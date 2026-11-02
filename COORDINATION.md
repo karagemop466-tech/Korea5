@@ -115,11 +115,15 @@ add/add conflict. Resolve by **appending** that session's task rows and log entr
 | Pull request #3 | **https://github.com/karagemop466-tech/Korea5/pull/3** — one row per game; Westwood One pre-game starts folded into the game row |
 | Merge #3 | **Merged** |
 | Pull request #4 | **https://github.com/karagemop466-tech/Korea5/pull/4** — cache-busted data fetches + final record |
+| Merge #4 | **Merged** |
+| Pull request #5 | **https://github.com/karagemop466-tech/Korea5/pull/5** — version data requests by content hash (stale-CDN fix) |
+| Merge #5 | **Merged**; Pages rebuilt and the live calendar verified: one row for 2026-11-02 with the pre-game note, 3.1 busy hours |
 | Pages build | `pages build and deployment` — **success**; Pages status `built`, source `main` / |
 | Live site | https://karagemop466-tech.github.io/Korea5/ — verified by fetching the published page |
 | Post-merge fix 1 | PR #2 — TBD-kickoff games were blocking a full 24 hours instead of the plausible 12:00–23:30 PT window |
 | Post-merge fix 2 | PR #3 — the live calendar showed duplicate rows for the same game because Westwood One's published time is its pre-game broadcast start (15–75 min before kickoff) |
-| Post-merge fix 3 | PR #4 — GitHub Pages was serving a cached `events-*.json` after deploy; data requests now carry a build-stamp query string |
+| Post-merge fix 3 | PR #4 — GitHub Pages was serving a cached `events-*.json` after deploy; data requests now carry a version query string |
+| Post-merge fix 4 | PR #5 — the version string was derived from the inputs and so did not change when the transform did; it is now a sha256 of the built data, and the live calendar was re-checked against the deployed site |
 
 ## Post-merge defect found and fixed
 

@@ -2,7 +2,7 @@
 
 **Prepared for:** a listener in San Francisco (94122) who wants to travel when nothing he follows is live on the radio.
 
-**Live site:** https://karagemop466-tech.github.io/Korea5/  ·  **Data rebuilt:** 2026-11-02T17:33:08Z  ·  **Verification report:** `verification/report.json` (49/62 curated rows re-verified)
+**Live site:** https://karagemop466-tech.github.io/Korea5/  ·  **Data rebuilt:** 2026-11-02T17:35:48Z  ·  **Verification report:** `verification/report.json` (61/62 curated rows re-verified)
 
 ## 1. Bottom line
 
@@ -102,7 +102,7 @@ Lightest-schedule view (same windows ranked by hours of live sport rather than w
 
 ## 9. Verification
 
-- 62 curated rows are re-checked in CI against the official page that publishes them: 49 passed, 13 failed.
+- 62 curated rows are re-checked in CI against the official page that publishes them: 61 passed, 1 failed.
 - 9/10 MLB API spot checks matched game-for-game.
 - 0 feed integrity problems (missing source links, malformed dates or times).
 - Failures are published on the Flagged page, not hidden.

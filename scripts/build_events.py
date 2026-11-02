@@ -246,6 +246,52 @@ def curated_events():
     return out
 
 
+# ---------------------------------------------------------------- upstream NFL feed
+def nfl_2026_full():
+    """Every 2026 NFL game, from the NFL.com by-week pages.
+
+    This feed is produced by the repo's parallel data pipeline (`data/upstream/nfl-2026.json`,
+    fetched from nfl.com/schedules by-week pages). 49ers rows are skipped here because the
+    club's own page already supplies them with radio affiliates.
+    """
+    p = "data/upstream/nfl-2026.json"
+    if not os.path.exists(p):
+        return []
+    d = json.load(open(p))
+    out = []
+    for g in d.get("games", []):
+        teams = f"{g.get('away') or ''} {g.get('home') or ''}"
+        if "49ers" in teams:
+            continue
+        if not g.get("datePT"):
+            continue
+        season = {"PRE": "preseason", "REG": "regular", "POST": "postseason"}.get(g.get("seasonType"), "regular")
+        tv = g.get("tv") or []
+        out.append({
+            "id": f"nfl2026-{g['id']}",
+            "league": "NFL",
+            "priority": "high",
+            "tags": ["nfl"] + (["westwoodone"] if g.get("nationalRadio") else []),
+            "date": g["datePT"],
+            "start": g.get("startPT"),
+            "durationMin": DURATION["nfl"],
+            "title": f"{g.get('away')} at {g.get('home')}",
+            "away": g.get("away"), "home": g.get("home"),
+            "venue": g.get("venue"),
+            "tv": ", ".join(tv) if tv else None,
+            "nationalRadio": g.get("nationalRadio"),
+            "seasonType": season,
+            "week": g.get("weekLabel") or (f"W{g.get('week')}" if g.get("week") else None),
+            "timeStatus": g.get("timeStatus", "verified"),
+            "status": "verified" if g.get("verification") == "verified" else "unconfirmed",
+            "dateStatus": "verified",
+            "source": g.get("sourceName") or "NFL.com official schedule",
+            "sourceLabel": "NFL.com game page",
+            "sourceUrl": g.get("sourceUrl") or "https://www.nfl.com/schedules/2026/",
+        })
+    return out
+
+
 # ---------------------------------------------------------------- estimates
 NFL_WINDOWS = [  # (suffix, weekday, startPT, minutes, label)
     ("sun-early", 6, "10:00", 210, "NFL Sunday early window"),
@@ -535,6 +581,8 @@ def main():
         est += nfl_postseason_estimate(y)
         for e in est:
             by_year[int(e["date"][:4])].append(e)
+    for e in nfl_2026_full():
+        by_year[2026].append(e)
     # the 2026 NFL season's postseason has not been seeded yet: estimate it too
     for e in nfl_postseason_estimate(2026):
         by_year[int(e["date"][:4])].append(e)
@@ -543,6 +591,14 @@ def main():
             pass
 
     # 2028/2029 MLB postseason estimates fall in the following year only if cross-year; none do.
+
+    # Re-bucket by the calendar year of each event's date so the site can load one file
+    # per year without cross-year gaps (NFL playoffs and January bowls spill into January).
+    rebucketed = defaultdict(list)
+    for y, evs in by_year.items():
+        for e in evs:
+            rebucketed[int(e["date"][:4])].append(e)
+    by_year = rebucketed
 
     meta_common = {
         "durations": DURATION,

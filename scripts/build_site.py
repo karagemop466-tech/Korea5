@@ -454,6 +454,21 @@ def sf_record():
 
 def build_nfl():
     cur = load("data/curated/nfl-2026-49ers.json", {"events": [], "meta": {}})
+    up = load("data/upstream/nfl-2026.json", {"games": []})
+    nfl_rows, nfl_count = [], 0
+    for g in sorted(up.get("games", []), key=lambda x: (x.get("datePT") or "9999", x.get("startPT") or "")):
+        if "49ers" in (g.get("away", "") + g.get("home", "")):
+            continue
+        nfl_count += 1
+        tv = ", ".join(g.get("tv") or []) or "—"
+        nfl_rows.append([
+            esc((g.get("weekLabel") or f"W{g.get('week')}") if g.get("week") else "—"),
+            esc(g.get("datePT") or "TBD"),
+            esc(g.get("startPT") or "TBD"),
+            esc(f"{g.get('away')} at {g.get('home')}"),
+            esc(tv),
+            src(g.get("sourceUrl"), "NFL.com"),
+        ])
     w1 = load("data/curated/westwoodone-2026.json", {"events": [], "meta": {}})
 
     sched = ""
@@ -510,6 +525,11 @@ verified for 2026–27. The 2027, 2028 and 2029 seasons have not been released, 
 <p class="small">Source: the club's own schedule page, which publishes kickoff in Pacific time and names the radio network for every game:
 <strong>KSAN 107.7 FM / KNBR 104.5 FM / 680 AM</strong>. Week 18 is listed by the club as TBD; both days of the league's final weekend are blocked.</p>
 {table(["Date", "Kickoff (PT)", "Opponent", "Venue", "TV", "Status"], sf_rows)}
+
+<h2>Every NFL game, 2026</h2>
+<p class="small">The full {nfl_count} games of the 2026 league year (preseason and regular season), each row linking to its own NFL.com game page.
+Kickoff times are Pacific. The 49ers rows are shown above from the club's own page, so they are not duplicated here.</p>
+{table(["Wk", "Date", "Kickoff (PT)", "Matchup", "TV", "Source"], nfl_rows)}
 
 <h2>Westwood One Sports — national NFL radio, 2026–27</h2>
 <p class="small">Times on the network's page are Eastern; Pacific conversions are in the calendar. Doubleheader rows are published by
@@ -591,7 +611,7 @@ def build_radio():
          '<a href="https://www.49ers.com/schedule/2026/" target="_blank" rel="noopener">49ers.com</a> · <a href="https://gostanford.com/sports/football/schedule" target="_blank" rel="noopener">gostanford.com</a>'],
         ["<strong>KSAN 107.7 FM</strong>", "49ers (simulcast)", "Named by the club on every 2026 game row.", '<a href="https://www.49ers.com/schedule/2026/" target="_blank" rel="noopener">49ers.com</a>'],
         ["<strong>KSFO 810 AM</strong>", "Cal football", "Named by Cal on every 2026 game row (except the Big Game, which moves to KNBR).", '<a href="https://calbears.com/sports/football/schedule" target="_blank" rel="noopener">calbears.com</a>'],
-        ["<strong>Westwood One Sports</strong> (national feed)", "NFL national windows", "Network schedule verified; the San Francisco affiliate that carries the feed is not published on the pages we verified — flagged.", '<a href="https://www.westwoodonesports.com/nfl-schedule/" target="_blank" rel="noopener">westwoodonesports.com</a>'],
+        ["<strong>Westwood One Sports</strong> (national feed)", "NFL national windows", "Network schedule verified. Its Station Finder lists San Francisco affiliates <strong>KNBR-AM, KNBR-FM, KNBR-F2 and KTCT-AM</strong>; the finder does not publish frequencies, and local programming can pre-empt a broadcast.", '<a href="https://www.westwoodonesports.com/station-finder/" target="_blank" rel="noopener">Station Finder</a> · <a href="https://www.westwoodonesports.com/nfl-schedule/" target="_blank" rel="noopener">schedule</a>'],
         ["<strong>95.7 FM KGMZ</strong> (“The Game”)", "Athletics (reported)", "No official Athletics or station page confirmed an A's radio flagship for 2026 in this pass. Left unverified rather than inferred.", '<span class="small">—</span>'],
     ]
     w1 = load("data/curated/westwoodone-2026.json", {"events": []})
@@ -704,7 +724,6 @@ def build_flagged():
         ("Dataset", "Stanford / Cal 2027–2029", "Neither school has released these seasons. Twelve Saturdays per school are blocked as estimates.", "https://gostanford.com/sports/football/schedule"),
         ("Gap", "Cal games before Nov 14, 2026", "Cal's official page could not be parsed unambiguously for its early-season card order, so those games are omitted rather than guessed.", "https://calbears.com/sports/football/schedule"),
         ("Gap", "Athletics radio flagship", "No official page confirmed which San Francisco station carries Athletics games in 2026. A's games are still blocked as high priority.", ""),
-        ("Gap", "Westwood One SF affiliate", "The network publishes its schedule but not the San Francisco station that carries it.", "https://www.westwoodonesports.com/station-finder"),
         ("Gap", "Westwood One non-NFL sports", "NCAA Basketball, golf, soccer and NCAA championships are published week by week and are not enumerated.", "https://www.westwoodonesports.com/"),
     ]
 
@@ -732,6 +751,14 @@ question needs a human decision.</div>
 
 <h2>Known gaps and estimates</h2>
 {table(["Type", "Item", "Detail", "Source"], rows)}
+
+<h2>Resolved during this build</h2>
+<ul class="clean">
+  <li><strong>Westwood One's San Francisco affiliate</strong> — resolved: the network's Station Finder lists KNBR-AM, KNBR-FM, KNBR-F2 and
+  KTCT-AM as San Francisco affiliates (<a href="https://www.westwoodonesports.com/station-finder/" target="_blank" rel="noopener">Station Finder</a>).
+  Frequencies are not published by the finder, and local programming can pre-empt a broadcast.</li>
+  <li><strong>All NFL games for 2026</strong> — the 272 regular-season and 49 preseason games are now in the dataset, each linking to its NFL.com game page.</li>
+</ul>
 
 <h2>What is verified, by contrast</h2>
 <ul class="clean">

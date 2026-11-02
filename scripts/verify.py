@@ -164,9 +164,28 @@ def verify_mlb():
     return out
 
 
+def verify_nfl_upstream():
+    """Spot-check the NFL feed rows against their NFL.com game pages."""
+    p = "data/upstream/nfl-2026.json"
+    if not os.path.exists(p):
+        return []
+    games = json.load(open(p)).get("games", [])
+    reg = [g for g in games if g.get("seasonType") == "REG" and g.get("sourceUrl")]
+    sample = reg[::max(1, len(reg) // 6)][:6]
+    out = []
+    for g in sample:
+        nick = [t.split()[-1] for t in (g.get("away", ""), g.get("home", "")) if t]
+        ok, missing, status = check_tokens(g["sourceUrl"], nick)
+        out.append({"date": g.get("datePT"), "title": g.get("title"),
+                    "url": g["sourceUrl"], "status": status,
+                    "verified": bool(ok), "missing": missing})
+    return out
+
+
 def main():
     os.makedirs("verification", exist_ok=True)
     curated = verify_curated()
+    nfl = verify_nfl_upstream()
     mlb = verify_mlb()
 
     # feed integrity
@@ -205,11 +224,14 @@ def main():
             "flaggedConflicts": len(conflicts),
             "mlbSpotChecks": len(mlb),
             "mlbSpotChecksPassed": sum(1 for m in mlb if m["match"]),
+            "nflSpotChecks": len(nfl),
+            "nflSpotChecksPassed": sum(1 for m in nfl if m["verified"]),
             "feedProblems": len(problems),
             "eventCounts": counts,
         },
         "curated": curated,
         "mlbSpotChecks": mlb,
+        "nflSpotChecks": nfl,
         "feedProblems": problems[:200],
     }
     with open("verification/report.json", "w", encoding="utf-8") as f:

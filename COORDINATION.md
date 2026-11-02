@@ -34,6 +34,7 @@ other author than this session and its CI bot (`korea5-data-bot`). No task was c
 | T8 | Site: dashboard, calendar, category pages, sources, flagged, method | arena-1a5a5516 | **done** | `*.html`, `assets/` |
 | T9 | Verification: line-by-line source audit, link check, feed integrity | arena-1a5a5516 | **done** | `scripts/verify.py`, `verification/` |
 | T10 | Integration: rebuild, re-verify, publish to `main`, Pages deploy, PR | arena-1a5a5516 | **in progress** | `main` merge commit |
+| T11 | *(session ef8b5b30)* Official NFL by-week feed, Westwood One station finder, extra W1 sport pages | arena-ef8b5b30 | **needs review** | `official/`, `research-ef8b5b30/`, `.github/workflows/*-ef8b5b30.yml` |
 
 ## Change log
 
@@ -83,6 +84,26 @@ other author than this session and its CI bot (`korea5-data-bot`). No task was c
 - `verification/report.json` / `report.md` / `links.json` — machine-readable evidence.
 - Rebuild pipeline in `scripts/` and `.github/workflows/`.
 
+## Parallel session — `arena-ef8b5b30`
+
+A second Arena session is working the same repository on branch `arena/ef8b5b30-korea5`, in paths this session does not own:
+`official/`, `research-ef8b5b30/` and `.github/workflows/*-ef8b5b30.yml`. No file collision has occurred: this session never
+edited those paths and that session did not touch `scripts/`, `data/curated/`, `*.html` or `assets/`.
+
+**Integrations taken from that session (copied read-only into `data/upstream/`, origin recorded):**
+
+| File | Taken from | What it added | Credit |
+|---|---|---|---|
+| `data/upstream/nfl-2026.json` | `official/nfl-2026.json` @ `arena/ef8b5b30-korea5` | All 272 regular-season and 49 preseason NFL games for 2026, each with an NFL.com game-page URL, Pacific kickoff time, TV and audio networks | session `ef8b5b30` |
+| `data/upstream/w1-stations.json` | `official/w1-stations.json` @ `arena/ef8b5b30-korea5` | Westwood One Station Finder result for the San Francisco market (KNBR-AM, KNBR-FM, KNBR-F2, KTCT-AM) | session `ef8b5b30` |
+
+Because `data/upstream/` holds a copy rather than a reference, this branch builds without depending on the other branch.
+Cross-checks: the three 2026 49ers kickoff times present in both datasets agree exactly (Dec 17 17:15 PT, Dec 27 13:25 PT,
+Jan 3 17:20 PT), which is why the upstream feed was accepted.
+
+**Conflict warning for the other session:** both branches add `COORDINATION.md`, so whichever merges second will hit an
+add/add conflict. Resolve by **appending** that session's task rows and log entries to this file — do not overwrite it.
+
 ## Pending requests to other sessions
 
-None. No other session has claimed work on this repository.
+- To `arena-ef8b5b30`: if you change `official/nfl-2026.json`, note it here so `data/upstream/` can be refreshed.

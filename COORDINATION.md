@@ -108,11 +108,18 @@ add/add conflict. Resolve by **appending** that session's task rows and log entr
 
 | Step | Result |
 |---|---|
-| Pull request | **#1 — https://github.com/karagemop466-tech/Korea5/pull/1** ("Free-time & vacation planner: verified MLB/NFL/NCAAF/Westwood One schedules + 2027–29 vacation analysis") |
-| Merge | **Merged** into `main` on 2026-11-02T17:38:23Z, merge commit `3ae71714fd9625aff3feff73831ad450beb8e8bf` |
+| Pull request #1 | **https://github.com/karagemop466-tech/Korea5/pull/1** — "Free-time & vacation planner: verified MLB/NFL/NCAAF/Westwood One schedules + 2027–29 vacation analysis" |
+| Merge #1 | **Merged** into `main` 2026-11-02T17:38:23Z, merge commit `3ae71714fd9625aff3feff73831ad450beb8e8bf` |
+| Pull request #2 | **https://github.com/karagemop466-tech/Korea5/pull/2** — TBD-kickoff blocking fix (24h → plausible window) + integration record |
+| Merge #2 | **Merged** 2026-11-02T17:40:33Z |
+| Pull request #3 | **https://github.com/karagemop466-tech/Korea5/pull/3** — one row per game; Westwood One pre-game starts folded into the game row |
+| Merge #3 | **Merged** |
+| Pull request #4 | **https://github.com/karagemop466-tech/Korea5/pull/4** — cache-busted data fetches + final record |
 | Pages build | `pages build and deployment` — **success**; Pages status `built`, source `main` / |
 | Live site | https://karagemop466-tech.github.io/Korea5/ — verified by fetching the published page |
-| Post-merge fix | PR #2 — TBD-kickoff games were blocking a full 24 hours instead of the plausible 12:00–23:30 PT window |
+| Post-merge fix 1 | PR #2 — TBD-kickoff games were blocking a full 24 hours instead of the plausible 12:00–23:30 PT window |
+| Post-merge fix 2 | PR #3 — the live calendar showed duplicate rows for the same game because Westwood One's published time is its pre-game broadcast start (15–75 min before kickoff) |
+| Post-merge fix 3 | PR #4 — GitHub Pages was serving a cached `events-*.json` after deploy; data requests now carry a build-stamp query string |
 
 ## Post-merge defect found and fixed
 

@@ -1,0 +1,25 @@
+name: probe
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/1a5a5516-korea5' ]
+    paths: [ 'scripts/probe_sources.py' ]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/1a5a5516-korea5
+      - name: Probe sources
+        run: python3 scripts/probe_sources.py
+      - name: Commit probe
+        run: |
+          git config user.name "korea5-data-bot"
+          git config user.email "korea5-data-bot@users.noreply.github.com"
+          git add research/probe.json
+          git commit -m "research: probe official source endpoints" || echo "no changes"
+          git pull --rebase --autostash origin arena/1a5a5516-korea5
+          git push origin HEAD:arena/1a5a5516-korea5

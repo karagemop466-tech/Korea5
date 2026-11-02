@@ -1,0 +1,33 @@
+name: official-data-ef8b5b30
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/ef8b5b30-korea5' ]
+    paths: [ 'tools/fetch_official.py', '.github/workflows/data-ef8b5b30.yml' ]
+permissions:
+  contents: write
+concurrency:
+  group: official-data-ef8b5b30
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/ef8b5b30-korea5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch official NFL / Westwood One / station / MLB-TBD data
+        run: python3 tools/fetch_official.py
+      - name: Commit official data
+        run: |
+          git config user.name "korea5-data-bot"
+          git config user.email "korea5-data-bot@users.noreply.github.com"
+          git add official/
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "data: refresh official NFL/W1/station/MLB-TBD feeds"
+            git pull --rebase --autostash origin arena/ef8b5b30-korea5
+            git push origin HEAD:arena/ef8b5b30-korea5
+          fi

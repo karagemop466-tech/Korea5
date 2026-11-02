@@ -30,18 +30,30 @@ _cache = {}
 
 
 def fetch(url, keep_scripts=False):
-    if url in _cache:
-        return _cache[url]
+    key = (url, keep_scripts)
+    if key in _cache:
+        return _cache[key]
     try:
         req = urllib.request.Request(url, headers=UA)
         with urllib.request.urlopen(req, timeout=60) as r:
             raw = r.read().decode("utf-8", "replace")
         txt = raw if keep_scripts else ANY_TAG.sub(" ", TAG_RE.sub(" ", raw))
         txt = html.unescape(txt)
-        _cache[url] = (r.status, txt)
+        _cache[key] = (r.status, txt)
     except Exception as e:  # noqa: BLE001
-        _cache[url] = (None, f"__ERROR__ {e!r}")
-    return _cache[url]
+        _cache[key] = (None, f"__ERROR__ {e!r}")
+    return _cache[key]
+
+
+# Committed snapshots captured from the same official URLs by scripts/extract_official.py.
+# Used only when a live re-fetch cannot reproduce the row (some official sites render
+# their schedule client-side and serve a shell to non-browser clients).
+SNAPSHOTS = {
+    "https://gostanford.com/sports/football/schedule": "research/text/stanford-2026.txt",
+    "https://calbears.com/sports/football/schedule": "research/text/cal-2026.txt",
+    "https://www.49ers.com/schedule/2026/": "research/text/49ers-2026.txt",
+    "https://www.westwoodonesports.com/nfl-schedule/": "research/text/westwoodone-nfl.txt",
+}
 
 
 def norm(s):
@@ -60,7 +72,16 @@ def check_tokens(url, tokens):
     status2, raw = fetch(url, keep_scripts=True)
     n2 = norm(raw)
     missing2 = [t for t in tokens if norm(t) not in n2]
-    return (not missing2), missing2, status2
+    if not missing2:
+        return True, [], status2
+    snap = SNAPSHOTS.get(url)
+    if snap and os.path.exists(snap):
+        ns = norm(open(snap, encoding="utf-8").read())
+        missing3 = [t for t in tokens if norm(t) not in ns]
+        if not missing3:
+            return "snapshot", [], status2
+        return False, missing3, status2
+    return False, missing2, status2
 
 
 def verify_curated():
@@ -82,11 +103,14 @@ def verify_curated():
             # event page), then fall back to the dataset's schedule page.
             targets = [u for u in (e.get("eventUrl"), src) if u]
             ok, missing, status = (None, [], None)
+            verified_against = None
             if tokens:
                 for t in targets:
                     ok, missing, status = check_tokens(t, tokens)
                     if ok:
                         src = t
+                        verified_against = "snapshot" if ok == "snapshot" else "live"
+                        ok = True
                         break
             rows.append({
                 "dataset": name,
@@ -99,6 +123,7 @@ def verify_curated():
                 "tokens": tokens,
                 "officialStatus": status,
                 "verified": ok,
+                "verifiedAgainst": verified_against,
                 "missingTokens": missing,
                 "note": e.get("note"),
                 "conflict": e.get("conflict"),

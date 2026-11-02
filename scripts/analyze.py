@@ -197,6 +197,27 @@ def main():
                 league_counts[e["league"]] += 1
         summary[str(y)] = {"scopes": per_scope, "leagueEvents": dict(league_counts)}
 
+    # ---- contiguous free stretches (all scope), per year
+    streaks = {}
+    for scope in ("all", "radio"):
+        streaks[scope] = {}
+        for y in (2026, 2027, 2028, 2029, 2030):
+            yd = [d for d in dates if d.startswith(str(y))]
+            runs, cur = [], []
+            for d in yd:
+                if days[d][scope]["hours"] == 0:
+                    cur.append(d)
+                else:
+                    if cur:
+                        runs.append(cur)
+                    cur = []
+            if cur:
+                runs.append(cur)
+            runs.sort(key=lambda r: (-len(r), r[0]))
+            streaks[scope][str(y)] = [
+                {"start": r[0], "end": r[-1], "days": len(r)} for r in runs[:8]
+            ]
+
     payload = {
         "meta": {
             "generatedUTC": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -210,6 +231,7 @@ def main():
             },
         },
         "summary": summary,
+        "freeStreaks": streaks,
         "vacations": vacations,
         "days": days,
     }

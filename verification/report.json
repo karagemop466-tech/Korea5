@@ -1,14 +1,14 @@
 {
- "generatedUTC": "2026-11-02T17:29:54Z",
+ "generatedUTC": "2026-11-02T17:30:35Z",
  "summary": {
   "curatedRows": 62,
   "rowsChecked": 62,
-  "rowsVerified": 0,
-  "rowsFailed": 62,
+  "rowsVerified": 49,
+  "rowsFailed": 13,
   "rowsWithoutTokens": 0,
   "flaggedConflicts": 3,
   "mlbSpotChecks": 10,
-  "mlbSpotChecksPassed": 0,
+  "mlbSpotChecksPassed": 9,
   "feedProblems": 0,
   "eventCounts": {
    "2026": 2977,
@@ -31,13 +31,9 @@
     "08/13",
     "Titans"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 1",
-    "08/13",
-    "Titans"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -53,13 +49,9 @@
     "08/20",
     "Chargers"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 2",
-    "08/20",
-    "Chargers"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -75,13 +67,9 @@
     "08/27",
     "Raiders"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 3",
-    "08/27",
-    "Raiders"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -97,13 +85,9 @@
     "09/10",
     "Rams"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 1",
-    "09/10",
-    "Rams"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -119,13 +103,9 @@
     "09/20",
     "Dolphins"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 2",
-    "09/20",
-    "Dolphins"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -141,13 +121,9 @@
     "09/27",
     "Cardinals"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 3",
-    "09/27",
-    "Cardinals"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -163,13 +139,9 @@
     "10/04",
     "Broncos"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 4",
-    "10/04",
-    "Broncos"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -185,13 +157,9 @@
     "10/11",
     "Seahawks"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 5",
-    "10/11",
-    "Seahawks"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -207,13 +175,9 @@
     "10/19",
     "Commanders"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 6",
-    "10/19",
-    "Commanders"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -229,13 +193,9 @@
     "10/25",
     "Falcons"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 7",
-    "10/25",
-    "Falcons"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -250,12 +210,9 @@
     "WEEK 8",
     "BYE"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 8",
-    "BYE"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": "Bye week \u2014 no game.",
    "conflict": null
   },
@@ -272,14 +229,9 @@
     "1:25 PM PST",
     "Raiders"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 9",
-    "11/08",
-    "1:25 PM PST",
-    "Raiders"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -296,14 +248,9 @@
     "1:25 PM PST",
     "Cowboys"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 10",
-    "11/15",
-    "1:25 PM PST",
-    "Cowboys"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -320,14 +267,9 @@
     "5:20 PM PST",
     "Vikings"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 11",
-    "11/22",
-    "5:20 PM PST",
-    "Vikings"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -344,14 +286,9 @@
     "1:25 PM PST",
     "Seahawks"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 12",
-    "11/29",
-    "1:25 PM PST",
-    "Seahawks"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -368,14 +305,9 @@
     "10:00 AM PST",
     "Giants"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 13",
-    "12/06",
-    "10:00 AM PST",
-    "Giants"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -392,14 +324,9 @@
     "1:25 PM PST",
     "Rams"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 14",
-    "12/13",
-    "1:25 PM PST",
-    "Rams"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -416,14 +343,9 @@
     "5:15 PM PST",
     "Chargers"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 15",
-    "12/17",
-    "5:15 PM PST",
-    "Chargers"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -440,14 +362,9 @@
     "1:25 PM PST",
     "Chiefs"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 16",
-    "12/27",
-    "1:25 PM PST",
-    "Chiefs"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -464,14 +381,9 @@
     "5:20 PM PST",
     "Eagles"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 17",
-    "01/03",
-    "5:20 PM PST",
-    "Eagles"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -487,13 +399,9 @@
     "Cardinals",
     "State Farm Stadium"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "WEEK 18",
-    "Cardinals",
-    "State Farm Stadium"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": "Official 49ers page lists Week 18 as TBD. NFL Week 18 is played in the final weekend of the regular season; the planner blocks both candidate days.",
    "conflict": null
   },
@@ -502,18 +410,15 @@
    "id": "w1-2026-11-02",
    "date": "2026-11-02",
    "title": "Chicago Bears vs Seattle Seahawks",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548540",
    "officialUrl": "https://www.westwoodonesports.com/events/548540",
    "tokens": [
     "Chicago Bears at Seattle Seahawks",
     "7:00 PM ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Chicago Bears at Seattle Seahawks",
-    "7:00 PM ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -522,18 +427,15 @@
    "id": "w1-2026-11-05",
    "date": "2026-11-05",
    "title": "Jacksonville Jaguars vs Baltimore Ravens",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548561",
    "officialUrl": "https://www.westwoodonesports.com/events/548561",
    "tokens": [
     "Jacksonville Jaguars at Baltimore Ravens",
     "7:30 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Jacksonville Jaguars at Baltimore Ravens",
-    "7:30 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -542,18 +444,15 @@
    "id": "w1-2026-11-07-ncaa",
    "date": "2026-11-07",
    "title": "Oregon vs Ohio State",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/557143",
    "officialUrl": "https://www.westwoodonesports.com/events/557143",
    "tokens": [
     "Oregon at Ohio State",
     "3 PM ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Oregon at Ohio State",
-    "3 PM ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -562,18 +461,15 @@
    "id": "w1-2026-11-08",
    "date": "2026-11-08",
    "title": "Cincinnati Bengals vs Atlanta Falcons",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548489",
    "officialUrl": "https://www.westwoodonesports.com/events/548489",
    "tokens": [
     "Cincinnati Bengals vs Atlanta Falcons",
     "9:15 AM ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Cincinnati Bengals vs Atlanta Falcons",
-    "9:15 AM ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -582,18 +478,15 @@
    "id": "w1-2026-11-09",
    "date": "2026-11-09",
    "title": "Buffalo Bills vs Minnesota Vikings",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548541",
    "officialUrl": "https://www.westwoodonesports.com/events/548541",
    "tokens": [
     "Buffalo Bills at Minnesota Vikings",
     "7:00 PM ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Buffalo Bills at Minnesota Vikings",
-    "7:00 PM ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -602,18 +495,15 @@
    "id": "w1-2026-11-15",
    "date": "2026-11-15",
    "title": "New England Patriots vs Detroit Lions",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548490",
    "officialUrl": "https://www.westwoodonesports.com/events/548490",
    "tokens": [
     "New England Patriots vs Detroit Lions",
     "9:15 AM ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "New England Patriots vs Detroit Lions",
-    "9:15 AM ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -622,18 +512,15 @@
    "id": "w1-2026-11-16",
    "date": "2026-11-16",
    "title": "Los Angeles Chargers vs Baltimore Ravens",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548542",
    "officialUrl": "https://www.westwoodonesports.com/events/548542",
    "tokens": [
     "Los Angeles Chargers at Baltimore Ravens",
     "7:00 PM ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Los Angeles Chargers at Baltimore Ravens",
-    "7:00 PM ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -642,18 +529,15 @@
    "id": "w1-2026-11-22",
    "date": "2026-11-22",
    "title": "Minnesota Vikings vs San Francisco 49ers",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548491",
    "officialUrl": "https://www.westwoodonesports.com/events/548491",
    "tokens": [
     "Minnesota Vikings vs San Francisco 49ers",
     "7:30 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Minnesota Vikings vs San Francisco 49ers",
-    "7:30 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": "49ers.com lists 5:20 PM PST (8:20 PM ET); Westwood One lists 7:30 PM ET."
   },
@@ -662,18 +546,15 @@
    "id": "w1-2026-11-25",
    "date": "2026-11-25",
    "title": "Green Bay Packers vs Los Angeles Rams",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548511",
    "officialUrl": "https://www.westwoodonesports.com/events/548511",
    "tokens": [
     "Green Bay Packers at Los Angeles Rams",
     "7:30 PM ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Green Bay Packers at Los Angeles Rams",
-    "7:30 PM ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -682,18 +563,15 @@
    "id": "w1-2026-11-26",
    "date": "2026-11-26",
    "title": "Philadelphia Eagles vs Dallas Cowboys",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548513",
    "officialUrl": "https://www.westwoodonesports.com/events/548513",
    "tokens": [
     "Philadelphia Eagles at Dallas Cowboys",
     "4:15 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Philadelphia Eagles at Dallas Cowboys",
-    "4:15 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -702,18 +580,15 @@
    "id": "w1-2026-11-27",
    "date": "2026-11-27",
    "title": "Denver Broncos vs Pittsburgh Steelers",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548515",
    "officialUrl": "https://www.westwoodonesports.com/events/548515",
    "tokens": [
     "Denver Broncos at Pittsburgh Steelers",
     "2:30 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Denver Broncos at Pittsburgh Steelers",
-    "2:30 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -722,18 +597,15 @@
    "id": "w1-2026-11-30",
    "date": "2026-11-30",
    "title": "Carolina Panthers vs Tampa Bay Buccaneers",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548544",
    "officialUrl": "https://www.westwoodonesports.com/events/548544",
    "tokens": [
     "Carolina Panthers at Tampa Bay Buccaneers",
     "7:00 PM ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Carolina Panthers at Tampa Bay Buccaneers",
-    "7:00 PM ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -742,18 +614,15 @@
    "id": "w1-2026-12-06",
    "date": "2026-12-06",
    "title": "Houston Texans vs Pittsburgh Steelers",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548503",
    "officialUrl": "https://www.westwoodonesports.com/events/548503",
    "tokens": [
     "Houston Texans at Pittsburgh Steelers",
     "7:30 PM ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Houston Texans at Pittsburgh Steelers",
-    "7:30 PM ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -762,18 +631,15 @@
    "id": "w1-2026-12-10",
    "date": "2026-12-10",
    "title": "Minnesota Vikings vs New England Patriots",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548567",
    "officialUrl": "https://www.westwoodonesports.com/events/548567",
    "tokens": [
     "Minnesota Vikings at New England Patriots",
     "7:30 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Minnesota Vikings at New England Patriots",
-    "7:30 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -782,18 +648,15 @@
    "id": "w1-2026-12-14",
    "date": "2026-12-14",
    "title": "Pittsburgh Steelers vs Jacksonville Jaguars",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548546",
    "officialUrl": "https://www.westwoodonesports.com/events/548546",
    "tokens": [
     "Pittsburgh Steelers at Jacksonville Jaguars",
     "7:00 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Pittsburgh Steelers at Jacksonville Jaguars",
-    "7:00 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -802,18 +665,15 @@
    "id": "w1-2026-12-19",
    "date": "2026-12-19",
    "title": " vs ",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548517",
    "officialUrl": "https://www.westwoodonesports.com/events/548517",
    "tokens": [
     "Seattle Seahawks at Philadelphia Eagles",
     "4:30 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Seattle Seahawks at Philadelphia Eagles",
-    "4:30 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -822,18 +682,15 @@
    "id": "w1-2026-12-20",
    "date": "2026-12-20",
    "title": "Detroit Lions vs Minnesota Vikings",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548506",
    "officialUrl": "https://www.westwoodonesports.com/events/548506",
    "tokens": [
     "Detroit Lions at Minnesota Vikings",
     "7:30 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Detroit Lions at Minnesota Vikings",
-    "7:30 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -842,18 +699,15 @@
    "id": "w1-2026-12-24",
    "date": "2026-12-24",
    "title": "Houston Texans vs Philadelphia Eagles",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548569",
    "officialUrl": "https://www.westwoodonesports.com/events/548569",
    "tokens": [
     "Houston Texans at Philadelphia Eagles",
     "7:30 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Houston Texans at Philadelphia Eagles",
-    "7:30 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -862,18 +716,15 @@
    "id": "w1-2026-12-25",
    "date": "2026-12-25",
    "title": "Buffalo Bills vs Denver Broncos",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548531",
    "officialUrl": "https://www.westwoodonesports.com/events/548531",
    "tokens": [
     "Buffalo Bills at Denver Broncos",
     "4:15 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Buffalo Bills at Denver Broncos",
-    "4:15 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -882,18 +733,15 @@
    "id": "w1-2026-12-26",
    "date": "2026-12-26",
    "title": " vs ",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548519",
    "officialUrl": "https://www.westwoodonesports.com/events/548519",
    "tokens": [
     "Week 16 Saturday Doubleheader TBA",
     "4:00 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Week 16 Saturday Doubleheader TBA",
-    "4:00 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -907,7 +755,7 @@
    "tokens": [
     "Jacksonville Jaguars at Dallas Cowboys"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Jacksonville Jaguars at Dallas Cowboys"
@@ -920,18 +768,15 @@
    "id": "w1-2026-12-28",
    "date": "2026-12-28",
    "title": "New York Giants vs Detroit Lions",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548550",
    "officialUrl": "https://www.westwoodonesports.com/events/548550",
    "tokens": [
     "New York Giants at Detroit Lions",
     "7:00 PM ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "New York Giants at Detroit Lions",
-    "7:00 PM ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -940,18 +785,15 @@
    "id": "w1-2027-01-02",
    "date": "2027-01-02",
    "title": " vs ",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548521",
    "officialUrl": "https://www.westwoodonesports.com/events/548521",
    "tokens": [
     "Week 17 Saturday Doubleheader TBA",
     "4:00 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Week 17 Saturday Doubleheader TBA",
-    "4:00 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -960,18 +802,15 @@
    "id": "w1-2027-01-03",
    "date": "2027-01-03",
    "title": "Philadelphia Eagles vs San Francisco 49ers",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548509",
    "officialUrl": "https://www.westwoodonesports.com/events/548509",
    "tokens": [
     "Philadelphia Eagles at San Francisco 49ers",
     "7:30 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Philadelphia Eagles at San Francisco 49ers",
-    "7:30 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -980,18 +819,15 @@
    "id": "w1-2027-01-09-a",
    "date": "2027-01-09",
    "title": " vs ",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548523",
    "officialUrl": "https://www.westwoodonesports.com/events/548523",
    "tokens": [
     "Week 18 Saturday Tripleheader TBA",
     "12:30 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Week 18 Saturday Tripleheader TBA",
-    "12:30 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -1000,18 +836,15 @@
    "id": "w1-2027-01-09-b",
    "date": "2027-01-09",
    "title": " vs ",
-   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "source": "https://www.westwoodonesports.com/events/548526",
    "officialUrl": "https://www.westwoodonesports.com/events/548526",
    "tokens": [
     "Week 18 Saturday Tripleheader TBA",
     "8:00 PM  ET"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Week 18 Saturday Tripleheader TBA",
-    "8:00 PM  ET"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -1027,7 +860,7 @@
     "Hawai'i",
     "37-27"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Sat Aug 29 4:00 PM",
@@ -1049,7 +882,7 @@
     "Miami",
     "6-45"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Fri Sep 4 6:00 PM",
@@ -1071,7 +904,7 @@
     "Duke",
     "7-35"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Sat Sep 19 1:00 PM",
@@ -1093,7 +926,7 @@
     "Georgia Tech",
     "34-27"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Sat Sep 26 7:30 PM",
@@ -1115,7 +948,7 @@
     "Wake Forest",
     "3-57"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Sat Oct 3 9:00 AM",
@@ -1137,7 +970,7 @@
     "Notre Dame",
     "7-58"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Sat Oct 10 12:30 PM",
@@ -1159,7 +992,7 @@
     "Elon",
     "34-7"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Sat Oct 17 4:30 PM",
@@ -1181,7 +1014,7 @@
     "North Carolina St.",
     "31-28"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Fri Oct 23 7:30 PM",
@@ -1203,7 +1036,7 @@
     "Louisville",
     "24-52"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Sat Oct 31 12:15 PM",
@@ -1224,7 +1057,7 @@
     "Sat Nov 14",
     "Virginia Tech"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Sat Nov 14",
@@ -1244,7 +1077,7 @@
     "Sat Nov 21",
     "129th Big Game at California"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Sat Nov 21",
@@ -1264,7 +1097,7 @@
     "Sat Nov 28",
     "SMU"
    ],
-   "officialStatus": null,
+   "officialStatus": 200,
    "verified": false,
    "missingTokens": [
     "Sat Nov 28",
@@ -1285,13 +1118,9 @@
     "Stanford",
     "129th Big Game"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Nov 14 (Sat)",
-    "Stanford",
-    "129th Big Game"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": "gostanford.com lists the Big Game on 2026-11-21."
   },
@@ -1307,13 +1136,9 @@
     "Pittsburgh",
     "KSFO 810 AM"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Nov 21 (Sat)",
-    "Pittsburgh",
-    "KSFO 810 AM"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -1327,11 +1152,9 @@
    "tokens": [
     "Nov 28 (Sat)"
    ],
-   "officialStatus": null,
-   "verified": false,
-   "missingTokens": [
-    "Nov 28 (Sat)"
-   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
    "note": "Opponent not shown on the official page; left blank and flagged unverified.",
    "conflict": null
   }
@@ -1340,91 +1163,91 @@
   {
    "year": 2026,
    "date": "2026-03-25",
-   "apiStatus": null,
+   "apiStatus": 200,
    "gamesInFeed": 1,
-   "gamesInApi": 0,
-   "match": false,
+   "gamesInApi": 1,
+   "match": true,
    "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-03-25&endDate=2026-03-25&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2026,
    "date": "2026-05-01",
-   "apiStatus": null,
+   "apiStatus": 200,
    "gamesInFeed": 15,
-   "gamesInApi": 0,
-   "match": false,
+   "gamesInApi": 15,
+   "match": true,
    "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-05-01&endDate=2026-05-01&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2026,
    "date": "2026-06-07",
-   "apiStatus": null,
+   "apiStatus": 200,
    "gamesInFeed": 15,
-   "gamesInApi": 0,
-   "match": false,
+   "gamesInApi": 15,
+   "match": true,
    "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-06-07&endDate=2026-06-07&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2026,
    "date": "2026-07-17",
-   "apiStatus": null,
+   "apiStatus": 200,
    "gamesInFeed": 14,
-   "gamesInApi": 0,
+   "gamesInApi": 15,
    "match": false,
    "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-07-17&endDate=2026-07-17&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2026,
    "date": "2026-08-23",
-   "apiStatus": null,
+   "apiStatus": 200,
    "gamesInFeed": 15,
-   "gamesInApi": 0,
-   "match": false,
+   "gamesInApi": 15,
+   "match": true,
    "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-08-23&endDate=2026-08-23&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
    "date": "2027-03-25",
-   "apiStatus": null,
+   "apiStatus": 200,
    "gamesInFeed": 15,
-   "gamesInApi": 0,
-   "match": false,
+   "gamesInApi": 15,
+   "match": true,
    "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-03-25&endDate=2027-03-25&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
    "date": "2027-05-01",
-   "apiStatus": null,
+   "apiStatus": 200,
    "gamesInFeed": 15,
-   "gamesInApi": 0,
-   "match": false,
+   "gamesInApi": 15,
+   "match": true,
    "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-05-01&endDate=2027-05-01&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
    "date": "2027-06-07",
-   "apiStatus": null,
+   "apiStatus": 200,
    "gamesInFeed": 11,
-   "gamesInApi": 0,
-   "match": false,
+   "gamesInApi": 11,
+   "match": true,
    "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-06-07&endDate=2027-06-07&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
    "date": "2027-07-18",
-   "apiStatus": null,
+   "apiStatus": 200,
    "gamesInFeed": 15,
-   "gamesInApi": 0,
-   "match": false,
+   "gamesInApi": 15,
+   "match": true,
    "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-07-18&endDate=2027-07-18&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
    "date": "2027-08-24",
-   "apiStatus": null,
+   "apiStatus": 200,
    "gamesInFeed": 15,
-   "gamesInApi": 0,
-   "match": false,
+   "gamesInApi": 15,
+   "match": true,
    "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-08-24&endDate=2027-08-24&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   }
  ],

@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "dataset": "San Francisco 49ers 2026 preseason and regular season",
+    "team": "San Francisco 49ers",
+    "league": "NFL",
+    "season": 2026,
+    "priority": "high",
+    "sources": [
+      "https://www.49ers.com/schedule/2026/"
+    ],
+    "sourceName": "49ers.com official schedule (club site operated by the San Francisco 49ers / NFL)",
+    "retrievedUTC": "2026-11-02",
+    "notes": "Kickoff times are published by the club in Pacific time. Radio affiliates for every regular-season game are listed by the club as KSAN 107.7 FM / KNBR 104.5 FM / 680 AM. Week 18 kickoff date and time are listed by the club as TBD (the league sets Week 18 dates after Week 17).",
+    "irregularities": [
+      "Week 18 date/time is TBD on the official page; the planner marks 2027-01-09 and 2027-01-10 as the league-wide Week 18 window and flags the 49ers game as date-unconfirmed."
+    ]
+  },
+  "events": [
+    {"id":"nfl-2026-pre1","date":"2026-08-13","startPT":"19:00","timeStatus":"not-published","seasonType":"preseason","week":"PRE 1","opponent":"Tennessee Titans","homeAway":"home","venue":"Levi's Stadium","tv":null,"radio":[],"verifyTokens":["WEEK 1","08/13","Titans"]},
+    {"id":"nfl-2026-pre2","date":"2026-08-20","startPT":"19:00","timeStatus":"not-published","seasonType":"preseason","week":"PRE 2","opponent":"Los Angeles Chargers","homeAway":"away","venue":"SoFi Stadium","tv":null,"radio":[],"verifyTokens":["WEEK 2","08/20","Chargers"]},
+    {"id":"nfl-2026-pre3","date":"2026-08-27","startPT":"19:00","timeStatus":"not-published","seasonType":"preseason","week":"PRE 3","opponent":"Las Vegas Raiders","homeAway":"away","venue":"Allegiant Stadium","tv":null,"radio":[],"verifyTokens":["WEEK 3","08/27","Raiders"]},
+
+    {"id":"nfl-2026-w01","date":"2026-09-10","startPT":null,"timeStatus":"not-published","seasonType":"regular","week":"W1","opponent":"Los Angeles Rams","homeAway":"away","venue":"Melbourne Cricket Ground","tv":null,"radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"result":"W 27-7","verifyTokens":["WEEK 1","09/10","Rams"]},
+    {"id":"nfl-2026-w02","date":"2026-09-20","startPT":null,"timeStatus":"not-published","seasonType":"regular","week":"W2","opponent":"Miami Dolphins","homeAway":"home","venue":"Levi's Stadium","tv":null,"radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"result":"W 35-13","verifyTokens":["WEEK 2","09/20","Dolphins"]},
+    {"id":"nfl-2026-w03","date":"2026-09-27","startPT":null,"timeStatus":"not-published","seasonType":"regular","week":"W3","opponent":"Arizona Cardinals","homeAway":"home","venue":"Levi's Stadium","tv":null,"radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"result":"W 36-30","verifyTokens":["WEEK 3","09/27","Cardinals"]},
+    {"id":"nfl-2026-w04","date":"2026-10-04","startPT":null,"timeStatus":"not-published","seasonType":"regular","week":"W4","opponent":"Denver Broncos","homeAway":"home","venue":"Levi's Stadium","tv":null,"radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"result":"W 24-14","verifyTokens":["WEEK 4","10/04","Broncos"]},
+    {"id":"nfl-2026-w05","date":"2026-10-11","startPT":null,"timeStatus":"not-published","seasonType":"regular","week":"W5","opponent":"Seattle Seahawks","homeAway":"away","venue":"Lumen Field","tv":null,"radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"result":"W 32-29","verifyTokens":["WEEK 5","10/11","Seahawks"]},
+    {"id":"nfl-2026-w06","date":"2026-10-19","startPT":null,"timeStatus":"not-published","seasonType":"regular","week":"W6","opponent":"Washington Commanders","homeAway":"home","venue":"Levi's Stadium","tv":null,"radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"result":"W 23-17","verifyTokens":["WEEK 6","10/19","Commanders"]},
+    {"id":"nfl-2026-w07","date":"2026-10-25","startPT":null,"timeStatus":"not-published","seasonType":"regular","week":"W7","opponent":"Atlanta Falcons","homeAway":"away","venue":"Mercedes-Benz Stadium","tv":null,"radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"result":"L 20-29","verifyTokens":["WEEK 7","10/25","Falcons"]},
+    {"id":"nfl-2026-w08","date":"2026-11-01","startPT":null,"timeStatus":"bye","seasonType":"regular","week":"W8","opponent":null,"homeAway":null,"venue":null,"tv":null,"radio":[],"note":"Bye week — no game.","verifyTokens":["WEEK 8","BYE"]},
+
+    {"id":"nfl-2026-w09","date":"2026-11-08","startPT":"13:25","timeStatus":"verified","seasonType":"regular","week":"W9","opponent":"Las Vegas Raiders","homeAway":"home","venue":"Levi's Stadium","tv":"FOX","radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"verifyTokens":["WEEK 9","11/08","1:25 PM PST","Raiders"]},
+    {"id":"nfl-2026-w10","date":"2026-11-15","startPT":"13:25","timeStatus":"verified","seasonType":"regular","week":"W10","opponent":"Dallas Cowboys","homeAway":"away","venue":"AT&T Stadium","tv":"FOX","radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"verifyTokens":["WEEK 10","11/15","1:25 PM PST","Cowboys"]},
+    {"id":"nfl-2026-w11","date":"2026-11-22","startPT":"17:20","timeStatus":"verified","seasonType":"regular","week":"W11","opponent":"Minnesota Vikings","homeAway":"home","venue":"Estadio Banorte (Mexico City)","tv":"NBC","radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"verifyTokens":["WEEK 11","11/22","5:20 PM PST","Vikings"]},
+    {"id":"nfl-2026-w12","date":"2026-11-29","startPT":"13:25","timeStatus":"verified","seasonType":"regular","week":"W12","opponent":"Seattle Seahawks","homeAway":"home","venue":"Levi's Stadium","tv":"FOX","radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"verifyTokens":["WEEK 12","11/29","1:25 PM PST","Seahawks"]},
+    {"id":"nfl-2026-w13","date":"2026-12-06","startPT":"10:00","timeStatus":"verified","seasonType":"regular","week":"W13","opponent":"New York Giants","homeAway":"away","venue":"MetLife Stadium","tv":"FOX","radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"verifyTokens":["WEEK 13","12/06","10:00 AM PST","Giants"]},
+    {"id":"nfl-2026-w14","date":"2026-12-13","startPT":"13:25","timeStatus":"verified","seasonType":"regular","week":"W14","opponent":"Los Angeles Rams","homeAway":"home","venue":"Levi's Stadium","tv":"FOX","radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"verifyTokens":["WEEK 14","12/13","1:25 PM PST","Rams"]},
+    {"id":"nfl-2026-w15","date":"2026-12-17","startPT":"17:15","timeStatus":"verified","seasonType":"regular","week":"W15","opponent":"Los Angeles Chargers","homeAway":"away","venue":"SoFi Stadium","tv":"Prime Video","radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"verifyTokens":["WEEK 15","12/17","5:15 PM PST","Chargers"]},
+    {"id":"nfl-2026-w16","date":"2026-12-27","startPT":"13:25","timeStatus":"verified","seasonType":"regular","week":"W16","opponent":"Kansas City Chiefs","homeAway":"away","venue":"Arrowhead Stadium","tv":"CBS","radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"verifyTokens":["WEEK 16","12/27","1:25 PM PST","Chiefs"]},
+    {"id":"nfl-2026-w17","date":"2027-01-03","startPT":"17:20","timeStatus":"verified","seasonType":"regular","week":"W17","opponent":"Philadelphia Eagles","homeAway":"home","venue":"Levi's Stadium","tv":"NBC","radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"verifyTokens":["WEEK 17","01/03","5:20 PM PST","Eagles"]},
+    {"id":"nfl-2026-w18","date":null,"dateWindowStart":"2027-01-09","dateWindowEnd":"2027-01-10","startPT":null,"timeStatus":"tbd","seasonType":"regular","week":"W18","opponent":"Arizona Cardinals","homeAway":"away","venue":"State Farm Stadium","tv":"TBD","radio":["KSAN 107.7 FM","KNBR 104.5 FM / 680 AM"],"verifyTokens":["WEEK 18","Cardinals","State Farm Stadium"],
+      "note":"Official 49ers page lists Week 18 as TBD. NFL Week 18 is played in the final weekend of the regular season; the planner blocks both candidate days."}
+  ]
+}

@@ -1,0 +1,246 @@
+[
+ {
+  "url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+  "status": 200,
+  "contentType": "text/html; charset=utf-8",
+  "bytes": 2425224,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": false,
+   "sidearm": false,
+   "window.__": 6,
+   "ld+json": false,
+   "application/json": false,
+   "sportsEvent": false,
+   "script count": 138
+  },
+  "head": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/42ed4b7f310fd6b5.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/aa3ce5a626aa908e.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/2c8615cd1853512d.css\" data-precedence=",
+  "sample": "rg/scripttemplates/otSDKStub.js\" as=\"script\"/><link rel=\"preload\" href=\"https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js\" as=\"script\"/><link rel=\"preload\" href=\"https://imasdk.googleapis.com/js/sdkloader/gpt_proxy.js\" as=\"script\"/><link rel=\"preload\" href=\"https://securepubads.g.doubleclick.net/tag/js/gpt.js\" as=\"script\"/><link rel=\"preload\" href=\"https://cdn.adsafeprotected.com/iasPET.1.js\" as=\"script\"/><link rel=\"preload\" href=\"https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js\" as=\"script\"/><meta name=\"next-size-adjust\" content=\"\"/><link crossorigin="
+ },
+ {
+  "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+  "status": 200,
+  "contentType": "text/html; charset=utf-8",
+  "bytes": 2408972,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": false,
+   "sidearm": false,
+   "window.__": 6,
+   "ld+json": false,
+   "application/json": false,
+   "sportsEvent": false,
+   "script count": 138
+  },
+  "head": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/42ed4b7f310fd6b5.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/aa3ce5a626aa908e.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/2c8615cd1853512d.css\" data-precedence=",
+  "sample": "rg/scripttemplates/otSDKStub.js\" as=\"script\"/><link rel=\"preload\" href=\"https://assets.adobedtm.com/a5ea4e8f4344/1648c62d3986/launch-53368d199d70.min.js\" as=\"script\"/><link rel=\"preload\" href=\"https://imasdk.googleapis.com/js/sdkloader/gpt_proxy.js\" as=\"script\"/><link rel=\"preload\" href=\"https://securepubads.g.doubleclick.net/tag/js/gpt.js\" as=\"script\"/><link rel=\"preload\" href=\"https://cdn.adsafeprotected.com/iasPET.1.js\" as=\"script\"/><link rel=\"preload\" href=\"https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js\" as=\"script\"/><meta name=\"next-size-adjust\" content=\"\"/><link crossorigin="
+ },
+ {
+  "url": "https://www.49ers.com/schedule/",
+  "status": 200,
+  "contentType": "text/html",
+  "bytes": 390368,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": false,
+   "sidearm": false,
+   "window.__": 0,
+   "ld+json": true,
+   "application/json": false,
+   "sportsEvent": true,
+   "script count": 103
+  },
+  "head": "<!DOCTYPE html><html lang=\"en-US\" dir=\"ltr\"><head><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"dns-prefetch\" href=\"//nflenterprises.tt.omtrdc.net\" crossorigin><link rel=\"preconnect\" href=\"//securepubads.g.doubleclick.net\" crossorigin><link rel=\"preconnect\" href=\"//cdn.onesignal.c",
+  "sample": "ts/fonts/NFL/All-ProStats/All-ProStats--bold.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\"><link rel=\"preload\" href=\"https://www.49ers.com/compiledassets/assets/fonts/NFL/All-ProStats/All-ProStats--medium.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\"><link rel=\"preload\" href=\"https://www.49ers.com/compiledassets/assets/fonts/NFL/All-ProStats/All-ProStats--regular.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\"><link rel=\"preload\" href=\"https://www.49ers.com/compiledassets/assets/fonts/NFL/Druk/Druk--Bold.woff\" as=\"font\" type=\"font/woff\" crossorigin=\"anonymo"
+ },
+ {
+  "url": "https://www.49ers.com/schedule/2026/",
+  "status": 200,
+  "contentType": "text/html",
+  "bytes": 381839,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": false,
+   "sidearm": false,
+   "window.__": 0,
+   "ld+json": true,
+   "application/json": false,
+   "sportsEvent": true,
+   "script count": 100
+  },
+  "head": "<!DOCTYPE html><html lang=\"en-US\" dir=\"ltr\"><head><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"dns-prefetch\" href=\"//nflenterprises.tt.omtrdc.net\" crossorigin><link rel=\"preconnect\" href=\"//securepubads.g.doubleclick.net\" crossorigin><link rel=\"preconnect\" href=\"//cdn.onesignal.c",
+  "sample": "ers.com/compiledassets/assets/fonts/NFL/All-ProStats/All-ProStats--bold.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\"><link rel=\"preload\" href=\"https://www.49ers.com/compiledassets/assets/fonts/NFL/All-ProStats/All-ProStats--medium.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\"><link rel=\"preload\" href=\"https://www.49ers.com/compiledassets/assets/fonts/NFL/All-ProStats/All-ProStats--regular.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\"><link rel=\"preload\" href=\"https://www.49ers.com/compiledassets/assets/fonts/NFL/Druk/Druk--Bold.woff\" as=\"font\" type=\"font"
+ },
+ {
+  "url": "https://www.westwoodonesports.com/nfl-schedule/",
+  "status": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "bytes": 65458,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": false,
+   "sidearm": false,
+   "window.__": 0,
+   "ld+json": false,
+   "application/json": true,
+   "sportsEvent": false,
+   "script count": 57
+  },
+  "head": "<!DOCTYPE HTML> <!--[if IEMobile 7 ]><html class=\"no-js iem7\" manifest=\"default.appcache?v=1\"><![endif]--> <!--[if lt IE 7 ]><html class=\"no-js ie6\" lang=\"en\"><![endif]--> <!--[if IE 7 ]><html class=\"no-js ie7\" lang=\"en\"><![endif]--> <!--[if IE 8 ]><html class=\"no-js ie8\" lang=\"en\">&nbsp;<![endif]--> <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class=\"no-js\" lang=\"en\"><!--<![en",
+  "sample": "http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"> \t<meta charset=\"UTF-8\" /> \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=6.0\"> \t<meta property=\"og:type\" content=\"website\" /> \t<meta property=\"og:title\" content=\"NFL Schedule\" /> \t<meta property=\"og:url\" content=\"https://www.westwoodonesports.com/nfl-schedule/\" /> \t<meta property=\"og:site_name\" content=\"Westwood One Sports\" /> \t<meta property=\"og:image\" content=\"https://media-cdn.socastsrm.com/uploads/station/3531/fbShare.png?r=90310\" />  \t<link rel=\"pingback\" href=\"https://www.wes"
+ },
+ {
+  "url": "https://www.westwoodonesports.com/wp-json/wp/v2/posts?per_page=1",
+  "status": 200,
+  "contentType": "application/json; charset=UTF-8",
+  "bytes": 4041,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": false,
+   "sidearm": false,
+   "window.__": 0,
+   "ld+json": false,
+   "application/json": false,
+   "sportsEvent": false,
+   "script count": 0
+  },
+  "head": "[{\"id\":78299,\"date\":\"2026-11-02T01:57:45\",\"date_gmt\":\"2026-11-02T06:57:45\",\"guid\":{\"rendered\":\"https:\\/\\/d3757.cms.socastsrm.com\\/?guid=92ca5a4d85516d3a9750db759f47e129\"},\"modified\":\"2026-11-02T01:57:45\",\"modified_gmt\":\"2026-11-02T06:57:45\",\"slug\":\"denver-stuffs-the-chiefs-at-the-goal-line-the-cowboys-blow-another-one-the-chargers-are-0-7\",\"status\":\"publish\",\"type\":\"post\",\"link\":\"https:\\/\\/www.wes",
+  "sample": "sports.com\\/wp-json\\/wp\\/v2\\/posts\"}],\"about\":[{\"href\":\"https:\\/\\/www.westwoodonesports.com\\/wp-json\\/wp\\/v2\\/types\\/post\"}],\"author\":[{\"embeddable\":true,\"href\":\"https:\\/\\/www.westwoodonesports.com\\/wp-json\\/wp\\/v2\\/users\\/1794118\"}],\"replies\":[{\"embeddable\":true,\"href\":\"https:\\/\\/www.westwoodonesports.com\\/wp-json\\/wp\\/v2\\/comments?post=78299\"}],\"version-history\":[{\"count\":1,\"href\":\"https:\\/\\/www.westwoodonesports.com\\/wp-json\\/wp\\/v2\\/posts\\/78299\\/revisions\"}],\"predecessor-version\":[{\"id\":78300,\"href\":\"https:\\/\\/www.westwoodonesports.com\\/wp-json\\/wp\\/v2\\/posts\\/78299\\/revisions\\/78300\"}],\""
+ },
+ {
+  "url": "https://www.westwoodonesports.com/events/548540",
+  "status": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "bytes": 65193,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": false,
+   "sidearm": false,
+   "window.__": 0,
+   "ld+json": true,
+   "application/json": false,
+   "sportsEvent": false,
+   "script count": 57
+  },
+  "head": "<!DOCTYPE HTML> <!--[if IEMobile 7 ]><html class=\"no-js iem7\" manifest=\"default.appcache?v=1\"><![endif]--> <!--[if lt IE 7 ]><html class=\"no-js ie6\" lang=\"en\"><![endif]--> <!--[if IE 7 ]><html class=\"no-js ie7\" lang=\"en\"><![endif]--> <!--[if IE 8 ]><html class=\"no-js ie8\" lang=\"en\">&nbsp;<![endif]--> <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class=\"no-js\" lang=\"en\"><!--<![en",
+  "sample": "rts</title> \t \t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"> \t<meta charset=\"UTF-8\" /> \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=6.0\"> \t<meta property=\"og:type\" content=\"website\" /> \t<meta property=\"og:title\" content=\"Chicago Bears at Seattle Seahawks\" /> \t<meta property=\"og:url\" content=\"https://www.westwoodonesports.com/events/548540/\" /> \t<meta property=\"og:site_name\" content=\"Westwood One Sports\" /> \t<meta property=\"og:image\" content=\"https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/3854/files/2026"
+ },
+ {
+  "url": "https://gostanford.com/sports/football/schedule",
+  "status": 200,
+  "contentType": "text/html;charset=utf-8",
+  "bytes": 653319,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": true,
+   "sidearm": false,
+   "window.__": 3,
+   "ld+json": true,
+   "application/json": true,
+   "sportsEvent": true,
+   "script count": 6
+  },
+  "head": "<!DOCTYPE html><html  lang=\"en-US\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Football 2026 - Stanford Cardinal - Official Athletics Website</title><script type=\"importmap\">{\"imports\":{\"#entry\":\"/_nuxt/DCZohxvI.js\"}}</script><style>@layer tenant-elements, tailwind-base, oas-content-blocks, oas-frontend, oas-frontend-dropdown-base, oas-fro",
+  "sample": "-y));padding-top:20px;display:none;position:absolute;bottom:0;right:-.75rem}.header-profile--active .header-profile__menu{display:block}.header-profile .menu{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity));--tw-shadow:0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);height:auto;box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);border-radius:.25rem;flex-direction:column;align-items:flex-start;padding:.75rem 1.25rem;display:flex;po"
+ },
+ {
+  "url": "https://gostanford.com/sports/football/schedule/2026",
+  "status": 404,
+  "error": "HTTPError 404"
+ },
+ {
+  "url": "https://calbears.com/sports/football/schedule",
+  "status": 200,
+  "contentType": "text/html;charset=utf-8",
+  "bytes": 842421,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": true,
+   "sidearm": true,
+   "window.__": 12,
+   "ld+json": false,
+   "application/json": true,
+   "sportsEvent": false,
+   "script count": 7
+  },
+  "head": "<!DOCTYPE html><html  lang=\"en\"><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>2026 Football Schedule - California Golden Bears Athletics</title><link href=\"https://htlbid.com\" rel=\"preconnect\"><link href=\"https://transcend-cdn.com\" rel=\"preconnect\" data-hid=\"transcend-preconnect-link\"><link href=\"https://telemetry.transcend.io\" rel=\"preconnect\" data-hid=\"telemetr",
+  "sample": "red = true\" onerror=\"this.dataset.onerrorfired = true\"></script><style>@layer theme, base, components, utilities;</style><link href=\"https://htlbid.com/v3/calbears.com/htlbid.css\" type=\"text/css\" rel=\"stylesheet\" data-hid=\"htlbid-code-link\"><style>.scroll-behind-active #app{margin-top:var(--common-global-top-ad-height)}@media only screen and (width<=768px){#app{margin-top:var(--common-global-top-ad-height)}}</style><style>.c-common-global-top-ad[data-v-8d12e75c]{clear:both;content:\"\";width:100%;display:table}.c-common-global-top-ad.scroll_behind[data-v-8d12e75c]{z-index:-1;position:fixed;top:0"
+ },
+ {
+  "url": "https://calbears.com/sports/football/schedule/2026",
+  "status": 200,
+  "contentType": "text/html;charset=utf-8",
+  "bytes": 842536,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": true,
+   "sidearm": true,
+   "window.__": 12,
+   "ld+json": false,
+   "application/json": true,
+   "sportsEvent": false,
+   "script count": 7
+  },
+  "head": "<!DOCTYPE html><html  lang=\"en\"><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>2026 Football Schedule - California Golden Bears Athletics</title><link href=\"https://htlbid.com\" rel=\"preconnect\"><link href=\"https://transcend-cdn.com\" rel=\"preconnect\" data-hid=\"transcend-preconnect-link\"><link href=\"https://telemetry.transcend.io\" rel=\"preconnect\" data-hid=\"telemetr",
+  "sample": "red = true\" onerror=\"this.dataset.onerrorfired = true\"></script><style>@layer theme, base, components, utilities;</style><link href=\"https://htlbid.com/v3/calbears.com/htlbid.css\" type=\"text/css\" rel=\"stylesheet\" data-hid=\"htlbid-code-link\"><style>.scroll-behind-active #app{margin-top:var(--common-global-top-ad-height)}@media only screen and (width<=768px){#app{margin-top:var(--common-global-top-ad-height)}}</style><style>.c-common-global-top-ad[data-v-8d12e75c]{clear:both;content:\"\";width:100%;display:table}.c-common-global-top-ad.scroll_behind[data-v-8d12e75c]{z-index:-1;position:fixed;top:0"
+ },
+ {
+  "url": "https://knbr.com/",
+  "status": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "bytes": 105136,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": false,
+   "sidearm": false,
+   "window.__": 0,
+   "ld+json": false,
+   "application/json": false,
+   "sportsEvent": false,
+   "script count": 65
+  },
+  "head": "<!DOCTYPE HTML> <!--[if IEMobile 7 ]><html class=\"no-js iem7\" manifest=\"default.appcache?v=1\"><![endif]--> <!--[if lt IE 7 ]><html class=\"no-js ie6\" lang=\"en\"><![endif]--> <!--[if IE 7 ]><html class=\"no-js ie7\" lang=\"en\"><![endif]--> <!--[if IE 8 ]><html class=\"no-js ie8\" lang=\"en\">&nbsp;<![endif]--> <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class=\"no-js\" lang=\"en\"><!--<![en",
+  "sample": "j=d.createElement(s),dl=l!=\"dataLayer\"?\"&l=\"+l:\"\";j.async=true;j.src=\"https://www.googletagmanager.com/gtm.js?id=\"+i+dl;f.parentNode.insertBefore(j,f);})\r (window,document,\"script\",\"dataLayer\",\"GTM-KWZCRR69\");</script>\r <!-- End Google Tag Manager -->\r \r <!-- RevContent Delivery Code DISABLED -->\r <script>\r /*\r document.addEventListener(\"DOMContentLoaded\",function(){let e=document.body;if(e.classList.contains(\"single-post\")||e.classList.contains(\"home\")){if(e.classList.contains(\"home\")){var t=\"144840\",i=\"286768\";if(isMobileDevice())var i=\"286638\"}if(e.classList.contains(\"single-post\")){var t=\""
+ },
+ {
+  "url": "https://www.audacy.com/knbr/schedule",
+  "status": 404,
+  "error": "HTTPError 404"
+ },
+ {
+  "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260910",
+  "status": 200,
+  "contentType": "application/json;charset=UTF-8",
+  "bytes": 13728,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": false,
+   "sidearm": false,
+   "window.__": 0,
+   "ld+json": false,
+   "application/json": false,
+   "sportsEvent": false,
+   "script count": 0
+  },
+  "head": "{\"leagues\":[{\"id\":\"28\",\"uid\":\"s:20~l:28\",\"name\":\"National Football League\",\"abbreviation\":\"NFL\",\"slug\":\"nfl\",\"season\":{\"year\":2026,\"startDate\":\"2026-08-06T07:00Z\",\"endDate\":\"2027-02-16T07:59Z\",\"displayName\":\"2026\",\"type\":{\"id\":\"2\",\"type\":2,\"name\":\"Regular Season\",\"abbreviation\":\"reg\"}},\"logos\":[{\"href\":\"https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png\",\"width\":500,\"height\":500,\"alt\":\"\",\"rel\":",
+  "sample": "ek 11\",\"alternateLabel\":\"Week 11\",\"detail\":\"Nov 18-24\",\"value\":\"11\",\"startDate\":\"2026-11-18T08:00Z\",\"endDate\":\"2026-11-25T07:59Z\"},{\"label\":\"Week 12\",\"alternateLabel\":\"Week 12\",\"detail\":\"Nov 25-Dec 1\",\"value\":\"12\",\"startDate\":\"2026-11-25T08:00Z\",\"endDate\":\"2026-12-02T07:59Z\"},{\"label\":\"Week 13\",\"alternateLabel\":\"Week 13\",\"detail\":\"Dec 2-8\",\"value\":\"13\",\"startDate\":\"2026-12-02T08:00Z\",\"endDate\":\"2026-12-09T07:59Z\"},{\"label\":\"Week 14\",\"alternateLabel\":\"Week 14\",\"detail\":\"Dec 9-15\",\"value\":\"14\",\"startDate\":\"2026-12-09T08:00Z\",\"endDate\":\"2026-12-16T07:59Z\"},{\"label\":\"Week 15\",\"alternateLabel\":\"Wee"
+ },
+ {
+  "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/stanford/schedule?season=2026",
+  "status": 200,
+  "contentType": "application/json;charset=UTF-8",
+  "bytes": 436180,
+  "fingerprints": {
+   "__NEXT_DATA__": false,
+   "__NUXT__": false,
+   "sidearm": false,
+   "window.__": 0,
+   "ld+json": false,
+   "application/json": false,
+   "sportsEvent": false,
+   "script count": 0
+  },
+  "head": "{\"timestamp\":\"2026-11-02T17:22:49Z\",\"status\":\"success\",\"season\":{\"year\":2026,\"type\":2,\"name\":\"Regular Season\",\"displayName\":\"2026\",\"half\":1},\"team\":{\"id\":\"24\",\"abbreviation\":\"STAN\",\"location\":\"Stanford\",\"name\":\"Cardinal\",\"displayName\":\"Stanford Cardinal\",\"clubhouse\":\"https://www.espn.com/college-football/team/_/id/24/stanford-cardinal\",\"color\":\"8c1515\",\"logo\":\"https://a.espncdn.com/i/teamlogos/nca",
+  "sample": "s/primary_logo_white.png\",\"width\":4096,\"height\":4096,\"alt\":\"\",\"rel\":[\"full\",\"primary_logo_white\"],\"lastUpdated\":\"2026-07-23T17:43Z\"},{\"href\":\"https://a.espncdn.com/guid/f74a44c4-7492-7a6e-34fe-ab14da6d7f2a/logos/secondary_logo_on_white_color.png\",\"width\":4096,\"height\":4096,\"alt\":\"\",\"rel\":[\"full\",\"secondary_logo_on_white_color\"],\"lastUpdated\":\"2026-07-23T17:43Z\"},{\"href\":\"https://a.espncdn.com/guid/f74a44c4-7492-7a6e-34fe-ab14da6d7f2a/logos/secondary_logo_on_black_color.png\",\"width\":4096,\"height\":4096,\"alt\":\"\",\"rel\":[\"full\",\"secondary_logo_on_black_color\"],\"lastUpdated\":\"2026-07-23T17:43Z\"},{\"h"
+ }
+]

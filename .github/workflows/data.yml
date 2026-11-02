@@ -1,0 +1,37 @@
+name: data
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "which fetcher"
+        default: "mlb"
+  push:
+    branches: [ 'arena/1a5a5516-korea5' ]
+    paths: [ 'scripts/**', '.github/workflows/data.yml' ]
+concurrency:
+  group: korea5-data-${{ github.ref }}
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/1a5a5516-korea5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch official MLB schedules
+        run: python3 scripts/fetch_mlb.py
+      - name: Commit data
+        run: |
+          git config user.name "korea5-data-bot"
+          git config user.email "korea5-data-bot@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "data: refresh official MLB schedules from MLB StatsAPI"
+            git pull --rebase --autostash origin arena/1a5a5516-korea5
+            git push origin HEAD:arena/1a5a5516-korea5
+          fi

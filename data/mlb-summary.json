@@ -1,0 +1,48 @@
+{
+  "2026": {
+    "regularSeasonGames": 2430,
+    "regularSeasonFirst": "2026-03-25",
+    "regularSeasonLast": "2026-09-27",
+    "gameTypeCounts": {
+      "A": 1,
+      "D": 16,
+      "E": 38,
+      "F": 9,
+      "L": 10,
+      "R": 2430,
+      "S": 451,
+      "W": 5
+    },
+    "verified": true,
+    "failedWindows": []
+  },
+  "2027": {
+    "regularSeasonGames": 2430,
+    "regularSeasonFirst": "2027-03-25",
+    "regularSeasonLast": "2027-09-26",
+    "gameTypeCounts": {
+      "A": 1,
+      "E": 5,
+      "R": 2430,
+      "S": 465
+    },
+    "verified": true,
+    "failedWindows": []
+  },
+  "2028": {
+    "regularSeasonGames": 0,
+    "regularSeasonFirst": null,
+    "regularSeasonLast": null,
+    "gameTypeCounts": {},
+    "verified": false,
+    "failedWindows": []
+  },
+  "2029": {
+    "regularSeasonGames": 0,
+    "regularSeasonFirst": null,
+    "regularSeasonLast": null,
+    "gameTypeCounts": {},
+    "verified": false,
+    "failedWindows": []
+  }
+}

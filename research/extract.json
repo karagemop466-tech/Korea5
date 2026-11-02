@@ -1,0 +1,32 @@
+{
+ "49ers-2026": {
+  "url": "https://www.49ers.com/schedule/2026/",
+  "status": 200,
+  "chars": 7241,
+  "path": "research/text/49ers-2026.txt"
+ },
+ "stanford-2026": {
+  "url": "https://gostanford.com/sports/football/schedule",
+  "status": 200,
+  "chars": 15143,
+  "path": "research/text/stanford-2026.txt"
+ },
+ "cal-2026": {
+  "url": "https://calbears.com/sports/football/schedule",
+  "status": 200,
+  "chars": 7203,
+  "path": "research/text/cal-2026.txt"
+ },
+ "westwoodone-nfl": {
+  "url": "https://www.westwoodonesports.com/nfl-schedule/",
+  "status": 200,
+  "chars": 505,
+  "path": "research/text/westwoodone-nfl.txt"
+ },
+ "nfl-week-9": {
+  "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+  "status": 200,
+  "chars": 9093,
+  "path": "research/text/nfl-week-9.txt"
+ }
+}

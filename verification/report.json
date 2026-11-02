@@ -1,0 +1,1285 @@
+{
+ "generatedUTC": "2026-11-02T17:28:55Z",
+ "summary": {
+  "curatedRows": 62,
+  "rowsChecked": 62,
+  "rowsVerified": 36,
+  "rowsFailed": 26,
+  "rowsWithoutTokens": 0,
+  "flaggedConflicts": 3,
+  "mlbSpotChecks": 10,
+  "mlbSpotChecksPassed": 9,
+  "feedProblems": 0,
+  "eventCounts": {
+   "2026": 2977,
+   "2027": 3092,
+   "2028": 427,
+   "2029": 432,
+   "2030": 15
+  }
+ },
+ "curated": [
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-pre1",
+   "date": "2026-08-13",
+   "title": " vs Tennessee Titans",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 1",
+    "08/13",
+    "Titans"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-pre2",
+   "date": "2026-08-20",
+   "title": " vs Los Angeles Chargers",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 2",
+    "08/20",
+    "Chargers"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-pre3",
+   "date": "2026-08-27",
+   "title": " vs Las Vegas Raiders",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 3",
+    "08/27",
+    "Raiders"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w01",
+   "date": "2026-09-10",
+   "title": " vs Los Angeles Rams",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 1",
+    "09/10",
+    "Rams"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w02",
+   "date": "2026-09-20",
+   "title": " vs Miami Dolphins",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 2",
+    "09/20",
+    "Dolphins"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w03",
+   "date": "2026-09-27",
+   "title": " vs Arizona Cardinals",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 3",
+    "09/27",
+    "Cardinals"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w04",
+   "date": "2026-10-04",
+   "title": " vs Denver Broncos",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 4",
+    "10/04",
+    "Broncos"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w05",
+   "date": "2026-10-11",
+   "title": " vs Seattle Seahawks",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 5",
+    "10/11",
+    "Seahawks"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w06",
+   "date": "2026-10-19",
+   "title": " vs Washington Commanders",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 6",
+    "10/19",
+    "Commanders"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w07",
+   "date": "2026-10-25",
+   "title": " vs Atlanta Falcons",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 7",
+    "10/25",
+    "Falcons"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w08",
+   "date": "2026-11-01",
+   "title": " vs ",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 8",
+    "BYE"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": "Bye week \u2014 no game.",
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w09",
+   "date": "2026-11-08",
+   "title": " vs Las Vegas Raiders",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 9",
+    "11/08",
+    "1:25 PM PST",
+    "Raiders"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w10",
+   "date": "2026-11-15",
+   "title": " vs Dallas Cowboys",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 10",
+    "11/15",
+    "1:25 PM PST",
+    "Cowboys"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w11",
+   "date": "2026-11-22",
+   "title": " vs Minnesota Vikings",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 11",
+    "11/22",
+    "5:20 PM PST",
+    "Vikings"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w12",
+   "date": "2026-11-29",
+   "title": " vs Seattle Seahawks",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 12",
+    "11/29",
+    "1:25 PM PST",
+    "Seahawks"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w13",
+   "date": "2026-12-06",
+   "title": " vs New York Giants",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 13",
+    "12/06",
+    "10:00 AM PST",
+    "Giants"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w14",
+   "date": "2026-12-13",
+   "title": " vs Los Angeles Rams",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 14",
+    "12/13",
+    "1:25 PM PST",
+    "Rams"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w15",
+   "date": "2026-12-17",
+   "title": " vs Los Angeles Chargers",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 15",
+    "12/17",
+    "5:15 PM PST",
+    "Chargers"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w16",
+   "date": "2026-12-27",
+   "title": " vs Kansas City Chiefs",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 16",
+    "12/27",
+    "1:25 PM PST",
+    "Chiefs"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w17",
+   "date": "2027-01-03",
+   "title": " vs Philadelphia Eagles",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 17",
+    "01/03",
+    "5:20 PM PST",
+    "Eagles"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "nfl-2026-49ers",
+   "id": "nfl-2026-w18",
+   "date": "2027-01-09",
+   "title": " vs Arizona Cardinals",
+   "source": "https://www.49ers.com/schedule/2026/",
+   "officialUrl": "https://www.49ers.com/schedule/2026/",
+   "tokens": [
+    "WEEK 18",
+    "Cardinals",
+    "State Farm Stadium"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": "Official 49ers page lists Week 18 as TBD. NFL Week 18 is played in the final weekend of the regular season; the planner blocks both candidate days.",
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-11-02",
+   "date": "2026-11-02",
+   "title": "Chicago Bears vs Seattle Seahawks",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548540",
+   "tokens": [
+    "Chicago Bears at Seattle Seahawks",
+    "7:00 PM ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Chicago Bears at Seattle Seahawks",
+    "7:00 PM ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-11-05",
+   "date": "2026-11-05",
+   "title": "Jacksonville Jaguars vs Baltimore Ravens",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548561",
+   "tokens": [
+    "Jacksonville Jaguars at Baltimore Ravens",
+    "7:30 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Jacksonville Jaguars at Baltimore Ravens",
+    "7:30 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-11-07-ncaa",
+   "date": "2026-11-07",
+   "title": "Oregon vs Ohio State",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/557143",
+   "tokens": [
+    "Oregon at Ohio State",
+    "3 PM ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Oregon at Ohio State",
+    "3 PM ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-11-08",
+   "date": "2026-11-08",
+   "title": "Cincinnati Bengals vs Atlanta Falcons",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548489",
+   "tokens": [
+    "Cincinnati Bengals vs Atlanta Falcons",
+    "9:15 AM ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Cincinnati Bengals vs Atlanta Falcons",
+    "9:15 AM ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-11-09",
+   "date": "2026-11-09",
+   "title": "Buffalo Bills vs Minnesota Vikings",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548541",
+   "tokens": [
+    "Buffalo Bills at Minnesota Vikings",
+    "7:00 PM ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Buffalo Bills at Minnesota Vikings",
+    "7:00 PM ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-11-15",
+   "date": "2026-11-15",
+   "title": "New England Patriots vs Detroit Lions",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548490",
+   "tokens": [
+    "New England Patriots vs Detroit Lions",
+    "9:15 AM ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "New England Patriots vs Detroit Lions",
+    "9:15 AM ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-11-16",
+   "date": "2026-11-16",
+   "title": "Los Angeles Chargers vs Baltimore Ravens",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548542",
+   "tokens": [
+    "Los Angeles Chargers at Baltimore Ravens",
+    "7:00 PM ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Los Angeles Chargers at Baltimore Ravens",
+    "7:00 PM ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-11-22",
+   "date": "2026-11-22",
+   "title": "Minnesota Vikings vs San Francisco 49ers",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548491",
+   "tokens": [
+    "Minnesota Vikings vs San Francisco 49ers",
+    "7:30 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Minnesota Vikings vs San Francisco 49ers",
+    "7:30 PM  ET"
+   ],
+   "note": null,
+   "conflict": "49ers.com lists 5:20 PM PST (8:20 PM ET); Westwood One lists 7:30 PM ET."
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-11-25",
+   "date": "2026-11-25",
+   "title": "Green Bay Packers vs Los Angeles Rams",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548511",
+   "tokens": [
+    "Green Bay Packers at Los Angeles Rams",
+    "7:30 PM ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Green Bay Packers at Los Angeles Rams",
+    "7:30 PM ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-11-26",
+   "date": "2026-11-26",
+   "title": "Philadelphia Eagles vs Dallas Cowboys",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548513",
+   "tokens": [
+    "Philadelphia Eagles at Dallas Cowboys",
+    "4:15 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Philadelphia Eagles at Dallas Cowboys",
+    "4:15 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-11-27",
+   "date": "2026-11-27",
+   "title": "Denver Broncos vs Pittsburgh Steelers",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548515",
+   "tokens": [
+    "Denver Broncos at Pittsburgh Steelers",
+    "2:30 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Denver Broncos at Pittsburgh Steelers",
+    "2:30 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-11-30",
+   "date": "2026-11-30",
+   "title": "Carolina Panthers vs Tampa Bay Buccaneers",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548544",
+   "tokens": [
+    "Carolina Panthers at Tampa Bay Buccaneers",
+    "7:00 PM ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Carolina Panthers at Tampa Bay Buccaneers",
+    "7:00 PM ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-12-06",
+   "date": "2026-12-06",
+   "title": "Houston Texans vs Pittsburgh Steelers",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548503",
+   "tokens": [
+    "Houston Texans at Pittsburgh Steelers",
+    "7:30 PM ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Houston Texans at Pittsburgh Steelers",
+    "7:30 PM ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-12-10",
+   "date": "2026-12-10",
+   "title": "Minnesota Vikings vs New England Patriots",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548567",
+   "tokens": [
+    "Minnesota Vikings at New England Patriots",
+    "7:30 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Minnesota Vikings at New England Patriots",
+    "7:30 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-12-14",
+   "date": "2026-12-14",
+   "title": "Pittsburgh Steelers vs Jacksonville Jaguars",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548546",
+   "tokens": [
+    "Pittsburgh Steelers at Jacksonville Jaguars",
+    "7:00 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Pittsburgh Steelers at Jacksonville Jaguars",
+    "7:00 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-12-19",
+   "date": "2026-12-19",
+   "title": " vs ",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548517",
+   "tokens": [
+    "Seattle Seahawks at Philadelphia Eagles",
+    "4:30 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Seattle Seahawks at Philadelphia Eagles",
+    "4:30 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-12-20",
+   "date": "2026-12-20",
+   "title": "Detroit Lions vs Minnesota Vikings",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548506",
+   "tokens": [
+    "Detroit Lions at Minnesota Vikings",
+    "7:30 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Detroit Lions at Minnesota Vikings",
+    "7:30 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-12-24",
+   "date": "2026-12-24",
+   "title": "Houston Texans vs Philadelphia Eagles",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548569",
+   "tokens": [
+    "Houston Texans at Philadelphia Eagles",
+    "7:30 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Houston Texans at Philadelphia Eagles",
+    "7:30 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-12-25",
+   "date": "2026-12-25",
+   "title": "Buffalo Bills vs Denver Broncos",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548531",
+   "tokens": [
+    "Buffalo Bills at Denver Broncos",
+    "4:15 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Buffalo Bills at Denver Broncos",
+    "4:15 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-12-26",
+   "date": "2026-12-26",
+   "title": " vs ",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548519",
+   "tokens": [
+    "Week 16 Saturday Doubleheader TBA",
+    "4:00 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Week 16 Saturday Doubleheader TBA",
+    "4:00 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-12-27",
+   "date": "2026-12-27",
+   "title": "Jacksonville Jaguars vs Dallas Cowboys",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548520",
+   "tokens": [
+    "Jacksonville Jaguars at Dallas Cowboys"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Jacksonville Jaguars at Dallas Cowboys"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-12-28",
+   "date": "2026-12-28",
+   "title": "New York Giants vs Detroit Lions",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548550",
+   "tokens": [
+    "New York Giants at Detroit Lions",
+    "7:00 PM ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "New York Giants at Detroit Lions",
+    "7:00 PM ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2027-01-02",
+   "date": "2027-01-02",
+   "title": " vs ",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548521",
+   "tokens": [
+    "Week 17 Saturday Doubleheader TBA",
+    "4:00 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Week 17 Saturday Doubleheader TBA",
+    "4:00 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2027-01-03",
+   "date": "2027-01-03",
+   "title": "Philadelphia Eagles vs San Francisco 49ers",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548509",
+   "tokens": [
+    "Philadelphia Eagles at San Francisco 49ers",
+    "7:30 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Philadelphia Eagles at San Francisco 49ers",
+    "7:30 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2027-01-09-a",
+   "date": "2027-01-09",
+   "title": " vs ",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548523",
+   "tokens": [
+    "Week 18 Saturday Tripleheader TBA",
+    "12:30 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Week 18 Saturday Tripleheader TBA",
+    "12:30 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2027-01-09-b",
+   "date": "2027-01-09",
+   "title": " vs ",
+   "source": "https://www.westwoodonesports.com/nfl-schedule/",
+   "officialUrl": "https://www.westwoodonesports.com/events/548526",
+   "tokens": [
+    "Week 18 Saturday Tripleheader TBA",
+    "8:00 PM  ET"
+   ],
+   "officialStatus": 200,
+   "verified": false,
+   "missingTokens": [
+    "Week 18 Saturday Tripleheader TBA",
+    "8:00 PM  ET"
+   ],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-stan-hawaii",
+   "date": "2026-08-29",
+   "title": "Stanford vs Hawai'i",
+   "source": "https://gostanford.com/sports/football/schedule",
+   "officialUrl": "https://gostanford.com/sports/football/schedule",
+   "tokens": [
+    "Sat Aug 29 4:00 PM",
+    "Hawai'i",
+    "37-27"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-stan-miami",
+   "date": "2026-09-04",
+   "title": "Stanford vs Miami (Fla.)",
+   "source": "https://gostanford.com/sports/football/schedule",
+   "officialUrl": "https://gostanford.com/sports/football/schedule",
+   "tokens": [
+    "Fri Sep 4 6:00 PM",
+    "Miami",
+    "6-45"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-stan-duke",
+   "date": "2026-09-19",
+   "title": "Stanford vs Duke",
+   "source": "https://gostanford.com/sports/football/schedule",
+   "officialUrl": "https://gostanford.com/sports/football/schedule",
+   "tokens": [
+    "Sat Sep 19 1:00 PM",
+    "Duke",
+    "7-35"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-stan-gt",
+   "date": "2026-09-26",
+   "title": "Stanford vs Georgia Tech",
+   "source": "https://gostanford.com/sports/football/schedule",
+   "officialUrl": "https://gostanford.com/sports/football/schedule",
+   "tokens": [
+    "Sat Sep 26 7:30 PM",
+    "Georgia Tech",
+    "34-27"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-stan-wake",
+   "date": "2026-10-03",
+   "title": "Stanford vs Wake Forest",
+   "source": "https://gostanford.com/sports/football/schedule",
+   "officialUrl": "https://gostanford.com/sports/football/schedule",
+   "tokens": [
+    "Sat Oct 3 9:00 AM",
+    "Wake Forest",
+    "3-57"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-stan-nd",
+   "date": "2026-10-10",
+   "title": "Stanford vs Notre Dame",
+   "source": "https://gostanford.com/sports/football/schedule",
+   "officialUrl": "https://gostanford.com/sports/football/schedule",
+   "tokens": [
+    "Sat Oct 10 12:30 PM",
+    "Notre Dame",
+    "7-58"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-stan-elon",
+   "date": "2026-10-17",
+   "title": "Stanford vs Elon",
+   "source": "https://gostanford.com/sports/football/schedule",
+   "officialUrl": "https://gostanford.com/sports/football/schedule",
+   "tokens": [
+    "Sat Oct 17 4:30 PM",
+    "Elon",
+    "34-7"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-stan-ncsu",
+   "date": "2026-10-23",
+   "title": "Stanford vs NC State",
+   "source": "https://gostanford.com/sports/football/schedule",
+   "officialUrl": "https://gostanford.com/sports/football/schedule",
+   "tokens": [
+    "Fri Oct 23 7:30 PM",
+    "North Carolina St.",
+    "31-28"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-stan-lou",
+   "date": "2026-10-31",
+   "title": "Stanford vs Louisville",
+   "source": "https://gostanford.com/sports/football/schedule",
+   "officialUrl": "https://gostanford.com/sports/football/schedule",
+   "tokens": [
+    "Sat Oct 31 12:15 PM",
+    "Louisville",
+    "24-52"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-stan-vt",
+   "date": "2026-11-14",
+   "title": "Stanford vs Virginia Tech",
+   "source": "https://gostanford.com/sports/football/schedule",
+   "officialUrl": "https://gostanford.com/sports/football/schedule",
+   "tokens": [
+    "Sat Nov 14",
+    "Virginia Tech"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": "School lists kickoff as '4 OR 4:30 P.M.'",
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-biggame-stan",
+   "date": "2026-11-21",
+   "title": "Stanford vs California",
+   "source": "https://gostanford.com/sports/football/schedule",
+   "officialUrl": "https://gostanford.com/sports/football/schedule",
+   "tokens": [
+    "Sat Nov 21",
+    "129th Big Game at California"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": "calbears.com lists the Big Game on 2026-11-14."
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-stan-smu",
+   "date": "2026-11-28",
+   "title": "Stanford vs SMU",
+   "source": "https://gostanford.com/sports/football/schedule",
+   "officialUrl": "https://gostanford.com/sports/football/schedule",
+   "tokens": [
+    "Sat Nov 28",
+    "SMU"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-biggame-cal",
+   "date": "2026-11-14",
+   "title": "California vs Stanford",
+   "source": "https://calbears.com/sports/football/schedule",
+   "officialUrl": "https://calbears.com/sports/football/schedule",
+   "tokens": [
+    "Nov 14 (Sat)",
+    "Stanford",
+    "129th Big Game"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": "gostanford.com lists the Big Game on 2026-11-21."
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-cal-pitt",
+   "date": "2026-11-21",
+   "title": "California vs Pittsburgh",
+   "source": "https://calbears.com/sports/football/schedule",
+   "officialUrl": "https://calbears.com/sports/football/schedule",
+   "tokens": [
+    "Nov 21 (Sat)",
+    "Pittsburgh",
+    "KSFO 810 AM"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": null,
+   "conflict": null
+  },
+  {
+   "dataset": "ncaaf-2026",
+   "id": "ncaaf-2026-cal-nov28",
+   "date": "2026-11-28",
+   "title": "California vs ",
+   "source": "https://calbears.com/sports/football/schedule",
+   "officialUrl": "https://calbears.com/sports/football/schedule",
+   "tokens": [
+    "Nov 28 (Sat)"
+   ],
+   "officialStatus": 200,
+   "verified": true,
+   "missingTokens": [],
+   "note": "Opponent not shown on the official page; left blank and flagged unverified.",
+   "conflict": null
+  }
+ ],
+ "mlbSpotChecks": [
+  {
+   "year": 2026,
+   "date": "2026-03-25",
+   "apiStatus": 200,
+   "gamesInFeed": 1,
+   "gamesInApi": 1,
+   "match": true,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-03-25&endDate=2026-03-25&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+  },
+  {
+   "year": 2026,
+   "date": "2026-05-01",
+   "apiStatus": 200,
+   "gamesInFeed": 15,
+   "gamesInApi": 15,
+   "match": true,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-05-01&endDate=2026-05-01&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+  },
+  {
+   "year": 2026,
+   "date": "2026-06-07",
+   "apiStatus": 200,
+   "gamesInFeed": 15,
+   "gamesInApi": 15,
+   "match": true,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-06-07&endDate=2026-06-07&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+  },
+  {
+   "year": 2026,
+   "date": "2026-07-17",
+   "apiStatus": 200,
+   "gamesInFeed": 14,
+   "gamesInApi": 15,
+   "match": false,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-07-17&endDate=2026-07-17&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+  },
+  {
+   "year": 2026,
+   "date": "2026-08-23",
+   "apiStatus": 200,
+   "gamesInFeed": 15,
+   "gamesInApi": 15,
+   "match": true,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-08-23&endDate=2026-08-23&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+  },
+  {
+   "year": 2027,
+   "date": "2027-03-25",
+   "apiStatus": 200,
+   "gamesInFeed": 15,
+   "gamesInApi": 15,
+   "match": true,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-03-25&endDate=2027-03-25&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+  },
+  {
+   "year": 2027,
+   "date": "2027-05-01",
+   "apiStatus": 200,
+   "gamesInFeed": 15,
+   "gamesInApi": 15,
+   "match": true,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-05-01&endDate=2027-05-01&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+  },
+  {
+   "year": 2027,
+   "date": "2027-06-07",
+   "apiStatus": 200,
+   "gamesInFeed": 11,
+   "gamesInApi": 11,
+   "match": true,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-06-07&endDate=2027-06-07&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+  },
+  {
+   "year": 2027,
+   "date": "2027-07-18",
+   "apiStatus": 200,
+   "gamesInFeed": 15,
+   "gamesInApi": 15,
+   "match": true,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-07-18&endDate=2027-07-18&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+  },
+  {
+   "year": 2027,
+   "date": "2027-08-24",
+   "apiStatus": 200,
+   "gamesInFeed": 15,
+   "gamesInApi": 15,
+   "match": true,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-08-24&endDate=2027-08-24&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+  }
+ ],
+ "feedProblems": []
+}

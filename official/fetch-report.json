@@ -1,0 +1,15 @@
+{
+ "generatedUTC": "2026-11-02T17:33:33.369929Z",
+ "sources": {
+  "nfl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+  "westwoodone": "https://www.westwoodonesports.com/nfl-schedule/",
+  "mlb": "https://statsapi.mlb.com/api/v1/schedule"
+ },
+ "failures": [],
+ "counts": {
+  "nflGames": 321,
+  "westwoodOneEvents": 580,
+  "w1SfAffiliates": 4,
+  "mlbTbdFlags": 5861
+ }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Method · Free Time Vacation Planner</title>
+<meta name="description" content="Free-time and vacation planner for MLB, NFL, Stanford and Cal football, and Westwood One national radio, in Pacific time for San Francisco 94122.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> FREE TIME / VACATION</div>
+  <nav class="main"><a href="index.html" class="">Dashboard</a><a href="calendar.html" class="">Calendar</a><a href="vacation.html" class="">Vacation windows</a><a href="mlb.html" class="">MLB</a><a href="nfl.html" class="">NFL &amp; 49ers</a><a href="ncaaf.html" class="">Stanford &amp; Cal</a><a href="radio.html" class="">Radio</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged</a><a href="method.html" class="active">Method</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Method, definitions and assumptions</h1>
+<p class="lede">This page exists so every number on the site can be traced to a rule. If a rule here looks wrong to you, the
+calendar is wrong in a predictable way — tell me and it can be changed in one place.</p>
+
+<h2>What “free” means</h2>
+<p>A minute is free when none of the following is on air:</p>
+<ul class="clean">
+  <li><strong>MLB</strong> — all 30 clubs, Spring Training through the World Series, including the All-Star Game (Giants and Athletics flagged high priority).</li>
+  <li><strong>NFL</strong> — every game, preseason through the Super Bowl (49ers flagged high priority).</li>
+  <li><strong>NCAAF</strong> — Stanford and California (high priority).</li>
+  <li><strong>Westwood One Sports</strong> — national NFL radio broadcasts.</li>
+</ul>
+<p>Three scopes are available on the calendar: <em>All games</em> (the list above), <em>Radio only</em> (games documented as airing on AM/FM in San Francisco)
+and <em>High priority</em> (Giants, Athletics, 49ers, Stanford, Cal, Westwood One).</p>
+
+<h2>Average game lengths used</h2>
+<p>Busy time is the scheduled start plus the average length of that kind of game. These are planning durations, not guarantees.</p>
+<div class="scroll"><table class=""><thead><tr><th>Sport</th><th>Minutes used</th><th>Why</th></tr></thead><tbody><tr><td>MLB regular season</td><td>165</td><td>MLB reported a 2:38 average for nine-inning games in 2025 (mlb.com/news/mlb-average-game-time-under-three-hours-third-straight-year); the planner adds a few minutes of buffer.</td></tr><tr><td>MLB postseason</td><td>195</td><td>Postseason games run longer: more between-inning time and pitching changes.</td></tr><tr><td>NFL</td><td>185</td><td>A three-hour game window plus the usual overrun; kickoff-to-final-whistle is typically 3:00–3:15.</td></tr><tr><td>NFL postseason</td><td>195</td><td>Longer halftimes and more stoppages.</td></tr><tr><td>NCAAF</td><td>200</td><td>College games run longer than NFL games; a 3:20 window is used.</td></tr></tbody></table></div>
+
+<h2>Time zone</h2>
+<p>Everything is computed and displayed in Pacific time (America/Los_Angeles). Westwood One publishes Eastern time; those rows are
+converted at ET−3h, which is correct for PST dates (from 2026-11-01). Daylight-saving boundaries are handled by the IANA time zone
+database, not by a fixed offset.</p>
+
+<h2>Estimates vs verified data</h2>
+<p>Every row carries a status:</p>
+<ul class="clean">
+  <li><span class="tag ver">verified</span> — an official source published the date, the matchup and the start time.</li>
+  <li><span class="tag est">estimated</span> — either the date is official but the start time is TBD (most of the 2027 MLB season), or the whole row is a modelled league window because the season has not been released.</li>
+  <li><span class="tag flag">unconfirmed</span> — the date is known but a value is missing (for example the 49ers' Week 18 date).</li>
+</ul>
+
+<h2>How estimated start times are produced</h2>
+<ol class="clean">
+  <li><strong>2027 MLB.</strong> MLB's feed carries a placeholder time for 1,631 regular-season games. For those, the planner takes the
+  most common Pacific start time that the <em>home club</em> actually used on that weekday in the released 2026 season. If the club has
+  no such history, the league-wide modal time for that weekday is used.</li>
+  <li><strong>2027–2029 NFL.</strong> Kickoff is the Thursday after Labor Day; 18 weeks; fixed Sunday/Thursday/Monday windows; Thanksgiving on the
+  fourth Thursday; Super Bowl on the second Sunday of February.</li>
+  <li><strong>2027–2029 NCAAF.</strong> Twelve Saturdays per school, late August to late November, blocked at 12:30 PM <em>and</em> 4:30 PM Pacific because
+  television sets kickoff late. This deliberately over-blocks rather than pretending to know the slot.</li>
+  <li><strong>2028–2029 MLB.</strong> Opening Day is the last Thursday of March, a daily slate runs to the last Sunday of September, the All-Star Game is the
+  second Tuesday of July, and the postseason starts the following Tuesday. Slate days are modelled as one row per day with no invented matchups.</li>
+</ol>
+
+<h2>What this model does not do</h2>
+<ul class="clean">
+  <li>It does not include rain delays, postponements, flex scheduling or overtime.</li>
+  <li>It does not include pre-game or post-game radio shows (typically 30–60 minutes either side).</li>
+  <li>It does not include other Westwood One properties (NCAA Basketball, golf, soccer) beyond the one published NCAA Football window.</li>
+  <li>It does not claim a station for the Athletics or for the Westwood One feed in San Francisco — those are flagged.</li>
+</ul>
+</main>
+<footer><div class="wrap">
+  <p><strong>Free Time Vacation Planner</strong> · Pacific time (America/Los_Angeles) · Coverage 2026-11-02 → 2030-02-28 ·
+  data rebuilt 2026-11-02T17:38:15Z</p>
+  <p>Verified data comes from MLB's own StatsAPI, 49ers.com, gostanford.com, calbears.com and westwoodonesports.com.
+  Anything not published by an official source is labelled <span class="tag est">estimated</span> and explained on the
+  <a href="method.html">Method</a> page. Items that could not be confirmed are on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

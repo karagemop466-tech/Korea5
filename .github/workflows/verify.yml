@@ -1,0 +1,32 @@
+name: verify
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/1a5a5516-korea5' ]
+    paths: [ 'scripts/verify.py', 'scripts/build_events.py', 'scripts/analyze.py', 'data/curated/**' ]
+concurrency:
+  group: korea5-data-${{ github.ref }}
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/1a5a5516-korea5
+      - name: Build feeds
+        run: |
+          python3 scripts/build_events.py
+          python3 scripts/analyze.py
+      - name: Verify against official sources
+        run: python3 scripts/verify.py
+      - name: Commit
+        run: |
+          git config user.name "korea5-data-bot"
+          git config user.email "korea5-data-bot@users.noreply.github.com"
+          git add data/ verification/
+          git commit -m "chore: rebuild feeds + verification report" || echo "no changes"
+          git pull --rebase --autostash origin arena/1a5a5516-korea5
+          git push origin HEAD:arena/1a5a5516-korea5

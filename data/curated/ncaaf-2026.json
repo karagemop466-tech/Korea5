@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "dataset": "NCAA Football 2026 — Stanford Cardinal and California Golden Bears",
+    "league": "NCAAF",
+    "priority": "high",
+    "sources": [
+      "https://gostanford.com/sports/football/schedule",
+      "https://calbears.com/sports/football/schedule"
+    ],
+    "sourceName": "Official athletics websites: gostanford.com (Stanford) and calbears.com (California)",
+    "retrievedUTC": "2026-11-02",
+    "notes": "Kickoff times are published in Pacific time by both schools. Cal's official page lists its football radio network as KSFO 810 AM for regular games and KNBR 104.5 FM / 680 AM for the Big Game; Stanford's page links its radio broadcast to The Sports Leader (KNBR network).",
+    "irregularities": [
+      "BIG GAME DATE CONFLICT: calbears.com lists Stanford at California with the '129th Big Game' promotion on Sat Nov 14, 2026 at 12:30 PM. gostanford.com lists '129th Big Game at California' on Sat Nov 21, 2026, time TBA. Two official sources disagree; the planner blocks BOTH dates and flags the conflict for review.",
+      "Cal's 2026 page does not display an opponent for Sat Nov 28, 2026 (card shows date only). Left blank and flagged unverified rather than inferred.",
+      "Stanford Nov 21 / Nov 28 kickoff times are listed as TBA by the school; nothing is inferred.",
+      "Cal's earlier-season card ordering could not be resolved unambiguously from the stripped page text, so only Cal games from 2026-11-14 onward are tabulated here; earlier Cal games are omitted rather than guessed."
+    ]
+  },
+  "events": [
+    {"id":"ncaaf-2026-stan-hawaii","team":"Stanford","date":"2026-08-29","startPT":"16:00","timeStatus":"verified","opponent":"Hawai'i","homeAway":"home","venue":"Stanford Stadium","result":"W 37-27","source":"https://gostanford.com/sports/football/schedule","verifyTokens":["Sat Aug 29 4:00 PM","Hawai'i","37-27"]},
+    {"id":"ncaaf-2026-stan-miami","team":"Stanford","date":"2026-09-04","startPT":"18:00","timeStatus":"verified","opponent":"Miami (Fla.)","homeAway":"home","venue":"Stanford Stadium","result":"L 6-45","source":"https://gostanford.com/sports/football/schedule","verifyTokens":["Fri Sep 4 6:00 PM","Miami","6-45"]},
+    {"id":"ncaaf-2026-stan-duke","team":"Stanford","date":"2026-09-19","startPT":"13:00","timeStatus":"verified","opponent":"Duke","homeAway":"away","venue":"Durham, NC","result":"L 7-35","source":"https://gostanford.com/sports/football/schedule","verifyTokens":["Sat Sep 19 1:00 PM","Duke","7-35"]},
+    {"id":"ncaaf-2026-stan-gt","team":"Stanford","date":"2026-09-26","startPT":"19:30","timeStatus":"verified","opponent":"Georgia Tech","homeAway":"home","venue":"Stanford Stadium","result":"W 34-27","source":"https://gostanford.com/sports/football/schedule","verifyTokens":["Sat Sep 26 7:30 PM","Georgia Tech","34-27"]},
+    {"id":"ncaaf-2026-stan-wake","team":"Stanford","date":"2026-10-03","startPT":"09:00","timeStatus":"verified","opponent":"Wake Forest","homeAway":"away","venue":"Winston-Salem, NC","result":"L 3-57","source":"https://gostanford.com/sports/football/schedule","verifyTokens":["Sat Oct 3 9:00 AM","Wake Forest","3-57"]},
+    {"id":"ncaaf-2026-stan-nd","team":"Stanford","date":"2026-10-10","startPT":"12:30","timeStatus":"verified","opponent":"Notre Dame","homeAway":"away","venue":"Notre Dame, IN","result":"L 7-58","source":"https://gostanford.com/sports/football/schedule","verifyTokens":["Sat Oct 10 12:30 PM","Notre Dame","7-58"]},
+    {"id":"ncaaf-2026-stan-elon","team":"Stanford","date":"2026-10-17","startPT":"16:30","timeStatus":"verified","opponent":"Elon","homeAway":"home","venue":"Stanford Stadium","result":"W 34-7","source":"https://gostanford.com/sports/football/schedule","verifyTokens":["Sat Oct 17 4:30 PM","Elon","34-7"]},
+    {"id":"ncaaf-2026-stan-ncsu","team":"Stanford","date":"2026-10-23","startPT":"19:30","timeStatus":"verified","opponent":"NC State","homeAway":"home","venue":"Stanford Stadium","result":"W 31-28","source":"https://gostanford.com/sports/football/schedule","verifyTokens":["Fri Oct 23 7:30 PM","North Carolina St.","31-28"]},
+    {"id":"ncaaf-2026-stan-lou","team":"Stanford","date":"2026-10-31","startPT":"12:15","timeStatus":"verified","opponent":"Louisville","homeAway":"away","venue":"Louisville, KY","result":"L 24-52","source":"https://gostanford.com/sports/football/schedule","verifyTokens":["Sat Oct 31 12:15 PM","Louisville","24-52"]},
+    {"id":"ncaaf-2026-stan-vt","team":"Stanford","date":"2026-11-14","startPT":null,"startWindow":"16:00-16:30","timeStatus":"tba","opponent":"Virginia Tech","homeAway":"away","venue":"Blacksburg, VA","source":"https://gostanford.com/sports/football/schedule","verifyTokens":["Sat Nov 14","Virginia Tech"],"note":"School lists kickoff as '4 OR 4:30 P.M.'"},
+    {"id":"ncaaf-2026-biggame-stan","team":"Stanford","date":"2026-11-21","startPT":null,"timeStatus":"tba","opponent":"California","homeAway":"away","venue":"Berkeley, CA","gameName":"129th Big Game","source":"https://gostanford.com/sports/football/schedule","verifyTokens":["Sat Nov 21","129th Big Game at California"],"conflict":"calbears.com lists the Big Game on 2026-11-14."},
+    {"id":"ncaaf-2026-stan-smu","team":"Stanford","date":"2026-11-28","startPT":null,"timeStatus":"tba","opponent":"SMU","homeAway":"home","venue":"Stanford Stadium","source":"https://gostanford.com/sports/football/schedule","verifyTokens":["Sat Nov 28","SMU"]},
+
+    {"id":"ncaaf-2026-biggame-cal","team":"California","date":"2026-11-14","startPT":"12:30","timeStatus":"verified","opponent":"Stanford","homeAway":"home","venue":"California Memorial Stadium","gameName":"129th Big Game","radio":["KNBR 104.5 FM / 680 AM"],"source":"https://calbears.com/sports/football/schedule","verifyTokens":["Nov 14 (Sat)","Stanford","129th Big Game"],"conflict":"gostanford.com lists the Big Game on 2026-11-21."},
+    {"id":"ncaaf-2026-cal-pitt","team":"California","date":"2026-11-21","startPT":null,"timeStatus":"tba","opponent":"Pittsburgh","homeAway":"home","venue":"California Memorial Stadium","radio":["KSFO 810 AM"],"source":"https://calbears.com/sports/football/schedule","verifyTokens":["Nov 21 (Sat)","Pittsburgh","KSFO 810 AM"]},
+    {"id":"ncaaf-2026-cal-nov28","team":"California","date":"2026-11-28","startPT":null,"timeStatus":"tba","opponent":null,"homeAway":null,"venue":null,"radio":["KSFO 810 AM"],"source":"https://calbears.com/sports/football/schedule","verifyTokens":["Nov 28 (Sat)"],"note":"Opponent not shown on the official page; left blank and flagged unverified."}
+  ]
+}

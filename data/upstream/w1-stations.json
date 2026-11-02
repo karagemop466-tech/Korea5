@@ -1,0 +1,24 @@
+{
+ "sourceUrl": "https://www.westwoodonesports.com/station-finder/",
+ "sourceName": "Westwood One Sports official Station Finder",
+ "market": "San Francisco, CA (Outer Sunset 94122 AM/FM reception area)",
+ "note": "Westwood One station-finder lists affiliates by market; it does not publish exact frequencies. Because of local blackouts and programming conflicts, not every affiliate airs every broadcast.",
+ "affiliates": [
+  {
+   "market": "San Francisco, CA",
+   "callLetters": "KNBR-AM"
+  },
+  {
+   "market": "San Francisco, CA",
+   "callLetters": "KNBR-F2"
+  },
+  {
+   "market": "San Francisco, CA",
+   "callLetters": "KNBR-FM"
+  },
+  {
+   "market": "San Francisco, CA",
+   "callLetters": "KTCT-AM"
+  }
+ ]
+}

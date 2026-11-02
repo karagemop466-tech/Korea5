@@ -1,0 +1,28 @@
+name: extract
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/1a5a5516-korea5' ]
+    paths: [ 'scripts/extract_official.py' ]
+concurrency:
+  group: korea5-data-${{ github.ref }}
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/1a5a5516-korea5
+      - name: Extract official page text
+        run: python3 scripts/extract_official.py
+      - name: Commit
+        run: |
+          git config user.name "korea5-data-bot"
+          git config user.email "korea5-data-bot@users.noreply.github.com"
+          git add research/
+          git commit -m "research: extract text from official schedule pages" || echo "no changes"
+          git pull --rebase --autostash origin arena/1a5a5516-korea5
+          git push origin HEAD:arena/1a5a5516-korea5

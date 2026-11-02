@@ -1,13 +1,13 @@
 # Verification report
 
-Generated: 2026-11-02T17:30:35Z
+Generated: 2026-11-02T17:34:33Z
 
 | Check | Result |
 |---|---|
 | curatedRows | 62 |
 | rowsChecked | 62 |
-| rowsVerified | 49 |
-| rowsFailed | 13 |
+| rowsVerified | 61 |
+| rowsFailed | 1 |
 | rowsWithoutTokens | 0 |
 | flaggedConflicts | 3 |
 | mlbSpotChecks | 10 |
@@ -66,18 +66,18 @@ Generated: 2026-11-02T17:30:35Z
 | westwoodone-2026 | 2027-01-03 | w1-2027-01-03 | yes | https://www.westwoodonesports.com/events/548509 |
 | westwoodone-2026 | 2027-01-09 | w1-2027-01-09-a | yes | https://www.westwoodonesports.com/events/548523 |
 | westwoodone-2026 | 2027-01-09 | w1-2027-01-09-b | yes | https://www.westwoodonesports.com/events/548526 |
-| ncaaf-2026 | 2026-08-29 | ncaaf-2026-stan-hawaii | **NO** | https://gostanford.com/sports/football/schedule |
-| ncaaf-2026 | 2026-09-04 | ncaaf-2026-stan-miami | **NO** | https://gostanford.com/sports/football/schedule |
-| ncaaf-2026 | 2026-09-19 | ncaaf-2026-stan-duke | **NO** | https://gostanford.com/sports/football/schedule |
-| ncaaf-2026 | 2026-09-26 | ncaaf-2026-stan-gt | **NO** | https://gostanford.com/sports/football/schedule |
-| ncaaf-2026 | 2026-10-03 | ncaaf-2026-stan-wake | **NO** | https://gostanford.com/sports/football/schedule |
-| ncaaf-2026 | 2026-10-10 | ncaaf-2026-stan-nd | **NO** | https://gostanford.com/sports/football/schedule |
-| ncaaf-2026 | 2026-10-17 | ncaaf-2026-stan-elon | **NO** | https://gostanford.com/sports/football/schedule |
-| ncaaf-2026 | 2026-10-23 | ncaaf-2026-stan-ncsu | **NO** | https://gostanford.com/sports/football/schedule |
-| ncaaf-2026 | 2026-10-31 | ncaaf-2026-stan-lou | **NO** | https://gostanford.com/sports/football/schedule |
-| ncaaf-2026 | 2026-11-14 | ncaaf-2026-stan-vt | **NO** | https://gostanford.com/sports/football/schedule |
-| ncaaf-2026 | 2026-11-21 | ncaaf-2026-biggame-stan | **NO** | https://gostanford.com/sports/football/schedule |
-| ncaaf-2026 | 2026-11-28 | ncaaf-2026-stan-smu | **NO** | https://gostanford.com/sports/football/schedule |
+| ncaaf-2026 | 2026-08-29 | ncaaf-2026-stan-hawaii | yes | https://gostanford.com/sports/football/schedule |
+| ncaaf-2026 | 2026-09-04 | ncaaf-2026-stan-miami | yes | https://gostanford.com/sports/football/schedule |
+| ncaaf-2026 | 2026-09-19 | ncaaf-2026-stan-duke | yes | https://gostanford.com/sports/football/schedule |
+| ncaaf-2026 | 2026-09-26 | ncaaf-2026-stan-gt | yes | https://gostanford.com/sports/football/schedule |
+| ncaaf-2026 | 2026-10-03 | ncaaf-2026-stan-wake | yes | https://gostanford.com/sports/football/schedule |
+| ncaaf-2026 | 2026-10-10 | ncaaf-2026-stan-nd | yes | https://gostanford.com/sports/football/schedule |
+| ncaaf-2026 | 2026-10-17 | ncaaf-2026-stan-elon | yes | https://gostanford.com/sports/football/schedule |
+| ncaaf-2026 | 2026-10-23 | ncaaf-2026-stan-ncsu | yes | https://gostanford.com/sports/football/schedule |
+| ncaaf-2026 | 2026-10-31 | ncaaf-2026-stan-lou | yes | https://gostanford.com/sports/football/schedule |
+| ncaaf-2026 | 2026-11-14 | ncaaf-2026-stan-vt | yes | https://gostanford.com/sports/football/schedule |
+| ncaaf-2026 | 2026-11-21 | ncaaf-2026-biggame-stan | yes | https://gostanford.com/sports/football/schedule |
+| ncaaf-2026 | 2026-11-28 | ncaaf-2026-stan-smu | yes | https://gostanford.com/sports/football/schedule |
 | ncaaf-2026 | 2026-11-14 | ncaaf-2026-biggame-cal | yes | https://calbears.com/sports/football/schedule |
 | ncaaf-2026 | 2026-11-21 | ncaaf-2026-cal-pitt | yes | https://calbears.com/sports/football/schedule |
 | ncaaf-2026 | 2026-11-28 | ncaaf-2026-cal-nov28 | yes | https://calbears.com/sports/football/schedule |
@@ -85,18 +85,6 @@ Generated: 2026-11-02T17:30:35Z
 ## Rows that failed verification
 
 - `w1-2026-12-27` — missing tokens: ['Jacksonville Jaguars at Dallas Cowboys'] — https://www.westwoodonesports.com/nfl-schedule/
-- `ncaaf-2026-stan-hawaii` — missing tokens: ['Sat Aug 29 4:00 PM', "Hawai'i", '37-27'] — https://gostanford.com/sports/football/schedule
-- `ncaaf-2026-stan-miami` — missing tokens: ['Fri Sep 4 6:00 PM', 'Miami', '6-45'] — https://gostanford.com/sports/football/schedule
-- `ncaaf-2026-stan-duke` — missing tokens: ['Sat Sep 19 1:00 PM', 'Duke', '7-35'] — https://gostanford.com/sports/football/schedule
-- `ncaaf-2026-stan-gt` — missing tokens: ['Sat Sep 26 7:30 PM', 'Georgia Tech', '34-27'] — https://gostanford.com/sports/football/schedule
-- `ncaaf-2026-stan-wake` — missing tokens: ['Sat Oct 3 9:00 AM', 'Wake Forest', '3-57'] — https://gostanford.com/sports/football/schedule
-- `ncaaf-2026-stan-nd` — missing tokens: ['Sat Oct 10 12:30 PM', 'Notre Dame', '7-58'] — https://gostanford.com/sports/football/schedule
-- `ncaaf-2026-stan-elon` — missing tokens: ['Sat Oct 17 4:30 PM', 'Elon', '34-7'] — https://gostanford.com/sports/football/schedule
-- `ncaaf-2026-stan-ncsu` — missing tokens: ['Fri Oct 23 7:30 PM', 'North Carolina St.', '31-28'] — https://gostanford.com/sports/football/schedule
-- `ncaaf-2026-stan-lou` — missing tokens: ['Sat Oct 31 12:15 PM', 'Louisville', '24-52'] — https://gostanford.com/sports/football/schedule
-- `ncaaf-2026-stan-vt` — missing tokens: ['Sat Nov 14', 'Virginia Tech'] — https://gostanford.com/sports/football/schedule
-- `ncaaf-2026-biggame-stan` — missing tokens: ['Sat Nov 21', '129th Big Game at California'] — https://gostanford.com/sports/football/schedule
-- `ncaaf-2026-stan-smu` — missing tokens: ['Sat Nov 28', 'SMU'] — https://gostanford.com/sports/football/schedule
 
 ## Flagged conflicts / irregularities
 

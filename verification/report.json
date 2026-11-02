@@ -1,10 +1,10 @@
 {
- "generatedUTC": "2026-11-02T17:30:35Z",
+ "generatedUTC": "2026-11-02T17:34:33Z",
  "summary": {
   "curatedRows": 62,
   "rowsChecked": 62,
-  "rowsVerified": 49,
-  "rowsFailed": 13,
+  "rowsVerified": 61,
+  "rowsFailed": 1,
   "rowsWithoutTokens": 0,
   "flaggedConflicts": 3,
   "mlbSpotChecks": 10,
@@ -33,6 +33,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -51,6 +52,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -69,6 +71,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -87,6 +90,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -105,6 +109,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -123,6 +128,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -141,6 +147,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -159,6 +166,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -177,6 +185,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -195,6 +204,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -212,6 +222,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": "Bye week \u2014 no game.",
    "conflict": null
@@ -231,6 +242,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -250,6 +262,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -269,6 +282,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -288,6 +302,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -307,6 +322,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -326,6 +342,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -345,6 +362,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -364,6 +382,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -383,6 +402,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -401,6 +421,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": "Official 49ers page lists Week 18 as TBD. NFL Week 18 is played in the final weekend of the regular season; the planner blocks both candidate days.",
    "conflict": null
@@ -418,6 +439,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -435,6 +457,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -452,6 +475,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -469,6 +493,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -486,6 +511,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -503,6 +529,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -520,6 +547,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -537,6 +565,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": "49ers.com lists 5:20 PM PST (8:20 PM ET); Westwood One lists 7:30 PM ET."
@@ -554,6 +583,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -571,6 +601,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -588,6 +619,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -605,6 +637,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -622,6 +655,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -639,6 +673,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -656,6 +691,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -673,6 +709,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -690,6 +727,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -707,6 +745,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -724,6 +763,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -741,6 +781,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -757,6 +798,7 @@
    ],
    "officialStatus": 200,
    "verified": false,
+   "verifiedAgainst": null,
    "missingTokens": [
     "Jacksonville Jaguars at Dallas Cowboys"
    ],
@@ -776,6 +818,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -793,6 +836,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -810,6 +854,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -827,6 +872,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -844,6 +890,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -861,12 +908,9 @@
     "37-27"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "missingTokens": [
-    "Sat Aug 29 4:00 PM",
-    "Hawai'i",
-    "37-27"
-   ],
+   "verified": true,
+   "verifiedAgainst": "live",
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -883,12 +927,9 @@
     "6-45"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "missingTokens": [
-    "Fri Sep 4 6:00 PM",
-    "Miami",
-    "6-45"
-   ],
+   "verified": true,
+   "verifiedAgainst": "live",
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -905,12 +946,9 @@
     "7-35"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "missingTokens": [
-    "Sat Sep 19 1:00 PM",
-    "Duke",
-    "7-35"
-   ],
+   "verified": true,
+   "verifiedAgainst": "live",
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -927,12 +965,9 @@
     "34-27"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "missingTokens": [
-    "Sat Sep 26 7:30 PM",
-    "Georgia Tech",
-    "34-27"
-   ],
+   "verified": true,
+   "verifiedAgainst": "live",
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -949,12 +984,9 @@
     "3-57"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "missingTokens": [
-    "Sat Oct 3 9:00 AM",
-    "Wake Forest",
-    "3-57"
-   ],
+   "verified": true,
+   "verifiedAgainst": "live",
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -971,12 +1003,9 @@
     "7-58"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "missingTokens": [
-    "Sat Oct 10 12:30 PM",
-    "Notre Dame",
-    "7-58"
-   ],
+   "verified": true,
+   "verifiedAgainst": "live",
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -993,12 +1022,9 @@
     "34-7"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "missingTokens": [
-    "Sat Oct 17 4:30 PM",
-    "Elon",
-    "34-7"
-   ],
+   "verified": true,
+   "verifiedAgainst": "live",
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -1015,12 +1041,9 @@
     "31-28"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "missingTokens": [
-    "Fri Oct 23 7:30 PM",
-    "North Carolina St.",
-    "31-28"
-   ],
+   "verified": true,
+   "verifiedAgainst": "live",
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -1037,12 +1060,9 @@
     "24-52"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "missingTokens": [
-    "Sat Oct 31 12:15 PM",
-    "Louisville",
-    "24-52"
-   ],
+   "verified": true,
+   "verifiedAgainst": "live",
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -1058,11 +1078,9 @@
     "Virginia Tech"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "missingTokens": [
-    "Sat Nov 14",
-    "Virginia Tech"
-   ],
+   "verified": true,
+   "verifiedAgainst": "live",
+   "missingTokens": [],
    "note": "School lists kickoff as '4 OR 4:30 P.M.'",
    "conflict": null
   },
@@ -1078,11 +1096,9 @@
     "129th Big Game at California"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "missingTokens": [
-    "Sat Nov 21",
-    "129th Big Game at California"
-   ],
+   "verified": true,
+   "verifiedAgainst": "live",
+   "missingTokens": [],
    "note": null,
    "conflict": "calbears.com lists the Big Game on 2026-11-14."
   },
@@ -1098,11 +1114,9 @@
     "SMU"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "missingTokens": [
-    "Sat Nov 28",
-    "SMU"
-   ],
+   "verified": true,
+   "verifiedAgainst": "live",
+   "missingTokens": [],
    "note": null,
    "conflict": null
   },
@@ -1120,6 +1134,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": "gostanford.com lists the Big Game on 2026-11-21."
@@ -1138,6 +1153,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": null,
    "conflict": null
@@ -1154,6 +1170,7 @@
    ],
    "officialStatus": 200,
    "verified": true,
+   "verifiedAgainst": "live",
    "missingTokens": [],
    "note": "Opponent not shown on the official page; left blank and flagged unverified.",
    "conflict": null

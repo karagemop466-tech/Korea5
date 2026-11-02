@@ -220,7 +220,8 @@ def main():
 
     payload = {
         "meta": {
-            "generatedUTC": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "generatedUTC": (json.load(open("data/events-2027.json"))["meta"].get("generatedUTC")
+                             if os.path.exists("data/events-2027.json") else "2026-11-02"),
             "today": TODAY.isoformat(),
             "horizon": [TODAY.isoformat(), HORIZON_END.isoformat()],
             "timezone": "America/Los_Angeles (PST/PDT)",

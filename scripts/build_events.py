@@ -600,10 +600,14 @@ def main():
             rebucketed[int(e["date"][:4])].append(e)
     by_year = rebucketed
 
+    # Deterministic build stamp: derived from the inputs, so re-running the pipeline on the
+    # same data produces byte-identical files (which keeps CI rebuilds conflict-free).
+    stamps = [m.get("meta", {}).get("retrievedUTC", "") for m in mlb_raw.values()]
+    build_stamp = max([s0 for s0 in stamps if s0] or ["2026-11-02"])
     meta_common = {
         "durations": DURATION,
         "timezone": "America/Los_Angeles",
-        "generatedUTC": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generatedUTC": build_stamp,
         "mlbStartModel2026": {"teams": {f"{k[0]}|{k[1]}": v for k, v in list(team_model.items())[:999]},
                               "weekday": {str(k): v for k, v in wd_model.items()}},
     }

@@ -33,7 +33,7 @@ other author than this session and its CI bot (`korea5-data-bot`). No task was c
 | T7 | Free/busy engine (PT), durations, vacation-window ranking | arena-1a5a5516 | **done** | `scripts/analyze.py`, `data/derived/analysis.json` |
 | T8 | Site: dashboard, calendar, category pages, sources, flagged, method | arena-1a5a5516 | **done** | `*.html`, `assets/` |
 | T9 | Verification: line-by-line source audit, link check, feed integrity | arena-1a5a5516 | **done** | `scripts/verify.py`, `verification/` |
-| T10 | Integration: rebuild, re-verify, publish to `main`, Pages deploy, PR | arena-1a5a5516 | **in progress** | `main` merge commit |
+| T10 | Integration: rebuild, re-verify, publish to `main`, Pages deploy, PR | arena-1a5a5516 | **done** | merge commit `3ae7171` |
 | T11 | *(session ef8b5b30)* Official NFL by-week feed, Westwood One station finder, extra W1 sport pages | arena-ef8b5b30 | **needs review** | `official/`, `research-ef8b5b30/`, `.github/workflows/*-ef8b5b30.yml` |
 
 ## Change log
@@ -103,6 +103,24 @@ Jan 3 17:20 PT), which is why the upstream feed was accepted.
 
 **Conflict warning for the other session:** both branches add `COORDINATION.md`, so whichever merges second will hit an
 add/add conflict. Resolve by **appending** that session's task rows and log entries to this file — do not overwrite it.
+
+## Integration record
+
+| Step | Result |
+|---|---|
+| Pull request | **#1 — https://github.com/karagemop466-tech/Korea5/pull/1** ("Free-time & vacation planner: verified MLB/NFL/NCAAF/Westwood One schedules + 2027–29 vacation analysis") |
+| Merge | **Merged** into `main` on 2026-11-02T17:38:23Z, merge commit `3ae71714fd9625aff3feff73831ad450beb8e8bf` |
+| Pages build | `pages build and deployment` — **success**; Pages status `built`, source `main` / |
+| Live site | https://karagemop466-tech.github.io/Korea5/ — verified by fetching the published page |
+| Post-merge fix | PR #2 — TBD-kickoff games were blocking a full 24 hours instead of the plausible 12:00–23:30 PT window |
+
+## Post-merge defect found and fixed
+
+Fetching the live dashboard showed **2026-11-14 as "24.0h busy"**. Cause: an event with no published kickoff time
+was treated as a whole-day block before its known `startWindow` was consulted. Fixed in `scripts/analyze.py` and
+`assets/app.js`: a row with a `startWindow` uses that window, and a row with no time at all is blocked 12:00–23:30 PT
+(the plausible playing window) rather than 24 hours. After the fix the same day reads **3.8 busy hours**, and the
+TBA Big Game on 2026-11-21 reads 11.5 hours instead of 24.
 
 ## Pending requests to other sessions
 

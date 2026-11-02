@@ -44,7 +44,14 @@ def scope_ok(ev, scope):
 def intervals(ev):
     """[(start_minutes, end_minutes)] for one event on one day (may exceed 1440)."""
     if not ev.get("start"):
-        return [(0, 1440)]
+        # A game with no published kickoff time is blocked conservatively, but only across
+        # the plausible playing window (see TBD_WINDOW in build_events.py), not all 24 hours.
+        if ev.get("startWindow"):
+            a, b = ev["startWindow"].split("-")
+            h1, m1 = map(int, a.split(":"))
+            h2, m2 = map(int, b.split(":"))
+            return [(h1 * 60 + m1, h2 * 60 + m2)]
+        return [(720, 1410)]
     base = [ev["start"]]
     mins = [(ev["start"], ev["durationMin"])]
     if ev.get("altWindow"):

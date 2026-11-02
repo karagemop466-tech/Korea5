@@ -18,8 +18,15 @@ const addDays = (iso, n) => {
 const prettyDate = (iso) => new Date(iso + "T12:00:00").toLocaleDateString("en-US",
   { weekday: "long", year: "numeric", month: "long", day: "numeric" });
 
+const TBD = [720, 1410]; // 12:00-23:30 PT conservative block for a TBD kickoff
 function evIntervals(e) {
-  if (!e.start) return [[0, 1440]];
+  if (!e.start) {
+    if (e.startWindow) {
+      const [a, b] = e.startWindow.split("-");
+      return [[toMin(a), toMin(b)]];
+    }
+    return [TBD];
+  }
   const out = [[toMin(e.start), toMin(e.start) + e.durationMin]];
   if (e.altWindow) out.push([toMin(e.altWindow.start), toMin(e.altWindow.start) + e.altWindow.durationMin]);
   if (e.startWindow) {

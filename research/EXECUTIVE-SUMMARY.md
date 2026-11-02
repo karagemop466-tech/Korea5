@@ -2,7 +2,7 @@
 
 **Prepared for:** a listener in San Francisco (94122) who wants to travel when nothing he follows is live on the radio.
 
-**Live site:** https://karagemop466-tech.github.io/Korea5/  ·  **Data rebuilt:** 2026-11-02T17:34:30Z  ·  **Verification report:** `verification/report.json` (61/62 curated rows re-verified)
+**Live site:** https://karagemop466-tech.github.io/Korea5/  ·  **Data rebuilt:** 2026-11-02T17:38:15Z  ·  **Verification report:** `verification/report.json` (61/62 curated rows re-verified)
 
 ## 1. Bottom line
 

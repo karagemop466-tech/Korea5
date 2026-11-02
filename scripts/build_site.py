@@ -4,6 +4,7 @@
 Every table row carries a link to the official source it came from. Rows whose values
 could not be confirmed are left blank and listed on the "Flagged for review" page.
 """
+import hashlib
 import html
 import json
 import os
@@ -28,6 +29,18 @@ NAV = [
     ("flagged.html", "Flagged"),
     ("method.html", "Method"),
 ]
+
+
+def data_version():
+    """Content hash of the data the calendar reads, so a deploy can never serve stale JSON
+    from the Pages CDN while the HTML is already new."""
+    h = hashlib.sha256()
+    for f in ("data/derived/analysis.json", "data/events-2026.json", "data/events-2027.json",
+              "data/events-2028.json", "data/events-2029.json", "data/events-2030.json"):
+        if os.path.exists(f):
+            with open(f, "rb") as fh:
+                h.update(fh.read())
+    return h.hexdigest()[:12]
 
 
 def esc(s):
@@ -260,6 +273,7 @@ Free time is any 30-minute-or-longer gap with no qualifying game on air.</p>
 <span class="tag est">estimated</span> means the date is official but the start time is TBD (common for the 2027 MLB season), or the whole row is a modelled league window.
 The exact reason is printed under the table for each day.</div>
 
+<script>window.DATA_VERSION = "{data_version()}";</script>
 <script src="assets/app.js"></script>
 """
     page("calendar.html", "Calendar", "calendar.html", body)
@@ -343,8 +357,9 @@ but the actual listening burden is only about three hours a night.
 {window_table('radio', 'hours')}
 
 <h2>Radio-only view</h2>
-<p class="small">Only games that actually air on AM/FM radio in San Francisco (Giants, Athletics, 49ers, Stanford, Cal, Westwood One national).</p>
-{window_table('high', 'hours')}
+<p class="small">Only games that actually air on AM/FM radio in San Francisco (Giants, Athletics, 49ers, Stanford, Cal, Westwood One national),
+ranked by the fewest hours of live coverage.</p>
+{window_table('radio', 'hours')}
 """
     page("vacation.html", "Vacation windows", "vacation.html", body)
 
@@ -632,6 +647,10 @@ the 49ers and Stanford. Cal is on KSFO 810 AM. That set covers every high-priori
 {table(["Station", "Carries", "How it was verified", "Source"], stations)}
 
 <h2>Westwood One national NFL windows</h2>
+<div class="callout"><strong>Timing difference worth knowing.</strong> On every game carried by both sources, Westwood One's published
+start is <strong>15–75 minutes earlier</strong> than the NFL's official kickoff — it is the start of the network's broadcast, not the snap.
+The planner therefore gives each game a single row: the radio goes busy at the earlier (Westwood One) time, and the kickoff time from
+the NFL schedule is noted on the row.</div>
 <p class="small">Every row below is one broadcast the network publishes. Doubleheaders and tripleheaders are published as a single
 window with participants TBA, so they are blocked as a window rather than as individual games.</p>
 {table(["Date", "League", "Broadcast", "Matchup", "Start", "Source"], rows)}
@@ -722,6 +741,7 @@ def build_flagged():
         ("Dataset", "MLB 2028 and 2029", "No official schedule exists. Whole seasons are modelled (Opening Day = last Thursday of March, daily slate, postseason from the following Tuesday).", "https://www.mlb.com/schedule"),
         ("Dataset", "NFL 2027–2029", "No official schedule exists. Broadcast windows are modelled; no matchups are invented.", "https://www.nfl.com/schedules/"),
         ("Dataset", "Stanford / Cal 2027–2029", "Neither school has released these seasons. Twelve Saturdays per school are blocked as estimates.", "https://gostanford.com/sports/football/schedule"),
+        ("Finding", "Westwood One start times", "On 17 games carried by both sources, the network's published start is 15–75 minutes before the NFL's official kickoff — it is the broadcast start. The planner uses the earlier time for busy-ness and keeps the kickoff on the row.", "https://www.westwoodonesports.com/nfl-schedule/"),
         ("Gap", "Cal games before Nov 14, 2026", "Cal's official page could not be parsed unambiguously for its early-season card order, so those games are omitted rather than guessed.", "https://calbears.com/sports/football/schedule"),
         ("Gap", "Athletics radio flagship", "No official page confirmed which San Francisco station carries Athletics games in 2026. A's games are still blocked as high priority.", ""),
         ("Gap", "Westwood One non-NFL sports", "NCAA Basketball, golf, soccer and NCAA championships are published week by week and are not enumerated.", "https://www.westwoodonesports.com/"),
@@ -736,8 +756,8 @@ site, and none of them have been silently filled in.</p>
 
 <div class="callout flag"><strong>Conflicts found between two official sources.</strong> Both are blocked in the calendar; the underlying
 question needs a human decision.</div>
-{table(["Where", "Item", "What is unresolved", "Source"],
-       [[esc(r['dataset']), esc(r['title'] or r['id']), esc(r['conflict']), src(r['officialUrl'])] for r in conflicts])}
+{table(["Date", "Item", "What is unresolved", "Source"],
+       [[esc(r['date']), f"{esc(r['title'] or r['id'])}<br><small>{esc(r['dataset'])}</small>", esc(r['conflict']), src(r['officialUrl'])] for r in conflicts])}
 
 <h2>Rows that failed automated re-verification</h2>
 <p class="small">{len(failed)} row(s). These remain in the dataset with their source links so the failure is visible.</p>

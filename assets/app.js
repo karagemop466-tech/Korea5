@@ -50,9 +50,10 @@ function inScope(e, scope) {
   return (e.tags || []).some((t) => SCOPE_TAGS.radio.includes(t));
 }
 
+const V = () => window.DATA_VERSION || "v0";
 async function loadYear(y) {
   if (S.events[y]) return S.events[y];
-  const r = await fetch(`data/events-${y}.json`);
+  const r = await fetch(`data/events-${y}.json?v=${V()}`);
   S.events[y] = await r.json();
   return S.events[y];
 }
@@ -133,7 +134,8 @@ async function render(iso) {
     }).join("");
   }
   const note = evs.find((e) => e.b);
-  $("#basis").textContent = note ? basisText(pack, note) : "No estimated times for this day.";
+  $("#basis").textContent = note ? basisText(pack, note)
+    : (evs.length ? "Every time on this day comes from an official source." : "");
 
   // week strip
   const strip = $("#strip"); strip.innerHTML = "";

@@ -18,9 +18,9 @@
     },
     "2027": {
       "daysInRange": 365,
-      "busy": 217,
+      "busy": 215,
       "unverified": 2,
-      "estimatedOnly": 68,
+      "estimatedOnly": 70,
       "free": 78,
       "modelFree": 0,
       "scheduleReleased": true,

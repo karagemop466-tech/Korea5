@@ -108,11 +108,22 @@ add/add conflict. Resolve by **appending** that session's task rows and log entr
 
 | Step | Result |
 |---|---|
-| Pull request | **#1 — https://github.com/karagemop466-tech/Korea5/pull/1** ("Free-time & vacation planner: verified MLB/NFL/NCAAF/Westwood One schedules + 2027–29 vacation analysis") |
-| Merge | **Merged** into `main` on 2026-11-02T17:38:23Z, merge commit `3ae71714fd9625aff3feff73831ad450beb8e8bf` |
+| Pull request #1 | **https://github.com/karagemop466-tech/Korea5/pull/1** — "Free-time & vacation planner: verified MLB/NFL/NCAAF/Westwood One schedules + 2027–29 vacation analysis" |
+| Merge #1 | **Merged** into `main` 2026-11-02T17:38:23Z, merge commit `3ae71714fd9625aff3feff73831ad450beb8e8bf` |
+| Pull request #2 | **https://github.com/karagemop466-tech/Korea5/pull/2** — TBD-kickoff blocking fix (24h → plausible window) + integration record |
+| Merge #2 | **Merged** 2026-11-02T17:40:33Z |
+| Pull request #3 | **https://github.com/karagemop466-tech/Korea5/pull/3** — one row per game; Westwood One pre-game starts folded into the game row |
+| Merge #3 | **Merged** |
+| Pull request #4 | **https://github.com/karagemop466-tech/Korea5/pull/4** — cache-busted data fetches + final record |
+| Merge #4 | **Merged** |
+| Pull request #5 | **https://github.com/karagemop466-tech/Korea5/pull/5** — version data requests by content hash (stale-CDN fix) |
+| Merge #5 | **Merged**; Pages rebuilt and the live calendar verified: one row for 2026-11-02 with the pre-game note, 3.1 busy hours |
 | Pages build | `pages build and deployment` — **success**; Pages status `built`, source `main` / |
 | Live site | https://karagemop466-tech.github.io/Korea5/ — verified by fetching the published page |
-| Post-merge fix | PR #2 — TBD-kickoff games were blocking a full 24 hours instead of the plausible 12:00–23:30 PT window |
+| Post-merge fix 1 | PR #2 — TBD-kickoff games were blocking a full 24 hours instead of the plausible 12:00–23:30 PT window |
+| Post-merge fix 2 | PR #3 — the live calendar showed duplicate rows for the same game because Westwood One's published time is its pre-game broadcast start (15–75 min before kickoff) |
+| Post-merge fix 3 | PR #4 — GitHub Pages was serving a cached `events-*.json` after deploy; data requests now carry a version query string |
+| Post-merge fix 4 | PR #5 — the version string was derived from the inputs and so did not change when the transform did; it is now a sha256 of the built data, and the live calendar was re-checked against the deployed site |
 
 ## Post-merge defect found and fixed
 
@@ -232,3 +243,9 @@ and merge result here.
   without waiting, confirm Pages deployment, then record PR link / merge result here and mark T11 / E10 done.
 - **Needs review items do not block merge:** they are published on the Flagged for Review page with official
   links, as required.
+- **2026-11-02 — second `main` merge.** `arena/1a5a5516` merged PRs #3–#8 into `main` after our first merge.
+  Merged `origin/main` (`fab3811`) into `arena/ef8b5b30-korea5` with `git merge --no-commit`; all root HTML
+  files auto-merged cleanly and our nav link / Prev-Next-Today labels / corrected Super Bowl wording survived.
+  `COORDINATION.md` auto-merged and retains both sessions' records. `tools/build_extra.py` was re-run so the
+  combined calendar, vacation ranking and verification are built from the latest `data/events-*.json`;
+  `tools/verify_extra.py` re-ran 31 checks with 0 failures. Local static server returned 200 for all tested files.

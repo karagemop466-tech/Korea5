@@ -110,8 +110,8 @@ function OptanonWrapper() { }
     "postID": 913,
     "title": "Live Radio Shows",
     "type": "page",
-    "referrer": null,
-    "userAgent": "Mozilla\/5.0 (compatible; Korea5FreeTime\/1.0; +official-source-verification)",
+    "referrer": "https:\/\/www.westwoodonesports.com\/",
+    "userAgent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/156.0.0.0 Safari\/537.36",
     "eventID": null,
     "location": "",
     "navString": "Live Radio Shows",
@@ -908,11 +908,11 @@ loadSvg('.scSocialIconsWidget .socialIconLink.youtube', base_url+theme_images_di
 <!-- END Sidebar 1 300x250/300x600 -->
 		</div>
 	</div>
-<div id='eventCalendar_1590032000' class='eventWidget eventGrid scWidgetContainer' data-artistid='0'>
+<div id='eventCalendar_265816880' class='eventWidget eventGrid scWidgetContainer' data-artistid='0'>
 	<h2 class="sc-heading-widget">Upcoming Broadcasts</h2>
 	<div class='filter'>
-		<a class='current activeFilter' href='javascript:SCEvents.eventCalendars[1590032000].showTab("current");'>Upcoming</a> 
-		<a class='past' href='javascript:SCEvents.eventCalendars[1590032000].showTab("past");'>Past</a>
+		<a class='current activeFilter' href='javascript:SCEvents.eventCalendars[265816880].showTab("current");'>Upcoming</a> 
+		<a class='past' href='javascript:SCEvents.eventCalendars[265816880].showTab("past");'>Past</a>
 	</div>
 	<div class='events current clearfix'></div>
 	<div class='events past clearfix'></div>
@@ -927,12 +927,12 @@ loadSvg('.scSocialIconsWidget .socialIconLink.youtube', base_url+theme_images_di
 
 	jQuery(function ($) {
 
-		SCEvents.eventCalendars[1590032000] = new EventCalendar(1590032000, 3757,"all",'current',{"current":0,"past":0},3,"America/New_York","https://www.westwoodonesports.com","<div class='event'><div class='info'><div class='date_bgd primary_bgd_color primary_color' {DATE_ATTR}>{DATE}<\/div><div class='date' {DATE_ATTR}>{DATE}<\/div><a href='{EVENT_LINK}'><div class='image'>{IMAGE}<\/div><div class='name'>{TITLE}<\/div><\/a><div class='venue'>{VENUE}<\/div><div class='event_live'>{PLAYER_LIVE}<\/div><div class='description'>{DESCRIPTION}<\/div><a class='details' href='{EVENT_LINK}'>Full Details<\/a><div class='social clearfix'>{SOCIAL}<\/div><\/div><\/div>",{"current":true,"past":true},300);
-		SCEvents.eventCalendars[1590032000].showTab('current');
+		SCEvents.eventCalendars[265816880] = new EventCalendar(265816880, 3757,"all",'current',{"current":0,"past":0},3,"America/New_York","https://www.westwoodonesports.com","<div class='event'><div class='info'><div class='date_bgd primary_bgd_color primary_color' {DATE_ATTR}>{DATE}<\/div><div class='date' {DATE_ATTR}>{DATE}<\/div><a href='{EVENT_LINK}'><div class='image'>{IMAGE}<\/div><div class='name'>{TITLE}<\/div><\/a><div class='venue'>{VENUE}<\/div><div class='event_live'>{PLAYER_LIVE}<\/div><div class='description'>{DESCRIPTION}<\/div><a class='details' href='{EVENT_LINK}'>Full Details<\/a><div class='social clearfix'>{SOCIAL}<\/div><\/div><\/div>",{"current":true,"past":true},300);
+		SCEvents.eventCalendars[265816880].showTab('current');
 		
-		$(document).on('click', '#eventCalendar_1590032000 .pagination', function(e) {
+		$(document).on('click', '#eventCalendar_265816880 .pagination', function(e) {
 			e.preventDefault();
-			SCEvents.eventCalendars[1590032000].showMore();
+			SCEvents.eventCalendars[265816880].showMore();
 		});
 		
 		$(document).on('click', '.vc_tta-tab', function() {
@@ -940,10 +940,10 @@ loadSvg('.scSocialIconsWidget .socialIconLink.youtube', base_url+theme_images_di
 			// Delay to ensure tab transition is complete and container width is correct
 			setTimeout(function() {
 				// Only reinitialize if this event widget is visible inside the active tab
-				if ($('#eventCalendar_1590032000').is(':visible')) {
-					SCEvents.eventCalendars[1590032000] = new EventCalendar(1590032000, 3757,"all",'current',{"current":0,"past":0},3,"America/New_York","https://www.westwoodonesports.com","<div class='event'><div class='info'><div class='date_bgd primary_bgd_color primary_color' {DATE_ATTR}>{DATE}<\/div><div class='date' {DATE_ATTR}>{DATE}<\/div><a href='{EVENT_LINK}'><div class='image'>{IMAGE}<\/div><div class='name'>{TITLE}<\/div><\/a><div class='venue'>{VENUE}<\/div><div class='event_live'>{PLAYER_LIVE}<\/div><div class='description'>{DESCRIPTION}<\/div><a class='details' href='{EVENT_LINK}'>Full Details<\/a><div class='social clearfix'>{SOCIAL}<\/div><\/div><\/div>",{"current":true,"past":true},300);
-					$('#eventCalendar_1590032000 .events.current').html('');
-					SCEvents.eventCalendars[1590032000].showTab('current');
+				if ($('#eventCalendar_265816880').is(':visible')) {
+					SCEvents.eventCalendars[265816880] = new EventCalendar(265816880, 3757,"all",'current',{"current":0,"past":0},3,"America/New_York","https://www.westwoodonesports.com","<div class='event'><div class='info'><div class='date_bgd primary_bgd_color primary_color' {DATE_ATTR}>{DATE}<\/div><div class='date' {DATE_ATTR}>{DATE}<\/div><a href='{EVENT_LINK}'><div class='image'>{IMAGE}<\/div><div class='name'>{TITLE}<\/div><\/a><div class='venue'>{VENUE}<\/div><div class='event_live'>{PLAYER_LIVE}<\/div><div class='description'>{DESCRIPTION}<\/div><a class='details' href='{EVENT_LINK}'>Full Details<\/a><div class='social clearfix'>{SOCIAL}<\/div><\/div><\/div>",{"current":true,"past":true},300);
+					$('#eventCalendar_265816880 .events.current').html('');
+					SCEvents.eventCalendars[265816880].showTab('current');
 				}
 			}, 100);
 		});

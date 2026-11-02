@@ -5,8 +5,8 @@
     "status": 200,
     "ctype": "text/html; charset=utf-8",
     "finalUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
-    "bytes": 2471408,
-    "sha256": "3da4f8c4000ec068",
+    "bytes": 2471409,
+    "sha256": "e8352ca36ed69561",
     "file": "research-ef8b5b30/raw/nfl_week9.raw"
   },
   {
@@ -15,8 +15,8 @@
     "status": 200,
     "ctype": "text/html; charset=utf-8",
     "finalUrl": "https://www.nfl.com/schedules",
-    "bytes": 2395627,
-    "sha256": "4a86e04b5603c5ce",
+    "bytes": 2394261,
+    "sha256": "5708e548c3a9d587",
     "file": "research-ef8b5b30/raw/nfl_pre.raw"
   },
   {
@@ -25,8 +25,8 @@
     "status": 200,
     "ctype": "text/html; charset=utf-8",
     "finalUrl": "https://www.nfl.com/schedules",
-    "bytes": 2394261,
-    "sha256": "4422f9c11d534ad2",
+    "bytes": 2394133,
+    "sha256": "d137d6bd9ef57c52",
     "file": "research-ef8b5b30/raw/nfl_post.raw"
   },
   {
@@ -35,8 +35,8 @@
     "status": 200,
     "ctype": "text/html; charset=utf-8",
     "finalUrl": "https://www.nfl.com/schedules",
-    "bytes": 2394261,
-    "sha256": "4422f9c11d534ad2",
+    "bytes": 2394133,
+    "sha256": "d137d6bd9ef57c52",
     "file": "research-ef8b5b30/raw/nfl_reg.raw"
   },
   {
@@ -55,8 +55,8 @@
     "status": 200,
     "ctype": "text/html; charset=utf-8",
     "finalUrl": "https://www.nfl.com/news/mercedes-benz-stadium-in-atlanta-to-host-super-bowl-lxii-in-2028",
-    "bytes": 692481,
-    "sha256": "c946d9353d1025a2",
+    "bytes": 692483,
+    "sha256": "ca3d99605eeb004e",
     "file": "research-ef8b5b30/raw/nfl_sb_lxii.raw"
   },
   {
@@ -66,7 +66,7 @@
     "ctype": "text/html",
     "finalUrl": "https://www.49ers.com/schedule/2026/",
     "bytes": 381839,
-    "sha256": "8a780406259b9e99",
+    "sha256": "d3ebbab4f29b6f4c",
     "file": "research-ef8b5b30/raw/49ers_2026.raw"
   },
   {
@@ -75,8 +75,8 @@
     "status": 200,
     "ctype": "text/html; charset=UTF-8",
     "finalUrl": "https://www.westwoodonesports.com/nfl-schedule/",
-    "bytes": 65277,
-    "sha256": "10a94a9ef32abb54",
+    "bytes": 65238,
+    "sha256": "954fc7be9baf838f",
     "file": "research-ef8b5b30/raw/wwo_nfl_schedule.raw"
   },
   {
@@ -105,8 +105,8 @@
     "status": 200,
     "ctype": "text/html; charset=UTF-8",
     "finalUrl": "https://www.westwoodonesports.com/live-shows/",
-    "bytes": 81100,
-    "sha256": "fa70a380783d4685",
+    "bytes": 81166,
+    "sha256": "88ca644a58b6184c",
     "file": "research-ef8b5b30/raw/wwo_live_shows.raw"
   },
   {
@@ -116,7 +116,7 @@
     "ctype": "text/html;charset=utf-8",
     "finalUrl": "https://gostanford.com/sports/football/schedule",
     "bytes": 653340,
-    "sha256": "30308453f018a28b",
+    "sha256": "1c1901873301c7ab",
     "file": "research-ef8b5b30/raw/stanford_2026.raw"
   },
   {
@@ -126,7 +126,7 @@
     "ctype": "text/html;charset=utf-8",
     "finalUrl": "https://calbears.com/sports/football/schedule/2026",
     "bytes": 842535,
-    "sha256": "557e71da5388f19a",
+    "sha256": "128c7615f59b8365",
     "file": "research-ef8b5b30/raw/cal_2026.raw"
   },
   {
@@ -136,7 +136,7 @@
     "ctype": "text/html;charset=utf-8",
     "finalUrl": "https://calbears.com/news/2026/9/16/california-football-announces-2027-conference-opponents",
     "bytes": 541416,
-    "sha256": "5b24e097bc771828",
+    "sha256": "8b1cd81f95663492",
     "file": "research-ef8b5b30/raw/cal_2027_opponents.raw"
   },
   {
@@ -146,7 +146,7 @@
     "ctype": "text/html;charset=utf-8",
     "finalUrl": "https://calbears.com/news/2024/7/10/football-cal-ucla-schedule-4-games-from-2026-29",
     "bytes": 531742,
-    "sha256": "0d7f9eda6bd8861f",
+    "sha256": "697aaccfebf34f69",
     "file": "research-ef8b5b30/raw/cal_future_schedules.raw"
   },
   {
@@ -156,7 +156,7 @@
     "ctype": "text/html;charset=utf-8",
     "finalUrl": "https://gostanford.com/news/2026/09/16/acc-announces-2027-conference-opponents",
     "bytes": 513255,
-    "sha256": "8bf819c9808caa62",
+    "sha256": "9c1abceeb6c1c076",
     "file": "research-ef8b5b30/raw/stanford_2027_opponents.raw"
   },
   {
@@ -166,7 +166,7 @@
     "ctype": "text/html;charset=utf-8",
     "finalUrl": "https://gostanford.com/news/2026/05/20/two-dates-added-to-notre-dame-rivalry",
     "bytes": 505671,
-    "sha256": "03d72126d08020c8",
+    "sha256": "e59098c14e63e97f",
     "file": "research-ef8b5b30/raw/stanford_notre_dame.raw"
   },
   {
@@ -186,7 +186,7 @@
     "ctype": "text/html; charset=utf-8",
     "finalUrl": "https://www.mlb.com/giants/schedule/watch",
     "bytes": 888777,
-    "sha256": "8b7266bc1ce10a82",
+    "sha256": "3d3b83c0aa499a8f",
     "file": "research-ef8b5b30/raw/giants_watch.raw"
   },
   {
@@ -205,8 +205,8 @@
     "status": 200,
     "ctype": "text/html; charset=utf-8",
     "finalUrl": "https://www.mlb.com/news/mlb-2027-schedule-released",
-    "bytes": 297635,
-    "sha256": "edd82112e2a4e0af",
+    "bytes": 297599,
+    "sha256": "f7d9f576b1a45805",
     "file": "research-ef8b5b30/raw/mlb_2027_release.raw"
   },
   {
@@ -218,6 +218,106 @@
     "bytes": 3051,
     "sha256": "d299fd5f9f3ba003",
     "file": "research-ef8b5b30/raw/mlb_api_sample.raw"
+  },
+  {
+    "name": "wwo_more_current",
+    "url": "https://www.westwoodonesports.com/more/eventGrid/?id=47029&range=current&offset=0&limit=100&timezone=America/New_York&widgetTitle=Event+Display",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/more/eventGrid/?id=47029&range=current&offset=0&limit=100&timezone=America/New_York&widgetTitle=Event+Display",
+    "bytes": 92663,
+    "sha256": "18d5d4f1533cd9b4",
+    "file": "research-ef8b5b30/raw/wwo_more_current.raw"
+  },
+  {
+    "name": "wwo_more_past",
+    "url": "https://www.westwoodonesports.com/more/eventGrid/?id=47030&range=current&offset=0&limit=100&timezone=America/New_York&widgetTitle=Event+Display",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/more/eventGrid/?id=47030&range=current&offset=0&limit=100&timezone=America/New_York&widgetTitle=Event+Display",
+    "bytes": 65661,
+    "sha256": "3ac7124963bdf518",
+    "file": "research-ef8b5b30/raw/wwo_more_past.raw"
+  },
+  {
+    "name": "wwo_event_548540",
+    "url": "https://www.westwoodonesports.com/events/548540/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/events/548540/",
+    "bytes": 65120,
+    "sha256": "241773027d1eeb04",
+    "file": "research-ef8b5b30/raw/wwo_event_548540.raw"
+  },
+  {
+    "name": "wwo_ncaab",
+    "url": "https://www.westwoodonesports.com/ncaa-basketball/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/ncaa-basketball/",
+    "bytes": 63997,
+    "sha256": "12a3e69a314e8c9c",
+    "file": "research-ef8b5b30/raw/wwo_ncaab.raw"
+  },
+  {
+    "name": "wwo_golf",
+    "url": "https://www.westwoodonesports.com/golf/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/golf/",
+    "bytes": 61559,
+    "sha256": "c78a6105f76ee4f1",
+    "file": "research-ef8b5b30/raw/wwo_golf.raw"
+  },
+  {
+    "name": "wwo_soccer",
+    "url": "https://www.westwoodonesports.com/us-soccer/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/us-soccer/",
+    "bytes": 61475,
+    "sha256": "d0bdb38ad2597397",
+    "file": "research-ef8b5b30/raw/wwo_soccer.raw"
+  },
+  {
+    "name": "wwo_mcws",
+    "url": "https://www.westwoodonesports.com/ncaa-mcws/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/ncaa-mcws/",
+    "bytes": 61675,
+    "sha256": "8ecf78a017148af1",
+    "file": "research-ef8b5b30/raw/wwo_mcws.raw"
+  },
+  {
+    "name": "wwo_wcws",
+    "url": "https://www.westwoodonesports.com/ncaa-wcws/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/ncaa-wcws/",
+    "bytes": 63898,
+    "sha256": "d647ddcc9181ae43",
+    "file": "research-ef8b5b30/raw/wwo_wcws.raw"
+  },
+  {
+    "name": "wwo_lacrosse",
+    "url": "https://www.westwoodonesports.com/ncaa-lacrosse/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/ncaa-lacrosse/",
+    "bytes": 60754,
+    "sha256": "4df78321a8491189",
+    "file": "research-ef8b5b30/raw/wwo_lacrosse.raw"
+  },
+  {
+    "name": "wwo_hockey",
+    "url": "https://www.westwoodonesports.com/ncaa-hockey/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/ncaa-hockey/",
+    "bytes": 60756,
+    "sha256": "29343d3cedf5c6b3",
+    "file": "research-ef8b5b30/raw/wwo_hockey.raw"
   },
   {
     "name": "fcc_search",

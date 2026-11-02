@@ -1,0 +1,1003 @@
+<!DOCTYPE HTML>
+<!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache?v=1"><![endif]-->
+<!--[if lt IE 7 ]><html class="no-js ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8" lang="en">&nbsp;<![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+
+	<!-- Begin : Custom Head HTML -->
+	<script>
+  // Enable TCF support for gtag 2025 (global)
+  window['gtag_enable_tcf_support'] = true;
+</script>
+
+<style>
+/* Remove extra top margin on title when no featured image is set */
+#sc-content-area .content-header.template-image_above:not(:has(img)) .feature-info h1 { margin-top: 0; }
+
+/* Allow google ads to be aligned properly */
+[data-google-query-id], [data-google-query-id] > div {
+  display: flex;
+  justify-self: center;
+}
+/* Content area ad margin */
+div[id^="div-gpt-ad-content"] {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Center event images */
+#event_info + .event_img { display: block; margin-left: auto; margin-right: auto; }
+
+/* Do not display bakery placeholders */
+.wpb_single_image:has(.vc_img-placeholder) { display: none; }
+
+/* Do not display author on FCC Applications category list */
+body.category-fcc-applications .sc-sidebar-wrapper .sc-content .sc-author { display: none; }
+
+/* Lessen gap on socast weather... */
+.sc-sidebar .scweather.scw-layout-horizontal .scw-row { gap: 10px; }
+</style><!-- TrustArc start -->
+<script src="https://consent.trustarc.com/v2/autoblockasset/core.min.js?cmId=ztxp2k"></script>
+<script src="https://consent.trustarc.com/v2/autoblock?cmId=ztxp2k"></script>
+<script type="text/javascript" async="async" src="https://consent.trustarc.com/v2/notice/ztxp2k?pcookie"></script>
+<script>
+// Reload page when the visitor changes their consent. Necessary to apply consent to the current page.
+document.addEventListener("trustarc-consent-updated",()=>setTimeout(()=>location.reload(),0));
+</script>
+<!-- TrustArc end -->
+
+<!-- One-Trust Cookies Consent Notice start for westwoodonesports.com -->
+<!--
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/019858b9-318d-75fe-bfe3-7e200478fffb/OtAutoBlock.js" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="019858b9-318d-75fe-bfe3-7e200478fffb" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+-->
+<!-- One-Trust Cookies Consent Notice end for westwoodonesports.com -->
+
+<style>
+.ad-space {padding: 0px 0 25px 0;text-align-last: center;}
+.sc-ad-block.slot-leaderboard {padding: 15px 0 20px 0;}
+.sc-ad-block.slot-footer {padding: 15px 0 20px 0;}
+.sc-sidebar .sc-ad-block { margin-bottom: 15px !important; }
+</style>
+	<!-- End : Custom Head HTML -->
+
+	<title>NCAA MCWS | Westwood One Sports</title>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=6.0">
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="NCAA MCWS" />
+	<meta property="og:url" content="https://www.westwoodonesports.com/ncaa-mcws/" />
+	<meta property="og:site_name" content="Westwood One Sports" />
+	<meta property="og:image" content="https://media-cdn.socastsrm.com/uploads/station/3531/fbShare.png?r=90310" />
+
+	<link rel="pingback" href="https://www.westwoodonesports.com/xmlrpc.php" />
+	<link rel="apple-touch-icon" href="https://media-cdn.socastsrm.com/uploads/station/3531/squareIcon.png?r=90311" />
+	<script>
+		var isIE8 = false; 
+	</script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+	<script>
+		isIE8 = true;
+		Date.now = Date.now || function() { return +new Date; };
+	</script>
+	<![endif]-->
+
+		
+	<script type="text/javascript">
+		//$headerType is "main"
+		//$request is "/ncaa-mcws/"
+		var socast_page = {
+    "cacheKey": "wp-postMacros-3854-wp-709",
+    "companyID": 580,
+    "accountID": 3757,
+    "blogID": 3854,
+    "ownerBlogID": 3854,
+    "currentBlogID": 3854,
+    "callLetters": "WWODEN1",
+    "siteName": "Westwood One Sports",
+    "squareLogo": "https:\/\/media-cdn.socastsrm.com\/uploads\/station\/3531\/squareIcon.png?r=90311",
+    "postID": 709,
+    "title": "NCAA MCWS",
+    "type": "page",
+    "referrer": "https:\/\/www.westwoodonesports.com\/",
+    "userAgent": "Mozilla\/5.0 (iPhone; CPU iPhone OS 18_5_0 like Mac OS X) AppleWebKit\/605.1.15 (KHTML, like Gecko) EdgiOS\/140.0.3485.52 Version\/18.0 Mobile\/15E148 Safari\/604.1",
+    "eventID": null,
+    "location": "",
+    "navString": "NCAA MCWS",
+    "isSyn": false,
+    "hasContent": true,
+    "featured_image": false,
+    "featured_image_caption": null,
+    "featured_image_alt": "",
+    "url": "http:\/\/www.westwoodonesports.com\/ncaa-mcws\/",
+    "is_yii": false,
+    "post_format": "standard",
+    "featured_image_facebook": "",
+    "featured_image_twitter": "",
+    "timestamp_published": "1751571668",
+    "timestamp_modified": "1752682886",
+    "date_published": "Jul 3, 2025 | 3:41 PM",
+    "date_modified": "Jul 16, 2025 | 12:21 PM",
+    "platform": "web",
+    "target": "omniture",
+    "pageType": "blog",
+    "shareTemplate": "<a href='http:\/\/www.facebook.com\/sharer.php?u=POST_URL' target='_blank' class='socialShareLink facebook'><img src='https:\/\/media-cdn.socastsrm.com\/images\/social\/png\/facebook.png' alt='facebook' \/><\/a><a href='https:\/\/bsky.app\/intent\/compose?text=POST_URL' target='_blank' class='socialShareLink bluesky'><img src='https:\/\/media-cdn.socastsrm.com\/images\/social\/png\/bluesky.png' alt='bluesky' \/><\/a><a href='https:\/\/x.com\/intent\/post?url=POST_URL&text=POST_TITLE' target='_blank' class='socialShareLink twitter'><img src='https:\/\/media-cdn.socastsrm.com\/images\/social\/png\/xitter.png' alt='twitter' \/><\/a><a href='mailto:?body=POST_URL&subject=POST_TITLE' target='_blank' class='socialShareLink email'><img src='https:\/\/media-cdn.socastsrm.com\/images\/social\/png\/email.png' alt='email' \/><\/a>"
+};
+		socast_page.url = window.location;
+		var adMacros = socast_page;
+		var Page = socast_page;
+		var gvars = { cdnStatic : '' };
+		var CDN_HOST_MEDIA = 'https://media-cdn.socastsrm.com';
+		var GOOGLE_MAP_ID = '77d575c540d23575';
+		var isMobileUserAgent = false;
+		var communityUserName = null;
+		var communityUserIcon = null;
+		var V3_RECAPTCHA_SITE_KEY = '6LchdXMgAAAAAP4dU47UWMAhU0Tc8Uf0ldZrstqZ';
+	</script>
+	
+	<script>
+	var hasPlayer = true;
+	var isInsideSocastIframe = false;
+	var playerType = 'socast';
+	var popupPlayerURL = '/player/?playerID=3649';
+	var popupPlayerSize = '_blank';
+</script>
+		<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//cdn-js.socastsrm.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//cdn-css.socastsrm.com' />
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.westwoodonesports.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.2"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel='stylesheet' id='wp-block-library-css' href='https://cdn-css.socastsrm.com/cdn_v18.6.6a/wordpress/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css' href='https://cdn-css.socastsrm.com/cdn_v18.6.6a/wordpress/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=8.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='https://cdn-css.socastsrm.com/cdn_v18.6.6a/application/css/bootstrap/4.1.0/css/bootstrap.css?ver=6.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='custom-css' href='https://cdn-css.socastsrm.com/cdn_v18.6.6a/application/css/custom.css?v=2013-10-02&#038;ver=6.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='global-theme-css' href='https://cdn-css.socastsrm.com/cdn_v18.6.6a/application/css/global-theme.css?ver=6.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='global-frontend-css' href='https://cdn-css.socastsrm.com/cdn_v18.6.6a/application/stylesheets/frontend/frontend.css?ver=6.8.4' type='text/css' media='all' />
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<script data-category-consent="optanon-category-C0001" data-ot-ignore type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/wordpress/wp-includes/js/jquery/jquery.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/wordpress/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/application/js/jquery/jquery-ui-1.13.3/jquery-ui.min.js" id="jquery-ui-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/application/css/bootstrap/4.1.0/js/popper-1.14.3.min.js" id="popper-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/application/css/bootstrap/4.1.0/js/bootstrap.min.js" id="bootstrap-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/application/js/json/json2.js" id="json-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/application/js/custom.js?v=2017-05-29" id="custom-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/application/js/jquery/socast.jquery.frontend.js" id="frontend-plugins-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/wordpress/wp-content/plugins/socast-widgets/js/lightBox.js?v=2014-08-21" id="lightbox-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/application/js/frontend.js" id="frontend-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/application/js/jquery/jquery.ui.kk-chronomasonry.js" id="chronomasonry-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/application/js/jquery/jquery.ui.socastTouch.js" id="socasttouch-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/wordpress/wp-content/plugins/socast-widgets/js/widgets/poll.js" id="socastcms_poll_script-js"></script>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=6LchdXMgAAAAAP4dU47UWMAhU0Tc8Uf0ldZrstqZ" id="recaptcha-js"></script>
+<script></script><link rel="https://api.w.org/" href="https://www.westwoodonesports.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.westwoodonesports.com/wp-json/wp/v2/pages/709" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.westwoodonesports.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.2" />
+<link rel="canonical" href="https://www.westwoodonesports.com/ncaa-mcws/" />
+<link rel='shortlink' href='https://www.westwoodonesports.com/?p=709' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.westwoodonesports.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.westwoodonesports.com%2Fncaa-mcws%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.westwoodonesports.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.westwoodonesports.com%2Fncaa-mcws%2F&#038;format=xml" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TQ2K7TM');</script>
+<!-- End Google Tag Manager --><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<link rel="icon" href="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/3854/files/2025/03/cropped-2732x2732-mobilebutton-1.png" sizes="32x32" />
+<link rel="icon" href="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/3854/files/2025/03/cropped-2732x2732-mobilebutton-1.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/3854/files/2025/03/cropped-2732x2732-mobilebutton-1.png" />
+<meta name="msapplication-TileImage" content="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/3854/files/2025/03/cropped-2732x2732-mobilebutton-1.png" />
+		<style type="text/css" id="wp-custom-css">
+			.hero-content {
+    padding: 0 !important;
+    margin: 0 !important;
+	  position: relative;
+	  top: -.1em;
+}
+.hero-content img.vc_single_image-img.attachment-full {
+	width:2000px;
+}
+.sc-sidebar .event_live a { color:#ffffff!important; }
+#stickyHeader.sticky {
+		  box-shadow: none !important;
+}
+nav#stickyHeader {
+    border: 0;
+}
+.hero-header {
+	border:0 !important;
+}
+#theHeader {
+	background-color: transparent !important;
+}
+a.pagination.btn.btn-silver.moreBtn {
+    background-color: #004e82;
+    color: #fff !important;
+}
+
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+
+.eventGrid .event .info { min-height:  415px; }
+
+@media only screen and (max-width: 959px) {
+	.home-sports {
+    column-count: 2;
+}
+.home-sports figure.wpb_wrapper.vc_figure {
+    margin-left: auto;
+}
+}		</style>
+		<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+	<!-- v2025-05-21 Bulk Script -->
+<!-- BEGIN CMLS GPT Setup -->
+<script>
+  // Enable TCF support for gtag
+  window['gtag_enable_tcf_support'] = true;
+  
+  // Used as the ad unit path for all tags
+  var GPT_SITE_ID = '/6717/wwosportsapp';
+  // Mimics "site groups" 
+  var GPT_SITE_GROUPS = ['Westwood One'];
+</script>
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+window.googletag = window.googletag || {};
+window.googletag.cmd = window.googletag.cmd || [];
+googletag.cmd.push(function() {
+  // Begin page-level targeting
+  // Split comma-separated string into an array
+  function split_tags(str) {
+    if (str !== 'null') {
+      return str.split(',').map(Function.prototype.call, String.prototype.trim);
+    }
+    return [];
+  }
+
+  // Remove characters not allowed in targeting key/values
+  function sanitize(input) {
+    // Check if input is an array
+    if (Array.isArray(input)) {
+      // Recursively sanitize each element of the array
+      return input.map(sanitize);
+    } else if (typeof input === 'string') {
+      // Replace disallowed characters and trim the string
+      const disallowedChars = '"\'=!+#*~;^()<>[],&-\\/';
+      for (const char of disallowedChars) {
+        input = input.replace(new RegExp('\\' + char, 'g'), '');
+      }
+      return input.trim();
+    } else {
+      // If the input is neither a string nor an array, return it as is
+      return input;
+    }
+  }
+
+  googletag.pubads().setTargeting('cms-sgroup', sanitize(GPT_SITE_GROUPS));
+  googletag.pubads().setTargeting('cms-sname', sanitize('WWODEN1'));
+  googletag.pubads().setTargeting('cms-ptitle', sanitize('ncaa mcws'));
+  googletag.pubads().setTargeting('cms-pcat', sanitize(split_tags('null')));
+  googletag.pubads().setTargeting('cms-ecat', sanitize(split_tags('null')));
+  googletag.pubads().setTargeting('cms-domain', sanitize(window.location.hostname));
+  googletag.pubads().setTargeting('cms-pathname', sanitize(window.location.pathname));
+  // End page-level targeting
+
+  googletag.pubads().collapseEmptyDivs();
+  googletag.enableServices();
+});
+</script>
+<style>
+  /* Allow google ads to be aligned properly */
+  [data-google-query-id], [data-google-query-id] > div {
+    display: flex
+    justify-self: center;
+    justify-content: center;
+  }
+  /* Allow top leaderboard to expand */
+  body #companion-ad728x90 {
+    width: auto !important;
+  }
+    body #companion-ad728x90 > div[id^="div-gpt"] {
+      min-width: 728px;
+      min-height: 90px;
+      justify-content: center
+    }
+  /* Add padding to filled ads */
+  .gpt-slot.padding-bottom[data-google-query-id] {
+    padding-bottom: 15px;
+  }
+  /* Show mobile ad above overlay */
+  #bannerWrapper {
+    z-index: 9999;
+  }
+</style>
+<!-- END CMLS GPT Setup -->
+
+<!-- BEGIN CUSTOM INJECTED SLOTS -->
+<script>
+  /**
+   * Injected mobile leaderboard, appears above page content.
+   */
+  (function(window, undefined) {
+    function injectSlots() {
+      var main = document.querySelector('body > main > #sc-content-area');
+      if (!main) return;
+
+      var div = document.createElement('div');
+      div.id='div-gpt-ad-mobile-leaderboard-top';
+      div.className='gpt-slot';
+      main.prepend(div);
+
+      googletag.cmd.push(function() {
+        window.GPT_SITE_SLOTS = window.GPT_SITE_SLOTS || {};
+
+        // Do not call if slot is hidden
+        if (!div || !div.offsetParent) return;
+
+        var sizeMap = googletag.sizeMapping()
+          .addSize([780,0], [])
+          .addSize([0,0], [[320, 50], [300, 50]])
+          .build();
+
+        window.GPT_SITE_SLOTS[div.id] = googletag.defineSlot(
+          GPT_SITE_ID,
+          [[728, 90], [970, 90], [970, 250]],
+          div.id
+        )
+          .addService(googletag.pubads())
+          .defineSizeMapping(sizeMap)
+          .setCollapseEmptyDiv(true, false)
+          .setTargeting("pos", "mobile-top")
+        ;
+
+        googletag.display(div.id);
+      });
+    }
+    if (window.self.document.readyState !== 'loading') {
+      injectSlots();
+    } else {
+      window.self.document.addEventListener('DOMContentLoaded', injectSlots);
+    }
+  })(window.self);
+</script>
+<style>
+[id*="div-gpt-ad-mobile-leaderboard-top"][data-google-query-id] {
+  margin-bottom: .5em;
+}
+.headerType-iframe [id*="div-gpt-ad-mobile-leaderboard-top"][data-google-query-id] {
+  margin-top: 0px;
+}
+</style>
+<!-- END CUSTOM INJECTED SLOTS -->	<style>
+		</style>
+	<style>.font-barlow { font-family: Barlow, Sans-Serif; } 
+</style><link href='https://fonts.googleapis.com/css?family=Barlow:400,300,300italic,400italic,700,900,100' rel='stylesheet' type='text/css'>
+		<link type="text/css" href="https://cdn-js.socastsrm.com/cdn_v18.6.6a/wordpress/wp-content/themes/socast-3/assets/css/style.css" rel="stylesheet" data-cssvar />
+		<style data-cssvar>
+		:root {
+			/* body and content */
+			--body-bgd: #004e82;
+			--sc-content-bgd: #ffffff;
+
+			--sc-text: #222222;
+			--text-header: #222222;
+			
+			--sc-primary: #00aadc;
+			--ad-slot-bgd: transparent;
+			--ad-slot-text: var(--sc-text);
+			
+			/* head and nav */
+			--nav-bgd: #004e82;
+			--nav-text: #ffffff;
+			--nav-text-hover: #eeeeee;
+			--nav-child-text: #cccccc;
+			--nav-child-text-hover: #ffffff;
+			--player-btn-bgd: #0e90c4;
+			--player-btn-text: #ffffff;
+			--player-btn-hover-bgd: #023864;
+			--player-btn-hover-text: #0e90c4;
+			--nav-font-size: 1.125rem;
+			--spacing-nav: calc(1.125rem / 2);
+			--nav-height: 75px;
+			
+			/* sidebar */
+			--sidebar-width: 320px;
+			--sidebar-bgd: transparent;
+			--sidebar-text: var(--sc-text);
+			--sidebar-highlight: var(--sc-primary);
+			--sidebar-btn-text: var(--sc-content-bgd);
+			
+			/* footer */
+			--footer-bgd: #0e90c4;
+			--footer-text: #ffffff;
+			--footer-highlight: #ffffff;
+			
+						--heading-font: Barlow, Sans-Serif; 
+					}
+		
+				body { font-family: Barlow, Sans-Serif; }
+						#stickyHeader, #minimalMenu, #minimalMenu .text-h3 { font-family: Barlow, Sans-Serif !important; }
+				
+		
+		@media screen and (min-width: 1280px) {
+			.site_width { 
+				max-width: 1280px !important;  
+				
+				margin-left:auto;
+				margin-right:auto;
+			}
+			
+		}
+		@media screen and (min-width: 1080px) {
+			body.single main .site_width,
+			body.single nav.site_width,
+			body.single footer.site_width{ 
+				max-width: 1080px !important; 
+				
+				margin-left:auto;
+				margin-right:auto;
+			}
+		}
+		
+		@media screen and (min-width: 1080px) {
+			main .floating-bgd-img { 
+					background-image: url('https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/3854/files/2025/06/bg-wave.png'); 
+					background-repeat: no-repeat; 
+					background-position: left top; 
+				}		}
+		@media screen and (max-width: 1079px) {
+			a.floating-bgd-img { display: none; }
+		}
+		
+				</style>
+	<script type='text/javascript' src='https://cdn-js.socastsrm.com/cdn_v18.6.6a/wordpress/wp-content/themes/socast-3/assets/js/scripts.js'></script>
+<link rel='shortcut icon' href='https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/3854/files/2025/03/cropped-2732x2732-mobilebutton-1.png' /></head>
+<body class='wp-singular page-template-default page page-id-709 wp-theme-socast-3 wpb-js-composer js-comp-ver-8.7.2 vc_responsive contentType-page socast-3 headerType-main header-not-sticky'><!--[if lte IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQ2K7TM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><div id="consent-banner"></div>
+
+<style>
+/* Put advertising tag in the right place */
+.sc-ad-block:before, .sc-ad-content-block:before { content: ''; display: none; }
+.sc-ad-block [data-google-query-id]:before, .sc-ad-content-block [data-google-query-id]:before {
+  content: "Advertisement";
+  margin-bottom: 5px;
+  display: block;
+  text-align: center;
+  opacity: 0.75;
+  font-size: 0.75rem;
+  line-height: 1em;
+}
+/* Fix color of advertising tag on darker bg */
+body > main > .sc-ad-block [data-google-query-id]:before, body > main > .sc-ad-content-block [data-google-query-id]:before {
+  color: #aaa;
+  opacity: 1;
+}
+</style><nav id='stickyHeader' class='nav-align-left full_content hasLogo hasPlayBtn'>
+	<div  class='site_width nav-container'><div class='nav-left hasLogo'>
+	<a href='#' id='minimalMenuToggle'>
+		<svg class='icon' viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill='currentColor' d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+				<span class='sr-text'>Menu</span>
+			</a>
+		<a class="header-logo sc-center-box" href="/">
+		<img src="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/3854/files/2025/06/wwosports-horizontal-white.png" alt="Westwood One Sports" />
+	</a>
+			<a href='#' class='socastPlayerBtn hover-effect'>
+		<span class='hover-effect'>
+			<span class='text icon-left'>STREAM LIVE</span><svg  class='icon' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+				<path fill='currentColor' d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+			</svg>
+		</span>
+	</a>
+	</div>
+<div class='nav-right'>
+	<a href='/?s=' class='search-icon'><svg class='icon' x="0" y="0" viewBox="0 0 24 24"> 
+<path fill='currentColor' d="M9.5,3C13.1,3,16,5.9,16,9.5c0,1.6-0.6,3.1-1.6,4.2l0.3,0.3h0.8l5,5L19,20.5l-5-5v-0.8l-0.3-0.3c-1.1,1-2.6,1.6-4.2,1.6
+	C5.9,16,3,13.1,3,9.5S5.9,3,9.5,3 M9.5,5C7,5,5,7,5,9.5S7,14,9.5,14S14,12,14,9.5S12,5,9.5,5z"/>
+</svg></a>
+</div>
+</div></nav>
+<div id='minimalMenu' class='left_align'>
+	<div class='wrapper'>
+		<a href='#' class='close hover-effect'><span class='hover-effect'>&times;</span></a>
+				<ul class="nav nav-expanded ">
+	<li>
+		<a href='/?s=' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">Search</span></a></li>
+	<li>
+		<a href='/' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">Home</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/nfl' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">NFL</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/ncaa-football' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">NCAA Football</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/ncaa-basketball' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">NCAA Basketball</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/golf' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">Golf</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/us-soccer' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">U.S. Soccer</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/ncaa-mcws' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">NCAA MCWS</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/ncaa-wcws' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">NCAA WCWS</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/ncaa-lacrosse' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">NCAA Lacrosse</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/ncaa-hockey' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">NCAA Hockey</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/live-shows' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">Live Radio Shows</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/podcasts' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">Podcasts</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/station-finder' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">Station Finder</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/about' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">About Us</span></a></li>
+	<li>
+		<a href='https://www.westwoodonesports.com/contact' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">Contact</span></a></li>
+</ul>		
+		<ul class='nav social social-badge'>
+		<li><a href='https://www.facebook.com/WestwoodOneSports/' title='Facebook' target='_blank' class='sc-center-box'><img alt='facebook' class='icon svg-loader' data-icon="facebook"  /></a></li>
+				<li><a href='https://x.com/westwood1sports' title='X' target='_blank' class='sc-center-box'><img alt='twitter' class='icon svg-loader' data-icon="xitter" /></a></li>
+						<li><a href='https://www.instagram.com/westwoodonesports/' title='Instagram' target='_blank' class='sc-center-box'><img alt='instagram' class='icon svg-loader' data-icon="instagram"  /></a></li>
+			<li><a href='https://tiktok.com/westwood.one.sports' title='TikTok' target='_blank' class='sc-center-box'><img alt='tiktok' class='icon svg-loader' data-icon="tiktok"  /></a></li>
+						<li><a href='https://youtube.com/westwood1sports' title='YouTube' target='_blank' class='sc-center-box'><img alt='youtube' class='icon svg-loader' data-icon="youtube" /></a></li>
+								</ul>	</div>
+</div>
+<div id='minimalMenuOverlay'></div>
+<div id='stickyNotifications'></div><main><div class='bgd-img-container'><div class='floating-bgd-img'></div></div><div class='sc-ad-block slot-leaderboard'><!-- BEGIN Leaderboard Top 728x90/970x90/320x50 -->
+<div id="div-gpt-ad-leaderboard-top" class="gpt-slot" align="center">
+  <script>
+  (function(window, undefined) {
+    var div = document.currentScript.parentElement;
+
+    // Randomize ID for slot reuse
+    div.id = div.id + '-' + ((Date.now()*Math.random()).toString(36).replace('.', ''));
+
+    googletag.cmd.push(function() {
+      window.GPT_SITE_SLOTS = window.GPT_SITE_SLOTS || {};
+
+      // Do not call if slot is hidden
+      if (!div || !div.offsetParent) return;
+
+      var sizeMap = googletag.sizeMapping()
+        .addSize([970,0], [[728, 90], [970, 90]])
+        .addSize([780,0], [[728, 90], [320, 50]])
+        .addSize([0,0], [[320, 50], [300, 50]])
+        .build();
+
+      window.GPT_SITE_SLOTS[div.id] = googletag.defineSlot(
+        GPT_SITE_ID,
+        [[728, 90], [970, 90], [970, 250]],
+        div.id
+      )
+        .addService(googletag.pubads())
+        .defineSizeMapping(sizeMap)
+        .setCollapseEmptyDiv(true, false)
+        .setTargeting("pos", "top")
+      ;
+
+      googletag.display(div.id);
+    });
+  })(window.self);
+  </script>
+</div>
+<!-- END Leaderboard Top 728x90/970x90/320x50 --></div><div id='sc-content-area' class='site_width'><div class='sc-sidebar-wrapper ' data-hascontent="true">
+<div class='sc-content'>
+
+<article id="post-709" class="post-709 page type-page status-publish hentry">
+	
+	<div class="entry-content">
+		<div class="wpb-content-wrapper"><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-8"><div class="vc_column-inner "><div class="wpb_wrapper"><div id='eventCalendar_1711045993' class='eventWidget eventGrid scWidgetContainer' data-artistid='0'>
+	<h2 class="sc-heading-widget">Upcoming NCAA Men's College World Series Broadcasts</h2>
+	<div class='filter'>
+		<a class='current activeFilter' href='javascript:SCEvents.eventCalendars[1711045993].showTab("current");'>Upcoming</a> 
+		<a class='past' href='javascript:SCEvents.eventCalendars[1711045993].showTab("past");'>Past</a>
+	</div>
+	<div class='events current clearfix'></div>
+	<div class='events past clearfix'></div>
+	
+	<a href='/more/eventGrid?id=47420&range=current&offset=0&limit=10&timezone=America/New_York&widgetTitle=Upcoming+NCAA+Men%27s+College+World+Series+Broadcasts' class='pagination btn btn-silver moreBtn'>More</a>
+	
+</div>
+
+<script>
+
+	var SCEvents = SCEvents || { eventCalendars: {} };
+
+	jQuery(function ($) {
+
+		SCEvents.eventCalendars[1711045993] = new EventCalendar(1711045993, 3757,"47420",'current',{"current":0,"past":0},10,"America/New_York","https://www.westwoodonesports.com","<div class='event'><div class='info'><div class='date_bgd primary_bgd_color primary_color' {DATE_ATTR}>{DATE}<\/div><div class='date' {DATE_ATTR}>{DATE}<\/div><a href='{EVENT_LINK}'><div class='image'>{IMAGE}<\/div><div class='name'>{TITLE}<\/div><\/a><div class='venue'>{VENUE}<\/div><div class='event_live'>{PLAYER_LIVE}<\/div><div class='description'>{DESCRIPTION}<\/div><a class='details' href='{EVENT_LINK}'>Full Details<\/a><div class='social clearfix'>{SOCIAL}<\/div><\/div><\/div>",{"current":true,"past":true},300);
+		SCEvents.eventCalendars[1711045993].showTab('current');
+		
+		$(document).on('click', '#eventCalendar_1711045993 .pagination', function(e) {
+			e.preventDefault();
+			SCEvents.eventCalendars[1711045993].showMore();
+		});
+		
+		$(document).on('click', '.vc_tta-tab', function() {
+			// Refresh Events when WPBakery tabs are clicked to fix formatting
+			// Delay to ensure tab transition is complete and container width is correct
+			setTimeout(function() {
+				// Only reinitialize if this event widget is visible inside the active tab
+				if ($('#eventCalendar_1711045993').is(':visible')) {
+					SCEvents.eventCalendars[1711045993] = new EventCalendar(1711045993, 3757,"47420",'current',{"current":0,"past":0},10,"America/New_York","https://www.westwoodonesports.com","<div class='event'><div class='info'><div class='date_bgd primary_bgd_color primary_color' {DATE_ATTR}>{DATE}<\/div><div class='date' {DATE_ATTR}>{DATE}<\/div><a href='{EVENT_LINK}'><div class='image'>{IMAGE}<\/div><div class='name'>{TITLE}<\/div><\/a><div class='venue'>{VENUE}<\/div><div class='event_live'>{PLAYER_LIVE}<\/div><div class='description'>{DESCRIPTION}<\/div><a class='details' href='{EVENT_LINK}'>Full Details<\/a><div class='social clearfix'>{SOCIAL}<\/div><\/div><\/div>",{"current":true,"past":true},300);
+					$('#eventCalendar_1711045993 .events.current').html('');
+					SCEvents.eventCalendars[1711045993].showTab('current');
+				}
+			}, 100);
+		});
+
+	});
+</script></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="blogNewsWidget scWidgetContainer sc-compressed" data-uid="scbnl-6ae8c75d055a4"  data-layout="-1" data-stripped="yes" data-summary="320" data-imgsize="thumbnail" data-author="no" data-view="no" data-date="yes" data-adpos="none" data-colwidth="0" data-excluded="" data-cache-namespace="16287">
+	<div class='loader sc-center-box hidden'><img src='https://media-cdn.socastsrm.com/application/theme/images/loaders/indicator-big.gif' alt='' /></div>
+	<h2 class='sc-heading-widget'>News &amp; Highlights</h2>
+	
+	<div class="posts items-wrapper"><div class="sc-compressed-item sc-divider item">
+	<a href="https://www.westwoodonesports.com/2025/06/25/lsu-tops-coastal-carolina-to-capture-national-title-number-eight-2/" class="sc-compressed-title" >LSU tops Coastal Carolina to capture national title number eight</a>
+	<span class="text-sm sc-item-detail">
+		<span class='sc-author'></span>
+		<span class='sc-time'><svg class="icon" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24"><path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" /></svg>Jun 25, 2025</span>
+		<span class='sc-view'></span>
+	</span>
+</div><div class="sc-compressed-item sc-divider item">
+	<a href="https://www.westwoodonesports.com/2025/06/23/lsu-tops-coastal-carolina-to-capture-national-title-number-eight/" class="sc-compressed-title" >LSU tops Coastal Carolina to capture national title number eight</a>
+	<span class="text-sm sc-item-detail">
+		<span class='sc-author'></span>
+		<span class='sc-time'><svg class="icon" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24"><path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" /></svg>Jun 23, 2025</span>
+		<span class='sc-view'></span>
+	</span>
+</div></div>
+	<div style='clear:both;'></div>
+	
+	
+	<div style='clear:both;'></div>
+</div><!-- Generated by: SoCast Blog List ({"last_updated":1793640285,"cache_namespace":16287,"source":"elasticsearch","count":2,"query_time":47,"query_time_es":1,"age":0}) --></div></div></div></div>
+</div>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+			</footer><!-- #entry-meta -->
+</article><!-- #post-709 -->
+	</div>
+</div>
+</main>
+<div class='sc-ad-block slot-mobile_footer'><!-- BEGIN "Mobile" Footer 320x50 -->
+<div id="div-gpt-ad-mobile" class="gpt-slot" align="center">
+  <script>
+  (function(window, undefined) {
+    var div = document.currentScript.parentElement;
+
+    // Randomize ID for slot reuse
+    div.id = div.id + '-' + ((Date.now()*Math.random()).toString(36).replace('.', ''));
+
+    googletag.cmd.push(function() {
+      window.GPT_SITE_SLOTS = window.GPT_SITE_SLOTS || {};
+
+      // Do not call if slot is hidden
+      if (!div || !div.offsetParent) return;
+
+      var sizeMap = googletag.sizeMapping()
+        .addSize([770, 0], [])
+        .addSize([0, 0], [[320, 50], [300, 50]])
+        .build();
+
+      window.GPT_SITE_SLOTS[div.id] = googletag.defineSlot(
+        GPT_SITE_ID,
+        [320, 50],
+        div.id
+      )
+        .addService(googletag.pubads())
+        .defineSizeMapping(sizeMap)
+        .setCollapseEmptyDiv(true, false)
+        .setTargeting("pos", "adhesion-bot")
+      ;
+
+      googletag.display(div.id);
+    });
+  })(window.self);
+  </script>
+</div>
+<!-- END "Mobile" 320x50 --></div><div class='sc-ad-block slot-footer'><!-- BEGIN Leaderboard Bottom 728x90/970x90/970x250/320x50 -->
+<div id="div-gpt-ad-leaderboard-bottom" class="gpt-slot" align="center">
+  <script>
+  (function(window, undefined) {
+    var div = document.currentScript.parentElement;
+
+    // Randomize ID for slot reuse
+    div.id = div.id + '-' + ((Date.now()*Math.random()).toString(36).replace('.', ''));
+
+    googletag.cmd.push(function() {
+      window.GPT_SITE_SLOTS = window.GPT_SITE_SLOTS || {};
+
+      // Do not call if slot is hidden
+      if (!div || !div.offsetParent) return;
+
+      var sizeMap = googletag.sizeMapping()
+        .addSize([1010,0], [[728, 90], [970, 90], [970, 250]])
+        .addSize([780,0], [[728, 90], [320, 50]])
+        .addSize([0,0], [])
+        .build();
+
+      window.GPT_SITE_SLOTS[div.id] = googletag.defineSlot(
+        GPT_SITE_ID,
+        [[728, 90], [970, 90], [970, 250]],
+        div.id
+      )
+        .addService(googletag.pubads())
+        .defineSizeMapping(sizeMap)
+        .setCollapseEmptyDiv(true, false)
+        .setTargeting("pos", "bot")
+      ;
+
+      googletag.display(div.id);
+    });
+  })(window.self);
+  </script>
+</div>
+<!-- END Leaderboard Bottom 728x90/970x90/970x250/320x50 --></div><footer id='theFooter' class='footerAlign-left footerWidth-full_content'><div class='site_width'><div class='footer-section footer-social'><ul class='nav social social-badge'>
+		<li><a href='https://www.facebook.com/WestwoodOneSports/' title='Facebook' target='_blank' class='sc-center-box'><img alt='facebook' class='icon svg-loader' data-icon="facebook"  /></a></li>
+				<li><a href='https://x.com/westwood1sports' title='X' target='_blank' class='sc-center-box'><img alt='twitter' class='icon svg-loader' data-icon="xitter" /></a></li>
+						<li><a href='https://www.instagram.com/westwoodonesports/' title='Instagram' target='_blank' class='sc-center-box'><img alt='instagram' class='icon svg-loader' data-icon="instagram"  /></a></li>
+			<li><a href='https://tiktok.com/westwood.one.sports' title='TikTok' target='_blank' class='sc-center-box'><img alt='tiktok' class='icon svg-loader' data-icon="tiktok"  /></a></li>
+						<li><a href='https://youtube.com/westwood1sports' title='YouTube' target='_blank' class='sc-center-box'><img alt='youtube' class='icon svg-loader' data-icon="youtube" /></a></li>
+								</ul></div>
+<div class='footer-section footer-nav'>
+	<ul class="nav nav-expanded ">
+	<li>
+		<a href='#cookiePrefs' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">Cookie Link</span></a></li>
+	<li>
+		<a href='/privacy' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">Privacy Policy</span></a></li>
+	<li>
+		<a href='/terms' target="_self" class="nav-item-parent hover-effect"><span class="hover-effect">Terms Of Service</span></a></li>
+</ul>
+</div>
+<div class='footer-section company '><a href='https://www.cumulusmedia.com/' target='_blank' class=''><img src='https://media-cdn.socastsrm.com/uploads/company/580/67180cfda0209.png' class='company-logo' alt='Cumulus Media' /></a></div>
+<div class="footer-section copyright">Copyright &copy; 2026. All Rights Reserved.</div>
+<div class='footer-section'>
+	<div id='socastTagline'>
+		<a id='poweredBySocastLink' href='https://www.socastdigital.com' target='_blank' rel='noopener noreferrer' >
+			<img src='https://media-cdn.socastsrm.com/wordpress/wp-content/themes/common_images/PoweredBySoCastTagline-White.png' alt='Powered by SoCast' />
+		</a>
+		<script>
+		$(document).ready(function() {
+			var image_type = '-White';
+			if (typeof footer_luminance != 'undefined' && footer_luminance < 127.5) image_type = '-Black';
+			loadSvg('#poweredBySocastLink', '/wordpress/wp-content/themes/common_images/PoweredBySoCastTagline', image_type, 'Powered by SoCast');
+		});
+		</script>
+	</div></div></div></footer><script type="text/javascript">
+function openLogin() {
+	window.location = "/login";
+}
+</script><script>
+	grecaptcha.ready(function(){
+		grecaptcha.execute("6LchdXMgAAAAAP4dU47UWMAhU0Tc8Uf0ldZrstqZ", {action: 'page_load'})
+		.then(_ => {
+			
+		});
+	});
+</script><script>
+(function () {
+	var NAME = 'sc_form_token';
+
+	function readCookie() {
+		var match = document.cookie.match(/(?:^|;\s*)sc_form_token=([^;]*)/);
+		return match ? decodeURIComponent(match[1]) : '';
+	}
+
+	function mintToken() {
+		var hex = '';
+		if (window.crypto && window.crypto.getRandomValues) {
+			var bytes = new Uint8Array(32);
+			window.crypto.getRandomValues(bytes);
+			for (var i = 0; i < bytes.length; i++) hex += ('0' + bytes[i].toString(16)).slice(-2);
+			return hex;
+		}
+		while (hex.length < 64) hex += Math.floor(Math.random() * 16).toString(16);
+		return hex;
+	}
+
+	/* The token the cookie holds, minting and storing one when it holds none. Returns
+	   '' when the cookie can't be written - a browser refusing cookies, or an older
+	   httponly sc_form_token still in place, which document.cookie may not overwrite.
+	   Either way the server-rendered field value is left exactly as it is. */
+	function currentToken() {
+		var token = readCookie();
+		if (token) return token;
+
+		token = mintToken();
+		var cookie = NAME + '=' + token + ';path=/;max-age=3600;samesite=Strict';
+		if (location.protocol === 'https:') cookie += ';secure';
+		document.cookie = cookie;
+
+		return readCookie() === token ? token : '';
+	}
+
+	function syncFields(scope) {
+		var fields = (scope || document).querySelectorAll('input[name="sc_form_token"]');
+		// No gated form in scope, so no reason to hand this visitor a cookie.
+		if (!fields.length) return;
+
+		var token = currentToken();
+		if (!token) return;
+		for (var i = 0; i < fields.length; i++) fields[i].value = token;
+	}
+
+	/* Capture phase, so the value is in place before the handlers that read the form
+	   back out - the comment and activity-stream forms serialize themselves and post
+	   over AJAX from their own submit handlers. */
+	document.addEventListener('submit', function (e) { syncFields(e.target); }, true);
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', function () { syncFields(); });
+	} else {
+		syncFields();
+	}
+})();
+</script><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wordpress\/wp-content\/blogs.dir\/3854\/files\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/socast-3\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="text/html" id="wpb-modifications"> window.wpbCustomElement = 1; </script><link rel='stylesheet' id='socastcms_eventDisplay_style-css' href='https://cdn-css.socastsrm.com/cdn_v18.6.6a/wordpress/wp-content/plugins/socast-widgets/css/widgets/eventDisplay.css?v=2016-02-24&#038;ver=6.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='socastcms_twoColumnLayout_style-css' href='https://cdn-css.socastsrm.com/cdn_v18.6.6a/wordpress/wp-content/plugins/socast-widgets/css/twoColumnLayout.css?ver=6.8.2' type='text/css' media='all' />
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,marker&amp;key=AIzaSyBY5c5Bd4wOXXCjyQLKGbCfxiMhnOu0QQ4" id="socastcms_widgets_google_maps-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/js/css-var-polyfill.js" id="css-polyfill-js"></script>
+<script data-category-consent="optanon-category-C0001" data-ot-ignore type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/wordpress/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=8.7.2" id="wpb_composer_front_js-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/wordpress/wp-content/plugins/socast-widgets/js/widgets/eventCalendar.js?v=2026-09-09&amp;ver=6.8.2" id="socastcms_eventCalendar_script-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/wordpress/wp-content/plugins/socast-widgets/js/twoColumnLayout.js?v=2013-09-02&amp;ver=6.8.2" id="socastcms_twoColumnLayout_script-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/wordpress/wp-content/plugins/socast-widgets/js/widgets/blogNews.js?ver=6.8.2" id="socastcms_blogNews_script-js"></script>
+<script type="text/javascript" src="https://cdn-js.socastsrm.com/cdn_v18.6.6a/wordpress/wp-content/plugins/socast-widgets/js/widgets/featureRotator.js?ver=6.8.2" id="socast_featureRotator_script-js"></script>
+<script></script><!-- BEGIN COOKIE CONSENT CUSTOMIZATIONS -->
+<script>
+(function(window, undefined) {
+  function addCookieNavToFooter() {
+    var footerNav = document.querySelector('#playerFooter .footer-links ul, #theFooter .footer-nav ul');
+    var footerLink = footerNav.querySelector('a[href="#cookiePrefs"]');
+    if (!footerLink) {
+      console.log('Failed to find cookie prefs link in footer.')
+      return;
+    }
+    var span = footerLink.querySelector('span');
+    span.remove();
+    footerLink.href = 'javascript:void(0)';
+    footerLink.className = 'ot-sdk-show-settings';  
+    footerLink.id = 'teconsent';  
+  }
+
+  if (document.readyState !== 'loaded') {
+    window.addEventListener('DOMContentLoaded', addCookieNavToFooter);
+  } else {
+    addCookieNavToFooter();
+  }
+})(window.self);
+</script>
+<style>
+#ot-sdk-btn-floating { display: none }
+#ot-footer-msg {
+  all: unset;
+  box-sizing: border-box;
+  display: block;
+  background: #222;
+  color: #bbb;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1.5em 1.5em;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  z-index: 999999;
+}
+#ot-footer-msg .inner {
+  all: unset;
+  magin: 0 auto;
+  max-width: 790px;
+}
+#ot-footer-msg a {
+  all: unset;
+  cursor: pointer;
+  color: #ddd;
+}
+#ot-footer-msg a:hover {
+  color: #fff;
+}
+#ot-footer-msg a::before {
+  content: "?";
+  margin-right: 0.75em;
+  vertical-align: middle;
+}
+
+#playerFooter .ot-sdk-show-settings::before,
+#theFooter .ot-sdk-show-settings::before {
+  content: "";
+  /*background-image: url(https://cdn.cookielaw.org/logos/static/opt_in_out_icon.png);*/
+  background-image: url("data:image/svg+xml,%3Csvg enable-background='new 0 0 30 14' viewBox='0 0 30 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath clip-rule='evenodd' d='m7.4 12.8h6.8l3.1-11.6h-9.9c-3.2-0-5.8 2.6-5.8 5.8s2.6 5.8 5.8 5.8z' fill='%23fff' fill-rule='evenodd'/%3E%3Cg%3E%3Cpath clip-rule='evenodd' d='m22.6 0h-15.2c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6h-6.8c-3.2 0-5.8-2.6-5.8-5.8z' fill='%2306f' fill-rule='evenodd'/%3E%3Cpath d='m24.6 4c.2.2.2.6 0 .8l-2.1 2.2 2.2 2.2c.2.2.2.6 0 .8s-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0s-.2-.6 0-.8l2.1-2.2-2.2-2.2c-.2-.2-.2-.6 0-.8s.6-.2.8 0l2.2 2.2 2.2-2.2c.2-.2.6-.2.8 0z' fill='%23fff'/%3E%3Cpath d='m12.7 4.1c.2.2.3.6.1.8l-4.2 4.9c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1l-2.2-2.2c-.2-.2-.2-.6 0-.8s.6-.2.8 0l1.8 1.7 3.8-4.5c.2-.2.6-.2.9 0z' fill='%2306f'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  height: 1em;
+  width: 2em;
+  display: inline-block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: bottom;
+  margin-right: 0.25em;
+}
+#playerFooter .ot-sdk-show-settings::before {
+  height: 100%;
+}
+</style>
+<!-- END COOKIE CONSENT CUSTOMIZATIONS --><div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0"></script>	</body>
+</html>

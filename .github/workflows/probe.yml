@@ -1,0 +1,25 @@
+name: official-source-probe
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/ef8b5b30-korea5' ]
+    paths: [ 'tools/probe.py', '.github/workflows/probe.yml' ]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/ef8b5b30-korea5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download raw official pages
+        run: python3 tools/probe.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: official-source-raw
+          path: research-ef8b5b30/raw/
+          retention-days: 7

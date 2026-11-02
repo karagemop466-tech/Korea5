@@ -293,6 +293,44 @@ def nfl_2026_full():
     return out
 
 
+# ---------------------------------------------------------------- de-duplication
+def fold_westwoodone(by_year):
+    """One row per game.
+
+    Westwood One publishes the start of its *broadcast*, which runs 15-75 minutes before
+    kickoff. Rather than showing the same game twice with two different times, the network
+    row is folded into the game row: the broadcast start becomes the row's start (that is
+    when the radio is busy) and the official kickoff is kept alongside it.
+    """
+    for y, evs in list(by_year.items()):
+        index = {}
+        for e in evs:
+            if e["league"] == "NFL" and " at " in (e.get("title") or ""):
+                a, h = e["title"].split(" at ", 1)
+                index[(e["date"], frozenset([a, h]))] = e
+        drop = []
+        for e in evs:
+            if "westwoodone" not in e.get("tags", []) or not e.get("away") or not e.get("home"):
+                continue
+            tgt = index.get((e["date"], frozenset([e["away"], e["home"]])))
+            if not tgt or tgt is e:
+                continue
+            tgt["nationalRadio"] = "Westwood One Sports (national)"
+            tgt["westwoodOneStart"] = e.get("start")
+            tgt["westwoodOneUrl"] = e.get("sourceUrl")
+            if e.get("start") and (not tgt.get("start") or e["start"] < tgt["start"]):
+                tgt["kickoff"] = tgt.get("start")
+                tgt["start"] = e["start"]
+            if tgt.get("kickoff"):
+                tgt["note"] = (f"On air from {tgt['start']} PT (Westwood One pre-game show); "
+                               f"kickoff {tgt['kickoff']} PT per the NFL schedule.")
+            if "westwoodone" not in tgt.setdefault("tags", []):
+                tgt["tags"].append("westwoodone")
+            drop.append(e)
+        for d in drop:
+            evs.remove(d)
+
+
 # ---------------------------------------------------------------- estimates
 NFL_WINDOWS = [  # (suffix, weekday, startPT, minutes, label)
     ("sun-early", 6, "10:00", 210, "NFL Sunday early window"),
@@ -592,6 +630,8 @@ def main():
             pass
 
     # 2028/2029 MLB postseason estimates fall in the following year only if cross-year; none do.
+
+    fold_westwoodone(by_year)
 
     # Re-bucket by the calendar year of each event's date so the site can load one file
     # per year without cross-year gaps (NFL playoffs and January bowls spill into January).

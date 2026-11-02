@@ -134,7 +134,8 @@ async function render(iso) {
     }).join("");
   }
   const note = evs.find((e) => e.b);
-  $("#basis").textContent = note ? basisText(pack, note) : "No estimated times for this day.";
+  $("#basis").textContent = note ? basisText(pack, note)
+    : (evs.length ? "Every time on this day comes from an official source." : "");
 
   // week strip
   const strip = $("#strip"); strip.innerHTML = "";

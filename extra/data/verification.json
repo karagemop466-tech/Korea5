@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "name": "Combined line-by-line verification",
+    "compiledUTC": "2026-11-02"
+  },
+  "checks": [
+    {
+      "name": "official NFL feed has 321 games",
+      "ok": true,
+      "detail": "321 games"
+    },
+    {
+      "name": "every official NFL row has a source URL",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "every official W1 row has a source URL",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "W1 station finder returns 4 SF affiliates",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "MLB TBD feed has flags",
+      "ok": true,
+      "detail": "5861 flags"
+    },
+    {
+      "name": "all curated source registry URLs are https official domains",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "all season anchors have source links",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "all station rows have source links",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "all duration rows have source links",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "all NCAAF future rows have source links",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "all estimate rows carry the exact ESTIMATION label",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "all flags have at least one official source link",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "rulebook PDFs extracted successfully",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no combined calendar row is missing a source URL",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no verified row has a blank start time",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "TBA rows have blank start times",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "counts": {
+    "nflGames": 321,
+    "nflNoKickoff": 24,
+    "nflNationalRadio": 72,
+    "w1Events": 580,
+    "w1EventsInRange": 311,
+    "parallelEvents": 7203,
+    "combinedEvents": 7529,
+    "calendarDays": 1215,
+    "calendarVerifiedRows": 909,
+    "calendarEstimatedRows": 3154,
+    "calendarTbaRows": 88,
+    "mlbTbdTrue": 2015,
+    "sourceRegistry": 41,
+    "seasonAnchors": 39,
+    "stations": 16,
+    "ncaafFutureRows": 26,
+    "estimateWindows": 11,
+    "flags": 20
+  },
+  "failures": []
+}

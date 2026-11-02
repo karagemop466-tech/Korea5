@@ -1,0 +1,30 @@
+name: official-source-probe-ef8b5b30
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/ef8b5b30-korea5' ]
+    paths: [ 'tools/probe.py', '.github/workflows/probe-ef8b5b30.yml' ]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/ef8b5b30-korea5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download raw official pages
+        run: python3 tools/probe.py
+      - name: Commit raw probe bytes for local parser development
+        run: |
+          git config user.name "korea5-probe-bot"
+          git config user.email "korea5-probe-bot@users.noreply.github.com"
+          git add -f research-ef8b5b30/raw/
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "probe: raw official page bytes (temporary research artifact)"
+            git pull --rebase --autostash origin arena/ef8b5b30-korea5
+            git push origin HEAD:arena/ef8b5b30-korea5
+          fi

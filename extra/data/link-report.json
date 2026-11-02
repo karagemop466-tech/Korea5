@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "name": "Combined line-by-line link and source verification",
+    "compiledUTC": "2026-11-02"
+  },
+  "checks": [
+    {
+      "name": "no empty href/src attributes",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "no broken local links",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no data-table row is missing an official source link",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "external links on extra pages use approved official domains",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "calendar covers 2026-11-02 to 2030-02-28",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "calendar has 1215 days",
+      "ok": true,
+      "detail": "1215"
+    },
+    {
+      "name": "every calendar day has all five buckets",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "calendar verified rows all have start times",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "calendar TBA rows all have blank start times",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "calendar rows all have source URLs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "build verification has zero failures",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "build verification has 16 checks",
+      "ok": true,
+      "detail": "16"
+    },
+    {
+      "name": "vacation ranking covers 2027, 2028, 2029",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "2028 and 2029 are marked scheduleReleased=false",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no 2027 window is fully free",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/sources.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/season-anchors.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/stations.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/durations.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/ncaaf-future.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/estimates.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/flags.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/rules.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "every estimate window carries exact ESTIMATION label",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "all flag IDs appear on Flagged for Review page",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Flagged for Review page is clearly labelled",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "estimates page carries exact ESTIMATION label",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "root pages link to the official-feed hub",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "root calendar has Prev, Next and Today buttons",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "root dashboard Super Bowl wording corrected",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "extra hub and all 14 extra pages exist",
+      "ok": true,
+      "detail": "15"
+    }
+  ],
+  "counts": {
+    "htmlFiles": 25,
+    "externalDomains": 16,
+    "missingLocal": 0,
+    "rowsMissingSource": 0,
+    "emptyAttrs": 0
+  },
+  "missingLocal": [],
+  "rowsMissingSource": [],
+  "externalDomains": [
+    "buffedlizard55-lab.github.io",
+    "calbears.com",
+    "collegefootballplayoff.com",
+    "gostanford.com",
+    "karagemop466-tech.github.io",
+    "media.nfl.com",
+    "operations.nfl.com",
+    "statsapi.mlb.com",
+    "www.49ers.com",
+    "www.espn.com",
+    "www.mlb.com",
+    "www.ncaa.org",
+    "www.nfl.com",
+    "www.profootballnetwork.com",
+    "www.thesportsleader.com",
+    "www.westwoodonesports.com"
+  ]
+}

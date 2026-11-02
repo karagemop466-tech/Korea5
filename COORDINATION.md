@@ -136,3 +136,116 @@ TBA Big Game on 2026-11-21 reads 11.5 hours instead of 24.
 ## Pending requests to other sessions
 
 - To `arena-ef8b5b30`: if you change `official/nfl-2026.json`, note it here so `data/upstream/` can be refreshed.
+
+---
+
+## Session `arena/ef8b5b30-korea5` — appended by the second integration pass
+
+> Per the conflict note above, this section is **appended**, not substituted. Everything written by
+> `arena-1a5a5516` above is preserved. Branch constraint: Arena fixes this session to
+> `arena/ef8b5b30-korea5`; no other branch may be created or pushed. Final integration, PR and
+> merge are performed from this branch.
+
+### Session registry (addendum)
+
+| Session ID | Branch | Role | Status |
+|---|---|---|---|
+| `arena-ef8b5b30` | `arena/ef8b5b30-korea5` | Official NFL by-week feed, Westwood One all-sport event feed, SF 94122 station verification, source registry, season anchors, duration/rulebook research, extra site pages, final combined verification and PR | **in progress** |
+
+### Task board (addendum, non-overlapping scopes)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| E1 | Coordination board, branch constraint, parallel-session discovery | arena-ef8b5b30 | done | `COORDINATION.md` |
+| E2 | CI probe of official pages (NFL, 49ers, Stanford, Cal, W1, MLB, KNBR, FCC) | arena-ef8b5b30 | done | `tools/probe.py`, `.github/workflows/probe-ef8b5b30.yml`, `research-ef8b5b30/raw/` |
+| E3 | Official NFL 2026 by-week feed (all 321 HOF/preseason/regular games, national radio flags) | arena-ef8b5b30 | done | `tools/fetch_official.py`, `.github/workflows/data-ef8b5b30.yml`, `official/nfl-2026.json` |
+| E4 | Official Westwood One event feeds (all sport categories, exact network windows) + SF station finder | arena-ef8b5b30 | done | `official/westwoodone.json`, `official/w1-stations.json` |
+| E5 | MLB StatsAPI `startTimeTBD` flag feed (blank + flag instead of inferred times) | arena-ef8b5b30 | done | `official/mlb-tbd.json` |
+| E6 | Official source registry, season anchors, 94122 station table, rulebook timing excerpts | arena-ef8b5b30 | done | `curated/sources.json`, `curated/season-anchors.json`, `curated/stations.json`, `curated/rules.json`, `.github/workflows/rules-ef8b5b30.yml` |
+| E7 | 2027–2029 NCAAF published future dates, estimates and irregularities register | arena-ef8b5b30 | in progress | `curated/ncaaf-future.json`, `curated/estimates.json`, `curated/flags.json` |
+| E8 | Extra site pages: official NFL full schedule, Westwood One all-sports, stations, anchors, durations, future NCAAF, verification report | arena-ef8b5b30 | in progress | `extra/*.html`, `extra/data/*.json`, `assets/extra.css` |
+| E9 | Combined line-by-line verification, link check, build check, executive summary | arena-ef8b5b30 | in progress | `extra/verification.html`, `research/EXECUTIVE-SUMMARY-ef8b5b30.md`, `tools/verify_extra.py` |
+| E10 | PR from `arena/ef8b5b30-korea5` to `main`, merge without waiting, Pages deploy confirmation, log here | arena-ef8b5b30 | unclaimed | `COORDINATION.md` (log only) |
+
+### Claim / handoff log (addendum)
+
+- 2026-11-02 — `ef8b5b30` claimed E1–E10. Scope deliberately avoids `scripts/`, `data/`, `*.html` (root),
+  `assets/` (existing files), `verification/` and `research/` owned by `1a5a5516`. Our additions live in
+  `official/`, `curated/`, `extra/`, `tools/*-ef8b5b30*`, `research-ef8b5b30/` and
+  `.github/workflows/*-ef8b5b30.yml`.
+- 2026-11-02 — Discovered `arena/1a5a5516-korea5` had merged PR #1 and PR #2 into `main` and published a
+  10-page site. Merged `origin/main` into `arena/ef8b5b30-korea5` (add/add conflict in `COORDINATION.md`
+  resolved by appending this section). No other file conflict occurred.
+- 2026-11-02 — `1a5a5516` copied our `official/nfl-2026.json` and `official/w1-stations.json` into
+  `data/upstream/`. We will not edit `data/upstream/`; the authoritative feeds remain `official/`.
+- Prior sites `buffedlizard55-lab.github.io/VacationSchedule/site/`, `/ScheduleFreeTime/`, `/RADIOSF/`
+  and `/VacationSchedule/` all returned GitHub Pages 404; logged on our Flagged page.
+
+### Additional official sources verified by this session
+
+- `https://www.westwoodonesports.com/more/eventGrid/?id=47029&range=current&offset=0&limit=100&timezone=America/New_York&widgetTitle=Event+Display` — W1 NFL event grid; plus event-detail pages with Unix `data-time` start/end.
+- `https://www.westwoodonesports.com/station-finder/` — SF affiliates KNBR-AM, KNBR-F2, KNBR-FM, KTCT-AM; official warning that blackouts/programming conflicts mean not every affiliate airs every broadcast.
+- `https://www.nfl.com/schedules/2026/by-week/week-9` and all `PRE`/`REG` by-week slugs — 321 games in embedded RSC `useFetchFootballWeeklyGameDetails`, with `broadcastInfo.audioNetworks`.
+- `https://www.nfl.com/news/2026-27-national-football-league-important-dates`, `https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced`, `https://www.mlb.com/news/mlb-2027-schedule-released`, `https://collegefootballplayoff.com/news/2026/6/1/26-27-broadcast-sked`.
+- `https://www.mlb.com/giants/schedule/watch`, `https://www.mlb.com/athletics/schedule/watch`, `https://www.49ers.com/news/san-francisco-49ers-announce-multi-year-partnership-extension-with-cumulus-media-s-knbr`, `https://www.thesportsleader.com/stanfordfootball/`, `https://calbears.com/sports/football/schedule/2026`, `https://www.espn.com/liveradiotv/s/nbaaffiliates.html`.
+- `https://operations.nfl.com/rules-officiating/2026-nfl-rulebook` and `https://www.ncaa.org/championships/playing-rules/football-playing-rules/` with their official PDF rulebooks.
+
+### Irregularities this session is adding to the combined Flagged page
+
+1. 2028 and 2029 MLB schedules are **not released**; both StatsAPI seasons return 0 games. All 2028/2029 rows are ESTIMATE — not a real verified released schedule.
+2. 2027 NFL schedule and 2027–2029 Westwood One postseason schedules are **not released**.
+3. 2,015 of the 5,861 MLB 2027 game records carry `startTimeTBD=true`; start times left blank, flags raised.
+4. 24 of 321 official 2026 NFL games have no published kickoff time (mostly Week 18 TBA).
+5. Super Bowl LXII (2028, Atlanta) and LXIII (2029, Las Vegas) hosts are official but dates are not published.
+6. W1 vs 49ers kickoff conflict on 2026-11-22 (MIN vs SF): W1 7:30 PM ET / 4:30 PM PT vs 49ers.com 5:20 PM PST.
+7. Older official Stanford/Cal future-schedule releases conflict with newer releases (e.g. 2027 TCU game canceled; 2028/2029 Wyoming/Minnesota/UCLA date conflicts); newest source is used, older conflicts are flagged.
+8. CFP official broadcast page lists TV networks but not a radio partner; radio carriage of CFP games in 94122 is unverified.
+9. W1 Station Finder lists call signs but no frequencies; frequencies are from separate official team/station pages.
+10. `1a5a5516` dashboard copy says the Feb 8–13 2027 gap "sits after the Super Bowl"; Super Bowl LXI is Feb 14 2027, so that gap is before the Super Bowl. Corrected on our combined analysis and flagged.
+
+### Pending integration note
+
+`needs review` items are published on the Flagged for Review page and do **not** block the merge. The final
+integration step will re-verify combined data line by line, confirm no broken local links, open a PR from
+`arena/ef8b5b30-korea5` to `main`, merge without waiting, confirm Pages deployment, and record the PR link
+and merge result here.
+
+### Completion log — session `arena/ef8b5b30` (second pass)
+
+- **2026-11-02 — E1–E9 done.** Merged `origin/main` (which already contained PR #1 and PR #2 from
+  `arena/1a5a5516`) into `arena/ef8b5b30-korea5`. The only conflict was add/add on `COORDINATION.md`;
+  resolved by **appending** this session's section, per the other session's explicit request.
+- **Pull method deviation (logged).** After merging `main`, `git pull --rebase origin arena/ef8b5b30-korea5`
+  tried to replay the whole `main` history onto this branch and hit an old add/add conflict. Rebase was aborted
+  and `git pull --no-rebase` (merge) was used instead to bring in the CI rulebook commit without rewriting
+  history. This preserves both sessions' commits; no work was discarded. Logged as an integration irregularity.
+- **Sources recorded:** `curated/sources.json` (41 official sources), `curated/season-anchors.json` (39),
+  `curated/stations.json` (16), `curated/durations.json`, `curated/rules.json` (verbatim NFL/NCAA rulebook
+  excerpts extracted in CI), `curated/ncaaf-future.json` (26), `curated/estimates.json` (11),
+  `curated/flags.json` (20). Every row has an official source URL.
+- **Official feeds recorded:** `official/nfl-2026.json` (321 NFL.com by-week games, 24 without kickoff,
+  72 with W1 national radio), `official/westwoodone.json` (580 W1 events, 311 in range),
+  `official/w1-stations.json` (4 SF affiliates), `official/mlb-tbd.json` (2,015 `startTimeTBD=true` flags).
+- **Verification performed:** `tools/build_extra.py` generated 15 extra pages + `extra/data/calendar.json`
+  (1,215 days) + `extra/data/vacation.json` (1/2/3-week ranking) + `extra/data/verification.json`.
+  `tools/verify_extra.py` ran 31 checks: 0 broken local links, 0 table rows missing an official source link,
+  0 build-check failures, all JSON valid, exact ESTIMATION label present, flag IDs published, root nav updated,
+  Prev/Next/Today present, Super Bowl wording corrected. Local static server returned HTTP 200 for 37 tested
+  HTML/CSS/JS/JSON files.
+- **Irregularities published:** see `extra/flagged.html` (20 items) and `curated/flags.json`. They include
+  2028/2029 unreleased MLB, 2027 TBD first pitches, NFL TBA kickoffs, W1 vs 49ers time conflict, older/newer
+  Stanford/Cal future-schedule conflicts, CFP radio partner gap, W1 station-frequency gap, prior 404 sites,
+  and the root dashboard's "after the Super Bowl" wording (corrected).
+- **Generated artifacts removed from Git:** the 17 MB `research-ef8b5b30/raw/` CI HTML handoff was untracked
+  (kept locally, ignored) and replaced by `research-ef8b5b30/README.md`. Durable outputs live in `official/`
+  and `curated/`.
+- **E10 status:** in progress. Next: commit + push, open PR from `arena/ef8b5b30-korea5` to `main`, merge
+  without waiting, confirm Pages deployment, then record PR link / merge result here and mark T11 / E10 done.
+- **Needs review items do not block merge:** they are published on the Flagged for Review page with official
+  links, as required.
+- **2026-11-02 — second `main` merge.** `arena/1a5a5516` merged PRs #3–#8 into `main` after our first merge.
+  Merged `origin/main` (`fab3811`) into `arena/ef8b5b30-korea5` with `git merge --no-commit`; all root HTML
+  files auto-merged cleanly and our nav link / Prev-Next-Today labels / corrected Super Bowl wording survived.
+  `COORDINATION.md` auto-merged and retains both sessions' records. `tools/build_extra.py` was re-run so the
+  combined calendar, vacation ranking and verification are built from the latest `data/events-*.json`;
+  `tools/verify_extra.py` re-ran 31 checks with 0 failures. Local static server returned 200 for all tested files.

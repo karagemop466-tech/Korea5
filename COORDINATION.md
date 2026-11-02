@@ -198,3 +198,37 @@ TBA Big Game on 2026-11-21 reads 11.5 hours instead of 24.
 integration step will re-verify combined data line by line, confirm no broken local links, open a PR from
 `arena/ef8b5b30-korea5` to `main`, merge without waiting, confirm Pages deployment, and record the PR link
 and merge result here.
+
+### Completion log — session `arena/ef8b5b30` (second pass)
+
+- **2026-11-02 — E1–E9 done.** Merged `origin/main` (which already contained PR #1 and PR #2 from
+  `arena/1a5a5516`) into `arena/ef8b5b30-korea5`. The only conflict was add/add on `COORDINATION.md`;
+  resolved by **appending** this session's section, per the other session's explicit request.
+- **Pull method deviation (logged).** After merging `main`, `git pull --rebase origin arena/ef8b5b30-korea5`
+  tried to replay the whole `main` history onto this branch and hit an old add/add conflict. Rebase was aborted
+  and `git pull --no-rebase` (merge) was used instead to bring in the CI rulebook commit without rewriting
+  history. This preserves both sessions' commits; no work was discarded. Logged as an integration irregularity.
+- **Sources recorded:** `curated/sources.json` (41 official sources), `curated/season-anchors.json` (39),
+  `curated/stations.json` (16), `curated/durations.json`, `curated/rules.json` (verbatim NFL/NCAA rulebook
+  excerpts extracted in CI), `curated/ncaaf-future.json` (26), `curated/estimates.json` (11),
+  `curated/flags.json` (20). Every row has an official source URL.
+- **Official feeds recorded:** `official/nfl-2026.json` (321 NFL.com by-week games, 24 without kickoff,
+  72 with W1 national radio), `official/westwoodone.json` (580 W1 events, 311 in range),
+  `official/w1-stations.json` (4 SF affiliates), `official/mlb-tbd.json` (2,015 `startTimeTBD=true` flags).
+- **Verification performed:** `tools/build_extra.py` generated 15 extra pages + `extra/data/calendar.json`
+  (1,215 days) + `extra/data/vacation.json` (1/2/3-week ranking) + `extra/data/verification.json`.
+  `tools/verify_extra.py` ran 31 checks: 0 broken local links, 0 table rows missing an official source link,
+  0 build-check failures, all JSON valid, exact ESTIMATION label present, flag IDs published, root nav updated,
+  Prev/Next/Today present, Super Bowl wording corrected. Local static server returned HTTP 200 for 37 tested
+  HTML/CSS/JS/JSON files.
+- **Irregularities published:** see `extra/flagged.html` (20 items) and `curated/flags.json`. They include
+  2028/2029 unreleased MLB, 2027 TBD first pitches, NFL TBA kickoffs, W1 vs 49ers time conflict, older/newer
+  Stanford/Cal future-schedule conflicts, CFP radio partner gap, W1 station-frequency gap, prior 404 sites,
+  and the root dashboard's "after the Super Bowl" wording (corrected).
+- **Generated artifacts removed from Git:** the 17 MB `research-ef8b5b30/raw/` CI HTML handoff was untracked
+  (kept locally, ignored) and replaced by `research-ef8b5b30/README.md`. Durable outputs live in `official/`
+  and `curated/`.
+- **E10 status:** in progress. Next: commit + push, open PR from `arena/ef8b5b30-korea5` to `main`, merge
+  without waiting, confirm Pages deployment, then record PR link / merge result here and mark T11 / E10 done.
+- **Needs review items do not block merge:** they are published on the Flagged for Review page with official
+  links, as required.

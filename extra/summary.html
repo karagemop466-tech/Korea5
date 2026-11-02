@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Executive summary · FREE TIME VACATION</title>
+<meta name="description" content="Official verified schedules, exact free time and flagged irregularities for San Francisco 94122.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/extra.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> FREE TIME / VACATION</div>
+  <nav class="main"><a href="../index.html">Dashboard</a><a href="../calendar.html">Calendar</a><a href="../vacation.html">Vacation windows</a><a href="../mlb.html">MLB</a><a href="../nfl.html">NFL &amp; 49ers</a><a href="../ncaaf.html">Stanford &amp; Cal</a><a href="../radio.html">Radio</a><a href="../sources.html">Sources</a><a href="../flagged.html">Flagged</a><a href="../method.html">Method</a><span class="nav-sep">|</span><a href="index.html">Official feeds</a><a href="calendar.html">Day scoreboard</a><a href="vacation.html">Free windows</a><a href="nfl-2026.html">NFL 2026</a><a href="westwoodone.html">Westwood One</a><a href="stations.html">SF stations</a><a href="season-anchors.html">Season anchors</a><a href="durations.html">Durations</a><a href="ncaaf-future.html">Future NCAAF</a><a href="estimates.html">Estimates</a><a href="summary.html" class="active">Executive summary</a><a href="sources.html">Source registry</a><a href="flagged.html">Flagged for Review</a><a href="verification.html">Line-by-line verification</a><a href="links.html">Link report</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Executive summary</h1>
+<h1>Executive summary — FREE TIME VACATION (combined integration)</h1>
+
+<h2>What this is</h2>
+
+<p>A GitHub Pages dashboard that answers one question for a listener in San Francisco / Outer Sunset 94122:</p>
+<p>**when is there nothing I want to hear live on AM/FM radio?** A minute is free when none of the covered</p>
+<p>broadcasts are on air. Coverage: all MLB games (all 30 clubs; Giants and Athletics high priority), MLB</p>
+<p>preseason / regular / postseason / All-Star / special / TBD; all NFL games preseason / regular / postseason /</p>
+<p>All-Star / TBD (49ers high priority); Stanford and California (Cal) NCAAF (high priority); Westwood One Sports</p>
+<p>national NFL radio (TNF / MNF / SNF / international / postseason / Super Bowl); and other sports broadcast live</p>
+<p>over AM/FM radio in the Bay Area (NCAA basketball, soccer, golf, hockey, lacrosse, MCWS, WCWS).</p>
+
+<p>All times are Pacific (America/Los_Angeles, PST/PDT). The site has a dashboard, calendar with Prev / Next /</p>
+<p>Today, day scoreboard with exact free and busy intervals, category pages, an analysis page, a sources page,</p>
+<p>and a clearly labelled **Flagged for Review** page. Every table row links to an official source.</p>
+
+<h2>Headline finding</h2>
+
+<p>In the strict verified view there is **no fully free 7-day window in 2027**. MLB&#x27;s official 2027 schedule runs</p>
+<p>from Spring Training opening Feb 19 through the regular-season finale Sep 26, with games on almost every day;</p>
+<p>NFL and college football then fill the winter weekends. The best verified gaps are the Monday–Saturday runs</p>
+<p>between NFL playoff weekends and the four days immediately after Super Bowl LXI (Sun Feb 14 2027):</p>
+<p>**Mon Feb 15 – Thu Feb 18 2027**, before Spring Training opens Feb 19.</p>
+
+<p>For **2028 and 2029 MLB and the NFL have released no schedules**. Those seasons are published only as</p>
+<p>**ESTIMATION — not a real verified released schedule**, with blank official date/time fields and flags. The</p>
+<p>root dashboard&#x27;s six-day streaks for those years come from a modelled estimate layer, not from a released</p>
+<p>league schedule.</p>
+
+<h2>Verified 2026 / 2027 structure</h2>
+
+<p>• **MLB 2026**: Spring Training Feb 20 – Mar 24; regular season Mar 25 – Sep 27 (2,430 games, all 30 clubs);</p>
+<p>  postseason Sep 29 – Oct 28; World Series Oct 23 – 28 (Rays at Brewers). Source: MLB StatsAPI and MLB.com.</p>
+<p>• **MLB 2027**: Spring Training opens Feb 19; Opening Night Wed Mar 24 (Netflix, TBD); traditional Opening Day</p>
+<p>  Thu Mar 25; 97th All-Star Game Tue Jul 13 at Wrigley Field; regular season ends Sun Sep 26; 2,430 games with</p>
+<p>  published dates and matchups, but **2,015 records carry `startTimeTBD=true`** — those first-pitch times are</p>
+<p>  left blank, not inferred. Source: MLB 2027 schedule release and MLB StatsAPI.</p>
+<p>• **NFL 2026**: Hall of Fame Game Aug 6 2026 (PT); preseason Aug 13–29; 272 regular-season games Sep 9 2026</p>
+<p>  – Jan 10 2027; Wild Card Jan 16–18 2027; Divisional Jan 23–24; Championships Jan 31; Super Bowl LXI</p>
+<p>  Sun Feb 14 2027 at SoFi Stadium. The NFL.com by-week feed yielded **321 games**; 24 have no published</p>
+<p>  kickoff time and 72 carry the Westwood One national radio flag. Sources: NFL.com by-week pages and NFL</p>
+<p>  Football Operations important dates / kickoff guide.</p>
+<p>• **NCAAF 2026**: Stanford and Cal seasons Aug 29 – Nov 28 2026; 129th Big Game Nov 21 2026 (time TBA).</p>
+<p>  CFP first round Dec 18–19 2026, quarterfinals Dec 30 / Jan 1 2027, semifinals Jan 14–15 2027,</p>
+<p>  national championship Mon Jan 25 2027. Sources: GoStanford.com, CalBears.com, CollegeFootballPlayoff.com.</p>
+
+<h2>Westwood One Sports and 94122 AM/FM radio</h2>
+
+<p>The official Westwood One event-grid and event-detail pages supply **exact network on-air windows**</p>
+<p>(start_time / end_time Unix epoch) converted to Pacific time. The feed covers NFL plus NCAA football and</p>
+<p>basketball, U.S. Soccer, golf, hockey, lacrosse, MCWS and WCWS. Westwood One national NFL broadcasts are high</p>
+<p>priority. The official Station Finder lists four San Francisco affiliates — KNBR-AM, KNBR-F2, KNBR-FM,</p>
+<p>KTCT-AM — and warns: &quot;Because of local blackouts and/or programming conflicts, not every affiliate can air</p>
+<p>every Westwood One Sports broadcast.&quot; Station-level carriage of any specific game is therefore not guaranteed.</p>
+
+<p>Bay Area stations confirmed on official pages: KNBR 680 AM / 104.5 FM (Giants English flagship, 49ers</p>
+<p>flagship), KSAN 107.7 FM (49ers), KSFO 810 AM (49ers network and Cal football), KSFN 1510 AM / 99.3 FM</p>
+<p>(Giants Spanish flagship), KNEW 960 AM (Athletics Bay Area), KSTE 650 AM and KVMX 92.1/105.5 FM (Athletics,</p>
+<p>Sacramento market; 94122 reception unverified), KTCT-AM 1050 (ESPN Radio / KNBR 1050 / Stanford football),</p>
+<p>KNBR 1050 with three hours of Stanford pregame.</p>
+
+<h2>Durations and halftime</h2>
+
+<p>Official facts: MLB&#x27;s 2025 average nine-inning game was **2:38** (MLB.com press release). The 2026 NFL</p>
+<p>Rulebook gives a 60-minute game (four 15-minute quarters) and a **13-minute halftime**; the 2026 NCAA Football</p>
+<p>Rules give a 60-minute game and a **20-minute halftime**. Westwood One publishes exact per-event start/end</p>
+<p>windows rather than a game length. The 165 / 185 / 195 / 200-minute busy blocks used by the free-time engine</p>
+<p>are **planning buffers**, labelled ESTIMATE and flagged; they are not official durations.</p>
+
+<h2>Free vacation windows</h2>
+
+<p>The combined analysis ranks 1-week, 2-week and 3-week windows for 2027, 2028 and 2029. A free day is one with</p>
+<p>no verified game with a published start, no TBA/unverified official row and no estimate-only row.</p>
+
+<p>• **2027 (verified schedule year):** no 7-day window is fully free. The best 1-week window is</p>
+<p>  **Jan 24–30 2027** (six verified free days, one estimate-layer day); the best 2-week and 3-week windows are</p>
+<p>  **Jan 24 – Feb 6** and **Jan 24 – Feb 13 2027** (12 and 18 free days). The cleanest post-Super-Bowl gap is</p>
+<p>  **Mon Feb 15 – Thu Feb 18 2027**.</p>
+<p>• **2028 / 2029:** strict verified free time cannot be asserted because no schedules are released. The ranking</p>
+<p>  is a planning model, labelled **ESTIMATION — not a real verified released schedule**; the best modelled</p>
+<p>  windows fall in late January / early February.</p>
+
+<p>See the **Free windows** page for the full ranking and the root **Vacation windows** page for the parallel</p>
+<p>session&#x27;s modelled view.</p>
+
+<h2>Combined data counts</h2>
+
+<p>• 321 official NFL 2026 games (24 without a published kickoff, 72 with the Westwood One national radio flag).</p>
+<p>• 580 official Westwood One Sports events in the feed, 311 in the 2026-01-01+ range shown on the site.</p>
+<p>• 2,015 MLB game records with `startTimeTBD=true`; their start times are blank.</p>
+<p>• 7,221 parallel-session event rows merged with our official feeds; 7,529 combined rows after de-duplication.</p>
+<p>• 1,215 calendar days (2026-11-02 → 2030-02-28) with 988 verified, 3,075 estimate-layer and 88 TBA rows.</p>
+<p>• 41 official sources, 39 season anchors, 16 station rows, 26 future-NCAAF rows, 11 estimate windows,</p>
+<p>  20 flagged irregularities.</p>
+<p>• 16 build checks and 31 link/verification checks, all passing; 0 broken local links and 0 table rows missing</p>
+<p>  an official source link.</p>
+
+<h2>Flagged for Review</h2>
+
+<p>Unverified / TBD / irregular items are published, not hidden, and do not block the merge. Examples: 2028/2029</p>
+<p>unreleased MLB schedules; 2027 TBD first pitches (2,015); 24 NFL games without kickoff times; Super Bowl LXII /</p>
+<p>LXIII dates TBA; the Westwood One vs 49ers kickoff conflict on 2026-11-22; conflicting older Stanford/Cal</p>
+<p>future-schedule releases; the CFP radio partner not stated on the official broadcast page; the Westwood One</p>
+<p>station-frequency gap; and the prior 404 sites. The exact label **ESTIMATION — not a real verified released</p>
+<p>schedule** appears on every unreleased-schedule row.</p>
+
+<h2>Verification</h2>
+
+<p>The second-pass build runs a line-by-line check over the merged feeds: source-URL presence, blank-value rules,</p>
+<p>TBD blanks, exact estimation labels, official-domain links, rulebook extraction, and local-link integrity.</p>
+<p>Results are on the **Line-by-line verification** page and in `extra/data/verification.json`. The combined</p>
+<p>calendar, NFL feed, Westwood One feed, source registry, station table, season anchors, duration table,</p>
+<p>future-NCAAF table, estimate table and flag register are all generated from committed data files, so the site</p>
+<p>can be rebuilt and re-checked deterministically.</p>
+
+<h2>Sources</h2>
+
+<p>Every source is official: MLB StatsAPI / MLB.com, NFL.com / NFL Football Operations, 49ers.com,</p>
+<p>GoStanford.com, CalBears.com, CollegeFootballPlayoff.com, WestwoodOneSports.com, TheSportsLeader.com (KNBR),</p>
+<p>ESPN.com affiliate list, NCAA.org and operations.nfl.com rulebooks. The full registry with per-row purpose is</p>
+<p>on the **Source registry** page.</p>
+
+</main>
+<footer><div class="wrap">
+  <p><strong>FREE TIME VACATION</strong> · Pacific time (America/Los_Angeles) · San Francisco / Outer Sunset 94122 AM/FM · compiled 2026-11-02</p>
+  <p>Every table row links to an official source. Unconfirmed values are blank and listed on
+  <a href="flagged.html">Flagged for Review</a>. Estimates are labelled
+  <span class="tag est">ESTIMATION — not a real verified released schedule</span>. Flagged items do not block the live site.</p>
+</div></footer>
+<script src="assets/extra.js"></script>
+</body></html>

@@ -45,3 +45,28 @@ reachable from a normal network. Everything the site needs is committed, so Page
 * Every table row links to an official source.
 * Where an official source has not published a value, the cell is blank and the row is listed on the Flagged page.
 * Estimated rows are labelled and never invent matchups.
+
+## Second-pass integration (session `arena/ef8b5b30-korea5`)
+
+The `extra/` section adds official feeds that the first site did not include, with its own navigation, a
+Prev/Next/Today day scoreboard and a clearly labelled **Flagged for Review** page:
+
+| Path | What it is |
+|---|---|
+| `extra/*.html` | Official-feed hub, day scoreboard, NFL 2026 (all 321 games), Westwood One all-sport events, SF 94122 stations, season anchors, durations/halftime, future Stanford/Cal dates, estimates, free-window ranking, executive summary, source registry, flagged register, verification and link report |
+| `official/` | CI-fetched official NFL by-week feed, Westwood One event-grid/event-detail feed, station finder, and MLB StatsAPI `startTimeTBD` flags |
+| `curated/` | Source registry, season anchors, station table, durations, future NCAAF dates, estimate windows, flagged irregularities, verbatim rulebook excerpts |
+| `extra/data/` | Generated combined calendar, vacation ranking and verification/link reports |
+| `tools/*-ef8b5b30.yml` / `tools/fetch_official.py` / `tools/extract_rules.py` | CI fetchers (GitHub Actions has outbound internet; the sandbox does not) |
+| `tools/build_extra.py` / `tools/verify_extra.py` | Generate the extra pages and re-verify every row, source link and local link line by line |
+
+Rebuild the second pass after the first-pass scripts:
+
+```bash
+python3 tools/build_extra.py       # regenerate extra/*.html + extra/data/*.json and update root nav
+python3 tools/verify_extra.py      # 31 checks: local links, source links, JSON integrity, labels, nav
+```
+
+The exact label **ESTIMATION — not a real verified released schedule** appears on every row whose schedule has
+not been officially released (2028/2029 MLB, 2027 NFL, 2027–2029 Westwood One postseason). Flagged items are
+published and do **not** block the Pages deployment.

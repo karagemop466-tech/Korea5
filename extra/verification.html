@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Line-by-line verification · FREE TIME VACATION</title>
+<meta name="description" content="Official verified schedules, exact free time and flagged irregularities for San Francisco 94122.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/extra.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> FREE TIME / VACATION</div>
+  <nav class="main"><a href="../index.html">Dashboard</a><a href="../calendar.html">Calendar</a><a href="../vacation.html">Vacation windows</a><a href="../mlb.html">MLB</a><a href="../nfl.html">NFL &amp; 49ers</a><a href="../ncaaf.html">Stanford &amp; Cal</a><a href="../radio.html">Radio</a><a href="../sources.html">Sources</a><a href="../flagged.html">Flagged</a><a href="../method.html">Method</a><span class="nav-sep">|</span><a href="index.html">Official feeds</a><a href="calendar.html">Day scoreboard</a><a href="vacation.html">Free windows</a><a href="nfl-2026.html">NFL 2026</a><a href="westwoodone.html">Westwood One</a><a href="stations.html">SF stations</a><a href="season-anchors.html">Season anchors</a><a href="durations.html">Durations</a><a href="ncaaf-future.html">Future NCAAF</a><a href="estimates.html">Estimates</a><a href="summary.html">Executive summary</a><a href="sources.html">Source registry</a><a href="flagged.html">Flagged for Review</a><a href="verification.html" class="active">Line-by-line verification</a><a href="links.html">Link report</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Line-by-line verification</h1>
+<p class="lede">Automated checks over every merged feed row, every source link, every local link, and the build
+output. Run with <code>python3 tools/verify_extra.py</code> after <code>python3 tools/build_extra.py</code>.</p>
+<div class="callout"><strong>Result:</strong> 16 checks,
+16 passed,
+0 failed. Failures are published, not hidden.</div>
+<h2>Checks</h2>
+<div class="scroll"><table id="vtbl"><thead><tr><th>Check</th><th>Result</th><th>Detail</th></tr></thead><tbody><tr><td>official NFL feed has 321 games</td><td><span class="tag ver">PASS</span></td><td>321 games</td></tr><tr><td>every official NFL row has a source URL</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>every official W1 row has a source URL</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>W1 station finder returns 4 SF affiliates</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>MLB TBD feed has flags</td><td><span class="tag ver">PASS</span></td><td>5861 flags</td></tr><tr><td>all curated source registry URLs are https official domains</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>all season anchors have source links</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>all station rows have source links</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>all duration rows have source links</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>all NCAAF future rows have source links</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>all estimate rows carry the exact ESTIMATION label</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>all flags have at least one official source link</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>rulebook PDFs extracted successfully</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>no combined calendar row is missing a source URL</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>no verified row has a blank start time</td><td><span class="tag ver">PASS</span></td><td></td></tr><tr><td>TBA rows have blank start times</td><td><span class="tag ver">PASS</span></td><td></td></tr></tbody></table></div>
+<h2>Combined feed counts</h2>
+<div class="scroll"><table id="ctbl"><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>nflGames</td><td>321</td></tr><tr><td>nflNoKickoff</td><td>24</td></tr><tr><td>nflNationalRadio</td><td>72</td></tr><tr><td>w1Events</td><td>580</td></tr><tr><td>w1EventsInRange</td><td>311</td></tr><tr><td>parallelEvents</td><td>7221</td></tr><tr><td>combinedEvents</td><td>7529</td></tr><tr><td>calendarDays</td><td>1215</td></tr><tr><td>calendarVerifiedRows</td><td>988</td></tr><tr><td>calendarEstimatedRows</td><td>3075</td></tr><tr><td>calendarTbaRows</td><td>88</td></tr><tr><td>mlbTbdTrue</td><td>2015</td></tr><tr><td>sourceRegistry</td><td>41</td></tr><tr><td>seasonAnchors</td><td>39</td></tr><tr><td>stations</td><td>16</td></tr><tr><td>ncaafFutureRows</td><td>26</td></tr><tr><td>estimateWindows</td><td>11</td></tr><tr><td>flags</td><td>20</td></tr></tbody></table></div>
+<h2>Prior verification evidence</h2>
+<p class="small">The parallel session's report: <a href="https://karagemop466-tech.github.io/Korea5/verification/report.md" target="_blank" rel="noopener noreferrer">verification/report.md</a>
+and <a href="https://karagemop466-tech.github.io/Korea5/verification/links.json" target="_blank" rel="noopener noreferrer">verification/links.json</a>.
+Its earlier pass reported 49/62 rows verified with 13 failures; the published dashboard later reported 61/62.
+The combined verification above re-checks the merged feeds and flags any remaining discrepancy.</p>
+<h2>Build / link check</h2>
+<p class="small">See <code>extra/data/verification.json</code> for machine-readable results,
+<a href="links.html">Local link &amp; source-link report</a> for the full link audit, and
+<code>tools/verify_extra.py</code> for the checker. The final integration step runs it before the PR.</p>
+
+</main>
+<footer><div class="wrap">
+  <p><strong>FREE TIME VACATION</strong> · Pacific time (America/Los_Angeles) · San Francisco / Outer Sunset 94122 AM/FM · compiled 2026-11-02</p>
+  <p>Every table row links to an official source. Unconfirmed values are blank and listed on
+  <a href="flagged.html">Flagged for Review</a>. Estimates are labelled
+  <span class="tag est">ESTIMATION — not a real verified released schedule</span>. Flagged items do not block the live site.</p>
+</div></footer>
+<script src="assets/extra.js"></script>
+</body></html>

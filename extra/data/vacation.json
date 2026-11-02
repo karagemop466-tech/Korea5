@@ -1,0 +1,796 @@
+{
+  "meta": {
+    "name": "Vacation window ranking \u2014 strict verified view",
+    "compiledUTC": "2026-11-02",
+    "estimateLabel": "ESTIMATION \u2014 not a real verified released schedule",
+    "rule": "A free day has no verified game with a published start time, no TBA/unverified official row, and no estimate-only row. 2028/2029 have no released schedules, so their windows are estimates and cannot be verified."
+  },
+  "years": {
+    "2026": {
+      "daysInRange": 60,
+      "busy": 39,
+      "unverified": 1,
+      "estimatedOnly": 0,
+      "free": 20,
+      "modelFree": 0,
+      "scheduleReleased": true,
+      "note": "Official schedules available for this year; strict verified analysis applies."
+    },
+    "2027": {
+      "daysInRange": 365,
+      "busy": 217,
+      "unverified": 2,
+      "estimatedOnly": 68,
+      "free": 78,
+      "modelFree": 0,
+      "scheduleReleased": true,
+      "note": "Official schedules available for this year; strict verified analysis applies."
+    },
+    "2028": {
+      "daysInRange": 366,
+      "busy": 0,
+      "unverified": 0,
+      "estimatedOnly": 366,
+      "free": 0,
+      "modelFree": 76,
+      "scheduleReleased": false,
+      "note": "No official MLB/NFL schedule released for this year; strict verified free time cannot be asserted. All windows are ESTIMATION \u2014 not a real verified released schedule"
+    },
+    "2029": {
+      "daysInRange": 365,
+      "busy": 0,
+      "unverified": 0,
+      "estimatedOnly": 365,
+      "free": 0,
+      "modelFree": 72,
+      "scheduleReleased": false,
+      "note": "No official MLB/NFL schedule released for this year; strict verified free time cannot be asserted. All windows are ESTIMATION \u2014 not a real verified released schedule"
+    }
+  },
+  "windows": {
+    "2027": {
+      "1week": [
+        {
+          "start": "2027-01-24",
+          "end": "2027-01-30",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 1,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-25",
+          "end": "2027-01-31",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 1,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-26",
+          "end": "2027-02-01",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 1,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-27",
+          "end": "2027-02-02",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 1,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-28",
+          "end": "2027-02-03",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 1,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-29",
+          "end": "2027-02-04",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 1,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-30",
+          "end": "2027-02-05",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 1,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-31",
+          "end": "2027-02-06",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 1,
+          "fullyFree": false,
+          "status": "verified"
+        }
+      ],
+      "2week": [
+        {
+          "start": "2027-01-24",
+          "end": "2027-02-06",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 2,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-25",
+          "end": "2027-02-07",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 2,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-26",
+          "end": "2027-02-08",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 2,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-27",
+          "end": "2027-02-09",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 2,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-28",
+          "end": "2027-02-10",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 2,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-29",
+          "end": "2027-02-11",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 2,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-30",
+          "end": "2027-02-12",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 2,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-31",
+          "end": "2027-02-13",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 2,
+          "fullyFree": false,
+          "status": "verified"
+        }
+      ],
+      "3week": [
+        {
+          "start": "2027-01-24",
+          "end": "2027-02-13",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 3,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-25",
+          "end": "2027-02-14",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 3,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-26",
+          "end": "2027-02-15",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 3,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-27",
+          "end": "2027-02-16",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 3,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-28",
+          "end": "2027-02-17",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 3,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-29",
+          "end": "2027-02-18",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 3,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-30",
+          "end": "2027-02-19",
+          "freeDays": 17,
+          "busyDays": 1,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 3,
+          "fullyFree": false,
+          "status": "verified"
+        },
+        {
+          "start": "2027-01-17",
+          "end": "2027-02-06",
+          "freeDays": 17,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 4,
+          "fullyFree": false,
+          "status": "verified"
+        }
+      ]
+    },
+    "2028": {
+      "1week": [
+        {
+          "start": "2028-01-23",
+          "end": "2028-01-29",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-24",
+          "end": "2028-01-30",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-25",
+          "end": "2028-01-31",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-26",
+          "end": "2028-02-01",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-27",
+          "end": "2028-02-02",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-28",
+          "end": "2028-02-03",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-29",
+          "end": "2028-02-04",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-30",
+          "end": "2028-02-05",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        }
+      ],
+      "2week": [
+        {
+          "start": "2028-01-23",
+          "end": "2028-02-05",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-24",
+          "end": "2028-02-06",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-25",
+          "end": "2028-02-07",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-26",
+          "end": "2028-02-08",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-27",
+          "end": "2028-02-09",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-28",
+          "end": "2028-02-10",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-29",
+          "end": "2028-02-11",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-30",
+          "end": "2028-02-12",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        }
+      ],
+      "3week": [
+        {
+          "start": "2028-01-23",
+          "end": "2028-02-12",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-24",
+          "end": "2028-02-13",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-25",
+          "end": "2028-02-14",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-26",
+          "end": "2028-02-15",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-27",
+          "end": "2028-02-16",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-28",
+          "end": "2028-02-17",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-29",
+          "end": "2028-02-18",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2028-01-16",
+          "end": "2028-02-05",
+          "freeDays": 17,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        }
+      ]
+    },
+    "2029": {
+      "1week": [
+        {
+          "start": "2029-01-21",
+          "end": "2029-01-27",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-22",
+          "end": "2029-01-28",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-23",
+          "end": "2029-01-29",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-24",
+          "end": "2029-01-30",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-25",
+          "end": "2029-01-31",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-26",
+          "end": "2029-02-01",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-27",
+          "end": "2029-02-02",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-28",
+          "end": "2029-02-03",
+          "freeDays": 6,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 7,
+          "fullyFree": false,
+          "status": "estimated"
+        }
+      ],
+      "2week": [
+        {
+          "start": "2029-01-21",
+          "end": "2029-02-03",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-22",
+          "end": "2029-02-04",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-23",
+          "end": "2029-02-05",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-24",
+          "end": "2029-02-06",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-25",
+          "end": "2029-02-07",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-26",
+          "end": "2029-02-08",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-27",
+          "end": "2029-02-09",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-28",
+          "end": "2029-02-10",
+          "freeDays": 12,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 14,
+          "fullyFree": false,
+          "status": "estimated"
+        }
+      ],
+      "3week": [
+        {
+          "start": "2029-01-21",
+          "end": "2029-02-10",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-22",
+          "end": "2029-02-11",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-23",
+          "end": "2029-02-12",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-24",
+          "end": "2029-02-13",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-25",
+          "end": "2029-02-14",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-26",
+          "end": "2029-02-15",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-27",
+          "end": "2029-02-16",
+          "freeDays": 18,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
+          "start": "2029-01-14",
+          "end": "2029-02-03",
+          "freeDays": 17,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        }
+      ]
+    }
+  }
+}

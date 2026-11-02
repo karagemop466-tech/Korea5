@@ -1,14 +1,14 @@
 {
- "generatedUTC": "2026-11-02T17:28:55Z",
+ "generatedUTC": "2026-11-02T17:29:54Z",
  "summary": {
   "curatedRows": 62,
   "rowsChecked": 62,
-  "rowsVerified": 36,
-  "rowsFailed": 26,
+  "rowsVerified": 0,
+  "rowsFailed": 62,
   "rowsWithoutTokens": 0,
   "flaggedConflicts": 3,
   "mlbSpotChecks": 10,
-  "mlbSpotChecksPassed": 9,
+  "mlbSpotChecksPassed": 0,
   "feedProblems": 0,
   "eventCounts": {
    "2026": 2977,
@@ -31,9 +31,13 @@
     "08/13",
     "Titans"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 1",
+    "08/13",
+    "Titans"
+   ],
    "note": null,
    "conflict": null
   },
@@ -49,9 +53,13 @@
     "08/20",
     "Chargers"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 2",
+    "08/20",
+    "Chargers"
+   ],
    "note": null,
    "conflict": null
   },
@@ -67,9 +75,13 @@
     "08/27",
     "Raiders"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 3",
+    "08/27",
+    "Raiders"
+   ],
    "note": null,
    "conflict": null
   },
@@ -85,9 +97,13 @@
     "09/10",
     "Rams"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 1",
+    "09/10",
+    "Rams"
+   ],
    "note": null,
    "conflict": null
   },
@@ -103,9 +119,13 @@
     "09/20",
     "Dolphins"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 2",
+    "09/20",
+    "Dolphins"
+   ],
    "note": null,
    "conflict": null
   },
@@ -121,9 +141,13 @@
     "09/27",
     "Cardinals"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 3",
+    "09/27",
+    "Cardinals"
+   ],
    "note": null,
    "conflict": null
   },
@@ -139,9 +163,13 @@
     "10/04",
     "Broncos"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 4",
+    "10/04",
+    "Broncos"
+   ],
    "note": null,
    "conflict": null
   },
@@ -157,9 +185,13 @@
     "10/11",
     "Seahawks"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 5",
+    "10/11",
+    "Seahawks"
+   ],
    "note": null,
    "conflict": null
   },
@@ -175,9 +207,13 @@
     "10/19",
     "Commanders"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 6",
+    "10/19",
+    "Commanders"
+   ],
    "note": null,
    "conflict": null
   },
@@ -193,9 +229,13 @@
     "10/25",
     "Falcons"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 7",
+    "10/25",
+    "Falcons"
+   ],
    "note": null,
    "conflict": null
   },
@@ -210,9 +250,12 @@
     "WEEK 8",
     "BYE"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 8",
+    "BYE"
+   ],
    "note": "Bye week \u2014 no game.",
    "conflict": null
   },
@@ -229,9 +272,14 @@
     "1:25 PM PST",
     "Raiders"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 9",
+    "11/08",
+    "1:25 PM PST",
+    "Raiders"
+   ],
    "note": null,
    "conflict": null
   },
@@ -248,9 +296,14 @@
     "1:25 PM PST",
     "Cowboys"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 10",
+    "11/15",
+    "1:25 PM PST",
+    "Cowboys"
+   ],
    "note": null,
    "conflict": null
   },
@@ -267,9 +320,14 @@
     "5:20 PM PST",
     "Vikings"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 11",
+    "11/22",
+    "5:20 PM PST",
+    "Vikings"
+   ],
    "note": null,
    "conflict": null
   },
@@ -286,9 +344,14 @@
     "1:25 PM PST",
     "Seahawks"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 12",
+    "11/29",
+    "1:25 PM PST",
+    "Seahawks"
+   ],
    "note": null,
    "conflict": null
   },
@@ -305,9 +368,14 @@
     "10:00 AM PST",
     "Giants"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 13",
+    "12/06",
+    "10:00 AM PST",
+    "Giants"
+   ],
    "note": null,
    "conflict": null
   },
@@ -324,9 +392,14 @@
     "1:25 PM PST",
     "Rams"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 14",
+    "12/13",
+    "1:25 PM PST",
+    "Rams"
+   ],
    "note": null,
    "conflict": null
   },
@@ -343,9 +416,14 @@
     "5:15 PM PST",
     "Chargers"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 15",
+    "12/17",
+    "5:15 PM PST",
+    "Chargers"
+   ],
    "note": null,
    "conflict": null
   },
@@ -362,9 +440,14 @@
     "1:25 PM PST",
     "Chiefs"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 16",
+    "12/27",
+    "1:25 PM PST",
+    "Chiefs"
+   ],
    "note": null,
    "conflict": null
   },
@@ -381,9 +464,14 @@
     "5:20 PM PST",
     "Eagles"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 17",
+    "01/03",
+    "5:20 PM PST",
+    "Eagles"
+   ],
    "note": null,
    "conflict": null
   },
@@ -399,9 +487,13 @@
     "Cardinals",
     "State Farm Stadium"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "WEEK 18",
+    "Cardinals",
+    "State Farm Stadium"
+   ],
    "note": "Official 49ers page lists Week 18 as TBD. NFL Week 18 is played in the final weekend of the regular season; the planner blocks both candidate days.",
    "conflict": null
   },
@@ -416,7 +508,7 @@
     "Chicago Bears at Seattle Seahawks",
     "7:00 PM ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Chicago Bears at Seattle Seahawks",
@@ -436,7 +528,7 @@
     "Jacksonville Jaguars at Baltimore Ravens",
     "7:30 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Jacksonville Jaguars at Baltimore Ravens",
@@ -456,7 +548,7 @@
     "Oregon at Ohio State",
     "3 PM ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Oregon at Ohio State",
@@ -476,7 +568,7 @@
     "Cincinnati Bengals vs Atlanta Falcons",
     "9:15 AM ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Cincinnati Bengals vs Atlanta Falcons",
@@ -496,7 +588,7 @@
     "Buffalo Bills at Minnesota Vikings",
     "7:00 PM ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Buffalo Bills at Minnesota Vikings",
@@ -516,7 +608,7 @@
     "New England Patriots vs Detroit Lions",
     "9:15 AM ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "New England Patriots vs Detroit Lions",
@@ -536,7 +628,7 @@
     "Los Angeles Chargers at Baltimore Ravens",
     "7:00 PM ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Los Angeles Chargers at Baltimore Ravens",
@@ -556,7 +648,7 @@
     "Minnesota Vikings vs San Francisco 49ers",
     "7:30 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Minnesota Vikings vs San Francisco 49ers",
@@ -576,7 +668,7 @@
     "Green Bay Packers at Los Angeles Rams",
     "7:30 PM ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Green Bay Packers at Los Angeles Rams",
@@ -596,7 +688,7 @@
     "Philadelphia Eagles at Dallas Cowboys",
     "4:15 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Philadelphia Eagles at Dallas Cowboys",
@@ -616,7 +708,7 @@
     "Denver Broncos at Pittsburgh Steelers",
     "2:30 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Denver Broncos at Pittsburgh Steelers",
@@ -636,7 +728,7 @@
     "Carolina Panthers at Tampa Bay Buccaneers",
     "7:00 PM ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Carolina Panthers at Tampa Bay Buccaneers",
@@ -656,7 +748,7 @@
     "Houston Texans at Pittsburgh Steelers",
     "7:30 PM ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Houston Texans at Pittsburgh Steelers",
@@ -676,7 +768,7 @@
     "Minnesota Vikings at New England Patriots",
     "7:30 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Minnesota Vikings at New England Patriots",
@@ -696,7 +788,7 @@
     "Pittsburgh Steelers at Jacksonville Jaguars",
     "7:00 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Pittsburgh Steelers at Jacksonville Jaguars",
@@ -716,7 +808,7 @@
     "Seattle Seahawks at Philadelphia Eagles",
     "4:30 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Seattle Seahawks at Philadelphia Eagles",
@@ -736,7 +828,7 @@
     "Detroit Lions at Minnesota Vikings",
     "7:30 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Detroit Lions at Minnesota Vikings",
@@ -756,7 +848,7 @@
     "Houston Texans at Philadelphia Eagles",
     "7:30 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Houston Texans at Philadelphia Eagles",
@@ -776,7 +868,7 @@
     "Buffalo Bills at Denver Broncos",
     "4:15 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Buffalo Bills at Denver Broncos",
@@ -796,7 +888,7 @@
     "Week 16 Saturday Doubleheader TBA",
     "4:00 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Week 16 Saturday Doubleheader TBA",
@@ -815,7 +907,7 @@
    "tokens": [
     "Jacksonville Jaguars at Dallas Cowboys"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Jacksonville Jaguars at Dallas Cowboys"
@@ -834,7 +926,7 @@
     "New York Giants at Detroit Lions",
     "7:00 PM ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "New York Giants at Detroit Lions",
@@ -854,7 +946,7 @@
     "Week 17 Saturday Doubleheader TBA",
     "4:00 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Week 17 Saturday Doubleheader TBA",
@@ -874,7 +966,7 @@
     "Philadelphia Eagles at San Francisco 49ers",
     "7:30 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Philadelphia Eagles at San Francisco 49ers",
@@ -894,7 +986,7 @@
     "Week 18 Saturday Tripleheader TBA",
     "12:30 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Week 18 Saturday Tripleheader TBA",
@@ -914,7 +1006,7 @@
     "Week 18 Saturday Tripleheader TBA",
     "8:00 PM  ET"
    ],
-   "officialStatus": 200,
+   "officialStatus": null,
    "verified": false,
    "missingTokens": [
     "Week 18 Saturday Tripleheader TBA",
@@ -935,9 +1027,13 @@
     "Hawai'i",
     "37-27"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Sat Aug 29 4:00 PM",
+    "Hawai'i",
+    "37-27"
+   ],
    "note": null,
    "conflict": null
   },
@@ -953,9 +1049,13 @@
     "Miami",
     "6-45"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Fri Sep 4 6:00 PM",
+    "Miami",
+    "6-45"
+   ],
    "note": null,
    "conflict": null
   },
@@ -971,9 +1071,13 @@
     "Duke",
     "7-35"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Sat Sep 19 1:00 PM",
+    "Duke",
+    "7-35"
+   ],
    "note": null,
    "conflict": null
   },
@@ -989,9 +1093,13 @@
     "Georgia Tech",
     "34-27"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Sat Sep 26 7:30 PM",
+    "Georgia Tech",
+    "34-27"
+   ],
    "note": null,
    "conflict": null
   },
@@ -1007,9 +1115,13 @@
     "Wake Forest",
     "3-57"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Sat Oct 3 9:00 AM",
+    "Wake Forest",
+    "3-57"
+   ],
    "note": null,
    "conflict": null
   },
@@ -1025,9 +1137,13 @@
     "Notre Dame",
     "7-58"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Sat Oct 10 12:30 PM",
+    "Notre Dame",
+    "7-58"
+   ],
    "note": null,
    "conflict": null
   },
@@ -1043,9 +1159,13 @@
     "Elon",
     "34-7"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Sat Oct 17 4:30 PM",
+    "Elon",
+    "34-7"
+   ],
    "note": null,
    "conflict": null
   },
@@ -1061,9 +1181,13 @@
     "North Carolina St.",
     "31-28"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Fri Oct 23 7:30 PM",
+    "North Carolina St.",
+    "31-28"
+   ],
    "note": null,
    "conflict": null
   },
@@ -1079,9 +1203,13 @@
     "Louisville",
     "24-52"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Sat Oct 31 12:15 PM",
+    "Louisville",
+    "24-52"
+   ],
    "note": null,
    "conflict": null
   },
@@ -1096,9 +1224,12 @@
     "Sat Nov 14",
     "Virginia Tech"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Sat Nov 14",
+    "Virginia Tech"
+   ],
    "note": "School lists kickoff as '4 OR 4:30 P.M.'",
    "conflict": null
   },
@@ -1113,9 +1244,12 @@
     "Sat Nov 21",
     "129th Big Game at California"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Sat Nov 21",
+    "129th Big Game at California"
+   ],
    "note": null,
    "conflict": "calbears.com lists the Big Game on 2026-11-14."
   },
@@ -1130,9 +1264,12 @@
     "Sat Nov 28",
     "SMU"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Sat Nov 28",
+    "SMU"
+   ],
    "note": null,
    "conflict": null
   },
@@ -1148,9 +1285,13 @@
     "Stanford",
     "129th Big Game"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Nov 14 (Sat)",
+    "Stanford",
+    "129th Big Game"
+   ],
    "note": null,
    "conflict": "gostanford.com lists the Big Game on 2026-11-21."
   },
@@ -1166,9 +1307,13 @@
     "Pittsburgh",
     "KSFO 810 AM"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Nov 21 (Sat)",
+    "Pittsburgh",
+    "KSFO 810 AM"
+   ],
    "note": null,
    "conflict": null
   },
@@ -1182,9 +1327,11 @@
    "tokens": [
     "Nov 28 (Sat)"
    ],
-   "officialStatus": 200,
-   "verified": true,
-   "missingTokens": [],
+   "officialStatus": null,
+   "verified": false,
+   "missingTokens": [
+    "Nov 28 (Sat)"
+   ],
    "note": "Opponent not shown on the official page; left blank and flagged unverified.",
    "conflict": null
   }
@@ -1193,92 +1340,92 @@
   {
    "year": 2026,
    "date": "2026-03-25",
-   "apiStatus": 200,
+   "apiStatus": null,
    "gamesInFeed": 1,
-   "gamesInApi": 1,
-   "match": true,
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-03-25&endDate=2026-03-25&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "gamesInApi": 0,
+   "match": false,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-03-25&endDate=2026-03-25&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2026,
    "date": "2026-05-01",
-   "apiStatus": 200,
+   "apiStatus": null,
    "gamesInFeed": 15,
-   "gamesInApi": 15,
-   "match": true,
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-05-01&endDate=2026-05-01&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "gamesInApi": 0,
+   "match": false,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-05-01&endDate=2026-05-01&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2026,
    "date": "2026-06-07",
-   "apiStatus": 200,
+   "apiStatus": null,
    "gamesInFeed": 15,
-   "gamesInApi": 15,
-   "match": true,
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-06-07&endDate=2026-06-07&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "gamesInApi": 0,
+   "match": false,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-06-07&endDate=2026-06-07&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2026,
    "date": "2026-07-17",
-   "apiStatus": 200,
+   "apiStatus": null,
    "gamesInFeed": 14,
-   "gamesInApi": 15,
+   "gamesInApi": 0,
    "match": false,
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-07-17&endDate=2026-07-17&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-07-17&endDate=2026-07-17&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2026,
    "date": "2026-08-23",
-   "apiStatus": 200,
+   "apiStatus": null,
    "gamesInFeed": 15,
-   "gamesInApi": 15,
-   "match": true,
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-08-23&endDate=2026-08-23&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "gamesInApi": 0,
+   "match": false,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-08-23&endDate=2026-08-23&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
    "date": "2027-03-25",
-   "apiStatus": 200,
+   "apiStatus": null,
    "gamesInFeed": 15,
-   "gamesInApi": 15,
-   "match": true,
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-03-25&endDate=2027-03-25&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "gamesInApi": 0,
+   "match": false,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-03-25&endDate=2027-03-25&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
    "date": "2027-05-01",
-   "apiStatus": 200,
+   "apiStatus": null,
    "gamesInFeed": 15,
-   "gamesInApi": 15,
-   "match": true,
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-05-01&endDate=2027-05-01&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "gamesInApi": 0,
+   "match": false,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-05-01&endDate=2027-05-01&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
    "date": "2027-06-07",
-   "apiStatus": 200,
+   "apiStatus": null,
    "gamesInFeed": 11,
-   "gamesInApi": 11,
-   "match": true,
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-06-07&endDate=2027-06-07&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "gamesInApi": 0,
+   "match": false,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-06-07&endDate=2027-06-07&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
    "date": "2027-07-18",
-   "apiStatus": 200,
+   "apiStatus": null,
    "gamesInFeed": 15,
-   "gamesInApi": 15,
-   "match": true,
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-07-18&endDate=2027-07-18&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "gamesInApi": 0,
+   "match": false,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-07-18&endDate=2027-07-18&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
    "date": "2027-08-24",
-   "apiStatus": 200,
+   "apiStatus": null,
    "gamesInFeed": 15,
-   "gamesInApi": 15,
-   "match": true,
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-08-24&endDate=2027-08-24&fields=dates%2Cdate%2Cgames%2CgamePk%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "gamesInApi": 0,
+   "match": false,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-08-24&endDate=2027-08-24&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   }
  ],
  "feedProblems": []

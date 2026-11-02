@@ -78,7 +78,16 @@ def verify_curated():
         for e in cur["events"]:
             src = e.get("source") or default_src
             tokens = e.get("verifyTokens") or []
-            ok, missing, status = check_tokens(src, tokens) if tokens else (None, [], None)
+            # Prefer the most specific official page for the row (e.g. a Westwood One
+            # event page), then fall back to the dataset's schedule page.
+            targets = [u for u in (e.get("eventUrl"), src) if u]
+            ok, missing, status = (None, [], None)
+            if tokens:
+                for t in targets:
+                    ok, missing, status = check_tokens(t, tokens)
+                    if ok:
+                        src = t
+                        break
             rows.append({
                 "dataset": name,
                 "id": e["id"],
@@ -108,7 +117,8 @@ def verify_mlb():
         games = data["games"]
         sample_dates = sorted({g["date"] for g in games if g["type"] == "R"})[::37][:6]
         for ds in sample_dates:
-            q = {"sportId": 1, "startDate": ds, "endDate": ds, "fields": "dates,date,games,gamePk,teams,away,home,team,name"}
+            q = {"sportId": 1, "startDate": ds, "endDate": ds,
+                 "fields": "dates,date,games,gamePk,gameType,teams,away,home,team,name"}
             url = "https://statsapi.mlb.com/api/v1/schedule?" + urllib.parse.urlencode(q)
             status, txt = fetch(url)
             live = set()
@@ -116,7 +126,8 @@ def verify_mlb():
                 payload = json.loads(txt)
                 for d in payload.get("dates", []):
                     for g in d.get("games", []):
-                        live.add(g["gamePk"])
+                        if g.get("gameType") == "R":
+                            live.add(g["gamePk"])
             except Exception:
                 status = None
             local = {g["id"] for g in games if g["date"] == ds and g["type"] == "R"}

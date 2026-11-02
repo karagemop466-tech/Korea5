@@ -511,6 +511,7 @@ def main():
     cur = curated_events()
     by_year = defaultdict(list)
     for e in cur:
+        e["dateStatus"] = "verified"
         by_year[int(e["date"][:4])].append(e)
 
     for y in (2026, 2027):

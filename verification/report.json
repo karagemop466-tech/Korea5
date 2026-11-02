@@ -1,5 +1,5 @@
 {
- "generatedUTC": "2026-11-02T17:36:17Z",
+ "generatedUTC": "2026-11-02T17:42:47Z",
  "summary": {
   "curatedRows": 62,
   "rowsChecked": 62,
@@ -13,7 +13,7 @@
   "nflSpotChecksPassed": 6,
   "feedProblems": 0,
   "eventCounts": {
-   "2026": 3245,
+   "2026": 3227,
    "2027": 3102,
    "2028": 427,
    "2029": 432,

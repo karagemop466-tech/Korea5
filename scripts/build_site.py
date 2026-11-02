@@ -632,6 +632,10 @@ the 49ers and Stanford. Cal is on KSFO 810 AM. That set covers every high-priori
 {table(["Station", "Carries", "How it was verified", "Source"], stations)}
 
 <h2>Westwood One national NFL windows</h2>
+<div class="callout"><strong>Timing difference worth knowing.</strong> On every game carried by both sources, Westwood One's published
+start is <strong>15–75 minutes earlier</strong> than the NFL's official kickoff — it is the start of the network's broadcast, not the snap.
+The planner therefore gives each game a single row: the radio goes busy at the earlier (Westwood One) time, and the kickoff time from
+the NFL schedule is noted on the row.</div>
 <p class="small">Every row below is one broadcast the network publishes. Doubleheaders and tripleheaders are published as a single
 window with participants TBA, so they are blocked as a window rather than as individual games.</p>
 {table(["Date", "League", "Broadcast", "Matchup", "Start", "Source"], rows)}
@@ -722,6 +726,7 @@ def build_flagged():
         ("Dataset", "MLB 2028 and 2029", "No official schedule exists. Whole seasons are modelled (Opening Day = last Thursday of March, daily slate, postseason from the following Tuesday).", "https://www.mlb.com/schedule"),
         ("Dataset", "NFL 2027–2029", "No official schedule exists. Broadcast windows are modelled; no matchups are invented.", "https://www.nfl.com/schedules/"),
         ("Dataset", "Stanford / Cal 2027–2029", "Neither school has released these seasons. Twelve Saturdays per school are blocked as estimates.", "https://gostanford.com/sports/football/schedule"),
+        ("Finding", "Westwood One start times", "On 17 games carried by both sources, the network's published start is 15–75 minutes before the NFL's official kickoff — it is the broadcast start. The planner uses the earlier time for busy-ness and keeps the kickoff on the row.", "https://www.westwoodonesports.com/nfl-schedule/"),
         ("Gap", "Cal games before Nov 14, 2026", "Cal's official page could not be parsed unambiguously for its early-season card order, so those games are omitted rather than guessed.", "https://calbears.com/sports/football/schedule"),
         ("Gap", "Athletics radio flagship", "No official page confirmed which San Francisco station carries Athletics games in 2026. A's games are still blocked as high priority.", ""),
         ("Gap", "Westwood One non-NFL sports", "NCAA Basketball, golf, soccer and NCAA championships are published week by week and are not enumerated.", "https://www.westwoodonesports.com/"),

@@ -2,7 +2,7 @@
 
 **Prepared for:** a listener in San Francisco (94122) who wants to travel when nothing he follows is live on the radio.
 
-**Live site:** https://karagemop466-tech.github.io/Korea5/  ·  **Data rebuilt:** 2026-11-02T17:45:08Z  ·  **Verification report:** `verification/report.json` (61/62 curated rows re-verified)
+**Live site:** https://karagemop466-tech.github.io/Korea5/  ·  **Data rebuilt:** 2026-11-02T17:51:49Z  ·  **Verification report:** `verification/report.json` (61/62 curated rows re-verified)
 
 ## 1. Bottom line
 
@@ -29,7 +29,7 @@ If the trip can only be two weeks or longer, the honest trade-off is one NFL Sun
 
 - 2,430 regular-season games across all 30 clubs, from MLB's own StatsAPI.
 - 8 Spring Training games; first regular-season day 2027-03-25, last 2027-09-26.
-- **1,631 of the 2,430 regular-season games have a placeholder start time** in the league feed (every one shows `:33`). Dates and matchups are official; the first-pitch time is not published yet. Those rows are labelled *estimated* and their start time is taken from the home club's most common start time on that weekday in the released 2026 season.
+- **1,710 of the 2,430 regular-season games have a placeholder start time** in the league feed (every one shows `:33`). Dates and matchups are official; the first-pitch time is not published yet. Those rows are labelled *estimated* and their start time is taken from the home club's most common start time on that weekday in the released 2026 season.
 
 ## 4. Ranked vacation windows
 

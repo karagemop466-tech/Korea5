@@ -357,8 +357,9 @@ but the actual listening burden is only about three hours a night.
 {window_table('radio', 'hours')}
 
 <h2>Radio-only view</h2>
-<p class="small">Only games that actually air on AM/FM radio in San Francisco (Giants, Athletics, 49ers, Stanford, Cal, Westwood One national).</p>
-{window_table('high', 'hours')}
+<p class="small">Only games that actually air on AM/FM radio in San Francisco (Giants, Athletics, 49ers, Stanford, Cal, Westwood One national),
+ranked by the fewest hours of live coverage.</p>
+{window_table('radio', 'hours')}
 """
     page("vacation.html", "Vacation windows", "vacation.html", body)
 

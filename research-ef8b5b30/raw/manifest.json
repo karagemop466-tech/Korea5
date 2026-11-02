@@ -1,0 +1,227 @@
+[
+  {
+    "name": "nfl_week9",
+    "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "finalUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+    "bytes": 2471408,
+    "sha256": "3da4f8c4000ec068",
+    "file": "research-ef8b5b30/raw/nfl_week9.raw"
+  },
+  {
+    "name": "nfl_pre",
+    "url": "https://www.nfl.com/schedules/2026/PRE",
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "finalUrl": "https://www.nfl.com/schedules",
+    "bytes": 2395627,
+    "sha256": "4a86e04b5603c5ce",
+    "file": "research-ef8b5b30/raw/nfl_pre.raw"
+  },
+  {
+    "name": "nfl_post",
+    "url": "https://www.nfl.com/schedules/2026/POST",
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "finalUrl": "https://www.nfl.com/schedules",
+    "bytes": 2394261,
+    "sha256": "4422f9c11d534ad2",
+    "file": "research-ef8b5b30/raw/nfl_post.raw"
+  },
+  {
+    "name": "nfl_reg",
+    "url": "https://www.nfl.com/schedules/2026/REG",
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "finalUrl": "https://www.nfl.com/schedules",
+    "bytes": 2394261,
+    "sha256": "4422f9c11d534ad2",
+    "file": "research-ef8b5b30/raw/nfl_reg.raw"
+  },
+  {
+    "name": "nfl_kickoff_guide",
+    "url": "https://media.nfl.com/football-information/2026/news/2026-kickoff-guide",
+    "status": 200,
+    "ctype": "text/html;charset=utf-8",
+    "finalUrl": "https://media.nfl.com/football-information/2026/news/2026-kickoff-guide",
+    "bytes": 29500,
+    "sha256": "dbf1092ba6be759a",
+    "file": "research-ef8b5b30/raw/nfl_kickoff_guide.raw"
+  },
+  {
+    "name": "nfl_sb_lxii",
+    "url": "https://www.nfl.com/news/mercedes-benz-stadium-in-atlanta-to-host-super-bowl-lxii-in-2028",
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "finalUrl": "https://www.nfl.com/news/mercedes-benz-stadium-in-atlanta-to-host-super-bowl-lxii-in-2028",
+    "bytes": 692481,
+    "sha256": "c946d9353d1025a2",
+    "file": "research-ef8b5b30/raw/nfl_sb_lxii.raw"
+  },
+  {
+    "name": "49ers_2026",
+    "url": "https://www.49ers.com/schedule/2026/",
+    "status": 200,
+    "ctype": "text/html",
+    "finalUrl": "https://www.49ers.com/schedule/2026/",
+    "bytes": 381839,
+    "sha256": "8a780406259b9e99",
+    "file": "research-ef8b5b30/raw/49ers_2026.raw"
+  },
+  {
+    "name": "wwo_nfl_schedule",
+    "url": "https://www.westwoodonesports.com/nfl-schedule/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/nfl-schedule/",
+    "bytes": 65277,
+    "sha256": "10a94a9ef32abb54",
+    "file": "research-ef8b5b30/raw/wwo_nfl_schedule.raw"
+  },
+  {
+    "name": "wwo_station_finder",
+    "url": "https://www.westwoodonesports.com/station-finder/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/station-finder/",
+    "bytes": 127899,
+    "sha256": "1c4b7b0e2769eda1",
+    "file": "research-ef8b5b30/raw/wwo_station_finder.raw"
+  },
+  {
+    "name": "wwo_ncaa_football",
+    "url": "https://www.westwoodonesports.com/ncaa-football/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/ncaa-football/",
+    "bytes": 61592,
+    "sha256": "c4b61efcf733e569",
+    "file": "research-ef8b5b30/raw/wwo_ncaa_football.raw"
+  },
+  {
+    "name": "wwo_live_shows",
+    "url": "https://www.westwoodonesports.com/live-shows/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.westwoodonesports.com/live-shows/",
+    "bytes": 81100,
+    "sha256": "fa70a380783d4685",
+    "file": "research-ef8b5b30/raw/wwo_live_shows.raw"
+  },
+  {
+    "name": "stanford_2026",
+    "url": "https://gostanford.com/sports/football/schedule",
+    "status": 200,
+    "ctype": "text/html;charset=utf-8",
+    "finalUrl": "https://gostanford.com/sports/football/schedule",
+    "bytes": 653340,
+    "sha256": "30308453f018a28b",
+    "file": "research-ef8b5b30/raw/stanford_2026.raw"
+  },
+  {
+    "name": "cal_2026",
+    "url": "https://calbears.com/sports/football/schedule/2026",
+    "status": 200,
+    "ctype": "text/html;charset=utf-8",
+    "finalUrl": "https://calbears.com/sports/football/schedule/2026",
+    "bytes": 842535,
+    "sha256": "557e71da5388f19a",
+    "file": "research-ef8b5b30/raw/cal_2026.raw"
+  },
+  {
+    "name": "cal_2027_opponents",
+    "url": "https://calbears.com/news/2026/9/16/california-football-announces-2027-conference-opponents",
+    "status": 200,
+    "ctype": "text/html;charset=utf-8",
+    "finalUrl": "https://calbears.com/news/2026/9/16/california-football-announces-2027-conference-opponents",
+    "bytes": 541416,
+    "sha256": "5b24e097bc771828",
+    "file": "research-ef8b5b30/raw/cal_2027_opponents.raw"
+  },
+  {
+    "name": "cal_future_schedules",
+    "url": "https://calbears.com/news/2024/7/10/football-cal-ucla-schedule-4-games-from-2026-29",
+    "status": 200,
+    "ctype": "text/html;charset=utf-8",
+    "finalUrl": "https://calbears.com/news/2024/7/10/football-cal-ucla-schedule-4-games-from-2026-29",
+    "bytes": 531742,
+    "sha256": "0d7f9eda6bd8861f",
+    "file": "research-ef8b5b30/raw/cal_future_schedules.raw"
+  },
+  {
+    "name": "stanford_2027_opponents",
+    "url": "https://gostanford.com/news/2026/09/16/acc-announces-2027-conference-opponents",
+    "status": 200,
+    "ctype": "text/html;charset=utf-8",
+    "finalUrl": "https://gostanford.com/news/2026/09/16/acc-announces-2027-conference-opponents",
+    "bytes": 513255,
+    "sha256": "8bf819c9808caa62",
+    "file": "research-ef8b5b30/raw/stanford_2027_opponents.raw"
+  },
+  {
+    "name": "stanford_notre_dame",
+    "url": "https://gostanford.com/news/2026/05/20/two-dates-added-to-notre-dame-rivalry",
+    "status": 200,
+    "ctype": "text/html;charset=utf-8",
+    "finalUrl": "https://gostanford.com/news/2026/05/20/two-dates-added-to-notre-dame-rivalry",
+    "bytes": 505671,
+    "sha256": "03d72126d08020c8",
+    "file": "research-ef8b5b30/raw/stanford_notre_dame.raw"
+  },
+  {
+    "name": "knbr_shows",
+    "url": "https://www.thesportsleader.com/shows/",
+    "status": 200,
+    "ctype": "text/html; charset=UTF-8",
+    "finalUrl": "https://www.thesportsleader.com/shows/",
+    "bytes": 83001,
+    "sha256": "574c69552ef1e085",
+    "file": "research-ef8b5b30/raw/knbr_shows.raw"
+  },
+  {
+    "name": "giants_watch",
+    "url": "https://www.mlb.com/giants/schedule/watch",
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "finalUrl": "https://www.mlb.com/giants/schedule/watch",
+    "bytes": 888777,
+    "sha256": "8b7266bc1ce10a82",
+    "file": "research-ef8b5b30/raw/giants_watch.raw"
+  },
+  {
+    "name": "athletics_watch",
+    "url": "https://www.mlb.com/athletics/schedule/watch",
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "finalUrl": "https://www.mlb.com/athletics/schedule/watch",
+    "bytes": 869749,
+    "sha256": "aed420f896f7df3a",
+    "file": "research-ef8b5b30/raw/athletics_watch.raw"
+  },
+  {
+    "name": "mlb_2027_release",
+    "url": "https://www.mlb.com/news/mlb-2027-schedule-released",
+    "status": 200,
+    "ctype": "text/html; charset=utf-8",
+    "finalUrl": "https://www.mlb.com/news/mlb-2027-schedule-released",
+    "bytes": 297635,
+    "sha256": "edd82112e2a4e0af",
+    "file": "research-ef8b5b30/raw/mlb_2027_release.raw"
+  },
+  {
+    "name": "mlb_api_sample",
+    "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2026&startDate=2026-09-27&endDate=2026-09-28&fields=dates,date,games,gamePk,gameDate,gameType,teams,away,home,team,name,status,detailedState,gameDurationMinutes",
+    "status": 200,
+    "ctype": "application/json;charset=UTF-8",
+    "finalUrl": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2026&startDate=2026-09-27&endDate=2026-09-28&fields=dates,date,games,gamePk,gameDate,gameType,teams,away,home,team,name,status,detailedState,gameDurationMinutes",
+    "bytes": 3051,
+    "sha256": "d299fd5f9f3ba003",
+    "file": "research-ef8b5b30/raw/mlb_api_sample.raw"
+  },
+  {
+    "name": "fcc_search",
+    "url": "https://www.fcc.gov/media/radio/fcc-station-search",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  }
+]

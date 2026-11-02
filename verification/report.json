@@ -1,5 +1,5 @@
 {
- "generatedUTC": "2026-11-02T17:34:33Z",
+ "generatedUTC": "2026-11-02T17:36:17Z",
  "summary": {
   "curatedRows": 62,
   "rowsChecked": 62,
@@ -9,10 +9,12 @@
   "flaggedConflicts": 3,
   "mlbSpotChecks": 10,
   "mlbSpotChecksPassed": 9,
+  "nflSpotChecks": 6,
+  "nflSpotChecksPassed": 6,
   "feedProblems": 0,
   "eventCounts": {
-   "2026": 2977,
-   "2027": 3092,
+   "2026": 3245,
+   "2027": 3102,
    "2028": 427,
    "2029": 432,
    "2030": 15
@@ -1266,6 +1268,56 @@
    "gamesInApi": 15,
    "match": true,
    "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-08-24&endDate=2027-08-24&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+  }
+ ],
+ "nflSpotChecks": [
+  {
+   "date": "2026-09-09",
+   "title": "New England Patriots at Seattle Seahawks",
+   "url": "https://www.nfl.com/games/patriots-at-seahawks-2026-reg-1",
+   "status": 200,
+   "verified": true,
+   "missing": []
+  },
+  {
+   "date": "2026-09-27",
+   "title": "Las Vegas Raiders at New Orleans Saints",
+   "url": "https://www.nfl.com/games/raiders-at-saints-2026-reg-3",
+   "status": 200,
+   "verified": true,
+   "missing": []
+  },
+  {
+   "date": "2026-10-18",
+   "title": "Buffalo Bills at Las Vegas Raiders",
+   "url": "https://www.nfl.com/games/bills-at-raiders-2026-reg-6",
+   "status": 200,
+   "verified": true,
+   "missing": []
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Buffalo Bills at Minnesota Vikings",
+   "url": "https://www.nfl.com/games/bills-at-vikings-2026-reg-9",
+   "status": 200,
+   "verified": true,
+   "missing": []
+  },
+  {
+   "date": "2026-12-06",
+   "title": "Detroit Lions at Atlanta Falcons",
+   "url": "https://www.nfl.com/games/lions-at-falcons-2026-reg-13",
+   "status": 200,
+   "verified": true,
+   "missing": []
+  },
+  {
+   "date": "2026-12-25",
+   "title": "Green Bay Packers at Chicago Bears",
+   "url": "https://www.nfl.com/games/packers-at-bears-2026-reg-16",
+   "status": 200,
+   "verified": true,
+   "missing": []
   }
  ],
  "feedProblems": []

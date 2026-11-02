@@ -260,6 +260,7 @@ Free time is any 30-minute-or-longer gap with no qualifying game on air.</p>
 <span class="tag est">estimated</span> means the date is official but the start time is TBD (common for the 2027 MLB season), or the whole row is a modelled league window.
 The exact reason is printed under the table for each day.</div>
 
+<script>window.DATA_VERSION = "{esc(ANALYSIS['meta']['generatedUTC'])}";</script>
 <script src="assets/app.js"></script>
 """
     page("calendar.html", "Calendar", "calendar.html", body)

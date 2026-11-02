@@ -4,6 +4,7 @@
 Every table row carries a link to the official source it came from. Rows whose values
 could not be confirmed are left blank and listed on the "Flagged for review" page.
 """
+import hashlib
 import html
 import json
 import os
@@ -28,6 +29,18 @@ NAV = [
     ("flagged.html", "Flagged"),
     ("method.html", "Method"),
 ]
+
+
+def data_version():
+    """Content hash of the data the calendar reads, so a deploy can never serve stale JSON
+    from the Pages CDN while the HTML is already new."""
+    h = hashlib.sha256()
+    for f in ("data/derived/analysis.json", "data/events-2026.json", "data/events-2027.json",
+              "data/events-2028.json", "data/events-2029.json", "data/events-2030.json"):
+        if os.path.exists(f):
+            with open(f, "rb") as fh:
+                h.update(fh.read())
+    return h.hexdigest()[:12]
 
 
 def esc(s):
@@ -260,7 +273,7 @@ Free time is any 30-minute-or-longer gap with no qualifying game on air.</p>
 <span class="tag est">estimated</span> means the date is official but the start time is TBD (common for the 2027 MLB season), or the whole row is a modelled league window.
 The exact reason is printed under the table for each day.</div>
 
-<script>window.DATA_VERSION = "{esc(ANALYSIS['meta']['generatedUTC'])}";</script>
+<script>window.DATA_VERSION = "{data_version()}";</script>
 <script src="assets/app.js"></script>
 """
     page("calendar.html", "Calendar", "calendar.html", body)

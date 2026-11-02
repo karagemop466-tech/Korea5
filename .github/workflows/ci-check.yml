@@ -1,0 +1,17 @@
+name: ci-check
+on:
+  push:
+    branches: [ 'arena/1a5a5516-korea5' ]
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe network + write marker
+        run: |
+          echo "runner ok $(date -u)"
+          curl -s -o /tmp/s.json -w "http=%{http_code} bytes=%{size_download}\n" "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-04-01&endDate=2027-04-02&fields=dates,date,totalGames"
+          cat /tmp/s.json
+      - name: Report
+        run: echo "probe complete"

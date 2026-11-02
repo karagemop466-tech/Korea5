@@ -38,6 +38,16 @@ URLS = [
     ("athletics_watch", "https://www.mlb.com/athletics/schedule/watch"),
     ("mlb_2027_release", "https://www.mlb.com/news/mlb-2027-schedule-released"),
     ("mlb_api_sample", "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2026&startDate=2026-09-27&endDate=2026-09-28&fields=dates,date,games,gamePk,gameDate,gameType,teams,away,home,team,name,status,detailedState,gameDurationMinutes"),
+    ("wwo_more_current", "https://www.westwoodonesports.com/more/eventGrid/?id=47029&range=current&offset=0&limit=100&timezone=America/New_York&widgetTitle=Event+Display"),
+    ("wwo_more_past", "https://www.westwoodonesports.com/more/eventGrid/?id=47030&range=current&offset=0&limit=100&timezone=America/New_York&widgetTitle=Event+Display"),
+    ("wwo_event_548540", "https://www.westwoodonesports.com/events/548540/"),
+    ("wwo_ncaab", "https://www.westwoodonesports.com/ncaa-basketball/"),
+    ("wwo_golf", "https://www.westwoodonesports.com/golf/"),
+    ("wwo_soccer", "https://www.westwoodonesports.com/us-soccer/"),
+    ("wwo_mcws", "https://www.westwoodonesports.com/ncaa-mcws/"),
+    ("wwo_wcws", "https://www.westwoodonesports.com/ncaa-wcws/"),
+    ("wwo_lacrosse", "https://www.westwoodonesports.com/ncaa-lacrosse/"),
+    ("wwo_hockey", "https://www.westwoodonesports.com/ncaa-hockey/"),
     ("fcc_search", "https://www.fcc.gov/media/radio/fcc-station-search"),
 ]
 

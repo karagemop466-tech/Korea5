@@ -4,6 +4,9 @@ on:
   push:
     branches: [ 'arena/1a5a5516-korea5' ]
     paths: [ 'scripts/probe_sources.py' ]
+concurrency:
+  group: korea5-data-${{ github.ref }}
+  cancel-in-progress: false
 permissions:
   contents: write
 jobs:

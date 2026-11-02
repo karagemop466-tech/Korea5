@@ -4,6 +4,9 @@ on:
   push:
     branches: [ 'arena/1a5a5516-korea5' ]
     paths: [ 'scripts/verify.py', 'scripts/build_events.py', 'scripts/analyze.py', 'data/curated/**' ]
+concurrency:
+  group: korea5-data-${{ github.ref }}
+  cancel-in-progress: false
 permissions:
   contents: write
 jobs:

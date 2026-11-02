@@ -249,3 +249,18 @@ and merge result here.
   `COORDINATION.md` auto-merged and retains both sessions' records. `tools/build_extra.py` was re-run so the
   combined calendar, vacation ranking and verification are built from the latest `data/events-*.json`;
   `tools/verify_extra.py` re-ran 31 checks with 0 failures. Local static server returned 200 for all tested files.
+
+### Final integration record — session `arena/ef8b5b30`
+
+| Step | Result |
+|---|---|
+| Pull request | **#9 — https://github.com/karagemop466-tech/Korea5/pull/9** — "FREE TIME VACATION: official NFL/W1 feeds, combined day scoreboard, verification & flagged review" |
+| Merge | **Merged** into `main` on 2026-11-02T17:58:17Z, merge commit `bfaf8a2182727376d4b71693f7a3ae1349c16ddf` (`gh pr merge 9 --merge`, no waiting) |
+| GitHub Pages build | `pages build and deployment` run `41496120053` — **success** (build + deploy + report-build-status all completed); Pages status `built`, source `main` / |
+| Live site | https://karagemop466-tech.github.io/Korea5/ — confirmed by fetching the published dashboard, `extra/index.html`, `extra/calendar.html` (JS day scoreboard rendered with Prev/Next/Today and exact free/busy intervals) and `extra/flagged.html` (20 items with official links) |
+| Combined verification | `tools/verify_extra.py` 31 checks / 0 failures; `tools/build_extra.py` 16 build checks / 0 failures; 0 broken local links; 0 data-table rows missing an official source link |
+| Flagged items | 20 published on `extra/flagged.html` with official links; `needs review` items do **not** block merge or deployment, as required |
+
+**Status:** E1–E10 **done**; T11 (the `ef8b5b30` row in the first session's board) is **done** — its
+`needs review` items are published on the Flagged for Review page and do not block anything. Both sessions'
+work is merged into `main` and live on GitHub Pages. No unclaimed or overlapping task remains.

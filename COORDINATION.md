@@ -40,6 +40,24 @@ and avoid the files already claimed here.
 - Shared outputs (`site/index.html` navigation and the combined table data) are owned by this
   session acting as final integrator; no other session should edit them without adding a claim
   and a request in this log.
+- 2026-11-02 — **Parallel session discovered**: `arena/1a5a5516-korea5` exists with commits. Its
+  `COORDINATION.md` claims research, MLB StatsAPI fetcher (`scripts/fetch_mlb.py`) and
+  `data/mlb-{2026,2027,2028,2029}.json`, `data/mlb-summary.json`, plus a CI workflow
+  `.github/workflows/data.yml`. Its MLB data are verified (2,430 regular-season games in each of
+  2026 and 2027; 2028/2029 empty and marked unverified because MLB has not released them).
+  **Coordination decision:** this session will NOT re-fetch or edit those files. It will consume
+  that MLB data at integration (copy/merge with attribution), and will keep its own work in
+  non-overlapping scopes (`site/`, `research-ef8b5b30/`, `tools/`, `official/nfl/`,
+  `official/ncaaf/`, `official/westwoodone/`, `VERIFICATION-ef8b5b30.md`). This session covers
+  NFL, Stanford/Cal NCAAF, Westwood One national radio, SF 94122 AM/FM station verification,
+  durations, free-time engine, site, verification, PR/merge. Request logged: integration should
+  merge `arena/1a5a5516-korea5` (or copy its `data/mlb-*.json`) before publishing so the MLB
+  half of the scoreboard is populated. No conflicting edits were made to that session's files.
+- 2026-11-02 — The three previously-worked-on sites
+  (`buffedlizard55-lab.github.io/VacationSchedule/site/`, `/ScheduleFreeTime/`, `/RADIOSF/`)
+  all returned GitHub Pages 404 during review. Logged as an irregularity for the Flagged for
+  Review page; this project therefore builds a new self-contained site rather than relying on
+  those pages.
 - If another session crashes or a claim is >60 min old with no commits, any session may take over
   the task and note the handoff here.
 

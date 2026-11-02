@@ -755,8 +755,8 @@ site, and none of them have been silently filled in.</p>
 
 <div class="callout flag"><strong>Conflicts found between two official sources.</strong> Both are blocked in the calendar; the underlying
 question needs a human decision.</div>
-{table(["Where", "Item", "What is unresolved", "Source"],
-       [[esc(r['dataset']), esc(r['title'] or r['id']), esc(r['conflict']), src(r['officialUrl'])] for r in conflicts])}
+{table(["Date", "Item", "What is unresolved", "Source"],
+       [[esc(r['date']), f"{esc(r['title'] or r['id'])}<br><small>{esc(r['dataset'])}</small>", esc(r['conflict']), src(r['officialUrl'])] for r in conflicts])}
 
 <h2>Rows that failed automated re-verification</h2>
 <p class="small">{len(failed)} row(s). These remain in the dataset with their source links so the failure is visible.</p>

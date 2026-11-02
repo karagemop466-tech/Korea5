@@ -1,0 +1,33 @@
+name: official-rules-ef8b5b30
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/ef8b5b30-korea5' ]
+    paths: [ 'tools/extract_rules.py', '.github/workflows/rules-ef8b5b30.yml' ]
+permissions:
+  contents: write
+concurrency:
+  group: official-rules-ef8b5b30
+  cancel-in-progress: false
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/ef8b5b30-korea5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --quiet pypdf
+      - run: python3 tools/extract_rules.py
+      - name: Commit rule excerpts
+        run: |
+          git config user.name "korea5-rules-bot"
+          git config user.email "korea5-rules-bot@users.noreply.github.com"
+          git add curated/rules.json
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "rules: extract official halftime/game-timing wording"
+            git pull --rebase --autostash origin arena/ef8b5b30-korea5
+            git push origin HEAD:arena/ef8b5b30-korea5
+          fi

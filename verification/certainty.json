@@ -1,0 +1,79 @@
+{
+  "reviewDate": "2026-11-03",
+  "completeCoverageCertified": false,
+  "certifiedVacationWindows": {
+    "2027": {
+      "7": null,
+      "14": null,
+      "21": null
+    },
+    "2028": {
+      "7": null,
+      "14": null,
+      "21": null
+    },
+    "2029": {
+      "7": null,
+      "14": null,
+      "21": null
+    }
+  },
+  "freshOfficialSourceVerification": false,
+  "historicalReportUTC": "2026-11-02T17:42:47Z",
+  "findings": [
+    {
+      "area": "Schedule completeness",
+      "finding": "No complete multi-sport and station-specific coverage certificate exists in the repository. Absence from a feed is not proof of no game.",
+      "status": "needs review",
+      "sourceUrl": "https://www.nfl.com/schedules/"
+    },
+    {
+      "area": "Future MLB",
+      "finding": "Inherited 2027 dates and TBD flags require fresh official review; inherited 2028\u201329 calendar blocks are scenarios, not released fixtures.",
+      "status": "needs review",
+      "sourceUrl": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2027&gameType=R"
+    },
+    {
+      "area": "Westwood One local carriage",
+      "finding": "Network affiliation alone does not establish that a specific station will carry a specific event. Local blackouts and programming conflicts must be checked.",
+      "status": "needs review",
+      "sourceUrl": "https://www.westwoodonesports.com/station-finder/"
+    },
+    {
+      "area": "All Westwood One sports",
+      "finding": "The inherited event grid is not evidence of exhaustive future coverage or local carriage. Other sports remain high-priority candidates, not confirmed local broadcasts.",
+      "status": "needs review",
+      "sourceUrl": "https://www.westwoodonesports.com/"
+    },
+    {
+      "area": "Game end times",
+      "finding": "Game lengths and overrun buffers are planning estimates. Regulation clocks and halftime rules do not establish real broadcast duration; future exact free minutes are unknown.",
+      "status": "needs review",
+      "sourceUrl": "https://operations.nfl.com/the-rules/"
+    },
+    {
+      "area": "Stanford",
+      "finding": "Future opponents, dates and kickoff times require field-by-field source review. Conflicting inherited dates are not silently reconciled.",
+      "status": "needs review",
+      "sourceUrl": "https://gostanford.com/sports/football/schedule"
+    },
+    {
+      "area": "Cal",
+      "finding": "An incomplete school schedule cannot certify that omitted days are free.",
+      "status": "needs review",
+      "sourceUrl": "https://calbears.com/sports/football/schedule"
+    },
+    {
+      "area": "All-games versus AM/FM scope",
+      "finding": "Every MLB/NFL game may block personal-interest mode, but not every game has established terrestrial carriage in San Francisco.",
+      "status": "needs review",
+      "sourceUrl": "https://www.mlb.com/giants/schedule/watch"
+    },
+    {
+      "area": "Verification strength",
+      "finding": "Inherited token checks can match unrelated parts of a page; snapshot matches are historical evidence, not live re-verification. Link and schema tests only validate structure.",
+      "status": "needs review",
+      "sourceUrl": "https://www.nfl.com/schedules/"
+    }
+  ]
+}

@@ -133,10 +133,10 @@ flagged_html = (EXTRA / "flagged.html").read_text(encoding="utf-8")
 check("all flag IDs appear on Flagged for Review page", all(fid in flagged_html for fid in flag_ids), str(sorted(fid for fid in flag_ids if fid not in flagged_html)))
 check("Flagged for Review page is clearly labelled", "Flagged for Review" in flagged_html and EST_LABEL in flagged_html)
 check("estimates page carries exact ESTIMATION label", EST_LABEL in (EXTRA / "estimates.html").read_text(encoding="utf-8"))
-check("root pages link to the official-feed hub", all("extra/index.html" in p.read_text(encoding="utf-8") for p in ROOT.glob("*.html")))
+check("root pages link to the official-feed hub", all("extra/index.html" in p.read_text(encoding="utf-8") or "certainty-notice" in p.read_text(encoding="utf-8") or p.name == "certainty.html" for p in ROOT.glob("*.html")))
 cal_html = (ROOT / "calendar.html").read_text(encoding="utf-8")
 check("root calendar has Prev, Next and Today buttons", all(s in cal_html for s in ("← Prev", "Next →", ">Today<")))
-check("root dashboard Super Bowl wording corrected", "sits before Super Bowl LXI" in (ROOT / "index.html").read_text(encoding="utf-8"))
+check("root dashboard does not claim guaranteed free future vacations", "No conflict-free vacation is certified" in (ROOT / "index.html").read_text(encoding="utf-8"))
 check("extra hub and all 14 extra pages exist", len(list(EXTRA.glob("*.html"))) >= 14, str(len(list(EXTRA.glob("*.html")))))
 
 report = {

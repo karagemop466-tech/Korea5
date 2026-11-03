@@ -265,6 +265,27 @@ and merge result here.
 `needs review` items are published on the Flagged for Review page and do not block anything. Both sessions'
 work is merged into `main` and live on GitHub Pages. No unclaimed or overlapping task remains.
 
+## Session arena-f9e705a1 — 2026-11-03
+
+Branch fixed by Arena: `arena/f9e705a1-korea5`; no alternate branches will be created.
+Existing sessions' completion records above are preserved. No active claim overlaps this work.
+
+| Task | Owner | Status | Scope |
+|---|---|---|---|
+| F1 Audit certainty claims and future vacation advice; integrate a conservative landing page and executive summary | arena-f9e705a1 | in progress | `index.html`, `README.md`, `research/EXECUTIVE-SUMMARY.md`, `scripts/build_site.py`, `tools/build_extra.py`, `assets/app.js`, `scripts/audit_certainty.py`, `.github/workflows/certainty.yml`, `verification/certainty.json`, `COORDINATION.md` |
+
+Claim: inspect inherited evidence, distinguish structural/link validation from source verification, and prevent unsupported guaranteed-free claims. Official-host network access is restricted in this sandbox; do not label inherited snapshots freshly verified. Any unresolved gaps will be published and nonblocking.
+
+### F1 scope / verification log
+
+- Claim push: initial `git pull --rebase origin arena/f9e705a1-korea5` reported that the remote branch did not yet exist. Initial push created that exact session branch; no other branch was used.
+- Integration scope expanded to generated root/extra HTML, `extra/data/vacation.json`, `extra/assets/extra.js`, link reports, `certainty.html`, and `tools/verify_extra.py`. No active claim overlaps these completed prior-session files.
+- Found unsupported inherited assertions: guaranteed six-day maximum, no possible week-long vacation, and a 2027 multi-sport `scheduleReleased=true` based on partial feeds. Replaced the dashboard, corrected certification flags, retained known conflicts in rankings, and published a certainty notice on every page. Old detailed tables are retained as inherited/model evidence, explicitly superseded by the notice for claims of verified free time.
+- Added executive summary and `certainty.html` with nine source-linked evidence limitations. Official references are manual-review destinations, **not fresh verification**. Sandbox outbound restrictions prevent directly retrieving sports hosts. Historical verification reports keep their original timestamps. Full line-by-line source-fact verification and exhaustive 94122 terrestrial carriage remain **needs review**, published and nonblocking.
+- Local verification: both generators succeed; 16 extra build checks pass; 31 link/schema/UI checks pass; 0 broken local links; 0 extra data-table rows missing source links. Python compileall and both calendar JavaScript syntax checks pass. Certainty assertions confirm no future 7/14/21-day window is certified and all pages disclose incomplete coverage.
+- These structural checks do not establish factual schedule correctness. No unreleased matchup, kickoff, station carriage or actual game end was fabricated.
+- Concurrent integration: PR #11 (`4769a02`, merged to main as `53b6b60`) changed dashboard schedule-status copy and the generated link report after this session started. PR #12 initially could not merge. Fetched and merged `origin/main` on the fixed session branch. Resolved `index.html` by retaining the parallel official-vs-estimated status section in the generator and adding explicit field-level/carriage caveats; exact release/date/kickoff assertions not freshly verified here are not restated as verified facts. Resolved `verification/links.json` by regeneration. The parallel commit remains in merge ancestry; no unrelated changes discarded. Merge (rather than rebase of main) preserves both session histories. Re-ran the full local build/check suite after resolution.
+- Integration repair detail: the generated link report still contained merge markers when the extra builder first read it, so that local build failed. Regenerated the root link report first, then rebuilt/audited both sites: 31/31 checks pass, no broken local links. No broken build was pushed. A subsequent required `git pull --rebase` tried to replay the already-integrated parallel main commit, causing the same historical conflicts; aborted that rebase without discarding work and used fast-forward-only pull for the session branch, whose remote tip is already an ancestor. This preserves the main merge and both authors' changes.
 ---
 
 ## Session `arena/7c5c30e4-korea5` (this session) — integration record
@@ -294,3 +315,5 @@ Branch constraint: this session is fixed to `arena/7c5c30e4-korea5`; no other br
 | Live site | https://karagemop466-tech.github.io/Korea5/ — confirmed built |
 
 Flagged irregularities and unverified items remain published on the Flagged for Review page and do not block the merge or deployment.
+
+- PR #13 concurrently appended the parallel session deployment log. Resolved the COORDINATION.md append/append conflict by retaining both complete sections. No data or site changes conflicted.

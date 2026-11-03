@@ -1,0 +1,26 @@
+name: Planner certainty and site checks
+on:
+  push:
+    branches: [main, arena/f9e705a1-korea5]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Rebuild and validate published site
+        run: |
+          python3 scripts/build_site.py
+          python3 tools/build_extra.py
+          python3 scripts/audit_certainty.py
+          python3 scripts/check_links.py
+          python3 tools/verify_extra.py
+          python3 scripts/audit_certainty.py
+      - name: Python syntax
+        run: python3 -m compileall -q scripts tools

@@ -95,7 +95,7 @@ function timeline(intervals, scope) {
   }
   const free = freeSegs.filter(([a, b]) => b - a >= 30);
   $("#freewin").innerHTML = free.length
-    ? free.map(([a, b]) => `<span class="tag ver">${fmt(a)}–${fmt(b)} free (${((b - a) / 60).toFixed(1)}h)</span>`).join(" ")
+    ? free.map(([a, b]) => `<span class="tag ver">${fmt(a)}–${fmt(b)} model gap (${((b - a) / 60).toFixed(1)}h)</span>`).join(" ")
     : `<span class="tag flag">No free window of 30 minutes or more</span>`;
   const busyH = merged.reduce((t, [a, b]) => t + (b - a), 0) / 60;
   $("#hours").textContent = busyH.toFixed(1);
@@ -114,7 +114,7 @@ async function render(iso) {
 
   const body = $("#gamelist");
   if (!evs.length) {
-    body.innerHTML = `<tr><td colspan="6" class="free"><strong>No qualifying games.</strong> The whole day is free.</td></tr>`;
+    body.innerHTML = `<tr><td colspan="6" class="free"><strong>No qualifying games.</strong> No loaded event blocks this day; complete radio coverage is unverified.</td></tr>`;
   } else {
     body.innerHTML = evs.map((e) => {
       const lg = e.league === "MLB" ? "mlb" : e.league === "NFL" ? "nfl" : "ncaaf";
@@ -157,14 +157,14 @@ async function render(iso) {
 
 async function init() {
   S.analysis = await (await fetch("data/derived/analysis.json")).json();
-  const today = S.analysis.meta.today;
+  const today = new Intl.DateTimeFormat("en-CA", {timeZone:"America/Los_Angeles", year:"numeric", month:"2-digit", day:"2-digit"}).format(new Date());
   const h = location.hash.replace("#", "");
   const start = /^\d{4}-\d{2}-\d{2}$/.test(h) ? h : today;
   $("#today").textContent = new Date(today + "T12:00:00").toLocaleDateString("en-US",
     { month: "short", day: "numeric", year: "numeric" });
   $("#prev").onclick = () => render(addDays(S.date, -1));
   $("#next").onclick = () => render(addDays(S.date, 1));
-  $("#tomorrow").onclick = () => render(addDays(S.analysis.meta.today, 1));
+  $("#tomorrow").onclick = () => render(addDays(S.date || today, 1));
   $("#tobay").onclick = () => render(today);
   $("#dateinput").onchange = (e) => render(e.target.value);
   $$(".chip[data-scope]").forEach((el) => el.addEventListener("click", () => {

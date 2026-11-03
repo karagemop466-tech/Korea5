@@ -73,9 +73,9 @@
     free.forEach(([x,y])=>{const d=document.createElement('div');d.className='seg free';d.style.left=(x/1440*100)+'%';d.style.width=((y-x)/1440*100)+'%';bar.appendChild(d);});
     ivs.forEach(([x,y])=>{const d=document.createElement('div');d.className='seg busy';d.style.left=(x/1440*100)+'%';d.style.width=((y-x)/1440*100)+'%';d.title=fmt(x)+'–'+fmt(y)+' busy';bar.appendChild(d);});
     const busyH=ivs.reduce((t,[x,y])=>t+(y-x),0)/60;
-    $('#x-busy').textContent=busyH.toFixed(1);$('#x-free').textContent=(24-busyH).toFixed(1);
-    const fw=free.filter(([x,y])=>y-x>=30);
-    $('#x-freewin').innerHTML=fw.length?fw.map(([x,y])=>`<span class="tag ver">${fmt(x)}–${fmt(y)} free (${((y-x)/60).toFixed(1)}h PT)</span>`).join(' '):'<span class="tag flag">No free window of 30 minutes or more</span>';
+    $('#x-busy').textContent=busyH.toFixed(1);$('#x-free').textContent=(b.tba.length||b.future.length)?'Unknown':(24-busyH).toFixed(1);
+    const fw=(b.tba.length||b.future.length)?[]:free.filter(([x,y])=>y-x>=30);
+    $('#x-freewin').innerHTML=fw.length?fw.map(([x,y])=>`<span class="tag ver">${fmt(x)}–${fmt(y)} model gap (${((y-x)/60).toFixed(1)}h PT)</span>`).join(' '):'<span class="tag flag">No model gap of 30 minutes or more</span>';
     const uv=[...b.tba,...b.future];
     $('#x-unverified').innerHTML=uv.length?`<div class="callout warn"><strong>Unverified / TBA on this day (${uv.length}).</strong> Exact free minutes cannot be computed for these rows because no official start time is published; they are not inferred.<ul>${uv.map(e=>`<li>${esc(e.title||'published future date')} — ${esc(e.note||'time not published')} ${a(e.sourceUrl,'official source')}</li>`).join('')}</ul></div>`:'';
     const evs=[...rows,...uv];
@@ -83,7 +83,7 @@
       <td>${esc(e.start||'—')}</td><td>${esc(e.end||'—')}</td><td>${esc(e.league||e.sport||'')}${e.phase?` <span class="small">${esc(e.phase)}</span>`:''}</td>
       <td>${esc(e.title||'')}${e.venue?`<br><span class="small">${esc(e.venue)}</span>`:''}${e.note?`<br><span class="small">${esc(e.note)}</span>`:''}</td>
       <td>${e.priority==='high'?'<span class="tag high">HIGH PRIORITY</span>':'—'}</td>
-      <td>${e.radio?'<span class="tag ver">RADIO</span>':'—'}</td>
+      <td>${e.radio?'<span class="tag est">RADIO CANDIDATE</span>':'—'}</td>
       <td>${badge(e.status||'unverified')}</td><td>${a(e.sourceUrl,'official source')}</td></tr>`).join(''):'<tr><td colspan="8">No scheduled sports programming found on the official feeds for this day.</td></tr>';
     const ctx=[...b.anchors.map(x=>`<span class="chip">${esc(x.label)} · ${esc(x.league)} ${a(x.sourceUrl,'source')}</span>`),
                ...b.future.map(x=>`<span class="chip">${esc(x.title)} ${a(x.sourceUrl,'source')}</span>`)];

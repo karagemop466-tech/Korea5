@@ -225,6 +225,50 @@ def main():
                 {"start": r[0], "end": r[-1], "days": len(r)} for r in runs[:8]
             ]
 
+    # ---- recommended window per year -------------------------------------
+    # The single longest run of consecutive days on which nothing in scope airs.
+    # Reported for both scopes so the site can answer "how long can I actually go?"
+    # without pretending that an all-star exhibition is a league game.
+    recommended = {}
+    for y in (2027, 2028, 2029):
+        entry = {"year": y, "scopes": {}}
+        for scope in ("all", "radio"):
+            yd = [d for d in dates if d.startswith(str(y))]
+            runs, cur = [], []
+            for d in yd:
+                if days[d][scope]["hours"] == 0:
+                    cur.append(d)
+                else:
+                    if cur:
+                        runs.append(cur)
+                    cur = []
+            if cur:
+                runs.append(cur)
+            if not runs:
+                continue
+            best = max(runs, key=lambda r: len(r))
+            before = [d for d in yd if d < best[0] and days[d][scope]["hours"] > 0]
+            after = [d for d in yd if d > best[-1] and days[d][scope]["hours"] > 0]
+            inside = [e for e in events
+                      if best[0] <= e["date"] <= best[-1] and scope_ok(e, scope)]
+            entry["scopes"][scope] = {
+                "start": best[0],
+                "end": best[-1],
+                "days": len(best),
+                "fits": {str(n): len(best) >= n for n in (7, 14, 21)},
+                "blockedBefore": before[-1] if before else None,
+                "blockedAfter": after[0] if after else None,
+                "eventsInside": len(inside),
+            }
+        # Any modelled all-star exhibition inside the radio window is a caveat, not a game.
+        rec = entry["scopes"].get("radio")
+        if rec:
+            rec["allStarInside"] = sorted({
+                e["title"] for e in events
+                if rec["start"] <= e["date"] <= rec["end"] and "nfl-allstar" in e.get("tags", [])
+            })
+        recommended[str(y)] = entry
+
     payload = {
         "meta": {
             "generatedUTC": (json.load(open("data/events-2027.json"))["meta"].get("generatedUTC")
@@ -240,6 +284,7 @@ def main():
         },
         "summary": summary,
         "freeStreaks": streaks,
+        "recommended": recommended,
         "vacations": vacations,
         "days": days,
     }
@@ -248,6 +293,10 @@ def main():
         json.dump(payload, f, separators=(",", ":"))
         f.write("\n")
     print(f"days={len(days)} size={os.path.getsize('data/derived/analysis.json')}")
+    for y, r in recommended.items():
+        for scope, w in r["scopes"].items():
+            print(f"  recommended [{scope}] {y}: {w['start']}..{w['end']} = {w['days']}d"
+                  f"  before={w['blockedBefore']} after={w['blockedAfter']}")
     for y, s in summary.items():
         a = s["scopes"]["all"]
         print(f"  {y}: freeDays(all)={a['freeDays']}/{a['days']} longestStreak={a['longestFreeStreak']} "

@@ -16,10 +16,13 @@ official page, it is blank and appears on <a href="flagged.html">Flagged for rev
 
 <div class="grid g4">
   <div class="card"><div class="kpi">62<small>curated rows</small></div></div>
-  <div class="card"><div class="kpi">61<small>re-verified against source</small></div></div>
-  <div class="card"><div class="kpi">9/10<small>MLB API spot checks</small></div></div>
+  <div class="card"><div class="kpi">36<small>historical snapshot token matches</small></div></div>
+  <div class="card"><div class="kpi">0<small>live curated rows matched</small></div></div>
+  <div class="card"><div class="kpi">0/10<small>live MLB API spot checks passed</small></div></div>
+  <div class="card"><div class="kpi">26<small>live source checks unavailable</small></div></div>
   <div class="card"><div class="kpi">0<small>feed integrity problems</small></div></div>
 </div>
+<p class="small">Snapshot matches are historical evidence, not fresh verification against the current official site. “Unavailable” means the source could not be reached during the recorded check; it is not a mismatch. See the <a href="certainty.html">certainty audit</a> and the machine-readable report for per-row status.</p>
 
 <h2>Official sources used</h2>
 <div class="scroll"><table class=""><thead><tr><th>Source</th><th>URL</th><th>Type</th><th>What it verifies</th></tr></thead><tbody><tr><td>MLB StatsAPI — official league data service</td><td><a href="https://statsapi.mlb.com/api/v1/schedule" target="_blank" rel="noopener">https://statsapi.mlb.com/api/v1/schedule</a></td><td>Official</td><td>2026 + 2027 MLB fixtures, times</td></tr><tr><td>MLB.com official schedule</td><td><a href="https://www.mlb.com/schedule" target="_blank" rel="noopener">https://www.mlb.com/schedule</a></td><td>Official</td><td>Human-readable per-date view of the same data</td></tr><tr><td>49ers.com — club schedule (times, venues, radio)</td><td><a href="https://www.49ers.com/schedule/2026/" target="_blank" rel="noopener">https://www.49ers.com/schedule/2026/</a></td><td>Official</td><td>49ers dates, kickoff times, TV, radio</td></tr><tr><td>gostanford.com — Stanford athletics</td><td><a href="https://gostanford.com/sports/football/schedule" target="_blank" rel="noopener">https://gostanford.com/sports/football/schedule</a></td><td>Official</td><td>Stanford 2026 dates, times, results</td></tr><tr><td>calbears.com — Cal athletics</td><td><a href="https://calbears.com/sports/football/schedule" target="_blank" rel="noopener">https://calbears.com/sports/football/schedule</a></td><td>Official</td><td>Cal 2026 dates, times, radio, results</td></tr><tr><td>Westwood One Sports — network NFL schedule</td><td><a href="https://www.westwoodonesports.com/nfl-schedule/" target="_blank" rel="noopener">https://www.westwoodonesports.com/nfl-schedule/</a></td><td>Official</td><td>National NFL radio windows, 2026–27</td></tr><tr><td>NFL.com schedules (structure reference for estimates)</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">https://www.nfl.com/schedules/</a></td><td>Official (reference only)</td><td>Weekly window structure used for 2027–29 estimates</td></tr></tbody></table></div>
@@ -37,7 +40,7 @@ official page, it is blank and appears on <a href="flagged.html">Flagged for rev
 
 <h2>Verification report</h2>
 <p class="small">Machine-readable: <a href="verification/report.json">verification/report.json</a> · human-readable:
-<a href="verification/report.md">verification/report.md</a>. Generated 2026-11-02T17:42:47Z.</p>
+<a href="verification/report.md">verification/report.md</a>. Generated 2026-11-03T19:39:00Z.</p>
 </main>
 <footer><div class="wrap">
   <p><strong>Free Time Vacation Planner</strong> · Pacific time (America/Los_Angeles) · Coverage 2026-11-02 → 2030-02-28 ·

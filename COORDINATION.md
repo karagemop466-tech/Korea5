@@ -264,3 +264,11 @@ and merge result here.
 **Status:** E1–E10 **done**; T11 (the `ef8b5b30` row in the first session's board) is **done** — its
 `needs review` items are published on the Flagged for Review page and do not block anything. Both sessions'
 work is merged into `main` and live on GitHub Pages. No unclaimed or overlapping task remains.
+
+## Session arena-ad64bf51 — safety and integration audit
+
+| Task | Owner | Status | Files |
+|---|---|---|---|
+| Audit existing planner for unsupported free-time claims and repair demonstrable issues | arena-ad64bf51 | in progress | `index.html`, `calendar.html`, `vacation.html`, `extra/`, `assets/`, `COORDINATION.md` |
+
+2026-11-03: Working on the Arena-fixed branch `arena/ad64bf51-korea5`; no new session branch can be created. Prior tasks above are recorded completed; this is a new integration audit.

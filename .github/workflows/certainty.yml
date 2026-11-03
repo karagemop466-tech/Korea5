@@ -22,5 +22,7 @@ jobs:
           python3 scripts/check_links.py
           python3 tools/verify_extra.py
           python3 scripts/audit_certainty.py
+          node --check extra/assets/extra.js
+          node tests/test_calendar_today.js
       - name: Python syntax
         run: python3 -m compileall -q scripts tools

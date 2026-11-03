@@ -901,7 +901,13 @@ footer a{color:var(--accent2)}
   // day scoreboard
   const cal=$('#x-dayhead'); if(!cal) return;
   const START='2026-11-02', END='2030-02-28';
-  const today='2026-11-02'; // compiled date; user local timezone is UTC
+  function pacificISODate(now) {
+    const fields = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit'
+    }).formatToParts(now).map(part => [part.type, part.value]));
+    return `${fields.year}-${fields.month}-${fields.day}`;
+  }
+  let today=pacificISODate(new Date());
   let cur=new URLSearchParams(location.search).get('d')||today;
   let pack=null, includeEst=false;
   const toMin=h=>{const [a,b]=h.split(':').map(Number);return a*60+b;};
@@ -932,6 +938,7 @@ footer a{color:var(--accent2)}
     return out;
   }
   function render(){
+    today=pacificISODate(new Date());
     const b=pack.days[cur]||{verified:[],estimated:[],tba:[],anchors:[],future:[]};
     const rows=[...b.verified,...(includeEst?b.estimated:[])];
     $('#x-date').value=cur;
@@ -966,7 +973,7 @@ footer a{color:var(--accent2)}
   }
   $('#x-prev').onclick=()=>{cur=clamp(addDays(cur,-1));render();};
   $('#x-next').onclick=()=>{cur=clamp(addDays(cur,1));render();};
-  $('#x-today').onclick=()=>{cur=today;render();};
+  $('#x-today').onclick=()=>{today=pacificISODate(new Date());cur=today;render();};
   $('#x-date').onchange=e=>{cur=clamp(e.target.value);render();};
   $('#x-est').onchange=e=>{includeEst=e.target.checked;render();};
   fetch('data/calendar.json').then(r=>r.json()).then(p=>{pack=p;cur=clamp(cur);render();}).catch(e=>{$('#x-dayhead').textContent='Could not load calendar.json: '+e;});

@@ -1,0 +1,74 @@
+{
+ "meta": {
+  "title": "Live official-source spot checks",
+  "performedUTC": "2026-11-03",
+  "method": "Re-queried the official endpoint through the page-fetch tool and compared game-for-game with the committed feed.",
+  "note": "Only the rows below were re-checked live. This is a spot check, not a full re-verification of every row."
+ },
+ "checks": [
+  {
+   "id": "MLB-2027-OPENING",
+   "claim": "2027 MLB regular season is published and loaded",
+   "officialUrl": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2027&gameType=R&startDate=2027-03-24&endDate=2027-03-31",
+   "observed": "15 games on 2027-03-25 (traditional Opening Day); 0 games on 2027-03-24 (Opening Night matchup TBA)",
+   "repoValue": "data/mlb-2027.json: 2430 regular-season games, first 2027-03-25, last 2027-09-26; 15 games on 2027-03-25",
+   "result": "match"
+  },
+  {
+   "id": "MLB-2027-ALLSTAR",
+   "claim": "2027 All-Star Game date",
+   "officialUrl": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2027-07-13&fields=dates,date,totalGames,games,gamePk,gameDate,gameType,teams,away,home,team,name",
+   "observed": "gamePk 853074, gameType A, American League All-Stars at National League All-Stars, 2027-07-13; MLB.com states the game is at Wrigley Field on Tue Jul 13",
+   "repoValue": "gamePk 853074 present on 2027-07-13 with gameType A",
+   "result": "match"
+  },
+  {
+   "id": "MLB-2027-FINALDAY",
+   "claim": "2027 final regular-season day",
+   "officialUrl": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2027-09-26&fields=dates,date,totalGames,games,gamePk,gameDate,gameType,teams,away,home,team,name",
+   "observed": "15 games, including San Francisco Giants at Colorado Rockies (853723) and Seattle Mariners at Athletics (854369)",
+   "repoValue": "15 games on 2027-09-26 with the same gamePk set",
+   "result": "match"
+  },
+  {
+   "id": "MLB-2028-NOT-RELEASED",
+   "claim": "2028 MLB schedule is not published",
+   "officialUrl": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2028&gameType=R&startDate=2028-03-01&endDate=2028-04-10",
+   "observed": "totalGames = 0, dates = []",
+   "repoValue": "data/mlb-2028.json has no games; 2028 rows in the planner are labelled ESTIMATION",
+   "result": "match"
+  },
+  {
+   "id": "NFL-2027-NOT-RELEASED",
+   "claim": "2027 NFL schedule is not published",
+   "officialUrl": "https://www.nfl.com/schedules/2027/",
+   "observed": "redirects to the 2026 season schedule page; no 2027 fixtures",
+   "repoValue": "2027 NFL rows are modelled and labelled ESTIMATION",
+   "result": "match"
+  },
+  {
+   "id": "SB-LXI",
+   "claim": "Super Bowl LXI date and venue",
+   "officialUrl": "https://www.sofistadium.com/news/detail/los-angeles-region-to-host-super-bowl-lxi-in-2027-welcoming-the-nfls-biggest-stage-for-the-second-time-this-decade-to-sofi-stadium",
+   "observed": "Sun Feb 14, 2027, SoFi Stadium, Inglewood (Los Angeles Super Bowl Host Committee / SoFi Stadium)",
+   "repoValue": "2027-02-14 Super Bowl row (estimated kickoff 15:30 PT)",
+   "result": "match"
+  },
+  {
+   "id": "W1-2026-27",
+   "claim": "Westwood One 2026-27 national windows",
+   "officialUrl": "https://www.westwoodonesports.com/nfl-schedule/",
+   "observed": "Published windows through Week 18 (Jan 9 tripleheader, Jan 10 Sunday Night Football); no Pro Bowl entry",
+   "repoValue": "Westwood One rows loaded; Pro Bowl removed from the radio scope in this revision",
+   "result": "match"
+  },
+  {
+   "id": "MLB-2027-RELEASE",
+   "claim": "2027 MLB season structure",
+   "officialUrl": "https://www.mlb.com/news/mlb-2027-schedule-released",
+   "observed": "Opening Night Wed Mar 24; Opening Day Thu Mar 25 with 14 games; All-Star Game Tue Jul 13 at Wrigley Field; final day Sun Sep 26",
+   "repoValue": "Same dates in the dashboard and vacation page",
+   "result": "match"
+  }
+ ]
+}

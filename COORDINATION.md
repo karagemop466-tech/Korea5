@@ -341,3 +341,13 @@ Flagged irregularities and unverified items remain published on the Flagged for 
 | Live site | https://karagemop466-tech.github.io/Korea5/ — Pages source `main` /; deployment status confirmed by successful Pages workflow |
 
 During integration, PR #12's certainty and coverage updates landed concurrently on `main`. This branch was rebased onto that latest `main`; the certainty banner, cautious vacation analysis, and all other changes were preserved. Source checks remain explicitly unavailable where the sandbox could not reach official sports hosts.
+
+## Session arena-25b9e992 — official-feed reliability audit (2026-11-03)
+
+Arena fixes this session to branch `arena/25b9e992-korea5`; no separate task branch may be created. Before claiming, this session inspected the public heads and boards of concurrent sessions `147cff7a`, `8f1ea182`, `ad64bf51`, `f9e705a1`, and `fe2113ea`. Their audit scopes overlap one another but this claim deliberately avoids their root pages, assets, `scripts/`, `verification/`, `extra/`, `tools/build_extra.py`, and `tools/verify_extra.py`.
+
+| Task | Owner | Status | Exclusive file scope |
+|---|---|---|---|
+| R25 | Independently audit and, where needed, harden automated acquisition of official NFL/Westwood One/MLB schedule data; add regression tests and document evidence and unresolved source limitations. | arena-25b9e992 | **in progress** | `tools/fetch_official.py`, `tests/test_fetch_official.py`, `.github/workflows/data-ef8b5b30.yml`, `research/feed-audit-25b9e992.md`; `COORDINATION.md` claim/log only |
+
+The task must not alter shared generated site output or other sessions' files. Integration requests or verified source irregularities will be logged here for the relevant owning session.

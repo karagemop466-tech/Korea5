@@ -294,3 +294,21 @@ Branch constraint: this session is fixed to `arena/7c5c30e4-korea5`; no other br
 | Live site | https://karagemop466-tech.github.io/Korea5/ — confirmed built |
 
 Flagged irregularities and unverified items remain published on the Flagged for Review page and do not block the merge or deployment.
+
+---
+
+## Session arena-e2642bf9 — live official-source verification + 1/2/3-week vacation windows (2026-11-03)
+
+Arena fixes this session to branch `arena/e2642bf9-korea5`; no `session-<id>/<task>` branch may be created or pushed.
+Before claiming, this session read `main` and the pushed boards of every concurrent branch
+(`147cff7a`, `25b9e992`, `7c5c30e4` [merged as PR #11], `8f1ea182`, `ad64bf51`, `b9716034`, `f9e705a1`, `fe2113ea`).
+Their scopes cover the existing root pages, `assets/`, `scripts/`, `verification/`, `extra/`, `tools/build_extra.py`,
+`tools/verify_extra.py`, `tools/fetch_official.py` and the executive summaries. **This claim touches none of those files.**
+
+| # | Task | Owner | Status | Exclusive file scope (all new paths) |
+|---|---|---|---|---|
+| V1 | Live re-verification of schedule facts by **direct fetch of official hosts** (MLB StatsAPI, nfl.com, 49ers.com, gostanford.com, calbears.com, westwoodonesports.com) — row-by-row evidence with the URL fetched and the value seen; mismatches and unreachable sources flagged, never filled in | arena-e2642bf9 | **in progress** | `audit-e2642bf9/`, `tools/live_verify_e2642bf9.py` |
+| V2 | Vacation-window finder for 2027, 2028, 2029: every 7/14/21-day window ranked by games inside it (strict = user's full definition; plus Giants/A's/49ers/Stanford/Cal-only view), each window row linked to the official sources that bound it; unreleased seasons labelled ESTIMATION | arena-e2642bf9 | **in progress** | `windows/` (new subpage + its data), `tools/windows_e2642bf9.py` |
+
+Shared outputs (root `index.html`, navigation, `data/`) will **not** be edited by this session unless it becomes the
+final integration session under the 60-minute rule; a nav-link request will be logged here instead.

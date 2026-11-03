@@ -449,6 +449,18 @@ Started from `main` tip `f9b5a7f` (PR #15 merged). No active claim overlapped th
 | Merge | (filled after merge) |
 | GitHub Pages build | (filled after merge) |
 | Live site | https://karagemop466-tech.github.io/Korea5/ |
+### U1/U2 integration record
+
+| Step | Result |
+|---|---|
+| Pull request | **#19 — https://github.com/karagemop466-tech/Korea5/pull/19** — “Fix Pacific Today date and clarify source verification” |
+| Merge | Merged to `main` at 2026-11-03T23:33:12Z, merge commit `b0630d795a9c0beea44bbedb6aca4a5a738d7349` |
+| Planner certainty checks | Run **41740056858** — validate passed |
+| GitHub Pages deployment | Run **41740056332** — build, deploy and report-build-status passed |
+| Live site | https://karagemop466-tech.github.io/Korea5/ — Pages API reports status `built`, source `main` / |
+
+No new sports schedule facts were added. The site still explicitly reports that complete line-by-line live official schedule validation and event-specific reception/carriage in 94122 are not established; snapshot matches are historical, not fresh verification.
+- Follow-up handoff: PR #21 from session `arena-0fb8732b` landed after PR #19 and also addressed the stale scoreboard Today bug during a full-repo audit. It confirms the same Pacific timezone behavior; its review retained the current `pacificISODate()` generator/asset implementation. The overlap is recorded rather than presenting duplicate work as independent schedule research.
 
 ---
 
@@ -489,3 +501,4 @@ Unlike prior sessions, this one could reach the official hosts through the page-
 | `https://www.sofistadium.com/news/detail/los-angeles-region-to-host-super-bowl-lxi-in-2027-...` | Super Bowl LXI: **Sun Feb 14, 2027**, SoFi Stadium (host committee + stadium, official) |
 | `https://www.nfl.com/schedules/2027/` | Redirects to the 2026 schedule page: no 2027 NFL schedule exists yet |
 | `https://www.westwoodonesports.com/nfl-schedule/` | 2026-27 national windows through Week 18 (Jan 9-10, 2027); **no Pro Bowl listed** |
+

@@ -44,7 +44,15 @@ jobs:
           fi
       - name: Fetch official NFL, Westwood One and MLB TBD feeds
         if: steps.mode.outputs.refresh == 'true'
-        run: python3 tools/fetch_official.py
+        run: |
+          if python3 tools/fetch_official.py > /tmp/official-fetch.log 2>&1; then
+            cat /tmp/official-fetch.log
+          else
+            # Preserve useful diagnostics in the check run, without pushing
+            # partially fetched data or relying on downloadable log artifacts.
+            python3 -c 'from pathlib import Path; s=Path("/tmp/official-fetch.log").read_text(errors="replace")[-15000:]; print("::error title=Official feed refresh failed::" + s.replace("%","%25").replace("\r","%0D").replace("\n","%0A"))'
+            exit 1
+          fi
       - name: Fetch MLB seasons and reject incomplete responses
         if: steps.mode.outputs.refresh == 'true'
         run: |

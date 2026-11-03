@@ -162,8 +162,8 @@ def build_index():
 <section class="hero">
   <div>
     <h1>When can I actually take a vacation?</h1>
-    <p class="lede">A year-round answer for San Francisco 94122, in Pacific time, built only from official schedules.
-    It blocks every MLB game (all 30 clubs), every NFL game, Stanford and Cal football, and Westwood One national NFL radio —
+    <p class="lede">A year-round answer for San Francisco 94122, in Pacific time, using official schedules and explicitly modelled windows.
+    It aims to include MLB (all 30 clubs), NFL, Stanford and Cal football, and Westwood One national NFL radio —
     then shows the gaps.</p>
     <div class="pill-row">
       {tag("MLB 2026 + 2027 verified", "tag ver")}
@@ -171,15 +171,7 @@ def build_index():
       {tag("2027 NFL / 2028–29 estimated", "tag est")}
       {tag(f"{REPORT.get('summary', {}).get('rowsVerified', 0)}/{REPORT.get('summary', {}).get('rowsChecked', 0)} rows re-verified", "tag ver")}
     </div>
-    <div class="callout">
-      <strong>The short answer.</strong> There is <strong>no fully free 7-day window in 2027, 2028 or 2029</strong>.
-      MLB schedules a full slate almost every day from late February to early October (verified for 2027), and NFL/college
-      football fills the winter weekends. The longest run with nothing on air is <strong>exactly six days</strong> in 2027, 2028 and 2029 —
-      and it recurs in January and February, in the Mon–Sat gaps between NFL playoff weekends. In 2027 the six-day options are
-      <strong>{esc(", ".join(fmt_range(s["start"], s["end"]) for s in (ANALYSIS.get("freeStreaks",{}).get("all",{}).get("2027") or [])[:3]))}</strong> —
-      the last of which sits after the Super Bowl and before Spring Training, when nothing at all is in season.
-      Full ranking on <a href="vacation.html">Vacation windows</a>.
-    </div>
+    <div class="callout warn"><strong>Executive summary — provisional planning only.</strong> Late January and February have relatively few listed conflicts in this model. Rankings are estimates, not proof of a free trip: future schedules, postseason games, radio carriage, and other sports are incomplete. Earlier analysis says Feb 8–13, 2027 sits before Super Bowl LXI; check <a href="flagged.html">Flagged for review</a> and official sources before booking. <a href="vacation.html">See modelled windows →</a></div>
   </div>
   <div class="grid">
     <div class="card"><div class="kpi">{esc(ANALYSIS['summary'].get('2027',{}).get('scopes',{}).get('all',{}).get('longestFreeStreak','—'))}<small>longest free streak, 2027 (days)</small></div></div>
@@ -231,21 +223,22 @@ def build_index():
 # ================================================================ calendar
 def build_calendar():
     body = f"""
+<div class="callout warn"><strong>Planning estimates, not confirmed availability.</strong> Schedules and radio carriage are incomplete; missing events and estimated durations can make a window look free when it is not. Earlier analysis says Feb 8–13, 2027 sits before Super Bowl LXI; check <a href="flagged.html">Flagged for review</a> and official sources before booking.</div>
 <h1>Free-time calendar</h1>
 <p class="lede">Every day from {ANALYSIS['meta']['today']} to {ANALYSIS['meta']['horizon'][1]}, in Pacific time.
-Free time is any 30-minute-or-longer gap with no qualifying game on air.</p>
+Free windows are gaps between listed events, including short gaps; they are estimates, not confirmed availability.</p>
 <div class="toolbar">
   <button id="prev">← Yesterday</button>
   <button id="tobay">Today</button>
   <button id="tomorrow">Tomorrow →</button>
-  <button id="next">Tomorrow +1 →</button>
+  <button id="next">Next →</button>
   <input type="date" id="dateinput" min="{ANALYSIS['meta']['today']}" max="{ANALYSIS['meta']['horizon'][1]}">
   <span class="small">Today is <strong id="today"></strong></span>
 </div>
 <div class="toolbar">
   <span class="small" style="margin-right:6px">What counts as busy:</span>
   <span class="chip on" data-scope="all">All games</span>
-  <span class="chip" data-scope="radio">Radio only (SF AM/FM)</span>
+  <span class="chip" data-scope="radio">Radio categories (carriage unconfirmed)</span>
   <span class="chip" data-scope="high">High priority</span>
 </div>
 
@@ -257,7 +250,7 @@ Free time is any 30-minute-or-longer gap with no qualifying game on air.</p>
   <div class="grid g3" style="margin-top:16px">
     <div class="card" style="padding:12px"><div class="kpi" id="hours">—<small>busy hours</small></div></div>
     <div class="card" style="padding:12px"><div class="kpi" id="freehrs">—<small>free hours</small></div></div>
-    <div class="card" style="padding:12px"><div class="small">Free windows (30 min or more)</div><div id="freewin" class="pill-row" style="margin:8px 0 0"></div></div>
+    <div class="card" style="padding:12px"><div class="small">Modelled free windows</div><div id="freewin" class="pill-row" style="margin:8px 0 0"></div></div>
   </div>
 </div>
 
@@ -320,7 +313,7 @@ def build_vacation():
 and <strong>lightest</strong> (the fewest hours of live sport per day).</p>
 
 <div class="callout flag">
-<strong>There is no 7-day, 14-day or 21-day window in 2027–2029 with zero games.</strong>
+<strong>In this incomplete model, no 7-day, 14-day or 21-day window in 2027–2029 has zero listed events.</strong>
 The longest fully free runs are {longest[2027]} days in 2027, {longest[2028]} days in 2028 and {longest[2029]} days in 2029.
 MLB plays a full slate almost every day from late February to early October, and NFL/college football covers the winter weekends.
 </div>
@@ -333,9 +326,7 @@ MLB plays a full slate almost every day from late February to early October, and
 
 <h2>The practical answer</h2>
 <div class="callout">
-<strong>Take the mid-February gap.</strong> Each year the calendar has one clean pocket: after the Super Bowl and before the first
-Spring Training game. In 2027 that is <strong>Feb 8–13</strong> (six nights, Mon–Sat). In 2028 and 2029 the same structure repeats
-(see the year pages below). It is the only stretch in the three years where you can go away and miss nothing at all.
+<strong>Consider late January and February, but do not book from this model alone.</strong> The current snapshot uses estimated playoff windows; it does not establish that any displayed gap is conflict-free. Recheck the <a href="https://www.nfl.com/schedules/">NFL schedule</a>, <a href="https://www.mlb.com/schedule">MLB schedule</a>, and local station listings before making plans.
 </div>
 <div class="callout warn">
 <strong>If the trip must be longer than a week</strong>, the honest trade-off is: accept one NFL Sunday (about 3 hours of radio) or the
@@ -357,7 +348,7 @@ but the actual listening burden is only about three hours a night.
 {window_table('radio', 'hours')}
 
 <h2>Radio-only view</h2>
-<p class="small">Only games that actually air on AM/FM radio in San Francisco (Giants, Athletics, 49ers, Stanford, Cal, Westwood One national),
+<p class="small">Games in selected local-team and national-radio categories (individual AM/FM carriage is not confirmed) (Giants, Athletics, 49ers, Stanford, Cal, Westwood One national),
 ranked by the fewest hours of live coverage.</p>
 {window_table('radio', 'hours')}
 """

@@ -11,20 +11,21 @@
 </div></header>
 <main class="wrap">
 <h1>Free-time calendar</h1>
+<div class="callout warn"><strong>Planning estimates, not confirmed availability.</strong> The snapshot is dated November 2, 2026. Schedules and radio carriage are incomplete; missing events and estimated durations can make a window look free when it is not. Check <a href="flagged.html">Flagged for review</a> and the official sources before booking. The radio filter is a category filter, not proof of local reception or carriage.</div>
 <p class="lede">Every day from 2026-11-02 to 2030-02-28, in Pacific time.
-Free time is any 30-minute-or-longer gap with no qualifying game on air.</p>
+Free windows are gaps between listed events, including short gaps; they are estimates, not confirmed availability.</p>
 <div class="toolbar">
   <button id="prev">← Prev</button>
   <button id="tobay">Today</button>
-  <button id="tomorrow">Next →</button>
-  <button id="next">+2 days →</button>
+  <button id="tomorrow">Tomorrow →</button>
+  <button id="next">Next →</button>
   <input type="date" id="dateinput" min="2026-11-02" max="2030-02-28">
   <span class="small">Today is <strong id="today"></strong></span>
 </div>
 <div class="toolbar">
   <span class="small" style="margin-right:6px">What counts as busy:</span>
   <span class="chip on" data-scope="all">All games</span>
-  <span class="chip" data-scope="radio">Radio only (SF AM/FM)</span>
+  <span class="chip" data-scope="radio">Radio categories (carriage unconfirmed)</span>
   <span class="chip" data-scope="high">High priority</span>
 </div>
 
@@ -36,7 +37,7 @@ Free time is any 30-minute-or-longer gap with no qualifying game on air.</p>
   <div class="grid g3" style="margin-top:16px">
     <div class="card" style="padding:12px"><div class="kpi" id="hours">—<small>busy hours</small></div></div>
     <div class="card" style="padding:12px"><div class="kpi" id="freehrs">—<small>free hours</small></div></div>
-    <div class="card" style="padding:12px"><div class="small">Free windows (30 min or more)</div><div id="freewin" class="pill-row" style="margin:8px 0 0"></div></div>
+    <div class="card" style="padding:12px"><div class="small">Modelled free windows</div><div id="freewin" class="pill-row" style="margin:8px 0 0"></div></div>
   </div>
 </div>
 

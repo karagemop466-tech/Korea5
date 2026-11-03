@@ -10,9 +10,9 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
 const toMin = (h) => { const [a, b] = h.split(":").map(Number); return a * 60 + b; };
-const fmt = (m) => `${String(Math.floor(m / 60) % 24).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
+const fmt = (m) => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 const addDays = (iso, n) => {
-  const d = new Date(iso + "T12:00:00"); d.setDate(d.getDate() + n);
+  const d = new Date(iso + "T12:00:00Z"); d.setUTCDate(d.getUTCDate() + n);
   return d.toISOString().slice(0, 10);
 };
 const prettyDate = (iso) => new Date(iso + "T12:00:00").toLocaleDateString("en-US",
@@ -71,6 +71,11 @@ function basisText(pack, e) {
   return (pack.meta.basis || {})[e.b] || e.timeBasis || "";
 }
 
+async function dayIntervals(iso, evs) {
+  const prior = await eventsFor(addDays(iso, -1), S.scope);
+  return [...evs.flatMap(evIntervals), ...prior.flatMap(evIntervals).filter(([, b]) => b > 1440).map(([a, b]) => [Math.max(0, a - 1440), b - 1440])];
+}
+
 function timeline(intervals, scope) {
   const merged = merge(intervals.filter((i) => i[1] > 0)).map(([a, b]) => [Math.max(0, a), Math.min(1440, b)]);
   const bar = $("#bar"); bar.innerHTML = "";
@@ -93,10 +98,10 @@ function timeline(intervals, scope) {
     d.title = `${fmt(a)}–${fmt(b)} busy`;
     bar.appendChild(d);
   }
-  const free = freeSegs.filter(([a, b]) => b - a >= 30);
+  const free = freeSegs.filter(([a, b]) => b > a);
   $("#freewin").innerHTML = free.length
     ? free.map(([a, b]) => `<span class="tag ver">${fmt(a)}–${fmt(b)} free (${((b - a) / 60).toFixed(1)}h)</span>`).join(" ")
-    : `<span class="tag flag">No free window of 30 minutes or more</span>`;
+    : `<span class="tag flag">No free window in this model</span>`;
   const busyH = merged.reduce((t, [a, b]) => t + (b - a), 0) / 60;
   $("#hours").textContent = busyH.toFixed(1);
   $("#freehrs").textContent = (24 - busyH).toFixed(1);
@@ -110,15 +115,15 @@ async function render(iso) {
   $("#dateinput").value = iso;
   const evs = (await eventsFor(iso, S.scope)).sort((a, b) => (a.start || "99") < (b.start || "99") ? -1 : 1);
   const pack = S.events[+y];
-  timeline(evs.flatMap(evIntervals), S.scope);
+  timeline(await dayIntervals(iso, evs), S.scope);
 
   const body = $("#gamelist");
   if (!evs.length) {
-    body.innerHTML = `<tr><td colspan="6" class="free"><strong>No qualifying games.</strong> The whole day is free.</td></tr>`;
+    body.innerHTML = `<tr><td colspan="6" class="free"><strong>No games start on this day in this feed.</strong> The timeline may include a game continuing from the previous day. Missing or unreleased schedules may contain conflicts.</td></tr>`;
   } else {
     body.innerHTML = evs.map((e) => {
       const lg = e.league === "MLB" ? "mlb" : e.league === "NFL" ? "nfl" : "ncaaf";
-      const status = e.status === "verified" ? `<span class="tag ver">verified</span>`
+      const status = e.status === "verified" && e.timeStatus !== "estimated" && e.dateStatus !== "estimated" ? `<span class="tag ver">verified date/time</span>`
         : e.status === "estimated" || e.timeStatus === "estimated" ? `<span class="tag est">estimated</span>`
           : `<span class="tag flag">${e.status || "unconfirmed"}</span>`;
       const when = e.start ? `<span class="mono">${e.start}</span> <small>PT</small>` : `<small>TBD</small>`;
@@ -143,12 +148,12 @@ async function render(iso) {
     const ds = addDays(iso, i);
     const pack2 = S.years.includes(+ds.slice(0, 4)) ? await loadYear(+ds.slice(0, 4)) : { events: [] };
     const dEv = pack2.events.filter((e) => e.date === ds && inScope(e, S.scope));
-    const h = merge(dEv.flatMap(evIntervals)).reduce((t, [a, b]) => t + (b - a), 0) / 60;
+    const h = merge(await dayIntervals(ds, dEv)).reduce((t, [a, b]) => t + Math.max(0, Math.min(1440, b) - Math.max(0, a)), 0) / 60;
     const cls = h === 0 ? "ver" : h < 3 ? "est" : "flag";
     const dt = new Date(ds + "T12:00:00");
     strip.insertAdjacentHTML("beforeend", `<a class="chip ${ds === iso ? "on" : ""}" href="#${ds}" data-day="${ds}">
       ${dt.toLocaleDateString("en-US", { weekday: "short" })} ${dt.getDate()}
-      <span class="tag ${cls}">${h === 0 ? "free" : h.toFixed(1) + "h"}</span></a>`);
+      <span class="tag ${cls}">${h === 0 ? "no listings" : h.toFixed(1) + "h"}</span></a>`);
   }
   $$("#strip .chip").forEach((el) => el.addEventListener("click", (ev) => {
     ev.preventDefault(); render(el.dataset.day);
@@ -157,16 +162,18 @@ async function render(iso) {
 
 async function init() {
   S.analysis = await (await fetch("data/derived/analysis.json")).json();
-  const today = S.analysis.meta.today;
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+  const min = S.analysis.meta.today, max = S.analysis.meta.horizon[1];
+  const clamp = d => d < min ? min : d > max ? max : d;
   const h = location.hash.replace("#", "");
-  const start = /^\d{4}-\d{2}-\d{2}$/.test(h) ? h : today;
+  const start = clamp(/^\d{4}-\d{2}-\d{2}$/.test(h) ? h : today);
   $("#today").textContent = new Date(today + "T12:00:00").toLocaleDateString("en-US",
     { month: "short", day: "numeric", year: "numeric" });
-  $("#prev").onclick = () => render(addDays(S.date, -1));
-  $("#next").onclick = () => render(addDays(S.date, 1));
-  $("#tomorrow").onclick = () => render(addDays(S.analysis.meta.today, 1));
-  $("#tobay").onclick = () => render(today);
-  $("#dateinput").onchange = (e) => render(e.target.value);
+  $("#prev").onclick = () => render(clamp(addDays(S.date, -1)));
+  $("#next").onclick = () => render(clamp(addDays(S.date, 1)));
+  $("#tomorrow").onclick = () => render(clamp(addDays(today, 1)));
+  $("#tobay").onclick = () => render(clamp(today));
+  $("#dateinput").onchange = (e) => render(clamp(e.target.value));
   $$(".chip[data-scope]").forEach((el) => el.addEventListener("click", () => {
     S.scope = el.dataset.scope;
     $$(".chip[data-scope]").forEach((x) => x.classList.toggle("on", x === el));
@@ -174,7 +181,7 @@ async function init() {
   }));
   window.addEventListener("hashchange", () => {
     const d = location.hash.replace("#", "");
-    if (/^\d{4}-\d{2}-\d{2}$/.test(d) && d !== S.date) render(d);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(d) && d !== S.date) render(clamp(d));
   });
   await render(start);
 }

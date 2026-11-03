@@ -509,3 +509,7 @@ Unlike prior sessions, this one could reach the official hosts through the page-
 | Live site | https://karagemop466-tech.github.io/Korea5/ — fetched live `extra/assets/extra.js` and confirmed it serves the dynamic `pacificISODate()` Pacific-today code |
 
 Flagged irregularities and unverified items remain published on `flagged.html` / `extra/flagged.html` and did not block the merge or deployment.
+
+- **Docs record PR #23 — https://github.com/karagemop466-tech/Korea5/pull/23** — merged into `main` as `25f027372df1dd5ca2855c006fb11ac0eb3df289` (its merge needed one more `origin/main` merge after PRs #20/#22 landed; `COORDINATION.md` conflict resolved by retaining both append sections). Pages build run **41740515510** on `25f0273` — **success**; certainty checks run **41740515091** — **success**; Pages status `built`, source `main` /, live site https://karagemop466-tech.github.io/Korea5/.
+
+**Session status:** R1–R3 **done**. This session's durable additions are the review record (`verification/session-review-0fb8732b.md`) and the coordination log; the stale-Today defect itself was fixed on `main` by the parallel sessions' `pacificISODate()` change, which this branch adopted during conflict resolution.

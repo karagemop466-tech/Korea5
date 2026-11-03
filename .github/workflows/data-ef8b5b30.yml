@@ -22,6 +22,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    outputs:
+      pages_enabled: ${{ steps.pages-mode.outputs.enabled }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -47,6 +49,7 @@ jobs:
         run: |
           if python3 tools/fetch_official.py > /tmp/official-fetch.log 2>&1; then
             cat /tmp/official-fetch.log
+            python3 -c 'import json; r=json.load(open("official/fetch-report.json")); print("::notice title=Official source refresh::" + json.dumps({"counts":r["counts"],"warnings":r["warnings"][:5],"warningCount":len(r["warnings"])},ensure_ascii=True).replace("%","%25"))'
           else
             # Preserve useful diagnostics in the check run, without pushing
             # partially fetched data or relying on downloadable log artifacts.
@@ -83,14 +86,31 @@ jobs:
             official/
             data/mlb-summary.json
           retention-days: 7
+      - name: Detect Pages publishing mode
+        id: pages-mode
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REF: ${{ github.ref }}
+        run: |
+          if [ "$REF" = refs/heads/main ]; then
+            type=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .build_type)
+            if [ "$type" = workflow ]; then
+              echo 'enabled=true' >> "$GITHUB_OUTPUT"
+            else
+              echo 'enabled=false' >> "$GITHUB_OUTPUT"
+              echo '::warning::Pages is still using branch publishing; refreshed data has not been deployed by this workflow.'
+            fi
+          else
+            echo 'enabled=false' >> "$GITHUB_OUTPUT"
+          fi
       - name: Upload checked site to Pages
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && steps.pages-mode.outputs.enabled == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && needs.build.outputs.pages_enabled == 'true'
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 10

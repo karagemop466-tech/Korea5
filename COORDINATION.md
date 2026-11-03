@@ -341,3 +341,43 @@ Flagged irregularities and unverified items remain published on the Flagged for 
 | Live site | https://karagemop466-tech.github.io/Korea5/ — Pages source `main` /; deployment status confirmed by successful Pages workflow |
 
 During integration, PR #12's certainty and coverage updates landed concurrently on `main`. This branch was rebased onto that latest `main`; the certainty banner, cautious vacation analysis, and all other changes were preserved. Source checks remain explicitly unavailable where the sandbox could not reach official sports hosts.
+
+---
+
+## Session `arena/8fa03d1b-korea5` — 2026-11-03
+
+Branch constraint: Arena fixes this session to `arena/8fa03d1b-korea5`. No other branch will be created or pushed.
+All prior sessions' records above are preserved unchanged.
+
+### Why this session exists
+
+Every prior session concluded with the same headline: *no 7/14/21-day window is certified free*. That is
+epistemically safe but it does not answer the owner's question — **when should I book?** This session keeps the
+certainty standard and adds the missing piece: a **computed, source-labelled recommendation per year**, plus a
+correction of one modelling defect that was actively distorting the answer.
+
+### Task board (addendum)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| G1 | Correct NFL all-star (Pro Bowl) modelling: it was tagged `westwoodone`, so a flag-football exhibition was blocking "radio" free time even though Westwood One's published 2026-27 schedule does not list it | arena-8fa03d1b | in progress | `scripts/build_events.py` |
+| G2 | Emit per-year recommended vacation windows (strict and radio scopes) from the event feed; no hard-coded dates | arena-8fa03d1b | in progress | `scripts/analyze.py`, `data/derived/analysis.json` |
+| G3 | Answer the question on the dashboard and the vacation page: exact dates, length, evidence status per component, official links | arena-8fa03d1b | in progress | `scripts/build_site.py`, `index.html`, `vacation.html` |
+| G4 | Rebuild, re-verify, PR to `main`, confirm Pages deploy, record result | arena-8fa03d1b | in progress | `COORDINATION.md` |
+
+Scope note: no other session is active (`git log --all` shows no commits after `f9b5a7f`). No claim overlaps.
+This session edits only the files listed above plus generated HTML under `*.html` and `data/`.
+
+### Official sources retrieved live this session
+
+Unlike prior sessions, this one could reach the official hosts through the page-fetch tool. Retrieved
+2026-11-03:
+
+| Source | What it established |
+|---|---|
+| `https://www.mlb.com/news/mlb-2027-schedule-released` | 2027 MLB season: Opening Night Wed Mar 24; traditional Opening Day Thu Mar 25 (14 games); All-Star Game Tue Jul 13 at Wrigley Field; final regular-season day Sun Sep 26 |
+| `https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2027&gameType=R&startDate=2027-03-24&endDate=2027-03-31` | 2027 fixtures exist in the official league feed (15 games on Mar 25, first pitch times present, `startTimeTBD` flags on some) |
+| `https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2028&gameType=R&startDate=2028-03-01&endDate=2028-04-10` | **0 games** — the 2028 schedule is not published, so 2028 MLB rows must stay labelled ESTIMATION |
+| `https://www.sofistadium.com/news/detail/los-angeles-region-to-host-super-bowl-lxi-in-2027-...` | Super Bowl LXI: **Sun Feb 14, 2027**, SoFi Stadium (host committee + stadium, official) |
+| `https://www.nfl.com/schedules/2027/` | Redirects to the 2026 schedule page: no 2027 NFL schedule exists yet |
+| `https://www.westwoodonesports.com/nfl-schedule/` | 2026-27 national windows through Week 18 (Jan 9-10, 2027); **no Pro Bowl listed** |

@@ -10,11 +10,14 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
 const toMin = (h) => { const [a, b] = h.split(":").map(Number); return a * 60 + b; };
-const fmt = (m) => `${String(Math.floor(m / 60) % 24).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
+const fmt = (m) => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 const addDays = (iso, n) => {
-  const d = new Date(iso + "T12:00:00"); d.setDate(d.getDate() + n);
+  const d = new Date(iso + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + n);
   return d.toISOString().slice(0, 10);
 };
+const validDate = (iso) => /^\d{4}-\d{2}-\d{2}$/.test(iso) &&
+  !Number.isNaN(Date.parse(iso + "T00:00:00Z")) &&
+  new Date(iso + "T00:00:00Z").toISOString().slice(0, 10) === iso;
 const prettyDate = (iso) => new Date(iso + "T12:00:00").toLocaleDateString("en-US",
   { weekday: "long", year: "numeric", month: "long", day: "numeric" });
 
@@ -103,6 +106,8 @@ function timeline(intervals, scope) {
 }
 
 async function render(iso) {
+  const min = $("#dateinput").min, max = $("#dateinput").max;
+  if (!validDate(iso) || iso < min || iso > max) return;
   S.date = iso;
   history.replaceState(null, "", `#${iso}`);
   const [y, m, d] = iso.split("-");
@@ -118,8 +123,8 @@ async function render(iso) {
   } else {
     body.innerHTML = evs.map((e) => {
       const lg = e.league === "MLB" ? "mlb" : e.league === "NFL" ? "nfl" : "ncaaf";
-      const status = e.status === "verified" ? `<span class="tag ver">verified</span>`
-        : e.status === "estimated" || e.timeStatus === "estimated" ? `<span class="tag est">estimated</span>`
+      const status = e.status === "estimated" || e.timeStatus === "estimated" ? `<span class="tag est">estimated</span>`
+        : e.status === "verified" ? `<span class="tag ver">verified</span>`
           : `<span class="tag flag">${e.status || "unconfirmed"}</span>`;
       const when = e.start ? `<span class="mono">${e.start}</span> <small>PT</small>` : `<small>TBD</small>`;
       const radio = e.radio && e.radio.length ? e.radio.join(" · ") : (e.nationalRadio || "");
@@ -141,6 +146,7 @@ async function render(iso) {
   const strip = $("#strip"); strip.innerHTML = "";
   for (let i = 0; i < 7; i++) {
     const ds = addDays(iso, i);
+    if (ds > $("#dateinput").max) break;
     const pack2 = S.years.includes(+ds.slice(0, 4)) ? await loadYear(+ds.slice(0, 4)) : { events: [] };
     const dEv = pack2.events.filter((e) => e.date === ds && inScope(e, S.scope));
     const h = merge(dEv.flatMap(evIntervals)).reduce((t, [a, b]) => t + (b - a), 0) / 60;
@@ -148,7 +154,7 @@ async function render(iso) {
     const dt = new Date(ds + "T12:00:00");
     strip.insertAdjacentHTML("beforeend", `<a class="chip ${ds === iso ? "on" : ""}" href="#${ds}" data-day="${ds}">
       ${dt.toLocaleDateString("en-US", { weekday: "short" })} ${dt.getDate()}
-      <span class="tag ${cls}">${h === 0 ? "free" : h.toFixed(1) + "h"}</span></a>`);
+      <span class="tag ${cls}">${h === 0 ? "no loaded games" : h.toFixed(1) + "h"}</span></a>`);
   }
   $$("#strip .chip").forEach((el) => el.addEventListener("click", (ev) => {
     ev.preventDefault(); render(el.dataset.day);
@@ -159,11 +165,13 @@ async function init() {
   S.analysis = await (await fetch("data/derived/analysis.json")).json();
   const today = new Intl.DateTimeFormat("en-CA", {timeZone:"America/Los_Angeles", year:"numeric", month:"2-digit", day:"2-digit"}).format(new Date());
   const h = location.hash.replace("#", "");
-  const start = /^\d{4}-\d{2}-\d{2}$/.test(h) ? h : today;
+  const min = $("#dateinput").min, max = $("#dateinput").max;
+  const initial = validDate(h) ? h : today;
+  const start = initial < min ? min : initial > max ? max : initial;
   $("#today").textContent = new Date(today + "T12:00:00").toLocaleDateString("en-US",
     { month: "short", day: "numeric", year: "numeric" });
   $("#prev").onclick = () => render(addDays(S.date, -1));
-  $("#next").onclick = () => render(addDays(S.date, 1));
+  $("#next").onclick = () => render(addDays(S.date, 2));
   $("#tomorrow").onclick = () => render(addDays(S.date || today, 1));
   $("#tobay").onclick = () => render(today);
   $("#dateinput").onchange = (e) => render(e.target.value);

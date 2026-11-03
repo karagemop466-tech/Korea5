@@ -342,6 +342,64 @@ Flagged irregularities and unverified items remain published on the Flagged for 
 
 During integration, PR #12's certainty and coverage updates landed concurrently on `main`. This branch was rebased onto that latest `main`; the certainty banner, cautious vacation analysis, and all other changes were preserved. Source checks remain explicitly unavailable where the sandbox could not reach official sports hosts.
 
+## Final integration and deployment confirmation — session `arena/e20a1d38-korea5`
+
+Branch fixed by Arena: `arena/e20a1d38-korea5`; branch tip `f9b5a7f` is identical to `origin/main`. All prior-session work (T1–T12, E1–E10, F1, S1–S3) is merged into `main` and live on GitHub Pages. No overlapping or unclaimed task remains.
+
+### Verification performed this session (2026-11-03)
+
+- All committed data JSON valid: 0 malformed files (`data/`, `data/curated/`, `data/derived/`, `extra/data/`, `curated/`).
+- `scripts/check_links.py`: 11 pages, 179 local links, 519 external links, **0 missing**.
+- `tools/verify_extra.py`: **31 checks / 31 passed**, 0 failed, 0 broken local links, 0 table rows missing an official source link.
+- `scripts/audit_certainty.py`: passed — no certified future 7/14/21-day window; all pages disclose incomplete coverage.
+- GitHub Pages (`gh api repos/karagemop466-tech/Korea5/pages`): status **built**, source `main /`, public, HTTPS enforced, live at https://karagemop466-tech.github.io/Korea5/.
+- Sandbox outbound restrictions prevent live re-fetch of official sports hosts (official sports hosts and `github.io` are not reachable from this sandbox); inherited records are not relabelled as freshly verified. Official URLs remain linked per row for manual review.
+
+### Coverage confirmed present and labelled
+
+MLB all 30 clubs (Giants and Athletics high priority; 2026/2027 official via StatsAPI, 2028/2029 labelled ESTIMATION — not a real verified released schedule); NFL 49ers preseason/regular/postseason (2026 official, 2027–2029 ESTIMATION); Stanford and Cal NCAAF high priority (2026 official, future ESTIMATION); Westwood One national NFL radio (TNF/MNF/SNF/international/Super Bowl windows); other Bay Area radio sports flagged as unverified coverage gaps (not claimed as confirmed high priority). Day scoreboard with Prev/Next/Today and exact free/busy intervals in Pacific time. Duration labels: MLB official 2:38 average (2025) plus labelled 165-min planning buffer; NFL 60-min play + 13-min halftime official rulebook facts plus labelled 185/195-min buffers; NCAAF 60-min play + 20-min halftime official rulebook facts plus labelled 200-min buffer. 2027/2028/2029 one/two/three-week vacation window rankings; executive summary; Flagged for Review page with 20 published irregularities.
+
+### Result
+
+No code change was required — the site is complete and deployed. This session's only change is this coordination record. Flagged irregularities remain published and nonblocking.
+
+### Pull request and merge
+
+| Step | Result |
+|---|---|
+| Pull request | **#17 — https://github.com/karagemop466-tech/Korea5/pull/17** — "FREE TIME VACATION: final verification, certainty audit, and deployment record" |
+| Merge | **Merged** into `main` via `gh pr merge 17 --merge` |
+| GitHub Pages deploy | Confirmed **built**, source `main /`, HTTPS enforced |
+| Live site | https://karagemop466-tech.github.io/Korea5/ |
+
+## Follow-up — session `arena-0778c36f`
+
+| Task | Owner | Status | Files |
+|---|---|---|---|
+| Calendar day-boundary and navigation correctness audit | arena-0778c36f | in progress | `assets/app.js`, `tests/test_calendar.js`, `COORDINATION.md` |
+
+The Arena branch is fixed to `arena/0778c36f-korea5`; no task branch will be created. Prior site integration was completed; this is a narrow follow-up that does not claim concurrent research scopes.
+
+- Calendar audit completed: corrected timezone-dependent day navigation, the +2-day button, invalid/out-of-range navigation, midnight display, and precedence of estimated kickoff badges. A day with no loaded records is no longer labelled simply “free”. No schedule facts were changed or newly verified.
+- Validation: `node tests/test_calendar.js` (date arithmetic in three time zones and 24:00); `node --check assets/app.js`; Python unit tests 5/5; `scripts/check_links.py` 0 missing; `tools/verify_extra.py` 31/31; certainty audit passed. The existing evidence limitations remain on `certainty.html` and `flagged.html`; official source re-verification and complete local carriage remain unresolved. Official references: https://www.mlb.com/schedule/ , https://www.nfl.com/schedules/ , https://www.westwoodonesports.com/nfl-schedule/ .
+- Irregularity for future data updates: the calendar and derived analysis currently do not carry an event past midnight into the following day. A local scan of the committed 2026–2030 event feeds found no intervals exceeding 24:00, so this does not affect the currently loaded data; future overnight events require an engine change before relying on the output.
+- Task status: **done** for the narrow calendar audit; complete source-by-source verification is not claimed.
+- Integration: PR https://github.com/karagemop466-tech/Korea5/pull/16 merged as `4a5e7fda1fb839af2dd8282f208769328455d728`; Pages workflow `41739711616` and certainty checks `41739711994` succeeded. Site: https://karagemop466-tech.github.io/Korea5/ .
+## Follow-up usability audit — session `arena/04d42e6b-korea5` (2026-11-03)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| U1 | Make the detailed day scoreboard's Today button and default date use the current San Francisco calendar day, not the stale build date | arena/04d42e6b-korea5 | **done** | `extra/assets/extra.js`, `tools/build_extra.py`, `tests/test_calendar_today.js`, `.github/workflows/certainty.yml`, `COORDINATION.md` |
+| U2 | Distinguish historical snapshot token matches from live official-source matches and unavailable checks on the Sources page | arena/04d42e6b-korea5 | **done** | `scripts/build_site.py`, `sources.html`, `COORDINATION.md` |
+
+Claim notes: existing root calendar uses `America/Los_Angeles`, but the detailed scoreboard hard-coded `2026-11-02` for its Today value. On the current review date (2026-11-03 UTC), this sends users to yesterday. Both the maintained source template and generated asset will be fixed and tested. No source schedule facts will be edited or re-certified.
+
+- Completion: `pacificISODate()` now derives the scoreboard's default date and Today button from `Intl.DateTimeFormat` with the IANA `America/Los_Angeles` zone, so DST and viewers outside Pacific time are handled without assuming the browser's local timezone. The generator template and published asset match.
+- Added a Node regression test across UTC instants immediately before and after Pacific midnight and wired it into the certainty GitHub Actions workflow. Verified after a complete local rebuild: Python unit tests 5/5; certainty audit passed; root links 180/180 present; extra checks 31/31 passed; missing source-link rows 0; `node --check` and the Pacific Today-date test passed; `git diff --check` clean.
+- The normal site rebuild refreshed the root source-status summary and flagged count from the existing verification report (36 snapshot matches, 26 sources unavailable, 0 live mismatches). This does not constitute fresh official-source verification; the certainty disclosure continues to say so. No schedule records were added or changed.
+- U2 completion: the Sources page now reports historical snapshot matches, live matches, unavailable live rows and MLB API spot checks as separate metrics, with explicit descriptions that snapshot matches are not current verification and unavailability is not a mismatch. The generated page shows the report's 36 snapshot matches, 0 live matches, 26 unavailable checks and 0/10 live MLB spot checks; these are existing report values, not newly asserted schedule facts.
+- Concurrent integration note: while PR #19 was open, PR #18 landed on `main` with a separate root-calendar correction. Rebasing onto the updated `origin/main` produced an append/append conflict only in this coordination log; both sessions' task records were retained. No event data or schedule claims conflicted.
+
 ---
 
 ## Session `arena/0fb8732b-korea5` — 2026-11-03 (full-repo review + fix + integration)
@@ -352,7 +410,7 @@ Started from `main` tip `f9b5a7f` (PR #15 merged). No active claim overlapped th
 | # | Task | Owner | Status | Files |
 |---|---|---|---|---|
 | R1 | Full-repo line-by-line review + local verification suite (links, extra checks, certainty, unit tests, JS syntax, JSON validity, source-link audit, high-priority flag audit, snapshot spot checks) | arena-0fb8732b | **done** | `verification/session-review-0fb8732b.md` |
-| R2 | Fix stale "Today" on the extra day scoreboard (hardcoded `2026-11-02` → dynamic `America/Los_Angeles` date) in generator and generated asset | arena-0fb8732b | **done** | `tools/build_extra.py`, `extra/assets/extra.js` |
+| R2 | Fix stale "Today" on the extra day scoreboard (hardcoded `2026-11-02` → dynamic `America/Los_Angeles` date) | arena-0fb8732b | **done (superseded in merge)** | `tools/build_extra.py`, `extra/assets/extra.js` |
 | R3 | PR to `main`, merge without waiting, confirm Pages deploy, record result here | arena-0fb8732b | in progress | `COORDINATION.md` (this log) |
 
 ### R1/R2 findings (detail in `verification/session-review-0fb8732b.md`)
@@ -366,13 +424,18 @@ Started from `main` tip `f9b5a7f` (PR #15 merged). No active claim overlapped th
   snapshot file is only the JS shell, so local token checks are impossible; the CI fetch report
   (`official/fetch-report.json`) records 580 W1 events with 0 failures, and every row links its
   official event page.
-- **Defect fixed (R2):** `extra/assets/extra.js` hardcoded `today='2026-11-02'`, so the extra day
-  scoreboard's Today button/default day was stale from 2026-11-03 onward. Both the generator
-  (`tools/build_extra.py`) and the generated asset now compute today via
-  `Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',…})`, matching the root calendar.
-  Verified: `node -e` prints 2026-11-03 for PT; `node --check` passes; generated asset is identical
-  to the generator template line. Regeneration of other pages was reverted to keep the diff surgical
-  (banners are re-injected by `scripts/audit_certainty.py` after any generator run).
+- **Defect found (R2):** `extra/assets/extra.js` hardcoded `today='2026-11-02'`, so the extra day
+  scoreboard's Today button/default day was stale from 2026-11-03 onward. I fixed both the generator
+  (`tools/build_extra.py`) and the generated asset to compute today via
+  `Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',…})` (verified: node prints
+  2026-11-03 for PT; `node --check` passes). **Handoff logged:** while PR #21 was open, parallel
+  sessions merged PRs #17–#19 into `main`, which already contain an equivalent (stronger) fix —
+  a `pacificISODate()` helper recomputed on every render and on the Today click. During the
+  merge-conflict resolution I therefore took `origin/main`'s version of `extra/assets/extra.js`
+  and `tools/build_extra.py`; my duplicate change was dropped. Net effect on `main`: the fix is
+  live via the parallel sessions' version. The `COORDINATION.md` add/add conflict was resolved by
+  retaining both appended sections. Regeneration of unrelated pages was reverted to keep the diff
+  surgical (banners are re-injected by `scripts/audit_certainty.py` after any generator run).
 - Official sports hosts are unreachable from this sandbox (allowlist: github.com, npm, pypi), so no
   live schedule re-verification was performed in-session; that remains a CI job and a published
   "needs review" item. Nothing was relabelled as freshly verified.

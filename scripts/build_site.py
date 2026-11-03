@@ -645,10 +645,13 @@ official page, it is blank and appears on <a href="flagged.html">Flagged for rev
 
 <div class="grid g4">
   <div class="card"><div class="kpi">{esc(v.get('curatedRows', '—'))}<small>curated rows</small></div></div>
-  <div class="card"><div class="kpi">{esc(v.get('rowsVerified', '—'))}<small>re-verified against source</small></div></div>
-  <div class="card"><div class="kpi">{esc(v.get('mlbSpotChecksPassed', '—'))}/{esc(v.get('mlbSpotChecks', '—'))}<small>MLB API spot checks</small></div></div>
+  <div class="card"><div class="kpi">{esc(v.get('rowsVerifiedSnapshot', '—'))}<small>historical snapshot token matches</small></div></div>
+  <div class="card"><div class="kpi">{esc(v.get('rowsVerifiedLive', '—'))}<small>live curated rows matched</small></div></div>
+  <div class="card"><div class="kpi">{esc(v.get('mlbSpotChecksPassed', '—'))}/{esc(v.get('mlbSpotChecks', '—'))}<small>live MLB API spot checks passed</small></div></div>
+  <div class="card"><div class="kpi">{esc(v.get('rowsUnavailable', '—'))}<small>live source checks unavailable</small></div></div>
   <div class="card"><div class="kpi">{esc(v.get('feedProblems', '—'))}<small>feed integrity problems</small></div></div>
 </div>
+<p class="small">Snapshot matches are historical evidence, not fresh verification against the current official site. “Unavailable” means the source could not be reached during the recorded check; it is not a mismatch. See the <a href="certainty.html">certainty audit</a> and the machine-readable report for per-row status.</p>
 
 <h2>Official sources used</h2>
 {table(["Source", "URL", "Type", "What it verifies"], rows)}

@@ -30,16 +30,22 @@ All 11 root pages + 15 `extra/` pages, `assets/`, `extra/assets/`, all `data/*.j
 | Combined calendar (`extra/data/calendar.json`) | 1,215 days, 2026-11-02 → 2030-02-28, includes today 2026-11-03 |
 | Vacation ranking (`extra/data/vacation.json`) | 1/2/3-week windows ranked for 2027, 2028, 2029; every window `fullyFree=false`, `status=estimated` |
 
-## Defect found and fixed this session
+## Defect found this session (fixed upstream in parallel; duplicate dropped in merge)
 
 **Stale "Today" on the extra day scoreboard.** `extra/assets/extra.js` hardcoded
 `today='2026-11-02'` ("compiled date"), so the Prev/Next/Today scoreboard's Today button and
 default day were one day behind on 2026-11-03. The root calendar (`assets/app.js`) already
-computed today dynamically in `America/Los_Angeles`. Fixed both the generated asset and its
+computed today dynamically in `America/Los_Angeles`. I fixed both the generated asset and its
 generator (`tools/build_extra.py`) to compute the current Pacific date via
-`Intl.DateTimeFormat('en-CA', {timeZone:'America/Los_Angeles', …})`. Verified with `node -e`
-(today PT = 2026-11-03) and `node --check`; regenerated asset is byte-identical to the
-generator template line.
+`Intl.DateTimeFormat('en-CA', {timeZone:'America/Los_Angeles', …})`, verified with `node -e`
+(today PT = 2026-11-03) and `node --check`.
+
+While PR #21 was open, parallel sessions merged PRs #17–#19 into `main`, which already contain an
+equivalent, stronger fix (a `pacificISODate()` helper recomputed on every render and on the Today
+click). In the merge-conflict resolution, `origin/main`'s version of `extra/assets/extra.js` and
+`tools/build_extra.py` was kept and my duplicate change was dropped — the fix is live on `main` via
+the parallel sessions' version. The `COORDINATION.md` add/add conflict was resolved by retaining
+both appended sections. No work was discarded.
 
 ## What could NOT be verified from this sandbox (published, nonblocking)
 

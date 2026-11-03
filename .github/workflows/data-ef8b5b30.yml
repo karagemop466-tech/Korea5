@@ -1,33 +1,95 @@
-name: official-data-ef8b5b30
+name: Official feeds and Pages
+
 on:
-  workflow_dispatch:
+  # A Pages deployment does not change source branches. A main push publishes
+  # the reviewed snapshot; a scheduled run builds a refreshed, checked snapshot.
   push:
-    branches: [ 'arena/ef8b5b30-korea5' ]
-    paths: [ 'tools/fetch_official.py', '.github/workflows/data-ef8b5b30.yml' ]
+    branches: [main, 'arena/25b9e992-korea5']
+  schedule:
+    - cron: '17 10 * * *'
+  workflow_dispatch:
+
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
 concurrency:
-  group: official-data-ef8b5b30
+  group: pages-official-refresh
   cancel-in-progress: false
+
 jobs:
-  fetch:
+  build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: arena/ef8b5b30-korea5
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Fetch official NFL / Westwood One / station / MLB-TBD data
-        run: python3 tools/fetch_official.py
-      - name: Commit official data
+      - name: Run source-ingestion regression tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Decide whether to refresh data
+        id: mode
+        env:
+          EVENT: ${{ github.event_name }}
+          REF: ${{ github.ref }}
+          MESSAGE: ${{ github.event.head_commit.message }}
         run: |
-          git config user.name "korea5-data-bot"
-          git config user.email "korea5-data-bot@users.noreply.github.com"
-          git add official/
-          if git diff --cached --quiet; then echo "no changes"; else
-            git commit -m "data: refresh official NFL/W1/station/MLB-TBD feeds"
-            git pull --rebase --autostash origin arena/ef8b5b30-korea5
-            git push origin HEAD:arena/ef8b5b30-korea5
+          if [ "$EVENT" = schedule ] || [ "$EVENT" = workflow_dispatch ] || \
+             { [ "$REF" = refs/heads/arena/25b9e992-korea5 ] && [[ "$MESSAGE" = *"[verify official]"* ]]; }; then
+            echo 'refresh=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'refresh=false' >> "$GITHUB_OUTPUT"
           fi
+      - name: Fetch official NFL, Westwood One and MLB TBD feeds
+        if: steps.mode.outputs.refresh == 'true'
+        run: python3 tools/fetch_official.py
+      - name: Fetch MLB seasons and reject incomplete responses
+        if: steps.mode.outputs.refresh == 'true'
+        run: |
+          cp data/mlb-summary.json /tmp/korea5-mlb-before.json
+          python3 scripts/fetch_mlb.py
+          python3 -c 'import json,sys; old=json.load(open("/tmp/korea5-mlb-before.json")); new=json.load(open("data/mlb-summary.json")); bad={y:v for y,v in new.items() if v.get("failedWindows") or (old.get(y,{}).get("regularSeasonGames",0)>0 and v.get("regularSeasonGames",0)<old[y]["regularSeasonGames"]*0.95)}; print("Incomplete or unexpectedly smaller MLB feeds:",bad); sys.exit(bool(bad))'
+      - name: Rebuild from the checked snapshot
+        if: steps.mode.outputs.refresh == 'true'
+        run: |
+          cp official/nfl-2026.json data/upstream/nfl-2026.json
+          cp official/w1-stations.json data/upstream/w1-stations.json
+          python3 scripts/build_events.py
+          python3 scripts/analyze.py
+          python3 scripts/build_site.py
+          python3 tools/build_extra.py
+      - name: Validate site and local links
+        run: |
+          python3 scripts/audit_certainty.py
+          python3 scripts/check_links.py
+          python3 tools/verify_extra.py
+          python3 scripts/audit_certainty.py
+      - name: Preserve source-refresh diagnostics for branch testing
+        if: github.ref != 'refs/heads/main' && steps.mode.outputs.refresh == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-feed-test-${{ github.run_id }}
+          path: |
+            official/
+            data/mlb-summary.json
+          retention-days: 7
+      - name: Upload checked site to Pages
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy checked site
+        id: deployment
+        uses: actions/deploy-pages@v4

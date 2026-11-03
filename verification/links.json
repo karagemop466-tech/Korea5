@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
  "pages": 11,
  "localLinksChecked": 179,
  "missing": [],
  "uniqueExternalLinks": 518,
+=======
+ "pages": 10,
+ "localLinksChecked": 165,
+ "missing": [],
+ "uniqueExternalLinks": 514,
+>>>>>>> origin/main
  "externalLinks": [
   "https://calbears.com/sports/football/schedule",
   "https://gostanford.com/sports/football/schedule",
@@ -12,7 +19,11 @@
   "https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2028&amp;gameType=R",
   "https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2029&amp;gameType=R",
   "https://www.49ers.com/schedule/2026/",
+<<<<<<< HEAD
   "https://www.mlb.com/giants/schedule/watch",
+=======
+  "https://www.mlb.com/news/mlb-2027-schedule-released",
+>>>>>>> origin/main
   "https://www.mlb.com/schedule",
   "https://www.mlb.com/schedule/2027-03-01",
   "https://www.mlb.com/schedule/2027-03-25",

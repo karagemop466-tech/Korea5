@@ -157,6 +157,13 @@ def build_index():
 <tr><td>2028</td><td>Unverified — no certified window</td><td>Use only labelled scenarios until official fixtures and station carriage are confirmed.</td><td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2028&amp;gameType=R">MLB official feed</a> · <a href="https://www.nfl.com/schedules/">NFL</a></td></tr>
 <tr><td>2029</td><td>Unverified — no certified window</td><td>Same limits apply. No exact best vacation date can responsibly be asserted.</td><td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2029&amp;gameType=R">MLB official feed</a> · <a href="https://www.nfl.com/schedules/">NFL</a></td></tr>
 </tbody></table></div>
+<h2>Schedule status — official vs estimated</h2>
+<p class="small">Integrated from the parallel dashboard update in PR #11. Official fixtures, estimated future fixtures and confirmed radio carriage are different evidence layers.</p>
+<div class="grid g3">
+<div class="card"><h3>2027 MLB</h3><p>The inherited data attributes dates and matchups to MLB's release. TBD first-pitch times remain unverified; a release does not certify every field or every future free day.</p><a href="https://www.mlb.com/news/mlb-2027-schedule-released">MLB schedule release</a></div>
+<div class="card"><h3>2028 &amp; 2029 MLB</h3><p>ESTIMATION — not a real verified released schedule. Scenario dates are not official fixtures.</p><a href="https://www.mlb.com/schedule">Official MLB schedules</a></div>
+<div class="card"><h3>2027 NFL &amp; Super Bowl LXI</h3><p>A season schedule and a championship anchor are separate. Exact dates, kickoffs and local station carriage must be validated independently; unconfirmed values are not filled in here.</p><a href="https://www.nfl.com/schedules/">NFL schedules</a> · <a href="https://www.westwoodonesports.com/nfl-schedule/">Westwood One schedule</a></div>
+</div>
 <h2>Explore by category</h2><div class="pill-row">
 <a class="btn" href="mlb.html">All 30 MLB clubs</a><a class="btn" href="extra/nfl-2026.html">NFL &amp; 49ers</a>
 <a class="btn" href="ncaaf.html">Stanford &amp; Cal</a><a class="btn" href="extra/westwoodone.html">Westwood One · all sports</a>

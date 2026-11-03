@@ -399,3 +399,53 @@ Claim notes: existing root calendar uses `America/Los_Angeles`, but the detailed
 - The normal site rebuild refreshed the root source-status summary and flagged count from the existing verification report (36 snapshot matches, 26 sources unavailable, 0 live mismatches). This does not constitute fresh official-source verification; the certainty disclosure continues to say so. No schedule records were added or changed.
 - U2 completion: the Sources page now reports historical snapshot matches, live matches, unavailable live rows and MLB API spot checks as separate metrics, with explicit descriptions that snapshot matches are not current verification and unavailability is not a mismatch. The generated page shows the report's 36 snapshot matches, 0 live matches, 26 unavailable checks and 0/10 live MLB spot checks; these are existing report values, not newly asserted schedule facts.
 - Concurrent integration note: while PR #19 was open, PR #18 landed on `main` with a separate root-calendar correction. Rebasing onto the updated `origin/main` produced an append/append conflict only in this coordination log; both sessions' task records were retained. No event data or schedule claims conflicted.
+
+---
+
+## Session `arena/0fb8732b-korea5` — 2026-11-03 (full-repo review + fix + integration)
+
+Branch constraint: Arena fixes this session to `arena/0fb8732b-korea5`; no other branch was created or pushed.
+Started from `main` tip `f9b5a7f` (PR #15 merged). No active claim overlapped this work.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| R1 | Full-repo line-by-line review + local verification suite (links, extra checks, certainty, unit tests, JS syntax, JSON validity, source-link audit, high-priority flag audit, snapshot spot checks) | arena-0fb8732b | **done** | `verification/session-review-0fb8732b.md` |
+| R2 | Fix stale "Today" on the extra day scoreboard (hardcoded `2026-11-02` → dynamic `America/Los_Angeles` date) | arena-0fb8732b | **done (superseded in merge)** | `tools/build_extra.py`, `extra/assets/extra.js` |
+| R3 | PR to `main`, merge without waiting, confirm Pages deploy, record result here | arena-0fb8732b | in progress | `COORDINATION.md` (this log) |
+
+### R1/R2 findings (detail in `verification/session-review-0fb8732b.md`)
+
+- `check_links.py`: 11 pages, 179 local + 519 external links, 0 missing. `verify_extra.py`: 31/31.
+  `audit_certainty.py`: passed. Unit tests 5/5. `node --check` both JS bundles. All data JSON valid.
+- Source-link audit: 8,554 source-bearing rows, 0 blank URLs; the single third-party research link
+  (`profootballnetwork.com`, durations research row) is already labelled non-official and flagged.
+- High-priority audit: 0 unflagged Giants/A's/49ers/Stanford/Cal rows across 7,203 events (2026–2030).
+- 49ers curated rows: 21/21 verifyTokens matched the committed official-page snapshot. Westwood One
+  snapshot file is only the JS shell, so local token checks are impossible; the CI fetch report
+  (`official/fetch-report.json`) records 580 W1 events with 0 failures, and every row links its
+  official event page.
+- **Defect found (R2):** `extra/assets/extra.js` hardcoded `today='2026-11-02'`, so the extra day
+  scoreboard's Today button/default day was stale from 2026-11-03 onward. I fixed both the generator
+  (`tools/build_extra.py`) and the generated asset to compute today via
+  `Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',…})` (verified: node prints
+  2026-11-03 for PT; `node --check` passes). **Handoff logged:** while PR #21 was open, parallel
+  sessions merged PRs #17–#19 into `main`, which already contain an equivalent (stronger) fix —
+  a `pacificISODate()` helper recomputed on every render and on the Today click. During the
+  merge-conflict resolution I therefore took `origin/main`'s version of `extra/assets/extra.js`
+  and `tools/build_extra.py`; my duplicate change was dropped. Net effect on `main`: the fix is
+  live via the parallel sessions' version. The `COORDINATION.md` add/add conflict was resolved by
+  retaining both appended sections. Regeneration of unrelated pages was reverted to keep the diff
+  surgical (banners are re-injected by `scripts/audit_certainty.py` after any generator run).
+- Official sports hosts are unreachable from this sandbox (allowlist: github.com, npm, pypi), so no
+  live schedule re-verification was performed in-session; that remains a CI job and a published
+  "needs review" item. Nothing was relabelled as freshly verified.
+- No new irregularities; all prior flagged items remain published on `flagged.html` / `extra/flagged.html`.
+
+### R3 integration record
+
+| Step | Result |
+|---|---|
+| Pull request | (filled after merge) |
+| Merge | (filled after merge) |
+| GitHub Pages build | (filled after merge) |
+| Live site | https://karagemop466-tech.github.io/Korea5/ |

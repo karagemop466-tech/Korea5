@@ -10,7 +10,8 @@ Purpose: Free-time / vacation planner covering **MLB (all 30 clubs), NFL (all ga
 
 | Session ID | Branch | Role | Status |
 |---|---|---|---|
-| `arena-1a5a5516` | `arena/1a5a5516-korea5` | Sole active session — research, data, build, verification, integration | **done** |
+| `arena-1a5a5516` | `arena/1a5a5516-korea5` | Research, data, build, verification, integration | **done** |
+| `arena-fe2113ea` | `arena/fe2113ea-korea5` | Post-merge requirements, accuracy, and usability audit; corrective integration if needed | **in progress** |
 
 **Note on branch naming.** The Arena session rule fixes this session's branch to `arena/1a5a5516-korea5`
 (no `session-<id>/<task>` branches may be created or pushed). All work therefore happened on that branch, and the
@@ -34,10 +35,12 @@ other author than this session and its CI bot (`korea5-data-bot`). No task was c
 | T8 | Site: dashboard, calendar, category pages, sources, flagged, method | arena-1a5a5516 | **done** | `*.html`, `assets/` |
 | T9 | Verification: line-by-line source audit, link check, feed integrity | arena-1a5a5516 | **done** | `scripts/verify.py`, `verification/` |
 | T10 | Integration: rebuild, re-verify, publish to `main`, Pages deploy, PR | arena-1a5a5516 | **done** | merge commit `3ae7171` |
-| T11 | *(session ef8b5b30)* Official NFL by-week feed, Westwood One station finder, extra W1 sport pages | arena-ef8b5b30 | **needs review** | `official/`, `research-ef8b5b30/`, `.github/workflows/*-ef8b5b30.yml` |
+| T11 | *(session ef8b5b30)* Official NFL by-week feed, Westwood One station finder, extra W1 sport pages | arena-ef8b5b30 | **done** | `official/`, `research-ef8b5b30/`, `.github/workflows/*-ef8b5b30.yml` |
+| T12 | Independent post-merge audit against the current user brief; correct confirmed requirements, accuracy, or usability defects and record unresolved items | arena-fe2113ea | **in progress** | `COORDINATION.md`, `README.md`, `research/EXECUTIVE-SUMMARY-ef8b5b30.md`, `extra/`, `tools/verify_extra.py` |
 
 ## Change log
 
+- **2026-11-03** — `arena-fe2113ea` claims T12 for a post-merge requirements/accuracy/usability audit. Scope is limited to `COORDINATION.md`, `README.md`, `research/EXECUTIVE-SUMMARY-ef8b5b30.md`, `extra/`, and `tools/verify_extra.py`; the fixed Arena branch `arena/fe2113ea-korea5` is used instead of creating a task branch.
 - **2026-11-02** — Board created. `arena-1a5a5516` claims T1–T10. Working branch `arena/1a5a5516-korea5`.
 - **2026-11-02** — Confirmed GitHub Actions executes in this repo and that runners can reach the official schedule hosts.
   Data acquisition therefore runs in CI instead of relying on transcription.

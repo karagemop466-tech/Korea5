@@ -317,3 +317,13 @@ Branch constraint: this session is fixed to `arena/7c5c30e4-korea5`; no other br
 Flagged irregularities and unverified items remain published on the Flagged for Review page and do not block the merge or deployment.
 
 - PR #13 concurrently appended the parallel session deployment log. Resolved the COORDINATION.md append/append conflict by retaining both complete sections. No data or site changes conflicted.
+
+---
+
+## Follow-up audit — session `arena-b9716034`
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| T12 | Correct verifier handling of unreachable official sources; distinguish unavailable from actual source mismatches | arena-b9716034 | **in progress** | `scripts/verify.py`, `verification/report.json`, `verification/report.md`, `verification/links.json`, `COORDINATION.md` |
+
+- 2026-11-03 — Claimed T12 after reading the completed task board. The sandbox's permitted outbound hosts do not include the official MLB/NFL/team/network sites. The first local verification run therefore received no official response for all 62 rows and incorrectly recorded them as 62 mismatches. T12 will fix that classification so unavailable sources are explicitly unverified rather than falsely reported as mismatched; it will not claim source verification without a successful response or an existing dated snapshot.

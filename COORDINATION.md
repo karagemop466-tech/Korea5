@@ -264,3 +264,39 @@ and merge result here.
 **Status:** E1–E10 **done**; T11 (the `ef8b5b30` row in the first session's board) is **done** — its
 `needs review` items are published on the Flagged for Review page and do not block anything. Both sessions'
 work is merged into `main` and live on GitHub Pages. No unclaimed or overlapping task remains.
+
+---
+
+## Session `arena/64d6c237-korea5` — 2026-11-03 live-source verification & clean planner pass
+
+> Branch rule: Arena fixes this session to `arena/64d6c237-korea5`; no other branch may be created or pushed.
+> Parallel active branches inspected via `git ls-remote` / GitHub API at start (`2026-11-03T19:35Z`):
+> `arena/ad64bf51-korea5`, `arena/147cff7a-korea5`, `arena/f9e705a1-korea5`, and `arena/fe2113ea-korea5`
+> (claiming `assets/`, root `*.html`, `scripts/`, `verification/`, `extra/`, `tools/build_extra.py`,
+> `tools/verify_extra.py`, `README.md`, `research/EXECUTIVE-SUMMARY*.md`).
+> To keep task scopes strictly non-overlapping during work, `arena-64d6c237` claims **only**
+> `verified/`, `planner/`, `tools/s64d6c237/`, `research/s64d6c237/`, and append-only updates to `COORDINATION.md`,
+> and defers shared root navigation/integration updates to final integration Step S7 after pulling `origin/main`.
+
+### Session registry (addendum — `arena-64d6c237`)
+
+| Session ID | Branch | Role | Status |
+|---|---|---|---|
+| `arena-64d6c237` | `arena/64d6c237-korea5` | Live official-source verification (Cal/Stanford NCAAF, 49ers/NFL, MLB all 30 clubs, Westwood One NFL & all sports, SF 94122 AM/FM radio schedules & durations), PST/PT free-time & 2027–2029 vacation analyzer, clean planner dashboard, final integration & PR | **in progress** |
+
+### Task board (`arena-64d6c237`, non-overlapping scopes)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| S1 | Live-source audit & verification of NCAAF (full 12-game Cal 2026 + Stanford 2026 + 2027–2029 future schedules), NFL/49ers, MLB (all 30 clubs 2026–2029), Westwood One Sports (NFL + all Bay Area radio sports) | `arena-64d6c237` | **in progress** | `verified/`, `research/s64d6c237/` |
+| S2 | Live verification of San Francisco / Outer Sunset 94122 AM/FM radio stations, upcoming station schedules (KNBR, KNEW, KSFO, KTCT, KSAN, KSFN, Westwood One affiliates), and official game durations / halftime rules | `arena-64d6c237` | unclaimed | `verified/stations-94122.json`, `verified/durations.json`, `research/s64d6c237/` |
+| S3 | Exact PST/PT minute-by-minute free-time engine (through 2029/2030) and 1-week / 2-week / 3-week vacation window ranking for 2027, 2028, 2029 (strictly separating verified vs clearly labeled estimations) | `arena-64d6c237` | unclaimed | `tools/s64d6c237/`, `verified/derived/` |
+| S4 | Clean, simple dashboard & category subpages (`planner/`): Landing + Executive Summary, Daily Scoreboard Calendar (Yesterday / Today / Tomorrow), Vacation Windows (2027–2029), MLB (all 30 clubs, Giants/A's high priority), NFL & 49ers, Stanford & Cal NCAAF, Westwood One & 94122 Radio, Durations & Method, Official Sources, Flagged for Review | `arena-64d6c237` | unclaimed | `planner/` |
+| S5 | Executive summary & line-by-line source/link verification audit (0 unverified inferences, blank + flagged where unconfirmed, 0 broken links) | `arena-64d6c237` | unclaimed | `research/s64d6c237/EXECUTIVE-SUMMARY.md`, `verified/verification-report.json` |
+| S6 | Final integration: merge latest `origin/main` (preserving all parallel session work), link `planner/` from shared navigation cleanly, re-verify combined build & links, open PR to `main`, merge, confirm GitHub Pages live deploy, log PR & merge result | `arena-64d6c237` | unclaimed | `COORDINATION.md` (+ shared nav at final integration only) |
+
+### Cross-scope defect requests logged for parallel sessions (`data/curated/` & root site)
+
+- **Request to owners of `data/curated/ncaaf-2026.json` / root HTML (`147cff7a`, `ad64bf51`, `f9e705a1`):** Live check of `calbears.com` (`https://calbears.com/news/2026/1/26/california-football-announces-2026-schedule.aspx` and live scoreboard) shows `1a5a5516`'s text parser shifted Cal's November opponents by one card: **Nov 14, 2026 is Cal at Virginia (12:30 PM PT)** (not Stanford), **Nov 21, 2026 is Stanford at Cal (129th Big Game)** (matching `gostanford.com` — no date conflict), and **Nov 28, 2026 is Pittsburgh at Cal** (not Nov 21 / blank). Cal's 9 earlier 2026 games (Sept 5 UCLA through Oct 31 at NC State) are also published on `calbears.com`. `arena-64d6c237` is recording the full verified 12-game Cal schedule in `verified/ncaaf-2026.json` without editing `data/curated/`.
+- **Request to owners of `data/curated/westwoodone-2026.json`:** Live check of `https://www.westwoodonesports.com/nfl-schedule/` shows `events/548520` is **Dec 26, 2026 — Week 16 Saturday Doubleheader TBA (8:00 PM ET)**, not Dec 27 JAX at DAL (card-offset bug in `1a5a5516`), and several TNF/MNF/SNF windows (e.g., Nov 12 WAS@NYG, Nov 19 IND@HOU, Nov 23 CIN@WAS, Dec 3 KC@LAR, Dec 7 DAL@SEA, Dec 13 BUF@GB, Dec 17 SF@LAC) were omitted from `data/curated/westwoodone-2026.json` (though present in `official/westwoodone.json`).
+

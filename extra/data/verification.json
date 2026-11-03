@@ -94,8 +94,8 @@
     "parallelEvents": 7203,
     "combinedEvents": 7529,
     "calendarDays": 1215,
-    "calendarVerifiedRows": 909,
-    "calendarEstimatedRows": 3154,
+    "calendarVerifiedRows": 988,
+    "calendarEstimatedRows": 3075,
     "calendarTbaRows": 88,
     "mlbTbdTrue": 2015,
     "sourceRegistry": 41,
@@ -103,7 +103,7 @@
     "stations": 16,
     "ncaafFutureRows": 26,
     "estimateWindows": 11,
-    "flags": 20
+    "flags": 22
   },
   "failures": []
 }

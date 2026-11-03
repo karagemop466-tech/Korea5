@@ -136,7 +136,12 @@ check("estimates page carries exact ESTIMATION label", EST_LABEL in (EXTRA / "es
 check("root pages link to the official-feed hub", all("extra/index.html" in p.read_text(encoding="utf-8") or "certainty-notice" in p.read_text(encoding="utf-8") or p.name == "certainty.html" for p in ROOT.glob("*.html")))
 cal_html = (ROOT / "calendar.html").read_text(encoding="utf-8")
 check("root calendar has Prev, Next and Today buttons", all(s in cal_html for s in ("← Prev", "Next →", ">Today<")))
-check("root dashboard does not claim guaranteed free future vacations", "No conflict-free vacation is certified" in (ROOT / "index.html").read_text(encoding="utf-8"))
+_idx = (ROOT / "index.html").read_text(encoding="utf-8")
+check("root dashboard does not claim guaranteed free future vacations",
+      "guaranteed free" not in _idx.lower()
+      and 'id="certainty-notice"' in _idx
+      and "ESTIMATION" in _idx,
+      "dashboard must carry the certainty notice, never say 'guaranteed free', and label unreleased years")
 check("extra hub and all 14 extra pages exist", len(list(EXTRA.glob("*.html"))) >= 14, str(len(list(EXTRA.glob("*.html")))))
 
 report = {

@@ -418,13 +418,25 @@ def nfl_postseason_estimate(season_year):
         ("superbowl", sb, "15:30", "Super Bowl"),
     ]
     for suffix, day, start, label in rounds:
+        # The Pro Bowl Games is an all-star exhibition, not a league game, and Westwood One's
+        # published 2026-27 NFL schedule does not list it. It therefore blocks the "all" and
+        # "high" scopes (the owner asked for NFL all-star events to be modelled) but must NOT
+        # carry the `westwoodone` tag, because that tag is what puts a row in the radio scope.
+        allstar = suffix == "probowl"
         rows.append({
-            "id": f"nfl-est-{season_year}-{suffix}", "league": "NFL", "priority": "high",
-            "tags": ["nfl", "westwoodone", "estimate"], "date": day.isoformat(), "start": start,
+            "id": f"nfl-est-{season_year}-{suffix}", "league": "NFL",
+            "priority": "high" if not allstar else "normal",
+            "tags": (["nfl", "nfl-allstar", "estimate"] if allstar
+                     else ["nfl", "westwoodone", "estimate"]),
+            "date": day.isoformat(), "start": start,
             "durationMin": DURATION["nfl-post"],
-            "title": f"{label} (participants TBD)", "seasonType": "postseason",
+            "title": f"{label} (participants TBD)", "seasonType": "special" if allstar else "postseason",
             "timeStatus": "estimated", "status": "estimated",
-            "timeBasis": ("Estimated from the NFL's structural calendar: Week 18 in early January, then Wild Card, "
+            "timeBasis": ("All-star exhibition, modelled on the Sunday before the Super Bowl. It is not a league "
+                          "game and Westwood One's published 2026-27 schedule does not list it, so it is excluded "
+                          "from the radio-only scope.")
+                         if allstar else
+                         ("Estimated from the NFL's structural calendar: Week 18 in early January, then Wild Card, "
                           "Divisional and Conference rounds, with the Super Bowl on the second Sunday of February."),
             "source": "https://www.nfl.com/schedules/", "sourceLabel": "Estimated — NFL structure",
             "sourceUrl": "https://www.nfl.com/schedules/",

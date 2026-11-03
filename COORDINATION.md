@@ -341,3 +341,33 @@ Flagged irregularities and unverified items remain published on the Flagged for 
 | Live site | https://karagemop466-tech.github.io/Korea5/ — Pages source `main` /; deployment status confirmed by successful Pages workflow |
 
 During integration, PR #12's certainty and coverage updates landed concurrently on `main`. This branch was rebased onto that latest `main`; the certainty banner, cautious vacation analysis, and all other changes were preserved. Source checks remain explicitly unavailable where the sandbox could not reach official sports hosts.
+
+## Final integration and deployment confirmation — session `arena/e20a1d38-korea5`
+
+Branch fixed by Arena: `arena/e20a1d38-korea5`; branch tip `f9b5a7f` is identical to `origin/main`. All prior-session work (T1–T12, E1–E10, F1, S1–S3) is merged into `main` and live on GitHub Pages. No overlapping or unclaimed task remains.
+
+### Verification performed this session (2026-11-03)
+
+- All committed data JSON valid: 0 malformed files (`data/`, `data/curated/`, `data/derived/`, `extra/data/`, `curated/`).
+- `scripts/check_links.py`: 11 pages, 179 local links, 519 external links, **0 missing**.
+- `tools/verify_extra.py`: **31 checks / 31 passed**, 0 failed, 0 broken local links, 0 table rows missing an official source link.
+- `scripts/audit_certainty.py`: passed — no certified future 7/14/21-day window; all pages disclose incomplete coverage.
+- GitHub Pages (`gh api repos/karagemop466-tech/Korea5/pages`): status **built**, source `main /`, public, HTTPS enforced, live at https://karagemop466-tech.github.io/Korea5/.
+- Sandbox outbound restrictions prevent live re-fetch of official sports hosts (official sports hosts and `github.io` are not reachable from this sandbox); inherited records are not relabelled as freshly verified. Official URLs remain linked per row for manual review.
+
+### Coverage confirmed present and labelled
+
+MLB all 30 clubs (Giants and Athletics high priority; 2026/2027 official via StatsAPI, 2028/2029 labelled ESTIMATION — not a real verified released schedule); NFL 49ers preseason/regular/postseason (2026 official, 2027–2029 ESTIMATION); Stanford and Cal NCAAF high priority (2026 official, future ESTIMATION); Westwood One national NFL radio (TNF/MNF/SNF/international/Super Bowl windows); other Bay Area radio sports flagged as unverified coverage gaps (not claimed as confirmed high priority). Day scoreboard with Prev/Next/Today and exact free/busy intervals in Pacific time. Duration labels: MLB official 2:38 average (2025) plus labelled 165-min planning buffer; NFL 60-min play + 13-min halftime official rulebook facts plus labelled 185/195-min buffers; NCAAF 60-min play + 20-min halftime official rulebook facts plus labelled 200-min buffer. 2027/2028/2029 one/two/three-week vacation window rankings; executive summary; Flagged for Review page with 20 published irregularities.
+
+### Result
+
+No code change was required — the site is complete and deployed. This session's only change is this coordination record. Flagged irregularities remain published and nonblocking.
+
+### Pull request and merge
+
+| Step | Result |
+|---|---|
+| Pull request | from `arena/e20a1d38-korea5` to `main` — coordination record + final verification summary |
+| Merge | pending |
+| GitHub Pages deploy | pending |
+| Live site | https://karagemop466-tech.github.io/Korea5/ |

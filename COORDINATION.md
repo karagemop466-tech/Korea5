@@ -325,6 +325,7 @@ Flagged irregularities and unverified items remain published on the Flagged for 
 | # | Task | Owner | Status | Files |
 |---|---|---|---|---|
 | T12 | Correct verifier handling of unreachable official sources; distinguish unavailable from actual source mismatches | arena-b9716034 | **done** | `scripts/verify.py`, `tests/test_verify.py`, `verification/report.json`, `verification/report.md`, `verification/links.json`, `COORDINATION.md` |
+| T13 | Audit public summary/vacation claims for consistency with evidence limits; prevent model rankings from reading as verified guarantees | arena-b833834b | **in progress** | `scripts/build_site.py`, `tools/build_extra.py`, `scripts/audit_certainty.py`, `research/EXECUTIVE-SUMMARY.md`, `research/EXECUTIVE-SUMMARY-ef8b5b30.md`, `README.md`, generated `index.html`, `vacation.html`, `extra/vacation.html`, `extra/summary.html`, `COORDINATION.md` |
 
 - 2026-11-03 — Claimed T12 after reading the completed task board. The sandbox's permitted outbound hosts do not include the official MLB/NFL/team/network sites. The first local verification run therefore received no official response for all 62 rows and incorrectly recorded them as 62 mismatches. T12 fixes that classification so unavailable sources are explicitly unverified rather than falsely reported as mismatched; it does not claim source verification without a successful response or an existing dated snapshot.
 - **Completion / evidence:** `scripts/verify.py` now distinguishes `verified-live`, `verified-snapshot`, `source-mismatch`, and `source-unavailable`. Updated `verification/report.json` / `.md` records 36 source-token matches against committed official-page snapshots, 26 live-source checks unavailable, 0 live mismatches, 10/10 MLB API spot checks unavailable, and 6/6 NFL page spot checks unavailable. No official site was reachable from this sandbox, so current-live schedule validity is not asserted. Official URLs remain linked per row (49ers.com, gostanford.com, calbears.com, westwoodonesports.com, statsapi.mlb.com, nfl.com).
@@ -341,3 +342,16 @@ Flagged irregularities and unverified items remain published on the Flagged for 
 | Live site | https://karagemop466-tech.github.io/Korea5/ — Pages source `main` /; deployment status confirmed by successful Pages workflow |
 
 During integration, PR #12's certainty and coverage updates landed concurrently on `main`. This branch was rebased onto that latest `main`; the certainty banner, cautious vacation analysis, and all other changes were preserved. Source checks remain explicitly unavailable where the sandbox could not reach official sports hosts.
+
+
+---
+
+## Session `arena/b833834b-korea5` — 2026-11-03
+
+Branch fixed by Arena to `arena/b833834b-korea5`; no alternate branch will be created. The existing task board showed no active claims when this task was claimed. This is the repository's final integration session for T13; the prior research/data/site tasks are all complete.
+
+**T13 claim:** audit the published summary and vacation-window copy against the current certainty policy. Keep inherited/model rankings visible only as provisional model outputs, remove contradictory language that presents them as verified or guaranteed free time, and make the generated HTML and executive summaries agree.
+
+**Scope:** `scripts/build_site.py`, `tools/build_extra.py`, `scripts/audit_certainty.py`, `research/EXECUTIVE-SUMMARY.md`, `research/EXECUTIVE-SUMMARY-ef8b5b30.md`, `README.md`, generated `index.html`, `vacation.html`, `extra/vacation.html`, `extra/summary.html`, and this board. No schedule data or official-source values are being changed under this claim.
+
+**Claim status:** in progress. Push the claim on the fixed Arena branch before editing other files; final verification will distinguish local build/structure checks from live official-source verification.

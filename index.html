@@ -10,31 +10,44 @@
   <nav class="main"><a href="index.html" class="active">Dashboard</a><a href="calendar.html" class="">Calendar</a><a href="vacation.html" class="">Vacation windows</a><a href="mlb.html" class="">MLB</a><a href="nfl.html" class="">NFL &amp; 49ers</a><a href="ncaaf.html" class="">Stanford &amp; Cal</a><a href="radio.html" class="">Radio</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged</a><a href="method.html" class="">Method</a><a href="extra/index.html">Official feeds &amp; verification</a></nav>
 </div></header>
 <main class="wrap"><aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. <a href="certainty.html">Flagged for Review: certainty audit</a>.</aside>
+
 <section class="hero"><div><p class="small">SAN FRANCISCO 94122 · PACIFIC TIME · 2026–2029</p>
 <h1>Plan time away.<br>Know what you might miss.</h1>
 <p class="lede">MLB, NFL, Stanford, Cal and Westwood One radio in one place. Official schedule records and planning estimates are kept separate.</p>
 <div class="pill-row"><a class="btn" href="extra/calendar.html">Open day scoreboard →</a>
-<a class="btn" href="extra/vacation.html">Compare 1 / 2 / 3 weeks</a></div></div>
-<div class="card"><h2>The honest answer</h2><p><strong>No conflict-free vacation is certified for 2027, 2028 or 2029.</strong></p>
-<p>That means <em>unknown</em>, not impossible. Missing fixtures, TBD starts, variable game lengths and unconfirmed local radio carriage prevent that guarantee.</p>
-<a href="certainty.html">Read the certainty audit →</a></div></section>
-<h2>Start here</h2><div class="grid g3">
-<div class="card"><h3>Everyday free time</h3><p>Browse dates, games and modelled gaps. A gap means nothing in the loaded data blocks it, not that all possible broadcasts have been ruled out.</p><a href="extra/calendar.html">Day scoreboard</a></div>
-<div class="card"><h3>Vacation planning</h3><p>Compare week-long, two-week and three-week candidates. All future rankings are provisional; do not book solely on a green gap.</p><a href="extra/vacation.html">Tentative rankings</a></div>
-<div class="card"><h3>AM/FM, not streaming</h3><p>A team or network affiliation does not confirm carriage of a particular game. Reception on a standard radio in Outer Sunset remains unverified.</p><a href="extra/stations.html">Station evidence</a></div></div>
-<h2>Executive summary</h2>
-<div class="scroll"><table><thead><tr><th>Year</th><th>7 / 14 / 21 days without conflicts</th><th>Planning advice</th><th>Official reference</th></tr></thead><tbody>
-<tr><td>2027</td><td>Unverified — no certified window</td><td>Winter gaps are candidates in the inherited model, not booking guarantees. NFL, college football and radio coverage are incomplete.</td><td><a href="https://www.nfl.com/schedules/">NFL schedules</a> · <a href="https://www.mlb.com/schedule">MLB schedules</a></td></tr>
-<tr><td>2028</td><td>Unverified — no certified window</td><td>Use only labelled scenarios until official fixtures and station carriage are confirmed.</td><td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2028&amp;gameType=R">MLB official feed</a> · <a href="https://www.nfl.com/schedules/">NFL</a></td></tr>
-<tr><td>2029</td><td>Unverified — no certified window</td><td>Same limits apply. No exact best vacation date can responsibly be asserted.</td><td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2029&amp;gameType=R">MLB official feed</a> · <a href="https://www.nfl.com/schedules/">NFL</a></td></tr>
+<a class="btn" href="vacation.html">Best vacation dates</a></div></div>
+<div class="card"><h2>The answer</h2>
+<p><strong>Each year one pocket opens: between the conference championships and the Super Bowl.</strong></p>
+<p>For <strong>2027</strong>: <strong>Feb 1 – Feb 13, 2027</strong> — 13 consecutive nights with no MLB, NFL, Stanford, Cal or Westwood One game on the air. The days either side of it are conference-championship Sunday (2027-01-31) and Super Bowl LXI (2027-02-14).</p>
+<p>For <strong>2028</strong>: Jan 31 – Feb 12, 2028. For <strong>2029</strong>: Jan 29 – Feb 10, 2029. Both are <span class="tag est">ESTIMATION</span> — those schedules are not released.</p>
+<a href="vacation.html">Dates, evidence and caveats →</a></div></section>
+
+<h2>Does a whole week fit?</h2>
+<div class="scroll"><table><thead><tr><th>Year</th><th>Longest run with nothing on the radio</th><th>7 days?</th><th>14 days?</th><th>21 days?</th><th>Evidence status</th></tr></thead><tbody>
+<tr><td><strong>2027</strong></td><td>Feb 1 – Feb 13, 2027 (13 days)</td>
+<td>yes</td><td>no</td><td>no</td>
+<td>MLB dates official; Super Bowl LXI date official; NFL round dates modelled</td></tr>
+<tr><td><strong>2028</strong></td><td>Jan 31 – Feb 12, 2028 (13 days)</td>
+<td>yes</td><td>no</td><td>no</td>
+<td><span class="tag est">ESTIMATION</span> — MLB 2028 and NFL 2027 schedules not released</td></tr>
+<tr><td><strong>2029</strong></td><td>Jan 29 – Feb 10, 2029 (13 days)</td>
+<td>yes</td><td>no</td><td>no</td>
+<td><span class="tag est">ESTIMATION</span> — neither schedule released</td></tr>
 </tbody></table></div>
-<h2>Schedule status — official vs estimated</h2>
-<p class="small">Integrated from the parallel dashboard update in PR #11. Official fixtures, estimated future fixtures and confirmed radio carriage are different evidence layers.</p>
+<p class="small">"Nothing on the radio" = no game tagged Giants, Athletics, 49ers, Stanford, Cal or Westwood One. The stricter all-games view (which also counts the NFL all-star exhibition) maxes out at six consecutive days; that variant is shown on the vacation page.</p>
+
+<h2>Start here</h2><div class="grid g3">
+<div class="card"><h3>Everyday free time</h3><p>Browse dates, games and modelled gaps, in Pacific time, with Yesterday / Today / Tomorrow controls.</p><a href="extra/calendar.html">Day scoreboard</a></div>
+<div class="card"><h3>Vacation planning</h3><p>Every candidate week, two-week and three-week span, ranked by conflicts, with the evidence layer for each.</p><a href="vacation.html">Best vacation dates</a></div>
+<div class="card"><h3>AM/FM, not streaming</h3><p>Which games have a documented Bay Area radio outlet, and what still cannot be confirmed from official pages.</p><a href="extra/stations.html">Station evidence</a></div></div>
+
+<h2>Schedule status — what is official today</h2>
 <div class="grid g3">
-<div class="card"><h3>2027 MLB</h3><p>The inherited data attributes dates and matchups to MLB's release. TBD first-pitch times remain unverified; a release does not certify every field or every future free day.</p><a href="https://www.mlb.com/news/mlb-2027-schedule-released">MLB schedule release</a></div>
-<div class="card"><h3>2028 &amp; 2029 MLB</h3><p>ESTIMATION — not a real verified released schedule. Scenario dates are not official fixtures.</p><a href="https://www.mlb.com/schedule">Official MLB schedules</a></div>
-<div class="card"><h3>2027 NFL &amp; Super Bowl LXI</h3><p>A season schedule and a championship anchor are separate. Exact dates, kickoffs and local station carriage must be validated independently; unconfirmed values are not filled in here.</p><a href="https://www.nfl.com/schedules/">NFL schedules</a> · <a href="https://www.westwoodonesports.com/nfl-schedule/">Westwood One schedule</a></div>
+<div class="card"><h3>2027 MLB — released</h3><p>Opening Night Wed Mar 24, 2027; traditional Opening Day Thu Mar 25; All-Star Game Tue Jul 13 at Wrigley Field; final regular-season day Sun Sep 26. Confirmed on MLB.com and in the MLB StatsAPI feed. First-pitch times that MLB has not set are marked estimated.</p><a href="https://www.mlb.com/news/mlb-2027-schedule-released">MLB 2027 schedule release</a></div>
+<div class="card"><h3>2028 &amp; 2029 MLB — not released</h3><p>The MLB StatsAPI returns zero games for 2028 and 2029, so those rows are <span class="tag est">ESTIMATION</span> — a modelled daily slate, never invented matchups.</p><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2028&amp;gameType=R">MLB official feed (2028)</a></div>
+<div class="card"><h3>NFL — 2026 released, 2027+ not</h3><p>All 2026 NFL games are loaded. nfl.com has no 2027 season page yet, so 2027 NFL rounds are modelled. Super Bowl LXI is officially Sun Feb 14, 2027 at SoFi Stadium.</p><a href="https://www.sofistadium.com/news/detail/los-angeles-region-to-host-super-bowl-lxi-in-2027-welcoming-the-nfls-biggest-stage-for-the-second-time-this-decade-to-sofi-stadium">Super Bowl LXI announcement</a></div>
 </div>
+
 <h2>Explore by category</h2><div class="pill-row">
 <a class="btn" href="mlb.html">All 30 MLB clubs</a><a class="btn" href="extra/nfl-2026.html">NFL &amp; 49ers</a>
 <a class="btn" href="ncaaf.html">Stanford &amp; Cal</a><a class="btn" href="extra/westwoodone.html">Westwood One · all sports</a>
@@ -44,7 +57,7 @@
 </main>
 <footer><div class="wrap">
   <p><strong>Free Time Vacation Planner</strong> · Pacific time (America/Los_Angeles) · Coverage 2026-11-02 → 2030-02-28 ·
-  data rebuilt 2026-11-02T17:51:49Z</p>
+  data rebuilt 2026-11-02T17:54:23Z</p>
   <p>Inherited schedule records cite MLB's own StatsAPI, 49ers.com, gostanford.com, calbears.com and westwoodonesports.com.
   Anything not published by an official source is labelled <span class="tag est">estimated</span> and explained on the
   <a href="method.html">Method</a> page. Items that could not be confirmed are on <a href="flagged.html">Flagged for review</a>.</p>

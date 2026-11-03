@@ -702,14 +702,22 @@ def window_table(ws, label):
         ))
     return table(["Window", "Free / model-free days", "Busy days", "Unverified days", "Estimate-layer days", "Result", "Basis"], rows, "wt" + label.replace(" ", ""), filter_bar("wt" + label.replace(" ", ""), with_league=False))
 
+# Per-year release status, stated per league rather than lumped together.
+release_basis = {
+    2027: ("MLB's 2027 schedule IS released (Opening Night Mar 24, Opening Day Mar 25, All-Star Game Jul 13, "
+           "final day Sep 26). The 2027 NFL schedule is not released, so NFL round dates are modelled."),
+    2028: "Neither the MLB nor the NFL 2028 schedule has been released.",
+    2029: "Neither the MLB nor the NFL 2029 schedule has been released.",
+}
+
 vy_blocks = []
 for y in (2027, 2028, 2029):
     s = strict[y]
     ws = vacation["windows"][str(y)]
     status_note = ('<div class="callout"><strong>Verified schedule year.</strong> Official MLB dates are released; '
                    'strict free-day rules apply.</div>' if s["scheduleReleased"] else
-                   f'<div class="callout warn"><strong>{esc(EST_LABEL)}</strong><br>MLB and NFL have not released {y} '
-                   'schedules. Strict verified free time cannot be asserted for this year; the ranking below is a '
+                   f'<div class="callout warn"><strong>{esc(EST_LABEL)}</strong><br>{esc(release_basis[y])} '
+                   'Strict verified free time cannot be asserted for this year; the ranking below is a '
                    'planning estimate from the modelled feed and is flagged.</div>')
     vy_blocks.append(f'''<h2>{y}</h2>
 <p class="small">Days in range {s["daysInRange"]} · busy {s["busy"]} · unverified/TBA {s["unverified"]} ·
@@ -723,12 +731,13 @@ va_body = f'''<h1>Free vacation windows — strict verified view</h1>
 <p class="lede">A minute is free when no covered game or national/local radio broadcast is on air. A free day has no
 verified game with a published start, no TBA/unverified official row and no estimate-only row. Windows are ranked by
 free days, then by fewest unverified days.</p>
-<div class="callout"><strong>Conclusion: unknown, not impossible.</strong> No 7-, 14- or 21-day conflict-free vacation is certified for 2027–2029. Rankings below describe loaded records and estimates, not complete future radio schedules. <a href="../certainty.html">Audit and limitations</a>.</div>
+<div class="callout"><strong>This page is the strict, all-games lens.</strong> A window is only “fully free” here when every day in it has zero loaded rows of any kind, so nothing reaches seven days in 2027–2029: MLB plays a slate almost every day of its season. For the dated recommendation from the radio lens — <strong>Feb 1 – Feb 13, 2027</strong>, with the evidence behind each anchor — see <a href="../vacation.html">Best vacation dates</a> and the <a href="../certainty.html">certainty audit</a>.</div>
 {''.join(vy_blocks)}
 <h2>Root dashboard comparison</h2>
-<p class="small">The <a href="../vacation.html">root Vacation windows page</a> uses the parallel session's modelled
-feed and reports six-day streaks. That feed is an estimate layer; this page separates it from the strict verified
-view. Both are linked from the dashboard.</p>
+<p class="small">The <a href="../vacation.html">root Vacation windows page</a> answers the question directly: it reports
+the longest run with nothing on the radio (13 nights in February of each year) and the stricter all-games run
+(six nights). This page keeps the strict, verified-only view separate so the two are never mixed. Both are linked from
+the dashboard.</p>
 '''
 (EXTRA / "vacation.html").write_text(page("Free vacation windows", "Free windows", va_body), encoding="utf-8")
 

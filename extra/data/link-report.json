@@ -152,7 +152,7 @@
     {
       "name": "root dashboard does not claim guaranteed free future vacations",
       "ok": true,
-      "detail": ""
+      "detail": "dashboard must carry the certainty notice, never say 'guaranteed free', and label unreleased years"
     },
     {
       "name": "extra hub and all 14 extra pages exist",
@@ -162,7 +162,7 @@
   ],
   "counts": {
     "htmlFiles": 26,
-    "externalDomains": 16,
+    "externalDomains": 17,
     "missingLocal": 0,
     "rowsMissingSource": 0,
     "emptyAttrs": 0
@@ -184,6 +184,7 @@
     "www.ncaa.org",
     "www.nfl.com",
     "www.profootballnetwork.com",
+    "www.sofistadium.com",
     "www.thesportsleader.com",
     "www.westwoodonesports.com"
   ]

@@ -264,3 +264,14 @@ and merge result here.
 **Status:** E1–E10 **done**; T11 (the `ef8b5b30` row in the first session's board) is **done** — its
 `needs review` items are published on the Flagged for Review page and do not block anything. Both sessions'
 work is merged into `main` and live on GitHub Pages. No unclaimed or overlapping task remains.
+
+## Session arena-f9e705a1 — 2026-11-03
+
+Branch fixed by Arena: `arena/f9e705a1-korea5`; no alternate branches will be created.
+Existing sessions' completion records above are preserved. No active claim overlaps this work.
+
+| Task | Owner | Status | Scope |
+|---|---|---|---|
+| F1 Audit certainty claims and future vacation advice; integrate a conservative landing page and executive summary | arena-f9e705a1 | in progress | `index.html`, `README.md`, `research/EXECUTIVE-SUMMARY.md`, `scripts/build_site.py`, `tools/build_extra.py`, `assets/app.js`, `scripts/audit_certainty.py`, `.github/workflows/certainty.yml`, `verification/certainty.json`, `COORDINATION.md` |
+
+Claim: inspect inherited evidence, distinguish structural/link validation from source verification, and prevent unsupported guaranteed-free claims. Official-host network access is restricted in this sandbox; do not label inherited snapshots freshly verified. Any unresolved gaps will be published and nonblocking.

@@ -78,6 +78,24 @@
     <a class="btn" href="calendar.html">Open the calendar →</a></div>
 </div>
 
+<h2>Schedule status — official vs estimated</h2>
+<p class="small">The planner only blocks days that a league or school has actually published. Where a season has not been
+released, the planner models the league's structure and labels every row
+<span class="tag est">estimated</span> — it is <strong>not</strong> a real verified released schedule.</p>
+<div class="grid g3">
+  <div class="card"><h3>2027 MLB</h3><p class="small"><span class="tag ver">Official</span> — schedule released
+    July 16, 2026. Season Mar 24 – Sep 26, 2027; All-Star Game Jul 13 at Wrigley Field. Dates and matchups are official;
+    some first-pitch times are still TBD and are left blank.</p>
+    <p class="small" style="margin-top:8px"><a href="https://www.mlb.com/news/mlb-2027-schedule-released" target="_blank" rel="noopener">mlb.com — 2027 schedule released</a></p></div>
+  <div class="card"><h3>2028 &amp; 2029 MLB</h3><p class="small"><span class="tag est">Estimated</span> — MLB has not
+    released either season. Dates, matchups and times are modelled on the league's calendar, not verified.</p>
+    <p class="small" style="margin-top:8px"><span class="tag est">ESTIMATION — not a real verified released schedule</span></p></div>
+  <div class="card"><h3>2027 NFL &amp; Super Bowl LXI</h3><p class="small"><span class="tag est">Estimated</span> — the
+    NFL releases its full schedule each May, so the 2027 season is not yet published. Super Bowl LXI is set for
+    Sunday, Feb 14, 2027 at SoFi Stadium (kickoff about 3:30 PM PT) and is carried on Westwood One radio.</p>
+    <p class="small" style="margin-top:8px"><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">nfl.com/schedules</a></p></div>
+</div>
+
 <h2>How this is built</h2>
 <div class="grid g3">
   <div class="card"><h3>1 · Official schedules</h3><p class="small">2026 and 2027 MLB come straight from MLB's StatsAPI (2,430 regular-season games per season, all 30 clubs).

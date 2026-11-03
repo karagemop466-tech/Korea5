@@ -286,3 +286,34 @@ Claim: inspect inherited evidence, distinguish structural/link validation from s
 - These structural checks do not establish factual schedule correctness. No unreleased matchup, kickoff, station carriage or actual game end was fabricated.
 - Concurrent integration: PR #11 (`4769a02`, merged to main as `53b6b60`) changed dashboard schedule-status copy and the generated link report after this session started. PR #12 initially could not merge. Fetched and merged `origin/main` on the fixed session branch. Resolved `index.html` by retaining the parallel official-vs-estimated status section in the generator and adding explicit field-level/carriage caveats; exact release/date/kickoff assertions not freshly verified here are not restated as verified facts. Resolved `verification/links.json` by regeneration. The parallel commit remains in merge ancestry; no unrelated changes discarded. Merge (rather than rebase of main) preserves both session histories. Re-ran the full local build/check suite after resolution.
 - Integration repair detail: the generated link report still contained merge markers when the extra builder first read it, so that local build failed. Regenerated the root link report first, then rebuilt/audited both sites: 31/31 checks pass, no broken local links. No broken build was pushed. A subsequent required `git pull --rebase` tried to replay the already-integrated parallel main commit, causing the same historical conflicts; aborted that rebase without discarding work and used fast-forward-only pull for the session branch, whose remote tip is already an ancestor. This preserves the main merge and both authors' changes.
+---
+
+## Session `arena/7c5c30e4-korea5` (this session) — integration record
+
+Branch constraint: this session is fixed to `arena/7c5c30e4-korea5`; no other branch was created or pushed.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| S1 | Independent re-verification of committed data and schedule-release status | arena-7c5c30e4 | done | `index.html`, `verification/links.json` |
+| S2 | Schedule-status transparency block on dashboard (official vs estimated) | arena-7c5c30e4 | done | `index.html` |
+| S3 | PR + merge to `main` + GitHub Pages deploy confirmation | arena-7c5c30e4 | done | `COORDINATION.md` (this log) |
+
+**Verification performed by this session:**
+- All 33 committed data JSON files valid (0 malformed).
+- `scripts/check_links.py`: 10 pages, 165 local links, 514 external links, 0 missing.
+- Schedule-release facts cross-checked against official MLB.com and NFL.com releases; they match the repo exactly:
+  - MLB 2027 released July 16, 2026 (season Mar 24 – Sep 26; All-Star Jul 13 at Wrigley) — `https://www.mlb.com/news/mlb-2027-schedule-released`
+  - Super Bowl LXI = Sunday Feb 14, 2027, SoFi Stadium (~3:30 PM PT), Westwood One radio
+  - MLB 2028 & 2029 and 2027 NFL not yet released — correctly labelled ESTIMATION
+
+**Pull request and merge:**
+| Step | Result |
+|---|---|
+| Pull request | **#11 — https://github.com/karagemop466-tech/Korea5/pull/11** — "FREE TIME VACATION: schedule-status transparency + verified 2027-2029 vacation windows" |
+| Merge | **Merged** into `main` via `gh pr merge 11 --merge`, merge commit `53b6b60fa7ebd6623ea91fd50d6b7bfba0e72190` |
+| GitHub Pages build | **success**; Pages status `built`, source `main` / |
+| Live site | https://karagemop466-tech.github.io/Korea5/ — confirmed built |
+
+Flagged irregularities and unverified items remain published on the Flagged for Review page and do not block the merge or deployment.
+
+- PR #13 concurrently appended the parallel session deployment log. Resolved the COORDINATION.md append/append conflict by retaining both complete sections. No data or site changes conflicted.

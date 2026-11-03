@@ -901,7 +901,7 @@ footer a{color:var(--accent2)}
   // day scoreboard
   const cal=$('#x-dayhead'); if(!cal) return;
   const START='2026-11-02', END='2030-02-28';
-  const today='2026-11-02'; // compiled date; user local timezone is UTC
+  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()); // current date in Pacific time (America/Los_Angeles)
   let cur=new URLSearchParams(location.search).get('d')||today;
   let pack=null, includeEst=false;
   const toMin=h=>{const [a,b]=h.split(':').map(Number);return a*60+b;};

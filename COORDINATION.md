@@ -341,3 +341,48 @@ Flagged irregularities and unverified items remain published on the Flagged for 
 | Live site | https://karagemop466-tech.github.io/Korea5/ — Pages source `main` /; deployment status confirmed by successful Pages workflow |
 
 During integration, PR #12's certainty and coverage updates landed concurrently on `main`. This branch was rebased onto that latest `main`; the certainty banner, cautious vacation analysis, and all other changes were preserved. Source checks remain explicitly unavailable where the sandbox could not reach official sports hosts.
+
+---
+
+## Session `arena/0fb8732b-korea5` — 2026-11-03 (full-repo review + fix + integration)
+
+Branch constraint: Arena fixes this session to `arena/0fb8732b-korea5`; no other branch was created or pushed.
+Started from `main` tip `f9b5a7f` (PR #15 merged). No active claim overlapped this work.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| R1 | Full-repo line-by-line review + local verification suite (links, extra checks, certainty, unit tests, JS syntax, JSON validity, source-link audit, high-priority flag audit, snapshot spot checks) | arena-0fb8732b | **done** | `verification/session-review-0fb8732b.md` |
+| R2 | Fix stale "Today" on the extra day scoreboard (hardcoded `2026-11-02` → dynamic `America/Los_Angeles` date) in generator and generated asset | arena-0fb8732b | **done** | `tools/build_extra.py`, `extra/assets/extra.js` |
+| R3 | PR to `main`, merge without waiting, confirm Pages deploy, record result here | arena-0fb8732b | in progress | `COORDINATION.md` (this log) |
+
+### R1/R2 findings (detail in `verification/session-review-0fb8732b.md`)
+
+- `check_links.py`: 11 pages, 179 local + 519 external links, 0 missing. `verify_extra.py`: 31/31.
+  `audit_certainty.py`: passed. Unit tests 5/5. `node --check` both JS bundles. All data JSON valid.
+- Source-link audit: 8,554 source-bearing rows, 0 blank URLs; the single third-party research link
+  (`profootballnetwork.com`, durations research row) is already labelled non-official and flagged.
+- High-priority audit: 0 unflagged Giants/A's/49ers/Stanford/Cal rows across 7,203 events (2026–2030).
+- 49ers curated rows: 21/21 verifyTokens matched the committed official-page snapshot. Westwood One
+  snapshot file is only the JS shell, so local token checks are impossible; the CI fetch report
+  (`official/fetch-report.json`) records 580 W1 events with 0 failures, and every row links its
+  official event page.
+- **Defect fixed (R2):** `extra/assets/extra.js` hardcoded `today='2026-11-02'`, so the extra day
+  scoreboard's Today button/default day was stale from 2026-11-03 onward. Both the generator
+  (`tools/build_extra.py`) and the generated asset now compute today via
+  `Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',…})`, matching the root calendar.
+  Verified: `node -e` prints 2026-11-03 for PT; `node --check` passes; generated asset is identical
+  to the generator template line. Regeneration of other pages was reverted to keep the diff surgical
+  (banners are re-injected by `scripts/audit_certainty.py` after any generator run).
+- Official sports hosts are unreachable from this sandbox (allowlist: github.com, npm, pypi), so no
+  live schedule re-verification was performed in-session; that remains a CI job and a published
+  "needs review" item. Nothing was relabelled as freshly verified.
+- No new irregularities; all prior flagged items remain published on `flagged.html` / `extra/flagged.html`.
+
+### R3 integration record
+
+| Step | Result |
+|---|---|
+| Pull request | (filled after merge) |
+| Merge | (filled after merge) |
+| GitHub Pages build | (filled after merge) |
+| Live site | https://karagemop466-tech.github.io/Korea5/ |

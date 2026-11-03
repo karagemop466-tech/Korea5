@@ -341,3 +341,11 @@ Flagged irregularities and unverified items remain published on the Flagged for 
 | Live site | https://karagemop466-tech.github.io/Korea5/ — Pages source `main` /; deployment status confirmed by successful Pages workflow |
 
 During integration, PR #12's certainty and coverage updates landed concurrently on `main`. This branch was rebased onto that latest `main`; the certainty banner, cautious vacation analysis, and all other changes were preserved. Source checks remain explicitly unavailable where the sandbox could not reach official sports hosts.
+
+## Follow-up — session `arena-0778c36f`
+
+| Task | Owner | Status | Files |
+|---|---|---|---|
+| Calendar day-boundary and navigation correctness audit | arena-0778c36f | in progress | `assets/app.js`, `tests/test_calendar.js`, `COORDINATION.md` |
+
+The Arena branch is fixed to `arena/0778c36f-korea5`; no task branch will be created. Prior site integration was completed; this is a narrow follow-up that does not claim concurrent research scopes.

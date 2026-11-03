@@ -367,7 +367,20 @@ No code change was required — the site is complete and deployed. This session'
 
 | Step | Result |
 |---|---|
-| Pull request | from `arena/e20a1d38-korea5` to `main` — coordination record + final verification summary |
-| Merge | pending |
-| GitHub Pages deploy | pending |
+| Pull request | **#17 — https://github.com/karagemop466-tech/Korea5/pull/17** — "FREE TIME VACATION: final verification, certainty audit, and deployment record" |
+| Merge | **Merged** into `main` via `gh pr merge 17 --merge` |
+| GitHub Pages deploy | Confirmed **built**, source `main /`, HTTPS enforced |
 | Live site | https://karagemop466-tech.github.io/Korea5/ |
+
+## Follow-up — session `arena-0778c36f`
+
+| Task | Owner | Status | Files |
+|---|---|---|---|
+| Calendar day-boundary and navigation correctness audit | arena-0778c36f | in progress | `assets/app.js`, `tests/test_calendar.js`, `COORDINATION.md` |
+
+The Arena branch is fixed to `arena/0778c36f-korea5`; no task branch will be created. Prior site integration was completed; this is a narrow follow-up that does not claim concurrent research scopes.
+
+- Calendar audit completed: corrected timezone-dependent day navigation, the +2-day button, invalid/out-of-range navigation, midnight display, and precedence of estimated kickoff badges. A day with no loaded records is no longer labelled simply “free”. No schedule facts were changed or newly verified.
+- Validation: `node tests/test_calendar.js` (date arithmetic in three time zones and 24:00); `node --check assets/app.js`; Python unit tests 5/5; `scripts/check_links.py` 0 missing; `tools/verify_extra.py` 31/31; certainty audit passed. The existing evidence limitations remain on `certainty.html` and `flagged.html`; official source re-verification and complete local carriage remain unresolved. Official references: https://www.mlb.com/schedule/ , https://www.nfl.com/schedules/ , https://www.westwoodonesports.com/nfl-schedule/ .
+- Irregularity for future data updates: the calendar and derived analysis currently do not carry an event past midnight into the following day. A local scan of the committed 2026–2030 event feeds found no intervals exceeding 24:00, so this does not affect the currently loaded data; future overnight events require an engine change before relying on the output.
+- Task status: **done** for the narrow calendar audit; complete source-by-source verification is not claimed.

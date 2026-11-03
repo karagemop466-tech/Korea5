@@ -317,3 +317,15 @@ Branch constraint: this session is fixed to `arena/7c5c30e4-korea5`; no other br
 Flagged irregularities and unverified items remain published on the Flagged for Review page and do not block the merge or deployment.
 
 - PR #13 concurrently appended the parallel session deployment log. Resolved the COORDINATION.md append/append conflict by retaining both complete sections. No data or site changes conflicted.
+
+---
+
+## Follow-up audit — session `arena-b9716034`
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| T12 | Correct verifier handling of unreachable official sources; distinguish unavailable from actual source mismatches | arena-b9716034 | **done** | `scripts/verify.py`, `tests/test_verify.py`, `verification/report.json`, `verification/report.md`, `verification/links.json`, `COORDINATION.md` |
+
+- 2026-11-03 — Claimed T12 after reading the completed task board. The sandbox's permitted outbound hosts do not include the official MLB/NFL/team/network sites. The first local verification run therefore received no official response for all 62 rows and incorrectly recorded them as 62 mismatches. T12 fixes that classification so unavailable sources are explicitly unverified rather than falsely reported as mismatched; it does not claim source verification without a successful response or an existing dated snapshot.
+- **Completion / evidence:** `scripts/verify.py` now distinguishes `verified-live`, `verified-snapshot`, `source-mismatch`, and `source-unavailable`. Updated `verification/report.json` / `.md` records 36 source-token matches against committed official-page snapshots, 26 live-source checks unavailable, 0 live mismatches, 10/10 MLB API spot checks unavailable, and 6/6 NFL page spot checks unavailable. No official site was reachable from this sandbox, so current-live schedule validity is not asserted. Official URLs remain linked per row (49ers.com, gostanford.com, calbears.com, westwoodonesports.com, statsapi.mlb.com, nfl.com).
+- **Tests run:** `python3 -m unittest discover -s tests -v` (5 passed); `python3 scripts/verify.py` (completed, with unavailable sources reported separately); `python3 scripts/check_links.py` (165 local links, 0 missing); `python3 tools/verify_extra.py` (31 checks passed, 0 failures); `git diff --check` (clean).

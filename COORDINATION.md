@@ -328,4 +328,16 @@ Flagged irregularities and unverified items remain published on the Flagged for 
 
 - 2026-11-03 — Claimed T12 after reading the completed task board. The sandbox's permitted outbound hosts do not include the official MLB/NFL/team/network sites. The first local verification run therefore received no official response for all 62 rows and incorrectly recorded them as 62 mismatches. T12 fixes that classification so unavailable sources are explicitly unverified rather than falsely reported as mismatched; it does not claim source verification without a successful response or an existing dated snapshot.
 - **Completion / evidence:** `scripts/verify.py` now distinguishes `verified-live`, `verified-snapshot`, `source-mismatch`, and `source-unavailable`. Updated `verification/report.json` / `.md` records 36 source-token matches against committed official-page snapshots, 26 live-source checks unavailable, 0 live mismatches, 10/10 MLB API spot checks unavailable, and 6/6 NFL page spot checks unavailable. No official site was reachable from this sandbox, so current-live schedule validity is not asserted. Official URLs remain linked per row (49ers.com, gostanford.com, calbears.com, westwoodonesports.com, statsapi.mlb.com, nfl.com).
-- **Tests run:** `python3 -m unittest discover -s tests -v` (5 passed); `python3 scripts/verify.py` (completed, with unavailable sources reported separately); `python3 scripts/check_links.py` (165 local links, 0 missing); `python3 tools/verify_extra.py` (31 checks passed, 0 failures); `git diff --check` (clean).
+- **Tests run:** `python3 -m unittest discover -s tests -v` (5 passed); `python3 scripts/verify.py` (completed, with unavailable sources reported separately); `python3 scripts/check_links.py` (latest combined site: 11 pages, 179 local links, 0 missing); `python3 tools/verify_extra.py` (31 checks passed, 0 failures); `python3 scripts/audit_certainty.py` (passed); `git diff --check` (clean).
+
+### T12 integration result
+
+| Step | Result |
+|---|---|
+| Pull request | **#14 — https://github.com/karagemop466-tech/Korea5/pull/14** — "Fix schedule source verification status reporting" |
+| Merge | **Merged** into `main` on 2026-11-03T19:42:35Z, merge commit `d703c636a4d1e86884a98d6e9b69fce14059fe75` |
+| GitHub Pages deployment | Run **41705783991** — build, deploy and report-build-status all **success** |
+| Planner certainty checks | Run **41705783663** — **success** |
+| Live site | https://karagemop466-tech.github.io/Korea5/ — Pages source `main` /; deployment status confirmed by successful Pages workflow |
+
+During integration, PR #12's certainty and coverage updates landed concurrently on `main`. This branch was rebased onto that latest `main`; the certainty banner, cautious vacation analysis, and all other changes were preserved. Source checks remain explicitly unavailable where the sandbox could not reach official sports hosts.

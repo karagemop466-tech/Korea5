@@ -3,8 +3,9 @@
 Line-by-line verification of the curated data against official sources.
 
 For every curated row that carries `verifyTokens`, this script re-downloads the cited
-official page and asserts that each token still appears in the page. A row that fails
-is reported as unverified; nothing is silently repaired.
+official page and checks whether each token appears in the page. It distinguishes a
+successful content mismatch from a source that could not be reached; only an actual
+mismatch is called a failure. Network-unavailable rows remain unverified, not mismatched.
 
 It also checks structural invariants of the generated event feeds:
   * every event has a source URL
@@ -41,6 +42,8 @@ def fetch(url, keep_scripts=False):
         txt = html.unescape(txt)
         _cache[key] = (r.status, txt)
     except Exception as e:  # noqa: BLE001
+        # A transport/DNS/timeout failure is not evidence that the source contradicts
+        # the curated row. Keep it distinct from a successful fetch with missing tokens.
         _cache[key] = (None, f"__ERROR__ {e!r}")
     return _cache[key]
 
@@ -61,22 +64,43 @@ def norm(s):
 
 
 def check_tokens(url, tokens):
-    """Return (ok, missing, status). Checks rendered text first, then raw HTML."""
+    """Return (result, missing, status).
+
+    result is True for a live match, ``"snapshot"`` for a match in a committed
+    official-page snapshot, False for a successful live fetch that contradicts the
+    tokens, and None when the source could not be checked. Unavailable is never a
+    content mismatch.
+    """
     status, txt = fetch(url)
     if status is None:
-        return False, list(tokens), None
+        snap = SNAPSHOTS.get(url)
+        if snap and os.path.exists(snap):
+            with open(snap, encoding="utf-8") as fh:
+                ns = norm(fh.read())
+            missing = [t for t in tokens if norm(t) not in ns]
+            if not missing:
+                return "snapshot", [], None
+        return None, list(tokens), None
     n = norm(txt)
     missing = [t for t in tokens if norm(t) not in n]
     if not missing:
         return True, [], status
     status2, raw = fetch(url, keep_scripts=True)
+    if status2 is None:
+        # The rendered response worked but the raw follow-up did not. The successful
+        # rendered page remains a valid basis for a mismatch only if it was non-empty.
+        if not n.strip():
+            return None, list(tokens), status
+        raw = txt
+        status2 = status
     n2 = norm(raw)
     missing2 = [t for t in tokens if norm(t) not in n2]
     if not missing2:
         return True, [], status2
     snap = SNAPSHOTS.get(url)
     if snap and os.path.exists(snap):
-        ns = norm(open(snap, encoding="utf-8").read())
+        with open(snap, encoding="utf-8") as fh:
+            ns = norm(fh.read())
         missing3 = [t for t in tokens if norm(t) not in ns]
         if not missing3:
             return "snapshot", [], status2
@@ -105,13 +129,36 @@ def verify_curated():
             ok, missing, status = (None, [], None)
             verified_against = None
             if tokens:
+                mismatch = None
+                snapshot_match = None
                 for t in targets:
-                    ok, missing, status = check_tokens(t, tokens)
-                    if ok:
+                    result, missing_here, status_here = check_tokens(t, tokens)
+                    if result is True:
+                        ok, missing, status = True, [], status_here
                         src = t
-                        verified_against = "snapshot" if ok == "snapshot" else "live"
-                        ok = True
+                        verified_against = "live"
                         break
+                    if result == "snapshot" and snapshot_match is None:
+                        snapshot_match = (t, status_here)
+                    elif result is False and mismatch is None:
+                        mismatch = (t, missing_here, status_here)
+                else:
+                    if snapshot_match is not None:
+                        src, status = snapshot_match
+                        ok, missing, verified_against = "snapshot", [], "snapshot"
+                    elif mismatch is not None:
+                        src, missing, status = mismatch
+                        ok = False
+            if not tokens:
+                result_status = "no-verification-tokens"
+            elif ok is True:
+                result_status = "verified-live"
+            elif ok == "snapshot":
+                result_status = "verified-snapshot"
+            elif ok is False:
+                result_status = "source-mismatch"
+            else:
+                result_status = "source-unavailable"
             rows.append({
                 "dataset": name,
                 "id": e["id"],
@@ -122,7 +169,8 @@ def verify_curated():
                 "officialUrl": e.get("eventUrl") or src,
                 "tokens": tokens,
                 "officialStatus": status,
-                "verified": ok,
+                "verified": True if ok is True or ok == "snapshot" else (False if ok is False else None),
+                "verificationStatus": result_status,
                 "verifiedAgainst": verified_against,
                 "missingTokens": missing,
                 "note": e.get("note"),
@@ -147,19 +195,24 @@ def verify_mlb():
             url = "https://statsapi.mlb.com/api/v1/schedule?" + urllib.parse.urlencode(q)
             status, txt = fetch(url)
             live = set()
+            parsed = False
             try:
                 payload = json.loads(txt)
                 for d in payload.get("dates", []):
                     for g in d.get("games", []):
                         if g.get("gameType") == "R":
                             live.add(g["gamePk"])
+                parsed = status is not None
             except Exception:
                 status = None
             local = {g["id"] for g in games if g["date"] == ds and g["type"] == "R"}
             out.append({
                 "year": y, "date": ds, "apiStatus": status,
                 "gamesInFeed": len(local), "gamesInApi": len(live),
-                "match": local == live, "source": url,
+                "match": (local == live) if parsed else None,
+                "verificationStatus": "verified-match" if parsed and local == live else
+                                      "feed-mismatch" if parsed else "source-unavailable",
+                "source": url,
             })
     return out
 
@@ -178,7 +231,11 @@ def verify_nfl_upstream():
         ok, missing, status = check_tokens(g["sourceUrl"], nick)
         out.append({"date": g.get("datePT"), "title": g.get("title"),
                     "url": g["sourceUrl"], "status": status,
-                    "verified": bool(ok), "missing": missing})
+                    "verified": True if ok is True or ok == "snapshot" else (False if ok is False else None),
+                    "verificationStatus": "verified-live" if ok is True else
+                                          "verified-snapshot" if ok == "snapshot" else
+                                          "source-mismatch" if ok is False else "source-unavailable",
+                    "missing": missing})
     return out
 
 
@@ -208,24 +265,34 @@ def main():
             if e.get("start") and not re.fullmatch(r"\d{2}:\d{2}", e["start"]):
                 problems.append({"year": y, "index": i, "id": e.get("id"), "problem": "bad start"})
 
-    checked = [r for r in curated if r["verified"] is not None]
-    failed = [r for r in checked if not r["verified"]]
+    checked = [r for r in curated if r["verificationStatus"] in
+               ("verified-live", "verified-snapshot", "source-mismatch")]
+    failed = [r for r in curated if r["verificationStatus"] == "source-mismatch"]
+    unavailable = [r for r in curated if r["verificationStatus"] == "source-unavailable"]
     conflicts = [r for r in curated if r.get("conflict")]
-    unverified_notes = [r for r in curated if r["verified"] is None]
+    unverified_notes = [r for r in curated if r["verificationStatus"] == "no-verification-tokens"]
 
     report = {
         "generatedUTC": __import__("datetime").datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
         "summary": {
             "curatedRows": len(curated),
+            "rowsWithTokens": sum(1 for r in curated if r["tokens"]),
             "rowsChecked": len(checked),
-            "rowsVerified": len(checked) - len(failed),
+            "rowsVerified": sum(1 for r in curated if r["verified"] is True),
+            "rowsVerifiedLive": sum(1 for r in curated if r["verificationStatus"] == "verified-live"),
+            "rowsVerifiedSnapshot": sum(1 for r in curated if r["verificationStatus"] == "verified-snapshot"),
             "rowsFailed": len(failed),
+            "rowsUnavailable": len(unavailable),
             "rowsWithoutTokens": len(unverified_notes),
             "flaggedConflicts": len(conflicts),
             "mlbSpotChecks": len(mlb),
-            "mlbSpotChecksPassed": sum(1 for m in mlb if m["match"]),
+            "mlbSpotChecksPassed": sum(1 for m in mlb if m["match"] is True),
+            "mlbSpotChecksFailed": sum(1 for m in mlb if m["match"] is False),
+            "mlbSpotChecksUnavailable": sum(1 for m in mlb if m["match"] is None),
             "nflSpotChecks": len(nfl),
-            "nflSpotChecksPassed": sum(1 for m in nfl if m["verified"]),
+            "nflSpotChecksPassed": sum(1 for m in nfl if m["verified"] is True),
+            "nflSpotChecksFailed": sum(1 for m in nfl if m["verified"] is False),
+            "nflSpotChecksUnavailable": sum(1 for m in nfl if m["verified"] is None),
             "feedProblems": len(problems),
             "eventCounts": counts,
         },
@@ -244,14 +311,20 @@ def main():
     for k, v in report["summary"].items():
         lines.append(f"| {k} | {v} |")
     lines += ["", "## Curated rows checked against official pages", "",
-              "| Dataset | Date | Row | Verified | Official source |", "|---|---|---|---|---|"]
+              "| Dataset | Date | Row | Verification status | Official source |", "|---|---|---|---|---|"]
+    lines += ["", "Verification status meanings: `verified-live` = tokens found in the current official response; `verified-snapshot` = tokens found in a committed snapshot but the live source could not confirm them; `source-mismatch` = successful live response did not contain the expected tokens; `source-unavailable` = live source could not be checked and no matching snapshot was available. Unavailable is not reported as a mismatch.", ""]
     for r in curated:
-        mark = "yes" if r["verified"] else ("—" if r["verified"] is None else "**NO**")
+        mark = r["verificationStatus"]
         lines.append(f"| {r['dataset']} | {r['date']} | {r['id']} | {mark} | {r['officialUrl']} |")
     if failed:
         lines += ["", "## Rows that failed verification", ""]
         for r in failed:
             lines.append(f"- `{r['id']}` — missing tokens: {r['missingTokens']} — {r['source']}")
+    if unavailable:
+        lines += ["", "## Sources unavailable for live verification", "",
+                  "These rows remain unverified; a network failure is not evidence of a schedule mismatch.", ""]
+        for r in unavailable:
+            lines.append(f"- `{r['id']}` — live check unavailable; expected tokens: {r['tokens']} — {r['officialUrl']}")
     if conflicts:
         lines += ["", "## Flagged conflicts / irregularities", ""]
         for r in conflicts:

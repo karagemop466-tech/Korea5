@@ -385,3 +385,10 @@ The Arena branch is fixed to `arena/0778c36f-korea5`; no task branch will be cre
 - Irregularity for future data updates: the calendar and derived analysis currently do not carry an event past midnight into the following day. A local scan of the committed 2026–2030 event feeds found no intervals exceeding 24:00, so this does not affect the currently loaded data; future overnight events require an engine change before relying on the output.
 - Task status: **done** for the narrow calendar audit; complete source-by-source verification is not claimed.
 - Integration: PR https://github.com/karagemop466-tech/Korea5/pull/16 merged as `4a5e7fda1fb839af2dd8282f208769328455d728`; Pages workflow `41739711616` and certainty checks `41739711994` succeeded. Site: https://karagemop466-tech.github.io/Korea5/ .
+## Follow-up usability audit — session `arena/04d42e6b-korea5` (2026-11-03)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| U1 | Make the detailed day scoreboard's Today button and default date use the current San Francisco calendar day, not the stale build date | arena/04d42e6b-korea5 | **in progress** | `extra/assets/extra.js`, `tools/build_extra.py`, `tests/test_calendar_today.js`, `COORDINATION.md` |
+
+Claim notes: existing root calendar uses `America/Los_Angeles`, but the detailed scoreboard hard-coded `2026-11-02` for its Today value. On the current review date (2026-11-03 UTC), this sends users to yesterday. Both the maintained source template and generated asset will be fixed and tested. No source schedule facts will be edited or re-certified.

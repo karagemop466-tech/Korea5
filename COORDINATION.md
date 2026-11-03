@@ -264,3 +264,11 @@ and merge result here.
 **Status:** E1–E10 **done**; T11 (the `ef8b5b30` row in the first session's board) is **done** — its
 `needs review` items are published on the Flagged for Review page and do not block anything. Both sessions'
 work is merged into `main` and live on GitHub Pages. No unclaimed or overlapping task remains.
+
+## Session arena-8f1ea182 — current audit
+
+| Task | Owner | Status | Scope |
+|---|---|---|---|
+| A1 | Audit existing planner for misleading free-time claims and correct high-impact issues; verify and integrate | arena-8f1ea182 | in progress | `COORDINATION.md`, root `*.html`, `assets/`, `scripts/`, `verification/` as necessary; avoids active claimed scopes |
+
+2026-11-03: Claimed A1. Arena fixes the branch name to `arena/8f1ea182-korea5`; no separate session branch can be created. Prior board entries report completed work; reviewing current state and any concurrent claims before edits.

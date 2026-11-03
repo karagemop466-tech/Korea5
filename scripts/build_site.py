@@ -75,7 +75,8 @@ def head(title, active):
   <div class="brand"><span class="dot"></span> FREE TIME / VACATION</div>
   <nav class="main">{nav}</nav>
 </div></header>
-<main class="wrap">"""
+<main class="wrap">
+<div class="callout warn"><strong>Planning estimate, not a guarantee of free time.</strong> Feeds are incomplete, schedules can change, and game end times are modeled. No events found does not prove nothing is on air. Local station carriage and reception require confirmation. Check <a href="https://www.mlb.com/schedule/">MLB</a>, <a href="https://www.nfl.com/schedules/">NFL</a>, and the <a href="https://www.westwoodonesports.com/station-finder/">Westwood One station finder</a> before booking.</div>"""
 
 
 def foot():
@@ -172,12 +173,12 @@ def build_index():
       {tag(f"{REPORT.get('summary', {}).get('rowsVerified', 0)}/{REPORT.get('summary', {}).get('rowsChecked', 0)} rows re-verified", "tag ver")}
     </div>
     <div class="callout">
-      <strong>The short answer.</strong> There is <strong>no fully free 7-day window in 2027, 2028 or 2029</strong>.
+      <strong>The short answer.</strong> The model finds <strong>no fully free 7-day window in 2027, 2028 or 2029</strong>; this is not a verified conclusion.
       MLB schedules a full slate almost every day from late February to early October (verified for 2027), and NFL/college
-      football fills the winter weekends. The longest run with nothing on air is <strong>exactly six days</strong> in 2027, 2028 and 2029 —
+      football fills the winter weekends. The longest modeled run with no included events is <strong>six days</strong> in 2027, 2028 and 2029 —
       and it recurs in January and February, in the Mon–Sat gaps between NFL playoff weekends. In 2027 the six-day options are
       <strong>{esc(", ".join(fmt_range(s["start"], s["end"]) for s in (ANALYSIS.get("freeStreaks",{}).get("all",{}).get("2027") or [])[:3]))}</strong> —
-      the last of which sits after the Super Bowl and before Spring Training, when nothing at all is in season.
+      the last of which sits before Super Bowl LXI; schedules and local radio carriage must be rechecked.
       Full ranking on <a href="vacation.html">Vacation windows</a>.
     </div>
   </div>
@@ -188,7 +189,7 @@ def build_index():
   </div>
 </section>
 
-<h2>Next 14 days</h2>
+<h2>14-day snapshot from November 2, 2026</h2>
 <p class="small">Busy time is measured against the definition on the <a href="method.html">Method</a> page. Click a day for the hour-by-hour view.</p>
 <div class="pill-row">{''.join(rows)}</div>
 
@@ -320,7 +321,7 @@ def build_vacation():
 and <strong>lightest</strong> (the fewest hours of live sport per day).</p>
 
 <div class="callout flag">
-<strong>There is no 7-day, 14-day or 21-day window in 2027–2029 with zero games.</strong>
+<strong>The model finds no 7-day, 14-day or 21-day window in 2027–2029 with zero included games; this is not verified.</strong>
 The longest fully free runs are {longest[2027]} days in 2027, {longest[2028]} days in 2028 and {longest[2029]} days in 2029.
 MLB plays a full slate almost every day from late February to early October, and NFL/college football covers the winter weekends.
 </div>
@@ -333,15 +334,13 @@ MLB plays a full slate almost every day from late February to early October, and
 
 <h2>The practical answer</h2>
 <div class="callout">
-<strong>Take the mid-February gap.</strong> Each year the calendar has one clean pocket: after the Super Bowl and before the first
-Spring Training game. In 2027 that is <strong>Feb 8–13</strong> (six nights, Mon–Sat). In 2028 and 2029 the same structure repeats
-(see the year pages below). It is the only stretch in the three years where you can go away and miss nothing at all.
+<strong>Consider the modeled winter gaps, subject to rechecking.</strong> The model identifies Feb 8–13, 2027 as a six-day gap; it is before Super Bowl LXI, not after it. Other January and February gaps also appear below. Future schedules and radio carriage are incomplete, so none of these is a confirmed conflict-free trip.
 </div>
 <div class="callout warn">
 <strong>If the trip must be longer than a week</strong>, the honest trade-off is: accept one NFL Sunday (about 3 hours of radio) or the
 Pro Bowl, and you can stretch the February window to 12–14 days with only a handful of busy hours — that is the best
 14-day score in all three years. In-season months (April–September) score badly on the strict test because MLB plays daily,
-but the actual listening burden is only about three hours a night.
+but actual listening time depends on overlapping games and local broadcasts.
 </div>
 
 <h2>Longest continuous free stretches</h2>

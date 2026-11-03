@@ -428,7 +428,7 @@ def page(title: str, active: str, body: str, desc: str = "") -> str:
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)} · FREE TIME VACATION</title>
-<meta name="description" content="{esc(desc or 'Official verified schedules, exact free time and flagged irregularities for San Francisco 94122.')}">
+<meta name="description" content="{esc(desc or 'Official schedules, modeled availability and flagged irregularities for San Francisco 94122.')}">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="assets/extra.css">
 </head><body>
@@ -437,6 +437,7 @@ def page(title: str, active: str, body: str, desc: str = "") -> str:
   <nav class="main">{nav_html(active)}</nav>
 </div></header>
 <main class="wrap">
+<div class="callout warn"><strong>Planning estimate, not a guarantee of free time.</strong> Feeds are incomplete, schedules can change, and game end times are modeled. No events found does not prove nothing is on air. Local station carriage and reception require confirmation. Check <a href="https://www.mlb.com/schedule/">MLB</a>, <a href="https://www.nfl.com/schedules/">NFL</a>, and the <a href="https://www.westwoodonesports.com/station-finder/">Westwood One station finder</a> before booking.</div>
 {body}
 </main>
 <footer><div class="wrap">
@@ -828,7 +829,7 @@ The combined verification above re-checks the merged feeds and flags any remaini
 (EXTRA / "verification.html").write_text(page("Line-by-line verification", "Line-by-line verification", ve_body), encoding="utf-8")
 
 # ---------------------------------------------------------------- extra/calendar.html
-cal_body = '''<h1>Day scoreboard — exact free time (Pacific)</h1>
+cal_body = '''<h1>Day scoreboard — modeled availability (Pacific)</h1>
 <p class="lede">A minute is free when no covered game or radio broadcast is on air. Use <strong>Prev</strong>,
 <strong>Next</strong> and <strong>Today</strong> to move day by day. Verified mode uses only rows with an official
 published start time; estimate mode adds the clearly labelled planning layer.</p>
@@ -908,11 +909,11 @@ footer a{color:var(--accent2)}
   // day scoreboard
   const cal=$('#x-dayhead'); if(!cal) return;
   const START='2026-11-02', END='2030-02-28';
-  const today='2026-11-02'; // compiled date; user local timezone is UTC
+  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
   let cur=new URLSearchParams(location.search).get('d')||today;
   let pack=null, includeEst=false;
   const toMin=h=>{const [a,b]=h.split(':').map(Number);return a*60+b;};
-  const fmt=m=>`${String(Math.floor(m/60)%24).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`;
+  const fmt=m=>`${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`;
   const addDays=(iso,n)=>{const d=new Date(iso+'T12:00:00Z');d.setDate(d.getDate()+n);return d.toISOString().slice(0,10);};
   const pretty=iso=>new Date(iso+'T12:00:00Z').toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric',timeZone:'UTC'});
   const clamp=s=>s<START?START:(s>END?END:s);
@@ -925,7 +926,7 @@ footer a{color:var(--accent2)}
       const s=toMin(e.start);
       let en=e.end?toMin(e.end):s+(Number(e.durationMin)||165);
       if(en<=s)en+=1440; // overnight network window
-      if(en>1440){out.push([s,1440]);out.push([0,en-1440]);}else out.push([s,en]);
+      out.push([s,en]);
     } else if(e.startWindow){
       const [x,y]=e.startWindow.split('-').map(toMin);out.push([x,y]);
     } else if(e.altWindow&&e.altWindow.start){
@@ -945,7 +946,9 @@ footer a{color:var(--accent2)}
     $('#x-today-label').textContent=today;
     $('#x-dayhead').textContent=pretty(cur)+' · '+(cur.slice(5).replace('-','/'))+' Pacific';
     $('#x-estbanner').style.display=includeEst?'':'none';
-    const ivs=merge(rows.flatMap(intervals)).map(([x,y])=>[Math.max(0,x),Math.min(1440,y)]);
+    const prev=pack.days[addDays(cur,-1)]||{verified:[],estimated:[]};
+    const carry=[...prev.verified,...(includeEst?prev.estimated:[])].flatMap(intervals).filter(([,y])=>y>1440).map(([,y])=>[0,y-1440]);
+    const ivs=merge([...rows.flatMap(intervals),...carry]).map(([x,y])=>[Math.max(0,x),Math.min(1440,y)]);
     const bar=$('#x-bar');bar.innerHTML='';let cursor=0;const free=[];
     for(const [x,y] of ivs){if(x>cursor)free.push([cursor,x]);cursor=Math.max(cursor,y);}
     if(cursor<1440)free.push([cursor,1440]);
@@ -967,13 +970,13 @@ footer a{color:var(--accent2)}
     const ctx=[...b.anchors.map(x=>`<span class="chip">${esc(x.label)} · ${esc(x.league)} ${a(x.sourceUrl,'source')}</span>`),
                ...b.future.map(x=>`<span class="chip">${esc(x.title)} ${a(x.sourceUrl,'source')}</span>`)];
     $('#x-context').innerHTML=ctx.length?ctx.join(' '):'<span class="small">No official season anchor for this day.</span>';
-    let strip='';for(let i=-3;i<=3;i++){const d=addDays(cur,i);if(d<START||d>END)continue;const bb=pack.days[d]||{};const busy=(bb.verified||[]).length;strip+=`<a class="chip" href="?d=${d}">${d.slice(5)} <span class="tag ${busy?'flag':'ver'}">${busy?busy+' events':'free?'}</span></a>`;}
+    let strip='';for(let i=-3;i<=3;i++){const d=addDays(cur,i);if(d<START||d>END)continue;const bb=pack.days[d]||{};const busy=(bb.verified||[]).length;strip+=`<a class="chip" href="?d=${d}">${d.slice(5)} <span class="tag ${busy?'flag':'ver'}">${busy?busy+' events':'none found'}</span></a>`;}
     $('#x-strip').innerHTML=strip;
     history.replaceState(null,'','?d='+cur);
   }
   $('#x-prev').onclick=()=>{cur=clamp(addDays(cur,-1));render();};
   $('#x-next').onclick=()=>{cur=clamp(addDays(cur,1));render();};
-  $('#x-today').onclick=()=>{cur=today;render();};
+  $('#x-today').onclick=()=>{cur=clamp(today);render();};
   $('#x-date').onchange=e=>{cur=clamp(e.target.value);render();};
   $('#x-est').onchange=e=>{includeEst=e.target.checked;render();};
   fetch('data/calendar.json').then(r=>r.json()).then(p=>{pack=p;cur=clamp(cur);render();}).catch(e=>{$('#x-dayhead').textContent='Could not load calendar.json: '+e;});

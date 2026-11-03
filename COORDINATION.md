@@ -269,6 +269,16 @@ work is merged into `main` and live on GitHub Pages. No unclaimed or overlapping
 
 | Task | Owner | Status | Files |
 |---|---|---|---|
-| Audit existing planner for unsupported free-time claims and repair demonstrable issues | arena-ad64bf51 | in progress | `index.html`, `calendar.html`, `vacation.html`, `extra/`, `assets/`, `COORDINATION.md` |
+| Audit existing planner for unsupported free-time claims and repair demonstrable issues | arena-ad64bf51 | needs review | `index.html`, `calendar.html`, `vacation.html`, `extra/`, `assets/`, `COORDINATION.md` |
 
 2026-11-03: Working on the Arena-fixed branch `arena/ad64bf51-korea5`; no new session branch can be created. Prior tasks above are recorded completed; this is a new integration audit.
+
+Scope update: audit includes `scripts/build_site.py` and `tools/build_extra.py` so corrections survive regeneration. No active ownership of these files is recorded above. Initial branch did not yet exist remotely, so the first pull --rebase reported missing ref; the claim was then pushed as the initial branch publication.
+
+### Audit outcome — 2026-11-03
+
+- Corrected the contradictory 2027 February recommendation (Feb 8–13 precedes Super Bowl LXI), replaced categorical claims with modeled/uncertain wording, and prominently warned that incomplete feeds and estimated durations cannot prove a free interval. Official reference: https://www.nfl.com/news/2026-27-national-football-league-important-dates. MLB confirms release of the 2027 regular-season schedules: https://www.mlb.com/rays/press-release/rays-announce-2027-regular-season-schedule. Westwood One cautions that not every affiliate airs every broadcast: https://www.westwoodonesports.com/station-finder/.
+- Corrected calendar Today/Next behavior, date bounds, estimated time badge precedence, 24:00 display, and prior-day overnight carry into the timeline. Both calendar implementations were updated; the extra generator includes its JS changes.
+- Static checks: `node --check` for both calendar scripts; `python3 tools/verify_extra.py` (31 passed); `python3 scripts/check_links.py` (0 missing local links). These are structural tests, not line-by-line official verification or proof of full coverage.
+- **Needs review, not completed:** the large existing feeds, all table values, rankings and local AM/FM carriage have not been independently reverified line by line in this session. The existing root and extra analyses use different inputs, include future models, and should not be treated as a guarantee. The existing scripts may regenerate pages with outdated specific narrative despite the new global warning. No live source refresh has been performed. Full integration verification and deployment are therefore not claimed.
+- Task status: **needs review**. Do not merge based on structural checks alone; the requested precondition of complete combined line-by-line verification has not been met.

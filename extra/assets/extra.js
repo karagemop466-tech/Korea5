@@ -29,11 +29,11 @@
   // day scoreboard
   const cal=$('#x-dayhead'); if(!cal) return;
   const START='2026-11-02', END='2030-02-28';
-  const today='2026-11-02'; // compiled date; user local timezone is UTC
+  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
   let cur=new URLSearchParams(location.search).get('d')||today;
   let pack=null, includeEst=false;
   const toMin=h=>{const [a,b]=h.split(':').map(Number);return a*60+b;};
-  const fmt=m=>`${String(Math.floor(m/60)%24).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`;
+  const fmt=m=>`${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`;
   const addDays=(iso,n)=>{const d=new Date(iso+'T12:00:00Z');d.setDate(d.getDate()+n);return d.toISOString().slice(0,10);};
   const pretty=iso=>new Date(iso+'T12:00:00Z').toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric',timeZone:'UTC'});
   const clamp=s=>s<START?START:(s>END?END:s);
@@ -46,7 +46,7 @@
       const s=toMin(e.start);
       let en=e.end?toMin(e.end):s+(Number(e.durationMin)||165);
       if(en<=s)en+=1440; // overnight network window
-      if(en>1440){out.push([s,1440]);out.push([0,en-1440]);}else out.push([s,en]);
+      out.push([s,en]);
     } else if(e.startWindow){
       const [x,y]=e.startWindow.split('-').map(toMin);out.push([x,y]);
     } else if(e.altWindow&&e.altWindow.start){
@@ -66,7 +66,9 @@
     $('#x-today-label').textContent=today;
     $('#x-dayhead').textContent=pretty(cur)+' · '+(cur.slice(5).replace('-','/'))+' Pacific';
     $('#x-estbanner').style.display=includeEst?'':'none';
-    const ivs=merge(rows.flatMap(intervals)).map(([x,y])=>[Math.max(0,x),Math.min(1440,y)]);
+    const prev=pack.days[addDays(cur,-1)]||{verified:[],estimated:[]};
+    const carry=[...prev.verified,...(includeEst?prev.estimated:[])].flatMap(intervals).filter(([,y])=>y>1440).map(([,y])=>[0,y-1440]);
+    const ivs=merge([...rows.flatMap(intervals),...carry]).map(([x,y])=>[Math.max(0,x),Math.min(1440,y)]);
     const bar=$('#x-bar');bar.innerHTML='';let cursor=0;const free=[];
     for(const [x,y] of ivs){if(x>cursor)free.push([cursor,x]);cursor=Math.max(cursor,y);}
     if(cursor<1440)free.push([cursor,1440]);
@@ -88,13 +90,13 @@
     const ctx=[...b.anchors.map(x=>`<span class="chip">${esc(x.label)} · ${esc(x.league)} ${a(x.sourceUrl,'source')}</span>`),
                ...b.future.map(x=>`<span class="chip">${esc(x.title)} ${a(x.sourceUrl,'source')}</span>`)];
     $('#x-context').innerHTML=ctx.length?ctx.join(' '):'<span class="small">No official season anchor for this day.</span>';
-    let strip='';for(let i=-3;i<=3;i++){const d=addDays(cur,i);if(d<START||d>END)continue;const bb=pack.days[d]||{};const busy=(bb.verified||[]).length;strip+=`<a class="chip" href="?d=${d}">${d.slice(5)} <span class="tag ${busy?'flag':'ver'}">${busy?busy+' events':'free?'}</span></a>`;}
+    let strip='';for(let i=-3;i<=3;i++){const d=addDays(cur,i);if(d<START||d>END)continue;const bb=pack.days[d]||{};const busy=(bb.verified||[]).length;strip+=`<a class="chip" href="?d=${d}">${d.slice(5)} <span class="tag ${busy?'flag':'ver'}">${busy?busy+' events':'none found'}</span></a>`;}
     $('#x-strip').innerHTML=strip;
     history.replaceState(null,'','?d='+cur);
   }
   $('#x-prev').onclick=()=>{cur=clamp(addDays(cur,-1));render();};
   $('#x-next').onclick=()=>{cur=clamp(addDays(cur,1));render();};
-  $('#x-today').onclick=()=>{cur=today;render();};
+  $('#x-today').onclick=()=>{cur=clamp(today);render();};
   $('#x-date').onchange=e=>{cur=clamp(e.target.value);render();};
   $('#x-est').onchange=e=>{includeEst=e.target.checked;render();};
   fetch('data/calendar.json').then(r=>r.json()).then(p=>{pack=p;cur=clamp(cur);render();}).catch(e=>{$('#x-dayhead').textContent='Could not load calendar.json: '+e;});

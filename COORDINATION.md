@@ -411,7 +411,7 @@ Started from `main` tip `f9b5a7f` (PR #15 merged). No active claim overlapped th
 |---|---|---|---|---|
 | R1 | Full-repo line-by-line review + local verification suite (links, extra checks, certainty, unit tests, JS syntax, JSON validity, source-link audit, high-priority flag audit, snapshot spot checks) | arena-0fb8732b | **done** | `verification/session-review-0fb8732b.md` |
 | R2 | Fix stale "Today" on the extra day scoreboard (hardcoded `2026-11-02` → dynamic `America/Los_Angeles` date) | arena-0fb8732b | **done (superseded in merge)** | `tools/build_extra.py`, `extra/assets/extra.js` |
-| R3 | PR to `main`, merge without waiting, confirm Pages deploy, record result here | arena-0fb8732b | in progress | `COORDINATION.md` (this log) |
+| R3 | PR to `main`, merge without waiting, confirm Pages deploy, record result here | arena-0fb8732b | **done** | `COORDINATION.md` (this log) |
 
 ### R1/R2 findings (detail in `verification/session-review-0fb8732b.md`)
 
@@ -502,3 +502,10 @@ Unlike prior sessions, this one could reach the official hosts through the page-
 | `https://www.nfl.com/schedules/2027/` | Redirects to the 2026 schedule page: no 2027 NFL schedule exists yet |
 | `https://www.westwoodonesports.com/nfl-schedule/` | 2026-27 national windows through Week 18 (Jan 9-10, 2027); **no Pro Bowl listed** |
 
+
+| Pull request | **#21 — https://github.com/karagemop466-tech/Korea5/pull/21** — "FREE TIME VACATION: full-repo review 2026-11-03 + fix stale Today on extra day scoreboard" |
+| Merge | **Merged** into `main` via `gh pr merge 21 --merge`, merge commit `34a89d919e24813f8f38e615a1a4413749fcce6c`. First attempt hit a conflict because parallel sessions merged PRs #17–#19 into `main` meanwhile; resolved locally (kept `origin/main`'s `pacificISODate()` Today fix in `extra/assets/extra.js` + `tools/build_extra.py`, took the union of both `COORDINATION.md` append sections), pushed, then merged. |
+| GitHub Pages build | run **41740292398** `pages build and deployment` — **success** on merge commit `34a89d9`; Pages status `built`, source `main` / ; certainty workflow run **41740293508** — **success** |
+| Live site | https://karagemop466-tech.github.io/Korea5/ — fetched live `extra/assets/extra.js` and confirmed it serves the dynamic `pacificISODate()` Pacific-today code |
+
+Flagged irregularities and unverified items remain published on `flagged.html` / `extra/flagged.html` and did not block the merge or deployment.

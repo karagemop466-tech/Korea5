@@ -1,0 +1,13 @@
+'use strict';
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const vm = require('node:vm');
+const source = fs.readFileSync('extra/assets/extra.js', 'utf8');
+const match = source.match(/function pacificISODate\(now\) \{[\s\S]*?\n  \}/);
+assert.ok(match, 'scoreboard must calculate its date in America/Los_Angeles');
+const pacificISODate = vm.runInNewContext(`(${match[0]})`, { Intl });
+assert.equal(pacificISODate(new Date('2026-11-03T06:59:00Z')), '2026-11-02', 'before Pacific midnight');
+assert.equal(pacificISODate(new Date('2026-11-03T08:00:00Z')), '2026-11-03', 'after Pacific midnight');
+assert.match(source, /let today\s*=\s*pacificISODate\(new Date\(\)\)/);
+assert.match(source, /#x-today'\)\.onclick=\(\)=>\{today=pacificISODate\(new Date\(\)\);cur=today;render\(\);\}/);
+console.log('Pacific Today-date tests passed.');

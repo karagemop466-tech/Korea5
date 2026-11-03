@@ -283,20 +283,18 @@ calendar = {
 
 # ---------------------------------------------------------------- vacation analysis (strict)
 def day_class(b, y: str) -> str:
-    # 2028 / 2029 / 2030 have no released MLB or NFL schedule: nothing can be verified free.
-    if y in unreleased_years:
-        return "estimated-only" if b["estimated"] else "estimated-free"
+    # Preserve known conflicts while refusing to certify gaps in incomplete coverage.
     if b["verified"]:
         return "busy"
     if b["tba"] or b["future"]:
         return "unverified"
     if b["estimated"]:
         return "estimated-only"
-    return "free"
+    return "estimated-free" if y in unreleased_years else "free"
 
 
 # Years with no released MLB schedule: 2028, 2029, 2030 -> strict analysis is unverifiable.
-unreleased_years = {"2028", "2029", "2030"}
+unreleased_years = {"2026", "2027", "2028", "2029", "2030"} # Complete multi-sport + local-carriage coverage is not certified.
 classes = {k: day_class(v, k[:4]) for k, v in days.items()}
 
 strict = {}
@@ -308,11 +306,11 @@ for y in (2026, 2027, 2028, 2029):
         "busy": sum(1 for k in ykeys if classes[k] == "busy"),
         "unverified": sum(1 for k in ykeys if classes[k] == "unverified"),
         "estimatedOnly": sum(1 for k in ykeys if classes[k] in ("estimated-only", "estimated-free")),
-        "free": sum(1 for k in ykeys if classes[k] == "free"),
+        "free": 0, # Never certify absence from incomplete feeds.
         "modelFree": sum(1 for k in ykeys if classes[k] == "estimated-free"),
         "scheduleReleased": released,
         "note": ("Official schedules available for this year; strict verified analysis applies." if released else
-                 "No official MLB/NFL schedule released for this year; strict verified free time cannot be asserted. "
+                 "Complete multi-sport schedules and local radio carriage are not certified; strict verified free time cannot be asserted. "
                  "All windows are " + EST_LABEL),
     }
 
@@ -337,7 +335,7 @@ vacation = {"meta": {
     "name": "Vacation window ranking — strict verified view",
     "compiledUTC": "2026-11-02",
     "estimateLabel": EST_LABEL,
-    "rule": "A free day has no verified game with a published start time, no TBA/unverified official row, and no estimate-only row. 2028/2029 have no released schedules, so their windows are estimates and cannot be verified.",
+    "rule": "No year has certified complete coverage. Model-free is not verified free. A model-free day has no loaded game with a published start time, no TBA/unverified official row, and no estimate-only row. 2028/2029 have no released schedules, so their windows are estimates and cannot be verified.",
 }, "years": strict, "windows": {}}
 for y in (2027, 2028, 2029):
     vacation["windows"][str(y)] = {
@@ -428,7 +426,7 @@ def page(title: str, active: str, body: str, desc: str = "") -> str:
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)} · FREE TIME VACATION</title>
-<meta name="description" content="{esc(desc or 'Official verified schedules, exact free time and flagged irregularities for San Francisco 94122.')}">
+<meta name="description" content="{esc(desc or 'Official-source records, tentative planning gaps and flagged irregularities for San Francisco 94122.')}">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="assets/extra.css">
 </head><body>
@@ -725,12 +723,7 @@ va_body = f'''<h1>Free vacation windows — strict verified view</h1>
 <p class="lede">A minute is free when no covered game or national/local radio broadcast is on air. A free day has no
 verified game with a published start, no TBA/unverified official row and no estimate-only row. Windows are ranked by
 free days, then by fewest unverified days.</p>
-<div class="callout"><strong>Headline.</strong> In 2027 there is <strong>no fully free 7-day window</strong>: MLB schedules
-games on almost every day from Spring Training (Feb 19) through Sep 26, and NFL / college football fills the winter
-weekends. The best strict 1-week window is <strong>Jan 24–30 2027</strong> with six verified free days and one
-estimate-layer day; the best 2-week and 3-week windows are Jan 24 – Feb 6 and Jan 24 – Feb 13 2027. The four days
-immediately after Super Bowl LXI (Feb 15–18 2027) are the cleanest verified gap before Spring Training opens
-Feb 19. 2028 and 2029 have no released schedules, so their windows are {esc(EST_LABEL)}.</div>
+<div class="callout"><strong>Conclusion: unknown, not impossible.</strong> No 7-, 14- or 21-day conflict-free vacation is certified for 2027–2029. Rankings below describe loaded records and estimates, not complete future radio schedules. <a href="../certainty.html">Audit and limitations</a>.</div>
 {''.join(vy_blocks)}
 <h2>Root dashboard comparison</h2>
 <p class="small">The <a href="../vacation.html">root Vacation windows page</a> uses the parallel session's modelled
@@ -828,7 +821,7 @@ The combined verification above re-checks the merged feeds and flags any remaini
 (EXTRA / "verification.html").write_text(page("Line-by-line verification", "Line-by-line verification", ve_body), encoding="utf-8")
 
 # ---------------------------------------------------------------- extra/calendar.html
-cal_body = '''<h1>Day scoreboard — exact free time (Pacific)</h1>
+cal_body = '''<h1>Day scoreboard — modelled gaps (Pacific)</h1>
 <p class="lede">A minute is free when no covered game or radio broadcast is on air. Use <strong>Prev</strong>,
 <strong>Next</strong> and <strong>Today</strong> to move day by day. Verified mode uses only rows with an official
 published start time; estimate mode adds the clearly labelled planning layer.</p>
@@ -849,7 +842,7 @@ Estimate rows are planning models, not official schedules. They are flagged on <
   <div class="legend"><span><i style="background:#e2523f"></i>game / radio on air</span><span><i style="background:#2f6f57"></i>free</span></div>
   <div class="grid g3" style="margin-top:16px">
     <div class="card" style="padding:12px"><div class="kpi" id="x-busy">—<small>busy hours</small></div></div>
-    <div class="card" style="padding:12px"><div class="kpi" id="x-free">—<small>free hours</small></div></div>
+    <div class="card" style="padding:12px"><div class="kpi" id="x-free">—<small>unblocked model hours</small></div></div>
     <div class="card" style="padding:12px"><div class="small">Free windows (30 min or more, PT)</div><div id="x-freewin" class="pill-row" style="margin:8px 0 0"></div></div>
   </div>
 </div>
@@ -952,9 +945,9 @@ footer a{color:var(--accent2)}
     free.forEach(([x,y])=>{const d=document.createElement('div');d.className='seg free';d.style.left=(x/1440*100)+'%';d.style.width=((y-x)/1440*100)+'%';bar.appendChild(d);});
     ivs.forEach(([x,y])=>{const d=document.createElement('div');d.className='seg busy';d.style.left=(x/1440*100)+'%';d.style.width=((y-x)/1440*100)+'%';d.title=fmt(x)+'–'+fmt(y)+' busy';bar.appendChild(d);});
     const busyH=ivs.reduce((t,[x,y])=>t+(y-x),0)/60;
-    $('#x-busy').textContent=busyH.toFixed(1);$('#x-free').textContent=(24-busyH).toFixed(1);
-    const fw=free.filter(([x,y])=>y-x>=30);
-    $('#x-freewin').innerHTML=fw.length?fw.map(([x,y])=>`<span class="tag ver">${fmt(x)}–${fmt(y)} free (${((y-x)/60).toFixed(1)}h PT)</span>`).join(' '):'<span class="tag flag">No free window of 30 minutes or more</span>';
+    $('#x-busy').textContent=busyH.toFixed(1);$('#x-free').textContent=(b.tba.length||b.future.length)?'Unknown':(24-busyH).toFixed(1);
+    const fw=(b.tba.length||b.future.length)?[]:free.filter(([x,y])=>y-x>=30);
+    $('#x-freewin').innerHTML=fw.length?fw.map(([x,y])=>`<span class="tag ver">${fmt(x)}–${fmt(y)} model gap (${((y-x)/60).toFixed(1)}h PT)</span>`).join(' '):'<span class="tag flag">No model gap of 30 minutes or more</span>';
     const uv=[...b.tba,...b.future];
     $('#x-unverified').innerHTML=uv.length?`<div class="callout warn"><strong>Unverified / TBA on this day (${uv.length}).</strong> Exact free minutes cannot be computed for these rows because no official start time is published; they are not inferred.<ul>${uv.map(e=>`<li>${esc(e.title||'published future date')} — ${esc(e.note||'time not published')} ${a(e.sourceUrl,'official source')}</li>`).join('')}</ul></div>`:'';
     const evs=[...rows,...uv];
@@ -962,7 +955,7 @@ footer a{color:var(--accent2)}
       <td>${esc(e.start||'—')}</td><td>${esc(e.end||'—')}</td><td>${esc(e.league||e.sport||'')}${e.phase?` <span class="small">${esc(e.phase)}</span>`:''}</td>
       <td>${esc(e.title||'')}${e.venue?`<br><span class="small">${esc(e.venue)}</span>`:''}${e.note?`<br><span class="small">${esc(e.note)}</span>`:''}</td>
       <td>${e.priority==='high'?'<span class="tag high">HIGH PRIORITY</span>':'—'}</td>
-      <td>${e.radio?'<span class="tag ver">RADIO</span>':'—'}</td>
+      <td>${e.radio?'<span class="tag est">RADIO CANDIDATE</span>':'—'}</td>
       <td>${badge(e.status||'unverified')}</td><td>${a(e.sourceUrl,'official source')}</td></tr>`).join(''):'<tr><td colspan="8">No scheduled sports programming found on the official feeds for this day.</td></tr>';
     const ctx=[...b.anchors.map(x=>`<span class="chip">${esc(x.label)} · ${esc(x.league)} ${a(x.sourceUrl,'source')}</span>`),
                ...b.future.map(x=>`<span class="chip">${esc(x.title)} ${a(x.sourceUrl,'source')}</span>`)];

@@ -7,9 +7,10 @@ Coverage runs from 2026-11-02 to 2030-02-28, computed in Pacific time for San Fr
 
 ## Headline finding
 
-No 7-day window in 2027, 2028 or 2029 is completely free of MLB, NFL, Stanford/Cal football and Westwood One national radio.
-The longest run with nothing on air is six days, and it recurs in January–February between NFL playoff weekends.
-
+**No 7-, 14- or 21-day conflict-free vacation is certified for 2027–2029.**
+This means unknown, not impossible: schedules, exact end times and local AM/FM carriage
+are incomplete. Rankings describe provisional model gaps, not verified booking windows.
+See [the certainty audit](certainty.html).
 See [`research/EXECUTIVE-SUMMARY.md`](research/EXECUTIVE-SUMMARY.md) for the full write-up.
 
 ## What is in here
@@ -70,3 +71,17 @@ python3 tools/verify_extra.py      # 31 checks: local links, source links, JSON 
 The exact label **ESTIMATION — not a real verified released schedule** appears on every row whose schedule has
 not been officially released (2028/2029 MLB, 2027 NFL, 2027–2029 Westwood One postseason). Flagged items are
 published and do **not** block the Pages deployment.
+
+## Certainty audit (2026-11-03)
+
+After either generator runs, publish the certainty policy and disclosure banners:
+
+```bash
+python3 scripts/audit_certainty.py
+python3 scripts/check_links.py
+python3 tools/verify_extra.py
+```
+
+Local tests check structure and links, not complete source-fact verification. Historical
+verification reports are preserved with their original timestamps. All future vacation
+windows remain provisional. `certainty.html` lists the outstanding evidence limits.

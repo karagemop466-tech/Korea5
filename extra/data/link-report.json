@@ -150,7 +150,7 @@
       "detail": ""
     },
     {
-      "name": "root dashboard Super Bowl wording corrected",
+      "name": "root dashboard does not claim guaranteed free future vacations",
       "ok": true,
       "detail": ""
     },
@@ -161,7 +161,7 @@
     }
   ],
   "counts": {
-    "htmlFiles": 25,
+    "htmlFiles": 26,
     "externalDomains": 16,
     "missingLocal": 0,
     "rowsMissingSource": 0,

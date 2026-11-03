@@ -422,7 +422,45 @@ def parse_w1_detail(event_id, category, stub, page):
     return rec
 
 
+def load_w1_history(now):
+    """Retain dated historical snapshots without re-querying hundreds of old pages."""
+    path = os.path.join(OUT, "westwoodone.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            pack = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    stamp = pack.get("meta", {}).get("retrievedUTC")
+    history = {}
+    for old in pack.get("events", []):
+        if not isinstance(old, dict) or not str(old.get("id", "")).startswith("w1-"):
+            continue
+        start = old.get("startUTC")
+        if start:
+            try:
+                when = dt.datetime.fromisoformat(start.replace("Z", "+00:00"))
+                if when.tzinfo is None or when >= now:
+                    continue
+            except (ValueError, TypeError):
+                continue
+        # Unknown-date rows stay explicitly unverified; no date is invented.
+        rec = dict(old)
+        rec["sourceRetrievedUTC"] = old.get("sourceRetrievedUTC") or stamp
+        rec["verification"] = "verified-snapshot" if start else "unverified-snapshot"
+        history[rec["id"][3:]] = rec
+    return history
+
+
+def recent_month_days(now, days=7):
+    """Use the grid's month/day only to decide what to fetch, never as a game date."""
+    today = now.astimezone(PT).date()
+    return {(today - dt.timedelta(days=i)).strftime("%b %d").upper() for i in range(days)}
+
+
 def fetch_w1():
+    now = dt.datetime.now(UTC)
+    history = load_w1_history(now)
+    recent_days = recent_month_days(now)
     stubs = {}
     grid_sources = []
     failures = []
@@ -441,7 +479,12 @@ def fetch_w1():
                     failures.append(f"W1 {category}/{rng}/{offset}: {error}")
                     break
                 for r in rows:
-                    stubs.setdefault(r["eventId"], dict(r, category=category, widgetId=wid))
+                    # Current events must always be re-fetched, even if an older
+                    # snapshot had the same id. Fetch missing recent past items;
+                    # old cached history is retained with its original timestamp.
+                    month_day = (r.get("monthDay") or "").upper()
+                    if rng == "current" or (r["eventId"] not in history and month_day in recent_days):
+                        stubs.setdefault(r["eventId"], dict(r, category=category, widgetId=wid))
                 if len(rows) < W1_PAGE_SIZE:
                     break
                 if number == W1_MAX_PAGES - 1:
@@ -450,18 +493,24 @@ def fetch_w1():
 
     def one(item):
         eid, stub = item
-        page = get(f"{W1_BASE}/events/{eid}/", tries=2, timeout=45)
-        return parse_w1_detail(eid, stub["category"], stub, page)
+        page = get(f"{W1_BASE}/events/{eid}/", tries=3, timeout=45)
+        rec = parse_w1_detail(eid, stub["category"], stub, page)
+        rec["sourceRetrievedUTC"] = now.isoformat().replace("+00:00", "Z")
+        return rec
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
-        events = list(ex.map(one, stubs.items()))
-    for event in events:
+    # Avoid stressing the network's host with hundreds of simultaneous requests.
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as ex:
+        refreshed = list(ex.map(one, stubs.items()))
+    for event in refreshed:
         for error in event["parseErrors"]:
             failures.append(f"W1 {event['id']}: {error}")
     if not stubs:
-        failures.append("W1: all schedule grids were empty; cannot validate the refresh")
-    elif not any(e.get("startUTC") for e in events):
-        failures.append("W1: no event detail contained a usable start time")
+        failures.append("W1: no current/recent event details acquired; cannot validate the refresh")
+    elif not any(e.get("startUTC") for e in refreshed):
+        failures.append("W1: no refreshed event detail contained a usable start time")
+    for event in refreshed:
+        history[event["id"][3:]] = event
+    events = list(history.values())
     events.sort(key=lambda e: (e.get("startUTC") or "9999", e["id"]))
     return events, grid_sources, failures
 

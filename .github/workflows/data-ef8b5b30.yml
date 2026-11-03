@@ -50,7 +50,7 @@ jobs:
           else
             # Preserve useful diagnostics in the check run, without pushing
             # partially fetched data or relying on downloadable log artifacts.
-            python3 -c 'from pathlib import Path; s=Path("/tmp/official-fetch.log").read_text(errors="replace")[-15000:]; print("::error title=Official feed refresh failed::" + s.replace("%","%25").replace("\r","%0D").replace("\n","%0A"))'
+            python3 -c 'import json; from pathlib import Path; s=Path("/tmp/official-fetch.log").read_text(errors="replace"); i=s.rfind("\n{\n  \"generatedUTC\""); r=json.JSONDecoder().raw_decode(s[i+1:])[0] if i>=0 else {"error":s[-2000:]}; f=r.get("failures",[]); r["failureCount"]=len(f); r["failures"]=f[:12]; print("::error title=Official feed refresh failed::" + json.dumps(r,ensure_ascii=True).replace("%","%25"))'
             exit 1
           fi
       - name: Fetch MLB seasons and reject incomplete responses

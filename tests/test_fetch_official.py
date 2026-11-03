@@ -6,7 +6,9 @@ feed audit; only a successful source refresh can establish current data.
 """
 import datetime as dt
 import json
+import tempfile
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 from urllib.parse import parse_qs, urlparse
 
@@ -153,6 +155,7 @@ class WestwoodGridAndEventTests(unittest.TestCase):
 
         with patch.object(feed, "W1_WIDGETS", {"NFL": ("unused", 1)}), \
                 patch.object(feed, "W1_PAGE_SIZE", 2), patch.object(feed, "W1_MAX_PAGES", 5), \
+                patch.object(feed, "load_w1_history", return_value={}), \
                 patch.object(feed, "get", side_effect=fake_get), patch.object(feed.time, "sleep"):
             events, _, errors = feed.fetch_w1()
         self.assertEqual(errors, [])
@@ -166,9 +169,25 @@ class WestwoodGridAndEventTests(unittest.TestCase):
             return '<span class="start_time" data-time="1793923200"></span>'
         with patch.object(feed, "W1_WIDGETS", {"NFL": ("unused", 1)}), \
                 patch.object(feed, "W1_PAGE_SIZE", 1), patch.object(feed, "W1_MAX_PAGES", 2), \
+                patch.object(feed, "load_w1_history", return_value={}), \
                 patch.object(feed, "get", side_effect=fake_get), patch.object(feed.time, "sleep"):
             _, _, errors = feed.fetch_w1()
         self.assertTrue(any("pagination limit" in e for e in errors))
+
+    def test_historical_cache_keeps_original_retrieval_date_and_not_future_rows(self):
+        pack = {"meta": {"retrievedUTC": "2026-11-01T00:00:00Z"}, "events": [
+            {"id": "w1-1", "startUTC": "2026-10-01T01:00:00Z", "verification": "verified"},
+            {"id": "w1-2", "startUTC": "2026-12-01T01:00:00Z", "verification": "verified"},
+            {"id": "w1-3", "startUTC": None, "verification": "unverified-no-time"},
+        ]}
+        with tempfile.TemporaryDirectory() as tmp:
+            Path(tmp, "westwoodone.json").write_text(json.dumps(pack))
+            with patch.object(feed, "OUT", tmp):
+                history = feed.load_w1_history(dt.datetime(2026, 11, 3, tzinfo=dt.timezone.utc))
+        self.assertEqual(set(history), {"1", "3"})
+        self.assertEqual(history["1"]["sourceRetrievedUTC"], "2026-11-01T00:00:00Z")
+        self.assertEqual(history["1"]["verification"], "verified-snapshot")
+        self.assertEqual(history["3"]["verification"], "unverified-snapshot")
 
     def test_missing_start_with_end_does_not_crash_or_invent_time(self):
         rec = feed.parse_w1_detail("1", "NFL", {}, '<span class="end_time" data-time="1793930400"></span>')

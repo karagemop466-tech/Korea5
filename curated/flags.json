@@ -81,19 +81,24 @@
   {
    "id": "F05",
    "severity": "medium",
-   "title": "Super Bowl LXII (2028) and LXIII (2029) dates not published",
-   "detail": "The hosts are official (Atlanta 2028, Las Vegas 2029) but the exact dates are not. Date fields are blank.",
+   "title": "Super Bowl LXIII (2029) exact date still not on an official page; LXII (2028) date now verified",
+   "detail": "Update 2026-11-05: the Mercedes-Benz Stadium official event page publishes Super Bowl LXII as February 13, 2028 (a Sunday) — the planner's modelled 2028 date already matched and is now anchored to that page (kickoff time still TBA). For Super Bowl LXIII the official release (NFL.com and media.nfl.com, Mar 30, 2026) confirms only Las Vegas / Allegiant Stadium in 2029; On Location's official page says only 'February 2029'. The exact date — reported as Sunday, February 11, 2029 by press coverage of the NFL's social announcement — does not appear on any official page reviewed, so the 2029 date fields stay blank and the modelled 2029-02-11 block remains labelled ESTIMATION.",
    "status": "needs-review",
    "sources": [
     {
-     "name": "Super Bowl LXII host (NFL.com)",
-     "url": "https://www.nfl.com/news/mercedes-benz-stadium-in-atlanta-to-host-super-bowl-lxii-in-2028"
+     "name": "Super Bowl LXII event page — February 13, 2028 (Mercedes-Benz Stadium, official)",
+     "url": "https://www.mercedesbenzstadium.com/events/super-bowl-lxii"
     },
     {
-     "name": "Super Bowl LXIII host (NFL.com)",
+     "name": "Super Bowl LXIII host announcement (NFL.com, official)",
      "url": "https://www.nfl.com/news/las-vegas-to-host-super-bowl-lxiii-in-2029"
+    },
+    {
+     "name": "Super Bowl LXIII release (media.nfl.com, official)",
+     "url": "https://media.nfl.com/news-and-releases/events/super-bowl-returns-to-las-vegas-in-2029-"
     }
    ]
+
   },
   {
    "id": "F06",
@@ -343,7 +348,7 @@
    "id": "F22",
    "severity": "high",
    "title": "2028 and 2029 vacation windows are model output",
-   "detail": "The recommended 2028 (Jan 31 - Feb 12) and 2029 (Jan 29 - Feb 10) windows are computed from a modelled MLB daily slate and a modelled NFL calendar, not from released schedules. They will move when those schedules are published and must be re-checked before booking. Only the 2027 window is anchored to officially released values (MLB 2027 season, Super Bowl LXI).",
+   "detail": "The recommended 2028 (Jan 31 - Feb 12) and 2029 (Jan 29 - Feb 10) windows are computed from a modelled MLB daily slate and a modelled NFL calendar, not from released schedules. They will move when those schedules are published and must be re-checked before booking. Only the 2027 window is anchored to officially released values (MLB 2027 season, Super Bowl LXI). Update 2026-11-05: the 2028 window's right edge is additionally anchored by the officially published Super Bowl LXII date, Sunday, February 13, 2028 (Mercedes-Benz Stadium event page), which the model had already matched; every other 2028/2029 input remains model output.",
    "status": "needs-review",
    "sources": [
     {

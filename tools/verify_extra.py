@@ -36,6 +36,7 @@ APPROVED_DOMAINS = {
     "collegefootballplayoff.com", "www.collegefootballplayoff.com",
     "karagemop466-tech.github.io", "buffedlizard55-lab.github.io",
     "profootballnetwork.com", "www.profootballnetwork.com",
+    "mercedesbenzstadium.com", "www.mercedesbenzstadium.com",
     "github.com", "www.github.com",
     "images.sidearmdev.com", "dxbhsrqyrr690.cloudfront.net",
 }

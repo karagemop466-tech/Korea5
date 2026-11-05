@@ -404,9 +404,43 @@ def nfl_calendar(year):
     return rows
 
 
+def official_superbowl(game_year):
+    """Officially published Super Bowl facts for the calendar year of the game.
+
+    Each entry was fetched live from the official page on 2026-11-05. The entry for a year
+    exists only when an official page publishes the DATE; host-only announcements (LXIII,
+    2029) are recorded here for the row title but deliberately carry no date, so those rows
+    stay dateStatus=estimated.
+    """
+    return {
+        2027: {
+            "date": "2027-02-14", "roman": "LXI", "host": "SoFi Stadium, Inglewood",
+            "url": "https://media.nfl.com/football-information/2026/news/2026-kickoff-guide",
+            "label": "2026 Kickoff Guide (NFL media) — 'Super Bowl LXI ... Sunday, February 14, 2027, at SoFi Stadium'",
+        },
+        2028: {
+            "date": "2028-02-13", "roman": "LXII", "host": "Mercedes-Benz Stadium, Atlanta",
+            "url": "https://www.mercedesbenzstadium.com/events/super-bowl-lxii",
+            "label": "Super Bowl LXII event page (Mercedes-Benz Stadium) — February 13, 2028",
+        },
+        2029: {
+            # Host official (NFL.com / media.nfl.com release, Mar 30 2026): Las Vegas, Allegiant Stadium.
+            # The exact date (reported as Feb 11, 2029) appears only in press reports of the NFL's
+            # social announcement, not on an official page — so NO "date" key here on purpose.
+            "roman": "LXIII", "host": "Allegiant Stadium, Las Vegas",
+            "url": "https://www.nfl.com/news/las-vegas-to-host-super-bowl-lxiii-in-2029",
+            "label": "Host announcement (NFL.com) — Las Vegas, Allegiant Stadium, 2029 (date TBA)",
+        },
+    }.get(game_year)
+
+
 def nfl_postseason_estimate(season_year):
     """Estimated NFL postseason for a season: runs into January/February of season_year+1."""
-    sb = nth_weekday(season_year + 1, 2, 6, 2)
+    official = official_superbowl(season_year + 1)
+    if official and official.get("date"):
+        sb = date.fromisoformat(official["date"])
+    else:
+        sb = nth_weekday(season_year + 1, 2, 6, 2)
     rows = []
     rounds = [
         ("wildcard-sat", sb - timedelta(days=29), "13:30", "Wild Card Saturday"),
@@ -423,6 +457,13 @@ def nfl_postseason_estimate(season_year):
         # "high" scopes (the owner asked for NFL all-star events to be modelled) but must NOT
         # carry the `westwoodone` tag, because that tag is what puts a row in the radio scope.
         allstar = suffix == "probowl"
+        is_sb = suffix == "superbowl"
+        sb_date_official = bool(is_sb and official and official.get("date")
+                                and day.isoformat() == official["date"])
+        title = f"{label} (participants TBD)"
+        if is_sb:
+            title = (f"Super Bowl {official['roman']} at {official['host']} (participants TBD)"
+                     if official else title)
         rows.append({
             "id": f"nfl-est-{season_year}-{suffix}", "league": "NFL",
             "priority": "high" if not allstar else "normal",
@@ -430,17 +471,23 @@ def nfl_postseason_estimate(season_year):
                      else ["nfl", "westwoodone", "estimate"]),
             "date": day.isoformat(), "start": start,
             "durationMin": DURATION["nfl-post"],
-            "title": f"{label} (participants TBD)", "seasonType": "special" if allstar else "postseason",
+            "title": title, "seasonType": "special" if allstar else "postseason",
             "timeStatus": "estimated", "status": "estimated",
             "timeBasis": ("All-star exhibition, modelled on the Sunday before the Super Bowl. It is not a league "
                           "game and Westwood One's published 2026-27 schedule does not list it, so it is excluded "
                           "from the radio-only scope.")
                          if allstar else
-                         ("Estimated from the NFL's structural calendar: Week 18 in early January, then Wild Card, "
-                          "Divisional and Conference rounds, with the Super Bowl on the second Sunday of February."),
+                         (("Super Bowl date officially published — " + official["label"]
+                          + ". The kickoff time is not published; the 15:30 PT start and the 195-minute block "
+                            "remain planning estimates.")
+                          if sb_date_official else
+                          ("Estimated from the NFL's structural calendar: Week 18 in early January, then Wild Card, "
+                           "Divisional and Conference rounds, with the Super Bowl on the second Sunday of February.")),
             "source": "https://www.nfl.com/schedules/", "sourceLabel": "Estimated — NFL structure",
             "sourceUrl": "https://www.nfl.com/schedules/",
-            "dateStatus": "estimated",
+            "dateStatus": "verified" if sb_date_official else "estimated",
+            **({"dateSource": official["url"], "dateSourceLabel": official["label"]}
+               if sb_date_official else {}),
         })
     return rows
 

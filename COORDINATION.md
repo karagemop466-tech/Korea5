@@ -512,6 +512,52 @@ Flagged irregularities and unverified items remain published on `flagged.html` /
 
 ---
 
+## Session `arena/57f0338e-korea5` — 2026-11-05 (independent audit + anchor re-verification)
+
+Branch constraint: Arena fixes this session to `arena/57f0338e-korea5`; no other branch will be created or pushed.
+Started from `main` tip `25f0273` (PR #23). No active claim overlaps this work; all prior sessions' records above are preserved.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| A1 | Independent full-repo audit: run the complete local verification suite (links, extra checks, certainty, unit tests, JS syntax, JSON validity), line-by-line review of data + site against the owner's requirements | arena-57f0338e | in progress | `verification/session-review-57f0338e.md`, `COORDINATION.md` |
+| A2 | Live re-check of key official anchors via page fetch: Super Bowl LXI/LXII/LXIII dates, Pro Bowl Games 2027 date, MLB 2028 / NFL 2027 schedule release status, MLB 2027 season dates | arena-57f0338e | in progress | `curated/season-anchors.json`, `curated/flags.json` (only if an official fact changed) |
+| A3 | If any anchor fact changed: update curated data + rebuild derived data and site, re-verify everything | arena-57f0338e | pending | generated outputs only |
+| A4 | PR to `main`, merge without waiting, confirm Pages deploy, record result here | arena-57f0338e | pending | `COORDINATION.md` (this log) |
+
+Scope note: shared outputs (`*.html`, `data/`) are otherwise integration-frozen; A3 touches them only to publish a
+newly verified official fact, which no other session has claimed. No schedule row will be invented; anything not
+confirmed from an official source stays blank/estimated and flagged.
+
+### Session `arena/57f0338e-korea5` — completion record (A1–A3 done, A4 = PR)
+
+- **2026-11-05 — A1 done.** Full local suite green on this branch: unit tests 5/5; `check_links.py`
+  11 pages / 181 local + 519 external / 0 missing; `tools/verify_extra.py` 31/31; `audit_certainty.py` passed;
+  `node --check` both JS bundles; all data JSON valid; `git diff --check` clean; local server HTTP 200 on 12 pages.
+  Evidence: `verification/session-review-57f0338e.md`.
+- **2026-11-05 — A2 done (live official-source checks via page fetch).**
+  Sources: `https://media.nfl.com/football-information/2026/news/2026-kickoff-guide` (SB LXI = Sun Feb 14, 2027,
+  SoFi Stadium); `https://www.mercedesbenzstadium.com/events/super-bowl-lxii` (SB LXII = Sun Feb 13, 2028,
+  Event Start TBA); `https://www.nfl.com/news/las-vegas-to-host-super-bowl-lxiii-in-2029` +
+  `https://media.nfl.com/news-and-releases/events/super-bowl-returns-to-las-vegas-in-2029-` (SB LXIII host only,
+  Las Vegas / Allegiant Stadium 2029, **no official date**; press-reported Feb 11, 2029 deliberately not entered);
+  `https://onlocationexp.com/nfl/2029-super-bowl-tickets` ("February 2029" only). Pro Bowl Games 2027: no official
+  date found (unofficial sources conflict) — F21 unchanged. 2027 NFL schedule and MLB 2028: not released —
+  F02/F01 stand.
+- **2026-11-05 — A3 done.** Verified updates applied and rebuilt: `scripts/build_events.py`
+  (official Super Bowl date anchoring; LXIII intentionally dateless), `curated/season-anchors.json`
+  (2028 SB row verified 2028-02-13 with stadium source), `curated/flags.json` (F05 rewritten, F22 extended),
+  `research/EXECUTIVE-SUMMARY-ef8b5b30.md` (dated update appended), `tools/verify_extra.py`
+  (+ mercedesbenzstadium.com official domain), `scripts/build_site.py` (fixed generator drift: nav link to
+  `extra/index.html` and Prev/Next/+2-days toolbar labels now match the shipped site). Derived data rebuilt —
+  recommendations unchanged: 2027 radio window Feb 1–13 anchored; 2028 best 3-week Jan 23–Feb 12 (ends one day
+  before the now-officially-dated SB LXII); 2029 best 3-week Jan 21–Feb 10. Exactly 3 combined-calendar days
+  changed (the three Super Bowls). No schedule value was inferred; LXIII date fields remain blank and labelled.
+- **Irregularities recorded:** (1) SB LXIII date unofficial — flag F05; (2) Pro Bowl 2027 date unofficial and
+  conflicting — flag F21; (3) root-page generator had drifted from shipped pages (nav link + toolbar labels),
+  now aligned — this session's record; (4) inherited snapshot-verification labels were not changed; only the
+  LXI/LXII dates above are freshly verified live.
+- **A4 in progress:** PR from `arena/57f0338e-korea5` to `main`, merge without waiting, Pages deploy
+  confirmation to be recorded below after merge.
 ## Session `arena/239c0da8-korea5` — 2026-11-05 (integration review)
 
 Branch fixed by Arena: `arena/239c0da8-korea5`. Read this board before review; existing schedule/data/site tasks are already marked complete and no active ownership conflict was listed.

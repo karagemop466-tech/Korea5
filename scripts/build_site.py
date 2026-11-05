@@ -28,6 +28,7 @@ NAV = [
     ("sources.html", "Sources"),
     ("flagged.html", "Flagged"),
     ("method.html", "Method"),
+    ("extra/index.html", "Official feeds &amp; verification"),
 ]
 
 
@@ -212,10 +213,10 @@ def build_calendar():
 <p class="lede">Every day from {ANALYSIS['meta']['today']} to {ANALYSIS['meta']['horizon'][1]}, in Pacific time.
 Free time is any 30-minute-or-longer gap with no qualifying game on air.</p>
 <div class="toolbar">
-  <button id="prev">← Yesterday</button>
+  <button id="prev">← Prev</button>
   <button id="tobay">Today</button>
-  <button id="tomorrow">Tomorrow →</button>
-  <button id="next">Tomorrow +1 →</button>
+  <button id="tomorrow">Next →</button>
+  <button id="next">+2 days →</button>
   <input type="date" id="dateinput" min="{ANALYSIS['meta']['today']}" max="{ANALYSIS['meta']['horizon'][1]}">
   <span class="small">Today is <strong id="today"></strong></span>
 </div>

@@ -174,6 +174,8 @@ for year in range(2026, 2031):
             "startWindow": e.get("startWindow") or "",
             "altWindow": e.get("altWindow") or "",
             "origin": f"data/events-{year}.json",
+            "tags": list(e.get("tags") or []),
+            "group": e.get("group") or "",
         })
 
 # ---------------------------------------------------------------- dedupe combined feed
@@ -235,7 +237,8 @@ for r in ncaaf_future:
         "note": r["note"],
     })
 
-buckets = defaultdict(lambda: {"verified": [], "estimated": [], "tba": [], "anchors": [], "future": []})
+buckets = defaultdict(lambda: {"verified": [], "estimated": [], "tba": [], "anchors": [], "future": [],
+                               "otherRadio": []})
 for e in combined:
     d = e.get("date")
     if not d or not (START.isoformat() <= d <= END.isoformat()):
@@ -243,6 +246,12 @@ for e in combined:
     item = {k: e.get(k, "") for k in ("title", "league", "sport", "phase", "start", "end", "durationMin",
                                        "venue", "radio", "priority", "priorityNote", "status", "sourceUrl",
                                        "sourceName", "note", "startWindow", "altWindow", "origin")}
+    # Other Bay Area AM/FM radio sport (Warriors, and any future addition) is sourced and
+    # displayed, but it is NOT part of the owner's closed four-item "free" definition, so it
+    # gets its own bucket and does not make a day busy. See data/curated/other-bayarea-radio.json.
+    if "other-radio" in (e.get("tags") or []) or e.get("group") == "other-radio":
+        buckets[d]["otherRadio"].append(item)
+        continue
     st = (e.get("status") or "").lower()
     if st == "estimated":
         buckets[d]["estimated"].append(item)
@@ -262,7 +271,8 @@ days = {}
 d = START
 while d <= END:
     key = d.isoformat()
-    b = buckets.get(key, {"verified": [], "estimated": [], "tba": [], "anchors": [], "future": []})
+    b = buckets.get(key, {"verified": [], "estimated": [], "tba": [], "anchors": [], "future": [],
+                          "otherRadio": []})
     days[key] = b
     d += timedelta(days=1)
 
@@ -276,6 +286,10 @@ calendar = {
         "verifiedDefinition": "A minute is free when no covered game or radio broadcast is on air. Only rows with an official published start time are used to compute exact busy minutes.",
         "estimateLabel": EST_LABEL,
         "note": "Days with TBA/unverified rows cannot have exact free minutes computed in verified mode; they are marked unverified rather than inferred.",
+        "otherRadioNote": ("Rows in the 'otherRadio' bucket are other live sport found on Bay Area AM/FM radio "
+                           "(the Golden State Warriors on KGMZ-FM 95.7 The Game). They are sourced and shown for "
+                           "information, but they are NOT part of the owner's closed four-item 'free' definition, so "
+                           "they do not make a day busy. See other-radio.html."),
     },
     "days": days,
 }
@@ -400,7 +414,8 @@ verification_out["counts"] = {
 ROOT_NAV = [
     ("../index.html", "Dashboard"), ("../calendar.html", "Calendar"), ("../vacation.html", "Vacation windows"),
     ("../mlb.html", "MLB"), ("../nfl.html", "NFL &amp; 49ers"), ("../ncaaf.html", "Stanford &amp; Cal"),
-    ("../radio.html", "Radio"), ("../sources.html", "Sources"), ("../flagged.html", "Flagged"), ("../method.html", "Method"),
+    ("../radio.html", "Radio"), ("../other-radio.html", "Other radio"),
+    ("../sources.html", "Sources"), ("../flagged.html", "Flagged"), ("../method.html", "Method"),
 ]
 EXTRA_NAV = [
     ("index.html", "Official feeds"), ("calendar.html", "Day scoreboard"), ("vacation.html", "Free windows"),
@@ -878,6 +893,7 @@ Estimate rows are planning models, not official schedules. They are flagged on <
   </div>
 </div>
 <div id="x-unverified"></div>
+<div id="x-other"></div>
 <h2>On air this day</h2>
 <div class="scroll"><table><thead><tr><th>Start (PT)</th><th>End (PT)</th><th>League / sport</th><th>Event</th><th>Priority</th><th>Radio</th><th>Status</th><th>Official source</th></tr></thead>
 <tbody id="x-events"><tr><td colspan="8">Loading…</td></tr></tbody></table></div>
@@ -970,7 +986,7 @@ footer a{color:var(--accent2)}
   }
   function render(){
     today=pacificISODate(new Date());
-    const b=pack.days[cur]||{verified:[],estimated:[],tba:[],anchors:[],future:[]};
+    const b=pack.days[cur]||{verified:[],estimated:[],tba:[],anchors:[],future:[],otherRadio:[]};
     const rows=[...b.verified,...(includeEst?b.estimated:[])];
     $('#x-date').value=cur;
     $('#x-today-label').textContent=today;
@@ -995,6 +1011,11 @@ footer a{color:var(--accent2)}
       <td>${e.priority==='high'?'<span class="tag high">HIGH PRIORITY</span>':'—'}</td>
       <td>${e.radio?'<span class="tag est">RADIO CANDIDATE</span>':'—'}</td>
       <td>${badge(e.status||'unverified')}</td><td>${a(e.sourceUrl,'official source')}</td></tr>`).join(''):'<tr><td colspan="8">No scheduled sports programming found on the official feeds for this day.</td></tr>';
+    const other=(b.otherRadio||[]);
+    $('#x-other').innerHTML=other.length?`<div class="callout"><strong>Also live on Bay Area AM/FM radio today (${other.length}) - does not block free time.</strong>
+      These are other sports found on Bay Area radio (the Golden State Warriors on KGMZ-FM 95.7 The Game). They are sourced, but they are
+      <em>not</em> part of your four-item "free" definition, so this day is still scored using only the rows above.
+      <ul>${other.map(e=>`<li>${esc(e.title||'')} - ${esc(e.start||'time TBA')} · ${esc(e.radio||e.league||'')} ${a(e.sourceUrl,'official source')}</li>`).join('')}</ul></div>`:'';
     const ctx=[...b.anchors.map(x=>`<span class="chip">${esc(x.label)} · ${esc(x.league)} ${a(x.sourceUrl,'source')}</span>`),
                ...b.future.map(x=>`<span class="chip">${esc(x.title)} ${a(x.sourceUrl,'source')}</span>`)];
     $('#x-context').innerHTML=ctx.length?ctx.join(' '):'<span class="small">No official season anchor for this day.</span>';

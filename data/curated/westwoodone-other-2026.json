@@ -1,0 +1,90 @@
+{
+  "dataset": "Westwood One Sports national broadcasts OUTSIDE the NFL — NCAA Football and U.S. Soccer",
+  "league": "NCAAF + Soccer",
+  "priority": "normal (national radio window; not a Giants/A's/49ers/Stanford/Cal game)",
+  "sources": [
+    "https://www.westwoodonesports.com/ncaa-football/",
+    "https://www.westwoodonesports.com/us-soccer/"
+  ],
+  "sourceName": "Westwood One Sports — official sport schedule pages",
+  "retrievedUTC": "2026-11-05",
+  "verifiedBy": "Read directly from the live official pages on 2026-11-05 (agent page fetch). Each event links to its own official event page.",
+  "notes": "These are Westwood One national radio windows, not station-level carriage. Times on the source pages are Eastern; Pacific times here are converted at ET-3h (PST is in effect from 2026-11-01). Rows whose air time reads 'TBD' on the official page carry a null start and are blocked across the plausible 12:00-23:30 Pacific window, not a fabricated clock time.",
+  "irregularities": [
+    "2026-11-14 Texas Tech at Oklahoma State and 2026-11-21 LSU at Tennessee are listed with 'Air time TBD' on the official event pages; the start time is left blank and the rows are flagged.",
+    "Westwood One's San Francisco affiliates (KNBR-AM, KNBR-FM, KNBR-F2, KTCT-AM) are published by market, not per sport or per event; the network states that not every affiliate airs every broadcast."
+  ],
+  "events": [
+    {
+      "id": "w1-ncaa-557144",
+      "date": "2026-11-14",
+      "startET": null,
+      "away": "Texas Tech",
+      "home": "Oklahoma State",
+      "venue": "Boone Pickens Stadium, Stillwater, OK",
+      "label": "NCAA Football",
+      "sport": "NCAAF",
+      "eventUrl": "https://www.westwoodonesports.com/events/557144",
+      "verifyTokens": ["Texas Tech at Oklahoma State", "Air time TBD"],
+      "note": "Official event page shows 'Air time TBD'."
+    },
+    {
+      "id": "w1-ncaa-557145",
+      "date": "2026-11-21",
+      "startET": null,
+      "away": "LSU",
+      "home": "Tennessee",
+      "venue": "Neyland Stadium, Knoxville, TN",
+      "label": "NCAA Football",
+      "sport": "NCAAF",
+      "eventUrl": "https://www.westwoodonesports.com/events/557145",
+      "verifyTokens": ["LSU at Tennessee", "Air time TBD"],
+      "note": "Official event page shows 'Air time TBD'."
+    },
+    {
+      "id": "w1-ncaa-557131",
+      "date": "2026-11-28",
+      "startET": "11:30",
+      "away": "Michigan",
+      "home": "Ohio State",
+      "venue": "Ohio Stadium, Columbus, OH",
+      "label": "NCAA Football",
+      "sport": "NCAAF",
+      "eventUrl": "https://www.westwoodonesports.com/events/557131",
+      "verifyTokens": ["Michigan at Ohio State", "11:30 AM ET"]
+    },
+    {
+      "id": "w1-ncaa-557146",
+      "date": "2026-12-05",
+      "startET": "15:30",
+      "title": "SEC Championship Game",
+      "venue": "Mercedes-Benz Stadium, Atlanta, GA",
+      "label": "NCAA Football — SEC Championship Game",
+      "sport": "NCAAF",
+      "eventUrl": "https://www.westwoodonesports.com/events/557146",
+      "verifyTokens": ["SEC Championship Game", "3:30 PM ET"]
+    },
+    {
+      "id": "w1-ncaa-557132",
+      "date": "2026-12-12",
+      "startET": "14:00",
+      "title": "Army vs Navy",
+      "venue": "MetLife Stadium, East Rutherford, NJ",
+      "label": "NCAA Football — Army vs Navy",
+      "sport": "NCAAF",
+      "eventUrl": "https://www.westwoodonesports.com/events/557132",
+      "verifyTokens": ["Army vs Navy", "2:00 PM ET"]
+    },
+    {
+      "id": "w1-soccer-572875",
+      "date": "2026-11-17",
+      "startET": "18:45",
+      "title": "USMNT vs Haiti",
+      "venue": "TQL Stadium, Cincinnati, OH",
+      "label": "U.S. Soccer — Nations League QF",
+      "sport": "Soccer",
+      "eventUrl": "https://www.westwoodonesports.com/events/572875",
+      "verifyTokens": ["USMNT vs Haiti", "6:45 PM ET"]
+    }
+  ]
+}

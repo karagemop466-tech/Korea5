@@ -25,6 +25,7 @@ NAV = [
     ("nfl.html", "NFL &amp; 49ers"),
     ("ncaaf.html", "Stanford &amp; Cal"),
     ("radio.html", "Radio"),
+    ("other-radio.html", "Other radio"),
     ("sources.html", "Sources"),
     ("flagged.html", "Flagged"),
     ("method.html", "Method"),
@@ -221,6 +222,17 @@ If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} op
 <div class="card"><h3>Vacation planning</h3><p>Every candidate week, two-week and three-week span, ranked by conflicts, with the evidence layer for each.</p><a href="vacation.html">Best vacation dates</a></div>
 <div class="card"><h3>AM/FM, not streaming</h3><p>Which games have a documented Bay Area radio outlet, and what still cannot be confirmed from official pages.</p><a href="extra/stations.html">Station evidence</a></div></div>
 
+<h2>Other live sport on Bay Area radio</h2>
+<div class="callout warn"><strong>New: we searched for every other sport carried live on Bay Area AM/FM radio.</strong>
+The Warriors (NBA) are confirmed game-by-game on <strong>KGMZ-FM 95.7 The Game</strong> and are now ingested from the official
+NBA.com schedule and the club's official season PDF. Because your "free" definition is a closed four-item list, they are held
+in their own group and do not block free time by default - but if they counted, the February 2027 window would shrink
+sharply, because the NBA plays straight through it. <a href="other-radio.html">See the stations, rows and sources</a>.</div>
+<div class="grid g3">
+<div class="card"><h3>Warriors on 95.7 The Game</h3><p>Flagship confirmed by the club; the radio station is printed on every game row of the official schedule.</p><a href="https://warriors.com/news/warriors-audacys-95-7-the-game-announce-multi-year-contract-extension-20251023">Warriors.com release</a></div>
+<div class="card"><h3>Sharks on 98.5 KFOX</h3><p>Flagship documented, but the newest official confirmation we could find is a 2019 NHL.com/Sharks article. Game rows were not ingested. Flagged.</p><a href="https://www.nhl.com/sharks/schedule">NHL.com Sharks schedule</a></div>
+<div class="card"><h3>Westwood One, all sports</h3><p>Every official sport page was checked. NCAA Football and U.S. Soccer had live windows; the rest had none that day. All eight are linked.</p><a href="other-radio.html">Other radio page</a></div></div>
+
 <h2>Schedule status — what is official today</h2>
 <div class="grid g3">
 <div class="card"><h3>2027 MLB — released</h3><p>Opening Night Wed Mar 24, 2027; traditional Opening Day Thu Mar 25; All-Star Game Tue Jul 13 at Wrigley Field; final regular-season day Sun Sep 26. Confirmed on MLB.com and in the MLB StatsAPI feed. First-pitch times that MLB has not set are marked estimated.</p><a href="https://www.mlb.com/news/mlb-2027-schedule-released">MLB 2027 schedule release</a></div>
@@ -343,15 +355,48 @@ def build_vacation():
         ev = ("Dates from the official NFL 2026–27 calendar and the MLB 2027 release; Pro Bowl date unverified"
               if y == 2027 else
               '<span class="tag est">ESTIMATION</span> — schedules not released')
+        r_ext = rec("extended", y) or {}
+        if not r_ext:
+            ext_cell = "—"
+        elif r_ext.get("fullyCovered"):
+            ext_cell = (f"<strong>{esc(fmt_range(r_ext['start'], r_ext['end']))}</strong> "
+                        f"({r_ext['days']}d)")
+        else:
+            ext_cell = (f"<strong>{esc(fmt_range(r_ext['start'], r_ext['end']))}</strong> "
+                        f"({r_ext['days']}d) <span class=\"tag flag\">partial</span>")
         return (f"<tr><td><strong>{y}</strong></td>"
                 f"<td><strong>{esc(ties_txt(P[y]['base']))}</strong></td>"
                 f"<td>{'yes' if fit.get('7') else 'no'}</td>"
                 f"<td>{'yes' if fit.get('14') else 'no'}</td>"
                 f"<td>{'yes' if fit.get('21') else 'no'}</td>"
+                f"<td>{ext_cell}</td>"
                 f"<td>{esc(r_all.get('blockedBefore') or '—')}</td>"
                 f"<td>{esc(r_all.get('blockedAfter') or '—')}</td>"
                 f"<td>{ev}</td></tr>")
     rows = "".join(row_for(y) for y in (2027, 2028, 2029))
+    oc = ANALYSIS.get("meta", {}).get("otherCoverage") or {}
+    oc_note = ("Other-sport rows were ingested for "
+               f"{oc.get('start', '—')} to {oc.get('end', '—')} only, so this comparison is only "
+               "meaningful for dates inside that window."
+               if oc else "No other-sport rows have been ingested yet.")
+    ext_rows = ""
+    for y in (2027, 2028, 2029):
+        rr = rec("radio", y) or {}
+        rx = rec("extended", y) or {}
+        if not rx:
+            ext_rows += (f"<tr><td><strong>{y}</strong></td>"
+                         f"<td>{esc(fmt_range(rr['start'], rr['end'])) if rr else '—'}"
+                         f"{' (' + str(rr.get('days')) + ' nights)' if rr else ''}</td>"
+                         f"<td>not computed</td></tr>")
+            continue
+        note = rx.get("coverageNote")
+        cell = (f"<strong>{esc(fmt_range(rx['start'], rx['end']))}</strong> ({rx['days']} nights)"
+                + (f"<br><span class=\"tag flag\">partial coverage</span> <small>{esc(note)}</small>"
+                   if note else ""))
+        ext_rows += (f"<tr><td><strong>{y}</strong></td>"
+                     f"<td><strong>{esc(fmt_range(rr['start'], rr['end'])) if rr else '—'}</strong>"
+                     f"{' (' + str(rr.get('days')) + ' nights)' if rr else ''}</td>"
+                     f"<td>{cell}</td></tr>")
     cards = "".join(
         f'<div class="card"><h3>{y}</h3>'
         f'<div class="kpi" style="font-size:26px">{n[y]} calendar days</div><small>longest all-games run (base case)</small>'
@@ -380,10 +425,26 @@ moves the answer (scenario table below).
 Jan 25–30 sits between the Divisional round (Jan 23–24) and the Conference Championships (Jan 31), both official.
 Feb 1–6 is free unless the Pro Bowl Games fall on one of those days, and the 2027 Pro Bowl date is not published.
 </div>
-<div class="scroll"><table><thead><tr><th>Year</th><th>Longest free run (base case)</th><th>Fits 1 week</th><th>Fits 2 weeks</th><th>Fits 3 weeks</th><th>Game day before</th><th>Game day after</th><th>Evidence</th></tr></thead><tbody>
+<div class="scroll"><table><thead><tr><th>Year</th><th>Longest free run (base case)</th><th>Fits 1 week</th><th>Fits 2 weeks</th><th>Fits 3 weeks</th><th>If other Bay Area radio sport counts</th><th>Game day before</th><th>Game day after</th><th>Evidence</th></tr></thead><tbody>
 {rows}
 </tbody></table></div>
 <p class="small">No 7-, 14- or 21-day window is fully free in any year. The ranked lists below show the windows with the fewest busy days.</p>
+
+<h2>What happens if the Warriors count too</h2>
+<div class="callout warn">
+<strong>You asked us to look for every other sport carried live on Bay Area AM/FM radio and treat it as high priority.
+We found one we could verify game-by-game: the Golden State Warriors on KGMZ-FM 95.7 The Game.</strong>
+They are <em>not</em> in the four-item "free" definition in your brief, so by default they do not block free time.
+Switch them on and the picture changes completely, because the NBA plays right through the February gap:
+{oc_note}
+</div>
+<div class="scroll"><table><thead><tr><th>Year</th><th>Four-item definition (default)</th><th>Adding other Bay Area radio sport</th></tr></thead><tbody>
+{ext_rows}
+</tbody></table></div>
+<p class="small">Every row in the right-hand column is computed from the same event feed, not typed in by hand.
+Where the other-sport schedule has not been ingested, the column is marked <span class="tag flag">partial</span> and
+must not be read as a clear window. See the <a href="other-radio.html">Other radio</a> page for the stations, the
+coverage window and every source link.</p>
 
 <div class="callout warn">
 <strong>Why not the summer?</strong> MLB plays a slate almost every day from late February to early October, and your scope
@@ -734,15 +795,115 @@ window with participants TBA, so they are blocked as a window rather than as ind
 {table(["Date", "League", "Broadcast", "Matchup", "Start", "Source"], rows)}
 
 <h2>Other sports on these stations</h2>
-<p class="small">Westwood One also distributes NCAA Football, NCAA Basketball, golf, U.S. Soccer and NCAA championship events
-(<a href="https://www.westwoodonesports.com/nfl-schedule/" target="_blank" rel="noopener">network schedule</a>). One NCAA Football
-broadcast appears in the verified list above (Oregon at Ohio State, Nov 7). The rest are not enumerated here because the network
-publishes them week by week — they are flagged as a known coverage gap rather than guessed at.</p>
+<p class="small">Westwood One also distributes NCAA Football, NCAA Basketball, golf, U.S. Soccer and NCAA championship events.
+On 2026-11-05 every official Westwood One sport page was checked: NCAA Football had six published windows and U.S. Soccer one,
+and NCAA Basketball, Golf, NCAA Hockey, MCWS, WCWS and Lacrosse each showed no upcoming event. All eight properties are listed
+with links on the <a href="other-radio.html">Other radio</a> page, so nothing is silently missing. Six NCAA Football windows are
+now in the feed rather than just the one.</p>
 """
     page("radio.html", "Radio", "radio.html", body)
 
 
 # ================================================================ sources
+def build_other_radio():
+    """Everything else we found being carried live on Bay Area AM/FM radio."""
+    other = load("data/curated/other-bayarea-radio.json", {}) or {}
+    w1other = load("data/curated/westwoodone-other-2026.json", {}) or {}
+    cov = ANALYSIS.get("meta", {}).get("otherCoverage") or {}
+    oc = other.get("coverageStart") or cov.get("start")
+    oc_end = other.get("coverageEnd") or cov.get("end")
+
+    st_rows = []
+    for s in other.get("stations", []):
+        tag = ('<span class="tag ver">in the free definition</span>' if s.get("inFreeDefinition")
+               else '<span class="tag flag">not in the free definition</span>')
+        conf = ('<span class="tag ver">official</span>' if s.get("status") == "verified"
+                else f'<span class="tag flag">{esc(s.get("status"))}</span>')
+        st_rows.append([
+            f"<strong>{esc(s['team'])}</strong><br><small>{esc(s.get('league',''))}</small>",
+            f"<strong>{esc(s['station'])}</strong><br><small>{esc(s.get('band',''))}</small>",
+            f"{esc(s.get('role',''))}<br><small>{esc(s.get('note',''))}</small>",
+            f"{conf}<br>{tag}",
+            f'<a href="{esc(s["sourceUrl"])}">{esc(s.get("sourceName","official source"))}</a>',
+        ])
+    st_table = table(["Team", "Station", "Role / caveat", "Status", "Official source"], st_rows)
+
+    def ev_rows(items, date_key="date"):
+        rows = []
+        for e in items:
+            rows.append([
+                f"<strong>{esc(e.get(date_key))}</strong>",
+                esc(e.get("startPT") or e.get("startET") or "—"),
+                esc(e.get("label") or e.get("title") or ""),
+                esc(e.get("opponent") or e.get("venue") or "—"),
+                esc(e.get("radio") or "Westwood One Sports (national)"),
+                f'<a href="{esc(e.get("eventUrl") or e.get("sourceUrl") or "#")}">source</a>',
+            ])
+        return rows
+
+    w1_table = table(["Date", "Time (ET)", "Broadcast", "Teams / venue", "Network", "Source"],
+                     ev_rows(w1other.get("events", [])))
+    gsw_table = table(["Date", "Tip (PT)", "Game", "Opponent", "Radio", "Source"],
+                      ev_rows(other.get("events", [])))
+
+    rights_rows = [[esc(r.get("sport", "")),
+                    esc(r.get("countNote", "")),
+                    ('<span class="tag ver">no events published yet</span>' if not r.get("upcomingPublished")
+                     else '<span class="tag ver">events published</span>'),
+                    f'<a href="{esc(r["sourceUrl"])}">official page</a>']
+                   for r in other.get("westwoodOneRights", [])]
+    rights_table = table(["Westwood One property", "What the official page shows (2026-11-05)", "Status", "Source"],
+                         rights_rows)
+
+    irr = "".join(f"<li>{esc(x)}</li>" for x in other.get("irregularities", []))
+
+    body = f"""
+<h1>Other live sport on Bay Area AM/FM radio</h1>
+<p class="lede">You asked us to look for <em>every</em> other sport carried live on Bay Area radio and to treat it as high
+priority. This page is that search: what we found, the station it airs on, the official source for each claim, and what we
+deliberately did not guess.</p>
+
+<div class="callout flag">
+<strong>Important: these are not, by default, part of your "free" definition.</strong>
+The brief defines a free minute as one with no MLB, no NFL, no Stanford, no Cal and no Westwood One national NFL broadcast.
+That is a closed list, so the rows on this page are held in their own group and <strong>do not block free time by default</strong>.
+The <a href="vacation.html">vacation page</a> shows both answers side by side so you can see exactly what changes if you
+switch them on. If you want them to block, say so and it is a one-line change.
+</div>
+
+<h2>Bay Area stations carrying live sport</h2>
+<p class="small">Carriage is published at team or network level. No official source states, per game, that a given broadcast
+is receivable on a standard AM/FM radio at an Outer Sunset address; that remains flagged on the
+<a href="certainty.html">certainty page</a>.</p>
+{st_table}
+
+<h2>Golden State Warriors — verified game by game</h2>
+<p class="small">Every row below was read from the official NBA.com Warriors schedule page or the club's official 2026-27
+season schedule PDF linked from it. The schedule page prints <strong>KGMZ-FM (95.7 The Game)</strong> as the radio outlet on
+each game row. Coverage: <strong>{esc(oc)} to {esc(oc_end)}</strong>. Home/away and venue are not readable from the PDF text
+layer and are left blank rather than guessed.</p>
+<div class="scroll">{gsw_table}</div>
+
+<h2>Westwood One national broadcasts outside the NFL</h2>
+<p class="small">These are national radio windows carried into the Bay Area by Westwood One's published San Francisco
+affiliates (KNBR-AM, KNBR-FM, KNBR-F2, KTCT-AM). Times are Eastern as published; the planner converts at ET-3h (PST).</p>
+{w1_table}
+
+<h2>Westwood One properties with no published upcoming broadcast</h2>
+<p class="small">Westwood One holds national radio rights to these sports. Each official page was checked on 2026-11-05 and
+showed no upcoming event at that moment. They are listed so nothing is silently missing from the model.</p>
+{rights_table}
+
+<h2>Irregularities and limits on this page</h2>
+<ul class="clean">{irr}</ul>
+
+<p class="small"><a href="flagged.html">Flagged for Review</a> ·
+<a href="sources.html">Sources</a> · <a href="method.html">Method</a></p>
+"""
+    page("other-radio.html", "Other radio", "other-radio.html", body)
+
+
+
 def build_sources():
     rows = []
     seen = {}
@@ -813,7 +974,9 @@ def build_flagged():
 
     # dataset-level irregularities declared by the curated files
     declared = []
-    for p in ("data/curated/nfl-2026-49ers.json", "data/curated/westwoodone-2026.json", "data/curated/ncaaf-2026.json"):
+    for p in ("data/curated/nfl-2026-49ers.json", "data/curated/westwoodone-2026.json",
+              "data/curated/westwoodone-other-2026.json", "data/curated/other-bayarea-radio.json",
+              "data/curated/ncaaf-2026.json"):
         d = load(p, {})
         for msg in d.get("meta", {}).get("irregularities", []):
             declared.append((os.path.basename(p), msg))
@@ -825,7 +988,13 @@ def build_flagged():
         ("Finding", "Westwood One start times", "On 17 games carried by both sources, the network's published start is 15–75 minutes before the NFL's official kickoff — it is the broadcast start. The planner uses the earlier time for busy-ness and keeps the kickoff on the row.", "https://www.westwoodonesports.com/nfl-schedule/"),
         ("Gap", "Cal games before Nov 14, 2026", "Cal's official page could not be parsed unambiguously for its early-season card order, so those games are omitted rather than guessed.", "https://calbears.com/sports/football/schedule"),
         ("Gap", "Athletics radio flagship", "No official page confirmed which San Francisco station carries Athletics games in 2026. A's games are still blocked as high priority.", ""),
-        ("Gap", "Westwood One non-NFL sports", "NCAA Basketball, golf, soccer and NCAA championships are published week by week and are not enumerated.", "https://www.westwoodonesports.com/"),
+        ("Gap", "San Jose Sharks (NHL) game rows", "Not ingested. The official Sharks schedule renders one month at a time, so a full-season feed was outside this session's retrieval scope. The flagship (98.5 KFOX) is confirmed only by a 2019 NHL.com/Sharks article and is flagged for re-verification.", "https://www.nhl.com/sharks/schedule"),
+        ("Finding", "Other Bay Area radio sport is NOT in the free definition", "The Golden State Warriors (KGMZ-FM 95.7 The Game) were found and ingested game by game, but the brief's 'what free means' list is closed, so they are held in a separate group that does not block free time by default. Both answers are shown on the vacation page.", "https://www.nba.com/warriors/schedule"),
+        ("Gap", "Warriors schedule beyond 2027-04-11", "Ingested rows end at the end of the 2026-27 regular season. No 2027-28 or 2028-29 NBA rows exist because that schedule has not been released.", "https://www.nba.com/warriors/schedule"),
+        ("Conflict", "Warriors at Dallas - 2026-11-18 vs 2026-11-17", "The live official schedule page says Wed Nov 18, 6:30 PM; the club's official season PDF places it on Tue Nov 17. The live page's date is used.", "https://www.nba.com/warriors/schedule"),
+        ("Conflict", "Warriors at Portland - 2026-11-27 vs 2026-11-28", "The live official schedule page says Fri Nov 27, 6:30 PM; the club's official season PDF places it on Sat Nov 28. The live page's date is used.", "https://www.nba.com/warriors/schedule"),
+        ("Unresolved", "Warriors vs Dallas, week of 2027-02-21", "The official season PDF prints this game without a readable column association, so its date could not be determined. It is omitted rather than guessed; treat 2027-02-21..2027-02-27 as uncertain.", "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf"),
+        ("Gap", "NBA game duration", "No official average NBA game length was confirmed from an official source. The 150-minute busy block is an unverified planning estimate.", "https://www.nba.com/warriors/schedule"),
         ("Dataset", "2027 Pro Bowl Games date", "Not published by the NFL. Two unverified candidate days (Feb 7 and Feb 9) are both blocked; the 2026 Westwood One window is used. Flag F21, F23.", "https://www.nfl.com/news/2026-27-national-football-league-important-dates"),
         ("Dataset", "Wild Card Monday, Jan 18 2027", "Inside the official Jan 16–18 window. The day and kickoff are estimates. Flag F24.", "https://www.nfl.com/news/2026-27-national-football-league-important-dates"),
         ("Gap", "Stanford and Cal bowl games, Dec 2026 – Jan 2027", "Not modelled; a bowl would block its date. Flag F25.", "https://gostanford.com/sports/football/schedule"),
@@ -936,7 +1105,8 @@ database, not by a fixed offset.</p>
 <ul class="clean">
   <li>It does not include rain delays, postponements, flex scheduling or overtime.</li>
   <li>It does not include pre-game or post-game radio shows (typically 30–60 minutes either side).</li>
-  <li>It does not include other Westwood One properties (NCAA Basketball, golf, soccer) beyond the one published NCAA Football window.</li>
+  <li>It now includes Westwood One's other properties where the network publishes them: six NCAA Football windows and one U.S. Soccer window were live on 2026-11-05. NCAA Basketball, Golf, NCAA Hockey, MCWS, WCWS and Lacrosse showed no upcoming events that day and are listed, with links, on the <a href="other-radio.html">Other radio</a> page.</li>
+  <li>The Golden State Warriors are ingested and sourced but held out of the default free-time scopes, because the brief's "free" definition is a closed four-item list. The <a href="vacation.html">vacation page</a> computes both answers.</li>
   <li>It does not claim a station for the Athletics or for the Westwood One feed in San Francisco — those are flagged.</li>
 </ul>
 """
@@ -951,6 +1121,7 @@ if __name__ == "__main__":
     build_nfl()
     build_ncaaf()
     build_radio()
+    build_other_radio()
     build_sources()
     build_flagged()
     build_method()

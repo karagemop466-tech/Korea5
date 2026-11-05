@@ -31,8 +31,15 @@ RADIO_TAGS = {"mlb-giants", "mlb-athletics", "nfl-49ers", "ncaaf-stanford", "nca
 
 
 def scope_ok(ev, scope):
+    """`all` is the closed four-item "free" definition from the brief.
+
+    `extended` additionally counts the other Bay Area AM/FM radio sports we found
+    (tag `other-radio`) - currently the Golden State Warriors on 95.7 The Game.
+    """
     tags = set(ev.get("tags", []))
     if scope == "all":
+        return "other-radio" not in tags
+    if scope == "extended":
         return True
     if scope == "radio":
         return bool(tags & RADIO_TAGS)
@@ -108,7 +115,7 @@ def main():
         iso = d0.isoformat()
         evs = by_day.get(iso, [])
         rec = {}
-        for scope in ("all", "radio", "high"):
+        for scope in ("all", "radio", "high", "extended"):
             sel = [e for e in evs if scope_ok(e, scope)]
             ivs = merge([iv for e in sel for iv in intervals(e)])
             today = clip(ivs)
@@ -140,7 +147,7 @@ def main():
     rank_idx = {d: i for i, d in enumerate(dates)}
 
     vacations = {}
-    for scope in ("all", "radio", "high"):
+    for scope in ("all", "radio", "high", "extended"):
         vacations[scope] = {}
         for length in (7, 14, 21):
             cands = []
@@ -188,7 +195,7 @@ def main():
         if not ydays:
             continue
         per_scope = {}
-        for scope in ("all", "radio", "high"):
+        for scope in ("all", "radio", "high", "extended"):
             free = [d for d in ydays if days[d][scope]["hours"] == 0]
             # longest fully-free streak
             best = cur = 0
@@ -209,7 +216,7 @@ def main():
 
     # ---- contiguous free stretches (all scope), per year
     streaks = {}
-    for scope in ("all", "radio"):
+    for scope in ("all", "radio", "extended"):
         streaks[scope] = {}
         for y in (2026, 2027, 2028, 2029, 2030):
             yd = [d for d in dates if d.startswith(str(y))]
@@ -228,6 +235,11 @@ def main():
                 {"start": r[0], "end": r[-1], "days": len(r)} for r in runs[:8]
             ]
 
+    # ---- coverage of the "other Bay Area radio sports" group ---------------
+    other_dates = sorted({e["date"] for e in events if "other-radio" in set(e.get("tags", []))})
+    other_coverage = ({"start": other_dates[0], "end": other_dates[-1], "rows": len(other_dates)}
+                      if other_dates else None)
+
     # ---- recommended window per year -------------------------------------
     # The single longest run of consecutive days on which nothing in scope airs.
     # Reported for both scopes so the site can answer "how long can I actually go?"
@@ -235,7 +247,7 @@ def main():
     recommended = {}
     for y in (2027, 2028, 2029):
         entry = {"year": y, "scopes": {}}
-        for scope in ("all", "radio"):
+        for scope in ("all", "radio", "extended"):
             yd = [d for d in dates if d.startswith(str(y))]
             runs, cur = [], []
             for d in yd:
@@ -263,6 +275,16 @@ def main():
                 "blockedAfter": after[0] if after else None,
                 "eventsInside": len(inside),
             }
+            if scope == "extended" and other_coverage:
+                covered = (other_coverage["start"] <= f"{y}-01-01" and
+                           other_coverage["end"] >= f"{y}-12-31")
+                entry["scopes"][scope]["otherCoverage"] = other_coverage
+                entry["scopes"][scope]["fullyCovered"] = covered
+                entry["scopes"][scope]["coverageNote"] = (
+                    None if covered else
+                    f"Other-sport rows were ingested only for {other_coverage['start']} to "
+                    f"{other_coverage['end']}. Outside that window this column equals the strict "
+                    f"column, which is NOT evidence that {y} is clear of other Bay Area radio sport.")
         # Any modelled all-star exhibition inside the radio window is a caveat, not a game.
         rec = entry["scopes"].get("radio")
         if rec:
@@ -328,11 +350,13 @@ def main():
                              if os.path.exists("data/events-2027.json") else "2026-11-02"),
             "today": TODAY.isoformat(),
             "horizon": [TODAY.isoformat(), HORIZON_END.isoformat()],
+            "otherCoverage": other_coverage,
             "timezone": "America/Los_Angeles (PST/PDT)",
             "scopes": {
                 "all": "Every MLB game (all 30 clubs), every NFL game, Stanford, Cal and Westwood One.",
                 "radio": "Only games that air on AM/FM radio in San Francisco: Giants, Athletics, 49ers, Stanford, Cal, Westwood One national (including the Pro Bowl Games, carried by Westwood One in 2026).",
                 "high": "Team tier: Giants, Athletics, 49ers, Stanford, Cal, Westwood One. Identical to the radio tier by construction, because the owner's priority list is these teams plus all MLB and NFL games, which the 'all' scope already blocks.",
+                "extended": "The four-item definition plus other Bay Area AM/FM radio sports we found (Warriors on 95.7 The Game). Not part of the brief's closed definition - opt in.",
             },
         },
         "summary": summary,

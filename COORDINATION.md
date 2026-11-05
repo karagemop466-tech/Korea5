@@ -544,3 +544,13 @@ No schedule data or event dates were changed. No new irregularities beyond the m
 | Live site | https://karagemop466-tech.github.io/Korea5/ — Pages deployment status confirmed `built` after workflow completion |
 
 The Actions logs included non-blocking Node.js 20 deprecation and future `ubuntu-latest` migration notices; no build, validation or deploy failures occurred.
+
+### Follow-up I2 — correct vacation-span unit labels
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| I2 | Replace inaccurate “nights” labels on date-inclusive free-window spans with “calendar days” and align source templates, generated pages, executive summary and flagged note | arena-239c0da8 | **done** | `README.md`, `certainty.html`, `curated/flags.json`, `extra/flagged.html`, `extra/vacation.html`, `index.html`, `research/EXECUTIVE-SUMMARY.md`, `scripts/audit_certainty.py`, `scripts/build_site.py`, `tools/build_extra.py`, `vacation.html` |
+
+Review finding: Feb 1–Feb 13 (2027), Jan 31–Feb 12 (2028), and Jan 29–Feb 10 (2029) each contain 13 inclusive calendar dates. The previous “13 nights” wording was not supported by the date-range calculation and could be misread as lodging duration. Changed all affected published copy/templates to “13 calendar days”; the strict Pro Bowl comparison now says six calendar days. The model does not calculate hotel nights, so no lodging-night count is asserted.
+
+Validation: rebuilt root and extra pages, regenerated the certainty notice, searched the repository for the prior 13-night/six-night labels, and ran `scripts/check_links.py` (180 local / 519 external, zero missing), `tools/verify_extra.py` (31/31), certainty audit, Python unit tests (5/5), both calendar Node tests, and `git diff --check` — all passed. This is a wording/model-interpretation correction only; no sports dates or schedule facts were added or changed. The 2027 window still depends on modelled NFL playoff round dates; 2028–2029 remain ESTIMATION. Official date references: https://www.mlb.com/news/mlb-2027-schedule-released and https://www.sofistadium.com/news/detail/los-angeles-region-to-host-super-bowl-lxi-in-2027-welcoming-the-nfls-biggest-stage-for-the-second-time-this-decade-to-sofi-stadium .

@@ -7,14 +7,14 @@ Coverage runs from 2026-11-02 to 2030-02-28, computed in Pacific time for San Fr
 
 ## Headline finding
 
-**2027: Mon Feb 1 – Sat Feb 13 — 13 nights with no MLB, NFL, Stanford, Cal or Westwood One game on the air.**
+**2027: Mon Feb 1 – Sat Feb 13 — 13 consecutive calendar days with no MLB, NFL, Stanford, Cal or Westwood One game on the air.**
 It is the gap between conference-championship Sunday (2027-01-31) and Super Bowl LXI (2027-02-14, SoFi Stadium).
 MLB's 2027 season (Mar 24 – Sep 26) and the Super Bowl date are officially released; the NFL playoff round dates around
 them are modelled. The same shape repeats in 2028 (Jan 31 – Feb 12) and 2029 (Jan 29 – Feb 10), both labelled
 **ESTIMATION** because those schedules are not released.
 
 A full 14-day trip does not quite fit — the day before the window is a conference championship and the day after is the
-Super Bowl. If the Pro Bowl exhibition also counts, the longest fully free run drops to six nights.
+Super Bowl. If the Pro Bowl exhibition also counts, the longest fully free run drops to six calendar days.
 
 See [`research/EXECUTIVE-SUMMARY.md`](research/EXECUTIVE-SUMMARY.md) for the full write-up and
 [the certainty audit](certainty.html) for what is still unverified.

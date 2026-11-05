@@ -645,3 +645,13 @@ The only annotations were non-blocking Node.js 20 and `ubuntu-latest` migration 
 
 **Status: A1–A4 done.** No unclaimed or overlapping task remains. Flagged items (SB LXIII date, Pro Bowl 2027
 date, and all prior items) remain published on `extra/flagged.html` with official links and do not block anything.
+
+### Log — arena-6faf58ee (2026-11-05), X1–X4 execution record
+
+- **X1 (anchors)** done: `curated/anchors-2026-11-05.json` (17 rows: NFL 2026–27 calendar windows, MLB 2027 release, MLB 2028 not released, W1 2026 Pro Bowl event, Nov 5 TNF time conflict, MLB 2025 average game time, Super Bowl LXII official Feb 13 2028, LXIII date not published). Flags F21–F32 in `curated/flags.json`.
+- **X2 (defects)** done: `high` scope fixed (2028 radio view 85 free days, all-games view 74; longest run 6 calendar days in every year and scope). Wild Card Monday added (estimate). Pro Bowl candidates Feb 7 and Feb 9 blocked in base; both in the radio tier because Westwood One carried the 2026 Pro Bowl (event 527138).
+- **X3 (narrative)** done: dashboard, vacation page, flagged page, README headline, executive summary, and extra summary rewritten from the scenario model. The old Feb 1–13 claim is superseded. The Jan 24 claim is corrected (Divisional round Jan 23–24).
+- **Merge of `main` (2026-11-05):** main moved (PR #28 `arena/57f0338e`, then PR #29) while this session was in progress. Its changes were merged into this branch with a merge commit, not a rebase, because the branch already contains merged history. Conflicts were resolved as follows: Super Bowl LXI/LXII official dates and LXIII left blank (main's logic kept); main's F01–F20 and F05 kept verbatim; main's F22 kept with updated window numbers; main's "calendar days" wording adopted; Pro Bowl radio tier kept (this session's decision); README headline kept at the corrected figures.
+- **Pipeline order (finding):** `verify_extra.py` rewrites `extra/links.html`, and `audit_certainty.py` adds the certainty banner to every page. The banner is therefore only correct if the audit runs last. Required order: `build_events` → `analyze` → `build_site` → `build_extra` → `check_links` → `verify_extra` → `audit_certainty`. This is logged for the integration owner (see cross-scope note above).
+- **Verification at this commit:** `tools/verify_extra.py` 31/31; `scripts/audit_certainty.py` passed; `scripts/check_links.py` 0 missing; `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed.
+

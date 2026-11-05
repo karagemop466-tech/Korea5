@@ -21,10 +21,26 @@ import json
 import os
 from collections import defaultdict
 from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 YEARS = (2026, 2027, 2028, 2029, 2030)
-TODAY = date(2026, 11, 2)
 HORIZON_END = date(2030, 2, 28)
+
+
+def analysis_start():
+    """First day the planner covers, in Pacific time.
+
+    The calendar is a rolling forward view, so it starts at the beginning of the current
+    Pacific month rather than at a hard-coded date. It used to be pinned to 2026-11-02,
+    which meant the published planner silently stopped covering anything earlier and the
+    value drifted further out of date every month. The resolved date is written into the
+    analysis metadata so the site always shows what the data actually covers.
+    """
+    now = datetime.now(ZoneInfo("America/Los_Angeles")).date()
+    return date(now.year, now.month, 1)
+
+
+TODAY = analysis_start()
 
 RADIO_TAGS = {"mlb-giants", "mlb-athletics", "nfl-49ers", "ncaaf-stanford", "ncaaf-cal",
               "westwoodone"}

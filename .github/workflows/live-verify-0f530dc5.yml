@@ -29,13 +29,19 @@ jobs:
           KOREA5_OFFICIAL_OUT=official-live python3 tools/fetch_official.py
       - name: Compare the live pull with the committed feeds
         run: python3 scripts/compare_feeds.py --live official-live
+      - name: Refresh the committed feeds from the live pull (never deletes committed data)
+        run: python3 scripts/merge_live_feeds.py --live official-live
+      - name: Rebuild the event feed and the free/busy analysis
+        run: |
+          python3 scripts/build_events.py
+          python3 scripts/analyze.py
       - name: Re-check every curated row against its live official page
         run: python3 scripts/verify.py
-      - name: Commit the verification evidence
+      - name: Commit the refreshed feeds and the verification evidence
         run: |
           git config user.name "korea5-data-bot"
           git config user.email "korea5-data-bot@users.noreply.github.com"
-          git add verification/
-          git commit -m "verification: live official-source comparison + refreshed verification report" || echo "no changes"
+          git add verification/ data/ official/
+          git commit -m "data+verification: refresh official feeds from the live pull and re-verify" || echo "no changes"
           git pull --rebase --autostash origin arena/0f530dc5-korea5
           git push origin HEAD:arena/0f530dc5-korea5

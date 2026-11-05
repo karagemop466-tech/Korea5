@@ -20,9 +20,11 @@ import os
 import re
 import urllib.parse
 import urllib.request
-from datetime import date
+from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; Korea5-free-time-planner/1.0)"}
+PT = ZoneInfo("America/Los_Angeles")
 TAG_RE = re.compile(r"<(script|style|noscript)[^>]*>.*?</\1>", re.S | re.I)
 ANY_TAG = re.compile(r"<[^>]+>")
 WS = re.compile(r"\s+")
@@ -190,8 +192,14 @@ def verify_mlb():
         games = data["games"]
         sample_dates = sorted({g["date"] for g in games if g["type"] == "R"})[::37][:6]
         for ds in sample_dates:
-            q = {"sportId": 1, "startDate": ds, "endDate": ds,
-                 "fields": "dates,date,games,gamePk,gameType,teams,away,home,team,name"}
+            # The league API buckets games into calendar days in a way that depends on the
+            # query window, so a single-day query can hand back a game whose own bucket
+            # is a neighbouring day. Query a three-day window and compare on the PACIFIC
+            # date of each game's own kickoff - the same rule the planner uses.
+            lo = (date.fromisoformat(ds) - timedelta(days=1)).isoformat()
+            hi = (date.fromisoformat(ds) + timedelta(days=1)).isoformat()
+            q = {"sportId": 1, "startDate": lo, "endDate": hi,
+                 "fields": "dates,date,games,gamePk,gameType,gameDate,teams,away,home,team,name"}
             url = "https://statsapi.mlb.com/api/v1/schedule?" + urllib.parse.urlencode(q)
             status, txt = fetch(url)
             live = set()
@@ -200,15 +208,34 @@ def verify_mlb():
                 payload = json.loads(txt)
                 for d in payload.get("dates", []):
                     for g in d.get("games", []):
-                        if g.get("gameType") == "R":
+                        if g.get("gameType") != "R":
+                            continue
+                        gd = g.get("gameDate")
+                        if not gd:
+                            continue
+                        try:
+                            pdt = datetime.fromisoformat(gd.replace("Z", "+00:00")).astimezone(PT)
+                        except Exception:
+                            continue
+                        if pdt.date().isoformat() == ds:
                             live.add(g["gamePk"])
                 parsed = status is not None
             except Exception:
                 status = None
-            local = {g["id"] for g in games if g["date"] == ds and g["type"] == "R"}
+            local = set()
+            for g in games:
+                if g["type"] != "R" or not g.get("utc"):
+                    continue
+                try:
+                    pdt = datetime.fromisoformat(g["utc"].replace("Z", "+00:00")).astimezone(PT)
+                except Exception:
+                    continue
+                if pdt.date().isoformat() == ds:
+                    local.add(g["id"])
             out.append({
                 "year": y, "date": ds, "apiStatus": status,
                 "gamesInFeed": len(local), "gamesInApi": len(live),
+                "onlyInFeed": sorted(local - live), "onlyInApi": sorted(live - local),
                 "match": (local == live) if parsed else None,
                 "verificationStatus": "verified-match" if parsed and local == live else
                                       "feed-mismatch" if parsed else "source-unavailable",

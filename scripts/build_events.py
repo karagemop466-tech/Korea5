@@ -332,13 +332,35 @@ def fold_westwoodone(by_year):
 
 
 # ---------------------------------------------------------------- estimates
-NFL_WINDOWS = [  # (suffix, weekday, startPT, minutes, label)
-    ("sun-early", 6, "10:00", 210, "NFL Sunday early window"),
-    ("sun-late", 6, "13:05", 210, "NFL Sunday late window"),
-    ("snf", 6, "17:20", 195, "Sunday Night Football"),
-    ("mnf", 0, "17:15", 195, "Monday Night Football"),
-    ("tnf", 3, "17:15", 195, "Thursday Night Football"),
+# Estimated NFL structure.
+#
+# Every window below is taken from the RELEASED 2026 NFL schedule (nfl.com by-week
+# pages, committed in data/upstream/nfl-2026.json) and replicated onto the future
+# calendar. The `radio` flag records whether that window is a Westwood One national
+# broadcast in the 2026 schedule - i.e. whether it would be on AM/FM radio in the Bay
+# Area. Sunday 1:00/4:05 PM ET games are NOT national radio (the 2026 feed lists only
+# the home and away team radio networks for them), so they do not block radio time.
+NFL_WINDOWS = [  # (suffix, weekday, startPT, minutes, label, national_radio)
+    ("sun-early", 6, "10:00", 210, "NFL Sunday early window", False),
+    ("sun-late", 6, "13:05", 210, "NFL Sunday late window", False),
+    ("snf", 6, "17:20", 195, "Sunday Night Football", True),
+    ("mnf", 0, "17:15", 195, "Monday Night Football", True),
+    ("tnf", 3, "17:15", 195, "Thursday Night Football", True),
 ]
+
+# Saturday games. The released 2026 schedule has two Saturday games (Sat Dec 19,
+# 5:00 PM ET and 8:20 PM ET) and both are Westwood One national broadcasts. The
+# traditional 1:00 PM ET Saturday slot used in other recent seasons is modelled too,
+# so a Saturday is never reported as free when the NFL might be on the air.
+SATURDAY_WINDOWS = [  # (suffix, startPT, minutes, label)
+    ("sat-early", "10:00", 210, "NFL Saturday early window"),
+    ("sat-late", "14:00", 210, "NFL Saturday afternoon window"),
+    ("sat-night", "17:20", 195, "NFL Saturday night window"),
+]
+
+# International games played in London/Mexico are listed in the 2026 feed on the
+# Sunday morning slot with Westwood One national radio.
+INTERNATIONAL_WEEKS = (4, 5, 6, 7, 9, 10)
 
 
 def nth_weekday(year, month, weekday, n):
@@ -373,7 +395,7 @@ def nfl_calendar(year):
     # regular season: 18 weeks
     for wk in range(1, 19):
         wk_monday = kickoff + timedelta(days=7 * (wk - 1))
-        for suffix, wd, start, mins, label in NFL_WINDOWS:
+        for suffix, wd, start, mins, label, radio in NFL_WINDOWS:
             day = wk_monday + timedelta(days=(wd - wk_monday.weekday()) % 7)
             rows.append({
                 "id": f"nfl-est-{year}-w{wk:02d}-{suffix}", "league": "NFL",
@@ -382,25 +404,99 @@ def nfl_calendar(year):
                 "date": day.isoformat(), "start": start, "durationMin": mins,
                 "title": f"Week {wk} — {label} (matchups TBD)",
                 "seasonType": "regular", "week": f"W{wk}",
+                "nationalRadio": "Westwood One Sports (national)" if radio else None,
                 "timeStatus": "estimated", "status": "estimated",
-                "timeBasis": "Estimated window; the NFL has not released this season's schedule.",
+                "timeBasis": ("Estimated window; the NFL has not released this season's schedule. "
+                              "Replicated from the released 2026 schedule."),
                 "source": "https://www.nfl.com/schedules/", "sourceLabel": "Estimated — NFL structure",
                 "sourceUrl": "https://www.nfl.com/schedules/",
             })
-    # Thanksgiving, Christmas, Black Friday
+        # Saturday games in the December weeks (two Saturday games in the released 2026
+        # schedule, both national radio).
+        if 14 <= wk <= 17:
+            # wk_monday is the week's Thursday; Saturday is two days later.
+            sat_day = wk_monday + timedelta(days=(5 - wk_monday.weekday()) % 7)
+            for suffix, start, mins, label in SATURDAY_WINDOWS:
+                rows.append({
+                    "id": f"nfl-est-{year}-w{wk:02d}-{suffix}", "league": "NFL",
+                    "priority": "normal", "tags": ["nfl", "estimate"],
+                    "date": sat_day.isoformat(), "start": start, "durationMin": mins,
+                    "title": f"Week {wk} — {label} (matchups TBD)",
+                    "seasonType": "regular", "week": f"W{wk}",
+                    "nationalRadio": "Westwood One Sports (national)",
+                    "timeStatus": "estimated", "status": "estimated",
+                    "timeBasis": ("The released 2026 schedule has two Saturday games (Sat Dec 19, "
+                                  "5:00 PM ET and 8:20 PM ET), both with Westwood One national "
+                                  "radio. Three Saturday windows are modelled so a December "
+                                  "Saturday is not reported as free."),
+                    "source": "https://www.nfl.com/schedules/", "sourceLabel": "Estimated — NFL structure",
+                    "sourceUrl": "https://www.nfl.com/schedules/",
+                })
+        # International games: early Sunday morning, Westwood One national radio.
+        if wk in INTERNATIONAL_WEEKS:
+            # Sunday is three days after the week's Thursday.
+            intl_day = wk_monday + timedelta(days=(6 - wk_monday.weekday()) % 7)
+            rows.append({
+                "id": f"nfl-est-{year}-w{wk:02d}-intl", "league": "NFL",
+                "priority": "normal", "tags": ["nfl", "estimate"],
+                "date": intl_day.isoformat(), "start": "06:30", "durationMin": 165,
+                "title": f"Week {wk} — NFL international game window (matchups TBD)",
+                "seasonType": "regular", "week": f"W{wk}",
+                "nationalRadio": "Westwood One Sports (national)",
+                "timeStatus": "estimated", "status": "estimated",
+                "timeBasis": ("The released 2026 schedule has an early-morning international "
+                              "game in weeks 4-7, 9 and 10 with Westwood One national radio."),
+                "source": "https://www.nfl.com/schedules/", "sourceLabel": "Estimated — NFL structure",
+                "sourceUrl": "https://www.nfl.com/schedules/",
+            })
+    # Thanksgiving: three Thursday games plus a Black Friday game, all national radio.
     tg = nth_weekday(year, 11, 3, 4)
-    for start, label in (("09:30", "Thanksgiving early game"), ("13:30", "Thanksgiving late game"),
+    for start, label in (("10:00", "Thanksgiving early game"), ("13:30", "Thanksgiving late game"),
                          ("17:20", "Thanksgiving night game")):
         rows.append({
             "id": f"nfl-est-{year}-thanksgiving-{start.replace(':','')}", "league": "NFL",
-            "priority": "normal", "tags": ["nfl", "westwoodone", "estimate"],
+            "priority": "normal", "tags": ["nfl", "estimate"],
             "date": tg.isoformat(), "start": start, "durationMin": DURATION["nfl"],
             "title": f"{label} (matchups TBD)", "seasonType": "regular",
+            "nationalRadio": "Westwood One Sports (national)",
             "timeStatus": "estimated", "status": "estimated",
-            "timeBasis": "Thanksgiving Day is a fixed NFL date (fourth Thursday of November).",
+            "timeBasis": ("Thanksgiving Day is a fixed NFL date (fourth Thursday of November). "
+                          "The released 2026 schedule had three Thursday games, all national radio."),
             "source": "https://www.nfl.com/schedules/", "sourceLabel": "Estimated — NFL structure",
             "sourceUrl": "https://www.nfl.com/schedules/",
         })
+    rows.append({
+        "id": f"nfl-est-{year}-blackfriday", "league": "NFL",
+        "priority": "normal", "tags": ["nfl", "estimate"],
+        "date": (tg + timedelta(days=1)).isoformat(), "start": "12:00", "durationMin": DURATION["nfl"],
+        "title": "Black Friday game (matchups TBD)", "seasonType": "regular",
+        "nationalRadio": "Westwood One Sports (national)",
+        "timeStatus": "estimated", "status": "estimated",
+        "timeBasis": ("The released 2026 schedule had a Friday game on the day after "
+                      "Thanksgiving, with Westwood One national radio."),
+        "source": "https://www.nfl.com/schedules/", "sourceLabel": "Estimated — NFL structure",
+        "sourceUrl": "https://www.nfl.com/schedules/",
+    })
+    # Christmas Day. The NFL plays on Christmas Day when it falls on a Thursday, Friday,
+    # Saturday, Sunday or Monday (2026: three Friday games, all national radio).
+    xmas = date(year, 12, 25)
+    if xmas.weekday() in (3, 4, 5, 6, 0):
+        for start in ("10:00", "13:30", "17:15"):
+            rows.append({
+                "id": f"nfl-est-{year}-christmas-{start.replace(':','')}", "league": "NFL",
+                "priority": "normal", "tags": ["nfl", "estimate"],
+                "date": xmas.isoformat(), "start": start, "durationMin": DURATION["nfl"],
+                "title": f"Christmas Day game window {start} PT (matchups TBD)",
+                "seasonType": "regular",
+                "nationalRadio": "Westwood One Sports (national)",
+                "timeStatus": "estimated", "status": "estimated",
+                "timeBasis": ("The released 2026 schedule had three Christmas Day games, all with "
+                              "Westwood One national radio. Christmas Day falls on a "
+                              + ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][xmas.weekday()]
+                              + " this year."),
+                "source": "https://www.nfl.com/schedules/", "sourceLabel": "Estimated — NFL structure",
+                "sourceUrl": "https://www.nfl.com/schedules/",
+            })
     return rows
 
 
@@ -546,12 +642,16 @@ def mlb_season_estimate(year):
             dd = day2 + timedelta(days=i)
             rows.append({
                 "id": f"mlb-est-{year}-post-{offset}-{i}", "league": "MLB", "priority": "normal",
-                "tags": ["mlb", "estimate"], "date": dd.isoformat(), "start": "17:00",
+                "tags": ["mlb", "mlb-giants", "mlb-athletics", "estimate"],
+                "date": dd.isoformat(), "start": "17:00",
                 "durationMin": DURATION["mlb-post"],
                 "title": f"{label} (teams TBD)", "seasonType": "postseason",
                 "timeStatus": "estimated", "status": "estimated",
                 "timeBasis": ("MLB has not released this season's schedule. Postseason rounds modelled on "
-                              "the 2026 structure (Wild Card from the Tuesday after the final regular-season day)."),
+                              "the 2026 structure (Wild Card from the Tuesday after the final regular-season day). "
+                              "Blocked in the radio scope because the Giants' and Athletics' flagship radio "
+                              "stations carry their club's postseason games and the participants are not "
+                              "yet known."),
                 "source": "https://www.mlb.com/schedule", "sourceLabel": "Estimated — MLB calendar",
                 "sourceUrl": "https://www.mlb.com/schedule",
             })
@@ -559,23 +659,28 @@ def mlb_season_estimate(year):
 
 
 def westwoodone_estimate(year):
-    """W1 national NFL: mirrors the NFL national windows (SNF/MNF/TNF + Thanksgiving)."""
+    """W1 national NFL: one row for every window the released 2026 schedule carried on
+    Westwood One national radio (Sunday Night, Monday Night, Thursday Night, the
+    Thanksgiving and Black Friday games, Christmas Day, the international games and the
+    December Saturday games)."""
     rows = []
     for e in nfl_calendar(year):
-        if e["id"].endswith("-snf") or e["id"].endswith("-mnf") or e["id"].endswith("-tnf"):
-            rows.append({
-                "id": e["id"].replace("nfl-est", "w1-est"), "league": "NFL", "priority": "high",
-                "tags": ["westwoodone", "nfl", "estimate"], "date": e["date"], "start": e["start"],
-                "durationMin": e["durationMin"],
-                "title": f"Westwood One national radio — {e['title'].split('— ')[-1]}",
-                "nationalRadio": "Westwood One Sports (national)",
-                "seasonType": e["seasonType"], "timeStatus": "estimated", "status": "estimated",
-                "timeBasis": ("Westwood One carries the NFL's national windows. The network has not published "
-                              f"its {year} schedule; the windows are modelled on the NFL calendar."),
-                "source": "https://www.westwoodonesports.com/nfl-schedule/",
-                "sourceLabel": "Estimated — Westwood One national windows",
-                "sourceUrl": "https://www.westwoodonesports.com/nfl-schedule/",
-            })
+        if not e.get("nationalRadio"):
+            continue
+        rows.append({
+            "id": e["id"].replace("nfl-est", "w1-est"), "league": "NFL", "priority": "high",
+            "tags": ["westwoodone", "nfl", "estimate"], "date": e["date"], "start": e["start"],
+            "durationMin": e["durationMin"],
+            "title": f"Westwood One national radio — {e['title'].split('— ')[-1]}",
+            "nationalRadio": "Westwood One Sports (national)",
+            "seasonType": e["seasonType"], "timeStatus": "estimated", "status": "estimated",
+            "timeBasis": ("Westwood One carries the NFL's national windows. The network has not published "
+                          f"its {year} schedule; the windows are replicated from the released 2026 "
+                          "NFL schedule, which lists Westwood One as the national radio network."),
+            "source": "https://www.westwoodonesports.com/nfl-schedule/",
+            "sourceLabel": "Estimated — Westwood One national windows",
+            "sourceUrl": "https://www.westwoodonesports.com/nfl-schedule/",
+        })
     return rows
 
 

@@ -134,8 +134,11 @@ def stations_block(live_dir, official_dir):
     committed = load(os.path.join(official_dir, "w1-stations.json"))
     if not live or not committed:
         return {"error": "one of the two feeds is missing"}
-    lc = {a.get("callSign"): a for a in committed.get("affiliates", [])}
-    ll = {a.get("callSign"): a for a in live.get("affiliates", [])}
+    def call(a):
+        return a.get("callLetters") or a.get("callSign")
+
+    lc = {call(a): a for a in committed.get("affiliates", []) if call(a)}
+    ll = {call(a): a for a in live.get("affiliates", []) if call(a)}
     changed = []
     for cs, a in lc.items():
         b = ll.get(cs)
@@ -146,9 +149,11 @@ def stations_block(live_dir, official_dir):
                      for k in set(a) | set(b) if a.get(k) != b.get(k)}
             changed.append({"callSign": cs, "diffs": diffs})
     return {
-        "source": committed.get("meta", {}).get("sourceUrl"),
+        "source": committed.get("sourceUrl") or live.get("sourceUrl"),
         "committedAffiliates": len(lc),
         "liveAffiliates": len(ll),
+        "committedCallSigns": sorted(lc),
+        "liveCallSigns": sorted(ll),
         "added": [cs for cs in ll if cs not in lc],
         "changed": changed,
         "identical": not changed and not any(cs not in lc for cs in ll),

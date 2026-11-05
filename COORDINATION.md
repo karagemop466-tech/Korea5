@@ -509,3 +509,19 @@ Unlike prior sessions, this one could reach the official hosts through the page-
 | Live site | https://karagemop466-tech.github.io/Korea5/ — fetched live `extra/assets/extra.js` and confirmed it serves the dynamic `pacificISODate()` Pacific-today code |
 
 Flagged irregularities and unverified items remain published on `flagged.html` / `extra/flagged.html` and did not block the merge or deployment.
+
+---
+
+## Session `arena/6faf58ee-korea5` — 2026-11-05 (claim)
+
+Branch constraint: Arena fixes this session to `arena/6faf58ee-korea5`; no other branch is created or pushed.
+Start point: `main` tip `25f0273`. All prior records above are preserved unchanged.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| X1 | Re-verify official anchors with live official fetches (NFL 2026–27 calendar, MLB 2027 release, MLB StatsAPI 2027/2028, Pro Bowl status) | arena-6faf58ee | in progress | `curated/anchors-2026-11-05.json` |
+| X2 | Fix defects: `high` scope excluded estimated Giants/A's/49ers/Stanford/Cal rows (2028–29 showed 293 free days); add official Wild Card Monday; model Pro Bowl date as unverified with alternative-date scenario | arena-6faf58ee | in progress | `scripts/build_events.py`, `scripts/analyze.py`, `data/events-*.json`, `data/derived/analysis.json` |
+| X3 | Regenerate site pages, executive summary and Flagged entries from the corrected feed | arena-6faf58ee | in progress | `*.html`, `extra/**`, `research/EXECUTIVE-SUMMARY.md`, `curated/flags.json` |
+| X4 | Verification run, PR to `main`, merge without waiting, Pages deploy confirmation, log here | arena-6faf58ee | unclaimed | `COORDINATION.md` (log only) |
+
+- 2026-11-05 — `arena-6faf58ee` claims X1–X4. Scope: no task from the board is open to another session; the sessions listed above are all marked done or needs review.

@@ -532,3 +532,15 @@ Branch fixed by Arena: `arena/239c0da8-korea5`. Read this board before review; e
 - The sandbox cannot establish actual terrestrial reception or a station-by-station broadcast for each event at Outer Sunset 94122. Those gaps remain published on the Flagged for Review pages. Existing historical snapshot/CI results are not relabelled as fresh checks.
 
 No schedule data or event dates were changed. No new irregularities beyond the missing certainty banner (now corrected) were found. Existing flagged rows and estimates remain nonblocking and clearly marked.
+
+### I1 integration record
+
+| Step | Result |
+|---|---|
+| Pull request | **#24 — https://github.com/karagemop466-tech/Korea5/pull/24** — “Add certainty disclosure to link report” |
+| Merge | Merged to `main` at **2026-11-05T21:11:48Z**, merge commit `007262d8ca051faf71525b6a5fe0122ff499ce97` |
+| Planner certainty/site checks | Run **42110411915** — `validate` passed |
+| GitHub Pages deployment | Run **42110411854** — build, deploy and report-build-status passed |
+| Live site | https://karagemop466-tech.github.io/Korea5/ — Pages deployment status confirmed `built` after workflow completion |
+
+The Actions logs included non-blocking Node.js 20 deprecation and future `ubuntu-latest` migration notices; no build, validation or deploy failures occurred.

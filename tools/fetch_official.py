@@ -25,7 +25,7 @@ import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
 
-OUT = "official"
+OUT = os.environ.get("KOREA5_OFFICIAL_OUT", "official")  # override to write a scratch copy
 UA = {
     "User-Agent": "Mozilla/5.0 (compatible; Korea5FreeTime/1.0; +official-source-verification)",
     "Accept-Language": "en-US,en;q=0.9",

@@ -106,9 +106,13 @@ def fetch_year(year):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--years", nargs="+", type=int, default=[2026, 2027, 2028, 2029])
+    ap.add_argument("--out-dir", default="data",
+                    help="directory that receives mlb-<year>.json (use a scratch dir to compare "
+                         "a fresh pull against the committed feed without touching it)")
     args = ap.parse_args()
 
-    os.makedirs("data", exist_ok=True)
+    out_dir = args.out_dir
+    os.makedirs(out_dir, exist_ok=True)
     summary = {}
     for year in args.years:
         print(f"== MLB {year}")
@@ -137,7 +141,7 @@ def main():
             },
             "games": games,
         }
-        path = f"data/mlb-{year}.json"
+        path = os.path.join(out_dir, f"mlb-{year}.json")
         with open(path, "w", encoding="utf-8") as f:
             json.dump(payload, f, separators=(",", ":"), ensure_ascii=False)
             f.write("\n")
@@ -148,7 +152,7 @@ def main():
               f"{payload['meta']['regularSeasonFirst']}..{payload['meta']['regularSeasonLast']} "
               f"errors={len(errors)}")
 
-    with open("data/mlb-summary.json", "w", encoding="utf-8") as f:
+    with open(os.path.join(out_dir, "mlb-summary.json"), "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)
         f.write("\n")
 

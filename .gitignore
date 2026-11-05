@@ -5,3 +5,6 @@ research-ef8b5b30/raw/
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Scratch directory for live official-feed pulls (regenerated in CI, not source data)
+official-live/

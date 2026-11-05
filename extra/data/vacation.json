@@ -22,7 +22,7 @@
       "unverified": 2,
       "estimatedOnly": 146,
       "free": 0,
-      "modelFree": 78,
+      "modelFree": 76,
       "scheduleReleased": false,
       "note": "Complete multi-sport schedules and local radio carriage are not certified; strict verified free time cannot be asserted. All windows are ESTIMATION \u2014 not a real verified released schedule"
     },
@@ -32,7 +32,7 @@
       "unverified": 3,
       "estimatedOnly": 363,
       "free": 0,
-      "modelFree": 76,
+      "modelFree": 74,
       "scheduleReleased": false,
       "note": "Complete multi-sport schedules and local radio carriage are not certified; strict verified free time cannot be asserted. All windows are ESTIMATION \u2014 not a real verified released schedule"
     },
@@ -42,7 +42,7 @@
       "unverified": 3,
       "estimatedOnly": 362,
       "free": 0,
-      "modelFree": 72,
+      "modelFree": 70,
       "scheduleReleased": false,
       "note": "Complete multi-sport schedules and local radio carriage are not certified; strict verified free time cannot be asserted. All windows are ESTIMATION \u2014 not a real verified released schedule"
     }
@@ -163,9 +163,9 @@
           "status": "estimated"
         },
         {
-          "start": "2027-01-27",
-          "end": "2027-02-09",
-          "freeDays": 12,
+          "start": "2027-01-19",
+          "end": "2027-02-01",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -173,9 +173,9 @@
           "status": "estimated"
         },
         {
-          "start": "2027-01-28",
-          "end": "2027-02-10",
-          "freeDays": 12,
+          "start": "2027-01-20",
+          "end": "2027-02-02",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -183,9 +183,9 @@
           "status": "estimated"
         },
         {
-          "start": "2027-01-29",
-          "end": "2027-02-11",
-          "freeDays": 12,
+          "start": "2027-01-21",
+          "end": "2027-02-03",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -193,9 +193,9 @@
           "status": "estimated"
         },
         {
-          "start": "2027-01-30",
-          "end": "2027-02-12",
-          "freeDays": 12,
+          "start": "2027-01-22",
+          "end": "2027-02-04",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -203,9 +203,9 @@
           "status": "estimated"
         },
         {
-          "start": "2027-01-31",
-          "end": "2027-02-13",
-          "freeDays": 12,
+          "start": "2027-01-23",
+          "end": "2027-02-05",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -215,9 +215,19 @@
       ],
       "3week": [
         {
+          "start": "2027-01-19",
+          "end": "2027-02-08",
+          "freeDays": 17,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
           "start": "2027-01-24",
           "end": "2027-02-13",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -227,7 +237,7 @@
         {
           "start": "2027-01-25",
           "end": "2027-02-14",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -237,7 +247,7 @@
         {
           "start": "2027-01-26",
           "end": "2027-02-15",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -247,7 +257,7 @@
         {
           "start": "2027-01-27",
           "end": "2027-02-16",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -257,7 +267,7 @@
         {
           "start": "2027-01-28",
           "end": "2027-02-17",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -267,7 +277,7 @@
         {
           "start": "2027-01-29",
           "end": "2027-02-18",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -277,20 +287,10 @@
         {
           "start": "2027-01-30",
           "end": "2027-02-19",
-          "freeDays": 17,
+          "freeDays": 16,
           "busyDays": 1,
           "unverifiedDays": 0,
           "estimateOnlyDays": 20,
-          "fullyFree": false,
-          "status": "estimated"
-        },
-        {
-          "start": "2027-01-17",
-          "end": "2027-02-06",
-          "freeDays": 17,
-          "busyDays": 0,
-          "unverifiedDays": 0,
-          "estimateOnlyDays": 21,
           "fullyFree": false,
           "status": "estimated"
         }
@@ -411,9 +411,9 @@
           "status": "estimated"
         },
         {
-          "start": "2028-01-26",
-          "end": "2028-02-08",
-          "freeDays": 12,
+          "start": "2028-01-18",
+          "end": "2028-01-31",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -421,9 +421,9 @@
           "status": "estimated"
         },
         {
-          "start": "2028-01-27",
-          "end": "2028-02-09",
-          "freeDays": 12,
+          "start": "2028-01-19",
+          "end": "2028-02-01",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -431,9 +431,9 @@
           "status": "estimated"
         },
         {
-          "start": "2028-01-28",
-          "end": "2028-02-10",
-          "freeDays": 12,
+          "start": "2028-01-20",
+          "end": "2028-02-02",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -441,9 +441,9 @@
           "status": "estimated"
         },
         {
-          "start": "2028-01-29",
-          "end": "2028-02-11",
-          "freeDays": 12,
+          "start": "2028-01-21",
+          "end": "2028-02-03",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -451,9 +451,9 @@
           "status": "estimated"
         },
         {
-          "start": "2028-01-30",
-          "end": "2028-02-12",
-          "freeDays": 12,
+          "start": "2028-01-22",
+          "end": "2028-02-04",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -463,9 +463,19 @@
       ],
       "3week": [
         {
+          "start": "2028-01-18",
+          "end": "2028-02-07",
+          "freeDays": 17,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
           "start": "2028-01-23",
           "end": "2028-02-12",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -475,7 +485,7 @@
         {
           "start": "2028-01-24",
           "end": "2028-02-13",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -485,7 +495,7 @@
         {
           "start": "2028-01-25",
           "end": "2028-02-14",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -495,7 +505,7 @@
         {
           "start": "2028-01-26",
           "end": "2028-02-15",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -505,7 +515,7 @@
         {
           "start": "2028-01-27",
           "end": "2028-02-16",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -515,7 +525,7 @@
         {
           "start": "2028-01-28",
           "end": "2028-02-17",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -525,16 +535,6 @@
         {
           "start": "2028-01-29",
           "end": "2028-02-18",
-          "freeDays": 18,
-          "busyDays": 0,
-          "unverifiedDays": 0,
-          "estimateOnlyDays": 21,
-          "fullyFree": false,
-          "status": "estimated"
-        },
-        {
-          "start": "2028-01-16",
-          "end": "2028-02-05",
           "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
@@ -659,9 +659,9 @@
           "status": "estimated"
         },
         {
-          "start": "2029-01-24",
-          "end": "2029-02-06",
-          "freeDays": 12,
+          "start": "2029-01-16",
+          "end": "2029-01-29",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -669,9 +669,9 @@
           "status": "estimated"
         },
         {
-          "start": "2029-01-25",
-          "end": "2029-02-07",
-          "freeDays": 12,
+          "start": "2029-01-17",
+          "end": "2029-01-30",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -679,9 +679,9 @@
           "status": "estimated"
         },
         {
-          "start": "2029-01-26",
-          "end": "2029-02-08",
-          "freeDays": 12,
+          "start": "2029-01-18",
+          "end": "2029-01-31",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -689,9 +689,9 @@
           "status": "estimated"
         },
         {
-          "start": "2029-01-27",
-          "end": "2029-02-09",
-          "freeDays": 12,
+          "start": "2029-01-19",
+          "end": "2029-02-01",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -699,9 +699,9 @@
           "status": "estimated"
         },
         {
-          "start": "2029-01-28",
-          "end": "2029-02-10",
-          "freeDays": 12,
+          "start": "2029-01-20",
+          "end": "2029-02-02",
+          "freeDays": 11,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 14,
@@ -711,9 +711,19 @@
       ],
       "3week": [
         {
+          "start": "2029-01-16",
+          "end": "2029-02-05",
+          "freeDays": 17,
+          "busyDays": 0,
+          "unverifiedDays": 0,
+          "estimateOnlyDays": 21,
+          "fullyFree": false,
+          "status": "estimated"
+        },
+        {
           "start": "2029-01-21",
           "end": "2029-02-10",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -723,7 +733,7 @@
         {
           "start": "2029-01-22",
           "end": "2029-02-11",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -733,7 +743,7 @@
         {
           "start": "2029-01-23",
           "end": "2029-02-12",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -743,7 +753,7 @@
         {
           "start": "2029-01-24",
           "end": "2029-02-13",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -753,7 +763,7 @@
         {
           "start": "2029-01-25",
           "end": "2029-02-14",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -763,7 +773,7 @@
         {
           "start": "2029-01-26",
           "end": "2029-02-15",
-          "freeDays": 18,
+          "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,
           "estimateOnlyDays": 21,
@@ -773,16 +783,6 @@
         {
           "start": "2029-01-27",
           "end": "2029-02-16",
-          "freeDays": 18,
-          "busyDays": 0,
-          "unverifiedDays": 0,
-          "estimateOnlyDays": 21,
-          "fullyFree": false,
-          "status": "estimated"
-        },
-        {
-          "start": "2029-01-14",
-          "end": "2029-02-03",
           "freeDays": 17,
           "busyDays": 0,
           "unverifiedDays": 0,

@@ -1,6 +1,6 @@
 # Verification report
 
-Generated: 2026-11-03T19:39:00Z
+Generated: 2026-11-05T21:20:04Z
 
 | Check | Result |
 |---|---|
@@ -23,7 +23,7 @@ Generated: 2026-11-03T19:39:00Z
 | nflSpotChecksFailed | 0 |
 | nflSpotChecksUnavailable | 6 |
 | feedProblems | 0 |
-| eventCounts | {2026: 3227, 2027: 3102, 2028: 427, 2029: 432, 2030: 15} |
+| eventCounts | {2026: 3227, 2027: 3104, 2028: 429, 2029: 434, 2030: 17} |
 
 ## Curated rows checked against official pages
 

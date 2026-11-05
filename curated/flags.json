@@ -326,7 +326,7 @@
    "id": "F21",
    "severity": "medium",
    "title": "Pro Bowl Games date for 2027 is modelled, not published",
-   "detail": "The planner places the Pro Bowl Games on the Sunday before Super Bowl LXI (modelled 2027-02-07). The NFL has not published that date on the pages reviewed. Because it is an all-star exhibition rather than a league game, and Westwood One's published 2026-27 schedule does not list it, the row is excluded from the radio-only free-time scope and retained in the all-games scope. Result: the radio view shows a 13-night February window; the all-games view shows a maximum of six consecutive free nights.",
+   "detail": "The planner places the Pro Bowl Games on the Sunday before Super Bowl LXI (modelled 2027-02-07). The NFL has not published that date on the pages reviewed. Because it is an all-star exhibition rather than a league game, and Westwood One's published 2026-27 schedule does not list it, the row is excluded from the radio-only free-time scope and retained in the all-games scope. Result: the radio view shows a 13-calendar-day February window; the all-games view shows a maximum of six consecutive free calendar days.",
    "status": "needs-review",
    "sources": [
     {

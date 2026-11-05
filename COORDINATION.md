@@ -554,3 +554,15 @@ The Actions logs included non-blocking Node.js 20 deprecation and future `ubuntu
 Review finding: Feb 1–Feb 13 (2027), Jan 31–Feb 12 (2028), and Jan 29–Feb 10 (2029) each contain 13 inclusive calendar dates. The previous “13 nights” wording was not supported by the date-range calculation and could be misread as lodging duration. Changed all affected published copy/templates to “13 calendar days”; the strict Pro Bowl comparison now says six calendar days. The model does not calculate hotel nights, so no lodging-night count is asserted.
 
 Validation: rebuilt root and extra pages, regenerated the certainty notice, searched the repository for the prior 13-night/six-night labels, and ran `scripts/check_links.py` (180 local / 519 external, zero missing), `tools/verify_extra.py` (31/31), certainty audit, Python unit tests (5/5), both calendar Node tests, and `git diff --check` — all passed. This is a wording/model-interpretation correction only; no sports dates or schedule facts were added or changed. The 2027 window still depends on modelled NFL playoff round dates; 2028–2029 remain ESTIMATION. Official date references: https://www.mlb.com/news/mlb-2027-schedule-released and https://www.sofistadium.com/news/detail/los-angeles-region-to-host-super-bowl-lxi-in-2027-welcoming-the-nfls-biggest-stage-for-the-second-time-this-decade-to-sofi-stadium .
+
+### I2 integration record
+
+| Step | Result |
+|---|---|
+| Pull request | **#26 — https://github.com/karagemop466-tech/Korea5/pull/26** — “Clarify vacation window lengths as calendar days” |
+| Merge | Merged to `main` at **2026-11-05T21:16:38Z**, merge commit `b4f134a190473329b66ca59fcce39115d02d47ed` |
+| Planner certainty/site checks | Run **42111155586** — `validate` passed |
+| GitHub Pages deployment | Run **42111154658** — build, deploy and report-build-status passed |
+| Live site | https://karagemop466-tech.github.io/Korea5/ — deployment completed successfully |
+
+The only annotations were non-blocking Node.js 20 and `ubuntu-latest` migration notices.

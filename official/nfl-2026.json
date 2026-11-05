@@ -26,8 +26,9 @@
    "https://www.nfl.com/schedules/2026/by-week/week-17",
    "https://www.nfl.com/schedules/2026/by-week/week-18"
   ],
-  "retrievedUTC": "2026-11-02T17:33:33.369929Z",
-  "note": "Game records are extracted from NFL.com's own embedded schedule data. Pacific times are converted from NFL.com UTC kickoff times using the America/Los_Angeles zone (PST/PDT). Postseason matchups for Jan-Feb 2027 were not published as game records on 2026-11-02; their official calendar windows are listed separately in season-anchors.json."
+  "retrievedUTC": "2026-11-05T21:18:26.170739Z",
+  "note": "Game records are extracted from NFL.com's own embedded schedule data. Pacific times are converted from NFL.com UTC kickoff times using the America/Los_Angeles zone (PST/PDT). Postseason matchups for Jan-Feb 2027 were not published as game records on 2026-11-02; their official calendar windows are listed separately in season-anchors.json.",
+  "committedUTC": "2026-11-05T21:19:27Z"
  },
  "games": [
   {

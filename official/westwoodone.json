@@ -28,7 +28,9 @@
    "https://www.westwoodonesports.com/more/eventGrid/?id=47033&range=current&offset=0&limit=100&timezone=America%2FNew_York&widgetTitle=Event+Display"
   ],
   "retrievedUTC": "2026-11-02T17:33:33.369929Z",
-  "note": "National radio broadcast windows come from each official event page's start_time/end_time epoch attributes (America/New_York on the source page), converted to UTC and Pacific. These are network on-air windows, not game durations. All Westwood One Sports broadcasts are treated as high priority in this project."
+  "note": "National radio broadcast windows come from each official event page's start_time/end_time epoch attributes (America/New_York on the source page), converted to UTC and Pacific. These are network on-air windows, not game durations. All Westwood One Sports broadcasts are treated as high priority in this project.",
+  "committedUTC": "2026-11-05T21:19:27Z",
+  "refreshNote": "Merged from a fresh official pull. Windows for past broadcasts whose event page no longer publishes the start/end epoch are carried forward from the previous verified commit and marked with windowSource."
  },
  "events": [
   {
@@ -5379,7 +5381,8 @@
    "timeStatus": "verified",
    "endUTC": "2025-10-21T05:45:00Z",
    "endPT": "22:45",
-   "durationMin": 240
+   "durationMin": 240,
+   "windowSource": "committed (live page no longer publishes start/end)"
   },
   {
    "id": "w1-495436",
@@ -5429,7 +5432,8 @@
    "timeStatus": "verified",
    "endUTC": "2025-10-24T03:59:00Z",
    "endPT": "20:59",
-   "durationMin": 269
+   "durationMin": 269,
+   "windowSource": "committed (live page no longer publishes start/end)"
   },
   {
    "id": "w1-484922",
@@ -5504,7 +5508,8 @@
    "timeStatus": "verified",
    "endUTC": "2025-10-27T03:59:00Z",
    "endPT": "20:59",
-   "durationMin": 269
+   "durationMin": 269,
+   "windowSource": "committed (live page no longer publishes start/end)"
   },
   {
    "id": "w1-482703",
@@ -5529,7 +5534,8 @@
    "timeStatus": "verified",
    "endUTC": "2025-10-28T03:59:00Z",
    "endPT": "20:59",
-   "durationMin": 299
+   "durationMin": 299,
+   "windowSource": "committed (live page no longer publishes start/end)"
   },
   {
    "id": "w1-495442",
@@ -5579,7 +5585,8 @@
    "timeStatus": "verified",
    "endUTC": "2025-10-31T03:59:00Z",
    "endPT": "20:59",
-   "durationMin": 269
+   "durationMin": 269,
+   "windowSource": "committed (live page no longer publishes start/end)"
   },
   {
    "id": "w1-484923",
@@ -5629,7 +5636,8 @@
    "timeStatus": "verified",
    "endUTC": "2025-11-03T04:59:00Z",
    "endPT": "20:59",
-   "durationMin": 269
+   "durationMin": 269,
+   "windowSource": "committed (live page no longer publishes start/end)"
   },
   {
    "id": "w1-482706",
@@ -5654,7 +5662,8 @@
    "timeStatus": "verified",
    "endUTC": "2025-11-04T04:59:00Z",
    "endPT": "20:59",
-   "durationMin": 299
+   "durationMin": 299,
+   "windowSource": "committed (live page no longer publishes start/end)"
   },
   {
    "id": "w1-482707",
@@ -5679,7 +5688,8 @@
    "timeStatus": "verified",
    "endUTC": "2025-11-07T04:59:00Z",
    "endPT": "20:59",
-   "durationMin": 269
+   "durationMin": 269,
+   "windowSource": "committed (live page no longer publishes start/end)"
   },
   {
    "id": "w1-484929",

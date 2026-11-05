@@ -1,0 +1,130 @@
+{
+ "generatedUTC": "2026-11-05T21:19:27Z",
+ "policy": "A refresh never deletes committed information. MLB and NFL feeds are replaced only when the live pull contains every committed game; the Westwood One feed is merged so that on-air windows the network no longer publishes for past events are carried forward.",
+ "mlb": {
+  "2026": {
+   "status": "updated",
+   "gamesBefore": 2960,
+   "gamesAfter": 2960,
+   "startTimesNowPublished": 0,
+   "gamesAdded": 0,
+   "addedSample": [],
+   "sampleTimeChanges": []
+  },
+  "2027": {
+   "status": "updated",
+   "gamesBefore": 2901,
+   "gamesAfter": 2903,
+   "startTimesNowPublished": 368,
+   "gamesAdded": 2,
+   "addedSample": [
+    872833,
+    872834
+   ],
+   "sampleTimeChanges": [
+    {
+     "id": 868341,
+     "date": "2027-02-19",
+     "committedUTC": "2027-02-19T08:33:00Z",
+     "liveUTC": "2027-02-19T19:35:00Z"
+    },
+    {
+     "id": 868330,
+     "date": "2027-02-20",
+     "committedUTC": "2027-02-20T10:33:00Z",
+     "liveUTC": "2027-02-20T19:05:00Z"
+    },
+    {
+     "id": 868334,
+     "date": "2027-02-21",
+     "committedUTC": "2027-02-21T10:33:00Z",
+     "liveUTC": "2027-02-21T19:35:00Z"
+    },
+    {
+     "id": 868321,
+     "date": "2027-02-22",
+     "committedUTC": "2027-02-22T10:33:00Z",
+     "liveUTC": "2027-02-22T20:05:00Z"
+    },
+    {
+     "id": 868305,
+     "date": "2027-02-23",
+     "committedUTC": "2027-02-23T10:33:00Z",
+     "liveUTC": "2027-02-23T20:05:00Z"
+    },
+    {
+     "id": 868309,
+     "date": "2027-02-24",
+     "committedUTC": "2027-02-24T10:33:00Z",
+     "liveUTC": "2027-02-24T20:05:00Z"
+    },
+    {
+     "id": 868296,
+     "date": "2027-02-25",
+     "committedUTC": "2027-02-25T10:33:00Z",
+     "liveUTC": "2027-02-25T20:05:00Z"
+    },
+    {
+     "id": 868292,
+     "date": "2027-02-26",
+     "committedUTC": "2027-02-26T08:33:00Z",
+     "liveUTC": "2027-02-26T20:10:00Z"
+    },
+    {
+     "id": 868284,
+     "date": "2027-02-26",
+     "committedUTC": "2027-02-26T10:33:00Z",
+     "liveUTC": "2027-02-26T20:05:00Z"
+    },
+    {
+     "id": 868277,
+     "date": "2027-02-27",
+     "committedUTC": "2027-02-27T10:33:00Z",
+     "liveUTC": "2027-02-27T20:05:00Z"
+    }
+   ]
+  },
+  "2028": {
+   "status": "updated",
+   "gamesBefore": 0,
+   "gamesAfter": 0,
+   "startTimesNowPublished": 0,
+   "gamesAdded": 0,
+   "addedSample": [],
+   "sampleTimeChanges": []
+  },
+  "2029": {
+   "status": "updated",
+   "gamesBefore": 0,
+   "gamesAfter": 0,
+   "startTimesNowPublished": 0,
+   "gamesAdded": 0,
+   "addedSample": [],
+   "sampleTimeChanges": []
+  }
+ },
+ "nfl": {
+  "2026": {
+   "status": "updated",
+   "gamesBefore": 321,
+   "gamesAfter": 321
+  }
+ },
+ "westwoodOne": {
+  "status": "merged",
+  "eventsBefore": 580,
+  "eventsAfter": 580,
+  "windowsCarriedForward": 8,
+  "eventsUpdatedFromLive": 0,
+  "eventsAdded": 0
+ },
+ "w1Stations": {
+  "status": "unchanged",
+  "affiliates": [
+   "KNBR-AM",
+   "KNBR-F2",
+   "KNBR-FM",
+   "KTCT-AM"
+  ]
+ }
+}

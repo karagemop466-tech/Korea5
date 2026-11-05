@@ -1,13 +1,13 @@
 {
- "generatedUTC": "2026-11-05T21:15:23Z",
+ "generatedUTC": "2026-11-05T21:19:44Z",
  "summary": {
-  "curatedRows": 62,
-  "rowsWithTokens": 62,
-  "rowsChecked": 62,
-  "rowsVerified": 61,
-  "rowsVerifiedLive": 61,
+  "curatedRows": 63,
+  "rowsWithTokens": 63,
+  "rowsChecked": 63,
+  "rowsVerified": 63,
+  "rowsVerifiedLive": 63,
   "rowsVerifiedSnapshot": 0,
-  "rowsFailed": 1,
+  "rowsFailed": 0,
   "rowsUnavailable": 0,
   "rowsWithoutTokens": 0,
   "flaggedConflicts": 3,
@@ -21,10 +21,10 @@
   "nflSpotChecksUnavailable": 0,
   "feedProblems": 0,
   "eventCounts": {
-   "2026": 3227,
-   "2027": 3102,
-   "2028": 427,
-   "2029": 432,
+   "2026": 3228,
+   "2027": 3145,
+   "2028": 480,
+   "2029": 473,
    "2030": 15
   }
  },
@@ -839,22 +839,40 @@
   },
   {
    "dataset": "westwoodone-2026",
-   "id": "w1-2026-12-27",
-   "date": "2026-12-27",
-   "title": "Jacksonville Jaguars vs Dallas Cowboys",
+   "id": "w1-2026-12-26-evening",
+   "date": "2026-12-26",
+   "title": " vs ",
    "source": "https://www.westwoodonesports.com/events/548520",
    "officialUrl": "https://www.westwoodonesports.com/events/548520",
    "tokens": [
-    "Jacksonville Jaguars at Dallas Cowboys"
+    "Week 16 Saturday Doubleheader TBA",
+    "8:00 PM ET"
    ],
    "officialStatus": 200,
-   "verified": false,
-   "verificationStatus": "source-mismatch",
-   "verifiedAgainst": null,
-   "missingTokens": [
-    "Jacksonville Jaguars at Dallas Cowboys"
+   "verified": true,
+   "verificationStatus": "verified-live",
+   "verifiedAgainst": "live",
+   "missingTokens": [],
+   "note": "Second Westwood One on-air window for the Week 16 Saturday doubleheader; the official event page lists it at 8:00 PM ET. Added 2026-11-05.",
+   "conflict": null
+  },
+  {
+   "dataset": "westwoodone-2026",
+   "id": "w1-2026-12-27",
+   "date": "2026-12-27",
+   "title": "Jacksonville Jaguars vs Dallas Cowboys",
+   "source": "https://www.westwoodonesports.com/events/548507",
+   "officialUrl": "https://www.westwoodonesports.com/events/548507",
+   "tokens": [
+    "Jacksonville Jaguars at Dallas Cowboys",
+    "7:30 PM  ET"
    ],
-   "note": null,
+   "officialStatus": 200,
+   "verified": true,
+   "verificationStatus": "verified-live",
+   "verifiedAgainst": "live",
+   "missingTokens": [],
+   "note": "Official event page 548507. The row previously pointed at event 548520, which is the Week 16 Saturday Doubleheader; corrected 2026-11-05.",
    "conflict": null
   },
   {
@@ -1255,9 +1273,11 @@
    "apiStatus": 200,
    "gamesInFeed": 1,
    "gamesInApi": 1,
+   "onlyInFeed": [],
+   "onlyInApi": [],
    "match": true,
    "verificationStatus": "verified-match",
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-03-25&endDate=2026-03-25&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-03-24&endDate=2026-03-26&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2CgameDate%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2026,
@@ -1265,9 +1285,11 @@
    "apiStatus": 200,
    "gamesInFeed": 15,
    "gamesInApi": 15,
+   "onlyInFeed": [],
+   "onlyInApi": [],
    "match": true,
    "verificationStatus": "verified-match",
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-05-01&endDate=2026-05-01&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-04-30&endDate=2026-05-02&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2CgameDate%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2026,
@@ -1275,9 +1297,11 @@
    "apiStatus": 200,
    "gamesInFeed": 15,
    "gamesInApi": 15,
+   "onlyInFeed": [],
+   "onlyInApi": [],
    "match": true,
    "verificationStatus": "verified-match",
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-06-07&endDate=2026-06-07&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-06-06&endDate=2026-06-08&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2CgameDate%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2026,
@@ -1285,9 +1309,13 @@
    "apiStatus": 200,
    "gamesInFeed": 14,
    "gamesInApi": 15,
+   "onlyInFeed": [],
+   "onlyInApi": [
+    824766
+   ],
    "match": false,
    "verificationStatus": "feed-mismatch",
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-07-17&endDate=2026-07-17&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-07-16&endDate=2026-07-18&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2CgameDate%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2026,
@@ -1295,9 +1323,11 @@
    "apiStatus": 200,
    "gamesInFeed": 15,
    "gamesInApi": 15,
+   "onlyInFeed": [],
+   "onlyInApi": [],
    "match": true,
    "verificationStatus": "verified-match",
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-08-23&endDate=2026-08-23&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-08-22&endDate=2026-08-24&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2CgameDate%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
@@ -1305,9 +1335,11 @@
    "apiStatus": 200,
    "gamesInFeed": 15,
    "gamesInApi": 15,
+   "onlyInFeed": [],
+   "onlyInApi": [],
    "match": true,
    "verificationStatus": "verified-match",
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-03-25&endDate=2027-03-25&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-03-24&endDate=2027-03-26&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2CgameDate%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
@@ -1315,9 +1347,11 @@
    "apiStatus": 200,
    "gamesInFeed": 15,
    "gamesInApi": 15,
+   "onlyInFeed": [],
+   "onlyInApi": [],
    "match": true,
    "verificationStatus": "verified-match",
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-05-01&endDate=2027-05-01&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-04-30&endDate=2027-05-02&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2CgameDate%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
@@ -1325,9 +1359,11 @@
    "apiStatus": 200,
    "gamesInFeed": 11,
    "gamesInApi": 11,
+   "onlyInFeed": [],
+   "onlyInApi": [],
    "match": true,
    "verificationStatus": "verified-match",
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-06-07&endDate=2027-06-07&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-06-06&endDate=2027-06-08&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2CgameDate%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
@@ -1335,9 +1371,11 @@
    "apiStatus": 200,
    "gamesInFeed": 15,
    "gamesInApi": 15,
+   "onlyInFeed": [],
+   "onlyInApi": [],
    "match": true,
    "verificationStatus": "verified-match",
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-07-18&endDate=2027-07-18&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-07-17&endDate=2027-07-19&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2CgameDate%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   },
   {
    "year": 2027,
@@ -1345,9 +1383,11 @@
    "apiStatus": 200,
    "gamesInFeed": 15,
    "gamesInApi": 15,
+   "onlyInFeed": [],
+   "onlyInApi": [],
    "match": true,
    "verificationStatus": "verified-match",
-   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-08-24&endDate=2027-08-24&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2Cteams%2Caway%2Chome%2Cteam%2Cname"
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-08-23&endDate=2027-08-25&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameType%2CgameDate%2Cteams%2Caway%2Chome%2Cteam%2Cname"
   }
  ],
  "nflSpotChecks": [

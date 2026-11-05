@@ -1,6 +1,6 @@
 # Live official-feed comparison
 
-Generated: 2026-11-05T21:15:13Z
+Generated: 2026-11-05T21:19:27Z
 
 Every official feed was re-downloaded from its official URL and compared record by record with the committed copy. The committed copies are never modified by this check.
 
@@ -11,8 +11,8 @@ Every official feed was re-downloaded from its official URL and compared record 
 | MLB 2028 | 0 | 0 | yes | 0 | 0 | 0 |
 | MLB 2029 | 0 | 0 | yes | 0 | 0 | 0 |
 | NFL 2026 | 321 | 321 | yes | 0 | 0 | 0 |
-| Westwood One | 580 | 580 | NO | 63 | 0 | 0 |
-| W1 SF station finder | 1 | 1 | yes | 0 | 0 | 0 |
+| Westwood One | 580 | 580 | NO | 8 | 0 | 0 |
+| W1 SF station finder | 4 | 4 | yes | 0 | 0 | 0 |
 
 ## Detail
 
@@ -224,30 +224,8 @@ Every official feed was re-downloaded from its official URL and compared record 
 - `872833` — {"date": "2027-03-22", "utc": "2027-03-23T00:10:00Z", "away": "Chicago White Sox", "home": "Texas Rangers", "type": "S", "venue": "Globe Life Field"}
 - `872834` — {"date": "2027-03-23", "utc": "2027-03-23T18:10:00Z", "away": "Chicago White Sox", "home": "Texas Rangers", "type": "S", "venue": "Globe Life Field"}
 
-### Westwood One — changed (63)
+### Westwood One — changed (8)
 
-- `w1-472246` — {"datePT": {"committed": "2025-03-19", "live": null}, "startPT": {"committed": "15:30", "live": null}, "endPT": {"committed": "18:10", "live": null}}
-- `w1-472677` — {"datePT": {"committed": "2025-03-20", "live": null}, "startPT": {"committed": "19:30", "live": null}, "endPT": {"committed": "22:00", "live": null}}
-- `w1-472790` — {"datePT": {"committed": "2025-03-21", "live": null}, "startPT": {"committed": "08:00", "live": null}, "endPT": {"committed": "22:30", "live": null}}
-- `w1-473180` — {"datePT": {"committed": "2025-03-22", "live": null}, "startPT": {"committed": "14:15", "live": null}, "endPT": {"committed": "16:45", "live": null}}
-- `w1-473181` — {"datePT": {"committed": "2025-03-22", "live": null}, "startPT": {"committed": "15:00", "live": null}, "endPT": {"committed": "17:30", "live": null}}
-- `w1-473182` — {"datePT": {"committed": "2025-03-22", "live": null}, "startPT": {"committed": "16:00", "live": null}, "endPT": {"committed": "18:30", "live": null}}
-- `w1-473183` — {"datePT": {"committed": "2025-03-22", "live": null}, "startPT": {"committed": "17:15", "live": null}, "endPT": {"committed": "19:45", "live": null}}
-- `w1-473184` — {"datePT": {"committed": "2025-03-22", "live": null}, "startPT": {"committed": "17:35", "live": null}, "endPT": {"committed": "20:05", "live": null}}
-- `w1-473185` — {"datePT": {"committed": "2025-03-22", "live": null}, "startPT": {"committed": "18:45", "live": null}, "endPT": {"committed": "21:15", "live": null}}
-- `w1-474485` — {"datePT": {"committed": "2025-04-05", "live": null}, "startPT": {"committed": "12:00", "live": null}, "endPT": {"committed": "21:30", "live": null}}
-- `w1-474486` — {"datePT": {"committed": "2025-04-05", "live": null}, "startPT": {"committed": "15:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
-- `w1-475680` — {"datePT": {"committed": "2025-04-06", "live": null}, "startPT": {"committed": "11:30", "live": null}, "endPT": {"committed": "15:00", "live": null}}
-- `w1-475732` — {"datePT": {"committed": "2025-04-07", "live": null}, "startPT": {"committed": "15:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
-- `w1-482640` — {"datePT": {"committed": "2025-06-14", "live": null}, "startPT": {"committed": "15:40", "live": null}, "endPT": {"committed": "19:40", "live": null}}
-- `w1-481883` — {"datePT": {"committed": "2025-07-02", "live": null}, "startPT": {"committed": "16:15", "live": null}, "endPT": {"committed": "19:00", "live": null}}
-- `w1-478876` — {"datePT": {"committed": "2025-07-31", "live": null}, "startPT": {"committed": "17:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
-- `w1-481831` — {"datePT": {"committed": "2025-09-04", "live": null}, "startPT": {"committed": "16:00", "live": null}, "endPT": {"committed": "22:00", "live": null}}
-- `w1-495427` — {"datePT": {"committed": "2025-09-06", "live": null}, "startPT": {"committed": "14:00", "live": null}, "endPT": {"committed": "16:30", "live": null}}
-- `w1-504718` — {"datePT": {"committed": "2025-09-27", "live": null}, "startPT": {"committed": "04:00", "live": null}, "endPT": {"committed": "15:00", "live": null}}
-- `w1-504719` — {"datePT": {"committed": "2025-09-28", "live": null}, "startPT": {"committed": "09:00", "live": null}, "endPT": {"committed": "16:00", "live": null}}
-- `w1-495433` — {"datePT": {"committed": "2025-10-10", "live": null}, "startPT": {"committed": "17:30", "live": null}, "endPT": {"committed": "20:00", "live": null}}
-- `w1-495434` — {"datePT": {"committed": "2025-10-14", "live": null}, "startPT": {"committed": "17:45", "live": null}, "endPT": {"committed": "20:30", "live": null}}
 - `w1-482699` — {"datePT": {"committed": "2025-10-20", "live": null}, "startPT": {"committed": "18:45", "live": null}, "endPT": {"committed": "22:45", "live": null}}
 - `w1-482700` — {"datePT": {"committed": "2025-10-23", "live": null}, "startPT": {"committed": "16:30", "live": null}, "endPT": {"committed": "20:59", "live": null}}
 - `w1-482701` — {"datePT": {"committed": "2025-10-26", "live": null}, "startPT": {"committed": "16:30", "live": null}, "endPT": {"committed": "20:59", "live": null}}
@@ -256,37 +234,4 @@ Every official feed was re-downloaded from its official URL and compared record 
 - `w1-482705` — {"datePT": {"committed": "2025-11-02", "live": null}, "startPT": {"committed": "16:30", "live": null}, "endPT": {"committed": "20:59", "live": null}}
 - `w1-482706` — {"datePT": {"committed": "2025-11-03", "live": null}, "startPT": {"committed": "16:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
 - `w1-482707` — {"datePT": {"committed": "2025-11-06", "live": null}, "startPT": {"committed": "16:30", "live": null}, "endPT": {"committed": "20:59", "live": null}}
-- `w1-484933` — {"datePT": {"committed": "2025-11-29", "live": null}, "startPT": {"committed": "08:30", "live": null}, "endPT": {"committed": "13:00", "live": null}}
-- `w1-484934` — {"datePT": {"committed": "2025-12-06", "live": null}, "startPT": {"committed": "12:30", "live": null}, "endPT": {"committed": "17:30", "live": null}}
-- `w1-534931` — {"datePT": {"committed": "2026-03-10", "live": null}, "startPT": {"committed": "17:45", "live": null}, "endPT": {"committed": "20:59", "live": null}}
-- `w1-534933` — {"datePT": {"committed": "2026-03-11", "live": null}, "startPT": {"committed": "15:45", "live": null}, "endPT": {"committed": "18:45", "live": null}}
-- `w1-534935` — {"datePT": {"committed": "2026-03-13", "live": null}, "startPT": {"committed": "14:15", "live": null}, "endPT": {"committed": "20:59", "live": null}}
-- `w1-534938` — {"datePT": {"committed": "2026-03-14", "live": null}, "startPT": {"committed": "07:45", "live": null}, "endPT": {"committed": "10:45", "live": null}}
-- `w1-536699` — {"datePT": {"committed": "2026-03-19", "live": null}, "startPT": {"committed": "13:15", "live": null}, "endPT": {"committed": "15:45", "live": null}}
-- `w1-536714` — {"datePT": {"committed": "2026-03-19", "live": null}, "startPT": {"committed": "13:15", "live": null}, "endPT": {"committed": "15:50", "live": null}}
-- `w1-536675` — {"datePT": {"committed": "2026-03-19", "live": null}, "startPT": {"committed": "15:40", "live": null}, "endPT": {"committed": "18:25", "live": null}}
-- `w1-536700` — {"datePT": {"committed": "2026-03-19", "live": null}, "startPT": {"committed": "16:20", "live": null}, "endPT": {"committed": "18:45", "live": null}}
-- `w1-536721` — {"datePT": {"committed": "2026-03-21", "live": null}, "startPT": {"committed": "08:00", "live": null}, "endPT": {"committed": "23:00", "live": null}, "venue": {"committed": null, "live": ""}}
-- `w1-536702` — {"datePT": {"committed": "2026-03-21", "live": null}, "startPT": {"committed": "09:05", "live": null}, "endPT": {"committed": "11:30", "live": null}}
-- `w1-536703` — {"datePT": {"committed": "2026-03-21", "live": null}, "startPT": {"committed": "11:35", "live": null}, "endPT": {"committed": "14:30", "live": null}}
-- `w1-537963` — {"datePT": {"committed": "2026-03-27", "live": null}, "startPT": {"committed": "11:00", "live": null}, "endPT": {"committed": "14:00", "live": null}}
-- `w1-537964` — {"datePT": {"committed": "2026-03-27", "live": null}, "startPT": {"committed": "14:00", "live": null}, "endPT": {"committed": "16:45", "live": null}}
-- `w1-536759` — {"datePT": {"committed": "2026-03-27", "live": null}, "startPT": {"committed": "15:00", "live": null}, "endPT": {"committed": "22:30", "live": null}, "venue": {"committed": null, "live": ""}}
-- `w1-536769` — {"datePT": {"committed": "2026-03-27", "live": null}, "startPT": {"committed": "16:00", "live": null}, "endPT": {"committed": "19:00", "live": null}}
-- `w1-536773` — {"datePT": {"committed": "2026-03-27", "live": null}, "startPT": {"committed": "16:25", "live": null}, "endPT": {"committed": "19:20", "live": null}}
-- `w1-537977` — {"datePT": {"committed": "2026-04-03", "live": null}, "startPT": {"committed": "18:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
-- `w1-536776` — {"datePT": {"committed": "2026-04-04", "live": null}, "startPT": {"committed": "12:00", "live": null}, "endPT": {"committed": "18:00", "live": null}}
-- `w1-538832` — {"datePT": {"committed": "2026-04-04", "live": null}, "startPT": {"committed": "15:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
-- `w1-535853` — {"datePT": {"committed": "2026-04-08", "live": null}, "startPT": {"committed": "19:00", "live": null}, "endPT": {"committed": "20:00", "live": null}}
-- `w1-548150` — {"datePT": {"committed": "2026-05-23", "live": null}, "startPT": {"committed": "11:30", "live": null}, "endPT": {"committed": "14:30", "live": null}}
-- `w1-550220` — {"datePT": {"committed": "2026-05-31", "live": null}, "startPT": {"committed": "12:00", "live": null}, "endPT": {"committed": "15:45", "live": null}}
-- `w1-545726` — {"datePT": {"committed": "2026-05-31", "live": null}, "startPT": {"committed": "12:15", "live": null}, "endPT": {"committed": "15:00", "live": null}}
-- `w1-550221` — {"datePT": {"committed": "2026-05-31", "live": null}, "startPT": {"committed": "16:00", "live": null}, "endPT": {"committed": "19:00", "live": null}}
-- `w1-550222` — {"datePT": {"committed": "2026-06-01", "live": null}, "startPT": {"committed": "09:00", "live": null}, "endPT": {"committed": "11:29", "live": null}}
-- `w1-550224` — {"datePT": {"committed": "2026-06-01", "live": null}, "startPT": {"committed": "12:00", "live": null}, "endPT": {"committed": "15:30", "live": null}}
-- `w1-545727` — {"datePT": {"committed": "2026-06-06", "live": null}, "startPT": {"committed": "11:15", "live": null}, "endPT": {"committed": "14:00", "live": null}}
-- `w1-551551` — {"datePT": {"committed": "2026-06-06", "live": null}, "startPT": {"committed": "14:30", "live": null}, "endPT": {"committed": "17:00", "live": null}}
-- `w1-551493` — {"datePT": {"committed": "2026-06-13", "live": null}, "startPT": {"committed": "16:40", "live": null}, "endPT": {"committed": "20:59", "live": null}}
-- `w1-551510` — {"datePT": {"committed": "2026-06-14", "live": null}, "startPT": {"committed": "10:40", "live": null}, "endPT": {"committed": "16:15", "live": null}}
-- `w1-551514` — {"datePT": {"committed": "2026-06-14", "live": null}, "startPT": {"committed": "15:40", "live": null}, "endPT": {"committed": "20:45", "live": null}}
 

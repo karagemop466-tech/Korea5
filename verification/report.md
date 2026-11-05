@@ -1,16 +1,16 @@
 # Verification report
 
-Generated: 2026-11-05T21:15:23Z
+Generated: 2026-11-05T21:19:44Z
 
 | Check | Result |
 |---|---|
-| curatedRows | 62 |
-| rowsWithTokens | 62 |
-| rowsChecked | 62 |
-| rowsVerified | 61 |
-| rowsVerifiedLive | 61 |
+| curatedRows | 63 |
+| rowsWithTokens | 63 |
+| rowsChecked | 63 |
+| rowsVerified | 63 |
+| rowsVerifiedLive | 63 |
 | rowsVerifiedSnapshot | 0 |
-| rowsFailed | 1 |
+| rowsFailed | 0 |
 | rowsUnavailable | 0 |
 | rowsWithoutTokens | 0 |
 | flaggedConflicts | 3 |
@@ -23,7 +23,7 @@ Generated: 2026-11-05T21:15:23Z
 | nflSpotChecksFailed | 0 |
 | nflSpotChecksUnavailable | 0 |
 | feedProblems | 0 |
-| eventCounts | {2026: 3227, 2027: 3102, 2028: 427, 2029: 432, 2030: 15} |
+| eventCounts | {2026: 3228, 2027: 3145, 2028: 480, 2029: 473, 2030: 15} |
 
 ## Curated rows checked against official pages
 
@@ -73,7 +73,8 @@ Verification status meanings: `verified-live` = tokens found in the current offi
 | westwoodone-2026 | 2026-12-24 | w1-2026-12-24 | verified-live | https://www.westwoodonesports.com/events/548569 |
 | westwoodone-2026 | 2026-12-25 | w1-2026-12-25 | verified-live | https://www.westwoodonesports.com/events/548531 |
 | westwoodone-2026 | 2026-12-26 | w1-2026-12-26 | verified-live | https://www.westwoodonesports.com/events/548519 |
-| westwoodone-2026 | 2026-12-27 | w1-2026-12-27 | source-mismatch | https://www.westwoodonesports.com/events/548520 |
+| westwoodone-2026 | 2026-12-26 | w1-2026-12-26-evening | verified-live | https://www.westwoodonesports.com/events/548520 |
+| westwoodone-2026 | 2026-12-27 | w1-2026-12-27 | verified-live | https://www.westwoodonesports.com/events/548507 |
 | westwoodone-2026 | 2026-12-28 | w1-2026-12-28 | verified-live | https://www.westwoodonesports.com/events/548550 |
 | westwoodone-2026 | 2027-01-02 | w1-2027-01-02 | verified-live | https://www.westwoodonesports.com/events/548521 |
 | westwoodone-2026 | 2027-01-03 | w1-2027-01-03 | verified-live | https://www.westwoodonesports.com/events/548509 |
@@ -94,10 +95,6 @@ Verification status meanings: `verified-live` = tokens found in the current offi
 | ncaaf-2026 | 2026-11-14 | ncaaf-2026-biggame-cal | verified-live | https://calbears.com/sports/football/schedule |
 | ncaaf-2026 | 2026-11-21 | ncaaf-2026-cal-pitt | verified-live | https://calbears.com/sports/football/schedule |
 | ncaaf-2026 | 2026-11-28 | ncaaf-2026-cal-nov28 | verified-live | https://calbears.com/sports/football/schedule |
-
-## Rows that failed verification
-
-- `w1-2026-12-27` — missing tokens: ['Jacksonville Jaguars at Dallas Cowboys'] — https://www.westwoodonesports.com/events/548520
 
 ## Flagged conflicts / irregularities
 

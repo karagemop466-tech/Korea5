@@ -23,7 +23,7 @@ from collections import defaultdict
 from datetime import date, datetime, timedelta
 
 YEARS = (2026, 2027, 2028, 2029, 2030)
-TODAY = date(2026, 11, 2)
+TODAY = date(2026, 11, 5)
 HORIZON_END = date(2030, 2, 28)
 
 RADIO_TAGS = {"mlb-giants", "mlb-athletics", "nfl-49ers", "ncaaf-stanford", "ncaaf-cal",
@@ -37,7 +37,10 @@ def scope_ok(ev, scope):
     if scope == "radio":
         return bool(tags & RADIO_TAGS)
     if scope == "high":
-        return ev.get("priority") == "high"
+        # The owner's team tier is the same set as the radio tier: Giants, Athletics, 49ers,
+        # Stanford, Cal and Westwood One. It used to test only the `priority` field, which
+        # left every estimated Giants/A's/49ers/Stanford/Cal row out of the scope.
+        return bool(tags & RADIO_TAGS)
     return True
 
 
@@ -269,6 +272,56 @@ def main():
             })
         recommended[str(y)] = entry
 
+    # ---- Pro Bowl date scenarios and tied longest runs --------------------
+    # The 2027-29 Pro Bowl Games date is not in the NFL's official calendar. The base result blocks
+    # both candidate dates (conservative). These scenarios show what each single assumption gives.
+    def runs_excluding(yd, scope, keep):
+        """All runs of days with nothing in scope; candidate Pro Bowl events are dropped unless keep()."""
+        runs, cur = [], []
+        for d in yd:
+            evs = [e for e in by_day.get(d, []) if scope_ok(e, scope)
+                   and (e.get("allstarCandidate") is None or keep(e))]
+            busy = merge([iv for e in evs for iv in intervals(e)])
+            if not busy:
+                cur.append(d)
+            else:
+                if cur:
+                    runs.append(cur)
+                cur = []
+        if cur:
+            runs.append(cur)
+        return runs
+
+    def summarize(runs):
+        if not runs:
+            return None, []
+        top = max(len(r) for r in runs)
+        ties = [{"start": r[0], "end": r[-1], "days": len(r)} for r in runs if len(r) == top]
+        return ties[0], ties
+
+    for y in (2027, 2028, 2029):
+        yd = [d for d in dates if d.startswith(str(y))]
+        cands = {}
+        for e in events:
+            if e.get("allstarCandidate") and e["date"].startswith(str(y)):
+                cands[e["allstarCandidate"]] = e["date"]
+        if str(y) not in recommended:
+            continue
+        block = {"candidates": cands, "scenarios": {}}
+        for scope in ("all", "radio"):
+            block["scenarios"][scope] = {}
+            for label, keep in (
+                ("bothCandidatesBlocked", lambda e: True),
+                ("onlyCandidateA", lambda e: e.get("allstarCandidate") == "A"),
+                ("onlyCandidateB", lambda e: e.get("allstarCandidate") == "B"),
+                ("noProBowlGame", lambda e: False),
+            ):
+                best, ties = summarize(runs_excluding(yd, scope, keep))
+                block["scenarios"][scope][label] = {"best": best, "ties": ties}
+            base_runs = runs_excluding(yd, scope, lambda e: True)
+            recommended[str(y)]["scopes"][scope]["ties"] = summarize(base_runs)[1]
+        recommended[str(y)]["proBowl"] = block
+
     payload = {
         "meta": {
             "generatedUTC": (json.load(open("data/events-2027.json"))["meta"].get("generatedUTC")
@@ -278,8 +331,8 @@ def main():
             "timezone": "America/Los_Angeles (PST/PDT)",
             "scopes": {
                 "all": "Every MLB game (all 30 clubs), every NFL game, Stanford, Cal and Westwood One.",
-                "radio": "Only games that air on AM/FM radio in San Francisco: Giants, Athletics, 49ers, Stanford, Cal, Westwood One.",
-                "high": "High-priority teams only: Giants, Athletics, 49ers, Stanford, Cal, Westwood One.",
+                "radio": "Only games that air on AM/FM radio in San Francisco: Giants, Athletics, 49ers, Stanford, Cal, Westwood One national (including the Pro Bowl Games, carried by Westwood One in 2026).",
+                "high": "Team tier: Giants, Athletics, 49ers, Stanford, Cal, Westwood One. Identical to the radio tier by construction, because the owner's priority list is these teams plus all MLB and NFL games, which the 'all' scope already blocks.",
             },
         },
         "summary": summary,

@@ -408,40 +408,61 @@ def nfl_postseason_estimate(season_year):
     """Estimated NFL postseason for a season: runs into January/February of season_year+1."""
     sb = nth_weekday(season_year + 1, 2, 6, 2)
     rows = []
+    # Official 2026-27 NFL calendar (nfl.com/news/2026-27-national-football-league-important-dates):
+    #   Wild Card Weekend Jan 16-18 2027 (Sat-Mon), Divisional Jan 23-24, Conference Championships Jan 31,
+    #   Super Bowl LXI Feb 14 at SoFi Stadium. The same calendar lists NO Pro Bowl date.
+    # Wild Card Monday is therefore added (sb-27 = Jan 18 2027). Its game times are not published.
     rounds = [
-        ("wildcard-sat", sb - timedelta(days=29), "13:30", "Wild Card Saturday"),
-        ("wildcard-sun", sb - timedelta(days=28), "10:00", "Wild Card Sunday"),
-        ("div-sat", sb - timedelta(days=22), "13:30", "Divisional Saturday"),
-        ("div-sun", sb - timedelta(days=21), "12:00", "Divisional Sunday"),
-        ("conf-sun", sb - timedelta(days=14), "12:00", "Conference Championships"),
-        ("probowl", sb - timedelta(days=7), "12:00", "Pro Bowl Games"),
-        ("superbowl", sb, "15:30", "Super Bowl"),
+        ("wildcard-sat", sb - timedelta(days=29), "13:30", "Wild Card Saturday", "postseason"),
+        ("wildcard-sun", sb - timedelta(days=28), "10:00", "Wild Card Sunday", "postseason"),
+        ("wildcard-mon", sb - timedelta(days=27), "17:15", "Wild Card Monday", "postseason"),
+        ("div-sat", sb - timedelta(days=22), "13:30", "Divisional Saturday", "postseason"),
+        ("div-sun", sb - timedelta(days=21), "12:00", "Divisional Sunday", "postseason"),
+        ("conf-sun", sb - timedelta(days=14), "12:00", "Conference Championships", "postseason"),
+        # Planning block for both Pro Bowl candidates = Westwood One's official 2026 broadcast window
+        # (event w1-527138, Tue Feb 3 2026, 16:30-19:30 PT, 180 min). Used only as a conservative block.
+        ("probowl-a", sb - timedelta(days=7), "16:30", "Pro Bowl Games (date unverified — candidate A)", "A"),
+        ("probowl-b", sb - timedelta(days=5), "16:30", "Pro Bowl Games (date unverified — candidate B)", "B"),
+        ("superbowl", sb, "15:30", "Super Bowl", "postseason"),
     ]
-    for suffix, day, start, label in rounds:
-        # The Pro Bowl Games is an all-star exhibition, not a league game, and Westwood One's
-        # published 2026-27 NFL schedule does not list it. It therefore blocks the "all" and
-        # "high" scopes (the owner asked for NFL all-star events to be modelled) but must NOT
-        # carry the `westwoodone` tag, because that tag is what puts a row in the radio scope.
-        allstar = suffix == "probowl"
+    for suffix, day, start, label, kind in rounds:
+        allstar = kind in ("A", "B")
+        if allstar:
+            basis = ("UNVERIFIED DATE. The NFL's official 2026-27 calendar does not list the 2027 Pro Bowl Games. "
+                     "Both candidate dates are blocked (conservative). Candidate A = Sunday Feb 7, from an aggregator "
+                     "site. Candidate B = Tuesday Feb 9, the Tuesday of Super Bowl week, which a secondary source "
+                     "reports for 2027 and which matches the 2026 pattern (the 2026 Pro Bowl Games were on Tue Feb 3 "
+                     "2026). Westwood One carried the 2026 Pro Bowl Games on Feb 3 2026, 4:30-7:30 PM PT, so both "
+                     "candidates are also put in the radio tier. The 16:30 start and 180-minute window are that "
+                     "2026 broadcast window, used as a planning block only.")
+        else:
+            basis = ("Round window from the NFL's official 2026-27 calendar (Wild Card Jan 16-18, Divisional "
+                     "Jan 23-24, Conference Championships Jan 31, Super Bowl LXI Feb 14). The day inside a "
+                     "multi-day window, the matchups and the kickoff times are estimated."
+                     if season_year == 2026 else
+                     "Estimated from the NFL's structural calendar: the playoffs run from mid-January, with the "
+                     "Super Bowl on the second Sunday of February. Matchups and times are estimated.")
         rows.append({
             "id": f"nfl-est-{season_year}-{suffix}", "league": "NFL",
             "priority": "high" if not allstar else "normal",
-            "tags": (["nfl", "nfl-allstar", "estimate"] if allstar
-                     else ["nfl", "westwoodone", "estimate"]),
+            "tags": (["nfl", "nfl-allstar", "westwoodone", "estimate"] if allstar
+                     else (["nfl", "westwoodone", "estimate"] if suffix != "wildcard-mon"
+                           else ["nfl", "estimate"])),
             "date": day.isoformat(), "start": start,
-            "durationMin": DURATION["nfl-post"],
-            "title": f"{label} (participants TBD)", "seasonType": "special" if allstar else "postseason",
+            "durationMin": 180 if allstar else DURATION["nfl-post"],
+            "title": f"{label}" + ("" if allstar else " (participants TBD)"),
+            "seasonType": "special" if allstar else "postseason",
             "timeStatus": "estimated", "status": "estimated",
-            "timeBasis": ("All-star exhibition, modelled on the Sunday before the Super Bowl. It is not a league "
-                          "game and Westwood One's published 2026-27 schedule does not list it, so it is excluded "
-                          "from the radio-only scope.")
-                         if allstar else
-                         ("Estimated from the NFL's structural calendar: Week 18 in early January, then Wild Card, "
-                          "Divisional and Conference rounds, with the Super Bowl on the second Sunday of February."),
-            "source": "https://www.nfl.com/schedules/", "sourceLabel": "Estimated — NFL structure",
-            "sourceUrl": "https://www.nfl.com/schedules/",
+            "timeBasis": basis,
+            "source": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+                      if season_year == 2026 else "https://www.nfl.com/schedules/",
+            "sourceLabel": "Official NFL 2026-27 calendar (dates) / estimated structure",
+            "sourceUrl": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+                         if season_year == 2026 else "https://www.nfl.com/schedules/",
             "dateStatus": "estimated",
         })
+        if allstar:
+            rows[-1]["allstarCandidate"] = kind
     return rows
 
 

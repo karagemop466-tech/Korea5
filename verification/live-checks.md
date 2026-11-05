@@ -1,0 +1,292 @@
+# Live official-feed comparison
+
+Generated: 2026-11-05T21:15:13Z
+
+Every official feed was re-downloaded from its official URL and compared record by record with the committed copy. The committed copies are never modified by this check.
+
+| Feed | Committed | Live | Identical | Changed | Missing | Added |
+|---|---|---|---|---|---|---|
+| MLB 2026 | 2960 | 2960 | yes | 0 | 0 | 0 |
+| MLB 2027 | 2901 | 2903 | NO | 368 | 0 | 2 |
+| MLB 2028 | 0 | 0 | yes | 0 | 0 | 0 |
+| MLB 2029 | 0 | 0 | yes | 0 | 0 | 0 |
+| NFL 2026 | 321 | 321 | yes | 0 | 0 | 0 |
+| Westwood One | 580 | 580 | NO | 63 | 0 | 0 |
+| W1 SF station finder | 1 | 1 | yes | 0 | 0 | 0 |
+
+## Detail
+
+### MLB 2027 — changed (368)
+
+- `868341` — {"utc": {"committed": "2027-02-19T08:33:00Z", "live": "2027-02-19T19:35:00Z"}}
+- `868330` — {"utc": {"committed": "2027-02-20T10:33:00Z", "live": "2027-02-20T19:05:00Z"}}
+- `868334` — {"utc": {"committed": "2027-02-21T10:33:00Z", "live": "2027-02-21T19:35:00Z"}}
+- `868321` — {"utc": {"committed": "2027-02-22T10:33:00Z", "live": "2027-02-22T20:05:00Z"}}
+- `868305` — {"utc": {"committed": "2027-02-23T10:33:00Z", "live": "2027-02-23T20:05:00Z"}}
+- `868309` — {"utc": {"committed": "2027-02-24T10:33:00Z", "live": "2027-02-24T20:05:00Z"}}
+- `868296` — {"utc": {"committed": "2027-02-25T10:33:00Z", "live": "2027-02-25T20:05:00Z"}}
+- `868292` — {"utc": {"committed": "2027-02-26T08:33:00Z", "live": "2027-02-26T20:10:00Z"}}
+- `868284` — {"utc": {"committed": "2027-02-26T10:33:00Z", "live": "2027-02-26T20:05:00Z"}}
+- `868277` — {"utc": {"committed": "2027-02-27T10:33:00Z", "live": "2027-02-27T20:05:00Z"}}
+- `868267` — {"utc": {"committed": "2027-02-28T10:33:00Z", "live": "2027-02-28T20:05:00Z"}}
+- `868271` — {"utc": {"committed": "2027-03-01T10:33:00Z", "live": "2027-03-01T20:05:00Z"}}
+- `868261` — {"utc": {"committed": "2027-03-02T10:33:00Z", "live": "2027-03-02T20:05:00Z"}}
+- `868249` — {"utc": {"committed": "2027-03-03T10:33:00Z", "live": "2027-03-04T01:05:00Z"}}
+- `868255` — {"utc": {"committed": "2027-03-03T20:05:00Z", "live": "2027-03-04T01:10:00Z"}}
+- `868251` — {"utc": {"committed": "2027-03-04T10:33:00Z", "live": "2027-03-04T20:05:00Z"}}
+- `868244` — {"utc": {"committed": "2027-03-05T10:33:00Z", "live": "2027-03-05T20:05:00Z"}}
+- `868223` — {"utc": {"committed": "2027-03-06T10:33:00Z", "live": "2027-03-06T20:05:00Z"}}
+- `868226` — {"utc": {"committed": "2027-03-07T10:33:00Z", "live": "2027-03-07T20:05:00Z"}}
+- `868211` — {"utc": {"committed": "2027-03-08T10:33:00Z", "live": "2027-03-08T20:05:00Z"}}
+- `868219` — {"utc": {"committed": "2027-03-09T10:33:00Z", "live": "2027-03-09T20:05:00Z"}}
+- `868201` — {"utc": {"committed": "2027-03-10T10:33:00Z", "live": "2027-03-10T20:05:00Z"}}
+- `868208` — {"utc": {"committed": "2027-03-11T10:33:00Z", "live": "2027-03-11T20:05:00Z"}}
+- `868185` — {"utc": {"committed": "2027-03-12T10:33:00Z", "live": "2027-03-13T01:05:00Z"}}
+- `868179` — {"utc": {"committed": "2027-03-13T11:33:00Z", "live": "2027-03-13T21:05:00Z"}}
+- `868172` — {"utc": {"committed": "2027-03-14T10:33:00Z", "live": "2027-03-14T20:05:00Z"}}
+- `868163` — {"utc": {"committed": "2027-03-15T10:33:00Z", "live": "2027-03-16T00:05:00Z"}}
+- `868159` — {"utc": {"committed": "2027-03-16T10:33:00Z", "live": "2027-03-17T01:05:00Z"}}
+- `868154` — {"utc": {"committed": "2027-03-17T10:33:00Z", "live": "2027-03-17T20:05:00Z"}}
+- `868156` — {"utc": {"committed": "2027-03-18T01:05:00Z", "live": "2027-03-18T01:10:00Z"}}
+- `868155` — {"utc": {"committed": "2027-03-18T10:33:00Z", "live": "2027-03-19T00:05:00Z"}}
+- `868149` — {"utc": {"committed": "2027-03-19T01:05:00Z", "live": "2027-03-19T01:10:00Z"}}
+- `868132` — {"utc": {"committed": "2027-03-19T10:33:00Z", "live": "2027-03-20T01:05:00Z"}}
+- `868131` — {"utc": {"committed": "2027-03-20T10:33:00Z", "live": "2027-03-20T19:05:00Z"}}
+- `853235` — {"utc": {"committed": "2027-03-25T08:33:00Z", "live": "2027-03-25T18:10:00Z"}}
+- `853225` — {"utc": {"committed": "2027-03-27T08:33:00Z", "live": "2027-03-27T23:10:00Z"}}
+- `854120` — {"utc": {"committed": "2027-03-27T08:33:00Z", "live": "2027-03-27T23:15:00Z"}}
+- `853389` — {"utc": {"committed": "2027-03-27T10:33:00Z", "live": "2027-03-27T23:15:00Z"}}
+- `853222` — {"utc": {"committed": "2027-03-28T08:33:00Z", "live": "2027-03-28T18:10:00Z"}}
+- `853223` — {"utc": {"committed": "2027-03-29T08:33:00Z", "live": "2027-03-29T23:40:00Z"}}
+- `853228` — {"utc": {"committed": "2027-03-30T08:33:00Z", "live": "2027-03-30T23:40:00Z"}}
+- `853230` — {"utc": {"committed": "2027-03-31T08:33:00Z", "live": "2027-03-31T17:40:00Z"}}
+- `852345` — {"utc": {"committed": "2027-04-01T08:33:00Z", "live": "2027-04-01T21:10:00Z"}}
+- `853801` — {"utc": {"committed": "2027-04-01T09:33:00Z", "live": "2027-04-01T20:10:00Z"}}
+- `852347` — {"utc": {"committed": "2027-04-02T08:33:00Z", "live": "2027-04-03T00:10:00Z"}}
+- `853799` — {"utc": {"committed": "2027-04-02T09:33:00Z", "live": "2027-04-03T00:40:00Z"}}
+- `853470` — {"utc": {"committed": "2027-04-02T10:33:00Z", "live": "2027-04-02T22:38:00Z"}}
+- `852343` — {"utc": {"committed": "2027-04-03T08:33:00Z", "live": "2027-04-03T23:10:00Z"}}
+- `853798` — {"utc": {"committed": "2027-04-03T09:33:00Z", "live": "2027-04-04T00:10:00Z"}}
+- `853473` — {"utc": {"committed": "2027-04-03T10:33:00Z", "live": "2027-04-03T22:38:00Z"}}
+- `852351` — {"utc": {"committed": "2027-04-04T08:33:00Z", "live": "2027-04-04T18:40:00Z"}}
+- `853800` — {"utc": {"committed": "2027-04-04T09:33:00Z", "live": "2027-04-04T19:10:00Z"}}
+- `853476` — {"utc": {"committed": "2027-04-04T10:33:00Z", "live": "2027-04-04T20:07:00Z"}}
+- `853795` — {"utc": {"committed": "2027-04-05T09:33:00Z", "live": "2027-04-06T00:40:00Z"}}
+- `853475` — {"utc": {"committed": "2027-04-05T10:33:00Z", "live": "2027-04-05T22:38:00Z"}}
+- `852327` — {"utc": {"committed": "2027-04-06T08:33:00Z", "live": "2027-04-07T00:10:00Z"}}
+- `853797` — {"utc": {"committed": "2027-04-06T09:33:00Z", "live": "2027-04-07T00:40:00Z"}}
+- `853468` — {"utc": {"committed": "2027-04-06T10:33:00Z", "live": "2027-04-06T22:38:00Z"}}
+- `852326` — {"utc": {"committed": "2027-04-07T08:33:00Z", "live": "2027-04-08T00:10:00Z"}}
+- `853796` — {"utc": {"committed": "2027-04-07T09:33:00Z", "live": "2027-04-07T19:10:00Z"}}
+- `853465` — {"utc": {"committed": "2027-04-07T10:33:00Z", "live": "2027-04-07T20:07:00Z"}}
+- `852325` — {"utc": {"committed": "2027-04-08T08:33:00Z", "live": "2027-04-08T18:40:00Z"}}
+- `853226` — {"utc": {"committed": "2027-04-09T08:33:00Z", "live": "2027-04-09T23:40:00Z"}}
+- `853224` — {"utc": {"committed": "2027-04-10T08:33:00Z", "live": "2027-04-10T20:10:00Z"}}
+- `853234` — {"utc": {"committed": "2027-04-11T08:33:00Z", "live": "2027-04-11T18:10:00Z"}}
+- `853231` — {"utc": {"committed": "2027-04-12T08:33:00Z", "live": "2027-04-12T23:40:00Z"}}
+- `853232` — {"utc": {"committed": "2027-04-13T08:33:00Z", "live": "2027-04-13T23:40:00Z"}}
+- `853233` — {"utc": {"committed": "2027-04-14T08:33:00Z", "live": "2027-04-14T23:40:00Z"}}
+- `853227` — {"utc": {"committed": "2027-04-15T08:33:00Z", "live": "2027-04-15T17:40:00Z"}}
+- `852331` — {"utc": {"committed": "2027-04-16T08:33:00Z", "live": "2027-04-17T00:10:00Z"}}
+- `853794` — {"utc": {"committed": "2027-04-16T09:33:00Z", "live": "2027-04-17T00:40:00Z"}}
+- `853466` — {"utc": {"committed": "2027-04-16T10:33:00Z", "live": "2027-04-16T22:38:00Z"}}
+- `852334` — {"utc": {"committed": "2027-04-17T08:33:00Z", "live": "2027-04-17T23:10:00Z"}}
+- `853792` — {"utc": {"committed": "2027-04-17T09:33:00Z", "live": "2027-04-17T19:10:00Z"}}
+- `852574` — {"utc": {"committed": "2027-04-17T10:33:00Z", "live": "2027-04-17T23:15:00Z"}}
+- `853472` — {"utc": {"committed": "2027-04-17T10:33:00Z", "live": "2027-04-17T22:38:00Z"}}
+- `852901` — {"utc": {"committed": "2027-04-17T22:05:00Z", "live": "2027-04-17T23:15:00Z"}}
+- `852333` — {"utc": {"committed": "2027-04-18T08:33:00Z", "live": "2027-04-18T18:40:00Z"}}
+- `853793` — {"utc": {"committed": "2027-04-18T09:33:00Z", "live": "2027-04-18T19:10:00Z"}}
+- `853474` — {"utc": {"committed": "2027-04-18T10:33:00Z", "live": "2027-04-18T20:07:00Z"}}
+- `852337` — {"utc": {"committed": "2027-04-19T08:33:00Z", "live": "2027-04-20T00:10:00Z"}}
+- `853477` — {"utc": {"committed": "2027-04-19T10:33:00Z", "live": "2027-04-19T22:38:00Z"}}
+- `852338` — {"utc": {"committed": "2027-04-20T08:33:00Z", "live": "2027-04-21T00:10:00Z"}}
+- `853791` — {"utc": {"committed": "2027-04-20T09:33:00Z", "live": "2027-04-21T00:40:00Z"}}
+- `853469` — {"utc": {"committed": "2027-04-20T10:33:00Z", "live": "2027-04-20T22:38:00Z"}}
+- `852328` — {"utc": {"committed": "2027-04-21T08:33:00Z", "live": "2027-04-21T18:40:00Z"}}
+- `853790` — {"utc": {"committed": "2027-04-21T09:33:00Z", "live": "2027-04-22T00:40:00Z"}}
+- `853789` — {"utc": {"committed": "2027-04-22T09:33:00Z", "live": "2027-04-22T19:10:00Z"}}
+- `853211` — {"utc": {"committed": "2027-04-23T08:33:00Z", "live": "2027-04-23T23:40:00Z"}}
+- `853471` — {"utc": {"committed": "2027-04-23T10:33:00Z", "live": "2027-04-23T22:38:00Z"}}
+- `853705` — {"utc": {"committed": "2027-04-24T07:33:00Z", "live": "2027-04-24T23:15:00Z"}}
+- `853873` — {"utc": {"committed": "2027-04-24T07:33:00Z", "live": "2027-04-24T23:15:00Z"}}
+- `853220` — {"utc": {"committed": "2027-04-24T08:33:00Z", "live": "2027-04-24T23:10:00Z"}}
+- `853456` — {"utc": {"committed": "2027-04-24T10:33:00Z", "live": "2027-04-24T22:38:00Z"}}
+- `853145` — {"utc": {"committed": "2027-04-24T23:10:00Z", "live": "2027-04-24T23:15:00Z"}}
+- `853209` — {"utc": {"committed": "2027-04-25T08:33:00Z", "live": "2027-04-25T18:10:00Z"}}
+- `853454` — {"utc": {"committed": "2027-04-25T10:33:00Z", "live": "2027-04-25T20:07:00Z"}}
+- `852332` — {"utc": {"committed": "2027-04-29T08:33:00Z", "live": "2027-04-30T00:10:00Z"}}
+- `852336` — {"utc": {"committed": "2027-04-30T08:33:00Z", "live": "2027-05-01T00:10:00Z"}}
+- `853219` — {"utc": {"committed": "2027-04-30T08:33:00Z", "live": "2027-04-30T23:40:00Z"}}
+- `853788` — {"utc": {"committed": "2027-04-30T09:33:00Z", "live": "2027-05-01T00:40:00Z"}}
+- `852324` — {"utc": {"committed": "2027-05-01T08:33:00Z", "live": "2027-05-01T23:10:00Z"}}
+- `853216` — {"utc": {"committed": "2027-05-01T08:33:00Z", "live": "2027-05-01T23:10:00Z"}}
+- `853787` — {"utc": {"committed": "2027-05-01T09:33:00Z", "live": "2027-05-02T00:10:00Z"}}
+- `852330` — {"utc": {"committed": "2027-05-02T08:33:00Z", "live": "2027-05-02T18:40:00Z"}}
+- `853213` — {"utc": {"committed": "2027-05-02T08:33:00Z", "live": "2027-05-02T18:10:00Z"}}
+- `853786` — {"utc": {"committed": "2027-05-02T09:33:00Z", "live": "2027-05-02T19:10:00Z"}}
+- `852329` — {"utc": {"committed": "2027-05-03T08:33:00Z", "live": "2027-05-04T00:10:00Z"}}
+- `853210` — {"utc": {"committed": "2027-05-03T08:33:00Z", "live": "2027-05-03T23:40:00Z"}}
+- `853784` — {"utc": {"committed": "2027-05-03T09:33:00Z", "live": "2027-05-04T00:40:00Z"}}
+- `853458` — {"utc": {"committed": "2027-05-03T10:33:00Z", "live": "2027-05-03T22:38:00Z"}}
+- `852335` — {"utc": {"committed": "2027-05-04T08:33:00Z", "live": "2027-05-05T00:10:00Z"}}
+- `853221` — {"utc": {"committed": "2027-05-04T08:33:00Z", "live": "2027-05-04T23:40:00Z"}}
+- `853785` — {"utc": {"committed": "2027-05-04T09:33:00Z", "live": "2027-05-05T00:40:00Z"}}
+- `853463` — {"utc": {"committed": "2027-05-04T10:33:00Z", "live": "2027-05-04T22:38:00Z"}}
+- `852319` — {"utc": {"committed": "2027-05-05T08:33:00Z", "live": "2027-05-06T00:10:00Z"}}
+- `853218` — {"utc": {"committed": "2027-05-05T08:33:00Z", "live": "2027-05-05T17:40:00Z"}}
+- `853783` — {"utc": {"committed": "2027-05-05T09:33:00Z", "live": "2027-05-05T19:10:00Z"}}
+- `853462` — {"utc": {"committed": "2027-05-05T10:33:00Z", "live": "2027-05-05T22:38:00Z"}}
+- `852317` — {"utc": {"committed": "2027-05-06T08:33:00Z", "live": "2027-05-06T18:40:00Z"}}
+- `853464` — {"utc": {"committed": "2027-05-06T10:33:00Z", "live": "2027-05-06T20:07:00Z"}}
+- `853453` — {"utc": {"committed": "2027-05-10T10:33:00Z", "live": "2027-05-10T22:38:00Z"}}
+- `853460` — {"utc": {"committed": "2027-05-11T10:33:00Z", "live": "2027-05-11T22:38:00Z"}}
+- `853457` — {"utc": {"committed": "2027-05-12T10:33:00Z", "live": "2027-05-12T20:07:00Z"}}
+- `852320` — {"utc": {"committed": "2027-05-14T08:33:00Z", "live": "2027-05-15T00:10:00Z"}}
+- `853215` — {"utc": {"committed": "2027-05-14T08:33:00Z", "live": "2027-05-14T23:40:00Z"}}
+- `853781` — {"utc": {"committed": "2027-05-14T09:33:00Z", "live": "2027-05-15T00:40:00Z"}}
+- `853459` — {"utc": {"committed": "2027-05-14T10:33:00Z", "live": "2027-05-14T22:38:00Z"}}
+- `852318` — {"utc": {"committed": "2027-05-15T08:33:00Z", "live": "2027-05-15T23:10:00Z"}}
+- `853214` — {"utc": {"committed": "2027-05-15T08:33:00Z", "live": "2027-05-15T23:10:00Z"}}
+- `853780` — {"utc": {"committed": "2027-05-15T09:33:00Z", "live": "2027-05-16T00:10:00Z"}}
+- `853452` — {"utc": {"committed": "2027-05-15T10:33:00Z", "live": "2027-05-15T22:38:00Z"}}
+- `852316` — {"utc": {"committed": "2027-05-16T08:33:00Z", "live": "2027-05-16T18:40:00Z"}}
+- `853212` — {"utc": {"committed": "2027-05-16T08:33:00Z", "live": "2027-05-16T18:10:00Z"}}
+- `853782` — {"utc": {"committed": "2027-05-16T09:33:00Z", "live": "2027-05-16T19:10:00Z"}}
+- `853461` — {"utc": {"committed": "2027-05-16T10:33:00Z", "live": "2027-05-16T20:07:00Z"}}
+- `853217` — {"utc": {"committed": "2027-05-17T08:33:00Z", "live": "2027-05-17T23:40:00Z"}}
+- `853777` — {"utc": {"committed": "2027-05-17T09:33:00Z", "live": "2027-05-18T00:40:00Z"}}
+- `852323` — {"utc": {"committed": "2027-05-18T08:33:00Z", "live": "2027-05-19T00:10:00Z"}}
+- `853195` — {"utc": {"committed": "2027-05-18T08:33:00Z", "live": "2027-05-18T17:40:00Z"}}
+- `853778` — {"utc": {"committed": "2027-05-18T09:33:00Z", "live": "2027-05-19T00:40:00Z"}}
+- `852321` — {"utc": {"committed": "2027-05-19T08:33:00Z", "live": "2027-05-20T00:10:00Z"}}
+- `853206` — {"utc": {"committed": "2027-05-19T08:33:00Z", "live": "2027-05-19T23:40:00Z"}}
+- `853779` — {"utc": {"committed": "2027-05-19T09:33:00Z", "live": "2027-05-19T19:10:00Z"}}
+- `852322` — {"utc": {"committed": "2027-05-20T08:33:00Z", "live": "2027-05-20T18:40:00Z"}}
+- `853197` — {"utc": {"committed": "2027-05-20T08:33:00Z", "live": "2027-05-20T17:40:00Z"}}
+- `853774` — {"utc": {"committed": "2027-05-25T09:33:00Z", "live": "2027-05-26T00:40:00Z"}}
+- `853775` — {"utc": {"committed": "2027-05-26T09:33:00Z", "live": "2027-05-27T00:40:00Z"}}
+- `853776` — {"utc": {"committed": "2027-05-27T09:33:00Z", "live": "2027-05-27T19:10:00Z"}}
+- `852309` — {"utc": {"committed": "2027-05-28T08:33:00Z", "live": "2027-05-29T00:10:00Z"}}
+- `853205` — {"utc": {"committed": "2027-05-28T08:33:00Z", "live": "2027-05-28T23:40:00Z"}}
+- `853455` — {"utc": {"committed": "2027-05-28T10:33:00Z", "live": "2027-05-28T22:38:00Z"}}
+- `852303` — {"utc": {"committed": "2027-05-29T08:33:00Z", "live": "2027-05-29T20:10:00Z"}}
+- `853202` — {"utc": {"committed": "2027-05-29T08:33:00Z", "live": "2027-05-29T20:10:00Z"}}
+- `853444` — {"utc": {"committed": "2027-05-29T10:33:00Z", "live": "2027-05-29T23:07:00Z"}}
+- `852306` — {"utc": {"committed": "2027-05-30T08:33:00Z", "live": "2027-05-30T18:40:00Z"}}
+- `853207` — {"utc": {"committed": "2027-05-30T08:33:00Z", "live": "2027-05-30T18:10:00Z"}}
+- `853448` — {"utc": {"committed": "2027-05-30T10:33:00Z", "live": "2027-05-30T20:07:00Z"}}
+- `852302` — {"utc": {"committed": "2027-05-31T08:33:00Z", "live": "2027-05-31T20:10:00Z"}}
+- `853204` — {"utc": {"committed": "2027-05-31T08:33:00Z", "live": "2027-05-31T18:10:00Z"}}
+- `853438` — {"utc": {"committed": "2027-05-31T10:33:00Z", "live": "2027-05-31T22:38:00Z"}}
+- `852312` — {"utc": {"committed": "2027-06-01T08:33:00Z", "live": "2027-06-02T00:10:00Z"}}
+- `853201` — {"utc": {"committed": "2027-06-01T08:33:00Z", "live": "2027-06-01T23:40:00Z"}}
+- `853439` — {"utc": {"committed": "2027-06-01T10:33:00Z", "live": "2027-06-01T22:38:00Z"}}
+- `852305` — {"utc": {"committed": "2027-06-02T08:33:00Z", "live": "2027-06-03T00:10:00Z"}}
+- `853199` — {"utc": {"committed": "2027-06-02T08:33:00Z", "live": "2027-06-02T17:40:00Z"}}
+- `853440` — {"utc": {"committed": "2027-06-02T10:33:00Z", "live": "2027-06-02T20:07:00Z"}}
+- `853772` — {"utc": {"committed": "2027-06-04T09:33:00Z", "live": "2027-06-05T00:40:00Z"}}
+- `853449` — {"utc": {"committed": "2027-06-04T10:33:00Z", "live": "2027-06-04T22:38:00Z"}}
+- `853446` — {"utc": {"committed": "2027-06-05T10:33:00Z", "live": "2027-06-05T23:07:00Z"}}
+- `853771` — {"utc": {"committed": "2027-06-06T09:33:00Z", "live": "2027-06-06T19:10:00Z"}}
+- `853447` — {"utc": {"committed": "2027-06-06T10:33:00Z", "live": "2027-06-06T20:07:00Z"}}
+- `853773` — {"utc": {"committed": "2027-06-07T09:33:00Z", "live": "2027-06-08T00:40:00Z"}}
+- `853769` — {"utc": {"committed": "2027-06-08T09:33:00Z", "live": "2027-06-09T00:40:00Z"}}
+- `853768` — {"utc": {"committed": "2027-06-09T09:33:00Z", "live": "2027-06-09T19:10:00Z"}}
+- `852307` — {"utc": {"committed": "2027-06-11T08:33:00Z", "live": "2027-06-12T00:10:00Z"}}
+- `853198` — {"utc": {"committed": "2027-06-11T08:33:00Z", "live": "2027-06-11T23:40:00Z"}}
+- `852304` — {"utc": {"committed": "2027-06-12T08:33:00Z", "live": "2027-06-12T20:10:00Z"}}
+- `853200` — {"utc": {"committed": "2027-06-12T08:33:00Z", "live": "2027-06-12T20:10:00Z"}}
+- `852310` — {"utc": {"committed": "2027-06-13T08:33:00Z", "live": "2027-06-13T18:40:00Z"}}
+- `853196` — {"utc": {"committed": "2027-06-13T08:33:00Z", "live": "2027-06-13T18:10:00Z"}}
+- `852314` — {"utc": {"committed": "2027-06-14T08:33:00Z", "live": "2027-06-15T00:10:00Z"}}
+- `853203` — {"utc": {"committed": "2027-06-14T08:33:00Z", "live": "2027-06-14T23:40:00Z"}}
+- `853451` — {"utc": {"committed": "2027-06-14T10:33:00Z", "live": "2027-06-14T22:38:00Z"}}
+- `852315` — {"utc": {"committed": "2027-06-15T08:33:00Z", "live": "2027-06-16T00:10:00Z"}}
+- `853208` — {"utc": {"committed": "2027-06-15T08:33:00Z", "live": "2027-06-15T23:40:00Z"}}
+- `853445` — {"utc": {"committed": "2027-06-15T10:33:00Z", "live": "2027-06-15T22:38:00Z"}}
+- `852308` — {"utc": {"committed": "2027-06-16T08:33:00Z", "live": "2027-06-16T18:40:00Z"}}
+- `853187` — {"utc": {"committed": "2027-06-16T08:33:00Z", "live": "2027-06-16T18:10:00Z"}}
+- `853441` — {"utc": {"committed": "2027-06-16T10:33:00Z", "live": "2027-06-16T22:38:00Z"}}
+- `852301` — {"utc": {"committed": "2027-06-18T08:33:00Z", "live": "2027-06-19T00:10:00Z"}}
+- `853767` — {"utc": {"committed": "2027-06-18T09:33:00Z", "live": "2027-06-19T00:40:00Z"}}
+- `852311` — {"utc": {"committed": "2027-06-19T08:33:00Z", "live": "2027-06-19T20:10:00Z"}}
+- `852313` — {"utc": {"committed": "2027-06-20T08:33:00Z", "live": "2027-06-20T18:40:00Z"}}
+- `853766` — {"utc": {"committed": "2027-06-20T09:33:00Z", "live": "2027-06-20T19:10:00Z"}}
+- `853764` — {"utc": {"committed": "2027-06-21T09:33:00Z", "live": "2027-06-22T00:40:00Z"}}
+- `853442` — {"utc": {"committed": "2027-06-21T10:33:00Z", "live": "2027-06-21T22:38:00Z"}}
+- `853763` — {"utc": {"committed": "2027-06-22T09:33:00Z", "live": "2027-06-23T00:40:00Z"}}
+- `853443` — {"utc": {"committed": "2027-06-22T10:33:00Z", "live": "2027-06-22T22:38:00Z"}}
+- `853762` — {"utc": {"committed": "2027-06-23T09:33:00Z", "live": "2027-06-23T19:10:00Z"}}
+
+### MLB 2027 — added (2)
+
+- `872833` — {"date": "2027-03-22", "utc": "2027-03-23T00:10:00Z", "away": "Chicago White Sox", "home": "Texas Rangers", "type": "S", "venue": "Globe Life Field"}
+- `872834` — {"date": "2027-03-23", "utc": "2027-03-23T18:10:00Z", "away": "Chicago White Sox", "home": "Texas Rangers", "type": "S", "venue": "Globe Life Field"}
+
+### Westwood One — changed (63)
+
+- `w1-472246` — {"datePT": {"committed": "2025-03-19", "live": null}, "startPT": {"committed": "15:30", "live": null}, "endPT": {"committed": "18:10", "live": null}}
+- `w1-472677` — {"datePT": {"committed": "2025-03-20", "live": null}, "startPT": {"committed": "19:30", "live": null}, "endPT": {"committed": "22:00", "live": null}}
+- `w1-472790` — {"datePT": {"committed": "2025-03-21", "live": null}, "startPT": {"committed": "08:00", "live": null}, "endPT": {"committed": "22:30", "live": null}}
+- `w1-473180` — {"datePT": {"committed": "2025-03-22", "live": null}, "startPT": {"committed": "14:15", "live": null}, "endPT": {"committed": "16:45", "live": null}}
+- `w1-473181` — {"datePT": {"committed": "2025-03-22", "live": null}, "startPT": {"committed": "15:00", "live": null}, "endPT": {"committed": "17:30", "live": null}}
+- `w1-473182` — {"datePT": {"committed": "2025-03-22", "live": null}, "startPT": {"committed": "16:00", "live": null}, "endPT": {"committed": "18:30", "live": null}}
+- `w1-473183` — {"datePT": {"committed": "2025-03-22", "live": null}, "startPT": {"committed": "17:15", "live": null}, "endPT": {"committed": "19:45", "live": null}}
+- `w1-473184` — {"datePT": {"committed": "2025-03-22", "live": null}, "startPT": {"committed": "17:35", "live": null}, "endPT": {"committed": "20:05", "live": null}}
+- `w1-473185` — {"datePT": {"committed": "2025-03-22", "live": null}, "startPT": {"committed": "18:45", "live": null}, "endPT": {"committed": "21:15", "live": null}}
+- `w1-474485` — {"datePT": {"committed": "2025-04-05", "live": null}, "startPT": {"committed": "12:00", "live": null}, "endPT": {"committed": "21:30", "live": null}}
+- `w1-474486` — {"datePT": {"committed": "2025-04-05", "live": null}, "startPT": {"committed": "15:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-475680` — {"datePT": {"committed": "2025-04-06", "live": null}, "startPT": {"committed": "11:30", "live": null}, "endPT": {"committed": "15:00", "live": null}}
+- `w1-475732` — {"datePT": {"committed": "2025-04-07", "live": null}, "startPT": {"committed": "15:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-482640` — {"datePT": {"committed": "2025-06-14", "live": null}, "startPT": {"committed": "15:40", "live": null}, "endPT": {"committed": "19:40", "live": null}}
+- `w1-481883` — {"datePT": {"committed": "2025-07-02", "live": null}, "startPT": {"committed": "16:15", "live": null}, "endPT": {"committed": "19:00", "live": null}}
+- `w1-478876` — {"datePT": {"committed": "2025-07-31", "live": null}, "startPT": {"committed": "17:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-481831` — {"datePT": {"committed": "2025-09-04", "live": null}, "startPT": {"committed": "16:00", "live": null}, "endPT": {"committed": "22:00", "live": null}}
+- `w1-495427` — {"datePT": {"committed": "2025-09-06", "live": null}, "startPT": {"committed": "14:00", "live": null}, "endPT": {"committed": "16:30", "live": null}}
+- `w1-504718` — {"datePT": {"committed": "2025-09-27", "live": null}, "startPT": {"committed": "04:00", "live": null}, "endPT": {"committed": "15:00", "live": null}}
+- `w1-504719` — {"datePT": {"committed": "2025-09-28", "live": null}, "startPT": {"committed": "09:00", "live": null}, "endPT": {"committed": "16:00", "live": null}}
+- `w1-495433` — {"datePT": {"committed": "2025-10-10", "live": null}, "startPT": {"committed": "17:30", "live": null}, "endPT": {"committed": "20:00", "live": null}}
+- `w1-495434` — {"datePT": {"committed": "2025-10-14", "live": null}, "startPT": {"committed": "17:45", "live": null}, "endPT": {"committed": "20:30", "live": null}}
+- `w1-482699` — {"datePT": {"committed": "2025-10-20", "live": null}, "startPT": {"committed": "18:45", "live": null}, "endPT": {"committed": "22:45", "live": null}}
+- `w1-482700` — {"datePT": {"committed": "2025-10-23", "live": null}, "startPT": {"committed": "16:30", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-482701` — {"datePT": {"committed": "2025-10-26", "live": null}, "startPT": {"committed": "16:30", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-482703` — {"datePT": {"committed": "2025-10-27", "live": null}, "startPT": {"committed": "16:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-482704` — {"datePT": {"committed": "2025-10-30", "live": null}, "startPT": {"committed": "16:30", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-482705` — {"datePT": {"committed": "2025-11-02", "live": null}, "startPT": {"committed": "16:30", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-482706` — {"datePT": {"committed": "2025-11-03", "live": null}, "startPT": {"committed": "16:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-482707` — {"datePT": {"committed": "2025-11-06", "live": null}, "startPT": {"committed": "16:30", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-484933` — {"datePT": {"committed": "2025-11-29", "live": null}, "startPT": {"committed": "08:30", "live": null}, "endPT": {"committed": "13:00", "live": null}}
+- `w1-484934` — {"datePT": {"committed": "2025-12-06", "live": null}, "startPT": {"committed": "12:30", "live": null}, "endPT": {"committed": "17:30", "live": null}}
+- `w1-534931` — {"datePT": {"committed": "2026-03-10", "live": null}, "startPT": {"committed": "17:45", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-534933` — {"datePT": {"committed": "2026-03-11", "live": null}, "startPT": {"committed": "15:45", "live": null}, "endPT": {"committed": "18:45", "live": null}}
+- `w1-534935` — {"datePT": {"committed": "2026-03-13", "live": null}, "startPT": {"committed": "14:15", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-534938` — {"datePT": {"committed": "2026-03-14", "live": null}, "startPT": {"committed": "07:45", "live": null}, "endPT": {"committed": "10:45", "live": null}}
+- `w1-536699` — {"datePT": {"committed": "2026-03-19", "live": null}, "startPT": {"committed": "13:15", "live": null}, "endPT": {"committed": "15:45", "live": null}}
+- `w1-536714` — {"datePT": {"committed": "2026-03-19", "live": null}, "startPT": {"committed": "13:15", "live": null}, "endPT": {"committed": "15:50", "live": null}}
+- `w1-536675` — {"datePT": {"committed": "2026-03-19", "live": null}, "startPT": {"committed": "15:40", "live": null}, "endPT": {"committed": "18:25", "live": null}}
+- `w1-536700` — {"datePT": {"committed": "2026-03-19", "live": null}, "startPT": {"committed": "16:20", "live": null}, "endPT": {"committed": "18:45", "live": null}}
+- `w1-536721` — {"datePT": {"committed": "2026-03-21", "live": null}, "startPT": {"committed": "08:00", "live": null}, "endPT": {"committed": "23:00", "live": null}, "venue": {"committed": null, "live": ""}}
+- `w1-536702` — {"datePT": {"committed": "2026-03-21", "live": null}, "startPT": {"committed": "09:05", "live": null}, "endPT": {"committed": "11:30", "live": null}}
+- `w1-536703` — {"datePT": {"committed": "2026-03-21", "live": null}, "startPT": {"committed": "11:35", "live": null}, "endPT": {"committed": "14:30", "live": null}}
+- `w1-537963` — {"datePT": {"committed": "2026-03-27", "live": null}, "startPT": {"committed": "11:00", "live": null}, "endPT": {"committed": "14:00", "live": null}}
+- `w1-537964` — {"datePT": {"committed": "2026-03-27", "live": null}, "startPT": {"committed": "14:00", "live": null}, "endPT": {"committed": "16:45", "live": null}}
+- `w1-536759` — {"datePT": {"committed": "2026-03-27", "live": null}, "startPT": {"committed": "15:00", "live": null}, "endPT": {"committed": "22:30", "live": null}, "venue": {"committed": null, "live": ""}}
+- `w1-536769` — {"datePT": {"committed": "2026-03-27", "live": null}, "startPT": {"committed": "16:00", "live": null}, "endPT": {"committed": "19:00", "live": null}}
+- `w1-536773` — {"datePT": {"committed": "2026-03-27", "live": null}, "startPT": {"committed": "16:25", "live": null}, "endPT": {"committed": "19:20", "live": null}}
+- `w1-537977` — {"datePT": {"committed": "2026-04-03", "live": null}, "startPT": {"committed": "18:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-536776` — {"datePT": {"committed": "2026-04-04", "live": null}, "startPT": {"committed": "12:00", "live": null}, "endPT": {"committed": "18:00", "live": null}}
+- `w1-538832` — {"datePT": {"committed": "2026-04-04", "live": null}, "startPT": {"committed": "15:00", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-535853` — {"datePT": {"committed": "2026-04-08", "live": null}, "startPT": {"committed": "19:00", "live": null}, "endPT": {"committed": "20:00", "live": null}}
+- `w1-548150` — {"datePT": {"committed": "2026-05-23", "live": null}, "startPT": {"committed": "11:30", "live": null}, "endPT": {"committed": "14:30", "live": null}}
+- `w1-550220` — {"datePT": {"committed": "2026-05-31", "live": null}, "startPT": {"committed": "12:00", "live": null}, "endPT": {"committed": "15:45", "live": null}}
+- `w1-545726` — {"datePT": {"committed": "2026-05-31", "live": null}, "startPT": {"committed": "12:15", "live": null}, "endPT": {"committed": "15:00", "live": null}}
+- `w1-550221` — {"datePT": {"committed": "2026-05-31", "live": null}, "startPT": {"committed": "16:00", "live": null}, "endPT": {"committed": "19:00", "live": null}}
+- `w1-550222` — {"datePT": {"committed": "2026-06-01", "live": null}, "startPT": {"committed": "09:00", "live": null}, "endPT": {"committed": "11:29", "live": null}}
+- `w1-550224` — {"datePT": {"committed": "2026-06-01", "live": null}, "startPT": {"committed": "12:00", "live": null}, "endPT": {"committed": "15:30", "live": null}}
+- `w1-545727` — {"datePT": {"committed": "2026-06-06", "live": null}, "startPT": {"committed": "11:15", "live": null}, "endPT": {"committed": "14:00", "live": null}}
+- `w1-551551` — {"datePT": {"committed": "2026-06-06", "live": null}, "startPT": {"committed": "14:30", "live": null}, "endPT": {"committed": "17:00", "live": null}}
+- `w1-551493` — {"datePT": {"committed": "2026-06-13", "live": null}, "startPT": {"committed": "16:40", "live": null}, "endPT": {"committed": "20:59", "live": null}}
+- `w1-551510` — {"datePT": {"committed": "2026-06-14", "live": null}, "startPT": {"committed": "10:40", "live": null}, "endPT": {"committed": "16:15", "live": null}}
+- `w1-551514` — {"datePT": {"committed": "2026-06-14", "live": null}, "startPT": {"committed": "15:40", "live": null}, "endPT": {"committed": "20:45", "live": null}}
+

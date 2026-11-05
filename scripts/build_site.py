@@ -28,6 +28,7 @@ NAV = [
     ("sources.html", "Sources"),
     ("flagged.html", "Flagged"),
     ("method.html", "Method"),
+    ("extra/index.html", "Official feeds &amp; verification"),
 ]
 
 
@@ -162,12 +163,12 @@ def run_txt(b):
     best = (b or {}).get("best")
     if not best:
         return "no free run"
-    return f"{fmt_range(best['start'], best['end'])} ({best['days']} nights)"
+    return f"{fmt_range(best['start'], best['end'])} ({best['days']} calendar days)"
 
 
 def ties_txt(b):
     ties = (b or {}).get("ties") or []
-    return "; ".join(f"{fmt_range(t['start'], t['end'])} ({t['days']} nights)" for t in ties) or "no free run"
+    return "; ".join(f"{fmt_range(t['start'], t['end'])} ({t['days']} calendar days)" for t in ties) or "no free run"
 
 
 def base_days(y):
@@ -201,8 +202,8 @@ def build_index():
 <a class="btn" href="vacation.html">Best vacation dates</a></div></div>
 <div class="card"><h2>The answer</h2>
 <p><strong>No 7-night stretch is free of every listed game in 2027, 2028 or 2029.</strong>
-The longest run with nothing on air is <strong>{n27} nights in 2027</strong>, <strong>{n28} nights in 2028</strong> and
-<strong>{n29} nights in 2029</strong>, all in January–February between the NFL playoff rounds and the Super Bowl.</p>
+The longest run with nothing on air is <strong>{n27} calendar days in 2027</strong>, <strong>{n28} calendar days in 2028</strong> and
+<strong>{n29} calendar days in 2029</strong>, all in January–February between the NFL playoff rounds and the Super Bowl.</p>
 <p><strong>2027:</strong> {esc(ties_txt(P[2027]['base']))}.
 If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} opens. If there is no Pro Bowl that week, {esc(run_txt(P[2027]['none']))} opens.</p>
 <p><strong>2028</strong> <span class="tag est">ESTIMATION</span>: {esc(ties_txt(P[2028]['base']))}. &nbsp; <strong>2029</strong> <span class="tag est">ESTIMATION</span>: {esc(ties_txt(P[2029]['base']))}.</p>
@@ -210,7 +211,7 @@ If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} op
 <a href="vacation.html">Dates, evidence and caveats →</a></div></section>
 
 <h2>Does a whole week fit?</h2>
-<div class="scroll"><table><thead><tr><th>Year</th><th>Longest all-games run (both Pro Bowl dates blocked)</th><th>7 nights?</th><th>14 nights?</th><th>21 nights?</th><th>If the Pro Bowl is Feb 9 only</th><th>If there is no Pro Bowl</th><th>Evidence status</th></tr></thead><tbody>
+<div class="scroll"><table><thead><tr><th>Year</th><th>Longest all-games run (both Pro Bowl dates blocked)</th><th>7 calendar days?</th><th>14 calendar days?</th><th>21 calendar days?</th><th>If the Pro Bowl is Feb 9 only</th><th>If there is no Pro Bowl</th><th>Evidence status</th></tr></thead><tbody>
 {rows_html}
 </tbody></table></div>
 <p class="small">"Nothing on the radio" = no game of the Giants, Athletics, 49ers, Stanford, Cal or Westwood One national broadcast. The all-games view also blocks every other MLB and NFL game; in these winter windows the two views give the same runs.</p>
@@ -244,10 +245,10 @@ def build_calendar():
 <p class="lede">Every day from {ANALYSIS['meta']['today']} to {ANALYSIS['meta']['horizon'][1]}, in Pacific time.
 Free time is any 30-minute-or-longer gap with no qualifying game on air.</p>
 <div class="toolbar">
-  <button id="prev">← Yesterday</button>
+  <button id="prev">← Prev</button>
   <button id="tobay">Today</button>
-  <button id="tomorrow">Tomorrow →</button>
-  <button id="next">Tomorrow +1 →</button>
+  <button id="tomorrow">Next →</button>
+  <button id="next">+2 days →</button>
   <input type="date" id="dateinput" min="{ANALYSIS['meta']['today']}" max="{ANALYSIS['meta']['horizon'][1]}">
   <span class="small">Today is <strong id="today"></strong></span>
 </div>
@@ -353,7 +354,7 @@ def build_vacation():
     rows = "".join(row_for(y) for y in (2027, 2028, 2029))
     cards = "".join(
         f'<div class="card"><h3>{y}</h3>'
-        f'<div class="kpi" style="font-size:26px">{n[y]} nights</div><small>longest all-games run (base case)</small>'
+        f'<div class="kpi" style="font-size:26px">{n[y]} calendar days</div><small>longest all-games run (base case)</small>'
         f'<p class="small" style="margin-top:10px">Pro Bowl Feb 9 only: {esc(run_txt(P[y]["onlyB"]))}. No Pro Bowl: {esc(run_txt(P[y]["none"]))}.</p></div>'
         for y in (2027, 2028, 2029))
     body = f"""
@@ -364,7 +365,7 @@ broadcast (Giants, Athletics, 49ers, Stanford, Cal, Westwood One national, and t
 
 <div class="callout flag">
 <strong>No 7-night window is free of every listed game in 2027, 2028 or 2029.</strong>
-The longest free run is {n[2027]} nights in 2027, {n[2028]} in 2028 and {n[2029]} in 2029. In 2027 the two
+The longest free run is {n[2027]} calendar days in 2027, {n[2028]} in 2028 and {n[2029]} in 2029. In 2027 the two
 6-night runs are Jan 25–30 and Feb 1–6. The 2027 Pro Bowl date is not published, so it is the one assumption that
 moves the answer (scenario table below).
 </div>

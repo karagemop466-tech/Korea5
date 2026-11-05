@@ -4,19 +4,19 @@
 **Site:** https://karagemop466-tech.github.io/Korea5/
 
 > **Supersedes** the earlier summary (`research/EXECUTIVE-SUMMARY-ef8b5b30.md`). That version recommended Feb 1–13, 2027
-> (13 nights) and counted Jan 24–30, 2027 as free. Both are corrected here: the Pro Bowl Games date is not published, so the 13-night run
+> (13 calendar days) and counted Jan 24–30, 2027 as free. Both are corrected here: the Pro Bowl Games date is not published, so the 13-night run
 > depends on it, and NFL.com lists the Divisional Playoffs on Jan 23–24, 2027.
 
 ## The answer
 
-**No 7-night stretch in 2027, 2028 or 2029 is free of every listed game.** The longest free run is **6 nights** each year. Winter is the only
+**No 7-day stretch in 2027, 2028 or 2029 is free of every listed game.** The longest free run is **6 calendar days** each year. Lengths count inclusive calendar days, not hotel nights. Winter is the only
 season with a free gap; MLB is busy almost every other day.
 
-| Year | Longest free run (base case) | If the Pro Bowl is Tue Feb 9 only | If there is no Pro Bowl that week | What is official behind it | Evidence status |
+| Year | Longest free run (base case, calendar days) | If the Pro Bowl is Tue Feb 9 only | If there is no Pro Bowl that week | What is official behind it | Evidence status |
 |---|---|---|---|---|---|
-| **2027** | **Mon Jan 25 – Sat Jan 30** or **Mon Feb 1 – Sat Feb 6** (6 nights each) | Mon Feb 1 – Mon Feb 8 (8 nights) | Mon Feb 1 – Sat Feb 13 (13 nights) | MLB 2027 season (Opening Night Mar 24, final day Sep 26) and the NFL playoff round windows (Jan 16–18, Jan 23–24, Jan 31) are official; Super Bowl LXI is Sun Feb 14 | Round windows **official**; game-day splits and the Pro Bowl date **unverified** |
-| **2028** | Mon Jan 24 – Sat Jan 29 or Mon Jan 31 – Sat Feb 5 (6 nights each) | Mon Jan 31 – Mon Feb 7 (8 nights) | Mon Jan 31 – Sat Feb 12 (13 nights) | Same calendar pattern | **ESTIMATION** — MLB 2028 and NFL 2027 schedules not released |
-| **2029** | Mon Jan 22 – Sat Jan 27 or Mon Jan 29 – Sat Feb 3 (6 nights each) | Mon Jan 29 – Mon Feb 5 (8 nights) | Mon Jan 29 – Sat Feb 10 (13 nights) | Same calendar pattern | **ESTIMATION** — neither schedule released |
+| **2027** | **Mon Jan 25 – Sat Jan 30** or **Mon Feb 1 – Sat Feb 6** (6 calendar days each) | Mon Feb 1 – Mon Feb 8 (8 calendar days) | Mon Feb 1 – Sat Feb 13 (13 calendar days) | MLB 2027 season (Opening Night Mar 24, final day Sep 26) and the NFL playoff round windows (Jan 16–18, Jan 23–24, Jan 31) are official; Super Bowl LXI is Sun Feb 14 | Round windows **official**; game-day splits and the Pro Bowl date **unverified** |
+| **2028** | Mon Jan 24 – Sat Jan 29 or Mon Jan 31 – Sat Feb 5 (6 calendar days each) | Mon Jan 31 – Mon Feb 7 (8 calendar days) | Mon Jan 31 – Sat Feb 12 (13 calendar days) | Same calendar pattern | **ESTIMATION** — MLB 2028 and NFL 2027 schedules not released |
+| **2029** | Mon Jan 22 – Sat Jan 27 or Mon Jan 29 – Sat Feb 3 (6 calendar days each) | Mon Jan 29 – Mon Feb 5 (8 calendar days) | Mon Jan 29 – Sat Feb 10 (13 calendar days) | Same calendar pattern | **ESTIMATION** — neither schedule released |
 
 Every year the free windows fall between the **Divisional / Conference playoff weekends** and the **Super Bowl**. The 6-night runs
 exist in both the all-games and radio-only views. Those two views differ elsewhere in the year (for example, many more free
@@ -40,12 +40,12 @@ guess. Westwood One carried the 2026 Pro Bowl Games (Tue Feb 3, 2026, 4:30–7:3
 
 | Scenario (2027) | Result |
 |---|---|
-| Both candidate days blocked (base) | 6 nights (Jan 25–30 or Feb 1–6) |
-| Only Feb 7 blocked | 6 nights (Jan 25–30, Feb 1–6 or Feb 8–13) |
-| Only Feb 9 blocked | 8 nights, Feb 1–8 |
-| No Pro Bowl that week | 13 nights, Feb 1–13 |
+| Both candidate days blocked (base) | 6 calendar days (Jan 25–30 or Feb 1–6) |
+| Only Feb 7 blocked | 6 calendar days (Jan 25–30, Feb 1–6 or Feb 8–13) |
+| Only Feb 9 blocked | 8 calendar days, Feb 1–8 |
+| No Pro Bowl that week | 13 calendar days, Feb 1–13 |
 
-Free-day totals (all games / radio): 2027 77 / 95, 2028 74 / 85, 2029 70 / 81. The longest run is 6 nights in all three years.
+Free-day totals (all games / radio): 2027 77 / 95, 2028 74 / 85, 2029 70 / 81. The longest run is 6 calendar days in all three years.
 
 ## What "free" means here
 
@@ -123,6 +123,6 @@ Published, with sources, on the Flagged for Review pages. They do not block publ
 
 ## Bottom line
 
-**Book Mon Jan 25 – Sat Jan 30, 2027, or Mon Feb 1 – Sat Feb 6, 2027.** Both are 6 nights, and both are the longest runs that are free of every
+**Book Mon Jan 25 – Sat Jan 30, 2027, or Mon Feb 1 – Sat Feb 6, 2027.** Both are 6 calendar days, and both are the longest runs that are free of every
 listed game in the base case. A 13-night trip (Feb 1–13) exists only if the Pro Bowl Games are not held that week. No 1-, 2- or 3-week trip is
 fully free in any year. The 2028 and 2029 equivalents are ESTIMATION only, and should be re-checked when those schedules are released.

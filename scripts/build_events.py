@@ -404,9 +404,47 @@ def nfl_calendar(year):
     return rows
 
 
+def official_superbowl(game_year):
+    """Officially published Super Bowl facts for the calendar year of the game.
+
+    Each entry was fetched live from the official page on 2026-11-05. The entry for a year
+    exists only when an official page publishes the DATE; host-only announcements (LXIII,
+    2029) are recorded here for the row title but deliberately carry no date, so those rows
+    stay dateStatus=estimated.
+    """
+    return {
+        2027: {
+            "date": "2027-02-14", "roman": "LXI", "host": "SoFi Stadium, Inglewood",
+            "url": "https://media.nfl.com/football-information/2026/news/2026-kickoff-guide",
+            "label": "2026 Kickoff Guide (NFL media) — 'Super Bowl LXI ... Sunday, February 14, 2027, at SoFi Stadium'",
+        },
+        2028: {
+            "date": "2028-02-13", "roman": "LXII", "host": "Mercedes-Benz Stadium, Atlanta",
+            "url": "https://www.mercedesbenzstadium.com/events/super-bowl-lxii",
+            "label": "Super Bowl LXII event page (Mercedes-Benz Stadium) — February 13, 2028",
+        },
+        2029: {
+            # Host official (NFL.com / media.nfl.com release, Mar 30 2026): Las Vegas, Allegiant Stadium.
+            # The exact date (reported as Feb 11, 2029) appears only in press reports of the NFL's
+            # social announcement, not on an official page — so NO "date" key here on purpose.
+            "roman": "LXIII", "host": "Allegiant Stadium, Las Vegas",
+            "url": "https://www.nfl.com/news/las-vegas-to-host-super-bowl-lxiii-in-2029",
+            "label": "Host announcement (NFL.com) — Las Vegas, Allegiant Stadium, 2029 (date TBA)",
+        },
+    }.get(game_year)
+
+
 def nfl_postseason_estimate(season_year):
-    """Estimated NFL postseason for a season: runs into January/February of season_year+1."""
-    sb = nth_weekday(season_year + 1, 2, 6, 2)
+    """Estimated NFL postseason for a season: runs into January/February of season_year+1.
+
+    Super Bowl date: the official date is used whenever an official page publishes it (see
+    official_superbowl); otherwise the second Sunday of February is an estimate.
+    """
+    official = official_superbowl(season_year + 1)
+    if official and official.get("date"):
+        sb = date.fromisoformat(official["date"])
+    else:
+        sb = nth_weekday(season_year + 1, 2, 6, 2)
     rows = []
     # Official 2026-27 NFL calendar (nfl.com/news/2026-27-national-football-league-important-dates):
     #   Wild Card Weekend Jan 16-18 2027 (Sat-Mon), Divisional Jan 23-24, Conference Championships Jan 31,
@@ -427,6 +465,15 @@ def nfl_postseason_estimate(season_year):
     ]
     for suffix, day, start, label, kind in rounds:
         allstar = kind in ("A", "B")
+        is_sb = suffix == "superbowl"
+        sb_date_official = bool(is_sb and official and official.get("date")
+                                and day.isoformat() == official["date"])
+        if is_sb and official:
+            title = f"Super Bowl {official['roman']} at {official['host']} (participants TBD)"
+        elif allstar:
+            title = label
+        else:
+            title = f"{label} (participants TBD)"
         if allstar:
             basis = ("UNVERIFIED DATE. The NFL's official 2026-27 calendar does not list the 2027 Pro Bowl Games. "
                      "Both candidate dates are blocked (conservative). Candidate A = Sunday Feb 7, from an aggregator "
@@ -435,6 +482,10 @@ def nfl_postseason_estimate(season_year):
                      "2026). Westwood One carried the 2026 Pro Bowl Games on Feb 3 2026, 4:30-7:30 PM PT, so both "
                      "candidates are also put in the radio tier. The 16:30 start and 180-minute window are that "
                      "2026 broadcast window, used as a planning block only.")
+        elif sb_date_official:
+            basis = ("Super Bowl date officially published — " + official["label"]
+                     + ". The kickoff time is not published; the 15:30 PT start and the 195-minute block "
+                       "remain planning estimates.")
         else:
             basis = ("Round window from the NFL's official 2026-27 calendar (Wild Card Jan 16-18, Divisional "
                      "Jan 23-24, Conference Championships Jan 31, Super Bowl LXI Feb 14). The day inside a "
@@ -442,7 +493,7 @@ def nfl_postseason_estimate(season_year):
                      if season_year == 2026 else
                      "Estimated from the NFL's structural calendar: the playoffs run from mid-January, with the "
                      "Super Bowl on the second Sunday of February. Matchups and times are estimated.")
-        rows.append({
+        row = {
             "id": f"nfl-est-{season_year}-{suffix}", "league": "NFL",
             "priority": "high" if not allstar else "normal",
             "tags": (["nfl", "nfl-allstar", "westwoodone", "estimate"] if allstar
@@ -450,7 +501,7 @@ def nfl_postseason_estimate(season_year):
                            else ["nfl", "estimate"])),
             "date": day.isoformat(), "start": start,
             "durationMin": 180 if allstar else DURATION["nfl-post"],
-            "title": f"{label}" + ("" if allstar else " (participants TBD)"),
+            "title": title,
             "seasonType": "special" if allstar else "postseason",
             "timeStatus": "estimated", "status": "estimated",
             "timeBasis": basis,
@@ -459,12 +510,13 @@ def nfl_postseason_estimate(season_year):
             "sourceLabel": "Official NFL 2026-27 calendar (dates) / estimated structure",
             "sourceUrl": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
                          if season_year == 2026 else "https://www.nfl.com/schedules/",
-            "dateStatus": "estimated",
-        })
-        if allstar:
-            rows[-1]["allstarCandidate"] = kind
+            "dateStatus": "verified" if sb_date_official else "estimated",
+        }
+        if sb_date_official:
+            row["dateSource"] = official["url"]
+            row["dateSourceLabel"] = official["label"]
+        rows.append(row)
     return rows
-
 
 def ncaaf_calendar(year):
     """Estimated Stanford / Cal seasons: 12 games, Saturdays, late Aug - late Nov."""

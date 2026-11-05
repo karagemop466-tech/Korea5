@@ -92,6 +92,28 @@
    "sourceName": "NFL.com: 2026-27 important dates"
   },
   {
+   "id": "A-NFL-2028-SUPER-BOWL-LXII",
+   "league": "NFL",
+   "label": "Super Bowl LXII at Mercedes-Benz Stadium, Atlanta",
+   "startDate": "2028-02-13",
+   "endDate": "2028-02-13",
+   "status": "verified",
+   "note": "Stadium official event page publishes Sunday, February 13, 2028. Kickoff time not published. Read on 2026-11-05 by the other session (arena-57f0338e) and re-read here.",
+   "sourceUrl": "https://www.mercedesbenzstadium.com/events/super-bowl-lxii",
+   "sourceName": "Mercedes-Benz Stadium: Super Bowl LXII"
+  },
+  {
+   "id": "A-NFL-2029-SUPER-BOWL-LXIII",
+   "league": "NFL",
+   "label": "Super Bowl LXIII at Allegiant Stadium, Las Vegas (host official; date not published)",
+   "startDate": null,
+   "endDate": null,
+   "status": "not-published",
+   "note": "Host announcement confirms Las Vegas / Allegiant Stadium in 2029 only. No official page found with the exact date; press reports of Sun Feb 11, 2029 are not used as a source. The model's Feb 11 2029 date stays ESTIMATION.",
+   "sourceUrl": "https://www.nfl.com/news/las-vegas-to-host-super-bowl-lxiii-in-2029",
+   "sourceName": "NFL.com: Las Vegas to host Super Bowl LXIII"
+  },
+  {
    "id": "A-NFL-2027-PRO-BOWL",
    "league": "NFL",
    "label": "2027 Pro Bowl Games date",

@@ -735,19 +735,41 @@ free days, then by fewest unverified days.</p>
 {''.join(vy_blocks)}
 <h2>Root dashboard comparison</h2>
 <p class="small">The <a href="../vacation.html">root Vacation windows page</a> answers the question directly: it reports
-the longest run with nothing on the radio (13 nights in February of each year) and the stricter all-games run
-(six nights). This page keeps the strict, verified-only view separate so the two are never mixed. Both are linked from
+the longest run with nothing on the radio: 6 nights in each year in the base case, and 8 or 13 nights if the
+unpublished 2027 Pro Bowl date falls elsewhere (scenario table on that page). This page keeps the strict, verified-only view separate so the two are never mixed. Both are linked from
 the dashboard.</p>
 '''
 (EXTRA / "vacation.html").write_text(page("Free vacation windows", "Free windows", va_body), encoding="utf-8")
 
 # ---------------------------------------------------------------- extra/summary.html
-exec_md = (ROOT / "research/EXECUTIVE-SUMMARY-ef8b5b30.md")
+exec_md = (ROOT / "research/EXECUTIVE-SUMMARY.md")
 exec_text = exec_md.read_text(encoding="utf-8") if exec_md.exists() else ""
-# Render simple markdown headings/paragraphs to HTML.
+# Render simple markdown headings/paragraphs/tables to HTML.
+import re as _re
+def inline(text: str) -> str:
+    text = esc(text)
+    text = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
+    text = _re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r'<a href="\2">\1</a>', text)
+    text = _re.sub(r"\[([^\]]+)\]\((\.\./[^)]+|[^)]+\.(?:html|md))\)", r'<a href="\2">\1</a>', text)
+    return text
 def md_to_html(md: str) -> str:
     out = []
+    in_table = False
     for line in md.splitlines():
+        if line.startswith("|"):
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            if all(set(c) <= set("-: ") for c in cells):
+                continue  # markdown separator row
+            if not in_table:
+                out.append("<div class=\"scroll\"><table>")
+                out.append("<tr>" + "".join(f"<th>{esc(c)}</th>" for c in cells) + "</tr>")
+                in_table = True
+            else:
+                out.append("<tr>" + "".join(f"<td>{inline(c)}</td>" for c in cells) + "</tr>")
+            continue
+        if in_table:
+            out.append("</table></div>")
+            in_table = False
         if line.startswith("## "):
             out.append(f"<h2>{esc(line[3:])}</h2>")
         elif line.startswith("# "):
@@ -757,7 +779,7 @@ def md_to_html(md: str) -> str:
         elif line.strip() == "":
             out.append("")
         else:
-            out.append(f"<p>{esc(line)}</p>")
+            out.append(f"<p>{inline(line)}</p>")
     return "\n".join(out)
 
 su_body = f'''<h1>Executive summary</h1>

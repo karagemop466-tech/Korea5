@@ -626,3 +626,62 @@ The only annotations were non-blocking Node.js 20 and `ubuntu-latest` migration 
 
 **Status: A1–A4 done.** No unclaimed or overlapping task remains. Flagged items (SB LXIII date, Pro Bowl 2027
 date, and all prior items) remain published on `extra/flagged.html` with official links and do not block anything.
+
+---
+
+## Session `arena/8c584f9c-korea5` — 2026-11-05
+
+Branch constraint: Arena fixes this session to `arena/8c584f9c-korea5`. No other branch will be created or pushed.
+All prior sessions' records above are preserved unchanged.
+
+### Why this session exists
+A line-by-line audit of the committed event feed found a modelling defect that contradicted both the owner's
+requirement and the site's own documented scope rule. The rule (analysis `meta.scopes.high`, the README and the
+executive summary) is: **every event carrying a user-interest tag — Giants, Athletics, 49ers, Stanford, Cal or
+Westwood One — is high priority.** In the committed feed that rule held for the *verified* 2026 rows but was
+violated for every *estimated* row: estimated Giants, Athletics and 49ers games, plus the Westwood One Thanksgiving
+windows, were tagged correctly yet left at `priority: "normal"`. That silently dropped them from the "high priority"
+scope for 2027–2029. Concretely, the committed analysis reported 2028 `high` = 293 free days / a 194-day streak
+while `radio` = 87 / 13 for the same scope definition — an impossible gap for two scopes the site says are the
+same set of teams.
+
+### Task board (addendum)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| H1 | Fix the high-priority invariant: estimated Giants/Athletics/49ers rows and the W1 Thanksgiving windows were tagged but left `normal`, removing them from the high-priority scope | arena-8c584f9c | done | `scripts/build_events.py`, `data/events-*.json`, `data/derived/analysis.json`, `extra/data/calendar.json`, `calendar.html` |
+| H2 | Rebuild, re-verify, PR to `main`, confirm Pages deploy, record result | arena-8c584f9c | in progress | `COORDINATION.md` |
+
+### What changed
+`scripts/build_events.py` adds `HIGH_PRIORITY_TAGS` and a normalization pass right after `fold_westwoodone()`:
+any event whose tags intersect `{mlb-giants, mlb-athletics, nfl-49ers, ncaaf-stanford, ncaaf-cal, westwoodone}` is set
+to `priority: "high"`. The NFL all-star exhibition is deliberately left out — it is tagged `nfl-allstar`, not a radio
+tag, so it stays out of both the high-priority and the radio scopes, exactly as the previous revision intended.
+**No date, time, matchup or status value was changed** — only the `priority` field and the derived cache-busting
+`DATA_VERSION`. This is a correctness fix to the modelled layer, not new schedule data.
+
+### Verification performed
+
+* Before: 2028 `high` scope = 293 free days / 194-day streak vs `radio` = 87 / 13 (contradiction).
+* After: `high` == `radio` for every year — 2026 25/2, 2027 97/13, 2028 87/13, 2029 83/13 free days / longest streak.
+* Headline recommendation unchanged: 2027 radio **Feb 1 – Feb 13 (13 nights)**; all-games **Jan 25 – Jan 30 (6 nights)**;
+  2028/2029 the same shape. Only the `high` scope moved.
+* Re-ran the full local pipeline green: `scripts/build_site.py`, `tools/build_extra.py`, `scripts/audit_certainty.py`,
+  `tools/verify_extra.py` (31/31 checks), node calendar tests, `scripts/check_links.py` (0 missing).
+* `git diff` confirms only `priority` values changed in the event files (no date/time/team edits).
+
+### Data provenance note
+The official schedule hosts (MLB StatsAPI, 49ers.com, gostanford.com, calbears.com, westwoodonesports.com, nfl.com) are
+**not reachable from this sandbox** (egress allowlist: github.com, registry.npmjs.org, pypi.org). Fresh live
+re-verification therefore ran in CI, not here. This session changed no schedule fact and added no new external claim;
+it repaired an internal consistency bug. The committed source records and their original verification reports are
+unchanged, and the Flagged page still carries every unresolved irregularity.
+
+### Integration record
+
+| Step | Result |
+|---|---|
+| Pull request | (filled after merge) |
+| Merge | (filled after merge) |
+| GitHub Pages build | (filled after merge) |
+| Live site | https://karagemop466-tech.github.io/Korea5/ |

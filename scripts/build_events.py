@@ -32,6 +32,14 @@ DURATION = {
 MLB_HIGH = {"San Francisco Giants", "Athletics", "Oakland Athletics"}
 MLB_SOURCE = "https://statsapi.mlb.com/api/v1/schedule"
 
+# Tags that mark an event as one the owner specifically cares about (Giants, Athletics,
+# 49ers, Stanford, Cal, or a Westwood One national window). Every event carrying one of these
+# tags is high priority, whether the row is verified or modelled. The NFL all-star exhibition is
+# deliberately NOT in this set: it is tagged `nfl-allstar`, not a radio tag, so it stays out of
+# the high-priority and radio scopes.
+HIGH_PRIORITY_TAGS = {"mlb-giants", "mlb-athletics", "nfl-49ers",
+                      "ncaaf-stanford", "ncaaf-cal", "westwoodone"}
+
 PLACEHOLDER_HOURS = set(range(0, 13))  # UTC hour that cannot be a real MLB first pitch
 
 MONTHS = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -691,6 +699,15 @@ def main():
     # 2028/2029 MLB postseason estimates fall in the following year only if cross-year; none do.
 
     fold_westwoodone(by_year)
+
+    # Enforce the high-priority invariant: every event that carries a user-interest tag is
+    # flagged high priority. This closes a modelling gap where estimated Giants, Athletics and
+    # 49ers rows (plus the Westwood One Thanksgiving windows) were tagged correctly but left at
+    # `normal` priority, which silently removed them from the "high priority" scope.
+    for evs in by_year.values():
+        for e in evs:
+            if any(t in HIGH_PRIORITY_TAGS for t in e.get("tags", [])):
+                e["priority"] = "high"
 
     # Re-bucket by the calendar year of each event's date so the site can load one file
     # per year without cross-year gaps (NFL playoffs and January bowls spill into January).

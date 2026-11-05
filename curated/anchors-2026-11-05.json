@@ -1,0 +1,194 @@
+{
+ "compiledUTC": "2026-11-05",
+ "retrievedWith": "fetch_page (official host reached from the page-fetch tool on this date)",
+ "rule": "Each row is one official value re-read on the retrieval date. Values not published are left blank with status not-published or unverified and appear on the Flagged for Review page.",
+ "anchors": [
+  {
+   "id": "A-MLB-2027-RELEASE",
+   "league": "MLB",
+   "label": "2027 regular season: Opening Night Wed Mar 24 (Netflix, matchup TBD); Opening Day Thu Mar 25; All-Star Game Tue Jul 13, Wrigley Field; final regular-season day Sun Sep 26",
+   "startDate": "2027-03-24",
+   "endDate": "2027-09-26",
+   "status": "verified",
+   "note": "MLB.com article text read on 2026-11-05. The fetch tool reported an unrelated URL in its metadata for this page; the body matches the 2027 release article. Flagged F28.",
+   "sourceUrl": "https://www.mlb.com/news/mlb-2027-schedule-released",
+   "sourceName": "MLB.com: MLB 2027 schedule released"
+  },
+  {
+   "id": "A-MLB-2027-SPRING-FIRST",
+   "league": "MLB",
+   "label": "First 2027 Spring Training game in the league feed (Diamondbacks at Giants)",
+   "startDate": "2027-02-19",
+   "endDate": "2027-02-19",
+   "status": "verified",
+   "note": "StatsAPI returns gameType S games from 2027-02-19; the same feed shows placeholder times on that date, so the time is not used.",
+   "sourceUrl": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2027&startDate=2027-02-01&endDate=2027-02-28",
+   "sourceName": "MLB StatsAPI schedule, Feb 2027"
+  },
+  {
+   "id": "A-MLB-2028-NOT-RELEASED",
+   "league": "MLB",
+   "label": "2028 regular season: zero games returned by the league feed",
+   "startDate": "2028-03-01",
+   "endDate": "2028-04-10",
+   "status": "not-published",
+   "note": "Result: totalGames 0 on 2026-11-05. 2028 rows stay ESTIMATION.",
+   "sourceUrl": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2028&gameType=R&startDate=2028-03-01&endDate=2028-04-10",
+   "sourceName": "MLB StatsAPI, 2028"
+  },
+  {
+   "id": "A-NFL-2026-27-WEEK18",
+   "league": "NFL",
+   "label": "2026 regular season Week 18",
+   "startDate": "2027-01-09",
+   "endDate": "2027-01-10",
+   "status": "verified",
+   "note": "NFL.com 2026-27 important dates: 'January 9-10 - Week 18'.",
+   "sourceUrl": "https://www.nfl.com/news/2026-27-national-football-league-important-dates",
+   "sourceName": "NFL.com: 2026-27 important dates"
+  },
+  {
+   "id": "A-NFL-2027-WILD-CARD",
+   "league": "NFL",
+   "label": "Wild Card Weekend (Sat-Mon window)",
+   "startDate": "2027-01-16",
+   "endDate": "2027-01-18",
+   "status": "verified",
+   "note": "Official window only. Individual game days (Sat/Sun/Mon) and times are not published; the model's day split is an estimate.",
+   "sourceUrl": "https://www.nfl.com/news/2026-27-national-football-league-important-dates",
+   "sourceName": "NFL.com: 2026-27 important dates"
+  },
+  {
+   "id": "A-NFL-2027-DIVISIONAL",
+   "league": "NFL",
+   "label": "Divisional Playoffs",
+   "startDate": "2027-01-23",
+   "endDate": "2027-01-24",
+   "status": "verified",
+   "note": "NFL.com 2026-27 important dates.",
+   "sourceUrl": "https://www.nfl.com/news/2026-27-national-football-league-important-dates",
+   "sourceName": "NFL.com: 2026-27 important dates"
+  },
+  {
+   "id": "A-NFL-2027-CONFERENCE",
+   "league": "NFL",
+   "label": "AFC and NFC Championship Games",
+   "startDate": "2027-01-31",
+   "endDate": "2027-01-31",
+   "status": "verified",
+   "note": "NFL.com 2026-27 important dates.",
+   "sourceUrl": "https://www.nfl.com/news/2026-27-national-football-league-important-dates",
+   "sourceName": "NFL.com: 2026-27 important dates"
+  },
+  {
+   "id": "A-NFL-2027-SUPER-BOWL-LXI",
+   "league": "NFL",
+   "label": "Super Bowl LXI at SoFi Stadium, Inglewood CA",
+   "startDate": "2027-02-14",
+   "endDate": "2027-02-14",
+   "status": "verified",
+   "note": "Listed in the NFL.com calendar; also on the host-committee release.",
+   "sourceUrl": "https://www.nfl.com/news/2026-27-national-football-league-important-dates",
+   "sourceName": "NFL.com: 2026-27 important dates"
+  },
+  {
+   "id": "A-NFL-2028-SUPER-BOWL-LXII",
+   "league": "NFL",
+   "label": "Super Bowl LXII at Mercedes-Benz Stadium, Atlanta",
+   "startDate": "2028-02-13",
+   "endDate": "2028-02-13",
+   "status": "verified",
+   "note": "Stadium official event page publishes Sunday, February 13, 2028. Kickoff time not published. Read on 2026-11-05 by the other session (arena-57f0338e) and re-read here.",
+   "sourceUrl": "https://www.mercedesbenzstadium.com/events/super-bowl-lxii",
+   "sourceName": "Mercedes-Benz Stadium: Super Bowl LXII"
+  },
+  {
+   "id": "A-NFL-2029-SUPER-BOWL-LXIII",
+   "league": "NFL",
+   "label": "Super Bowl LXIII at Allegiant Stadium, Las Vegas (host official; date not published)",
+   "startDate": null,
+   "endDate": null,
+   "status": "not-published",
+   "note": "Host announcement confirms Las Vegas / Allegiant Stadium in 2029 only. No official page found with the exact date; press reports of Sun Feb 11, 2029 are not used as a source. The model's Feb 11 2029 date stays ESTIMATION.",
+   "sourceUrl": "https://www.nfl.com/news/las-vegas-to-host-super-bowl-lxiii-in-2029",
+   "sourceName": "NFL.com: Las Vegas to host Super Bowl LXIII"
+  },
+  {
+   "id": "A-NFL-2027-PRO-BOWL",
+   "league": "NFL",
+   "label": "2027 Pro Bowl Games date",
+   "startDate": null,
+   "endDate": null,
+   "status": "not-published",
+   "note": "The NFL.com 2026-27 calendar lists no Pro Bowl date. Secondary sources conflict: NFL Playoff Pass says Tue Feb 9, 2027; SportBusy says Feb 7, 2027. Both candidate days are blocked in the model. Flag F21 / F23.",
+   "sourceUrl": "https://www.nfl.com/news/2026-27-national-football-league-important-dates",
+   "sourceName": "NFL.com: 2026-27 important dates (no Pro Bowl listed)"
+  },
+  {
+   "id": "A-NFL-2027-SCHEDULE",
+   "league": "NFL",
+   "label": "2027 NFL regular-season schedule",
+   "startDate": null,
+   "endDate": null,
+   "status": "not-published",
+   "note": "nfl.com/schedules/2027/ returned the 2026 season page on 2026-11-05.",
+   "sourceUrl": "https://www.nfl.com/schedules/2027/",
+   "sourceName": "NFL.com schedules, 2027"
+  },
+  {
+   "id": "A-W1-PRO-BOWL-2026",
+   "league": "Westwood One Sports",
+   "label": "2026 Pro Bowl Games carried on Westwood One (precedent for 2027)",
+   "startDate": "2026-02-03",
+   "endDate": "2026-02-03",
+   "status": "verified",
+   "note": "Event page: 'Tue Feb 3, 2026 7:30 PM - 10:30 PM (EST)' = 4:30-7:30 PM PT. This is the reason both 2027 candidates are in the radio tier.",
+   "sourceUrl": "https://www.westwoodonesports.com/events/527138/",
+   "sourceName": "Westwood One event page 527138"
+  },
+  {
+   "id": "A-W1-NFL-SCHEDULE",
+   "league": "Westwood One Sports",
+   "label": "Westwood One NFL national windows (published through Week 18 Jan 9-10, 2027 and then Wild Card, see note)",
+   "startDate": "2026-11-05",
+   "endDate": "2027-01-10",
+   "status": "verified",
+   "note": "Page read on 2026-11-05 lists Nov 5 TNF Jaguars at Ravens at 7:30 PM ET; NFL.com lists the same game at 8:15 PM. Flag F27.",
+   "sourceUrl": "https://www.westwoodonesports.com/nfl-schedule/",
+   "sourceName": "Westwood One NFL schedule"
+  },
+  {
+   "id": "A-NFL-TNF-NOV5-2026",
+   "league": "NFL",
+   "label": "Jacksonville Jaguars at Baltimore Ravens (Thu Nov 5, 2026, Prime Video)",
+   "startDate": "2026-11-05",
+   "endDate": "2026-11-05",
+   "status": "verified",
+   "note": "NFL.com game centre shows 8:15PM (time zone not labelled on the fetched page). Westwood One shows 7:30 PM ET. Flag F27.",
+   "sourceUrl": "https://www.nfl.com/games/jaguars-at-ravens-2026-reg-9",
+   "sourceName": "NFL.com game centre"
+  },
+  {
+   "id": "A-MLB-2025-AVG-TIME",
+   "league": "MLB",
+   "label": "Average nine-inning game time, 2025 season: 2:38 (158 min)",
+   "startDate": "2025-01-01",
+   "endDate": "2025-12-31",
+   "status": "verified",
+   "note": "MLB press release on 2025 attendance, re-read 2026-11-05. The MLB planning block of 165 min is this figure plus a buffer, and is labelled as an estimate.",
+   "sourceUrl": "https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007",
+   "sourceName": "MLB.com press release (2025 attendance)"
+  },
+  {
+   "id": "A-STANFORD-CAL-BOWLS-2026-27",
+   "league": "NCAAF",
+   "label": "Stanford and Cal postseason (bowl) games, Dec 2026 - Jan 2027",
+   "startDate": null,
+   "endDate": null,
+   "status": "not-published",
+   "note": "Bowl eligibility and assignments depend on the final 2026 regular-season results. Not modelled. Flag F25.",
+   "sourceUrl": "https://gostanford.com/sports/football/schedule",
+   "sourceName": "Stanford football schedule (official)"
+  }
+ ]
+}

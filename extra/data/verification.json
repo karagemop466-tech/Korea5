@@ -91,11 +91,11 @@
     "nflNationalRadio": 72,
     "w1Events": 580,
     "w1EventsInRange": 311,
-    "parallelEvents": 7203,
-    "combinedEvents": 7529,
+    "parallelEvents": 7211,
+    "combinedEvents": 7537,
     "calendarDays": 1215,
     "calendarVerifiedRows": 988,
-    "calendarEstimatedRows": 3075,
+    "calendarEstimatedRows": 3083,
     "calendarTbaRows": 88,
     "mlbTbdTrue": 2015,
     "sourceRegistry": 41,
@@ -103,7 +103,7 @@
     "stations": 16,
     "ncaafFutureRows": 26,
     "estimateWindows": 11,
-    "flags": 22
+    "flags": 32
   },
   "failures": []
 }

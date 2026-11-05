@@ -145,19 +145,55 @@ def fmt_range(a, b):
     return f"{da.strftime('%b %-d, %Y')} – {db.strftime('%b %-d, %Y')}"
 
 
+def pb_block(y):
+    """Pro Bowl scenario block for one year, computed in analyze.py (both-blocked is the base case)."""
+    r = REC.get(str(y), {}) or {}
+    pb = r.get("proBowl") or {}
+    sc = (pb.get("scenarios") or {}).get("all") or {}
+    return {
+        "base": sc.get("bothCandidatesBlocked") or {},
+        "onlyA": sc.get("onlyCandidateA") or {},
+        "onlyB": sc.get("onlyCandidateB") or {},
+        "none": sc.get("noProBowlGame") or {},
+        "cands": pb.get("candidates") or {},
+    }
+
+
+def run_txt(b):
+    best = (b or {}).get("best")
+    if not best:
+        return "no free run"
+    return f"{fmt_range(best['start'], best['end'])} ({best['days']} calendar days)"
+
+
+def ties_txt(b):
+    ties = (b or {}).get("ties") or []
+    return "; ".join(f"{fmt_range(t['start'], t['end'])} ({t['days']} calendar days)" for t in ties) or "no free run"
+
+
+def base_days(y):
+    return ((pb_block(y)["base"] or {}).get("best") or {}).get("days", 0)
+
+
+def fits_txt(y, n):
+    return "yes" if base_days(y) >= n else "no"
+
+
 # ================================================================ index
 def build_index():
-    r27 = rec("radio", 2027) or {}
-    r28 = rec("radio", 2028) or {}
-    r29 = rec("radio", 2029) or {}
-    def lbl(w):
-        if not w:
-            return "—"
-        return fmt_range(w["start"], w["end"])
-    w27a = fmt_range(r27["start"], r27["end"]).split(" – ")[0] if r27 else "—"
-    w27b = fmt_range(r27["start"], r27["end"]).split(" – ")[1] if r27 else "—"
-    w28a, w28b = (fmt_range(r28["start"], r28["end"]).split(" – ") if r28 else ("—", "—"))
-    w29a, w29b = (fmt_range(r29["start"], r29["end"]).split(" – ") if r29 else ("—", "—"))
+    P = {y: pb_block(y) for y in (2027, 2028, 2029)}
+    n27, n28, n29 = base_days(2027), base_days(2028), base_days(2029)
+    tag_est = '<span class="tag est">ESTIMATION</span>'
+    rows_html = ""
+    for y in (2027, 2028, 2029):
+        b = P[y]
+        tag = ('<span class="tag ver">official calendar windows</span> + Pro Bowl date unverified' if y == 2027
+               else tag_est + " — MLB 2028/2029 and NFL 2027+ schedules not released")
+        rows_html += (f"<tr><td><strong>{y}</strong></td>"
+                      f"<td><strong>{esc(ties_txt(b['base']))}</strong></td>"
+                      f"<td>{fits_txt(y, 7)}</td><td>{fits_txt(y, 14)}</td><td>{fits_txt(y, 21)}</td>"
+                      f"<td>{esc(run_txt(b['onlyB']))}</td><td>{esc(run_txt(b['none']))}</td>"
+                      f"<td>{tag}</td></tr>")
     body = f"""
 <section class="hero"><div><p class="small">SAN FRANCISCO 94122 · PACIFIC TIME · 2026–2029</p>
 <h1>Plan time away.<br>Know what you might miss.</h1>
@@ -165,24 +201,20 @@ def build_index():
 <div class="pill-row"><a class="btn" href="extra/calendar.html">Open day scoreboard →</a>
 <a class="btn" href="vacation.html">Best vacation dates</a></div></div>
 <div class="card"><h2>The answer</h2>
-<p><strong>Each year one pocket opens: between the conference championships and the Super Bowl.</strong></p>
-<p>For <strong>2027</strong>: <strong>{w27a} – {w27b}</strong> — {r27.get("days","—")} consecutive calendar days with no MLB, NFL, Stanford, Cal or Westwood One game on the air. The days either side of it are conference-championship Sunday ({esc(r27.get("blockedBefore") or "—")}) and Super Bowl LXI ({esc(r27.get("blockedAfter") or "—")}).</p>
-<p>For <strong>2028</strong>: {w28a} – {w28b}. For <strong>2029</strong>: {w29a} – {w29b}. Both are <span class="tag est">ESTIMATION</span> — those schedules are not released.</p>
+<p><strong>No 7-night stretch is free of every listed game in 2027, 2028 or 2029.</strong>
+The longest run with nothing on air is <strong>{n27} calendar days in 2027</strong>, <strong>{n28} calendar days in 2028</strong> and
+<strong>{n29} calendar days in 2029</strong>, all in January–February between the NFL playoff rounds and the Super Bowl.</p>
+<p><strong>2027:</strong> {esc(ties_txt(P[2027]['base']))}.
+If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} opens. If there is no Pro Bowl that week, {esc(run_txt(P[2027]['none']))} opens.</p>
+<p><strong>2028</strong> <span class="tag est">ESTIMATION</span>: {esc(ties_txt(P[2028]['base']))}. &nbsp; <strong>2029</strong> <span class="tag est">ESTIMATION</span>: {esc(ties_txt(P[2029]['base']))}.</p>
+<p class="small">The NFL has not published the 2027 Pro Bowl Games date, so both candidate days are blocked. Westwood One carried the 2026 Pro Bowl Games, so it counts toward the radio view as well.</p>
 <a href="vacation.html">Dates, evidence and caveats →</a></div></section>
 
 <h2>Does a whole week fit?</h2>
-<div class="scroll"><table><thead><tr><th>Year</th><th>Longest run with nothing on the radio</th><th>7 days?</th><th>14 days?</th><th>21 days?</th><th>Evidence status</th></tr></thead><tbody>
-<tr><td><strong>2027</strong></td><td>{esc(fmt_range(r27["start"], r27["end"]) if r27 else "—")} ({r27.get("days","—")} days)</td>
-<td>{"yes" if (r27.get("fits",{}).get("7")) else "no"}</td><td>{"yes" if (r27.get("fits",{}).get("14")) else "no"}</td><td>{"no" if not (r27.get("fits",{}).get("21")) else "yes"}</td>
-<td>MLB dates official; Super Bowl LXI date official; NFL round dates modelled</td></tr>
-<tr><td><strong>2028</strong></td><td>{esc(fmt_range(r28["start"], r28["end"]) if r28 else "—")} ({r28.get("days","—")} days)</td>
-<td>{"yes" if (r28.get("fits",{}).get("7")) else "no"}</td><td>{"yes" if (r28.get("fits",{}).get("14")) else "no"}</td><td>{"no" if not (r28.get("fits",{}).get("21")) else "yes"}</td>
-<td><span class="tag est">ESTIMATION</span> — MLB 2028 and NFL 2027 schedules not released</td></tr>
-<tr><td><strong>2029</strong></td><td>{esc(fmt_range(r29["start"], r29["end"]) if r29 else "—")} ({r29.get("days","—")} days)</td>
-<td>{"yes" if (r29.get("fits",{}).get("7")) else "no"}</td><td>{"yes" if (r29.get("fits",{}).get("14")) else "no"}</td><td>{"no" if not (r29.get("fits",{}).get("21")) else "yes"}</td>
-<td><span class="tag est">ESTIMATION</span> — neither schedule released</td></tr>
+<div class="scroll"><table><thead><tr><th>Year</th><th>Longest all-games run (both Pro Bowl dates blocked)</th><th>7 calendar days?</th><th>14 calendar days?</th><th>21 calendar days?</th><th>If the Pro Bowl is Feb 9 only</th><th>If there is no Pro Bowl</th><th>Evidence status</th></tr></thead><tbody>
+{rows_html}
 </tbody></table></div>
-<p class="small">"Nothing on the radio" = no game tagged Giants, Athletics, 49ers, Stanford, Cal or Westwood One. The stricter all-games view (which also counts the NFL all-star exhibition) maxes out at six consecutive days; that variant is shown on the vacation page.</p>
+<p class="small">"Nothing on the radio" = no game of the Giants, Athletics, 49ers, Stanford, Cal or Westwood One national broadcast. The all-games view also blocks every other MLB and NFL game; in these winter windows the two views give the same runs.</p>
 
 <h2>Start here</h2><div class="grid g3">
 <div class="card"><h3>Everyday free time</h3><p>Browse dates, games and modelled gaps, in Pacific time, with Yesterday / Today / Tomorrow controls.</p><a href="extra/calendar.html">Day scoreboard</a></div>
@@ -193,7 +225,7 @@ def build_index():
 <div class="grid g3">
 <div class="card"><h3>2027 MLB — released</h3><p>Opening Night Wed Mar 24, 2027; traditional Opening Day Thu Mar 25; All-Star Game Tue Jul 13 at Wrigley Field; final regular-season day Sun Sep 26. Confirmed on MLB.com and in the MLB StatsAPI feed. First-pitch times that MLB has not set are marked estimated.</p><a href="https://www.mlb.com/news/mlb-2027-schedule-released">MLB 2027 schedule release</a></div>
 <div class="card"><h3>2028 &amp; 2029 MLB — not released</h3><p>The MLB StatsAPI returns zero games for 2028 and 2029, so those rows are <span class="tag est">ESTIMATION</span> — a modelled daily slate, never invented matchups.</p><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2028&amp;gameType=R">MLB official feed (2028)</a></div>
-<div class="card"><h3>NFL — 2026 released, 2027+ not</h3><p>All 2026 NFL games are loaded. nfl.com has no 2027 season page yet, so 2027 NFL rounds are modelled. Super Bowl LXI is officially Sun Feb 14, 2027 at SoFi Stadium.</p><a href="https://www.sofistadium.com/news/detail/los-angeles-region-to-host-super-bowl-lxi-in-2027-welcoming-the-nfls-biggest-stage-for-the-second-time-this-decade-to-sofi-stadium">Super Bowl LXI announcement</a></div>
+<div class="card"><h3>NFL — 2026 released, 2027+ not</h3><p>All 2026 NFL games are loaded. nfl.com has no 2027 season page yet. The 2027 playoff round windows (Jan 9–10, Jan 16–18, Jan 23–24, Jan 31) and Super Bowl LXI (Sun Feb 14, 2027, SoFi Stadium) come from the official NFL 2026–27 calendar; game-day splits and kickoffs are modelled. The 2027 Pro Bowl date is not published.</p><a href="https://www.nfl.com/news/2026-27-national-football-league-important-dates">NFL 2026–27 important dates</a></div>
 </div>
 
 <h2>Explore by category</h2><div class="pill-row">
@@ -289,62 +321,69 @@ def build_vacation():
                        table(["Window", "Fully free days", "Busy hours", "Days with games (count)"], rows))
         return "".join(out)
 
-    # strict statement
-    longest = {y: ANALYSIS["summary"].get(str(y), {}).get("scopes", {}).get("all", {}).get("longestFreeStreak", 0)
-               for y in (2027, 2028, 2029)}
+    P = {y: pb_block(y) for y in (2027, 2028, 2029)}
+    n = {y: base_days(y) for y in (2027, 2028, 2029)}
+    def scen_table():
+        rows = []
+        for lab, key in (("Both candidate dates blocked (base case)", "base"),
+                         ("Only candidate A blocked (Sun Feb 7 or the year's equivalent)", "onlyA"),
+                         ("Only candidate B blocked (Tue Feb 9 or the year's equivalent)", "onlyB"),
+                         ("No Pro Bowl Games that week", "none")):
+            cells = [f"<strong>{esc(lab)}</strong>"]
+            for y in (2027, 2028, 2029):
+                cells.append(esc(run_txt(P[y][key])))
+            rows.append(cells)
+        return table(["Pro Bowl scenario (all-games and radio views give the same runs)", "2027", "2028 (ESTIMATION)", "2029 (ESTIMATION)"], rows)
+    cand = {y: P[y]["cands"] for y in (2027, 2028, 2029)}
     def row_for(y):
-        r_radio = rec("radio", y) or {}
         r_all = rec("all", y) or {}
-        if not r_radio:
+        if not r_all:
             return ""
-        fit = r_radio.get("fits", {})
-        ev = ("MLB dates and the Super Bowl date are official; NFL round dates modelled"
+        fit = r_all.get("fits", {})
+        ev = ("Dates from the official NFL 2026–27 calendar and the MLB 2027 release; Pro Bowl date unverified"
               if y == 2027 else
               '<span class="tag est">ESTIMATION</span> — schedules not released')
         return (f"<tr><td><strong>{y}</strong></td>"
-                f"<td><strong>{esc(fmt_range(r_radio['start'], r_radio['end']))}</strong></td>"
-                f"<td>{r_radio['days']}</td>"
+                f"<td><strong>{esc(ties_txt(P[y]['base']))}</strong></td>"
                 f"<td>{'yes' if fit.get('7') else 'no'}</td>"
                 f"<td>{'yes' if fit.get('14') else 'no'}</td>"
                 f"<td>{'yes' if fit.get('21') else 'no'}</td>"
-                f"<td>{esc(r_radio.get('blockedBefore') or '—')}</td>"
-                f"<td>{esc(r_radio.get('blockedAfter') or '—')}</td>"
+                f"<td>{esc(r_all.get('blockedBefore') or '—')}</td>"
+                f"<td>{esc(r_all.get('blockedAfter') or '—')}</td>"
                 f"<td>{ev}</td></tr>")
-
     rows = "".join(row_for(y) for y in (2027, 2028, 2029))
-    r27 = rec("radio", 2027) or {}
-    w27 = esc(fmt_range(r27["start"], r27["end"])) if r27 else "—"
-    seven = max((rec("all", y) or {}).get("days", 0) for y in (2027, 2028, 2029)) or 6
+    cards = "".join(
+        f'<div class="card"><h3>{y}</h3>'
+        f'<div class="kpi" style="font-size:26px">{n[y]} calendar days</div><small>longest all-games run (base case)</small>'
+        f'<p class="small" style="margin-top:10px">Pro Bowl Feb 9 only: {esc(run_txt(P[y]["onlyB"]))}. No Pro Bowl: {esc(run_txt(P[y]["none"]))}.</p></div>'
+        for y in (2027, 2028, 2029))
     body = f"""
 <h1>Vacation windows, 2027–2029</h1>
 <p class="lede">Two lenses, both computed from the event feed. <strong>Radio</strong> counts only games that are actually
-broadcast (Giants, Athletics, 49ers, Stanford, Cal, Westwood One national). <strong>All games</strong> also counts every
-other MLB and NFL row in the scope, including the NFL all-star exhibition.</p>
+broadcast (Giants, Athletics, 49ers, Stanford, Cal, Westwood One national, and the Pro Bowl Games, which Westwood One carried in 2026).
+<strong>All games</strong> also counts every other MLB and NFL row in the scope. In the January–February windows the two lenses agree.</p>
 
 <div class="callout flag">
-<strong>Radio lens: 13 calendar days in 2027. All-games lens: {longest[2027]} calendar days.</strong>
-Lengths below count inclusive calendar days, not hotel nights. On the strictest reading — every MLB game in the league,
-every NFL game, and the Pro Bowl exhibition — no 7-, 14- or 21-day window exists in 2027–2029; the longest clean runs
-are {longest[2027]}, {longest[2028]} and {longest[2029]} days.
-Drop the exhibition, which is not a league game and is not on Westwood One's published schedule, and a 13-day
-February window opens in every one of the three years.
+<strong>No 7-night window is free of every listed game in 2027, 2028 or 2029.</strong>
+The longest free run is {n[2027]} calendar days in 2027, {n[2028]} in 2028 and {n[2029]} in 2029. In 2027 the two
+6-night runs are Jan 25–30 and Feb 1–6. The 2027 Pro Bowl date is not published, so it is the one assumption that
+moves the answer (scenario table below).
 </div>
 
 <div class="grid g3">
-  {''.join(f'''<div class="card"><h3>{y}</h3>
-  <div class="kpi" style="font-size:26px">{(rec("radio", y) or {}).get("days", "—")} calendar days</div><small>radio-free run (all games: {longest[y]} days)</small>
-  <p class="small" style="margin-top:10px">{year_facts(y).get('scopes',{}).get('all',{}).get('freeDays','—')} fully free days under the all-games lens across the calendar year.</p></div>''' for y in (2027, 2028, 2029))}
+  {cards}
 </div>
 
-<h2>The answer: the conference-championship → Super Bowl gap</h2>
+<h2>The answer: the NFL playoff gap before the Super Bowl</h2>
 <div class="callout">
-<strong>Book {w27}.</strong> It is the longest run of consecutive calendar days in 2027 on which nothing in your list is on the air:
-no MLB, no NFL, no Stanford, no Cal, no Westwood One national window. It sits between conference-championship Sunday
-and Super Bowl LXI, and 2027 is the only one of the three years where both of those anchors are pinned to official dates.
+<strong>2027 base case: {esc(ties_txt(P[2027]['base']))}.</strong> Each run has nothing on the radio or the all-games list.
+Jan 25–30 sits between the Divisional round (Jan 23–24) and the Conference Championships (Jan 31), both official.
+Feb 1–6 is free unless the Pro Bowl Games fall on one of those days, and the 2027 Pro Bowl date is not published.
 </div>
-<div class="scroll"><table><thead><tr><th>Year</th><th>Window</th><th>Calendar days</th><th>Fits 1 week</th><th>Fits 2 weeks</th><th>Fits 3 weeks</th><th>Game day before</th><th>Game day after</th><th>Evidence</th></tr></thead><tbody>
+<div class="scroll"><table><thead><tr><th>Year</th><th>Longest free run (base case)</th><th>Fits 1 week</th><th>Fits 2 weeks</th><th>Fits 3 weeks</th><th>Game day before</th><th>Game day after</th><th>Evidence</th></tr></thead><tbody>
 {rows}
 </tbody></table></div>
+<p class="small">No 7-, 14- or 21-day window is fully free in any year. The ranked lists below show the windows with the fewest busy days.</p>
 
 <div class="callout warn">
 <strong>Why not the summer?</strong> MLB plays a slate almost every day from late February to early October, and your scope
@@ -352,28 +391,36 @@ counts every MLB game, not just the Giants and Athletics. So April–September i
 The winter gap is the only place a multi-week trip fits.
 </div>
 
-<h2>Strict all-games view (counts the NFL all-star exhibition)</h2>
-<div class="callout flag">
-<strong>If you also refuse to travel during the Pro Bowl Games</strong>, the longest fully free run drops to
-{seven} calendar days in each year, and it splits the February window in two. The Pro Bowl is an all-star exhibition rather than a league
-game, and Westwood One's published 2026-27 NFL schedule does not list it, so it was removed from the radio-only scope in this
-revision and is still counted in the all-games scope. That is the only difference between the two answers.
-</div>
+<h2>Pro Bowl Games: the one date that moves the answer</h2>
+<p class="small">The NFL has not published a 2027 Pro Bowl date. The candidate days below come from secondary sources and are
+<span class="tag est">ESTIMATION</span>. The planner blocks both candidate days, and reports the runs that open if one or both are not on the calendar.</p>
+<p class="small">2027 candidates: A = {esc(cand[2027].get('A',''))}, B = {esc(cand[2027].get('B',''))}.
+2028: A = {esc(cand[2028].get('A',''))}, B = {esc(cand[2028].get('B',''))}.
+2029: A = {esc(cand[2029].get('A',''))}, B = {esc(cand[2029].get('B',''))}.</p>
+{scen_table()}
+<p class="small">Westwood One's official 2026 Pro Bowl Games window (Tue Feb 3, 2026, 4:30–7:30 PM PT) is the block used for each candidate:
+<a href="https://www.westwoodonesports.com/events/527138/">Westwood One event page</a>.</p>
 
 <h2>Evidence behind each date</h2>
 <div class="scroll"><table><thead><tr><th>Anchor</th><th>Value used</th><th>Status</th><th>Official source</th></tr></thead><tbody>
 <tr><td>2027 MLB regular season</td><td>Mar 24 (Opening Night) – Sep 26, 2027</td><td><span class="tag ver">official</span></td><td><a href="https://www.mlb.com/news/mlb-2027-schedule-released">MLB.com schedule release</a></td></tr>
 <tr><td>2027 MLB All-Star Game</td><td>Tue Jul 13, 2027, Wrigley Field</td><td><span class="tag ver">official</span></td><td><a href="https://www.mlb.com/news/mlb-2027-schedule-released">MLB.com schedule release</a></td></tr>
 <tr><td>2027 MLB fixtures</td><td>Full 30-club schedule loaded from the league feed</td><td><span class="tag ver">official</span></td><td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2027&amp;gameType=R">MLB StatsAPI</a></td></tr>
-<tr><td>Super Bowl LXI</td><td>Sun Feb 14, 2027, SoFi Stadium</td><td><span class="tag ver">official</span></td><td><a href="https://www.sofistadium.com/news/detail/los-angeles-region-to-host-super-bowl-lxi-in-2027-welcoming-the-nfls-biggest-stage-for-the-second-time-this-decade-to-sofi-stadium">SoFi Stadium / LA host committee</a></td></tr>
-<tr><td>2026-27 NFL playoff rounds</td><td>Wild Card, Divisional, Conference dates</td><td><span class="tag est">estimated</span></td><td><a href="https://www.nfl.com/schedules/">NFL schedules</a></td></tr>
+<tr><td>2027 NFL playoff round windows</td><td>Week 18 Jan 9–10; Wild Card Jan 16–18; Divisional Jan 23–24; Conference Championships Jan 31</td><td><span class="tag ver">official windows</span></td><td><a href="https://www.nfl.com/news/2026-27-national-football-league-important-dates">NFL 2026–27 important dates</a></td></tr>
+<tr><td>Super Bowl LXI</td><td>Sun Feb 14, 2027, SoFi Stadium</td><td><span class="tag ver">official</span></td><td><a href="https://www.nfl.com/news/2026-27-national-football-league-important-dates">NFL 2026–27 important dates</a></td></tr>
+<tr><td>2027 Pro Bowl Games</td><td>Not published. Candidates Feb 7 and Feb 9 blocked; Westwood One 2026 window used for both</td><td><span class="tag est">ESTIMATION</span></td><td><a href="https://www.westwoodonesports.com/events/527138/">Westwood One 2026 Pro Bowl event</a></td></tr>
+<tr><td>Wild Card Monday (Jan 18, 2027)</td><td>Monday inside the official Jan 16–18 window; time and carriage not published</td><td><span class="tag est">ESTIMATION</span></td><td><a href="https://www.nfl.com/news/2026-27-national-football-league-important-dates">NFL 2026–27 important dates</a></td></tr>
 <tr><td>2028 / 2029 MLB seasons</td><td>Modelled daily slate, no matchups invented</td><td><span class="tag est">ESTIMATION</span></td><td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2028&amp;gameType=R">MLB StatsAPI returns 0 games</a></td></tr>
-<tr><td>2027 / 2028 / 2029 NFL seasons</td><td>Modelled 18-week structure + playoff rounds</td><td><span class="tag est">ESTIMATION</span></td><td><a href="https://www.nfl.com/schedules/">NFL schedules (no future season page)</a></td></tr>
-<tr><td>Stanford / Cal 2027-2029</td><td>Twelve Saturday windows per school, kickoff TBD</td><td><span class="tag est">ESTIMATION</span></td><td><a href="https://gostanford.com/sports/football/schedule">Stanford</a> · <a href="https://calbears.com/sports/football/schedule">Cal</a></td></tr>
+<tr><td>2027 / 2028 / 2029 NFL seasons</td><td>Modelled 18-week structure; playoff day splits are estimates</td><td><span class="tag est">ESTIMATION</span></td><td><a href="https://www.nfl.com/schedules/2027/">nfl.com 2027 schedule (not published)</a></td></tr>
+<tr><td>Stanford / Cal 2027–2029</td><td>Twelve Saturday windows per school, kickoff TBD; bowl games not modelled</td><td><span class="tag est">ESTIMATION</span></td><td><a href="https://gostanford.com/sports/football/schedule">Stanford</a> · <a href="https://calbears.com/sports/football/schedule">Cal</a></td></tr>
 <tr><td>Westwood One 2027+</td><td>National windows inside the modelled NFL structure</td><td><span class="tag est">ESTIMATION</span></td><td><a href="https://www.westwoodonesports.com/nfl-schedule/">Westwood One NFL schedule</a></td></tr>
 </tbody></table></div>
 <p class="small">A row is only <span class="tag ver">official</span> when an official page published that exact value.
 Everything else is a model output, labelled as such, and does not certify an absence of games on any other day.</p>
+
+<h2>Ranked windows (7, 14, 21 days)</h2>
+<p class="small">Each list is sorted by fewest days with any game. Scope: all MLB + all NFL + Stanford + Cal + Westwood One.</p>
+{window_table('all', 'strict')}
 
 <h2>Longest continuous free stretches</h2>
 <p class="small">Runs of consecutive days with no qualifying game at all. This is the clearest way to see where a real trip fits.</p>
@@ -779,6 +826,12 @@ def build_flagged():
         ("Gap", "Cal games before Nov 14, 2026", "Cal's official page could not be parsed unambiguously for its early-season card order, so those games are omitted rather than guessed.", "https://calbears.com/sports/football/schedule"),
         ("Gap", "Athletics radio flagship", "No official page confirmed which San Francisco station carries Athletics games in 2026. A's games are still blocked as high priority.", ""),
         ("Gap", "Westwood One non-NFL sports", "NCAA Basketball, golf, soccer and NCAA championships are published week by week and are not enumerated.", "https://www.westwoodonesports.com/"),
+        ("Dataset", "2027 Pro Bowl Games date", "Not published by the NFL. Two unverified candidate days (Feb 7 and Feb 9) are both blocked; the 2026 Westwood One window is used. Flag F21, F23.", "https://www.nfl.com/news/2026-27-national-football-league-important-dates"),
+        ("Dataset", "Wild Card Monday, Jan 18 2027", "Inside the official Jan 16–18 window. The day and kickoff are estimates. Flag F24.", "https://www.nfl.com/news/2026-27-national-football-league-important-dates"),
+        ("Gap", "Stanford and Cal bowl games, Dec 2026 – Jan 2027", "Not modelled; a bowl would block its date. Flag F25.", "https://gostanford.com/sports/football/schedule"),
+        ("Finding", "Jaguars at Ravens, Thu Nov 5 2026", "Westwood One lists 7:30 PM ET; NFL.com game centre lists 8:15 PM. The earlier time is used for busy time. Flag F27.", "https://www.nfl.com/games/jaguars-at-ravens-2026-reg-9"),
+        ("Correction", "Jan 24 2027 is not a free day", "The earlier summary (research/EXECUTIVE-SUMMARY-ef8b5b30.md) listed Jan 24–30 as free. The Divisional round is Jan 23–24 per NFL.com; the corrected run is Jan 25–30. Flag F26.", "https://www.nfl.com/news/2026-27-national-football-league-important-dates"),
+        ("Correction", "High-priority scope undercounted 2028–2029", "The earlier 293 free days / 194-day run was a defect in the 'high' scope. Corrected to the radio team set. Flag F31.", ""),
     ]
 
     rows = [[esc(a), esc(b), esc(c), src(d, "official source") if d else '<span class="small">—</span>'] for a, b, c, d in open_items]

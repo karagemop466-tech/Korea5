@@ -1,3 +1,5 @@
+> **SUPERSEDED (2026-11-05).** This summary is out of date. Its Feb 1–13, 2027 recommendation assumed no Pro Bowl that week, and it counted Jan 24–30, 2027 as free. NFL.com lists the Divisional playoffs on Jan 23–24, 2027. The current answer is in `research/EXECUTIVE-SUMMARY.md`: 6 nights (Jan 25–30 or Feb 1–6, 2027) in the base case.
+
 # Executive summary — FREE TIME VACATION (combined integration)
 
 ## What this is

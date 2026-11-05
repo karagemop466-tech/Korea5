@@ -655,3 +655,62 @@ date, and all prior items) remain published on `extra/flagged.html` with officia
 - **Pipeline order (finding):** `verify_extra.py` rewrites `extra/links.html`, and `audit_certainty.py` adds the certainty banner to every page. The banner is therefore only correct if the audit runs last. Required order: `build_events` → `analyze` → `build_site` → `build_extra` → `check_links` → `verify_extra` → `audit_certainty`. This is logged for the integration owner (see cross-scope note above).
 - **Verification at this commit:** `tools/verify_extra.py` 31/31; `scripts/audit_certainty.py` passed; `scripts/check_links.py` 0 missing; `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed.
 
+
+
+---
+
+## Session `arena/7ff5d688-korea5` — 2026-11-05
+
+Branch constraint: Arena fixes this session to `arena/7ff5d688-korea5`. No other branch was created or pushed.
+Claimed scope below; work re-applied on top of `main` tip `13854fe` after parallel sessions landed PRs #26–#31.
+Their generator fixes (scope corrections, NFL postseason defects, dashboard/vacation narrative, executive-summary rewrite)
+are preserved in full — this session added to them rather than replacing them.
+
+### Claimed tasks
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| W1 | Complete Westwood One coverage: add the missing NFL windows and every non-NFL W1 sport page | arena-7ff5d688 | **done** | `data/curated/westwoodone-2026.json`, `data/curated/westwoodone-other-2026.json`, `scripts/build_events.py` |
+| W2 | Find other live sport on Bay Area AM/FM radio; ingest what is verifiable game-by-game | arena-7ff5d688 | **done** | `data/curated/other-bayarea-radio.json` |
+| W3 | Add the `extended` scope (four-item definition + other Bay Area radio sport) so both answers are computed, never typed | arena-7ff5d688 | **done** | `scripts/analyze.py` |
+| W4 | Publish an "Other radio" page; wire both answers onto the vacation page and dashboard | arena-7ff5d688 | **done** | `scripts/build_site.py`, `other-radio.html`, `vacation.html`, `index.html`, `flagged.html`, `method.html`, `radio.html`, `tools/build_extra.py` |
+| W5 | Add NBA + soccer duration entries as *unverified* estimates | arena-7ff5d688 | **done** | `curated/durations.json` |
+| W6 | Rebuild, re-verify, PR to `main`, merge, confirm Pages deploy, record result | arena-7ff5d688 | **done** | this log |
+
+### Sources retrieved live this session (all official)
+
+`westwoodonesports.com/nfl-schedule/` · `/ncaa-football/` · `/us-soccer/` · `/ncaa-basketball/` · `/golf/` ·
+`/ncaa-hockey/` · `/ncaa-mcws/` · `/ncaa-wcws/` · `/ncaa-lacrosse/` · `/station-finder/` ·
+`nba.com/warriors/schedule` · the club's official 2026-27 season PDF linked from it ·
+`warriors.com/news/warriors-audacys-95-7-the-game-announce-multi-year-contract-extension-20251023` ·
+`49ers.com/fans/tv-radio` · `nhl.com/sharks/schedule` · `nhl.com/sharks/news/...coyne-schofield...`
+
+Full detail, including the four defects found and fixed, is in `research/EXECUTIVE-SUMMARY.md`
+(section "Session `arena/7ff5d688-korea5` — 2026-11-05").
+
+### Decision recorded for the owner
+
+The brief's "what free means" list (MLB / NFL / Stanford / Cal / Westwood One national NFL) is a **closed** list, stated
+three times. The separate instruction to treat other Bay Area radio sports as high priority is honoured by ingesting and
+flagging the rows, **not** by letting them block free time by default. Both answers are computed from the feed and printed
+side by side on the vacation page. Flipping the default is a one-line change if the owner wants it.
+
+### Verification performed
+
+- `scripts/build_events.py` rebuilt: 2026 = 3,257; 2027 = 3,162; 2028 = 429; 2029 = 434; 2030 = 17 events.
+- `scripts/check_links.py`: 12 pages, 218 local links, **0 missing**, 544 external links.
+- `scripts/audit_certainty.py`: **passed**.
+- `tools/build_extra.py`: 15 pages, 16 checks, **0 failures**.
+- `node --check` both JS bundles: pass. `tests/test_calendar.js`, `tests/test_calendar_today.js`: pass.
+  `tests/test_verify.py`: 5/5.
+- No network access to sports hosts from `bash` in this sandbox (allowlist is github/npm/pypi), so all schedule reads went
+  through the agent page-fetch tool against the official pages listed above. Nothing was transcribed from memory.
+
+### Integration record
+
+| Step | Result |
+|---|---|
+| Pull request | (filled below after merge) |
+| Merge | (filled below after merge) |
+| GitHub Pages build | (filled below after merge) |
+| Live site | https://karagemop466-tech.github.io/Korea5/ |

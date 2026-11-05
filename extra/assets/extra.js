@@ -67,7 +67,7 @@
   }
   function render(){
     today=pacificISODate(new Date());
-    const b=pack.days[cur]||{verified:[],estimated:[],tba:[],anchors:[],future:[]};
+    const b=pack.days[cur]||{verified:[],estimated:[],tba:[],anchors:[],future:[],otherRadio:[]};
     const rows=[...b.verified,...(includeEst?b.estimated:[])];
     $('#x-date').value=cur;
     $('#x-today-label').textContent=today;
@@ -92,6 +92,11 @@
       <td>${e.priority==='high'?'<span class="tag high">HIGH PRIORITY</span>':'—'}</td>
       <td>${e.radio?'<span class="tag est">RADIO CANDIDATE</span>':'—'}</td>
       <td>${badge(e.status||'unverified')}</td><td>${a(e.sourceUrl,'official source')}</td></tr>`).join(''):'<tr><td colspan="8">No scheduled sports programming found on the official feeds for this day.</td></tr>';
+    const other=(b.otherRadio||[]);
+    $('#x-other').innerHTML=other.length?`<div class="callout"><strong>Also live on Bay Area AM/FM radio today (${other.length}) - does not block free time.</strong>
+      These are other sports found on Bay Area radio (the Golden State Warriors on KGMZ-FM 95.7 The Game). They are sourced, but they are
+      <em>not</em> part of your four-item "free" definition, so this day is still scored using only the rows above.
+      <ul>${other.map(e=>`<li>${esc(e.title||'')} - ${esc(e.start||'time TBA')} · ${esc(e.radio||e.league||'')} ${a(e.sourceUrl,'official source')}</li>`).join('')}</ul></div>`:'';
     const ctx=[...b.anchors.map(x=>`<span class="chip">${esc(x.label)} · ${esc(x.league)} ${a(x.sourceUrl,'source')}</span>`),
                ...b.future.map(x=>`<span class="chip">${esc(x.title)} ${a(x.sourceUrl,'source')}</span>`)];
     $('#x-context').innerHTML=ctx.length?ctx.join(' '):'<span class="small">No official season anchor for this day.</span>';

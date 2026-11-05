@@ -1,0 +1,1154 @@
+{
+ "dataset": "Other live sports on Bay Area AM/FM radio — carriage table plus Golden State Warriors (NBA) game rows",
+ "league": "OTHER",
+ "priority": "high (flagged at the owner's request) — but NOT part of the four-item 'free' definition",
+ "retrievedUTC": "2026-11-05",
+ "verifiedBy": "Read directly from the live official pages on 2026-11-05 (agent page fetch).",
+ "market": "San Francisco Bay Area / Outer Sunset 94122 over-the-air AM/FM reception",
+ "whyThisFileExists": "The owner asked us to look for every other sport carried live on Bay Area radio and to treat it as high priority. The 'What free means' definition in the brief is a closed four-item list (MLB, NFL, Stanford/Cal NCAAF, Westwood One national NFL radio), so these rows are modelled in their own group and do not, by default, block free time. Turn the toggle on the Other radio page to include them.",
+ "defaultBlocking": false,
+ "sources": [
+  "https://www.nba.com/warriors/schedule",
+  "https://warriors.com/news/warriors-audacys-95-7-the-game-announce-multi-year-contract-extension-20251023",
+  "https://www.49ers.com/fans/tv-radio",
+  "https://www.nhl.com/sharks/news/sharks-add-gold-medalist-kendall-coyne-schofield-to-tv-broadcast-team-308891532",
+  "https://www.westwoodonesports.com/station-finder/",
+  "https://www.westwoodonesports.com/ncaa-basketball/",
+  "https://www.westwoodonesports.com/golf/",
+  "https://www.westwoodonesports.com/us-soccer/",
+  "https://www.westwoodonesports.com/ncaa-mcws/",
+  "https://www.westwoodonesports.com/ncaa-wcws/",
+  "https://www.westwoodonesports.com/ncaa-lacrosse/",
+  "https://www.westwoodonesports.com/ncaa-hockey/",
+  "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf"
+ ],
+ "notes": "Carriage is published at team or network level. No official source states, per game, that a given broadcast is receivable on a standard AM/FM radio at an Outer Sunset address; that remains flagged.",
+ "irregularities": [
+  "nba.com/warriors/schedule prints tip times without a timezone label. They are read as Pacific (team-local); the club's official season PDF uses the same numbers, which is the cross-check used.",
+  "SOURCE CONFLICT — 2026-11-18 vs 2026-11-17 at Dallas: the live schedule page says Wed Nov 18, 6:30 PM; the club's September PDF places DAL at Tue Nov 17, 6:30P. The live page's date is used and the conflict is flagged.",
+  "SOURCE CONFLICT — 2026-11-27 vs 2026-11-28 at Portland: the live schedule page says Fri Nov 27, 6:30 PM; the PDF places POR at Sat Nov 28, 6:30P. The live page's date is used and the conflict is flagged.",
+  "UNRESOLVED — one Warriors game against Dallas in the week of 2027-02-21 appears on the official PDF with no readable column association. It is omitted rather than assigned to a guessed date; the week 2027-02-21..2027-02-27 should be treated as uncertain.",
+  "The official PDF prints 'CUP GAMES QUARTERFINALS / SEMIFINALS / CHAMPIONSHIP' placeholders (Dec 4-11, 2026). Those are not confirmed Warriors games and are not ingested.",
+  "The official San Jose Sharks flagship confirmation found is an NHL.com/Sharks article dated 2019. No newer official statement was located this session; it is flagged for re-verification.",
+  "San Jose Sharks game rows were NOT ingested: nhl.com/sharks/schedule renders one month at a time, so a full-season feed is outside this session's retrieval scope.",
+  "No official average NBA game length was confirmed from an official source. The 150-minute busy block is an unverified planning estimate and is published on the Flagged page as such."
+ ],
+ "stations": [
+  {
+   "team": "San Francisco 49ers",
+   "league": "NFL",
+   "station": "KNBR 680 AM / KNBR 104.5 FM / KSAN 107.7 FM / 810 KSFO",
+   "band": "AM + FM",
+   "role": "U.S. Bank 49ers Radio Network — flagship and network partners",
+   "status": "verified",
+   "inFreeDefinition": true,
+   "sourceUrl": "https://www.49ers.com/fans/tv-radio",
+   "sourceName": "49ers.com — TV & Radio Partners (official club page)"
+  },
+  {
+   "team": "Golden State Warriors",
+   "league": "NBA",
+   "station": "KGMZ-FM 95.7 The Game",
+   "band": "FM",
+   "role": "Warriors flagship radio station; printed on every game row of the official schedule page",
+   "status": "verified",
+   "inFreeDefinition": false,
+   "sourceUrl": "https://warriors.com/news/warriors-audacys-95-7-the-game-announce-multi-year-contract-extension-20251023",
+   "sourceName": "Warriors.com — 95.7 The Game multi-year extension (official club release)"
+  },
+  {
+   "team": "San Jose Sharks",
+   "league": "NHL",
+   "station": "KUFX-FM 98.5 (KFOX)",
+   "band": "FM",
+   "role": "Sharks Radio Network flagship",
+   "status": "verified-date-2019",
+   "inFreeDefinition": false,
+   "note": "Most recent official confirmation located is an NHL.com/Sharks article from 2019. Flagged for re-verification; no game rows ingested.",
+   "sourceUrl": "https://www.nhl.com/sharks/news/sharks-add-gold-medalist-kendall-coyne-schofield-to-tv-broadcast-team-308891532",
+   "sourceName": "NHL.com/Sharks — broadcast team announcement (official club page, 2019)"
+  },
+  {
+   "team": "Westwood One Sports (national)",
+   "league": "Multi-sport",
+   "station": "KNBR-AM, KNBR-FM, KNBR-F2, KTCT-AM",
+   "band": "AM + FM",
+   "role": "Published San Francisco-market affiliates. The network states that, because of local blackouts and/or programming conflicts, not every affiliate airs every broadcast.",
+   "status": "verified",
+   "inFreeDefinition": true,
+   "sourceUrl": "https://www.westwoodonesports.com/station-finder/",
+   "sourceName": "Westwood One Sports — Station Finder (official network page)"
+  }
+ ],
+ "westwoodOneRights": [
+  {
+   "sport": "NCAA Football",
+   "upcomingPublished": true,
+   "countNote": "Six windows published for 2026 (see westwoodone-other-2026.json)",
+   "sourceUrl": "https://www.westwoodonesports.com/ncaa-football/",
+   "status": "verified"
+  },
+  {
+   "sport": "U.S. Soccer",
+   "upcomingPublished": true,
+   "countNote": "One window published (USMNT vs Haiti, 2026-11-17)",
+   "sourceUrl": "https://www.westwoodonesports.com/us-soccer/",
+   "status": "verified"
+  },
+  {
+   "sport": "NCAA Basketball (incl. men's and women's tournaments)",
+   "upcomingPublished": false,
+   "countNote": "Page showed 'No upcoming events' on 2026-11-05; season is played Nov-March",
+   "sourceUrl": "https://www.westwoodonesports.com/ncaa-basketball/",
+   "status": "verified"
+  },
+  {
+   "sport": "Golf",
+   "upcomingPublished": false,
+   "countNote": "Page showed 'No upcoming events' on 2026-11-05",
+   "sourceUrl": "https://www.westwoodonesports.com/golf/",
+   "status": "verified"
+  },
+  {
+   "sport": "NCAA Men's College World Series (baseball)",
+   "upcomingPublished": false,
+   "countNote": "Seasonal (June)",
+   "sourceUrl": "https://www.westwoodonesports.com/ncaa-mcws/",
+   "status": "verified"
+  },
+  {
+   "sport": "NCAA Women's College World Series (softball)",
+   "upcomingPublished": false,
+   "countNote": "Seasonal (June)",
+   "sourceUrl": "https://www.westwoodonesports.com/ncaa-wcws/",
+   "status": "verified"
+  },
+  {
+   "sport": "NCAA Lacrosse",
+   "upcomingPublished": false,
+   "countNote": "Seasonal (May)",
+   "sourceUrl": "https://www.westwoodonesports.com/ncaa-lacrosse/",
+   "status": "verified"
+  },
+  {
+   "sport": "NCAA Hockey",
+   "upcomingPublished": false,
+   "countNote": "Page showed 'No upcoming events' on 2026-11-05; championship is played in the spring",
+   "sourceUrl": "https://www.westwoodonesports.com/ncaa-hockey/",
+   "status": "verified"
+  }
+ ],
+ "events": [
+  {
+   "id": "nba-gsw-2026-11-05",
+   "date": "2026-11-05",
+   "startPT": "19:00",
+   "homeAway": "home",
+   "opponent": "Miami Heat",
+   "venue": "Chase Center, San Francisco, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Miami Heat"
+  },
+  {
+   "id": "nba-gsw-2026-11-07",
+   "date": "2026-11-07",
+   "startPT": "17:30",
+   "homeAway": "home",
+   "opponent": "Orlando Magic",
+   "venue": "Chase Center, San Francisco, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Orlando Magic"
+  },
+  {
+   "id": "nba-gsw-2026-11-09",
+   "date": "2026-11-09",
+   "startPT": "19:00",
+   "homeAway": "home",
+   "opponent": "New Orleans Pelicans",
+   "venue": "Chase Center, San Francisco, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs New Orleans Pelicans"
+  },
+  {
+   "id": "nba-gsw-2026-11-11",
+   "date": "2026-11-11",
+   "startPT": "18:30",
+   "homeAway": "away",
+   "opponent": "Houston Rockets",
+   "venue": "Houston, TX",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at Houston Rockets"
+  },
+  {
+   "id": "nba-gsw-2026-11-13",
+   "date": "2026-11-13",
+   "startPT": "18:30",
+   "homeAway": "away",
+   "opponent": "San Antonio Spurs",
+   "venue": "San Antonio, TX",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at San Antonio Spurs (NBA Cup)"
+  },
+  {
+   "id": "nba-gsw-2026-11-16",
+   "date": "2026-11-16",
+   "startPT": "17:00",
+   "homeAway": "away",
+   "opponent": "New Orleans Pelicans",
+   "venue": "New Orleans, LA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at New Orleans Pelicans"
+  },
+  {
+   "id": "nba-gsw-2026-11-18",
+   "date": "2026-11-18",
+   "startPT": "18:30",
+   "homeAway": "away",
+   "opponent": "Dallas Mavericks",
+   "venue": "Dallas, TX",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at Dallas Mavericks"
+  },
+  {
+   "id": "nba-gsw-2026-11-19",
+   "date": "2026-11-19",
+   "startPT": "17:00",
+   "homeAway": "away",
+   "opponent": "Memphis Grizzlies",
+   "venue": "Memphis, TN",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at Memphis Grizzlies"
+  },
+  {
+   "id": "nba-gsw-2026-11-22",
+   "date": "2026-11-22",
+   "startPT": "17:30",
+   "homeAway": "home",
+   "opponent": "Boston Celtics",
+   "venue": "Chase Center, San Francisco, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Boston Celtics"
+  },
+  {
+   "id": "nba-gsw-2026-11-25",
+   "date": "2026-11-25",
+   "startPT": "19:00",
+   "homeAway": "home",
+   "opponent": "Sacramento Kings",
+   "venue": "Chase Center, San Francisco, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Sacramento Kings (NBA Cup)"
+  },
+  {
+   "id": "nba-gsw-2026-11-27",
+   "date": "2026-11-27",
+   "startPT": "18:30",
+   "homeAway": "away",
+   "opponent": "Portland Trail Blazers",
+   "venue": "Portland, OR",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at Portland Trail Blazers (NBA Cup)"
+  },
+  {
+   "id": "nba-gsw-2026-11-29",
+   "date": "2026-11-29",
+   "startPT": "17:30",
+   "homeAway": "home",
+   "opponent": "LA Clippers",
+   "venue": "Chase Center, San Francisco, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs LA Clippers"
+  },
+  {
+   "id": "nba-gsw-2026-12-01",
+   "date": "2026-12-01",
+   "startPT": "20:00",
+   "homeAway": "home",
+   "opponent": "Utah Jazz",
+   "venue": "Chase Center, San Francisco, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Utah Jazz"
+  },
+  {
+   "id": "nba-gsw-2026-12-12",
+   "date": "2026-12-12",
+   "startPT": "17:00",
+   "homeAway": "away",
+   "opponent": "Cleveland Cavaliers",
+   "venue": "Cleveland, OH",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at Cleveland Cavaliers"
+  },
+  {
+   "id": "nba-gsw-2026-12-14",
+   "date": "2026-12-14",
+   "startPT": "17:00",
+   "homeAway": "away",
+   "opponent": "Memphis Grizzlies",
+   "venue": "Memphis, TN",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at Memphis Grizzlies"
+  },
+  {
+   "id": "nba-gsw-2026-12-16",
+   "date": "2026-12-16",
+   "startPT": "16:00",
+   "homeAway": "away",
+   "opponent": "Indiana Pacers",
+   "venue": "Indianapolis, IN",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at Indiana Pacers"
+  },
+  {
+   "id": "nba-gsw-2026-12-18",
+   "date": "2026-12-18",
+   "startPT": "16:30",
+   "homeAway": "away",
+   "opponent": "Toronto Raptors",
+   "venue": "Toronto, ON",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at Toronto Raptors"
+  },
+  {
+   "id": "nba-gsw-2026-12-20",
+   "date": "2026-12-20",
+   "startPT": "17:00",
+   "homeAway": "away",
+   "opponent": "Milwaukee Bucks",
+   "venue": "Milwaukee, WI",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at Milwaukee Bucks"
+  },
+  {
+   "id": "nba-gsw-2026-12-22",
+   "date": "2026-12-22",
+   "startPT": "19:30",
+   "homeAway": "home",
+   "opponent": "Dallas Mavericks",
+   "venue": "Chase Center, San Francisco, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Dallas Mavericks"
+  },
+  {
+   "id": "nba-gsw-2026-12-23",
+   "date": "2026-12-23",
+   "startPT": "19:30",
+   "homeAway": "away",
+   "opponent": "LA Clippers",
+   "venue": "Inglewood, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at LA Clippers"
+  },
+  {
+   "id": "nba-gsw-2026-12-25",
+   "date": "2026-12-25",
+   "startPT": "19:30",
+   "homeAway": "home",
+   "opponent": "Denver Nuggets",
+   "venue": "Chase Center, San Francisco, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Denver Nuggets"
+  },
+  {
+   "id": "nba-gsw-2026-12-27",
+   "date": "2026-12-27",
+   "startPT": "17:30",
+   "homeAway": "home",
+   "opponent": "Minnesota Timberwolves",
+   "venue": "Chase Center, San Francisco, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Minnesota Timberwolves"
+  },
+  {
+   "id": "nba-gsw-2026-12-28",
+   "date": "2026-12-28",
+   "startPT": "18:00",
+   "homeAway": "away",
+   "opponent": "Phoenix Suns",
+   "venue": "Phoenix, AZ",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors at Phoenix Suns"
+  },
+  {
+   "id": "nba-gsw-2026-12-30",
+   "date": "2026-12-30",
+   "startPT": "19:00",
+   "homeAway": "home",
+   "opponent": "Houston Rockets",
+   "venue": "Chase Center, San Francisco, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Houston Rockets"
+  },
+  {
+   "id": "nba-gsw-2027-01-02",
+   "date": "2027-01-02",
+   "startPT": "17:30",
+   "homeAway": "home",
+   "opponent": "Brooklyn Nets",
+   "venue": "Chase Center, San Francisco, CA",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Brooklyn Nets"
+  },
+  {
+   "id": "nba-gsw-2027-01-06",
+   "date": "2027-01-06",
+   "startPT": "19:00",
+   "opponent": "New York Knicks",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs New York Knicks",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "NYK",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-07",
+   "date": "2027-01-07",
+   "startPT": "19:00",
+   "opponent": "Detroit Pistons",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Detroit Pistons",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "DET",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-09",
+   "date": "2027-01-09",
+   "startPT": "17:30",
+   "opponent": "Chicago Bulls",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Chicago Bulls",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "CHI",
+    "5:30P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-12",
+   "date": "2027-01-12",
+   "startPT": "20:00",
+   "opponent": "Sacramento Kings",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Sacramento Kings",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "SAC",
+    "8:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-13",
+   "date": "2027-01-13",
+   "startPT": "19:00",
+   "opponent": "Charlotte Hornets",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Charlotte Hornets",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "CHA",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-15",
+   "date": "2027-01-15",
+   "startPT": "16:00",
+   "opponent": "Atlanta Hawks",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Atlanta Hawks",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "ATL",
+    "4:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-17",
+   "date": "2027-01-17",
+   "startPT": "15:00",
+   "opponent": "Miami Heat",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Miami Heat",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "MIA",
+    "3:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-19",
+   "date": "2027-01-19",
+   "startPT": "16:00",
+   "opponent": "Orlando Magic",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Orlando Magic",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "ORL",
+    "4:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-21",
+   "date": "2027-01-21",
+   "startPT": "19:00",
+   "opponent": "Los Angeles Lakers",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Los Angeles Lakers",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "LAL",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-22",
+   "date": "2027-01-22",
+   "startPT": "19:00",
+   "opponent": "Milwaukee Bucks",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Milwaukee Bucks",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "MIL",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-24",
+   "date": "2027-01-24",
+   "startPT": "17:30",
+   "opponent": "Oklahoma City Thunder",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Oklahoma City Thunder",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "OKC",
+    "5:30P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-27",
+   "date": "2027-01-27",
+   "startPT": "19:00",
+   "opponent": "Portland Trail Blazers",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Portland Trail Blazers",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "POR",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-28",
+   "date": "2027-01-28",
+   "startPT": "18:00",
+   "opponent": "Utah Jazz",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Utah Jazz",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "UTA",
+    "6:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-30",
+   "date": "2027-01-30",
+   "startPT": "14:30",
+   "opponent": "San Antonio Spurs",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs San Antonio Spurs",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "SAS",
+    "2:30P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-01-31",
+   "date": "2027-01-31",
+   "startPT": "19:00",
+   "opponent": "San Antonio Spurs",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs San Antonio Spurs",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "SAS",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-02-01",
+   "date": "2027-02-01",
+   "startPT": "19:30",
+   "opponent": "LA Clippers",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs LA Clippers",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "LAC",
+    "7:30P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-02-02",
+   "date": "2027-02-02",
+   "startPT": "16:00",
+   "opponent": "Charlotte Hornets",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Charlotte Hornets",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "CHA",
+    "4:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-02-07",
+   "date": "2027-02-07",
+   "startPT": "12:00",
+   "opponent": "Detroit Pistons",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Detroit Pistons",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "DET",
+    "12:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-02-08",
+   "date": "2027-02-08",
+   "startPT": "17:00",
+   "opponent": "Chicago Bulls",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Chicago Bulls",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "CHI",
+    "5:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-02-09",
+   "date": "2027-02-09",
+   "startPT": "16:30",
+   "opponent": "Boston Celtics",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Boston Celtics",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "BOS",
+    "4:30P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-02-10",
+   "date": "2027-02-10",
+   "startPT": "17:30",
+   "opponent": "New York Knicks",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs New York Knicks",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "NYK",
+    "5:30P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-02-14",
+   "date": "2027-02-14",
+   "startPT": "16:30",
+   "opponent": "Indiana Pacers",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Indiana Pacers",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "IND",
+    "4:30P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-02-15",
+   "date": "2027-02-15",
+   "startPT": "19:00",
+   "opponent": "New Orleans Pelicans",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs New Orleans Pelicans",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "NOP",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-02-21-allstar",
+   "date": "2027-02-21",
+   "startPT": null,
+   "opponent": "NBA All-Star Game (Phoenix)",
+   "radio": null,
+   "label": "NBA All-Star Game 2027 — Phoenix (printed on the Warriors' official season schedule)",
+   "allStar": true,
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "ALL-STAR",
+    "GAME",
+    "PHOENIX"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-01",
+   "date": "2027-03-01",
+   "startPT": "17:30",
+   "opponent": "Houston Rockets",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Houston Rockets",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "HOU",
+    "5:30P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-02",
+   "date": "2027-03-02",
+   "startPT": "17:00",
+   "opponent": "Dallas Mavericks",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Dallas Mavericks",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "DAL",
+    "5:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-03",
+   "date": "2027-03-03",
+   "startPT": "19:00",
+   "opponent": "Washington Wizards",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Washington Wizards",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "WAS",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-04",
+   "date": "2027-03-04",
+   "startPT": "19:00",
+   "opponent": "Washington Wizards",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Washington Wizards",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "WAS",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-07",
+   "date": "2027-03-07",
+   "startPT": "19:00",
+   "opponent": "Houston Rockets",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Houston Rockets",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "HOU",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-08",
+   "date": "2027-03-08",
+   "startPT": "20:00",
+   "opponent": "Portland Trail Blazers",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Portland Trail Blazers",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "POR",
+    "8:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-09",
+   "date": "2027-03-09",
+   "startPT": "19:00",
+   "opponent": "Sacramento Kings",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Sacramento Kings",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "SAC",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-11",
+   "date": "2027-03-11",
+   "startPT": "19:00",
+   "opponent": "Denver Nuggets",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Denver Nuggets",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "DEN",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-12",
+   "date": "2027-03-12",
+   "startPT": "19:00",
+   "opponent": "Denver Nuggets",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Denver Nuggets",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "DEN",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-14",
+   "date": "2027-03-14",
+   "startPT": "19:00",
+   "opponent": "Los Angeles Lakers",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Los Angeles Lakers",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "LAL",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-15",
+   "date": "2027-03-15",
+   "startPT": "19:00",
+   "opponent": "Cleveland Cavaliers",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Cleveland Cavaliers",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "CLE",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-16",
+   "date": "2027-03-16",
+   "startPT": "19:00",
+   "opponent": "Memphis Grizzlies",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Memphis Grizzlies",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "MEM",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-17",
+   "date": "2027-03-17",
+   "startPT": "19:00",
+   "opponent": "Portland Trail Blazers",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Portland Trail Blazers",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "POR",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-18",
+   "date": "2027-03-18",
+   "startPT": "19:00",
+   "opponent": "Portland Trail Blazers",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Portland Trail Blazers",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "POR",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-21",
+   "date": "2027-03-21",
+   "startPT": "19:00",
+   "opponent": "Atlanta Hawks",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Atlanta Hawks",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "ATL",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-22",
+   "date": "2027-03-22",
+   "startPT": "19:00",
+   "opponent": "Atlanta Hawks",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Atlanta Hawks",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "ATL",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-23",
+   "date": "2027-03-23",
+   "startPT": "19:00",
+   "opponent": "Philadelphia 76ers",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Philadelphia 76ers",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "PHI",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-24",
+   "date": "2027-03-24",
+   "startPT": "19:00",
+   "opponent": "Toronto Raptors",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Toronto Raptors",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "TOR",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-25",
+   "date": "2027-03-25",
+   "startPT": "19:00",
+   "opponent": "Toronto Raptors",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Toronto Raptors",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "TOR",
+    "7:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-26",
+   "date": "2027-03-26",
+   "startPT": "16:00",
+   "opponent": "Washington Wizards",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Washington Wizards",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "WAS",
+    "4:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-27",
+   "date": "2027-03-27",
+   "startPT": "16:00",
+   "opponent": "Washington Wizards",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Washington Wizards",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "WAS",
+    "4:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-28",
+   "date": "2027-03-28",
+   "startPT": "16:30",
+   "opponent": "Brooklyn Nets",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Brooklyn Nets",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "BKN",
+    "4:30P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-29",
+   "date": "2027-03-29",
+   "startPT": "16:30",
+   "opponent": "Brooklyn Nets",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Brooklyn Nets",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "BKN",
+    "4:30P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-30",
+   "date": "2027-03-30",
+   "startPT": "16:00",
+   "opponent": "Philadelphia 76ers",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Philadelphia 76ers",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "PHI",
+    "4:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-03-31",
+   "date": "2027-03-31",
+   "startPT": "16:00",
+   "opponent": "Philadelphia 76ers",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Philadelphia 76ers",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "PHI",
+    "4:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-04-04",
+   "date": "2027-04-04",
+   "startPT": "15:00",
+   "opponent": "Sacramento Kings",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Sacramento Kings",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "SAC",
+    "3:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-04-06",
+   "date": "2027-04-06",
+   "startPT": "20:00",
+   "opponent": "Phoenix Suns",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Phoenix Suns",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "PHX",
+    "8:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-04-08",
+   "date": "2027-04-08",
+   "startPT": "18:30",
+   "opponent": "Oklahoma City Thunder",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Oklahoma City Thunder",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "OKC",
+    "6:30P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-04-09",
+   "date": "2027-04-09",
+   "startPT": "17:00",
+   "opponent": "Oklahoma City Thunder",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Oklahoma City Thunder",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "OKC",
+    "5:00P"
+   ]
+  },
+  {
+   "id": "nba-gsw-2027-04-11",
+   "date": "2027-04-11",
+   "startPT": "17:30",
+   "opponent": "Utah Jazz",
+   "radio": "KGMZ-FM 95.7 The Game",
+   "label": "Golden State Warriors vs Utah Jazz",
+   "source": "pdf",
+   "sourceUrl": "https://cdn.nba.com/teams/uploads/sites/1610612744/2026/09/2627Schedule_8.5x11_v2.pdf",
+   "verifyTokens": [
+    "UTA",
+    "5:30P"
+   ]
+  }
+ ],
+ "coverageStart": "2026-11-05",
+ "coverageEnd": "2027-04-11",
+ "coverage": "79 Golden State Warriors rows, 2026-11-05 to 2027-04-11. 2026-11-05 to 2027-01-02 came from the live official schedule page (nba.com/warriors/schedule, which prints the radio station on every row); 2027-01-06 to 2027-04-11 came from the club's official 2026-27 season schedule PDF linked from that page. Home/away and venue are not readable from the PDF text layer and are left blank rather than guessed."
+}

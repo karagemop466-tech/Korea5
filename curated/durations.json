@@ -1,30 +1,173 @@
 {
   "meta": {
     "name": "Game durations, halftime and on-air windows",
-    "compiledUTC": "2026-11-02",
+    "compiledUTC": "2026-11-05",
     "rule": "Official rulebook / league facts are separated from planning buffers. Any number that is not published by an official source is labelled ESTIMATE and appears on the Flagged for Review page. A blank end time means the value could not be confirmed.",
     "estimateLabel": "ESTIMATION — not a real verified released schedule",
     "timezone": "America/Los_Angeles (Pacific)"
   },
   "official": [
-    {"sport": "MLB", "fact": "Average nine-inning game time, 2025", "value": "2:38 (158 minutes)", "status": "verified", "note": "MLB reported that 2025 was the third straight season with an average game time of 2:40 or less.", "sourceUrl": "https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007", "sourceName": "MLB 2025 attendance press release (MLB.com)"},
-    {"sport": "MLB", "fact": "2027 first-pitch times", "value": "", "status": "unverified", "note": "MLB's 2027 release says complete first-pitch times are not final; 2,015 game records carry startTimeTBD=true in StatsAPI. Times left blank.", "sourceUrl": "https://www.mlb.com/news/mlb-2027-schedule-released", "sourceName": "MLB 2027 schedule release (MLB.com)"},
-    {"sport": "NFL", "fact": "Regulation playing time", "value": "60 minutes (four 15-minute quarters)", "status": "verified", "note": "2026 NFL Rulebook, Rule 4, Section 1, Article 1.", "sourceUrl": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook", "sourceName": "Official 2026 NFL Rulebook (NFL Football Operations)"},
-    {"sport": "NFL", "fact": "Halftime", "value": "13 minutes", "status": "verified", "note": "2026 NFL Rulebook, Rule 4, Section 1, Article 3: 'there shall be an intermission of 13 minutes'.", "sourceUrl": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook", "sourceName": "Official 2026 NFL Rulebook (NFL Football Operations)"},
-    {"sport": "NCAAF", "fact": "Regulation playing time", "value": "60 minutes (four 15-minute quarters)", "status": "verified", "note": "2026 NCAA Football Rules, Rule 3, Section 2, Article 1.", "sourceUrl": "https://www.ncaa.org/championships/playing-rules/football-playing-rules/", "sourceName": "NCAA Football Playing Rules (NCAA.org)"},
-    {"sport": "NCAAF", "fact": "Halftime", "value": "20 minutes", "status": "verified", "note": "2026 NCAA Football Rules, Rule 3, Section 2: 'The intermission between halves of a regular-season game shall be 20 minutes'.", "sourceUrl": "https://www.ncaa.org/championships/playing-rules/football-playing-rules/", "sourceName": "NCAA Football Playing Rules (NCAA.org)"},
-    {"sport": "Westwood One Sports", "fact": "Exact national radio on-air window", "value": "Published per event (start_time / end_time on the official event page)", "status": "verified", "note": "The network publishes a start and end for every event; these are the exact windows used on the Westwood One page, not a modelled game length.", "sourceUrl": "https://www.westwoodonesports.com/events/548540/", "sourceName": "Westwood One Sports official event page (example)"},
-    {"sport": "Stanford NCAAF", "fact": "Pregame coverage", "value": "3 hours before kickoff", "status": "verified", "note": "KNBR 1050 says it carries three hours of pregame and every Stanford game live. This pregame is talk, not a game broadcast; it is listed for completeness and is not used to block free time.", "sourceUrl": "https://www.thesportsleader.com/stanfordfootball/", "sourceName": "Stanford Football on KNBR 1050 (official station page)"}
+    {
+      "sport": "MLB",
+      "fact": "Average nine-inning game time, 2025",
+      "value": "2:38 (158 minutes)",
+      "status": "verified",
+      "note": "MLB reported that 2025 was the third straight season with an average game time of 2:40 or less.",
+      "sourceUrl": "https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007",
+      "sourceName": "MLB 2025 attendance press release (MLB.com)"
+    },
+    {
+      "sport": "MLB",
+      "fact": "2027 first-pitch times",
+      "value": "",
+      "status": "unverified",
+      "note": "MLB's 2027 release says complete first-pitch times are not final; 2,015 game records carry startTimeTBD=true in StatsAPI. Times left blank.",
+      "sourceUrl": "https://www.mlb.com/news/mlb-2027-schedule-released",
+      "sourceName": "MLB 2027 schedule release (MLB.com)"
+    },
+    {
+      "sport": "NFL",
+      "fact": "Regulation playing time",
+      "value": "60 minutes (four 15-minute quarters)",
+      "status": "verified",
+      "note": "2026 NFL Rulebook, Rule 4, Section 1, Article 1.",
+      "sourceUrl": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook",
+      "sourceName": "Official 2026 NFL Rulebook (NFL Football Operations)"
+    },
+    {
+      "sport": "NFL",
+      "fact": "Halftime",
+      "value": "13 minutes",
+      "status": "verified",
+      "note": "2026 NFL Rulebook, Rule 4, Section 1, Article 3: 'there shall be an intermission of 13 minutes'.",
+      "sourceUrl": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook",
+      "sourceName": "Official 2026 NFL Rulebook (NFL Football Operations)"
+    },
+    {
+      "sport": "NCAAF",
+      "fact": "Regulation playing time",
+      "value": "60 minutes (four 15-minute quarters)",
+      "status": "verified",
+      "note": "2026 NCAA Football Rules, Rule 3, Section 2, Article 1.",
+      "sourceUrl": "https://www.ncaa.org/championships/playing-rules/football-playing-rules/",
+      "sourceName": "NCAA Football Playing Rules (NCAA.org)"
+    },
+    {
+      "sport": "NCAAF",
+      "fact": "Halftime",
+      "value": "20 minutes",
+      "status": "verified",
+      "note": "2026 NCAA Football Rules, Rule 3, Section 2: 'The intermission between halves of a regular-season game shall be 20 minutes'.",
+      "sourceUrl": "https://www.ncaa.org/championships/playing-rules/football-playing-rules/",
+      "sourceName": "NCAA Football Playing Rules (NCAA.org)"
+    },
+    {
+      "sport": "Westwood One Sports",
+      "fact": "Exact national radio on-air window",
+      "value": "Published per event (start_time / end_time on the official event page)",
+      "status": "verified",
+      "note": "The network publishes a start and end for every event; these are the exact windows used on the Westwood One page, not a modelled game length.",
+      "sourceUrl": "https://www.westwoodonesports.com/events/548540/",
+      "sourceName": "Westwood One Sports official event page (example)"
+    },
+    {
+      "sport": "Stanford NCAAF",
+      "fact": "Pregame coverage",
+      "value": "3 hours before kickoff",
+      "status": "verified",
+      "note": "KNBR 1050 says it carries three hours of pregame and every Stanford game live. This pregame is talk, not a game broadcast; it is listed for completeness and is not used to block free time.",
+      "sourceUrl": "https://www.thesportsleader.com/stanfordfootball/",
+      "sourceName": "Stanford Football on KNBR 1050 (official station page)"
+    }
   ],
   "planningEstimates": [
-    {"sport": "MLB", "use": "Busy block for one regular-season game", "minutes": 165, "label": "ESTIMATE", "status": "estimated", "note": "Planning buffer around the official 2:38 average. Not an official duration; flagged.", "sourceUrl": "https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007", "sourceName": "MLB 2025 attendance press release (basis for estimate)"},
-    {"sport": "MLB postseason", "use": "Busy block for one postseason game", "minutes": 195, "label": "ESTIMATE", "status": "estimated", "note": "Planning buffer; MLB has not published an average postseason duration. Flagged.", "sourceUrl": "https://www.mlb.com/news/press-release-mlb-announces-2026-postseason-schedule", "sourceName": "MLB 2026 Postseason schedule (official calendar basis)"},
-    {"sport": "NFL", "use": "Busy block for one game", "minutes": 185, "label": "ESTIMATE", "status": "estimated", "note": "Planning buffer around 60 minutes of play plus 13-minute halftime, stoppages, reviews and commercials. Not an official duration; flagged.", "sourceUrl": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook", "sourceName": "Official 2026 NFL Rulebook (basis for estimate)"},
-    {"sport": "NFL postseason / Super Bowl", "use": "Busy block for one playoff or Super Bowl game", "minutes": 195, "label": "ESTIMATE", "status": "estimated", "note": "Planning buffer; the Super Bowl halftime is longer than the standard 13 minutes but the official length for LXIII was not confirmed. Flagged.", "sourceUrl": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook", "sourceName": "Official 2026 NFL Rulebook (basis for estimate)"},
-    {"sport": "NCAAF", "use": "Busy block for one Stanford or Cal game", "minutes": 200, "label": "ESTIMATE", "status": "estimated", "note": "Planning buffer around 60 minutes of play plus 20-minute halftime and stoppages. Not an official duration; flagged.", "sourceUrl": "https://www.ncaa.org/championships/playing-rules/football-playing-rules/", "sourceName": "NCAA Football Playing Rules (basis for estimate)"}
+    {
+      "sport": "MLB",
+      "use": "Busy block for one regular-season game",
+      "minutes": 165,
+      "label": "ESTIMATE",
+      "status": "estimated",
+      "note": "Planning buffer around the official 2:38 average. Not an official duration; flagged.",
+      "sourceUrl": "https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007",
+      "sourceName": "MLB 2025 attendance press release (basis for estimate)"
+    },
+    {
+      "sport": "MLB postseason",
+      "use": "Busy block for one postseason game",
+      "minutes": 195,
+      "label": "ESTIMATE",
+      "status": "estimated",
+      "note": "Planning buffer; MLB has not published an average postseason duration. Flagged.",
+      "sourceUrl": "https://www.mlb.com/news/press-release-mlb-announces-2026-postseason-schedule",
+      "sourceName": "MLB 2026 Postseason schedule (official calendar basis)"
+    },
+    {
+      "sport": "NFL",
+      "use": "Busy block for one game",
+      "minutes": 185,
+      "label": "ESTIMATE",
+      "status": "estimated",
+      "note": "Planning buffer around 60 minutes of play plus 13-minute halftime, stoppages, reviews and commercials. Not an official duration; flagged.",
+      "sourceUrl": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook",
+      "sourceName": "Official 2026 NFL Rulebook (basis for estimate)"
+    },
+    {
+      "sport": "NFL postseason / Super Bowl",
+      "use": "Busy block for one playoff or Super Bowl game",
+      "minutes": 195,
+      "label": "ESTIMATE",
+      "status": "estimated",
+      "note": "Planning buffer; the Super Bowl halftime is longer than the standard 13 minutes but the official length for LXIII was not confirmed. Flagged.",
+      "sourceUrl": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook",
+      "sourceName": "Official 2026 NFL Rulebook (basis for estimate)"
+    },
+    {
+      "sport": "NCAAF",
+      "use": "Busy block for one Stanford or Cal game",
+      "minutes": 200,
+      "label": "ESTIMATE",
+      "status": "estimated",
+      "note": "Planning buffer around 60 minutes of play plus 20-minute halftime and stoppages. Not an official duration; flagged.",
+      "sourceUrl": "https://www.ncaa.org/championships/playing-rules/football-playing-rules/",
+      "sourceName": "NCAA Football Playing Rules (basis for estimate)"
+    },
+    {
+      "sport": "NBA",
+      "use": "Busy block for one Golden State Warriors game",
+      "minutes": 150,
+      "label": "ESTIMATE",
+      "status": "unverified",
+      "note": "UNVERIFIED ESTIMATE. No official average NBA game length was confirmed from an official source, so no value is asserted as official. The block is a planning buffer only and is flagged. It is not part of the default free-time scopes.",
+      "sourceUrl": "https://www.nba.com/warriors/schedule",
+      "sourceName": "NBA.com Warriors official schedule (source of the schedule rows)"
+    },
+    {
+      "sport": "Soccer",
+      "use": "Busy block for one Westwood One U.S. Soccer broadcast",
+      "minutes": 120,
+      "label": "ESTIMATE",
+      "status": "unverified",
+      "note": "UNVERIFIED ESTIMATE. No official average broadcast length confirmed. Planning buffer only; flagged.",
+      "sourceUrl": "https://www.westwoodonesports.com/us-soccer/",
+      "sourceName": "Westwood One Sports official U.S. Soccer page"
+    }
   ],
   "researchReferences": [
-    {"topic": "Average real-time game length research", "note": "Third-party research commonly reports NFL games near three hours and FBS college football games near three and a half hours. These are NOT official values and are not used as verified schedule data. The official rulebooks above are authoritative for playing time and halftime.", "status": "research", "official": false, "sourceUrl": "https://www.profootballnetwork.com/cfb/college-football-halftime-length-ncaa-rules/", "sourceName": "Pro Football Network halftime explainer (third-party research; flagged)"},
-    {"topic": "2026 MLB average game time research", "note": "Third-party trackers reported 2026 averages slightly above the official 2025 figure. Not used as a verified value; the official MLB 2:38 figure is used instead.", "status": "research", "official": false, "sourceUrl": "https://www.mlb.com/news/mlb-average-game-time-under-three-hours-third-straight-year", "sourceName": "MLB.com article on game-time trend (official context)"}
+    {
+      "topic": "Average real-time game length research",
+      "note": "Third-party research commonly reports NFL games near three hours and FBS college football games near three and a half hours. These are NOT official values and are not used as verified schedule data. The official rulebooks above are authoritative for playing time and halftime.",
+      "status": "research",
+      "official": false,
+      "sourceUrl": "https://www.profootballnetwork.com/cfb/college-football-halftime-length-ncaa-rules/",
+      "sourceName": "Pro Football Network halftime explainer (third-party research; flagged)"
+    },
+    {
+      "topic": "2026 MLB average game time research",
+      "note": "Third-party trackers reported 2026 averages slightly above the official 2025 figure. Not used as a verified value; the official MLB 2:38 figure is used instead.",
+      "status": "research",
+      "official": false,
+      "sourceUrl": "https://www.mlb.com/news/mlb-average-game-time-under-three-hours-third-straight-year",
+      "sourceName": "MLB.com article on game-time trend (official context)"
+    }
   ]
 }

@@ -28,6 +28,10 @@ DURATION = {
     "mlb": 165, "mlb-post": 195,
     "nfl": 185, "nfl-post": 195,
     "ncaaf": 200,
+    # Non-core sports found on Bay Area AM/FM radio. Both are planning buffers, not
+    # official durations: no official average length was confirmed from an official source,
+    # so both are published as unverified estimates on the Flagged for Review page.
+    "nba": 150, "soccer": 120,
 }
 MLB_HIGH = {"San Francisco Giants", "Athletics", "Oakland Athletics"}
 MLB_SOURCE = "https://statsapi.mlb.com/api/v1/schedule"
@@ -217,6 +221,86 @@ def curated_events():
                 "sourceLabel": "Westwood One Sports official NFL schedule",
                 "sourceUrl": e.get("eventUrl"),
                 "verifyTokens": e.get("verifyTokens", []),
+            })
+
+    # ---- Westwood One national broadcasts OUTSIDE the NFL (NCAA Football, U.S. Soccer).
+    # These are national radio windows carried into the Bay Area by the network's San Francisco
+    # affiliates. They are not Giants/A's/49ers/Stanford/Cal games, so they are `normal` priority,
+    # but they do occupy AM/FM radio and therefore belong in the model.
+    p = "data/curated/westwoodone-other-2026.json"
+    if os.path.exists(p):
+        cur = json.load(open(p))
+        for e in cur["events"]:
+            start = None
+            basis = None
+            if e.get("startET"):
+                h, m = map(int, e["startET"].split(":"))
+                start = f"{(h - 3) % 24:02d}:{m:02d}"
+                basis = "Westwood One publishes Eastern time; converted to Pacific at ET-3h (PST)."
+            sport = e.get("sport", "NCAAF")
+            league = "NCAAF" if sport == "NCAAF" else "OTHER"
+            dur = DURATION["ncaaf"] if sport == "NCAAF" else DURATION["soccer"]
+            title = e.get("title") or (f"{e['away']} at {e['home']}" if e.get("away") and e.get("home")
+                                       else f"{e['label']} \u2014 participants TBA")
+            out.append({
+                "id": e["id"], "league": league,
+                "priority": "normal",
+                "tags": ["westwoodone"] + (["ncaaf"] if sport == "NCAAF" else
+                                           ["other-radio", "soccer"]),
+                "date": e["date"], "start": start,
+                "startWindow": None if start else "12:00-23:30",
+                "durationMin": dur, "title": title,
+                "away": e.get("away"), "home": e.get("home"), "venue": e.get("venue"),
+                "nationalRadio": "Westwood One Sports (national)",
+                "seasonType": "regular", "label": e.get("label"),
+                "timeStatus": "verified" if start else "unverified",
+                "timeBasis": basis, "status": "verified" if start else "unverified",
+                "note": e.get("note"),
+                "source": "https://www.westwoodonesports.com/ncaa-football/",
+                "sourceLabel": "Westwood One Sports official non-NFL schedule pages",
+                "sourceUrl": e.get("eventUrl"),
+                "verifyTokens": e.get("verifyTokens", []),
+            })
+
+    # ---- Other live sports on Bay Area AM/FM radio (currently: Golden State Warriors, NBA).
+    # The owner asked us to find every other sport carried live on Bay Area radio and treat it as
+    # high priority. The brief's own "what free means" list is closed (MLB / NFL / Stanford /
+    # Cal / Westwood One national NFL), so these rows live in their own group, tagged
+    # `other-radio`: they are excluded from the default free-time scopes and can be switched on
+    # in the UI. Nothing here is guessed - every row is read from the official schedule.
+    p = "data/curated/other-bayarea-radio.json"
+    if os.path.exists(p):
+        cur = json.load(open(p))
+        for e in cur["events"]:
+            src_url = e.get("sourceUrl") or "https://www.nba.com/warriors/schedule"
+            src_label = ("Warriors official 2026-27 season schedule PDF (NBA.com)"
+                         if e.get("source") == "pdf" else "NBA.com Warriors official schedule")
+            tags = ["other-radio", "nba", "nba-warriors"]
+            if e.get("allStar"):
+                tags.append("nba-allstar")
+            out.append({
+                "id": e["id"], "league": "OTHER",
+                "priority": "high",
+                "tags": tags,
+                "date": e["date"], "start": e.get("startPT"),
+                "startWindow": None if e.get("startPT") else "12:00-23:30",
+                "durationMin": DURATION["nba"],
+                "title": e.get("label") or "Golden State Warriors",
+                "teams": ["Golden State Warriors", e.get("opponent")],
+                "opponent": e.get("opponent"), "venue": e.get("venue"),
+                "radio": [e["radio"]] if e.get("radio") else [],
+                "seasonType": "allstar" if e.get("allStar") else "regular",
+                "timeStatus": "verified" if e.get("startPT") else "unverified",
+                "timeBasis": ("Tip time as printed on the official NBA.com Warriors schedule. "
+                              "The source prints no timezone label; times are read as Pacific "
+                              "(team-local) and cross-checked against the club's official season PDF. "
+                              "Flagged for review."),
+                "status": "verified" if e.get("startPT") else "unverified",
+                "group": "other-radio",
+                "source": src_url,
+                "sourceLabel": src_label,
+                "sourceUrl": src_url,
+                "verifyTokens": [x for x in e.get("verifyTokens", []) if x],
             })
 
     p = "data/curated/ncaaf-2026.json"

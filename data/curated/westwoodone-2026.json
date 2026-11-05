@@ -1,47 +1,445 @@
 {
-  "meta": {
-    "dataset": "Westwood One Sports national NFL (and listed NCAA Football) radio broadcasts",
-    "league": "NFL + NCAAF",
-    "priority": "high (national NFL radio)",
-    "sources": [
-      "https://www.westwoodonesports.com/nfl-schedule/"
-    ],
-    "sourceName": "Westwood One Sports — NFL Schedule (official network schedule page)",
-    "retrievedUTC": "2026-11-02",
-    "notes": "Westwood One publishes broadcast windows, not station-level carriage. Times on the source page are Eastern. Pacific times here are converted at ET-3h (PST, in effect from 2026-11-01). Doubleheader/tripleheader entries are listed by the network as a single window with participants TBA.",
-    "irregularities": [
-      "2026-11-22 MIN vs SF: Westwood One lists 7:30 PM ET (4:30 PM PST); the 49ers' official page lists 5:20 PM PST (8:20 PM ET). Both windows are blocked by the planner and the discrepancy is flagged.",
-      "2026-12-27 JAX at DAL: kickoff time was not captured from the source page (page section truncated during retrieval); time is left blank and flagged unverified.",
-      "Week 16/17/18 Saturday doubleheader entries list 'TBA' participants; only the broadcast windows are published at this time.",
-      "Westwood One's 2026-27 NFL postseason broadcasts had not been published on the schedule page as of 2026-11-02."
-    ]
-  },
-  "events": [
-    {"id":"w1-2026-11-02","date":"2026-11-02","startET":"19:00","label":"Monday Night Football","away":"Chicago Bears","home":"Seattle Seahawks","venue":"Lumen Field, Seattle, WA","eventUrl":"https://www.westwoodonesports.com/events/548540","verifyTokens":["Chicago Bears at Seattle Seahawks","7:00 PM ET"]},
-    {"id":"w1-2026-11-05","date":"2026-11-05","startET":"19:30","label":"Thursday Night Football","away":"Jacksonville Jaguars","home":"Baltimore Ravens","venue":"M&T Bank Stadium","eventUrl":"https://www.westwoodonesports.com/events/548561","verifyTokens":["Jacksonville Jaguars at Baltimore Ravens","7:30 PM  ET"]},
-    {"id":"w1-2026-11-07-ncaa","date":"2026-11-07","startET":"15:00","label":"NCAA Football","away":"Oregon","home":"Ohio State","venue":"Ohio Stadium","eventUrl":"https://www.westwoodonesports.com/events/557143","visibility":"secondary","verifyTokens":["Oregon at Ohio State","3 PM ET"]},
-    {"id":"w1-2026-11-08","date":"2026-11-08","startET":"09:15","label":"2026 NFL Madrid Game","away":"Cincinnati Bengals","home":"Atlanta Falcons","venue":"Santiago Bernabéu, Madrid","eventUrl":"https://www.westwoodonesports.com/events/548489","verifyTokens":["Cincinnati Bengals vs Atlanta Falcons","9:15 AM ET"]},
-    {"id":"w1-2026-11-09","date":"2026-11-09","startET":"19:00","label":"Monday Night Football","away":"Buffalo Bills","home":"Minnesota Vikings","venue":"U.S. Bank Stadium","eventUrl":"https://www.westwoodonesports.com/events/548541","verifyTokens":["Buffalo Bills at Minnesota Vikings","7:00 PM ET"]},
-    {"id":"w1-2026-11-15","date":"2026-11-15","startET":"09:15","label":"2026 NFL Munich Game","away":"New England Patriots","home":"Detroit Lions","venue":"Allianz Arena, Munich","eventUrl":"https://www.westwoodonesports.com/events/548490","verifyTokens":["New England Patriots vs Detroit Lions","9:15 AM ET"]},
-    {"id":"w1-2026-11-16","date":"2026-11-16","startET":"19:00","label":"Monday Night Football","away":"Los Angeles Chargers","home":"Baltimore Ravens","venue":"M&T Bank Stadium","eventUrl":"https://www.westwoodonesports.com/events/548542","verifyTokens":["Los Angeles Chargers at Baltimore Ravens","7:00 PM ET"]},
-    {"id":"w1-2026-11-22","date":"2026-11-22","startET":"19:30","label":"2026 NFL Mexico City Game","away":"Minnesota Vikings","home":"San Francisco 49ers","venue":"Estadio Azteca (Estadio Banorte), Mexico City","eventUrl":"https://www.westwoodonesports.com/events/548491","conflict":"49ers.com lists 5:20 PM PST (8:20 PM ET); Westwood One lists 7:30 PM ET.","verifyTokens":["Minnesota Vikings vs San Francisco 49ers","7:30 PM  ET"]},
-    {"id":"w1-2026-11-25","date":"2026-11-25","startET":"19:30","label":"Thanksgiving Wednesday","away":"Green Bay Packers","home":"Los Angeles Rams","venue":"SoFi Stadium","eventUrl":"https://www.westwoodonesports.com/events/548511","verifyTokens":["Green Bay Packers at Los Angeles Rams","7:30 PM ET"]},
-    {"id":"w1-2026-11-26","date":"2026-11-26","startET":"16:15","label":"NFL Thanksgiving Day Tripleheader","away":"Philadelphia Eagles","home":"Dallas Cowboys","venue":"AT&T Stadium","eventUrl":"https://www.westwoodonesports.com/events/548513","verifyTokens":["Philadelphia Eagles at Dallas Cowboys","4:15 PM  ET"]},
-    {"id":"w1-2026-11-27","date":"2026-11-27","startET":"14:30","label":"NFL Black Friday Game","away":"Denver Broncos","home":"Pittsburgh Steelers","venue":"Acrisure Stadium","eventUrl":"https://www.westwoodonesports.com/events/548515","verifyTokens":["Denver Broncos at Pittsburgh Steelers","2:30 PM  ET"]},
-    {"id":"w1-2026-11-30","date":"2026-11-30","startET":"19:00","label":"Monday Night Football","away":"Carolina Panthers","home":"Tampa Bay Buccaneers","venue":"Raymond James Stadium","eventUrl":"https://www.westwoodonesports.com/events/548544","verifyTokens":["Carolina Panthers at Tampa Bay Buccaneers","7:00 PM ET"]},
-    {"id":"w1-2026-12-06","date":"2026-12-06","startET":"19:30","label":"Sunday Night Football","away":"Houston Texans","home":"Pittsburgh Steelers","venue":"Acrisure Stadium","eventUrl":"https://www.westwoodonesports.com/events/548503","verifyTokens":["Houston Texans at Pittsburgh Steelers","7:30 PM ET"]},
-    {"id":"w1-2026-12-10","date":"2026-12-10","startET":"19:30","label":"Thursday Night Football","away":"Minnesota Vikings","home":"New England Patriots","venue":"Gillette Stadium","eventUrl":"https://www.westwoodonesports.com/events/548567","verifyTokens":["Minnesota Vikings at New England Patriots","7:30 PM  ET"]},
-    {"id":"w1-2026-12-14","date":"2026-12-14","startET":"19:00","label":"Monday Night Football","away":"Pittsburgh Steelers","home":"Jacksonville Jaguars","venue":"EverBank Stadium","eventUrl":"https://www.westwoodonesports.com/events/548546","verifyTokens":["Pittsburgh Steelers at Jacksonville Jaguars","7:00 PM  ET"]},
-    {"id":"w1-2026-12-19","date":"2026-12-19","startET":"16:30","label":"Week 15 Saturday NFL Doubleheader","away":null,"home":null,"venue":null,"eventUrl":"https://www.westwoodonesports.com/events/548517","verifyTokens":["Seattle Seahawks at Philadelphia Eagles","4:30 PM  ET"]},
-    {"id":"w1-2026-12-20","date":"2026-12-20","startET":"19:30","label":"Sunday Night Football","away":"Detroit Lions","home":"Minnesota Vikings","venue":"U.S. Bank Stadium","eventUrl":"https://www.westwoodonesports.com/events/548506","verifyTokens":["Detroit Lions at Minnesota Vikings","7:30 PM  ET"]},
-    {"id":"w1-2026-12-24","date":"2026-12-24","startET":"19:30","label":"Thursday Night Football","away":"Houston Texans","home":"Philadelphia Eagles","venue":"Lincoln Financial Field","eventUrl":"https://www.westwoodonesports.com/events/548569","verifyTokens":["Houston Texans at Philadelphia Eagles","7:30 PM  ET"]},
-    {"id":"w1-2026-12-25","date":"2026-12-25","startET":"16:15","label":"Christmas Day NFL Tripleheader","away":"Buffalo Bills","home":"Denver Broncos","venue":"Empower Field at Mile High","eventUrl":"https://www.westwoodonesports.com/events/548531","verifyTokens":["Buffalo Bills at Denver Broncos","4:15 PM  ET"]},
-    {"id":"w1-2026-12-26","date":"2026-12-26","startET":"16:00","label":"Week 16 Saturday NFL Doubleheader","away":null,"home":null,"venue":null,"eventUrl":"https://www.westwoodonesports.com/events/548519","verifyTokens":["Week 16 Saturday Doubleheader TBA","4:00 PM  ET"]},
-    {"id":"w1-2026-12-27","date":"2026-12-27","startET":null,"startETStatus":"unverified","label":"Sunday Night Football","away":"Jacksonville Jaguars","home":"Dallas Cowboys","venue":"AT&T Stadium","eventUrl":"https://www.westwoodonesports.com/events/548520","verifyTokens":["Jacksonville Jaguars at Dallas Cowboys"]},
-    {"id":"w1-2026-12-28","date":"2026-12-28","startET":"19:00","label":"Monday Night Football","away":"New York Giants","home":"Detroit Lions","venue":"Ford Field","eventUrl":"https://www.westwoodonesports.com/events/548550","verifyTokens":["New York Giants at Detroit Lions","7:00 PM ET"]},
-    {"id":"w1-2027-01-02","date":"2027-01-02","startET":"16:00","label":"Week 17 Saturday NFL Doubleheader","away":null,"home":null,"venue":null,"eventUrl":"https://www.westwoodonesports.com/events/548521","verifyTokens":["Week 17 Saturday Doubleheader TBA","4:00 PM  ET"]},
-    {"id":"w1-2027-01-03","date":"2027-01-03","startET":"19:30","label":"Sunday Night Football","away":"Philadelphia Eagles","home":"San Francisco 49ers","venue":"Levi's Stadium","eventUrl":"https://www.westwoodonesports.com/events/548509","verifyTokens":["Philadelphia Eagles at San Francisco 49ers","7:30 PM  ET"]},
-    {"id":"w1-2027-01-09-a","date":"2027-01-09","startET":"12:30","label":"Week 18 Saturday Tripleheader","away":null,"home":null,"venue":null,"eventUrl":"https://www.westwoodonesports.com/events/548523","verifyTokens":["Week 18 Saturday Tripleheader TBA","12:30 PM  ET"]},
-    {"id":"w1-2027-01-09-b","date":"2027-01-09","startET":"20:00","label":"Week 18 Saturday Tripleheader","away":null,"home":null,"venue":null,"eventUrl":"https://www.westwoodonesports.com/events/548526","verifyTokens":["Week 18 Saturday Tripleheader TBA","8:00 PM  ET"]}
+ "meta": {
+  "dataset": "Westwood One Sports national NFL (and listed NCAA Football) radio broadcasts",
+  "league": "NFL + NCAAF",
+  "priority": "high (national NFL radio)",
+  "sources": [
+   "https://www.westwoodonesports.com/nfl-schedule/"
+  ],
+  "sourceName": "Westwood One Sports — NFL Schedule (official network schedule page)",
+  "retrievedUTC": "2026-11-05",
+  "notes": "Westwood One publishes broadcast windows, not station-level carriage. Times on the source page are Eastern. Pacific times here are converted at ET-3h (PST, in effect from 2026-11-01). Doubleheader/tripleheader entries are listed by the network as a single window with participants TBA. Re-checked against the live official page on 2026-11-05: four broadcast windows that were missing from the earlier pass were added (events 548520, 548522, 548524, 548510) and the Week 15 Saturday window (548517) now names its participants.",
+  "irregularities": [
+   "2026-11-22 MIN vs SF: Westwood One lists 7:30 PM ET (4:30 PM PST); the 49ers' official page lists 5:20 PM PST (8:20 PM ET). Both windows are blocked by the planner and the discrepancy is flagged.",
+   "2026-12-27 JAX at DAL: kickoff time was not captured from the source page (page section truncated during retrieval); time is left blank and flagged unverified.",
+   "Week 16/17/18 Saturday doubleheader entries list 'TBA' participants; only the broadcast windows are published at this time.",
+   "Westwood One's 2026-27 NFL postseason broadcasts had not been published on the schedule page as of 2026-11-02.",
+   "As of the 2026-11-05 re-check, Westwood One's published NFL schedule ends with Week 18 (2027-01-09 and 2027-01-10). No postseason or Super Bowl windows are published on that page; every postseason row in this planner is modelled and labelled ESTIMATE."
   ]
+ },
+ "events": [
+  {
+   "id": "w1-2026-11-02",
+   "date": "2026-11-02",
+   "startET": "19:00",
+   "label": "Monday Night Football",
+   "away": "Chicago Bears",
+   "home": "Seattle Seahawks",
+   "venue": "Lumen Field, Seattle, WA",
+   "eventUrl": "https://www.westwoodonesports.com/events/548540",
+   "verifyTokens": [
+    "Chicago Bears at Seattle Seahawks",
+    "7:00 PM ET"
+   ]
+  },
+  {
+   "id": "w1-2026-11-05",
+   "date": "2026-11-05",
+   "startET": "19:30",
+   "label": "Thursday Night Football",
+   "away": "Jacksonville Jaguars",
+   "home": "Baltimore Ravens",
+   "venue": "M&T Bank Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548561",
+   "verifyTokens": [
+    "Jacksonville Jaguars at Baltimore Ravens",
+    "7:30 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2026-11-07-ncaa",
+   "date": "2026-11-07",
+   "startET": "15:00",
+   "label": "NCAA Football",
+   "away": "Oregon",
+   "home": "Ohio State",
+   "venue": "Ohio Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/557143",
+   "visibility": "secondary",
+   "verifyTokens": [
+    "Oregon at Ohio State",
+    "3 PM ET"
+   ]
+  },
+  {
+   "id": "w1-2026-11-08",
+   "date": "2026-11-08",
+   "startET": "09:15",
+   "label": "2026 NFL Madrid Game",
+   "away": "Cincinnati Bengals",
+   "home": "Atlanta Falcons",
+   "venue": "Santiago Bernabéu, Madrid",
+   "eventUrl": "https://www.westwoodonesports.com/events/548489",
+   "verifyTokens": [
+    "Cincinnati Bengals vs Atlanta Falcons",
+    "9:15 AM ET"
+   ]
+  },
+  {
+   "id": "w1-2026-11-09",
+   "date": "2026-11-09",
+   "startET": "19:00",
+   "label": "Monday Night Football",
+   "away": "Buffalo Bills",
+   "home": "Minnesota Vikings",
+   "venue": "U.S. Bank Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548541",
+   "verifyTokens": [
+    "Buffalo Bills at Minnesota Vikings",
+    "7:00 PM ET"
+   ]
+  },
+  {
+   "id": "w1-2026-11-15",
+   "date": "2026-11-15",
+   "startET": "09:15",
+   "label": "2026 NFL Munich Game",
+   "away": "New England Patriots",
+   "home": "Detroit Lions",
+   "venue": "Allianz Arena, Munich",
+   "eventUrl": "https://www.westwoodonesports.com/events/548490",
+   "verifyTokens": [
+    "New England Patriots vs Detroit Lions",
+    "9:15 AM ET"
+   ]
+  },
+  {
+   "id": "w1-2026-11-16",
+   "date": "2026-11-16",
+   "startET": "19:00",
+   "label": "Monday Night Football",
+   "away": "Los Angeles Chargers",
+   "home": "Baltimore Ravens",
+   "venue": "M&T Bank Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548542",
+   "verifyTokens": [
+    "Los Angeles Chargers at Baltimore Ravens",
+    "7:00 PM ET"
+   ]
+  },
+  {
+   "id": "w1-2026-11-22",
+   "date": "2026-11-22",
+   "startET": "19:30",
+   "label": "2026 NFL Mexico City Game",
+   "away": "Minnesota Vikings",
+   "home": "San Francisco 49ers",
+   "venue": "Estadio Azteca (Estadio Banorte), Mexico City",
+   "eventUrl": "https://www.westwoodonesports.com/events/548491",
+   "conflict": "49ers.com lists 5:20 PM PST (8:20 PM ET); Westwood One lists 7:30 PM ET.",
+   "verifyTokens": [
+    "Minnesota Vikings vs San Francisco 49ers",
+    "7:30 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2026-11-25",
+   "date": "2026-11-25",
+   "startET": "19:30",
+   "label": "Thanksgiving Wednesday",
+   "away": "Green Bay Packers",
+   "home": "Los Angeles Rams",
+   "venue": "SoFi Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548511",
+   "verifyTokens": [
+    "Green Bay Packers at Los Angeles Rams",
+    "7:30 PM ET"
+   ]
+  },
+  {
+   "id": "w1-2026-11-26",
+   "date": "2026-11-26",
+   "startET": "16:15",
+   "label": "NFL Thanksgiving Day Tripleheader",
+   "away": "Philadelphia Eagles",
+   "home": "Dallas Cowboys",
+   "venue": "AT&T Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548513",
+   "verifyTokens": [
+    "Philadelphia Eagles at Dallas Cowboys",
+    "4:15 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2026-11-27",
+   "date": "2026-11-27",
+   "startET": "14:30",
+   "label": "NFL Black Friday Game",
+   "away": "Denver Broncos",
+   "home": "Pittsburgh Steelers",
+   "venue": "Acrisure Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548515",
+   "verifyTokens": [
+    "Denver Broncos at Pittsburgh Steelers",
+    "2:30 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2026-11-30",
+   "date": "2026-11-30",
+   "startET": "19:00",
+   "label": "Monday Night Football",
+   "away": "Carolina Panthers",
+   "home": "Tampa Bay Buccaneers",
+   "venue": "Raymond James Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548544",
+   "verifyTokens": [
+    "Carolina Panthers at Tampa Bay Buccaneers",
+    "7:00 PM ET"
+   ]
+  },
+  {
+   "id": "w1-2026-12-06",
+   "date": "2026-12-06",
+   "startET": "19:30",
+   "label": "Sunday Night Football",
+   "away": "Houston Texans",
+   "home": "Pittsburgh Steelers",
+   "venue": "Acrisure Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548503",
+   "verifyTokens": [
+    "Houston Texans at Pittsburgh Steelers",
+    "7:30 PM ET"
+   ]
+  },
+  {
+   "id": "w1-2026-12-10",
+   "date": "2026-12-10",
+   "startET": "19:30",
+   "label": "Thursday Night Football",
+   "away": "Minnesota Vikings",
+   "home": "New England Patriots",
+   "venue": "Gillette Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548567",
+   "verifyTokens": [
+    "Minnesota Vikings at New England Patriots",
+    "7:30 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2026-12-14",
+   "date": "2026-12-14",
+   "startET": "19:00",
+   "label": "Monday Night Football",
+   "away": "Pittsburgh Steelers",
+   "home": "Jacksonville Jaguars",
+   "venue": "EverBank Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548546",
+   "verifyTokens": [
+    "Pittsburgh Steelers at Jacksonville Jaguars",
+    "7:00 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2026-12-19",
+   "date": "2026-12-19",
+   "startET": "16:30",
+   "label": "Week 15 Saturday NFL Doubleheader",
+   "away": "Seattle Seahawks",
+   "home": "Philadelphia Eagles",
+   "venue": "Lincoln Financial Field, Philadelphia, PA",
+   "eventUrl": "https://www.westwoodonesports.com/events/548517",
+   "verifyTokens": [
+    "Seattle Seahawks at Philadelphia Eagles",
+    "4:30 PM  ET"
+   ],
+   "note": "Westwood One's official event page (548517) names the participants. The row had been carried with participants unparsed, so the planner rendered it as \"participants TBA\" and, separately, the same game also appeared from the NFL.com feed — a duplicate title. Corrected 2026-11-05."
+  },
+  {
+   "id": "w1-2026-12-20",
+   "date": "2026-12-20",
+   "startET": "19:30",
+   "label": "Sunday Night Football",
+   "away": "Detroit Lions",
+   "home": "Minnesota Vikings",
+   "venue": "U.S. Bank Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548506",
+   "verifyTokens": [
+    "Detroit Lions at Minnesota Vikings",
+    "7:30 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2026-12-24",
+   "date": "2026-12-24",
+   "startET": "19:30",
+   "label": "Thursday Night Football",
+   "away": "Houston Texans",
+   "home": "Philadelphia Eagles",
+   "venue": "Lincoln Financial Field",
+   "eventUrl": "https://www.westwoodonesports.com/events/548569",
+   "verifyTokens": [
+    "Houston Texans at Philadelphia Eagles",
+    "7:30 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2026-12-25",
+   "date": "2026-12-25",
+   "startET": "16:15",
+   "label": "Christmas Day NFL Tripleheader",
+   "away": "Buffalo Bills",
+   "home": "Denver Broncos",
+   "venue": "Empower Field at Mile High",
+   "eventUrl": "https://www.westwoodonesports.com/events/548531",
+   "verifyTokens": [
+    "Buffalo Bills at Denver Broncos",
+    "4:15 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2026-12-26",
+   "date": "2026-12-26",
+   "startET": "16:00",
+   "label": "Week 16 Saturday NFL Doubleheader",
+   "away": null,
+   "home": null,
+   "venue": null,
+   "eventUrl": "https://www.westwoodonesports.com/events/548519",
+   "verifyTokens": [
+    "Week 16 Saturday Doubleheader TBA",
+    "4:00 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2026-12-26-b",
+   "date": "2026-12-26",
+   "startET": "20:00",
+   "label": "Week 16 Saturday NFL Doubleheader",
+   "away": null,
+   "home": null,
+   "venue": null,
+   "eventUrl": "https://www.westwoodonesports.com/events/548520",
+   "verifyTokens": [
+    "Week 16 Saturday Doubleheader TBA",
+    "8:00 PM ET"
+   ]
+  },
+  {
+   "id": "w1-2026-12-27",
+   "date": "2026-12-27",
+   "startET": null,
+   "startETStatus": "unverified",
+   "label": "Sunday Night Football",
+   "away": "Jacksonville Jaguars",
+   "home": "Dallas Cowboys",
+   "venue": "AT&T Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548520",
+   "verifyTokens": [
+    "Jacksonville Jaguars at Dallas Cowboys"
+   ]
+  },
+  {
+   "id": "w1-2026-12-28",
+   "date": "2026-12-28",
+   "startET": "19:00",
+   "label": "Monday Night Football",
+   "away": "New York Giants",
+   "home": "Detroit Lions",
+   "venue": "Ford Field",
+   "eventUrl": "https://www.westwoodonesports.com/events/548550",
+   "verifyTokens": [
+    "New York Giants at Detroit Lions",
+    "7:00 PM ET"
+   ]
+  },
+  {
+   "id": "w1-2027-01-02",
+   "date": "2027-01-02",
+   "startET": "16:00",
+   "label": "Week 17 Saturday NFL Doubleheader",
+   "away": null,
+   "home": null,
+   "venue": null,
+   "eventUrl": "https://www.westwoodonesports.com/events/548521",
+   "verifyTokens": [
+    "Week 17 Saturday Doubleheader TBA",
+    "4:00 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2027-01-02-b",
+   "date": "2027-01-02",
+   "startET": "20:00",
+   "label": "Week 17 Saturday NFL Doubleheader",
+   "away": null,
+   "home": null,
+   "venue": null,
+   "eventUrl": "https://www.westwoodonesports.com/events/548522",
+   "verifyTokens": [
+    "Week 17 Saturday NFL Doubleheader TBA",
+    "8:00 PM ET"
+   ]
+  },
+  {
+   "id": "w1-2027-01-03",
+   "date": "2027-01-03",
+   "startET": "19:30",
+   "label": "Sunday Night Football",
+   "away": "Philadelphia Eagles",
+   "home": "San Francisco 49ers",
+   "venue": "Levi's Stadium",
+   "eventUrl": "https://www.westwoodonesports.com/events/548509",
+   "verifyTokens": [
+    "Philadelphia Eagles at San Francisco 49ers",
+    "7:30 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2027-01-09-a",
+   "date": "2027-01-09",
+   "startET": "12:30",
+   "label": "Week 18 Saturday Tripleheader",
+   "away": null,
+   "home": null,
+   "venue": null,
+   "eventUrl": "https://www.westwoodonesports.com/events/548523",
+   "verifyTokens": [
+    "Week 18 Saturday Tripleheader TBA",
+    "12:30 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2027-01-09-c",
+   "date": "2027-01-09",
+   "startET": "16:15",
+   "label": "Week 18 Saturday NFL Tripleheader",
+   "away": null,
+   "home": null,
+   "venue": null,
+   "eventUrl": "https://www.westwoodonesports.com/events/548524",
+   "verifyTokens": [
+    "Week 18 Saturday Tripleheader TBA",
+    "4:15 PM ET"
+   ]
+  },
+  {
+   "id": "w1-2027-01-09-b",
+   "date": "2027-01-09",
+   "startET": "20:00",
+   "label": "Week 18 Saturday Tripleheader",
+   "away": null,
+   "home": null,
+   "venue": null,
+   "eventUrl": "https://www.westwoodonesports.com/events/548526",
+   "verifyTokens": [
+    "Week 18 Saturday Tripleheader TBA",
+    "8:00 PM  ET"
+   ]
+  },
+  {
+   "id": "w1-2027-01-10",
+   "date": "2027-01-10",
+   "startET": "19:30",
+   "label": "Week 18 Sunday Night Football",
+   "away": null,
+   "home": null,
+   "venue": null,
+   "eventUrl": "https://www.westwoodonesports.com/events/548510",
+   "verifyTokens": [
+    "Week 18 Sunday Night Football - Teams TBA",
+    "7:30 PM ET"
+   ]
+  }
+ ]
 }

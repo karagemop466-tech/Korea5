@@ -166,7 +166,7 @@ def build_index():
 <a class="btn" href="vacation.html">Best vacation dates</a></div></div>
 <div class="card"><h2>The answer</h2>
 <p><strong>Each year one pocket opens: between the conference championships and the Super Bowl.</strong></p>
-<p>For <strong>2027</strong>: <strong>{w27a} – {w27b}</strong> — {r27.get("days","—")} consecutive nights with no MLB, NFL, Stanford, Cal or Westwood One game on the air. The days either side of it are conference-championship Sunday ({esc(r27.get("blockedBefore") or "—")}) and Super Bowl LXI ({esc(r27.get("blockedAfter") or "—")}).</p>
+<p>For <strong>2027</strong>: <strong>{w27a} – {w27b}</strong> — {r27.get("days","—")} consecutive calendar days with no MLB, NFL, Stanford, Cal or Westwood One game on the air. The days either side of it are conference-championship Sunday ({esc(r27.get("blockedBefore") or "—")}) and Super Bowl LXI ({esc(r27.get("blockedAfter") or "—")}).</p>
 <p>For <strong>2028</strong>: {w28a} – {w28b}. For <strong>2029</strong>: {w29a} – {w29b}. Both are <span class="tag est">ESTIMATION</span> — those schedules are not released.</p>
 <a href="vacation.html">Dates, evidence and caveats →</a></div></section>
 
@@ -322,26 +322,27 @@ broadcast (Giants, Athletics, 49ers, Stanford, Cal, Westwood One national). <str
 other MLB and NFL row in the scope, including the NFL all-star exhibition.</p>
 
 <div class="callout flag">
-<strong>Radio lens: 13 nights in 2027. All-games lens: {longest[2027]} nights.</strong>
-On the strictest reading — every MLB game in the league, every NFL game, and the Pro Bowl exhibition — no 7-, 14- or
-21-day window exists in 2027–2029; the longest clean runs are {longest[2027]}, {longest[2028]} and {longest[2029]} days.
-Drop the exhibition, which is not a league game and is not on Westwood One's published schedule, and a 13-night
-February trip opens in every one of the three years.
+<strong>Radio lens: 13 calendar days in 2027. All-games lens: {longest[2027]} calendar days.</strong>
+Lengths below count inclusive calendar days, not hotel nights. On the strictest reading — every MLB game in the league,
+every NFL game, and the Pro Bowl exhibition — no 7-, 14- or 21-day window exists in 2027–2029; the longest clean runs
+are {longest[2027]}, {longest[2028]} and {longest[2029]} days.
+Drop the exhibition, which is not a league game and is not on Westwood One's published schedule, and a 13-day
+February window opens in every one of the three years.
 </div>
 
 <div class="grid g3">
   {''.join(f'''<div class="card"><h3>{y}</h3>
-  <div class="kpi" style="font-size:26px">{(rec("radio", y) or {}).get("days", "—")} nights</div><small>radio-free run (all games: {longest[y]} days)</small>
+  <div class="kpi" style="font-size:26px">{(rec("radio", y) or {}).get("days", "—")} calendar days</div><small>radio-free run (all games: {longest[y]} days)</small>
   <p class="small" style="margin-top:10px">{year_facts(y).get('scopes',{}).get('all',{}).get('freeDays','—')} fully free days under the all-games lens across the calendar year.</p></div>''' for y in (2027, 2028, 2029))}
 </div>
 
 <h2>The answer: the conference-championship → Super Bowl gap</h2>
 <div class="callout">
-<strong>Book {w27}.</strong> It is the longest run of consecutive nights in 2027 on which nothing in your list is on the air:
+<strong>Book {w27}.</strong> It is the longest run of consecutive calendar days in 2027 on which nothing in your list is on the air:
 no MLB, no NFL, no Stanford, no Cal, no Westwood One national window. It sits between conference-championship Sunday
 and Super Bowl LXI, and 2027 is the only one of the three years where both of those anchors are pinned to official dates.
 </div>
-<div class="scroll"><table><thead><tr><th>Year</th><th>Window</th><th>Nights</th><th>Fits 1 week</th><th>Fits 2 weeks</th><th>Fits 3 weeks</th><th>Game day before</th><th>Game day after</th><th>Evidence</th></tr></thead><tbody>
+<div class="scroll"><table><thead><tr><th>Year</th><th>Window</th><th>Calendar days</th><th>Fits 1 week</th><th>Fits 2 weeks</th><th>Fits 3 weeks</th><th>Game day before</th><th>Game day after</th><th>Evidence</th></tr></thead><tbody>
 {rows}
 </tbody></table></div>
 
@@ -354,7 +355,7 @@ The winter gap is the only place a multi-week trip fits.
 <h2>Strict all-games view (counts the NFL all-star exhibition)</h2>
 <div class="callout flag">
 <strong>If you also refuse to travel during the Pro Bowl Games</strong>, the longest fully free run drops to
-{seven} nights in each year, and it splits the February window in two. The Pro Bowl is an all-star exhibition rather than a league
+{seven} calendar days in each year, and it splits the February window in two. The Pro Bowl is an all-star exhibition rather than a league
 game, and Westwood One's published 2026-27 NFL schedule does not list it, so it was removed from the radio-only scope in this
 revision and is still counted in the all-games scope. That is the only difference between the two answers.
 </div>

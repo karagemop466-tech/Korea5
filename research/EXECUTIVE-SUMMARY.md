@@ -7,9 +7,11 @@
 
 | Year | Best window | Length | What is official behind it | Evidence status |
 |---|---|---|---|---|
-| **2027** | **Mon Feb 1 – Sat Feb 13, 2027** | **13 nights** | MLB's 2027 season (Opening Night Mar 24, Opening Day Mar 25, final day Sep 26) is released and loaded from the league feed; Super Bowl LXI is Sun Feb 14, 2027; MLB Spring Training 2027 begins Fri Feb 19 | Dates **official**; NFL playoff round dates **modelled** |
-| **2028** | Sun Jan 31 – Sat Feb 12, 2028 | 13 nights | Same calendar structure | **ESTIMATION** — MLB 2028 and NFL 2027 schedules not released |
-| **2029** | Mon Jan 29 – Sat Feb 10, 2029 | 13 nights | Same calendar structure | **ESTIMATION** — neither schedule released |
+| **2027** | **Mon Feb 1 – Sat Feb 13, 2027** | **13 calendar days** | MLB's 2027 season (Opening Night Mar 24, Opening Day Mar 25, final day Sep 26) is released and loaded from the league feed; Super Bowl LXI is Sun Feb 14, 2027; MLB Spring Training 2027 begins Fri Feb 19 | Dates **official**; NFL playoff round dates **modelled** |
+| **2028** | Sun Jan 31 – Sat Feb 12, 2028 | 13 calendar days | Same calendar structure | **ESTIMATION** — MLB 2028 and NFL 2027 schedules not released |
+| **2029** | Mon Jan 29 – Sat Feb 10, 2029 | 13 calendar days | Same calendar structure | **ESTIMATION** — neither schedule released |
+
+**Lengths count inclusive calendar days, not hotel nights.**
 
 Every year the same pocket opens between **conference-championship Sunday** and the **Super Bowl**. It is the only
 multi-week stretch in which no MLB, NFL, Stanford, Cal or Westwood One game is on the air, because:
@@ -19,11 +21,11 @@ multi-week stretch in which no MLB, NFL, Stanford, Cal or Westwood One game is o
 * the two weeks after the conference championships are the one point where both leagues are dormant.
 
 A **full 14-day** vacation does not quite fit: the day before the window is a conference championship and the day after
-is the Super Bowl. **13 nights is the maximum.** Three weeks fits nowhere in any year.
+is the Super Bowl. **13 consecutive calendar days is the maximum.** Three weeks fits nowhere in any year.
 
 ### The stricter variant
 
-If the **Pro Bowl Games** also counts as an event to avoid, the longest fully free run falls to **six nights** in each
+If the **Pro Bowl Games** also counts as an event to avoid, the longest fully free run falls to **six calendar days** in each
 year (2027: Jan 25–30, Feb 1–6, Feb 8–13). The Pro Bowl is an all-star exhibition, not a league game, and Westwood
 One's published 2026-27 NFL schedule does not list it, so the planner counts it in the *all games* view and excludes it
 from the *radio* view. That distinction is the only difference between the two answers and it is printed on the site.

@@ -558,3 +558,57 @@ confirmed from an official source stays blank/estimated and flagged.
   LXI/LXII dates above are freshly verified live.
 - **A4 in progress:** PR from `arena/57f0338e-korea5` to `main`, merge without waiting, Pages deploy
   confirmation to be recorded below after merge.
+## Session `arena/239c0da8-korea5` — 2026-11-05 (integration review)
+
+Branch fixed by Arena: `arena/239c0da8-korea5`. Read this board before review; existing schedule/data/site tasks are already marked complete and no active ownership conflict was listed.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| I1 | Re-run local integrity, certainty and UI tests; ensure the link-report subpage also carries the project-wide uncertainty notice | arena-239c0da8 | **done** | `extra/links.html`, `COORDINATION.md` |
+
+### Verification and source review
+
+- `python3 scripts/check_links.py`: 11 pages, 180 local links, 519 external links; 0 missing.
+- `python3 tools/verify_extra.py`: 31/31 checks passed; 0 rows missing a source URL.
+- `python3 scripts/audit_certainty.py`: passed; no future free window is certified and all published pages must disclose incomplete coverage. This exposed that `extra/links.html` lacked the common certainty notice; the generated page was corrected. The link report itself still describes the 31 historical/local checks accurately and does not assert fresh source verification.
+- `python3 -m unittest discover -s tests -v`: 5/5; `node tests/test_calendar.js` and `node tests/test_calendar_today.js`: passed; `git diff --check`: clean.
+- Manually fetched the official MLB 2027 release at https://www.mlb.com/news/mlb-2027-schedule-released and confirmed the listed 2027 season anchors (Mar 24 Opening Night, Mar 25 traditional Opening Day, July 13 All-Star Game, Sep 26 final regular-season day).
+- Fetched https://www.nfl.com/schedules/2027/; the official NFL page resolves to the 2026 schedule, so future NFL dates remain estimates, not verified fixtures.
+- Fetched https://www.westwoodonesports.com/nfl-schedule/ and confirmed the page is live/upcoming and lists current 2026 NFL broadcast windows. No claim is made here that its full dynamic schedule was independently reconciled against every committed event row.
+- The sandbox cannot establish actual terrestrial reception or a station-by-station broadcast for each event at Outer Sunset 94122. Those gaps remain published on the Flagged for Review pages. Existing historical snapshot/CI results are not relabelled as fresh checks.
+
+No schedule data or event dates were changed. No new irregularities beyond the missing certainty banner (now corrected) were found. Existing flagged rows and estimates remain nonblocking and clearly marked.
+
+### I1 integration record
+
+| Step | Result |
+|---|---|
+| Pull request | **#24 — https://github.com/karagemop466-tech/Korea5/pull/24** — “Add certainty disclosure to link report” |
+| Merge | Merged to `main` at **2026-11-05T21:11:48Z**, merge commit `007262d8ca051faf71525b6a5fe0122ff499ce97` |
+| Planner certainty/site checks | Run **42110411915** — `validate` passed |
+| GitHub Pages deployment | Run **42110411854** — build, deploy and report-build-status passed |
+| Live site | https://karagemop466-tech.github.io/Korea5/ — Pages deployment status confirmed `built` after workflow completion |
+
+The Actions logs included non-blocking Node.js 20 deprecation and future `ubuntu-latest` migration notices; no build, validation or deploy failures occurred.
+
+### Follow-up I2 — correct vacation-span unit labels
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| I2 | Replace inaccurate “nights” labels on date-inclusive free-window spans with “calendar days” and align source templates, generated pages, executive summary and flagged note | arena-239c0da8 | **done** | `README.md`, `certainty.html`, `curated/flags.json`, `extra/flagged.html`, `extra/vacation.html`, `index.html`, `research/EXECUTIVE-SUMMARY.md`, `scripts/audit_certainty.py`, `scripts/build_site.py`, `tools/build_extra.py`, `vacation.html` |
+
+Review finding: Feb 1–Feb 13 (2027), Jan 31–Feb 12 (2028), and Jan 29–Feb 10 (2029) each contain 13 inclusive calendar dates. The previous “13 nights” wording was not supported by the date-range calculation and could be misread as lodging duration. Changed all affected published copy/templates to “13 calendar days”; the strict Pro Bowl comparison now says six calendar days. The model does not calculate hotel nights, so no lodging-night count is asserted.
+
+Validation: rebuilt root and extra pages, regenerated the certainty notice, searched the repository for the prior 13-night/six-night labels, and ran `scripts/check_links.py` (180 local / 519 external, zero missing), `tools/verify_extra.py` (31/31), certainty audit, Python unit tests (5/5), both calendar Node tests, and `git diff --check` — all passed. This is a wording/model-interpretation correction only; no sports dates or schedule facts were added or changed. The 2027 window still depends on modelled NFL playoff round dates; 2028–2029 remain ESTIMATION. Official date references: https://www.mlb.com/news/mlb-2027-schedule-released and https://www.sofistadium.com/news/detail/los-angeles-region-to-host-super-bowl-lxi-in-2027-welcoming-the-nfls-biggest-stage-for-the-second-time-this-decade-to-sofi-stadium .
+
+### I2 integration record
+
+| Step | Result |
+|---|---|
+| Pull request | **#26 — https://github.com/karagemop466-tech/Korea5/pull/26** — “Clarify vacation window lengths as calendar days” |
+| Merge | Merged to `main` at **2026-11-05T21:16:38Z**, merge commit `b4f134a190473329b66ca59fcce39115d02d47ed` |
+| Planner certainty/site checks | Run **42111155586** — `validate` passed |
+| GitHub Pages deployment | Run **42111154658** — build, deploy and report-build-status passed |
+| Live site | https://karagemop466-tech.github.io/Korea5/ — deployment completed successfully |
+
+The only annotations were non-blocking Node.js 20 and `ubuntu-latest` migration notices.

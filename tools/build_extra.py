@@ -735,8 +735,8 @@ free days, then by fewest unverified days.</p>
 {''.join(vy_blocks)}
 <h2>Root dashboard comparison</h2>
 <p class="small">The <a href="../vacation.html">root Vacation windows page</a> answers the question directly: it reports
-the longest run with nothing on the radio (13 nights in February of each year) and the stricter all-games run
-(six nights). This page keeps the strict, verified-only view separate so the two are never mixed. Both are linked from
+the longest run with nothing on the radio (13 calendar days in February of each year) and the stricter all-games run
+(six calendar days). This page keeps the strict, verified-only view separate so the two are never mixed. Both are linked from
 the dashboard.</p>
 '''
 (EXTRA / "vacation.html").write_text(page("Free vacation windows", "Free windows", va_body), encoding="utf-8")

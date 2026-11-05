@@ -631,3 +631,17 @@ Validation: rebuilt root and extra pages, regenerated the certainty notice, sear
 | Live site | https://karagemop466-tech.github.io/Korea5/ — deployment completed successfully |
 
 The only annotations were non-blocking Node.js 20 and `ubuntu-latest` migration notices.
+- **2026-11-05 — A4 done.**
+
+| Step | Result |
+|---|---|
+| Pull request | **#28 — https://github.com/karagemop466-tech/Korea5/pull/28** — "FREE TIME VACATION: verified Super Bowl dates (LXII = Feb 13, 2028), anchor/flag updates, generator drift fix" |
+| Merge conflict during PR | Parallel session `arena/239c0da8` (PRs #24–#27) had landed on `main`. Resolved locally by merging `origin/main`: `COORDINATION.md` union (both appended sections kept), generated pages (`certainty.html`, `extra/flagged.html`) taken from `origin/main` then regenerated from the merged generators so both sessions' changes survive. No work discarded. |
+| Rebase deviation (logged) | A `git pull --rebase` on the session branch tried to replay already-merged `main` history and stopped mid-rebase; aborted with `git rebase --abort`. Branch history preserved via the merge commit; nothing discarded. |
+| Merge | **Merged** into `main` 2026-11-05T21:20:21Z, merge commit `03cd7ac9cd09b3f6b8028f8cad16bc0e8d2d13d4` (`gh pr merge 28 --merge`, no waiting) |
+| CI | `Planner certainty and site checks` run 42111730701 — **success**; re-run 42111684816 on branch tip — **success** |
+| GitHub Pages build | `pages build and deployment` run 42111729701 — **success** on `03cd7ac` |
+| Live site | https://karagemop466-tech.github.io/Korea5/ — fetched live `extra/season-anchors.html` after deploy and confirmed the new verified row: "2028 | NFL | Super Bowl LXII — Atlanta | 2028-02-13 | verified | … Mercedes-Benz Stadium" |
+
+**Status: A1–A4 done.** No unclaimed or overlapping task remains. Flagged items (SB LXIII date, Pro Bowl 2027
+date, and all prior items) remain published on `extra/flagged.html` with official links and do not block anything.

@@ -532,3 +532,29 @@ Branch fixed by Arena: `arena/239c0da8-korea5`. Read this board before review; e
 - The sandbox cannot establish actual terrestrial reception or a station-by-station broadcast for each event at Outer Sunset 94122. Those gaps remain published on the Flagged for Review pages. Existing historical snapshot/CI results are not relabelled as fresh checks.
 
 No schedule data or event dates were changed. No new irregularities beyond the missing certainty banner (now corrected) were found. Existing flagged rows and estimates remain nonblocking and clearly marked.
+
+---
+
+## Session `arena/0f530dc5-korea5` — 2026-11-05 (live verification sweep + modelling defect fixes)
+
+Branch fixed by Arena: `arena/0f530dc5-korea5`. Started from `main` tip `007262d` (PR #24 merged).
+No prior session is active on the board; the only other branch with recent commits is
+`arena/239c0da8-korea5` (PR #24, merged). No file scope below is owned by another open session.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| S1 | Claim + coordinate (this section) | arena-0f530dc5 | done | `COORDINATION.md` |
+| S2 | Live line-by-line verification sweep of official sources (MLB StatsAPI, MLB.com, nfl.com, Westwood One, 49ers, Stanford, Cal, KNBR, SB announcements) with today's date; machine-readable evidence | arena-0f530dc5 | in progress | `verification/live-checks-0f530dc5.json`, `verification/session-0f530dc5.md` |
+| S3 | DEFECT A — estimated MLB postseason (2027–2029) carried no Giants/Athletics radio tag, so the radio scope reported mid-October as free | arena-0f530dc5 | in progress | `scripts/build_events.py` |
+| S4 | DEFECT B — NFL season estimate model had no Saturday, Christmas Day or Black Friday windows, so it reported those days free | arena-0f530dc5 | in progress | `scripts/build_events.py` |
+| S5 | DEFECT C — `scripts/analyze.py` hard-coded `TODAY = 2026-11-02` | arena-0f530dc5 | in progress | `scripts/analyze.py` |
+| S6 | Rebuild pipeline, re-run verification/link check/tests, regenerate site + docs | arena-0f530dc5 | pending | `data/`, `*.html`, `extra/`, `research/` |
+| S7 | Publish the sweep + new flagged irregularities on the site (Flagged for Review + certainty pages) | arena-0f530dc5 | pending | `curated/flags.json`, `*.html`, `research/EXECUTIVE-SUMMARY.md` |
+| S8 | PR to `main`, merge without waiting, confirm Pages deploy, record result here | arena-0f530dc5 | pending | `COORDINATION.md` (log only) |
+
+### Scope discipline
+
+This session edits only: `scripts/build_events.py`, `scripts/analyze.py`, `scripts/build_site.py`,
+`tools/build_extra.py`, `curated/flags.json`, `verification/**`, `research/**`, and the generated
+`*.html` / `extra/*.html` / `data/**` outputs. Shared navigation is rebuilt by the existing generators;
+no other session's claim is touched.

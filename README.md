@@ -5,19 +5,25 @@ Coverage runs from 2026-11-02 to 2030-02-28, computed in Pacific time for San Fr
 
 **Live site:** https://karagemop466-tech.github.io/Korea5/
 
-## Headline finding
+## Headline finding (updated 2026-11-05)
 
-**2027: Mon Feb 1 – Sat Feb 13 — 13 nights with no MLB, NFL, Stanford, Cal or Westwood One game on the air.**
-It is the gap between conference-championship Sunday (2027-01-31) and Super Bowl LXI (2027-02-14, SoFi Stadium).
-MLB's 2027 season (Mar 24 – Sep 26) and the Super Bowl date are officially released; the NFL playoff round dates around
-them are modelled. The same shape repeats in 2028 (Jan 31 – Feb 12) and 2029 (Jan 29 – Feb 10), both labelled
-**ESTIMATION** because those schedules are not released.
+**No 7-night stretch in 2027, 2028 or 2029 is free of every listed game.** The longest run with nothing on air is
+**6 nights** in each year, in January–February between the NFL playoff rounds and the Super Bowl:
 
-A full 14-day trip does not quite fit — the day before the window is a conference championship and the day after is the
-Super Bowl. If the Pro Bowl exhibition also counts, the longest fully free run drops to six nights.
+* **2027:** Mon Jan 25 – Sat Jan 30, or Mon Feb 1 – Sat Feb 6 (both 6 nights). If the Pro Bowl Games are on Tue Feb 9
+  only, Feb 1–8 (8 nights) opens. If there is no Pro Bowl that week, Feb 1–13 (13 nights) opens.
+* **2028** (ESTIMATION): Jan 24–29 or Jan 31 – Feb 5 (6 nights each).
+* **2029** (ESTIMATION): Jan 22–27 or Jan 29 – Feb 3 (6 nights each).
 
-See [`research/EXECUTIVE-SUMMARY.md`](research/EXECUTIVE-SUMMARY.md) for the full write-up and
-[the certainty audit](certainty.html) for what is still unverified.
+The NFL has not published a 2027 Pro Bowl Games date; the two candidate days are unverified and both are blocked in the
+base case. Westwood One carried the 2026 Pro Bowl, so it is in the radio tier. MLB's 2027 season is officially released;
+2028 and 2029 MLB and 2027+ NFL schedules are not, so those rows are labelled **ESTIMATION**.
+
+The earlier headline (Feb 1–13, 2027, 13 nights) is superseded. It assumed no Pro Bowl that week. The corrected
+January 24 date is a Divisional playoff day, not a free day.
+
+See [`research/EXECUTIVE-SUMMARY.md`](research/EXECUTIVE-SUMMARY.md) for the full write-up,
+[Flagged for Review](flagged.html) for open items, and [the certainty audit](certainty.html) for what is still unverified.
 
 ## What is in here
 
@@ -40,7 +46,9 @@ python3 scripts/fetch_mlb.py      # official MLB feed (2026-2029; 2028/29 return
 python3 scripts/build_events.py   # normalize + add the labelled estimate layer
 python3 scripts/analyze.py        # free/busy windows, free streaks, vacation ranking
 python3 scripts/build_site.py     # regenerate the HTML
+python3 tools/build_extra.py      # regenerate extra/ pages (calendar, stations, flagged, summary)
 python3 scripts/check_links.py    # fail if any local link is broken
+python3 tools/verify_extra.py     # 31 link, schema and UI checks
 python3 scripts/verify.py         # re-check every curated row against its official page (needs network)
 ```
 

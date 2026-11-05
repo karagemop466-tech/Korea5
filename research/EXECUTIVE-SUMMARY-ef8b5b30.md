@@ -119,3 +119,25 @@ Every source is official: MLB StatsAPI / MLB.com, NFL.com / NFL Football Operati
 GoStanford.com, CalBears.com, CollegeFootballPlayoff.com, WestwoodOneSports.com, TheSportsLeader.com (KNBR),
 ESPN.com affiliate list, NCAA.org and operations.nfl.com rulebooks. The full registry with per-row purpose is
 on the **Source registry** page.
+
+## Update 2026-11-05 (session arena-57f0338e — appended, original text above unchanged)
+
+Two of the items listed above as "TBA" have moved:
+
+- **Super Bowl LXII (2028) date is now official.** The Mercedes-Benz Stadium event page publishes
+  **Sunday, February 13, 2028** (https://www.mercedesbenzstadium.com/events/super-bowl-lxii). The planner's
+  modelled 2028 Super Bowl date already matched; the row is now anchored to that page (kickoff time still
+  unpublished, so the 15:30 PT start remains a planning estimate). The 2028 season anchor row is verified.
+- **Super Bowl LXI (2027) date re-verified live** on the NFL's 2026 Kickoff Guide page: "Super Bowl LXI …
+  Sunday, February 14, 2027, at SoFi Stadium" (https://media.nfl.com/football-information/2026/news/2026-kickoff-guide).
+- **Super Bowl LXIII (2029) exact date is still not on an official page.** NFL.com and media.nfl.com confirm
+  Las Vegas / Allegiant Stadium in 2029; On Location's official page says only "February 2029". Press reports
+  of the NFL's social announcement give Sunday, February 11, 2029, and the planner's modelled date matches,
+  but per the no-inference rule the 2029 date fields stay blank and the block stays labelled ESTIMATION —
+  not a real verified released schedule.
+
+Still true and unchanged: MLB 2028/2029 schedules are not released; the 2027 NFL schedule is not released
+(expected May 2027); 2027 MLB first-pitch times are largely TBD; Westwood One 2027–29 postseason radio
+schedules are not published. All recommended windows remain: 2027 anchored (radio view Feb 1–13 free of any
+loaded radio game), 2028 (Jan 23 – Feb 12 best 3-week) and 2029 (Jan 21 – Feb 10 best 3-week) model output —
+re-check before booking.

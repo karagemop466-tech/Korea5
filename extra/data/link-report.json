@@ -162,7 +162,7 @@
   ],
   "counts": {
     "htmlFiles": 26,
-    "externalDomains": 17,
+    "externalDomains": 18,
     "missingLocal": 0,
     "rowsMissingSource": 0,
     "emptyAttrs": 0
@@ -180,6 +180,7 @@
     "statsapi.mlb.com",
     "www.49ers.com",
     "www.espn.com",
+    "www.mercedesbenzstadium.com",
     "www.mlb.com",
     "www.ncaa.org",
     "www.nfl.com",

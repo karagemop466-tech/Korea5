@@ -7,7 +7,6 @@ Coverage runs from 2026-11-02 to 2030-02-28, computed in Pacific time for San Fr
 
 ## Headline finding (updated 2026-11-05)
 
-<<<<<<< HEAD
 **No 7-day stretch in 2027, 2028 or 2029 is free of every listed game.** The longest run with nothing on air is
 **6 calendar days** in each year, in January–February between the NFL playoff rounds and the Super Bowl:
 
@@ -15,16 +14,6 @@ Coverage runs from 2026-11-02 to 2030-02-28, computed in Pacific time for San Fr
   only, Feb 1–8 (8 calendar days) opens. If there is no Pro Bowl that week, Feb 1–13 (13 calendar days) opens.
 * **2028** (ESTIMATION): Jan 24–29 or Jan 31 – Feb 5 (6 calendar days each).
 * **2029** (ESTIMATION): Jan 22–27 or Jan 29 – Feb 3 (6 calendar days each).
-=======
-**2027: Mon Feb 1 – Sat Feb 13 — 13 consecutive calendar days with no MLB, NFL, Stanford, Cal or Westwood One game on the air.**
-It is the gap between conference-championship Sunday (2027-01-31) and Super Bowl LXI (2027-02-14, SoFi Stadium).
-MLB's 2027 season (Mar 24 – Sep 26) and the Super Bowl date are officially released; the NFL playoff round dates around
-them are modelled. The same shape repeats in 2028 (Jan 31 – Feb 12) and 2029 (Jan 29 – Feb 10), both labelled
-**ESTIMATION** because those schedules are not released.
-
-A full 14-day trip does not quite fit — the day before the window is a conference championship and the day after is the
-Super Bowl. If the Pro Bowl exhibition also counts, the longest fully free run drops to six calendar days.
->>>>>>> origin/main
 
 The NFL has not published a 2027 Pro Bowl Games date; the two candidate days are unverified and both are blocked in the
 base case. Westwood One carried the 2026 Pro Bowl, so it is in the radio tier. MLB's 2027 season is officially released;

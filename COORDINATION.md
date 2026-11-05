@@ -512,7 +512,6 @@ Flagged irregularities and unverified items remain published on `flagged.html` /
 
 ---
 
-<<<<<<< HEAD
 ## Session `arena/6faf58ee-korea5` — 2026-11-05 (claim)
 
 Branch constraint: Arena fixes this session to `arena/6faf58ee-korea5`; no other branch is created or pushed.
@@ -532,7 +531,6 @@ Start point: `main` tip `25f0273`. All prior records above are preserved unchang
 - Data correction (X2): the `high` scope now matches the radio team set. The earlier 2028 result of 293 free days and a 194-day run was a defect.
 - Findings recorded in `curated/flags.json` (F21–F32) and in `curated/anchors-2026-11-05.json`.
 
-=======
 ## Session `arena/57f0338e-korea5` — 2026-11-05 (independent audit + anchor re-verification)
 
 Branch constraint: Arena fixes this session to `arena/57f0338e-korea5`; no other branch will be created or pushed.
@@ -633,4 +631,3 @@ Validation: rebuilt root and extra pages, regenerated the certainty notice, sear
 | Live site | https://karagemop466-tech.github.io/Korea5/ — deployment completed successfully |
 
 The only annotations were non-blocking Node.js 20 and `ubuntu-latest` migration notices.
->>>>>>> origin/main

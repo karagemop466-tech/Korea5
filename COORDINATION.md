@@ -509,3 +509,21 @@ Unlike prior sessions, this one could reach the official hosts through the page-
 | Live site | https://karagemop466-tech.github.io/Korea5/ — fetched live `extra/assets/extra.js` and confirmed it serves the dynamic `pacificISODate()` Pacific-today code |
 
 Flagged irregularities and unverified items remain published on `flagged.html` / `extra/flagged.html` and did not block the merge or deployment.
+
+---
+
+## Session `arena/57f0338e-korea5` — 2026-11-05 (independent audit + anchor re-verification)
+
+Branch constraint: Arena fixes this session to `arena/57f0338e-korea5`; no other branch will be created or pushed.
+Started from `main` tip `25f0273` (PR #23). No active claim overlaps this work; all prior sessions' records above are preserved.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| A1 | Independent full-repo audit: run the complete local verification suite (links, extra checks, certainty, unit tests, JS syntax, JSON validity), line-by-line review of data + site against the owner's requirements | arena-57f0338e | in progress | `verification/session-review-57f0338e.md`, `COORDINATION.md` |
+| A2 | Live re-check of key official anchors via page fetch: Super Bowl LXI/LXII/LXIII dates, Pro Bowl Games 2027 date, MLB 2028 / NFL 2027 schedule release status, MLB 2027 season dates | arena-57f0338e | in progress | `curated/season-anchors.json`, `curated/flags.json` (only if an official fact changed) |
+| A3 | If any anchor fact changed: update curated data + rebuild derived data and site, re-verify everything | arena-57f0338e | pending | generated outputs only |
+| A4 | PR to `main`, merge without waiting, confirm Pages deploy, record result here | arena-57f0338e | pending | `COORDINATION.md` (this log) |
+
+Scope note: shared outputs (`*.html`, `data/`) are otherwise integration-frozen; A3 touches them only to publish a
+newly verified official fact, which no other session has claimed. No schedule row will be invented; anything not
+confirmed from an official source stays blank/estimated and flagged.

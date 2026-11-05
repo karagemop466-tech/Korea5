@@ -509,3 +509,26 @@ Unlike prior sessions, this one could reach the official hosts through the page-
 | Live site | https://karagemop466-tech.github.io/Korea5/ — fetched live `extra/assets/extra.js` and confirmed it serves the dynamic `pacificISODate()` Pacific-today code |
 
 Flagged irregularities and unverified items remain published on `flagged.html` / `extra/flagged.html` and did not block the merge or deployment.
+
+---
+
+## Session `arena/239c0da8-korea5` — 2026-11-05 (integration review)
+
+Branch fixed by Arena: `arena/239c0da8-korea5`. Read this board before review; existing schedule/data/site tasks are already marked complete and no active ownership conflict was listed.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| I1 | Re-run local integrity, certainty and UI tests; ensure the link-report subpage also carries the project-wide uncertainty notice | arena-239c0da8 | **done** | `extra/links.html`, `COORDINATION.md` |
+
+### Verification and source review
+
+- `python3 scripts/check_links.py`: 11 pages, 180 local links, 519 external links; 0 missing.
+- `python3 tools/verify_extra.py`: 31/31 checks passed; 0 rows missing a source URL.
+- `python3 scripts/audit_certainty.py`: passed; no future free window is certified and all published pages must disclose incomplete coverage. This exposed that `extra/links.html` lacked the common certainty notice; the generated page was corrected. The link report itself still describes the 31 historical/local checks accurately and does not assert fresh source verification.
+- `python3 -m unittest discover -s tests -v`: 5/5; `node tests/test_calendar.js` and `node tests/test_calendar_today.js`: passed; `git diff --check`: clean.
+- Manually fetched the official MLB 2027 release at https://www.mlb.com/news/mlb-2027-schedule-released and confirmed the listed 2027 season anchors (Mar 24 Opening Night, Mar 25 traditional Opening Day, July 13 All-Star Game, Sep 26 final regular-season day).
+- Fetched https://www.nfl.com/schedules/2027/; the official NFL page resolves to the 2026 schedule, so future NFL dates remain estimates, not verified fixtures.
+- Fetched https://www.westwoodonesports.com/nfl-schedule/ and confirmed the page is live/upcoming and lists current 2026 NFL broadcast windows. No claim is made here that its full dynamic schedule was independently reconciled against every committed event row.
+- The sandbox cannot establish actual terrestrial reception or a station-by-station broadcast for each event at Outer Sunset 94122. Those gaps remain published on the Flagged for Review pages. Existing historical snapshot/CI results are not relabelled as fresh checks.
+
+No schedule data or event dates were changed. No new irregularities beyond the missing certainty banner (now corrected) were found. Existing flagged rows and estimates remain nonblocking and clearly marked.

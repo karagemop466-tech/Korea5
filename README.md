@@ -64,7 +64,8 @@ rosters, then computes rest days, scoring rates, de-vig arithmetic and a shuffle
 Three findings worth reading first:
 
 1. **The home-field "edge" is a coin at this sample.** 232 of 453 decided games went to the home team in 2025–26
-   (51.2%, 90% CI 47.4–55.1%), and the shuffle test returns p = 1.000. That is the correct reading and the reason
+   (51.2%; 90% CI 47.4–55.1% from the Wilson interval, 95% bootstrap interval 47.0–56.1%), and a two-sided
+   bootstrap p = 0.666. That is the correct reading and the reason
    the skill-vs-luck gate exists.
 2. **No price exists, so nothing is certified.** The official NFL week, game and stat pages were probed by exact
    regex for odds fields: **zero hits**. With no price no bet can be settled, so the leaderboard ranks nobody and

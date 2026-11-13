@@ -1,877 +1,893 @@
 {
-  "meta": {
-    "name": "Flagged for Review — combined irregularity register",
-    "compiledUTC": "2026-11-02",
-    "note": "Items here are published for manual review. Per the project brief, flagged / unverified / needs-review items do NOT block the PR merge or the GitHub Pages deployment. Every row links to an official source; a value that could not be confirmed is left blank rather than inferred.",
-    "label": "ESTIMATION — not a real verified released schedule"
-  },
-  "flags": [
+ "meta": {
+  "name": "Flagged for Review \u2014 combined irregularity register",
+  "compiledUTC": "2026-11-02",
+  "note": "Items here are published for manual review. Per the project brief, flagged / unverified / needs-review items do NOT block the PR merge or the GitHub Pages deployment. Every row links to an official source; a value that could not be confirmed is left blank rather than inferred.",
+  "label": "ESTIMATION \u2014 not a real verified released schedule"
+ },
+ "flags": [
+  {
+   "id": "F01",
+   "severity": "high",
+   "title": "2028 and 2029 MLB schedules are not released",
+   "detail": "MLB StatsAPI returns 0 regular-season games for 2028 and 2029. All 2028/2029 MLB rows on this site are ESTIMATION \u2014 not a real verified released schedule. Dates, opponents and times are blank on verified tables.",
+   "status": "needs-review",
+   "sources": [
     {
-      "id": "F01",
-      "severity": "high",
-      "title": "2028 and 2029 MLB schedules are not released",
-      "detail": "MLB StatsAPI returns 0 regular-season games for 2028 and 2029. All 2028/2029 MLB rows on this site are ESTIMATION — not a real verified released schedule. Dates, opponents and times are blank on verified tables.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "MLB schedule (MLB.com)",
-          "url": "https://www.mlb.com/schedule"
-        },
-        {
-          "name": "MLB StatsAPI 2028",
-          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2028&gameType=R"
-        },
-        {
-          "name": "MLB StatsAPI 2029",
-          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2029&gameType=R"
-        }
-      ]
+     "name": "MLB schedule (MLB.com)",
+     "url": "https://www.mlb.com/schedule"
     },
     {
-      "id": "F02",
-      "severity": "high",
-      "title": "2027 NFL schedule and 2027–29 Westwood One postseason schedules are not released",
-      "detail": "No official 2027 NFL schedule or 2027–2029 Westwood One postseason broadcast schedule exists as of 2026-11-02. These are left blank and labelled ESTIMATION — not a real verified released schedule.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL schedules",
-          "url": "https://www.nfl.com/schedules/"
-        },
-        {
-          "name": "Westwood One Sports NFL schedule",
-          "url": "https://www.westwoodonesports.com/nfl-schedule/"
-        }
-      ]
+     "name": "MLB StatsAPI 2028",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2028&gameType=R"
     },
     {
-      "id": "F03",
-      "severity": "high",
-      "title": "2,015 MLB 2027 games carry TBD first-pitch times",
-      "detail": "MLB StatsAPI returns startTimeTBD=true for 2,015 of the 5,861 checked 2026/2027 game records; the placeholder time is often 07:33Z. Start times are left blank on verified tables; the parallel session's modelled start times appear only in the clearly labelled planning-estimate mode.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "MLB 2027 schedule release",
-          "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
-        },
-        {
-          "name": "MLB StatsAPI 2027",
-          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2027&gameType=R"
-        }
-      ]
-    },
-    {
-      "id": "F04",
-      "severity": "medium",
-      "title": "24 official 2026 NFL games have no published kickoff time",
-      "detail": "The NFL.com by-week feed contains 321 HOF/preseason/regular games; 24 have no kickoff time (mostly Week 18 TBA). Those rows show blank times and are flagged.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com 2026 Week 18",
-          "url": "https://www.nfl.com/schedules/2026/by-week/week-18"
-        },
-        {
-          "name": "2026-27 NFL Important Dates",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        }
-      ]
-    },
-    {
-      "id": "F05",
-      "severity": "medium",
-      "title": "Super Bowl LXIII (2029) exact date still not on an official page; LXII (2028) date now verified",
-      "detail": "Update 2026-11-05: the Mercedes-Benz Stadium official event page publishes Super Bowl LXII as February 13, 2028 (a Sunday) — the planner's modelled 2028 date already matched and is now anchored to that page (kickoff time still TBA). For Super Bowl LXIII the official release (NFL.com and media.nfl.com, Mar 30, 2026) confirms only Las Vegas / Allegiant Stadium in 2029; On Location's official page says only 'February 2029'. The exact date — reported as Sunday, February 11, 2029 by press coverage of the NFL's social announcement — does not appear on any official page reviewed, so the 2029 date fields stay blank and the modelled 2029-02-11 block remains labelled ESTIMATION.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Super Bowl LXII event page — February 13, 2028 (Mercedes-Benz Stadium, official)",
-          "url": "https://www.mercedesbenzstadium.com/events/super-bowl-lxii"
-        },
-        {
-          "name": "Super Bowl LXIII host announcement (NFL.com, official)",
-          "url": "https://www.nfl.com/news/las-vegas-to-host-super-bowl-lxiii-in-2029"
-        },
-        {
-          "name": "Super Bowl LXIII release (media.nfl.com, official)",
-          "url": "https://media.nfl.com/news-and-releases/events/super-bowl-returns-to-las-vegas-in-2029-"
-        }
-      ]
-    },
-    {
-      "id": "F06",
-      "severity": "high",
-      "title": "Westwood One vs 49ers kickoff conflict, 2026-11-22 MIN at SF",
-      "detail": "The official Westwood One schedule lists 7:30 PM ET (4:30 PM PT) while 49ers.com lists 5:20 PM PST for the Mexico City game. Both windows are blocked and the conflict is published rather than silently resolved.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Westwood One Sports NFL schedule",
-          "url": "https://www.westwoodonesports.com/nfl-schedule/"
-        },
-        {
-          "name": "49ers 2026 schedule",
-          "url": "https://www.49ers.com/schedule/2026/"
-        }
-      ]
-    },
-    {
-      "id": "F07",
-      "severity": "medium",
-      "title": "Older official Stanford / Cal future-schedule releases conflict with newer ones",
-      "detail": "Cal 2028: 2020 release put Wyoming on Sept 2, 2024 release puts UCLA on Sept 2. Cal 2029: 2020 release put Minnesota on Sept 1, 2024 release puts Wisconsin on Sept 1. Stanford 2027 TCU game was canceled in 2026. Newer sources are used; older entries are left blank or flagged.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Cal-UCLA 2026-29 (2024)",
-          "url": "https://calbears.com/news/2024/7/10/football-cal-ucla-schedule-4-games-from-2026-29"
-        },
-        {
-          "name": "Cal adds Minnesota/Wyoming (2020)",
-          "url": "https://calbears.com/news/2020/2/11/football-cal-adds-minnesota-and-wyoming-to-future-schedules"
-        },
-        {
-          "name": "TCU series update (2026)",
-          "url": "https://gostanford.com/news/2026/04/17/tcu-series-update"
-        }
-      ]
-    },
-    {
-      "id": "F08",
-      "severity": "medium",
-      "title": "CFP radio partner not stated on official broadcast schedule",
-      "detail": "CollegeFootballPlayoff.com publishes 2026-27 CFP dates and TV networks but no radio partner. Radio carriage of CFP games on a 94122 AM/FM station is therefore unverified; the dates are shown as official anchors only.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "2026-27 CFP Broadcast Schedule",
-          "url": "https://collegefootballplayoff.com/news/2026/6/1/26-27-broadcast-sked"
-        }
-      ]
-    },
-    {
-      "id": "F09",
-      "severity": "low",
-      "title": "Westwood One Station Finder does not publish frequencies",
-      "detail": "The official Station Finder lists San Francisco affiliates by call sign (KNBR-AM, KNBR-F2, KNBR-FM, KTCT-AM) but no frequencies. Frequencies on this site come from separate official team / station / ESPN pages and are attributed individually.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Westwood One Station Finder",
-          "url": "https://www.westwoodonesports.com/station-finder/"
-        },
-        {
-          "name": "ESPN Radio affiliate list",
-          "url": "https://www.espn.com/liveradiotv/s/nbaaffiliates.html"
-        }
-      ]
-    },
-    {
-      "id": "F10",
-      "severity": "high",
-      "title": "Westwood One warns not every affiliate airs every broadcast",
-      "detail": "Official wording: 'Because of local blackouts and/or programming conflicts, not every affiliate can air every Westwood One Sports broadcast.' National W1 windows are high priority but station-level carriage in 94122 is not guaranteed.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Westwood One Station Finder",
-          "url": "https://www.westwoodonesports.com/station-finder/"
-        }
-      ]
-    },
-    {
-      "id": "F11",
-      "severity": "medium",
-      "title": "Dashboard copy says Feb 8–13 2027 gap is 'after the Super Bowl'",
-      "detail": "Super Bowl LXI is officially Feb 14 2027, so the Feb 8–13 2027 window is BEFORE the Super Bowl. The root dashboard wording is corrected on our combined analysis page; the original wording is retained here as a documented irregularity.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "2026 Kickoff Guide (Super Bowl LXI date)",
-          "url": "https://media.nfl.com/football-information/2026/news/2026-kickoff-guide"
-        },
-        {
-          "name": "2026-27 NFL Important Dates",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        }
-      ]
-    },
-    {
-      "id": "F12",
-      "severity": "medium",
-      "title": "Prior sites referenced in the brief return GitHub Pages 404",
-      "detail": "buffedlizard55-lab.github.io/VacationSchedule/site/, /ScheduleFreeTime/, /RADIOSF/ and /VacationSchedule/ all returned 404 during review. This project builds a new self-contained site instead of relying on those pages.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Prior site (404)",
-          "url": "https://buffedlizard55-lab.github.io/VacationSchedule/site/"
-        }
-      ]
-    },
-    {
-      "id": "F13",
-      "severity": "medium",
-      "title": "2026 Big Game date conflict between two official school pages",
-      "detail": "calbears.com listed the Big Game on Sat Nov 14 2026 at 12:30 PM while gostanford.com listed Stanford at California on Sat Nov 21 2026 TBA. Both dates were blocked by the parallel session. The 2026 Cal schedule page now shows Stanford on Nov 21; the older Nov 14 entry is retained as a flagged conflict.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Cal 2026 schedule",
-          "url": "https://calbears.com/sports/football/schedule/2026"
-        },
-        {
-          "name": "Stanford 2026 schedule",
-          "url": "https://gostanford.com/sports/football/schedule"
-        }
-      ]
-    },
-    {
-      "id": "F14",
-      "severity": "medium",
-      "title": "Westwood One 2026-12-27 JAX at DAL time not retrievable",
-      "detail": "The parallel session could not retrieve a kickoff time from the official W1 event page; the time was left blank and marked unverified.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Westwood One Sports NFL schedule",
-          "url": "https://www.westwoodonesports.com/nfl-schedule/"
-        }
-      ]
-    },
-    {
-      "id": "F15",
-      "severity": "low",
-      "title": "2026 Stanford Nov 14 kickoff listed as '4 OR 4:30 P.M.'",
-      "detail": "The official Stanford schedule page gives two possible kickoff times. Neither is inferred; both are listed as ambiguous and flagged.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Stanford 2026 schedule",
-          "url": "https://gostanford.com/sports/football/schedule"
-        },
-        {
-          "name": "Stanford / Virginia Tech kickoff options (GoStanford.com, 2026)",
-          "url": "https://gostanford.com/news/2026/11/2/two-options-for-virginia-tech-kickoff-time-unveiled"
-        }
-      ]
-    },
-    {
-      "id": "F16",
-      "severity": "low",
-      "title": "2026 Stanford Nov 28 SMU kickoff TBA on schedule page",
-      "detail": "The official schedule card shows TBA while embedded JSON-LD carries a UTC timestamp; per the no-inference rule the PT kickoff is left blank and flagged.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Stanford 2026 schedule",
-          "url": "https://gostanford.com/sports/football/schedule"
-        }
-      ]
-    },
-    {
-      "id": "F17",
-      "severity": "medium",
-      "title": "2027 MLB All-Star Game and Opening Night times not published",
-      "detail": "MLB's 2027 release names dates (Mar 24, Jul 13) but not first-pitch times; those time fields are blank.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "MLB 2027 schedule release",
-          "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
-        }
-      ]
-    },
-    {
-      "id": "F18",
-      "severity": "low",
-      "title": "Planning durations are estimates, not official values",
-      "detail": "165/185/195/200-minute busy blocks are planning buffers around official rulebook playing times and MLB's official 2:38 average. They are labelled ESTIMATE and flagged; official rulebook facts are shown separately.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Official 2026 NFL Rulebook",
-          "url": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook"
-        },
-        {
-          "name": "NCAA Football Playing Rules",
-          "url": "https://www.ncaa.org/championships/playing-rules/football-playing-rules/"
-        }
-      ]
-    },
-    {
-      "id": "F19",
-      "severity": "low",
-      "title": "Parallel verification report had failing row checks",
-      "detail": "An earlier verification/report.md recorded 49/62 rows verified, 13 failures and 3 conflicts; the published dashboard later reported 61/62. The combined verification page re-checks the merged data and lists any remaining failures instead of assuming they are resolved.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Published verification report",
-          "url": "https://karagemop466-tech.github.io/Korea5/verification/report.md"
-        }
-      ]
-    },
-    {
-      "id": "F20",
-      "severity": "low",
-      "title": "Sacramento-market Athletics affiliates: 94122 reception unverified",
-      "detail": "KSTE 650 AM and KVMX 92.1/105.5 FM are official Athletics radio affiliates in Sacramento, but over-the-air reception in Outer Sunset 94122 is not confirmed by an official source. KNEW 960 AM is the Bay Area affiliate.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Athletics TV & radio affiliates (MLB.com)",
-          "url": "https://www.mlb.com/athletics/schedule/watch"
-        }
-      ]
-    },
-    {
-      "id": "F21",
-      "severity": "high",
-      "title": "2027 Pro Bowl Games date is not published (both candidates blocked; Westwood One carried the 2026 edition)",
-      "detail": "The NFL 2026-27 calendar lists no Pro Bowl date. Secondary sources conflict: Non-official aggregators (NFL Playoff Pass: Tue Feb 9, 2027; SportBusy: Feb 7, 2027) are named here but not linked, because they are not official sources. The planner blocks both days in the all-games and radio views. Westwood One carried the 2026 Pro Bowl Games on Tue Feb 3, 2026 (4:30-7:30 PM PT), so the radio view depends on this date too. Results (base case): both blocked = 6 calendar days; Feb 9 only = 8 calendar days (Feb 1-8); no Pro Bowl = 13 calendar days (Feb 1-13).",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: 2026-27 important dates (no Pro Bowl listed)",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        },
-        {
-          "name": "Westwood One: 2026 Pro Bowl Games event (official)",
-          "url": "https://www.westwoodonesports.com/events/527138/"
-        }
-      ]
-    },
-    {
-      "id": "F22",
-      "severity": "high",
-      "title": "2028 and 2029 vacation windows are model output",
-      "detail": "The recommended 2028 (base case: Jan 24–29 or Jan 31–Feb 5, 6 calendar days each) and 2029 (base case: Jan 22–27 or Jan 29–Feb 3, 6 calendar days each) windows are computed from a modelled MLB daily slate and a modelled NFL calendar, not from released schedules. They will move when those schedules are published and must be re-checked before booking. Only the 2027 window is anchored to officially released values (MLB 2027 season, NFL playoff round windows, Super Bowl LXI). Update 2026-11-05: the 2028 Super Bowl LXII date (Sunday, February 13, 2028, Mercedes-Benz Stadium event page) is now verified and the model uses it; every other 2028/2029 input remains model output.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "MLB StatsAPI (2028 returns 0 games)",
-          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2028&gameType=R"
-        },
-        {
-          "name": "MLB.com 2027 schedule release",
-          "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
-        }
-      ]
-    },
-    {
-      "id": "F23",
-      "severity": "high",
-      "title": "Pro Bowl Games 2027: two unverified candidate dates, both blocked",
-      "detail": "Candidate A = Sun Feb 7 (aggregator, not linked); candidate B = Tue Feb 9 (secondary, not linked). Neither appears in the NFL's official calendar. The planning block is the 2026 Westwood One window (4:30-7:30 PM PT). The 2028 and 2029 candidates are the same structural guess (Super Bowl minus 7 and minus 5 days) and are ESTIMATION only.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: 2026-27 important dates",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        },
-        {
-          "name": "Westwood One 2026 Pro Bowl event",
-          "url": "https://www.westwoodonesports.com/events/527138/"
-        }
-      ]
-    },
-    {
-      "id": "F24",
-      "severity": "medium",
-      "title": "Wild Card Monday added (Jan 18, 2027) from the official Jan 16-18 window; game times not published",
-      "detail": "The NFL calendar lists Wild Card Weekend as Jan 16-18, 2027. The model had only Saturday and Sunday, so a Monday block was added. Its kickoff time (17:15 PT) is an estimate, and it is not tagged to Westwood One. Monday game carriage is unknown.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: 2026-27 important dates",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        }
-      ]
-    },
-    {
-      "id": "F25",
-      "severity": "high",
-      "title": "Stanford and Cal postseason (bowl) games for 2026-27 are not modelled",
-      "detail": "A bowl game would fall in late December or early January and would block that day. Bowl assignments depend on the final 2026 regular-season records, so none has been modelled. The Jan 25-30 2027 run should be re-checked after bowl selections.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Stanford football schedule (gostanford.com)",
-          "url": "https://gostanford.com/sports/football/schedule"
-        },
-        {
-          "name": "Cal football schedule (calbears.com)",
-          "url": "https://calbears.com/sports/football/schedule"
-        }
-      ]
-    },
-    {
-      "id": "F26",
-      "severity": "medium",
-      "title": "Correction: Jan 24 2027 is a Divisional playoff day, not a free day",
-      "detail": "The earlier executive summary (research/EXECUTIVE-SUMMARY-ef8b5b30.md, extra/summary.html) described Jan 24-30 2027 as six free days. NFL.com lists the Divisional Playoffs for Jan 23-24, 2027. The corrected free run is Jan 25-30 2027 (6 calendar days). That earlier page is superseded by research/EXECUTIVE-SUMMARY.md.",
-      "status": "corrected",
-      "sources": [
-        {
-          "name": "NFL.com: 2026-27 important dates",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        }
-      ]
-    },
-    {
-      "id": "F27",
-      "severity": "medium",
-      "title": "Thu Nov 5 2026: Westwood One start 7:30 PM ET vs NFL.com kickoff 8:15 PM",
-      "detail": "Jaguars at Ravens: Westwood One lists 7:30 PM ET; the NFL.com game centre lists 8:15 PM (its time zone is not labelled on the fetched page). Westwood One's published time is its pre-game start. Both are shown; the planner uses the earlier one for busy time.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Westwood One NFL schedule",
-          "url": "https://www.westwoodonesports.com/nfl-schedule/"
-        },
-        {
-          "name": "NFL.com game centre (Jaguars at Ravens, 2026 REG 9)",
-          "url": "https://www.nfl.com/games/jaguars-at-ravens-2026-reg-9"
-        }
-      ]
-    },
-    {
-      "id": "F28",
-      "severity": "medium",
-      "title": "Fetch tool metadata mismatch on two official pages (content matched)",
-      "detail": "On 2026-11-05 the page-fetch tool returned an unrelated URL in its metadata for the MLB 2027 release and the MLB 2025 attendance release. The body text matches the named articles. Manual re-check is recommended before relying on either URL.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "MLB.com: MLB 2027 schedule released",
-          "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
-        },
-        {
-          "name": "MLB.com: 2025 attendance release",
-          "url": "https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007"
-        }
-      ]
-    },
-    {
-      "id": "F29",
-      "severity": "medium",
-      "title": "2027 NFL schedule still not published on nfl.com (checked 2026-11-05)",
-      "detail": "nfl.com/schedules/2027/ returned the 2026 season page. Every 2027 NFL regular-season, playoff-matchup and kickoff value is therefore ESTIMATION. Only the round windows in the NFL 2026-27 calendar are official.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com schedules, 2027",
-          "url": "https://www.nfl.com/schedules/2027/"
-        }
-      ]
-    },
-    {
-      "id": "F30",
-      "severity": "medium",
-      "title": "research/build_docs.py is stale and is not in the rebuild chain",
-      "detail": "scripts/build_docs.py would overwrite the README.md sections that other sessions added by hand. README.md and research/EXECUTIVE-SUMMARY.md are therefore maintained by hand in this session, and the rebuild commands in the README no longer include it.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Repository README",
-          "url": "https://github.com/karagemop466-tech/Korea5/blob/main/README.md"
-        }
-      ]
-    },
-    {
-      "id": "F31",
-      "severity": "medium",
-      "title": "Correction: high-priority tier was undercounting estimated 2028-2029 games",
-      "detail": "The 'high' scope tested the priority field only. Estimated Giants, Athletics, 49ers, Stanford and Cal rows were marked normal priority, so 2028 showed 293 free days and a 194-day run. The high scope now uses the same team set as the radio tier (2028 radio view: 85 free days; all-games view: 74 free days; longest run 6 calendar days in both). The owner's list counts all MLB and NFL games as high priority; those are blocking in the all-games scope.",
-      "status": "corrected",
-      "sources": [
-        {
-          "name": "Method (planner scope definitions)",
-          "url": "https://github.com/karagemop466-tech/Korea5/blob/main/scripts/analyze.py"
-        }
-      ]
-    },
-    {
-      "id": "F32",
-      "severity": "low",
-      "title": "Wild Card and playoff round days inside each window are estimates",
-      "detail": "The NFL publishes round windows (for example Jan 16-18 for Wild Card). The Saturday, Sunday or Monday split, and all kickoff times, are estimates. A day is blocked if any round could fall on it.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: 2026-27 important dates",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        }
-      ]
-    },
-    {
-      "id": "F33",
-      "severity": "medium",
-      "title": "Texans depth chart published as an image — strings unverified",
-      "detail": "houstontexans.com/team/depth-chart publishes 'Unofficial Depth Chart' as a picture, not a table. HOU replacement strings on the Week-10 deficiency tracker are left blank and flagged rather than inferred. The image link is provided for manual review.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Texans depth chart (image)",
-          "url": "https://www.houstontexans.com/team/depth-chart/"
-        }
-      ]
-    },
-    {
-      "id": "F34",
-      "severity": "medium",
-      "title": "Panthers depth-chart page unreachable — CAR rows blank",
-      "detail": "carolinapanthers.com/team/depth-chart refused CI connections twice and returned HTTP 500 on direct fetch (2026-11-13). CAR depth strings and replacements are blank/unverified on the tracker. No ESPN/secondary substitute was used.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Panthers depth chart (unreachable)",
-          "url": "https://www.carolinapanthers.com/team/depth-chart/"
-        }
-      ]
-    },
-    {
-      "id": "F35",
-      "severity": "medium",
-      "title": "Market odds are a trusted secondary source, not official league data",
-      "detail": "Spread/total/moneyline reference values come from DraftKings odds exposed through ESPN's scoreboard API (NFL official partner). They are labelled 'trusted secondary' everywhere. Sportsbook operator pages themselves were not reachable for verification.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "ESPN NFL odds",
-          "url": "https://www.espn.com/nfl/odds"
-        }
-      ]
-    },
-    {
-      "id": "F36",
-      "severity": "low",
-      "title": "Fitted home-field advantage (-0.5 pts) deviates from the traditional ~2.5 prior",
-      "detail": "The least-squares fit on 136 official Week 1-9 results estimates HFA = -0.5 points. The traditional prior is about +2.5. The model uses the fitted value; a +/-3 pt sensitivity shifts all spreads uniformly. Flagged for reviewer decision.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Official results used in the fit",
-          "url": "https://www.nfl.com/schedules/2026/by-week/week-9"
-        }
-      ]
-    },
-    {
-      "id": "F37",
-      "severity": "low",
-      "title": "Model totals are not injury-adjusted in v0",
-      "detail": "Injury weights move the spread only. Totals for injury-hit games (e.g., SEA @ LV with Darnold out) are therefore stale. Documented as a limitation on lines.html; fix proposed as an accepted-path candidate.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com injuries",
-          "url": "https://www.nfl.com/injuries/"
-        }
-      ]
-    },
-    {
-      "id": "F38",
-      "severity": "medium",
-      "title": "DET S Kerby Joseph (Game Status: Out) is not on the club's published depth chart",
-      "detail": "The official injury report lists Kerby Joseph (S) as Out for NE @ DET, but the Lions' published depth chart lists only Chuck Clark and Brian Branch at S. The replacement string is left blank and flagged — never inferred.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com injuries",
-          "url": "https://www.nfl.com/injuries/"
-        },
-        {
-          "name": "Lions depth chart",
-          "url": "https://www.detroitlions.com/team/depth-chart/"
-        }
-      ]
-    },
-    {
-      "id": "F39",
-      "severity": "low",
-      "title": "Sunday/Monday game statuses not yet designated at retrieval",
-      "detail": "Only WAS @ NYG (Thu) and NE @ DET carry game-status designations in the 2026-11-13 snapshot; other games show practice status only. Blank cells are blank on the tracker — they are not filled with guesses. Re-pull on Friday/Saturday updates them (S2/S7).",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com injuries",
-          "url": "https://www.nfl.com/injuries/"
-        }
-      ]
-    },
-    {
-      "id": "F40",
-      "severity": "high",
-      "title": "Player-prop markets unavailable from verified sources — prop strategies blocked",
-      "detail": "No official or licensed-book prop board could be verified in this pass. Player-prop combo strategies (ST5, SG6/SG7) are registered but blocked (Q5). Modelled prop baselines would need Q19 usage data first.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "ESPN NFL odds (no props verified)",
-          "url": "https://www.espn.com/nfl/odds"
-        }
-      ]
-    },
-    {
-      "id": "F41",
-      "severity": "medium",
-      "title": "Correlation values are literature-anchored estimates, not computed here",
-      "detail": "The correlation matrix on strategies.html publishes rho ranges with explicit 'unverified estimate' labels. Empirical phi coefficients require the pick ledger (S3) and the correlation job (S5). Until then same-game staking uses the documented rho floor 0.35.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Correlation framework (published site page)",
-          "url": "https://karagemop466-tech.github.io/Korea5/strategies.html"
-        }
-      ]
-    },
-    {
-      "id": "F42",
-      "severity": "medium",
-      "title": "Model v0 is unproven: first out-of-sample test was a side loss",
-      "detail": "WAS @ NYG (Week 10 TNF): model NYG -2.2, final Commanders 24-21 — wrong side, 5.2-point margin error. One game proves nothing; gate G4 requires n >= 100 graded picks before any rewards. Reported straight, not hidden.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Official game page",
-          "url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10"
-        }
-      ]
-    },
-    {
-      "id": "F43",
-      "severity": "low",
-      "title": "nfl.com Week-1 game listing shows a Wednesday date for Sunday Night Football",
-      "detail": "The official scores page lists NE at SEA as 'Sunday Night Football, September 9th, 2026', but September 9, 2026 is a Wednesday. The score is captured as shown; no date was silently corrected. Verification of the true kickoff date is pending.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: 2026 week 1 scores",
-          "url": "https://www.nfl.com/scores/2026/week-1"
-        }
-      ]
-    },
-    {
-      "id": "F44",
-      "severity": "low",
-      "title": "nfl.com scores pages can serve 'Hidden Score' placeholders in spoiler mode",
-      "detail": "One retrieval of the Week-3 scores page returned 'Hidden Score' placeholders (client-side spoiler state). The canonical week URL was re-fetched and the full scores obtained. All 137 captured finals reconcile exactly against the standings, so no placeholder leaked into the data. Logged as a source-behavior irregularity for future collectors.",
-      "status": "resolved",
-      "sources": [
-        {
-          "name": "NFL.com: 2026 week 3 scores",
-          "url": "https://www.nfl.com/scores/2026/week-3"
-        },
-        {
-          "name": "NFL.com: 2026 standings",
-          "url": "https://www.nfl.com/standings/league/2026/REG"
-        }
-      ]
-    },
-    {
-      "id": "F45",
-      "severity": "high",
-      "title": "No OFFICIAL market odds source — nfl-intel market columns blank",
-      "detail": "Market columns on nfl-intel-lines.html are deliberately blank and flagged. A trusted-secondary market feed (DraftKings via ESPN partner feed) was captured by session arena-65332583 and is flagged as not-official league data (their F35) - usable for context, not for verification. This blocks validation gates G5 (ATS vs closing line) and G6 on official data, CLV tracking on official prices, and parlay-leg correlation measurement. Never inferred (see Q-ODDS).",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Questions register: Q-ODDS",
-          "url": "https://karagemop466-tech.github.io/Korea5/questions.html"
-        }
-      ]
-    },
-    {
-      "id": "F46",
-      "severity": "low",
-      "title": "Week-10 game-status designations blank for Sunday and Monday games as of 2026-11-13",
-      "detail": "The official injury report shows no Game Status yet for the Sunday and Monday Week-10 games. Blank means 'not yet published' per the official page semantics; nothing was inferred. Values will refresh after Friday/Saturday designations post.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: Week-10 injuries",
-          "url": "https://www.nfl.com/injuries/"
-        }
-      ]
-    },
-    {
-      "id": "F47",
-      "severity": "medium",
-      "title": "2026 home-field advantage computes to about zero (−0.02 pts/game)",
-      "detail": "Across 137 verified 2026 finals the weighted home-field edge is −0.02 points per game — far below the historically assumed ~2.5 points. The model uses the computed value. Whether this is a season quirk, a schedule artifact or a lasting change is unverified (see Q-HFA).",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: 2026 standings (PF/PA reconciliation)",
-          "url": "https://www.nfl.com/standings/league/2026/REG"
-        }
-      ]
-    },
-    {
-      "id": "F48",
-      "severity": "medium",
-      "title": "Rest-days signal (r=0.438) may be partially schedule-confounded",
-      "detail": "The rest-days difference is the strongest measured pre-game signal against 2026 margins (n=74 walk-forward). It is partially confounded: Week-12 bye teams carry a rest edge into their next game by construction. The predictive correlation is computed and reported; any causal interpretation is unverified.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: 2026 schedule",
-          "url": "https://www.nfl.com/schedules/2026/by-week/week-11"
-        }
-      ]
-    },
-    {
-      "id": "F49",
-      "severity": "medium",
-      "title": "Baltimore QB depth tier: '3rd string' verified by news chain, '4th string' unverified",
-      "detail": "Starter Lamar Jackson is on IR and backup Tyler Huntley is out for the season per official NFL.com news, so the starter for Week 10 is necessarily from the third tier or lower. The specific 4th-string designation is not confirmed by an official depth chart and is labelled unverified. Note: club-site depth charts (1st-5th strings, 30 of 32 clubs) were captured by session arena-65332583 in data/lines/depth-charts.json with two flagged gaps (HOU image-only, CAR unreachable); club sites count as team-official sources but are not the league injury report.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: Top stories from Week 9",
-          "url": "https://www.nfl.com/news/top-stories-from-week-9-of-the-2026-nfl-season"
-        },
-        {
-          "name": "NFL.com: Huntley out for season",
-          "url": "https://www.nfl.com/news/ravens-qb-tyler-huntley-out-for-season-after-suffering-turf-toe-injury"
-        }
-      ]
-    },
-    {
-      "id": "F50",
-      "severity": "low",
-      "title": "Week-10 TNF result falls after the original data snapshot",
-      "detail": "The standings snapshot includes WAS 24 @ NYG 21 (Thu Nov 12), explaining '137 games vs 136' during reconciliation; the 32/32 exact match confirms it. Data stays consistent as of 2026-11-13.",
-      "status": "resolved",
-      "sources": [
-        {
-          "name": "NFL.com: 2026 week 10 scores",
-          "url": "https://www.nfl.com/scores/2026/week-10"
-        }
-      ]
-    },
-    {
-      "id": "F51",
-      "severity": "medium",
-      "title": "Parlay-leg and player-prop pair correlations are blank",
-      "detail": "The strategy frameworks need empirical joint-hit correlations to price same-game parlays and prop combos. No graded market or prop data exists in this system, so all such cells are blank and flagged; conservative Frechet bounds are documented as the interim policy (see Q-PROPS, Q-ODDS).",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Strategies & correlation values",
-          "url": "https://karagemop466-tech.github.io/Korea5/nfl-strategies.html"
-        }
-      ]
-    },
-    {
-      "id": "F52",
-      "severity": "high",
-      "title": "No market prices in this repository: no edge, ROI or CLV claim is possible",
-      "detail": "The NFL Signals Lab publishes model lines only, each labelled 'model line - no market price exists in this repository to compare against'. Edge, ROI and closing-line value require archived odds with timestamps; no price feed is held here, so no such claim is made on any page. Adding a licensed, timestamped price archive is what would unblock them - not different wording.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL Signals Lab — model lines",
-          "url": "https://karagemop466-tech.github.io/Korea5/nfl-signals-lines.html"
-        }
-      ]
-    },
-    {
-      "id": "F53",
-      "severity": "high",
-      "title": "Availability data is one current snapshot, not a point-in-time archive",
-      "detail": "nfl.com/injuries/ returns identical markup for every season/week query, so the capture stores one dated snapshot per run. Applying today's report to past weeks would leak, so the injury-adjusted strategy's leakage gate is marked failed on purpose and its backtest figure is not comparable to the others. Point-in-time history accumulates through data/nfl-signals/forward-ledger.json, one archive per run.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com injury report",
-          "url": "https://www.nfl.com/injuries/"
-        },
-        {
-          "name": "NFL Signals Lab — availability model",
-          "url": "https://karagemop466-tech.github.io/Korea5/nfl-signals-injuries.html"
-        }
-      ]
-    },
-    {
-      "id": "F54",
-      "severity": "medium",
-      "title": "Five played 2026 games carry no score label on the official by-week page",
-      "detail": "For all five (each involving the same club) the by-week card renders a 'Watch Replay' link where the FINAL score label normally sits, and the game page itself publishes no score text either. Those rows stay null, are excluded from scoring, and are counted as pastGamesStillMissingScores in official/lab/fetch-report.json. The exact markup is preserved in official/lab/gap-context.json so a future parser fix is written against evidence instead of assumption.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com 2026 by-week schedule",
-          "url": "https://www.nfl.com/schedules/2026/by-week/week-2"
-        }
-      ]
-    },
-    {
-      "id": "F55",
-      "severity": "medium",
-      "title": "No official depth chart: replacement tiers cannot be computed",
-      "detail": "nfl.com/depth-charts/ and the per-club depth-chart paths return 404, and no payload on the captured pages carries a position-ranked depth chart. Second-, third- and fourth-string claims are therefore left uncomputed and listed in correlation_study.notComputable, rather than estimated from contract year or snap counts.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com (no depth-chart page)",
-          "url": "https://www.nfl.com/depth-charts/"
-        }
-      ]
-    },
-    {
-      "id": "F56",
-      "severity": "medium",
-      "title": "Backtest sample cannot separate the models from luck",
-      "detail": "100 games are scoreable out of sample from the 2026 capture. The paired difference between the leading strategy and the home-field baseline has t = 1.48 with a week-block bootstrap interval of [-0.005, 0.073], which includes zero, so the leaderboard is published as provisional and no prize is payable. Roughly 180 paired games would be needed at the observed effect size; the pre-registered promotion gate is 60 settled forward-ledger rows. Figures rendered on nfl-signals-backtest.html always come from the latest run.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL Signals Lab — walk-forward backtest",
-          "url": "https://karagemop466-tech.github.io/Korea5/nfl-signals-backtest.html"
-        }
-      ]
-    },
-    {
-      "id": "F57",
-      "severity": "low",
-      "title": "Standings payload carries no points for/against",
-      "detail": "The embedded by-week standings blob gives wins, losses, ties, home/away splits and division rank but no points columns, so standingsWithoutPoints is 32/32 and pointsFor/pointsAgainst stay null. Team points used by the model come from the game scores themselves and are never back-filled from another table.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com standings",
-          "url": "https://www.nfl.com/standings/"
-        }
-      ]
-    },
-    {
-      "id": "F58",
-      "severity": "low",
-      "title": "Inactives are reachable only through official articles",
-      "detail": "nfl.com/inactives/ is client-rendered (the capture's probe finds only an apiUrls entry), so the page yields zero rows and inactives are read from the weekly official inactives article, which exists for some weeks only. Because the 2026 rulebook sets a 48-player game-day active roster, an inactive is not necessarily injured; the two are kept as separate fields and never substituted for one another.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com inactives",
-          "url": "https://www.nfl.com/inactives/"
-        }
-      ]
-    },
-    {
-      "id": "F59",
-      "severity": "medium",
-      "title": "Player-prop combinations are specified but uncomputed",
-      "detail": "No player-level season statistics and no prop prices are captured; the official player-statistics page renders client-side. propCombos.available is false, with the required inputs and the joint-distribution method written out so the analysis can run the day the data exists. No player-prop number is published in the meantime.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com player statistics",
-          "url": "https://www.nfl.com/stats/player-stats/"
-        }
-      ]
+     "name": "MLB StatsAPI 2029",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2029&gameType=R"
     }
-  ]
+   ]
+  },
+  {
+   "id": "F02",
+   "severity": "high",
+   "title": "2027 NFL schedule and 2027\u201329 Westwood One postseason schedules are not released",
+   "detail": "No official 2027 NFL schedule or 2027\u20132029 Westwood One postseason broadcast schedule exists as of 2026-11-02. These are left blank and labelled ESTIMATION \u2014 not a real verified released schedule.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL schedules",
+     "url": "https://www.nfl.com/schedules/"
+    },
+    {
+     "name": "Westwood One Sports NFL schedule",
+     "url": "https://www.westwoodonesports.com/nfl-schedule/"
+    }
+   ]
+  },
+  {
+   "id": "F03",
+   "severity": "high",
+   "title": "2,015 MLB 2027 games carry TBD first-pitch times",
+   "detail": "MLB StatsAPI returns startTimeTBD=true for 2,015 of the 5,861 checked 2026/2027 game records; the placeholder time is often 07:33Z. Start times are left blank on verified tables; the parallel session's modelled start times appear only in the clearly labelled planning-estimate mode.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "MLB 2027 schedule release",
+     "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
+    },
+    {
+     "name": "MLB StatsAPI 2027",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2027&gameType=R"
+    }
+   ]
+  },
+  {
+   "id": "F04",
+   "severity": "medium",
+   "title": "24 official 2026 NFL games have no published kickoff time",
+   "detail": "The NFL.com by-week feed contains 321 HOF/preseason/regular games; 24 have no kickoff time (mostly Week 18 TBA). Those rows show blank times and are flagged.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com 2026 Week 18",
+     "url": "https://www.nfl.com/schedules/2026/by-week/week-18"
+    },
+    {
+     "name": "2026-27 NFL Important Dates",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    }
+   ]
+  },
+  {
+   "id": "F05",
+   "severity": "medium",
+   "title": "Super Bowl LXIII (2029) exact date still not on an official page; LXII (2028) date now verified",
+   "detail": "Update 2026-11-05: the Mercedes-Benz Stadium official event page publishes Super Bowl LXII as February 13, 2028 (a Sunday) \u2014 the planner's modelled 2028 date already matched and is now anchored to that page (kickoff time still TBA). For Super Bowl LXIII the official release (NFL.com and media.nfl.com, Mar 30, 2026) confirms only Las Vegas / Allegiant Stadium in 2029; On Location's official page says only 'February 2029'. The exact date \u2014 reported as Sunday, February 11, 2029 by press coverage of the NFL's social announcement \u2014 does not appear on any official page reviewed, so the 2029 date fields stay blank and the modelled 2029-02-11 block remains labelled ESTIMATION.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Super Bowl LXII event page \u2014 February 13, 2028 (Mercedes-Benz Stadium, official)",
+     "url": "https://www.mercedesbenzstadium.com/events/super-bowl-lxii"
+    },
+    {
+     "name": "Super Bowl LXIII host announcement (NFL.com, official)",
+     "url": "https://www.nfl.com/news/las-vegas-to-host-super-bowl-lxiii-in-2029"
+    },
+    {
+     "name": "Super Bowl LXIII release (media.nfl.com, official)",
+     "url": "https://media.nfl.com/news-and-releases/events/super-bowl-returns-to-las-vegas-in-2029-"
+    }
+   ]
+  },
+  {
+   "id": "F06",
+   "severity": "high",
+   "title": "Westwood One vs 49ers kickoff conflict, 2026-11-22 MIN at SF",
+   "detail": "The official Westwood One schedule lists 7:30 PM ET (4:30 PM PT) while 49ers.com lists 5:20 PM PST for the Mexico City game. Both windows are blocked and the conflict is published rather than silently resolved.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Westwood One Sports NFL schedule",
+     "url": "https://www.westwoodonesports.com/nfl-schedule/"
+    },
+    {
+     "name": "49ers 2026 schedule",
+     "url": "https://www.49ers.com/schedule/2026/"
+    }
+   ]
+  },
+  {
+   "id": "F07",
+   "severity": "medium",
+   "title": "Older official Stanford / Cal future-schedule releases conflict with newer ones",
+   "detail": "Cal 2028: 2020 release put Wyoming on Sept 2, 2024 release puts UCLA on Sept 2. Cal 2029: 2020 release put Minnesota on Sept 1, 2024 release puts Wisconsin on Sept 1. Stanford 2027 TCU game was canceled in 2026. Newer sources are used; older entries are left blank or flagged.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Cal-UCLA 2026-29 (2024)",
+     "url": "https://calbears.com/news/2024/7/10/football-cal-ucla-schedule-4-games-from-2026-29"
+    },
+    {
+     "name": "Cal adds Minnesota/Wyoming (2020)",
+     "url": "https://calbears.com/news/2020/2/11/football-cal-adds-minnesota-and-wyoming-to-future-schedules"
+    },
+    {
+     "name": "TCU series update (2026)",
+     "url": "https://gostanford.com/news/2026/04/17/tcu-series-update"
+    }
+   ]
+  },
+  {
+   "id": "F08",
+   "severity": "medium",
+   "title": "CFP radio partner not stated on official broadcast schedule",
+   "detail": "CollegeFootballPlayoff.com publishes 2026-27 CFP dates and TV networks but no radio partner. Radio carriage of CFP games on a 94122 AM/FM station is therefore unverified; the dates are shown as official anchors only.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "2026-27 CFP Broadcast Schedule",
+     "url": "https://collegefootballplayoff.com/news/2026/6/1/26-27-broadcast-sked"
+    }
+   ]
+  },
+  {
+   "id": "F09",
+   "severity": "low",
+   "title": "Westwood One Station Finder does not publish frequencies",
+   "detail": "The official Station Finder lists San Francisco affiliates by call sign (KNBR-AM, KNBR-F2, KNBR-FM, KTCT-AM) but no frequencies. Frequencies on this site come from separate official team / station / ESPN pages and are attributed individually.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Westwood One Station Finder",
+     "url": "https://www.westwoodonesports.com/station-finder/"
+    },
+    {
+     "name": "ESPN Radio affiliate list",
+     "url": "https://www.espn.com/liveradiotv/s/nbaaffiliates.html"
+    }
+   ]
+  },
+  {
+   "id": "F10",
+   "severity": "high",
+   "title": "Westwood One warns not every affiliate airs every broadcast",
+   "detail": "Official wording: 'Because of local blackouts and/or programming conflicts, not every affiliate can air every Westwood One Sports broadcast.' National W1 windows are high priority but station-level carriage in 94122 is not guaranteed.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Westwood One Station Finder",
+     "url": "https://www.westwoodonesports.com/station-finder/"
+    }
+   ]
+  },
+  {
+   "id": "F11",
+   "severity": "medium",
+   "title": "Dashboard copy says Feb 8\u201313 2027 gap is 'after the Super Bowl'",
+   "detail": "Super Bowl LXI is officially Feb 14 2027, so the Feb 8\u201313 2027 window is BEFORE the Super Bowl. The root dashboard wording is corrected on our combined analysis page; the original wording is retained here as a documented irregularity.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "2026 Kickoff Guide (Super Bowl LXI date)",
+     "url": "https://media.nfl.com/football-information/2026/news/2026-kickoff-guide"
+    },
+    {
+     "name": "2026-27 NFL Important Dates",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    }
+   ]
+  },
+  {
+   "id": "F12",
+   "severity": "medium",
+   "title": "Prior sites referenced in the brief return GitHub Pages 404",
+   "detail": "buffedlizard55-lab.github.io/VacationSchedule/site/, /ScheduleFreeTime/, /RADIOSF/ and /VacationSchedule/ all returned 404 during review. This project builds a new self-contained site instead of relying on those pages.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Prior site (404)",
+     "url": "https://buffedlizard55-lab.github.io/VacationSchedule/site/"
+    }
+   ]
+  },
+  {
+   "id": "F13",
+   "severity": "medium",
+   "title": "2026 Big Game date conflict between two official school pages",
+   "detail": "calbears.com listed the Big Game on Sat Nov 14 2026 at 12:30 PM while gostanford.com listed Stanford at California on Sat Nov 21 2026 TBA. Both dates were blocked by the parallel session. The 2026 Cal schedule page now shows Stanford on Nov 21; the older Nov 14 entry is retained as a flagged conflict.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Cal 2026 schedule",
+     "url": "https://calbears.com/sports/football/schedule/2026"
+    },
+    {
+     "name": "Stanford 2026 schedule",
+     "url": "https://gostanford.com/sports/football/schedule"
+    }
+   ]
+  },
+  {
+   "id": "F14",
+   "severity": "medium",
+   "title": "Westwood One 2026-12-27 JAX at DAL time not retrievable",
+   "detail": "The parallel session could not retrieve a kickoff time from the official W1 event page; the time was left blank and marked unverified.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Westwood One Sports NFL schedule",
+     "url": "https://www.westwoodonesports.com/nfl-schedule/"
+    }
+   ]
+  },
+  {
+   "id": "F15",
+   "severity": "low",
+   "title": "2026 Stanford Nov 14 kickoff listed as '4 OR 4:30 P.M.'",
+   "detail": "The official Stanford schedule page gives two possible kickoff times. Neither is inferred; both are listed as ambiguous and flagged.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Stanford 2026 schedule",
+     "url": "https://gostanford.com/sports/football/schedule"
+    },
+    {
+     "name": "Stanford / Virginia Tech kickoff options (GoStanford.com, 2026)",
+     "url": "https://gostanford.com/news/2026/11/2/two-options-for-virginia-tech-kickoff-time-unveiled"
+    }
+   ]
+  },
+  {
+   "id": "F16",
+   "severity": "low",
+   "title": "2026 Stanford Nov 28 SMU kickoff TBA on schedule page",
+   "detail": "The official schedule card shows TBA while embedded JSON-LD carries a UTC timestamp; per the no-inference rule the PT kickoff is left blank and flagged.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Stanford 2026 schedule",
+     "url": "https://gostanford.com/sports/football/schedule"
+    }
+   ]
+  },
+  {
+   "id": "F17",
+   "severity": "medium",
+   "title": "2027 MLB All-Star Game and Opening Night times not published",
+   "detail": "MLB's 2027 release names dates (Mar 24, Jul 13) but not first-pitch times; those time fields are blank.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "MLB 2027 schedule release",
+     "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
+    }
+   ]
+  },
+  {
+   "id": "F18",
+   "severity": "low",
+   "title": "Planning durations are estimates, not official values",
+   "detail": "165/185/195/200-minute busy blocks are planning buffers around official rulebook playing times and MLB's official 2:38 average. They are labelled ESTIMATE and flagged; official rulebook facts are shown separately.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Official 2026 NFL Rulebook",
+     "url": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook"
+    },
+    {
+     "name": "NCAA Football Playing Rules",
+     "url": "https://www.ncaa.org/championships/playing-rules/football-playing-rules/"
+    }
+   ]
+  },
+  {
+   "id": "F19",
+   "severity": "low",
+   "title": "Parallel verification report had failing row checks",
+   "detail": "An earlier verification/report.md recorded 49/62 rows verified, 13 failures and 3 conflicts; the published dashboard later reported 61/62. The combined verification page re-checks the merged data and lists any remaining failures instead of assuming they are resolved.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Published verification report",
+     "url": "https://karagemop466-tech.github.io/Korea5/verification/report.md"
+    }
+   ]
+  },
+  {
+   "id": "F20",
+   "severity": "low",
+   "title": "Sacramento-market Athletics affiliates: 94122 reception unverified",
+   "detail": "KSTE 650 AM and KVMX 92.1/105.5 FM are official Athletics radio affiliates in Sacramento, but over-the-air reception in Outer Sunset 94122 is not confirmed by an official source. KNEW 960 AM is the Bay Area affiliate.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Athletics TV & radio affiliates (MLB.com)",
+     "url": "https://www.mlb.com/athletics/schedule/watch"
+    }
+   ]
+  },
+  {
+   "id": "F21",
+   "severity": "high",
+   "title": "2027 Pro Bowl Games date is not published (both candidates blocked; Westwood One carried the 2026 edition)",
+   "detail": "The NFL 2026-27 calendar lists no Pro Bowl date. Secondary sources conflict: Non-official aggregators (NFL Playoff Pass: Tue Feb 9, 2027; SportBusy: Feb 7, 2027) are named here but not linked, because they are not official sources. The planner blocks both days in the all-games and radio views. Westwood One carried the 2026 Pro Bowl Games on Tue Feb 3, 2026 (4:30-7:30 PM PT), so the radio view depends on this date too. Results (base case): both blocked = 6 calendar days; Feb 9 only = 8 calendar days (Feb 1-8); no Pro Bowl = 13 calendar days (Feb 1-13).",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: 2026-27 important dates (no Pro Bowl listed)",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    },
+    {
+     "name": "Westwood One: 2026 Pro Bowl Games event (official)",
+     "url": "https://www.westwoodonesports.com/events/527138/"
+    }
+   ]
+  },
+  {
+   "id": "F22",
+   "severity": "high",
+   "title": "2028 and 2029 vacation windows are model output",
+   "detail": "The recommended 2028 (base case: Jan 24\u201329 or Jan 31\u2013Feb 5, 6 calendar days each) and 2029 (base case: Jan 22\u201327 or Jan 29\u2013Feb 3, 6 calendar days each) windows are computed from a modelled MLB daily slate and a modelled NFL calendar, not from released schedules. They will move when those schedules are published and must be re-checked before booking. Only the 2027 window is anchored to officially released values (MLB 2027 season, NFL playoff round windows, Super Bowl LXI). Update 2026-11-05: the 2028 Super Bowl LXII date (Sunday, February 13, 2028, Mercedes-Benz Stadium event page) is now verified and the model uses it; every other 2028/2029 input remains model output.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "MLB StatsAPI (2028 returns 0 games)",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2028&gameType=R"
+    },
+    {
+     "name": "MLB.com 2027 schedule release",
+     "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
+    }
+   ]
+  },
+  {
+   "id": "F23",
+   "severity": "high",
+   "title": "Pro Bowl Games 2027: two unverified candidate dates, both blocked",
+   "detail": "Candidate A = Sun Feb 7 (aggregator, not linked); candidate B = Tue Feb 9 (secondary, not linked). Neither appears in the NFL's official calendar. The planning block is the 2026 Westwood One window (4:30-7:30 PM PT). The 2028 and 2029 candidates are the same structural guess (Super Bowl minus 7 and minus 5 days) and are ESTIMATION only.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: 2026-27 important dates",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    },
+    {
+     "name": "Westwood One 2026 Pro Bowl event",
+     "url": "https://www.westwoodonesports.com/events/527138/"
+    }
+   ]
+  },
+  {
+   "id": "F24",
+   "severity": "medium",
+   "title": "Wild Card Monday added (Jan 18, 2027) from the official Jan 16-18 window; game times not published",
+   "detail": "The NFL calendar lists Wild Card Weekend as Jan 16-18, 2027. The model had only Saturday and Sunday, so a Monday block was added. Its kickoff time (17:15 PT) is an estimate, and it is not tagged to Westwood One. Monday game carriage is unknown.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: 2026-27 important dates",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    }
+   ]
+  },
+  {
+   "id": "F25",
+   "severity": "high",
+   "title": "Stanford and Cal postseason (bowl) games for 2026-27 are not modelled",
+   "detail": "A bowl game would fall in late December or early January and would block that day. Bowl assignments depend on the final 2026 regular-season records, so none has been modelled. The Jan 25-30 2027 run should be re-checked after bowl selections.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Stanford football schedule (gostanford.com)",
+     "url": "https://gostanford.com/sports/football/schedule"
+    },
+    {
+     "name": "Cal football schedule (calbears.com)",
+     "url": "https://calbears.com/sports/football/schedule"
+    }
+   ]
+  },
+  {
+   "id": "F26",
+   "severity": "medium",
+   "title": "Correction: Jan 24 2027 is a Divisional playoff day, not a free day",
+   "detail": "The earlier executive summary (research/EXECUTIVE-SUMMARY-ef8b5b30.md, extra/summary.html) described Jan 24-30 2027 as six free days. NFL.com lists the Divisional Playoffs for Jan 23-24, 2027. The corrected free run is Jan 25-30 2027 (6 calendar days). That earlier page is superseded by research/EXECUTIVE-SUMMARY.md.",
+   "status": "corrected",
+   "sources": [
+    {
+     "name": "NFL.com: 2026-27 important dates",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    }
+   ]
+  },
+  {
+   "id": "F27",
+   "severity": "medium",
+   "title": "Thu Nov 5 2026: Westwood One start 7:30 PM ET vs NFL.com kickoff 8:15 PM",
+   "detail": "Jaguars at Ravens: Westwood One lists 7:30 PM ET; the NFL.com game centre lists 8:15 PM (its time zone is not labelled on the fetched page). Westwood One's published time is its pre-game start. Both are shown; the planner uses the earlier one for busy time.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Westwood One NFL schedule",
+     "url": "https://www.westwoodonesports.com/nfl-schedule/"
+    },
+    {
+     "name": "NFL.com game centre (Jaguars at Ravens, 2026 REG 9)",
+     "url": "https://www.nfl.com/games/jaguars-at-ravens-2026-reg-9"
+    }
+   ]
+  },
+  {
+   "id": "F28",
+   "severity": "medium",
+   "title": "Fetch tool metadata mismatch on two official pages (content matched)",
+   "detail": "On 2026-11-05 the page-fetch tool returned an unrelated URL in its metadata for the MLB 2027 release and the MLB 2025 attendance release. The body text matches the named articles. Manual re-check is recommended before relying on either URL.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "MLB.com: MLB 2027 schedule released",
+     "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
+    },
+    {
+     "name": "MLB.com: 2025 attendance release",
+     "url": "https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007"
+    }
+   ]
+  },
+  {
+   "id": "F29",
+   "severity": "medium",
+   "title": "2027 NFL schedule still not published on nfl.com (checked 2026-11-05)",
+   "detail": "nfl.com/schedules/2027/ returned the 2026 season page. Every 2027 NFL regular-season, playoff-matchup and kickoff value is therefore ESTIMATION. Only the round windows in the NFL 2026-27 calendar are official.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com schedules, 2027",
+     "url": "https://www.nfl.com/schedules/2027/"
+    }
+   ]
+  },
+  {
+   "id": "F30",
+   "severity": "medium",
+   "title": "research/build_docs.py is stale and is not in the rebuild chain",
+   "detail": "scripts/build_docs.py would overwrite the README.md sections that other sessions added by hand. README.md and research/EXECUTIVE-SUMMARY.md are therefore maintained by hand in this session, and the rebuild commands in the README no longer include it.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Repository README",
+     "url": "https://github.com/karagemop466-tech/Korea5/blob/main/README.md"
+    }
+   ]
+  },
+  {
+   "id": "F31",
+   "severity": "medium",
+   "title": "Correction: high-priority tier was undercounting estimated 2028-2029 games",
+   "detail": "The 'high' scope tested the priority field only. Estimated Giants, Athletics, 49ers, Stanford and Cal rows were marked normal priority, so 2028 showed 293 free days and a 194-day run. The high scope now uses the same team set as the radio tier (2028 radio view: 85 free days; all-games view: 74 free days; longest run 6 calendar days in both). The owner's list counts all MLB and NFL games as high priority; those are blocking in the all-games scope.",
+   "status": "corrected",
+   "sources": [
+    {
+     "name": "Method (planner scope definitions)",
+     "url": "https://github.com/karagemop466-tech/Korea5/blob/main/scripts/analyze.py"
+    }
+   ]
+  },
+  {
+   "id": "F32",
+   "severity": "low",
+   "title": "Wild Card and playoff round days inside each window are estimates",
+   "detail": "The NFL publishes round windows (for example Jan 16-18 for Wild Card). The Saturday, Sunday or Monday split, and all kickoff times, are estimates. A day is blocked if any round could fall on it.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: 2026-27 important dates",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    }
+   ]
+  },
+  {
+   "id": "F33",
+   "severity": "medium",
+   "title": "Texans depth chart published as an image \u2014 strings unverified",
+   "detail": "houstontexans.com/team/depth-chart publishes 'Unofficial Depth Chart' as a picture, not a table. HOU replacement strings on the Week-10 deficiency tracker are left blank and flagged rather than inferred. The image link is provided for manual review.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Texans depth chart (image)",
+     "url": "https://www.houstontexans.com/team/depth-chart/"
+    }
+   ]
+  },
+  {
+   "id": "F34",
+   "severity": "medium",
+   "title": "Panthers depth-chart page unreachable \u2014 CAR rows blank",
+   "detail": "carolinapanthers.com/team/depth-chart refused CI connections twice and returned HTTP 500 on direct fetch (2026-11-13). CAR depth strings and replacements are blank/unverified on the tracker. No ESPN/secondary substitute was used.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Panthers depth chart (unreachable)",
+     "url": "https://www.carolinapanthers.com/team/depth-chart/"
+    }
+   ]
+  },
+  {
+   "id": "F35",
+   "severity": "medium",
+   "title": "Market odds are a trusted secondary source, not official league data",
+   "detail": "Spread/total/moneyline reference values come from DraftKings odds exposed through ESPN's scoreboard API (NFL official partner). They are labelled 'trusted secondary' everywhere. Sportsbook operator pages themselves were not reachable for verification.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "ESPN NFL odds",
+     "url": "https://www.espn.com/nfl/odds"
+    }
+   ]
+  },
+  {
+   "id": "F36",
+   "severity": "low",
+   "title": "Fitted home-field advantage (-0.5 pts) deviates from the traditional ~2.5 prior",
+   "detail": "The least-squares fit on 136 official Week 1-9 results estimates HFA = -0.5 points. The traditional prior is about +2.5. The model uses the fitted value; a +/-3 pt sensitivity shifts all spreads uniformly. Flagged for reviewer decision.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Official results used in the fit",
+     "url": "https://www.nfl.com/schedules/2026/by-week/week-9"
+    }
+   ]
+  },
+  {
+   "id": "F37",
+   "severity": "low",
+   "title": "Model totals are not injury-adjusted in v0",
+   "detail": "Injury weights move the spread only. Totals for injury-hit games (e.g., SEA @ LV with Darnold out) are therefore stale. Documented as a limitation on lines.html; fix proposed as an accepted-path candidate.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com injuries",
+     "url": "https://www.nfl.com/injuries/"
+    }
+   ]
+  },
+  {
+   "id": "F38",
+   "severity": "medium",
+   "title": "DET S Kerby Joseph (Game Status: Out) is not on the club's published depth chart",
+   "detail": "The official injury report lists Kerby Joseph (S) as Out for NE @ DET, but the Lions' published depth chart lists only Chuck Clark and Brian Branch at S. The replacement string is left blank and flagged \u2014 never inferred.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com injuries",
+     "url": "https://www.nfl.com/injuries/"
+    },
+    {
+     "name": "Lions depth chart",
+     "url": "https://www.detroitlions.com/team/depth-chart/"
+    }
+   ]
+  },
+  {
+   "id": "F39",
+   "severity": "low",
+   "title": "Sunday/Monday game statuses not yet designated at retrieval",
+   "detail": "Only WAS @ NYG (Thu) and NE @ DET carry game-status designations in the 2026-11-13 snapshot; other games show practice status only. Blank cells are blank on the tracker \u2014 they are not filled with guesses. Re-pull on Friday/Saturday updates them (S2/S7).",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com injuries",
+     "url": "https://www.nfl.com/injuries/"
+    }
+   ]
+  },
+  {
+   "id": "F40",
+   "severity": "high",
+   "title": "Player-prop markets unavailable from verified sources \u2014 prop strategies blocked",
+   "detail": "No official or licensed-book prop board could be verified in this pass. Player-prop combo strategies (ST5, SG6/SG7) are registered but blocked (Q5). Modelled prop baselines would need Q19 usage data first.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "ESPN NFL odds (no props verified)",
+     "url": "https://www.espn.com/nfl/odds"
+    }
+   ]
+  },
+  {
+   "id": "F41",
+   "severity": "medium",
+   "title": "Correlation values are literature-anchored estimates, not computed here",
+   "detail": "The correlation matrix on strategies.html publishes rho ranges with explicit 'unverified estimate' labels. Empirical phi coefficients require the pick ledger (S3) and the correlation job (S5). Until then same-game staking uses the documented rho floor 0.35.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Correlation framework (published site page)",
+     "url": "https://karagemop466-tech.github.io/Korea5/strategies.html"
+    }
+   ]
+  },
+  {
+   "id": "F42",
+   "severity": "medium",
+   "title": "Model v0 is unproven: first out-of-sample test was a side loss",
+   "detail": "WAS @ NYG (Week 10 TNF): model NYG -2.2, final Commanders 24-21 \u2014 wrong side, 5.2-point margin error. One game proves nothing; gate G4 requires n >= 100 graded picks before any rewards. Reported straight, not hidden.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Official game page",
+     "url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10"
+    }
+   ]
+  },
+  {
+   "id": "F43",
+   "severity": "low",
+   "title": "nfl.com Week-1 game listing shows a Wednesday date for Sunday Night Football",
+   "detail": "The official scores page lists NE at SEA as 'Sunday Night Football, September 9th, 2026', but September 9, 2026 is a Wednesday. The score is captured as shown; no date was silently corrected. Verification of the true kickoff date is pending.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: 2026 week 1 scores",
+     "url": "https://www.nfl.com/scores/2026/week-1"
+    }
+   ]
+  },
+  {
+   "id": "F44",
+   "severity": "low",
+   "title": "nfl.com scores pages can serve 'Hidden Score' placeholders in spoiler mode",
+   "detail": "One retrieval of the Week-3 scores page returned 'Hidden Score' placeholders (client-side spoiler state). The canonical week URL was re-fetched and the full scores obtained. All 137 captured finals reconcile exactly against the standings, so no placeholder leaked into the data. Logged as a source-behavior irregularity for future collectors.",
+   "status": "resolved",
+   "sources": [
+    {
+     "name": "NFL.com: 2026 week 3 scores",
+     "url": "https://www.nfl.com/scores/2026/week-3"
+    },
+    {
+     "name": "NFL.com: 2026 standings",
+     "url": "https://www.nfl.com/standings/league/2026/REG"
+    }
+   ]
+  },
+  {
+   "id": "F45",
+   "severity": "high",
+   "title": "No OFFICIAL market odds source \u2014 nfl-intel market columns blank",
+   "detail": "Market columns on nfl-intel-lines.html are deliberately blank and flagged. A trusted-secondary market feed (DraftKings via ESPN partner feed) was captured by session arena-65332583 and is flagged as not-official league data (their F35) - usable for context, not for verification. This blocks validation gates G5 (ATS vs closing line) and G6 on official data, CLV tracking on official prices, and parlay-leg correlation measurement. Never inferred (see Q-ODDS).",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Questions register: Q-ODDS",
+     "url": "https://karagemop466-tech.github.io/Korea5/questions.html"
+    }
+   ]
+  },
+  {
+   "id": "F46",
+   "severity": "low",
+   "title": "Week-10 game-status designations blank for Sunday and Monday games as of 2026-11-13",
+   "detail": "The official injury report shows no Game Status yet for the Sunday and Monday Week-10 games. Blank means 'not yet published' per the official page semantics; nothing was inferred. Values will refresh after Friday/Saturday designations post.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: Week-10 injuries",
+     "url": "https://www.nfl.com/injuries/"
+    }
+   ]
+  },
+  {
+   "id": "F47",
+   "severity": "medium",
+   "title": "2026 home-field advantage computes to about zero (\u22120.02 pts/game)",
+   "detail": "Across 137 verified 2026 finals the weighted home-field edge is \u22120.02 points per game \u2014 far below the historically assumed ~2.5 points. The model uses the computed value. Whether this is a season quirk, a schedule artifact or a lasting change is unverified (see Q-HFA).",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: 2026 standings (PF/PA reconciliation)",
+     "url": "https://www.nfl.com/standings/league/2026/REG"
+    }
+   ]
+  },
+  {
+   "id": "F48",
+   "severity": "medium",
+   "title": "Rest-days signal (r=0.438) may be partially schedule-confounded",
+   "detail": "The rest-days difference is the strongest measured pre-game signal against 2026 margins (n=74 walk-forward). It is partially confounded: Week-12 bye teams carry a rest edge into their next game by construction. The predictive correlation is computed and reported; any causal interpretation is unverified.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: 2026 schedule",
+     "url": "https://www.nfl.com/schedules/2026/by-week/week-11"
+    }
+   ]
+  },
+  {
+   "id": "F49",
+   "severity": "medium",
+   "title": "Baltimore QB depth tier: '3rd string' verified by news chain, '4th string' unverified",
+   "detail": "Starter Lamar Jackson is on IR and backup Tyler Huntley is out for the season per official NFL.com news, so the starter for Week 10 is necessarily from the third tier or lower. The specific 4th-string designation is not confirmed by an official depth chart and is labelled unverified. Note: club-site depth charts (1st-5th strings, 30 of 32 clubs) were captured by session arena-65332583 in data/lines/depth-charts.json with two flagged gaps (HOU image-only, CAR unreachable); club sites count as team-official sources but are not the league injury report.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: Top stories from Week 9",
+     "url": "https://www.nfl.com/news/top-stories-from-week-9-of-the-2026-nfl-season"
+    },
+    {
+     "name": "NFL.com: Huntley out for season",
+     "url": "https://www.nfl.com/news/ravens-qb-tyler-huntley-out-for-season-after-suffering-turf-toe-injury"
+    }
+   ]
+  },
+  {
+   "id": "F50",
+   "severity": "low",
+   "title": "Week-10 TNF result falls after the original data snapshot",
+   "detail": "The standings snapshot includes WAS 24 @ NYG 21 (Thu Nov 12), explaining '137 games vs 136' during reconciliation; the 32/32 exact match confirms it. Data stays consistent as of 2026-11-13.",
+   "status": "resolved",
+   "sources": [
+    {
+     "name": "NFL.com: 2026 week 10 scores",
+     "url": "https://www.nfl.com/scores/2026/week-10"
+    }
+   ]
+  },
+  {
+   "id": "F51",
+   "severity": "medium",
+   "title": "Parlay-leg and player-prop pair correlations are blank",
+   "detail": "The strategy frameworks need empirical joint-hit correlations to price same-game parlays and prop combos. No graded market or prop data exists in this system, so all such cells are blank and flagged; conservative Frechet bounds are documented as the interim policy (see Q-PROPS, Q-ODDS).",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Strategies & correlation values",
+     "url": "https://karagemop466-tech.github.io/Korea5/nfl-strategies.html"
+    }
+   ]
+  },
+  {
+   "id": "F52",
+   "severity": "high",
+   "title": "No market prices in this repository: no edge, ROI or CLV claim is possible",
+   "detail": "The NFL Signals Lab publishes model lines only, each labelled 'model line - no market price exists in this repository to compare against'. Edge, ROI and closing-line value require archived odds with timestamps; no price feed is held here, so no such claim is made on any page. Adding a licensed, timestamped price archive is what would unblock them - not different wording.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL Signals Lab \u2014 model lines",
+     "url": "https://karagemop466-tech.github.io/Korea5/nfl-signals-lines.html"
+    }
+   ]
+  },
+  {
+   "id": "F53",
+   "severity": "high",
+   "title": "Availability data is one current snapshot, not a point-in-time archive",
+   "detail": "nfl.com/injuries/ returns identical markup for every season/week query, so the capture stores one dated snapshot per run. Applying today's report to past weeks would leak, so the injury-adjusted strategy's leakage gate is marked failed on purpose and its backtest figure is not comparable to the others. Point-in-time history accumulates through data/nfl-signals/forward-ledger.json, one archive per run.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com injury report",
+     "url": "https://www.nfl.com/injuries/"
+    },
+    {
+     "name": "NFL Signals Lab \u2014 availability model",
+     "url": "https://karagemop466-tech.github.io/Korea5/nfl-signals-injuries.html"
+    }
+   ]
+  },
+  {
+   "id": "F54",
+   "severity": "medium",
+   "title": "Five played 2026 games carry no score label on the official by-week page",
+   "detail": "For all five (each involving the same club) the by-week card renders a 'Watch Replay' link where the FINAL score label normally sits, and the game page itself publishes no score text either. Those rows stay null, are excluded from scoring, and are counted as pastGamesStillMissingScores in official/lab/fetch-report.json. The exact markup is preserved in official/lab/gap-context.json so a future parser fix is written against evidence instead of assumption.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com 2026 by-week schedule",
+     "url": "https://www.nfl.com/schedules/2026/by-week/week-2"
+    }
+   ]
+  },
+  {
+   "id": "F55",
+   "severity": "medium",
+   "title": "No official depth chart: replacement tiers cannot be computed",
+   "detail": "nfl.com/depth-charts/ and the per-club depth-chart paths return 404, and no payload on the captured pages carries a position-ranked depth chart. Second-, third- and fourth-string claims are therefore left uncomputed and listed in correlation_study.notComputable, rather than estimated from contract year or snap counts.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com (no depth-chart page)",
+     "url": "https://www.nfl.com/depth-charts/"
+    }
+   ]
+  },
+  {
+   "id": "F56",
+   "severity": "medium",
+   "title": "Backtest sample cannot separate the models from luck",
+   "detail": "100 games are scoreable out of sample from the 2026 capture. The paired difference between the leading strategy and the home-field baseline has t = 1.48 with a week-block bootstrap interval of [-0.005, 0.073], which includes zero, so the leaderboard is published as provisional and no prize is payable. Roughly 180 paired games would be needed at the observed effect size; the pre-registered promotion gate is 60 settled forward-ledger rows. Figures rendered on nfl-signals-backtest.html always come from the latest run.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL Signals Lab \u2014 walk-forward backtest",
+     "url": "https://karagemop466-tech.github.io/Korea5/nfl-signals-backtest.html"
+    }
+   ]
+  },
+  {
+   "id": "F57",
+   "severity": "low",
+   "title": "Standings payload carries no points for/against",
+   "detail": "The embedded by-week standings blob gives wins, losses, ties, home/away splits and division rank but no points columns, so standingsWithoutPoints is 32/32 and pointsFor/pointsAgainst stay null. Team points used by the model come from the game scores themselves and are never back-filled from another table.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com standings",
+     "url": "https://www.nfl.com/standings/"
+    }
+   ]
+  },
+  {
+   "id": "F58",
+   "severity": "low",
+   "title": "Inactives are reachable only through official articles",
+   "detail": "nfl.com/inactives/ is client-rendered (the capture's probe finds only an apiUrls entry), so the page yields zero rows and inactives are read from the weekly official inactives article, which exists for some weeks only. Because the 2026 rulebook sets a 48-player game-day active roster, an inactive is not necessarily injured; the two are kept as separate fields and never substituted for one another.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com inactives",
+     "url": "https://www.nfl.com/inactives/"
+    }
+   ]
+  },
+  {
+   "id": "F59",
+   "severity": "medium",
+   "title": "Player-prop combinations are specified but uncomputed",
+   "detail": "No player-level season statistics and no prop prices are captured; the official player-statistics page renders client-side. propCombos.available is false, with the required inputs and the joint-distribution method written out so the analysis can run the day the data exists. No player-prop number is published in the meantime.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com player statistics",
+     "url": "https://www.nfl.com/stats/player-stats/"
+    }
+   ]
+  },
+  {
+   "id": "F60",
+   "severity": "medium",
+   "status": "corrected",
+   "title": "The published shuffle test could not have returned anything but p = 1.000",
+   "detail": "nfl/system/tools/analyze_market.py permuted the 453 decided outcomes and compared the permuted home-win COUNT against the observed count (232). Permuting a list cannot change how many of its entries are 1, so the comparison was 232 >= 232 on every one of the 2,000 draws and the p-value was 1.0000 by construction. The conclusion it was used to support - that a home-field prior is not distinguishable from a coin at this sample - happens to be correct, and the README carried that sentence. The test itself was vacuous. Replaced on 2026-11-13 with a two-sided bootstrap on the per-game hit indicator: observed home win rate 0.5121 on 453 decided games, 95% bootstrap interval 0.4702-0.5607, p = 0.6657. That is a real test that reaches the same published conclusion.",
+   "affects": "nfl/system/summary.html, nfl/system/signals.html, nfl/system/validation.html, README.md headline finding 1",
+   "sources": [
+    {
+     "name": "NFL.com official standings (outcomes only; no price data exists)",
+     "url": "https://www.nfl.com/standings/"
+    }
+   ],
+   "detectedBy": "session arena-827c3da2",
+   "action": "Code fixed, section rebuilt, verifier now looks for the two-sided key. Reviewer should confirm the p-value on nfl/system/summary.html is 0.666."
+  }
+ ]
 }

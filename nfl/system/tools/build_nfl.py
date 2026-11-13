@@ -181,7 +181,7 @@ report week, {fmt(SUM.get('depthRows'))} depth-chart entries across {fmt(SUM.get
 return can be computed. Any page claiming a return would be inventing it.</li>
 <li><strong>So nothing is certified.</strong> {fmt(SKILL.get('n'))} official finals are enough to test the
 <em>machinery</em>, not enough to certify a strategy. The shuffle test on a home-field prior returns
-p&nbsp;=&nbsp;{fmt(SKILL.get('shuffleTest', {}).get('pValueOneSided'), 3)} — i.e. indistinguishable from a coin.</li>
+p&nbsp;=&nbsp;{fmt(SKILL.get('shuffleTest', {}).get('pValueTwoSided'), 3)} — i.e. indistinguishable from a coin.</li>
 <li><strong>Luck is separated from skill by construction.</strong> The gate suite permutes outcomes, so a strategy
 that only looks good because outcomes were kind scores no better than its shuffled twin.</li>
 <li><strong>Injuries and depth are tracked as two separate facts.</strong> The official injury report gives status;
@@ -259,7 +259,7 @@ de-vigged prices, correlations with bootstrap intervals, calibration and shuffle
 validation suite; and this site, which publishes the results and the gaps with the same prominence.</p>
 
 <p><strong>What it proves.</strong> Machinery, not edge. With {fmt(SKILL.get('n'))} decided games the home-field
-prior is statistically indistinguishable from a coin (shuffle p&nbsp;=&nbsp;{fmt(SKILL.get('shuffleTest', {}).get('pValueOneSided'), 3)}),
+prior is statistically indistinguishable from a coin (shuffle p&nbsp;=&nbsp;{fmt(SKILL.get('shuffleTest', {}).get('pValueTwoSided'), 3)}),
 and with no stored prices not one strategy can be settled. The leaderboard therefore ranks nobody, and says so.
 That is the honest output, and it is a real result: it tells you exactly what the next decision must be.</p>
 
@@ -292,7 +292,7 @@ The second is the reward policy (Q04); the third is the reviewer for this regist
 <td>{model("MODEL")}</td><td>{fmt(hf.get('decided'))} decided</td>
 <td>{src('https://www.nfl.com/standings/', 'official standings')}</td></tr>
 <tr><td>Shuffle test on a home-field prior</td>
-<td>p = {fmt(SKILL.get('shuffleTest', {}).get('pValueOneSided'), 3)}</td>
+<td>p = {fmt(SKILL.get('shuffleTest', {}).get('pValueTwoSided'), 3)}</td>
 <td>{model("MODEL")}</td><td>{fmt(SKILL.get('shuffleTest', {}).get('draws'))} permutations</td>
 <td>{src('https://www.nfl.com/schedules/2026/by-week/week-10', 'nfl.com week pages')}</td></tr>
 <tr><td>Official injury rows, current report week</td><td>{fmt(SUM.get('injuryRows2026'))}</td>
@@ -669,7 +669,7 @@ A win rate can: go 12&ndash;0 on coin flips and you look brilliant. Score those 
 {fmt(gate_by_id('G3').get('shuffleDraws'))} times.
 If the real score sits inside that shuffled distribution, the result is what a know-nothing would have got.
 The test on a home-field prior currently returns
-p&nbsp;=&nbsp;{fmt(SKILL.get('shuffleTest', {}).get('pValueOneSided'), 3)} — inside the distribution, so: luck.</p>
+p&nbsp;=&nbsp;{fmt(SKILL.get('shuffleTest', {}).get('pValueTwoSided'), 3)} — inside the distribution, so: luck.</p>
 <p><strong>3. Minimum sample.</strong> A 60% win rate on 20 bets is noise. The gate will not look at a strategy
 below {fmt(gate_by_id('G3').get('minSample'))} settled
 bets, and it prints that refusal rather than a provisional verdict.</p>

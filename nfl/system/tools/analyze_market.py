@@ -550,23 +550,40 @@ def run():
         probs = [0.5] * n          # a know-nothing coin
         skill["brierCoin"] = brier(probs, outcomes)
         skill["brierHomePrior"] = brier([0.55] * n, outcomes)  # stated prior, not fitted
-        # shuffle test: permute outcomes, recompute the home-pick hit rate
+        # Shuffle test: permute outcomes, recompute the home-pick hit rate.
+        # FIXED 2026-11-13 (session arena-827c3da2, defect A03): the previous version asked
+        # whether sum(permuted outcomes) >= sum(outcomes). Permuting cannot change the number of
+        # home wins, so the comparison was 232 >= 232 on every draw and the p-value was always
+        # exactly 1.0000. It now asks the question a home-field prior actually implies: are the
+        # home teams' wins spread over MORE games than chance would put them in? Two-sided
+        # bootstrap over the per-game hit indicator, reported with its interval.
         hits = sum(outcomes)
         draws = 2000
         ge = 0
+        boot = []
         for _ in range(draws):
-            perm = outcomes[:]
-            RNG.shuffle(perm)
-            if sum(perm) >= hits:
+            sample = [RNG.choice(outcomes) for _ in range(n)]
+            rate = sum(sample) / n
+            boot.append(rate)
+            if abs(rate - 0.5) >= abs(base - 0.5):
                 ge += 1
+        boot.sort()
+        lo_b = boot[int(0.025 * draws)]
+        hi_b = boot[int(0.975 * draws) - 1]
         skill["shuffleTest"] = {
             "draws": draws,
-            "statistic": "count of home wins among decided games",
+            "statistic": "home win rate among decided games",
             "observed": hits,
-            "pValueOneSided": round((ge + 1) / (draws + 1), 4),
+            "observedRate": round(base, 4),
+            "bootstrap95": [round(lo_b, 4), round(hi_b, 4)],
+            "pValueTwoSided": round((ge + 1) / (draws + 1), 4),
             "reading": ("a home-field prior is not distinguishable from a coin at this sample"
                         if (ge + 1) / (draws + 1) > 0.05 else
                         "the observed home rate is unlikely under a coin"),
+            "fixedOn": "2026-11-13",
+            "previousVersion": ("permuted the outcomes and compared the permuted home-win COUNT with "
+                                "the observed count; that quantity is invariant under permutation, so "
+                                "the test returned p = 1.0000 by construction"),
             "note": "This tests OUTCOME randomness, not strategy skill. It demonstrates the machinery "
                     "the gates use; it is not evidence that any strategy is profitable.",
         }

@@ -122,5 +122,59 @@ class TestLeaderboardConsistency(unittest.TestCase):
                                 f"{row['id']} is rewarded despite a failed gate")
 
 
+class TestShuffleTestIsNotVacuous(unittest.TestCase):
+    """A03 - a permutation test must be able to return something other than 1.000.
+
+    The published version permuted the outcomes and compared the permuted home-win COUNT
+    with the observed count. Permuting cannot change that count, so every draw tied and the
+    p-value was 1.0000 by construction. This reproduces the old statistic on the committed
+    data and then requires the published replacement to be a real rate test.
+    """
+
+    def setUp(self):
+        with open(os.path.join(ROOT, "nfl", "system", "data", "official-results.json"),
+                  encoding="utf-8") as f:
+            self.results = json.load(f)["results"]
+        with open(os.path.join(ROOT, "nfl", "system", "data", "derived", "skill.json"),
+                  encoding="utf-8") as f:
+            self.skill = json.load(f)
+
+    def outcomes(self):
+        return [1 if r["homeScore"] > r["awayScore"] else 0 for r in self.results
+                if r["awayScore"] is not None and r["homeScore"] is not None
+                and r["awayScore"] != r["homeScore"]]
+
+    def test_the_old_statistic_was_invariant(self):
+        import random
+        o = self.outcomes()
+        rng = random.Random(7)
+        for _ in range(200):
+            perm = o[:]
+            rng.shuffle(perm)
+            self.assertEqual(sum(perm), sum(o),
+                             "permutation changed the home-win count (impossible)")
+
+    def test_published_statistic_is_a_rate_not_a_count(self):
+        st = self.skill["shuffleTest"]
+        self.assertIn("rate", st["statistic"].lower(),
+                      "the published shuffle statistic is still a count, which cannot vary")
+        self.assertIn("pValueTwoSided", st)
+        self.assertNotIn("pValueOneSided", st)
+
+    def test_published_p_value_is_not_degenerate(self):
+        st = self.skill["shuffleTest"]
+        self.assertNotEqual(st["pValueTwoSided"], 1.0,
+                            "the shuffle test returns exactly 1.000, which is the vacuous result")
+        lo, hi = st["bootstrap95"]
+        self.assertLess(lo, st["observedRate"])
+        self.assertGreater(hi, st["observedRate"])
+
+    def test_observed_home_rate_matches_the_outcomes(self):
+        o = self.outcomes()
+        st = self.skill["shuffleTest"]
+        self.assertEqual(st["observed"], sum(o))
+        self.assertAlmostEqual(st["observedRate"], sum(o) / len(o), places=4)
+
+
 if __name__ == "__main__":
     unittest.main()

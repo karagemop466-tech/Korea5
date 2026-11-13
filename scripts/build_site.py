@@ -23,6 +23,13 @@ NAV = [
     ("vacation.html", "Vacation windows"),
     ("mlb.html", "MLB"),
     ("nfl.html", "NFL &amp; 49ers"),
+    ("nfl-intel.html", "NFL Intel"),
+    ("nfl-intel-lines.html", "Intel lines"),
+    ("nfl-intel-strategies.html", "Intel strategies"),
+    ("nfl-intel-injuries.html", "Intel injuries"),
+    ("nfl-intel-executive.html", "Intel executive"),
+    ("nfl-intel-suggestions.html", "Intel suggestions"),
+    ("nfl-intel-questions.html", "Intel questions"),
     ("ncaaf.html", "Stanford &amp; Cal"),
     ("radio.html", "Radio"),
     ("nfl-analytics.html", "NFL Analytics"),
@@ -238,6 +245,11 @@ If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} op
 <div class="card"><h3>NFL — 2026 released, 2027+ not</h3><p>All 2026 NFL games are loaded. nfl.com has no 2027 season page yet. The 2027 playoff round windows (Jan 9–10, Jan 16–18, Jan 23–24, Jan 31) and Super Bowl LXI (Sun Feb 14, 2027, SoFi Stadium) come from the official NFL 2026–27 calendar; game-day splits and kickoffs are modelled. The 2027 Pro Bowl date is not published.</p><a href="https://www.nfl.com/news/2026-27-national-football-league-important-dates">NFL 2026–27 important dates</a></div>
 </div>
 
+<h2>NFL Intelligence</h2><div class="grid g3">
+<div class="card"><h3>Originate, don't copy</h3><p>Our own spreads, totals and power ratings for every remaining 2026 game, computed from 137 verified finals, with a walk-forward backtest and published formulas.</p><a href="nfl-intel-lines.html">Lines &amp; ratings</a> · <a href="nfl-intel-strategies.html">Strategies</a></div>
+<div class="card"><h3>Availability &amp; deficiencies</h3><p>The official Week-10 injury report (296 rows) plus verified starter/backup news — where a defense is on its 3rd or 4th option, we say so only when an official source confirms it.</p><a href="nfl-intel-injuries.html">Injury tracker</a></div>
+<div class="card"><h3>Decide with gaps visible</h3><p>Executive summary, a suggestions register with review-before-implement workflow, and a questions register listing exactly what is missing and how to discover it.</p><a href="nfl-intel-executive.html">Executive</a> · <a href="nfl-intel-questions.html">Questions</a></div>
+</div>
 <h2>Explore by category</h2><div class="pill-row">
 <a class="btn" href="mlb.html">All 30 MLB clubs</a><a class="btn" href="extra/nfl-2026.html">NFL &amp; 49ers</a>
 <a class="btn" href="nfl-analytics.html">NFL Analytics &amp; lines</a>

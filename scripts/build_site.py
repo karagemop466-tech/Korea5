@@ -26,6 +26,8 @@ NAV = [
     ("ncaaf.html", "Stanford &amp; Cal"),
     ("radio.html", "Radio"),
     ("lab/index.html", "NFL Lab"),
+    ("lab/questions.html", "Decisions"),
+    ("lab/suggestions.html", "Suggestions"),
     ("sources.html", "Sources"),
     ("flagged.html", "Flagged"),
     ("method.html", "Method"),

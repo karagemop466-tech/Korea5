@@ -181,3 +181,19 @@ pages checked. None of them is hidden and none of them blocks the site.
 [NFL player game logs](https://www.nfl.com/players/justin-jefferson/stats/logs/) ·
 [NFL game page and official Game Book, Bills at Vikings Nov 9 2026](https://www.nfl.com/games/bills-at-vikings-2026-reg-9) ·
 [NFL Football Operations](https://operations.nfl.com/)
+
+### Parallel-session framework notes (2026-11-13)
+
+Official starting sources reviewed: [NFL injury report](https://www.nfl.com/injuries/) (page presents current season/week and player position, injury, practice status and game status), [NFL player statistics](https://www.nfl.com/stats/player-stats/) (official category/year selector), and [NFL transactions](https://www.nfl.com/transactions/). These pages do not establish a complete retrospective book-odds history or a dated 2nd/3rd/4th-string lineup ranking; those remain missing. See [research detail](research/NFL-STRATEGY.md) and [line-origination notes](research/NFL-LINES.md).
+
+### Decisions before implementation (decision register: lab/questions.html)
+
+Eight decisions must be answered before any site or strategy change is implemented: which markets independent lines cover, what “originating a line” means operationally, how model skill is separated from luck, which injury and replacement inputs are verifiable, whether parlays and player-prop combos can be fairly evaluated, what rewards and leaderboard controls are acceptable, whether 2nd/3rd/4th-string replacements can be ranked from official data, and whether future NFL seasons are official data. Current verdicts: pending, undefined, not measurable yet, not available (blank unless an official source supports it), not yet, none authorized (paper-only proposed), blank/unverified, and estimation only for 2027–2029 respectively. Every row links to an official source for manual review; blank cells are intentionally blank and nothing is inferred.
+
+### Suggestions review queue (suggestions register: lab/suggestions.html)
+
+Eight suggestions are logged: an odds archive, an injury/inactive and depth-chart evidence pipeline, a walk-forward research harness with an immutable prediction ledger, a paper-only leaderboard, plus the four structural changes this session implemented (Decisions page, Suggestions queue, landing-page navigation, Flagged-page additions). Statuses: S1–S4 proposed; S5–S8 chosen and published this session. A reviewer must record a decision before anything is implemented; nothing is changed silently.
+
+### Line origination status
+
+No betting lines, odds or player-prop prices are published by any official NFL source reviewed here, so no line values appear anywhere on the site and none are invented. Candidate signal families (team spread/moneyline, game/team totals, player props, injury/replacement adjustment, combinations) are hypotheses only; correlation values are measured from historical joint outcomes or left blank and unverified; validation gates run eight deep from data provenance to a locked prospective paper trial; offence and defence (including 2nd/3rd/4th-string backups replacing starters) are tracked symmetrically with official observations separated from model-estimated opportunity share. The leaderboard is paper-first and no rewards are authorized pending policy, legal and responsible-play review.

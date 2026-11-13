@@ -213,7 +213,9 @@ recommended order — so a decision can be made before any code is written.</p><
 <h2>Official sources used</h2>
 {source_table()}
 <p class="small">Checklist of what was verified and how: see <a href="flags.html">Flagged for Review</a> and
-<a href="../research/NFL-LINES-LAB.md">the research notes</a>.</p>
+<a href="../research/NFL-LINES-LAB.md">the research notes</a>. The parallel line-origination design memo is kept at
+<a href="../research/NFL-LINES.md">research/NFL-LINES.md</a>, with the earlier strategy notes at
+<a href="../research/NFL-STRATEGY.md">research/NFL-STRATEGY.md</a>.</p>
 """
     write(os.path.join(LAB, "index.html"), page("NFL Lines Lab", "index.html", body))
 
@@ -627,6 +629,65 @@ corrected later.</p>
     write(os.path.join(LAB, "flags.html"), page("Flagged for Review", "flags.html", body))
 
 
+# ---------------------------------------------------------------- retained entry points
+# The NFL lines surface was published in parallel by two earlier sessions
+# (arena/8602d76f and arena/c9041d2a). Their pages are kept as addresses so no
+# link breaks, and each one now points at the lab page that carries the same
+# content plus the official records and the measured numbers.
+LEGACY_PAGES = [
+    ("nfl-lines.html", "NFL Lines Origination", "The landing page for the NFL lines work.",
+     "lab/index.html", "NFL Lines Lab"),
+    ("nfl-strategies.html", "NFL Strategies", "The strategy catalogue and its validation gates.",
+     "lab/strategies.html", "Strategies and gates"),
+    ("nfl-correlation.html", "NFL Correlation", "Dependence between candidate legs.",
+     "lab/correlations.html", "Correlations"),
+    ("nfl-injuries.html", "NFL Injuries", "Injury and depth tracking.",
+     "lab/injuries.html", "Injuries and depth"),
+    ("nfl-questions.html", "NFL Questions", "The pre-decision question register.",
+     "lab/questions.html", "Decision register"),
+    ("nfl-suggestions.html", "NFL Suggestions", "The improvement register.",
+     "lab/suggestions.html", "Suggestions"),
+    ("nfl-executive-summary.html", "NFL Executive Summary", "The written summary of the lines work.",
+     "research/NFL-LINES.md", "Line-origination research notes"),
+    ("nfl-flagged.html", "NFL Flagged for Review", "The lines-work irregularities register.",
+     "lab/flags.html", "Flagged for Review"),
+    ("decisions.html", "Decisions", "The decisions that have to be answered first.",
+     "lab/questions.html", "Decision register"),
+    ("suggestions.html", "Suggestions", "The improvement register.",
+     "lab/suggestions.html", "Suggestions"),
+]
+
+
+def build_legacy():
+    for name, title, what, target, target_label in LEGACY_PAGES:
+        body = f"""
+<h1>{esc(title)}</h1>
+<p class="lede">{esc(what)} This page is now part of the <strong>NFL Lines Lab</strong>. The content lives in one place,
+with the official records behind it and every row linked to its source.</p>
+<div class="callout"><strong>Where it moved.</strong> The live version of this material is on the
+<a href="{esc(target)}">{esc(target_label)}</a> page. The lab version adds the official NFL records the earlier pages
+could only describe: the published Week 10 injury report, official player game logs, and the official Game Book, plus the
+measured correlations, dispersion figures and minimum-sample rules computed from them.</div>
+<div class="grid g3">
+<div class="card"><h3>Lab home</h3><p>Headline findings and the official sources behind them.</p>
+<a href="lab/index.html">Open →</a></div>
+<div class="card"><h3>Decision register</h3><p>What is known, what is missing, what blocks each decision, how to close it.</p>
+<a href="lab/questions.html">Open →</a></div>
+<div class="card"><h3>Strategies and gates</h3><p>Twelve candidate signals and the nine gates each must pass.</p>
+<a href="lab/strategies.html">Open →</a></div>
+<div class="card"><h3>Correlations</h3><p>Measured dependence between legs, with intervals and sample sizes.</p>
+<a href="lab/correlations.html">Open →</a></div>
+<div class="card"><h3>Injuries and depth</h3><p>The official injury report, the official Game Book and the tier rules.</p>
+<a href="lab/injuries.html">Open →</a></div>
+<div class="card"><h3>Suggestions and flags</h3><p>What to change and in what order; everything that is still unverified.</p>
+<a href="lab/suggestions.html">Suggestions →</a> · <a href="lab/flags.html">Flagged →</a></div>
+</div>
+<p class="small">Written research: <a href="research/NFL-LINES.md">line-origination notes</a> ·
+<a href="research/NFL-LINES-LAB.md">NFL Lines Lab notes</a> · <a href="research/NFL-STRATEGY.md">strategy notes</a> ·
+<a href="research/EXECUTIVE-SUMMARY.md">executive summary</a></p>
+"""
+        write(name, page(title, "", body, root=True))
+
 # ---------------------------------------------------------------- retained entry point
 def build_stub():
     body = f"""
@@ -677,6 +738,7 @@ build_leaderboard()
 build_suggestions()
 build_flags()
 build_stub()
+build_legacy()
 
 print(json.dumps({
     "labPages": len([f for f in os.listdir(LAB) if f.endswith(".html")]),
@@ -688,4 +750,5 @@ print(json.dumps({
     "injuryRows": sum(len(t["rows"]) for t in INJ.get("practice", {}).values()),
     "gameStatusRows": len(INJ.get("gameStatus", [])),
     "correlations": len(ANA.get("correlations", [])),
+    "legacyPointerPages": len(LEGACY_PAGES),
 }, indent=1))

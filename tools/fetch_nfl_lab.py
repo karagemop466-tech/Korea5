@@ -320,8 +320,14 @@ def parse_results(pairs, url, week_label, page_scores=None):
         score_mismatch = None
         if (a_pts is None or h_pts is None) and slug and slug in by_slug:
             alt = by_slug[slug]
-            nick = lambda n: (str(n or "").strip().split()[-1].lower() if n else "")
-            if nick(away) == alt[2].split()[-1] and nick(home) == alt[3].split()[-1]:
+            # Club nicknames must agree before a published score is attached to a game. The label is
+            # the short form ("49ers", "Rams") and the row is the club name; team names that begin
+            # with digits ("49ers", "Bengals" is not) are matched on their letter tail so a leading
+            # number never breaks the comparison.
+            nick = lambda n: re.sub(r"[^a-z]", "", str(n or "").strip().split()[-1].lower())
+            lab = [re.sub(r"[^a-z]", "", str(x).strip().split()[-1].lower()) for x in (alt[2], alt[3])]
+            same = lambda x, y: bool(x) and bool(y) and (x == y or x.endswith(y) or y.endswith(x))
+            if same(nick(away), lab[0]) and same(nick(home), lab[1]):
                 a_pts, h_pts, score_source = alt[0], alt[1], "pageScoreLink"
             else:
                 score_mismatch = f"label says {alt[2]} {alt[0]} / {alt[3]} {alt[1]}, row says " \

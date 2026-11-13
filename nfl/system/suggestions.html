@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions register · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="active">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Suggestions register</h1><p class="lede">22 proposed improvements, each with its options, cost, risk and gate — so a reviewer can compare paths and choose before anything is implemented.</p>
+
+<div class="callout"><strong>How to use this page.</strong> Each row is a proposal with its options, its cost,
+its risk, the validation gate it must pass, and its current state. Nothing in the "already built" state was
+implemented silently: the "built as" column names the artefact on this site. Anything requiring a price, a
+reward or a person's judgement is capped at <em>accepted — proposed default</em> until you decide.</div>
+<p><span class="badge none" style="margin:2px 4px 2px 0">accepted-built: 18</span><span class="badge none" style="margin:2px 4px 2px 0">accepted-proposed-default: 2</span><span class="badge none" style="margin:2px 4px 2px 0">blocked-needs-input: 2</span></p>
+<div class="scroll" style="max-height:none"><table class="tight" id="sugtbl"><thead><tr>
+<th>ID</th><th>Area</th><th>Suggestion (expand for options and risk)</th><th>Status</th>
+<th>Gate</th><th>Built as</th><th>Source</th></tr></thead><tbody>
+<tr>
+<td class="nowrap"><strong>S01</strong></td>
+<td class="nowrap">Decision making</td>
+<td>Put every open decision on one page with its evidence, its gap and the cost of deciding wrong, instead of scattering caveats across pages.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> The repository already publishes dozens of correct caveats, but a reader cannot see which ones block a decision. A single register turns caveats into a to-do list.<br>
+  <strong>Options:</strong> A: browsable register (chosen). B: keep caveats per page. C: a PDF brief.<br>
+  <strong>Risk:</strong> A register can look authoritative; mitigated by showing &#x27;blocks&#x27; and &#x27;status&#x27; rather than a verdict.<br>
+  <strong>Needs:</strong> Q01–Q18 in nfl/curated/questions.json.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G1 Provenance</td>
+<td>nfl/questions.html + nfl/curated/questions.json</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S02</strong></td>
+<td class="nowrap">Decision making</td>
+<td>Score each suggestion by decision value: how much it changes a decision, divided by how much work it is.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> Stops low-value polish outranking the things that actually unblock the system (prices, sample size, ownership of review).<br>
+  <strong>Options:</strong> A: value/effort score shown per row (chosen). B: no ranking.<br>
+  <strong>Risk:</strong> The score is a judgement, so it is labelled JUDGEMENT and the inputs are printed.<br>
+  <strong>Needs:</strong> Nothing external.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G6 Honesty labelling</td>
+<td>value/effort columns on nfl/suggestions.html</td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S03</strong></td>
+<td class="nowrap">Own lines</td>
+<td>Publish a fair price (no margin) plus an offered price at a stated hold, and label both, rather than publishing one ambiguous number.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> A single number is unusable: you cannot tell if it is a probability, a price, or a price with juice. Separating fair from offered makes the model auditable.<br>
+  <strong>Options:</strong> A: fair + offered (chosen default). B: fair only. C: offered only.<br>
+  <strong>Risk:</strong> If the hold is not stated per market, the offered price is still ambiguous — hence the hold column.<br>
+  <strong>Needs:</strong> Q02 must be answered by the owner to replace the default hold.</div></details></td>
+<td><span class="badge official">accepted-proposed-default</span></td>
+<td class="nowrap">G4 Calibration</td>
+<td>fair/offered price columns, method printed on nfl/market.html</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S04</strong></td>
+<td class="nowrap">Own lines</td>
+<td>Never show a model number without the sample it came from and the uncertainty band.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> A point estimate invites overconfidence. With 8–10 games of official data, the band is wide and that is the honest finding.<br>
+  <strong>Options:</strong> A: value + n + interval (chosen). B: value only.<br>
+  <strong>Risk:</strong> Wide bands look weak; they are accurate.<br>
+  <strong>Needs:</strong> Official per-game data (ingested).</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G5 Uncertainty</td>
+<td>n and 90% bootstrap interval on every computed row</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S05</strong></td>
+<td class="nowrap">Skill vs luck</td>
+<td>Run a shuffle test that destroys any real edge, and only call a strategy skill-based when its observed score beats the shuffled distribution.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> This is the direct operational answer to &#x27;remove luck from the equation&#x27;: if the same strategy applied to randomised outcomes scores as well, the result was luck.<br>
+  <strong>Options:</strong> A: shuffle test + minimum sample (chosen). B: raw win rate.<br>
+  <strong>Risk:</strong> A shuffle test controls for outcome randomness but not for data snooping across many strategies; that is why G7 (multiple testing) is a separate gate.<br>
+  <strong>Needs:</strong> Settled outcomes (official final scores).</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G3 Skill-vs-luck</td>
+<td>Monte-Carlo shuffle test, 2000 draws, printed p-value</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2025/by-week/week-5" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S06</strong></td>
+<td class="nowrap">Skill vs luck</td>
+<td>Do not rank by win rate. Rank by proper scoring (Brier/log loss) and calibration, and show ROI only where real prices exist.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> Win rate is the most luck-dominated statistic in betting, and ranking by it guarantees the leaderboard rewards variance.<br>
+  <strong>Options:</strong> A: proper scoring + calibration (chosen). B: win rate + ROI.<br>
+  <strong>Risk:</strong> Proper scoring is less intuitive; the site explains it inline.<br>
+  <strong>Needs:</strong> Nothing external.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G3, G7</td>
+<td>leaderboard scoring on nfl/leaderboard.html</td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S07</strong></td>
+<td class="nowrap">Competition</td>
+<td>Make the leaderboard paper-only and rank-only by default, with a reward column that reads &#x27;no reward authorised&#x27; until the owner sets the rule.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> The owner asked for rewards for top strategies, but a reward rule is a policy decision with money attached. Publishing ranks now and rewards later unblocks everything else.<br>
+  <strong>Options:</strong> A: paper-only ranks first, rewards after policy (chosen). B: define rewards now with invented amounts (rejected).<br>
+  <strong>Risk:</strong> The owner may want rewards immediately — the page therefore shows exactly what one policy decision would unlock.<br>
+  <strong>Needs:</strong> Q04 answered.</div></details></td>
+<td><span class="badge official">accepted-proposed-default</span></td>
+<td class="nowrap">G8 Governance</td>
+<td>&#x27;reward: not authorised&#x27; printed on every leaderboard row</td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S08</strong></td>
+<td class="nowrap">Correlation</td>
+<td>Never multiply leg probabilities for a parlay. Publish the empirical joint probability, the independence product, and the difference.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> The independence product is wrong whenever legs share a game or a player, and the size of the error is exactly what a parlay needs to price.<br>
+  <strong>Options:</strong> A: empirical joint vs independent product, difference shown (chosen). B: independent product only (rejected).<br>
+  <strong>Risk:</strong> Joint probabilities from few games are unstable; suppressed below n=8 shared games.<br>
+  <strong>Needs:</strong> Q08, Q09.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G2 Correlation honesty</td>
+<td>nfl/correlation.html, pairwise matrix with n and interval</td>
+<td class="nowrap"><a href="https://www.nfl.com/players/christian-mccaffrey/stats" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S09</strong></td>
+<td class="nowrap">Injuries</td>
+<td>Treat the official injury report and the club depth chart as two separate facts, and only call a lineup &#x27;depleted&#x27; when both agree and name the replacement.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> Out/Questionable is status, not a lineup. A depth chart is a projection. Combining them into one &#x27;deficiency score&#x27; without saying so would be the exact hallucination the owner forbade.<br>
+  <strong>Options:</strong> A: two facts + explicit replacement column (chosen). B: single synthetic severity score (rejected, unverifiable).<br>
+  <strong>Risk:</strong> Depth charts are club-projected and not uniform across clubs (Q12).<br>
+  <strong>Needs:</strong> Q05, Q06, Q07.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G1 Provenance</td>
+<td>nfl/injuries.html — injury rows joined to depth tier, replacement named only when the chart names one</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S10</strong></td>
+<td class="nowrap">Injuries</td>
+<td>Show a per-team &#x27;next man up&#x27; depth table: for each position, who starts, who is next, and how many tiers deep the club publishes.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> This is the concrete answer to &#x27;2nd, 3rd or 4th string having to replace starters&#x27; — it shows the actual published depth rather than asserting deficiency.<br>
+  <strong>Options:</strong> A: full depth table per club (chosen). B: only injured starters (weaker).<br>
+  <strong>Risk:</strong> Clubs publish different tier counts and some say &#x27;Unofficial&#x27;.<br>
+  <strong>Needs:</strong> Official club depth charts (ingested).</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G1</td>
+<td>nfl/injuries.html depth section</td>
+<td class="nowrap"><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.49ers.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S11</strong></td>
+<td class="nowrap">Offence vs defence</td>
+<td>Separate offensive and defensive deficiency, and show both sides of the same game side by side.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> A missing left tackle hurts the offence&#x27;s own output; a missing corner helps the opponent&#x27;s offence. Treating them as one number makes the sign ambiguous.<br>
+  <strong>Options:</strong> A: two columns per game (chosen). B: one net number (rejected — sign ambiguity).<br>
+  <strong>Risk:</strong> Position value is not measured here; the table lists positions, it does not value them.<br>
+  <strong>Needs:</strong> Q06, Q07.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G1</td>
+<td>offence/defence columns on nfl/injuries.html</td>
+<td class="nowrap"><a href="https://www.chiefs.com/team/depth-chart" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.chiefs.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S12</strong></td>
+<td class="nowrap">Market</td>
+<td>Publish the de-vig method explicitly (multiplicative and additive/power) and show both, because the choice changes the fair price.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> Two-way prices hide a margin; how you remove it changes the fair probability. Showing only one method hides a modelling decision.<br>
+  <strong>Options:</strong> A: both methods + the spread between them (chosen). B: one method (weaker).<br>
+  <strong>Risk:</strong> Neither method is &#x27;correct&#x27;; the page says so.<br>
+  <strong>Needs:</strong> A two-way price pair (Q01).</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G4</td>
+<td>nfl/market.html de-vig comparator (works on any price pair, demoed on a stated example)</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S13</strong></td>
+<td class="nowrap">Market</td>
+<td>Do not present any price as &#x27;the market&#x27; unless a timestamped, attributable quote is stored. Publish MODEL prices and label them.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> The official NFL pages publish no odds at all (verified: zero odds fields on week, game and stats pages). Claiming a market number would be fabrication.<br>
+  <strong>Options:</strong> A: MODEL label + explicit &#x27;no official price feed&#x27; notice (chosen). B: cite a sportsbook page as if official (rejected).<br>
+  <strong>Risk:</strong> The site looks less impressive; it stays true.<br>
+  <strong>Needs:</strong> Q01.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G1, G6</td>
+<td>MODEL badge on every non-price number; &#x27;no official price feed&#x27; banner on nfl/market.html</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S14</strong></td>
+<td class="nowrap">Validation</td>
+<td>Freeze the gate thresholds before results are seen, and print the freeze date next to the results.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> Thresholds chosen after seeing results are not validation. A printed freeze date makes post-hoc adjustment visible.<br>
+  <strong>Options:</strong> A: pre-registered thresholds with a date (chosen). B: tune later (rejected).<br>
+  <strong>Risk:</strong> The thresholds are still the owner&#x27;s to change — a change is logged as a new version.<br>
+  <strong>Needs:</strong> Nothing.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G8</td>
+<td>gate version + frozen date on nfl/validation.html</td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S15</strong></td>
+<td class="nowrap">Validation</td>
+<td>Add a multiple-testing guard so that testing 40 strategies cannot manufacture a winner.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> With enough strategies, one will look skilful by chance. The guard raises the bar as the number of tested strategies grows.<br>
+  <strong>Options:</strong> A: Benjamini–Hochberg style guard (chosen). B: none (rejected).<br>
+  <strong>Risk:</strong> Conservative — some real edges will be held back; that is the point.<br>
+  <strong>Needs:</strong> Nothing.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G7</td>
+<td>false-discovery guard on nfl/validation.html</td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S16</strong></td>
+<td class="nowrap">Data</td>
+<td>Ingest official data in CI rather than transcribing it by hand, and commit the raw fetch report with every run.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> Hand transcription is where invented values come from. A committed fetch report makes every table row traceable to a URL and a time.<br>
+  <strong>Options:</strong> A: CI ingest + fetch report (chosen). B: manual transcription (rejected).<br>
+  <strong>Risk:</strong> CI runners reach the official hosts; the dev sandbox does not, so local runs cannot refresh data.<br>
+  <strong>Needs:</strong> Nothing.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G1</td>
+<td>.github/workflows/nfl-data.yml + nfl/data/fetch-report.json</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S17</strong></td>
+<td class="nowrap">Site</td>
+<td>Keep the new section additive: a separate `nfl/` shelf with its own navigation, so the existing planner pages and their generators are untouched.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> Two sessions already own the root pages. An additive section cannot break their build, and a reviewer can ignore it entirely.<br>
+  <strong>Options:</strong> A: additive section (chosen). B: rewrite root pages (rejected — conflicts with other sessions).<br>
+  <strong>Risk:</strong> Two navigations on the site; mitigated by an explicit link in both directions.<br>
+  <strong>Needs:</strong> Nothing.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G1</td>
+<td>nfl/*.html with its own nav; one nav entry added to the root pages</td>
+<td class="nowrap"><a href="https://karagemop466-tech.github.io/Korea5/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">karagemop466-tech.github.io</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S18</strong></td>
+<td class="nowrap">Site</td>
+<td>Put an &#x27;unverified&#x27; badge on every value the official source did not publish, and leave the cell empty rather than blank-looking.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> An empty cell is ambiguous: it could mean zero, missing, or not checked. An explicit badge removes the ambiguity.<br>
+  <strong>Options:</strong> A: explicit badge + em dash (chosen). B: empty cell (rejected).<br>
+  <strong>Risk:</strong> Visually noisy; accepted as the cost of honesty.<br>
+  <strong>Needs:</strong> Nothing.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G6</td>
+<td>unverified badge rule in nfl/tools/build_nfl.py, asserted by nfl/tools/verify_nfl.py</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S19</strong></td>
+<td class="nowrap">Governance</td>
+<td>Assign a named reviewer for the suggestions register and require a written reason on every accept/reject.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> Without an owner, a register is decoration. Without reasons, the same rejected idea returns next session.<br>
+  <strong>Options:</strong> A: named reviewer + reason (chosen). B: no owner.<br>
+  <strong>Risk:</strong> It is the owner&#x27;s time; the page therefore batches decisions and shows the decision value of each.<br>
+  <strong>Needs:</strong> Q17.</div></details></td>
+<td><span class="badge unverified">blocked-needs-input</span></td>
+<td class="nowrap">G8</td>
+<td>reviewer column left blank and marked &#x27;unassigned&#x27; on nfl/suggestions.html</td>
+<td class="nowrap"><a href="https://github.com/karagemop466-tech/Korea5" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">github.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S20</strong></td>
+<td class="nowrap">Own lines</td>
+<td>Store an immutable snapshot of every price the owner records, with book and timestamp, so closing-line value can be computed later.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> CLV is the fastest-validating measure of skill, and it is impossible to compute retroactively without stored quotes.<br>
+  <strong>Options:</strong> A: append-only quote ledger (schema proposed). B: compute CLV from memory (rejected).<br>
+  <strong>Risk:</strong> Entering prices is manual — this is the one place manual input is unavoidable unless a licensed feed is bought.<br>
+  <strong>Needs:</strong> Q01, owner decision.</div></details></td>
+<td><span class="badge unverified">blocked-needs-input</span></td>
+<td class="nowrap">G9 Point-in-time</td>
+<td>ledger schema published, no data</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S21</strong></td>
+<td class="nowrap">Data</td>
+<td>Rank single bets, parlays and player-prop combos in three separate competitions rather than one leaderboard.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> They have different variance and different data requirements; pooling them lets a lucky parlay outrank a well-calibrated single.<br>
+  <strong>Options:</strong> A: three boards (chosen). B: one pooled board (rejected).<br>
+  <strong>Risk:</strong> Sparser boards; mitigated by showing n on every row.<br>
+  <strong>Needs:</strong> Nothing.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G3</td>
+<td>three leaderboards on nfl/leaderboard.html</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/player-stats/category/receiving/2026/reg/all/receivingreceptions/desc" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>S22</strong></td>
+<td class="nowrap">Market</td>
+<td>Publish an explicit &#x27;what we do not have&#x27; block on the market page rather than a footnote.
+  <details><summary class="dim" style="cursor:pointer;font-size:12px">why / options / risk</summary>
+  <div class="small" style="margin-top:6px"><strong>Why:</strong> The most important information about a betting page is what it cannot see. A footnote is read by nobody.<br>
+  <strong>Options:</strong> A: top-of-page block (chosen). B: footnote (rejected).<br>
+  <strong>Risk:</strong> Makes the page look incomplete — it is.<br>
+  <strong>Needs:</strong> Nothing.</div></details></td>
+<td><span class="badge official">accepted-built</span></td>
+<td class="nowrap">G6</td>
+<td>&#x27;What we do not have&#x27; block on nfl/market.html and nfl/index.html</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr>
+</tbody></table></div>
+
+<h2>The decision rules this register is held to</h2>
+<div class="card prose"><ol>
+<li>A suggestion may not contradict a verified official value. If it would, the row links the official source it would contradict and stays &#x27;awaiting review&#x27;.</li><li>Anything requiring a price, a reward, or a person&#x27;s judgement is capped at &#x27;accepted-proposed-default&#x27; until the owner decides.</li><li>No suggestion may introduce a number that is not either (a) computed from official ingested data, or (b) explicitly labelled MODEL/ESTIMATE with its method printed.</li>
+</ol></div>
+
+<h2>Where the individual decisions live</h2>
+<p>The questions that block specific suggestions are tracked one per row on
+<a href="questions.html">Questions &amp; gaps</a>. The thresholds a strategy must clear are on
+<a href="validation.html">Validation gates</a>. The reason no suggestion can yet claim a betting edge is on
+<a href="market.html">Lines &amp; market</a>.</p>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · data retrieved 2026-11-13T13:33:20.791202Z (newest official fetch) · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../../index.html">Korea5 planner</a> · also see the
+<a href="../../nfl-strategy.html">strategy lab proposal</a> and the
+<a href="../index.html">NFL Decision Support hub</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

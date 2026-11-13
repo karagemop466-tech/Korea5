@@ -1,0 +1,3340 @@
+{
+ "leagueMeanPointsPerGame": 21.81,
+ "games": [
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "DET",
+   "home": "CIN",
+   "awayScore": 14,
+   "homeScore": 16,
+   "margin": 2,
+   "gameUrl": "https://www.nfl.com/games/lions-at-bengals-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 21.9,
+    "homeEstimate": 22.6,
+    "homeMinusAway": 0.7,
+    "total": 44.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "GB",
+   "home": "PIT",
+   "awayScore": 9,
+   "homeScore": 28,
+   "margin": 19,
+   "gameUrl": "https://www.nfl.com/games/packers-at-steelers-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 21.7,
+    "homeEstimate": 21.8,
+    "homeMinusAway": 0.1,
+    "total": 43.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "IND",
+   "home": "NE",
+   "awayScore": 13,
+   "homeScore": 13,
+   "margin": 0,
+   "gameUrl": "https://www.nfl.com/games/colts-at-patriots-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 21.5,
+    "homeEstimate": 22.5,
+    "homeMinusAway": 1.0,
+    "total": 44.0,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "LAC",
+   "home": "HOU",
+   "awayScore": 27,
+   "homeScore": 7,
+   "margin": -20,
+   "gameUrl": "https://www.nfl.com/games/chargers-at-texans-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 21.3,
+    "homeEstimate": 22.5,
+    "homeMinusAway": 1.2,
+    "total": 43.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "ARI",
+   "home": "LV",
+   "awayScore": 27,
+   "homeScore": 14,
+   "margin": -13,
+   "gameUrl": "https://www.nfl.com/games/cardinals-at-raiders-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 22.6,
+    "homeEstimate": 23.1,
+    "homeMinusAway": 0.5,
+    "total": 45.7,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "TEN",
+   "home": "SF",
+   "awayScore": 19,
+   "homeScore": 13,
+   "margin": -6,
+   "gameUrl": "https://www.nfl.com/games/titans-at-49ers-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 20.8,
+    "homeEstimate": 22.8,
+    "homeMinusAway": 2.0,
+    "total": 43.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "DEN",
+   "home": "ATL",
+   "awayScore": 27,
+   "homeScore": 7,
+   "margin": -20,
+   "gameUrl": "https://www.nfl.com/games/broncos-at-falcons-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 21.3,
+    "homeMinusAway": -0.7,
+    "total": 43.3,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "TB",
+   "home": "NYJ",
+   "awayScore": 24,
+   "homeScore": 16,
+   "margin": -8,
+   "gameUrl": "https://www.nfl.com/games/buccaneers-at-jets-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 21.7,
+    "homeEstimate": 20.9,
+    "homeMinusAway": -0.8,
+    "total": 42.6,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "MIA",
+   "home": "WAS",
+   "awayScore": 7,
+   "homeScore": 20,
+   "margin": 13,
+   "gameUrl": "https://www.nfl.com/games/dolphins-at-commanders-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 21.0,
+    "homeEstimate": 21.7,
+    "homeMinusAway": 0.8,
+    "total": 42.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "CAR",
+   "home": "BUF",
+   "awayScore": 14,
+   "homeScore": 29,
+   "margin": 15,
+   "gameUrl": "https://www.nfl.com/games/panthers-at-bills-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 23.6,
+    "homeMinusAway": 1.6,
+    "total": 45.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "CLE",
+   "home": "CHI",
+   "awayScore": 10,
+   "homeScore": 34,
+   "margin": 24,
+   "gameUrl": "https://www.nfl.com/games/browns-at-bears-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 20.9,
+    "homeEstimate": 22.5,
+    "homeMinusAway": 1.6,
+    "total": 43.5,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "MIN",
+   "home": "NYG",
+   "awayScore": 13,
+   "homeScore": 10,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/vikings-at-giants-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 20.4,
+    "homeEstimate": 21.0,
+    "homeMinusAway": 0.6,
+    "total": 41.4,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "LA",
+   "home": "KC",
+   "awayScore": 20,
+   "homeScore": 12,
+   "margin": -8,
+   "gameUrl": "https://www.nfl.com/games/rams-at-chiefs-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 21.5,
+    "homeEstimate": 21.2,
+    "homeMinusAway": -0.3,
+    "total": 42.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "JAX",
+   "home": "NO",
+   "awayScore": 24,
+   "homeScore": 20,
+   "margin": -4,
+   "gameUrl": "https://www.nfl.com/games/jaguars-at-saints-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 23.1,
+    "homeEstimate": 20.9,
+    "homeMinusAway": -2.2,
+    "total": 44.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "PHI",
+   "home": "BAL",
+   "awayScore": 7,
+   "homeScore": 24,
+   "margin": 17,
+   "gameUrl": "https://www.nfl.com/games/eagles-at-ravens-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 20.8,
+    "homeEstimate": 22.3,
+    "homeMinusAway": 1.5,
+    "total": 43.1,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 1",
+   "away": "DAL",
+   "home": "SEA",
+   "awayScore": 17,
+   "homeScore": 7,
+   "margin": -10,
+   "gameUrl": "https://www.nfl.com/games/cowboys-at-seahawks-2026-pre-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",
+   "model": {
+    "awayEstimate": 21.9,
+    "homeEstimate": 21.7,
+    "homeMinusAway": -0.1,
+    "total": 43.6,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "LV",
+   "home": "HOU",
+   "awayScore": 22,
+   "homeScore": 20,
+   "margin": -2,
+   "gameUrl": "https://www.nfl.com/games/raiders-at-texans-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 22.3,
+    "homeEstimate": 22.8,
+    "homeMinusAway": 0.5,
+    "total": 45.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "SF",
+   "home": "LAC",
+   "awayScore": 41,
+   "homeScore": 17,
+   "margin": -24,
+   "gameUrl": "https://www.nfl.com/games/49ers-at-chargers-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 23.2,
+    "homeEstimate": 20.7,
+    "homeMinusAway": -2.6,
+    "total": 43.9,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "NYJ",
+   "home": "PIT",
+   "awayScore": 17,
+   "homeScore": 0,
+   "margin": -17,
+   "gameUrl": "https://www.nfl.com/games/jets-at-steelers-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 20.8,
+    "homeEstimate": 21.8,
+    "homeMinusAway": 1.0,
+    "total": 42.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "CAR",
+   "home": "JAX",
+   "awayScore": 34,
+   "homeScore": 17,
+   "margin": -17,
+   "gameUrl": "https://www.nfl.com/games/panthers-at-jaguars-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 21.3,
+    "homeEstimate": 22.9,
+    "homeMinusAway": 1.6,
+    "total": 44.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "GB",
+   "home": "DEN",
+   "awayScore": 33,
+   "homeScore": 13,
+   "margin": -20,
+   "gameUrl": "https://www.nfl.com/games/packers-at-broncos-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 21.9,
+    "homeEstimate": 22.0,
+    "homeMinusAway": 0.1,
+    "total": 43.9,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "WAS",
+   "home": "DET",
+   "awayScore": 13,
+   "homeScore": 17,
+   "margin": 4,
+   "gameUrl": "https://www.nfl.com/games/commanders-at-lions-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 21.4,
+    "homeEstimate": 22.6,
+    "homeMinusAway": 1.2,
+    "total": 44.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "BUF",
+   "home": "CLE",
+   "awayScore": 31,
+   "homeScore": 7,
+   "margin": -24,
+   "gameUrl": "https://www.nfl.com/games/bills-at-browns-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 23.3,
+    "homeEstimate": 21.2,
+    "homeMinusAway": -2.1,
+    "total": 44.4,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "ATL",
+   "home": "IND",
+   "awayScore": 34,
+   "homeScore": 6,
+   "margin": -28,
+   "gameUrl": "https://www.nfl.com/games/falcons-at-colts-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 22.3,
+    "homeEstimate": 21.4,
+    "homeMinusAway": -1.0,
+    "total": 43.7,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "BAL",
+   "home": "MIN",
+   "awayScore": 13,
+   "homeScore": 3,
+   "margin": -10,
+   "gameUrl": "https://www.nfl.com/games/ravens-at-vikings-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 21.0,
+    "homeEstimate": 20.8,
+    "homeMinusAway": -0.3,
+    "total": 41.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "NO",
+   "home": "LA",
+   "awayScore": 0,
+   "homeScore": 34,
+   "margin": 34,
+   "gameUrl": "https://www.nfl.com/games/saints-at-rams-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 21.1,
+    "homeEstimate": 22.8,
+    "homeMinusAway": 1.7,
+    "total": 44.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "NYG",
+   "home": "MIA",
+   "awayScore": 26,
+   "homeScore": 3,
+   "margin": -23,
+   "gameUrl": "https://www.nfl.com/games/giants-at-dolphins-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 22.1,
+    "homeEstimate": 20.1,
+    "homeMinusAway": -2.0,
+    "total": 42.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "CHI",
+   "home": "CIN",
+   "awayScore": 9,
+   "homeScore": 27,
+   "margin": 18,
+   "gameUrl": "https://www.nfl.com/games/bears-at-bengals-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 22.4,
+    "homeMinusAway": 0.4,
+    "total": 44.4,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "PHI",
+   "home": "NE",
+   "awayScore": 21,
+   "homeScore": 24,
+   "margin": 3,
+   "gameUrl": "https://www.nfl.com/games/eagles-at-patriots-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 21.1,
+    "homeEstimate": 22.2,
+    "homeMinusAway": 1.1,
+    "total": 43.4,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "KC",
+   "home": "TB",
+   "awayScore": 15,
+   "homeScore": 16,
+   "margin": 1,
+   "gameUrl": "https://www.nfl.com/games/chiefs-at-buccaneers-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 21.4,
+    "homeEstimate": 20.9,
+    "homeMinusAway": -0.5,
+    "total": 42.3,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "DAL",
+   "home": "ARI",
+   "awayScore": 34,
+   "homeScore": 13,
+   "margin": -21,
+   "gameUrl": "https://www.nfl.com/games/cowboys-at-cardinals-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 23.5,
+    "homeEstimate": 22.0,
+    "homeMinusAway": -1.5,
+    "total": 45.5,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 2",
+   "away": "SEA",
+   "home": "TEN",
+   "awayScore": 16,
+   "homeScore": 19,
+   "margin": 3,
+   "gameUrl": "https://www.nfl.com/games/seahawks-at-titans-2026-pre-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-2",
+   "model": {
+    "awayEstimate": 21.6,
+    "homeEstimate": 20.6,
+    "homeMinusAway": -1.0,
+    "total": 42.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "PIT",
+   "home": "BUF",
+   "awayScore": 27,
+   "homeScore": 28,
+   "margin": 1,
+   "gameUrl": "https://www.nfl.com/games/steelers-at-bills-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 21.7,
+    "homeEstimate": 22.6,
+    "homeMinusAway": 0.9,
+    "total": 44.3,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "NE",
+   "home": "CLE",
+   "awayScore": 13,
+   "homeScore": 37,
+   "margin": 24,
+   "gameUrl": "https://www.nfl.com/games/patriots-at-browns-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 21.9,
+    "homeEstimate": 21.4,
+    "homeMinusAway": -0.5,
+    "total": 43.4,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "SF",
+   "home": "LV",
+   "awayScore": 18,
+   "homeScore": 12,
+   "margin": -6,
+   "gameUrl": "https://www.nfl.com/games/49ers-at-raiders-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 23.5,
+    "homeEstimate": 21.6,
+    "homeMinusAway": -1.8,
+    "total": 45.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "LA",
+   "home": "LAC",
+   "awayScore": 20,
+   "homeScore": 18,
+   "margin": -2,
+   "gameUrl": "https://www.nfl.com/games/rams-at-chargers-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 22.7,
+    "homeEstimate": 20.5,
+    "homeMinusAway": -2.2,
+    "total": 43.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "WAS",
+   "home": "BAL",
+   "awayScore": 3,
+   "homeScore": 41,
+   "margin": 38,
+   "gameUrl": "https://www.nfl.com/games/commanders-at-ravens-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 21.3,
+    "homeEstimate": 22.2,
+    "homeMinusAway": 0.9,
+    "total": 43.5,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "HOU",
+   "home": "CAR",
+   "awayScore": 13,
+   "homeScore": 16,
+   "margin": 3,
+   "gameUrl": "https://www.nfl.com/games/texans-at-panthers-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 22.4,
+    "homeEstimate": 22.3,
+    "homeMinusAway": -0.1,
+    "total": 44.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "ATL",
+   "home": "MIA",
+   "awayScore": 17,
+   "homeScore": 12,
+   "margin": -5,
+   "gameUrl": "https://www.nfl.com/games/falcons-at-dolphins-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 21.9,
+    "homeEstimate": 20.7,
+    "homeMinusAway": -1.2,
+    "total": 42.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "TB",
+   "home": "JAX",
+   "awayScore": 0,
+   "homeScore": 19,
+   "margin": 19,
+   "gameUrl": "https://www.nfl.com/games/buccaneers-at-jaguars-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 20.8,
+    "homeEstimate": 22.0,
+    "homeMinusAway": 1.3,
+    "total": 42.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "NYG",
+   "home": "NYJ",
+   "awayScore": 23,
+   "homeScore": 6,
+   "margin": -17,
+   "gameUrl": "https://www.nfl.com/games/giants-at-jets-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 21.9,
+    "homeEstimate": 20.8,
+    "homeMinusAway": -1.1,
+    "total": 42.7,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "NO",
+   "home": "DAL",
+   "awayScore": 27,
+   "homeScore": 24,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/saints-at-cowboys-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 23.2,
+    "homeMinusAway": 1.3,
+    "total": 45.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "SEA",
+   "home": "KC",
+   "awayScore": 9,
+   "homeScore": 9,
+   "margin": 0,
+   "gameUrl": "https://www.nfl.com/games/seahawks-at-chiefs-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 20.8,
+    "homeEstimate": 21.1,
+    "homeMinusAway": 0.3,
+    "total": 42.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "CIN",
+   "home": "PHI",
+   "awayScore": 30,
+   "homeScore": 13,
+   "margin": -17,
+   "gameUrl": "https://www.nfl.com/games/bengals-at-eagles-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 23.2,
+    "homeEstimate": 20.6,
+    "homeMinusAway": -2.6,
+    "total": 43.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "ARI",
+   "home": "GB",
+   "awayScore": 38,
+   "homeScore": 42,
+   "margin": 4,
+   "gameUrl": "https://www.nfl.com/games/cardinals-at-packers-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 21.8,
+    "homeEstimate": 23.3,
+    "homeMinusAway": 1.4,
+    "total": 45.1,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "MIN",
+   "home": "DEN",
+   "awayScore": 6,
+   "homeScore": 34,
+   "margin": 28,
+   "gameUrl": "https://www.nfl.com/games/vikings-at-broncos-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 20.6,
+    "homeEstimate": 21.1,
+    "homeMinusAway": 0.5,
+    "total": 41.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "DET",
+   "home": "IND",
+   "awayScore": 25,
+   "homeScore": 16,
+   "margin": -9,
+   "gameUrl": "https://www.nfl.com/games/lions-at-colts-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 23.0,
+    "homeEstimate": 21.2,
+    "homeMinusAway": -1.8,
+    "total": 44.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Preseason Week 3",
+   "away": "CHI",
+   "home": "TEN",
+   "awayScore": 24,
+   "homeScore": 15,
+   "margin": -9,
+   "gameUrl": "https://www.nfl.com/games/bears-at-titans-2026-pre-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/preseason-week-3",
+   "model": {
+    "awayEstimate": 22.5,
+    "homeEstimate": 21.0,
+    "homeMinusAway": -1.5,
+    "total": 43.5,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "NE",
+   "home": "SEA",
+   "awayScore": 10,
+   "homeScore": 13,
+   "margin": 3,
+   "gameUrl": "https://www.nfl.com/games/patriots-at-seahawks-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 21.1,
+    "homeEstimate": 21.7,
+    "homeMinusAway": 0.5,
+    "total": 42.8,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "SF",
+   "home": "LA",
+   "awayScore": 27,
+   "homeScore": 7,
+   "margin": -20,
+   "gameUrl": "https://www.nfl.com/games/49ers-at-rams-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 21.7,
+    "homeMinusAway": -0.4,
+    "total": 43.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "CHI",
+   "home": "CAR",
+   "awayScore": 59,
+   "homeScore": 37,
+   "margin": -22,
+   "gameUrl": "https://www.nfl.com/games/bears-at-panthers-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 22.8,
+    "homeEstimate": 21.8,
+    "homeMinusAway": -1.0,
+    "total": 44.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "TB",
+   "home": "CIN",
+   "awayScore": 27,
+   "homeScore": 33,
+   "margin": 6,
+   "gameUrl": "https://www.nfl.com/games/buccaneers-at-bengals-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 21.2,
+    "homeEstimate": 22.3,
+    "homeMinusAway": 1.1,
+    "total": 43.5,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "NO",
+   "home": "DET",
+   "awayScore": 30,
+   "homeScore": 31,
+   "margin": 1,
+   "gameUrl": "https://www.nfl.com/games/saints-at-lions-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 21.6,
+    "homeEstimate": 23.0,
+    "homeMinusAway": 1.4,
+    "total": 44.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "BUF",
+   "home": "HOU",
+   "awayScore": 36,
+   "homeScore": 31,
+   "margin": -5,
+   "gameUrl": "https://www.nfl.com/games/bills-at-texans-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 23.3,
+    "homeEstimate": 21.9,
+    "homeMinusAway": -1.5,
+    "total": 45.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "BAL",
+   "home": "IND",
+   "awayScore": 41,
+   "homeScore": 23,
+   "margin": -18,
+   "gameUrl": "https://www.nfl.com/games/ravens-at-colts-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 22.6,
+    "homeEstimate": 21.1,
+    "homeMinusAway": -1.4,
+    "total": 43.7,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "CLE",
+   "home": "JAX",
+   "awayScore": 10,
+   "homeScore": 34,
+   "margin": 24,
+   "gameUrl": "https://www.nfl.com/games/browns-at-jaguars-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 20.4,
+    "homeEstimate": 22.6,
+    "homeMinusAway": 2.1,
+    "total": 43.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "ATL",
+   "home": "PIT",
+   "awayScore": 13,
+   "homeScore": 20,
+   "margin": 7,
+   "gameUrl": "https://www.nfl.com/games/falcons-at-steelers-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 21.1,
+    "homeEstimate": 21.8,
+    "homeMinusAway": 0.7,
+    "total": 42.9,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "NYJ",
+   "home": "TEN",
+   "awayScore": 23,
+   "homeScore": 10,
+   "margin": -13,
+   "gameUrl": "https://www.nfl.com/games/jets-at-titans-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 21.5,
+    "homeEstimate": 21.4,
+    "homeMinusAway": -0.1,
+    "total": 42.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "ARI",
+   "home": "LAC",
+   "awayScore": 26,
+   "homeScore": 14,
+   "margin": -12,
+   "gameUrl": "https://www.nfl.com/games/cardinals-at-chargers-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 22.3,
+    "homeEstimate": 22.1,
+    "homeMinusAway": -0.2,
+    "total": 44.4,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "MIA",
+   "home": "LV",
+   "awayScore": 13,
+   "homeScore": 27,
+   "margin": 14,
+   "gameUrl": "https://www.nfl.com/games/dolphins-at-raiders-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 21.5,
+    "homeEstimate": 22.4,
+    "homeMinusAway": 0.9,
+    "total": 43.9,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "GB",
+   "home": "MIN",
+   "awayScore": 22,
+   "homeScore": 39,
+   "margin": 17,
+   "gameUrl": "https://www.nfl.com/games/packers-at-vikings-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 21.4,
+    "homeEstimate": 21.0,
+    "homeMinusAway": -0.4,
+    "total": 42.4,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "WAS",
+   "home": "PHI",
+   "awayScore": 22,
+   "homeScore": 24,
+   "margin": 2,
+   "gameUrl": "https://www.nfl.com/games/commanders-at-eagles-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 21.9,
+    "homeEstimate": 21.3,
+    "homeMinusAway": -0.6,
+    "total": 43.2,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "DAL",
+   "home": "NYG",
+   "awayScore": 20,
+   "homeScore": 28,
+   "margin": 8,
+   "gameUrl": "https://www.nfl.com/games/cowboys-at-giants-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 22.1,
+    "homeMinusAway": 0.1,
+    "total": 44.1,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 1",
+   "away": "DEN",
+   "home": "KC",
+   "awayScore": 10,
+   "homeScore": 31,
+   "margin": 21,
+   "gameUrl": "https://www.nfl.com/games/broncos-at-chiefs-2026-reg-1",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "model": {
+    "awayEstimate": 21.3,
+    "homeEstimate": 21.4,
+    "homeMinusAway": 0.1,
+    "total": 42.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "DET",
+   "home": "BUF",
+   "awayScore": 31,
+   "homeScore": 41,
+   "margin": 10,
+   "gameUrl": "https://www.nfl.com/games/lions-at-bills-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 22.2,
+    "homeEstimate": 23.0,
+    "homeMinusAway": 0.8,
+    "total": 45.3,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "CAR",
+   "home": "ATL",
+   "awayScore": 34,
+   "homeScore": 3,
+   "margin": -31,
+   "gameUrl": "https://www.nfl.com/games/panthers-at-falcons-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 22.2,
+    "homeEstimate": 22.1,
+    "homeMinusAway": -0.1,
+    "total": 44.3,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "NO",
+   "home": "BAL",
+   "awayScore": 24,
+   "homeScore": 17,
+   "margin": -7,
+   "gameUrl": "https://www.nfl.com/games/saints-at-ravens-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 21.6,
+    "homeEstimate": 22.6,
+    "homeMinusAway": 1.0,
+    "total": 44.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "MIN",
+   "home": "CHI",
+   "awayScore": 9,
+   "homeScore": 3,
+   "margin": -6,
+   "gameUrl": "https://www.nfl.com/games/vikings-at-bears-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 20.6,
+    "homeEstimate": 21.5,
+    "homeMinusAway": 0.9,
+    "total": 42.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "CIN",
+   "home": "HOU",
+   "awayScore": 20,
+   "homeScore": 6,
+   "margin": -14,
+   "gameUrl": "https://www.nfl.com/games/bengals-at-texans-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 22.9,
+    "homeEstimate": 21.6,
+    "homeMinusAway": -1.4,
+    "total": 44.5,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "PIT",
+   "home": "NE",
+   "awayScore": 3,
+   "homeScore": 20,
+   "margin": 17,
+   "gameUrl": "https://www.nfl.com/games/steelers-at-patriots-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 21.9,
+    "homeEstimate": 21.3,
+    "homeMinusAway": -0.7,
+    "total": 43.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "GB",
+   "home": "NYJ",
+   "awayScore": 20,
+   "homeScore": 17,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/packers-at-jets-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 22.4,
+    "homeEstimate": 21.4,
+    "homeMinusAway": -0.9,
+    "total": 43.8,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "CLE",
+   "home": "TB",
+   "awayScore": 23,
+   "homeScore": 19,
+   "margin": -4,
+   "gameUrl": "https://www.nfl.com/games/browns-at-buccaneers-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 20.9,
+    "homeEstimate": 21.7,
+    "homeMinusAway": 0.9,
+    "total": 42.6,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "PHI",
+   "home": "TEN",
+   "awayScore": 24,
+   "homeScore": 20,
+   "margin": -4,
+   "gameUrl": "https://www.nfl.com/games/eagles-at-titans-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 21.1,
+    "homeEstimate": 21.7,
+    "homeMinusAway": 0.6,
+    "total": 42.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "JAX",
+   "home": "DEN",
+   "awayScore": 13,
+   "homeScore": 20,
+   "margin": 7,
+   "gameUrl": "https://www.nfl.com/games/jaguars-at-broncos-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 22.1,
+    "homeEstimate": 21.1,
+    "homeMinusAway": -0.9,
+    "total": 43.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "LV",
+   "home": "LAC",
+   "awayScore": 26,
+   "homeScore": 14,
+   "margin": -12,
+   "gameUrl": "https://www.nfl.com/games/raiders-at-chargers-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 22.7,
+    "homeEstimate": 21.9,
+    "homeMinusAway": -0.7,
+    "total": 44.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "SEA",
+   "home": "ARI",
+   "awayScore": 31,
+   "homeScore": 7,
+   "margin": -24,
+   "gameUrl": "https://www.nfl.com/games/seahawks-at-cardinals-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 22.5,
+    "homeEstimate": 21.1,
+    "homeMinusAway": -1.4,
+    "total": 43.6,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "WAS",
+   "home": "DAL",
+   "awayScore": 20,
+   "homeScore": 37,
+   "margin": 17,
+   "gameUrl": "https://www.nfl.com/games/commanders-at-cowboys-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 21.7,
+    "homeEstimate": 22.8,
+    "homeMinusAway": 1.1,
+    "total": 44.5,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "MIA",
+   "home": "SF",
+   "awayScore": 13,
+   "homeScore": 35,
+   "margin": 22,
+   "gameUrl": "https://www.nfl.com/games/dolphins-at-49ers-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 20.2,
+    "homeEstimate": 22.9,
+    "homeMinusAway": 2.7,
+    "total": 43.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "IND",
+   "home": "KC",
+   "awayScore": 30,
+   "homeScore": 33,
+   "margin": 3,
+   "gameUrl": "https://www.nfl.com/games/colts-at-chiefs-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 20.7,
+    "homeEstimate": 22.5,
+    "homeMinusAway": 1.8,
+    "total": 43.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 2",
+   "away": "NYG",
+   "home": "LA",
+   "awayScore": 6,
+   "homeScore": 28,
+   "margin": 22,
+   "gameUrl": "https://www.nfl.com/games/giants-at-rams-2026-reg-2",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "model": {
+    "awayEstimate": 21.2,
+    "homeEstimate": 21.6,
+    "homeMinusAway": 0.4,
+    "total": 42.8,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "ATL",
+   "home": "GB",
+   "awayScore": 35,
+   "homeScore": 14,
+   "margin": -21,
+   "gameUrl": "https://www.nfl.com/games/falcons-at-packers-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 21.7,
+    "homeEstimate": 22.3,
+    "homeMinusAway": 0.6,
+    "total": 44.1,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "LAC",
+   "home": "BUF",
+   "awayScore": 16,
+   "homeScore": 24,
+   "margin": 8,
+   "gameUrl": "https://www.nfl.com/games/chargers-at-bills-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 21.0,
+    "homeEstimate": 23.7,
+    "homeMinusAway": 2.7,
+    "total": 44.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "CAR",
+   "home": "CLE",
+   "awayScore": 18,
+   "homeScore": 21,
+   "margin": 3,
+   "gameUrl": "https://www.nfl.com/games/panthers-at-browns-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 22.2,
+    "homeEstimate": 21.7,
+    "homeMinusAway": -0.5,
+    "total": 44.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "NYJ",
+   "home": "DET",
+   "awayScore": 24,
+   "homeScore": 31,
+   "margin": 7,
+   "gameUrl": "https://www.nfl.com/games/jets-at-lions-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 21.2,
+    "homeEstimate": 22.4,
+    "homeMinusAway": 1.1,
+    "total": 43.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "HOU",
+   "home": "IND",
+   "awayScore": 17,
+   "homeScore": 19,
+   "margin": 2,
+   "gameUrl": "https://www.nfl.com/games/texans-at-colts-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 22.6,
+    "homeEstimate": 21.5,
+    "homeMinusAway": -1.1,
+    "total": 44.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "NE",
+   "home": "JAX",
+   "awayScore": 6,
+   "homeScore": 35,
+   "margin": 29,
+   "gameUrl": "https://www.nfl.com/games/patriots-at-jaguars-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 21.0,
+    "homeEstimate": 22.6,
+    "homeMinusAway": 1.6,
+    "total": 43.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "KC",
+   "home": "MIA",
+   "awayScore": 24,
+   "homeScore": 10,
+   "margin": -14,
+   "gameUrl": "https://www.nfl.com/games/chiefs-at-dolphins-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 22.1,
+    "homeEstimate": 20.0,
+    "homeMinusAway": -2.1,
+    "total": 42.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "TEN",
+   "home": "NYG",
+   "awayScore": 7,
+   "homeScore": 12,
+   "margin": 5,
+   "gameUrl": "https://www.nfl.com/games/titans-at-giants-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 20.8,
+    "homeEstimate": 22.0,
+    "homeMinusAway": 1.2,
+    "total": 42.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "CIN",
+   "home": "PIT",
+   "awayScore": 27,
+   "homeScore": 30,
+   "margin": 3,
+   "gameUrl": "https://www.nfl.com/games/bengals-at-steelers-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 22.2,
+    "homeEstimate": 21.4,
+    "homeMinusAway": -0.8,
+    "total": 43.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "SEA",
+   "home": "WAS",
+   "awayScore": 31,
+   "homeScore": 33,
+   "margin": 2,
+   "gameUrl": "https://www.nfl.com/games/seahawks-at-commanders-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 21.8,
+    "homeEstimate": 20.8,
+    "homeMinusAway": -1.0,
+    "total": 42.6,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "ARI",
+   "home": "SF",
+   "awayScore": 30,
+   "homeScore": 36,
+   "margin": 6,
+   "gameUrl": "https://www.nfl.com/games/cardinals-at-49ers-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 21.3,
+    "homeEstimate": 23.6,
+    "homeMinusAway": 2.3,
+    "total": 44.9,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "MIN",
+   "home": "TB",
+   "awayScore": 23,
+   "homeScore": 16,
+   "margin": -7,
+   "gameUrl": "https://www.nfl.com/games/vikings-at-buccaneers-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 20.5,
+    "homeEstimate": 20.7,
+    "homeMinusAway": 0.2,
+    "total": 41.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "LV",
+   "home": "NO",
+   "awayScore": 35,
+   "homeScore": 27,
+   "margin": -8,
+   "gameUrl": "https://www.nfl.com/games/raiders-at-saints-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 22.8,
+    "homeEstimate": 22.6,
+    "homeMinusAway": -0.3,
+    "total": 45.4,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "BAL",
+   "home": "DAL",
+   "awayScore": 34,
+   "homeScore": 31,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/ravens-at-cowboys-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 22.1,
+    "homeEstimate": 22.4,
+    "homeMinusAway": 0.2,
+    "total": 44.5,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "LA",
+   "home": "DEN",
+   "awayScore": 26,
+   "homeScore": 30,
+   "margin": 4,
+   "gameUrl": "https://www.nfl.com/games/rams-at-broncos-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 21.8,
+    "homeEstimate": 21.3,
+    "homeMinusAway": -0.4,
+    "total": 43.1,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 3",
+   "away": "PHI",
+   "home": "CHI",
+   "awayScore": 7,
+   "homeScore": 27,
+   "margin": 20,
+   "gameUrl": "https://www.nfl.com/games/eagles-at-bears-2026-reg-3",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "model": {
+    "awayEstimate": 20.6,
+    "homeEstimate": 22.8,
+    "homeMinusAway": 2.2,
+    "total": 43.4,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "PIT",
+   "home": "CLE",
+   "awayScore": 24,
+   "homeScore": 27,
+   "margin": 3,
+   "gameUrl": "https://www.nfl.com/games/steelers-at-browns-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 21.9,
+    "homeEstimate": 20.7,
+    "homeMinusAway": -1.2,
+    "total": 42.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "IND",
+   "home": "WAS",
+   "awayScore": 30,
+   "homeScore": 13,
+   "margin": -17,
+   "gameUrl": "https://www.nfl.com/games/colts-at-commanders-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 21.6,
+    "homeEstimate": 22.2,
+    "homeMinusAway": 0.5,
+    "total": 43.8,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "TEN",
+   "home": "BAL",
+   "awayScore": 18,
+   "homeScore": 24,
+   "margin": 6,
+   "gameUrl": "https://www.nfl.com/games/titans-at-ravens-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 21.1,
+    "homeEstimate": 22.0,
+    "homeMinusAway": 0.9,
+    "total": 43.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "NE",
+   "home": "BUF",
+   "awayScore": 29,
+   "homeScore": 26,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/patriots-at-bills-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 21.7,
+    "homeEstimate": 23.3,
+    "homeMinusAway": 1.6,
+    "total": 45.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "NYJ",
+   "home": "CHI",
+   "awayScore": 12,
+   "homeScore": 23,
+   "margin": 11,
+   "gameUrl": "https://www.nfl.com/games/jets-at-bears-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 21.0,
+    "homeEstimate": 22.5,
+    "homeMinusAway": 1.4,
+    "total": 43.5,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "JAX",
+   "home": "CIN",
+   "awayScore": 22,
+   "homeScore": 17,
+   "margin": -5,
+   "gameUrl": "https://www.nfl.com/games/jaguars-at-bengals-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 22.1,
+    "homeEstimate": 21.9,
+    "homeMinusAway": -0.2,
+    "total": 44.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "DAL",
+   "home": "HOU",
+   "awayScore": 34,
+   "homeScore": 30,
+   "margin": -4,
+   "gameUrl": "https://www.nfl.com/games/cowboys-at-texans-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 22.7,
+    "homeEstimate": 22.2,
+    "homeMinusAway": -0.5,
+    "total": 44.9,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "ARI",
+   "home": "NYG",
+   "awayScore": 24,
+   "homeScore": 36,
+   "margin": 12,
+   "gameUrl": "https://www.nfl.com/games/cardinals-at-giants-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 21.2,
+    "homeEstimate": 22.8,
+    "homeMinusAway": 1.6,
+    "total": 44.0,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "LA",
+   "home": "PHI",
+   "awayScore": 24,
+   "homeScore": 20,
+   "margin": -4,
+   "gameUrl": "https://www.nfl.com/games/rams-at-eagles-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 22.6,
+    "homeEstimate": 20.3,
+    "homeMinusAway": -2.2,
+    "total": 42.9,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "GB",
+   "home": "TB",
+   "awayScore": 17,
+   "homeScore": 14,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/packers-at-buccaneers-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 21.9,
+    "homeEstimate": 21.7,
+    "homeMinusAway": -0.2,
+    "total": 43.5,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "MIA",
+   "home": "MIN",
+   "awayScore": 10,
+   "homeScore": 15,
+   "margin": 5,
+   "gameUrl": "https://www.nfl.com/games/dolphins-at-vikings-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 19.8,
+    "homeEstimate": 21.2,
+    "homeMinusAway": 1.4,
+    "total": 41.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "KC",
+   "home": "LV",
+   "awayScore": 30,
+   "homeScore": 27,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/chiefs-at-raiders-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 22.6,
+    "homeEstimate": 21.4,
+    "homeMinusAway": -1.2,
+    "total": 44.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "LAC",
+   "home": "SEA",
+   "awayScore": 23,
+   "homeScore": 30,
+   "margin": 7,
+   "gameUrl": "https://www.nfl.com/games/chargers-at-seahawks-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 20.4,
+    "homeEstimate": 22.1,
+    "homeMinusAway": 1.6,
+    "total": 42.5,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "DEN",
+   "home": "SF",
+   "awayScore": 14,
+   "homeScore": 24,
+   "margin": 10,
+   "gameUrl": "https://www.nfl.com/games/broncos-at-49ers-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 21.5,
+    "homeEstimate": 22.3,
+    "homeMinusAway": 0.8,
+    "total": 43.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "DET",
+   "home": "CAR",
+   "awayScore": 26,
+   "homeScore": 32,
+   "margin": 6,
+   "gameUrl": "https://www.nfl.com/games/lions-at-panthers-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 22.8,
+    "homeEstimate": 22.0,
+    "homeMinusAway": -0.7,
+    "total": 44.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 4",
+   "away": "ATL",
+   "home": "NO",
+   "awayScore": 45,
+   "homeScore": 24,
+   "margin": -21,
+   "gameUrl": "https://www.nfl.com/games/falcons-at-saints-2026-reg-4",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "model": {
+    "awayEstimate": 22.3,
+    "homeEstimate": 21.8,
+    "homeMinusAway": -0.6,
+    "total": 44.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "TB",
+   "home": "DAL",
+   "awayScore": 24,
+   "homeScore": 16,
+   "margin": -8,
+   "gameUrl": "https://www.nfl.com/games/buccaneers-at-cowboys-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 21.8,
+    "homeEstimate": 22.1,
+    "homeMinusAway": 0.3,
+    "total": 43.9,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "PHI",
+   "home": "JAX",
+   "awayScore": 17,
+   "homeScore": 19,
+   "margin": 2,
+   "gameUrl": "https://www.nfl.com/games/eagles-at-jaguars-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 20.1,
+    "homeEstimate": 22.9,
+    "homeMinusAway": 2.7,
+    "total": 43.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "CIN",
+   "home": "MIA",
+   "awayScore": 31,
+   "homeScore": 24,
+   "margin": -7,
+   "gameUrl": "https://www.nfl.com/games/bengals-at-dolphins-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 23.0,
+    "homeEstimate": 20.3,
+    "homeMinusAway": -2.7,
+    "total": 43.3,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "LV",
+   "home": "NE",
+   "awayScore": 17,
+   "homeScore": 45,
+   "margin": 28,
+   "gameUrl": "https://www.nfl.com/games/raiders-at-patriots-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 22.3,
+    "homeEstimate": 22.6,
+    "homeMinusAway": 0.4,
+    "total": 44.9,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "MIN",
+   "home": "NO",
+   "awayScore": 23,
+   "homeScore": 13,
+   "margin": -10,
+   "gameUrl": "https://www.nfl.com/games/vikings-at-saints-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 21.6,
+    "homeEstimate": 20.9,
+    "homeMinusAway": -0.8,
+    "total": 42.5,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "CLE",
+   "home": "NYJ",
+   "awayScore": 12,
+   "homeScore": 17,
+   "margin": 5,
+   "gameUrl": "https://www.nfl.com/games/browns-at-jets-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 21.4,
+    "homeEstimate": 21.5,
+    "homeMinusAway": 0.1,
+    "total": 42.8,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "IND",
+   "home": "PIT",
+   "awayScore": 22,
+   "homeScore": 34,
+   "margin": 12,
+   "gameUrl": "https://www.nfl.com/games/colts-at-steelers-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 20.8,
+    "homeEstimate": 22.5,
+    "homeMinusAway": 1.7,
+    "total": 43.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "HOU",
+   "home": "TEN",
+   "awayScore": 26,
+   "homeScore": 3,
+   "margin": -23,
+   "gameUrl": "https://www.nfl.com/games/texans-at-titans-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 22.1,
+    "homeEstimate": 21.5,
+    "homeMinusAway": -0.6,
+    "total": 43.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "NYG",
+   "home": "WAS",
+   "awayScore": 27,
+   "homeScore": 27,
+   "margin": 0,
+   "gameUrl": "https://www.nfl.com/games/giants-at-commanders-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 22.1,
+    "homeEstimate": 20.9,
+    "homeMinusAway": -1.2,
+    "total": 43.1,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "CHI",
+   "home": "GB",
+   "awayScore": 7,
+   "homeScore": 31,
+   "margin": 24,
+   "gameUrl": "https://www.nfl.com/games/bears-at-packers-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 22.5,
+    "homeEstimate": 22.0,
+    "homeMinusAway": -0.5,
+    "total": 44.4,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "DEN",
+   "home": "LAC",
+   "awayScore": 23,
+   "homeScore": 17,
+   "margin": -6,
+   "gameUrl": "https://www.nfl.com/games/broncos-at-chargers-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 22.5,
+    "homeEstimate": 20.7,
+    "homeMinusAway": -1.8,
+    "total": 43.3,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "DET",
+   "home": "ARI",
+   "awayScore": 45,
+   "homeScore": 21,
+   "margin": -24,
+   "gameUrl": "https://www.nfl.com/games/lions-at-cardinals-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 23.3,
+    "homeEstimate": 21.7,
+    "homeMinusAway": -1.6,
+    "total": 44.9,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "SF",
+   "home": "SEA",
+   "awayScore": 32,
+   "homeScore": 29,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/49ers-at-seahawks-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 21.0,
+    "homeMinusAway": -1.0,
+    "total": 43.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "BAL",
+   "home": "ATL",
+   "awayScore": 30,
+   "homeScore": 23,
+   "margin": -7,
+   "gameUrl": "https://www.nfl.com/games/ravens-at-falcons-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 21.9,
+    "homeEstimate": 21.5,
+    "homeMinusAway": -0.5,
+    "total": 43.4,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 5",
+   "away": "BUF",
+   "home": "LA",
+   "awayScore": 37,
+   "homeScore": 34,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/bills-at-rams-2026-reg-5",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "model": {
+    "awayEstimate": 22.5,
+    "homeEstimate": 22.1,
+    "homeMinusAway": -0.4,
+    "total": 44.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "SEA",
+   "home": "DEN",
+   "awayScore": 14,
+   "homeScore": 17,
+   "margin": 3,
+   "gameUrl": "https://www.nfl.com/games/seahawks-at-broncos-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 21.1,
+    "homeEstimate": 21.3,
+    "homeMinusAway": 0.2,
+    "total": 42.4,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "HOU",
+   "home": "JAX",
+   "awayScore": 34,
+   "homeScore": 31,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/texans-at-jaguars-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 21.1,
+    "homeEstimate": 22.6,
+    "homeMinusAway": 1.5,
+    "total": 43.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "CHI",
+   "home": "ATL",
+   "awayScore": 31,
+   "homeScore": 23,
+   "margin": -8,
+   "gameUrl": "https://www.nfl.com/games/bears-at-falcons-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 22.4,
+    "homeEstimate": 21.3,
+    "homeMinusAway": -1.1,
+    "total": 43.8,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "BAL",
+   "home": "CLE",
+   "awayScore": 10,
+   "homeScore": 13,
+   "margin": 3,
+   "gameUrl": "https://www.nfl.com/games/ravens-at-browns-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 21.1,
+    "homeMinusAway": -0.9,
+    "total": 43.1,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "TEN",
+   "home": "IND",
+   "awayScore": 26,
+   "homeScore": 20,
+   "margin": -6,
+   "gameUrl": "https://www.nfl.com/games/titans-at-colts-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 21.5,
+    "homeMinusAway": -0.5,
+    "total": 43.4,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "NYJ",
+   "home": "NE",
+   "awayScore": 19,
+   "homeScore": 26,
+   "margin": 7,
+   "gameUrl": "https://www.nfl.com/games/jets-at-patriots-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 21.5,
+    "homeEstimate": 21.9,
+    "homeMinusAway": 0.4,
+    "total": 43.4,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "NO",
+   "home": "NYG",
+   "awayScore": 34,
+   "homeScore": 27,
+   "margin": -7,
+   "gameUrl": "https://www.nfl.com/games/saints-at-giants-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 21.2,
+    "homeEstimate": 22.5,
+    "homeMinusAway": 1.3,
+    "total": 43.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "CAR",
+   "home": "PHI",
+   "awayScore": 25,
+   "homeScore": 14,
+   "margin": -11,
+   "gameUrl": "https://www.nfl.com/games/panthers-at-eagles-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 22.5,
+    "homeEstimate": 21.4,
+    "homeMinusAway": -1.1,
+    "total": 44.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "PIT",
+   "home": "TB",
+   "awayScore": 26,
+   "homeScore": 19,
+   "margin": -7,
+   "gameUrl": "https://www.nfl.com/games/steelers-at-buccaneers-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 21.3,
+    "homeEstimate": 21.0,
+    "homeMinusAway": -0.3,
+    "total": 42.4,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "ARI",
+   "home": "LA",
+   "awayScore": 18,
+   "homeScore": 16,
+   "margin": -2,
+   "gameUrl": "https://www.nfl.com/games/cardinals-at-rams-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 21.1,
+    "homeEstimate": 23.1,
+    "homeMinusAway": 2.0,
+    "total": 44.3,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "LAC",
+   "home": "KC",
+   "awayScore": 6,
+   "homeScore": 22,
+   "margin": 16,
+   "gameUrl": "https://www.nfl.com/games/chargers-at-chiefs-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 20.4,
+    "homeEstimate": 22.4,
+    "homeMinusAway": 1.9,
+    "total": 42.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "BUF",
+   "home": "LV",
+   "awayScore": 33,
+   "homeScore": 30,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/bills-at-raiders-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 24.0,
+    "homeEstimate": 22.0,
+    "homeMinusAway": -1.9,
+    "total": 46.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "DAL",
+   "home": "GB",
+   "awayScore": 13,
+   "homeScore": 23,
+   "margin": 10,
+   "gameUrl": "https://www.nfl.com/games/cowboys-at-packers-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 22.6,
+    "homeEstimate": 22.5,
+    "homeMinusAway": -0.1,
+    "total": 45.1,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 6",
+   "away": "WAS",
+   "home": "SF",
+   "awayScore": 17,
+   "homeScore": 23,
+   "margin": 6,
+   "gameUrl": "https://www.nfl.com/games/commanders-at-49ers-2026-reg-6",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "model": {
+    "awayEstimate": 21.0,
+    "homeEstimate": 23.0,
+    "homeMinusAway": 2.0,
+    "total": 44.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "NE",
+   "home": "CHI",
+   "awayScore": 24,
+   "homeScore": 30,
+   "margin": 6,
+   "gameUrl": "https://www.nfl.com/games/patriots-at-bears-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 21.5,
+    "homeEstimate": 22.6,
+    "homeMinusAway": 1.1,
+    "total": 44.1,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "PIT",
+   "home": "NO",
+   "awayScore": 16,
+   "homeScore": 10,
+   "margin": -6,
+   "gameUrl": "https://www.nfl.com/games/steelers-at-saints-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 22.5,
+    "homeEstimate": 21.2,
+    "homeMinusAway": -1.3,
+    "total": 43.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "SF",
+   "home": "ATL",
+   "awayScore": 20,
+   "homeScore": 29,
+   "margin": 9,
+   "gameUrl": "https://www.nfl.com/games/49ers-at-falcons-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 22.7,
+    "homeEstimate": 21.2,
+    "homeMinusAway": -1.5,
+    "total": 43.9,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "CIN",
+   "home": "BAL",
+   "awayScore": 35,
+   "homeScore": 13,
+   "margin": -22,
+   "gameUrl": "https://www.nfl.com/games/bengals-at-ravens-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 22.6,
+    "homeEstimate": 21.5,
+    "homeMinusAway": -1.1,
+    "total": 44.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "TB",
+   "home": "CAR",
+   "awayScore": 43,
+   "homeScore": 13,
+   "margin": -30,
+   "gameUrl": "https://www.nfl.com/games/buccaneers-at-panthers-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 21.7,
+    "homeMinusAway": -0.4,
+    "total": 43.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "NYG",
+   "home": "HOU",
+   "awayScore": 27,
+   "homeScore": 21,
+   "margin": -6,
+   "gameUrl": "https://www.nfl.com/games/giants-at-texans-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 21.4,
+    "homeMinusAway": -0.6,
+    "total": 43.4,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "IND",
+   "home": "MIN",
+   "awayScore": 10,
+   "homeScore": 16,
+   "margin": 6,
+   "gameUrl": "https://www.nfl.com/games/colts-at-vikings-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 20.5,
+    "homeEstimate": 21.6,
+    "homeMinusAway": 1.1,
+    "total": 42.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "MIA",
+   "home": "NYJ",
+   "awayScore": 28,
+   "homeScore": 25,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/dolphins-at-jets-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 20.8,
+    "homeEstimate": 21.6,
+    "homeMinusAway": 0.9,
+    "total": 42.4,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "CLE",
+   "home": "TEN",
+   "awayScore": 27,
+   "homeScore": 24,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/browns-at-titans-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 21.4,
+    "homeEstimate": 21.4,
+    "homeMinusAway": 0.0,
+    "total": 42.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "DEN",
+   "home": "ARI",
+   "awayScore": 30,
+   "homeScore": 16,
+   "margin": -14,
+   "gameUrl": "https://www.nfl.com/games/broncos-at-cardinals-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 22.9,
+    "homeEstimate": 21.4,
+    "homeMinusAway": -1.5,
+    "total": 44.3,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "GB",
+   "home": "DET",
+   "awayScore": 17,
+   "homeScore": 20,
+   "margin": 3,
+   "gameUrl": "https://www.nfl.com/games/packers-at-lions-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 22.2,
+    "homeEstimate": 22.4,
+    "homeMinusAway": 0.2,
+    "total": 44.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "LA",
+   "home": "LV",
+   "awayScore": 35,
+   "homeScore": 21,
+   "margin": -14,
+   "gameUrl": "https://www.nfl.com/games/rams-at-raiders-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 23.0,
+    "homeEstimate": 21.5,
+    "homeMinusAway": -1.5,
+    "total": 44.5,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "KC",
+   "home": "SEA",
+   "awayScore": 3,
+   "homeScore": 20,
+   "margin": 17,
+   "gameUrl": "https://www.nfl.com/games/chiefs-at-seahawks-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 21.1,
+    "homeEstimate": 20.8,
+    "homeMinusAway": -0.3,
+    "total": 42.0,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 7",
+   "away": "DAL",
+   "home": "PHI",
+   "awayScore": 38,
+   "homeScore": 21,
+   "margin": -17,
+   "gameUrl": "https://www.nfl.com/games/cowboys-at-eagles-2026-reg-7",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "model": {
+    "awayEstimate": 23.0,
+    "homeEstimate": 21.2,
+    "homeMinusAway": -1.8,
+    "total": 44.2,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "CAR",
+   "home": "GB",
+   "awayScore": 19,
+   "homeScore": 27,
+   "margin": 8,
+   "gameUrl": "https://www.nfl.com/games/panthers-at-packers-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 22.2,
+    "homeEstimate": 22.7,
+    "homeMinusAway": 0.5,
+    "total": 44.9,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "BAL",
+   "home": "BUF",
+   "awayScore": 10,
+   "homeScore": 36,
+   "margin": 26,
+   "gameUrl": "https://www.nfl.com/games/ravens-at-bills-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 21.8,
+    "homeEstimate": 23.0,
+    "homeMinusAway": 1.1,
+    "total": 44.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "TEN",
+   "home": "CIN",
+   "awayScore": 36,
+   "homeScore": 43,
+   "margin": 7,
+   "gameUrl": "https://www.nfl.com/games/titans-at-bengals-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 20.9,
+    "homeEstimate": 22.9,
+    "homeMinusAway": 2.0,
+    "total": 43.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "ARI",
+   "home": "DAL",
+   "awayScore": 33,
+   "homeScore": 30,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/cardinals-at-cowboys-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 23.5,
+    "homeMinusAway": 1.5,
+    "total": 45.5,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "MIN",
+   "home": "DET",
+   "awayScore": 15,
+   "homeScore": 19,
+   "margin": 4,
+   "gameUrl": "https://www.nfl.com/games/vikings-at-lions-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 20.8,
+    "homeEstimate": 21.4,
+    "homeMinusAway": 0.6,
+    "total": 42.3,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "IND",
+   "home": "JAX",
+   "awayScore": 7,
+   "homeScore": 42,
+   "margin": 35,
+   "gameUrl": "https://www.nfl.com/games/colts-at-jaguars-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 20.5,
+    "homeEstimate": 23.1,
+    "homeMinusAway": 2.6,
+    "total": 43.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "LV",
+   "home": "NYJ",
+   "awayScore": 38,
+   "homeScore": 33,
+   "margin": -5,
+   "gameUrl": "https://www.nfl.com/games/raiders-at-jets-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 22.2,
+    "homeEstimate": 22.2,
+    "homeMinusAway": -0.0,
+    "total": 44.4,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "CLE",
+   "home": "PIT",
+   "awayScore": 6,
+   "homeScore": 27,
+   "margin": 21,
+   "gameUrl": "https://www.nfl.com/games/browns-at-steelers-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 20.7,
+    "homeEstimate": 21.9,
+    "homeMinusAway": 1.2,
+    "total": 42.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "ATL",
+   "home": "TB",
+   "awayScore": 0,
+   "homeScore": 16,
+   "margin": 16,
+   "gameUrl": "https://www.nfl.com/games/falcons-at-buccaneers-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 21.2,
+    "homeEstimate": 21.6,
+    "homeMinusAway": 0.4,
+    "total": 42.9,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "LAC",
+   "home": "LA",
+   "awayScore": 9,
+   "homeScore": 24,
+   "margin": 15,
+   "gameUrl": "https://www.nfl.com/games/chargers-at-rams-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 20.5,
+    "homeEstimate": 22.7,
+    "homeMinusAway": 2.2,
+    "total": 43.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "KC",
+   "home": "DEN",
+   "awayScore": 24,
+   "homeScore": 28,
+   "margin": 4,
+   "gameUrl": "https://www.nfl.com/games/chiefs-at-broncos-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 21.4,
+    "homeEstimate": 21.3,
+    "homeMinusAway": -0.1,
+    "total": 42.7,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "NE",
+   "home": "MIA",
+   "awayScore": 24,
+   "homeScore": 19,
+   "margin": -5,
+   "gameUrl": "https://www.nfl.com/games/patriots-at-dolphins-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 22.1,
+    "homeEstimate": 20.9,
+    "homeMinusAway": -1.2,
+    "total": 42.9,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "PHI",
+   "home": "WAS",
+   "awayScore": 10,
+   "homeScore": 27,
+   "margin": 17,
+   "gameUrl": "https://www.nfl.com/games/eagles-at-commanders-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 21.3,
+    "homeEstimate": 21.9,
+    "homeMinusAway": 0.6,
+    "total": 43.2,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 8",
+   "away": "CHI",
+   "home": "SEA",
+   "awayScore": 34,
+   "homeScore": 17,
+   "margin": -17,
+   "gameUrl": "https://www.nfl.com/games/bears-at-seahawks-2026-reg-8",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "model": {
+    "awayEstimate": 21.7,
+    "homeEstimate": 21.2,
+    "homeMinusAway": -0.5,
+    "total": 42.9,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "JAX",
+   "home": "BAL",
+   "awayScore": 33,
+   "homeScore": 10,
+   "margin": -23,
+   "gameUrl": "https://www.nfl.com/games/jaguars-at-ravens-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 22.3,
+    "homeEstimate": 21.1,
+    "homeMinusAway": -1.2,
+    "total": 43.3,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "CIN",
+   "home": "ATL",
+   "awayScore": 34,
+   "homeScore": 17,
+   "margin": -17,
+   "gameUrl": "https://www.nfl.com/games/bengals-at-falcons-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 22.8,
+    "homeEstimate": 21.3,
+    "homeMinusAway": -1.5,
+    "total": 44.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "DEN",
+   "home": "CAR",
+   "awayScore": 26,
+   "homeScore": 21,
+   "margin": -5,
+   "gameUrl": "https://www.nfl.com/games/broncos-at-panthers-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 22.4,
+    "homeEstimate": 21.7,
+    "homeMinusAway": -0.7,
+    "total": 44.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "DAL",
+   "home": "IND",
+   "awayScore": 27,
+   "homeScore": 23,
+   "margin": -4,
+   "gameUrl": "https://www.nfl.com/games/cowboys-at-colts-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 23.2,
+    "homeEstimate": 21.6,
+    "homeMinusAway": -1.7,
+    "total": 44.8,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "NYJ",
+   "home": "KC",
+   "awayScore": 12,
+   "homeScore": 35,
+   "margin": 23,
+   "gameUrl": "https://www.nfl.com/games/jets-at-chiefs-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 20.7,
+    "homeEstimate": 21.9,
+    "homeMinusAway": 1.2,
+    "total": 42.6,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "DET",
+   "home": "MIA",
+   "awayScore": 19,
+   "homeScore": 9,
+   "margin": -10,
+   "gameUrl": "https://www.nfl.com/games/lions-at-dolphins-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 22.6,
+    "homeEstimate": 20.6,
+    "homeMinusAway": -2.0,
+    "total": 43.2,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "CLE",
+   "home": "NO",
+   "awayScore": 22,
+   "homeScore": 23,
+   "margin": 1,
+   "gameUrl": "https://www.nfl.com/games/browns-at-saints-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 22.0,
+    "homeEstimate": 21.9,
+    "homeMinusAway": -0.1,
+    "total": 43.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "NYG",
+   "home": "PHI",
+   "awayScore": 19,
+   "homeScore": 11,
+   "margin": -8,
+   "gameUrl": "https://www.nfl.com/games/giants-at-eagles-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 22.3,
+    "homeEstimate": 20.4,
+    "homeMinusAway": -1.8,
+    "total": 42.7,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "LA",
+   "home": "WAS",
+   "awayScore": 20,
+   "homeScore": 13,
+   "margin": -7,
+   "gameUrl": "https://www.nfl.com/games/rams-at-commanders-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 22.4,
+    "homeEstimate": 20.9,
+    "homeMinusAway": -1.6,
+    "total": 43.3,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "HOU",
+   "home": "LAC",
+   "awayScore": 44,
+   "homeScore": 22,
+   "margin": -22,
+   "gameUrl": "https://www.nfl.com/games/texans-at-chargers-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 22.5,
+    "homeEstimate": 21.3,
+    "homeMinusAway": -1.2,
+    "total": 43.8,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "LV",
+   "home": "SF",
+   "awayScore": 17,
+   "homeScore": 38,
+   "margin": 21,
+   "gameUrl": "https://www.nfl.com/games/raiders-at-49ers-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 21.6,
+    "homeEstimate": 23.5,
+    "homeMinusAway": 1.8,
+    "total": 45.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "GB",
+   "home": "NE",
+   "awayScore": 45,
+   "homeScore": 27,
+   "margin": -18,
+   "gameUrl": "https://www.nfl.com/games/packers-at-patriots-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 22.5,
+    "homeEstimate": 21.9,
+    "homeMinusAway": -0.6,
+    "total": 44.4,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "ARI",
+   "home": "SEA",
+   "awayScore": 3,
+   "homeScore": 17,
+   "margin": 14,
+   "gameUrl": "https://www.nfl.com/games/cardinals-at-seahawks-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 21.1,
+    "homeEstimate": 22.5,
+    "homeMinusAway": 1.4,
+    "total": 43.6,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "TB",
+   "home": "CHI",
+   "awayScore": 24,
+   "homeScore": 27,
+   "margin": 3,
+   "gameUrl": "https://www.nfl.com/games/buccaneers-at-bears-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 21.3,
+    "homeEstimate": 22.0,
+    "homeMinusAway": 0.7,
+    "total": 43.2,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 9",
+   "away": "BUF",
+   "home": "MIN",
+   "awayScore": 23,
+   "homeScore": 6,
+   "margin": -17,
+   "gameUrl": "https://www.nfl.com/games/bills-at-vikings-2026-reg-9",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "model": {
+    "awayEstimate": 22.3,
+    "homeEstimate": 20.8,
+    "homeMinusAway": -1.4,
+    "total": 43.1,
+    "evidenceGames": 11
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  },
+  {
+   "weekLabel": "Week 10",
+   "away": "WAS",
+   "home": "NYG",
+   "awayScore": 24,
+   "homeScore": 21,
+   "margin": -3,
+   "gameUrl": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "model": {
+    "awayEstimate": 20.9,
+    "homeEstimate": 22.1,
+    "homeMinusAway": 1.2,
+    "total": 43.1,
+    "evidenceGames": 12
+   },
+   "modelLabel": "MODEL — shrunk own scoring vs opponent scoring-allowed, re-centred on the league mean"
+  }
+ ],
+ "note": "Scores are official. The estimate column is a MODEL output, not an official value and not a betting line. It is included only to show the method that would price a game once real prices exist.",
+ "sourceUrls": [
+  "https://www.nfl.com/schedules/2026/by-week/week-10",
+  "https://www.nfl.com/stats/team-stats/offense/scoring/2026/reg/all"
+ ]
+}

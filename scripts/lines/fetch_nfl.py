@@ -305,6 +305,30 @@ def parse_team_stats(stats_list, side, source_url):
     return rows
 
 
+def find_team_stats(state_data):
+    """Locate the {awayTeam:{stats:[...]}, homeTeam:{stats:[...]}} payload.
+
+    The league wraps this payload more than one way depending on the page, so the
+    structure is located by shape rather than by a fixed path.
+    """
+    if not isinstance(state_data, dict):
+        return None
+    seen = set()
+    stack = [state_data]
+    while stack:
+        cur = stack.pop()
+        if not isinstance(cur, dict) or id(cur) in seen:
+            continue
+        seen.add(id(cur))
+        away = cur.get("awayTeam")
+        if isinstance(away, dict) and isinstance(away.get("stats"), list) and away["stats"]:
+            return cur
+        for v in cur.values():
+            if isinstance(v, (dict, list)):
+                stack.append(v)
+    return None
+
+
 def fetch_boxscore(game):
     slug = game.get("slug")
     if not slug:
@@ -426,6 +450,7 @@ def parse_depth_chart(page, url):
     """
     units = {}
     tier_labels_found = False
+    tables_seen = 0
     for tm in re.finditer(r"<table\b([^>]*)>(.*?)</table>", page, re.S | re.I):
         attrs, block = tm.group(1), tm.group(2)
         tables_seen += 1

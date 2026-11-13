@@ -2019,3 +2019,11 @@ scope is needed it will be logged here instead of made.
   statuses not yet designated at retrieval; no verified player-prop market (prop strategies blocked at Q5);
   correlation values are estimates (Q10); model v0 first test was a side loss (G4 pending, n≥100 required).
 - **N9 in progress:** PR to `main`, merge, Pages deploy confirmation and final record to follow below.
+## N9 — INTEGRATION RECORD (session `arena-65332583-korea5`, 2026-11-13)
+
+- **PR #57 — MERGED 2026-11-13T13:55:55Z** — https://github.com/karagemop466-tech/Korea5/pull/57
+  (branch `arena/65332583-korea5` → `main`; merge commit `71009c8`). Merge instructions: standard merge, no squash, no waiting for review (owner instruction).
+- CI on the PR: "Planner certainty and site checks" **passed** (16s, run 43437985976). Post-merge main runs **passed**: certainty checks (43438003879), `nfl-site` (43438004094), `pages build and deployment` (43438002141).
+- **GitHub Pages LIVE**: https://karagemop466-tech.github.io/Korea5/nfl-analytics.html (verified 2026-11-13 — dashboard, `lines.html`, `injuries.html`, `strategies.html`, `leaderboard.html`, `questions.html`, `analytics-suggestions.html`, `requirements.html` all render with source-linked rows).
+- Merge history during integration (all conflicts resolved keeping every session's work — see MERGE LOG above): `3233cc9` (1st pass, PRs #52/#54/#56/#58), `9440933` (2nd pass, PRs #53/#59/#60), `42deb9c` (3rd pass). Three passes were required because parallel sessions merged to `main` during review; each pass re-unioned `COORDINATION.md`/`README.md` and regenerated all pages (final: 125 pages, 0 missing links).
+- N9 **done**. All tasks N1–N9 complete. Follow-up work (S1–S15 suggestions, open questions Q4/Q5/Q10/Q17, G1–G7 progression) is registered on the live site for reviewer decisions; nothing auto-implemented.

@@ -45,9 +45,23 @@ ABBR_MAP = {
 }
 
 
-def norm_abbr(a: str) -> str:
+# Franchise relocations: ESPN labels historical games with the CURRENT abbreviation, while the
+# nflverse schedule uses the abbreviation of the season played. Mapped by year, not by guesswork.
+RELOCATIONS = [
+    ("LV", "OAK", 2019),   # Raiders were OAK through 2019, LV from 2020
+    ("LA", "STL", 2015),   # Rams were STL through 2015, LA from 2016
+    ("LAC", "SD", 2016),   # Chargers were SD through 2016, LAC from 2017
+]
+
+
+def norm_abbr(a: str, season: int | None = None) -> str:
     a = (a or "").strip().upper()
-    return ABBR_MAP.get(a, a)
+    a = ABBR_MAP.get(a, a)
+    if season:
+        for new, old, last_old in RELOCATIONS:
+            if a == new and season <= last_old:
+                return old
+    return a
 
 
 def read_csv(p):
@@ -423,7 +437,8 @@ def cross_source_and_market():
                 continue
             teams = {}
             for c in comp.get("competitors", []):
-                ab = norm_abbr((c.get("team") or {}).get("abbreviation", ""))
+                espn_season = int((e.get("season") or {}).get("year") or 0) or None
+                ab = norm_abbr((c.get("team") or {}).get("abbreviation", ""), espn_season)
                 score = c.get("score")
                 if isinstance(score, dict):
                     score = score.get("value")

@@ -683,7 +683,7 @@ Branch fixed by Arena: `arena/1e59465a-korea5` (session id `arena-1e59465a`). Sc
 | N4 Own lines, gates, leaderboard, correlations, parlays | **done** | `scripts/nfl_lab/model.py` outputs in `data/nfl-lab/` | Walk-forward (K from 2006–2015 only; test 2016–2025). Result: model MAE 10.17 vs market 9.79; 10 strategies, **0 validated**; parlays 10 tested, **0 validated**; points awarded 0. | F02 model below market; F03 QB signal n = 7; F04 props untestable. |
 | N5 Site | **done** | `nfl-lab/*.html`, `nfl-lab/assets/` | 12 pages built from data; no placeholder text left. | — |
 | N6 Verification | **done** | `scripts/nfl_lab/verify.py`, `data/nfl-lab/verification.json` | 1,624 table rows: 1,549 official-linked, 47 flagged (UNVERIFIED / UNOFFICIAL / NO SOURCE / FLAGGED), 28 in marked method tables, 0 without source; 0 missing local links; 15 JSON files valid. | F05 Singapore legal position (GRA sources fetched). |
-| N7 PR and merge | in progress | — | — | — |
+| N7 PR and merge | **done** | PR #39 (https://github.com/karagemop466-tech/Korea5/pull/39) | Merged to main with a merge commit (`6e88bd7`) at 2026-11-13T13:24:48Z, after merging origin/main to clear a COORDINATION.md conflict (both log sections kept). Pages build for `a22bd06` (which includes the merge) reported `built` at 13:25:49Z. Live URL not checked from the sandbox (outbound to github.io blocked). | — |
 
 **Request for the integration step (not done here):** add a link to `nfl-lab/index.html` from the root navigation (R5). No root file was edited by this session.
 
@@ -920,3 +920,11 @@ the curated specification, and the site navigation now carries a single NFL entr
 **Verified after the merge:** `analyze_lab.py` → `build_lab.py` → `build_site.py` → `build_extra.py` →
 `audit_certainty.py` → `check_links.py` → `verify_extra.py` → `verify_lab.py` → `audit_certainty.py` → node checks →
 Python unit tests. Result: **45 pages, 1,259 local links, 1,196 external links, 0 missing; lab verification 0 failures.**
+
+### Merge result — arena-1e59465a (2026-11-13)
+
+- PR #39 (`arena/1e59465a-korea5` → `main`): **MERGED** at 2026-11-13T13:24:48Z, merge commit `6e88bd7`.
+- Conflict: `COORDINATION.md` only, resolved by keeping both sides (append-only log). No other session's files were changed.
+- GitHub Pages: latest build `a22bd06` (on main, after the merge) reports `built`. The live URL is not reachable from the sandbox, so please open https://karagemop466-tech.github.io/Korea5/nfl-lab/ to confirm.
+- No PR checks ran on the branch; the `Planner certainty and site checks` workflow did not trigger for this PR. Local equivalents passed: `verify.py` (pass, 0 rows without source), unit tests (OK).
+- Integration request still open: root README link to the lab (R5). Not done by this session.

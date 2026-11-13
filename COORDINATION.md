@@ -655,3 +655,20 @@ date, and all prior items) remain published on `extra/flagged.html` with officia
 - **Pipeline order (finding):** `verify_extra.py` rewrites `extra/links.html`, and `audit_certainty.py` adds the certainty banner to every page. The banner is therefore only correct if the audit runs last. Required order: `build_events` → `analyze` → `build_site` → `build_extra` → `check_links` → `verify_extra` → `audit_certainty`. This is logged for the integration owner (see cross-scope note above).
 - **Verification at this commit:** `tools/verify_extra.py` 31/31; `scripts/audit_certainty.py` passed; `scripts/check_links.py` 0 missing; `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed.
 
+
+## Session `arena/1e59465a-korea5` — 2026-11-13 (NFL lines lab, claim)
+
+Branch fixed by Arena: `arena/1e59465a-korea5` (session id `arena-1e59465a`). Scope is a **new, self-contained section** so it does not touch files owned by other sessions:
+`nfl-lab/` (site), `scripts/nfl_lab/`, `data/nfl-lab/`, `.github/workflows/nfl-lab-*.yml`. Root `index.html`, navigation and `README.md` are **not** edited; a link from the root site is logged below as a request for the integration step.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N1 | Repo review: run existing checks, record irregularities with official links | arena-1e59465a | unclaimed→in progress | `nfl-lab/flagged.html`, `data/nfl-lab/repo-review.json` |
+| N2 | Data: NFL games + market lines 1999–2026 (nflverse/nfldata mirror), official NFL schedule links | arena-1e59465a | in progress | `scripts/nfl_lab/`, `data/nfl-lab/games-*.json` |
+| N3 | Data: injury reports (nflverse mirror of NFL official injury reports) + depth-chart backup flags, via CI | arena-1e59465a | in progress | `scripts/nfl_lab/fetch_injuries.py`, `.github/workflows/nfl-lab-data.yml`, `data/nfl-lab/injuries-*.json` |
+| N4 | Own-line model (power ratings from prior results only), validation gates, leaderboard, correlations | arena-1e59465a | in progress | `scripts/nfl_lab/model.py`, `data/nfl-lab/strategies.json` |
+| N5 | Site: landing, questions, suggestions, lines, strategies, validation, correlations, injuries, sources, flagged, executive summary | arena-1e59465a | in progress | `nfl-lab/*.html`, `nfl-lab/assets/` |
+| N6 | Verification: every row has official source link, local link check, JSON checks; irregularities logged | arena-1e59465a | in progress | `scripts/nfl_lab/verify.py`, `nfl-lab/verification.html` |
+| N7 | PR `arena/1e59465a-korea5` → `main`, merge without waiting, Pages deploy confirmation, log here | arena-1e59465a | unclaimed | `COORDINATION.md` (log only) |
+
+- 2026-11-13 — `arena-1e59465a` claims N1–N7. Request for integration step (not done by this session): add a link to `nfl-lab/index.html` from the root navigation.

@@ -73,6 +73,14 @@ LOGS = load("data/lab/player-logs-2026.json", {})
 BOOK = load("data/lab/gamebook-bills-vikings-2026-w9.json", {})
 ANA = load("data/lab/analysis.json", {})
 
+# The number of games per player is derived from the committed records, never typed,
+# so a stated count can never drift away from the rows it describes.
+PLAYER_GAMES = sorted({len(p.get("games", [])) for p in LOGS.get("players", [])})
+if len(PLAYER_GAMES) != 1:
+    raise SystemExit(f"build_lab: players have differing game counts: {PLAYER_GAMES}")
+GAMES_PER_PLAYER = PLAYER_GAMES[0]
+GAMES_WORD = {8: "eight", 9: "nine", 7: "seven", 10: "ten", 6: "six", 12: "twelve"}.get(GAMES_PER_PLAYER, str(GAMES_PER_PLAYER))
+
 
 def esc(v):
     return html.escape("" if v is None else str(v))
@@ -378,7 +386,7 @@ claimed.</p>
 <h2>How many games before a correlation estimate means anything</h2>
 <p class="small">Power of a two-sided Fisher-z test against a true correlation of zero, alpha 0.05.</p>
 {table(["True correlation", "n = 8", "n = 17", "n = 33", "n = 65", "n = 100", "n = 200", "Basis"], power_rows)}
-<p class="small">Read this as: with nine games of a single season, a real correlation of 0.3 would be detected only about
+<p class="small">Read this as: with {GAMES_WORD} games of a single season, a real correlation of 0.3 would be detected only about
 one time in ten. Any strategy that claims to have found a dependable relationship from one season of data is reading noise.</p>
 
 <h2 id="method">Method and limits</h2>

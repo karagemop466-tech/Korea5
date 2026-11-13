@@ -1391,3 +1391,44 @@ Node syntax and calendar tests pass; 5/5 Python unit tests pass; `compileall` an
   session's scope, so the duplication is recorded here instead.
 * The Week 10 injury snapshot, the five player logs and the Week 9 Game Book are point-in-time extracts from
   2026-11-13. Re-running the fetch and the analysis is what refreshes them.
+
+### Second defect found and fixed: a stated sample size that did not match the data (arena-c6eea73d, 2026-11-13)
+
+While verifying the deployed pages against the committed records, the sample size stated on two published pages did not
+match the rows that are actually stored.
+
+**What was wrong.** The player-log records hold **eight** rows per player, spanning weeks 1-9 of the 2026 season with one
+week absent from each player's list (week 6 for four of the five players, week 7 for one), because the official page
+omits games a player did not appear in. Two published pages said **nine**:
+
+* `lab/correlations.html` — "Read this as: with nine games of a single season, a real relationship would be found
+  roughly one time in ten." The power table on that same page is computed at **n = 8**, so the sentence contradicted the
+  table directly above it.
+* `lab/flags.html` (flag L12) — "All sample sizes are stated as nine weeks of one season."
+* `data/lab/player-logs-2026.json` metadata — "Nine games per player is a small sample."
+
+**Why it survived.** Nothing compared a number written in prose with the rows it describes. The verifier checked that
+published *coefficients* matched the analysis output, but a stated *count* was never cross-checked, so the error was
+invisible to every check that existed.
+
+**Fixes applied.**
+
+1. The count is now **derived** in `tools/build_lab.py` from the committed player-log rows (`GAMES_PER_PLAYER`), and the
+   prose uses the derived word. A stated count can no longer drift away from the data it describes.
+2. The metadata in `data/lab/player-logs-2026.json` was rewritten to state the real structure: eight rows per player
+   spanning weeks 1-9, with the reason a week is absent.
+3. The curated flag L12 was corrected and now records that the page originally said "nine games" / "nine weeks", so the
+   record shows the correction instead of hiding it.
+4. `tools/verify_lab.py` gained a check that fails when a published game count or the stored metadata disagrees with the
+   number of rows actually committed.
+
+**Negative tests run to prove the new check works** (each injected, detected, then reverted):
+
+| Injected fault | Detected |
+|---|---|
+| Page says "with nine games of a single season" | `published game count "nine" does not match the 8 stored rows` |
+| Metadata says "Nine games per player" | `metadata says "Nine games per player" but 8 rows are stored` |
+
+**Verified after the fix:** 62 pages, 1,554 local links, 1,235 external links, 0 missing; all three NFL verifiers pass;
+certainty audit passes twice; Node syntax and calendar tests pass; 5/5 Python unit tests pass; `compileall` and
+`git diff --check` clean.

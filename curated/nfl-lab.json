@@ -1099,8 +1099,8 @@
    "id": "L12",
    "severity": "low",
    "area": "analysis",
-   "finding": "Only the 2026 season of the official player Logs pages was transcribed in this pass. The pages are year-scoped and earlier seasons were not read.",
-   "action": "All sample sizes are stated as nine weeks of one season. Multi-season work is listed as open work in the question register.",
+   "finding": "Only the 2026 season of the official player Logs pages was transcribed in this pass. The pages are year-scoped and earlier seasons were not read. The sample is eight games per player, spanning weeks 1-9 of the season with one week absent from each player's list, because the official page omits games the player did not appear in.",
+   "action": "All sample sizes are stated as eight games of one season. This page and the correlations page originally said \"nine games\" / \"nine weeks\" while eight rows were stored, which was wrong; the count is now derived from the committed rows rather than written by hand, and the verifier fails if a published count disagrees with the data. Multi-season work is listed as open work in the question register.",
    "sources": [
     "https://www.nfl.com/players/justin-jefferson/stats/logs/"
    ]

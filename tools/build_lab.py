@@ -24,6 +24,7 @@ could not be confirmed is rendered blank and listed on the flagged page.
 import html
 import json
 import os
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
@@ -35,18 +36,26 @@ os.makedirs(ASSETS, exist_ok=True)
 SITE = "Free Time Vacation Planner"
 LAB_NAME = "NFL Lines Lab"
 
-ROOT_NAV = [
-    ("../index.html", "Dashboard"),
-    ("../calendar.html", "Calendar"),
-    ("../vacation.html", "Vacation windows"),
-    ("../mlb.html", "MLB"),
-    ("../nfl.html", "NFL &amp; 49ers"),
-    ("../radio.html", "Radio"),
-    ("../sources.html", "Sources"),
-    ("../flagged.html", "Flagged"),
-    ("../method.html", "Method"),
-    ("../extra/index.html", "Official feeds"),
-]
+# The site navigation has one source of truth: scripts/build_site.py. This file used
+# to keep its own copy of the root links, which silently dropped any surface another
+# session added to the navigation. The canonical list is read from there instead, so a
+# new section shows up here without anyone having to remember to update two places.
+try:
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts"))
+    from build_site import NAV as SITE_NAV
+except Exception:                                    # pragma: no cover - fallback only
+    SITE_NAV = [
+        ("index.html", "Dashboard"), ("calendar.html", "Calendar"), ("vacation.html", "Vacation windows"),
+        ("mlb.html", "MLB"), ("nfl.html", "NFL &amp; 49ers"), ("ncaaf.html", "Stanford &amp; Cal"),
+        ("radio.html", "Radio"), ("lab/index.html", "NFL Lab"), ("lab/questions.html", "Decisions"),
+        ("lab/suggestions.html", "Suggestions"), ("nfl-lab/index.html", "NFL Model"),
+        ("nfl/index.html", "NFL Decision Support"), ("sources.html", "Sources"), ("flagged.html", "Flagged"),
+        ("method.html", "Method"), ("extra/index.html", "Official feeds &amp; verification"),
+    ]
+
+# The lab's own pages are not part of the site navigation list; they get their own strip.
+LAB_OWN = {"lab/index.html", "lab/questions.html", "lab/suggestions.html"}
+ROOT_NAV = [(u, n) for u, n in SITE_NAV if u not in LAB_OWN]
 LAB_NAV = [
     ("index.html", "Lab home"),
     ("questions.html", "Questions"),
@@ -72,6 +81,14 @@ INJ = load("data/lab/injuries-week10-2026.json", {})
 LOGS = load("data/lab/player-logs-2026.json", {})
 BOOK = load("data/lab/gamebook-bills-vikings-2026-w9.json", {})
 ANA = load("data/lab/analysis.json", {})
+
+# The number of games per player is derived from the committed records, never typed,
+# so a stated count can never drift away from the rows it describes.
+PLAYER_GAMES = sorted({len(p.get("games", [])) for p in LOGS.get("players", [])})
+if len(PLAYER_GAMES) != 1:
+    raise SystemExit(f"build_lab: players have differing game counts: {PLAYER_GAMES}")
+GAMES_PER_PLAYER = PLAYER_GAMES[0]
+GAMES_WORD = {8: "eight", 9: "nine", 7: "seven", 10: "ten", 6: "six", 12: "twelve"}.get(GAMES_PER_PLAYER, str(GAMES_PER_PLAYER))
 
 
 def esc(v):
@@ -101,7 +118,10 @@ def table(headers, rows, cls=""):
 
 
 def nav(active, root=False):
-    parts = [f'<a href="{u if not root else u[3:]}">{n}</a>' for u, n in ROOT_NAV]
+    # root=True  -> the page sits at the repository root, links are root-relative
+    # root=False -> the page sits in lab/, links need one level up
+    prefix = "" if root else "../"
+    parts = [f'<a href="{prefix}{u}">{n}</a>' for u, n in ROOT_NAV]
     parts.append('<span class="nav-sep">|</span>')
     parts += [f'<a href="{u if not root else "lab/" + u}" class="{"active" if u == active else ""}">{n}</a>'
               for u, n in LAB_NAV]
@@ -378,7 +398,7 @@ claimed.</p>
 <h2>How many games before a correlation estimate means anything</h2>
 <p class="small">Power of a two-sided Fisher-z test against a true correlation of zero, alpha 0.05.</p>
 {table(["True correlation", "n = 8", "n = 17", "n = 33", "n = 65", "n = 100", "n = 200", "Basis"], power_rows)}
-<p class="small">Read this as: with nine games of a single season, a real correlation of 0.3 would be detected only about
+<p class="small">Read this as: with {GAMES_WORD} games of a single season, a real correlation of 0.3 would be detected only about
 one time in ten. Any strategy that claims to have found a dependable relationship from one season of data is reading noise.</p>
 
 <h2 id="method">Method and limits</h2>

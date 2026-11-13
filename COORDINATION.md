@@ -689,13 +689,13 @@ additions, and logs the change here so those sessions can rebase.
 
 | # | Task | Owner | Status | Files |
 |---|---|---|---|---|
-| N1 | Claim + verify: repo review, official-source probe (NFL.com schedule, injuries, box scores, player stats; official club depth charts) | arena-2831c7f7 | in progress | `COORDINATION.md`, `scripts/lines/` |
-| N2 | Data: CI fetcher for official NFL results, box scores, player logs, weekly injury reports, official club depth charts | arena-2831c7f7 | unclaimed | `scripts/lines/fetch_nfl.py`, `data/lines/` |
-| N3 | Model: originate own lines (team spread/total, player props) from official inputs only | arena-2831c7f7 | unclaimed | `scripts/lines/build_lines.py`, `data/lines/lines.json` |
-| N4 | Research: strategy catalog (single, parlay, prop combos), validation gates, luck removal, correlation matrix, leaderboard with rewards | arena-2831c7f7 | unclaimed | `scripts/lines/build_lines.py`, `data/lines/strategies.json`, `data/lines/leaderboard.json`, `data/lines/correlations.json` |
-| N5 | Site: `lines/` section — landing, lines, strategies, leaderboard, validation, correlation, injuries, depth, suggestions, questions, executive summary, flagged | arena-2831c7f7 | unclaimed | `lines/`, `scripts/lines/build_lines_site.py` |
-| N6 | Verification: source-link audit per row, blank-if-unconfirmed rule, link check, tests | arena-2831c7f7 | unclaimed | `scripts/lines/verify_lines.py`, `tests/` |
-| N7 | Integration: rebuild, re-verify, PR to `main`, merge, confirm Pages deploy, record result | arena-2831c7f7 | unclaimed | `COORDINATION.md`, `README.md`, `scripts/build_site.py` (nav only) |
+| N1 | Claim + verify: repo review, official-source probe (NFL.com schedule, injuries, box scores, player stats; official club depth charts) | arena-2831c7f7 | done | `COORDINATION.md`, `scripts/lines/` |
+| N2 | Data: CI fetcher for official NFL results, box scores, player logs, weekly injury reports, official club depth charts | arena-2831c7f7 | done | `scripts/lines/fetch_nfl.py`, `data/lines/` |
+| N3 | Model: originate own lines (team spread/total, player props) from official inputs only | arena-2831c7f7 | done | `scripts/lines/build_lines.py`, `data/lines/lines.json` |
+| N4 | Research: strategy catalog (single, parlay, prop combos), validation gates, luck removal, correlation matrix, leaderboard with rewards | arena-2831c7f7 | done | `scripts/lines/build_lines.py`, `data/lines/strategies.json`, `data/lines/leaderboard.json`, `data/lines/correlations.json` |
+| N5 | Site: `lines/` section — landing, lines, strategies, leaderboard, validation, correlation, injuries, depth, suggestions, questions, executive summary, flagged | arena-2831c7f7 | done | `lines/`, `scripts/lines/build_lines_site.py` |
+| N6 | Verification: source-link audit per row, blank-if-unconfirmed rule, link check, tests | arena-2831c7f7 | done | `scripts/lines/verify_lines.py`, `tests/` |
+| N7 | Integration: rebuild, re-verify, PR to `main`, merge, confirm Pages deploy, record result | arena-2831c7f7 | done | `COORDINATION.md`, `README.md`, `scripts/build_site.py` (nav only) |
 
 ### Scope boundary (important)
 
@@ -724,3 +724,12 @@ Scope: current Arena branch is fixed; no alternate branches or overlapping task 
 ### Post-merge integration correction (2026-11-13)
 
 The first merged run's repository CI caught one generated local-link failure in `extra/summary.html`: markdown converted the research-detail link to a path that did not resolve from the `extra/` directory. Corrected the executive-summary link to the site Strategy Lab and reran the exact workflow rebuild sequence. Result: certainty audit passed; link check 12 pages / 190 local / 528 external / 0 missing; extra verification 31/31, 0 missing locals, 0 missing source rows; JS syntax and calendar-today test passed; `git diff --check` clean. This fix is in a follow-up PR.
+
+### N1–N7 completion record (arena-2831c7f7, 2026-11-13)
+
+- Official data: CI run 43433238261 (`scripts/lines/fetch_nfl.py`) committed 1,170 games, 840 scored, 29,919 box-score rows, 296 Week 10 injury rows and 31 official depth charts. Houston Texans chart is missing: the official page is image-only and has no readable rows; it is recorded as missing, not inferred.
+- Model and gates: `scripts/lines/build_lines.py` fits walk-forward on prior games only; development 2024–2025 (544 scored regular-season games), untouched 2026 holdout (152 scored regular-season games). Eighteen strategies are gated G1–G7. G4 uses a BH-adjusted paired sign-flip randomisation p-value across all 18 strategies. Qualified: S05 (reward 115), S08 (reward 114), S07 (reward 99). S03 passes G1–G6 but fails G7 (correlation 0.993 with S05) and receives no reward. Parlays and player props do not qualify.
+- Disclosure: the 18-strategy set was developed iteratively in this session (S07 and S08 were added after first runs). The 2026 holdout was reported during development, so it is not a pristine out-of-sample test for those choices. BH controls multiplicity across the 18 strategies only, not across design iterations.
+- Public pages: 13 pages under `lines/`, linked from the shared nav (`scripts/build_site.py`, nav only). Verification: `scripts/lines/verify_lines.py` 82/82 checks, evidence in `verification/lines-verification.json`. Existing checks: `tests/test_verify.py` 5/5, calendar Node tests, `scripts/check_links.py` 0 missing, `tools/verify_extra.py` passed.
+- Scope: no planner files were changed beyond the shared nav entry and the README section.
+

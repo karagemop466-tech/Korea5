@@ -27,6 +27,7 @@ NAV = [
     ("radio.html", "Radio"),
     ("sources.html", "Sources"),
     ("flagged.html", "Flagged"),
+    ("lines/index.html", "NFL lines (paper)"),
     ("method.html", "Method"),
     ("extra/index.html", "Official feeds &amp; verification"),
 ]

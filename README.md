@@ -38,6 +38,7 @@ See [`research/EXECUTIVE-SUMMARY.md`](research/EXECUTIVE-SUMMARY.md) for the ful
 | `verification/` | Machine-readable verification report and link check |
 | `research/` | Executive summary, probe results, and text snapshots of official pages |
 | `scripts/` | Fetch, build, analyze, verify, site and docs generators |
+| `data/lines/`, `scripts/lines/`, `lines/` | NFL lines research (paper only): official-data fetch, walk-forward team lines, props, parlays, strategy gates, leaderboard and 13 pages. Start at [`lines/index.html`](lines/index.html). |
 
 ## Rebuild
 
@@ -50,6 +51,15 @@ python3 tools/build_extra.py      # regenerate extra/ pages (calendar, stations,
 python3 scripts/check_links.py    # fail if any local link is broken
 python3 tools/verify_extra.py     # 31 link, schema and UI checks
 python3 scripts/verify.py         # re-check every curated row against its official page (needs network)
+```
+
+NFL lines (paper research only; no sportsbook prices or wagers are involved):
+
+```bash
+python3 scripts/lines/fetch_nfl.py          # official NFL.com + club depth charts (needs network; CI runs this)
+python3 scripts/lines/build_lines.py        # walk-forward lines, props, parlays, gates, leaderboard
+python3 scripts/lines/build_lines_site.py   # regenerate the 13 pages under lines/
+python3 scripts/lines/verify_lines.py       # schema, official-source, leakage and page checks -> verification/lines-verification.json
 ```
 
 Data acquisition and verification run in GitHub Actions (`.github/workflows/`), because the schedule sources are only

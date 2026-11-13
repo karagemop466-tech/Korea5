@@ -1,26 +1,28 @@
 #!/usr/bin/env python3
-"""NFL Signal Lab official-data fetcher (runs on GitHub Actions: the sandbox has no outbound network).
+"""NFL Signal Lab official-data fetcher (runs on GitHub Actions: the Arena sandbox has no outbound network).
 
-Collects ONLY data that the NFL publishes itself, and never fills a field that the official
-page does not carry:
+Collects ONLY data the NFL publishes itself, and never fills a field the official page does not carry:
 
-  1. 2026 by-week schedule pages      -> per-game result rows (status, scores, venue, teams)
-  2. 2026 weekly official injury pages -> per-player practice / game status rows
-  3. 2026 official team statistics page-> points-for / points-against cross-check rows
-  4. endpoint probe                     -> HTTP status for candidate official endpoints used to
-                                           record which sources exist (inactives, in-game injury CSV)
+  1. 2026 by-week schedule pages       -> per-game result rows (status, scores, venue, teams)
+  2. 2026 official standings (per week) -> team points for/against and win-loss record
+  3. 2026 weekly official injury pages   -> per-player practice / game status rows
+  4. nfl.com/inactives page + injuries page discovery dumps -> which official structure carries them
+  5. endpoint probe                       -> HTTP status for candidate official endpoints
 
 Outputs (committed by .github/workflows/nfl-lab.yml):
   official/lab/results-2026.json
+  official/lab/standings-2026.json
   official/lab/injuries-2026.json
-  official/lab/team-stats-2026.json
+  official/lab/inactives-2026.json
+  official/lab/discovery.json
   official/lab/probe-report.json
   official/lab/fetch-report.json
 
-Rules enforced here:
-  * every row carries `sourceUrl` (the exact official page it came from) and `sourceName`;
-  * a value absent from the official payload stays `null` and is counted in the fetch report;
-  * nothing is transcribed by hand, so nothing can be invented.
+Honesty rules enforced here:
+  * every row carries `sourceUrl` + `sourceName` pointing at the exact official page it came from;
+  * a value absent from the official payload stays null and is counted in `extraction` stats;
+  * nothing is transcribed by hand, so nothing can be invented;
+  * parse failures are reported, not papered over.
 """
 from __future__ import annotations
 
@@ -41,32 +43,30 @@ UA = {
     "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
 }
 SEASON = 2026
-NFL_WEEK_SLUGS = [(f"week-{i}", f"Week {i}") for i in range(1, 19)]
+WEEKS = list(range(1, 19))
 SCHEDULE_BASE = f"https://www.nfl.com/schedules/{SEASON}/by-week/"
-INJURY_URLS = [
-    f"https://www.nfl.com/injuries/?season={SEASON}&week={i}" for i in range(1, 12)
-]
-TEAM_STATS_URL = f"https://www.nfl.com/stats/team-stats/?season={SEASON}&statType=season&sortOrder=DESC&sort=points&category=points"
+INJURY_URL = "https://www.nfl.com/injuries/"
+INACTIVE_URL = "https://www.nfl.com/inactives/"
+TRANSACTIONS_URL = "https://www.nfl.com/transactions/"
+TEAM_STATS_URL = f"https://www.nfl.com/stats/team-stats/?season={SEASON}&statType=season&sort=points&category=points"
 PROBE_ENDPOINTS = [
-    ("nfl.com injuries landing", "https://www.nfl.com/injuries/"),
-    ("nfl.com transactions", "https://www.nfl.com/transactions/"),
+    ("nfl.com injuries landing", INJURY_URL),
+    ("nfl.com inactives page", INACTIVE_URL),
+    ("nfl.com transactions", TRANSACTIONS_URL),
     ("nfl.com stats portal", "https://www.nfl.com/stats/"),
     ("nfl.com team stats", "https://www.nfl.com/stats/team-stats/"),
     ("nfl.com player stats", "https://www.nfl.com/stats/player-stats/"),
-    ("nfl.com league rules index", "https://www.nfl.com/news/nfl-scheduling-candidates"),
-    ("nfl.com depth charts (league)", "https://www.nfl.com/depth-charts/"),
+    ("nfl.com depth-charts (league)", "https://www.nfl.com/depth-charts/"),
     ("nfl.com club depth chart", "https://www.nfl.com/teams/san-francisco-49ers/depth-chart/"),
-    ("nfl.com inactives page", "https://www.nfl.com/inactives/"),
-    ("nfl.com rosters page", "https://www.nfl.com/teams/san-francisco-49ers/roster/"),
-    ("operations.nfl.com rulebook", "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook"),
+    ("nfl.com club roster", "https://www.nfl.com/teams/san-francisco-49ers/roster/"),
+    ("nfl.com 2026-27 important dates", "https://www.nfl.com/news/2026-27-national-football-league-important-dates"),
+    ("operations.nfl.com 2026 rulebook", "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook"),
     ("operations.nfl.com homepage", "https://operations.nfl.com/"),
     ("api.nfl.com season games", f"https://api.nfl.com/season/{SEASON}/games/?seasonType=REG&week=9"),
-    ("api.nfl.com club injuries", f"https://api.nfl.com/club/san-francisco-49ers/teams/current/injuries.json"),
-    ("static.www.nfl.com in-game injury CSV (per-game)",
+    ("api.nfl.com club injuries", "https://api.nfl.com/club/san-francisco-49ers/teams/current/injuries.json"),
+    ("static.www.nfl.com game injury CSV",
      "https://static.www.nfl.com/public/stats/statistics/games/injuries/2026/reg/2026110801.csv"),
-    ("static.www.nfl.com in-game injury CSV (alt path)",
-     "https://static.www.nfl.com/stats/statistics/games/injuries/2026/reg/2026110801.csv"),
-    ("static.www.nfl.com game inactives CSV (per-game)",
+    ("static.www.nfl.com game inactives CSV",
      "https://static.www.nfl.com/public/stats/statistics/games/inactives/2026/reg/2026110801.csv"),
 ]
 
@@ -75,7 +75,7 @@ notes: list[str] = []
 
 def log(msg: str) -> None:
     print(msg, flush=True)
-    notes.append(msg)
+    notes.append(msg[-300:])
 
 
 def get(url, tries=3, timeout=45, text=True):
@@ -85,16 +85,15 @@ def get(url, tries=3, timeout=45, text=True):
             req = urllib.request.Request(url, headers=UA)
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 body = r.read()
-                return body.decode("utf-8", "replace") if text else body
+            return body.decode("utf-8", "replace") if text else body
         except Exception as e:  # noqa: BLE001 - diagnostics only
             last = e
-            time.sleep(1.0 + attempt)
+            time.sleep(0.8 + attempt)
     log(f"  ! fetch failed {url}: {type(last).__name__}: {last}")
     return None
 
 
 def status_of(url):
-    """HTTP status code for a URL (probe only; body discarded)."""
     try:
         req = urllib.request.Request(url, headers=UA)
         with urllib.request.urlopen(req, timeout=30) as r:
@@ -112,9 +111,13 @@ def jwrite(name, obj):
         f.write("\n")
 
 
-# ------------------------------------------------------------------- payload mining
-def rsc_payloads(page: str):
-    """Yield dehydrated react-query payloads embedded in an NFL.com page."""
+# --------------------------------------------------------------- payload mining
+def page_payloads(page: str):
+    """Yield (origin, obj) for every JSON payload embedded in an NFL.com page.
+
+    Two shapes exist on nfl.com today: dehydrated react-query objects pushed through
+    `self.__next_f.push(...)`, and a `__NEXT_DATA__` script block.
+    """
     for raw in re.findall(r"self\.__next_f\.push\((\[.*?\])\)</script>", page, re.S):
         try:
             arr = json.loads(raw)
@@ -129,61 +132,110 @@ def rsc_payloads(page: str):
             obj = json.loads(payload.split(":", 1)[1])
         except Exception:
             continue
-        stack = [obj]
+        stack = [(obj, 0)]
         while stack:
-            cur = stack.pop()
+            cur, depth = stack.pop()
+            if depth > 8:
+                continue
             if isinstance(cur, dict):
                 if "queryKey" in cur and "state" in cur:
-                    yield cur
-                stack.extend(cur.values())
+                    yield ("rsc", cur)
+                stack.extend((v, depth + 1) for v in cur.values())
             elif isinstance(cur, list):
-                stack.extend(cur)
+                stack.extend((v, depth + 1) for v in cur)
+    for raw in re.findall(r'<script[^>]*id="__NEXT_DATA__"[^>]*>(.*?)</script>', page, re.S):
+        try:
+            yield ("nextdata", json.loads(raw))
+        except Exception:
+            continue
 
 
-def walk(node, pred, out, depth=0):
-    """Collect every dict/list for which pred returns True (bounded depth)."""
-    if depth > 24:
+def payload_data(pairs):
+    """Every payload `data` object, from both react-query and __NEXT_DATA__ shapes."""
+    for origin, q in pairs:
+        if origin == "rsc":
+            data = (q.get("state") or {}).get("data")
+            if data is not None:
+                yield str((q.get("queryKey") or ["?"])[0]), data
+        else:
+            props = ((q.get("props") or {}).get("pageProps")) or q.get("data") or q
+            if isinstance(props, dict):
+                for k, v in props.items():
+                    if isinstance(v, (dict, list)):
+                        yield f"nextdata:{k}", v
+
+
+def walk(node, pred, out, depth=0, cap=4000):
+    if depth > 26 or len(out) >= cap:
         return
     if isinstance(node, dict):
         if pred(node):
             out.append(node)
         for v in node.values():
-            walk(v, pred, out, depth + 1)
+            walk(v, pred, out, depth + 1, cap)
     elif isinstance(node, list):
         for v in node:
-            walk(v, pred, out, depth + 1)
+            walk(v, pred, out, depth + 1, cap)
 
 
-def find_key(node, names, depth=0):
-    """First value under any of `names` in a nested structure (case-insensitive)."""
-    if depth > 12 or not isinstance(node, (dict, list)):
+def dig(node, names, depth=0):
+    """First scalar found under any key in `names` (case-insensitive), searching dicts then lists."""
+    if depth > 14:
         return None
     if isinstance(node, dict):
-        for k, v in node.items():
-            if k.lower() in names and not isinstance(v, (dict, list)):
-                return v
+        for k in list(node.keys()):
+            if k.lower() in names and isinstance(node[k], (str, int, float, bool)):
+                return node[k]
         for v in node.values():
-            got = find_key(v, names, depth + 1)
+            got = dig(v, names, depth + 1)
             if got is not None:
                 return got
-    else:
+    elif isinstance(node, list):
         for v in node:
-            got = find_key(v, names, depth + 1)
+            got = dig(v, names, depth + 1)
             if got is not None:
                 return got
     return None
 
 
-# ------------------------------------------------------------------------- results
-def parse_results(page, url, week_label):
-    """Return one row per game on an official by-week schedule page."""
-    rows, seen = [], set()
+def as_int(v):
+    try:
+        if v is None or isinstance(v, bool):
+            return None
+        return int(str(v).strip())
+    except (TypeError, ValueError):
+        return None
+
+
+def game_status_name(g):
+    st = g.get("status")
+    if isinstance(st, dict):
+        return str(dig(st, {"name", "state", "type", "label"}) or "").upper()
+    return str(st or "").upper()
+
+
+def text_scores(page: str):
+    """Fallback score reader: the by-week page also renders an accessible score string per game,
+    e.g. "Jaguars 33, Ravens 10, FINAL". Keyed by the two nicknames, matched case-insensitively.
+    Used only when the structured payload carries no score, and recorded per row as scoreSource."""
+    out: dict[tuple[str, str], tuple[int, int]] = {}
+    pat = re.compile(r"([A-Z][A-Za-z0-9 .'\-]{2,28}?)\s+(\d{1,2})\s*,\s*"
+                     r"([A-Z][A-Za-z0-9 .'\-]{2,28}?)\s+(\d{1,2})\s*,\s*FINAL")
+    for a, ap, h, hp in pat.findall(page):
+        key = (a.strip().split()[-1].lower(), h.strip().split()[-1].lower())
+        out.setdefault(key, (int(ap), int(hp)))
+    return out
+
+
+# ---------------------------------------------------------------------- results
+def parse_results(pairs, url, week_label, page_scores=None):
     games: list[dict] = []
-    walk(
-        [q.get("state", {}).get("data") for q in page],
-        lambda d: d.get("id") and ("awayTeam" in d or "homeTeam" in d) and ("status" in d or "gameStatus" in d),
-        games,
-    )
+    for _key, data in pairs:
+        # Only the weekly-game-details shape carries results; the ways-to-watch shape on the
+        # same page has the same ids but no score or status, so require a richer marker.
+        walk(data, lambda d: bool(d.get("id")) and ("awayTeamStandings" in d or "summary" in d), games)
+    rows, seen = [], set()
+    page_scores = page_scores or {}
     for g in games:
         gid = str(g.get("id"))
         if gid in seen:
@@ -191,27 +243,49 @@ def parse_results(page, url, week_label):
         seen.add(gid)
         away_obj = g.get("awayTeam") or {}
         home_obj = g.get("homeTeam") or {}
-        away = away_obj.get("fullName") or away_obj.get("nameShort") or away_obj.get("nickname")
-        home = home_obj.get("fullName") or home_obj.get("nameShort") or home_obj.get("nickname")
-        status = (g.get("status") or g.get("gameStatus") or "")
-        if isinstance(status, dict):
-            status = status.get("type") or status.get("label")
-        status = str(status)
-        a_pts = find_key(away_obj, {"points", "score", "totalpoints"})
-        h_pts = find_key(home_obj, {"points", "score", "totalpoints"})
+        summary = g.get("summary") or {}
+        away = away_obj.get("fullName") or dig(away_obj, {"nameshort", "nickname"})
+        home = home_obj.get("fullName") or dig(home_obj, {"nameshort", "nickname"})
+        status = game_status_name(g) or str(g.get("status") or "").upper()
+        # Scores live either on the team object, or in a per-team score block elsewhere
+        # in the payload (summary.scores[].current.value). Match by team id, never by order.
+        score_blocks: list[dict] = []
+        walk(g, lambda d: isinstance(d, dict) and "team" in d
+             and any(k in d for k in ("current", "points", "value", "score", "totals")), score_blocks, cap=200)
+
+        def team_points(team_obj):
+            direct = as_int(dig(team_obj, {"points", "totalpoints"}))
+            if direct is not None:
+                return direct
+            tid = str(dig(team_obj, {"id"}) or "")
+            for blk in score_blocks:
+                t = blk.get("team")
+                if not isinstance(t, dict):
+                    continue
+                if tid and str(dig(t, {"id"}) or "") == tid:
+                    got = as_int(dig(blk, {"points", "value", "score"}))
+                    if got is None:
+                        got = as_int(dig(blk.get("current") or {}, {"value", "points"}))
+                    return got
+            return None
+
+        a_pts = team_points(away_obj)
+        h_pts = team_points(home_obj)
+        score_source = "gamePayload" if (a_pts is not None and h_pts is not None) else None
+        if a_pts is None or h_pts is None:
+            nick = lambda n: (str(n or "").strip().split()[-1].lower() if n else "")
+            alt = page_scores.get((nick(away), nick(home)))
+            if alt:
+                a_pts, h_pts, score_source = alt[0], alt[1], "pageScoreText"
         slug = None
         for e in (g.get("externalIds") or []):
             if isinstance(e, dict) and e.get("source") == "slug" and e.get("id"):
                 slug = e["id"]
                 break
-        game_url = f"https://www.nfl.com/games/{slug}" if slug else url
+        is_final = status in ("FINAL", "F", "FINAL_OVERTIME", "STATUS_FINAL", "FINAL/TIE") or "FINAL" in status
         winner = None
         if a_pts is not None and h_pts is not None:
-            try:
-                ai, hi = int(a_pts), int(h_pts)
-                winner = "away" if ai > hi else ("home" if hi > ai else "tie")
-            except (TypeError, ValueError):
-                winner = None
+            winner = "away" if a_pts > h_pts else ("home" if h_pts > a_pts else "tie")
         rows.append({
             "gameId": gid,
             "season": SEASON,
@@ -219,294 +293,374 @@ def parse_results(page, url, week_label):
             "week": g.get("week"),
             "weekType": g.get("weekType"),
             "weekLabel": week_label,
-            "dateUTC": g.get("time"),
+            "dateUTC": g.get("time") or g.get("date"),
             "away": away,
             "home": home,
-            "awayAbbr": away_obj.get("abbreviation") or away_obj.get("abbr"),
-            "homeAbbr": home_obj.get("abbreviation") or home_obj.get("abbr"),
-            "awayPoints": int(a_pts) if str(a_pts or "").isdigit() else None,
-            "homePoints": int(h_pts) if str(h_pts or "").isdigit() else None,
-            "status": status,
+            "awayAbbr": dig(away_obj, {"abbreviation", "abbr"}),
+            "homeAbbr": dig(home_obj, {"abbreviation", "abbr"}),
+            "awayPoints": a_pts,
+            "homePoints": h_pts,
+            "status": status or None,
             "winner": winner,
-            "venue": (g.get("venue") or {}).get("name") if isinstance(g.get("venue"), dict) else g.get("venue"),
-            "sourceUrl": game_url,
+            "venue": (g.get("venue") or {}).get("name") if isinstance(g.get("venue"), dict) else None,
+            "category": g.get("category"),
+            "scoreSource": score_source,
+            "sourceUrl": (f"https://www.nfl.com/games/{slug}" if slug else url),
             "listUrl": url,
-            "sourceName": "NFL.com official 2026 schedule (by-week page, embedded game payload)",
-            "verification": "verified" if "FINAL" in status.upper() and str(a_pts or "") != "" else "scheduled",
+            "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
+            "verification": "verified" if (a_pts is not None and h_pts is not None)
+                            else ("final-without-scores" if is_final else "scheduled"),
         })
     return rows, games
 
 
-# ------------------------------------------------------------------------ injuries
-INJURY_FIELDS = {
-    "player": ("player", "playerName", "full_name", "name"),
-    "position": ("position", "pos"),
-    "injury": ("injuryDescription", "injury", "injuryType", "description"),
-    "practice": ("practiceStatus", "practiceParticipation", "practice", "practiceStatusDescription"),
-    "game": ("gameStatus", "gameStatusDescription", "status", "gameParticipation"),
-    "updated": ("statusDate", "updatedDate", "reportDate", "date", "lastUpdated"),
-}
+def parse_standings(pairs, url):
+    """Official per-week standings snapshots: team, record, points for/against, splits."""
+    blobs: list[dict] = []
+    for key, data in pairs:
+        if "Standings" not in key:
+            continue
+        walk(data, lambda d: isinstance(d.get("standings"), list), blobs)
+    rows, seen = [], set()
+    for blob in blobs:
+        season = blob.get("season")
+        season_type = blob.get("seasonType")
+        for wk in (blob.get("weeks") or []):
+            week = wk.get("week")
+            for entry in (wk.get("standings") or []):
+                team = dig(entry.get("team"), {"fullname", "nameshort"}) if isinstance(entry.get("team"), dict) else None
+                if not team:
+                    continue
+                pts = dig(entry, {"points"})
+                pfor = None
+                pag = None
+                if isinstance(pts, dict):
+                    pfor = as_int(pts.get("for"))
+                    pag = as_int(pts.get("against"))
+                if pfor is None:
+                    pfor = as_int(dig(entry, {"pointsfor", "pointsscored", "pf"}))
+                    pag = as_int(dig(entry, {"pointsagainst", "pointsallowed", "pa"}))
+                overall = entry.get("overall") or entry.get("winLossTies") or {}
+                rec = {
+                    "season": season, "seasonType": season_type, "week": week, "team": team,
+                    "abbr": dig(entry.get("team"), {"abbreviation"}),
+                    "wins": as_int(dig(overall if isinstance(overall, dict) else {}, {"wins"})),
+                    "losses": as_int(dig(overall if isinstance(overall, dict) else {}, {"losses"})),
+                    "ties": as_int(dig(overall if isinstance(overall, dict) else {}, {"ties"})),
+                    "pointsFor": pfor, "pointsAgainst": pag,
+                    "homeWins": as_int(dig(entry.get("home"), {"wins"})) if isinstance(entry.get("home"), dict) else None,
+                    "homeLosses": as_int(dig(entry.get("home"), {"losses"})) if isinstance(entry.get("home"), dict) else None,
+                    "awayWins": as_int(dig(entry.get("away"), {"wins"})) if isinstance(entry.get("away"), dict) else None,
+                    "awayLosses": as_int(dig(entry.get("away"), {"losses"})) if isinstance(entry.get("away"), dict) else None,
+                    "divisionRank": as_int(dig(entry.get("division"), {"rank"})) if isinstance(entry.get("division"), dict) else None,
+                    "sourceUrl": url,
+                    "sourceName": "NFL.com official standings (embedded by-week payload)",
+                    "verification": "verified" if (pfor is not None and pag is not None) else "partial",
+                }
+                key2 = (week, team)
+                if key2 in seen:
+                    continue
+                seen.add(key2)
+                rows.append(rec)
+    return rows, blobs
 
 
-def parse_injuries(page, url, label):
-    """Return injury rows from any embedded payload that looks like an official injury report."""
-    rows: list[dict] = []
-    cands: list[dict] = []
-    walk([q.get("state", {}).get("data") for q in page],
-         lambda d: any(k.lower() in {"playername", "full_name", "player", "position", "practicestatus", "gamestatus"}
-                       for k in d.keys()), cands)
+# --------------------------------------------------------------------- injuries
+PLAYER_KEYS = {"playername", "full_name", "fullname", "player", "name", "lastname"}
+
+
+def mine_players(node, out, depth=0, cap=1200):
+    """Find dicts that look like one player's report row, keeping the enclosing context."""
+    if depth > 26 or len(out) >= cap:
+        return
+    if isinstance(node, dict):
+        low = {k.lower() for k in node.keys()}
+        if low & PLAYER_KEYS and low & {"position", "pos", "injury", "injurydescription", "practicestatus",
+                                        "gamestatus", "status", "injurytype", "statusdescription"}:
+            out.append(node)
+            return
+        for v in node.values():
+            mine_players(v, out, depth + 1, cap)
+    elif isinstance(node, list):
+        for v in node:
+            mine_players(v, out, depth + 1, cap)
+
+
+def parse_injury_like(pairs, url, label):
+    rows, cands = [], []
+    for _key, data in pairs:
+        mine_players(data, cands)
     seen = set()
     for d in cands:
         low = {k.lower(): v for k, v in d.items()}
-        player = None
-        for key in INJURY_FIELDS["player"]:
-            v = low.get(key)
-            if isinstance(v, str) and v.strip():
-                player = v.strip()
-            elif isinstance(v, dict):
-                player = (v.get("firstName", "") + " " + v.get("lastName", "")).strip() or v.get("fullName")
-            if player:
-                break
-        if not player:
-            continue
+
         def pick(names):
-            for key in names:
-                if key in low and isinstance(low[key], (str, int, float)) and str(low[key]).strip():
-                    return str(low[key]).strip()
-                if key in low and isinstance(low[key], dict):
-                    got = find_key(low[key], {"description", "label", "name", "value", "code"})
+            for n in names:
+                v = low.get(n)
+                if isinstance(v, str) and v.strip():
+                    return v.strip()
+                if isinstance(v, dict):
+                    got = dig(v, {"description", "label", "name", "value", "code", "statustype"})
+                    if got is not None:
+                        return str(got)
+                if isinstance(v, list) and v and isinstance(v[0], dict):
+                    got = dig(v[0], {"description", "label", "name", "value"})
                     if got is not None:
                         return str(got)
             return None
-        pos = pick(INJURY_FIELDS["position"])
-        inj = pick(INJURY_FIELDS["injury"])
-        prac = pick(INJURY_FIELDS["practice"])
-        game = pick(INJURY_FIELDS["game"])
-        upd = pick(INJURY_FIELDS["updated"])
+
+        player = pick(("player", "playername", "full_name", "fullname", "name"))
+        if not player and "firstName" in low:
+            player = f"{low.get('firstName')} {low.get('lastName')}".strip()
+        if not player:
+            continue
+        pos = pick(("position", "pos"))
+        inj = pick(("injurydescription", "injury", "injurytype", "description"))
+        prac = pick(("practicestatus", "practiceparticipation", "practice", "practicestatusdescription",
+                     "practicestatuscode"))
+        game = pick(("gamestatus", "gamestatusdescription", "status", "gameparticipation", "statusdescription"))
+        upd = pick(("statusdate", "updateddate", "reportdate", "date", "lastupdated", "updatedat"))
+        club = pick(("club", "clubabbr", "team", "teamabbr", "abbreviation"))
         key = (label, player, pos, prac, game)
         if key in seen:
             continue
         seen.add(key)
         rows.append({
-            "weekLabel": label,
-            "team": None,
-            "player": player,
-            "position": pos,
-            "injury": inj,
-            "practiceStatus": prac,
-            "gameStatus": game,
+            "label": label, "player": player, "position": pos, "injury": inj,
+            "practiceStatus": prac, "gameStatus": game, "team": club,
             "reportedDate": upd,
             "sourceUrl": url,
-            "sourceName": "NFL.com official injury report (embedded page payload)",
+            "sourceName": "NFL.com official injury report page (embedded payload)",
             "verification": "verified" if (prac or game) else "present-no-status",
         })
     return rows, cands
 
 
-# ----------------------------------------------------------------------- team stats
-def parse_team_stats(page, url):
-    rows: list[dict] = []
-    cands: list[dict] = []
-    walk([q.get("state", {}).get("data") for q in page],
-         lambda d: any(k.lower() in {"team", "pointsfor", "pointsagainst", "pf", "pa", "stat"} for k in d.keys()), cands)
+# ------------------------------------------------------------------- discovery
+def discover(url, name, extra_re=None):
+    page = get(url)
+    if not page:
+        return {"url": url, "fetched": False}
+    pairs = list(page_payloads(page))
+    payload_index = []
+    for key, data in pairs:
+        kinds = []
+        sample = json.dumps(data, ensure_ascii=False)[:900] if not isinstance(data, str) else data[:900]
+        n_list = 0
+        stack = [(data, 0)]
+        while stack:
+            cur, d = stack.pop()
+            if d > 10:
+                continue
+            if isinstance(cur, dict):
+                for k, v in cur.items():
+                    if isinstance(v, list) and v and isinstance(v[0], dict):
+                        n_list = max(n_list, len(v))
+                        kinds.append(f"{k}[{len(v)}]:{','.join(sorted(v[0].keys())[:12])}")
+                    stack.append((v, d + 1))
+            elif isinstance(cur, list):
+                for v in cur:
+                    stack.append((v, d + 1))
+        kinds = list(dict.fromkeys(kinds))[:12]
+        payload_index.append({"queryKey": key[:160], "largestList": n_list,
+                              "lists": kinds[:8], "sample": sample})
+    api_urls = sorted({u for u in re.findall(r'https?://[^"\'\\ ]{6,220}', page)
+                       if re.search(r"(api\.nfl\.com|/api/|injur|inactiv|depth|transaction)", u)})[:60]
+    hrefs = sorted({h for h in re.findall(r'href="(/[^"]*(?:injur|inactiv|depth|transaction)[^"]*)"', page)})[:60]
+    out = {
+        "url": url, "fetched": True, "bytes": len(page),
+        "payloadCount": len(pairs),
+        "payloadIndex": payload_index[:40],
+        "apiUrls": api_urls,
+        "relatedHrefs": hrefs,
+    }
+    if extra_re:
+        out["matches"] = {k: sorted({m for m in re.findall(v, page)})[:20] for k, v in extra_re.items()}
+    return out
+
+
+# --------------------------------------------------------------------- inactives
+def parse_inactives(pairs, url):
+    rows, cands = [], []
+    for _key, data in pairs:
+        mine_players(data, cands)
+    seen = set()
     for d in cands:
         low = {k.lower(): v for k, v in d.items()}
-        team = low.get("team")
-        if isinstance(team, dict):
-            team = team.get("displayName") or team.get("shortName") or team.get("name")
-        stat = low.get("stat") or low.get("value")
-        label = low.get("statName") or low.get("label") or low.get("category") or low.get("name")
-        if team and (stat is not None or label):
-            rows.append({
-                "team": team if isinstance(team, str) else None,
-                "stat": str(label) if label else None,
-                "value": str(stat) if stat is not None else None,
-                "rank": low.get("rank"),
-                "sourceUrl": url,
-                "sourceName": "NFL.com official team statistics (embedded page payload)",
-                "verification": "verified" if label and stat is not None else "partial",
-            })
+        name = None
+        for n in ("player", "playername", "full_name", "name"):
+            v = low.get(n)
+            if isinstance(v, str) and v.strip():
+                name = v.strip()
+            elif isinstance(v, dict):
+                name = dig(v, {"fullname", "displayname", "name"})
+            if name:
+                break
+        if not name:
+            continue
+        st = None
+        for n in ("status", "inactivestatus", "statusdescription", "type"):
+            v = low.get(n)
+            if isinstance(v, str):
+                st = v.strip()
+                break
+            if isinstance(v, dict):
+                st = dig(v, {"description", "label", "name", "value"})
+                if st:
+                    st = str(st)
+                    break
+        key = (str(name), str(st))
+        if key in seen:
+            continue
+        seen.add(key)
+        rows.append({
+            "player": str(name), "position": dig(d, {"position", "pos"}),
+            "status": st,
+            "team": dig(d, {"club", "team", "abbreviation"}),
+            "gameId": dig(d, {"gameid", "gameId"}),
+            "sourceUrl": url,
+            "sourceName": "NFL.com inactives page (embedded payload)",
+            "verification": "verified" if st else "present-no-status",
+        })
     return rows, cands
 
 
+# ------------------------------------------------------------------------ main
 def main():
     started = dt.datetime.now(dt.timezone.utc).isoformat()
     os.makedirs(OUT, exist_ok=True)
 
-
-    # ---- 1. results -----------------------------------------------------------
+    # 1 + 2 — results and official standings, week by week ---------------------
     all_rows: list[dict] = []
+    standing_rows: list[dict] = []
     per_week: dict[str, int] = {}
-    sample_dumped = False
-    for slug, label in NFL_WEEK_SLUGS:
-        url = SCHEDULE_BASE + slug
+    per_week_final: dict[str, int] = {}
+    standings_weeks_seen: set[int] = set()
+    for wk in WEEKS:
+        url = f"{SCHEDULE_BASE}week-{wk}"
         page = get(url)
         if page is None:
-            per_week[label] = -1
+            per_week[f"Week {wk}"] = -1
             continue
-        payloads = list(rsc_payloads(page))
-        rows, games = parse_results(payloads, url, label)
-        per_week[label] = len(rows)
+        pairs = list(page_payloads(page))
+        rows, _games = parse_results(pairs, url, f"Week {wk}", text_scores(page))
+        srows, _blobs = parse_standings(pairs, url)
+        per_week[f"Week {wk}"] = len(rows)
+        per_week_final[f"Week {wk}"] = len([r for r in rows if r["verification"] == "verified"])
+        standings_weeks_seen |= {r["week"] for r in srows if isinstance(r["week"], int)}
         all_rows.extend(rows)
-        if rows and not sample_dumped and any("FINAL" in r["status"].upper() for r in rows):
-            jwrite("sample-final-game-object.json", games[0] if games else {})
-            sample_dumped = True
-        log(f"results {label}: {len(rows)} games")
+        standing_rows.extend(srows)
+        log(f"week {wk}: games={len(rows)} final={per_week_final[f'Week {wk}']} standingsRows={len(srows)}")
 
-    finals = [r for r in all_rows if "FINAL" in r["status"].upper()]
+    finals = [r for r in all_rows if r["verification"] == "verified"]
     jwrite("results-2026.json", {
         "meta": {
-            "dataset": f"NFL {SEASON} season game results captured from official nfl.com by-week pages",
+            "dataset": f"NFL {SEASON} games captured from official nfl.com by-week pages (embedded payload)",
             "retrievedUTC": started,
             "games": len(all_rows),
             "final": len(finals),
-            "withScores": len([r for r in finals if r["awayPoints"] is not None and r["homePoints"] is not None]),
             "perWeek": per_week,
+            "perWeekFinal": per_week_final,
             "sourceName": "NFL.com official schedule (by-week)",
-            "sourcePages": [SCHEDULE_BASE + s for s, _ in NFL_WEEK_SLUGS],
-            "note": "Scores come from the same embedded payload the by-week page renders. "
-                    "A game with no score in the payload keeps null fields.",
+            "sourcePages": [f"{SCHEDULE_BASE}week-{w}" for w in WEEKS],
+            "note": "Scores come from the same embedded payload the page renders. Games the payload "
+                    "does not carry scores for keep null and are labelled scheduled/final-without-scores.",
         },
         "games": all_rows,
     })
+    jwrite("standings-2026.json", {
+        "meta": {
+            "dataset": f"NFL {SEASON} official standings snapshots (record, points for/against, splits)",
+            "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat(),
+            "rows": len(standing_rows),
+            "weeksSeen": sorted(standings_weeks_seen),
+            "sourcePages": [f"{SCHEDULE_BASE}week-{w}" for w in WEEKS],
+            "sourceName": "NFL.com official standings (embedded by-week payload)",
+        },
+        "rows": standing_rows,
+    })
 
-    # ---- 2. injuries ----------------------------------------------------------
+    # 3 — weekly official injury reports ---------------------------------------
     inj_rows: list[dict] = []
-    inj_keys: dict[str, int] = {}
-    for url in INJURY_URLS:
-        wk = urllib.parse.parse_qs(urllib.parse.urlparse(url).query).get("week", ["?"])[0]
+    inj_counts: dict[str, int] = {}
+    inj_week_params = ["", *[f"?season={SEASON}&week={w}" for w in range(9, 12)]]
+    for i, param in enumerate(inj_week_params):
+        url = INJURY_URL + param
         page = get(url)
+        label = "current" if not param else param.split("week=")[1]
         if page is None:
-            inj_keys[f"week {wk}"] = -1
+            inj_counts[label] = -1
             continue
-        rows, cands = parse_injuries(list(rsc_payloads(page)), url, f"Week {wk}")
-        inj_keys[f"week {wk}"] = len(rows)
+        rows, _c = parse_injury_like(list(page_payloads(page)), INJURY_URL, label)
+        inj_counts[label] = len(rows)
         inj_rows.extend(rows)
-        log(f"injuries week {wk}: {len(rows)} rows")
+        log(f"injuries {label}: {len(rows)} rows")
     jwrite("injuries-2026.json", {
         "meta": {
-            "dataset": f"NFL {SEASON} weekly official injury reports captured from nfl.com/injuries",
+            "dataset": f"NFL {SEASON} official weekly injury report rows (nfl.com/injuries)",
             "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat(),
             "rows": len(inj_rows),
-            "perWeek": inj_keys,
+            "perRequest": inj_counts,
+            "sourcePages": [INJURY_URL + p for p in inj_week_params],
             "sourceName": "NFL.com official injury report",
-            "sourcePages": INJURY_URLS,
-            "note": "Team attribution and depth-chart order are NOT part of the embedded payload if the page "
-                    "omits them; those fields stay null rather than being inferred.",
+            "note": "Practice participation and game status are separate official fields; the page does not "
+                    "publish depth-chart order, so backup tier is never inferred here.",
         },
         "rows": inj_rows,
     })
 
-    # ---- 3. team stats --------------------------------------------------------
-    stats_rows: list[dict] = []
-    page = get(TEAM_STATS_URL)
+    # 4 — inactives + structural discovery dumps -------------------------------
+    page = get(INACTIVE_URL)
+    ina_rows: list[dict] = []
     if page:
-        stats_rows, _ = parse_team_stats(list(rsc_payloads(page)), TEAM_STATS_URL)
-    jwrite("team-stats-2026.json", {
+        ina_rows, _ = parse_inactives(list(page_payloads(page)), INACTIVE_URL)
+    jwrite("inactives-2026.json", {
         "meta": {
-            "dataset": f"NFL {SEASON} official team statistics (points), cross-check for derived scoring rates",
+            "dataset": "NFL.com inactives page rows (game-day inactive designations)",
             "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat(),
-            "rows": len(stats_rows),
-            "sourceUrl": TEAM_STATS_URL,
-            "sourceName": "NFL.com official statistics",
-            "note": "Empty rows array means the page renders client-side; no values were assumed.",
+            "rows": len(ina_rows),
+            "sourceUrl": INACTIVE_URL,
+            "sourceName": "NFL.com inactives",
+            "note": "Zero rows means the page renders from a client-side call the static HTML does not contain.",
         },
-        "rows": stats_rows,
+        "rows": ina_rows,
     })
+    discovery = {
+        "meta": {
+            "purpose": "Structural reconnaissance so parsers are developed against evidence, not guesses: "
+                       "which embedded payloads exist, which API URLs the page references, and the exact "
+                       "field names in each list.",
+            "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat(),
+        },
+        "injuries": discover(INJURY_URL, "injuries"),
+        "inactives": discover(INACTIVE_URL, "inactives"),
+        "transactions": discover(TRANSACTIONS_URL, "transactions"),
+        "teamStats": discover(TEAM_STATS_URL, "team-stats"),
+        "scheduleWeek9": discover(f"{SCHEDULE_BASE}week-9", "schedule-week-9"),
+    }
+    jwrite("discovery.json", discovery)
 
-    # ---- 4. endpoint probe ----------------------------------------------------
+    # 5 — endpoint probe --------------------------------------------------------
     probe = []
     for name, url in PROBE_ENDPOINTS:
         code, ctype = status_of(url)
         probe.append({"name": name, "url": url, "httpStatus": code,
                       "contentType": ctype if isinstance(ctype, str) else str(ctype),
-                      "reachable": code == 200})
+                      "reachable": code == 200,
+                      "meaning": "200 OK — public official page" if code == 200 else
+                                 ("401 — exists but requires authorisation (licensed endpoint)" if code == 401 else
+                                  ("404 — not published at this address" if code == 404 else "unreachable"))})
         log(f"probe {name}: {code}")
     jwrite("probe-report.json", {
         "meta": {
-            "purpose": "Record which official endpoints exist for injury / inactive / results data. "
-                       "Used by the site's source-availability table; a non-200 is reported, never guessed.",
+            "purpose": "Record which official endpoints exist for results / injury / inactive / depth data. "
+                       "Drives the source-availability table on the site. Non-200 answers are findings, not errors.",
             "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat(),
+            "method": "HTTP GET status from the CI runner (sandbox has no outbound network)",
         },
         "endpoints": probe,
     })
 
-    # ---- 4b. payload probe (field-name discovery; lets the local parser be developed offline) ----
-    probe_pages = {
-        "injuries-current": "https://www.nfl.com/injuries/",
-        "schedule-week-9": SCHEDULE_BASE + "week-9",
-        "team-stats": TEAM_STATS_URL,
-    }
-    payload_probe = {}
-    for name, url in probe_pages.items():
-        page = get(url)
-        if not page:
-            payload_probe[name] = {"url": url, "fetched": False}
-            continue
-        payloads = list(rsc_payloads(page))
-        keys = []
-        samples = []
-        for q in payloads:
-            data = (q.get("state") or {}).get("data")
-            keys.append("|".join(str(k) for k in (q.get("queryKey") or [])[:3]))
-            if isinstance(data, list) and data and isinstance(data[0], dict):
-                samples.append({
-                    "queryKey": keys[-1],
-                    "itemKeys": sorted(data[0].keys())[:40],
-                    "sample": json.dumps(data[0], ensure_ascii=False)[:1200],
-                })
-            elif isinstance(data, dict):
-                samples.append({"queryKey": keys[-1], "itemKeys": sorted(data.keys())[:40],
-                                "sample": json.dumps(data, ensure_ascii=False)[:1200]})
-        hrefs = sorted({h for h in re.findall(r'href="(/injuries[^"]*)"', page)})[:40]
-        payload_probe[name] = {
-            "url": url,
-            "fetched": True,
-            "bytes": len(page),
-            "queryKeys": keys[:60],
-            "samples": samples[:8],
-            "injuryHrefs": hrefs,
-        }
-        log(f"payload-probe {name}: {len(keys)} queries, {len(hrefs)} injury hrefs")
-    jwrite("payload-probe.json", {
-        "meta": {"purpose": "Field-name discovery for the parsers above; keeps parser development offline.",
-                 "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat()},
-        "pages": payload_probe,
-    })
-
-    # ---- 4c. per-game official CSV endpoints (in-game injury report / inactives) ----
-    csv_probe = []
-    last_final = finals[-1] if finals else None
-    if last_final:
-        d = (last_final.get("dateUTC") or "")[:10].replace("-", "")
-        for seq in range(1, 5):
-            gid = f"{d}0{seq}"
-            for kind in ("injuries", "inactives"):
-                url = ("https://static.www.nfl.com/public/stats/statistics/games/"
-                       f"{kind}/{SEASON}/reg/{gid}.csv")
-                code, _ = status_of(url)
-                body = get(url, tries=1) if code == 200 else None
-                csv_probe.append({
-                    "gameId": gid, "kind": kind, "url": url, "httpStatus": code,
-                    "bytes": len(body) if body else 0,
-                    "head": (body or "")[:400],
-                })
-                log(f"csv probe {kind} {gid}: {code}")
-    jwrite("csv-endpoint-probe.json", {
-        "meta": {
-            "purpose": "Check whether the NFL publishes per-game injury-report / inactive-list CSVs at "
-                       "static.www.nfl.com, and capture the header row of any file that does resolve. "
-                       "Findings feed the source-availability table; failures are recorded, not guessed.",
-            "game": (last_final or {}).get("title"),
-            "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat(),
-        },
-        "probes": csv_probe,
-    })
-
-    # ---- 5. fetch report ------------------------------------------------------
-    keys_seen = {}
-    for label in ("results", "injuries", "stats"):
-        keys_seen[label] = {"parsed": {"results": len(all_rows), "injuries": len(inj_rows), "stats": len(stats_rows)}[label]}
     jwrite("fetch-report.json", {
         "meta": {
             "script": "tools/fetch_nfl_lab.py",
@@ -516,16 +670,25 @@ def main():
         },
         "counts": {
             "games": len(all_rows),
-            "gamesFinal": len(finals),
-            "gamesWithScores": len([r for r in finals if r["awayPoints"] is not None]),
+            "gamesFinalWithScores": len(finals),
+            "standingsRows": len(standing_rows),
             "injuryRows": len(inj_rows),
-            "teamStatRows": len(stats_rows),
+            "inactivesRows": len(ina_rows),
+        },
+        "extraction": {
+            "gamesWithoutScores": len([r for r in all_rows if r["awayPoints"] is None]),
+            "standingsWithoutPoints": len([r for r in standing_rows if r["pointsFor"] is None]),
+            "injuriesWithoutTeam": len([r for r in inj_rows if not r["team"]]),
+            "injuriesWithoutPosition": len([r for r in inj_rows if not r["position"]]),
         },
         "perWeek": per_week,
-        "injuryPerWeek": inj_keys,
-        "notes": notes[-40:],
+        "perWeekFinal": per_week_final,
+        "injuryPerRequest": inj_counts,
+        "standingsWeeks": sorted(standings_weeks_seen),
+        "notes": notes[-30:],
     })
-    log(f"wrote {OUT}: games={len(all_rows)} final={len(finals)} injury={len(inj_rows)} stats={len(stats_rows)}")
+    log(f"wrote {OUT}: games={len(all_rows)} final={len(finals)} standings={len(standing_rows)} "
+        f"injuries={len(inj_rows)} inactives={len(ina_rows)}")
 
 
 if __name__ == "__main__":

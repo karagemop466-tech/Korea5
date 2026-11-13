@@ -762,14 +762,17 @@ def build_executive(mr, lb, q, hyp):
     corr = (mr.get("correlation", {}) or {}).get("pairs", []) or []
     mc = mr.get("marketCoverage", {}) or {}
 
+    def n5(v):
+        return f"{v:.5f}" if isinstance(v, (int, float)) else esc(v)
+
     head = table(["Measure", "Value"], [
         ["Seasons loaded", esc(", ".join(str(x) for x in (mr.get("seasons") or [])))],
         ["Out-of-sample evaluation seasons", esc(", ".join(str(x) for x in (mr.get("evaluatedSeasons") or [])))],
         ["Games evaluated out of sample", esc(m.get("games"))],
         ["Accuracy (pick the higher-probability side)", esc(m.get("accuracy"))],
-        ["Log loss", esc(f'{m.get("logloss")} vs baseline {m.get("baselineLogloss")}')],
-        ["Log-loss skill vs baseline", esc(m.get("skill"))],
-        ["Brier skill vs baseline", esc(m.get("brierSkill"))],
+        ["Log loss", esc(f'{n5(m.get("logloss"))} vs baseline {n5(m.get("baselineLogloss"))}')],
+        ["Log-loss skill vs baseline", n5(m.get("skill"))],
+        ["Brier skill vs baseline", n5(m.get("brierSkill"))],
         ["Luck deflation (best-of-K null)",
          esc(f'N={d.get("N")} permutations, K={d.get("K")}, null p95={d.get("p95")} → {d.get("verdict")}')],
         ["Cross-source score check", esc(cs.get("summary"))],
@@ -780,13 +783,13 @@ def build_executive(mr, lb, q, hyp):
         sc = f.get("scores", {}) or {}
         fd = f.get("deflation", {}) or {}
         fam_rows.append([esc(name.title()), esc(len(f.get("features", []) or [])),
-                         esc(sc.get("skill")), esc(fd.get("p95")),
+                         n5(sc.get("skill")), n5(fd.get("p95")),
                          pill("passed" if fd.get("passed") else "failed"),
                          esc(f.get("claim", ""))])
     fam_tbl = table(["Family", "# signals", "Skill", "Null p95", "Deflation verdict", "Claim"], fam_rows) if fam_rows else "<p>No family rows in this run.</p>"
 
     prop_rows = [[esc(p.get("market", "").replace("_", " ")), esc(p.get("position")),
-                  esc(p.get("line")), esc(p.get("games")), esc(p.get("skill")), esc(p.get("accuracy"))]
+                  esc(p.get("line")), esc(p.get("games")), n5(p.get("skill")), n5(p.get("accuracy"))]
                  for p in props]
     prop_tbl = (table(["Market", "Position", "Line", "Games", "Skill vs base rate", "Accuracy"], prop_rows)
                 if prop_rows else "<p>No player-prop rows in this run.</p>")

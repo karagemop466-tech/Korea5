@@ -1,130 +1,139 @@
-# NFL Lines Lab — executive summary
+# NFL Lines Lab — Executive Summary
 
-**Repository:** `karagemop466-tech/Korea5` · **Section:** `nfl-lines/` · **Branch:** `arena/02f4d067-korea5`
-**Generated:** 2026-11-13 · **Every figure below is computed by `nfl/model.py` and written to
-`nfl/data/model_results.json`; nothing in this document is transcribed from memory or from another site.**
+*All figures below are produced by the repository pipeline (`nfl/fetch_data.py` → `nfl/model.py` →
+`nfl/analyze.py` → `nfl/leaderboard.py`) from hashed public files, on the full 2016–2026 dataset.
+Generated for CI run `nfl-lines-model` on branch `arena/02f4d067-korea5`; the live, self-updating version
+of this document is the site's [Executive summary](nfl-lines/executive.html) page, which renders every
+number from `nfl/data/*.json` at build time.*
 
-Live page: <https://karagemop466-tech.github.io/Korea5/nfl-lines/index.html>
+## 1. What exists today
 
----
+- **Data pipeline** — weekly NFL data (schedules, scores, rosters, injuries, depth charts, snap counts,
+  player stats, play-by-play) fetched from the nflverse-data GitHub releases, plus ESPN scoreboard
+  cross-checks; every file stored with a SHA-256 hash in `nfl/data/provenance.json`.
+- **Own-line model** — an Elo/form strength engine producing team ratings and a walk-forward logistic
+  model that outputs a home-win probability per game. This *is* the lab's own line: no published market
+  number is used as an input to the prediction.
+- **Validation gates** — walk-forward evaluation (no lookahead), luck deflation via a best-of-K
+  permutation null, calibration slope, per-season stability, and sample-size floors. Gates G1–G8 are
+  preregistered in `nfl/PREREGISTRATION.md`; nothing is promoted without passing them.
+- **Leaderboard competition** — strategies (single-game models, prop markets, parlay families,
+  same-game prop combos) are scored and ranked; reward tiers A/C/D with lab points 1000/300/50
+  (non-monetary) for top performers. Entry rules and scoring formulas are published on the
+  [Leaderboard](nfl-lines/leaderboard.html) page.
+- **Injuries and depth** — weekly injury reports plus depth charts with 1st/2nd/3rd/4th-string tiers per
+  position unit, snap-weighted replacement values, and explicit chart-snapshot dates on
+  [Injuries & lineups](nfl-lines/injuries.html).
+- **Verification** — a second publisher (ESPN) checked game-by-game against nflverse results.
 
-## 1. What was asked, and what exists now
+## 2. Headline result (out-of-sample, 2017–2022 seasons)
 
-The request had five parts. Each is answered by something that runs, not by a proposal.
+| Measure | Value |
+|---|---|
+| Games evaluated out of sample | **1,632** |
+| Accuracy (higher-probability side) | **0.636** |
+| Log loss | **0.63924** vs baseline 0.68848 |
+| **Log-loss skill vs baseline** | **+0.07152** |
+| Brier skill vs baseline | +0.09291 (0.22381 vs 0.24673) |
+| Luck deflation (best-of-K null) | N=200 permutations, K=9, null p95 = **0.02863**, 22 season-blocks |
+| Deflation verdict | **passed** — observed skill exceeds the 95th percentile of the luck null |
 
-| Asked for | Delivered | Where |
-|---|---|---|
-| Improve decision making; a reviewable section of suggestions | 10 numbered suggestions, each with a test and a cost, plus a suggested reading order for a decision | `nfl-lines/suggestions.html` |
-| A clear list of questions, information and answers needed before a decision | 12 numbered decision blockers: what is known, what is missing, why it matters, how to get it, who owns it, what it blocks | `nfl-lines/questions.html` |
-| Suggest ways to discover missing information | Coverage counting, null-and-flag, two-publisher cross-check, and a six-item gap register with the exact acquisition step for each | `nfl-lines/questions.html`, `nfl-lines/data.html` |
-| Originate lines; research signals; leaderboard; singles, parlays, prop combos; validation gates; correlations; luck removal; skill-based selection | A walk-forward model with pre-registered gates, best-of-K permutation deflation, measured correlation matrix with bootstrap intervals, a correlation-aware copula pricer, and a tiered leaderboard | `nfl-lines/lines.html`, `signals.html`, `leaderboard.html`, `parlays.html` |
-| Track injuries and know when 2nd/3rd/4th-string players replace starters, on offense and defense | Official report status separated from depth-chart tiering, per unit (offense / defense), with the snapshot date published on every row | `nfl-lines/injuries.html` |
+The skill is **selective**: it comes entirely from the *strength* family (Elo-style ratings + recent form).
 
-## 2. The headline results (computed, with gates)
+| Family | Skill | Null p95 | Deflation verdict |
+|---|---|---|---|
+| Strength (Elo + form) | 0.07152 | 0.02863 | **passed** |
+| Context (rest, dome, QB change, injuries out) | 0.0006 | 0.05157 | **failed** — not distinguishable from luck |
 
-* **Out-of-sample record:** 1,632 games across evaluated seasons 2017–2022, walk-forward: the model for
-  each season is fitted only on earlier seasons.
-* **Skill vs a naive baseline:** log loss **0.6382** against a prior-season win-rate baseline of **0.6885**,
-  i.e. **7.30% skill**. Winner accuracy is **63.5%** — reported, but deliberately *not* used as a gate,
-  because accuracy is the metric that most rewards luck.
-* **Luck filter (deflation):** 200 shuffled-label refits. The best-of-9 permutation null has a 95th
-  percentile of **1.52%** skill; the model's 7.30% clears it. **Verdict: passes deflation.**
-* **The honest negative:** the *context* family (rest, division, roof, quarterback change, injury shares)
-  scored only **0.53%** skill and **failed** deflation — its null threshold was 5.34%. Almost all of the
-  skill comes from team strength (chronological Elo plus recent form), not from the situational angles
-  most betting discussion focuses on.
-* **Correlation:** 55 signal pairs measured; 11 have a bootstrap interval that excludes zero. The largest
-  real relationship is between the two "short week" flags (r = 1.00 — they are the same information twice),
-  then offense-vs-defense starter value (r = 0.21) and dome-vs-defense value (r = 0.21).
-* **Cross-source verification:** **2,086 of 2,776** completed games match ESPN exactly, with **0
-  disagreements**; the remainder are unmatched joins, reported rather than hidden.
+## 3. Strategy competition status
 
-## 3. What is *not* claimed, and why
+Leaderboard (top rows; full board on [Leaderboard](nfl-lines/leaderboard.html)):
 
-This is the most important section, because the fastest way to produce an attractive NFL dashboard is to
-claim an edge the data cannot support.
+| # | Tier | Score | Strategy | Sample |
+|---|---|---|---|---|
+| 1 | A | 4.289 | Single-game model — strength features (9 signals) | 1,632 games |
+| 2 | C | 1.79 | WR receptions over 4.5 | 1,573 |
+| 3 | C | 1.68 | RB rushing yards over 55.0 | 1,011 |
+| 4 | C | 1.34 | WR receiving yards over 45.0 | 1,573 |
+| 5 | C | 0.68 | RB rushing touchdowns over 0.5 | 1,011 |
+| … | C | — | QB, TD and parlay/prop-combo families (reference only) | — |
 
-1. **No profit, ROI or closing-line-value claim.** The only market data available is one spread/total
-   snapshot per game with no timestamp, and the moneyline columns are empty. A return cannot be computed
-   from a price whose timing is unknown. This is gap **GAP-1**.
-2. **No player-prop edge.** No prop price exists in any reachable source. Props are scored as *forecast
-   accuracy* against a published league base rate, and every prop row is Tier C at best by construction.
-   This is gap **GAP-2**.
-3. **No claim that the injury index measures talent.** It weights players by snap share, which is usage,
-   not ability. A high-usage, low-impact player lost moves the index more than he should. Question **Q6**.
-4. **No claim that a Questionable player will miss the game.** The injury report is a pre-game
-   designation; the inactive list at kickoff is not in the dataset. Question **Q5**.
-5. **No claim that any parlay is a good bet.** The lab publishes a *joint probability*, computed with a
-   copula over a measured correlation matrix. Without a payout it cannot become an expected value.
+- **Singles**: the strength model is the only Tier-A strategy (all gates passed).
+- **Parlays**: 2-leg and 3-leg cross-game families are published as *reference rows* with expected vs
+  realised joint hit rates (one construction per season, n=6). No payout is claimed — see GAP-1.
+- **Player-prop combos**: same-game combos are only constructed where the measured correlation excludes
+  zero (best-of-K bootstrapped). The published quantity is the *gap* between the copula joint probability
+  and the naive product — i.e. how wrong multiplying marginals would be — not a price.
 
-## 4. The competition and the rewards
+## 4. Correlation values (measured, 55 signal pairs, 11 exclude zero)
 
-Ranking is `deflated skill × sample-size shrink × calibration factor`. A strategy that wins 60% of 40 games
-scores near zero, which is the intended behaviour. Tiers:
+| Pair | Pearson r | 95% bootstrap CI | N |
+|---|---|---|---|
+| off_value_diff ~ def_value_diff | 0.253 | [0.203, 0.300] | 1,632 |
+| off_out_diff ~ def_out_diff | 0.205 | [0.162, 0.252] | 1,632 |
+| dome ~ def_value_diff | 0.124 | [0.076, 0.172] | 1,632 |
+| dome ~ off_value_diff | 0.105 | [0.053, 0.152] | 1,632 |
+| away_qb_change ~ off_value_diff | 0.079 | [0.031, 0.123] | 1,535 |
+| home_qb_change ~ off_value_diff | −0.076 | [−0.125, −0.022] | 1,537 |
 
-* **Tier A** — passes sample size, positive out-of-sample skill, best-of-K deflation, calibration slope in
-  [0.8, 1.25], and sign stability across seasons.
-* **Tier C** — positive skill but not yet distinguishable from luck, or no market to price against.
-* **Tier D** — fails a gate; retained in the audit history with the failing gate named.
+Pairs whose interval contains zero are published as *unmeasured*, never as zero. Within-team same-week
+prop correlations (shared game script) are negative or near zero once the best-of-K filter is applied
+(e.g. RB rushing yards ~ rushing TDs r = −0.081 [−0.120, −0.038]).
 
-Rewards are **Lab Points and research priority only**. No money and no prize of monetary value is offered,
-because paying out on betting performance is a regulated activity that this repository is not positioned to
-satisfy. That decision is recorded as **Q4**, not assumed.
-
-## 5. Injury and lineup tracking, stated precisely
-
-Three separate facts are kept separate on the page and never multiplied into one unexplained score:
-
-| Column | Status | Source |
-|---|---|---|
-| Out / Doubtful / Questionable count | **verified** — copied from the official weekly report | nflverse `injuries_<season>.csv`, built from the NFL report; official reference <https://www.nfl.com/injuries/> |
-| Snap-weighted share of listed starters still listed first | **derived** — snap share × depth rank | nflverse depth charts + snap counts |
-| Who is 1st / 2nd / 3rd / 4th string, per position | **published** — with the depth-chart snapshot date on every row | nflverse depth charts |
-
-A missing depth row is **unknown**, never "backup". A missing report row is **unknown**, never "healthy".
-
-## 6. Six gaps that block the next stage
-
-| Gap | Blocks | What closes it |
-|---|---|---|
-| GAP-1 Timestamped odds history | ROI, vig, closing-line value, any betting claim | A licensed odds feed, or an archived pre-kickoff screenshot with a timestamp |
-| GAP-2 Prop prices and settlement rules | Prop-combo pricing, correlated-prop payout | A prop market feed with timestamps |
-| GAP-3 Game-day inactive list | Verified "who actually started" | ESPN summary endpoint per game (reachable from CI) |
-| GAP-4 Player talent weighting | Precision of the lineup index | Per-player EPA from play-by-play, blended with snap share |
-| GAP-5 Referee/weather subgroup size | Officiating and weather families | Minimum-subgroup gate; data already fetched |
-| GAP-6 Exploitable injury timestamps | A strict pre-kickoff cutoff for older seasons | `date_modified` where present; labelled fallback otherwise |
-
-## 7. What I would do first
-
-1. **Start capturing timestamped market snapshots** (S3). This is the single change that turns a research
-   model into a line-making system, and it cannot be recovered retroactively.
-2. **Add the inactive list** (S4) so the lineup index becomes a fact rather than a proxy.
-3. **Run the locked prospective paper trial** (S8) before spending anything on rewards.
-4. **Tighten the statistics before adding strategies** (S2, S7). More strategies tested on the same data is
-   how a lab manufactures a winner.
-
-## 8. Verification performed for this summary
+## 5. Verification performed
 
 | Check | Result |
 |---|---|
-| Unit tests, including a leakage test and a "pure noise must fail deflation" test | 9 / 9 pass |
-| Pre-registration committed before results | `nfl/PREREGISTRATION.md` (plus one dated amendment for the optimiser swap) |
-| Every input hashed | `nfl/data/provenance.json` — 352 files HTTP 200, 3 unavailable, recorded |
-| Cross-source score check | 2,086 exact matches, 0 disagreements, unmatched rows counted |
-| Link check of the generated section | `scripts/check_links.py` covers `nfl-lines/` |
-| Certainty banner on every page | `scripts/audit_certainty.py` injects the lab's own disclosure |
+| nflverse result vs ESPN final score (independent publishers) | **2,776 of 2,776** ESPN-sampled completed games match exactly; **0 differ, 0 unmatched** |
+| Neutral-site games | joined on team pair, not on published home team |
+| Kickoff-date skew (ESPN dates are UTC) | ±2-day pairing window verified 136/136 on local sample |
+| Franchise relocations (OAK/LV, SD/LAC, STL/LA) | season-aware abbreviation table; residual unmatched count driven to zero |
+| Provenance | every fetched file recorded with SHA-256 + source URL; 3 unavailable assets named on the [Data audit](nfl-lines/data.html) page |
+| Market coverage | spread present for 100 %, total 100 %, moneyline 99.97 % of 2,898 completed games — but each is a **single un-timestamped snapshot** (GAP-1) |
+| Unit tests | 9 model tests, root suites and link audit all green in CI |
 
-## 9. Reproducing it
+## 6. What is NOT claimed
+
+- **No profit, ROI, payout or edge claim.** No timestamped price history exists (GAP-1), so closing-line
+  value and returns cannot be computed. This lab is a research model that originates its own lines; it is
+  not, yet, a betting system.
+- Context-family skill is **not** claimed — it fails the luck-deflation gate.
+- Nothing on the site is hand-entered; unverifiable values stay blank and appear on
+  [Flagged](nfl-lines/flagged.html).
+
+## 7. Open gaps blocking decisions (details on [Data audit](nfl-lines/data.html))
+
+| ID | Missing | Blocks |
+|---|---|---|
+| GAP-1 | Timestamped odds history (opening/closing, all books) | ROI, CLV, edge, parlay payouts |
+| GAP-2 | Player-prop prices | Prop-market edge claims |
+| GAP-3 | Official weekly inactive list (game-day) | Exact 1st–4th-string confirmation on game day |
+| GAP-4 | Talent-weighted depth (draft/contract value) | Precise backup-quality discount |
+| GAP-5 | Larger subgroup samples for combo props | Tighter combo-correlation intervals |
+| GAP-6 | Injury-report timestamps | Intra-week designation movement analysis |
+
+## 8. Open questions before decisions
+
+Twelve questions ([Questions](nfl-lines/questions.html), Q1–Q12) are published with what is known, what is
+missing, the impact, and a concrete suggestion to obtain the missing information. The pivotal one is Q1:
+*forecast accuracy against a baseline, or profit against a price?* — today only the former is computable.
+Ten hypotheses (H1–H10) carry explicit verdicts on [Signals](nfl-lines/signals.html).
+
+## 9. Suggested paths (choose before anything changes)
+
+Ten proposals (S1–S10) are listed on [Suggestions](nfl-lines/suggestions.html) — ranked by decision value,
+each with what it needs and what it unblocks. Nothing is implemented from that list until a path is chosen.
+
+## 10. Reproduce
 
 ```bash
-python3 nfl/fetch_data.py --seasons 2016 ... 2026 --with-espn   # CI only: needs the open internet
-python3 nfl/model.py --perm 200                                  # writes nfl/data/model_results.json
-python3 nfl/analyze.py                                           # audit, hypotheses, questions
-python3 nfl/leaderboard.py                                       # tiers, points
-python3 nfl/build_site.py                                        # renders nfl-lines/*.html
-python3 -m unittest discover -s nfl/tests -v                     # gates as tests
+python3 nfl/fetch_data.py --with-espn --seasons 2016:2026
+python3 nfl/model.py --perm 200
+python3 nfl/analyze.py
+python3 nfl/leaderboard.py
+python3 nfl/build_site.py
+python3 -m unittest discover -s nfl/tests
 ```
 
-The authoring sandbox cannot reach the sports hosts, so the pipeline runs in
-`.github/workflows/nfl-model.yml` and commits its derived JSON back to the branch. That is the same pattern
-the repository already used for its MLB and NFL schedule feeds.
+Every number in this summary appears in `nfl/data/model_results.json` (CI-computed, committed with the
+run log `nfl/data/last_run.log`) and is re-derived by the commands above.

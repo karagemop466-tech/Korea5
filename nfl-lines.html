@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NFL Lines Origination · Korea5</title>
+<meta name="description" content="NFL lines origination dashboard: signals, strategies, validation gates, correlation, injury and depth tracking. Every row cites an official source; anything not published by an official source is left blank and flagged unverified.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES / ORIGINATION</div>
+  <nav class="main"><a href="index.html">Dashboard</a><a href="nfl-lines.html" class="active">NFL Lines</a><a href="nfl-strategies.html">Strategies</a><a href="nfl-correlation.html">Correlation</a><a href="nfl-injuries.html">Injuries</a><a href="nfl-questions.html">Questions</a><a href="nfl-suggestions.html">Suggestions</a><a href="nfl-executive-summary.html">Executive Summary</a><a href="nfl-flagged.html">Flagged</a><a href="flagged.html">Planner Flagged</a></nav>
+</div></header>
+<main class="wrap">
+<aside id="certainty-notice" class="callout warn" role="note"><strong>Research framework — not betting advice.</strong> The NFL does not publish official betting lines, odds or player-prop prices. Every numeric line/odds/correlation cell below is therefore left blank and flagged unverified. Structural facts (schedule, injury designations, rulebook) cite official NFL sources. Nothing here guarantees an edge.</aside>
+
+<section class="hero">
+<div>
+<p class="small">ORIGINATE YOUR OWN NFL LINES &middot; SIGNALS &middot; STRATEGIES &middot; VALIDATION GATES &middot; CORRELATION &middot; INJURIES &middot; DEPTH</p>
+<h1>NFL Lines Origination</h1>
+<p class="lede">A decision-making framework for originating NFL lines: single bets, parlays and player-prop combinations. Each strategy must pass validation gates before it can appear on the leaderboard, and every number must be traceable to an official source or explicitly flagged unverified.</p>
+<div class="pill-row"><a class="btn" href="nfl-strategies.html">Strategies &amp; gates &rarr;</a><a class="btn" href="nfl-injuries.html">Injury &amp; depth tracking &rarr;</a><a class="btn" href="nfl-questions.html">Pre-decision questions &rarr;</a></div>
+</div>
+<div class="card"><h3>Decision rule</h3>
+<p class="small">No strategy is published unless it passes every validation gate, its correlation inputs are disclosed, and every number is traceable to an official source or explicitly flagged unverified. Luck is excluded: only selectively skill-based, repeatable signals are admitted.</p></div>
+</section>
+
+<h2>Origination inputs (official schedule &amp; injury facts)</h2>
+<p class="small">These are the only inputs confirmed from an official NFL source. Everything else is a model input and must be sourced or flagged.</p>
+<div class="scroll"><table><thead><tr><th>Input</th><th>Value</th><th>Source</th><th>Status</th></tr></thead><tbody>
+<tr><td>Regular-season weeks</td><td>18</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">NFL.com schedules</a></td><td><span class="tag ver">verified</span></td></tr>
+<tr><td>Season kickoff anchor</td><td>Thursday after Labor Day</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">NFL.com schedules</a></td><td><span class="tag ver">verified (structural)</span></td></tr>
+<tr><td>Thanksgiving window</td><td>4th Thursday of November</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">NFL.com schedules</a></td><td><span class="tag ver">verified (structural)</span></td></tr>
+<tr><td>Super Bowl window</td><td>2nd Sunday of February</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">NFL.com schedules</a> &middot; <a href="https://operations.nfl.com/rules-officiating/2026-nfl-rulebook" target="_blank" rel="noopener">NFL rulebook</a></td><td><span class="tag ver">verified (structural)</span></td></tr>
+<tr><td>Injury report cadence</td><td>Weekly, every team</td><td><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">NFL.com injury report</a></td><td><span class="tag ver">verified</span></td></tr>
+<tr><td>Injury designations</td><td>Out / Doubtful / Questionable</td><td><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">NFL.com injury report</a></td><td><span class="tag ver">verified</span></td></tr>
+<tr><td>Practice statuses</td><td>Full / Limited / Did Not Participate</td><td><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">NFL.com injury report</a></td><td><span class="tag ver">verified</span></td></tr>
+<tr><td>Official betting line (moneyline / spread / total)</td><td></td><td><span class="small">—</span></td><td><span class="tag flag">unverified</span></td></tr>
+<tr><td>Official player-prop price</td><td></td><td><span class="small">—</span></td><td><span class="tag flag">unverified</span></td></tr>
+</tbody></table></div>
+<p class="small"><strong>Rule applied:</strong> where the NFL publishes no value (lines, props, depth charts), the cell is left blank and flagged. No value is inferred or filled in.</p>
+
+<h2>Signal library</h2>
+<p class="small">Candidate signals used to generate originating lines. Each is listed with what it measures and whether its source data is official.</p>
+<div class="scroll"><table><thead><tr><th>Signal</th><th>What it measures</th><th>Source</th><th>Source official?</th></tr></thead><tbody>
+<tr><td>Schedule &amp; rest</td><td>Days off between games, short week (Thursday night), travel, bye timing</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">NFL.com schedules</a></td><td><span class="tag ver">verified</span></td></tr>
+<tr><td>Injury designations</td><td>Out / Doubtful / Questionable by player and position group</td><td><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">NFL.com injury report</a></td><td><span class="tag ver">verified</span></td></tr>
+<tr><td>Practice participation</td><td>Full / Limited / Did Not Participate by week</td><td><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">NFL.com injury report</a></td><td><span class="tag ver">verified</span></td></tr>
+<tr><td>Depth-chart replacement</td><td>2nd / 3rd / 4th-string backup replacing a starter (defense or offense)</td><td></td><td><span class="tag flag">unverified</span></td></tr>
+<tr><td>Venue &amp; environment</td><td>Dome vs outdoor, home field, altitude</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">NFL.com schedules</a> (venues)</td><td><span class="tag ver">verified (venue)</span></td></tr>
+<tr><td>Weather</td><td>Temperature, wind, precipitation at kickoff</td><td></td><td><span class="tag flag">unverified</span></td></tr>
+<tr><td>Market line movement</td><td>Opening vs current line, public money</td><td></td><td><span class="tag flag">unverified</span></td></tr>
+</tbody></table></div>
+
+<h2>Strategy leaderboard (snapshot)</h2>
+<p class="small">Top performing strategies by validated edge. Leaderboard positions, edge values and rewards are a framework — no official results exist yet.</p>
+<div class="scroll"><table><thead><tr><th>Rank</th><th>Strategy</th><th>Bet type</th><th>Validation gates passed</th><th>Correlation disclosed</th><th>Edge (pts/game)</th><th>Status</th></tr></thead><tbody>
+<tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td><span class="tag flag">unverified</span></td></tr>
+<tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td><span class="tag flag">unverified</span></td></tr>
+<tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td><span class="tag flag">unverified</span></td></tr>
+</tbody></table></div>
+<p class="small">Reward policy: top-ranked strategies that hold across a full season and pass re-validation receive priority for implementation review (see <a href="nfl-suggestions.html">Suggestions</a>). No rewards are paid until results are verified against settled games.</p>
+
+<h2>Validation gates</h2>
+<p class="small">Every strategy must pass all gates before it may appear on the leaderboard.</p>
+<div class="scroll"><table><thead><tr><th>Gate</th><th>Requirement</th><th>Pass criterion</th><th>Status</th></tr></thead><tbody>
+<tr><td>Official-source traceability</td><td>Every input cites an official source or is blank</td><td>100% of rows sourced or flagged</td><td><span class="tag ver">met (framework)</span></td></tr>
+<tr><td>No unpublished odds</td><td>Blank line/prop cells are never treated as known</td><td>No inferred values</td><td><span class="tag ver">met (framework)</span></td></tr>
+<tr><td>Correlation disclosed</td><td>Each parlay/prop combo lists its correlation inputs</td><td>Inputs named, values blank/unverified</td><td><span class="tag flag">pending</span></td></tr>
+<tr><td>Skill-based, repeatable</td><td>Signal is documented logic, not luck</td><td>Written rule that can be back-tested</td><td><span class="tag flag">pending</span></td></tr>
+<tr><td>Injury/depth adjusted</td><td>Starter replacements (2nd–4th string) reflected</td><td>Depth inputs populated or flagged</td><td><span class="tag flag">pending</span></td></tr>
+</tbody></table></div>
+
+<h2>Correlation summary</h2>
+<p class="small">Correlation inputs for combining bets (parlays / prop combos). The NFL publishes no official correlation matrix, so all values are blank and flagged unverified.</p>
+<div class="scroll"><table><thead><tr><th>Bet pair</th><th>Correlation</th><th>Source</th><th>Status</th></tr></thead><tbody>
+<tr><td>Same-game moneyline + spread</td><td></td><td></td><td><span class="tag flag">unverified</span></td></tr>
+<tr><td>Same-game player prop + team total</td><td></td><td></td><td><span class="tag flag">unverified</span></td></tr>
+<tr><td>Two player props, same game</td><td></td><td></td><td><span class="tag flag">unverified</span></td></tr>
+<tr><td>Same-team props across games (parlay)</td><td></td><td></td><td><span class="tag flag">unverified</span></td></tr>
+</tbody></table></div>
+
+<h2>Next steps &amp; review</h2>
+<div class="pill-row">
+<a class="btn" href="nfl-strategies.html">Review strategies &amp; gates</a>
+<a class="btn" href="nfl-injuries.html">Review injury &amp; depth tracking</a>
+<a class="btn" href="nfl-suggestions.html">Submit / review a suggestion</a>
+<a class="btn" href="nfl-flagged.html">View flagged unverified items</a>
+</div>
+<p><a href="nfl-executive-summary.html">Executive summary &rarr;</a> &middot; <a href="nfl-questions.html">Pre-decision questions &rarr;</a></p>
+</main>
+<footer><div class="wrap">
+  <p><strong>NFL Lines Origination</strong> &middot; Pacific time (America/Los_Angeles) &middot; Part of Korea5 &middot; Live site: https://karagemop466-tech.github.io/Korea5/</p>
+  <p>Structural facts cite NFL.com and the official NFL rulebook. Betting lines, props, correlations, depth charts and strategy results are not published by the NFL and are left blank and flagged unverified.</p>
+</div></footer></body></html>

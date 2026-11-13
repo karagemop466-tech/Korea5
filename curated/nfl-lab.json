@@ -1134,6 +1134,16 @@
    "sources": [
     "https://operations.nfl.com/"
    ]
+  },
+  {
+   "id": "L16",
+   "severity": "medium",
+   "area": "presentation",
+   "finding": "The landing page picked its -110 sample-size rows by comparing the stored break-even probability (rounded to four decimals, 0.5238) with 110/210 using a 1e-6 tolerance. The comparison matched nothing, so the headline rendered as 'bets for a +5 point edge; for +3 points at -110' with no number in it.",
+   "action": "Fixed: the rows are selected by their price label, the builder refuses to emit a missing value, and the verifier now fails when a required row is absent. The verifier had repeated the same comparison with an even tighter tolerance, so its check matched no rows and passed without testing anything; it also gained page-level link and anchor resolution. Negative tests confirm it now catches a blank headline, a missing file and a dangling anchor.",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/"
+   ]
   }
  ]
 }

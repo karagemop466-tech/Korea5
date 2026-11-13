@@ -1,15 +1,16 @@
 {
  "meta": {
   "script": "tools/fetch_nfl_lab.py",
-  "startedUTC": "2026-11-13T13:54:02.909214+00:00",
-  "finishedUTC": "2026-11-13T13:54:23.377046+00:00",
+  "startedUTC": "2026-11-13T13:56:55.597020+00:00",
+  "finishedUTC": "2026-11-13T13:57:12.421195+00:00",
   "python": "3.11.18"
  },
  "counts": {
   "games": 291,
-  "gamesFinalWithScores": 132,
+  "gamesFinalWithScores": 129,
+  "gapContextSamples": 8,
   "gapFilledFromGamePages": 0,
-  "pastGamesStillMissingScores": 5,
+  "pastGamesStillMissingScores": 8,
   "standingsRows": 32,
   "injuryRows": 296,
   "inactivesRows": 0,
@@ -17,7 +18,7 @@
   "articlePagesParsed": 11
  },
  "extraction": {
-  "gamesWithoutScores": 159,
+  "gamesWithoutScores": 162,
   "standingsWithoutPoints": 32,
   "injuriesWithoutTeam": 0,
   "injuriesWithoutPosition": 0,
@@ -45,13 +46,13 @@
   "Week 18": 35
  },
  "perWeekFinal": {
-  "Week 1": 16,
+  "Week 1": 15,
   "Week 2": 15,
   "Week 3": 15,
   "Week 4": 15,
-  "Week 5": 15,
+  "Week 5": 14,
   "Week 6": 13,
-  "Week 7": 14,
+  "Week 7": 13,
   "Week 8": 14,
   "Week 9": 14,
   "Week 10": 1,

@@ -983,7 +983,7 @@ Both sessions cover the same NFL requirements (questions/information/answers, su
 
 | Session ID | Branch | Role | Status |
 |---|---|---|---|
-| `arena-c9041d2a` | `arena/c9041d2a-korea5` | NFL decisions page, suggestions queue, line-origination research notes, injury/lineup tracking, site integration, PR #38 to main | active |
+| `arena-c9041d2a` | `arena/c9041d2a-korea5` | NFL decisions page, suggestions queue, line-origination research notes, injury/lineup tracking, site integration, PR #38 to main | done |
 
 | # | Task | Owner | Status | Files |
 |---|---|---|---|---|
@@ -991,14 +991,24 @@ Both sessions cover the same NFL requirements (questions/information/answers, su
 | N4 | Decisions-before-implementation page: questions / information known / missing / answer / discovery step / official source | arena-c9041d2a | **done** | `decisions.html` |
 | N5 | Suggestions review section: propose → under review → chosen/rejected/blocked/implemented; reviewer decision recorded before anything is implemented | arena-c9041d2a | **done** | `suggestions.html` |
 | N6 | NFL line origination, signal families, singles/parlays/player-prop combos, correlation measurement, validation gates, injury/lineup tracker, paper-first leaderboard | arena-c9041d2a | **done** | `nfl-strategy.html`, `research/NFL-LINES.md` |
-| N7 | Site integration: navigation merged with session `arena/8602d76f`, dashboard tables, flagged additions, local link check, certainty audit | arena-c9041d2a | **in progress** | `index.html`, `nfl.html`, `nfl-strategy.html`, `scripts/build_site.py`, COORDINATION.md |
-| N8 | Pull request #38 to main, merge, confirm GitHub Pages deploy, record PR link and result | arena-c9041d2a | **in progress** | `COORDINATION.md` |
+| N7 | Site integration: navigation merged with session `arena/8602d76f`, dashboard tables, flagged additions, local link check, certainty audit | arena-c9041d2a | **done** | `index.html`, `nfl.html`, `nfl-strategy.html`, `scripts/build_site.py`, COORDINATION.md |
+| N8 | Pull request #38 to main, merge, confirm GitHub Pages deploy, record PR link and result | arena-c9041d2a | **done** | `COORDINATION.md` |
 
 Scope: this session works only on branch `arena/c9041d2a-korea5`; no `session-<id>/<task>` branches are created or pushed (fixed by the Arena session rule). All NFL analytics content is research design only: no measured edge, correlation value, ROI or top-performing strategy is claimed; no betting lines are invented; any value not published by an official source is left blank and flagged unverified.
 
 Change log:
 - **2026-11-13** — Session `arena-c9041d2a` claims N3–N8. Branch `arena/c9041d2a-korea5`, active.
 - **2026-11-13** — Merge conflict with `origin/main` (session `arena/8602d76f`, PR #36) resolved by keeping both sessions' files: planner nav extended with both link sets; COORDINATION.md sections appended; `research/EXECUTIVE-SUMMARY.md` kept at this session's superset version; `extra/data/link-report.json` and `extra/summary.html` fixes from `origin/main` retained.
+- **2026-11-13** — CI failure on the PR merge commit fixed: `tools/build_extra.py` `inline()` wrote bare links `NFL-STRATEGY.md` / `NFL-LINES.md` into `extra/summary.html` where they resolve inside `extra/` and are missing (verify_extra.py: 2 missing local links). Fixed by pointing `research/EXECUTIVE-SUMMARY.md` at `../research/NFL-STRATEGY.md` and `../research/NFL-LINES.md`, and making `inline()` in `tools/build_extra.py` rewrite bare research `.md` links to `../research/<file>` defensively. Full pipeline re-verified green on main.
+
+### Completion record — session `arena-c9041d2a` (2026-11-13)
+
+- **Pull request:** #38 — https://github.com/karagemop466-tech/Korea5/pull/38 — "NFL decision support: decisions page, suggestions queue, line-origination research", opened from `arena/c9041d2a-korea5` to `main`, merged without waiting, merge commit `d23fb1b7621420abc66d99bb0dd9579df6a65fc5` (ancestor of main tip `a22bd06`).
+- **Merge result:** merged to `main` without waiting for review; PR state MERGED at 2026-11-13T13:20:45Z.
+- **CI:** `Planner certainty and site checks` run 43433686625 — success on main tip `a22bd06` (build_site.py, build_extra.py, audit_certainty.py x2, check_links.py 22 pages / 432 local links / 0 missing, verify_extra.py 31/31 / 0 missing local / 0 rows missing source, node syntax + calendar-today tests, compileall). Earlier PR-run failure 43433107594 (bare `.md` links in generated summary.html) was fixed as noted above before the final push.
+- **GitHub Pages:** build+deploy succeeded on main tip `a22bd06`; Pages API status `built`, source `main` /, URL https://karagemop466-tech.github.io/Korea5/. Live spot checks served correctly: `/`, `/decisions.html`, `/suggestions.html` (root pages now point into the consolidated NFL Lines Lab at `/lab/`).
+- **Flagged irregularities:** published on `flagged.html` and `nfl-flagged.html` with official links; none block the merge; none silently filled.
+- No manual input was required; all work was done on branch `arena/c9041d2a-korea5`, pushed, and merged via PR #38 without waiting.
 
 ### Integration of the parallel NFL sessions (arena-c6eea73d, 2026-11-13)
 

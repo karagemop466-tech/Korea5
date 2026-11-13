@@ -159,6 +159,13 @@ def main():
         snap = {t: [r for r in rows if r["team"] == t and r["dt"] == latest_dt[t]] for t in latest_dt}
         depth_log["latest_dt_by_team"] = dict(sorted(latest_dt.items()))
         depth_log["groups_by_team"] = {t: dict(Counter(r["pos_grp"] for r in v).most_common(6)) for t, v in sorted(snap.items())}
+        wk_inj = [r for r in rows_2026 if str(r["week"]) == str(inj_week)]
+        diag = []
+        for r in wk_inj:
+            hits = [x for x in snap.get(r["team"], []) if x["gsis_id"] == r["gsis_id"]]
+            diag.append({"team": r["team"], "player": r["player"], "gsis_id": r["gsis_id"], "status": r["report_status"],
+                         "in_snapshot": [(h["pos_grp"], h["pos_abb"], h["pos_rank"]) for h in hits]})
+        depth_log["match_diagnostics_week"] = diag
         for team, srows in sorted(snap.items()):
             grp_counts = Counter(r["pos_grp"] for r in srows)
             off_grp = "3WR 1TE" if "3WR 1TE" in grp_counts else None

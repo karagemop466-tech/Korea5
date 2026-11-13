@@ -655,3 +655,52 @@ date, and all prior items) remain published on `extra/flagged.html` with officia
 - **Pipeline order (finding):** `verify_extra.py` rewrites `extra/links.html`, and `audit_certainty.py` adds the certainty banner to every page. The banner is therefore only correct if the audit runs last. Required order: `build_events` → `analyze` → `build_site` → `build_extra` → `check_links` → `verify_extra` → `audit_certainty`. This is logged for the integration owner (see cross-scope note above).
 - **Verification at this commit:** `tools/verify_extra.py` 31/31; `scripts/audit_certainty.py` passed; `scripts/check_links.py` 0 missing; `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed.
 
+
+---
+
+## Session `arena/2831c7f7-korea5` — 2026-11-13 (claim)
+
+Branch constraint: Arena fixes this session to `arena/2831c7f7-korea5`. No other branch will be created or pushed.
+Start point: `main` tip `13854fe` (PR #31 merged). All prior records above are preserved unchanged.
+
+### Why this session exists
+
+The owner asked for a **new capability** on top of the existing free-time planner: a self-contained
+**NFL lines origination, signal/strategy research and leaderboard** workstream, with
+
+* a published **Suggestions** section (proposals reviewed *before* implementation),
+* a published **Questions / information / answers** register that states what is known, what is missing,
+  and how the missing pieces should be obtained,
+* an **injury + depth** tracker that flags when a 2nd/3rd/4th-string backup is forced into a starter role
+  on either side of the ball,
+* an **executive summary**, and
+* strict verification: every table row links an official source; anything unconfirmed is blank and flagged.
+
+Parallel-session check at claim time: `git ls-remote --heads origin` shows 27 other `arena/*` branches, but
+`git log --all` shows a single author and no commits after `13854fe`. Two PRs are open from other sessions —
+**#30** (`scripts/build_events.py`, `data/events-*.json`, `data/derived/analysis.json`, `calendar.html`,
+`COORDINATION.md`) and **#32** (`scripts/build_events.py`, `scripts/analyze.py`, `scripts/build_site.py`,
+`tools/build_extra.py`, `data/events-*.json`, `extra/**`, `*.html`, `COORDINATION.md`). **Neither touches
+`data/lines/`, `scripts/lines/`, `lines/` or `research/lines-*`**, so there is no file-scope overlap with this
+session's core work. This session touches `scripts/build_site.py` and `COORDINATION.md` only for navigation
+additions, and logs the change here so those sessions can rebase.
+
+### Task board (addendum)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N1 | Claim + verify: repo review, official-source probe (NFL.com schedule, injuries, box scores, player stats; official club depth charts) | arena-2831c7f7 | in progress | `COORDINATION.md`, `scripts/lines/` |
+| N2 | Data: CI fetcher for official NFL results, box scores, player logs, weekly injury reports, official club depth charts | arena-2831c7f7 | unclaimed | `scripts/lines/fetch_nfl.py`, `data/lines/` |
+| N3 | Model: originate own lines (team spread/total, player props) from official inputs only | arena-2831c7f7 | unclaimed | `scripts/lines/build_lines.py`, `data/lines/lines.json` |
+| N4 | Research: strategy catalog (single, parlay, prop combos), validation gates, luck removal, correlation matrix, leaderboard with rewards | arena-2831c7f7 | unclaimed | `scripts/lines/build_lines.py`, `data/lines/strategies.json`, `data/lines/leaderboard.json`, `data/lines/correlations.json` |
+| N5 | Site: `lines/` section — landing, lines, strategies, leaderboard, validation, correlation, injuries, depth, suggestions, questions, executive summary, flagged | arena-2831c7f7 | unclaimed | `lines/`, `scripts/lines/build_lines_site.py` |
+| N6 | Verification: source-link audit per row, blank-if-unconfirmed rule, link check, tests | arena-2831c7f7 | unclaimed | `scripts/lines/verify_lines.py`, `tests/` |
+| N7 | Integration: rebuild, re-verify, PR to `main`, merge, confirm Pages deploy, record result | arena-2831c7f7 | unclaimed | `COORDINATION.md`, `README.md`, `scripts/build_site.py` (nav only) |
+
+### Scope boundary (important)
+
+`data/lines/`, `scripts/lines/`, `lines/`, `research/lines-*` and `.github/workflows/lines*.yml` are owned
+**exclusively** by this session. No other session may edit them without logging a request here first.
+The existing planner pipeline (`scripts/build_events.py`, `scripts/analyze.py`, `data/events-*.json`,
+`data/derived/analysis.json`) is **not** modified by this session.
+

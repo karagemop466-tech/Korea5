@@ -1,6 +1,6 @@
 {
  "meta": {
-  "retrievedUTC": "2026-11-13T13:21:22.919287+00:00",
+  "retrievedUTC": "2026-11-13T13:23:00.427354+00:00",
   "sourceName": "Official club depth charts",
   "directoryUrl": "https://www.nfl.com/teams/"
  },
@@ -12,8 +12,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.azcardinals.com/team/depth-chart/",
    "sourceName": "Official Arizona Cardinals depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -881,8 +881,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.buffalobills.com/team/depth-chart/",
    "sourceName": "Official Buffalo Bills depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -1297,8 +1297,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.chicagobears.com/team/depth-chart/",
    "sourceName": "Official Chicago Bears depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -1309,8 +1309,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.bengals.com/team/depth-chart/",
    "sourceName": "Official Cincinnati Bengals depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -1755,8 +1755,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.dallascowboys.com/team/depth-chart/",
    "sourceName": "Official Dallas Cowboys depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -1767,8 +1767,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.denverbroncos.com/team/depth-chart/",
    "sourceName": "Official Denver Broncos depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -2603,7 +2603,7 @@
    "chartLabel": null,
    "tierLabelsInSource": false,
    "tablesOnPage": 0,
-   "sourceUrl": null,
+   "sourceUrl": "https://www.houstontexans.com/team/depth-chart/",
    "sourceName": "Official Houston Texans depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -2614,8 +2614,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.colts.com/team/depth-chart/",
    "sourceName": "Official Indianapolis Colts depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -2626,8 +2626,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.jaguars.com/team/depth-chart/",
    "sourceName": "Official Jacksonville Jaguars depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -2638,8 +2638,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.chiefs.com/team/depth-chart/",
    "sourceName": "Official Kansas City Chiefs depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -2650,8 +2650,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.raiders.com/team/depth-chart/",
    "sourceName": "Official Las Vegas Raiders depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -3101,8 +3101,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.therams.com/team/depth-chart/",
    "sourceName": "Official Los Angeles Rams depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -3940,8 +3940,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.patriots.com/team/depth-chart/",
    "sourceName": "Official New England Patriots depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -3952,8 +3952,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.neworleanssaints.com/team/depth-chart/",
    "sourceName": "Official New Orleans Saints depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -4418,8 +4418,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.newyorkjets.com/team/depth-chart/",
    "sourceName": "Official New York Jets depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -4430,8 +4430,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.philadelphiaeagles.com/team/depth-chart/",
    "sourceName": "Official Philadelphia Eagles depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -4442,8 +4442,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.steelers.com/team/depth-chart/",
    "sourceName": "Official Pittsburgh Steelers depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -4903,8 +4903,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.seahawks.com/team/depth-chart/",
    "sourceName": "Official Seattle Seahawks depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -4915,8 +4915,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.buccaneers.com/team/depth-chart/",
    "sourceName": "Official Tampa Bay Buccaneers depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -4927,8 +4927,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.tennesseetitans.com/team/depth-chart/",
    "sourceName": "Official Tennessee Titans depth chart",
    "verification": "unverified-not-fetched"
   },
@@ -4939,8 +4939,8 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
-   "tablesOnPage": 0,
-   "sourceUrl": null,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.commanders.com/team/depth-chart/",
    "sourceName": "Official Washington Commanders depth chart",
    "verification": "unverified-not-fetched"
   }

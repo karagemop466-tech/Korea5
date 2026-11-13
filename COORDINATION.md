@@ -709,8 +709,8 @@ Scope: this session owns the new NFL lines origination vertical only — `index.
 - **Official sources verified live:** nfl.com/schedules (18 weeks, kickoff anchor, Thanksgiving, Super Bowl window; 2027–2029 not released), nfl.com/injuries (weekly report; Out/Doubtful/Questionable; Full/Limited/DNP), operations.nfl.com/2026-nfl-rulebook (official 2026 rulebook PDF).
 - **Verification performed:** `python3 scripts/check_links.py` — pages=19, localLinks=326, missing=0, external=523. All new + edited HTML files parse cleanly. Betting lines, props, correlations, depth charts and strategy results confirmed absent from official sources; left blank + flagged.
 - **Irregularities published:** F-NFL-01 to F-NFL-07 on `nfl-flagged.html`; nonblocking.
-- **Pull request:** to be opened from `arena/8602d76f-korea5` to `main`.
-- **Merge / Pages deploy:** pending.
+- **Pull request:** #36 — https://github.com/karagemop466-tech/Korea5/pull/36 — opened from `arena/8602d76f-korea5` to `main`, merged into `main` without waiting, merge commit `e472f4e7afc68bb114f66c8ab9db51fc55259be3`.
+- **Merge / Pages deploy:** merged into `main` via `gh pr merge 36 --merge`. GitHub Pages status `built`, source `main /`, HTTPS enforced, live at https://karagemop466-tech.github.io/Korea5/ (confirmed `nfl-lines.html` served live). `verification/links.json` regenerated: pages=20, localLinks=336, external=529, missing=0.
 
 
 ## Session `arena-2cd43859` — NFL analytics and decision-support

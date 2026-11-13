@@ -229,26 +229,32 @@ SCORE_TEXT_RE = re.compile(
     r"(?P<home>[A-Za-z0-9][A-Za-z .'\-]{1,28}?)\s+(?P<hs>\d{1,2})\s*,\s*(?P<state>FINAL(?:/OT)?|FINAL, TIED)")
 
 
-def page_scores_by_slug(page: str):
-    """Read the FINAL score labels the by-week page publishes and bind each to its game slug.
+ANCHOR_RE = re.compile(r'<a[^>]*href="(?:https?://www\.nfl\.com)?/games/([a-z0-9\-]+)"[^>]*>(.*?)</a>',
+                       re.S | re.I)
+SCORE_PAIR_RE = re.compile(r"(\d{1,2})\s*,\s*(\d{1,2})\s*,\s*FINAL")
 
-    The page carries an accessible string per game of the form
-    "Jaguars 33, Ravens 10, FINAL, Thursday, November 5th" next to the link
-    "/games/jaguars-at-ravens-2026-reg-9". Both a slug index and a nickname-pair index are returned;
-    the nickname index exists only so a row can be matched when the payload gives no slug.
-    Values come from the official page text, never from a guess, and every row records which
-    fallback (if any) produced it.
+
+def page_scores_by_slug(page: str):
+    """Bind each published FINAL score to the game it belongs to.
+
+    The by-week page renders one accessible string per game, e.g.
+    "Raiders 17, 49ers 38, FINAL, Sunday, November 8th", inside that game's own link to
+    /games/<slug>. Scores are therefore read from inside each game link — never from a text window,
+    which can borrow a neighbouring game's number. Two indexes are returned:
+
+      by_slug  — authoritative, keyed on the league's own game slug
+      by_nick  — fallback for the rare block that carries no href, keyed on the two nicknames
     """
     by_slug: dict[str, tuple[int, int]] = {}
     by_nick: dict[tuple[str, str], tuple[int, int]] = {}
+    for slug, inner in ANCHOR_RE.findall(page):
+        text = strip_tags(inner)
+        m = SCORE_PAIR_RE.search(text)
+        if m:
+            by_slug.setdefault(slug, (int(m.group(1)), int(m.group(2))))
     for m in SCORE_TEXT_RE.finditer(page):
-        window = page[max(0, m.start() - 500):m.end() + 500]
-        href = re.search(r'(?:https?://www\.nfl\.com)?/games/([a-z0-9\-]+)', window)
-        pair = (int(m.group("as")), int(m.group("hs")))
-        if href:
-            by_slug.setdefault(href.group(1), pair)
         nick = (m.group("away").strip().split()[-1].lower(), m.group("home").strip().split()[-1].lower())
-        by_nick.setdefault(nick, pair)
+        by_nick.setdefault(nick, (int(m.group("as")), int(m.group("hs"))))
     return by_slug, by_nick
 
 
@@ -984,7 +990,18 @@ def main():
     today = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
     gaps = [r for r in all_rows if r["awayPoints"] is None and (r.get("dateUTC") or "9999") < today]
     filled = 0
+    gap_context = {}
     for r in gaps[:140]:
+        wk_page = get(r.get("listUrl") or "")
+        if wk_page and r["sourceUrl"].rsplit("/", 1)[-1] in wk_page:
+            slug = r["sourceUrl"].rsplit("/", 1)[-1]
+            i = wk_page.find(slug)
+            m = ANCHOR_RE.search(wk_page, max(0, i - 4000), i + 6000)
+            gap_context[slug] = {
+                "anchorFound": bool(m),
+                "anchorText": strip_tags(m.group(2))[:200] if m else None,
+                "raw": re.sub(r"\s+", " ", wk_page[max(0, i - 300):i + 900])[:1200],
+            }
         gpage = get(r["sourceUrl"])
         if not gpage:
             continue
@@ -999,6 +1016,12 @@ def main():
         r["verification"] = "verified"
         filled += 1
     log(f"score gap fill: {filled}/{len(gaps)} past games recovered from their own game page")
+    jwrite("gap-context.json", {
+        "meta": {"purpose": "Exact official markup around each game whose score could not be bound, so the "
+                             "parser is fixed against evidence rather than assumption.",
+                 "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat()},
+        "samples": gap_context,
+    })
     finals = [r for r in all_rows if r["verification"] == "verified"]
     jwrite("results-2026.json", {
         "meta": {
@@ -1220,6 +1243,7 @@ def main():
         "counts": {
             "games": len(all_rows),
             "gamesFinalWithScores": len(finals),
+            "gapContextSamples": len(gap_context),
             "gapFilledFromGamePages": filled,
             "pastGamesStillMissingScores": len([r for r in all_rows
                                                 if r["awayPoints"] is None

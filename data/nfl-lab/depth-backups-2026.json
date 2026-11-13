@@ -1,6 +1,41 @@
 {
- "description": "2026 regular-season starters (depth_team 1) listed Out or Doubtful on the NFL weekly injury report, with the first healthy player further down the same depth list. Depth charts are the nflverse mirror, not an NFL-published chart; treat as third-party until checked.",
+ "description": "Latest ESPN-derived depth chart snapshot (nflverse mirror) per team, compared with the latest NFL official injury report week. Lists starters (pos_rank 1) reported Out, Doubtful or Questionable, and the first healthy player further down the same depth slot. Not week-keyed; a current tracker, not a historical record.",
+ "injury_week": 10,
  "upstream_injuries": "https://github.com/nflverse/nflverse-data/releases/tag/injuries",
  "upstream_depth": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
- "rows": []
+ "official_reference": "https://www.nfl.com/injuries/league/2026/reg10",
+ "rows": [
+  {
+   "team": "DET",
+   "depth_slot": "LCB",
+   "depth_group": "Base 4-3 D",
+   "starter": "D.J. Reed",
+   "starter_gsis_id": "00-0034384",
+   "starter_report_status": "Out",
+   "starter_group": "DB",
+   "starter_injury": "Hip",
+   "first_healthy_backup": "Khalil Dorsey",
+   "backup_depth_rank": "2",
+   "injury_week": 10,
+   "source": "https://www.nfl.com/injuries/league/2026/reg10",
+   "depth_source": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+   "depth_snapshot_utc": "2026-11-13T07:02:06Z"
+  },
+  {
+   "team": "NE",
+   "depth_slot": "LCB",
+   "depth_group": "Base 3-4 D",
+   "starter": "Carlton Davis III",
+   "starter_gsis_id": "00-0034778",
+   "starter_report_status": "Out",
+   "starter_group": "DB",
+   "starter_injury": "Knee",
+   "first_healthy_backup": "Charles Woods",
+   "backup_depth_rank": "2",
+   "injury_week": 10,
+   "source": "https://www.nfl.com/injuries/league/2026/reg10",
+   "depth_source": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+   "depth_snapshot_utc": "2026-11-13T07:02:06Z"
+  }
+ ]
 }

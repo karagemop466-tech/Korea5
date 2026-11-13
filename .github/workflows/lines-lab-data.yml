@@ -1,4 +1,4 @@
-name: NFL lab upstream data
+name: NFL skill lab upstream data
 
 # Session arena-fb9c9608 (K-suggestions S12/S13): snapshot the datasets that the
 # sandbox cannot reach — nflverse release assets (injuries, depth charts, snap
@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: nfl-lab-data
+  group: lines-lab-data
   cancel-in-progress: false
 
 jobs:
@@ -31,16 +31,16 @@ jobs:
           python-version: '3.12'
 
       - name: Fetch upstream datasets
-        run: python3 nfl-lab/scripts/fetch_upstream.py
+        run: python3 lines-lab/scripts/fetch_upstream.py
 
       - name: Commit snapshots (if changed)
         run: |
           git config user.name "korea5-data-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add nfl-lab/data/upstream/
+          git add lines-lab/data/upstream/
           if git diff --cached --quiet; then
             echo "No changes to upstream data."
           else
-            git commit -m "NFL lab upstream snapshot $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git commit -m "NFL skill lab upstream snapshot $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             git push
           fi

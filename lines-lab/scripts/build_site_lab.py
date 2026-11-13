@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""NFL Lines Lab — static site generator (session arena-fb9c9608).
+"""NFL Skill Lab — static site generator (session arena-fb9c9608).
 
-Reads derived + official JSON from nfl-lab/data/ and renders every page under
-nfl-lab/. Every table row that states a fact carries a link to its source.
+Reads derived + official JSON from lines-lab/data/ and renders every page under
+lines-lab/. Every table row that states a fact carries a link to its source.
 Values that could not be verified are left blank and listed on flagged.html.
 """
 import json, os, html
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-LAB = os.path.join(ROOT, "nfl-lab")
+LAB = os.path.join(ROOT, "lines-lab")
 DATA = os.path.join(LAB, "data")
 DER = os.path.join(DATA, "derived")
 
@@ -42,7 +42,7 @@ SRC_TNF = "https://www.nfl.com/games/commanders-at-giants-2026-reg-10"
 SRC_STRATEGY_PAGE = "https://karagemop466-tech.github.io/Korea5/nfl-strategy.html"
 
 PAGES = [
-    ("index.html", "NFL Lines Lab"),
+    ("index.html", "NFL Skill Lab"),
     ("lines.html", "Originated lines"),
     ("leaderboard.html", "Strategy leaderboard"),
     ("correlation.html", "Correlation"),
@@ -56,7 +56,7 @@ PAGES = [
     ("data.html", "Data index"),
 ]
 
-CSS = """/* NFL Lines Lab */
+CSS = """/* NFL Skill Lab */
 :root{--ink:#12212b;--mut:#5b6b76;--line:#dbe3e9;--bg:#f5f7f9;--card:#fff;--acc:#0b5ea8;--acc2:#0a4a86;--good:#0e7c3f;--warn:#a35a00;--bad:#a8231f;--flag:#fff3d6}
 *{box-sizing:border-box}
 body{margin:0;font:15px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
@@ -121,12 +121,12 @@ def page(fname, title, body, banner=True):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{esc(title)} — NFL Lines Lab</title>
+<title>{esc(title)} — NFL Skill Lab</title>
 <meta name="description" content="NFL lines origination, strategy leaderboard, correlation values and injury/depth tracking with source-linked verification.">
 <link rel="stylesheet" href="assets/lab.css">
 </head>
 <body>
-<header><h1>NFL Lines Lab</h1>
+<header><h1>NFL Skill Lab</h1>
 <div class="sub">Originate lines &middot; leaderboard strategies through validation gates &middot; measure correlation &middot; track injuries and depth. Built {BUILD_UTC[:10]} by session {SESSION}; branch <code>arena/fb9c9608-korea5</code>.</div>
 </header>
 <nav>{nav}</nav>
@@ -134,7 +134,7 @@ def page(fname, title, body, banner=True):
 {certainty}
 {body}
 </main>
-<footer>NFL Lines Lab — part of <a href="../index.html">Korea5</a> (live site: karagemop466-tech.github.io/Korea5). Data build {BUILD_UTC}. Report problems on <a href="flagged.html">Flagged for Review</a>.</footer>
+<footer>NFL Skill Lab — part of <a href="../index.html">Korea5</a> (live site: karagemop466-tech.github.io/Korea5). Data build {BUILD_UTC}. Report problems on <a href="flagged.html">Flagged for Review</a>.</footer>
 </body></html>
 """
 
@@ -409,7 +409,7 @@ CI by 10,000-sample bootstrap over bets. Points = 100 × ROI%, awarded only when
 <h2>How to submit a strategy</h2>
 <ol class="tight">
 <li>Write the rule in plain language + code (deterministic; no look-ahead; inputs from the <a href="data.html">data index</a> only).</li>
-<li>Open a PR adding it to <code>nfl-lab/scripts/build_nfl_lab.py</code>'s strategy table (or a sibling module) with its entry conditions and pricing.</li>
+<li>Open a PR adding it to <code>lines-lab/scripts/build_nfl_lab.py</code>'s strategy table (or a sibling module) with its entry conditions and pricing.</li>
 <li>The build re-runs the walk-forward automatically; the result lands on this page with all gates evaluated.</li>
 <li>Propose via the <a href="suggestions.html">Suggestions board</a> first if the rule needs a new data source — new sources need a provenance row.</li>
 </ol>
@@ -439,7 +439,7 @@ def p_injuries():
 <h2>Scope</h2>
 <p class="lede">Source of truth: the <a href="{SRC_INJ}" rel="noopener">official NFL.com injury report</a>
 (Week 10, 2026 season), fetched 2026-11-13 and transcribed row-for-row into
-<code>nfl-lab/data/official/injuries-2026-w10.json</code> ({sum(len(r) for g in injuries['games'] for t, r in g['teams'].items() if isinstance(r, list))} player rows across 28 teams).
+<code>lines-lab/data/official/injuries-2026-w10.json</code> ({sum(len(r) for g in injuries['games'] for t, r in g['teams'].items() if isinstance(r, list))} player rows across 28 teams).
 The tracker converts that report into per-unit availability pressure and QB availability — it never
 guesses who is a starter or a backup.</p>
 {injuries_page()}
@@ -474,9 +474,9 @@ walk-forward predictions, market comparison, gates — not to win.</p>
 <li>Simulations use a fixed RNG seed ({2026}) so every number on this site is reproducible.</li>
 </ul>
 <h2>Rebuild</h2>
-<pre>python3 nfl-lab/scripts/build_nfl_lab.py   # data -> derived JSON (deterministic)
-python3 nfl-lab/scripts/build_site_lab.py  # derived JSON -> nfl-lab/*.html
-python3 nfl-lab/scripts/verify_nfl_lab.py  # link + row-source + schema checks</pre>
+<pre>python3 lines-lab/scripts/build_nfl_lab.py   # data -> derived JSON (deterministic)
+python3 lines-lab/scripts/build_site_lab.py  # derived JSON -> lines-lab/*.html
+python3 lines-lab/scripts/verify_nfl_lab.py  # link + row-source + schema checks</pre>
 """
     return page("method.html", "Method & gates", body)
 
@@ -550,7 +550,7 @@ def p_suggestions():
          "Unowned discovery steps do not happen.", "proposed"),
         ("S08", "rewards", "Define reward currency as 'review credit' (PR acknowledgements), not money, in writing.",
          "Removes ambiguity while legal/policy review is pending (D5).", "proposed"),
-        ("S09", "data", "Archive a copy of each fetched official page (HTML) under nfl-lab/data/archive/ with fetch timestamps.",
+        ("S09", "data", "Archive a copy of each fetched official page (HTML) under lines-lab/data/archive/ with fetch timestamps.",
          "Makes the transcription auditable later even if the page changes.", "proposed"),
         ("S10", "lines", "Add originated totals-only board section so total edges are reviewable without spread edges.",
          "Totals behave differently (S3/S4 gates) and deserve their own view.", "proposed"),
@@ -608,13 +608,13 @@ every claim can be re-checked by hand.</p>
 <tr><td>R7</td><td>Inherited feeds (prior sessions)</td><td>Sampled <code>official/nfl-2026.json</code> against today's official pages; re-ran the repo's own checks (<code>check_links.py</code>, <code>verify_extra.py</code>, <code>audit_certainty.py</code>, unit tests)</td>
 <td><span class="tag off">consistent</span> inherited schedule rows agree with today's official pages; checks pass (log below)</td>
 <td class='src'><a href='https://www.nfl.com/schedules/2026/by-week/week-10/' rel='noopener'>NFL.com ↗</a></td></tr>
-<tr><td>R8</td><td>Site link integrity after this build</td><td><code>nfl-lab/scripts/verify_nfl_lab.py</code> (local links, row source links, JSON validity) plus the repo's existing checks</td>
-<td>published in <code>nfl-lab/data/derived/verification.json</code></td>
+<tr><td>R8</td><td>Site link integrity after this build</td><td><code>lines-lab/scripts/verify_nfl_lab.py</code> (local links, row source links, JSON validity) plus the repo's existing checks</td>
+<td>published in <code>lines-lab/data/derived/verification.json</code></td>
 <td class='src'><a href='data.html' >data index</a></td></tr>
 </table>
 <h2>Check log</h2>
 <p class="small">Populated by <code>verify_nfl_lab.py</code> at build time; the machine-readable version is
-<code>nfl-lab/data/derived/verification.json</code>.</p>
+<code>lines-lab/data/derived/verification.json</code>.</p>
 <div id="checklog"><p class="small">See verification.json (the generator embeds the latest results below).</p></div>
 <h2>Irregularities carried into the flagged register</h2>
 <p class="small">NFL-K1 … NFL-K10 — see <a href="flagged.html">Flagged for Review</a>. Prior sessions' items
@@ -624,10 +624,10 @@ remain published on <a href="../extra/flagged.html">the planner's flagged page</
 
 def p_flagged():
     return page("flagged.html", "Flagged for review", f"""
-<h2>Flagged for review — NFL Lines Lab</h2>
+<h2>Flagged for review — NFL Skill Lab</h2>
 <p class="lede">Irregularities and unverified items found in this build. Nothing here was hidden, inferred,
 or silently corrected; items do not block deployment. The planner's separate flagged page is
-<a href="../extra/flagged.html">extra/flagged.html</a>.</p>
+<a href="../extra/flagged.html">../extra/flagged.html</a>.</p>
 {flags_page()}
 """)
 
@@ -660,9 +660,9 @@ def p_data():
     return page("data.html", "Data index", f"""
 <h2>Data index</h2>
 <p class="lede">Everything the lab publishes is a committed, deterministic artifact of
-<code>nfl-lab/scripts/build_nfl_lab.py</code> over the inputs below. Rebuild commands are on
+<code>lines-lab/scripts/build_nfl_lab.py</code> over the inputs below. Rebuild commands are on
 <a href="method.html">Method</a>.</p>
-<table><tr><th>Path (relative to nfl-lab/)</th><th>Contents</th></tr>{rows}</table>
+<table><tr><th>Path (relative to lines-lab/)</th><th>Contents</th></tr>{rows}</table>
 """)
 
 PAGES_FN = {

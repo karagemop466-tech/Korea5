@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""NFL Lines Lab — upstream data fetcher (stdlib only).
+"""NFL Skill Lab — upstream data fetcher (stdlib only).
 
 Downloads the nflverse release-asset datasets that unlock the currently-blank
 research areas (player injuries history, depth charts, snap counts) and refreshes
 the results/market table. Designed to run in GitHub Actions (unrestricted network);
 the build sandbox cannot reach release assets, so nothing here runs at build time.
 
-Outputs land in nfl-lab/data/upstream/ with a manifest recording source URL,
-etag/sha and fetch timestamp. Nothing in nfl-lab/data/official/ or derived/ is
+Outputs land in lines-lab/data/upstream/ with a manifest recording source URL,
+etag/sha and fetch timestamp. Nothing in lines-lab/data/official/ or derived/ is
 touched — upstream files are an evidence layer for manual review and future
 modeling, never auto-published as page rows without their own provenance pass.
 """
@@ -30,7 +30,7 @@ TARGETS = [
 ]
 
 def fetch(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "korea5-nfl-lab/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "korea5-lines-lab/1.0"})
     with urllib.request.urlopen(req, timeout=120) as r:
         return r.read()
 

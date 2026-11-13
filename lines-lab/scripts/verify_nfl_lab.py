@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""NFL Lines Lab — build verification (session arena-fb9c9608).
+"""NFL Skill Lab — build verification (session arena-fb9c9608).
 
 Checks JSON integrity, local link integrity across nfl-lab pages, that every
 fact-bearing table row carries a source link, that official-vs-dataset
 cross-checks agree, and that no build artefact leaked placeholders.
-Writes nfl-lab/data/derived/verification.json.
+Writes lines-lab/data/derived/verification.json.
 """
 import json, os, re, glob, html.parser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-LAB = os.path.join(ROOT, "nfl-lab")
+LAB = os.path.join(ROOT, "lines-lab")
 DER = os.path.join(LAB, "data", "derived")
 
 checks, failures = [], 0

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""NFL Lines Lab — data build (session arena-fb9c9608).
+"""NFL Skill Lab — data build (session arena-fb9c9608).
 
 Deterministic analytics over committed inputs:
-  nfl-lab/data/nfldata/games.csv        (results + market lines, nflverse/nfldata)
-  nfl-lab/data/official/*.json          (official NFL.com pages fetched 2026-11-13)
+  lines-lab/data/nfldata/games.csv        (results + market lines, nflverse/nfldata)
+  lines-lab/data/official/*.json          (official NFL.com pages fetched 2026-11-13)
 
-Outputs (nfl-lab/data/derived/):
+Outputs (lines-lab/data/derived/):
   model-meta.json      parameters, fit diagnostics, verification counts
   lines-2026-w10-w11.json  originated lines vs market, Weeks 10-11 2026
   leaderboard.json     walk-forward strategy backtest, validation gates, ranking
@@ -21,7 +21,7 @@ import csv, json, math, os, random, statistics
 from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # repo root
-LAB = os.path.join(ROOT, "nfl-lab")
+LAB = os.path.join(ROOT, "lines-lab")
 DATA = os.path.join(LAB, "data")
 DER = os.path.join(DATA, "derived")
 os.makedirs(DER, exist_ok=True)

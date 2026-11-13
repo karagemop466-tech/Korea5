@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Strategy leaderboard — NFL Lines Lab</title>
+<title>Strategy leaderboard — NFL Skill Lab</title>
 <meta name="description" content="NFL lines origination, strategy leaderboard, correlation values and injury/depth tracking with source-linked verification.">
 <link rel="stylesheet" href="assets/lab.css">
 </head>
 <body>
-<header><h1>NFL Lines Lab</h1>
+<header><h1>NFL Skill Lab</h1>
 <div class="sub">Originate lines &middot; leaderboard strategies through validation gates &middot; measure correlation &middot; track injuries and depth. Built 2026-11-13 by session arena-fb9c9608; branch <code>arena/fb9c9608-korea5</code>.</div>
 </header>
-<nav><a href="index.html" class="">NFL Lines Lab</a><a href="lines.html" class="">Originated lines</a><a href="leaderboard.html" class="active">Strategy leaderboard</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries & depth</a><a href="method.html" class="">Method & gates</a><a href="decisions.html" class="">Decisions needed</a><a href="suggestions.html" class="">Suggestions</a><a href="review.html" class="">Repo review</a><a href="flagged.html" class="">Flagged for review</a><a href="sources.html" class="">Sources</a><a href="data.html" class="">Data index</a></nav>
+<nav><a href="index.html" class="">NFL Skill Lab</a><a href="lines.html" class="">Originated lines</a><a href="leaderboard.html" class="active">Strategy leaderboard</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries & depth</a><a href="method.html" class="">Method & gates</a><a href="decisions.html" class="">Decisions needed</a><a href="suggestions.html" class="">Suggestions</a><a href="review.html" class="">Repo review</a><a href="flagged.html" class="">Flagged for review</a><a href="sources.html" class="">Sources</a><a href="data.html" class="">Data index</a></nav>
 <main>
 <div class="banner"><strong>Honesty policy.</strong> Every fact row links to its source. Market lines (spreads/totals/moneylines) are bookmaker quotes from the open-source nflverse/nfldata dataset — labelled <span class="tag mkt">market</span>, not official NFL data. Official data comes from NFL.com pages fetched 2026-11-13 (link on each row). Values that could not be verified are left blank and listed on <a href="flagged.html">Flagged for Review</a>. No betting edge is claimed anywhere; the leaderboard is a paper research competition.</div>
 
@@ -29,7 +29,7 @@ PAPER POINTS ONLY. No monetary or real-world rewards are authorized. Strategies 
 <h2>How to submit a strategy</h2>
 <ol class="tight">
 <li>Write the rule in plain language + code (deterministic; no look-ahead; inputs from the <a href="data.html">data index</a> only).</li>
-<li>Open a PR adding it to <code>nfl-lab/scripts/build_nfl_lab.py</code>'s strategy table (or a sibling module) with its entry conditions and pricing.</li>
+<li>Open a PR adding it to <code>lines-lab/scripts/build_nfl_lab.py</code>'s strategy table (or a sibling module) with its entry conditions and pricing.</li>
 <li>The build re-runs the walk-forward automatically; the result lands on this page with all gates evaluated.</li>
 <li>Propose via the <a href="suggestions.html">Suggestions board</a> first if the rule needs a new data source — new sources need a provenance row.</li>
 </ol>
@@ -39,5 +39,5 @@ archived entry quotes) and G6 (prospective locked trial) must exist before any r
 reviewed — see <a href="suggestions.html">S12–S14</a> and flag <a href="flagged.html">NFL-K6</a>.</div>
 
 </main>
-<footer>NFL Lines Lab — part of <a href="../index.html">Korea5</a> (live site: karagemop466-tech.github.io/Korea5). Data build 2026-11-13T14:00:00Z. Report problems on <a href="flagged.html">Flagged for Review</a>.</footer>
+<footer>NFL Skill Lab — part of <a href="../index.html">Korea5</a> (live site: karagemop466-tech.github.io/Korea5). Data build 2026-11-13T14:00:00Z. Report problems on <a href="flagged.html">Flagged for Review</a>.</footer>
 </body></html>

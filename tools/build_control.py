@@ -31,6 +31,21 @@ os.chdir(ROOT)
 os.makedirs(OUT, exist_ok=True)
 
 
+def _stamp():
+    """A stable build stamp: SOURCE_DATE_EPOCH if set, else the newest input file's mtime."""
+    import time
+    epoch = os.environ.get("SOURCE_DATE_EPOCH")
+    if epoch:
+        stamp = int(epoch)
+    else:
+        newest = 0.0
+        for pat in ("data/lines/*.json", "data/nfl-signals/*.json", "nfl/system/data/derived/*.json"):
+            for f in glob.glob(pat):
+                newest = max(newest, os.path.getmtime(f))
+        stamp = int(newest) if newest else int(time.time())
+    return _dt.datetime.fromtimestamp(stamp, _dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
 def load(path, default=None):
     try:
         with open(path, encoding="utf-8") as f:
@@ -776,7 +791,9 @@ def main():
         ("NFL Analytics", "nfl-analytics.html", "market capture and requirements"),
     ]
     meta = {
-        "generatedUTC": _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        # Deterministic: taken from the newest committed injury capture so a rebuild of an
+        # unchanged tree produces a byte-identical file (and therefore no CI drift).
+        "generatedUTC": _stamp(),
         "surfaces": [{"name": a, "path": b, "what": c} for a, b, c in sites],
         "counts": {
             "decisions": len(decisions),

@@ -2251,3 +2251,60 @@ protocol allows only the integration session to touch; this session is the integ
 1. A number is published only if it is computed from a committed file or re-read live from an official page.
 2. A defect found in another session's file is **reported, not silently overwritten**. The owning file is named.
 3. Nothing is described as an edge, a win rate or a yield unless a stored price and a settled record exist. None do.
+
+### C1–C7 completion record — session `arena-827c3da2-korea5` (2026-11-13)
+
+| # | Task | Status | What exists now |
+|---|---|---|---|
+| C1 | Claim pushed before work | **done** | commit `bf6af5f` |
+| C2 | Data-integrity audit of every NFL register | **done** | **three published defects found and fixed** (A01–A03 below); `data/control/audit.json` |
+| C3 | Unified decision register | **done** | `data/control/decisions.json` — **16 decisions merged from 107 question rows across 5 registers**; the 8 rows deliberately not merged are listed with the reason |
+| C4 | Live re-verification against official NFL.com pages | **done** | 32/32 standings rows, 1 game score, 8/8 player-log rows, 2 depth-chart replacements, all matched; see §Live verification |
+| C5 | NFL Control Room site | **done** | `control/` — 10 pages + `assets/` from `tools/build_control.py` and `tools/build_control_site.py` |
+| C6 | Verifier with negative tests, wired into CI | **done** | `tools/verify_control.py` — **358 checks**; 5 injected faults all detected; one CI step added |
+| C7 | Nav (one tuple), PR, merge, Pages | **in progress** | `scripts/build_site.py` NAV and `tools/build_extra.py` ROOT_NAV each gained exactly one entry |
+
+**Defects found in other sessions' published data — reported, fixed, tested, not hidden.**
+
+| ID | Defect | Where | Fix | Regression test |
+|---|---|---|---|---|
+| **A01** | All 296 Week 10 injury rows attributed to *Dallas Cowboys* | `scripts/lines/fetch_nfl.py` → `data/lines/injuries.json`, `lines/injuries.html` | Each club table is now bound to its own `d3-o-section-sub-title` club label. Rebuilt file matches the independent parser in `data/nfl-analytics/injuries-week-10-2026.json` on all 296 rows | `tests/test_lines_integrity.py` (4 tests) |
+| **A02** | `leaderboard.json` gave S03 reward 0; `strategies.json` gave 72 | `scripts/lines/build_lines.py` | Leaderboard rows are the same objects as the strategy rows, with an assertion that fails the build on drift | `tests/test_lines_integrity.py` (4 tests) |
+| **A03** | Published shuffle test permuted outcomes then compared home-win counts, so p was 1.0000 by construction | `nfl/system/tools/analyze_market.py` → `skill.json`, `nfl/system/summary.html`, README | Two-sided bootstrap on the hit indicator: observed 0.5121, 95% CI 0.4702–0.5607, **p = 0.6657** | `tests/test_lines_integrity.py` (4 tests) |
+
+All three defects had passed every existing verifier in the repository. Each test was **negative-tested**: the defect
+was reintroduced on a copy, the named failure appeared, and the copy was restored. `data/lines/flags.json` gained
+FL-14/FL-15/FL-16 and `curated/flags.json` gained **F60**; the README sentence that cited the vacuous p-value was
+corrected.
+
+**Live verification performed this session** (official pages re-read over the network, not assumed from a commit):
+
+| Official page | Rows compared | Result |
+|---|---|---|
+| `nfl.com/standings/league/2026/REG` | 32 clubs (W, L, T, PCT, PF, PA) | **32/32 matched** |
+| `nfl.com/games/jaguars-at-ravens-2026-reg-9` | 1 final | **JAX 33 – BAL 10 matched** |
+| `nfl.com/players/justin-jefferson/stats/logs/` | 8 games | **8/8 matched**, including the week with no statistics |
+| `detroitlions.com/team/depth-chart/` | 2 tiers | **Cade Mays → Juice Scruggs; D.J. Reed → Rock Ya-Sin confirmed** |
+| `nfl.com/injuries/` | 296 rows | **identical** to the independent parser after A01 |
+
+**Recomputed rather than trusted**: the −110 sample-size table (19,565 / 4,887 / 2,170 / 779 / 345), the prop
+dispersion behind the noise gates (22.65 and 31.15 yards), the home-field count (232 of 453 decided games, 51.21%),
+the two-receiver correlation (r = −0.8192, leave-one-game-out range −0.911 to −0.780), and all 137 completed 2026
+games across four independent captures — 0 disagreements.
+
+**Verification before publication.** Full pipeline in the documented order; `tools/verify_control.py` **358/358**;
+`scripts/check_links.py` **149 pages, 4,456 local links, 1,984 external, 0 missing**; `nfl/system` verifier
+99/99 PASS; `scripts/verify_nfl.py` PASS; `tools/verify_extra.py` failures 0, rowsMissingSource 0;
+`tools/verify_lab.py` pass; certainty audit passed twice; `scripts/lines/verify_lines.py` 82/82;
+`tests/test_lines_integrity.py` 12/12; `node --check control/assets/control.js` clean; `compileall` clean;
+`git diff --check` clean; a second rebuild of `data/control/` produced a byte-identical file, so the output is
+deterministic (the build stamp now derives from the newest committed input, not wall-clock time).
+
+**Scope discipline.** No other session's data, generator, page or verifier was edited except the three defects above,
+each of which was a correctness failure in a published number. The only shared-output edits are one NAV tuple in
+`scripts/build_site.py`, one in `tools/build_extra.py`, and one added CI step block.
+
+**Open items this session is publishing rather than resolving** (all on `control/flagged.html`, non-blocking):
+D-PRICE (no market price exists anywhere), D-REWARD (no written owner decision), the undocumented upstream source of
+the third-party line archive, 29 of 32 depth charts not re-read live this session, and FL-16 (the Week 10 snapshot is
+applied to unplayed weeks 11–18 fixtures).

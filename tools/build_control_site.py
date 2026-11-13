@@ -41,6 +41,7 @@ def pct(v):
 
 NAV = [
     ("index.html", "Overview"),
+    ("summary.html", "Executive summary"),
     ("decisions.html", "Decisions"),
     ("suggestions.html", "Suggestions"),
     ("evidence.html", "Evidence"),
@@ -58,7 +59,7 @@ def page(title, body, active, lede=""):
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{e(title)} · NFL Control Room</title>
+<title>{title} · NFL Control Room</title>
 <meta name="description" content="NFL Control Room: one decision register, one suggestion review board and one evidence ledger covering every NFL section of this repository.">
 <link rel="stylesheet" href="assets/control.css">
 <script defer src="assets/control.js"></script>
@@ -190,9 +191,81 @@ authoritative for, so a reader knows where to look and where not to.</p>
 <li><strong>Flagged for review</strong> — everything unverified, with the official source that would settle it. Non-blocking, by the project's own rule.</li>
 </ul>
 """
-    return page("NFL Control Room", body, "index.html",
+    return page("Overview", body, "index.html",
                 "One page-set for the whole NFL programme: what is known, what is open, and which path to take. "
                 "Built from the registers and datasets already committed, with every figure recomputed rather than copied.")
+
+
+def page_summary(md_path):
+    """Render the executive summary markdown as a page, so the site and the repo share one source."""
+    import re as _re
+    with open(md_path, encoding="utf-8") as f:
+        md = f.read()
+    out = []
+    in_table = False
+    in_list = False
+    for line in md.split("\n"):
+        raw = line.rstrip()
+        if raw.startswith("|"):
+            cells = [c.strip() for c in raw.strip("|").split("|")]
+            if set("".join(cells)) <= set("-: "):
+                continue
+            tag = "th" if not in_table else "td"
+            if not in_table:
+                out.append('<table class="grid wide"><thead><tr>')
+                in_table = True
+                tag = "th"
+            else:
+                out.append("<tr>")
+            for c in cells:
+                out.append(f"<{tag}>{inline(c)}</{tag}>")
+            out.append("</tr>")
+            if tag == "th" and in_table:
+                out.append("</thead><tbody>")
+            continue
+        if in_table:
+            out.append("</tbody></table>")
+            in_table = False
+        if raw.startswith("- "):
+            if not in_list:
+                out.append("<ul class=\"bullets\">")
+                in_list = True
+            out.append("<li>" + inline(raw[2:]) + "</li>")
+            continue
+        if in_list:
+            out.append("</ul>")
+            in_list = False
+        if raw.startswith("### "):
+            out.append("<h3>" + inline(raw[4:]) + "</h3>")
+        elif raw.startswith("## "):
+            out.append("<h2>" + inline(raw[3:]) + "</h2>")
+        elif raw.startswith("# "):
+            out.append("<h1>" + inline(raw[2:]) + "</h1>")
+        elif raw.startswith("---"):
+            continue
+        elif raw.startswith("**") and raw.endswith("**"):
+            out.append("<p><strong>" + inline(raw.strip("*")) + "</strong></p>")
+        elif raw.strip():
+            out.append("<p>" + inline(raw) + "</p>")
+    if in_table:
+        out.append("</tbody></table>")
+    if in_list:
+        out.append("</ul>")
+    body = "".join(out).replace("<h1>Executive summary — NFL research programme</h1>", "")
+    return page("Executive summary", body, "summary.html",
+                "The whole programme in one document: what is verified, what is broken, what is missing and what to do "
+                "next. The same text is committed as research/CONTROL-ROOM-EXECUTIVE-SUMMARY.md.")
+
+
+def inline(text):
+    """Minimal inline markdown: bold, code, links. Escaped first, so no raw HTML survives."""
+    import re as _re
+    t = e(text)
+    t = _re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r'<a href="\2" rel="noopener">\1</a>', t)
+    t = _re.sub(r"`([^`]+)`", r"<code>\1</code>", t)
+    t = _re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", t)
+    t = _re.sub(r"(?<![\w\"])\*([^*]+)\*(?![\w\"])", r"<em>\1</em>", t)
+    return t
 
 
 def page_decisions(decisions, not_merged):
@@ -564,6 +637,7 @@ def main():
 
     pages = {
         "index.html": page_index(meta, dec["decisions"], sug["suggestions"]),
+        "summary.html": page_summary("research/CONTROL-ROOM-EXECUTIVE-SUMMARY.md"),
         "decisions.html": page_decisions(dec["decisions"], dec["notMerged"]),
         "suggestions.html": page_suggestions(sug["suggestions"]),
         "evidence.html": page_evidence(ev["datasets"]),

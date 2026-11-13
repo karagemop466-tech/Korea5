@@ -47,6 +47,7 @@ NAV = [
     ("extra/index.html", "Official feeds &amp; verification"),
     ("nfl/system/index.html", "NFL decision system"),
     ("strategy-lab/index.html", "Strategy Lab"),
+    ("control/index.html", "NFL Control Room"),
 ]
 
 
@@ -251,7 +252,17 @@ If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} op
 <div class="card"><h3>Availability &amp; deficiencies</h3><p>The official Week-10 injury report (296 rows) plus verified starter/backup news — where a defense is on its 3rd or 4th option, we say so only when an official source confirms it.</p><a href="nfl-intel-injuries.html">Injury tracker</a></div>
 <div class="card"><h3>Decide with gaps visible</h3><p>Executive summary, a suggestions register with review-before-implement workflow, and a questions register listing exactly what is missing and how to discover it.</p><a href="nfl-intel-executive.html">Executive</a> · <a href="nfl-intel-questions.html">Questions</a></div>
 </div>
+<h2>Start here: the NFL Control Room</h2>
+<div class="card"><h3>One page-set for the whole NFL programme</h3>
+<p>Nine NFL sections were built by nine sessions. The <a href="control/index.html">NFL Control Room</a> merges every
+open decision into one register, every proposal into one review board with options and a recommended default, and every
+dataset into one evidence ledger. It publishes no edge, because the repository holds no market price and no settled
+bet.</p>
+<a href="control/decisions.html">Decisions</a> · <a href="control/suggestions.html">Suggestions</a> ·
+<a href="control/injuries.html">Injuries &amp; depth</a> · <a href="control/audit.html">Audit</a></div>
+
 <h2>Explore by category</h2><div class="pill-row">
+<a class="btn" href="control/index.html">NFL Control Room</a>
 <a class="btn" href="mlb.html">All 30 MLB clubs</a><a class="btn" href="extra/nfl-2026.html">NFL &amp; 49ers</a>
 <a class="btn" href="nfl-analytics.html">NFL Analytics &amp; lines</a>
 <a class="btn" href="ncaaf.html">Stanford &amp; Cal</a><a class="btn" href="extra/westwoodone.html">Westwood One · all sports</a>

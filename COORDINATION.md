@@ -655,3 +655,51 @@ date, and all prior items) remain published on `extra/flagged.html` with officia
 - **Pipeline order (finding):** `verify_extra.py` rewrites `extra/links.html`, and `audit_certainty.py` adds the certainty banner to every page. The banner is therefore only correct if the audit runs last. Required order: `build_events` → `analyze` → `build_site` → `build_extra` → `check_links` → `verify_extra` → `audit_certainty`. This is logged for the integration owner (see cross-scope note above).
 - **Verification at this commit:** `tools/verify_extra.py` 31/31; `scripts/audit_certainty.py` passed; `scripts/check_links.py` 0 missing; `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed.
 
+
+## Session `arena/8602d76f-korea5` — NFL Lines Origination (this session)
+
+Branch constraint: Arena fixes this session to `arena/8602d76f-korea5`; no other branch is created or pushed.
+Start point: `main` tip `13854fe` (branch `arena/8602d76f-korea5`, status active). All prior sessions' records above are preserved unchanged.
+Scope: this session owns the new NFL lines origination vertical only — `index.html` (landing + nav), `nfl-lines.html`, `nfl-strategies.html`, `nfl-correlation.html`, `nfl-injuries.html`, `nfl-questions.html`, `nfl-suggestions.html`, `nfl-executive-summary.html`, `nfl-flagged.html`. It does not edit `scripts/`, `data/`, `extra/`, `official/`, `curated/` or any existing root `*.html` other than `index.html`.
+
+### Session registry (addendum)
+
+| Session ID | Branch | Role | Status |
+|---|---|---|---|
+| `arena-8602d76f` | `arena/8602d76f-korea5` | NFL lines origination vertical: landing, strategies, correlation, injuries, questions, suggestions, executive summary, flagged review; verification, PR, merge, Pages deploy | **in progress** |
+
+### Task board (addendum)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N1 | NFL lines origination landing/dashboard + nav | arena-8602d76f | **in progress** | `index.html`, `nfl-lines.html` |
+| N2 | Strategies, signals, leaderboard, validation gates, single/parlay/player-prop combos | arena-8602d76f | **in progress** | `nfl-strategies.html`, `nfl-lines.html` |
+| N3 | Correlation values table | arena-8602d76f | **in progress** | `nfl-correlation.html` |
+| N4 | Injury tracking + defense/offense depth-chart (backup) deficiencies | arena-8602d76f | **in progress** | `nfl-injuries.html` |
+| N5 | Pre-decision questions / information / answers + missing-information discovery | arena-8602d76f | **in progress** | `nfl-questions.html` |
+| N6 | Suggestions section + review-before-implement workflow | arena-8602d76f | **in progress** | `nfl-suggestions.html` |
+| N7 | Executive summary | arena-8602d76f | **in progress** | `nfl-executive-summary.html` |
+| N8 | Consolidated Flagged for Review (unverified items) + verification, PR, merge, Pages deploy, log | arena-8602d76f | **in progress** | `nfl-flagged.html`, `COORDINATION.md` |
+
+### Honesty rules (this session)
+
+- Every table row links to an official source (nfl.com, operations.nfl.com) or is left blank.
+- The NFL does not publish official betting lines, odds, player-prop prices or correlation values. Those cells are therefore left **blank** and flagged **unverified** — never inferred or filled in.
+- Numeric strategy performance and reward values are a framework, not published results; they are blank/unverified until sourced.
+
+### Official sources used (this session)
+
+| Source | What it provides |
+|---|---|
+| https://www.nfl.com/schedules/ | NFL schedule structure (18 weeks, kickoff Thursday after Labor Day, Thanksgiving 4th Thursday, Super Bowl 2nd Sunday of February); 2027–2029 seasons not released |
+| https://www.nfl.com/injuries/ | Official NFL injury report; weekly report required of every team; designations Out / Doubtful / Questionable; practice status Full / Limited / Did Not Participate |
+| https://operations.nfl.com/rules-officiating/2026-nfl-rulebook | Official 2026 NFL rulebook (downloadable PDF) |
+
+### Irregularities this session is adding (published on `nfl-flagged.html`, nonblocking)
+
+1. No official NFL betting line exists (moneyline / spread / total) — every odds cell blank, flagged unverified.
+2. No official player-prop price exists — blank, flagged unverified.
+3. No official correlation matrix is published by the NFL — blank, flagged unverified.
+4. No official depth-chart / backup-replacement feed is published by the NFL — blank, flagged unverified.
+5. Strategy performance history and leaderboard rewards are not official data — blank, flagged unverified.
+

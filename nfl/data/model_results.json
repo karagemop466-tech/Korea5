@@ -68,7 +68,7 @@
    ]
   }
  },
- "generatedUTC": "2026-11-13T14:22:16Z",
+ "generatedUTC": "2026-11-13T14:32:23Z",
  "selftest": false,
  "seasons": [
   2016,
@@ -833,9 +833,12 @@
    "line": 225.0,
    "games": 389,
    "logloss": 0.6659,
+   "baseRate": 0.4907,
+   "baseRateLogloss": 0.6933,
    "accuracy": 0.6221,
-   "skill": 0.0393,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "skill": 0.0394,
+   "priorGames": 1818,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "rushing_yards",
@@ -843,9 +846,12 @@
    "line": 55.0,
    "games": 1011,
    "logloss": 0.4576,
-   "accuracy": 0.7844,
-   "skill": 0.3398,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "baseRate": 0.205,
+   "baseRateLogloss": 0.5498,
+   "accuracy": 0.6627,
+   "skill": 0.1677,
+   "priorGames": 4793,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "receiving_yards",
@@ -853,9 +859,12 @@
    "line": 45.0,
    "games": 1573,
    "logloss": 0.5452,
-   "accuracy": 0.7203,
-   "skill": 0.2135,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "baseRate": 0.3126,
+   "baseRateLogloss": 0.6298,
+   "accuracy": 0.6542,
+   "skill": 0.1344,
+   "priorGames": 6752,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "receptions",
@@ -863,9 +872,12 @@
    "line": 4.5,
    "games": 1573,
    "logloss": 0.4546,
-   "accuracy": 0.7839,
-   "skill": 0.3442,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "baseRate": 0.2251,
+   "baseRateLogloss": 0.5537,
+   "accuracy": 0.6751,
+   "skill": 0.179,
+   "priorGames": 6752,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "passing_tds",
@@ -873,9 +885,12 @@
    "line": 1.5,
    "games": 389,
    "logloss": 0.6623,
-   "accuracy": 0.6375,
-   "skill": 0.0445,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "baseRate": 0.4132,
+   "baseRateLogloss": 0.6837,
+   "accuracy": 0.5861,
+   "skill": 0.0312,
+   "priorGames": 1818,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "rushing_tds",
@@ -883,9 +898,12 @@
    "line": 0.5,
    "games": 1011,
    "logloss": 0.4915,
-   "accuracy": 0.7695,
-   "skill": 0.291,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "baseRate": 0.1781,
+   "baseRateLogloss": 0.5274,
+   "accuracy": 0.5371,
+   "skill": 0.0682,
+   "priorGames": 4793,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "receiving_tds",
@@ -893,9 +911,12 @@
    "line": 0.5,
    "games": 1573,
    "logloss": 0.4871,
-   "accuracy": 0.773,
-   "skill": 0.2972,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "baseRate": 0.1919,
+   "baseRateLogloss": 0.4955,
+   "accuracy": 0.5321,
+   "skill": 0.0169,
+   "priorGames": 6752,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "passing_yards",
@@ -903,9 +924,12 @@
    "line": 225.0,
    "games": 358,
    "logloss": 0.6481,
+   "baseRate": 0.4808,
+   "baseRateLogloss": 0.6928,
    "accuracy": 0.6369,
-   "skill": 0.065,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "skill": 0.0646,
+   "priorGames": 2473,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "rushing_yards",
@@ -913,9 +937,12 @@
    "line": 55.0,
    "games": 1072,
    "logloss": 0.4527,
-   "accuracy": 0.7575,
-   "skill": 0.3469,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "baseRate": 0.2048,
+   "baseRateLogloss": 0.5645,
+   "accuracy": 0.6959,
+   "skill": 0.1981,
+   "priorGames": 6435,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "receiving_yards",
@@ -923,9 +950,12 @@
    "line": 45.0,
    "games": 1520,
    "logloss": 0.5393,
-   "accuracy": 0.7283,
-   "skill": 0.2219,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "baseRate": 0.3104,
+   "baseRateLogloss": 0.6374,
+   "accuracy": 0.6632,
+   "skill": 0.1539,
+   "priorGames": 9235,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "receptions",
@@ -933,9 +963,12 @@
    "line": 4.5,
    "games": 1520,
    "logloss": 0.4632,
-   "accuracy": 0.7855,
-   "skill": 0.3317,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "baseRate": 0.2241,
+   "baseRateLogloss": 0.5732,
+   "accuracy": 0.6789,
+   "skill": 0.1919,
+   "priorGames": 9235,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "passing_tds",
@@ -943,9 +976,12 @@
    "line": 1.5,
    "games": 358,
    "logloss": 0.6632,
-   "accuracy": 0.5894,
-   "skill": 0.0432,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "baseRate": 0.4061,
+   "baseRateLogloss": 0.6761,
+   "accuracy": 0.5978,
+   "skill": 0.0191,
+   "priorGames": 2473,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "rushing_tds",
@@ -953,9 +989,12 @@
    "line": 0.5,
    "games": 1072,
    "logloss": 0.48,
-   "accuracy": 0.7826,
-   "skill": 0.3075,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "baseRate": 0.1821,
+   "baseRateLogloss": 0.5051,
+   "accuracy": 0.5382,
+   "skill": 0.0497,
+   "priorGames": 6435,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   },
   {
    "market": "receiving_tds",
@@ -963,17 +1002,424 @@
    "line": 0.5,
    "games": 1520,
    "logloss": 0.4727,
-   "accuracy": 0.7967,
-   "skill": 0.318,
-   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   "baseRate": 0.1887,
+   "baseRateLogloss": 0.4672,
+   "accuracy": 0.4934,
+   "skill": -0.0117,
+   "priorGames": 9235,
+   "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
   }
  ],
  "leaderboard": [
   {
    "family": "single",
-   "name": "Home-win model (walk-forward, prior info only)",
+   "name": "Model vs published spread (reference only)",
+   "tier": "C",
+   "score": 0.0,
+   "metrics": {
+    "games": 1632,
+    "modelLogloss": 0.6376,
+    "spreadImpliedLogloss": 0.9288,
+    "skill": 0.3136
+   },
+   "gates": {
+    "G8_market": {
+     "pass": false,
+     "value": "one un-timestamped snapshot; no closing line, no vig, no ROI"
+    }
+   },
+   "claim": "Compares the model with a probability implied by the published spread. Reference only: the timing of that line is unknown, so beating it would not establish a tradable edge."
+  },
+  {
+   "family": "parlay",
+   "name": "2-leg cross-game parlay (highest-confidence picks)",
+   "tier": "C",
+   "score": 0.0,
+   "metrics": {
+    "legs": 2,
+    "seasonsTested": 6,
+    "expectedJoint": 0.8399,
+    "realisedHitRate": 1.0,
+    "difference": 0.1601,
+    "note": "One combination per season; a joint probability is not a payout. With this sample the realised rate is far too noisy to confirm calibration."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": false,
+     "value": "6 combinations"
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "no parlay price, payout or vig in any reachable source"
+    }
+   },
+   "claim": "Joint probability and realised hit rate only. No payout, no vig, no ROI."
+  },
+  {
+   "family": "parlay",
+   "name": "3-leg cross-game parlay (highest-confidence picks)",
+   "tier": "C",
+   "score": 0.0,
+   "metrics": {
+    "legs": 3,
+    "seasonsTested": 6,
+    "expectedJoint": 0.7562,
+    "realisedHitRate": 0.8333,
+    "difference": 0.0772,
+    "note": "One combination per season; a joint probability is not a payout. With this sample the realised rate is far too noisy to confirm calibration."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": false,
+     "value": "6 combinations"
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "no parlay price, payout or vig in any reachable source"
+    }
+   },
+   "claim": "Joint probability and realised hit rate only. No payout, no vig, no ROI."
+  },
+  {
+   "family": "prop",
+   "name": "QB passing yards over 225.0",
+   "tier": "C",
+   "score": 0.394,
+   "metrics": {
+    "market": "passing_yards",
+    "position": "QB",
+    "line": 225.0,
+    "games": 389,
+    "logloss": 0.6659,
+    "baseRate": 0.4907,
+    "baseRateLogloss": 0.6933,
+    "accuracy": 0.6221,
+    "skill": 0.0394,
+    "priorGames": 1818,
+    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 389
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.0394
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "prop",
+   "name": "RB rushing yards over 55.0",
+   "tier": "C",
+   "score": 1.677,
+   "metrics": {
+    "market": "rushing_yards",
+    "position": "RB",
+    "line": 55.0,
+    "games": 1011,
+    "logloss": 0.4576,
+    "baseRate": 0.205,
+    "baseRateLogloss": 0.5498,
+    "accuracy": 0.6627,
+    "skill": 0.1677,
+    "priorGames": 4793,
+    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 1011
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.1677
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "prop",
+   "name": "WR receiving yards over 45.0",
+   "tier": "C",
+   "score": 1.344,
+   "metrics": {
+    "market": "receiving_yards",
+    "position": "WR",
+    "line": 45.0,
+    "games": 1573,
+    "logloss": 0.5452,
+    "baseRate": 0.3126,
+    "baseRateLogloss": 0.6298,
+    "accuracy": 0.6542,
+    "skill": 0.1344,
+    "priorGames": 6752,
+    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 1573
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.1344
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "prop",
+   "name": "WR receptions over 4.5",
+   "tier": "C",
+   "score": 1.79,
+   "metrics": {
+    "market": "receptions",
+    "position": "WR",
+    "line": 4.5,
+    "games": 1573,
+    "logloss": 0.4546,
+    "baseRate": 0.2251,
+    "baseRateLogloss": 0.5537,
+    "accuracy": 0.6751,
+    "skill": 0.179,
+    "priorGames": 6752,
+    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 1573
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.179
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "prop",
+   "name": "QB passing tds over 1.5",
+   "tier": "C",
+   "score": 0.312,
+   "metrics": {
+    "market": "passing_tds",
+    "position": "QB",
+    "line": 1.5,
+    "games": 389,
+    "logloss": 0.6623,
+    "baseRate": 0.4132,
+    "baseRateLogloss": 0.6837,
+    "accuracy": 0.5861,
+    "skill": 0.0312,
+    "priorGames": 1818,
+    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 389
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.0312
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "prop",
+   "name": "RB rushing tds over 0.5",
+   "tier": "C",
+   "score": 0.682,
+   "metrics": {
+    "market": "rushing_tds",
+    "position": "RB",
+    "line": 0.5,
+    "games": 1011,
+    "logloss": 0.4915,
+    "baseRate": 0.1781,
+    "baseRateLogloss": 0.5274,
+    "accuracy": 0.5371,
+    "skill": 0.0682,
+    "priorGames": 4793,
+    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 1011
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.0682
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "prop",
+   "name": "WR receiving tds over 0.5",
+   "tier": "C",
+   "score": 0.169,
+   "metrics": {
+    "market": "receiving_tds",
+    "position": "WR",
+    "line": 0.5,
+    "games": 1573,
+    "logloss": 0.4871,
+    "baseRate": 0.1919,
+    "baseRateLogloss": 0.4955,
+    "accuracy": 0.5321,
+    "skill": 0.0169,
+    "priorGames": 6752,
+    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 1573
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.0169
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "single",
+   "name": "Single-game model \u2014 context features (11 signals)",
+   "tier": "C",
+   "score": 0.0,
+   "metrics": {
+    "games": 1632,
+    "logloss": 0.68612,
+    "baselineLogloss": 0.68848,
+    "skill": 0.00343,
+    "brier": 0.24627,
+    "baselineBrier": 0.24673,
+    "brierSkill": 0.0019,
+    "accuracy": 0.5668
+   },
+   "gates": {
+    "G4_skill": {
+     "pass": true,
+     "value": 0.00343
+    },
+    "G5_deflation": {
+     "pass": false,
+     "value": "observed 0.00343 vs best-of-11 null p95 0.0534"
+    },
+    "G6_calibration": {
+     "pass": false,
+     "value": 0.7167
+    },
+    "G7_stability": {
+     "pass": true,
+     "value": {
+      "2017": 0.00029,
+      "2018": 0.01439,
+      "2019": -0.00094,
+      "2020": 0.00554,
+      "2021": -0.00383,
+      "2022": 0.00565
+     }
+    }
+   },
+   "calibration": {
+    "bins": [
+     {
+      "bin": "0.2-0.3",
+      "n": 7,
+      "predicted": 0.2647,
+      "observed": 0.2857
+     },
+     {
+      "bin": "0.3-0.4",
+      "n": 133,
+      "predicted": 0.3633,
+      "observed": 0.4361
+     },
+     {
+      "bin": "0.4-0.5",
+      "n": 115,
+      "predicted": 0.4451,
+      "observed": 0.4348
+     },
+     {
+      "bin": "0.5-0.6",
+      "n": 857,
+      "predicted": 0.5619,
+      "observed": 0.5309
+     },
+     {
+      "bin": "0.6-0.7",
+      "n": 412,
+      "predicted": 0.643,
+      "observed": 0.6092
+     },
+     {
+      "bin": "0.7-0.8",
+      "n": 101,
+      "predicted": 0.7296,
+      "observed": 0.6931
+     },
+     {
+      "bin": "0.8-0.9",
+      "n": 7,
+      "predicted": 0.8205,
+      "observed": 0.5714
+     }
+    ],
+    "slope": 0.7167
+   },
+   "stability": {
+    "2017": 0.00029,
+    "2018": 0.01439,
+    "2019": -0.00094,
+    "2020": 0.00554,
+    "2021": -0.00383,
+    "2022": 0.00565
+   },
+   "claim": "Out-of-sample probability skill vs a prior-season win-rate baseline. No betting return claimed."
+  },
+  {
+   "family": "single",
+   "name": "Single-game model \u2014 strength features (9 signals)",
    "tier": "A",
-   "score": 4.601,
+   "score": 4.276,
    "metrics": {
     "games": 1632,
     "logloss": 0.63757,
@@ -985,17 +1431,13 @@
     "accuracy": 0.6379
    },
    "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": "1632 games across 6 seasons"
-    },
     "G4_skill": {
      "pass": true,
      "value": 0.07395
     },
     "G5_deflation": {
      "pass": true,
-     "value": "observed 0.07395 vs null p95 0.03119 (N=200)"
+     "value": "observed 0.07395 vs best-of-9 null p95 0.03119"
     },
     "G6_calibration": {
      "pass": true,
@@ -1011,10 +1453,6 @@
       "2021": 0.0345,
       "2022": 0.07218
      }
-    },
-    "G8_market": {
-     "pass": true,
-     "value": "reported separately; no edge claimed without line history"
     }
    },
    "calibration": {
@@ -1090,343 +1528,107 @@
     "2021": 0.0345,
     "2022": 0.07218
    },
-   "claim": "Out-of-sample probability skill against a prior-season win-rate baseline. No betting return is claimed: the market columns in the source data are a single un-timestamped snapshot, so no closing price or vig is known."
-  },
-  {
-   "family": "single",
-   "name": "Model vs published spread (reference only)",
-   "tier": "C",
-   "score": 0.0,
-   "metrics": {
-    "games": 1632,
-    "modelLogloss": 0.6376,
-    "spreadImpliedLogloss": 0.9288,
-    "skill": 0.3136
-   },
-   "gates": {
-    "G8_market": {
-     "pass": false,
-     "value": "one un-timestamped snapshot; no closing line, no vig, no ROI"
-    }
-   },
-   "claim": "Compares the model with a probability implied by the published spread. Reference only: the timing of that line is unknown, so beating it would not establish a tradable edge."
-  },
-  {
-   "family": "parlay",
-   "name": "2-leg parlay of highest-confidence picks",
-   "tier": "C",
-   "score": 0.0,
-   "metrics": {
-    "seasonsTested": 6,
-    "expectedJointIndependent": 0.8399,
-    "expectedJointCorrelationAware": 0.8394,
-    "note": "Cross-game legs are near-independent by construction; the copula path is exercised so the same code can price same-game legs."
-   },
-   "gates": {
-    "G8_market": {
-     "pass": false,
-     "value": "no parlay price available; payout rules and vig unknown"
-    }
-   },
-   "claim": "Joint probability only. No payout, no vig, no ROI, because no parlay price exists in any reachable source."
-  },
-  {
-   "family": "parlay",
-   "name": "3-leg parlay of highest-confidence picks",
-   "tier": "C",
-   "score": 0.0,
-   "metrics": {
-    "seasonsTested": 6,
-    "expectedJointIndependent": 0.7562,
-    "expectedJointCorrelationAware": 0.7568,
-    "note": "Cross-game legs are near-independent by construction; the copula path is exercised so the same code can price same-game legs."
-   },
-   "gates": {
-    "G8_market": {
-     "pass": false,
-     "value": "no parlay price available; payout rules and vig unknown"
-    }
-   },
-   "claim": "Joint probability only. No payout, no vig, no ROI, because no parlay price exists in any reachable source."
-  },
-  {
-   "family": "prop",
-   "name": "QB passing yards over 225.0",
-   "tier": "C",
-   "score": 0.393,
-   "metrics": {
-    "market": "passing_yards",
-    "position": "QB",
-    "line": 225.0,
-    "games": 389,
-    "logloss": 0.6659,
-    "accuracy": 0.6221,
-    "skill": 0.0393,
-    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 389
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.0393
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
-  },
-  {
-   "family": "prop",
-   "name": "RB rushing yards over 55.0",
-   "tier": "C",
-   "score": 3.398,
-   "metrics": {
-    "market": "rushing_yards",
-    "position": "RB",
-    "line": 55.0,
-    "games": 1011,
-    "logloss": 0.4576,
-    "accuracy": 0.7844,
-    "skill": 0.3398,
-    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 1011
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.3398
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
-  },
-  {
-   "family": "prop",
-   "name": "WR receiving yards over 45.0",
-   "tier": "C",
-   "score": 2.135,
-   "metrics": {
-    "market": "receiving_yards",
-    "position": "WR",
-    "line": 45.0,
-    "games": 1573,
-    "logloss": 0.5452,
-    "accuracy": 0.7203,
-    "skill": 0.2135,
-    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 1573
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.2135
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
-  },
-  {
-   "family": "prop",
-   "name": "WR receptions over 4.5",
-   "tier": "C",
-   "score": 3.442,
-   "metrics": {
-    "market": "receptions",
-    "position": "WR",
-    "line": 4.5,
-    "games": 1573,
-    "logloss": 0.4546,
-    "accuracy": 0.7839,
-    "skill": 0.3442,
-    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 1573
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.3442
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
-  },
-  {
-   "family": "prop",
-   "name": "QB passing tds over 1.5",
-   "tier": "C",
-   "score": 0.445,
-   "metrics": {
-    "market": "passing_tds",
-    "position": "QB",
-    "line": 1.5,
-    "games": 389,
-    "logloss": 0.6623,
-    "accuracy": 0.6375,
-    "skill": 0.0445,
-    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 389
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.0445
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
-  },
-  {
-   "family": "prop",
-   "name": "RB rushing tds over 0.5",
-   "tier": "C",
-   "score": 2.91,
-   "metrics": {
-    "market": "rushing_tds",
-    "position": "RB",
-    "line": 0.5,
-    "games": 1011,
-    "logloss": 0.4915,
-    "accuracy": 0.7695,
-    "skill": 0.291,
-    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 1011
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.291
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
-  },
-  {
-   "family": "prop",
-   "name": "WR receiving tds over 0.5",
-   "tier": "C",
-   "score": 2.972,
-   "metrics": {
-    "market": "receiving_tds",
-    "position": "WR",
-    "line": 0.5,
-    "games": 1573,
-    "logloss": 0.4871,
-    "accuracy": 0.773,
-    "skill": 0.2972,
-    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 1573
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.2972
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
-  },
-  {
-   "family": "single",
-   "name": "Single-game model \u2014 context features (11 signals)",
-   "tier": "C",
-   "score": 0.0,
-   "metrics": {
-    "games": 1632,
-    "logloss": 0.68612,
-    "baselineLogloss": 0.68848,
-    "skill": 0.00343,
-    "brier": 0.24627,
-    "baselineBrier": 0.24673,
-    "brierSkill": 0.0019,
-    "accuracy": 0.5668
-   },
-   "gates": {
-    "G4_skill": {
-     "pass": true,
-     "value": 0.00343
-    },
-    "G5_deflation": {
-     "pass": false,
-     "value": "observed 0.00343 vs best-of-11 null p95 0.0534"
-    },
-    "G7_stability": {
-     "pass": true,
-     "value": "see stability block"
-    }
-   },
    "claim": "Out-of-sample probability skill vs a prior-season win-rate baseline. No betting return claimed."
   },
   {
-   "family": "single",
-   "name": "Single-game model \u2014 strength features (9 signals)",
-   "tier": "A",
-   "score": 4.276,
+   "family": "prop-combo",
+   "name": "Same-game combo: rushing_yards + rushing_tds (RB)",
+   "tier": "C",
+   "score": 0.0,
    "metrics": {
-    "games": 1632,
-    "logloss": 0.63757,
-    "baselineLogloss": 0.68848,
-    "skill": 0.07395,
-    "brier": 0.22321,
-    "baselineBrier": 0.24673,
-    "brierSkill": 0.09535,
-    "accuracy": 0.6379
+    "r": -0.0811,
+    "ci": [
+     -0.1199,
+     -0.0384
+    ],
+    "pairs": 1824,
+    "jointIfIndependent": 0.3025,
+    "jointWithMeasuredCorrelation": 0.2903,
+    "errorFromAssumingIndependence": -0.0122,
+    "note": "Marginals are illustrative (0.55 each). The published quantity is the gap between the copula joint and the naive product, not a price."
    },
    "gates": {
-    "G4_skill": {
-     "pass": true,
-     "value": 0.07395
-    },
-    "G5_deflation": {
-     "pass": true,
-     "value": "observed 0.07395 vs best-of-9 null p95 0.03119"
-    },
-    "G7_stability": {
-     "pass": true,
-     "value": "see stability block"
+    "G8_market": {
+     "pass": false,
+     "value": "no prop price exists"
     }
    },
-   "claim": "Out-of-sample probability skill vs a prior-season win-rate baseline. No betting return claimed."
+   "claim": "Measures how wrong independence would be. No price, no payout, no edge."
+  },
+  {
+   "family": "prop-combo",
+   "name": "Same-game combo: receiving_yards + receptions (WR)",
+   "tier": "C",
+   "score": 0.0,
+   "metrics": {
+    "r": -0.0566,
+    "ci": [
+     -0.0834,
+     -0.028
+    ],
+    "pairs": 4612,
+    "jointIfIndependent": 0.3025,
+    "jointWithMeasuredCorrelation": 0.2946,
+    "errorFromAssumingIndependence": -0.0079,
+    "note": "Marginals are illustrative (0.55 each). The published quantity is the gap between the copula joint and the naive product, not a price."
+   },
+   "gates": {
+    "G8_market": {
+     "pass": false,
+     "value": "no prop price exists"
+    }
+   },
+   "claim": "Measures how wrong independence would be. No price, no payout, no edge."
+  },
+  {
+   "family": "prop-combo",
+   "name": "Same-game combo: rushing_yards + rushing_tds (RB)",
+   "tier": "C",
+   "score": 0.0,
+   "metrics": {
+    "r": -0.0671,
+    "ci": [
+     -0.105,
+     -0.0276
+    ],
+    "pairs": 1939,
+    "jointIfIndependent": 0.3025,
+    "jointWithMeasuredCorrelation": 0.2922,
+    "errorFromAssumingIndependence": -0.0104,
+    "note": "Marginals are illustrative (0.55 each). The published quantity is the gap between the copula joint and the naive product, not a price."
+   },
+   "gates": {
+    "G8_market": {
+     "pass": false,
+     "value": "no prop price exists"
+    }
+   },
+   "claim": "Measures how wrong independence would be. No price, no payout, no edge."
+  },
+  {
+   "family": "prop-combo",
+   "name": "Same-game combo: receiving_yards + receptions (WR)",
+   "tier": "C",
+   "score": 0.0,
+   "metrics": {
+    "r": -0.0541,
+    "ci": [
+     -0.0806,
+     -0.0262
+    ],
+    "pairs": 4213,
+    "jointIfIndependent": 0.3025,
+    "jointWithMeasuredCorrelation": 0.2948,
+    "errorFromAssumingIndependence": -0.0077,
+    "note": "Marginals are illustrative (0.55 each). The published quantity is the gap between the copula joint and the naive product, not a price."
+   },
+   "gates": {
+    "G8_market": {
+     "pass": false,
+     "value": "no prop price exists"
+    }
+   },
+   "claim": "Measures how wrong independence would be. No price, no payout, no edge."
   }
  ],
  "featureCoverage": [

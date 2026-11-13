@@ -340,8 +340,8 @@
  200 espn_2026_t2_w7.json                 126,932 bytes
  200 espn_2026_t2_w8.json                 126,088 bytes
  200 espn_2026_t2_w9.json                 133,973 bytes
- 200 espn_2026_t2_w10.json                254,476 bytes
- 200 espn_2026_t2_w11.json                236,508 bytes
+ 200 espn_2026_t2_w10.json                254,518 bytes
+ 200 espn_2026_t2_w11.json                236,550 bytes
  200 espn_2026_t2_w12.json                182,869 bytes
  200 espn_2026_t2_w13.json                163,033 bytes
  200 espn_2026_t2_w14.json                172,371 bytes
@@ -387,15 +387,15 @@ Traceback (most recent call last):
     idx[(r["gameday"], r["home"])].append(r)
                        ~^^^^^^^^
 KeyError: 'home'
-leaderboard: 13 strategies
-  #1 A    4.601 pts= 1000 Home-win model (walk-forward, prior info only)
-  #2 A    4.276 pts= 1000 Single-game model — strength features (9 signals)
-  #3 C    3.442 pts=  300 WR receptions over 4.5
-  #4 C    3.398 pts=  300 RB rushing yards over 55.0
-  #5 C    2.972 pts=  300 WR receiving tds over 0.5
-  #6 C     2.91 pts=  300 RB rushing tds over 0.5
-  #7 C    2.135 pts=  300 WR receiving yards over 45.0
-  #8 C    0.445 pts=  300 QB passing tds over 1.5
+leaderboard: 16 strategies
+  #1 A    4.276 pts= 1000 Single-game model — strength features (9 signals)
+  #2 C     1.79 pts=  300 WR receptions over 4.5
+  #3 C    1.677 pts=  300 RB rushing yards over 55.0
+  #4 C    1.344 pts=  300 WR receiving yards over 45.0
+  #5 C    0.682 pts=  300 RB rushing tds over 0.5
+  #6 C    0.394 pts=  300 QB passing yards over 225.0
+  #7 C    0.312 pts=  300 QB passing tds over 1.5
+  #8 C    0.169 pts=  300 WR receiving tds over 0.5
 built 11 pages in nfl-lines/
 test_cholesky_and_copula (test_model.TestGates.test_cholesky_and_copula) ... ok
 test_deflation_rejects_pure_noise (test_model.TestGates.test_deflation_rejects_pure_noise)
@@ -413,6 +413,6 @@ test_walk_forward_ignores_future_seasons (test_model.TestNoLeakage.test_walk_for
 test_questions_have_all_resolution_fields (test_model.TestQuestions.test_questions_have_all_resolution_fields) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 12.193s
+Ran 9 tests in 18.340s
 
 OK

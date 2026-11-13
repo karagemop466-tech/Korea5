@@ -758,10 +758,17 @@ pages so the NFL Lines area is one coherent section. The root nav carries both e
 
 | Step | Result |
 |---|---|
-| Pull request | (filled after merge) |
-| Merge | (filled after merge) |
-| GitHub Pages build | (filled after merge) |
-| Live site | https://karagemop466-tech.github.io/Korea5/nfl/ |
+| Pull request | **#42 — https://github.com/karagemop466-tech/Korea5/pull/42** — "NFL Decision Support hub: requirements, method, leaderboard design, source registry + verifier (consolidated with origination section)" |
+| Merge conflict during PR | `main` advanced twice while the PR was open (PRs #43/#44 added the `lab/` NFL Lab section and regenerated the link report). Resolved locally by merging `origin/main` with `git merge` (not rebase, to preserve history). Conflicts resolved by **union**: `COORDINATION.md` keeps both appended sections; `index.html` keeps `main`'s nav (NFL Lab / Decisions / Suggestions) and adds the single "NFL Decision Support" link; `verification/links.json` regenerated via `scripts/check_links.py`. No work discarded. |
+| Merge | **Merged** into `main` 2026-11-13T13:28:18Z, merge commit `0a4c0f4e4b3e2ab0651ce914e95c0b6eaba70940` (`gh pr merge 42 --merge`, no waiting) |
+| GitHub Pages build | status **built**, source `main /` |
+| Live site | https://karagemop466-tech.github.io/Korea5/nfl/ — fetched live `nfl/index.html` and confirmed the dashboard, verified anchors with official source links, requirements coverage, method, leaderboard summary and companion-origination links all render |
+
+**Status: N1–N9 done.** The NFL Lines area is one coherent section: the companion origination pages
+(`nfl-*.html`) and the `lab/` NFL Lab pages (built by parallel sessions) plus this session's `nfl/` Decision
+Support layer (requirements, method, leaderboard design, source registry + verifier). No unclaimed or
+overlapping task remains for this session. Flagged irregularities and unverified items remain published and
+non-blocking.
 
 
 

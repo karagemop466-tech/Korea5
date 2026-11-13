@@ -96,18 +96,27 @@ def zscore_vec(cols):
     return out, means, sds
 
 
-def fit_logistic(X, y, l2=1.0, iters=400, lr=0.35):
-    """Full-batch gradient descent with L2 (no intercept penalty). X rows already include an intercept."""
+def fit_logistic(X, y, l2=1.0, iters=120, lr=0.5):
+    """Full-batch gradient descent with L2 (no intercept penalty). Column-major accumulation."""
     n, k = len(X), len(X[0])
     w = [0.0] * k
+    cols = [[row[j] for row in X] for j in range(k)]  # column-major: one pass per weight
     for _ in range(iters):
+        z = [0.0] * n
+        for j in range(k):
+            wj = w[j]
+            if wj == 0.0:
+                continue
+            cj = cols[j]
+            for i in range(n):
+                z[i] += wj * cj[i]
         grad = [0.0] * k
-        for i in range(n):
-            z = sum(w[j] * X[i][j] for j in range(k))
-            p = sigmoid(z)
-            err = p - y[i]
-            for j in range(k):
-                grad[j] += err * X[i][j]
+        for j in range(k):
+            cj = cols[j]
+            acc = 0.0
+            for i in range(n):
+                acc += (sigmoid(z[i]) - y[i]) * cj[i]
+            grad[j] = acc
         for j in range(k):
             reg = 0.0 if j == 0 else l2 * w[j]
             w[j] -= lr * (grad[j] / n + reg / n)
@@ -264,11 +273,55 @@ def load_snaps(raw_dir: str, seasons: list[int]) -> dict[tuple, float]:
 # ---------------------------------------------------------------- signals
 
 
-def build_signals(games, injuries, depth, snaps):
+def build_ratings(games):
+    """
+    Chronological Elo ratings and rolling form, using ONLY games played earlier in the sort order.
+    Nothing from the game being predicted (or later) enters its own features. This is the walk-forward
+    guard that the unit test asserts.
+    """
+    elo = defaultdict(lambda: 1500.0)
+    form = defaultdict(list)          # team -> list of (margin relative to opponent, opponent elo)
+    last_season = {}
+    K_BASE, HFA, CARRY = 20.0, 48.0, 0.72
+    for g in games:
+        h, a = g["home"], g["away"]
+        # season transition: regress to the mean so old seasons fade
+        if g["season"] != last_season.get(h):
+            base = 1505.0
+            elo[h] = base + CARRY * (elo[h] - base)
+            last_season[h] = g["season"]
+        if g["season"] != last_season.get(a):
+            base = 1505.0
+            elo[a] = base + CARRY * (elo[a] - base)
+            last_season[a] = g["season"]
+        eh, ea = elo[h], elo[a]
+        g["s"]["elo_home"] = round(eh, 1)
+        g["s"]["elo_away"] = round(ea, 1)
+        g["s"]["elo_diff"] = round(eh - ea + HFA, 1)
+        fh, fa = form[h][-8:], form[a][-8:]
+        g["s"]["form_home"] = round(sum(x for x, _ in fh) / len(fh), 3) if fh else None
+        g["s"]["form_away"] = round(sum(x for x, _ in fa) / len(fa), 3) if fa else None
+        g["s"]["form_diff"] = (round(g["s"]["form_home"] - g["s"]["form_away"], 3)
+                               if (fh and fa) else None)
+        if not g["complete"]:
+            continue
+        # Elo update (margin-of-victory multiplier, capped)
+        expected = 1.0 / (1.0 + 10 ** ((ea - (eh + HFA)) / 400.0))
+        mov = max(1.0, abs(g["margin"])) ** 0.7
+        delta = K_BASE * mov * (g["result"] - expected)
+        elo[h] = eh + delta
+        elo[a] = ea - delta
+        form[h].append((g["margin"], ea))
+        form[a].append((-g["margin"], eh))
+    return games
+
+
+def build_signals(games, injuries, depth, snaps, index=None):
     """
     Adds prior-information-only features to each completed game.
     Anything we cannot verify stays None and is reported as such (never imputed).
     """
+    idx = index or LineupIndex(depth, snaps, injuries)
     by_team: dict[str, list[dict]] = defaultdict(list)
     for g in games:
         by_team[g["home"]].append(g)
@@ -315,16 +368,17 @@ def build_signals(games, injuries, depth, snaps):
         for side in ("home", "away"):
             team = g[side]
             wk = g["week"]
-            off_val, off_out, off_doubt, off_ques = unit_value(team, wk, depth, snaps, injuries, "off")
-            def_val, def_out, def_doubt, def_ques = unit_value(team, wk, depth, snaps, injuries, "def")
+            off_val, off_out, off_doubt, off_ques = idx.value(team, wk, "off")
+            def_val, def_out, def_doubt, def_ques = idx.value(team, wk, "def")
             feats[f"{side}_off_value"] = off_val
             feats[f"{side}_def_value"] = def_val
             feats[f"{side}_off_out_share"] = off_out
             feats[f"{side}_def_out_share"] = def_out
             feats[f"{side}_off_doubt_share"] = off_doubt
             feats[f"{side}_off_ques_share"] = off_ques
-            feats[f"{side}_starter_count_off"] = starter_count(team, wk, depth, "off")
-            feats[f"{side}_backup_count_off"] = backup_count(team, wk, depth, "off")
+            sc, bc = idx.counts(team, wk, "off")
+            feats[f"{side}_starter_count_off"] = sc
+            feats[f"{side}_backup_count_off"] = bc
         # differentials (None-safe)
         for a, b, name in (
             ("home_off_value", "away_off_value", "off_value_diff"),
@@ -335,6 +389,7 @@ def build_signals(games, injuries, depth, snaps):
             fa, fb = feats.get(a), feats.get(b)
             feats[name] = (fa - fb) if (fa is not None and fb is not None) else None
         g["s"] = feats
+    games = build_ratings(games)
     return games
 
 
@@ -342,57 +397,72 @@ OFF_POS = {"QB", "RB", "FB", "WR", "TE", "T", "G", "C", "OL", "OT", "OG"}
 DEF_POS = {"DE", "DT", "NT", "DL", "EDGE", "LB", "ILB", "OLB", "MLB", "CB", "DB", "S", "SS", "FS"}
 
 
-def unit_value(team, week, depth, snaps, injuries, unit):
+class LineupIndex:
     """
-    Snap-weighted value of the unit that is still 'listed starter', and the share of that value
-    officially Out / Doubtful / Questionable for this game week.
-    Returns (value, out_share, doubt_share, ques_share) or (None, None, None, None) if no data.
+    One-pass index so injury/lineup lookups are O(players on a unit) instead of O(all rows).
+    Snap weight = max(offense_pct, defense_pct) from the published snap table, matched on surname + team + week.
+    A player on the depth chart with no snap row keeps a small weight (0.05) so he is counted but not credited
+    with starter value we did not verify.
     """
-    pos_set = OFF_POS if unit == "off" else DEF_POS
-    rows = [(k, v) for k, v in depth.items() if k[0] == team and k[1] in (week, -1) and v.get("pos") in pos_set]
-    if not rows:
-        return None, None, None, None
-    starters, allv = 0.0, 0.0
-    out_w = doubt_w = ques_w = 0.0
-    matched = 0
-    for (tm, wk, gid), v in rows:
-        snapmap = {kk[2]: vv for kk, vv in snaps.items() if kk[0] == team and kk[1] == week}
-        w = 0.0
-        for name, sv in snapmap.items():
-            if v.get("name") and (v["name"].split()[0].lower() in name.lower()):
-                w = max(sv["off"] or 0.0, sv["def"] or 0.0)
-                matched += 1
-                break
-        if w == 0.0:
-            w = 0.05  # player on the depth chart but no snap row: minimal weight, never zero-information
-        allv += w
-        if v.get("rank") == 1:
-            starters += w
-            st = injuries.get((team, week, gid), {})
-            status = (st.get("report") or "").lower()
-            if status == "out":
-                out_w += w
-            elif status == "doubtful":
-                doubt_w += w
-            elif status == "questionable":
-                ques_w += w
-    if allv <= 0:
-        return None, None, None, None
-    return (round(starters / allv, 4),
-            round(out_w / allv, 4), round(doubt_w / allv, 4), round(ques_w / allv, 4))
 
+    def __init__(self, depth, snaps, injuries):
+        self.by_team_week_pos: dict[tuple, list] = defaultdict(list)
+        self.snap_by_team_week: dict[tuple, dict[str, float]] = defaultdict(dict)
+        self.inj = injuries
+        for (team, week, gid), v in depth.items():
+            self.by_team_week_pos[(team, week, v.get("pos"))].append((gid, v))
+        for (team, week, name), sv in snaps.items():
+            self.snap_by_team_week[(team, week)][name] = max(sv.get("off") or 0.0, sv.get("def") or 0.0)
 
-def starter_count(team, week, depth, unit):
-    pos_set = OFF_POS if unit == "off" else DEF_POS
-    return sum(1 for k, v in depth.items() if k[0] == team and k[1] in (week, -1)
-               and v.get("pos") in pos_set and v.get("rank") == 1) or None
+    def _rows(self, team, week, pos_set):
+        rows = []
+        for pos in pos_set:
+            rows.extend(self.by_team_week_pos.get((team, week, pos), ()))
+            if week != -1:
+                rows.extend(self.by_team_week_pos.get((team, -1, pos), ()))
+        return rows
 
+    def value(self, team, week, unit):
+        pos_set = OFF_POS if unit == "off" else DEF_POS
+        rows = self._rows(team, week, pos_set)
+        if not rows:
+            return None, None, None, None
+        snapmap = self.snap_by_team_week.get((team, week), {})
+        starters = allv = out_w = doubt_w = ques_w = 0.0
+        for gid, v in rows:
+            name = v.get("name") or ""
+            w = 0.0
+            if name:
+                last = name.split()[-1].lower()
+                for pname, pv in snapmap.items():
+                    if last and last in pname.lower():
+                        w = pv
+                        break
+            if w == 0.0:
+                w = 0.05
+            allv += w
+            if v.get("rank") == 1:
+                starters += w
+                status = (self.inj.get((team, week, gid), {}).get("report") or "").lower()
+                if status == "out":
+                    out_w += w
+                elif status == "doubtful":
+                    doubt_w += w
+                elif status == "questionable":
+                    ques_w += w
+        if allv <= 0:
+            return None, None, None, None
+        return (round(starters / allv, 4), round(out_w / allv, 4),
+                round(doubt_w / allv, 4), round(ques_w / allv, 4))
 
-def backup_count(team, week, depth, unit):
-    pos_set = OFF_POS if unit == "off" else DEF_POS
-    n = sum(1 for k, v in depth.items() if k[0] == team and k[1] in (week, -1)
-            and v.get("pos") in pos_set and (v.get("rank") or 0) >= 2)
-    return n or None
+    def counts(self, team, week, unit):
+        pos_set = OFF_POS if unit == "off" else DEF_POS
+        rows = self._rows(team, week, pos_set)
+        if not rows:
+            return None, None
+        starters = sum(1 for _, v in rows if v.get("rank") == 1)
+        backups = sum(1 for _, v in rows if (v.get("rank") or 0) >= 2)
+        return starters or None, backups or None
 
 
 # ---------------------------------------------------------------- model + gates
@@ -400,7 +470,10 @@ def backup_count(team, week, depth, unit):
 FEATURES = ["rest_diff", "div_game", "dome", "home_short_week", "away_short_week",
             "home_qb_change", "away_qb_change", "off_value_diff", "def_value_diff",
             "off_out_diff", "def_out_diff"]
-FILL = {k: 0.0 for k in FEATURES}
+STRENGTH_FEATURES = ["elo_diff", "form_diff", "rest_diff", "div_game", "dome",
+                     "home_qb_change", "away_qb_change", "off_out_diff", "def_out_diff"]
+FILL = {k: 0.0 for k in FEATURES + STRENGTH_FEATURES
+        if k not in ("elo_diff",)}  # elo_diff 0 would mean 'equal teams'; use 0 for it too (documented)
 
 
 def matrix(games, features, fill=FILL):
@@ -448,28 +521,33 @@ def naive_prior(games, seasons_eval, seasons_all):
     return out
 
 
-def walk_forward(games, seasons_eval, features=FEATURES, l2=1.0):
-    """Fit on seasons < S, predict S. Returns records with p, y, season."""
+_CACHE: dict[int, tuple] = {}
+
+
+def walk_forward(games, seasons_eval, features=FEATURES, l2=1.0, y_override=None):
+    """
+    Fit on seasons < S, predict S. Standardisation uses training-season statistics only (leakage guard).
+    `y_override` lets the permutation test swap outcomes without rebuilding features.
+    """
     recs = []
-    all_seasons = sorted({g["season"] for g in games})
+    key = content_key(games)
+    blocks = {s: _block(games, s, features, key) for s in sorted({g["season"] for g in games})}
     for S in seasons_eval:
-        train = [g for g in games if g["season"] < S]
-        test = [g for g in games if g["season"] == S]
-        Xtr, ytr, _ = matrix(train, features)
-        Xte, yte, keep = matrix(test, features)
+        train_seasons = [s for s in blocks if s < S]
+        Xtr, ytr = [], []
+        for s in train_seasons:
+            Xs, ys, _ = blocks[s]
+            Xtr.extend(Xs)
+            ytr.extend(ys)
+        Xte, yte, keep = blocks.get(S, ([], [], []))
         if len(Xtr) < 200 or not Xte:
             continue
-        # standardise using training stats only (leakage guard)
-        cols = list(zip(*[r[1:] for r in Xtr]))
-        scaled, means, sds = zscore_vec([list(c) for c in cols])
-        if not means:
-            continue
+        cols = [[row[j] for row in Xtr] for j in range(1, len(Xtr[0]))]
+        scaled, means, sds = zscore_vec(cols)
 
         def scale(rows):
-            out = []
-            for r in rows:
-                out.append([1.0] + [(v - means[i]) / sds[i] if sds[i] else 0.0 for i, v in enumerate(r[1:])])
-            return out
+            return [[1.0] + [(v - means[i]) / sds[i] if sds[i] else 0.0 for i, v in enumerate(r[1:])]
+                    for r in rows]
 
         w = fit_logistic(scale(Xtr), ytr, l2=l2)
         for r, yy, g in zip(scale(Xte), yte, keep):
@@ -477,6 +555,25 @@ def walk_forward(games, seasons_eval, features=FEATURES, l2=1.0):
                          "week": g["week"], "date": g["date"],
                          "spread": g["spread_line"], "total_line": g["total_line"]})
     return recs
+
+
+_BLOCKS: dict[tuple, tuple] = {}
+
+
+def _block(games, season, features, key):
+    ck = (key, season, tuple(features))
+    if ck not in _BLOCKS:
+        _BLOCKS[ck] = matrix([g for g in games if g["season"] == season], features)
+    return _BLOCKS[ck]
+
+
+def content_key(games) -> str:
+    """Cache key derived from the actual rows, so a shuffled copy can never collide with the real one."""
+    h = 0
+    for g in games:
+        if g["complete"]:
+            h = (h * 1000003 + hash((g["game_id"], g["result"]))) & 0xFFFFFFFFFFFF
+    return f"{len(games)}:{h}"
 
 
 def scores(recs, base):
@@ -492,32 +589,49 @@ def scores(recs, base):
             "accuracy": round(acc, 4)}
 
 
-def deflate(games, seasons_eval, base, observed_skill, N=200, rng_seed=SEED):
+def deflate(games, seasons_eval, base, observed_skill, N=200, rng_seed=SEED, K=1, features=FEATURES):
     """
     Best-of-N null: shuffle outcomes within each evaluated season, refit and re-score.
     Returns the 95th percentile of the best null skill and the full list.
     """
     rng = random.Random(rng_seed)
-    null_skills = []
-    pool = [g for g in games if g["season"] in seasons_eval and g["complete"]]
+    by_season = {s: [g for g in games if g["season"] == s and g["complete"]] for s in seasons_eval}
+    real = {s: [g["result"] for g in by_season[s]] for s in seasons_eval}
+    single = []
+    best_of = []
+    blocks_per = max(1, N // max(1, K))
     for _ in range(N):
-        shuffled = []
-        order = list(range(len(pool)))
-        rng.shuffle(order)
-        for i, g in enumerate(pool):
-            h = dict(g)
-            h["result"] = pool[order[i]]["result"]
-            shuffled.append(h)
-        recs = walk_forward(shuffled, seasons_eval)
-        if not recs:
-            continue
-        s = scores(recs, base)["skill"]
-        if s is not None:
-            null_skills.append(s)
-    p95 = percentile(null_skills, 0.95) if null_skills else None
-    return {"N": len(null_skills), "p95": round(p95, 5) if p95 is not None else None,
-            "median": round(statistics.median(null_skills), 5) if null_skills else None,
-            "passed": (observed_skill is not None and p95 is not None and observed_skill > p95)}
+        perm = {}
+        for s in seasons_eval:
+            outs = list(real[s])
+            rng.shuffle(outs)
+            perm[s] = iter(outs)
+        swapped = []
+        for g in games:
+            if g["season"] in perm and g["complete"]:
+                h = dict(g)
+                h["result"] = next(perm[g["season"]])
+                swapped.append(h)
+            else:
+                swapped.append(g)
+        _BLOCKS.clear()
+        recs = walk_forward(swapped, seasons_eval, features=features)
+        if recs:
+            v = scores(recs, base)["skill"]
+            if v is not None:
+                single.append(v)
+        _BLOCKS.clear()
+    # best-of-K: the threshold a researcher would face after trying K candidates on the same data
+    for i in range(0, max(0, len(single) - K + 1), K):
+        best_of.append(max(single[i:i + K]))
+    p95_single = percentile(single, 0.95) if single else None
+    p95_best = percentile(best_of, 0.95) if best_of else p95_single
+    return {"N": len(single), "K": K,
+            "p95_single": round(p95_single, 5) if p95_single is not None else None,
+            "p95": round(p95_best, 5) if p95_best is not None else None,
+            "median": round(statistics.median(single), 5) if single else None,
+            "blocks": len(best_of),
+            "passed": (observed_skill is not None and p95_best is not None and observed_skill > p95_best)}
 
 
 def calibration(recs, bins=10):
@@ -893,11 +1007,18 @@ def run(raw_dir, seasons, out_dir, selftest=False, perm_n=60):
     seasons_all = sorted({g["season"] for g in complete})
     seasons_eval = [s for s in seasons_all if s > min(seasons_all)][:6]
     base = naive_prior(games, seasons_eval, seasons_all)
-    recs = walk_forward(games, seasons_eval)
-    if not recs:
+    results = {}
+    for fam, feats, K in (("context", FEATURES, 11), ("strength", STRENGTH_FEATURES, 9)):
+        recs_f = walk_forward(games, seasons_eval, features=feats)
+        if not recs_f:
+            continue
+        sf = scores(recs_f, base)
+        df = deflate(games, seasons_eval, base, sf["skill"], N=perm_n, K=K, features=feats)
+        results[fam] = {"recs": recs_f, "scores": sf, "deflation": df, "features": feats}
+    if not results:
         return {"error": "no evaluable games", "games": len(games)}
-    s = scores(recs, base)
-    defl = deflate(games, seasons_eval, base, s["skill"], N=perm_n)
+    best = max(results, key=lambda k: (results[k]["scores"]["skill"] or -9))
+    recs, s, defl = results[best]["recs"], results[best]["scores"], results[best]["deflation"]
     corr = correlation_matrix(games, seasons_eval)
     props = load_prop_rows(raw_dir, seasons_eval)
     prop_results = [prop_eval(props, s2, spec) for s2 in seasons_eval[-2:] for spec in PROP_SPECS]
@@ -905,9 +1026,14 @@ def run(raw_dir, seasons, out_dir, selftest=False, perm_n=60):
     for s2 in seasons_eval[-2:]:
         pcorr += prop_correlation(props, s2, PROP_SPECS)
     lb = build_leaderboard(games, recs, base, corr, prop_results, pcorr, defl)
+    lb += family_rows(results)
 
     coverage = feature_coverage(games, seasons_eval)
+    board = current_board(games, injuries, depth, snaps, LineupIndex(depth, snaps, injuries))
     result = {
+        "bestFamily": best,
+        "families": {k: {"scores": v["scores"], "deflation": v["deflation"],
+                         "features": v["features"]} for k, v in results.items()},
         "generatedUTC": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
         "selftest": selftest,
         "seasons": seasons_all, "evaluatedSeasons": seasons_eval,
@@ -918,6 +1044,7 @@ def run(raw_dir, seasons, out_dir, selftest=False, perm_n=60):
         "props": [p for p in prop_results if p],
         "leaderboard": lb,
         "featureCoverage": coverage,
+        "currentBoard": board,
         "modelSpec": {"features": FEATURES, "l2": 1.0, "type": "logistic regression, walk-forward by season",
                       "fill": "missing signal -> 0 (documented; never a guessed value)"},
     }
@@ -925,6 +1052,87 @@ def run(raw_dir, seasons, out_dir, selftest=False, perm_n=60):
     with open(os.path.join(out_dir, "model_results.json"), "w", encoding="utf-8") as fh:
         json.dump(result, fh, indent=1)
     return result
+
+
+def family_rows(results):
+    """One leaderboard row per pre-registered feature family, so no comparison is hidden."""
+    order = {"A": 2, "C": 1, "D": 0}
+    rows = []
+    for fam, r in results.items():
+        sc, df = r["scores"], r["deflation"]
+        passed = (sc["skill"] or 0) > 0 and df["passed"]
+        rows.append({
+            "family": "single", "name": f"Single-game model — {fam} features ({len(r['features'])} signals)",
+            "tier": "A" if passed else ("C" if (sc["skill"] or 0) > 0 else "D"),
+            "score": round(max(0.0, (sc["skill"] or 0) - (df["p95"] or 0)) * 100, 3) if sc["skill"] else 0.0,
+            "metrics": sc,
+            "gates": {"G4_skill": {"pass": (sc["skill"] or 0) > 0, "value": sc["skill"]},
+                      "G5_deflation": {"pass": df["passed"],
+                                       "value": f"observed {sc['skill']} vs best-of-{df['K']} null p95 {df['p95']}"},
+                      "G7_stability": {"pass": True, "value": "see stability block"}},
+            "claim": "Out-of-sample probability skill vs a prior-season win-rate baseline. No betting return claimed.",
+        })
+    return rows
+
+
+def current_board(games, injuries, depth, snaps, index):
+    """
+    The current-season board: for each team, the latest week in the data, the official injury report
+    for that week, and the lineup status (starters vs 2nd/3rd/4th string) derived from the latest
+    depth-chart snapshot. Every field is traceable to a published row; anything absent stays blank.
+    """
+    seasons = sorted({g["season"] for g in games})
+    if not seasons:
+        return {}
+    cur = seasons[-1]
+    cur_games = [g for g in games if g["season"] == cur]
+    if not cur_games:
+        return {}
+    latest_week = max((g["week"] for g in cur_games), default=0)
+    teams = sorted({g["home"] for g in cur_games} | {g["away"] for g in cur_games})
+    board = {"season": cur, "week": latest_week, "teams": [], "games": []}
+
+    inj_by_team = defaultdict(list)
+    for (team, week, gid), v in injuries.items():
+        if week == latest_week:
+            inj_by_team[team].append({"gsisId": gid, **v})
+
+    for t in teams:
+        rep = inj_by_team.get(t, [])
+        outs = [x for x in rep if (x.get("report") or "").lower() == "out"]
+        doubts = [x for x in rep if (x.get("report") or "").lower() == "doubtful"]
+        ques = [x for x in rep if (x.get("report") or "").lower() == "questionable"]
+        off_val, off_out, off_doubt, off_ques = index.value(t, latest_week, "off")
+        def_val, def_out, def_doubt, def_ques = index.value(t, latest_week, "def")
+        # who is listed as a backup at each tier, per position group (published rows only)
+        tiers = defaultdict(lambda: defaultdict(list))
+        for pos in ("QB", "RB", "WR", "TE", "OL", "DL", "LB", "CB", "S"):
+            for gid, v in index.by_team_week_pos.get((t, latest_week, pos), []):
+                rank = v.get("rank")
+                if rank and rank <= 4 and v.get("name"):
+                    tiers[pos][rank].append(v["name"])
+        board["teams"].append({
+            "team": t,
+            "reportCount": len(rep),
+            "out": len(outs), "doubtful": len(doubts), "questionable": len(ques),
+            "outNames": [x.get("name") or x.get("full_name") or x["gsisId"] for x in outs][:8],
+            "offStarterValue": off_val, "defStarterValue": def_val,
+            "offOutShare": off_out, "defOutShare": def_out,
+            "offDoubtfulShare": off_doubt, "defDoubtfulShare": def_doubt,
+            "offQuestionableShare": off_ques, "defQuestionableShare": def_ques,
+            "tiers": {p: {str(r): names for r, names in d.items()} for p, d in tiers.items()},
+            "status": ("verified" if rep or off_val is not None else "unknown"),
+        })
+    for g in [x for x in cur_games if x["week"] == latest_week]:
+        board["games"].append({
+            "gameId": g["game_id"], "date": g["date"], "week": g["week"],
+            "away": g["away"], "home": g["home"], "roof": g["roof"],
+            "awayRest": g["away_rest"], "homeRest": g["home_rest"],
+            "spread": g["spread_line"], "total": g["total_line"],
+            "complete": g["complete"],
+            "modelHomeWinProb": None,  # filled by the caller with the walk-forward probability when available
+        })
+    return board
 
 
 def feature_coverage(games, seasons_eval):

@@ -11,6 +11,8 @@ on:
       - 'nfl/model.py'
       - 'nfl/leaderboard.py'
       - 'nfl/build_site.py'
+      - 'nfl/analyze.py'
+      - 'nfl/labels.json'
       - '.github/workflows/nfl-model.yml'
 permissions:
   contents: write
@@ -32,10 +34,12 @@ jobs:
         run: python3 nfl/fetch_data.py --seasons 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 --with-espn
       - name: run model
         run: python3 nfl/model.py --perm ${{ github.event.inputs.perm || '60' }}
-      - name: leaderboard + site data
+      - name: audit + hypotheses + questions
+        run: python3 nfl/analyze.py
+      - name: leaderboard + site
         run: |
-          python3 nfl/leaderboard.py || true
-          python3 nfl/build_site.py || true
+          python3 nfl/leaderboard.py
+          python3 nfl/build_site.py
       - name: commit derived outputs
         run: |
           git config user.name "korea5-nfl-bot"

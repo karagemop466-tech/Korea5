@@ -405,6 +405,7 @@ ROOT_NAV = [
     ("../nfl/index.html", "NFL Decision Support"),
     ("../nfl/system/index.html", "NFL decision system"),
     ("../lines-lab/index.html", "NFL Skill Lab"),
+    ("../strategy-lab/index.html", "Strategy Lab"),
 ]
 EXTRA_NAV = [
     ("index.html", "Official feeds"), ("calendar.html", "Day scoreboard"), ("vacation.html", "Free windows"),

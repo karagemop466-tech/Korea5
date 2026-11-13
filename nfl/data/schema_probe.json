@@ -1,5 +1,5 @@
 {
- "generatedUTC": "2026-11-13T13:15:08Z",
+ "generatedUTC": "2026-11-13T13:17:22Z",
  "files": {
   "games.csv": {
    "bytes": 105624,
@@ -4233,7 +4233,7 @@
    "statusExample": "STATUS_FINAL"
   },
   "espn_2026_t2_w10.json": {
-   "bytes": 254476,
+   "bytes": 254518,
    "jsonTopKeys": [
     "leagues",
     "season",
@@ -4272,7 +4272,7 @@
    "statusExample": "STATUS_FINAL"
   },
   "espn_2026_t2_w11.json": {
-   "bytes": 236508,
+   "bytes": 236550,
    "jsonTopKeys": [
     "leagues",
     "season",
@@ -4323,7 +4323,7 @@
    "oddsExample": {
     "provider": {
      "id": "100",
-     "name": "DraftKings",
+     "name": "Draft Kings",
      "priority": 1,
      "logos": [
       {
@@ -4339,7 +4339,7 @@
        ]
       }
      ],
-     "displayName": "DraftKings"
+     "displayName": "Draft Kings"
     },
     "details": "HOU -10",
     "overUnder": 44.5,

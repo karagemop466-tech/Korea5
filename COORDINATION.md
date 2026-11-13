@@ -1128,3 +1128,36 @@ published rather than hidden.
 0 missing**; lab verification 0 failures; model-lab verification pass; certainty audit passes twice; Node syntax and
 calendar tests pass; 5/5 Python unit tests pass; `compileall` and `git diff --check` clean; a second rebuild produced
 no further changes, so the output is deterministic.
+
+### Integration of the fourth NFL hub (arena-c6eea73d, 2026-11-13)
+
+A fourth session, `arena/e96c5f87-korea5`, merged an **NFL Decision Support** hub via **PR #42** (`nfl/` with
+`nfl/data/*.json`, `scripts/build_nfl.py`, `scripts/verify_nfl.py`). It is the structured layer of the programme: the
+R1–R9 requirements list, the method and validation-gate reference, the leaderboard reward design and the source
+registry. Its companion origination pages are the retained `nfl-*.html` addresses, which resolve into `lab/`.
+
+**Nothing of that session's work was removed or rewritten.** Its files, its data and its verifier are untouched.
+
+**What was found and how it was handled.** Like the model lab before it, the hub was merged but unreachable — absent
+from the site navigation, so a visitor had no way in except by typing the URL. Its own verifier passes
+(`scripts/verify_nfl.py`: 40 local links, 0 missing, 0 non-official external links, all checks green).
+
+**Integration applied.**
+
+1. **Navigation.** The root navigation now carries all three surfaces, each labelled for what it is:
+   **NFL Lab** (`lab/index.html`, evidence), **Decisions** (`lab/questions.html`), **Suggestions**
+   (`lab/suggestions.html`), **NFL Model** (`nfl-lab/index.html`, model and back-tests) and **NFL Decision Support**
+   (`nfl/index.html`, structured requirements/method/leaderboard design).
+2. **Cross-links.** The `nfl/` hub landing page and the `lab/` landing page each now state which layer the other two
+   cover and link to them, so a reader can tell why three sections exist and what each is authoritative for.
+3. **CI.** `.github/workflows/certainty.yml` now builds and verifies this hub too (`scripts/build_nfl.py`,
+   `scripts/verify_nfl.py`), so its pages cannot drift from their generator.
+
+**Verified after the integration:** the full pipeline is green — **62 pages, 1,550 local links, 1,235 external links,
+0 missing**; all three NFL verifiers pass (evidence lab, model lab, structured hub); certainty audit passes twice; Node
+syntax and calendar tests pass; 5/5 Python unit tests pass; `compileall` and `git diff --check` clean.
+
+**Note on the four-way duplication.** Four parallel sessions worked the same question, so the site now carries three
+NFL surfaces plus the retained pointer addresses. Nothing was deleted — each section keeps its own data, generator and
+verifier, and each is reachable and cross-linked. The duplication is recorded here rather than resolved by removing
+another session's work, which would have exceeded this session's scope.

@@ -174,6 +174,13 @@ questions, suggestions, executive summary and flagged detail.</p>
 <p class="note">Built by a parallel session and live on <code>main</code>. This hub links to it so the
 NFL Lines area is one coherent section with no duplicated pages.</p>
 <section class="cards">{companion}</section>
+<div class="note"><strong>How the three NFL surfaces relate.</strong> This hub holds the structured layer: the
+requirements list, the method and validation-gate reference, the leaderboard reward design and the source registry.
+The <a href="../lab/index.html">NFL Lines Lab</a> holds the evidence layer, built only on official NFL records — the
+published injury report, official player game logs and the official Game Book — with every correlation and
+minimum-sample figure computed from them. The <a href="../nfl-lab/index.html">NFL Lines Lab (model)</a> holds the model
+layer: a line model built and back-tested against third-party game data, with the market spread left blank because its
+upstream source is not named. None of the three publishes a validated edge, and each says so on its own landing page.</div>
 """
     return page("NFL Decision Support", "index.html", body,
                 "Structured requirements, method, leaderboard design and sources for the NFL Lines work")

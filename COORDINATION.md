@@ -690,3 +690,40 @@ scope is needed it will be logged here instead of made.
 **Change log**
 - **2026-11-13** — Board section created; N1–N9 claimed by `arena-65332583`. Starting with N3 data acquisition
   (official NFL.com Week 10 injury report, 2026 standings/scores, club depth charts) in parallel with N1/N2 registers.
+
+### Session `arena-65332583` — completion record (N1–N8 done; N9 = integration)
+
+- **2026-11-13 — N3 done (data acquisition + verification).** CI fetcher (`scripts/fetch_nfl_analytics.py`, workflow
+  `nfl-analytics-fetch`, runs 43432736798 + 43433410589) pulled official snapshots into `research/nfl-analytics-raw/`
+  (sha256 in `fetch-report.json`): NFL.com Week-10 injury report, 2026 standings, by-week schedules weeks 1–10,
+  30 club depth charts, ESPN scoreboard API (odds reference). Parsed by `scripts/parse_nfl_analytics.py` into
+  296 injury rows (14 games, 26 team tables), 137 finals with per-game NFL.com URLs, 869 depth rows (1st–5th strings),
+  32 standings rows, DraftKings spread/total/ML blocks for 13 games. Cross-checks: injury-page slate matches the
+  independent `data/upstream/nfl-2026.json` **14/14** incl. TV windows; standings PF cross-check vs official game-page
+  PPG (PIT 22.5, CIN 30.0) matches; DET depth rows match a rendered fetch of detroitlions.com cell-by-cell.
+  Record: `research/nfl-week10-verification.md`.
+- **2026-11-13 — N4 done (model + strategies).** `scripts/originate_lines.py`: least-squares margin ratings on weeks 1–9
+  (136 finals; week 10 held out), fitted HFA −0.5 (flagged F36 vs traditional ≈2.5), scoring/allowing totals, documented
+  injury weights joined to depth strings. Week-10 board with market comparison and edges published on `lines.html`.
+  First out-of-sample validation WAS @ NYG (Commanders 24–21): model NYG −2.2 → side loss, 5.2-pt error (F42, reported
+  straight). `strategies.html`: 7 signals, 5 strategies incl. parlays + player-prop combos, 7 validation gates
+  (G1–G7), correlation matrix as flagged estimates (F41) with estimator + rho floor, luck-removal method.
+- **2026-11-13 — N1, N2, N5, N6, N7, N8 done.** Registers R1–R18 / Q1–Q20 / S1–S15 with the review workflow
+  (nothing auto-implemented); leaderboard design with anti-luck scoring and unconfirmed reward proposals (Q11);
+  Week-10 deficiency tracker (96 rows — starters out with named 2nd/3rd/4th-string replacements, offense + defense);
+  executive summary `research/EXECUTIVE-SUMMARY-NFL.md`; 8 suite pages + nav integration via `scripts/build_site.py`
+  NAV and one dashboard pill (generator and shipped pages regenerated together — no drift).
+- **Scope amendment (logged per protocol).** `tools/verify_extra.py` APPROVED_DOMAINS extended with three official
+  club domains (detroitlions.com, houstontexans.com, carolinapanthers.com) so flag rows F33/F34/F38 can cite the club
+  depth-chart pages they are about. No other `tools/` change. Everything else stayed inside the declared scope.
+- **Verification at this commit.** `scripts/check_links.py`: 19 pages, 458 local + 858 external links, **0 missing**;
+  `tools/verify_extra.py` **31/31**; `scripts/audit_certainty.py` passed (all pages carry the disclosure);
+  `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` + `tests/test_calendar_today.js` OK;
+  `node --check extra/assets/extra.js` OK; `python3 -m compileall -q scripts tools` OK; `git diff --check` clean.
+- **Irregularities F33–F42** published on both Flagged for Review pages (append-only `curated/flags.json`):
+  HOU depth chart is an image; CAR depth page unreachable (CI ×2 + direct fetch 500) — both blank, never inferred;
+  market odds are DraftKings via ESPN (trusted secondary, not official league data); fitted HFA deviation;
+  totals not injury-adjusted in v0; DET S Kerby Joseph (Out) missing from the club depth chart; Sunday/Monday game
+  statuses not yet designated at retrieval; no verified player-prop market (prop strategies blocked at Q5);
+  correlation values are estimates (Q10); model v0 first test was a side loss (G4 pending, n≥100 required).
+- **N9 in progress:** PR to `main`, merge, Pages deploy confirmation and final record to follow below.

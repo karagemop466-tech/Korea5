@@ -99,3 +99,35 @@ python3 tools/verify_extra.py
 Local tests check structure and links, not complete source-fact verification. Historical
 verification reports are preserved with their original timestamps. All future vacation
 windows remain provisional. `certainty.html` lists the outstanding evidence limits.
+
+## NFL Analytics, Line Origination & Decision Support (2026-11-13)
+
+A verified-data suite for originating **our own NFL lines**, tracking **injuries and lineup deficiencies**
+(2nd/3rd/4th-string replacements on offense and defense), and running a **validation-gated strategy leaderboard**
+that removes luck from the scoring. Live from the site nav as **NFL Analytics**.
+
+| Page | What it is |
+|---|---|
+| `nfl-analytics.html` | Suite dashboard + executive summary |
+| `lines.html` | Week-10 originated lines vs market, ratings, parameters, first validation point |
+| `injuries.html` | Every official injury row + depth-string deficiency report |
+| `strategies.html` | Signals, strategies (singles/parlays/prop combos), 7 validation gates, correlation values, luck removal |
+| `leaderboard.html` | Competition rules, anti-luck scoring, rewards (proposals pending owner decision) |
+| `questions.html` | Q1–Q20 decision prerequisites: have / missing / blocks / discovery |
+| `suggestions.html` | S1–S15 review register — choose the best path before anything is implemented |
+| `requirements.html` | R1–R18 requirements register |
+
+Data lives in `data/nfl-analytics/` (every row source-linked). Raw official snapshots + sha256 manifest:
+`research/nfl-analytics-raw/`. Verification record: `research/nfl-week10-verification.md`.
+Executive summary: `research/EXECUTIVE-SUMMARY-NFL.md`. Flags F33–F42 on the Flagged for Review pages.
+
+```bash
+python3 scripts/fetch_nfl_analytics.py   # CI: official snapshots (injuries, standings, schedules, 32 depth charts, ESPN odds ref)
+python3 scripts/parse_nfl_analytics.py   # snapshots -> row-level JSON (296 injury rows, 137 finals, 869 depth rows)
+python3 scripts/originate_lines.py       # model lines + lineup-deficiency report
+python3 scripts/build_nfl_analytics.py   # the 8 suite pages (row-source check enforced at build time)
+```
+
+Honesty rules: every table row links to an official source; derived values are labelled `MODEL OUTPUT`;
+market odds (DraftKings via ESPN) are labelled trusted-secondary, never official; anything unverifiable stays
+blank and is published on Flagged for Review (e.g., Texans depth chart is an image, Panthers depth page is down).

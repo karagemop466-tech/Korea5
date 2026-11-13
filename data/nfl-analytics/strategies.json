@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Strategy Research Register — signals, validation gates, correlation, luck removal",
+    "created": "2026-11-13",
+    "principle": "A strategy is a pre-registered rule that maps verified information to bet selections. It may score on the leaderboard only after passing every validation gate. All parameter values below are MODEL PARAMETERS or literature-anchored estimates unless a row says 'computed here'."
+  },
+  "signals": [
+    {"id": "SG1", "name": "Own-line discrepancy (spread)", "definition": "modelSpreadHome - marketSpreadHome beyond a threshold (default 3.0 pts after de-vigging).", "dataNeeded": "model lines (have), market reference (have via DraftKings/ESPN, labelled)", "status": "active", "source": "model-lines-week-10-2026.json"},
+    {"id": "SG2", "name": "Own-line discrepancy (total)", "definition": "modelTotal - marketTotal beyond 2.5 pts.", "dataNeeded": "model lines + market reference", "status": "active", "source": "model-lines-week-10-2026.json"},
+    {"id": "SG3", "name": "Lineup-deficiency imbalance", "definition": "difference in modelled injury points between the two teams of a game (injuryAdjAwayPts - injuryAdjHomePts) beyond 1.5 pts, in the direction the market has not priced (checked against the market move if available).", "dataNeeded": "official injury report + club depth charts (have)", "status": "active", "source": "lineup-report-week-10-2026.json"},
+    {"id": "SG4", "name": "Backup-QB downgrade", "definition": "opponent faces a 2nd/3rd-string QB starter (depth-chart confirmed) and the market line has not fully adjusted (model-market edge still positive).", "dataNeeded": "depth charts + news of official starter naming (nfl.com news used only as labelled context)", "status": "active", "source": "lineup-report-week-10-2026.json"},
+    {"id": "SG5", "name": "Rest/spot asymmetry", "definition": "rest-day difference or international/short-week spot not reflected in the model-market edge.", "dataNeeded": "official schedule (have, data/upstream/nfl-2026.json)", "status": "design", "source": "https://www.nfl.com/schedules/2026/by-week/week-10"},
+    {"id": "SG6", "name": "Cluster-injury defense", "definition": "two or more same-unit defensive starters out (e.g., CB1 + S1) — pass-game exposure signal for opponent player props.", "dataNeeded": "injury report + depth charts (have); prop market (missing — Q5)", "status": "blocked on Q5", "source": "lineup-report-week-10-2026.json"},
+    {"id": "SG7", "name": "Positive-feedback prop combo", "definition": "player-prop legs on the same game whose joint hit probability exceeds the product of marginals by a documented correlation factor (see correlation table).", "dataNeeded": "prop lines (missing), usage baselines (partial)", "status": "blocked on Q5/Q19", "source": "strategies.html#correlation"}
+  ],
+  "strategies": [
+    {"id": "ST1", "name": "Single: model-market edge", "betType": "single", "rule": "Bet the side the model favours when |edgeSpreadPts| >= 3.0 AND the lineup signal agrees or is neutral; otherwise pass.", "gatesRequired": ["G1", "G2", "G3", "G4", "G5", "G6"], "status": "registered — pre-launch", "notes": "Week-10 live board would have produced passes on JAX/TEN, BUF/NYJ, CAR/NO, SF/DAL per current edges; edges are v0 and gates G4/G5 need pick volume."},
+    {"id": "ST2", "name": "Single: total discrepancy", "betType": "single", "rule": "Bet Over/Under the model side when |edgeTotalPts| >= 2.5; no injury adjustment applied to totals in v0 (known limitation).", "gatesRequired": ["G1", "G2", "G4", "G5", "G6"], "status": "registered — pre-launch", "notes": "Current board shows model totals below market in 8 of 13 games (v0 bias to Under; must pass G4 calibration before scoring)."},
+    {"id": "ST3", "name": "Parlay: 2-leg cross-game edge stack", "betType": "parlay", "rule": "Two single-qualifying legs from DIFFERENT games; combined price must clear the product of true probabilities by the correlation haircut (independent legs: multiply fair probabilities; never stack positively-correlated legs without the matrix).", "gatesRequired": ["G1", "G2", "G3", "G4", "G5", "G6", "G7"], "status": "registered — pre-launch", "notes": "Cross-game legs are approximately independent (see correlation table); same-game legs are NOT."},
+    {"id": "ST4", "name": "Same-game parlay: correlated core", "betType": "same-game parlay", "rule": "Team ML/Spread + game total + at most one correlated player prop on the SAME game; stake scaled by the empirical correlation matrix (frozen at pre-launch estimates until enough samples exist).", "gatesRequired": ["G1", "G2", "G3", "G4", "G5", "G6", "G7"], "status": "registered — blocked on Q5/Q10", "notes": "SGP correlation structure is the single biggest luck amplifier; the matrix cell values below are ESTIMATES pending the S5 job."},
+    {"id": "ST5", "name": "Player-prop combo: usage-driven", "betType": "player prop combo", "rule": "2-3 prop legs built from verified usage drivers (target share/carry share on official stats) plus lineup-deficiency signals; each leg needs its own edge vs a modelled baseline; combos capped at 3 legs.", "gatesRequired": ["G1", "G2", "G3", "G4", "G5", "G6", "G7"], "status": "registered — blocked on Q5/Q19", "notes": "No official prop market is verified; modelled baselines would be labelled MODEL OUTPUT and graded on raw outcomes only."}
+  ],
+  "validationGates": [
+    {"id": "G1", "name": "Pre-registration lock", "definition": "Strategy rule + parameters timestamped before the first graded kickoff; no mid-week edits (edits create a new strategy ID).", "why": "Removes hindsight fitting.", "measurement": "git/JSON timestamps vs official kickoff times."},
+    {"id": "G2", "name": "Verified-inputs-only", "definition": "Every input in the decision path traces to an official source row or a labelled MODEL OUTPUT; unverified cells force a pass.", "why": "No hallucinated information (R16).", "measurement": "row-source audit in build_nfl_analytics.py + parse-report."},
+    {"id": "G3", "name": "Parameter disclosure", "definition": "All weights/thresholds published with the strategy; changes require a new version and re-validation.", "why": "Parameters are assumptions until validated.", "measurement": "parameters block in model-lines JSON."},
+    {"id": "G4", "name": "Calibration sample", "definition": "N >= 100 graded picks before rewards; model MAE tracked weekly (first point: WAS@NYG error 5.2 pts, side loss).", "why": "Small samples are noise.", "measurement": "pick ledger + weekly postmortem (S11)."},
+    {"id": "G5", "name": "Skill, not luck (statistical)", "definition": "95% bootstrap CI of ROI must clear 0 after shrinkage toward the mean; closing-line value positive on average (when market snapshots exist).", "why": "Directly implements R10.", "measurement": "leaderboard scoring formula."},
+    {"id": "G6", "name": "Exposure discipline", "definition": "Quarter-Kelly stake cap 3% of bankroll, weekly exposure cap 10%, no compounding of parlays.", "why": "Variance control.", "measurement": "stake ledger."},
+    {"id": "G7", "name": "Correlation audit", "definition": "Every multi-leg ticket declares its correlation assumptions; same-game tickets must use the published matrix or a conservative floor (max rho = 0.35 until measured).", "why": "Parlays otherwise launder luck.", "measurement": "correlation table + S5 job."}
+  ],
+  "correlation": {
+    "status": "FRAMEWORK PUBLISHED — empirical values pending (Q10). Values below are literature-anchored estimates, NOT computed here, and are flagged unverified until the S5 job runs.",
+    "estimator": "phi coefficient between binary leg outcomes on graded same-game samples; shrunk toward 0 with prior weight 20; published with sample size per cell.",
+    "matrix": [
+      {"pair": "spread side & game total (same game)", "rhoEstimate": "-0.05 to +0.05", "basis": "roughly symmetric historically; must be measured", "status": "unverified estimate"},
+      {"pair": "team total over & game total over (same game)", "rhoEstimate": "+0.6 to +0.8", "basis": "subset relationship (part-whole) — mathematically positive", "status": "part-whole identity, direction certain; magnitude unverified"},
+      {"pair": "QB passing yards over & team total over (same game)", "rhoEstimate": "+0.5 to +0.7", "basis": "shared game environment", "status": "unverified estimate"},
+      {"pair": "RB rushing yards over & team win (same game)", "rhoEstimate": "+0.3 to +0.5", "basis": "game-script dependent", "status": "unverified estimate"},
+      {"pair": "two legs, different games", "rhoEstimate": "0", "basis": "independent game outcomes", "status": "working assumption; measurable"},
+      {"pair": "player prop & opponent player prop (same game)", "rhoEstimate": "-0.2 to +0.2", "basis": "varies by position pairing", "status": "unverified estimate"}
+    ],
+    "rule": "Until measured, same-game staking uses rho floor 0.35 for positively-linked legs and treats the parlay as its own correlated exposure unit (G7).",
+    "sourceLinks": ["https://www.nfl.com/games/steelers-at-bengals-2026-reg-10"]
+  },
+  "luckRemoval": {
+    "principles": [
+      "Grade on closing-line value (CLV) as well as outcomes: a strategy that beats the close repeatedly has skill even in a losing month (needs Q4/Q17 resolved).",
+      "Shrink ROI toward the mean: shrunkROI = (n*ROI + k*0)/(n+k) with k = 25; publish n beside every score.",
+      "Bootstrap 95% CI (10,000 resamples of the pick ledger); rewards require the interval to clear zero.",
+      "Deflate parlays: expected variance of a parlay grows superlinearly; count a parlay as its legs for sample-size purposes.",
+      "Separate 'process score' (did the strategy follow its own rules?) from 'outcome score' — process errors invalidate the week regardless of result.",
+      "Report luck-adjusted rank = shrunkROI rank + CLV rank blend (60/40), never raw ROI alone."
+    ],
+    "sources": []
+  }
+}

@@ -1,510 +1,644 @@
 {
-  "meta": {
-    "name": "Flagged for Review — combined irregularity register",
-    "compiledUTC": "2026-11-02",
-    "note": "Items here are published for manual review. Per the project brief, flagged / unverified / needs-review items do NOT block the PR merge or the GitHub Pages deployment. Every row links to an official source; a value that could not be confirmed is left blank rather than inferred.",
-    "label": "ESTIMATION — not a real verified released schedule"
-  },
-  "flags": [
+ "meta": {
+  "name": "Flagged for Review — combined irregularity register",
+  "compiledUTC": "2026-11-02",
+  "note": "Items here are published for manual review. Per the project brief, flagged / unverified / needs-review items do NOT block the PR merge or the GitHub Pages deployment. Every row links to an official source; a value that could not be confirmed is left blank rather than inferred.",
+  "label": "ESTIMATION — not a real verified released schedule"
+ },
+ "flags": [
+  {
+   "id": "F01",
+   "severity": "high",
+   "title": "2028 and 2029 MLB schedules are not released",
+   "detail": "MLB StatsAPI returns 0 regular-season games for 2028 and 2029. All 2028/2029 MLB rows on this site are ESTIMATION — not a real verified released schedule. Dates, opponents and times are blank on verified tables.",
+   "status": "needs-review",
+   "sources": [
     {
-      "id": "F01",
-      "severity": "high",
-      "title": "2028 and 2029 MLB schedules are not released",
-      "detail": "MLB StatsAPI returns 0 regular-season games for 2028 and 2029. All 2028/2029 MLB rows on this site are ESTIMATION — not a real verified released schedule. Dates, opponents and times are blank on verified tables.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "MLB schedule (MLB.com)",
-          "url": "https://www.mlb.com/schedule"
-        },
-        {
-          "name": "MLB StatsAPI 2028",
-          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2028&gameType=R"
-        },
-        {
-          "name": "MLB StatsAPI 2029",
-          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2029&gameType=R"
-        }
-      ]
+     "name": "MLB schedule (MLB.com)",
+     "url": "https://www.mlb.com/schedule"
     },
     {
-      "id": "F02",
-      "severity": "high",
-      "title": "2027 NFL schedule and 2027–29 Westwood One postseason schedules are not released",
-      "detail": "No official 2027 NFL schedule or 2027–2029 Westwood One postseason broadcast schedule exists as of 2026-11-02. These are left blank and labelled ESTIMATION — not a real verified released schedule.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL schedules",
-          "url": "https://www.nfl.com/schedules/"
-        },
-        {
-          "name": "Westwood One Sports NFL schedule",
-          "url": "https://www.westwoodonesports.com/nfl-schedule/"
-        }
-      ]
+     "name": "MLB StatsAPI 2028",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2028&gameType=R"
     },
     {
-      "id": "F03",
-      "severity": "high",
-      "title": "2,015 MLB 2027 games carry TBD first-pitch times",
-      "detail": "MLB StatsAPI returns startTimeTBD=true for 2,015 of the 5,861 checked 2026/2027 game records; the placeholder time is often 07:33Z. Start times are left blank on verified tables; the parallel session's modelled start times appear only in the clearly labelled planning-estimate mode.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "MLB 2027 schedule release",
-          "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
-        },
-        {
-          "name": "MLB StatsAPI 2027",
-          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2027&gameType=R"
-        }
-      ]
-    },
-    {
-      "id": "F04",
-      "severity": "medium",
-      "title": "24 official 2026 NFL games have no published kickoff time",
-      "detail": "The NFL.com by-week feed contains 321 HOF/preseason/regular games; 24 have no kickoff time (mostly Week 18 TBA). Those rows show blank times and are flagged.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com 2026 Week 18",
-          "url": "https://www.nfl.com/schedules/2026/by-week/week-18"
-        },
-        {
-          "name": "2026-27 NFL Important Dates",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        }
-      ]
-    },
-    {
-      "id": "F05",
-      "severity": "medium",
-      "title": "Super Bowl LXIII (2029) exact date still not on an official page; LXII (2028) date now verified",
-      "detail": "Update 2026-11-05: the Mercedes-Benz Stadium official event page publishes Super Bowl LXII as February 13, 2028 (a Sunday) — the planner's modelled 2028 date already matched and is now anchored to that page (kickoff time still TBA). For Super Bowl LXIII the official release (NFL.com and media.nfl.com, Mar 30, 2026) confirms only Las Vegas / Allegiant Stadium in 2029; On Location's official page says only 'February 2029'. The exact date — reported as Sunday, February 11, 2029 by press coverage of the NFL's social announcement — does not appear on any official page reviewed, so the 2029 date fields stay blank and the modelled 2029-02-11 block remains labelled ESTIMATION.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Super Bowl LXII event page — February 13, 2028 (Mercedes-Benz Stadium, official)",
-          "url": "https://www.mercedesbenzstadium.com/events/super-bowl-lxii"
-        },
-        {
-          "name": "Super Bowl LXIII host announcement (NFL.com, official)",
-          "url": "https://www.nfl.com/news/las-vegas-to-host-super-bowl-lxiii-in-2029"
-        },
-        {
-          "name": "Super Bowl LXIII release (media.nfl.com, official)",
-          "url": "https://media.nfl.com/news-and-releases/events/super-bowl-returns-to-las-vegas-in-2029-"
-        }
-      ]
-    },
-    {
-      "id": "F06",
-      "severity": "high",
-      "title": "Westwood One vs 49ers kickoff conflict, 2026-11-22 MIN at SF",
-      "detail": "The official Westwood One schedule lists 7:30 PM ET (4:30 PM PT) while 49ers.com lists 5:20 PM PST for the Mexico City game. Both windows are blocked and the conflict is published rather than silently resolved.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Westwood One Sports NFL schedule",
-          "url": "https://www.westwoodonesports.com/nfl-schedule/"
-        },
-        {
-          "name": "49ers 2026 schedule",
-          "url": "https://www.49ers.com/schedule/2026/"
-        }
-      ]
-    },
-    {
-      "id": "F07",
-      "severity": "medium",
-      "title": "Older official Stanford / Cal future-schedule releases conflict with newer ones",
-      "detail": "Cal 2028: 2020 release put Wyoming on Sept 2, 2024 release puts UCLA on Sept 2. Cal 2029: 2020 release put Minnesota on Sept 1, 2024 release puts Wisconsin on Sept 1. Stanford 2027 TCU game was canceled in 2026. Newer sources are used; older entries are left blank or flagged.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Cal-UCLA 2026-29 (2024)",
-          "url": "https://calbears.com/news/2024/7/10/football-cal-ucla-schedule-4-games-from-2026-29"
-        },
-        {
-          "name": "Cal adds Minnesota/Wyoming (2020)",
-          "url": "https://calbears.com/news/2020/2/11/football-cal-adds-minnesota-and-wyoming-to-future-schedules"
-        },
-        {
-          "name": "TCU series update (2026)",
-          "url": "https://gostanford.com/news/2026/04/17/tcu-series-update"
-        }
-      ]
-    },
-    {
-      "id": "F08",
-      "severity": "medium",
-      "title": "CFP radio partner not stated on official broadcast schedule",
-      "detail": "CollegeFootballPlayoff.com publishes 2026-27 CFP dates and TV networks but no radio partner. Radio carriage of CFP games on a 94122 AM/FM station is therefore unverified; the dates are shown as official anchors only.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "2026-27 CFP Broadcast Schedule",
-          "url": "https://collegefootballplayoff.com/news/2026/6/1/26-27-broadcast-sked"
-        }
-      ]
-    },
-    {
-      "id": "F09",
-      "severity": "low",
-      "title": "Westwood One Station Finder does not publish frequencies",
-      "detail": "The official Station Finder lists San Francisco affiliates by call sign (KNBR-AM, KNBR-F2, KNBR-FM, KTCT-AM) but no frequencies. Frequencies on this site come from separate official team / station / ESPN pages and are attributed individually.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Westwood One Station Finder",
-          "url": "https://www.westwoodonesports.com/station-finder/"
-        },
-        {
-          "name": "ESPN Radio affiliate list",
-          "url": "https://www.espn.com/liveradiotv/s/nbaaffiliates.html"
-        }
-      ]
-    },
-    {
-      "id": "F10",
-      "severity": "high",
-      "title": "Westwood One warns not every affiliate airs every broadcast",
-      "detail": "Official wording: 'Because of local blackouts and/or programming conflicts, not every affiliate can air every Westwood One Sports broadcast.' National W1 windows are high priority but station-level carriage in 94122 is not guaranteed.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Westwood One Station Finder",
-          "url": "https://www.westwoodonesports.com/station-finder/"
-        }
-      ]
-    },
-    {
-      "id": "F11",
-      "severity": "medium",
-      "title": "Dashboard copy says Feb 8–13 2027 gap is 'after the Super Bowl'",
-      "detail": "Super Bowl LXI is officially Feb 14 2027, so the Feb 8–13 2027 window is BEFORE the Super Bowl. The root dashboard wording is corrected on our combined analysis page; the original wording is retained here as a documented irregularity.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "2026 Kickoff Guide (Super Bowl LXI date)",
-          "url": "https://media.nfl.com/football-information/2026/news/2026-kickoff-guide"
-        },
-        {
-          "name": "2026-27 NFL Important Dates",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        }
-      ]
-    },
-    {
-      "id": "F12",
-      "severity": "medium",
-      "title": "Prior sites referenced in the brief return GitHub Pages 404",
-      "detail": "buffedlizard55-lab.github.io/VacationSchedule/site/, /ScheduleFreeTime/, /RADIOSF/ and /VacationSchedule/ all returned 404 during review. This project builds a new self-contained site instead of relying on those pages.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Prior site (404)",
-          "url": "https://buffedlizard55-lab.github.io/VacationSchedule/site/"
-        }
-      ]
-    },
-    {
-      "id": "F13",
-      "severity": "medium",
-      "title": "2026 Big Game date conflict between two official school pages",
-      "detail": "calbears.com listed the Big Game on Sat Nov 14 2026 at 12:30 PM while gostanford.com listed Stanford at California on Sat Nov 21 2026 TBA. Both dates were blocked by the parallel session. The 2026 Cal schedule page now shows Stanford on Nov 21; the older Nov 14 entry is retained as a flagged conflict.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Cal 2026 schedule",
-          "url": "https://calbears.com/sports/football/schedule/2026"
-        },
-        {
-          "name": "Stanford 2026 schedule",
-          "url": "https://gostanford.com/sports/football/schedule"
-        }
-      ]
-    },
-    {
-      "id": "F14",
-      "severity": "medium",
-      "title": "Westwood One 2026-12-27 JAX at DAL time not retrievable",
-      "detail": "The parallel session could not retrieve a kickoff time from the official W1 event page; the time was left blank and marked unverified.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Westwood One Sports NFL schedule",
-          "url": "https://www.westwoodonesports.com/nfl-schedule/"
-        }
-      ]
-    },
-    {
-      "id": "F15",
-      "severity": "low",
-      "title": "2026 Stanford Nov 14 kickoff listed as '4 OR 4:30 P.M.'",
-      "detail": "The official Stanford schedule page gives two possible kickoff times. Neither is inferred; both are listed as ambiguous and flagged.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Stanford 2026 schedule",
-          "url": "https://gostanford.com/sports/football/schedule"
-        },
-        {
-          "name": "Stanford / Virginia Tech kickoff options (GoStanford.com, 2026)",
-          "url": "https://gostanford.com/news/2026/11/2/two-options-for-virginia-tech-kickoff-time-unveiled"
-        }
-      ]
-    },
-    {
-      "id": "F16",
-      "severity": "low",
-      "title": "2026 Stanford Nov 28 SMU kickoff TBA on schedule page",
-      "detail": "The official schedule card shows TBA while embedded JSON-LD carries a UTC timestamp; per the no-inference rule the PT kickoff is left blank and flagged.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Stanford 2026 schedule",
-          "url": "https://gostanford.com/sports/football/schedule"
-        }
-      ]
-    },
-    {
-      "id": "F17",
-      "severity": "medium",
-      "title": "2027 MLB All-Star Game and Opening Night times not published",
-      "detail": "MLB's 2027 release names dates (Mar 24, Jul 13) but not first-pitch times; those time fields are blank.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "MLB 2027 schedule release",
-          "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
-        }
-      ]
-    },
-    {
-      "id": "F18",
-      "severity": "low",
-      "title": "Planning durations are estimates, not official values",
-      "detail": "165/185/195/200-minute busy blocks are planning buffers around official rulebook playing times and MLB's official 2:38 average. They are labelled ESTIMATE and flagged; official rulebook facts are shown separately.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Official 2026 NFL Rulebook",
-          "url": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook"
-        },
-        {
-          "name": "NCAA Football Playing Rules",
-          "url": "https://www.ncaa.org/championships/playing-rules/football-playing-rules/"
-        }
-      ]
-    },
-    {
-      "id": "F19",
-      "severity": "low",
-      "title": "Parallel verification report had failing row checks",
-      "detail": "An earlier verification/report.md recorded 49/62 rows verified, 13 failures and 3 conflicts; the published dashboard later reported 61/62. The combined verification page re-checks the merged data and lists any remaining failures instead of assuming they are resolved.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Published verification report",
-          "url": "https://karagemop466-tech.github.io/Korea5/verification/report.md"
-        }
-      ]
-    },
-    {
-      "id": "F20",
-      "severity": "low",
-      "title": "Sacramento-market Athletics affiliates: 94122 reception unverified",
-      "detail": "KSTE 650 AM and KVMX 92.1/105.5 FM are official Athletics radio affiliates in Sacramento, but over-the-air reception in Outer Sunset 94122 is not confirmed by an official source. KNEW 960 AM is the Bay Area affiliate.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Athletics TV & radio affiliates (MLB.com)",
-          "url": "https://www.mlb.com/athletics/schedule/watch"
-        }
-      ]
-    },
-    {
-      "id": "F21",
-      "severity": "high",
-      "title": "2027 Pro Bowl Games date is not published (both candidates blocked; Westwood One carried the 2026 edition)",
-      "detail": "The NFL 2026-27 calendar lists no Pro Bowl date. Secondary sources conflict: Non-official aggregators (NFL Playoff Pass: Tue Feb 9, 2027; SportBusy: Feb 7, 2027) are named here but not linked, because they are not official sources. The planner blocks both days in the all-games and radio views. Westwood One carried the 2026 Pro Bowl Games on Tue Feb 3, 2026 (4:30-7:30 PM PT), so the radio view depends on this date too. Results (base case): both blocked = 6 calendar days; Feb 9 only = 8 calendar days (Feb 1-8); no Pro Bowl = 13 calendar days (Feb 1-13).",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: 2026-27 important dates (no Pro Bowl listed)",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        },
-        {
-          "name": "Westwood One: 2026 Pro Bowl Games event (official)",
-          "url": "https://www.westwoodonesports.com/events/527138/"
-        }
-      ]
-    },
-    {
-      "id": "F22",
-      "severity": "high",
-      "title": "2028 and 2029 vacation windows are model output",
-      "detail": "The recommended 2028 (base case: Jan 24–29 or Jan 31–Feb 5, 6 calendar days each) and 2029 (base case: Jan 22–27 or Jan 29–Feb 3, 6 calendar days each) windows are computed from a modelled MLB daily slate and a modelled NFL calendar, not from released schedules. They will move when those schedules are published and must be re-checked before booking. Only the 2027 window is anchored to officially released values (MLB 2027 season, NFL playoff round windows, Super Bowl LXI). Update 2026-11-05: the 2028 Super Bowl LXII date (Sunday, February 13, 2028, Mercedes-Benz Stadium event page) is now verified and the model uses it; every other 2028/2029 input remains model output.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "MLB StatsAPI (2028 returns 0 games)",
-          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2028&gameType=R"
-        },
-        {
-          "name": "MLB.com 2027 schedule release",
-          "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
-        }
-      ]
-    },
-    {
-      "id": "F23",
-      "severity": "high",
-      "title": "Pro Bowl Games 2027: two unverified candidate dates, both blocked",
-      "detail": "Candidate A = Sun Feb 7 (aggregator, not linked); candidate B = Tue Feb 9 (secondary, not linked). Neither appears in the NFL's official calendar. The planning block is the 2026 Westwood One window (4:30-7:30 PM PT). The 2028 and 2029 candidates are the same structural guess (Super Bowl minus 7 and minus 5 days) and are ESTIMATION only.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: 2026-27 important dates",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        },
-        {
-          "name": "Westwood One 2026 Pro Bowl event",
-          "url": "https://www.westwoodonesports.com/events/527138/"
-        }
-      ]
-    },
-    {
-      "id": "F24",
-      "severity": "medium",
-      "title": "Wild Card Monday added (Jan 18, 2027) from the official Jan 16-18 window; game times not published",
-      "detail": "The NFL calendar lists Wild Card Weekend as Jan 16-18, 2027. The model had only Saturday and Sunday, so a Monday block was added. Its kickoff time (17:15 PT) is an estimate, and it is not tagged to Westwood One. Monday game carriage is unknown.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: 2026-27 important dates",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        }
-      ]
-    },
-    {
-      "id": "F25",
-      "severity": "high",
-      "title": "Stanford and Cal postseason (bowl) games for 2026-27 are not modelled",
-      "detail": "A bowl game would fall in late December or early January and would block that day. Bowl assignments depend on the final 2026 regular-season records, so none has been modelled. The Jan 25-30 2027 run should be re-checked after bowl selections.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Stanford football schedule (gostanford.com)",
-          "url": "https://gostanford.com/sports/football/schedule"
-        },
-        {
-          "name": "Cal football schedule (calbears.com)",
-          "url": "https://calbears.com/sports/football/schedule"
-        }
-      ]
-    },
-    {
-      "id": "F26",
-      "severity": "medium",
-      "title": "Correction: Jan 24 2027 is a Divisional playoff day, not a free day",
-      "detail": "The earlier executive summary (research/EXECUTIVE-SUMMARY-ef8b5b30.md, extra/summary.html) described Jan 24-30 2027 as six free days. NFL.com lists the Divisional Playoffs for Jan 23-24, 2027. The corrected free run is Jan 25-30 2027 (6 calendar days). That earlier page is superseded by research/EXECUTIVE-SUMMARY.md.",
-      "status": "corrected",
-      "sources": [
-        {
-          "name": "NFL.com: 2026-27 important dates",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        }
-      ]
-    },
-    {
-      "id": "F27",
-      "severity": "medium",
-      "title": "Thu Nov 5 2026: Westwood One start 7:30 PM ET vs NFL.com kickoff 8:15 PM",
-      "detail": "Jaguars at Ravens: Westwood One lists 7:30 PM ET; the NFL.com game centre lists 8:15 PM (its time zone is not labelled on the fetched page). Westwood One's published time is its pre-game start. Both are shown; the planner uses the earlier one for busy time.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Westwood One NFL schedule",
-          "url": "https://www.westwoodonesports.com/nfl-schedule/"
-        },
-        {
-          "name": "NFL.com game centre (Jaguars at Ravens, 2026 REG 9)",
-          "url": "https://www.nfl.com/games/jaguars-at-ravens-2026-reg-9"
-        }
-      ]
-    },
-    {
-      "id": "F28",
-      "severity": "medium",
-      "title": "Fetch tool metadata mismatch on two official pages (content matched)",
-      "detail": "On 2026-11-05 the page-fetch tool returned an unrelated URL in its metadata for the MLB 2027 release and the MLB 2025 attendance release. The body text matches the named articles. Manual re-check is recommended before relying on either URL.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "MLB.com: MLB 2027 schedule released",
-          "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
-        },
-        {
-          "name": "MLB.com: 2025 attendance release",
-          "url": "https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007"
-        }
-      ]
-    },
-    {
-      "id": "F29",
-      "severity": "medium",
-      "title": "2027 NFL schedule still not published on nfl.com (checked 2026-11-05)",
-      "detail": "nfl.com/schedules/2027/ returned the 2026 season page. Every 2027 NFL regular-season, playoff-matchup and kickoff value is therefore ESTIMATION. Only the round windows in the NFL 2026-27 calendar are official.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com schedules, 2027",
-          "url": "https://www.nfl.com/schedules/2027/"
-        }
-      ]
-    },
-    {
-      "id": "F30",
-      "severity": "medium",
-      "title": "research/build_docs.py is stale and is not in the rebuild chain",
-      "detail": "scripts/build_docs.py would overwrite the README.md sections that other sessions added by hand. README.md and research/EXECUTIVE-SUMMARY.md are therefore maintained by hand in this session, and the rebuild commands in the README no longer include it.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "Repository README",
-          "url": "https://github.com/karagemop466-tech/Korea5/blob/main/README.md"
-        }
-      ]
-    },
-    {
-      "id": "F31",
-      "severity": "medium",
-      "title": "Correction: high-priority tier was undercounting estimated 2028-2029 games",
-      "detail": "The 'high' scope tested the priority field only. Estimated Giants, Athletics, 49ers, Stanford and Cal rows were marked normal priority, so 2028 showed 293 free days and a 194-day run. The high scope now uses the same team set as the radio tier (2028 radio view: 85 free days; all-games view: 74 free days; longest run 6 calendar days in both). The owner's list counts all MLB and NFL games as high priority; those are blocking in the all-games scope.",
-      "status": "corrected",
-      "sources": [
-        {
-          "name": "Method (planner scope definitions)",
-          "url": "https://github.com/karagemop466-tech/Korea5/blob/main/scripts/analyze.py"
-        }
-      ]
-    },
-    {
-      "id": "F32",
-      "severity": "low",
-      "title": "Wild Card and playoff round days inside each window are estimates",
-      "detail": "The NFL publishes round windows (for example Jan 16-18 for Wild Card). The Saturday, Sunday or Monday split, and all kickoff times, are estimates. A day is blocked if any round could fall on it.",
-      "status": "needs-review",
-      "sources": [
-        {
-          "name": "NFL.com: 2026-27 important dates",
-          "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
-        }
-      ]
+     "name": "MLB StatsAPI 2029",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2029&gameType=R"
     }
-  ]
+   ]
+  },
+  {
+   "id": "F02",
+   "severity": "high",
+   "title": "2027 NFL schedule and 2027–29 Westwood One postseason schedules are not released",
+   "detail": "No official 2027 NFL schedule or 2027–2029 Westwood One postseason broadcast schedule exists as of 2026-11-02. These are left blank and labelled ESTIMATION — not a real verified released schedule.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL schedules",
+     "url": "https://www.nfl.com/schedules/"
+    },
+    {
+     "name": "Westwood One Sports NFL schedule",
+     "url": "https://www.westwoodonesports.com/nfl-schedule/"
+    }
+   ]
+  },
+  {
+   "id": "F03",
+   "severity": "high",
+   "title": "2,015 MLB 2027 games carry TBD first-pitch times",
+   "detail": "MLB StatsAPI returns startTimeTBD=true for 2,015 of the 5,861 checked 2026/2027 game records; the placeholder time is often 07:33Z. Start times are left blank on verified tables; the parallel session's modelled start times appear only in the clearly labelled planning-estimate mode.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "MLB 2027 schedule release",
+     "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
+    },
+    {
+     "name": "MLB StatsAPI 2027",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2027&gameType=R"
+    }
+   ]
+  },
+  {
+   "id": "F04",
+   "severity": "medium",
+   "title": "24 official 2026 NFL games have no published kickoff time",
+   "detail": "The NFL.com by-week feed contains 321 HOF/preseason/regular games; 24 have no kickoff time (mostly Week 18 TBA). Those rows show blank times and are flagged.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com 2026 Week 18",
+     "url": "https://www.nfl.com/schedules/2026/by-week/week-18"
+    },
+    {
+     "name": "2026-27 NFL Important Dates",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    }
+   ]
+  },
+  {
+   "id": "F05",
+   "severity": "medium",
+   "title": "Super Bowl LXIII (2029) exact date still not on an official page; LXII (2028) date now verified",
+   "detail": "Update 2026-11-05: the Mercedes-Benz Stadium official event page publishes Super Bowl LXII as February 13, 2028 (a Sunday) — the planner's modelled 2028 date already matched and is now anchored to that page (kickoff time still TBA). For Super Bowl LXIII the official release (NFL.com and media.nfl.com, Mar 30, 2026) confirms only Las Vegas / Allegiant Stadium in 2029; On Location's official page says only 'February 2029'. The exact date — reported as Sunday, February 11, 2029 by press coverage of the NFL's social announcement — does not appear on any official page reviewed, so the 2029 date fields stay blank and the modelled 2029-02-11 block remains labelled ESTIMATION.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Super Bowl LXII event page — February 13, 2028 (Mercedes-Benz Stadium, official)",
+     "url": "https://www.mercedesbenzstadium.com/events/super-bowl-lxii"
+    },
+    {
+     "name": "Super Bowl LXIII host announcement (NFL.com, official)",
+     "url": "https://www.nfl.com/news/las-vegas-to-host-super-bowl-lxiii-in-2029"
+    },
+    {
+     "name": "Super Bowl LXIII release (media.nfl.com, official)",
+     "url": "https://media.nfl.com/news-and-releases/events/super-bowl-returns-to-las-vegas-in-2029-"
+    }
+   ]
+  },
+  {
+   "id": "F06",
+   "severity": "high",
+   "title": "Westwood One vs 49ers kickoff conflict, 2026-11-22 MIN at SF",
+   "detail": "The official Westwood One schedule lists 7:30 PM ET (4:30 PM PT) while 49ers.com lists 5:20 PM PST for the Mexico City game. Both windows are blocked and the conflict is published rather than silently resolved.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Westwood One Sports NFL schedule",
+     "url": "https://www.westwoodonesports.com/nfl-schedule/"
+    },
+    {
+     "name": "49ers 2026 schedule",
+     "url": "https://www.49ers.com/schedule/2026/"
+    }
+   ]
+  },
+  {
+   "id": "F07",
+   "severity": "medium",
+   "title": "Older official Stanford / Cal future-schedule releases conflict with newer ones",
+   "detail": "Cal 2028: 2020 release put Wyoming on Sept 2, 2024 release puts UCLA on Sept 2. Cal 2029: 2020 release put Minnesota on Sept 1, 2024 release puts Wisconsin on Sept 1. Stanford 2027 TCU game was canceled in 2026. Newer sources are used; older entries are left blank or flagged.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Cal-UCLA 2026-29 (2024)",
+     "url": "https://calbears.com/news/2024/7/10/football-cal-ucla-schedule-4-games-from-2026-29"
+    },
+    {
+     "name": "Cal adds Minnesota/Wyoming (2020)",
+     "url": "https://calbears.com/news/2020/2/11/football-cal-adds-minnesota-and-wyoming-to-future-schedules"
+    },
+    {
+     "name": "TCU series update (2026)",
+     "url": "https://gostanford.com/news/2026/04/17/tcu-series-update"
+    }
+   ]
+  },
+  {
+   "id": "F08",
+   "severity": "medium",
+   "title": "CFP radio partner not stated on official broadcast schedule",
+   "detail": "CollegeFootballPlayoff.com publishes 2026-27 CFP dates and TV networks but no radio partner. Radio carriage of CFP games on a 94122 AM/FM station is therefore unverified; the dates are shown as official anchors only.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "2026-27 CFP Broadcast Schedule",
+     "url": "https://collegefootballplayoff.com/news/2026/6/1/26-27-broadcast-sked"
+    }
+   ]
+  },
+  {
+   "id": "F09",
+   "severity": "low",
+   "title": "Westwood One Station Finder does not publish frequencies",
+   "detail": "The official Station Finder lists San Francisco affiliates by call sign (KNBR-AM, KNBR-F2, KNBR-FM, KTCT-AM) but no frequencies. Frequencies on this site come from separate official team / station / ESPN pages and are attributed individually.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Westwood One Station Finder",
+     "url": "https://www.westwoodonesports.com/station-finder/"
+    },
+    {
+     "name": "ESPN Radio affiliate list",
+     "url": "https://www.espn.com/liveradiotv/s/nbaaffiliates.html"
+    }
+   ]
+  },
+  {
+   "id": "F10",
+   "severity": "high",
+   "title": "Westwood One warns not every affiliate airs every broadcast",
+   "detail": "Official wording: 'Because of local blackouts and/or programming conflicts, not every affiliate can air every Westwood One Sports broadcast.' National W1 windows are high priority but station-level carriage in 94122 is not guaranteed.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Westwood One Station Finder",
+     "url": "https://www.westwoodonesports.com/station-finder/"
+    }
+   ]
+  },
+  {
+   "id": "F11",
+   "severity": "medium",
+   "title": "Dashboard copy says Feb 8–13 2027 gap is 'after the Super Bowl'",
+   "detail": "Super Bowl LXI is officially Feb 14 2027, so the Feb 8–13 2027 window is BEFORE the Super Bowl. The root dashboard wording is corrected on our combined analysis page; the original wording is retained here as a documented irregularity.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "2026 Kickoff Guide (Super Bowl LXI date)",
+     "url": "https://media.nfl.com/football-information/2026/news/2026-kickoff-guide"
+    },
+    {
+     "name": "2026-27 NFL Important Dates",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    }
+   ]
+  },
+  {
+   "id": "F12",
+   "severity": "medium",
+   "title": "Prior sites referenced in the brief return GitHub Pages 404",
+   "detail": "buffedlizard55-lab.github.io/VacationSchedule/site/, /ScheduleFreeTime/, /RADIOSF/ and /VacationSchedule/ all returned 404 during review. This project builds a new self-contained site instead of relying on those pages.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Prior site (404)",
+     "url": "https://buffedlizard55-lab.github.io/VacationSchedule/site/"
+    }
+   ]
+  },
+  {
+   "id": "F13",
+   "severity": "medium",
+   "title": "2026 Big Game date conflict between two official school pages",
+   "detail": "calbears.com listed the Big Game on Sat Nov 14 2026 at 12:30 PM while gostanford.com listed Stanford at California on Sat Nov 21 2026 TBA. Both dates were blocked by the parallel session. The 2026 Cal schedule page now shows Stanford on Nov 21; the older Nov 14 entry is retained as a flagged conflict.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Cal 2026 schedule",
+     "url": "https://calbears.com/sports/football/schedule/2026"
+    },
+    {
+     "name": "Stanford 2026 schedule",
+     "url": "https://gostanford.com/sports/football/schedule"
+    }
+   ]
+  },
+  {
+   "id": "F14",
+   "severity": "medium",
+   "title": "Westwood One 2026-12-27 JAX at DAL time not retrievable",
+   "detail": "The parallel session could not retrieve a kickoff time from the official W1 event page; the time was left blank and marked unverified.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Westwood One Sports NFL schedule",
+     "url": "https://www.westwoodonesports.com/nfl-schedule/"
+    }
+   ]
+  },
+  {
+   "id": "F15",
+   "severity": "low",
+   "title": "2026 Stanford Nov 14 kickoff listed as '4 OR 4:30 P.M.'",
+   "detail": "The official Stanford schedule page gives two possible kickoff times. Neither is inferred; both are listed as ambiguous and flagged.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Stanford 2026 schedule",
+     "url": "https://gostanford.com/sports/football/schedule"
+    },
+    {
+     "name": "Stanford / Virginia Tech kickoff options (GoStanford.com, 2026)",
+     "url": "https://gostanford.com/news/2026/11/2/two-options-for-virginia-tech-kickoff-time-unveiled"
+    }
+   ]
+  },
+  {
+   "id": "F16",
+   "severity": "low",
+   "title": "2026 Stanford Nov 28 SMU kickoff TBA on schedule page",
+   "detail": "The official schedule card shows TBA while embedded JSON-LD carries a UTC timestamp; per the no-inference rule the PT kickoff is left blank and flagged.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Stanford 2026 schedule",
+     "url": "https://gostanford.com/sports/football/schedule"
+    }
+   ]
+  },
+  {
+   "id": "F17",
+   "severity": "medium",
+   "title": "2027 MLB All-Star Game and Opening Night times not published",
+   "detail": "MLB's 2027 release names dates (Mar 24, Jul 13) but not first-pitch times; those time fields are blank.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "MLB 2027 schedule release",
+     "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
+    }
+   ]
+  },
+  {
+   "id": "F18",
+   "severity": "low",
+   "title": "Planning durations are estimates, not official values",
+   "detail": "165/185/195/200-minute busy blocks are planning buffers around official rulebook playing times and MLB's official 2:38 average. They are labelled ESTIMATE and flagged; official rulebook facts are shown separately.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Official 2026 NFL Rulebook",
+     "url": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook"
+    },
+    {
+     "name": "NCAA Football Playing Rules",
+     "url": "https://www.ncaa.org/championships/playing-rules/football-playing-rules/"
+    }
+   ]
+  },
+  {
+   "id": "F19",
+   "severity": "low",
+   "title": "Parallel verification report had failing row checks",
+   "detail": "An earlier verification/report.md recorded 49/62 rows verified, 13 failures and 3 conflicts; the published dashboard later reported 61/62. The combined verification page re-checks the merged data and lists any remaining failures instead of assuming they are resolved.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Published verification report",
+     "url": "https://karagemop466-tech.github.io/Korea5/verification/report.md"
+    }
+   ]
+  },
+  {
+   "id": "F20",
+   "severity": "low",
+   "title": "Sacramento-market Athletics affiliates: 94122 reception unverified",
+   "detail": "KSTE 650 AM and KVMX 92.1/105.5 FM are official Athletics radio affiliates in Sacramento, but over-the-air reception in Outer Sunset 94122 is not confirmed by an official source. KNEW 960 AM is the Bay Area affiliate.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Athletics TV & radio affiliates (MLB.com)",
+     "url": "https://www.mlb.com/athletics/schedule/watch"
+    }
+   ]
+  },
+  {
+   "id": "F21",
+   "severity": "high",
+   "title": "2027 Pro Bowl Games date is not published (both candidates blocked; Westwood One carried the 2026 edition)",
+   "detail": "The NFL 2026-27 calendar lists no Pro Bowl date. Secondary sources conflict: Non-official aggregators (NFL Playoff Pass: Tue Feb 9, 2027; SportBusy: Feb 7, 2027) are named here but not linked, because they are not official sources. The planner blocks both days in the all-games and radio views. Westwood One carried the 2026 Pro Bowl Games on Tue Feb 3, 2026 (4:30-7:30 PM PT), so the radio view depends on this date too. Results (base case): both blocked = 6 calendar days; Feb 9 only = 8 calendar days (Feb 1-8); no Pro Bowl = 13 calendar days (Feb 1-13).",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: 2026-27 important dates (no Pro Bowl listed)",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    },
+    {
+     "name": "Westwood One: 2026 Pro Bowl Games event (official)",
+     "url": "https://www.westwoodonesports.com/events/527138/"
+    }
+   ]
+  },
+  {
+   "id": "F22",
+   "severity": "high",
+   "title": "2028 and 2029 vacation windows are model output",
+   "detail": "The recommended 2028 (base case: Jan 24–29 or Jan 31–Feb 5, 6 calendar days each) and 2029 (base case: Jan 22–27 or Jan 29–Feb 3, 6 calendar days each) windows are computed from a modelled MLB daily slate and a modelled NFL calendar, not from released schedules. They will move when those schedules are published and must be re-checked before booking. Only the 2027 window is anchored to officially released values (MLB 2027 season, NFL playoff round windows, Super Bowl LXI). Update 2026-11-05: the 2028 Super Bowl LXII date (Sunday, February 13, 2028, Mercedes-Benz Stadium event page) is now verified and the model uses it; every other 2028/2029 input remains model output.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "MLB StatsAPI (2028 returns 0 games)",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&season=2028&gameType=R"
+    },
+    {
+     "name": "MLB.com 2027 schedule release",
+     "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
+    }
+   ]
+  },
+  {
+   "id": "F23",
+   "severity": "high",
+   "title": "Pro Bowl Games 2027: two unverified candidate dates, both blocked",
+   "detail": "Candidate A = Sun Feb 7 (aggregator, not linked); candidate B = Tue Feb 9 (secondary, not linked). Neither appears in the NFL's official calendar. The planning block is the 2026 Westwood One window (4:30-7:30 PM PT). The 2028 and 2029 candidates are the same structural guess (Super Bowl minus 7 and minus 5 days) and are ESTIMATION only.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: 2026-27 important dates",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    },
+    {
+     "name": "Westwood One 2026 Pro Bowl event",
+     "url": "https://www.westwoodonesports.com/events/527138/"
+    }
+   ]
+  },
+  {
+   "id": "F24",
+   "severity": "medium",
+   "title": "Wild Card Monday added (Jan 18, 2027) from the official Jan 16-18 window; game times not published",
+   "detail": "The NFL calendar lists Wild Card Weekend as Jan 16-18, 2027. The model had only Saturday and Sunday, so a Monday block was added. Its kickoff time (17:15 PT) is an estimate, and it is not tagged to Westwood One. Monday game carriage is unknown.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: 2026-27 important dates",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    }
+   ]
+  },
+  {
+   "id": "F25",
+   "severity": "high",
+   "title": "Stanford and Cal postseason (bowl) games for 2026-27 are not modelled",
+   "detail": "A bowl game would fall in late December or early January and would block that day. Bowl assignments depend on the final 2026 regular-season records, so none has been modelled. The Jan 25-30 2027 run should be re-checked after bowl selections.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Stanford football schedule (gostanford.com)",
+     "url": "https://gostanford.com/sports/football/schedule"
+    },
+    {
+     "name": "Cal football schedule (calbears.com)",
+     "url": "https://calbears.com/sports/football/schedule"
+    }
+   ]
+  },
+  {
+   "id": "F26",
+   "severity": "medium",
+   "title": "Correction: Jan 24 2027 is a Divisional playoff day, not a free day",
+   "detail": "The earlier executive summary (research/EXECUTIVE-SUMMARY-ef8b5b30.md, extra/summary.html) described Jan 24-30 2027 as six free days. NFL.com lists the Divisional Playoffs for Jan 23-24, 2027. The corrected free run is Jan 25-30 2027 (6 calendar days). That earlier page is superseded by research/EXECUTIVE-SUMMARY.md.",
+   "status": "corrected",
+   "sources": [
+    {
+     "name": "NFL.com: 2026-27 important dates",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    }
+   ]
+  },
+  {
+   "id": "F27",
+   "severity": "medium",
+   "title": "Thu Nov 5 2026: Westwood One start 7:30 PM ET vs NFL.com kickoff 8:15 PM",
+   "detail": "Jaguars at Ravens: Westwood One lists 7:30 PM ET; the NFL.com game centre lists 8:15 PM (its time zone is not labelled on the fetched page). Westwood One's published time is its pre-game start. Both are shown; the planner uses the earlier one for busy time.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Westwood One NFL schedule",
+     "url": "https://www.westwoodonesports.com/nfl-schedule/"
+    },
+    {
+     "name": "NFL.com game centre (Jaguars at Ravens, 2026 REG 9)",
+     "url": "https://www.nfl.com/games/jaguars-at-ravens-2026-reg-9"
+    }
+   ]
+  },
+  {
+   "id": "F28",
+   "severity": "medium",
+   "title": "Fetch tool metadata mismatch on two official pages (content matched)",
+   "detail": "On 2026-11-05 the page-fetch tool returned an unrelated URL in its metadata for the MLB 2027 release and the MLB 2025 attendance release. The body text matches the named articles. Manual re-check is recommended before relying on either URL.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "MLB.com: MLB 2027 schedule released",
+     "url": "https://www.mlb.com/news/mlb-2027-schedule-released"
+    },
+    {
+     "name": "MLB.com: 2025 attendance release",
+     "url": "https://www.mlb.com/press-release/press-release-mlb-attendance-reaches-71-4-million-three-straight-years-of-growth-for-first-time-since-2007"
+    }
+   ]
+  },
+  {
+   "id": "F29",
+   "severity": "medium",
+   "title": "2027 NFL schedule still not published on nfl.com (checked 2026-11-05)",
+   "detail": "nfl.com/schedules/2027/ returned the 2026 season page. Every 2027 NFL regular-season, playoff-matchup and kickoff value is therefore ESTIMATION. Only the round windows in the NFL 2026-27 calendar are official.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com schedules, 2027",
+     "url": "https://www.nfl.com/schedules/2027/"
+    }
+   ]
+  },
+  {
+   "id": "F30",
+   "severity": "medium",
+   "title": "research/build_docs.py is stale and is not in the rebuild chain",
+   "detail": "scripts/build_docs.py would overwrite the README.md sections that other sessions added by hand. README.md and research/EXECUTIVE-SUMMARY.md are therefore maintained by hand in this session, and the rebuild commands in the README no longer include it.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Repository README",
+     "url": "https://github.com/karagemop466-tech/Korea5/blob/main/README.md"
+    }
+   ]
+  },
+  {
+   "id": "F31",
+   "severity": "medium",
+   "title": "Correction: high-priority tier was undercounting estimated 2028-2029 games",
+   "detail": "The 'high' scope tested the priority field only. Estimated Giants, Athletics, 49ers, Stanford and Cal rows were marked normal priority, so 2028 showed 293 free days and a 194-day run. The high scope now uses the same team set as the radio tier (2028 radio view: 85 free days; all-games view: 74 free days; longest run 6 calendar days in both). The owner's list counts all MLB and NFL games as high priority; those are blocking in the all-games scope.",
+   "status": "corrected",
+   "sources": [
+    {
+     "name": "Method (planner scope definitions)",
+     "url": "https://github.com/karagemop466-tech/Korea5/blob/main/scripts/analyze.py"
+    }
+   ]
+  },
+  {
+   "id": "F32",
+   "severity": "low",
+   "title": "Wild Card and playoff round days inside each window are estimates",
+   "detail": "The NFL publishes round windows (for example Jan 16-18 for Wild Card). The Saturday, Sunday or Monday split, and all kickoff times, are estimates. A day is blocked if any round could fall on it.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com: 2026-27 important dates",
+     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+    }
+   ]
+  },
+  {
+   "id": "F33",
+   "severity": "medium",
+   "title": "Texans depth chart published as an image — strings unverified",
+   "detail": "houstontexans.com/team/depth-chart publishes 'Unofficial Depth Chart' as a picture, not a table. HOU replacement strings on the Week-10 deficiency tracker are left blank and flagged rather than inferred. The image link is provided for manual review.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Texans depth chart (image)",
+     "url": "https://www.houstontexans.com/team/depth-chart/"
+    }
+   ]
+  },
+  {
+   "id": "F34",
+   "severity": "medium",
+   "title": "Panthers depth-chart page unreachable — CAR rows blank",
+   "detail": "carolinapanthers.com/team/depth-chart refused CI connections twice and returned HTTP 500 on direct fetch (2026-11-13). CAR depth strings and replacements are blank/unverified on the tracker. No ESPN/secondary substitute was used.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Panthers depth chart (unreachable)",
+     "url": "https://www.carolinapanthers.com/team/depth-chart/"
+    }
+   ]
+  },
+  {
+   "id": "F35",
+   "severity": "medium",
+   "title": "Market odds are a trusted secondary source, not official league data",
+   "detail": "Spread/total/moneyline reference values come from DraftKings odds exposed through ESPN's scoreboard API (NFL official partner). They are labelled 'trusted secondary' everywhere. Sportsbook operator pages themselves were not reachable for verification.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "ESPN NFL odds",
+     "url": "https://www.espn.com/nfl/odds"
+    }
+   ]
+  },
+  {
+   "id": "F36",
+   "severity": "low",
+   "title": "Fitted home-field advantage (-0.5 pts) deviates from the traditional ~2.5 prior",
+   "detail": "The least-squares fit on 136 official Week 1-9 results estimates HFA = -0.5 points. The traditional prior is about +2.5. The model uses the fitted value; a +/-3 pt sensitivity shifts all spreads uniformly. Flagged for reviewer decision.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Official results used in the fit",
+     "url": "https://www.nfl.com/schedules/2026/by-week/week-9"
+    }
+   ]
+  },
+  {
+   "id": "F37",
+   "severity": "low",
+   "title": "Model totals are not injury-adjusted in v0",
+   "detail": "Injury weights move the spread only. Totals for injury-hit games (e.g., SEA @ LV with Darnold out) are therefore stale. Documented as a limitation on lines.html; fix proposed as an accepted-path candidate.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com injuries",
+     "url": "https://www.nfl.com/injuries/"
+    }
+   ]
+  },
+  {
+   "id": "F38",
+   "severity": "medium",
+   "title": "DET S Kerby Joseph (Game Status: Out) is not on the club's published depth chart",
+   "detail": "The official injury report lists Kerby Joseph (S) as Out for NE @ DET, but the Lions' published depth chart lists only Chuck Clark and Brian Branch at S. The replacement string is left blank and flagged — never inferred.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com injuries",
+     "url": "https://www.nfl.com/injuries/"
+    },
+    {
+     "name": "Lions depth chart",
+     "url": "https://www.detroitlions.com/team/depth-chart/"
+    }
+   ]
+  },
+  {
+   "id": "F39",
+   "severity": "low",
+   "title": "Sunday/Monday game statuses not yet designated at retrieval",
+   "detail": "Only WAS @ NYG (Thu) and NE @ DET carry game-status designations in the 2026-11-13 snapshot; other games show practice status only. Blank cells are blank on the tracker — they are not filled with guesses. Re-pull on Friday/Saturday updates them (S2/S7).",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "NFL.com injuries",
+     "url": "https://www.nfl.com/injuries/"
+    }
+   ]
+  },
+  {
+   "id": "F40",
+   "severity": "high",
+   "title": "Player-prop markets unavailable from verified sources — prop strategies blocked",
+   "detail": "No official or licensed-book prop board could be verified in this pass. Player-prop combo strategies (ST5, SG6/SG7) are registered but blocked (Q5). Modelled prop baselines would need Q19 usage data first.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "ESPN NFL odds (no props verified)",
+     "url": "https://www.espn.com/nfl/odds"
+    }
+   ]
+  },
+  {
+   "id": "F41",
+   "severity": "medium",
+   "title": "Correlation values are literature-anchored estimates, not computed here",
+   "detail": "The correlation matrix on strategies.html publishes rho ranges with explicit 'unverified estimate' labels. Empirical phi coefficients require the pick ledger (S3) and the correlation job (S5). Until then same-game staking uses the documented rho floor 0.35.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Correlation framework (published site page)",
+     "url": "https://karagemop466-tech.github.io/Korea5/strategies.html"
+    }
+   ]
+  },
+  {
+   "id": "F42",
+   "severity": "medium",
+   "title": "Model v0 is unproven: first out-of-sample test was a side loss",
+   "detail": "WAS @ NYG (Week 10 TNF): model NYG -2.2, final Commanders 24-21 — wrong side, 5.2-point margin error. One game proves nothing; gate G4 requires n >= 100 graded picks before any rewards. Reported straight, not hidden.",
+   "status": "needs-review",
+   "sources": [
+    {
+     "name": "Official game page",
+     "url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10"
+    }
+   ]
+  }
+ ]
 }

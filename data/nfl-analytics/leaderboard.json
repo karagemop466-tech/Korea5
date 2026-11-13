@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "Strategy Leaderboard — rules, scoring, rewards",
+    "created": "2026-11-13",
+    "status": "DESIGN PUBLISHED — competition opens once the pick ledger exists (S3). No entries yet; the table below is the scaffold.",
+    "principle": "Rank selectively skill-based strategies, not lucky ones. Raw ROI never determines rewards on its own (R10)."
+  },
+  "competition": {
+    "unit": "1 unit = 1% of a notional 100-unit bankroll (paper units; owner may set real budget — Q11)",
+    "windows": ["Weekly leaderboard (Week 10 onward)", "Season leaderboard 2026-27", "Multi-season rolling (from 2027)"],
+    "eligibility": [
+      "Strategy registered with a unique ID and pre-kickoff lock (G1)",
+      "All inputs from verified rows or labelled MODEL OUTPUT (G2)",
+      "Published parameters (G3)",
+      "Exposure caps respected (G6)",
+      "Multi-leg tickets declare correlation assumptions (G7)"
+    ],
+    "scoring": {
+      "rawROI": "net units / units staked, per graded pick",
+      "shrunkROI": "(n*rawROI + 25*0)/(n+25)",
+      "clvScore": "mean(closing value of taken price) when market snapshots exist; otherwise excluded and noted",
+      "skillScore": "100 * (0.6 * z(shrunkROI) + 0.4 * z(clvScore)) over the active field; z = standard score within season, min 100 picks for full weight",
+      "processGate": "any rule-violation week voids that week from scoring",
+      "tieBreaks": ["higher shrunkROI", "larger n", "lower exposure used", "earlier registration"]
+    },
+    "antiLuck": [
+      "Rewards require 95% bootstrap CI of ROI to clear zero (G5)",
+      "Parlays count as their leg count for sample size",
+      "One lucky outlier week is winsorized at the 99th percentile of weekly ROI before scoring",
+      "Rank display shows n and CI width beside every strategy so readers see precision"
+    ]
+  },
+  "rewards": {
+    "status": "PROPOSAL — needs owner decision (Q11). Defaults below are placeholders, not commitments.",
+    "tiers": [
+      {"rank": "1", "rewardProposed": "Named season champion + review-priority for strategy ideas", "confirmed": false},
+      {"rank": "2-3", "rewardProposed": "Named podium finish", "confirmed": false},
+      {"rank": "weekly winners", "rewardProposed": "Weekly shout-out on the dashboard", "confirmed": false}
+    ],
+    "rule": "No reward is paid to a strategy whose skillScore CI includes zero, regardless of raw rank."
+  },
+  "entries": [],
+  "scoringTable": {"columns": ["rank", "strategy", "type", "n picks", "raw ROI", "shrunk ROI", "95% CI", "CLV", "skillScore", "status"], "rows": []},
+  "sources": []
+}

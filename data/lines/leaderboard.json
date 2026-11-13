@@ -16,6 +16,9 @@
    "id": "S05",
    "name": "Model moneyline, strong separation only",
    "family": "team",
+   "market": "moneyline",
+   "rule": "S03 but only bets when the model margin is at least 4 points.",
+   "benchmark": "pick'em with the historical home win rate as the naive probability",
    "metrics": {
     "betsConsidered": 356,
     "betsPlaced": 356,
@@ -53,6 +56,8 @@
     "holdoutRoi": 0.3075965130759654,
     "adjustedP": 0.007012149392530373
    },
+   "sourceUrl": "https://www.nfl.com/games/chargers-at-panthers-2024-reg-2",
+   "sourceName": "Official game page (Los Angeles Chargers at Carolina Panthers)",
    "gates": {
     "G1": {
      "pass": true,
@@ -85,8 +90,6 @@
    },
    "reward": 115,
    "rewardNote": "1000 x skill 0.115 x evidence 1.00 x luck guard 1.00",
-   "sourceUrl": "https://www.nfl.com/games/chargers-at-panthers-2024-reg-2",
-   "sourceName": "Official game page (Los Angeles Chargers at Carolina Panthers)",
    "rank": 1,
    "status": "qualified"
   },
@@ -94,6 +97,9 @@
    "id": "S08",
    "name": "Model team points vs the team's own scoring average (model's Under pick)",
    "family": "team",
+   "market": "team points",
+   "rule": "The model's Under selection on a team's points line. The controlled comparison against the naive model is the log-loss column, which scores both on the same events.",
+   "benchmark": "the team's own prior scoring average (pre-registered naive line)",
    "metrics": {
     "betsConsidered": 1296,
     "betsPlaced": 596,
@@ -131,6 +137,8 @@
     "holdoutRoi": 0.09454545454545486,
     "adjustedP": 0.00042497875106244684
    },
+   "sourceUrl": "https://www.nfl.com/games/cowboys-at-giants-2024-reg-4",
+   "sourceName": "Official game page (Dallas Cowboys at New York Giants)",
    "gates": {
     "G1": {
      "pass": true,
@@ -163,8 +171,6 @@
    },
    "reward": 114,
    "rewardNote": "1000 x skill 0.114 x evidence 1.00 x luck guard 1.00",
-   "sourceUrl": "https://www.nfl.com/games/cowboys-at-giants-2024-reg-4",
-   "sourceName": "Official game page (Dallas Cowboys at New York Giants)",
    "rank": 2,
    "status": "qualified"
   },
@@ -172,6 +178,9 @@
    "id": "S07",
    "name": "Model team points vs the team's own scoring average (model's Over pick)",
    "family": "team",
+   "market": "team points",
+   "rule": "Bets a team's modelled points over that team's own prior scoring average. Line = the team's own recency-weighted points scored.",
+   "benchmark": "the team's own prior scoring average (pre-registered naive line)",
    "metrics": {
     "betsConsidered": 1296,
     "betsPlaced": 572,
@@ -209,6 +218,8 @@
     "holdoutRoi": 0.3086510263929622,
     "adjustedP": 0.00042497875106244684
    },
+   "sourceUrl": "https://www.nfl.com/games/cowboys-at-giants-2024-reg-4",
+   "sourceName": "Official game page (New York Giants at Dallas Cowboys)",
    "gates": {
     "G1": {
      "pass": true,
@@ -241,8 +252,6 @@
    },
    "reward": 99,
    "rewardNote": "1000 x skill 0.099 x evidence 1.00 x luck guard 1.00",
-   "sourceUrl": "https://www.nfl.com/games/cowboys-at-giants-2024-reg-4",
-   "sourceName": "Official game page (New York Giants at Dallas Cowboys)",
    "rank": 3,
    "status": "qualified"
   },
@@ -250,6 +259,9 @@
    "id": "S03",
    "name": "Model moneyline vs pick'em (follow the model)",
    "family": "team",
+   "market": "moneyline",
+   "rule": "Bets the model-favoured team to win straight, line = 0 (pick'em).",
+   "benchmark": "pick'em with the historical home win rate as the naive probability",
    "metrics": {
     "betsConsidered": 696,
     "betsPlaced": 615,
@@ -287,6 +299,8 @@
     "holdoutRoi": 0.20502901353965206,
     "adjustedP": 0.007012149392530373
    },
+   "sourceUrl": "https://www.nfl.com/games/raiders-at-ravens-2024-reg-2",
+   "sourceName": "Official game page (Baltimore Ravens at Las Vegas Raiders)",
    "gates": {
     "G1": {
      "pass": true,
@@ -319,8 +333,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/raiders-at-ravens-2024-reg-2",
-   "sourceName": "Official game page (Baltimore Ravens at Las Vegas Raiders)",
    "rank": 4,
    "status": "failed"
   },
@@ -328,6 +340,9 @@
    "id": "L02",
    "name": "Three-leg player-prop parlay",
    "family": "parlay",
+   "market": "3-leg player prop parlay",
+   "rule": "The three strongest player-prop legs in the same game are combined.",
+   "benchmark": "the same legs priced by the naive model with the same measured correlation",
    "metrics": {
     "betsConsidered": 324,
     "betsPlaced": 324,
@@ -364,6 +379,8 @@
     "holdoutRoi": -0.6631016042780752,
     "adjustedP": 0.3791754856701609
    },
+   "sourceUrl": "https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats",
+   "sourceName": "Official game page (Minnesota Vikings at Cleveland Browns)",
    "gates": {
     "G1": {
      "pass": true,
@@ -396,8 +413,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats",
-   "sourceName": "Official game page (Minnesota Vikings at Cleveland Browns)",
    "rank": 5,
    "status": "failed"
   },
@@ -405,6 +420,9 @@
    "id": "L03",
    "name": "Game total + model moneyline parlay",
    "family": "parlay",
+   "market": "2-leg game total + moneyline",
+   "rule": "League-average total and the model-favoured moneyline in the same game, combined with the MEASURED correlation between the two outcomes.",
+   "benchmark": "the same legs priced by the naive model with the same measured correlation",
    "metrics": {
     "betsConsidered": 681,
     "betsPlaced": 383,
@@ -442,6 +460,8 @@
     "holdoutRoi": -0.35537190082644604,
     "adjustedP": 0.5258403746479342
    },
+   "sourceUrl": "https://www.nfl.com/games/bills-at-dolphins-2024-reg-2",
+   "sourceName": "Official game page (Miami Dolphins at Buffalo Bills)",
    "gates": {
     "G1": {
      "pass": true,
@@ -474,8 +494,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/bills-at-dolphins-2024-reg-2",
-   "sourceName": "Official game page (Miami Dolphins at Buffalo Bills)",
    "rank": 6,
    "status": "failed"
   },
@@ -483,6 +501,9 @@
    "id": "L01",
    "name": "Two-leg player-prop parlay",
    "family": "parlay",
+   "market": "2-leg player prop parlay",
+   "rule": "The two strongest player-prop legs in the same game are combined. The joint probability uses the MEASURED within-game correlation, never an independence assumption.",
+   "benchmark": "the same legs priced by the naive model with the same measured correlation",
    "metrics": {
     "betsConsidered": 336,
     "betsPlaced": 336,
@@ -519,6 +540,8 @@
     "holdoutRoi": -0.40079628400796324,
     "adjustedP": 0.4353327788156047
    },
+   "sourceUrl": "https://www.nfl.com/games/49ers-at-rams-2025-reg-5?tab=stats",
+   "sourceName": "Official game page (Los Angeles Rams at San Francisco 49ers)",
    "gates": {
     "G1": {
      "pass": true,
@@ -551,8 +574,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/49ers-at-rams-2025-reg-5?tab=stats",
-   "sourceName": "Official game page (Los Angeles Rams at San Francisco 49ers)",
    "rank": 7,
    "status": "failed"
   },
@@ -560,6 +581,9 @@
    "id": "P06",
    "name": "Rushing touchdowns over the player's own average",
    "family": "prop",
+   "market": "player rushing touchdowns",
+   "rule": "Line = the player's own prior average rushing touchdowns; projection is opponent-adjusted.",
+   "benchmark": "the player's own prior average (pre-registered naive line)",
    "metrics": {
     "betsConsidered": 1145,
     "betsPlaced": 669,
@@ -596,6 +620,8 @@
     "holdoutRoi": 0.13154726068633388,
     "adjustedP": 0.4620227321967236
    },
+   "sourceUrl": "https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats",
+   "sourceName": "Official game page (Minnesota Vikings at Cleveland Browns)",
    "gates": {
     "G1": {
      "pass": true,
@@ -628,8 +654,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats",
-   "sourceName": "Official game page (Minnesota Vikings at Cleveland Browns)",
    "rank": 8,
    "status": "failed"
   },
@@ -637,6 +661,9 @@
    "id": "S02",
    "name": "Model game total vs league average (model's Under pick)",
    "family": "team",
+   "market": "game total",
+   "rule": "The model's Under selection: bets Under the league-average line in the games where the model expects a total below the league average. The controlled comparison against the naive model is the log-loss column, which scores both on the same events.",
+   "benchmark": "league-average combined points (pre-registered naive line)",
    "metrics": {
     "betsConsidered": 696,
     "betsPlaced": 323,
@@ -674,6 +701,8 @@
     "holdoutRoi": 0.15702479338843,
     "adjustedP": 0.3231963401829908
    },
+   "sourceUrl": "https://www.nfl.com/games/raiders-at-ravens-2024-reg-2",
+   "sourceName": "Official game page (Baltimore Ravens at Las Vegas Raiders)",
    "gates": {
     "G1": {
      "pass": true,
@@ -706,8 +735,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/raiders-at-ravens-2024-reg-2",
-   "sourceName": "Official game page (Baltimore Ravens at Las Vegas Raiders)",
    "rank": 9,
    "status": "failed"
   },
@@ -715,6 +742,9 @@
    "id": "P03",
    "name": "Receptions over the player's own average",
    "family": "prop",
+   "market": "player receptions",
+   "rule": "Line = the player's own prior average receptions; projection is opponent-adjusted.",
+   "benchmark": "the player's own prior average (pre-registered naive line)",
    "metrics": {
     "betsConsidered": 6,
     "betsPlaced": 6,
@@ -751,6 +781,8 @@
     "holdoutRoi": -0.045454545454545414,
     "adjustedP": 0.7537123143842808
    },
+   "sourceUrl": "https://www.nfl.com/games/saints-at-rams-2025-reg-9?tab=stats",
+   "sourceName": "Official game page (Los Angeles Rams at New Orleans Saints)",
    "gates": {
     "G1": {
      "pass": true,
@@ -783,8 +815,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/saints-at-rams-2025-reg-9?tab=stats",
-   "sourceName": "Official game page (Los Angeles Rams at New Orleans Saints)",
    "rank": 10,
    "status": "failed"
   },
@@ -792,6 +822,9 @@
    "id": "P07",
    "name": "Rush attempts over the player's own average",
    "family": "prop",
+   "market": "player rush attempts",
+   "rule": "Line = the player's own prior average rush attempts; projection is opponent-adjusted.",
+   "benchmark": "the player's own prior average (pre-registered naive line)",
    "metrics": {
     "betsConsidered": 650,
     "betsPlaced": 303,
@@ -828,6 +861,8 @@
     "holdoutRoi": 0.22445141065830743,
     "adjustedP": 0.4893793771849869
    },
+   "sourceUrl": "https://www.nfl.com/games/texans-at-ravens-2025-reg-5?tab=stats",
+   "sourceName": "Official game page (Houston Texans at Baltimore Ravens)",
    "gates": {
     "G1": {
      "pass": true,
@@ -860,8 +895,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/texans-at-ravens-2025-reg-5?tab=stats",
-   "sourceName": "Official game page (Houston Texans at Baltimore Ravens)",
    "rank": 11,
    "status": "failed"
   },
@@ -869,6 +902,9 @@
    "id": "P01",
    "name": "Receiving yards over the player's own average",
    "family": "prop",
+   "market": "player receiving yards",
+   "rule": "Line = the player's own prior average receiving yards. Our projection = recency-weighted average adjusted for the opponent's allowance rate.",
+   "benchmark": "the player's own prior average (pre-registered naive line)",
    "metrics": {
     "betsConsidered": 2901,
     "betsPlaced": 1248,
@@ -905,6 +941,8 @@
     "holdoutRoi": -0.0539620807000492,
     "adjustedP": 0.7335664466776661
    },
+   "sourceUrl": "https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats",
+   "sourceName": "Official game page (Minnesota Vikings at Cleveland Browns)",
    "gates": {
     "G1": {
      "pass": true,
@@ -937,8 +975,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats",
-   "sourceName": "Official game page (Minnesota Vikings at Cleveland Browns)",
    "rank": 12,
    "status": "failed"
   },
@@ -946,6 +982,9 @@
    "id": "P04",
    "name": "Passing yards over the player's own average",
    "family": "prop",
+   "market": "player passing yards",
+   "rule": "Line = the quarterback's own prior average passing yards; projection is opponent-adjusted.",
+   "benchmark": "the player's own prior average (pre-registered naive line)",
    "metrics": {
     "betsConsidered": 1800,
     "betsPlaced": 756,
@@ -982,6 +1021,8 @@
     "holdoutRoi": -0.008125952260031035,
     "adjustedP": 0.40933953302334886
    },
+   "sourceUrl": "https://www.nfl.com/games/49ers-at-rams-2025-reg-5?tab=stats",
+   "sourceName": "Official game page (Los Angeles Rams at San Francisco 49ers)",
    "gates": {
     "G1": {
      "pass": true,
@@ -1014,8 +1055,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/49ers-at-rams-2025-reg-5?tab=stats",
-   "sourceName": "Official game page (Los Angeles Rams at San Francisco 49ers)",
    "rank": 13,
    "status": "failed"
   },
@@ -1023,6 +1062,9 @@
    "id": "P02",
    "name": "Rushing yards over the player's own average",
    "family": "prop",
+   "market": "player rushing yards",
+   "rule": "Line = the player's own prior average rushing yards; projection is opponent-adjusted.",
+   "benchmark": "the player's own prior average (pre-registered naive line)",
    "metrics": {
     "betsConsidered": 1259,
     "betsPlaced": 677,
@@ -1059,6 +1101,8 @@
     "holdoutRoi": -0.031122031122030748,
     "adjustedP": 0.3231963401829908
    },
+   "sourceUrl": "https://www.nfl.com/games/texans-at-ravens-2025-reg-5?tab=stats",
+   "sourceName": "Official game page (Baltimore Ravens at Houston Texans)",
    "gates": {
     "G1": {
      "pass": true,
@@ -1091,8 +1135,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/texans-at-ravens-2025-reg-5?tab=stats",
-   "sourceName": "Official game page (Baltimore Ravens at Houston Texans)",
    "rank": 14,
    "status": "failed"
   },
@@ -1100,6 +1142,9 @@
    "id": "S01",
    "name": "Model game total vs league average (model's Over pick)",
    "family": "team",
+   "market": "game total",
+   "rule": "Bet Over when the model total exceeds the league-average total, Under when it is below. Line = league-average combined points from prior games only.",
+   "benchmark": "league-average combined points (pre-registered naive line)",
    "metrics": {
     "betsConsidered": 696,
     "betsPlaced": 291,
@@ -1137,6 +1182,8 @@
     "holdoutRoi": 0.14545454545454556,
     "adjustedP": 0.0791877072813026
    },
+   "sourceUrl": "https://www.nfl.com/games/bills-at-dolphins-2024-reg-2",
+   "sourceName": "Official game page (Miami Dolphins at Buffalo Bills)",
    "gates": {
     "G1": {
      "pass": true,
@@ -1169,8 +1216,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/bills-at-dolphins-2024-reg-2",
-   "sourceName": "Official game page (Miami Dolphins at Buffalo Bills)",
    "rank": 15,
    "status": "failed"
   },
@@ -1178,6 +1223,9 @@
    "id": "S06",
    "name": "Model game total, large deviation only",
    "family": "team",
+   "market": "game total",
+   "rule": "S01 but only bets when the model total differs from the league average by at least 3 points.",
+   "benchmark": "league-average combined points (pre-registered naive line)",
    "metrics": {
     "betsConsidered": 483,
     "betsPlaced": 232,
@@ -1215,6 +1263,8 @@
     "holdoutRoi": 0.22181818181818203,
     "adjustedP": 0.0744562771861407
    },
+   "sourceUrl": "https://www.nfl.com/games/saints-at-cowboys-2024-reg-2",
+   "sourceName": "Official game page (Dallas Cowboys at New Orleans Saints)",
    "gates": {
     "G1": {
      "pass": true,
@@ -1247,8 +1297,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/saints-at-cowboys-2024-reg-2",
-   "sourceName": "Official game page (Dallas Cowboys at New Orleans Saints)",
    "rank": 16,
    "status": "failed"
   },
@@ -1256,6 +1304,9 @@
    "id": "P05",
    "name": "Receiving touchdowns over the player's own average",
    "family": "prop",
+   "market": "player receiving touchdowns",
+   "rule": "Line = the player's own prior average receiving touchdowns; projection is opponent-adjusted.",
+   "benchmark": "the player's own prior average (pre-registered naive line)",
    "metrics": {
     "betsConsidered": 35,
     "betsPlaced": 34,
@@ -1292,6 +1343,8 @@
     "holdoutRoi": 0.38842975206611574,
     "adjustedP": 0.5258403746479342
    },
+   "sourceUrl": "https://www.nfl.com/games/colts-at-chargers-2025-reg-7?tab=stats",
+   "sourceName": "Official game page (Indianapolis Colts at Los Angeles Chargers)",
    "gates": {
     "G1": {
      "pass": true,
@@ -1324,8 +1377,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/games/colts-at-chargers-2025-reg-7?tab=stats",
-   "sourceName": "Official game page (Indianapolis Colts at Los Angeles Chargers)",
    "rank": 17,
    "status": "failed"
   },
@@ -1333,6 +1384,9 @@
    "id": "S04",
    "name": "Model moneyline vs pick'em (fade the model)",
    "family": "team",
+   "market": "moneyline",
+   "rule": "Structural control. At a -110 price the model-underdog can never carry a probability above the price-implied 52.38%, so this strategy can never clear the price filter. It is kept so the price filter is visibly applied to every strategy, not only the ones that benefit from it.",
+   "benchmark": "pick'em with the historical home win rate as the naive probability",
    "metrics": {
     "betsConsidered": 696,
     "betsPlaced": 0,
@@ -1365,6 +1419,8 @@
     "note": "no bets cleared the price filter",
     "adjustedP": null
    },
+   "sourceUrl": "https://www.nfl.com/schedules/",
+   "sourceName": "Official NFL.com schedule",
    "gates": {
     "G1": {
      "pass": true,
@@ -1397,8 +1453,6 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "sourceUrl": "https://www.nfl.com/schedules/",
-   "sourceName": "Official NFL.com schedule",
    "rank": 18,
    "status": "failed"
   }

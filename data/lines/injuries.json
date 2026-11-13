@@ -3,12 +3,13 @@
   "retrievedUTC": "2026-11-13T13:23:56.135525+00:00",
   "sourceName": "NFL.com official weekly injury report",
   "sourceUrl": "https://www.nfl.com/injuries/",
-  "week": 10
+  "week": 10,
+  "parserNote": "Team attribution rebuilt 2026-11-13 by session arena-827c3da2: rows were previously all attributed to Dallas Cowboys because the parser searched backwards across the whole page for a full club name. Each row is now bound to the club title element that owns its table. Row-level values (player, position, injury, practice, game status) are unchanged."
  },
  "rows": [
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Washington Commanders",
    "player": "John Bates",
    "playerPath": "/players/john-bates/",
    "playerUrl": "https://www.nfl.com/players/john-bates/",
@@ -21,7 +22,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Washington Commanders",
    "player": "Treylon Burks",
    "playerPath": "/players/treylon-burks/",
    "playerUrl": "https://www.nfl.com/players/treylon-burks/",
@@ -34,7 +35,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Washington Commanders",
    "player": "Jayden Daniels",
    "playerPath": "/players/jayden-daniels/",
    "playerUrl": "https://www.nfl.com/players/jayden-daniels/",
@@ -47,7 +48,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Washington Commanders",
    "player": "Matt Gulbin",
    "playerPath": "/players/matt-gulbin/",
    "playerUrl": "https://www.nfl.com/players/matt-gulbin/",
@@ -60,7 +61,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Washington Commanders",
    "player": "Chig Okonkwo",
    "playerPath": "/players/chigoziem-okonkwo/",
    "playerUrl": "https://www.nfl.com/players/chigoziem-okonkwo/",
@@ -73,7 +74,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Washington Commanders",
    "player": "Lucas Patrick",
    "playerPath": "/players/lucas-patrick/",
    "playerUrl": "https://www.nfl.com/players/lucas-patrick/",
@@ -86,7 +87,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Washington Commanders",
    "player": "Amik Robertson",
    "playerPath": "/players/amik-robertson/",
    "playerUrl": "https://www.nfl.com/players/amik-robertson/",
@@ -99,7 +100,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Washington Commanders",
    "player": "Shy Tuttle",
    "playerPath": "/players/shy-tuttle/",
    "playerUrl": "https://www.nfl.com/players/shy-tuttle/",
@@ -112,7 +113,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Washington Commanders",
    "player": "Colson Yankoff",
    "playerPath": "/players/colson-yankoff/",
    "playerUrl": "https://www.nfl.com/players/colson-yankoff/",
@@ -125,7 +126,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Giants",
    "player": "Abdul Carter",
    "playerPath": "/players/abdul-carter/",
    "playerUrl": "https://www.nfl.com/players/abdul-carter/",
@@ -138,7 +139,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Giants",
    "player": "Jermaine Eluemunor",
    "playerPath": "/players/jermaine-eluemunor/",
    "playerUrl": "https://www.nfl.com/players/jermaine-eluemunor/",
@@ -151,7 +152,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Giants",
    "player": "Malik Harrison",
    "playerPath": "/players/malik-harrison/",
    "playerUrl": "https://www.nfl.com/players/malik-harrison/",
@@ -164,7 +165,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Giants",
    "player": "Colton Hood",
    "playerPath": "/players/colton-hood/",
    "playerUrl": "https://www.nfl.com/players/colton-hood/",
@@ -177,7 +178,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Giants",
    "player": "Theo Johnson",
    "playerPath": "/players/theo-johnson/",
    "playerUrl": "https://www.nfl.com/players/theo-johnson/",
@@ -190,7 +191,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Giants",
    "player": "Charlie Jones",
    "playerPath": "/players/charlie-jones-3/",
    "playerUrl": "https://www.nfl.com/players/charlie-jones-3/",
@@ -203,7 +204,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Giants",
    "player": "J.J. McCarthy",
    "playerPath": "/players/j-j-mccarthy/",
    "playerUrl": "https://www.nfl.com/players/j-j-mccarthy/",
@@ -216,7 +217,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Giants",
    "player": "Darnell Mooney",
    "playerPath": "/players/darnell-mooney/",
    "playerUrl": "https://www.nfl.com/players/darnell-mooney/",
@@ -229,7 +230,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Giants",
    "player": "Malik Nabers",
    "playerPath": "/players/malik-nabers/",
    "playerUrl": "https://www.nfl.com/players/malik-nabers/",
@@ -242,7 +243,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Giants",
    "player": "Cam Skattebo",
    "playerPath": "/players/cam-skattebo/",
    "playerUrl": "https://www.nfl.com/players/cam-skattebo/",
@@ -255,7 +256,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Giants",
    "player": "Andrew Thomas",
    "playerPath": "/players/andrew-thomas/",
    "playerUrl": "https://www.nfl.com/players/andrew-thomas/",
@@ -268,7 +269,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Ben Brown",
    "playerPath": "/players/ben-brown-2/",
    "playerUrl": "https://www.nfl.com/players/ben-brown-2/",
@@ -281,7 +282,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "A.J. Brown",
    "playerPath": "/players/a-j-brown/",
    "playerUrl": "https://www.nfl.com/players/a-j-brown/",
@@ -294,7 +295,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Kevin Byard",
    "playerPath": "/players/kevin-byard/",
    "playerUrl": "https://www.nfl.com/players/kevin-byard/",
@@ -307,7 +308,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Carlton Davis III",
    "playerPath": "/players/carlton-davis/",
    "playerUrl": "https://www.nfl.com/players/carlton-davis/",
@@ -320,7 +321,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Reggie Gilliam",
    "playerPath": "/players/reggie-gilliam/",
    "playerUrl": "https://www.nfl.com/players/reggie-gilliam/",
@@ -333,7 +334,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "TreVeyon Henderson",
    "playerPath": "/players/treveyon-henderson/",
    "playerUrl": "https://www.nfl.com/players/treveyon-henderson/",
@@ -346,7 +347,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Hunter Henry",
    "playerPath": "/players/hunter-henry/",
    "playerUrl": "https://www.nfl.com/players/hunter-henry/",
@@ -359,7 +360,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Cameron Latu",
    "playerPath": "/players/cameron-latu/",
    "playerUrl": "https://www.nfl.com/players/cameron-latu/",
@@ -372,7 +373,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Drake Maye",
    "playerPath": "/players/drake-maye/",
    "playerUrl": "https://www.nfl.com/players/drake-maye/",
@@ -385,7 +386,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Morgan Moses",
    "playerPath": "/players/morgan-moses/",
    "playerUrl": "https://www.nfl.com/players/morgan-moses/",
@@ -398,7 +399,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Walter Rouse",
    "playerPath": "/players/walter-rouse/",
    "playerUrl": "https://www.nfl.com/players/walter-rouse/",
@@ -411,7 +412,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Brenden Schooler",
    "playerPath": "/players/brenden-schooler/",
    "playerUrl": "https://www.nfl.com/players/brenden-schooler/",
@@ -424,7 +425,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Rhamondre Stevenson",
    "playerPath": "/players/rhamondre-stevenson/",
    "playerUrl": "https://www.nfl.com/players/rhamondre-stevenson/",
@@ -437,7 +438,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Greg Van Roten",
    "playerPath": "/players/greg-van-roten/",
    "playerUrl": "https://www.nfl.com/players/greg-van-roten/",
@@ -450,7 +451,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New England Patriots",
    "player": "Charles Woods",
    "playerPath": "/players/charles-woods/",
    "playerUrl": "https://www.nfl.com/players/charles-woods/",
@@ -463,7 +464,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Detroit Lions",
    "player": "Brian Branch",
    "playerPath": "/players/brian-branch/",
    "playerUrl": "https://www.nfl.com/players/brian-branch/",
@@ -476,7 +477,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Detroit Lions",
    "player": "Jared Goff",
    "playerPath": "/players/jared-goff/",
    "playerUrl": "https://www.nfl.com/players/jared-goff/",
@@ -489,7 +490,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Detroit Lions",
    "player": "Kerby Joseph",
    "playerPath": "/players/kerby-joseph/",
    "playerUrl": "https://www.nfl.com/players/kerby-joseph/",
@@ -502,7 +503,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Detroit Lions",
    "player": "Cade Mays",
    "playerPath": "/players/cade-mays/",
    "playerUrl": "https://www.nfl.com/players/cade-mays/",
@@ -515,7 +516,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Detroit Lions",
    "player": "D.J. Reed",
    "playerPath": "/players/d-j-reed/",
    "playerUrl": "https://www.nfl.com/players/d-j-reed/",
@@ -528,7 +529,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Detroit Lions",
    "player": "Jacob Saylors",
    "playerPath": "/players/jacob-saylors/",
    "playerUrl": "https://www.nfl.com/players/jacob-saylors/",
@@ -541,7 +542,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Detroit Lions",
    "player": "Amon-Ra St. Brown",
    "playerPath": "/players/amon-ra-st-brown/",
    "playerUrl": "https://www.nfl.com/players/amon-ra-st-brown/",
@@ -554,7 +555,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Detroit Lions",
    "player": "Sione Vaki",
    "playerPath": "/players/sione-vaki/",
    "playerUrl": "https://www.nfl.com/players/sione-vaki/",
@@ -567,7 +568,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Detroit Lions",
    "player": "DJ Wonnum",
    "playerPath": "/players/d-j-wonnum/",
    "playerUrl": "https://www.nfl.com/players/d-j-wonnum/",
@@ -580,7 +581,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Kansas City Chiefs",
    "player": "Jeffrey Bassa",
    "playerPath": "/players/jeffrey-bassa/",
    "playerUrl": "https://www.nfl.com/players/jeffrey-bassa/",
@@ -593,7 +594,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Kansas City Chiefs",
    "player": "Mansoor Delane",
    "playerPath": "/players/mansoor-delane/",
    "playerUrl": "https://www.nfl.com/players/mansoor-delane/",
@@ -606,7 +607,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Kansas City Chiefs",
    "player": "Justin Fields",
    "playerPath": "/players/justin-fields/",
    "playerUrl": "https://www.nfl.com/players/justin-fields/",
@@ -619,7 +620,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Kansas City Chiefs",
    "player": "Jaden Hicks",
    "playerPath": "/players/jaden-hicks/",
    "playerUrl": "https://www.nfl.com/players/jaden-hicks/",
@@ -632,7 +633,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Kansas City Chiefs",
    "player": "Travis Kelce",
    "playerPath": "/players/travis-kelce/",
    "playerUrl": "https://www.nfl.com/players/travis-kelce/",
@@ -645,7 +646,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Kansas City Chiefs",
    "player": "Patrick Mahomes",
    "playerPath": "/players/patrick-mahomes/",
    "playerUrl": "https://www.nfl.com/players/patrick-mahomes/",
@@ -658,7 +659,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Kansas City Chiefs",
    "player": "Jaylon Moore",
    "playerPath": "/players/jaylon-moore-2/",
    "playerUrl": "https://www.nfl.com/players/jaylon-moore-2/",
@@ -671,7 +672,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Kansas City Chiefs",
    "player": "Omarr Norman-Lott",
    "playerPath": "/players/omarr-norman-lott/",
    "playerUrl": "https://www.nfl.com/players/omarr-norman-lott/",
@@ -684,7 +685,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Kansas City Chiefs",
    "player": "Jaydn Ott",
    "playerPath": "/players/jaydn-ott/",
    "playerUrl": "https://www.nfl.com/players/jaydn-ott/",
@@ -697,7 +698,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Kansas City Chiefs",
    "player": "Rashee Rice",
    "playerPath": "/players/rashee-rice/",
    "playerUrl": "https://www.nfl.com/players/rashee-rice/",
@@ -710,7 +711,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Kansas City Chiefs",
    "player": "Peter Woods",
    "playerPath": "/players/peter-woods/",
    "playerUrl": "https://www.nfl.com/players/peter-woods/",
@@ -723,7 +724,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Kansas City Chiefs",
    "player": "Xavier Worthy",
    "playerPath": "/players/xavier-worthy/",
    "playerUrl": "https://www.nfl.com/players/xavier-worthy/",
@@ -736,7 +737,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Atlanta Falcons",
    "player": "Zachariah Branch",
    "playerPath": "/players/zachariah-branch/",
    "playerUrl": "https://www.nfl.com/players/zachariah-branch/",
@@ -749,7 +750,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Atlanta Falcons",
    "player": "Kendal Daniels",
    "playerPath": "/players/kendal-daniels/",
    "playerUrl": "https://www.nfl.com/players/kendal-daniels/",
@@ -762,7 +763,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Atlanta Falcons",
    "player": "Divine Deablo",
    "playerPath": "/players/divine-deablo/",
    "playerUrl": "https://www.nfl.com/players/divine-deablo/",
@@ -775,7 +776,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Atlanta Falcons",
    "player": "Gervon Dexter Sr.",
    "playerPath": "/players/gervon-dexter/",
    "playerUrl": "https://www.nfl.com/players/gervon-dexter/",
@@ -788,7 +789,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Atlanta Falcons",
    "player": "James Pearce Jr.",
    "playerPath": "/players/james-pearce-jr/",
    "playerUrl": "https://www.nfl.com/players/james-pearce-jr/",
@@ -801,7 +802,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Atlanta Falcons",
    "player": "Za'Darius Smith",
    "playerPath": "/players/za-darius-smith/",
    "playerUrl": "https://www.nfl.com/players/za-darius-smith/",
@@ -814,7 +815,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Atlanta Falcons",
    "player": "Jawaan Taylor",
    "playerPath": "/players/jawaan-taylor/",
    "playerUrl": "https://www.nfl.com/players/jawaan-taylor/",
@@ -827,7 +828,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Atlanta Falcons",
    "player": "Cameron Thomas",
    "playerPath": "/players/cameron-thomas/",
    "playerUrl": "https://www.nfl.com/players/cameron-thomas/",
@@ -840,7 +841,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Atlanta Falcons",
    "player": "Josh Woods",
    "playerPath": "/players/josh-woods/",
    "playerUrl": "https://www.nfl.com/players/josh-woods/",
@@ -853,7 +854,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Minnesota Vikings",
    "player": "Blake Cashman",
    "playerPath": "/players/blake-cashman/",
    "playerUrl": "https://www.nfl.com/players/blake-cashman/",
@@ -866,7 +867,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Minnesota Vikings",
    "player": "T.J. Hockenson",
    "playerPath": "/players/t-j-hockenson/",
    "playerUrl": "https://www.nfl.com/players/t-j-hockenson/",
@@ -879,7 +880,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Minnesota Vikings",
    "player": "Tyrion Ingram-Dawkins",
    "playerPath": "/players/tyrion-ingram-dawkins/",
    "playerUrl": "https://www.nfl.com/players/tyrion-ingram-dawkins/",
@@ -892,7 +893,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Minnesota Vikings",
    "player": "Theo Jackson",
    "playerPath": "/players/theo-jackson/",
    "playerUrl": "https://www.nfl.com/players/theo-jackson/",
@@ -905,7 +906,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Minnesota Vikings",
    "player": "Jauan Jennings",
    "playerPath": "/players/jauan-jennings/",
    "playerUrl": "https://www.nfl.com/players/jauan-jennings/",
@@ -918,7 +919,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Minnesota Vikings",
    "player": "Kyler Murray",
    "playerPath": "/players/kyler-murray/",
    "playerUrl": "https://www.nfl.com/players/kyler-murray/",
@@ -931,7 +932,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Minnesota Vikings",
    "player": "Kyle Van Noy",
    "playerPath": "/players/kyle-van-noy/",
    "playerUrl": "https://www.nfl.com/players/kyle-van-noy/",
@@ -944,7 +945,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Minnesota Vikings",
    "player": "Jay Ward",
    "playerPath": "/players/jay-ward/",
    "playerUrl": "https://www.nfl.com/players/jay-ward/",
@@ -957,7 +958,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Minnesota Vikings",
    "player": "Carson Wentz",
    "playerPath": "/players/carson-wentz/",
    "playerUrl": "https://www.nfl.com/players/carson-wentz/",
@@ -970,7 +971,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Aaron Banks",
    "playerPath": "/players/aaron-banks/",
    "playerUrl": "https://www.nfl.com/players/aaron-banks/",
@@ -983,7 +984,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Chris Brooks",
    "playerPath": "/players/christopher-brooks/",
    "playerUrl": "https://www.nfl.com/players/christopher-brooks/",
@@ -996,7 +997,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Javon Bullard",
    "playerPath": "/players/javon-bullard/",
    "playerUrl": "https://www.nfl.com/players/javon-bullard/",
@@ -1009,7 +1010,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Zaire Franklin",
    "playerPath": "/players/zaire-franklin/",
    "playerUrl": "https://www.nfl.com/players/zaire-franklin/",
@@ -1022,7 +1023,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Travis Glover",
    "playerPath": "/players/travis-glover/",
    "playerUrl": "https://www.nfl.com/players/travis-glover/",
@@ -1035,7 +1036,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Ty'Ron Hopper",
    "playerPath": "/players/ty-ron-hopper/",
    "playerUrl": "https://www.nfl.com/players/ty-ron-hopper/",
@@ -1048,7 +1049,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Josh Jacobs",
    "playerPath": "/players/josh-jacobs-x3315/",
    "playerUrl": "https://www.nfl.com/players/josh-jacobs-x3315/",
@@ -1061,7 +1062,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Bo Melton",
    "playerPath": "/players/bo-melton/",
    "playerUrl": "https://www.nfl.com/players/bo-melton/",
@@ -1074,7 +1075,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Skyy Moore",
    "playerPath": "/players/skyy-moore/",
    "playerUrl": "https://www.nfl.com/players/skyy-moore/",
@@ -1087,7 +1088,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Micah Parsons",
    "playerPath": "/players/micah-parsons/",
    "playerUrl": "https://www.nfl.com/players/micah-parsons/",
@@ -1100,7 +1101,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Sean Rhyan",
    "playerPath": "/players/sean-rhyan/",
    "playerUrl": "https://www.nfl.com/players/sean-rhyan/",
@@ -1113,7 +1114,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Trey Smack",
    "playerPath": "/players/trey-smack/",
    "playerUrl": "https://www.nfl.com/players/trey-smack/",
@@ -1126,7 +1127,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Lukas Van Ness",
    "playerPath": "/players/lukas-van-ness/",
    "playerUrl": "https://www.nfl.com/players/lukas-van-ness/",
@@ -1139,7 +1140,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Josh Whyle",
    "playerPath": "/players/josh-whyle/",
    "playerUrl": "https://www.nfl.com/players/josh-whyle/",
@@ -1152,7 +1153,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Savion Williams",
    "playerPath": "/players/savion-williams/",
    "playerUrl": "https://www.nfl.com/players/savion-williams/",
@@ -1165,7 +1166,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Green Bay Packers",
    "player": "Kevin Zeitler",
    "playerPath": "/players/kevin-zeitler/",
    "playerUrl": "https://www.nfl.com/players/kevin-zeitler/",
@@ -1178,7 +1179,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Jacksonville Jaguars",
    "player": "Jessie Bates",
    "playerPath": "/players/jessie-bates/",
    "playerUrl": "https://www.nfl.com/players/jessie-bates/",
@@ -1191,7 +1192,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Jacksonville Jaguars",
    "player": "Ezra Cleveland",
    "playerPath": "/players/ezra-cleveland/",
    "playerUrl": "https://www.nfl.com/players/ezra-cleveland/",
@@ -1204,7 +1205,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Jacksonville Jaguars",
    "player": "Branson Combs",
    "playerPath": "/players/branson-combs/",
    "playerUrl": "https://www.nfl.com/players/branson-combs/",
@@ -1217,7 +1218,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Jacksonville Jaguars",
    "player": "Jordan Davis",
    "playerPath": "/players/jordan-davis/",
    "playerUrl": "https://www.nfl.com/players/jordan-davis/",
@@ -1230,7 +1231,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Jacksonville Jaguars",
    "player": "BJ Green II",
    "playerPath": "/players/bj-green-ii/",
    "playerUrl": "https://www.nfl.com/players/bj-green-ii/",
@@ -1243,7 +1244,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Jacksonville Jaguars",
    "player": "Robert Hainsey",
    "playerPath": "/players/robert-hainsey/",
    "playerUrl": "https://www.nfl.com/players/robert-hainsey/",
@@ -1256,7 +1257,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Jacksonville Jaguars",
    "player": "Antonio Johnson",
    "playerPath": "/players/antonio-johnson-3/",
    "playerUrl": "https://www.nfl.com/players/antonio-johnson-3/",
@@ -1269,7 +1270,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Jacksonville Jaguars",
    "player": "Jakobi Meyers",
    "playerPath": "/players/jakobi-meyers/",
    "playerUrl": "https://www.nfl.com/players/jakobi-meyers/",
@@ -1282,7 +1283,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Jacksonville Jaguars",
    "player": "Chris Rodriguez Jr.",
    "playerPath": "/players/chris-rodriguez-jr/",
    "playerUrl": "https://www.nfl.com/players/chris-rodriguez-jr/",
@@ -1295,7 +1296,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Jacksonville Jaguars",
    "player": "Bhayshul Tuten",
    "playerPath": "/players/bhayshul-tuten/",
    "playerUrl": "https://www.nfl.com/players/bhayshul-tuten/",
@@ -1308,7 +1309,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Jacksonville Jaguars",
    "player": "Travon Walker",
    "playerPath": "/players/travon-walker/",
    "playerUrl": "https://www.nfl.com/players/travon-walker/",
@@ -1321,7 +1322,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Tennessee Titans",
    "player": "Cody Barton",
    "playerPath": "/players/cody-barton/",
    "playerUrl": "https://www.nfl.com/players/cody-barton/",
@@ -1334,7 +1335,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Tennessee Titans",
    "player": "John Franklin-Myers",
    "playerPath": "/players/john-franklin-myers/",
    "playerUrl": "https://www.nfl.com/players/john-franklin-myers/",
@@ -1347,7 +1348,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Tennessee Titans",
    "player": "Marcus Harris",
    "playerPath": "/players/marcus-harris-4/",
    "playerUrl": "https://www.nfl.com/players/marcus-harris-4/",
@@ -1360,7 +1361,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Tennessee Titans",
    "player": "Anthony Hill Jr.",
    "playerPath": "/players/anthony-hill-jr/",
    "playerUrl": "https://www.nfl.com/players/anthony-hill-jr/",
@@ -1373,7 +1374,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Tennessee Titans",
    "player": "Jaylon Jones",
    "playerPath": "/players/jaylon-jones-2/",
    "playerUrl": "https://www.nfl.com/players/jaylon-jones-2/",
@@ -1386,7 +1387,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Tennessee Titans",
    "player": "JC Latham",
    "playerPath": "/players/jc-latham/",
    "playerUrl": "https://www.nfl.com/players/jc-latham/",
@@ -1399,7 +1400,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Tennessee Titans",
    "player": "Tony Pollard",
    "playerPath": "/players/tony-pollard/",
    "playerUrl": "https://www.nfl.com/players/tony-pollard/",
@@ -1412,7 +1413,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Tennessee Titans",
    "player": "Peter Skoronski",
    "playerPath": "/players/peter-skoronski/",
    "playerUrl": "https://www.nfl.com/players/peter-skoronski/",
@@ -1425,7 +1426,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Tennessee Titans",
    "player": "Tyjae Spears",
    "playerPath": "/players/tyjae-spears/",
    "playerUrl": "https://www.nfl.com/players/tyjae-spears/",
@@ -1438,7 +1439,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Tennessee Titans",
    "player": "Carnell Tate",
    "playerPath": "/players/carnell-tate/",
    "playerUrl": "https://www.nfl.com/players/carnell-tate/",
@@ -1451,7 +1452,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Tennessee Titans",
    "player": "Tommy Townsend",
    "playerPath": "/players/tommy-townsend/",
    "playerUrl": "https://www.nfl.com/players/tommy-townsend/",
@@ -1464,7 +1465,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Tennessee Titans",
    "player": "Kevin Winston Jr.",
    "playerPath": "/players/kevin-winston-jr/",
    "playerUrl": "https://www.nfl.com/players/kevin-winston-jr/",
@@ -1477,7 +1478,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Buffalo Bills",
    "player": "Alec Anderson",
    "playerPath": "/players/alec-anderson-2/",
    "playerUrl": "https://www.nfl.com/players/alec-anderson-2/",
@@ -1490,7 +1491,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Buffalo Bills",
    "player": "Christian Benford",
    "playerPath": "/players/christian-benford/",
    "playerUrl": "https://www.nfl.com/players/christian-benford/",
@@ -1503,7 +1504,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Buffalo Bills",
    "player": "Spencer Brown",
    "playerPath": "/players/spencer-brown/",
    "playerUrl": "https://www.nfl.com/players/spencer-brown/",
@@ -1516,7 +1517,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Buffalo Bills",
    "player": "Dion Dawkins",
    "playerPath": "/players/dion-dawkins/",
    "playerUrl": "https://www.nfl.com/players/dion-dawkins/",
@@ -1529,7 +1530,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Buffalo Bills",
    "player": "Sam Franklin Jr.",
    "playerPath": "/players/sam-franklin/",
    "playerUrl": "https://www.nfl.com/players/sam-franklin/",
@@ -1542,7 +1543,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Buffalo Bills",
    "player": "Greg Gaines",
    "playerPath": "/players/greg-gaines/",
    "playerUrl": "https://www.nfl.com/players/greg-gaines/",
@@ -1555,7 +1556,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Buffalo Bills",
    "player": "Jordan Hancock",
    "playerPath": "/players/jordan-hancock/",
    "playerUrl": "https://www.nfl.com/players/jordan-hancock/",
@@ -1568,7 +1569,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Buffalo Bills",
    "player": "Dalton Kincaid",
    "playerPath": "/players/dalton-kincaid/",
    "playerUrl": "https://www.nfl.com/players/dalton-kincaid/",
@@ -1581,7 +1582,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Buffalo Bills",
    "player": "Connor McGovern",
    "playerPath": "/players/connor-mcgovern-2/",
    "playerUrl": "https://www.nfl.com/players/connor-mcgovern-2/",
@@ -1594,7 +1595,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Buffalo Bills",
    "player": "Ar'maj Reed-Adams",
    "playerPath": "/players/ar-maj-reed-adams/",
    "playerUrl": "https://www.nfl.com/players/ar-maj-reed-adams/",
@@ -1607,7 +1608,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Buffalo Bills",
    "player": "T.J. Sanders",
    "playerPath": "/players/t-j-sanders/",
    "playerUrl": "https://www.nfl.com/players/t-j-sanders/",
@@ -1620,7 +1621,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Buffalo Bills",
    "player": "Tyrell Shavers",
    "playerPath": "/players/tyrell-shavers/",
    "playerUrl": "https://www.nfl.com/players/tyrell-shavers/",
@@ -1633,7 +1634,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Jets",
    "player": "Jarvis Brownlee Jr.",
    "playerPath": "/players/jarvis-brownlee-jr/",
    "playerUrl": "https://www.nfl.com/players/jarvis-brownlee-jr/",
@@ -1646,7 +1647,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Jets",
    "player": "Omar Cooper Jr.",
    "playerPath": "/players/omar-cooper-jr/",
    "playerUrl": "https://www.nfl.com/players/omar-cooper-jr/",
@@ -1659,7 +1660,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Jets",
    "player": "Joseph Ossai",
    "playerPath": "/players/joseph-ossai/",
    "playerUrl": "https://www.nfl.com/players/joseph-ossai/",
@@ -1672,7 +1673,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Jets",
    "player": "VJ Payne",
    "playerPath": "/players/vj-payne/",
    "playerUrl": "https://www.nfl.com/players/vj-payne/",
@@ -1685,7 +1686,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Jets",
    "player": "Harrison Phillips",
    "playerPath": "/players/harrison-phillips/",
    "playerUrl": "https://www.nfl.com/players/harrison-phillips/",
@@ -1698,7 +1699,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Jets",
    "player": "Trevin Wallace",
    "playerPath": "/players/trevin-wallace/",
    "playerUrl": "https://www.nfl.com/players/trevin-wallace/",
@@ -1711,7 +1712,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Jets",
    "player": "Garrett Wilson",
    "playerPath": "/players/garrett-wilson/",
    "playerUrl": "https://www.nfl.com/players/garrett-wilson/",
@@ -1724,7 +1725,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New York Jets",
    "player": "Nahshon Wright",
    "playerPath": "/players/nahshon-wright/",
    "playerUrl": "https://www.nfl.com/players/nahshon-wright/",
@@ -1737,7 +1738,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Miami Dolphins",
    "player": "Tucker Addington",
    "playerPath": "/players/tucker-addington/",
    "playerUrl": "https://www.nfl.com/players/tucker-addington/",
@@ -1750,7 +1751,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Miami Dolphins",
    "player": "Kaytron Allen",
    "playerPath": "/players/kaytron-allen/",
    "playerUrl": "https://www.nfl.com/players/kaytron-allen/",
@@ -1763,7 +1764,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Miami Dolphins",
    "player": "Darrell Baker Jr.",
    "playerPath": "/players/darrell-baker-jr/",
    "playerUrl": "https://www.nfl.com/players/darrell-baker-jr/",
@@ -1776,7 +1777,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Miami Dolphins",
    "player": "Chris Bell",
    "playerPath": "/players/chris-bell-2/",
    "playerUrl": "https://www.nfl.com/players/chris-bell-2/",
@@ -1789,7 +1790,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Miami Dolphins",
    "player": "Aaron Brewer",
    "playerPath": "/players/aaron-brewer-2/",
    "playerUrl": "https://www.nfl.com/players/aaron-brewer-2/",
@@ -1802,7 +1803,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Miami Dolphins",
    "player": "Malik Herring",
    "playerPath": "/players/malik-herring/",
    "playerUrl": "https://www.nfl.com/players/malik-herring/",
@@ -1815,7 +1816,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Miami Dolphins",
    "player": "Will Kacmarek",
    "playerPath": "/players/will-kacmarek/",
    "playerUrl": "https://www.nfl.com/players/will-kacmarek/",
@@ -1828,7 +1829,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Miami Dolphins",
    "player": "Michael Taaffe",
    "playerPath": "/players/michael-taaffe/",
    "playerUrl": "https://www.nfl.com/players/michael-taaffe/",
@@ -1841,7 +1842,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Miami Dolphins",
    "player": "Dante Trader Jr.",
    "playerPath": "/players/dante-trader-jr/",
    "playerUrl": "https://www.nfl.com/players/dante-trader-jr/",
@@ -1854,7 +1855,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Miami Dolphins",
    "player": "Jared Wayne",
    "playerPath": "/players/jared-wayne/",
    "playerUrl": "https://www.nfl.com/players/jared-wayne/",
@@ -1867,7 +1868,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Miami Dolphins",
    "player": "Jaylen Wright",
    "playerPath": "/players/jaylen-wright/",
    "playerUrl": "https://www.nfl.com/players/jaylen-wright/",
@@ -1880,7 +1881,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "Mo Alie-Cox",
    "playerPath": "/players/mo-alie-cox/",
    "playerUrl": "https://www.nfl.com/players/mo-alie-cox/",
@@ -1893,7 +1894,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "CJ Allen",
    "playerPath": "/players/cj-allen/",
    "playerUrl": "https://www.nfl.com/players/cj-allen/",
@@ -1906,7 +1907,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "Jaylon Carlies",
    "playerPath": "/players/jaylon-carlies/",
    "playerUrl": "https://www.nfl.com/players/jaylon-carlies/",
@@ -1919,7 +1920,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "Akeem Davis-Gaither",
    "playerPath": "/players/akeem-davis-gaither/",
    "playerUrl": "https://www.nfl.com/players/akeem-davis-gaither/",
@@ -1932,7 +1933,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "A.J. Haulcy",
    "playerPath": "/players/a-j-haulcy/",
    "playerUrl": "https://www.nfl.com/players/a-j-haulcy/",
@@ -1945,7 +1946,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "Arden Key",
    "playerPath": "/players/arden-key/",
    "playerUrl": "https://www.nfl.com/players/arden-key/",
@@ -1958,7 +1959,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "Luke Rhodes",
    "playerPath": "/players/luke-rhodes/",
    "playerUrl": "https://www.nfl.com/players/luke-rhodes/",
@@ -1971,7 +1972,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "Grover Stewart",
    "playerPath": "/players/grover-stewart/",
    "playerUrl": "https://www.nfl.com/players/grover-stewart/",
@@ -1984,7 +1985,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "Jonathan Taylor",
    "playerPath": "/players/jonathan-taylor/",
    "playerUrl": "https://www.nfl.com/players/jonathan-taylor/",
@@ -1997,7 +1998,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "Jerry Tillery",
    "playerPath": "/players/jerry-tillery/",
    "playerUrl": "https://www.nfl.com/players/jerry-tillery/",
@@ -2010,7 +2011,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "Jalen Travis",
    "playerPath": "/players/jalen-travis/",
    "playerUrl": "https://www.nfl.com/players/jalen-travis/",
@@ -2023,7 +2024,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "Justin Walley",
    "playerPath": "/players/justin-walley/",
    "playerUrl": "https://www.nfl.com/players/justin-walley/",
@@ -2036,7 +2037,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Indianapolis Colts",
    "player": "Charvarius Ward",
    "playerPath": "/players/charvarius-ward/",
    "playerUrl": "https://www.nfl.com/players/charvarius-ward/",
@@ -2049,7 +2050,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Carolina Panthers",
    "player": "Jonathon Brooks",
    "playerPath": "/players/jonathon-brooks/",
    "playerUrl": "https://www.nfl.com/players/jonathon-brooks/",
@@ -2062,7 +2063,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Carolina Panthers",
    "player": "Brady Christensen",
    "playerPath": "/players/brady-christensen/",
    "playerUrl": "https://www.nfl.com/players/brady-christensen/",
@@ -2075,7 +2076,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Carolina Panthers",
    "player": "Trevor Etienne",
    "playerPath": "/players/trevor-etienne/",
    "playerUrl": "https://www.nfl.com/players/trevor-etienne/",
@@ -2088,7 +2089,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Carolina Panthers",
    "player": "Chuba Hubbard",
    "playerPath": "/players/chuba-hubbard/",
    "playerUrl": "https://www.nfl.com/players/chuba-hubbard/",
@@ -2101,7 +2102,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Carolina Panthers",
    "player": "Lee Hunter",
    "playerPath": "/players/lee-hunter/",
    "playerUrl": "https://www.nfl.com/players/lee-hunter/",
@@ -2114,7 +2115,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Carolina Panthers",
    "player": "Mike Jackson",
    "playerPath": "/players/mike-jackson/",
    "playerUrl": "https://www.nfl.com/players/mike-jackson/",
@@ -2127,7 +2128,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Carolina Panthers",
    "player": "Will Lee III",
    "playerPath": "/players/will-lee-iii/",
    "playerUrl": "https://www.nfl.com/players/will-lee-iii/",
@@ -2140,7 +2141,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Carolina Panthers",
    "player": "Xavier Legette",
    "playerPath": "/players/xavier-legette/",
    "playerUrl": "https://www.nfl.com/players/xavier-legette/",
@@ -2153,7 +2154,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Carolina Panthers",
    "player": "Damien Lewis",
    "playerPath": "/players/damien-lewis/",
    "playerUrl": "https://www.nfl.com/players/damien-lewis/",
@@ -2166,7 +2167,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Carolina Panthers",
    "player": "Bobby Okereke",
    "playerPath": "/players/bobby-okereke/",
    "playerUrl": "https://www.nfl.com/players/bobby-okereke/",
@@ -2179,7 +2180,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Carolina Panthers",
    "player": "Jaelan Phillips",
    "playerPath": "/players/jaelan-phillips/",
    "playerUrl": "https://www.nfl.com/players/jaelan-phillips/",
@@ -2192,7 +2193,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Carolina Panthers",
    "player": "Torricelli Simpkins III",
    "playerPath": "/players/torricelli-simpkins-iii/",
    "playerUrl": "https://www.nfl.com/players/torricelli-simpkins-iii/",
@@ -2205,7 +2206,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New Orleans Saints",
    "player": "Kelvin Banks Jr.",
    "playerPath": "/players/kelvin-banks-jr/",
    "playerUrl": "https://www.nfl.com/players/kelvin-banks-jr/",
@@ -2218,7 +2219,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New Orleans Saints",
    "player": "CJ Donaldson",
    "playerPath": "/players/cj-donaldson/",
    "playerUrl": "https://www.nfl.com/players/cj-donaldson/",
@@ -2231,7 +2232,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New Orleans Saints",
    "player": "David Edwards",
    "playerPath": "/players/david-edwards-x1290/",
    "playerUrl": "https://www.nfl.com/players/david-edwards-x1290/",
@@ -2244,7 +2245,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New Orleans Saints",
    "player": "Martin Emerson",
    "playerPath": "/players/martin-emerson/",
    "playerUrl": "https://www.nfl.com/players/martin-emerson/",
@@ -2257,7 +2258,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New Orleans Saints",
    "player": "Travis Etienne",
    "playerPath": "/players/travis-etienne/",
    "playerUrl": "https://www.nfl.com/players/travis-etienne/",
@@ -2270,7 +2271,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New Orleans Saints",
    "player": "Noah Fant",
    "playerPath": "/players/noah-fant-x4946/",
    "playerUrl": "https://www.nfl.com/players/noah-fant-x4946/",
@@ -2283,7 +2284,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New Orleans Saints",
    "player": "Taliese Fuaga",
    "playerPath": "/players/taliese-fuaga/",
    "playerUrl": "https://www.nfl.com/players/taliese-fuaga/",
@@ -2296,7 +2297,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New Orleans Saints",
    "player": "Alvin Kamara",
    "playerPath": "/players/alvin-kamara/",
    "playerUrl": "https://www.nfl.com/players/alvin-kamara/",
@@ -2309,7 +2310,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New Orleans Saints",
    "player": "Erik McCoy",
    "playerPath": "/players/erik-mccoy/",
    "playerUrl": "https://www.nfl.com/players/erik-mccoy/",
@@ -2322,7 +2323,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New Orleans Saints",
    "player": "Christen Miller",
    "playerPath": "/players/christen-miller/",
    "playerUrl": "https://www.nfl.com/players/christen-miller/",
@@ -2335,7 +2336,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New Orleans Saints",
    "player": "Asim Richards",
    "playerPath": "/players/asim-richards/",
    "playerUrl": "https://www.nfl.com/players/asim-richards/",
@@ -2348,7 +2349,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "New Orleans Saints",
    "player": "Quincy Riley",
    "playerPath": "/players/quincy-riley/",
    "playerUrl": "https://www.nfl.com/players/quincy-riley/",
@@ -2361,7 +2362,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "Azeez Al-Shaair",
    "playerPath": "/players/azeez-al-shaair/",
    "playerUrl": "https://www.nfl.com/players/azeez-al-shaair/",
@@ -2374,7 +2375,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "Reed Blankenship",
    "playerPath": "/players/reed-blankenship/",
    "playerUrl": "https://www.nfl.com/players/reed-blankenship/",
@@ -2387,7 +2388,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "Tank Dell",
    "playerPath": "/players/tank-dell/",
    "playerUrl": "https://www.nfl.com/players/tank-dell/",
@@ -2400,7 +2401,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "Blake Fisher",
    "playerPath": "/players/blake-fisher/",
    "playerUrl": "https://www.nfl.com/players/blake-fisher/",
@@ -2413,7 +2414,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "Marvin Harrison Jr.",
    "playerPath": "/players/marvin-harrison-jr/",
    "playerUrl": "https://www.nfl.com/players/marvin-harrison-jr/",
@@ -2426,7 +2427,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "Jacob Hummel",
    "playerPath": "/players/jake-hummel/",
    "playerUrl": "https://www.nfl.com/players/jake-hummel/",
@@ -2439,7 +2440,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "Brevin Jordan",
    "playerPath": "/players/brevin-jordan/",
    "playerUrl": "https://www.nfl.com/players/brevin-jordan/",
@@ -2452,7 +2453,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "Woody Marks",
    "playerPath": "/players/woody-marks/",
    "playerUrl": "https://www.nfl.com/players/woody-marks/",
@@ -2465,7 +2466,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "David Montgomery",
    "playerPath": "/players/david-montgomery/",
    "playerUrl": "https://www.nfl.com/players/david-montgomery/",
@@ -2478,7 +2479,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "Keylan Rutledge",
    "playerPath": "/players/keylan-rutledge/",
    "playerUrl": "https://www.nfl.com/players/keylan-rutledge/",
@@ -2491,7 +2492,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "Jaylin Smith",
    "playerPath": "/players/jaylin-smith/",
    "playerUrl": "https://www.nfl.com/players/jaylin-smith/",
@@ -2504,7 +2505,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "Wyatt Teller",
    "playerPath": "/players/wyatt-teller/",
    "playerUrl": "https://www.nfl.com/players/wyatt-teller/",
@@ -2517,7 +2518,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Houston Texans",
    "player": "Tommy Togiai",
    "playerPath": "/players/tommy-togiai/",
    "playerUrl": "https://www.nfl.com/players/tommy-togiai/",
@@ -2530,7 +2531,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cleveland Browns",
    "player": "Austin Barber",
    "playerPath": "/players/austin-barber/",
    "playerUrl": "https://www.nfl.com/players/austin-barber/",
@@ -2543,7 +2544,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cleveland Browns",
    "player": "Denzel Boston",
    "playerPath": "/players/denzel-boston/",
    "playerUrl": "https://www.nfl.com/players/denzel-boston/",
@@ -2556,7 +2557,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cleveland Browns",
    "player": "Michael Burton",
    "playerPath": "/players/michael-burton/",
    "playerUrl": "https://www.nfl.com/players/michael-burton/",
@@ -2569,7 +2570,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cleveland Browns",
    "player": "Maliek Collins",
    "playerPath": "/players/maliek-collins/",
    "playerUrl": "https://www.nfl.com/players/maliek-collins/",
@@ -2582,7 +2583,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cleveland Browns",
    "player": "Harold Fannin Jr.",
    "playerPath": "/players/harold-fannin-jr/",
    "playerUrl": "https://www.nfl.com/players/harold-fannin-jr/",
@@ -2595,7 +2596,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cleveland Browns",
    "player": "Ronnie Hickman Jr.",
    "playerPath": "/players/ronnie-hickman-jr/",
    "playerUrl": "https://www.nfl.com/players/ronnie-hickman-jr/",
@@ -2608,7 +2609,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cleveland Browns",
    "player": "Tytus Howard",
    "playerPath": "/players/tytus-howard-x1979/",
    "playerUrl": "https://www.nfl.com/players/tytus-howard-x1979/",
@@ -2621,7 +2622,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cleveland Browns",
    "player": "Elgton Jenkins",
    "playerPath": "/players/elgton-jenkins/",
    "playerUrl": "https://www.nfl.com/players/elgton-jenkins/",
@@ -2634,7 +2635,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cleveland Browns",
    "player": "Donovan McMillon",
    "playerPath": "/players/donovan-mcmillon-2/",
    "playerUrl": "https://www.nfl.com/players/donovan-mcmillon-2/",
@@ -2647,7 +2648,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cleveland Browns",
    "player": "Carson Schwesinger",
    "playerPath": "/players/carson-schwesinger/",
    "playerUrl": "https://www.nfl.com/players/carson-schwesinger/",
@@ -2660,7 +2661,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cleveland Browns",
    "player": "Denzel Ward",
    "playerPath": "/players/denzel-ward/",
    "playerUrl": "https://www.nfl.com/players/denzel-ward/",
@@ -2673,7 +2674,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cleveland Browns",
    "player": "Quincy Williams",
    "playerPath": "/players/quincy-williams/",
    "playerUrl": "https://www.nfl.com/players/quincy-williams/",
@@ -2686,7 +2687,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Los Angeles Rams",
    "player": "Davis Allen",
    "playerPath": "/players/davis-allen/",
    "playerUrl": "https://www.nfl.com/players/davis-allen/",
@@ -2699,7 +2700,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Los Angeles Rams",
    "player": "Steve Avila",
    "playerPath": "/players/steve-avila/",
    "playerUrl": "https://www.nfl.com/players/steve-avila/",
@@ -2712,7 +2713,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Los Angeles Rams",
    "player": "Joe Cardona",
    "playerPath": "/players/joe-cardona/",
    "playerUrl": "https://www.nfl.com/players/joe-cardona/",
@@ -2725,7 +2726,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Los Angeles Rams",
    "player": "Kam Curl",
    "playerPath": "/players/kamren-curl/",
    "playerUrl": "https://www.nfl.com/players/kamren-curl/",
@@ -2738,7 +2739,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Los Angeles Rams",
    "player": "Terrance Ferguson",
    "playerPath": "/players/terrance-ferguson-2/",
    "playerUrl": "https://www.nfl.com/players/terrance-ferguson-2/",
@@ -2751,7 +2752,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Los Angeles Rams",
    "player": "Myles Garrett",
    "playerPath": "/players/myles-garrett/",
    "playerUrl": "https://www.nfl.com/players/myles-garrett/",
@@ -2764,7 +2765,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Los Angeles Rams",
    "player": "Trent McDuffie",
    "playerPath": "/players/trent-mcduffie/",
    "playerUrl": "https://www.nfl.com/players/trent-mcduffie/",
@@ -2777,7 +2778,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Los Angeles Rams",
    "player": "Puka Nacua",
    "playerPath": "/players/puka-nacua/",
    "playerUrl": "https://www.nfl.com/players/puka-nacua/",
@@ -2790,7 +2791,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Los Angeles Rams",
    "player": "Colby Parkinson",
    "playerPath": "/players/colby-parkinson/",
    "playerUrl": "https://www.nfl.com/players/colby-parkinson/",
@@ -2803,7 +2804,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Los Angeles Rams",
    "player": "Matthew Stafford",
    "playerPath": "/players/matthew-stafford/",
    "playerUrl": "https://www.nfl.com/players/matthew-stafford/",
@@ -2816,7 +2817,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Budda Baker",
    "playerPath": "/players/budda-baker/",
    "playerUrl": "https://www.nfl.com/players/budda-baker/",
@@ -2829,7 +2830,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Zachary Carter",
    "playerPath": "/players/zachary-carter-x9168/",
    "playerUrl": "https://www.nfl.com/players/zachary-carter-x9168/",
@@ -2842,7 +2843,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Hjalte Froholdt",
    "playerPath": "/players/hjalte-froholdt/",
    "playerUrl": "https://www.nfl.com/players/hjalte-froholdt/",
@@ -2855,7 +2856,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Jon Gaines II",
    "playerPath": "/players/jon-gaines-ii/",
    "playerUrl": "https://www.nfl.com/players/jon-gaines-ii/",
@@ -2868,7 +2869,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Bam Knight",
    "playerPath": "/players/bam-knight/",
    "playerUrl": "https://www.nfl.com/players/bam-knight/",
@@ -2881,7 +2882,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Hunter Long",
    "playerPath": "/players/hunter-long/",
    "playerUrl": "https://www.nfl.com/players/hunter-long/",
@@ -2894,7 +2895,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Roy Lopez",
    "playerPath": "/players/roy-lopez/",
    "playerUrl": "https://www.nfl.com/players/roy-lopez/",
@@ -2907,7 +2908,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Max Melton",
    "playerPath": "/players/max-melton/",
    "playerUrl": "https://www.nfl.com/players/max-melton/",
@@ -2920,7 +2921,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Darius Robinson",
    "playerPath": "/players/darius-robinson-2/",
    "playerUrl": "https://www.nfl.com/players/darius-robinson-2/",
@@ -2933,7 +2934,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Isaac Seumalo",
    "playerPath": "/players/isaac-seumalo/",
    "playerUrl": "https://www.nfl.com/players/isaac-seumalo/",
@@ -2946,7 +2947,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Dante Stills",
    "playerPath": "/players/dante-stills/",
    "playerUrl": "https://www.nfl.com/players/dante-stills/",
@@ -2959,7 +2960,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Josh Sweat",
    "playerPath": "/players/josh-sweat/",
    "playerUrl": "https://www.nfl.com/players/josh-sweat/",
@@ -2972,7 +2973,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Jayden Williams",
    "playerPath": "/players/jayden-williams/",
    "playerUrl": "https://www.nfl.com/players/jayden-williams/",
@@ -2985,7 +2986,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Mack Wilson",
    "playerPath": "/players/mack-wilson/",
    "playerUrl": "https://www.nfl.com/players/mack-wilson/",
@@ -2998,7 +2999,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Arizona Cardinals",
    "player": "Andrew Wingard",
    "playerPath": "/players/andrew-wingard/",
    "playerUrl": "https://www.nfl.com/players/andrew-wingard/",
@@ -3011,7 +3012,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "AJ Barner",
    "playerPath": "/players/aj-barner/",
    "playerUrl": "https://www.nfl.com/players/aj-barner/",
@@ -3024,7 +3025,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Anthony Bradford",
    "playerPath": "/players/anthony-bradford/",
    "playerUrl": "https://www.nfl.com/players/anthony-bradford/",
@@ -3037,7 +3038,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Charles Cross",
    "playerPath": "/players/charles-cross-2/",
    "playerUrl": "https://www.nfl.com/players/charles-cross-2/",
@@ -3050,7 +3051,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Sam Darnold",
    "playerPath": "/players/sam-darnold/",
    "playerUrl": "https://www.nfl.com/players/sam-darnold/",
@@ -3063,7 +3064,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Derick Hall",
    "playerPath": "/players/derick-hall/",
    "playerUrl": "https://www.nfl.com/players/derick-hall/",
@@ -3076,7 +3077,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Drew Lock",
    "playerPath": "/players/drew-lock/",
    "playerUrl": "https://www.nfl.com/players/drew-lock/",
@@ -3089,7 +3090,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Quenton Nelson",
    "playerPath": "/players/quenton-nelson/",
    "playerUrl": "https://www.nfl.com/players/quenton-nelson/",
@@ -3102,7 +3103,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Uchenna Nwosu",
    "playerPath": "/players/uchenna-nwosu/",
    "playerUrl": "https://www.nfl.com/players/uchenna-nwosu/",
@@ -3115,7 +3116,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Patrick O'Connell",
    "playerPath": "/players/patrick-o-connell/",
    "playerUrl": "https://www.nfl.com/players/patrick-o-connell/",
@@ -3128,7 +3129,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Connor O'Toole",
    "playerPath": "/players/connor-o-toole/",
    "playerUrl": "https://www.nfl.com/players/connor-o-toole/",
@@ -3141,7 +3142,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Brandon Pili",
    "playerPath": "/players/brandon-pili/",
    "playerUrl": "https://www.nfl.com/players/brandon-pili/",
@@ -3154,7 +3155,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Jarran Reed",
    "playerPath": "/players/jarran-reed/",
    "playerUrl": "https://www.nfl.com/players/jarran-reed/",
@@ -3167,7 +3168,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Rashid Shaheed",
    "playerPath": "/players/rashid-shaheed/",
    "playerUrl": "https://www.nfl.com/players/rashid-shaheed/",
@@ -3180,7 +3181,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Jaxon Smith-Njigba",
    "playerPath": "/players/jaxon-smith-njigba/",
    "playerUrl": "https://www.nfl.com/players/jaxon-smith-njigba/",
@@ -3193,7 +3194,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Seattle Seahawks",
    "player": "Leonard Williams",
    "playerPath": "/players/leonard-williams/",
    "playerUrl": "https://www.nfl.com/players/leonard-williams/",
@@ -3206,7 +3207,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Las Vegas Raiders",
    "player": "Thomas Booker",
    "playerPath": "/players/thomas-booker/",
    "playerUrl": "https://www.nfl.com/players/thomas-booker/",
@@ -3219,7 +3220,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Las Vegas Raiders",
    "player": "Foley Fatukasi",
    "playerPath": "/players/foley-fatukasi/",
    "playerUrl": "https://www.nfl.com/players/foley-fatukasi/",
@@ -3232,7 +3233,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Las Vegas Raiders",
    "player": "Ian Thomas",
    "playerPath": "/players/ian-thomas/",
    "playerUrl": "https://www.nfl.com/players/ian-thomas/",
@@ -3245,7 +3246,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Las Vegas Raiders",
    "player": "Trey Zuhn III",
    "playerPath": "/players/trey-zuhn-iii/",
    "playerUrl": "https://www.nfl.com/players/trey-zuhn-iii/",
@@ -3258,7 +3259,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "San Francisco 49ers",
    "player": "Mike Evans",
    "playerPath": "/players/mike-evans/",
    "playerUrl": "https://www.nfl.com/players/mike-evans/",
@@ -3271,7 +3272,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "San Francisco 49ers",
    "player": "Renardo Green",
    "playerPath": "/players/renardo-green/",
    "playerUrl": "https://www.nfl.com/players/renardo-green/",
@@ -3284,7 +3285,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "San Francisco 49ers",
    "player": "Dre Greenlaw",
    "playerPath": "/players/dre-greenlaw-x9042/",
    "playerUrl": "https://www.nfl.com/players/dre-greenlaw-x9042/",
@@ -3297,7 +3298,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "San Francisco 49ers",
    "player": "Nate Hobbs",
    "playerPath": "/players/nate-hobbs/",
    "playerUrl": "https://www.nfl.com/players/nate-hobbs/",
@@ -3310,7 +3311,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "San Francisco 49ers",
    "player": "Deommodore Lenoir",
    "playerPath": "/players/deommodore-lenoir/",
    "playerUrl": "https://www.nfl.com/players/deommodore-lenoir/",
@@ -3323,7 +3324,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "San Francisco 49ers",
    "player": "Christian McCaffrey",
    "playerPath": "/players/christian-mccaffrey/",
    "playerUrl": "https://www.nfl.com/players/christian-mccaffrey/",
@@ -3336,7 +3337,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "San Francisco 49ers",
    "player": "Siran Neal",
    "playerPath": "/players/siran-neal/",
    "playerUrl": "https://www.nfl.com/players/siran-neal/",
@@ -3349,7 +3350,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "San Francisco 49ers",
    "player": "Demarcus Robinson",
    "playerPath": "/players/demarcus-robinson/",
    "playerUrl": "https://www.nfl.com/players/demarcus-robinson/",
@@ -3362,7 +3363,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "San Francisco 49ers",
    "player": "Deebo Samuel Sr.",
    "playerPath": "/players/deebo-samuel/",
    "playerUrl": "https://www.nfl.com/players/deebo-samuel/",
@@ -3375,7 +3376,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "San Francisco 49ers",
    "player": "Upton Stout",
    "playerPath": "/players/upton-stout/",
    "playerUrl": "https://www.nfl.com/players/upton-stout/",
@@ -3388,7 +3389,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "San Francisco 49ers",
    "player": "C.J. West",
    "playerPath": "/players/cj-west/",
    "playerUrl": "https://www.nfl.com/players/cj-west/",
@@ -3401,7 +3402,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "San Francisco 49ers",
    "player": "Trent Williams",
    "playerPath": "/players/trent-williams/",
    "playerUrl": "https://www.nfl.com/players/trent-williams/",
@@ -3648,7 +3649,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Pittsburgh Steelers",
    "player": "Brandin Echols",
    "playerPath": "/players/brandin-echols/",
    "playerUrl": "https://www.nfl.com/players/brandin-echols/",
@@ -3661,7 +3662,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Pittsburgh Steelers",
    "player": "DeShon Elliott",
    "playerPath": "/players/deshon-elliott/",
    "playerUrl": "https://www.nfl.com/players/deshon-elliott/",
@@ -3674,7 +3675,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Pittsburgh Steelers",
    "player": "Derrick Harmon",
    "playerPath": "/players/derrick-harmon-2/",
    "playerUrl": "https://www.nfl.com/players/derrick-harmon-2/",
@@ -3687,7 +3688,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Pittsburgh Steelers",
    "player": "Cameron Heyward",
    "playerPath": "/players/cameron-heyward/",
    "playerUrl": "https://www.nfl.com/players/cameron-heyward/",
@@ -3700,7 +3701,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Pittsburgh Steelers",
    "player": "Ben Skowronek",
    "playerPath": "/players/ben-skowronek/",
    "playerUrl": "https://www.nfl.com/players/ben-skowronek/",
@@ -3713,7 +3714,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Pittsburgh Steelers",
    "player": "Doneiko Slaughter",
    "playerPath": "/players/doneiko-slaughter/",
    "playerUrl": "https://www.nfl.com/players/doneiko-slaughter/",
@@ -3726,7 +3727,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Pittsburgh Steelers",
    "player": "Darnell Washington",
    "playerPath": "/players/darnell-washington/",
    "playerUrl": "https://www.nfl.com/players/darnell-washington/",
@@ -3739,7 +3740,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Pittsburgh Steelers",
    "player": "T.J. Watt",
    "playerPath": "/players/t-j-watt/",
    "playerUrl": "https://www.nfl.com/players/t-j-watt/",
@@ -3752,7 +3753,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cincinnati Bengals",
    "player": "Jonathan Allen",
    "playerPath": "/players/jonathan-allen/",
    "playerUrl": "https://www.nfl.com/players/jonathan-allen/",
@@ -3765,7 +3766,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cincinnati Bengals",
    "player": "Jalen Davis",
    "playerPath": "/players/jalen-davis/",
    "playerUrl": "https://www.nfl.com/players/jalen-davis/",
@@ -3778,7 +3779,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cincinnati Bengals",
    "player": "Kyle Dugger",
    "playerPath": "/players/kyle-dugger/",
    "playerUrl": "https://www.nfl.com/players/kyle-dugger/",
@@ -3791,7 +3792,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cincinnati Bengals",
    "player": "Dylan Fairchild",
    "playerPath": "/players/dylan-fairchild/",
    "playerUrl": "https://www.nfl.com/players/dylan-fairchild/",
@@ -3804,7 +3805,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cincinnati Bengals",
    "player": "B.J. Hill",
    "playerPath": "/players/b-j-hill/",
    "playerUrl": "https://www.nfl.com/players/b-j-hill/",
@@ -3817,7 +3818,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cincinnati Bengals",
    "player": "Andrei Iosivas",
    "playerPath": "/players/andrei-iosivas/",
    "playerUrl": "https://www.nfl.com/players/andrei-iosivas/",
@@ -3830,7 +3831,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cincinnati Bengals",
    "player": "Brian Parker II",
    "playerPath": "/players/brian-parker-ii/",
    "playerUrl": "https://www.nfl.com/players/brian-parker-ii/",
@@ -3843,7 +3844,7 @@
   },
   {
    "week": 10,
-   "team": "Dallas Cowboys",
+   "team": "Cincinnati Bengals",
    "player": "DJ Turner II",
    "playerPath": "/players/dj-turner-2/",
    "playerUrl": "https://www.nfl.com/players/dj-turner-2/",

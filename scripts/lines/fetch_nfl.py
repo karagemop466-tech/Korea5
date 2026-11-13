@@ -371,6 +371,50 @@ def clean_text(s):
     return re.sub(r"\s+", " ", html.unescape(TAG_RE.sub("", s or ""))).strip()
 
 
+
+# The official injury page labels each club table with its OWN title element
+# (`<div class="d3-o-section-sub-title"><span>Commanders</span></div>`), not with the full
+# club name. The original implementation searched the whole preceding page for a full club
+# name, took the last match, and so attributed every row on the page to whichever club was
+# named last before the final table (Dallas Cowboys). That mislabelled all 296 rows of the
+# 2026 Week 10 report. Fixed 2026-11-13 by session arena-827c3da2; see
+# data/control/audit.json and tests/test_control_audit.py.
+OWNER_RE = re.compile(r'd3-o-section-sub-title"\s*><span>(.*?)</span>', re.S | re.I)
+
+NICKNAMES = {
+    "Cardinals": "Arizona Cardinals", "Falcons": "Atlanta Falcons", "Ravens": "Baltimore Ravens",
+    "Bills": "Buffalo Bills", "Panthers": "Carolina Panthers", "Bears": "Chicago Bears",
+    "Bengals": "Cincinnati Bengals", "Browns": "Cleveland Browns", "Cowboys": "Dallas Cowboys",
+    "Broncos": "Denver Broncos", "Lions": "Detroit Lions", "Packers": "Green Bay Packers",
+    "Texans": "Houston Texans", "Colts": "Indianapolis Colts", "Jaguars": "Jacksonville Jaguars",
+    "Chiefs": "Kansas City Chiefs", "Raiders": "Las Vegas Raiders", "Chargers": "Los Angeles Chargers",
+    "Rams": "Los Angeles Rams", "Dolphins": "Miami Dolphins", "Vikings": "Minnesota Vikings",
+    "Patriots": "New England Patriots", "Saints": "New Orleans Saints", "Giants": "New York Giants",
+    "Jets": "New York Jets", "Eagles": "Philadelphia Eagles", "Steelers": "Pittsburgh Steelers",
+    "49ers": "San Francisco 49ers", "Seahawks": "Seattle Seahawks", "Buccaneers": "Tampa Bay Buccaneers",
+    "Titans": "Tennessee Titans", "Commanders": "Washington Commanders",
+}
+
+
+def team_for_table(page, table_start):
+    """Return the full club name that owns the table starting at table_start.
+
+    The nearest owner title *before* the table wins. If that title is not a known club
+    nickname, the table is reported as unattributed (None) rather than guessed.
+    """
+    before = page[:table_start]
+    found = OWNER_RE.findall(before)
+    if not found:
+        return None
+    label = clean_text(found[-1])
+    if label in NICKNAMES:
+        return NICKNAMES[label]
+    for full, _abbr, _domain in CLUBS:
+        if full == label or full.endswith(" " + label):
+            return full
+    return None
+
+
 def parse_injuries_page(page, url):
     """Split the official injury report page into (team, week, rows)."""
     rows = []
@@ -381,14 +425,7 @@ def parse_injuries_page(page, url):
     # tables of the report
     for tm in re.finditer(r"<table\b[^>]*d3-o-reports--detailed[^>]*>.*?</table>", page, re.S | re.I):
         block = tm.group(0)
-        before = page[:tm.start()]
-        team = None
-        best = -1
-        for full, _abbr, _domain in CLUBS:
-            pos = before.rfind(full)
-            if pos > best:
-                best = pos
-                team = full
+        team = team_for_table(page, tm.start())
         if team is None:
             continue
         for rm in re.finditer(r"<tr\b[^>]*>(.*?)</tr>", block, re.S | re.I):

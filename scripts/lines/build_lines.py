@@ -797,19 +797,32 @@ def main():
         reward, reward_note = compute_reward(r, gates)
         r["reward"] = reward
         r["rewardNote"] = reward_note
-        leaderboard.append({
-            "id": r["id"], "name": r["name"], "family": r["family"],
-            "metrics": r["metrics"], "gates": gates,
-            "reward": reward, "rewardNote": reward_note,
-            "sourceUrl": r.get("sourceUrl"), "sourceName": r.get("sourceName"),
-        })
+        # The row is the SAME dict as the strategy entry, plus rank/status. They must not be
+        # copies: the redundancy gate below rewrites G7, `status` and `reward`, and a copy would
+        # leave strategies.json and leaderboard.json disagreeing (defect A02, fixed 2026-11-13).
+        r["rank"] = None
+        r["status"] = None
+        leaderboard.append(r)
     leaderboard.sort(key=lambda x: (-(x["reward"] or 0),
                                     x["metrics"].get("logLoss") if x["metrics"].get("logLoss") is not None else 9))
     for i, row in enumerate(leaderboard, start=1):
         row["rank"] = i
 
-    # redundancy gate needs the ranking, so apply it after sorting
+    # The leaderboard rows are the SAME objects held in `results`, and `apply_redundancy_gate`
+    # rewrites G7, `status` and `reward` on them in place so the two published files cannot
+    # disagree. Before 2026-11-13 the gate was applied only to `leaderboard` while
+    # strategies.json had already been assigned `results` by reference in a different order,
+    # which left strategies.json and leaderboard.json disagreeing on S03 (reward 72 vs 0) and
+    # shipped a leaderboard whose ranks/status were computed before the reward was zeroed.
+    # See data/control/audit.json (A02).
     apply_redundancy_gate(leaderboard, correlations)
+    _by_id = {r["id"]: r for r in results}
+    for row in leaderboard:
+        assert row is _by_id[row["id"]], "leaderboard row is a copy of a strategy row"
+        assert row["reward"] == _by_id[row["id"]]["reward"], f"reward drift on {row['id']}"
+    assert sorted(r["rank"] for r in leaderboard) == list(range(1, len(leaderboard) + 1)), "ranks not contiguous"
+    for i, row in enumerate(leaderboard, start=1):
+        row["rank"] = i
 
     # ---------------------------------------------------------------- lineup risk
     lineup = build_lineup_risk(inj_doc, depth_doc, reg_games, games_doc)

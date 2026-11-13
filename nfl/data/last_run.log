@@ -1,7 +1,7 @@
  200 games.csv                          2,190,032 bytes
  200 officials.csv                      1,293,787 bytes
  200 player_stats.parquet               5,621,855 bytes
- 200 injuries_2026.csv                    354,572 bytes
+ 200 injuries_2026.csv                    355,094 bytes
  200 depth_charts_timestamp.json               43 bytes
  200 player_stats_timestamp.json               43 bytes
  200 injuries_timestamp.json                   43 bytes
@@ -67,9 +67,9 @@
  200 snap_counts_2025.csv               2,401,290 bytes
  200 play_by_play_2025.csv.gz          19,105,296 bytes
  404 stats_player_week_2026.csv       FAIL HTTP 404
- 200 injuries_2026.csv                    354,572 bytes
+ 200 injuries_2026.csv                    355,094 bytes
  200 depth_charts_2026.csv             74,795,019 bytes
- 200 roster_2026.csv                      982,988 bytes
+ 200 roster_2026.csv                      983,400 bytes
  200 snap_counts_2026.csv               1,147,455 bytes
  200 espn_2016_t2_w1.json                 142,247 bytes
  200 espn_2016_t2_w2.json                 141,051 bytes
@@ -380,15 +380,15 @@
 wrote data_audit.json
 wrote hypotheses.json
 wrote questions.json
-leaderboard: 16 strategies
+leaderboard: 14 strategies
   #1 A    4.289 pts= 1000 Single-game model — strength features (9 signals)
   #2 C     1.79 pts=  300 WR receptions over 4.5
   #3 C    1.677 pts=  300 RB rushing yards over 55.0
   #4 C    1.344 pts=  300 WR receiving yards over 45.0
   #5 C    0.682 pts=  300 RB rushing tds over 0.5
-  #6 C    0.394 pts=  300 QB passing yards over 225.0
-  #7 C    0.312 pts=  300 QB passing tds over 1.5
-  #8 C    0.169 pts=  300 WR receiving tds over 0.5
+  #6 C    0.169 pts=  300 WR receiving tds over 0.5
+  #7 C    0.153 pts=  300 QB passing yards over 225.0
+  #8 C    0.121 pts=  300 QB passing tds over 1.5
 built 11 pages in nfl-lines/
 test_cholesky_and_copula (test_model.TestGates.test_cholesky_and_copula) ... ok
 test_deflation_rejects_pure_noise (test_model.TestGates.test_deflation_rejects_pure_noise)
@@ -406,6 +406,6 @@ test_walk_forward_ignores_future_seasons (test_model.TestNoLeakage.test_walk_for
 test_questions_have_all_resolution_fields (test_model.TestQuestions.test_questions_have_all_resolution_fields) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 11.326s
+Ran 9 tests in 19.305s
 
 OK

@@ -122,8 +122,7 @@ def plan(seasons: list[int], max_season: int) -> list[tuple[str, str, str]]:
     out: list[tuple[str, str, str]] = [
         ("games.csv", release_url("schedules", "games.csv"), "csv"),
         ("games_timestamp.json", release_url("schedules", "timestamp.json"), "json"),
-        ("injuries.csv", release_url("injuries", "injuries.csv") if False else
-         release_url("injuries", "injuries_2026.csv"), "csv"),
+        ("injuries_current.csv", release_url("injuries", f"injuries_{max_season}.csv"), "csv"),
         ("officials.csv", release_url("officials", "officials.csv"), "csv"),
         ("depth_charts_timestamp.json", release_url("depth_charts", "timestamp.json"), "json"),
     ]
@@ -134,12 +133,8 @@ def plan(seasons: list[int], max_season: int) -> list[tuple[str, str, str]]:
             (f"depth_charts_{y}.csv", release_url("depth_charts", f"depth_charts_{y}.csv"), "csv"),
             (f"roster_{y}.csv", release_url("rosters", f"roster_{y}.csv"), "csv"),
             (f"snap_counts_{y}.csv", release_url("snap_counts", f"snap_counts_{y}.csv"), "csv"),
+            (f"advstats_week_team_{y}.csv", release_url("pfr_advstats", f"advstats_week_team_{y}.csv"), "csv"),
         ]
-        # roster_{y}.csv only exists for the current season; older years are roster_{y} too -> probe.
-        if y <= max_season - 1:
-            out.append((f"play_by_play_{y}.csv.gz", release_url("pbp", f"play_by_play_{y}.parquet"), "skip"))
-            out.append((f"advstats_week_team_{y}.csv",
-                        release_url("pfr_advstats", f"advstats_week_team_{y}.csv"), "csv"))
     # ESPN cross-check: one scoreboard pull per completed season + current.
     for y in seasons:
         out.append((f"espn_scoreboard_{y}.json", espn_scoreboard(y), "json"))
@@ -213,9 +208,9 @@ def main() -> int:
 
     manifest["summary"] = {"requested": len(items), "ok": ok, "failed": fail}
     if not args.check_only:
+        os.makedirs("nfl/data", exist_ok=True)
         with open(os.path.join("nfl/data", "provenance.json"), "w", encoding="utf-8") as fh:
             json.dump(manifest, fh, indent=1)
-        os.makedirs("nfl/data", exist_ok=True)
         # Backfill max_season: release timestamps for the current season.
         for tag, fname in (("injuries", "injuries_timestamp.json"),
                            ("player_stats", "stats_player_timestamp.json")):

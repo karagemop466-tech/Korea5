@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: probe asset inventory (no commit)
-        run: python3 nfl/fetch_data.py --seasons 2025 2026 --check-only
+        run: python3 nfl/fetch_data.py --seasons 2016 2026 --check-only
       - name: full fetch
         if: github.event.inputs.mode != 'probe'
         run: python3 nfl/fetch_data.py --seasons 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026

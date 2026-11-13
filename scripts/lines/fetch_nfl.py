@@ -314,11 +314,18 @@ def fetch_boxscore(game):
     if page is None:
         return [], [f"{slug}: box score fetch failed"]
     data = rsc_query_data(page, "useFetchTeamStatsContainerData")
-    if not isinstance(data, dict):
-        return [], [f"{slug}: team stats payload missing"]
+    diag = None
+    if isinstance(data, dict):
+        diag = {"keys": sorted(data)[:12]}
+    payload = find_team_stats(data)
+    if payload is None:
+        msg = f"{slug}: team stats payload missing"
+        if diag:
+            msg += f" (keys={diag['keys']})"
+        return [], [msg]
     rows = []
     for side in ("awayTeam", "homeTeam"):
-        team = data.get(side) or {}
+        team = payload.get(side) or {}
         rows.extend(parse_team_stats(team.get("stats"), side, url))
     for r in rows:
         r["gameId"] = game.get("gameId")
@@ -421,14 +428,24 @@ def parse_depth_chart(page, url):
     tier_labels_found = False
     for tm in re.finditer(r"<table\b([^>]*)>(.*?)</table>", page, re.S | re.I):
         attrs, block = tm.group(1), tm.group(2)
+        tables_seen += 1
         head = re.search(r"<thead\b[^>]*>(.*?)</thead>", block, re.S | re.I)
         if not head:
             continue
         headers = [clean_text(h).lower() for h in re.findall(r"<th\b[^>]*>(.*?)</th>", head.group(1), re.S | re.I)]
-        if not headers or headers[0] != "position" or not any("player" in h for h in headers[1:]):
+        has_tier = any(h in DEPTH_HEADERS for h in headers[1:])
+        has_player = any("player" in h for h in headers[1:])
+        if not headers or headers[0] != "position" or not (has_tier or has_player):
             continue
         cap = re.search(r"<caption[^>]*>(.*?)</caption>", block, re.S | re.I)
         unit = clean_text(cap.group(1)).title() if cap else ""
+        if not unit:
+            hs = re.findall(r"<h[1-4][^>]*>(.*?)</h[1-4]>", page[:tm.start()], re.S | re.I)
+            for h in reversed(hs):
+                t = clean_text(h).strip("*# ").title()
+                if t in ("Offense", "Defense", "Special Teams"):
+                    unit = t
+                    break
         tiers = []
         for i, h in enumerate(headers[1:], start=1):
             tiers.append(h if h in DEPTH_HEADERS else ORDINAL.get(i, f"tier{i}"))
@@ -475,7 +492,7 @@ def parse_depth_chart(page, url):
             note = m.group(1)
             break
     label = "unofficial" if re.search(r"\bunofficial\b", page, re.I) else "official"
-    return units, note, label, tier_labels_found
+    return units, note, label, tier_labels_found, tables_seen
 
 
 def fetch_depth_chart(club):
@@ -489,7 +506,7 @@ def fetch_depth_chart(club):
         page = get(url, tries=2)
         if page is None:
             continue
-        units, note, label, tier_labels = parse_depth_chart(page, url)
+        units, note, label, tier_labels, tables_seen = parse_depth_chart(page, url)
         if units:
             return {
                 "team": full,
@@ -498,6 +515,7 @@ def fetch_depth_chart(club):
                 "asOf": note,
                 "chartLabel": label,
                 "tierLabelsInSource": tier_labels,
+                "tablesOnPage": tables_seen,
                 "sourceUrl": url,
                 "sourceName": f"Official {full} depth chart",
                 "verification": "verified",
@@ -509,6 +527,7 @@ def fetch_depth_chart(club):
         "asOf": None,
         "chartLabel": None,
         "tierLabelsInSource": False,
+        "tablesOnPage": 0,
         "sourceUrl": None,
         "sourceName": f"Official {full} depth chart",
         "verification": "unverified-not-fetched",

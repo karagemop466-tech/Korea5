@@ -425,6 +425,22 @@ def _teams(pairs, url):
 
 
 
+
+CLUB_LINK_RE = re.compile(
+    r'<a[^>]*href="(?:https?://www\.nfl\.com)?/teams/([a-z0-9\-]+)/?"[^>]*>(?P<t>.*?)</a>', re.S | re.I)
+
+
+def club_labels(page: str):
+    """{clubSlug: displayed club name} from the club links the page itself renders."""
+    out = {}
+    for m in CLUB_LINK_RE.finditer(page):
+        slug = m.group(1)
+        label = re.sub(r"\s+", " ", strip_tags(m.group("t"))).strip()
+        if label and len(label) <= 60 and slug not in out:
+            out[slug] = label
+    return out
+
+
 # ------------------------------------------------------------- plain HTML tables
 ROW_RE = re.compile(r"<tr[^>]*>(.*?)</tr>", re.S | re.I)
 CELL_RE = re.compile(r"<t(?P<k>[hd])[^>]*>(?P<v>.*?)</t(?P=k)>", re.S | re.I)
@@ -455,13 +471,15 @@ def parse_tables(page: str, base_url: str):
         context = page[max(0, m.start() - 6000):m.start()]
         heads = HEAD_RE.findall(context)
         heading = strip_tags(heads[-1][1]) if heads else None
-        clubs = list(re.finditer(r'href="(?:https?://www\.nfl\.com)?/teams/([a-z0-9\-]+)', context))
+        clubs = list(CLUB_LINK_RE.finditer(context))
         club = clubs[-1].group(1) if clubs else None
+        club_label = re.sub(r"\s+", " ", strip_tags(clubs[-1].group("t"))).strip() if clubs else None
         tables.append({
             "headers": headers,
             "rows": body,
             "heading": heading,
             "clubSlug": club,
+            "clubLabel": (club_label or None) if (club_label or None) not in ("",) else None,
             "url": base_url,
             "rawRowCount": len(body),
         })
@@ -500,6 +518,7 @@ def table_rows_to_injuries(tables, label):
                 "label": label,
                 "section": t["heading"],
                 "clubSlug": t["clubSlug"],
+                "clubLabel": t.get("clubLabel"),
                 "player": texts[0].strip(),
                 "position": get("position") or None,
                 "injury": get("injur") or None,
@@ -928,11 +947,23 @@ def main():
         "rows": standing_rows,
     })
 
+    label_pages = [get(INJURY_URL), get(INACTIVE_URL)]
+    slug_to_label: dict[str, str] = {}
+    for lp in label_pages:
+        if lp:
+            for k, v in club_labels(lp).items():
+                slug_to_label.setdefault(k, v)
+    for t in teams_found.values():
+        for slug, label in slug_to_label.items():
+            if label.lower().split()[-1] == t["fullName"].lower().split()[-1]:
+                t["slug"] = slug
+                break
     jwrite("teams-2026.json", {
         "meta": {
             "dataset": f"NFL {SEASON} club registry (official club list embedded on the by-week pages)",
             "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat(),
             "clubs": len(teams_found),
+            "clubLabelsOnInjuryPage": len(slug_to_label),
             "sourcePages": [f"{SCHEDULE_BASE}week-{w}" for w in WEEKS[:1]],
             "usedFor": "Joining the injury-report page's /teams/<slug> context to a club name; the join key is "
                        "the league's own slug, and a club that cannot be matched stays null.",
@@ -948,6 +979,7 @@ def main():
     # The official page ignores ?season/&week in the server-rendered markup (verified: identical
     # tables for weeks 9, 10 and 11), so only the landing page is requested and labelled "current".
     inj_week_params = [""]
+    t_labels_url = "https://www.nfl.com/injuries/ (club link rendered above each team table)"
     inj_shapes: dict[str, dict] = {}
     for i, param in enumerate(inj_week_params):
         url = INJURY_URL + param
@@ -960,9 +992,9 @@ def main():
         rows = table_rows_to_injuries(tables, label)
         for r in rows:
             club = by_slug.get(r["clubSlug"])
-            r["team"] = club["fullName"] if club else None
+            r["team"] = club["fullName"] if club else (r.get("clubLabel") or None)
             r["teamAbbr"] = club["abbreviation"] if club else None
-            r["teamJoinSource"] = club["sourceUrl"] if club else None
+            r["teamJoinSource"] = club["sourceUrl"] if club else t_labels_url
         inj_counts[label] = len(rows)
         inj_shapes[label] = {
             "tables": len(tables),
@@ -991,6 +1023,7 @@ def main():
     art_rows, art_links, art_fail, art_ok, art_kinds = collect_articles([INJURY_URL, INACTIVE_URL])
     # Join each article section heading (e.g. "GIANTS", "NEW YORK GIANTS") to the official club list.
     # Unmatched headings stay null rather than being guessed.
+    by_fullname = {t["fullName"]: t for t in teams_found.values()}
     by_nick = {}
     for t in teams_found.values():
         words = re.sub(r"[^A-Za-z ]", " ", t["fullName"]).split()
@@ -1009,6 +1042,16 @@ def main():
         r["team"] = club["fullName"] if club else None
         r["teamAbbr"] = club["abbreviation"] if club else None
         r["teamJoin"] = "official club list" if club else None
+        if not r["team"]:
+            ctx = (r.get("context") or "")
+            pos = ctx.find(r.get("player") or "\u0000")
+            head = ctx[:pos] if pos > 0 else ctx
+            for full, t2 in by_fullname.items():
+                if full in head:
+                    r["team"] = t2["fullName"]
+                    r["teamAbbr"] = t2["abbreviation"]
+                    r["teamJoin"] = "club named in the article sentence"
+                    break
     jwrite("articles-2026.json", {
         "meta": {
             "dataset": "NFL.com official news articles for weekly injury reports and game-day inactives",

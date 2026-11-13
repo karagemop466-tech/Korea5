@@ -4708,5 +4708,16 @@
   "l2": 1.0,
   "type": "logistic regression, walk-forward by season",
   "fill": "missing signal -> 0 (documented; never a guessed value)"
+ },
+ "crossSource": {
+  "status": "not run",
+  "summary": "no raw data",
+  "examples": []
+ },
+ "marketCoverage": {
+  "spreadPct": null,
+  "moneylinePct": null,
+  "espnOddsGames": 0,
+  "espnGames": 0
  }
 }

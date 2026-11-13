@@ -80,7 +80,7 @@ def audit(model_results):
     A["checks"].append({
         "id": "market",
         "name": "Market reference available per game",
-        "result": (f"spread/total present for {mkt.get('spreadPct', 'n/a')} of games; "
+        "result": (f"spread present for {mkt.get('spreadPct', 'n/a')} of games; "
                    f"moneylines present for {mkt.get('moneylinePct', 'n/a')}; "
                    f"ESPN current-season odds {mkt.get('espnOddsGames', 'n/a')} games"),
         "status": "partial",
@@ -235,8 +235,19 @@ def hypotheses(model_results):
         elif h["id"] == "H7":
             item.update({"result": [r for r in model_results.get("leaderboard", []) if r["family"] == "parlay"],
                          "verdict": "measured"})
+        elif h["id"] == "H4":
+            item.update({"result": "Depth tiers are published per team and position on the injuries page; no tier "
+                                   "feature has been fitted yet because the snapshot has no week column for 2022+.",
+                         "verdict": "not tested"})
+        elif h["id"] == "H8":
+            item.update({"result": "No timestamped line exists, so the reference comparison cannot establish an edge.",
+                         "verdict": "not testable yet"})
         elif h["id"] == "H9":
-            item.update({"result": "reported in the calibration table by subgroup", "verdict": "measured"})
+            item.update({"result": "Division flag is inside the context family, which failed to clear deflation.",
+                         "verdict": "fails"})
+        elif h["id"] == "H10":
+            item.update({"result": "Registered only; subgroup sizes are too small to gate honestly.",
+                         "verdict": "not tested"})
         out["items"].append(item)
     return out
 
@@ -356,14 +367,16 @@ def cross_source_and_market():
     rows = [r for r in read_csv(games_path) if r.get("season", "").isdigit() and int(r["season"]) >= 2016]
     if not rows:
         return out, coverage
-    n = len(rows)
-    coverage["spreadPct"] = f"{sum(1 for r in rows if r.get('spread_line')) / n:.3f}"
-    coverage["moneylinePct"] = f"{sum(1 for r in rows if r.get('home_moneyline')) / n:.3f}"
+    n = max(1, len(rows))
+    coverage["games"] = len(rows)
+    coverage["spreadPct"] = round(sum(1 for r in rows if r.get('spread_line')) / n, 4)
+    coverage["moneylinePct"] = round(sum(1 for r in rows if r.get('home_moneyline')) / n, 4)
+    coverage["totalPct"] = round(sum(1 for r in rows if r.get('total_line')) / n, 4)
     # ESPN scoreboards: match on date + team abbreviations
     idx = defaultdict(list)
     for r in rows:
         if r.get("home_score") and r.get("away_score"):
-            idx[(r["gameday"], r["home"])].append(r)
+            idx[(r["gameday"], r.get("home_team"))].append(r)
     agree = disagree = missing = 0
     examples = []
     for f in sorted(glob.glob(os.path.join(RAW, "espn_*_t2_w*.json"))):

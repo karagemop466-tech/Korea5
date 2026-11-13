@@ -647,9 +647,9 @@ score. Disagreements are shown rather than resolved.</div>
 {table(["Date", "Home", "nflverse", "ESPN", "Link"], ex) if ex else ''}
 <h2>Market coverage</h2>
 <div class="grid g3">
-<div class="card"><div class="kpi">{esc(mkt.get('spreadPct'))}<small>of games have a spread and total</small></div>
+<div class="card"><div class="kpi">{pct(mkt.get('spreadPct'))}<small>of games have a spread</small></div>
 <p class="small">From nflverse schedules. One value per game, no timestamp.</p></div>
-<div class="card"><div class="kpi">{esc(mkt.get('moneylinePct'))}<small>have moneylines</small></div>
+<div class="card"><div class="kpi">{pct(mkt.get('moneylinePct'))}<small>have moneylines</small></div>
 <p class="small">Empty, so vig cannot be measured from this source.</p></div>
 <div class="card"><div class="kpi">{esc(mkt.get('espnOddsGames'))}<small>games with ESPN odds</small></div>
 <p class="small">Of {esc(mkt.get('espnGames'))} games fetched. Odds exist only for the current week on screen.</p></div>

@@ -37,10 +37,11 @@ def load(p):
 # Publishers disagree on a handful of club abbreviations. Mapped explicitly rather than fuzzy-matched,
 # so a game is never silently paired with the wrong team.
 ABBR_MAP = {
-    "WSH": "WAS", "LAR": "LA", "JAC": "JAX", "LVR": "LV", "SD": "LAC", "STL": "LA",
-    "OAK": "LV", "ARZ": "ARI", "BLT": "BAL", "CLV": "CLE", "HST": "HOU", "SL": "LA",
+    # ESPN -> nflverse, observed in the fetched files
+    "WSH": "WAS", "LAR": "LA", "JAC": "JAX", "LV": "LV", "LVR": "LV", "OAK": "LV",
+    # extra spellings kept for other publisher variants
+    "SD": "LAC", "STL": "LA", "ARZ": "ARI", "BLT": "BAL", "CLV": "CLE", "HST": "HOU",
     "NOR": "NO", "SFO": "SF", "TAM": "TB", "GNB": "GB", "KAN": "KC", "NWE": "NE",
-    "NYJ": "NYJ", "NYG": "NYG", "LAC": "LAC", "LAR": "LA", "CAR": "CAR", "TEN": "TEN",
 }
 
 
@@ -470,8 +471,8 @@ def cross_source_and_market():
     out = {
         "status": "pass" if disagree == 0 and agree > 0 else ("partial" if agree else "not run"),
         "summary": (f"{agree} of {total} ESPN-sampled completed games match exactly, {disagree} differ, "
-                    f"{missing} unmatched (ESPN week pulls do not cover January dates or playoff rounds "
-                    f"beyond week 4, so those games are absent from the ESPN side, not in conflict)"),
+                    f"{missing} unmatched. An unmatched game is one ESPN returned but no nflverse row could be "
+                    f"paired with on date and both clubs; it is counted as unchecked, never as agreement."),
         "examples": examples,
         "agree": agree, "disagree": disagree, "unmatched": missing,
         "unmatchedByDate": dict(sorted(unmatched_dates.items())[:20]),

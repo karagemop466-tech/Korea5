@@ -32,14 +32,15 @@ UA = {
 }
 
 TARGETS = [
-    ("schedule-2026-w9", "https://www.nfl.com/schedules/2026/by-week/week-9"),
-    ("game-stats-2026-w10", "https://www.nfl.com/games/commanders-at-giants-2026-reg-10?tab=stats"),
-    ("player-stats-2026", "https://www.nfl.com/players/amon-ra-st-brown/stats"),
-    ("injuries", "https://www.nfl.com/injuries/"),
-    ("inactives", "https://www.nfl.com/inactives/"),
+    ("schedule-2025-w1", "https://www.nfl.com/schedules/2025/by-week/week-1"),
+    ("team-roster-lions", "https://www.nfl.com/teams/detroit-lions/team/roster/"),
+    ("team-roster-chiefs", "https://www.nfl.com/teams/kansas-city-chiefs/team/roster/"),
+    ("players-index", "https://www.nfl.com/players/"),
+    ("player-page-maye", "https://www.nfl.com/players/drake-maye/stats"),
+    ("player-page-logs", "https://www.nfl.com/players/drake-maye/stats/logs/"),
+    ("team-page-lions", "https://www.nfl.com/teams/detroit-lions/"),
+    ("game-overview-2026-w10", "https://www.nfl.com/games/commanders-at-giants-2026-reg-10?tab=overview"),
     ("standings-2026", "https://www.nfl.com/standings/league/2026/REG"),
-    ("depth-chart-49ers", "https://www.49ers.com/team/depth-chart/"),
-    ("depth-chart-chiefs", "https://www.chiefs.com/team/depth-chart/"),
 ]
 
 

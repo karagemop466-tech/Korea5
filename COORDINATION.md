@@ -655,3 +655,30 @@ date, and all prior items) remain published on `extra/flagged.html` with officia
 - **Pipeline order (finding):** `verify_extra.py` rewrites `extra/links.html`, and `audit_certainty.py` adds the certainty banner to every page. The banner is therefore only correct if the audit runs last. Required order: `build_events` → `analyze` → `build_site` → `build_extra` → `check_links` → `verify_extra` → `audit_certainty`. This is logged for the integration owner (see cross-scope note above).
 - **Verification at this commit:** `tools/verify_extra.py` 31/31; `scripts/audit_certainty.py` passed; `scripts/check_links.py` 0 missing; `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed.
 
+---
+
+## Session `arena/e96c5f87-korea5` — 2026-11-13 (NFL Lines & Strategy hub)
+
+Branch fixed by Arena: `arena/e96c5f87-korea5`; no other branch is created or pushed. Start point: `main`
+tip `13854fe` (PR #31). Open PR **#32** (`arena/7ff5d688-korea5`) touches the vacation planner's shared outputs
+(`index.html`, `scripts/*`, `data/**`, `extra/**`, `curated/**`, `*.html`). This session's scope is deliberately
+**non-overlapping**: a new self-contained `nfl/` section plus new generator/verifier scripts that PR #32 does not
+touch. The only shared file this session edits is this `COORDINATION.md` (log only) and, at final integration, a
+single navigation link in the root `index.html` (resolved by union if PR #32 has landed).
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N1 | Requirements + open questions + suggestions: full requirement list; explicit have/don't-have information inventory; questions that must be answered before any decision; suggestions aimed at discovering missing information | arena-e96c5f87 | in progress | `nfl/data/requirements.json`, `nfl/data/questions.json`, `nfl/data/suggestions.json` |
+| N2 | Strategy framework: single bet, parlay, player-prop combos; validation gates; correlation method; skill-vs-luck (luck removal) methodology | arena-e96c5f87 | in progress | `nfl/data/strategies.json`, `nfl/data/method.json`, `nfl/method.html` |
+| N3 | Leaderboard competition design: ranking metric, validation-gated eligibility, reward tiers | arena-e96c5f87 | in progress | `nfl/data/leaderboard.json`, `nfl/leaderboard.html` |
+| N4 | Injury & roster model: starter/backup (2nd/3rd/4th string) tracking for offense and defense; defense-deficiency signals | arena-e96c5f87 | in progress | `nfl/data/injuries.json`, `nfl/injuries.html` |
+| N5 | Source registry + flagged register: every row carries an official source link; unverifiable values blank and flagged | arena-e96c5f87 | in progress | `nfl/data/sources.json`, `nfl/data/flags.json`, `nfl/sources.html`, `nfl/flagged.html` |
+| N6 | Executive summary: important details, verified anchors, open gaps | arena-e96c5f87 | in progress | `nfl/data/executive-summary.json`, `nfl/executive-summary.html` |
+| N7 | Site build: clean dashboard landing + category subpages, tables with source links, generator | arena-e96c5f87 | in progress | `nfl/*.html`, `nfl/assets/`, `scripts/build_nfl.py` |
+| N8 | Verification: row-by-row source-link audit, blank/flag audit, link check, JSON validity | arena-e96c5f87 | in progress | `scripts/verify_nfl.py` |
+| N9 | Integration: nav link, rebuild, re-verify, PR to `main`, merge without waiting, confirm Pages deploy, log result | arena-e96c5f87 | unclaimed | `COORDINATION.md` (log), root `index.html` (nav only) |
+
+Claim note: no prior task on the board is open to another session; PR #32's scope is disjoint from this session's
+new `nfl/` files. No file collision is expected. Generated artifacts stay inside `nfl/` so the vacation planner's
+integration-frozen outputs are untouched.
+

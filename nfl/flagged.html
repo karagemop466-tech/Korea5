@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="active">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Flagged for review</h1><p class="lede">Everything unresolved, with the official reference that shows the gap is real and what each gap costs — published rather than hidden.</p>
+
+<div class="callout"><strong>Flagged for Review.</strong> Nothing on this page blocks the site from publishing;
+everything on it blocks a <em>claim</em>. Each row names the gap, the official reference that shows why the gap
+is real, and what it costs. Review these after publication and request changes.</div>
+<p class="small">11 items flagged.</p>
+<div class="scroll" style="max-height:none"><table class="tight" id="flagtbl"><thead><tr>
+<th>Area</th><th>What is unresolved</th><th>Why it is unresolved</th><th>What it blocks</th>
+<th>Official reference</th></tr></thead><tbody><tr><td class="nowrap">Depth chart</td><td><strong>HOU depth chart is not in this dataset</strong></td>
+<td class="small">no parseable depth-chart table on the official page</td><td class="small">That club&#x27;s next-man-up column is blank.</td>
+<td class="nowrap"><a href="https://www.houstontexans.com/team/depth-chart" target="_blank" rel="noopener noreferrer">official reference</a><br><span class="dim" style="font-size:11px">www.houstontexans.com</span></td></tr><tr><td class="nowrap">Prices</td><td><strong>No NFL price, spread, total or prop line exists in the system</strong></td>
+<td class="small">nfl.com publishes no odds — the probe found zero odds fields on week, game and stats pages.</td><td class="small">No ROI, no CLV, no certification, no reward. This is the single largest gap.</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">official reference</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td class="nowrap">Correlation</td><td><strong>No real correlation value is published</strong></td>
+<td class="small">The ingested official player feed is season-to-date leaders, not per-game logs joined by week. A correlation from season totals answers a different question.</td><td class="small">Parlay and prop-combo pricing cannot be published.</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/player-stats/category/receiving/2026/reg/all/receivingreceptions/desc" target="_blank" rel="noopener noreferrer">official reference</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td class="nowrap">Participation</td><td><strong>No snap counts or gamebook participation data</strong></td>
+<td class="small">Not machine-readable on the pages probed.</td><td class="small">&#x27;The 2nd string started&#x27; remains a depth-chart inference, not a measurement.</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">official reference</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td class="nowrap">Injury status</td><td><strong>Questionable is not a probability</strong></td>
+<td class="small">The official report publishes a status word, not a likelihood.</td><td class="small">The injury load column is a count of report rows, never a severity score.</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official reference</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td class="nowrap">Rules</td><td><strong>The 2026 NFL rulebook URL probed returned HTTP 404</strong></td>
+<td class="small">operations.nfl.com/the-rules/2026-nfl-rulebook/ returned 404 during the probe.</td><td class="small">No rule is quoted anywhere on this site until the current URL is confirmed.</td>
+<td class="nowrap"><a href="https://operations.nfl.com/the-rules/" target="_blank" rel="noopener noreferrer">official reference</a><br><span class="dim" style="font-size:11px">operations.nfl.com</span></td></tr><tr><td class="nowrap">Depth charts</td><td><strong>Clubs publish different tier counts and several self-label their chart &#x27;Unofficial&#x27;</strong></td>
+<td class="small">There is no league-normalised depth-chart feed.</td><td class="small">Cross-club depth comparison is approximate and is labelled as such.</td>
+<td class="nowrap"><a href="https://www.chiefs.com/team/depth-chart" target="_blank" rel="noopener noreferrer">official reference</a><br><span class="dim" style="font-size:11px">www.chiefs.com</span></td></tr><tr><td class="nowrap">Sample</td><td><strong>Two partial seasons, no price history</strong></td>
+<td class="small">The 2026 season is in progress and no historical prices exist.</td><td class="small">No strategy can be backtested against a price, so none can be certified.</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official reference</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td class="nowrap">Scoring tables</td><td><strong>The official team-stats &#x27;scoring&#x27; pages publish touchdowns, not points</strong></td>
+<td class="small">Confirmed by reading the headers: Rsh TD / Rec TD / Tot TD / 2-PT, and FR TD / SFTY / INT TD.</td><td class="small">Using them as points would overstate scoring by roughly 6x. Points here are computed from official finals instead.</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/team-stats/offense/scoring/2026/reg/all" target="_blank" rel="noopener noreferrer">official reference</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td class="nowrap">Governance</td><td><strong>No reviewer is named for the suggestions register</strong></td>
+<td class="small">Q17 is unanswered.</td><td class="small">Nothing can be marked &#x27;chosen&#x27;; every suggestion stays in an open state.</td>
+<td class="nowrap"><a href="https://github.com/karagemop466-tech/Korea5" target="_blank" rel="noopener noreferrer">official reference</a><br><span class="dim" style="font-size:11px">github.com</span></td></tr><tr><td class="nowrap">Rewards</td><td><strong>No reward policy exists</strong></td>
+<td class="small">Q04 is unanswered.</td><td class="small">The leaderboard prints &#x27;not authorised&#x27; on every row.</td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official reference</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table></div>
+
+<h2>Irregularities found and fixed during this session</h2>
+<div class="card prose"><ol>
+<li><strong>A wrong derivation was caught and corrected.</strong> The first pass computed points-per-game from the
+official <em>team scoring</em> table, which publishes touchdowns rather than points, producing a league mean of
+12.97 points per game. The headers were read, the error identified, and points are now computed from official
+final scores (league mean 21.81 for 2026). The buggy figure is not published anywhere.</li>
+<li><strong>A season blend was caught and corrected.</strong> The first pass pooled 2025 and 2026 finals into one
+scoring rate, which would have described "28 games" per club without saying it spanned two seasons. Rates are
+now current-season only, with the prior season kept separately and labelled.</li>
+<li><strong>Houston's depth chart is an image.</strong> The parser returned nothing, and rather than substitute a
+guess the club is listed as unavailable with the reason.</li>
+<li><strong>Green Bay's chart uses a different table layout.</strong> A second parser was added and verified
+against the live page; the Packers are now included, with jersey numbers stripped from names.</li>
+</ol></div>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · built 2026-11-13T13:22:15Z · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../index.html">Korea5 planner</a> · also see the
+<a href="../nfl-strategy.html">strategy lab proposal</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

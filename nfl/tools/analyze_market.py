@@ -571,6 +571,7 @@ def run():
                           "blockedBy": s["blockedBy"], "settled": 0,
                           "brier": None, "logLoss": None, "roi": None, "clv": None,
                           "rank": None, "reward": "not authorised",
+                          "sourceUrl": s.get("sourceUrl"),
                           "reason": "0 settled bets; no stored price"} for s in entrants],
             "eligible": 0,
         }

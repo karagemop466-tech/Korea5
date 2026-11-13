@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Correlation · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="active">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Correlation</h1><p class="lede">What correlation values will be computed from, why none is published yet, and the rules that forbid multiplying leg probabilities.</p>
+
+<div class="callout"><strong>No real correlation value is published on this page yet.</strong>
+The ingested official player-stat feed contains season-to-date leaders, not per-game logs joined by team and week. A correlation computed from season totals would be a correlation of 32 aggregate points, not of game outcomes. Refusing to publish it is the honest output; see Q08 and the method page.
+<p style="margin:8px 0 0"><strong>What is needed:</strong> Per-player game logs (WK / OPP / stat columns), which nfl.com publishes on each player page. That ingest is the next task and is not claimed as done here.</p></div>
+
+<h2>Why a fake correlation would be worse than none</h2>
+<div class="card prose">
+<p>A correlation is a claim that two things move together. Computing it from season <em>totals</em> across 32
+clubs — which is what the ingested leader boards contain — answers a completely different question: it would
+tell you whether good teams have good players, which is trivially true and useless for a parlay. The number
+would look precise and mean nothing.</p>
+<p>So the page shows the machinery on clearly-labelled synthetic data, and withholds the real value until the
+real per-game logs are ingested. That is a deliberate refusal, not an oversight.</p>
+</div>
+
+<h2>The machinery, demonstrated on synthetic data</h2>
+<div class="card">
+<p><span class="badge model">MODEL</span> SYNTHETIC DEMONSTRATION — simulated numbers, not any real player</p>
+<dl class="kv">
+<dt>Pearson r</dt><dd>0.676</dd>
+<dt>90% bootstrap interval</dt><dd>0.462 to 0.829</dd>
+<dt>n</dt><dd>24</dd>
+<dt>Reading</dt><dd>positive</dd>
+<dt>Suppression floor</dt><dd>8 observations — below this, withheld entirely</dd>
+</dl>
+<p class="small" style="margin-top:8px">Shows the interval machinery: with 24 observations a strong simulated relationship still has a wide interval.</p>
+</div>
+
+<h2>How the real value will be computed (and why it needs a join)</h2>
+<div class="card prose"><ol>
+<li>Fetch each player's official game log (WK, OPP, RESULT, stat columns) from their nfl.com player page.</li>
+<li>Join two players by <em>club and week</em> — not by season total — so each observation is one shared game.</li>
+<li>Compute Pearson r, then a 1,000-draw bootstrap for the 90% interval.</li>
+<li>If the interval spans zero, publish the literal words <em>"indistinguishable from zero"</em>. With 8 games,
+that will be most pairs.</li>
+<li>Never multiply leg probabilities for a same-player or same-game combo. Publish the empirical joint, the
+independence product, and the signed difference.</li>
+</ol></div>
+
+<h2>Combination rules that already bind</h2>
+<div class="card"><ul class="prose">
+<li><strong>C1.</strong> Never multiply leg probabilities unless the legs are on different games, different teams and different players, and even then publish the empirical joint as the primary number.</li><li><strong>C2.</strong> A parlay&#x27;s price must show the hold compounding: a three-leg parlay at the same hold has roughly three times the margin of a single.</li><li><strong>C3.</strong> Correlation between legs must be reported with its interval, and a correlation whose interval spans zero must be printed as &#x27;indistinguishable from zero&#x27;.</li><li><strong>C4.</strong> A player-prop combo on one player (e.g. rushing yards over AND receptions over) is a single joint event and must be estimated from that player&#x27;s joint outcomes, never from two marginals.</li>
+</ul></div>
+<p class="small"><a href="https://www.nfl.com/players/christian-mccaffrey/stats" target="_blank" rel="noopener noreferrer">official player stats page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></p>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · built 2026-11-13T13:22:15Z · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../index.html">Korea5 planner</a> · also see the
+<a href="../nfl-strategy.html">strategy lab proposal</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Executive summary · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="active">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Executive summary</h1><p class="lede">Everything below in one page: what was built, what it proves, what it cannot prove, and the five decisions that move it forward.</p>
+
+<div class="card prose">
+<h2 style="margin-top:0">Executive summary</h2>
+<p><strong>What was asked.</strong> Originate NFL lines, generate useful signals, run a leaderboard competition
+with rewards for top strategies across single bets, parlays and player-prop combos, pass every strategy through
+validation gates, determine correlation values, remove luck from the equation, and track injuries and
+starter/backup deficiencies on both sides of the ball — with no manual input, no hallucination, and an official
+source for every value.</p>
+
+<p><strong>What was built.</strong> An ingest pipeline that runs in CI and pulls seven official datasets
+(scores, injury report, 32 club depth charts, seven team-stat tables, player-stat leaders, rosters, and the
+official schedule already in the repository); an analysis engine that computes rest days, scoring rates,
+de-vigged prices, correlations with bootstrap intervals, calibration and shuffle tests; a nine-gate
+validation suite; and this site, which publishes the results and the gaps with the same prominence.</p>
+
+<p><strong>What it proves.</strong> Machinery, not edge. With 453 decided games the home-field
+prior is statistically indistinguishable from a coin (shuffle p&nbsp;=&nbsp;1.000),
+and with no stored prices not one strategy can be settled. The leaderboard therefore ranks nobody, and says so.
+That is the honest output, and it is a real result: it tells you exactly what the next decision must be.</p>
+
+<p><strong>What it cannot prove — and why that is not a failure of effort.</strong> A line requires a price;
+a price requires a market feed; the NFL does not publish one. Correlation between teammates requires per-game
+player logs joined by week, which the ingested leader boards are not. Snap counts, travel and weather are not
+machine-readable on the official pages probed. Each of these is named, sourced and costed on the Questions page
+rather than papered over.</p>
+
+<p><strong>The one decision that unblocks the most.</strong> Decide the price source (Q01). Everything
+downstream — ROI, closing-line value, parlay settlement, reward allocation, certification — is blocked on it.
+The second is the reward policy (Q04); the third is the reviewer for this register (Q17).</p>
+</div>
+
+<h2>The numbers, with their evidence</h2>
+<div class="scroll"><table class="tight"><thead><tr>
+<th>Finding</th><th>Value</th><th>Status</th><th>n</th><th>Official source</th></tr></thead><tbody>
+<tr><td>Completed 2026 games ingested with final scores</td><td>185</td>
+<td><span class="badge official">OFFICIAL</span></td><td>185 games</td>
+<td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">nfl.com week pages</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>Completed 2025 games ingested (prior-season reference)</td><td>272</td>
+<td><span class="badge official">OFFICIAL</span></td><td>272 games</td>
+<td><a href="https://www.nfl.com/schedules/2025/by-week/week-5" target="_blank" rel="noopener noreferrer">nfl.com 2025 week pages</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>Home-team win rate, 2026 only</td>
+<td>47.2% (interval 41.2&ndash;53.3%)</td>
+<td><span class="badge model">MODEL</span></td><td>182 decided</td>
+<td><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official standings</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>Home-team win rate, both seasons pooled</td>
+<td>51.2% (interval 47.4&ndash;55.1%)</td>
+<td><span class="badge model">MODEL</span></td><td>453 decided</td>
+<td><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official standings</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>Shuffle test on a home-field prior</td>
+<td>p = 1.000</td>
+<td><span class="badge model">MODEL</span></td><td>2,000 permutations</td>
+<td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">nfl.com week pages</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>Official injury rows, current report week</td><td>3,117</td>
+<td><span class="badge official">OFFICIAL</span></td><td>week 10</td>
+<td><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official injury report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>Clubs with a parseable official depth chart</td><td>31 of 32</td>
+<td><span class="badge official">OFFICIAL</span></td><td>1,762 entries</td>
+<td><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener noreferrer">49ers.com depth chart</a><br><span class="dim" style="font-size:11px">www.49ers.com</span></td></tr>
+<tr><td>League mean points per game, 2026 finals</td><td>21.81</td>
+<td><span class="badge model">MODEL</span></td><td>32 clubs</td>
+<td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">nfl.com week pages</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>Strategies certified as skill-based</td><td><strong>0</strong></td><td><span class="badge unverified">UNVERIFIED</span></td>
+<td>0 settled bets</td><td><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official standings</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>Stored betting prices</td><td><strong>0</strong></td><td><span class="badge unverified">UNVERIFIED</span></td>
+<td>&mdash;</td><td><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+</tbody></table></div>
+<p class="small">Machine-readable versions: <code>nfl/data/derived/summary.json</code>,
+<code>nfl/data/derived/skill.json</code>, <code>nfl/data/fetch-report.json</code>.</p>
+
+<h2>What to do next, in order</h2>
+<table class="tight"><thead><tr><th>#</th><th>Decision</th><th>Unblocks</th><th>Cost</th><th>Official reference</th></tr></thead><tbody>
+<tr><td>1</td><td>Choose the price source (<a href="questions.html#Q01">Q01</a>)</td><td>ROI, CLV, parlay settlement, certification, rewards</td><td>one decision</td><td><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">game page (no odds)</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>2</td><td>Set the reward policy (<a href="questions.html#Q04">Q04</a>)</td><td>Leaderboard payouts</td><td>one decision</td><td><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official standings</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>3</td><td>Name the register reviewer (<a href="questions.html#Q17">Q17</a>)</td><td>Any suggestion being accepted</td><td>one name</td><td><a href="https://github.com/karagemop466-tech/Korea5" target="_blank" rel="noopener noreferrer">repository</a><br><span class="dim" style="font-size:11px">github.com</span></td></tr>
+<tr><td>4</td><td>Ingest per-game player logs (<a href="questions.html#Q08">Q08</a>)</td><td>Real correlation values, prop combos</td><td>one CI job</td><td><a href="https://www.nfl.com/players/christian-mccaffrey/stats" target="_blank" rel="noopener noreferrer">player game log</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>5</td><td>Ingest snap counts / gamebooks (<a href="questions.html#Q07">Q07</a>)</td><td>Backup-vs-starter measurement</td><td>one CI job + a source decision</td><td><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+</tbody></table>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · built 2026-11-13T13:22:15Z · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../index.html">Korea5 planner</a> · also see the
+<a href="../nfl-strategy.html">strategy lab proposal</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

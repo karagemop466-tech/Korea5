@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overview · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="active">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Overview</h1><p class="lede">A line-origination and strategy-validation system built only on official NFL data. It shows what the official data can support, refuses to show what it cannot, and puts every open decision on one page.</p>
+
+<div class="grid g4">
+<div class="card"><div class="kpi">185<small>2026 games with official final scores</small></div><p class=small style=margin:6px_0_0>scores read from nfl.com week pages</p></div>
+<div class="card"><div class="kpi">3,117<small>official injury rows (week 10)</small></div><p class=small style=margin:6px_0_0>nfl.com injury report</p></div>
+<div class="card"><div class="kpi">31/32<small>clubs with a parseable depth chart</small></div><p class=small style=margin:6px_0_0>1,762 depth entries</p></div>
+<div class="card"><div class="kpi">0<small>strategies certified</small></div><p class=small style=margin:6px_0_0>no stored price exists to settle any bet</p></div>
+</div>
+<h2>The honest state of the system in six lines</h2>
+<div class="card prose">
+<ol>
+<li><strong>Data is real and sourced.</strong> 185 completed 2026 games,
+272 from 2025, 3,117 official injury rows for the current
+report week, 1,762 depth-chart entries across 31 clubs, and
+7 official team stat tables. Each is fetched by CI and stamped.</li>
+<li><strong>Prices do not exist.</strong> nfl.com publishes no odds. With no price, no bet can be settled and no
+return can be computed. Any page claiming a return would be inventing it.</li>
+<li><strong>So nothing is certified.</strong> 453 official finals are enough to test the
+<em>machinery</em>, not enough to certify a strategy. The shuffle test on a home-field prior returns
+p&nbsp;=&nbsp;1.000 — i.e. indistinguishable from a coin.</li>
+<li><strong>Luck is separated from skill by construction.</strong> The gate suite permutes outcomes, so a strategy
+that only looks good because outcomes were kind scores no better than its shuffled twin.</li>
+<li><strong>Injuries and depth are tracked as two separate facts.</strong> The official injury report gives status;
+the club depth chart gives who is next. A replacement is named only when the club's own chart names him.</li>
+<li><strong>Every open decision is on one page.</strong> 18 questions, each with what we
+have, what we do not have, and the official source that would close it.</li>
+</ol>
+</div>
+
+<h2>Start here</h2>
+<div class="grid g3">
+<div class="card"><h3>Read the executive summary</h3>
+<p>The whole finding in one page: what was built, what it proves, what it cannot prove.</p>
+<a class="btn" href="summary.html">Executive summary →</a></div>
+<div class="card"><h3>Review the suggestions</h3>
+<p>22 proposed improvements, each with options, cost, risk, the gate it must pass
+and whether it is already built.</p><a class="btn" href="suggestions.html">Suggestions register →</a></div>
+<div class="card"><h3>Answer the questions</h3>
+<p>18 decisions that block progress, sorted by what they block.</p>
+<a class="btn" href="questions.html">Questions &amp; gaps →</a></div>
+</div>
+
+<h2>What the official data already says</h2>
+<div class="grid g2">
+<div class="card"><h3>Home advantage is a coin at this sample</h3>
+<p>Across 453 decided games in 2025 and 2026, the home team won
+<strong>232</strong> times
+(<strong>51.2%</strong>, 90% interval
+47.4&ndash;55.1%).</p>
+<p class="small">The interval spans 50%, so a home-field "edge" is not demonstrated here. That is the correct
+reading, and it is exactly why the skill-vs-luck gate exists.
+<a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official standings</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></p></div>
+<div class="card"><h3>Rest days are exact; travel is not</h3>
+<p>32 team-games in 2026 come off 4 or fewer rest days
+(minimum 4 days). Rest is computed from official kickoff dates,
+so it is exact. Travel distance is <em>not</em> official and is not included.</p>
+<p class="small"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official 2026 schedule</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></p></div>
+</div>
+
+<h2>What we do not have — stated plainly</h2>
+<div class="callout">
+<p><strong>No prices.</strong> Not a single spread, moneyline, total or prop line exists in this system, because the
+official NFL pages publish none. Consequence: no ROI, no closing-line value, no claim of outperforming a price, no certified
+strategy.</p>
+<p><strong>No snap counts.</strong> Who actually played is not published as machine-readable data on the pages probed.
+Consequence: "the 2nd string had to start" is a depth-chart inference, labelled as such, never a measurement.</p>
+<p><strong>One club publishes its depth chart as an image.</strong> Houston's chart is a picture, so it is blank here
+rather than guessed. Consequence: 31 of 32 clubs have depth data.</p>
+</div>
+<p class="small">Full unresolved list: <a href="flagged.html">Flagged for review</a> ·
+<a href="questions.html">Questions &amp; gaps</a> · <a href="method.html">Method</a></p>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · built 2026-11-13T13:22:15Z · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../index.html">Korea5 planner</a> · also see the
+<a href="../nfl-strategy.html">strategy lab proposal</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lines &amp;amp; market · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="active">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Lines &amp;amp; market</h1><p class="lede">How a line would be originated from official data, what de-vigging does to a price, and why no market line is published here: the official NFL sources publish no odds at all.</p>
+
+<div class="callout">
+<h3 style="margin-top:0">What we do not have</h3>
+<ul>
+<li><strong>No price feed.</strong> The official NFL week pages, game pages and stats pages were probed by exact
+regex for odds, spread, moneyline and totals fields: <strong>zero hits on every page</strong>
+(<code>nfl/research/probe.json</code>).</li>
+<li><strong>Therefore: no market line, no ROI, no closing-line value, no certified bet.</strong></li>
+<li>The arithmetic below is a <em>tool</em> demonstrated on stated example prices. It is not a market and it is
+not advice.</li>
+</ul></div>
+
+<h2>How a line would be originated — the working method</h2>
+<div class="card prose"><ol>
+<li><strong>Estimate each side's scoring.</strong> Own shrunk points-for against the opponent's shrunk
+points-against, re-centred on the league mean. Shrunk means <em>n/(n+9)</em>, so an 11-game sample carries about
+55% weight and a hot start cannot masquerade as a season truth.</li>
+<li><strong>Convert to a margin and a total.</strong> Margin = home estimate &minus; away estimate; total = sum.</li>
+<li><strong>Convert to a probability.</strong> Nothing on this site does this yet, because doing it properly
+requires an outcome distribution calibrated on many seasons, and this system has two partial ones. Publishing a
+probability now would be a guess wearing a decimal point.</li>
+<li><strong>Compare with a market price.</strong> Impossible: there is no market price. This is the step that
+makes a line a line, and it is the one step the official data cannot supply.</li>
+</ol></div>
+
+<h2>De-vig: turning a two-way price into a fair price</h2>
+<p class="prose">A two-way price hides a margin. Removing it changes the fair probability, and <em>how</em> you
+remove it changes the answer. Both standard methods are shown, with the gap between them, so the choice is
+visible rather than buried.</p>
+<div class="scroll"><table class="tight"><thead><tr><th>Example</th><th>Price pair</th>
+<th>Raw implied</th><th>Hold</th><th>Multiplicative</th><th>Additive</th><th>Method gap</th>
+<th>Reference page</th></tr></thead>
+<tbody><tr>
+<td>Even-ish two-way</td>
+<td class="nowrap">-110 / -110</td>
+<td>52.4% / 52.4%</td>
+<td>4.76%</td>
+<td>50.0% / 50.0%
+  <br><span class="dim">(-100 / -100)</span></td>
+<td>50.0% / 50.0%
+  <br><span class="dim">(-100 / -100)</span></td>
+<td>0.00 pp</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td>Standard spread</td>
+<td class="nowrap">-115 / -105</td>
+<td>53.5% / 51.2%</td>
+<td>4.71%</td>
+<td>51.1% / 48.9%
+  <br><span class="dim">(-104 / 104)</span></td>
+<td>51.1% / 48.9%
+  <br><span class="dim">(-105 / 105)</span></td>
+<td>0.05 pp</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td>Heavy favourite</td>
+<td class="nowrap">-450 / 350</td>
+<td>81.8% / 22.2%</td>
+<td>4.04%</td>
+<td>78.6% / 21.4%
+  <br><span class="dim">(-368 / 368)</span></td>
+<td>79.8% / 20.2%
+  <br><span class="dim">(-395 / 395)</span></td>
+<td>1.16 pp</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr></tbody></table></div>
+<p class="small"><span class="badge model">MODEL</span> All values computed by <code>nfl/tools/analyze_market.py</code> from the price
+pair printed in the row. These are illustrative price pairs, not NFL market prices.</p>
+
+<h2>Why parlays cost more than they look</h2>
+<p class="prose">Each leg carries the same per-leg margin, so the margin compounds. At a &minus;110/&minus;110
+per-leg price, a five-leg parlay carries roughly five times the effective hold of a single. That is arithmetic,
+not opinion.</p>
+<table class="tight"><thead><tr><th>Legs</th><th>Fair decimal</th><th>Offered decimal at the same per-leg hold</th>
+<th>Effective hold</th><th>Reference page</th></tr></thead><tbody><tr><td>2</td><td>4.000</td>
+<td>3.660</td><td>-9.29%</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official schedule</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>3</td><td>8.000</td>
+<td>7.002</td><td>-14.25%</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official schedule</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>4</td><td>16.000</td>
+<td>13.396</td><td>-19.43%</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official schedule</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>5</td><td>32.000</td>
+<td>25.629</td><td>-24.86%</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official schedule</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table>
+
+<h2>Scoring rates from official finals (the input to any total)</h2>
+<p class="prose"><span class="badge model">MODEL</span> Points are computed from official final scores, current season only.
+<strong>Note:</strong> the official team-stats "scoring" pages publish <em>touchdowns</em>, not points — using
+them as points would be wrong, so they are used only for touchdown counts and the point totals come from finals.</p>
+<div class="scroll"><table class="tight"><thead><tr><th>Team</th><th>Games (n)</th><th>PPG for</th>
+<th>PPG against</th><th>Shrunk for</th><th>Shrunk against</th><th>Shrink weight</th><th>Source</th></tr></thead>
+<tbody><tr><td>BUF</td><td>11</td><td>31.27</td>
+<td>21.36</td><td>27.01</td><td>21.56</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>CIN</td><td>11</td><td>28.45</td>
+<td>19.18</td><td>25.46</td><td>20.36</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>SF</td><td>11</td><td>27.91</td>
+<td>18.55</td><td>25.16</td><td>20.02</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>DAL</td><td>12</td><td>26.75</td>
+<td>23.58</td><td>24.63</td><td>22.82</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>JAX</td><td>11</td><td>26.27</td>
+<td>15.91</td><td>24.26</td><td>18.56</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>CHI</td><td>12</td><td>25.67</td>
+<td>19.67</td><td>24.02</td><td>20.59</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>DET</td><td>11</td><td>25.27</td>
+<td>21.27</td><td>23.71</td><td>21.51</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>GB</td><td>12</td><td>25.00</td>
+<td>22.50</td><td>23.63</td><td>22.20</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>LA</td><td>12</td><td>24.00</td>
+<td>17.58</td><td>23.06</td><td>19.39</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>CAR</td><td>11</td><td>23.91</td>
+<td>25.27</td><td>22.96</td><td>23.71</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>LV</td><td>12</td><td>23.83</td>
+<td>27.75</td><td>22.96</td><td>25.20</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>DEN</td><td>12</td><td>22.67</td>
+<td>19.33</td><td>22.30</td><td>20.39</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>HOU</td><td>11</td><td>22.64</td>
+<td>23.36</td><td>22.27</td><td>22.66</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>BAL</td><td>12</td><td>22.25</td>
+<td>20.75</td><td>22.06</td><td>21.20</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>NYG</td><td>12</td><td>21.83</td>
+<td>18.17</td><td>21.82</td><td>19.73</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>NE</td><td>12</td><td>21.75</td>
+<td>23.17</td><td>21.78</td><td>22.59</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>KC</td><td>11</td><td>21.64</td>
+<td>17.09</td><td>21.72</td><td>19.21</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>PIT</td><td>11</td><td>21.36</td>
+<td>18.00</td><td>21.56</td><td>19.71</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>ARI</td><td>12</td><td>21.33</td>
+<td>28.75</td><td>21.54</td><td>25.78</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>NO</td><td>11</td><td>21.09</td>
+<td>27.09</td><td>21.41</td><td>24.71</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>ATL</td><td>12</td><td>20.50</td>
+<td>22.33</td><td>21.06</td><td>22.11</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>TB</td><td>12</td><td>20.17</td>
+<td>19.00</td><td>20.87</td><td>20.20</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>SEA</td><td>12</td><td>19.50</td>
+<td>17.25</td><td>20.49</td><td>19.20</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>WAS</td><td>12</td><td>19.33</td>
+<td>24.00</td><td>20.39</td><td>23.06</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>NYJ</td><td>12</td><td>18.42</td>
+<td>22.50</td><td>19.87</td><td>22.20</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>IND</td><td>12</td><td>18.25</td>
+<td>26.75</td><td>19.78</td><td>24.63</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>CLE</td><td>12</td><td>17.92</td>
+<td>22.83</td><td>19.59</td><td>22.39</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>TEN</td><td>11</td><td>17.91</td>
+<td>22.91</td><td>19.66</td><td>22.41</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>LAC</td><td>11</td><td>16.64</td>
+<td>26.09</td><td>18.97</td><td>24.16</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>PHI</td><td>12</td><td>15.75</td>
+<td>24.92</td><td>18.35</td><td>23.59</td>
+<td>0.571</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>MIN</td><td>11</td><td>15.27</td>
+<td>15.73</td><td>18.21</td><td>18.47</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>MIA</td><td>11</td><td>13.45</td>
+<td>23.91</td><td>17.21</td><td>22.96</td>
+<td>0.550</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official finals</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table></div>
+
+<h2>What a model line looks like on completed games</h2>
+<p class="prose">The last 185 completed games, with the model's estimate beside the official final score.
+The estimate uses only pre-game information (season-to-date rates), so comparing it with the final is a fair
+demonstration of the method — though not a backtest, because there is no price to beat.</p>
+<div class="scroll"><table class="tight"><thead><tr><th>Week</th><th>Matchup</th><th>Official final</th>
+<th><span class="badge model">MODEL</span> estimate</th><th>Evidence games</th><th>Source</th></tr></thead><tbody><tr><td>Week 9</td><td>NYJ at KC</td>
+<td>12&ndash;35</td>
+<td>20.7 &ndash; 21.9
+ <br><span class="dim">home +1.2 · total 42.6</span></td>
+<td>11</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/jets-at-chiefs-2026-reg-9" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Week 9</td><td>DET at MIA</td>
+<td>19&ndash;9</td>
+<td>22.6 &ndash; 20.6
+ <br><span class="dim">home -2.0 · total 43.2</span></td>
+<td>11</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/lions-at-dolphins-2026-reg-9" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Week 9</td><td>CLE at NO</td>
+<td>22&ndash;23</td>
+<td>22.0 &ndash; 21.9
+ <br><span class="dim">home -0.1 · total 43.8</span></td>
+<td>11</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/browns-at-saints-2026-reg-9" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Week 9</td><td>NYG at PHI</td>
+<td>19&ndash;11</td>
+<td>22.3 &ndash; 20.4
+ <br><span class="dim">home -1.8 · total 42.7</span></td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/giants-at-eagles-2026-reg-9" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Week 9</td><td>LA at WAS</td>
+<td>20&ndash;13</td>
+<td>22.4 &ndash; 20.9
+ <br><span class="dim">home -1.6 · total 43.3</span></td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/rams-at-commanders-2026-reg-9" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Week 9</td><td>HOU at LAC</td>
+<td>44&ndash;22</td>
+<td>22.5 &ndash; 21.3
+ <br><span class="dim">home -1.2 · total 43.8</span></td>
+<td>11</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/texans-at-chargers-2026-reg-9" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Week 9</td><td>LV at SF</td>
+<td>17&ndash;38</td>
+<td>21.6 &ndash; 23.5
+ <br><span class="dim">home +1.8 · total 45.1</span></td>
+<td>11</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/raiders-at-49ers-2026-reg-9" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Week 9</td><td>GB at NE</td>
+<td>45&ndash;27</td>
+<td>22.5 &ndash; 21.9
+ <br><span class="dim">home -0.6 · total 44.4</span></td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/packers-at-patriots-2026-reg-9" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Week 9</td><td>ARI at SEA</td>
+<td>3&ndash;17</td>
+<td>21.1 &ndash; 22.5
+ <br><span class="dim">home +1.4 · total 43.6</span></td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/cardinals-at-seahawks-2026-reg-9" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Week 9</td><td>TB at CHI</td>
+<td>24&ndash;27</td>
+<td>21.3 &ndash; 22.0
+ <br><span class="dim">home +0.7 · total 43.2</span></td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/buccaneers-at-bears-2026-reg-9" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Week 9</td><td>BUF at MIN</td>
+<td>23&ndash;6</td>
+<td>22.3 &ndash; 20.8
+ <br><span class="dim">home -1.4 · total 43.1</span></td>
+<td>11</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/bills-at-vikings-2026-reg-9" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Week 10</td><td>WAS at NYG</td>
+<td>24&ndash;21</td>
+<td>20.9 &ndash; 22.1
+ <br><span class="dim">home +1.2 · total 43.1</span></td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/commanders-at-giants-2026-reg-10" target="_blank" rel="noopener noreferrer">official game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table></div>
+<p class="small">No official NFL source publishes odds. The arithmetic below is a tool, not a market. Every number here is arithmetic on a stated example, labelled as such.</p>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · built 2026-11-13T13:22:15Z · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../index.html">Korea5 planner</a> · also see the
+<a href="../nfl-strategy.html">strategy lab proposal</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

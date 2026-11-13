@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data health · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="active">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Data health</h1><p class="lede">Exactly what was ingested, from where and when, plus the datasets that are deliberately absent and the official reason each is absent.</p>
+
+<div class="callout"><strong>Read the fetch report before trusting any aggregate.</strong>
+A missing week page means missing games, not zero games. Every failed fetch is listed below and in
+<code>nfl/data/fetch-report.json</code>.</div>
+
+<h2>What was ingested</h2>
+<div class="scroll"><table class="tight"><thead><tr><th>Dataset</th><th>Rows</th><th>Breakdown</th>
+<th>Retrieved (UTC)</th><th>Status</th><th>Official source</th></tr></thead><tbody><tr><td>Final scores</td><td>457</td>
+<td>{&quot;2026&quot;: 185, &quot;2025&quot;: 272}</td>
+<td class="nowrap">2026-11-13T13:17:49.265472Z</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Injury report rows</td><td>8,900</td>
+<td>{&quot;2026&quot;: 3117, &quot;2025&quot;: 5783}</td>
+<td class="nowrap">2026-11-13T13:17:49.265472Z</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Depth-chart entries</td><td>1,762</td>
+<td>31</td>
+<td class="nowrap">—</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener noreferrer">official page</a><br><span class="dim" style="font-size:11px">www.49ers.com</span></td></tr><tr><td>Team stat tables</td><td>7</td>
+<td>&mdash;</td>
+<td class="nowrap">—</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/team-stats/" target="_blank" rel="noopener noreferrer">official page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Player stat categories</td><td>3</td>
+<td>&mdash;</td>
+<td class="nowrap">—</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/player-stats/" target="_blank" rel="noopener noreferrer">official page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Roster players</td><td>2,850</td>
+<td>&mdash;</td>
+<td class="nowrap">—</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/teams/san-francisco-49ers/roster" target="_blank" rel="noopener noreferrer">official page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table></div>
+
+<h2>Fetch integrity</h2>
+<div class="statline">
+<div><b>0</b><span>failed fetches</span></div>
+<div><b>2026-11-13T13:17:49.265472Z</b><span>run started</span></div>
+<div><b>2026-11-13T13:18:09.353440Z</b><span>run finished</span></div>
+</div>
+<p class="prose ok">Every configured official URL returned data. A zero here means zero configured fetches failed — not that the data covers everything.</p>
+
+<h2>Clubs whose depth chart is blank here</h2>
+<table class="tight"><thead><tr><th>Team</th><th>Page</th><th>Why</th></tr></thead><tbody>
+<tr><td>HOU</td><td class="nowrap"><a href="https://www.houstontexans.com/team/depth-chart" target="_blank" rel="noopener noreferrer">club page</a><br><span class="dim" style="font-size:11px">www.houstontexans.com</span></td><td class="small">no parseable depth-chart table on the official page</td></tr>
+</tbody></table>
+
+<h2>What is deliberately absent</h2>
+<table class="tight"><thead><tr><th>Dataset</th><th>Status</th><th>Why</th><th>Official reference</th></tr></thead><tbody>
+<tr><td>Betting prices (spread, moneyline, total, props)</td><td><span class="badge unverified">UNVERIFIED</span></td>
+<td class="small">The official NFL pages publish no odds. Probed by exact regex: 0 hits on week pages, game pages
+and stats pages (<code>nfl/research/probe.json</code>).</td>
+<td><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">game page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>Snap counts / participation</td><td><span class="badge unverified">UNVERIFIED</span></td>
+<td class="small">Not loaded. Player season pages carry per-game stat logs, which imply participation but do not
+prove it — a player can play and record no stat.</td>
+<td><a href="https://www.nfl.com/players/christian-mccaffrey/stats" target="_blank" rel="noopener noreferrer">player stats</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>Per-game player logs (for correlation)</td><td><span class="badge unverified">UNVERIFIED</span></td>
+<td class="small">The ingested player feed is season-to-date leaders. Correlating season totals answers the wrong
+question; the per-game ingest is the named next task.</td>
+<td><a href="https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc" target="_blank" rel="noopener noreferrer">player leaders</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>Weather at kickoff</td><td><span class="badge unverified">UNVERIFIED</span></td>
+<td class="small">Published inconsistently: a forecast line appeared on one probed week page and not another.</td>
+<td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">week page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+<tr><td>Travel distance</td><td><span class="badge unverified">UNVERIFIED</span></td>
+<td class="small">Venues are official; venue coordinates are not. Adding a coordinate list means adding a
+non-official source, which is a decision, not an import.</td>
+<td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">week page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+</tbody></table>
+
+<h2>How this runs with no manual input</h2>
+<div class="card prose"><ol>
+<li><code>.github/workflows/nfl-probe.yml</code> records what each official page actually returns, so parsers are
+written against real bytes.</li>
+<li><code>.github/workflows/nfl-data.yml</code> fetches every dataset, writes the fetch report, and commits the
+result. The dev sandbox has no outbound network; the Actions runner does, which is why ingest lives in CI.</li>
+<li><code>nfl/tools/analyze_market.py</code> computes every published number from those files.</li>
+<li><code>nfl/tools/build_nfl.py</code> renders this site; <code>nfl/tools/verify_nfl.py</code> re-checks every
+row's source link and every badge rule.</li>
+</ol></div>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · built 2026-11-13T13:22:15Z · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../index.html">Korea5 planner</a> · also see the
+<a href="../nfl-strategy.html">strategy lab proposal</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

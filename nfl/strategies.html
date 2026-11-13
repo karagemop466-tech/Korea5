@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strategies &amp;amp; competition · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="active">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Strategies &amp;amp; competition</h1><p class="lede">Ten pre-registered strategy hypotheses across single bets, parlays and player-prop combos, each with its inputs, its blocking gate and whether it is testable today.</p>
+
+<div class="callout"><strong>Zero of these 10 strategies is certified.</strong>
+The registry exists so the comparison is <em>pre-registered</em>: the hypotheses, the inputs and the blocking
+gate are written down before any result is seen. That is what stops a leaderboard from being a search for the
+luckiest strategy.</div>
+
+<h2>The three boards</h2>
+<div class="grid g3">
+<div class="card"><h3>Single bets</h3>
+<p class="small">One outcome per decision; the cleanest place to measure calibration.</p>
+<dl class="kv"><dt>Minimum sample</dt><dd>100 settled bets</dd>
+<dt>Variance</dt><dd>Lowest of the three</dd>
+<dt>Extra gate</dt><dd>—</dd></dl></div><div class="card"><h3>Parlays</h3>
+<p class="small">Requires the empirical joint probability, not a product of legs. Minimum sample raised because variance is much higher.</p>
+<dl class="kv"><dt>Minimum sample</dt><dd>150 settled bets</dd>
+<dt>Variance</dt><dd>Highest</dd>
+<dt>Extra gate</dt><dd>G2 Correlation honesty</dd></dl></div><div class="card"><h3>Player-prop combos</h3>
+<p class="small">Legs on the same player or the same game are correlated by construction; the joint must be estimated empirically.</p>
+<dl class="kv"><dt>Minimum sample</dt><dd>120 settled bets</dd>
+<dt>Variance</dt><dd>High, and dependent</dd>
+<dt>Extra gate</dt><dd>G2 + G5 suppression floor of 8 shared games</dd></dl></div>
+</div>
+
+<h2>Registry</h2>
+<div class="scroll" style="max-height:none"><table class="tight"><thead><tr>
+<th>ID</th><th>Board</th><th>Strategy &amp; hypothesis</th><th>Inputs</th><th>Computed from</th>
+<th>Status</th><th>Blocked by</th><th>Testable today</th><th>Source</th></tr></thead><tbody>
+<tr>
+<td class="nowrap"><strong>ST01</strong></td>
+<td class="nowrap">Single bets</td>
+<td><strong>Rest differential</strong><br><span class="small dim">The team with more days of rest since its previous game covers the spread more often than the price implies.</span></td>
+<td class="small">Official kickoff dates for every game (nfl.com by-week pages) → exact rest days. No travel, no estimates.</td>
+<td class="small">official-results.json (2026: 185 finals, 2025: 272 finals)</td>
+<td><span class="badge unverified">blocked-no-price</span></td>
+<td class="small">G9 / Q01 — spread outcomes need a spread. Rest days are computable today; outcomes against a number are not.</td>
+<td class="small">Yes for the rest-day feature itself; no for the wager.</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>ST02</strong></td>
+<td class="nowrap">Single bets</td>
+<td><strong>Short-week fade</strong><br><span class="small dim">A team playing on Thursday after a Sunday game (4 days rest) underperforms its price.</span></td>
+<td class="small">Official kickoff dates and the TNF/SNF/MNF labels printed on the official week pages.</td>
+<td class="small">official-results.json</td>
+<td><span class="badge unverified">blocked-no-price</span></td>
+<td class="small">G9 / Q01</td>
+<td class="small">Feature only.</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>ST03</strong></td>
+<td class="nowrap">Single bets</td>
+<td><strong>Scoring-form baseline</strong><br><span class="small dim">A shrunk estimate of points scored and allowed per game (regularised toward the league mean) is better calibrated than the league-average prior.</span></td>
+<td class="small">Official team scoring stats (offence and defence, 32 clubs) and official final scores.</td>
+<td class="small">official-teamstats.json + official-results.json</td>
+<td><span class="badge unverified">blocked-sample</span></td>
+<td class="small">G3 minimum sample of 100 settled bets; the 2026 season has 185 finals but no prices to settle against.</td>
+<td class="small">Yes as a probability model scored by Brier against realised winners — no price needed for that step.</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/team-stats/offense/scoring/2026/reg/all" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>ST04</strong></td>
+<td class="nowrap">Single bets</td>
+<td><strong>Turnover-regression fade</strong><br><span class="small dim">Teams whose win total is driven by an unusually high turnover differential regress; the market lags the regression by a week or two.</span></td>
+<td class="small">Official team turnover differential is NOT on the team-stats pages; the official game pages publish per-game team stat lines.</td>
+<td class="small">not yet ingested — needs the game-page tab=stats extraction</td>
+<td><span class="badge unverified">blocked-sample</span></td>
+<td class="small">Data not ingested (G1) + prices (Q01).</td>
+<td class="small">No.</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>ST05</strong></td>
+<td class="nowrap">Player-prop combos</td>
+<td><strong>Workload-first rushing prop</strong><br><span class="small dim">A running back&#x27;s rushing-attempt count is more predictable than his yards per attempt, so his over/under on attempts is a cleaner signal than his yardage line.</span></td>
+<td class="small">Official per-game player logs (WK, OPP, RESULT, ATT, YDS, ...) from the player&#x27;s own stats page.</td>
+<td class="small">official-playerstats.json (season leaders) + per-player game logs</td>
+<td><span class="badge unverified">blocked-sample</span></td>
+<td class="small">G5 — game logs cover fewer than 8 games for most players, below the suppression floor.</td>
+<td class="small">Distribution can be estimated; not enough games to publish.</td>
+<td class="nowrap"><a href="https://www.nfl.com/players/christian-mccaffrey/stats" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>ST06</strong></td>
+<td class="nowrap">Player-prop combos</td>
+<td><strong>Same-drive stacking (QB passing + WR receiving)</strong><br><span class="small dim">A quarterback&#x27;s passing yards and his number-one receiver&#x27;s receiving yards are strongly positively correlated, so the independence product massively understates the joint probability.</span></td>
+<td class="small">Two official per-game logs on the same team, joined by week and opponent.</td>
+<td class="small">official-playerstats.json + player game logs</td>
+<td><span class="badge none">not-certifiable-yet</span></td>
+<td class="small">G2 is evaluable (the joint can be estimated), but G3/G7 need settled bets and prices.</td>
+<td class="small">Yes — the correlation and the independence gap can be computed now, with n and an interval.</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/player-stats/category/passing/2026/reg/all/passingyards/desc" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>ST07</strong></td>
+<td class="nowrap">Parlays</td>
+<td><strong>Anti-correlated game script</strong><br><span class="small dim">In a game with a large spread, the favourite&#x27;s passing volume and the underdog&#x27;s rushing volume move in opposite directions to the naive model, so stacking them is worse than independence suggests.</span></td>
+<td class="small">Official spread (not available) + two player logs.</td>
+<td class="small">blocked on the spread</td>
+<td><span class="badge unverified">blocked-no-price</span></td>
+<td class="small">Q01</td>
+<td class="small">No.</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>ST08</strong></td>
+<td class="nowrap">Single bets</td>
+<td><strong>Injury-status prior</strong><br><span class="small dim">A team whose listed starting quarterback is &#x27;Out&#x27; on the official report, with a listed backup on the depth chart, underperforms the price by more than the price already reflects.</span></td>
+<td class="small">Official injury report (status) + club depth chart (who is next).</td>
+<td class="small">official-injuries.json + official-depth.json</td>
+<td><span class="badge unverified">blocked-sample</span></td>
+<td class="small">Depth coverage is 30 of 32 clubs (HOU publishes an image, GB uses a different table layout now parsed); QB-out games are few per season.</td>
+<td class="small">The join is built and runs; the wager cannot be settled.</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>ST09</strong></td>
+<td class="nowrap">Single bets</td>
+<td><strong>Depth-tier mismatch</strong><br><span class="small dim">When a club must start a 3rd-string player at a premium position (QB, LT, CB1), its performance falls short of its price.</span></td>
+<td class="small">Club depth charts (depth=1/2/3/4) + official injury report (who is Out).</td>
+<td class="small">official-depth.json + official-injuries.json</td>
+<td><span class="badge unverified">blocked-sample</span></td>
+<td class="small">Depth charts are club projections, several self-labelled &#x27;Unofficial&#x27;; &#x27;starting&#x27; is not published anywhere as a fact (Q07).</td>
+<td class="small">The flag is publishable; the edge is not measurable.</td>
+<td class="nowrap"><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.49ers.com</span></td></tr><tr>
+<td class="nowrap"><strong>ST10</strong></td>
+<td class="nowrap">Single bets</td>
+<td><strong>Home-field prior</strong><br><span class="small dim">The baseline every other strategy must beat: home teams win at the league&#x27;s historical home rate.</span></td>
+<td class="small">Official final scores for 2025 and 2026.</td>
+<td class="small">official-results.json</td>
+<td><span class="badge unverified">blocked-no-price</span></td>
+<td class="small">It is a baseline, not an edge; it cannot be a &#x27;top strategy&#x27; and is listed so the leaderboard has a floor.</td>
+<td class="small">Yes — the home win rate is computed from official finals and shown with n.</td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table></div>
+
+<h2>How a strategy is scored</h2>
+<div class="card prose"><dl class="kv">
+<dt>Primary</dt><dd>Brier score and log loss against the realised outcome (lower is better); both are proper scoring rules and cannot be gamed by hedging.</dd>
+<dt>Secondary</dt><dd>Expected calibration error over probability deciles.</dd>
+<dt>ROI only if</dt><dd>A stored, timestamped two-way price exists for every settled bet. Otherwise ROI is withheld, not estimated.</dd>
+<dt>CLV only if</dt><dd>A stored closing price exists. CLV is the fastest skill signal but needs the price ledger (S20).</dd>
+</dl>
+<p style="margin-top:10px"><strong>Never used as a ranking key:</strong></p>
+<ul><li>Raw win rate as a ranking key</li><li>Longest winning streak</li><li>Units won without a stated stake rule</li><li>Any back-test figure that used information published after the decision cutoff</li></ul></div>
+
+<h2>Rewards</h2>
+<div class="card prose">
+<p><strong>No reward is authorised.</strong> Q04 is unanswered. A reward rule is a policy decision with money attached and cannot be invented by the system.</p>
+<p><strong>What one decision would unlock:</strong> Reward currency, payout rule, eligibility rule, and the G8 reviewer. Ranks are already computed, so the reward could be attached retroactively to the same ranking without re-scoring.</p>
+<p><strong>Proposed default if asked:</strong> Paper-only. Rank by primary score. Reward the top three only after G7 has held for two consecutive evaluation cycles. No cash, no entry fee, no incentive to over-bet.</p>
+</div>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · built 2026-11-13T13:22:15Z · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../index.html">Korea5 planner</a> · also see the
+<a href="../nfl-strategy.html">strategy lab proposal</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

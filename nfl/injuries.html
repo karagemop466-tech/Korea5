@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Injuries &amp;amp; depth · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="active">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Injuries &amp;amp; depth</h1><p class="lede">The official injury report and all 32 club depth charts, kept as separate facts — with the replacement named only when the club's own chart names him.</p>
+
+<div class="callout"><strong>Two facts, kept separate.</strong>
+The official injury report publishes <em>status</em> (Out / Doubtful / Questionable) and practice
+participation. The club depth chart publishes <em>order</em> (1st / 2nd / 3rd string). Neither is a lineup and
+neither is a snap count. A replacement is named below <strong>only when the club's own chart names the next
+tier</strong> — never inferred.</div>
+
+<div class="statline">
+<div><b>296</b><span>players on the week-10 report</span></div>
+<div><b>8</b><span>listed Out</span></div>
+<div><b>0</b><span>listed Doubtful</span></div>
+<div><b>1</b><span>listed Questionable</span></div>
+<div><b>0</b><span>published tiers at affected positions</span></div>
+</div>
+<p class="small"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">NFL.com official injury report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span> · report week 10</p>
+
+<h2>Injury load by unit — offence vs defence, never merged</h2>
+<p class="prose">Counts are counts of official report rows by official position. They are NOT a severity score: one Out quarterback and three Questionable backups are not comparable.</p>
+<div class="scroll"><table class="tight"><thead><tr><th>Team</th><th>Offence rows</th><th>Defence rows</th>
+<th>Special teams rows</th><th>Out</th><th>Doubtful</th><th>Questionable</th><th>Total players</th>
+<th>Source</th></tr></thead><tbody><tr><td>49ers</td><td>5</td>
+<td>7</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bengals</td><td>3</td>
+<td>5</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>8</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>7</td>
+<td>5</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>6</td>
+<td>6</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>6</td>
+<td>9</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>15</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>7</td>
+<td>5</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>3</td>
+<td>9</td><td>1</td>
+<td>0</td><td>0</td><td>0</td>
+<td>13</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Commanders</td><td>7</td>
+<td>2</td><td>0</td>
+<td>2</td><td>0</td><td>0</td>
+<td>9</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>7</td>
+<td>11</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>18</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Dolphins</td><td>6</td>
+<td>4</td><td>1</td>
+<td>0</td><td>0</td><td>0</td>
+<td>11</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Falcons</td><td>2</td>
+<td>7</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>9</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Giants</td><td>8</td>
+<td>3</td><td>0</td>
+<td>0</td><td>0</td><td>1</td>
+<td>11</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jaguars</td><td>5</td>
+<td>6</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>11</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jets</td><td>2</td>
+<td>6</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>8</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>5</td>
+<td>4</td><td>0</td>
+<td>3</td><td>0</td><td>0</td>
+<td>9</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>10</td>
+<td>5</td><td>1</td>
+<td>0</td><td>0</td><td>0</td>
+<td>16</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>7</td>
+<td>5</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>11</td>
+<td>4</td><td>0</td>
+<td>3</td><td>0</td><td>0</td>
+<td>15</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Raiders</td><td>2</td>
+<td>2</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>4</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Rams</td><td>6</td>
+<td>3</td><td>1</td>
+<td>0</td><td>0</td><td>0</td>
+<td>10</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>9</td>
+<td>3</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>8</td>
+<td>7</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>15</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Steelers</td><td>2</td>
+<td>6</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>8</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>8</td>
+<td>5</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>13</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>5</td>
+<td>6</td><td>1</td>
+<td>0</td><td>0</td><td>0</td>
+<td>12</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Vikings</td><td>4</td>
+<td>5</td><td>0</td>
+<td>0</td><td>0</td><td>0</td>
+<td>9</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table></div>
+
+<h2>Next man up — who the club says is behind an unavailable player</h2>
+<p class="prose">This is the direct answer to "is a 2nd, 3rd or 4th string replacing a starter?". The column
+<em>next tier</em> is taken from the club's own published chart at the tier immediately below the unavailable
+player. Where the club publishes no further tier, the cell is blank and badged &mdash; it is not filled with a
+guess.</p>
+<div class="scroll" style="max-height:none"><table class="tight"><thead><tr><th>Team</th><th>Pos</th>
+<th>Listed Out / Doubtful</th><th>Chart starter</th><th>Next tier (club's own chart)</th>
+<th>Tiers published</th><th>Chart as of</th><th>Rule applied</th><th>Source</th></tr></thead>
+<tbody><tr><td>Commanders</td><td>C</td>
+<td>Lucas Patrick</td>
+<td><span class="badge unverified">no chart row</span> &mdash;</td>
+<td><span class="badge unverified">no next tier published</span></td>
+<td>0</td><td class="nowrap">—</td>
+<td class="small">no published next tier at this position — left blank</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">injury report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Commanders</td><td>TE</td>
+<td>Colson Yankoff</td>
+<td><span class="badge unverified">no chart row</span> &mdash;</td>
+<td><span class="badge unverified">no next tier published</span></td>
+<td>0</td><td class="nowrap">—</td>
+<td class="small">no published next tier at this position — left blank</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">injury report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>C</td>
+<td>Cade Mays</td>
+<td><span class="badge unverified">no chart row</span> &mdash;</td>
+<td><span class="badge unverified">no next tier published</span></td>
+<td>0</td><td class="nowrap">—</td>
+<td class="small">no published next tier at this position — left blank</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">injury report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>CB</td>
+<td>D.J. Reed</td>
+<td><span class="badge unverified">no chart row</span> &mdash;</td>
+<td><span class="badge unverified">no next tier published</span></td>
+<td>0</td><td class="nowrap">—</td>
+<td class="small">no published next tier at this position — left blank</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">injury report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>S</td>
+<td>Kerby Joseph</td>
+<td><span class="badge unverified">no chart row</span> &mdash;</td>
+<td><span class="badge unverified">no next tier published</span></td>
+<td>0</td><td class="nowrap">—</td>
+<td class="small">no published next tier at this position — left blank</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">injury report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>C</td>
+<td>Ben Brown</td>
+<td><span class="badge unverified">no chart row</span> &mdash;</td>
+<td><span class="badge unverified">no next tier published</span></td>
+<td>0</td><td class="nowrap">—</td>
+<td class="small">no published next tier at this position — left blank</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">injury report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>CB</td>
+<td>Carlton Davis III</td>
+<td><span class="badge unverified">no chart row</span> &mdash;</td>
+<td><span class="badge unverified">no next tier published</span></td>
+<td>0</td><td class="nowrap">—</td>
+<td class="small">no published next tier at this position — left blank</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">injury report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>RB</td>
+<td>TreVeyon Henderson</td>
+<td><span class="badge unverified">no chart row</span> &mdash;</td>
+<td><span class="badge unverified">no next tier published</span></td>
+<td>0</td><td class="nowrap">—</td>
+<td class="small">no published next tier at this position — left blank</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">injury report</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table></div>
+
+<h2>Every player on the current report</h2>
+<div class="scroll"><table class="tight"><thead><tr><th>Team</th><th>Pos</th><th>Player</th><th>Injury</th>
+<th>Practice status</th><th>Game status</th><th>Unit</th><th>Source</th></tr></thead><tbody><tr><td>49ers</td><td>WR</td><td>Mike Evans</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/mike-evans/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>49ers</td><td>CB</td><td>Renardo Green</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/renardo-green/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>49ers</td><td>LB</td><td>Dre Greenlaw</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/dre-greenlaw-x9042/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>49ers</td><td>CB</td><td>Nate Hobbs</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/nate-hobbs/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>49ers</td><td>CB</td><td>Deommodore Lenoir</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/deommodore-lenoir/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>49ers</td><td>RB</td><td>Christian McCaffrey</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/christian-mccaffrey/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>49ers</td><td>S</td><td>Siran Neal</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/siran-neal/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>49ers</td><td>WR</td><td>Demarcus Robinson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/demarcus-robinson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>49ers</td><td>WR</td><td>Deebo Samuel Sr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/deebo-samuel/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>49ers</td><td>CB</td><td>Upton Stout</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/upton-stout/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>49ers</td><td>DT</td><td>C.J. West</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/cj-west/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>49ers</td><td>T</td><td>Trent Williams</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/trent-williams/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bengals</td><td>DT</td><td>Jonathan Allen</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jonathan-allen/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bengals</td><td>CB</td><td>Jalen Davis</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jalen-davis/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bengals</td><td>S</td><td>Kyle Dugger</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/kyle-dugger/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bengals</td><td>G</td><td>Dylan Fairchild</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/dylan-fairchild/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bengals</td><td>DT</td><td>B.J. Hill</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/b-j-hill/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bengals</td><td>WR</td><td>Andrei Iosivas</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/andrei-iosivas/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bengals</td><td>G</td><td>Brian Parker II</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/brian-parker-ii/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bengals</td><td>CB</td><td>DJ Turner II</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/dj-turner-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>G</td><td>Alec Anderson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/alec-anderson-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>CB</td><td>Christian Benford</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/christian-benford/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>T</td><td>Spencer Brown</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/spencer-brown/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>T</td><td>Dion Dawkins</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/dion-dawkins/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>S</td><td>Sam Franklin Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/sam-franklin/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>DT</td><td>Greg Gaines</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/greg-gaines/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>CB</td><td>Jordan Hancock</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jordan-hancock/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>TE</td><td>Dalton Kincaid</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/dalton-kincaid/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>C</td><td>Connor McGovern</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/connor-mcgovern-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>G</td><td>Ar&#x27;maj Reed-Adams</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/ar-maj-reed-adams/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>DE</td><td>T.J. Sanders</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/t-j-sanders/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Bills</td><td>WR</td><td>Tyrell Shavers</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/tyrell-shavers/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>T</td><td>Austin Barber</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/austin-barber/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>WR</td><td>Denzel Boston</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/denzel-boston/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>FB</td><td>Michael Burton</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/michael-burton/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>DT</td><td>Maliek Collins</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/maliek-collins/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>TE</td><td>Harold Fannin Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/harold-fannin-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>S</td><td>Ronnie Hickman Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/ronnie-hickman-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>T</td><td>Tytus Howard</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/tytus-howard-x1979/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>C</td><td>Elgton Jenkins</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/elgton-jenkins/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>S</td><td>Donovan McMillon</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/donovan-mcmillon-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>LB</td><td>Carson Schwesinger</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/carson-schwesinger/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>CB</td><td>Denzel Ward</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/denzel-ward/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Browns</td><td>LB</td><td>Quincy Williams</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/quincy-williams/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>S</td><td>Budda Baker</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/budda-baker/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>DT</td><td>Zachary Carter</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/zachary-carter-x9168/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>C</td><td>Hjalte Froholdt</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/hjalte-froholdt/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>G</td><td>Jon Gaines II</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jon-gaines-ii/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>RB</td><td>Bam Knight</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/bam-knight/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>TE</td><td>Hunter Long</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/hunter-long/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>DT</td><td>Roy Lopez</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/roy-lopez/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>CB</td><td>Max Melton</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/max-melton/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>DT</td><td>Darius Robinson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/darius-robinson-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>G</td><td>Isaac Seumalo</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/isaac-seumalo/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>DT</td><td>Dante Stills</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/dante-stills/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>LB</td><td>Josh Sweat</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/josh-sweat/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>T</td><td>Jayden Williams</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jayden-williams/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>LB</td><td>Mack Wilson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/mack-wilson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cardinals</td><td>S</td><td>Andrew Wingard</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/andrew-wingard/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>LB</td><td>Jeffrey Bassa</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jeffrey-bassa/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>CB</td><td>Mansoor Delane</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/mansoor-delane/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>QB</td><td>Justin Fields</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/justin-fields/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>S</td><td>Jaden Hicks</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jaden-hicks/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>TE</td><td>Travis Kelce</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/travis-kelce/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>QB</td><td>Patrick Mahomes</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/patrick-mahomes/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>T</td><td>Jaylon Moore</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jaylon-moore-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>DT</td><td>Omarr Norman-Lott</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/omarr-norman-lott/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>RB</td><td>Jaydn Ott</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jaydn-ott/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>WR</td><td>Rashee Rice</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/rashee-rice/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>DT</td><td>Peter Woods</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/peter-woods/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Chiefs</td><td>WR</td><td>Xavier Worthy</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/xavier-worthy/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>TE</td><td>Mo Alie-Cox</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/mo-alie-cox/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>LB</td><td>CJ Allen</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/cj-allen/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>LB</td><td>Jaylon Carlies</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jaylon-carlies/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>LB</td><td>Akeem Davis-Gaither</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/akeem-davis-gaither/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>S</td><td>A.J. Haulcy</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/a-j-haulcy/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>DE</td><td>Arden Key</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/arden-key/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>LS</td><td>Luke Rhodes</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">specialteams</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/luke-rhodes/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>DT</td><td>Grover Stewart</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/grover-stewart/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>RB</td><td>Jonathan Taylor</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jonathan-taylor/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>DT</td><td>Jerry Tillery</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jerry-tillery/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>T</td><td>Jalen Travis</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jalen-travis/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>CB</td><td>Justin Walley</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/justin-walley/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Colts</td><td>CB</td><td>Charvarius Ward</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/charvarius-ward/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Commanders</td><td>TE</td><td>John Bates</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/john-bates/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Commanders</td><td>WR</td><td>Treylon Burks</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/treylon-burks/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Commanders</td><td>QB</td><td>Jayden Daniels</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jayden-daniels/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Commanders</td><td>C</td><td>Matt Gulbin</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/matt-gulbin/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Commanders</td><td>TE</td><td>Chig Okonkwo</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/chigoziem-okonkwo/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Commanders</td><td>C</td><td>Lucas Patrick</td>
+<td>Concussion</td>
+<td>Did Not Participate In Practice</td><td>Out</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/lucas-patrick/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Commanders</td><td>CB</td><td>Amik Robertson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/amik-robertson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Commanders</td><td>DT</td><td>Shy Tuttle</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/shy-tuttle/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Commanders</td><td>TE</td><td>Colson Yankoff</td>
+<td>Knee</td>
+<td>Did Not Participate In Practice</td><td>Out</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/colson-yankoff/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>DT</td><td>Jonathan Bullard</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jonathan-bullard/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>S</td><td>Alijah Clark</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/alijah-clark/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>LB</td><td>Donovan Ezeiruaku</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/donovan-ezeiruaku/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>TE</td><td>Jake Ferguson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jake-ferguson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>RB</td><td>Tyler Goodson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/tyler-goodson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>S</td><td>Malik Hooker</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/malik-hooker/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>LB</td><td>Marist Liufau</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/marist-liufau/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>S</td><td>P.J. Locke</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/p-j-locke/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>LB</td><td>Von Miller</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/von-miller/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>WR</td><td>Jonathan Mingo</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jonathan-mingo/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>CB</td><td>Devin Moore</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/devin-moore-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>LB</td><td>DeMarvion Overshown</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/demarvion-overshown/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>WR</td><td>George Pickens</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/george-pickens/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>CB</td><td>Joey Porter Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/joey-porter-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>TE</td><td>Luke Schoonmaker</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/luke-schoonmaker/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>TE</td><td>Brevyn Spann-Ford</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/brevyn-spann-ford/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>S</td><td>Juanyeh Thomas</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/juanyeh-thomas/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Cowboys</td><td>WR</td><td>KaVontae Turpin</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/kavontae-turpin/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Dolphins</td><td>LS</td><td>Tucker Addington</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">specialteams</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/tucker-addington/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Dolphins</td><td>RB</td><td>Kaytron Allen</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/kaytron-allen/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Dolphins</td><td>CB</td><td>Darrell Baker Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/darrell-baker-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Dolphins</td><td>WR</td><td>Chris Bell</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/chris-bell-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Dolphins</td><td>C</td><td>Aaron Brewer</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/aaron-brewer-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Dolphins</td><td>DE</td><td>Malik Herring</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/malik-herring/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Dolphins</td><td>TE</td><td>Will Kacmarek</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/will-kacmarek/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Dolphins</td><td>S</td><td>Michael Taaffe</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/michael-taaffe/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Dolphins</td><td>S</td><td>Dante Trader Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/dante-trader-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Dolphins</td><td>WR</td><td>Jared Wayne</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jared-wayne/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Dolphins</td><td>RB</td><td>Jaylen Wright</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jaylen-wright/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Falcons</td><td>WR</td><td>Zachariah Branch</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/zachariah-branch/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Falcons</td><td>LB</td><td>Kendal Daniels</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/kendal-daniels/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Falcons</td><td>LB</td><td>Divine Deablo</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/divine-deablo/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Falcons</td><td>DT</td><td>Gervon Dexter Sr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/gervon-dexter/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Falcons</td><td>DE</td><td>James Pearce Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/james-pearce-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Falcons</td><td>DE</td><td>Za&#x27;Darius Smith</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/za-darius-smith/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Falcons</td><td>T</td><td>Jawaan Taylor</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jawaan-taylor/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Falcons</td><td>DE</td><td>Cameron Thomas</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/cameron-thomas/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Falcons</td><td>LB</td><td>Josh Woods</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/josh-woods/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Giants</td><td>LB</td><td>Abdul Carter</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/abdul-carter/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Giants</td><td>T</td><td>Jermaine Eluemunor</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jermaine-eluemunor/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Giants</td><td>LB</td><td>Malik Harrison</td>
+<td>Groin</td>
+<td>Limited Participation in Practice</td><td>Questionable</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/malik-harrison/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Giants</td><td>CB</td><td>Colton Hood</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/colton-hood/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Giants</td><td>TE</td><td>Theo Johnson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/theo-johnson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Giants</td><td>WR</td><td>Charlie Jones</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/charlie-jones-3/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Giants</td><td>QB</td><td>J.J. McCarthy</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/j-j-mccarthy/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Giants</td><td>WR</td><td>Darnell Mooney</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/darnell-mooney/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Giants</td><td>WR</td><td>Malik Nabers</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/malik-nabers/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Giants</td><td>RB</td><td>Cam Skattebo</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/cam-skattebo/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Giants</td><td>T</td><td>Andrew Thomas</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/andrew-thomas/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jaguars</td><td>S</td><td>Jessie Bates</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jessie-bates/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jaguars</td><td>G</td><td>Ezra Cleveland</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/ezra-cleveland/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jaguars</td><td>LB</td><td>Branson Combs</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/branson-combs/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jaguars</td><td>DT</td><td>Jordan Davis</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jordan-davis/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jaguars</td><td>DE</td><td>BJ Green II</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/bj-green-ii/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jaguars</td><td>C</td><td>Robert Hainsey</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/robert-hainsey/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jaguars</td><td>S</td><td>Antonio Johnson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/antonio-johnson-3/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jaguars</td><td>WR</td><td>Jakobi Meyers</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jakobi-meyers/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jaguars</td><td>RB</td><td>Chris Rodriguez Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/chris-rodriguez-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jaguars</td><td>RB</td><td>Bhayshul Tuten</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/bhayshul-tuten/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jaguars</td><td>DE</td><td>Travon Walker</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/travon-walker/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jets</td><td>CB</td><td>Jarvis Brownlee Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jarvis-brownlee-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jets</td><td>WR</td><td>Omar Cooper Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/omar-cooper-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jets</td><td>DE</td><td>Joseph Ossai</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/joseph-ossai/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jets</td><td>S</td><td>VJ Payne</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/vj-payne/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jets</td><td>DT</td><td>Harrison Phillips</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/harrison-phillips/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jets</td><td>LB</td><td>Trevin Wallace</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/trevin-wallace/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jets</td><td>WR</td><td>Garrett Wilson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/garrett-wilson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Jets</td><td>CB</td><td>Nahshon Wright</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/nahshon-wright/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>S</td><td>Brian Branch</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/brian-branch/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>QB</td><td>Jared Goff</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jared-goff/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>S</td><td>Kerby Joseph</td>
+<td>Knee</td>
+<td>Full Participation in Practice</td><td>Out</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/kerby-joseph/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>C</td><td>Cade Mays</td>
+<td>Ankle</td>
+<td>Did Not Participate In Practice</td><td>Out</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/cade-mays/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>CB</td><td>D.J. Reed</td>
+<td>Hip</td>
+<td>Did Not Participate In Practice</td><td>Out</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/d-j-reed/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>RB</td><td>Jacob Saylors</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jacob-saylors/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>WR</td><td>Amon-Ra St. Brown</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/amon-ra-st-brown/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>RB</td><td>Sione Vaki</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/sione-vaki/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Lions</td><td>DE</td><td>DJ Wonnum</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/d-j-wonnum/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>G</td><td>Aaron Banks</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/aaron-banks/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>RB</td><td>Chris Brooks</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/christopher-brooks/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>S</td><td>Javon Bullard</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/javon-bullard/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>LB</td><td>Zaire Franklin</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/zaire-franklin/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>G</td><td>Travis Glover</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/travis-glover/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>LB</td><td>Ty&#x27;Ron Hopper</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/ty-ron-hopper/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>RB</td><td>Josh Jacobs</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/josh-jacobs-x3315/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>WR</td><td>Bo Melton</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/bo-melton/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>WR</td><td>Skyy Moore</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/skyy-moore/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>LB</td><td>Micah Parsons</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/micah-parsons/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>C</td><td>Sean Rhyan</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/sean-rhyan/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>K</td><td>Trey Smack</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">specialteams</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/trey-smack/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>LB</td><td>Lukas Van Ness</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/lukas-van-ness/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>TE</td><td>Josh Whyle</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/josh-whyle/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>WR</td><td>Savion Williams</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/savion-williams/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Packers</td><td>G</td><td>Kevin Zeitler</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/kevin-zeitler/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>RB</td><td>Jonathon Brooks</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jonathon-brooks/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>G</td><td>Brady Christensen</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/brady-christensen/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>RB</td><td>Trevor Etienne</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/trevor-etienne/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>RB</td><td>Chuba Hubbard</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/chuba-hubbard/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>DT</td><td>Lee Hunter</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/lee-hunter/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>CB</td><td>Mike Jackson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/mike-jackson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>CB</td><td>Will Lee III</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/will-lee-iii/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>WR</td><td>Xavier Legette</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/xavier-legette/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>G</td><td>Damien Lewis</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/damien-lewis/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>LB</td><td>Bobby Okereke</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/bobby-okereke/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>LB</td><td>Jaelan Phillips</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jaelan-phillips/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Panthers</td><td>G</td><td>Torricelli Simpkins III</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/torricelli-simpkins-iii/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>C</td><td>Ben Brown</td>
+<td>Knee</td>
+<td>Did Not Participate In Practice</td><td>Out</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/ben-brown-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>WR</td><td>A.J. Brown</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/a-j-brown/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>S</td><td>Kevin Byard</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/kevin-byard/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>CB</td><td>Carlton Davis III</td>
+<td>Knee</td>
+<td>Did Not Participate In Practice</td><td>Out</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/carlton-davis/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>FB</td><td>Reggie Gilliam</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/reggie-gilliam/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>RB</td><td>TreVeyon Henderson</td>
+<td>Illness</td>
+<td>Did Not Participate In Practice</td><td>Out</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/treveyon-henderson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>TE</td><td>Hunter Henry</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/hunter-henry/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>TE</td><td>Cameron Latu</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/cameron-latu/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>QB</td><td>Drake Maye</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/drake-maye/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>T</td><td>Morgan Moses</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/morgan-moses/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>T</td><td>Walter Rouse</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/walter-rouse/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>S</td><td>Brenden Schooler</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/brenden-schooler/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>RB</td><td>Rhamondre Stevenson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/rhamondre-stevenson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>G</td><td>Greg Van Roten</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/greg-van-roten/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Patriots</td><td>CB</td><td>Charles Woods</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/charles-woods/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Raiders</td><td>DT</td><td>Thomas Booker</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/thomas-booker/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Raiders</td><td>DT</td><td>Foley Fatukasi</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/foley-fatukasi/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Raiders</td><td>TE</td><td>Ian Thomas</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/ian-thomas/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Raiders</td><td>C</td><td>Trey Zuhn III</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/trey-zuhn-iii/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Rams</td><td>TE</td><td>Davis Allen</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/davis-allen/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Rams</td><td>G</td><td>Steve Avila</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/steve-avila/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Rams</td><td>LS</td><td>Joe Cardona</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">specialteams</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/joe-cardona/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Rams</td><td>S</td><td>Kam Curl</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/kamren-curl/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Rams</td><td>TE</td><td>Terrance Ferguson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/terrance-ferguson-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Rams</td><td>LB</td><td>Myles Garrett</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/myles-garrett/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Rams</td><td>CB</td><td>Trent McDuffie</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/trent-mcduffie/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Rams</td><td>WR</td><td>Puka Nacua</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/puka-nacua/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Rams</td><td>TE</td><td>Colby Parkinson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/colby-parkinson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Rams</td><td>QB</td><td>Matthew Stafford</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/matthew-stafford/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>T</td><td>Kelvin Banks Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/kelvin-banks-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>RB</td><td>CJ Donaldson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/cj-donaldson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>G</td><td>David Edwards</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/david-edwards-x1290/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>CB</td><td>Martin Emerson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/martin-emerson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>RB</td><td>Travis Etienne</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/travis-etienne/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>TE</td><td>Noah Fant</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/noah-fant-x4946/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>T</td><td>Taliese Fuaga</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/taliese-fuaga/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>RB</td><td>Alvin Kamara</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/alvin-kamara/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>C</td><td>Erik McCoy</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/erik-mccoy/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>DT</td><td>Christen Miller</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/christen-miller/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>T</td><td>Asim Richards</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/asim-richards/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Saints</td><td>CB</td><td>Quincy Riley</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/quincy-riley/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>TE</td><td>AJ Barner</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/aj-barner/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>G</td><td>Anthony Bradford</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/anthony-bradford/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>T</td><td>Charles Cross</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/charles-cross-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>QB</td><td>Sam Darnold</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/sam-darnold/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>LB</td><td>Derick Hall</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/derick-hall/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>QB</td><td>Drew Lock</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/drew-lock/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>G</td><td>Quenton Nelson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/quenton-nelson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>LB</td><td>Uchenna Nwosu</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/uchenna-nwosu/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>LB</td><td>Patrick O&#x27;Connell</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/patrick-o-connell/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>LB</td><td>Connor O&#x27;Toole</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/connor-o-toole/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>DT</td><td>Brandon Pili</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/brandon-pili/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>DT</td><td>Jarran Reed</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jarran-reed/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>WR</td><td>Rashid Shaheed</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/rashid-shaheed/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>WR</td><td>Jaxon Smith-Njigba</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jaxon-smith-njigba/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Seahawks</td><td>DT</td><td>Leonard Williams</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/leonard-williams/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Steelers</td><td>CB</td><td>Brandin Echols</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/brandin-echols/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Steelers</td><td>S</td><td>DeShon Elliott</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/deshon-elliott/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Steelers</td><td>DT</td><td>Derrick Harmon</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/derrick-harmon-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Steelers</td><td>DT</td><td>Cameron Heyward</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/cameron-heyward/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Steelers</td><td>WR</td><td>Ben Skowronek</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/ben-skowronek/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Steelers</td><td>CB</td><td>Doneiko Slaughter</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/doneiko-slaughter/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Steelers</td><td>TE</td><td>Darnell Washington</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/darnell-washington/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Steelers</td><td>LB</td><td>T.J. Watt</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/t-j-watt/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>LB</td><td>Azeez Al-Shaair</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/azeez-al-shaair/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>S</td><td>Reed Blankenship</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/reed-blankenship/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>WR</td><td>Tank Dell</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/tank-dell/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>T</td><td>Blake Fisher</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/blake-fisher/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>WR</td><td>Marvin Harrison Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/marvin-harrison-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>LB</td><td>Jacob Hummel</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jake-hummel/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>TE</td><td>Brevin Jordan</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/brevin-jordan/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>RB</td><td>Woody Marks</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/woody-marks/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>RB</td><td>David Montgomery</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/david-montgomery/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>G</td><td>Keylan Rutledge</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/keylan-rutledge/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>CB</td><td>Jaylin Smith</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jaylin-smith/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>G</td><td>Wyatt Teller</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/wyatt-teller/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Texans</td><td>DT</td><td>Tommy Togiai</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/tommy-togiai/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>LB</td><td>Cody Barton</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/cody-barton/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>DE</td><td>John Franklin-Myers</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/john-franklin-myers/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>CB</td><td>Marcus Harris</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/marcus-harris-4/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>LB</td><td>Anthony Hill Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/anthony-hill-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>CB</td><td>Jaylon Jones</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jaylon-jones-2/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>T</td><td>JC Latham</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jc-latham/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>RB</td><td>Tony Pollard</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/tony-pollard/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>G</td><td>Peter Skoronski</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/peter-skoronski/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>RB</td><td>Tyjae Spears</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/tyjae-spears/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>WR</td><td>Carnell Tate</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/carnell-tate/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>P</td><td>Tommy Townsend</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">specialteams</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/tommy-townsend/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Titans</td><td>S</td><td>Kevin Winston Jr.</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/kevin-winston-jr/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Vikings</td><td>LB</td><td>Blake Cashman</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/blake-cashman/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Vikings</td><td>TE</td><td>T.J. Hockenson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/t-j-hockenson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Vikings</td><td>DT</td><td>Tyrion Ingram-Dawkins</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/tyrion-ingram-dawkins/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Vikings</td><td>S</td><td>Theo Jackson</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Full Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/theo-jackson/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Vikings</td><td>WR</td><td>Jauan Jennings</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jauan-jennings/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Vikings</td><td>QB</td><td>Kyler Murray</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/kyler-murray/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Vikings</td><td>LB</td><td>Kyle Van Noy</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Did Not Participate In Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/kyle-van-noy/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Vikings</td><td>S</td><td>Jay Ward</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">defense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/jay-ward/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr><td>Vikings</td><td>QB</td><td>Carson Wentz</td>
+<td><span class="badge unverified">no injury listed</span> &mdash;</td>
+<td>Limited Participation in Practice</td><td><span class="badge unverified">no game status</span> &mdash;</td>
+<td class="nowrap"><span class="badge none">offense</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/carson-wentz/" target="_blank" rel="noopener noreferrer">player page</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table></div>
+<p class="small">Showing the first 296 of 296 rows. The full set is in
+<code>nfl/data/derived/injuries.json</code>. Blank injury or game-status cells mean the official page published
+no value for that player.</p>
+
+<h2>Depth charts: coverage and what is missing</h2>
+<p class="prose">Clubs publish different tier counts and some self-label their chart &#x27;Unofficial&#x27;. Depth is a club projection, not a measurement of who played.</p>
+<div class="statline">
+<div><b>31</b><span>clubs parsed</span></div>
+<div><b>261</b><span>positions with 3+ published tiers</span></div>
+<div><b>155</b><span>positions with 4 tiers</span></div>
+</div>
+<h3>Clubs whose chart could not be extracted</h3>
+<table class="tight"><thead><tr><th>Team</th><th>Official page</th><th>Why it is blank here</th></tr></thead>
+<tbody><tr><td>HOU</td><td class="nowrap"><a href="https://www.houstontexans.com/team/depth-chart" target="_blank" rel="noopener noreferrer">club page</a><br><span class="dim" style="font-size:11px">www.houstontexans.com</span></td>
+<td class="small">no parseable depth-chart table on the official page</td></tr></tbody></table>
+<p class="small">Tier histogram across all clubs and positions:
+{&quot;1&quot;: 167, &quot;2&quot;: 257, &quot;3&quot;: 106, &quot;4&quot;: 62, &quot;5&quot;: 51, &quot;6&quot;: 38, &quot;7&quot;: 3, &quot;11&quot;: 1}</p>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · built 2026-11-13T13:22:15Z · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../index.html">Korea5 planner</a> · also see the
+<a href="../nfl-strategy.html">strategy lab proposal</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

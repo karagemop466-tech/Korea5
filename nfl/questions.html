@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Questions, information and gaps · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="active">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Questions, information and gaps</h1><p class="lede">What has to be answered before a decision can reasonably be made — separated into what we have, what we do not have, and what would close the gap.</p>
+
+<div class="callout"><strong>This page is the answer to "what do we not know?".</strong>
+Every row is a question that cannot be fully answered from the information the repository holds. The
+<em>what we have</em> column is evidence with a source; the <em>gap</em> column is what is missing; the
+<em>how to close it</em> column names the official source or the decision that would settle it.</div>
+<div class="statline">
+<div><b>2</b><span>answered</span></div><div><b>1</b><span>blocked</span></div><div><b>9</b><span>open</span></div><div><b>6</b><span>partial</span></div>
+<div><b>18</b><span>total questions</span></div>
+</div>
+<div class="scroll" style="max-height:none"><table class="tight"><thead><tr>
+<th>ID</th><th>Topic</th><th>Question</th><th>What we have</th><th>What we do not have</th>
+<th>How to close it</th><th>Blocks</th><th>Status</th><th>Source</th></tr></thead><tbody>
+<tr id="Q01">
+<td class="nowrap"><strong>Q01</strong></td>
+<td class="nowrap">Our own lines</td>
+<td><strong>Which official source publishes NFL point spreads, moneylines or totals that we are allowed to cite row by row?</strong></td>
+<td class="small">Nothing. nfl.com game pages, week pages and team stat pages were probed by exact regex (nfl/research/probe.json): odds/spread/moneyline field counts are all 0.</td>
+<td class="small">No official NFL price feed is available in this repository. Any price must therefore be typed in by the owner with the book, timestamp and screenshot, or the system publishes a model number and labels it MODEL — not a market line.</td>
+<td class="small">Decide whether to consume a licensed odds API under the owner&#x27;s own account, or to record prices manually as observations. Both need a decision before any ROI claim is published.</td>
+<td class="small">Every ROI, closing-line-value and price-outperformance claim.</td>
+<td><span class="badge none">open</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q02">
+<td class="nowrap"><strong>Q02</strong></td>
+<td class="nowrap">Our own lines</td>
+<td><strong>What does &#x27;originating my own line&#x27; mean for this project: a fair-price model, or a tradable two-way price with a hold?</strong></td>
+<td class="small">The engine can produce win probabilities and devigged fair prices from any two-way price pair (functions implemented in nfl/tools/analyze_market.py and unit-tested).</td>
+<td class="small">The owner has not stated whether the published number must include a margin (juice) and, if so, whether it should be a fixed hold or a per-market hold.</td>
+<td class="small">One decision from the owner. Default proposed in nfl/curated/validation-gates.json: publish fair price and a suggested price at a stated hold.</td>
+<td class="small">Presentation of the line, and the definition of a winning bet.</td>
+<td><span class="badge none">open</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q03">
+<td class="nowrap"><strong>Q03</strong></td>
+<td class="nowrap">Skill vs luck</td>
+<td><strong>How many settled bets are needed before a strategy may be called skill-based rather than lucky?</strong></td>
+<td class="small">A statistical gate is implemented (binomial test against the break-even probability implied by the price, plus a Monte-Carlo shuffle test that destroys any real edge).</td>
+<td class="small">The threshold is a policy choice, not a fact. The gate currently refuses to certify anything below 100 settled bets and reports the p-value so the owner can see how weak the evidence is.</td>
+<td class="small">Owner decision on the false-positive budget. Record it in nfl/curated/validation-gates.json before results accumulate, so the threshold cannot be moved after the fact.</td>
+<td class="small">Leaderboard certification and rewards.</td>
+<td><span class="badge none">partial</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q04">
+<td class="nowrap"><strong>Q04</strong></td>
+<td class="nowrap">Skill vs luck</td>
+<td><strong>Are the rewards real money, an honour system, or a paper scoreboard?</strong></td>
+<td class="small">A leaderboard schema with scoring formulas (Brier score, log loss, ROI, closing-line value, calibration error) and a demotion/probation rule.</td>
+<td class="small">No reward currency, no payout rule and no eligibility rule exists. The site therefore publishes ranks only and states that no monetary reward is promised.</td>
+<td class="small">Owner decision. Until then the leaderboard is explicitly &#x27;no reward, ranking only&#x27;.</td>
+<td class="small">Any statement that a strategy &#x27;earns&#x27; something.</td>
+<td><span class="badge none">open</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q05">
+<td class="nowrap"><strong>Q05</strong></td>
+<td class="nowrap">Injuries</td>
+<td><strong>Does the official injury report tell us who will actually start?</strong></td>
+<td class="small">The NFL official report gives player, position, injury, practice status and game status (Out / Doubtful / Questionable) per team per week. 2026 weeks 1-10 and 2025 weeks 1-18 are loaded.</td>
+<td class="small">It does not name the replacement. &#x27;Questionable&#x27; is not a probability. Practice status is not a snap count.</td>
+<td class="small">Join the injury report to each club&#x27;s official depth chart (done) and to official snap-count/gamebook data (not yet loaded; see Q07).</td>
+<td class="small">Any &#x27;defence loses its 2nd-string corner&#x27; claim.</td>
+<td><span class="badge none">partial</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q06">
+<td class="nowrap"><strong>Q06</strong></td>
+<td class="nowrap">Injuries</td>
+<td><strong>How deep is each defence and offence behind the listed starter — is the 2nd string a real drop-off or a coin flip?</strong></td>
+<td class="small">Official club depth charts give 1st/2nd/3rd/4th string at every position for each club that publishes one, with the club&#x27;s own &#x27;updated as of&#x27; date.</td>
+<td class="small">A depth chart is a projection by the club, not a performance measurement. Several clubs label theirs &#x27;Unofficial Depth Chart&#x27;. Depth is not quality: the 2nd string is not always worse.</td>
+<td class="small">Replace the projection with measured performance of the actual participants (official snap counts and player stats). Until then the site shows depth as a flag, never as a rating.</td>
+<td class="small">Quantifying &#x27;deficiency&#x27; in a defence or offence.</td>
+<td><span class="badge none">partial</span></td>
+<td class="nowrap"><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.49ers.com</span></td></tr><tr id="Q07">
+<td class="nowrap"><strong>Q07</strong></td>
+<td class="nowrap">Injuries</td>
+<td><strong>Which players actually played, and how many snaps?</strong></td>
+<td class="small">Nothing official in this repository yet. Player season stat pages publish per-game logs (WK, OPP, RESULT and stat columns) which imply participation.</td>
+<td class="small">No official snap-count feed is loaded. Absence from a game log is not proof of zero snaps — a player can play and record no stat.</td>
+<td class="small">Add the official NFL gamebook / snap-count publication as a source, or accept that participation is inferred from stat logs and label it as such.</td>
+<td class="small">Backup-vs-starter strength measurement.</td>
+<td><span class="badge none">open</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/players/christian-mccaffrey/stats" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q08">
+<td class="nowrap"><strong>Q08</strong></td>
+<td class="nowrap">Correlation</td>
+<td><strong>Which player props in the same game are positively correlated, and by how much?</strong></td>
+<td class="small">Official per-game player stat logs for the loaded seasons, which is exactly the input a correlation estimate needs.</td>
+<td class="small">The sample is small (a partial season), so any correlation estimate carries a wide confidence interval. Estimates are published with n and a bootstrap interval, and are withheld below n=8 games.</td>
+<td class="small">Accumulate more official game logs; resample with a block bootstrap; never publish a correlation without its interval.</td>
+<td class="small">Parlay correlation adjustment and same-game parlay pricing.</td>
+<td><span class="badge none">partial</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q09">
+<td class="nowrap"><strong>Q09</strong></td>
+<td class="nowrap">Correlation</td>
+<td><strong>Do game-level outcomes correlate with the props inside them (e.g. a big favourite rushing more)?</strong></td>
+<td class="small">Final scores for every played 2025 and 2026 game, plus per-game player logs.</td>
+<td class="small">Mapping a player log row to a specific game requires the opponent and week to match the schedule; that join is implemented but only covers games where both official pages exist.</td>
+<td class="small">Complete the join and report the match rate. Unmatched rows are excluded and counted, never guessed.</td>
+<td class="small">Cross-market correlation (spread vs rushing prop).</td>
+<td><span class="badge none">open</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q10">
+<td class="nowrap"><strong>Q10</strong></td>
+<td class="nowrap">Validation</td>
+<td><strong>What is the minimum sample and the multiple-testing correction before a strategy is promoted?</strong></td>
+<td class="small">A gate list with explicit pass/fail logic, including a Benjamini-Hochberg style false-discovery guard when many strategies are tested at once.</td>
+<td class="small">The reward rule and the promotion threshold are policy, not fact. Defaults are proposed and marked as defaults.</td>
+<td class="small">Owner sign-off, recorded before results are seen.</td>
+<td class="small">Publishing &#x27;top performing strategy&#x27;.</td>
+<td><span class="badge none">open</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q11">
+<td class="nowrap"><strong>Q11</strong></td>
+<td class="nowrap">Validation</td>
+<td><strong>Is there enough history to backtest at all?</strong></td>
+<td class="small">2025 and 2026 official results and player logs are loaded on demand by CI.</td>
+<td class="small">Two partial seasons with no historical prices is not a backtest of a betting strategy; it is a backtest of a probability model. Any strategy that needs prices cannot be backtested yet (see Q01).</td>
+<td class="small">Either obtain licensed historical prices, or restrict backtests to probability-scoring (Brier/log-loss) and label them &#x27;no price backtest&#x27;.</td>
+<td class="small">Any historical ROI claim.</td>
+<td><span class="badge unverified">blocked</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2025/by-week/week-5" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q12">
+<td class="nowrap"><strong>Q12</strong></td>
+<td class="nowrap">Data quality</td>
+<td><strong>Are the depth charts the same thing across all 32 clubs?</strong></td>
+<td class="small">Per-club pages with per-club &#x27;updated as of&#x27; dates and per-club naming (some say &#x27;Unofficial&#x27;).</td>
+<td class="small">They are not normalised: some clubs publish 4 tiers, some 3; some list 11 defensive positions, some 12. Cross-club comparison of &#x27;depth&#x27; is therefore approximate and is flagged as such.</td>
+<td class="small">Publish a per-club chart schema note and never sum across clubs without saying so.</td>
+<td class="small">League-wide &#x27;most injured defence&#x27; style claims.</td>
+<td><span class="badge none">partial</span></td>
+<td class="nowrap"><a href="https://www.chiefs.com/team/depth-chart" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.chiefs.com</span></td></tr><tr id="Q13">
+<td class="nowrap"><strong>Q13</strong></td>
+<td class="nowrap">Data quality</td>
+<td><strong>Could a page change between two fetches in the same day?</strong></td>
+<td class="small">Every record carries the fetch time and the exact source URL it came from.</td>
+<td class="small">Yes — injury reports and depth charts change during the week, and week pages gain scores. The site therefore stamps each table with its retrieval time.</td>
+<td class="small">Re-run the CI fetch before publishing anything time-sensitive; the site shows the stamp so staleness is visible.</td>
+<td class="small">Nothing, provided the stamp is shown.</td>
+<td><span class="badge none">answered</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q14">
+<td class="nowrap"><strong>Q14</strong></td>
+<td class="nowrap">Data quality</td>
+<td><strong>How do the two partial-season datasets compare in size and shape?</strong></td>
+<td class="small">Counts per dataset are published on the Data health page and in nfl/data/fetch-report.json.</td>
+<td class="small">Coverage is not completeness. A missing week page means missing games, not zero games; the report lists every failed fetch.</td>
+<td class="small">Read fetch-report.json failures before trusting any aggregate.</td>
+<td class="small">Nothing, provided failures stay visible.</td>
+<td><span class="badge none">answered</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-1" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q15">
+<td class="nowrap"><strong>Q15</strong></td>
+<td class="nowrap">Model</td>
+<td><strong>What is the baseline every strategy must beat?</strong></td>
+<td class="small">Baselines defined: coin flip (50% ATS), home-field prior from official results, and the market&#x27;s own devigged price when a price exists.</td>
+<td class="small">With no prices (Q01), the only baselines available are probability-scoring baselines, not ROI baselines.</td>
+<td class="small">State the baseline per competition in the strategy registry.</td>
+<td class="small">Any &#x27;beats the baseline&#x27; claim.</td>
+<td><span class="badge none">partial</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q16">
+<td class="nowrap"><strong>Q16</strong></td>
+<td class="nowrap">Model</td>
+<td><strong>How should rest, travel and short weeks be handled?</strong></td>
+<td class="small">Official kickoff dates and venues for every 2026 game, from which rest days can be derived exactly.</td>
+<td class="small">Travel distance is not published; deriving it means adding a venue-coordinate source, which is not an official NFL page.</td>
+<td class="small">Either drop travel, or publish it as an estimate with the non-official coordinate source named.</td>
+<td class="small">Travel-based signals.</td>
+<td><span class="badge none">open</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr id="Q17">
+<td class="nowrap"><strong>Q17</strong></td>
+<td class="nowrap">Governance</td>
+<td><strong>Who reviews a suggestion, and what stops a suggestion contradicting a verified table?</strong></td>
+<td class="small">A suggestions register with status, owner, review gate and a check that a suggestion touching a verified row must cite its source.</td>
+<td class="small">No reviewer is assigned. The register therefore defaults every row to &#x27;awaiting review&#x27; and nothing is auto-accepted.</td>
+<td class="small">Assign the reviewer role. Until then the Suggestion review page lists decisions in open state only.</td>
+<td class="small">Any suggestion being marked &#x27;chosen&#x27;.</td>
+<td><span class="badge none">open</span></td>
+<td class="nowrap"><a href="https://github.com/karagemop466-tech/Korea5" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">github.com</span></td></tr><tr id="Q18">
+<td class="nowrap"><strong>Q18</strong></td>
+<td class="nowrap">Governance</td>
+<td><strong>What happens when two strategies claim the same edge, or when a strategy&#x27;s live results diverge from its backtest?</strong></td>
+<td class="small">A probation rule: a strategy whose live scoring diverges from its declared expectation by more than the stated tolerance is demoted to probation and its reward is withheld.</td>
+<td class="small">The tolerance value is a policy choice, not a fact.</td>
+<td class="small">Owner sets the tolerance in nfl/curated/validation-gates.json.</td>
+<td class="small">Reward allocation.</td>
+<td><span class="badge none">open</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr>
+</tbody></table></div>
+
+<h2>Grouped by topic</h2>
+<div class="card" style="margin:12px 0"><h3>Our own lines</h3><ul class="prose"><li><strong>Q01</strong> — Which official source publishes NFL point spreads, moneylines or totals that we are allowed to cite row by row? <span class="dim">[open]</span></li><li><strong>Q02</strong> — What does &#x27;originating my own line&#x27; mean for this project: a fair-price model, or a tradable two-way price with a hold? <span class="dim">[open]</span></li></ul></div><div class="card" style="margin:12px 0"><h3>Skill vs luck</h3><ul class="prose"><li><strong>Q03</strong> — How many settled bets are needed before a strategy may be called skill-based rather than lucky? <span class="dim">[partial]</span></li><li><strong>Q04</strong> — Are the rewards real money, an honour system, or a paper scoreboard? <span class="dim">[open]</span></li></ul></div><div class="card" style="margin:12px 0"><h3>Injuries</h3><ul class="prose"><li><strong>Q05</strong> — Does the official injury report tell us who will actually start? <span class="dim">[partial]</span></li><li><strong>Q06</strong> — How deep is each defence and offence behind the listed starter — is the 2nd string a real drop-off or a coin flip? <span class="dim">[partial]</span></li><li><strong>Q07</strong> — Which players actually played, and how many snaps? <span class="dim">[open]</span></li></ul></div><div class="card" style="margin:12px 0"><h3>Correlation</h3><ul class="prose"><li><strong>Q08</strong> — Which player props in the same game are positively correlated, and by how much? <span class="dim">[partial]</span></li><li><strong>Q09</strong> — Do game-level outcomes correlate with the props inside them (e.g. a big favourite rushing more)? <span class="dim">[open]</span></li></ul></div><div class="card" style="margin:12px 0"><h3>Validation</h3><ul class="prose"><li><strong>Q10</strong> — What is the minimum sample and the multiple-testing correction before a strategy is promoted? <span class="dim">[open]</span></li><li><strong>Q11</strong> — Is there enough history to backtest at all? <span class="dim">[blocked]</span></li></ul></div><div class="card" style="margin:12px 0"><h3>Data quality</h3><ul class="prose"><li><strong>Q12</strong> — Are the depth charts the same thing across all 32 clubs? <span class="dim">[partial]</span></li><li><strong>Q13</strong> — Could a page change between two fetches in the same day? <span class="dim">[answered]</span></li><li><strong>Q14</strong> — How do the two partial-season datasets compare in size and shape? <span class="dim">[answered]</span></li></ul></div><div class="card" style="margin:12px 0"><h3>Model</h3><ul class="prose"><li><strong>Q15</strong> — What is the baseline every strategy must beat? <span class="dim">[partial]</span></li><li><strong>Q16</strong> — How should rest, travel and short weeks be handled? <span class="dim">[open]</span></li></ul></div><div class="card" style="margin:12px 0"><h3>Governance</h3><ul class="prose"><li><strong>Q17</strong> — Who reviews a suggestion, and what stops a suggestion contradicting a verified table? <span class="dim">[open]</span></li><li><strong>Q18</strong> — What happens when two strategies claim the same edge, or when a strategy&#x27;s live results diverge from its backtest? <span class="dim">[open]</span></li></ul></div>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · built 2026-11-13T13:22:15Z · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../index.html">Korea5 planner</a> · also see the
+<a href="../nfl-strategy.html">strategy lab proposal</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

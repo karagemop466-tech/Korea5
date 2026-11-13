@@ -1,0 +1,500 @@
+{
+  "meta": {
+    "name": "NFL section line-by-line verification",
+    "note": "Structural, labelling and sourcing checks. These do NOT re-fetch the official pages; a green result means every published row has a source link and every computed value is labelled, not that the source content was re-read today."
+  },
+  "summary": {
+    "checks": 96,
+    "passed": 96,
+    "failed": 0
+  },
+  "counts": {
+    "pages": 14,
+    "externalHosts": 7,
+    "rowsWithoutSource": 0,
+    "brokenLocal": 0
+  },
+  "failures": [],
+  "checks": [
+    {
+      "name": "14 section pages exist",
+      "ok": true,
+      "detail": "14 pages"
+    },
+    {
+      "name": "derived data present",
+      "ok": true,
+      "detail": "12 files"
+    },
+    {
+      "name": "no broken local links from nfl pages",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "no empty href/src in nfl pages",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "every external link is an approved official domain",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "every data-table row carries an official source link (method page exempt: it lists methods, not values)",
+      "ok": true,
+      "detail": "0 rows: []"
+    },
+    {
+      "name": "the method-page exemption is the only exemption",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "page copy never says \"guaranteed profit\"",
+      "ok": true,
+      "detail": "guaranteed profit"
+    },
+    {
+      "name": "page copy never says \"risk-free\"",
+      "ok": true,
+      "detail": "risk-free"
+    },
+    {
+      "name": "page copy never says \"guaranteed win\"",
+      "ok": true,
+      "detail": "guaranteed win"
+    },
+    {
+      "name": "page copy never says \"sure thing\"",
+      "ok": true,
+      "detail": "sure thing"
+    },
+    {
+      "name": "page copy never says \"beat the market\"",
+      "ok": true,
+      "detail": "beat the market"
+    },
+    {
+      "name": "page copy never says \"proven edge\"",
+      "ok": true,
+      "detail": "proven edge"
+    },
+    {
+      "name": "page copy never says \"verified edge\"",
+      "ok": true,
+      "detail": "verified edge"
+    },
+    {
+      "name": "no page asserts a certified strategy",
+      "ok": true,
+      "detail": "no non-zero certified count"
+    },
+    {
+      "name": "reward is never shown as authorised",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "correlation.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "correlation.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "correlation.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "data.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "data.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "data.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "flagged.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "flagged.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "flagged.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "injuries.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "injuries.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "injuries.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "leaderboard.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "leaderboard.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "leaderboard.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "market.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "market.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "market.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "method.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "method.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "method.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "questions.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "questions.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "questions.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "signals.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "signals.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "signals.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "strategies.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "strategies.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "strategies.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "suggestions.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "suggestions.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "suggestions.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "summary.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "summary.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "summary.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "validation.html carries the no-claim notice",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "validation.html links to the flagged page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "validation.html carries the MODEL legend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "coverage records a retrieval time for scores",
+      "ok": true,
+      "detail": "sources listed"
+    },
+    {
+      "name": "price feed is recorded as unavailable",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "scoring rates are current-season only",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "scoring rates are separated from the prior season",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "official touchdown-vs-points warning is present",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "league mean points per game is plausible (18-28)",
+      "ok": true,
+      "detail": "21.81"
+    },
+    {
+      "name": "every team scoring row names its source",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "home win rate carries an interval",
+      "ok": true,
+      "detail": "[0.4736, 0.5506]"
+    },
+    {
+      "name": "home win rate states it is descriptive, not a forecast",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "injury rows are counted per unit, not scored",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "injury page states counts are not a severity score",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no injury row has an invented game status",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "depth charts record clubs that could not be parsed",
+      "ok": true,
+      "detail": "[{'team': 'HOU', 'url': 'https://www.houstontexans.com/team/depth-chart', 'reason': 'no parseable depth-chart table on the official page', 'imageOnly': False}]"
+    },
+    {
+      "name": "every depth position row names its club source",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "correlation is not published as a real finding",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "correlation demonstration is labelled synthetic",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "market data records that no price feed exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "every devig example is labelled an example",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no leaderboard entrant has a rank",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no leaderboard entrant has settled bets",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "reward is not authorised in the leaderboard data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no strategy is certified in the skill data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shuffle test prints a p-value",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/suggestions.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/questions.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/validation-gates.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/strategies.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated/signals.json parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "every question carries a source url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "every question states what it blocks",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "every suggestion carries a source url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "every suggestion names its gate",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "gates have a frozen date",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "gate change log records results-seen at freeze",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "curated questions sources are on approved official domains",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "curated suggestions sources are on approved official domains",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "curated strategies sources are on approved official domains",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "curated signals sources are on approved official domains",
+      "ok": true,
+      "detail": "[]"
+    }
+  ]
+}

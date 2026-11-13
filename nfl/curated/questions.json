@@ -18,7 +18,7 @@
       "have": "Nothing. nfl.com game pages, week pages and team stat pages were probed by exact regex (nfl/research/probe.json): odds/spread/moneyline field counts are all 0.",
       "gap": "No official NFL price feed is available in this repository. Any price must therefore be typed in by the owner with the book, timestamp and screenshot, or the system publishes a model number and labels it MODEL — not a market line.",
       "howToClose": "Decide whether to consume a licensed odds API under the owner's own account, or to record prices manually as observations. Both need a decision before any ROI claim is published.",
-      "blocks": "Every ROI, closing-line-value and 'beat the market' claim.",
+      "blocks": "Every ROI, closing-line-value and price-outperformance claim.",
       "status": "open",
       "sourceUrl": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
       "verifiedAt": "2026-11-13"

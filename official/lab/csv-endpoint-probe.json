@@ -1,0 +1,8 @@
+{
+ "meta": {
+  "purpose": "Check whether the NFL publishes per-game injury-report / inactive-list CSVs at static.www.nfl.com, and capture the header row of any file that does resolve. Findings feed the source-availability table; failures are recorded, not guessed.",
+  "game": null,
+  "retrievedUTC": "2026-11-13T13:15:21.570864+00:00"
+ },
+ "probes": []
+}

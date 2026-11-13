@@ -1,0 +1,127 @@
+{
+ "meta": {
+  "purpose": "Record which official endpoints exist for injury / inactive / results data. Used by the site's source-availability table; a non-200 is reported, never guessed.",
+  "retrievedUTC": "2026-11-13T13:15:21.205109+00:00"
+ },
+ "endpoints": [
+  {
+   "name": "nfl.com injuries landing",
+   "url": "https://www.nfl.com/injuries/",
+   "httpStatus": 200,
+   "contentType": "text/html",
+   "reachable": true
+  },
+  {
+   "name": "nfl.com transactions",
+   "url": "https://www.nfl.com/transactions/",
+   "httpStatus": 200,
+   "contentType": "text/html",
+   "reachable": true
+  },
+  {
+   "name": "nfl.com stats portal",
+   "url": "https://www.nfl.com/stats/",
+   "httpStatus": 200,
+   "contentType": "text/html",
+   "reachable": true
+  },
+  {
+   "name": "nfl.com team stats",
+   "url": "https://www.nfl.com/stats/team-stats/",
+   "httpStatus": 200,
+   "contentType": "text/html",
+   "reachable": true
+  },
+  {
+   "name": "nfl.com player stats",
+   "url": "https://www.nfl.com/stats/player-stats/",
+   "httpStatus": 200,
+   "contentType": "text/html",
+   "reachable": true
+  },
+  {
+   "name": "nfl.com league rules index",
+   "url": "https://www.nfl.com/news/nfl-scheduling-candidates",
+   "httpStatus": 404,
+   "contentType": "",
+   "reachable": false
+  },
+  {
+   "name": "nfl.com depth charts (league)",
+   "url": "https://www.nfl.com/depth-charts/",
+   "httpStatus": 404,
+   "contentType": "",
+   "reachable": false
+  },
+  {
+   "name": "nfl.com club depth chart",
+   "url": "https://www.nfl.com/teams/san-francisco-49ers/depth-chart/",
+   "httpStatus": 404,
+   "contentType": "",
+   "reachable": false
+  },
+  {
+   "name": "nfl.com inactives page",
+   "url": "https://www.nfl.com/inactives/",
+   "httpStatus": 200,
+   "contentType": "text/html",
+   "reachable": true
+  },
+  {
+   "name": "nfl.com rosters page",
+   "url": "https://www.nfl.com/teams/san-francisco-49ers/roster/",
+   "httpStatus": 200,
+   "contentType": "text/html",
+   "reachable": true
+  },
+  {
+   "name": "operations.nfl.com rulebook",
+   "url": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook",
+   "httpStatus": 200,
+   "contentType": "text/html; charset=utf-8",
+   "reachable": true
+  },
+  {
+   "name": "operations.nfl.com homepage",
+   "url": "https://operations.nfl.com/",
+   "httpStatus": 200,
+   "contentType": "text/html; charset=utf-8",
+   "reachable": true
+  },
+  {
+   "name": "api.nfl.com season games",
+   "url": "https://api.nfl.com/season/2026/games/?seasonType=REG&week=9",
+   "httpStatus": 401,
+   "contentType": "",
+   "reachable": false
+  },
+  {
+   "name": "api.nfl.com club injuries",
+   "url": "https://api.nfl.com/club/san-francisco-49ers/teams/current/injuries.json",
+   "httpStatus": 401,
+   "contentType": "",
+   "reachable": false
+  },
+  {
+   "name": "static.www.nfl.com in-game injury CSV (per-game)",
+   "url": "https://static.www.nfl.com/public/stats/statistics/games/injuries/2026/reg/2026110801.csv",
+   "httpStatus": 404,
+   "contentType": "",
+   "reachable": false
+  },
+  {
+   "name": "static.www.nfl.com in-game injury CSV (alt path)",
+   "url": "https://static.www.nfl.com/stats/statistics/games/injuries/2026/reg/2026110801.csv",
+   "httpStatus": 404,
+   "contentType": "",
+   "reachable": false
+  },
+  {
+   "name": "static.www.nfl.com game inactives CSV (per-game)",
+   "url": "https://static.www.nfl.com/public/stats/statistics/games/inactives/2026/reg/2026110801.csv",
+   "httpStatus": 404,
+   "contentType": "",
+   "reachable": false
+  }
+ ]
+}

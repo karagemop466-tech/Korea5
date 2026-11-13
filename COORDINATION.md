@@ -655,3 +655,15 @@ date, and all prior items) remain published on `extra/flagged.html` with officia
 - **Pipeline order (finding):** `verify_extra.py` rewrites `extra/links.html`, and `audit_certainty.py` adds the certainty banner to every page. The banner is therefore only correct if the audit runs last. Required order: `build_events` → `analyze` → `build_site` → `build_extra` → `check_links` → `verify_extra` → `audit_certainty`. This is logged for the integration owner (see cross-scope note above).
 - **Verification at this commit:** `tools/verify_extra.py` 31/31; `scripts/audit_certainty.py` passed; `scripts/check_links.py` 0 missing; `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed.
 
+
+## Session `arena/abf74fdd-korea5` — NFL strategy decision lab (2026-11-13)
+
+Branch constraint: Arena fixes this session to `arena/abf74fdd-korea5`; all work stays on that branch. Existing root `*.html`/`data/` outputs are shared integration outputs; this session owns only the new `nfl-lab/` portal, its landing-page integration through the site generator, and this coordination record. Historical board rows marked in progress belong to old sessions; current checkout has no corresponding active agent claim.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| NFL1 | Build an NFL lines/strategy research portal: executive summary, evidence-backed data requirements, questions/missing information, injury/depth-chart monitoring, candidate single/parlay/player-prop signals, correlation and validation gates, leaderboard/rewards proposal, dedicated Suggestions review page, and flagged items | arena-abf74fdd | in progress | `nfl-lab/**` |
+| NFL2 | Integrate a discoverable link into the site dashboard while preserving generated-page source of truth | arena-abf74fdd | in progress | `scripts/build_site.py`, `index.html` |
+| NFL3 | Verify every factual/strategy table row's official citations, run local site checks, publish PR/merge/deploy if checks pass, record outcomes | arena-abf74fdd | in progress | `COORDINATION.md`, `nfl-lab/**` |
+
+Initial claim committed on the Arena-fixed branch before implementation. No live betting/injury data will be invented: the portal will distinguish documented methods from data not currently available, leave unknown observations blank, and mark open source/coverage questions for review. This is an NFL strategy/research addition, not an assertion of validated profitability or an automated real-time line service.

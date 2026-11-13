@@ -750,3 +750,63 @@ rewritten; the data lab links to them and states plainly which parts are proposa
   from GitHub Actions, nflverse release assets, MLB StatsAPI, ESPN scoreboard and nfl.com all return HTTP 200; from the
   authoring sandbox only github.com / api.github.com / pypi.org are reachable. All NFL data acquisition therefore runs
   in Actions and commits provenance, exactly as the board's existing `data.yml` / `verify.yml` pattern does.
+
+- **2026-11-13 — L1 done.** CI fetcher `nfl/fetch_data.py` (stdlib) pulls nflverse-data release assets
+  (`schedules`, `officials`, `player_stats`, `injuries`, `depth_charts`, `rosters`, `snap_counts`, `pbp`, 2016–2026)
+  plus ESPN scoreboard JSON (stratified week sample, `nfl/raw/samples/_espn_index.json`). Every fetched file is
+  recorded with SHA-256 + source URL in `nfl/data/provenance.json`. **Cross-source validation: 2,776 of 2,776
+  ESPN-sampled completed games match nflverse final scores exactly — 0 differ, 0 unmatched.** Joining rules (all
+  data-driven, no hand edits): team-pair key (handles neutral-site games where no home team is published),
+  ±2-day window (ESPN kickoff dates are UTC), season-aware franchise table (OAK/LV ≤2019, SD/LAC ≤2016,
+  STL/LA ≤2015) plus WSH/WAS, LAR/LA, JAC/JAX aliases.
+- **2026-11-13 — L2 done.** Injury/lineup index lives in `nfl/model.py` (`load_injuries`, `load_depth`,
+  `snapshot_week`, `LineupIndex`, `build_signals`) — the board's `nfl/build_features.py` was folded into the
+  engine to keep one code path. Depth tiers are resolved against the **chart snapshot date that was current at
+  the game week** (not today's chart), names parsed from `full_name`, and every board row emits
+  `depthSnapshotWeek`/`depthSnapshotUTC`. Verified vs inferred columns stay separate (official report status
+  never merged into a synthetic strength without a label).
+- **2026-11-13 — L3 done.** Walk-forward logistic model (IRLS, L2), Elo/form strength ratings (regress 0.72,
+  HFA 48, K 20, MOV^0.7), 9 strength + 11 context signals. **Out-of-sample 2017–2022, 1,632 games: logloss
+  0.63924 vs 0.68848 baseline → skill 0.07152; accuracy 0.636.** Luck deflation: best-of-K null, N=200, K=9,
+  p95 0.02863 over 22 season-blocks → **passed**. Strength family passes; context family (0.0006) fails and is
+  labelled *not distinguishable from luck*. Correlations: 55 signal pairs, 11 exclude zero (largest
+  off_value~def_value 0.253 [0.203, 0.300]); same-team prop correlations measured with bootstrap CIs.
+  9 unit tests in `nfl/tests/` green in CI and locally.
+- **2026-11-13 — L4 done.** `nfl/leaderboard.py` → `nfl/data/leaderboard.json`: singles, prop markets,
+  cross-game parlay families (expected vs realised joint hit rate, one construction per season, n=6), and
+  same-game prop combos built **only** where the measured correlation excludes zero (copula joint vs naive
+  product published as the gap). Tiers A/C/D with pre-registered gates G1–G8 (`nfl/PREREGISTRATION.md`);
+  lab points 1000/300/50, explicitly non-monetary. Current board: #1 Tier A strength model (score 4.289).
+- **2026-11-13 — L5 done.** 12 generated pages under `nfl-lines/` (Dashboard, Executive summary, Lines &
+  model, Signals, Injuries & lineups, Leaderboard, Parlays & props, Questions, Suggestions, Data audit,
+  Flagged, Sources), every table row carries a source link, values that cannot be confirmed stay blank and
+  land on Flagged. `nfl-lines/executive.html` + `nfl/EXECUTIVE-SUMMARY.md` render the executive summary
+  **from the pipeline JSONs at build time** (no hand-typed figures).
+- **2026-11-13 — L6 done.** Questions register Q1–Q12 (`nfl-lines/questions.html`; the board's
+  `nfl-questions.html` filename was consolidated into the section), hypotheses H1–H10 with explicit verdicts
+  (`nfl-lines/signals.html`), suggestions S1–S10 for review **before** any change
+  (`nfl-lines/suggestions.html`) — nothing from that list is implemented pending a chosen path.
+
+**Sources used** (all linked per row on `nfl-lines/sources.html` / `nfl-lines/data.html`):
+nflverse-data releases `https://github.com/nflverse/nflverse-data/releases/download/<release>/<asset>`
+(schedules, officials, player_stats, injuries, depth_charts, rosters, snap_counts, pbp — CC-BY-4.0);
+ESPN scoreboard `https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?...` (scores + odds
+cross-check); NFL.com schedule/injury/stats portals linked for manual review. Live-source probes: NFL.com
+and ESPN return HTTP 200 from CI (`nfl/probe/reachability.json`); the authoring sandbox cannot reach them,
+which is why acquisition runs in Actions.
+
+**Verification performed:** CI runs `nfl-lines-model` (fetch → model `--perm 200` → analyze → leaderboard →
+site → tests) all green after each change; `Planner certainty and site checks` green; local chain
+`scripts/build_site.py → tools/build_extra.py → scripts/check_links.py → tools/verify_extra.py →
+scripts/audit_certainty.py` passes (427 local links, 0 missing; verify_extra 31 passed, 0 failed,
+0 rows missing source); `python3 -m unittest discover -s tests` 5/5, `node tests/test_calendar_today.js`
+pass, `python3 -m unittest discover -s nfl/tests` 9/9. Cross-source 2,776/2,776 exact (above).
+
+**Irregularities flagged for review** (published on Flagged pages with source links; do not block):
+GAP-1 no timestamped odds history (single un-timestamped spread/total/ML snapshot per game — 100 %/100 %/
+99.97 % presence on 2,898 completed games) → no ROI/CLV/payout claims anywhere; GAP-2 no player-prop prices;
+GAP-3 no official game-day inactive list in the feeds (blank, never inferred); GAP-4 depth tiers are chart
+positions, not talent-weighted; GAP-5 subgroup sizes for combo props; GAP-6 injury reports are dated but not
+time-stamped. Also: 3 planned assets unavailable (named in provenance, e.g. `stats_player_week_2019.csv`
+superseded by `player_stats_2019.csv`); 2027-01-10 week-18 rows in the schedule are **fixtures, not results**
+and are excluded from outcome statistics.

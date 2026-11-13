@@ -1,0 +1,6 @@
+{
+ "description": "2026 regular-season starters (depth_team 1) listed Out or Doubtful on the NFL weekly injury report, with the first healthy player further down the same depth list. Depth charts are the nflverse mirror, not an NFL-published chart; treat as third-party until checked.",
+ "upstream_injuries": "https://github.com/nflverse/nflverse-data/releases/tag/injuries",
+ "upstream_depth": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+ "rows": []
+}

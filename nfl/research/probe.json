@@ -1,5 +1,5 @@
 {
-  "generatedUTC": "2026-11-13T13:10:32.930341Z",
+  "generatedUTC": "2026-11-13T13:11:42.141832Z",
   "note": "Raw probe only. No value in this file is published on the site; it exists to prove which official fields are machine-readable.",
   "sources": {
     "nfl_week5": {
@@ -19,7 +19,7 @@
     "nfl_week10": {
       "url": "https://www.nfl.com/schedules/2026/by-week/week-10",
       "httpStatus": 200,
-      "bytes": 2312722,
+      "bytes": 2312723,
       "diagnostics": {
         "rsc_push_blocks": 40,
         "weeklyGameDetails": 2,
@@ -100,7 +100,7 @@
     "game_sf_dal": {
       "url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
       "httpStatus": 200,
-      "bytes": 1173511,
+      "bytes": 1173554,
       "diagnostics": {
         "odds_field": 0,
         "odds_word": 0,

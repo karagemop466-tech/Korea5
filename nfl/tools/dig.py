@@ -27,20 +27,27 @@ def get(url):
         return r.read().decode("utf-8", "replace")
 
 
+OUT = []
+
+
 def show(label, text, limit=1400):
-    print("\n" + "=" * 78)
-    print("### " + label)
-    print("=" * 78)
-    print(text[:limit])
+    block = "\n" + "=" * 78 + "\n### " + label + "\n" + "=" * 78 + "\n" + text[:limit] + "\n"
+    print(block)
+    OUT.append(block)
+
+
+def emit(msg):
+    print(msg)
+    OUT.append(str(msg) + "\n")
 
 
 def dig_week(h):
     # final scores are rendered as "Away 24, Home 21, FINAL, Thursday, ..."
     pat = re.compile(r"([A-Z][A-Za-z0-9 .'&]{1,24}?) (\d{1,3}), ([A-Z][A-Za-z0-9 .'&]{1,24}?) (\d{1,3}), FINAL")
     hits = pat.findall(h)
-    print(f"score-pattern matches: {len(hits)}")
+    emit(f"score-pattern matches: {len(hits)}")
     for x in hits[:8]:
-        print("   ", x)
+        emit("    " + repr(x))
     m = pat.search(h)
     if m:
         s = max(0, m.start() - 700)
@@ -49,7 +56,7 @@ def dig_week(h):
 
 def dig_injuries(h):
     tables = [m.start() for m in re.finditer(r"<table", h)]
-    print("tables:", len(tables))
+    emit(f"tables: {len(tables)}")
     for i, p in enumerate(tables[:2]):
         show(f"injuries table #{i} start", h[p:p + 1800], 1800)
     # team heading before the first table
@@ -81,7 +88,7 @@ def dig_player(h):
 def dig_game(h):
     for kw in ("odds", "Odds", "spread", "moneyline"):
         n = len(re.findall(kw, h))
-        print(f"{kw}: {n} hits")
+        emit(f"{kw}: {n} hits")
         if n:
             p = h.find(kw)
             show(f"game page around '{kw}'", h[max(0, p - 400):p + 600], 1000)
@@ -89,6 +96,8 @@ def dig_game(h):
 
 def main():
     which = sys.argv[1] if len(sys.argv) > 1 else "all"
+    from pathlib import Path
+    dest = Path(__file__).resolve().parent.parent / "research" / "dig.txt"
     for k, url in URLS.items():
         if which not in ("all", k if k in ("week", "injuries", "depth", "stats", "player", "game") else "stats"):
             continue
@@ -102,6 +111,7 @@ def main():
         {"week": dig_week, "injuries": dig_injuries, "depth": dig_depth,
          "stats": dig_stats, "defstats": dig_stats, "player": dig_player,
          "game": dig_game}[k](h)
+    dest.write_text("".join(OUT)[:400_000], encoding="utf-8")
 
 
 if __name__ == "__main__":

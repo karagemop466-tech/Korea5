@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Validation gates · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="active">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Validation gates</h1><p class="lede">Nine gates, thresholds frozen before any result was seen, and the five mechanisms that separate skill from luck.</p>
+
+<div class="callout"><strong>Thresholds frozen 2026-11-13, before any strategy
+result was computed.</strong> These thresholds are frozen on the date above, before any strategy result was computed. Changing a threshold requires a new version number and a new freeze date; the change is logged in the Gate change log below. A threshold changed after results were seen is evidence the result was fitted.</div>
+
+<div class="statline">
+<div><b>9</b><span>gates defined</span></div>
+<div><b>6</b><span>fully automated</span></div>
+<div><b>1</b><span>need your decision</span></div>
+<div><b>2</b><span>need data we lack</span></div>
+<div><b>0</b><span>strategies certified</span></div>
+</div>
+<p class="prose">No strategy has a settled sample of 100 bets. With zero stored prices (Q01) no strategy can even be settled against a price. Certifying one now would require inventing data.</p>
+
+<h2>The gates</h2>
+<div class="scroll" style="max-height:none"><table class="tight"><thead><tr>
+<th>ID</th><th>Gate</th><th>Passes only when</th><th>Fails when</th><th>Evaluated by</th><th>Type</th>
+<th>Data checked against</th></tr></thead><tbody><tr>
+<td class="nowrap"><strong>G1</strong></td>
+<td><strong>Provenance</strong><br><span class="small dim">Does every input value come from a named official source, with a URL and a retrieval time?</span></td>
+<td class="small">100% of input rows carry sourceUrl + retrievedUTC, and the URL is on the approved official-domain list.</td>
+<td class="small">Any row with no source, an unofficial host, or an invented value.</td>
+<td class="small">nfl/tools/verify_nfl.py</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official data</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>G2</strong></td>
+<td><strong>Correlation honesty</strong><br><span class="small dim">Are dependent outcomes treated as dependent?</span></td>
+<td class="small">No parlay or combo price is published from a product of independent leg probabilities. Every combination shows the empirical joint probability, the independence product, and the signed difference, with n and an interval.</td>
+<td class="small">Any published combo price that silently assumes independence.</td>
+<td class="small">nfl/tools/verify_nfl.py (scans for independence products presented as prices)</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official data</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>G3</strong></td>
+<td><strong>Skill vs luck</strong><br><span class="small dim">Could this result have arisen from a coin that knows nothing?</span></td>
+<td class="small">Observed proper score beats the shuffled-outcome distribution at p &lt; 0.05, AND the strategy has at least the minimum settled sample, AND its calibration error is within tolerance.</td>
+<td class="small">p &gt;= 0.05, or sample below minimum, or calibration error above tolerance.</td>
+<td class="small">nfl/tools/analyze_market.py</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official data</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>G4</strong></td>
+<td><strong>Calibration</strong><br><span class="small dim">When the model says 60%, does it happen 60% of the time?</span></td>
+<td class="small">Expected calibration error (ECE) over deciles &lt;= 0.07 and no decile off by more than 0.15 with n&gt;=20 in that decile.</td>
+<td class="small">ECE above tolerance, or a badly miscalibrated decile.</td>
+<td class="small">nfl/tools/analyze_market.py</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official data</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>G5</strong></td>
+<td><strong>Uncertainty</strong><br><span class="small dim">Is the uncertainty printed next to the estimate?</span></td>
+<td class="small">Every published estimate carries n and a 90% interval; estimates with n below the suppression floor are withheld entirely.</td>
+<td class="small">A point estimate with no n, or an estimate published below the floor.</td>
+<td class="small">nfl/tools/verify_nfl.py</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official data</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>G6</strong></td>
+<td><strong>Honesty labelling</strong><br><span class="small dim">Is every non-official number labelled as a model output?</span></td>
+<td class="small">Every computed value carries MODEL or ESTIMATE; every unpublishable value is blank with an UNVERIFIED badge; no page claims a verified value that has no official source.</td>
+<td class="small">A computed number presented as a fact, or a blank cell with no badge.</td>
+<td class="small">nfl/tools/verify_nfl.py</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official data</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>G7</strong></td>
+<td><strong>Multiple testing</strong><br><span class="small dim">If 40 strategies were tried, is the winner still surprising?</span></td>
+<td class="small">Benjamini–Hochberg style false-discovery control across all strategies tested in the same cycle, at q = 0.10, applied to the G3 p-values.</td>
+<td class="small">A strategy promoted on a p-value that does not survive the false-discovery correction.</td>
+<td class="small">nfl/tools/analyze_market.py</td>
+<td><span class="badge official">OFFICIAL</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official data</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>G8</strong></td>
+<td><strong>Governance</strong><br><span class="small dim">Who decided, when, and on what evidence?</span></td>
+<td class="small">Every promotion, demotion and reward decision names a reviewer, a date, and a reason; the gate version that applied is printed alongside.</td>
+<td class="small">An accepted strategy with no named reviewer.</td>
+<td class="small">nfl/curated/suggestions.json review fields (owner decision — Q17)</td>
+<td><span class="badge judgement">JUDGEMENT</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official data</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr><tr>
+<td class="nowrap"><strong>G9</strong></td>
+<td><strong>Point-in-time integrity</strong><br><span class="small dim">Was the information used actually available at the moment the bet would have been made?</span></td>
+<td class="small">Every input carries a publication time; nothing published after the decision cutoff may be used. Lineup news after the cutoff is excluded.</td>
+<td class="small">Any input whose publication time is after the cutoff, or any input with no publication time.</td>
+<td class="small">requires a stored publication timestamp per input (not yet available for all sources — Q13)</td>
+<td><span class="badge judgement">JUDGEMENT</span></td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official data</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td>
+</tr></tbody></table></div>
+
+<h2>How luck is removed — the actual mechanism</h2>
+<div class="card prose">
+<p><strong>1. Proper scoring.</strong> Brier and log loss cannot be gamed by hedging or by refusing to commit.
+A win rate can: go 12&ndash;0 on coin flips and you look brilliant. Score those same coin flips and you do not.</p>
+<p><strong>2. Shuffle test.</strong> Take the strategy's picks, keep them, and randomly permute the outcomes
+2,000 times.
+If the real score sits inside that shuffled distribution, the result is what a know-nothing would have got.
+The test on a home-field prior currently returns
+p&nbsp;=&nbsp;1.000 — inside the distribution, so: luck.</p>
+<p><strong>3. Minimum sample.</strong> A 60% win rate on 20 bets is noise. The gate will not look at a strategy
+below 100 settled
+bets, and it prints that refusal rather than a provisional verdict.</p>
+<p><strong>4. Calibration.</strong> A model that says 60% must be right 60% of the time, not 45% of the time
+while winning 60% of its picks. Expected calibration error is computed over deciles.</p>
+<p><strong>5. Multiple testing.</strong> Testing 40 strategies guarantees a winner. The false-discovery guard
+raises the bar as the number of entrants grows, so the winner must be surprising <em>given how hard we looked</em>.</p>
+<p><strong>6. Point-in-time integrity.</strong> Information published after the decision cutoff is a leak, not a
+signal. Every input carries a publication time; the cutoff is kickoff minus 60 minutes, which is safely after
+the NFL's final game-status update at 90 minutes before kickoff.</p>
+</div>
+
+<h2>Gate change log</h2>
+<table class="tight"><thead><tr><th>Version</th><th>Date</th><th>Change</th><th>Results seen at the time</th>
+<th>Evidence base</th></tr></thead>
+<tbody><tr><td>1.0</td><td>2026-11-13</td><td>Initial freeze. Thresholds: minSample 100, alpha 0.05, ECE 0.07, q 0.10, suppression floors 8/6/8.</td><td>none — no strategy has been evaluated yet</td><td class='nowrap'><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official standings</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · data retrieved 2026-11-13T13:33:20.791202Z (newest official fetch) · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../../index.html">Korea5 planner</a> · also see the
+<a href="../../nfl-strategy.html">strategy lab proposal</a> and the
+<a href="../index.html">NFL Decision Support hub</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

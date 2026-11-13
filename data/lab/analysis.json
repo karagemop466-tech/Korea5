@@ -1,0 +1,627 @@
+{
+ "meta": {
+  "title": "NFL Lines Lab \u2014 dispersion, correlation and sample-size analysis",
+  "inputs": [
+   "data/lab/player-logs-2026.json",
+   "data/lab/gamebook-bills-vikings-2026-w9.json"
+  ],
+  "source": "All inputs are official NFL records committed under data/lab/ with their own source URLs.",
+  "generatedUTC": "2026-11-13",
+  "disclaimer": "These are properties of official game data. They are not probabilities of winning, not prices, and not evidence of an edge. No market or settlement data exists in this repository, so no win rate, yield, ROI or fair price is computed anywhere on this site.",
+  "method": "Pearson r on matched game-level observations; 95% intervals from the Fisher z transform with se = 1/sqrt(n-3); two-sided p-values from the t distribution with n-2 degrees of freedom via the regularized incomplete beta function; sample sizes from the normal approximation to the one-proportion z test."
+ },
+ "dispersion": [
+  {
+   "prop": "Justin Jefferson receiving yards",
+   "unit": "receiving yards",
+   "n": 7,
+   "mean": 56.14,
+   "stdev": 22.65,
+   "median": 55.0,
+   "min": 32,
+   "max": 92,
+   "range": 60,
+   "cv": 0.403,
+   "source": "https://www.nfl.com/players/justin-jefferson/stats/logs/"
+  },
+  {
+   "prop": "Jordan Addison receiving yards",
+   "unit": "receiving yards",
+   "n": 7,
+   "mean": 39.57,
+   "stdev": 31.15,
+   "median": 28.0,
+   "min": 0,
+   "max": 90,
+   "range": 90,
+   "cv": 0.787,
+   "source": "https://www.nfl.com/players/jordan-addison/stats/logs/"
+  },
+  {
+   "prop": "Aaron Jones rushing yards",
+   "unit": "rushing yards",
+   "n": 8,
+   "mean": 59.25,
+   "stdev": 39.51,
+   "median": 49.0,
+   "min": 16,
+   "max": 113,
+   "range": 97,
+   "cv": 0.667,
+   "source": "https://www.nfl.com/players/aaron-jones/stats/logs/"
+  },
+  {
+   "prop": "Josh Allen passing yards",
+   "unit": "passing yards",
+   "n": 8,
+   "mean": 253.38,
+   "stdev": 42.25,
+   "median": 250.5,
+   "min": 204,
+   "max": 334,
+   "range": 130,
+   "cv": 0.167,
+   "source": "https://www.nfl.com/players/josh-allen/stats/logs/"
+  },
+  {
+   "prop": "Minnesota Vikings team points",
+   "unit": "points",
+   "n": 8,
+   "mean": 18.25,
+   "stdev": 10.26,
+   "median": 15.5,
+   "min": 6,
+   "max": 39,
+   "range": 33,
+   "cv": 0.562,
+   "source": "https://www.nfl.com/players/justin-jefferson/stats/logs/"
+  },
+  {
+   "prop": "Buffalo Bills team points",
+   "unit": "points",
+   "n": 8,
+   "mean": 32.0,
+   "stdev": 6.76,
+   "median": 34.5,
+   "min": 23,
+   "max": 41,
+   "range": 18,
+   "cv": 0.211,
+   "source": "https://www.nfl.com/players/josh-allen/stats/logs/"
+  }
+ ],
+ "correlations": [
+  {
+   "a": "Justin Jefferson receiving yards",
+   "b": "Jordan Addison receiving yards",
+   "n": 6,
+   "weeks": [
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "r": -0.8192,
+   "ci95": [
+    -0.9795,
+    -0.0227
+   ],
+   "pValue": 0.0461,
+   "ciIncludesZero": false,
+   "pairNote": "Two same-team wide receivers in the same game \u2014 the most common two-leg prop structure.",
+   "sourceA": "https://www.nfl.com/players/justin-jefferson/stats/logs/",
+   "sourceB": "https://www.nfl.com/players/jordan-addison/stats/logs/"
+  },
+  {
+   "a": "Justin Jefferson receiving yards",
+   "b": "Aaron Jones rushing yards",
+   "n": 7,
+   "weeks": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    8,
+    9
+   ],
+   "r": 0.3139,
+   "ci95": [
+    -0.5751,
+    0.863
+   ],
+   "pValue": 0.493,
+   "ciIncludesZero": true,
+   "pairNote": "Same-team skill positions: a receiving yard prop and a rushing yard prop in one game.",
+   "sourceA": "https://www.nfl.com/players/justin-jefferson/stats/logs/",
+   "sourceB": "https://www.nfl.com/players/aaron-jones/stats/logs/"
+  },
+  {
+   "a": "Jordan Addison receiving yards",
+   "b": "Aaron Jones rushing yards",
+   "n": 7,
+   "weeks": [
+    1,
+    2,
+    3,
+    4,
+    7,
+    8,
+    9
+   ],
+   "r": 0.0672,
+   "ci95": [
+    -0.7224,
+    0.7807
+   ],
+   "pValue": 0.8862,
+   "ciIncludesZero": true,
+   "pairNote": "Same-team skill positions: second receiving yard prop against a rushing yard prop.",
+   "sourceA": "https://www.nfl.com/players/jordan-addison/stats/logs/",
+   "sourceB": "https://www.nfl.com/players/aaron-jones/stats/logs/"
+  },
+  {
+   "a": "Justin Jefferson receiving yards",
+   "b": "Minnesota Vikings team points",
+   "n": 7,
+   "weeks": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    8,
+    9
+   ],
+   "r": 0.5542,
+   "ci95": [
+    -0.3413,
+    0.9223
+   ],
+   "pValue": 0.1967,
+   "ciIncludesZero": true,
+   "pairNote": "Player prop against the team scoring prop \u2014 the structure of a player-plus-team-total parlay.",
+   "sourceA": "https://www.nfl.com/players/justin-jefferson/stats/logs/",
+   "sourceB": "https://www.nfl.com/players/josh-allen/stats/logs/"
+  },
+  {
+   "a": "Aaron Jones rushing yards",
+   "b": "Minnesota Vikings team points",
+   "n": 8,
+   "weeks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9
+   ],
+   "r": 0.0139,
+   "ci95": [
+    -0.6976,
+    0.7116
+   ],
+   "pValue": 0.9739,
+   "ciIncludesZero": true,
+   "pairNote": "Rushing yard prop against the team scoring prop.",
+   "sourceA": "https://www.nfl.com/players/aaron-jones/stats/logs/",
+   "sourceB": "https://www.nfl.com/players/josh-allen/stats/logs/"
+  },
+  {
+   "a": "Justin Jefferson receiving yards",
+   "b": "Minnesota Vikings game total",
+   "n": 7,
+   "weeks": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    8,
+    9
+   ],
+   "r": 0.497,
+   "ci95": [
+    -0.4092,
+    0.9096
+   ],
+   "pValue": 0.2564,
+   "ciIncludesZero": true,
+   "pairNote": "Player prop against the over/under total for the same game.",
+   "sourceA": "https://www.nfl.com/players/justin-jefferson/stats/logs/",
+   "sourceB": "https://www.nfl.com/players/josh-allen/stats/logs/"
+  },
+  {
+   "a": "Minnesota Vikings team points",
+   "b": "Minnesota Vikings game total",
+   "n": 8,
+   "weeks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9
+   ],
+   "r": 0.8913,
+   "ci95": [
+    0.5018,
+    0.9803
+   ],
+   "pValue": 0.003,
+   "ciIncludesZero": false,
+   "pairNote": "Team scoring against the full game total \u2014 the dependence inside a single over/under market.",
+   "sourceA": "https://www.nfl.com/players/justin-jefferson/stats/logs/",
+   "sourceB": "https://www.nfl.com/players/josh-allen/stats/logs/"
+  },
+  {
+   "a": "Josh Allen passing yards",
+   "b": "Buffalo Bills team points",
+   "n": 8,
+   "weeks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9
+   ],
+   "r": 0.3866,
+   "ci95": [
+    -0.4372,
+    0.8576
+   ],
+   "pValue": 0.3442,
+   "ciIncludesZero": true,
+   "pairNote": "Passing yard prop against the team scoring prop.",
+   "sourceA": "https://www.nfl.com/players/josh-allen/stats/logs/",
+   "sourceB": "https://www.nfl.com/players/josh-allen/stats/logs/"
+  }
+ ],
+ "sampleSize": [
+  {
+   "priceBasis": "-110 (standard moneyline price)",
+   "breakEven": 0.5238,
+   "trueWinRate": 0.5338,
+   "edgeOverBreakEven": 0.01,
+   "observationsNeeded": 19565,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "-110 (standard moneyline price)",
+   "breakEven": 0.5238,
+   "trueWinRate": 0.5438,
+   "edgeOverBreakEven": 0.02,
+   "observationsNeeded": 4887,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "-110 (standard moneyline price)",
+   "breakEven": 0.5238,
+   "trueWinRate": 0.5538,
+   "edgeOverBreakEven": 0.03,
+   "observationsNeeded": 2170,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "-110 (standard moneyline price)",
+   "breakEven": 0.5238,
+   "trueWinRate": 0.5738,
+   "edgeOverBreakEven": 0.05,
+   "observationsNeeded": 779,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "-110 (standard moneyline price)",
+   "breakEven": 0.5238,
+   "trueWinRate": 0.5988,
+   "edgeOverBreakEven": 0.075,
+   "observationsNeeded": 345,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "-105 (standard spread price)",
+   "breakEven": 0.5122,
+   "trueWinRate": 0.5222,
+   "edgeOverBreakEven": 0.01,
+   "observationsNeeded": 19603,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "-105 (standard spread price)",
+   "breakEven": 0.5122,
+   "trueWinRate": 0.5322,
+   "edgeOverBreakEven": 0.02,
+   "observationsNeeded": 4898,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "-105 (standard spread price)",
+   "breakEven": 0.5122,
+   "trueWinRate": 0.5422,
+   "edgeOverBreakEven": 0.03,
+   "observationsNeeded": 2175,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "-105 (standard spread price)",
+   "breakEven": 0.5122,
+   "trueWinRate": 0.5622,
+   "edgeOverBreakEven": 0.05,
+   "observationsNeeded": 781,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "-105 (standard spread price)",
+   "breakEven": 0.5122,
+   "trueWinRate": 0.5872,
+   "edgeOverBreakEven": 0.075,
+   "observationsNeeded": 346,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "50/50 (no vig)",
+   "breakEven": 0.5,
+   "trueWinRate": 0.51,
+   "edgeOverBreakEven": 0.01,
+   "observationsNeeded": 19620,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "50/50 (no vig)",
+   "breakEven": 0.5,
+   "trueWinRate": 0.52,
+   "edgeOverBreakEven": 0.02,
+   "observationsNeeded": 4904,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "50/50 (no vig)",
+   "breakEven": 0.5,
+   "trueWinRate": 0.53,
+   "edgeOverBreakEven": 0.03,
+   "observationsNeeded": 2178,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "50/50 (no vig)",
+   "breakEven": 0.5,
+   "trueWinRate": 0.55,
+   "edgeOverBreakEven": 0.05,
+   "observationsNeeded": 783,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  },
+  {
+   "priceBasis": "50/50 (no vig)",
+   "breakEven": 0.5,
+   "trueWinRate": 0.575,
+   "edgeOverBreakEven": 0.075,
+   "observationsNeeded": 347,
+   "note": "Two-sided one-proportion z test, alpha = 0.05, power = 0.80, normal approximation."
+  }
+ ],
+ "noiseGates": [
+  {
+   "prop": "Justin Jefferson receiving yards",
+   "stdev": 22.65,
+   "gamesNeededForPlus3YardEdge": 58,
+   "gamesNeededForPlus5YardEdge": 21,
+   "gamesNeededForPlus10YardEdge": 6,
+   "note": "n >= (standard deviation / modelled edge)^2, so that the standard error of the mean falls below the modelled edge."
+  },
+  {
+   "prop": "Jordan Addison receiving yards",
+   "stdev": 31.15,
+   "gamesNeededForPlus3YardEdge": 108,
+   "gamesNeededForPlus5YardEdge": 39,
+   "gamesNeededForPlus10YardEdge": 10,
+   "note": "n >= (standard deviation / modelled edge)^2, so that the standard error of the mean falls below the modelled edge."
+  },
+  {
+   "prop": "Aaron Jones rushing yards",
+   "stdev": 39.51,
+   "gamesNeededForPlus3YardEdge": 174,
+   "gamesNeededForPlus5YardEdge": 63,
+   "gamesNeededForPlus10YardEdge": 16,
+   "note": "n >= (standard deviation / modelled edge)^2, so that the standard error of the mean falls below the modelled edge."
+  },
+  {
+   "prop": "Josh Allen passing yards",
+   "stdev": 42.25,
+   "gamesNeededForPlus3YardEdge": 199,
+   "gamesNeededForPlus5YardEdge": 72,
+   "gamesNeededForPlus10YardEdge": 18,
+   "note": "n >= (standard deviation / modelled edge)^2, so that the standard error of the mean falls below the modelled edge."
+  }
+ ],
+ "correlationPower": [
+  {
+   "trueCorrelation": 0.2,
+   "n": 8,
+   "powerVsZero": 0.074,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.2,
+   "n": 17,
+   "powerVsZero": 0.118,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.2,
+   "n": 33,
+   "powerVsZero": 0.199,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.2,
+   "n": 65,
+   "powerVsZero": 0.358,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.2,
+   "n": 100,
+   "powerVsZero": 0.515,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.2,
+   "n": 200,
+   "powerVsZero": 0.812,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.3,
+   "n": 8,
+   "powerVsZero": 0.106,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.3,
+   "n": 17,
+   "powerVsZero": 0.212,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.3,
+   "n": 33,
+   "powerVsZero": 0.396,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.3,
+   "n": 65,
+   "powerVsZero": 0.683,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.3,
+   "n": 100,
+   "powerVsZero": 0.862,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.3,
+   "n": 200,
+   "powerVsZero": 0.991,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.4,
+   "n": 8,
+   "powerVsZero": 0.157,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.4,
+   "n": 17,
+   "powerVsZero": 0.354,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.4,
+   "n": 33,
+   "powerVsZero": 0.641,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.4,
+   "n": 65,
+   "powerVsZero": 0.916,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.4,
+   "n": 100,
+   "powerVsZero": 0.987,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.4,
+   "n": 200,
+   "powerVsZero": 1.0,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.5,
+   "n": 8,
+   "powerVsZero": 0.233,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.5,
+   "n": 17,
+   "powerVsZero": 0.538,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.5,
+   "n": 33,
+   "powerVsZero": 0.853,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.5,
+   "n": 65,
+   "powerVsZero": 0.991,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.5,
+   "n": 100,
+   "powerVsZero": 1.0,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.5,
+   "n": 200,
+   "powerVsZero": 1.0,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.7,
+   "n": 8,
+   "powerVsZero": 0.492,
+   "detectable": false
+  },
+  {
+   "trueCorrelation": 0.7,
+   "n": 17,
+   "powerVsZero": 0.901,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.7,
+   "n": 33,
+   "powerVsZero": 0.997,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.7,
+   "n": 65,
+   "powerVsZero": 1.0,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.7,
+   "n": 100,
+   "powerVsZero": 1.0,
+   "detectable": true
+  },
+  {
+   "trueCorrelation": 0.7,
+   "n": 200,
+   "powerVsZero": 1.0,
+   "detectable": true
+  }
+ ]
+}

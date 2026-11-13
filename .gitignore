@@ -6,4 +6,5 @@ research-ef8b5b30/raw/
 __pycache__/
 *.pyc
 research/lines-raw/
-research/lines-raw/
+# NFL probe samples are large raw page dumps; keep the diagnostics JSON only
+nfl/research/raw/

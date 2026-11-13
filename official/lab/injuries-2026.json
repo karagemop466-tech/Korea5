@@ -1,36 +1,22 @@
 {
  "meta": {
-  "dataset": "NFL 2026 weekly official injury reports captured from nfl.com/injuries",
-  "retrievedUTC": "2026-11-13T13:15:16.796539+00:00",
+  "dataset": "NFL 2026 official weekly injury report rows (nfl.com/injuries)",
+  "retrievedUTC": "2026-11-13T13:19:09.151428+00:00",
   "rows": 0,
-  "perWeek": {
-   "week 1": 0,
-   "week 2": 0,
-   "week 3": 0,
-   "week 4": 0,
-   "week 5": 0,
-   "week 6": 0,
-   "week 7": 0,
-   "week 8": 0,
-   "week 9": 0,
-   "week 10": 0,
-   "week 11": 0
+  "perRequest": {
+   "current": 0,
+   "9": 0,
+   "10": 0,
+   "11": 0
   },
-  "sourceName": "NFL.com official injury report",
   "sourcePages": [
-   "https://www.nfl.com/injuries/?season=2026&week=1",
-   "https://www.nfl.com/injuries/?season=2026&week=2",
-   "https://www.nfl.com/injuries/?season=2026&week=3",
-   "https://www.nfl.com/injuries/?season=2026&week=4",
-   "https://www.nfl.com/injuries/?season=2026&week=5",
-   "https://www.nfl.com/injuries/?season=2026&week=6",
-   "https://www.nfl.com/injuries/?season=2026&week=7",
-   "https://www.nfl.com/injuries/?season=2026&week=8",
+   "https://www.nfl.com/injuries/",
    "https://www.nfl.com/injuries/?season=2026&week=9",
    "https://www.nfl.com/injuries/?season=2026&week=10",
    "https://www.nfl.com/injuries/?season=2026&week=11"
   ],
-  "note": "Team attribution and depth-chart order are NOT part of the embedded payload if the page omits them; those fields stay null rather than being inferred."
+  "sourceName": "NFL.com official injury report",
+  "note": "Practice participation and game status are separate official fields; the page does not publish depth-chart order, so backup tier is never inferred here."
  },
  "rows": []
 }

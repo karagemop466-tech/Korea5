@@ -1,0 +1,30 @@
+{
+ "meta": {
+  "dataset": "NFL 2026 official standings snapshots (record, points for/against, splits)",
+  "retrievedUTC": "2026-11-13T13:19:08.952079+00:00",
+  "rows": 0,
+  "weeksSeen": [],
+  "sourcePages": [
+   "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "https://www.nfl.com/schedules/2026/by-week/week-5",
+   "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "https://www.nfl.com/schedules/2026/by-week/week-11",
+   "https://www.nfl.com/schedules/2026/by-week/week-12",
+   "https://www.nfl.com/schedules/2026/by-week/week-13",
+   "https://www.nfl.com/schedules/2026/by-week/week-14",
+   "https://www.nfl.com/schedules/2026/by-week/week-15",
+   "https://www.nfl.com/schedules/2026/by-week/week-16",
+   "https://www.nfl.com/schedules/2026/by-week/week-17",
+   "https://www.nfl.com/schedules/2026/by-week/week-18"
+  ],
+  "sourceName": "NFL.com official standings (embedded by-week payload)"
+ },
+ "rows": []
+}

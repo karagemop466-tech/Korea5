@@ -18,6 +18,10 @@ jobs:
         run: |
           python3 scripts/analyze_lab.py
           python3 tools/build_lab.py
+          python3 scripts/nfl_lab/build_site.py
+          python3 scripts/nfl_lab/verify.py
+          python3 scripts/build_nfl.py
+          python3 scripts/verify_nfl.py
           python3 scripts/build_site.py
           python3 tools/build_extra.py
           python3 scripts/audit_certainty.py

@@ -150,9 +150,16 @@ def build_index():
     ana = ANA.get("correlations", [])
     pair = next((c for c in ana if "Jordan Addison" in c["b"]), None)
     pair_ci = "" if not pair else f"{pair['ci95'][0]} to {pair['ci95'][1]}"
-    ss = [s for s in ANA.get("sampleSize", []) if abs(s["breakEven"] - 110 / 210) < 1e-6]
+    # The -110 rows are selected by their price label, not by comparing the
+    # rounded break-even probability to 110/210: the stored value is rounded to
+    # four decimals, so a tolerance comparison silently matched nothing.
+    ss = [s for s in ANA.get("sampleSize", []) if "-110" in s["priceBasis"]]
+    if not ss:
+        raise SystemExit("build_lab: no -110 sample-size rows in analysis.json")
     n5 = next((s["observationsNeeded"] for s in ss if s["edgeOverBreakEven"] == 0.05), None)
     n3 = next((s["observationsNeeded"] for s in ss if s["edgeOverBreakEven"] == 0.03), None)
+    if n5 is None or n3 is None:
+        raise SystemExit("build_lab: the +5 or +3 point sample-size row is missing")
     inj_status = len(INJ.get("gameStatus", []))
     teams = len(INJ.get("practice", {}))
     rows = len([r for t in INJ.get("practice", {}).values() for r in t["rows"]])
@@ -177,7 +184,7 @@ service, a price feed, or a validated strategy. The leaderboard is published emp
 parlay as the product of two marginal probabilities would be wrong, in the direction that favours the book.</td>
 <td>{srcs([pair['sourceA'], pair['sourceB']] if pair else [])}</td></tr>
 <tr><td>2</td><td>A small edge cannot be told apart from luck without a large sample</td>
-<td>{esc(n5)} bets for a +5 point edge; {esc(n3)} for +3 points at -110</td>
+<td>{esc(f"{n5:,}")} bets for a +5 point edge; {esc(f"{n3:,}")} for +3 points at -110</td>
 <td>This is the number that decides whether a strategy is skill or luck. It is now a hard entry condition on the leaderboard.</td>
 <td>{src('https://www.nfl.com/players/justin-jefferson/stats/logs/')}</td></tr>
 <tr><td>3</td><td>Player props are noisy</td>
@@ -212,6 +219,14 @@ recommended order — so a decision can be made before any code is written.</p><
 
 <h2>Official sources used</h2>
 {source_table()}
+<div class="callout"><strong>Two labs, one question.</strong> This lab is the <em>evidence</em> side: official NFL records
+only — the published injury report, official player game logs, the official Game Book — and every correlation, dispersion
+figure and minimum-sample rule is computed from them by <code>scripts/analyze_lab.py</code>. The companion
+<a href="../nfl-lab/index.html">NFL Lines Lab (model)</a> is the <em>model</em> side: it builds and back-tests a line
+model against third-party game data and reports how it compares with the market spread. A third page,
+<a href="../nfl/index.html">NFL Decision Support</a>, holds the structured layer: the requirements list, the method and
+validation-gate reference, the leaderboard reward design and the source registry. None of the three publishes a
+validated edge, and each says so on its own landing page.</div>
 <p class="small">Checklist of what was verified and how: see <a href="flags.html">Flagged for Review</a> and
 <a href="../research/NFL-LINES-LAB.md">the research notes</a>. The parallel line-origination design memo is kept at
 <a href="../research/NFL-LINES.md">research/NFL-LINES.md</a>, with the earlier strategy notes at

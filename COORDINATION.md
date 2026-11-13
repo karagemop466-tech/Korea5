@@ -809,10 +809,17 @@ pages so the NFL Lines area is one coherent section. The root nav carries both e
 
 | Step | Result |
 |---|---|
-| Pull request | (filled after merge) |
-| Merge | (filled after merge) |
-| GitHub Pages build | (filled after merge) |
-| Live site | https://karagemop466-tech.github.io/Korea5/nfl/ |
+| Pull request | **#42 — https://github.com/karagemop466-tech/Korea5/pull/42** — "NFL Decision Support hub: requirements, method, leaderboard design, source registry + verifier (consolidated with origination section)" |
+| Merge conflict during PR | `main` advanced twice while the PR was open (PRs #43/#44 added the `lab/` NFL Lab section and regenerated the link report). Resolved locally by merging `origin/main` with `git merge` (not rebase, to preserve history). Conflicts resolved by **union**: `COORDINATION.md` keeps both appended sections; `index.html` keeps `main`'s nav (NFL Lab / Decisions / Suggestions) and adds the single "NFL Decision Support" link; `verification/links.json` regenerated via `scripts/check_links.py`. No work discarded. |
+| Merge | **Merged** into `main` 2026-11-13T13:28:18Z, merge commit `0a4c0f4e4b3e2ab0651ce914e95c0b6eaba70940` (`gh pr merge 42 --merge`, no waiting) |
+| GitHub Pages build | status **built**, source `main /` |
+| Live site | https://karagemop466-tech.github.io/Korea5/nfl/ — fetched live `nfl/index.html` and confirmed the dashboard, verified anchors with official source links, requirements coverage, method, leaderboard summary and companion-origination links all render |
+
+**Status: N1–N9 done.** The NFL Lines area is one coherent section: the companion origination pages
+(`nfl-*.html`) and the `lab/` NFL Lab pages (built by parallel sessions) plus this session's `nfl/` Decision
+Support layer (requirements, method, leaderboard design, source registry + verifier). No unclaimed or
+overlapping task remains for this session. Flagged irregularities and unverified items remain published and
+non-blocking.
 
 
 
@@ -1027,7 +1034,7 @@ Both sessions cover the same NFL requirements (questions/information/answers, su
 
 | Session ID | Branch | Role | Status |
 |---|---|---|---|
-| `arena-c9041d2a` | `arena/c9041d2a-korea5` | NFL decisions page, suggestions queue, line-origination research notes, injury/lineup tracking, site integration, PR #38 to main | active |
+| `arena-c9041d2a` | `arena/c9041d2a-korea5` | NFL decisions page, suggestions queue, line-origination research notes, injury/lineup tracking, site integration, PR #38 to main | done |
 
 | # | Task | Owner | Status | Files |
 |---|---|---|---|---|
@@ -1035,14 +1042,24 @@ Both sessions cover the same NFL requirements (questions/information/answers, su
 | N4 | Decisions-before-implementation page: questions / information known / missing / answer / discovery step / official source | arena-c9041d2a | **done** | `decisions.html` |
 | N5 | Suggestions review section: propose → under review → chosen/rejected/blocked/implemented; reviewer decision recorded before anything is implemented | arena-c9041d2a | **done** | `suggestions.html` |
 | N6 | NFL line origination, signal families, singles/parlays/player-prop combos, correlation measurement, validation gates, injury/lineup tracker, paper-first leaderboard | arena-c9041d2a | **done** | `nfl-strategy.html`, `research/NFL-LINES.md` |
-| N7 | Site integration: navigation merged with session `arena/8602d76f`, dashboard tables, flagged additions, local link check, certainty audit | arena-c9041d2a | **in progress** | `index.html`, `nfl.html`, `nfl-strategy.html`, `scripts/build_site.py`, COORDINATION.md |
-| N8 | Pull request #38 to main, merge, confirm GitHub Pages deploy, record PR link and result | arena-c9041d2a | **in progress** | `COORDINATION.md` |
+| N7 | Site integration: navigation merged with session `arena/8602d76f`, dashboard tables, flagged additions, local link check, certainty audit | arena-c9041d2a | **done** | `index.html`, `nfl.html`, `nfl-strategy.html`, `scripts/build_site.py`, COORDINATION.md |
+| N8 | Pull request #38 to main, merge, confirm GitHub Pages deploy, record PR link and result | arena-c9041d2a | **done** | `COORDINATION.md` |
 
 Scope: this session works only on branch `arena/c9041d2a-korea5`; no `session-<id>/<task>` branches are created or pushed (fixed by the Arena session rule). All NFL analytics content is research design only: no measured edge, correlation value, ROI or top-performing strategy is claimed; no betting lines are invented; any value not published by an official source is left blank and flagged unverified.
 
 Change log:
 - **2026-11-13** — Session `arena-c9041d2a` claims N3–N8. Branch `arena/c9041d2a-korea5`, active.
 - **2026-11-13** — Merge conflict with `origin/main` (session `arena/8602d76f`, PR #36) resolved by keeping both sessions' files: planner nav extended with both link sets; COORDINATION.md sections appended; `research/EXECUTIVE-SUMMARY.md` kept at this session's superset version; `extra/data/link-report.json` and `extra/summary.html` fixes from `origin/main` retained.
+- **2026-11-13** — CI failure on the PR merge commit fixed: `tools/build_extra.py` `inline()` wrote bare links `NFL-STRATEGY.md` / `NFL-LINES.md` into `extra/summary.html` where they resolve inside `extra/` and are missing (verify_extra.py: 2 missing local links). Fixed by pointing `research/EXECUTIVE-SUMMARY.md` at `../research/NFL-STRATEGY.md` and `../research/NFL-LINES.md`, and making `inline()` in `tools/build_extra.py` rewrite bare research `.md` links to `../research/<file>` defensively. Full pipeline re-verified green on main.
+
+### Completion record — session `arena-c9041d2a` (2026-11-13)
+
+- **Pull request:** #38 — https://github.com/karagemop466-tech/Korea5/pull/38 — "NFL decision support: decisions page, suggestions queue, line-origination research", opened from `arena/c9041d2a-korea5` to `main`, merged without waiting, merge commit `d23fb1b7621420abc66d99bb0dd9579df6a65fc5` (ancestor of main tip `a22bd06`).
+- **Merge result:** merged to `main` without waiting for review; PR state MERGED at 2026-11-13T13:20:45Z.
+- **CI:** `Planner certainty and site checks` run 43433686625 — success on main tip `a22bd06` (build_site.py, build_extra.py, audit_certainty.py x2, check_links.py 22 pages / 432 local links / 0 missing, verify_extra.py 31/31 / 0 missing local / 0 rows missing source, node syntax + calendar-today tests, compileall). Earlier PR-run failure 43433107594 (bare `.md` links in generated summary.html) was fixed as noted above before the final push.
+- **GitHub Pages:** build+deploy succeeded on main tip `a22bd06`; Pages API status `built`, source `main` /, URL https://karagemop466-tech.github.io/Korea5/. Live spot checks served correctly: `/`, `/decisions.html`, `/suggestions.html` (root pages now point into the consolidated NFL Lines Lab at `/lab/`).
+- **Flagged irregularities:** published on `flagged.html` and `nfl-flagged.html` with official links; none block the merge; none silently filled.
+- No manual input was required; all work was done on branch `arena/c9041d2a-korea5`, pushed, and merged via PR #38 without waiting.
 
 ### Integration of the parallel NFL sessions (arena-c6eea73d, 2026-11-13)
 
@@ -1210,3 +1227,167 @@ Consequences and how they were handled:
   for this PR. After merging, those workflow files exist on `main` and subsequent PRs run them normally.
 - No gate was weakened, skipped or marked optional to get past this. Nothing in the PR deletes or edits an
   existing workflow: `certainty`, `data`, `verify`, `probe`, `extract` and the `-ef8b5b30` set are untouched.
+
+- Integration request still open: root README link to the lab (R5). Not done by this session.
+### Post-merge defect found and fixed (arena-c6eea73d, 2026-11-13)
+
+After PR #40 was merged and Pages had deployed, a live read of the deployed landing page showed one headline value
+rendering blank: *"bets for a +5 point edge; for +3 points at -110"* — the 779 and 2,170 were missing.
+
+**Cause.** `tools/build_lab.py` selected the -110 sample-size rows by comparing the stored break-even probability
+(0.5238, rounded to four decimals) with `110 / 210` using a `1e-6` tolerance. The comparison matched **no** rows, so
+the two numbers interpolated as empty strings and the page published a sentence with no number in it.
+
+**The verifier passed anyway.** `tools/verify_lab.py` repeated the same comparison with an even tighter tolerance
+(`1e-9`), so its sample-size loop iterated over an empty list, `hit` was `None`, and the `if hit and ...` guard skipped
+every assertion. The check was vacuous — it reported success while testing nothing.
+
+**Fixes applied.**
+
+1. The builder now selects the rows by their price label (`"-110" in priceBasis`) and raises if the list is empty or if
+   the +5 or +3 point row is missing, so a missing number can never be published again.
+2. The verifier uses the same label-based selection and now **fails** when a required sample-size row is absent, rather
+   than skipping the check.
+3. The verifier gained page-level link resolution: every in-repository link on every lab page must resolve to a file that
+   exists, and a `#fragment` must match an `id`/`name` that actually exists in the target file.
+4. Headline numbers are now printed with thousands separators (779, 2,170).
+
+**Negative tests run to prove the verifier is no longer vacuous** (each injected, detected, then reverted):
+
+| Injected fault | Detected |
+|---|---|
+| Headline number blanked | `sample-size headline 779 is not published` |
+| Link to a non-existent file | `page links to a file that does not exist` |
+| Link to a non-existent anchor | `anchor link points at a missing anchor` |
+
+**Published impact.** One number was blank on the live site between the first deploy and this fix. No other published
+value was affected. The defect is recorded as flag **L16** on `lab/flags.html` with its cause and fix, so the record
+shows what went wrong rather than quietly correcting it.
+
+**Verified after the fix:** the full pipeline is green — 45 pages, 1,261 local links, 1,196 external links, 0 missing;
+lab verification 0 failures; certainty audit passes twice; Node syntax and calendar tests pass; 5/5 Python unit tests
+pass; `compileall` and `git diff --check` clean.
+
+### Integration of the third NFL lab (arena-c6eea73d, 2026-11-13)
+
+A third session, `arena/1e59465a-korea5`, merged its own NFL work while this branch was being finalised: **PR #39**
+(`nfl-lab/`, `data/nfl-lab/`, `scripts/nfl_lab/`), later recorded in **PR #43**. That work is a **model and back-test**
+lab: it builds a line model from third-party game data, tests it walk-forward and out-of-sample, compares it with the
+market spread, and leaves the market lines blank because their upstream source is not named.
+
+**Nothing of that session's work was removed or rewritten.** Its files, its verifier and its claims are untouched.
+
+**What was found and how it was handled.** The new section was merged into `main` but was not reachable: it was absent
+from the site navigation and from the README, which the session itself had left as an open integration request (R5).
+It also sat alongside this session's `lab/` section, giving the site two NFL surfaces with no stated relationship.
+
+**Integration applied.**
+
+1. **Navigation.** The root navigation now carries both, labelled for what they are: **NFL Lab** (`lab/index.html`,
+   the evidence workbench), **Decisions**, **Suggestions**, and **NFL Model** (`nfl-lab/index.html`, the model and
+   back-test lab).
+2. **Cross-links both ways.** Each lab landing page now states which side of the question it covers and links to the
+   other. `lab/` is the *evidence* side, built only on official NFL records (published injury report, official player
+   game logs, official Game Book), with every correlation, dispersion figure and minimum-sample rule computed from them
+   by `scripts/analyze_lab.py`. `nfl-lab/` is the *model* side, built from third-party game data with the market spread
+   left blank and flagged unverified. Both landing pages say plainly that neither publishes a validated edge.
+3. **README (the open R5 request).** The README now has a section pointing at both labs and stating that neither
+   publishes a win rate, yield or validated edge, and that both keep the leaderboard empty until a strategy passes
+   every gate.
+4. **CI.** `.github/workflows/certainty.yml` now builds and verifies the model lab as well:
+   `python3 scripts/nfl_lab/build_site.py` and `python3 scripts/nfl_lab/verify.py`, alongside the existing lab steps.
+
+**Independent check of the merged model lab.** Its own verifier passes: 1,624 table rows — 1,549 official-linked, 47
+flagged, 28 method-table rows, **0 without a source**; 0 missing local links; 15 data files parse as JSON; the only
+non-official external domain is `github.com`, used on flagged and method rows only. Its data provenance was inspected
+rather than assumed: `data/nfl-lab/games-source.json` records the archive URL, the archive SHA-256 and the per-file
+SHA-256 of `nflverse/nfldata`, and states plainly that the file's own documentation does not name the upstream source
+of the spread and total lines, so they are treated as unverified third-party input. The model reports itself as less
+accurate than the market spread (model MAE 10.17 pts against market spread MAE 9.79 pts over 2016-25), which is
+published rather than hidden.
+
+**Verified after the integration:** the full pipeline is green — **57 pages, 1,492 local links, 1,229 external links,
+0 missing**; lab verification 0 failures; model-lab verification pass; certainty audit passes twice; Node syntax and
+calendar tests pass; 5/5 Python unit tests pass; `compileall` and `git diff --check` clean; a second rebuild produced
+no further changes, so the output is deterministic.
+
+### Integration of the fourth NFL hub (arena-c6eea73d, 2026-11-13)
+
+A fourth session, `arena/e96c5f87-korea5`, merged an **NFL Decision Support** hub via **PR #42** (`nfl/` with
+`nfl/data/*.json`, `scripts/build_nfl.py`, `scripts/verify_nfl.py`). It is the structured layer of the programme: the
+R1–R9 requirements list, the method and validation-gate reference, the leaderboard reward design and the source
+registry. Its companion origination pages are the retained `nfl-*.html` addresses, which resolve into `lab/`.
+
+**Nothing of that session's work was removed or rewritten.** Its files, its data and its verifier are untouched.
+
+**What was found and how it was handled.** Like the model lab before it, the hub was merged but unreachable — absent
+from the site navigation, so a visitor had no way in except by typing the URL. Its own verifier passes
+(`scripts/verify_nfl.py`: 40 local links, 0 missing, 0 non-official external links, all checks green).
+
+**Integration applied.**
+
+1. **Navigation.** The root navigation now carries all three surfaces, each labelled for what it is:
+   **NFL Lab** (`lab/index.html`, evidence), **Decisions** (`lab/questions.html`), **Suggestions**
+   (`lab/suggestions.html`), **NFL Model** (`nfl-lab/index.html`, model and back-tests) and **NFL Decision Support**
+   (`nfl/index.html`, structured requirements/method/leaderboard design).
+2. **Cross-links.** The `nfl/` hub landing page and the `lab/` landing page each now state which layer the other two
+   cover and link to them, so a reader can tell why three sections exist and what each is authoritative for.
+3. **CI.** `.github/workflows/certainty.yml` now builds and verifies this hub too (`scripts/build_nfl.py`,
+   `scripts/verify_nfl.py`), so its pages cannot drift from their generator.
+
+**Verified after the integration:** the full pipeline is green — **62 pages, 1,550 local links, 1,235 external links,
+0 missing**; all three NFL verifiers pass (evidence lab, model lab, structured hub); certainty audit passes twice; Node
+syntax and calendar tests pass; 5/5 Python unit tests pass; `compileall` and `git diff --check` clean.
+
+**Note on the four-way duplication.** Four parallel sessions worked the same question, so the site now carries three
+NFL surfaces plus the retained pointer addresses. Nothing was deleted — each section keeps its own data, generator and
+verifier, and each is reachable and cross-linked. The duplication is recorded here rather than resolved by removing
+another session's work, which would have exceeded this session's scope.
+
+### Publication result and live-site verification (arena-c6eea73d, 2026-11-13)
+
+**Pull requests.** PR **#40** (the lab itself) and PR **#48** (the defect fix and the integration of the three
+parallel surfaces) were both created against `main`, passed CI, and were merged with a merge commit, without waiting
+for review:
+
+| PR | Merge commit | Merged at | CI |
+|---|---|---|---|
+| #40 | `8c12949` | 2026-11-13T13:23:42Z | validate: pass |
+| #48 | `1c2a508` | 2026-11-13T13:31:50Z | validate: pass |
+
+**GitHub Pages.** Both deployments ran the `pages build and deployment` workflow on `main` and reported **success**
+(run 43433266619 after #40, run 43434442924 after #48).
+
+**Live-site verification.** The deployed site was then read back over the network — not assumed from the commit:
+
+| Check | Result |
+|---|---|
+| `lab/index.html` headline finding 2 | **"779 bets for a +5 point edge; 2,170 for +3 points at -110"** — the number that was blank is published |
+| `lab/index.html` cross-link block | present, linking the model lab and the Decision Support hub |
+| `lab/index.html` official-source table | 10 sources, each linked, each dated 2026-11-13 |
+| Root navigation (read from the built HTML) | NFL Lab · Decisions · Suggestions · NFL Model · NFL Decision Support |
+| Dashboard "Explore by category" | lists NFL Lines Lab, NFL Model & back-tests, NFL Decision Support |
+| `nfl.html` | links all three NFL surfaces |
+
+**Note on the first read.** The first read of the live page still showed the blank number. That was a stale CDN copy,
+not a failed deployment: the fix was confirmed present in `origin/main` (`1c2a508`) and the deployment had reported
+success. Re-reading with a cache-busting query string returned the corrected page. This is recorded because "the
+deploy succeeded" and "the live page serves the fix" are different claims and only the second one was checked.
+
+**Final state of the pipeline on the merged tree:** 62 pages, 1,554 local links, 1,235 external links, 0 missing; the
+evidence-lab verifier, the model-lab verifier and the structured-hub verifier all pass; certainty audit passes twice;
+Node syntax and calendar tests pass; 5/5 Python unit tests pass; `compileall` and `git diff --check` clean.
+
+**What remains open, stated plainly.**
+
+* The repository still holds **no market price, no settlement record and no forecast log**, so no win rate, yield, edge,
+  fair price or profitable strategy is published anywhere, and every leaderboard is published empty. That is the
+  boundary the work was built to respect, not an oversight.
+* The correlations rest on 6-8 matched official games with wide intervals. They are published with their intervals and
+  no pair is described as reliable.
+* **Four parallel sessions worked this question**, so the site carries three NFL surfaces plus the retained
+  `nfl-*.html` pointer addresses. Nothing of any session was deleted; each section keeps its own data, generator and
+  verifier. Consolidating them further would have meant removing another session's work, which was outside this
+  session's scope, so the duplication is recorded here instead.
+* The Week 10 injury snapshot, the five player logs and the Week 9 Game Book are point-in-time extracts from
+  2026-11-13. Re-running the fetch and the analysis is what refreshes them.

@@ -394,6 +394,37 @@ def parse_standings(pairs, url):
     return rows, blobs
 
 
+
+def _teams(pairs, url):
+    """All 32 clubs from the official `useFetchExperienceTeams` payload (id, name, abbreviation, slug)."""
+    out, seen = [], set()
+    for key, data in pairs:
+        if "Teams" not in key:
+            continue
+        blobs: list[dict] = []
+        walk(data, lambda d: isinstance(d.get("fullName"), str) and ("abbreviation" in d or "id" in d), blobs)
+        for d in blobs:
+            name = d.get("fullName")
+            if not name or name in seen:
+                continue
+            seen.add(name)
+            slug = dig(d, {"slug", "teamslug", "url", "href"})
+            slug = str(slug or "").strip("/").split("/")[-1] or None
+            out.append({
+                "id": str(d.get("id")) if d.get("id") is not None else None,
+                "fullName": name,
+                "abbreviation": dig(d, {"abbreviation", "abbr"}),
+                "conference": dig(d, {"conferenceabbr", "conference"}),
+                "division": dig(d, {"divisionabbr", "division"}),
+                "slug": slug,
+                "sourceUrl": url,
+                "sourceName": "NFL.com club list (embedded schedule payload)",
+                "verification": "verified",
+            })
+    return out
+
+
+
 # ------------------------------------------------------------- plain HTML tables
 ROW_RE = re.compile(r"<tr[^>]*>(.*?)</tr>", re.S | re.I)
 CELL_RE = re.compile(r"<t(?P<k>[hd])[^>]*>(?P<v>.*?)</t(?P=k)>", re.S | re.I)
@@ -821,6 +852,7 @@ def main():
     per_week: dict[str, int] = {}
     per_week_final: dict[str, int] = {}
     fallback_probe: dict[int, dict] = {}
+    teams_found: dict[str, dict] = {}
     standings_weeks_seen: set[int] = set()
     standings_seen: set[tuple] = set()
     for wk in WEEKS:
@@ -842,6 +874,8 @@ def main():
         srows, _blobs = parse_standings(pairs, url)
         per_week[f"Week {wk}"] = len(rows)
         per_week_final[f"Week {wk}"] = len([r for r in rows if r["verification"] == "verified"])
+        for t in _teams(pairs, url):
+            teams_found.setdefault(t["slug"] or t["fullName"], t)
         standings_weeks_seen |= {r["week"] for r in srows if isinstance(r["week"], int)}
         all_rows.extend(rows)
         for r in srows:
@@ -894,10 +928,26 @@ def main():
         "rows": standing_rows,
     })
 
+    jwrite("teams-2026.json", {
+        "meta": {
+            "dataset": f"NFL {SEASON} club registry (official club list embedded on the by-week pages)",
+            "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat(),
+            "clubs": len(teams_found),
+            "sourcePages": [f"{SCHEDULE_BASE}week-{w}" for w in WEEKS[:1]],
+            "usedFor": "Joining the injury-report page's /teams/<slug> context to a club name; the join key is "
+                       "the league's own slug, and a club that cannot be matched stays null.",
+        },
+        "clubs": sorted(teams_found.values(), key=lambda t: t["fullName"]),
+    })
+    by_slug = {t["slug"]: t for t in teams_found.values() if t.get("slug")}
+    by_abbr = {t["abbreviation"]: t for t in teams_found.values() if t.get("abbreviation")}
+
     # 3 — weekly official injury reports ---------------------------------------
     inj_rows: list[dict] = []
     inj_counts: dict[str, int] = {}
-    inj_week_params = ["", *[f"?season={SEASON}&week={w}" for w in range(9, 12)]]
+    # The official page ignores ?season/&week in the server-rendered markup (verified: identical
+    # tables for weeks 9, 10 and 11), so only the landing page is requested and labelled "current".
+    inj_week_params = [""]
     inj_shapes: dict[str, dict] = {}
     for i, param in enumerate(inj_week_params):
         url = INJURY_URL + param
@@ -908,6 +958,11 @@ def main():
             continue
         tables = parse_tables(page, url)
         rows = table_rows_to_injuries(tables, label)
+        for r in rows:
+            club = by_slug.get(r["clubSlug"])
+            r["team"] = club["fullName"] if club else None
+            r["teamAbbr"] = club["abbreviation"] if club else None
+            r["teamJoinSource"] = club["sourceUrl"] if club else None
         inj_counts[label] = len(rows)
         inj_shapes[label] = {
             "tables": len(tables),
@@ -934,6 +989,26 @@ def main():
 
     # 3b — official weekly injury-report and game-day inactives ARTICLES ----------------
     art_rows, art_links, art_fail, art_ok, art_kinds = collect_articles([INJURY_URL, INACTIVE_URL])
+    # Join each article section heading (e.g. "GIANTS", "NEW YORK GIANTS") to the official club list.
+    # Unmatched headings stay null rather than being guessed.
+    by_nick = {}
+    for t in teams_found.values():
+        words = re.sub(r"[^A-Za-z ]", " ", t["fullName"]).split()
+        by_nick.setdefault(words[-1].lower(), t)
+        by_nick.setdefault(t["fullName"].lower(), t)
+    for r in art_rows:
+        sec = (r.get("section") or "").strip().lower()
+        club = None
+        if sec:
+            if sec in by_nick:
+                club = by_nick[sec]
+            else:
+                tail = [w for w in re.sub(r"[^a-z ]", " ", sec).split() if w]
+                if tail:
+                    club = by_nick.get(tail[-1])
+        r["team"] = club["fullName"] if club else None
+        r["teamAbbr"] = club["abbreviation"] if club else None
+        r["teamJoin"] = "official club list" if club else None
     jwrite("articles-2026.json", {
         "meta": {
             "dataset": "NFL.com official news articles for weekly injury reports and game-day inactives",
@@ -1031,8 +1106,10 @@ def main():
         "extraction": {
             "gamesWithoutScores": len([r for r in all_rows if r["awayPoints"] is None]),
             "standingsWithoutPoints": len([r for r in standing_rows if r["pointsFor"] is None]),
-            "injuriesWithoutTeam": len([r for r in inj_rows if not r["team"]]),
+            "injuriesWithoutTeam": len([r for r in inj_rows if not r["clubSlug"]]),
             "injuriesWithoutPosition": len([r for r in inj_rows if not r["position"]]),
+            "injuryUniquePlayers": len({(r["player"], r["label"]) for r in inj_rows}),
+            "articleSections": len({r.get("section") for r in art_rows if r.get("section")}),
         },
         "perWeek": per_week,
         "perWeekFinal": per_week_final,

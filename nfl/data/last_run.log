@@ -340,8 +340,8 @@
  200 espn_2026_t2_w7.json                 126,932 bytes
  200 espn_2026_t2_w8.json                 126,088 bytes
  200 espn_2026_t2_w9.json                 133,973 bytes
- 200 espn_2026_t2_w10.json                254,518 bytes
- 200 espn_2026_t2_w11.json                236,550 bytes
+ 200 espn_2026_t2_w10.json                254,476 bytes
+ 200 espn_2026_t2_w11.json                236,508 bytes
  200 espn_2026_t2_w12.json                182,869 bytes
  200 espn_2026_t2_w13.json                163,033 bytes
  200 espn_2026_t2_w14.json                172,371 bytes
@@ -368,17 +368,9 @@ Traceback (most recent call last):
     "depthSnapshotWeek": snap_week,
                          ^^^^^^^^^
 NameError: name 'snap_week' is not defined. Did you mean: 'snapshot_week'?
-Traceback (most recent call last):
-  File "/home/runner/work/Korea5/Korea5/nfl/analyze.py", line 426, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/Korea5/Korea5/nfl/analyze.py", line 336, in main
-    mr["crossSource"], mr["marketCoverage"] = cross_source_and_market()
-                                              ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Korea5/Korea5/nfl/analyze.py", line 366, in cross_source_and_market
-    idx[(r["gameday"], r["home"])].append(r)
-                       ~^^^^^^^^
-KeyError: 'home'
+wrote data_audit.json
+wrote hypotheses.json
+wrote questions.json
 leaderboard: 5 strategies
   #1 A    5.778 pts= 1000 Single-game model — strength features (9 signals)
   #2 C      0.0 pts=  300 Model vs published spread (reference only)
@@ -402,6 +394,6 @@ test_walk_forward_ignores_future_seasons (test_model.TestNoLeakage.test_walk_for
 test_questions_have_all_resolution_fields (test_model.TestQuestions.test_questions_have_all_resolution_fields) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 18.609s
+Ran 9 tests in 15.138s
 
 OK

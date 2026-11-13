@@ -1,5 +1,5 @@
 {
- "generatedUTC": "2026-11-13T14:41:53Z",
+ "generatedUTC": "2026-11-13T14:45:16Z",
  "competition": {
   "title": "NFL Lines Lab strategy competition",
   "basis": "Score = pre-registered deflated skill \u00d7 sample-size shrink \u00d7 calibration factor. Raw win rate is never a ranking input.",

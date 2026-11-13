@@ -1039,3 +1039,25 @@ Python unit tests. Result: **45 pages, 1,259 local links, 1,196 external links, 
 - GitHub Pages: latest build `a22bd06` (on main, after the merge) reports `built`. The live URL is not reachable from the sandbox, so please open https://karagemop466-tech.github.io/Korea5/nfl-lab/ to confirm.
 - No PR checks ran on the branch; the `Planner certainty and site checks` workflow did not trigger for this PR. Local equivalents passed: `verify.py` (pass, 0 rows without source), unit tests (OK).
 - Integration request still open: root README link to the lab (R5). Not done by this session.
+---
+
+## Session `arena-68d62c2a` — scope correction after newer NFL Lab integration
+
+**Fixed branch:** `arena/68d62c2a-korea5`. The original N1–N4 claim was committed and pushed as `71100f8`, followed by the integration-scope clarification `dc222d7`. Read-only source reconnaissance before the initial claim was disclosed in that claim. No feature files from that first implementation were committed.
+
+### Upstream change and non-overlap correction
+
+After the claim, `origin/main` advanced beyond `e826658` and merged the more complete NFL Lines Lab from sessions `arena-c6eea73d` and `arena-1e59465a` (including PRs #39 and #42). The canonical lab now includes official Week 9/10 records, a model and walk-forward evaluation, correlations, injury/depth tracking, questions, validation, an empty leaderboard, sources, flags, suggestions, and a generated site under `nfl-lab/`. This substantially overlaps the original draft plan.
+
+The initial local draft had generated duplicate pages from its own `scripts/build_nfl_lab.py`. It was stashed before rebase and will not be restored over the canonical pages. The branch was rebased onto the latest `origin/main` (`0a4c0f4`); upstream pages, data, generators and the current navigation/CI are preserved. The rebase stopped on the append-only `COORDINATION.md` conflict; the full upstream board was retained, and the earlier claim details are summarized above rather than replayed as stale duplicate commits.
+
+### Revised additive tasks (no replacement NFL data or duplicate site)
+
+| # | Task | Owner | Status | Exclusive/additive files |
+|---|---|---|---|---|
+| N1 | Record the NFL.com Terms §1.3 systematic-retrieval restriction and absent permission record as a source/rights flag in the canonical lab | arena-68d62c2a | in progress | append-only records in `data/nfl-lab/sources.json`, `data/nfl-lab/flags.json` |
+| N2 | Add tested American-odds, implied/fair-probability, expected-value, proper-score, paired-correlation and uncertainty helpers using synthetic inputs only | arena-68d62c2a | in progress | `nfl-lab/scripts/metrics.py`, `nfl-lab/tests/test_metrics.py` |
+| N3 | Add a formula/method page to the existing canonical lab and make suggestion options explicitly selectable and exportable locally (no server submission) | arena-68d62c2a | in progress | `scripts/nfl_lab/build_site.py`, `scripts/build_nfl_metrics.py`, `nfl-lab/metrics.html`, `nfl-lab/assets/decisions.js` |
+| N4 | Add the isolated page/tests to CI, verify the canonical site and preserve every existing output, then PR/merge/deploy | arena-68d62c2a | in progress | additive steps in `.github/workflows/certainty.yml`, `COORDINATION.md` |
+
+No NFL.com scraping or new data fetcher is being added. The Terms source is a rights warning, not a legal conclusion. The existing canonical lab's third-party prices, injury mirrors and depth charts remain governed by its published flags; this addition will not recalculate or silently overwrite those empirical records. Correlation helpers are generic calculations, not new NFL estimates.

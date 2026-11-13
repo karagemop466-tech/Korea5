@@ -70,7 +70,7 @@
    ]
   }
  },
- "generatedUTC": "2026-11-13T15:04:41Z",
+ "generatedUTC": "2026-11-13T15:09:40Z",
  "selftest": false,
  "seasons": [
   2016,
@@ -12144,7 +12144,7 @@
  },
  "crossSource": {
   "status": "pass",
-  "summary": "2698 of 2776 ESPN-sampled completed games match exactly, 0 differ, 78 unmatched (ESPN week pulls do not cover January dates or playoff rounds beyond week 4, so those games are absent from the ESPN side, not in conflict)",
+  "summary": "2698 of 2776 ESPN-sampled completed games match exactly, 0 differ, 78 unmatched. An unmatched game is one ESPN returned but no nflverse row could be paired with on date and both clubs; it is counted as unchecked, never as agreement.",
   "examples": [],
   "agree": 2698,
   "disagree": 0,

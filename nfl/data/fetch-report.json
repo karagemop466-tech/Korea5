@@ -1,0 +1,39 @@
+{
+ "startedUTC": "2026-11-13T13:14:35.925072Z",
+ "failures": [],
+ "results": {
+  "2026": 185,
+  "2025": 272
+ },
+ "injuries": {
+  "2026": 3117,
+  "2025": 5783
+ },
+ "depth": {
+  "rows": 1707,
+  "teams": 30,
+  "teamsMissing": [
+   "GB",
+   "HOU"
+  ]
+ },
+ "teamStats": {
+  "offense_passing": 32,
+  "offense_rushing": 32,
+  "offense_receiving": 32,
+  "offense_scoring": 32,
+  "defense_passing": 32,
+  "defense_rushing": 32,
+  "defense_scoring": 32
+ },
+ "playerStats": {
+  "passing": 25,
+  "rushing": 25,
+  "receiving": 25
+ },
+ "rosters": {
+  "teams": 32,
+  "players": 2850
+ },
+ "finishedUTC": "2026-11-13T13:16:53.851369Z"
+}

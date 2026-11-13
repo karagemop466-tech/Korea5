@@ -38,7 +38,10 @@ jobs:
           python3 - <<'EOF'
           import glob, json, os, shutil
           os.makedirs("nfl/raw/samples", exist_ok=True)
-          files = sorted(glob.glob("nfl/raw/espn_*_t2_w*.json"))[:60]
+          allf = sorted(glob.glob("nfl/raw/espn_*_t2_w*.json"))
+          step = max(1, len(allf) // 90)
+          files = allf[::step]
+          json.dump(allf, open("nfl/raw/samples/_espn_index.json", "w"))
           for f in files:
               d = json.load(open(f))
               d["events"] = d.get("events", [])[:20]

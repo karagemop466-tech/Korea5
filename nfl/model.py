@@ -1008,7 +1008,9 @@ def market_track(games, recs):
     normal approximation (sigma = 13.5 points, the long-standing football margin SD) purely as a reference.
     Because the line is a single snapshot with unknown timing, this is labelled a reference, not an edge.
     """
-    pairs = [(r, g) for r in recs for g in games if g["game_id"] == r["game_id"] and g["spread_line"] is not None]
+    by_id = {g["game_id"]: g for g in games}
+    pairs = [(r, by_id[r["game_id"]]) for r in recs
+             if r["game_id"] in by_id and by_id[r["game_id"]]["spread_line"] is not None]
     if len(pairs) < 100:
         return None
     sigma = 13.5
@@ -1021,7 +1023,9 @@ def market_track(games, recs):
             "tier": "C", "score": 0.0,
             "metrics": {"games": len(pairs), "modelLogloss": round(mean(ll_m), 4),
                         "spreadImpliedLogloss": round(mean(ll_b), 4),
-                        "skill": round(1 - mean(ll_m) / mean(ll_b), 4)},
+                        "skill": round(1 - mean(ll_m) / mean(ll_b), 4),
+                        "note": "Reference only: the spread is a single un-timestamped snapshot, so this cannot "
+                                "be converted into a return."},
             "gates": {"G8_market": {"pass": False,
                                     "value": "one un-timestamped snapshot; no closing line, no vig, no ROI"}},
             "claim": "Compares the model with a probability implied by the published spread. Reference only: "

@@ -87,8 +87,9 @@ def audit(model_results):
         "detail": [{"item": "Spread and total line (nflverse schedules)",
                     "value": f"{mkt.get('spreadPct')} of completed games",
                     "caveat": "Single un-timestamped snapshot per game. No opening line, no closing line, no price."},
-                   {"item": "Moneylines", "value": f"{mkt.get('moneylinePct')}",
-                    "caveat": "Empty in every season checked, so vig cannot be measured from this source."},
+                   {"item": "Moneylines", "value": f"{mkt.get('moneylinePct')} of completed games",
+                    "caveat": "Present for both sides but published as a single un-timestamped price per game, "
+                              "so the vig is implied by that one price and no line movement can be measured."},
                    {"item": "Player prop market", "value": "0 games",
                     "caveat": "No prop market exists in any reachable source. Props are scored as forecast accuracy only."},
                    {"item": "ESPN current-season odds", "value": f"{mkt.get('espnOddsGames')} games",

@@ -234,28 +234,36 @@ ANCHOR_RE = re.compile(r'<a[^>]*href="(?:https?://www\.nfl\.com)?/games/([a-z0-9
 
 
 def page_scores_by_slug(page: str):
-    """Bind every published FINAL score to its own game slug, with a nickname integrity check.
+    """Bind every published FINAL score to the game it belongs to, with a nickname integrity check.
 
-    The by-week page carries one accessible string per game, e.g.
-    "49ers 27, Rams 7, FINAL, Thursday, September 10th", inside that game's own link to
-    /games/<slug>. Two passes are run over the page because some cards are emitted as real HTML and
-    others sit inside an HTML-escaped JSON attribute: raw, then entity-decoded.
-
-    A score is accepted only when the two nicknames in the label agree with the away/home clubs of
-    the game it is being attached to, so a neighbouring card can never lend its number. Mismatches
-    are counted and reported instead of being resolved silently.
+    The by-week page carries one accessible score label per game, e.g.
+    "49ers 27, Rams 7, FINAL, Thursday, September 10th". It appears in two shapes: inside the game's
+    own link to /games/<slug>, and as a screen-reader <span>. Some cards are emitted as real HTML and
+    others sit inside an HTML-escaped JSON attribute whose quotes are backslash-escaped, so three
+    textual forms of the page are read. Nothing is guessed from a text window - a label is attached
+    only to a game slug, and parse_results then refuses the pair unless the two club nicknames in the
+    label agree with that game's away/home clubs. Mismatches are reported, never resolved silently.
     """
     out: dict[str, tuple[int, int, str, str]] = {}
     un = html_lib.unescape(page)
-    # Some game cards are emitted as real HTML; others sit inside a JSON string in a data attribute
-    # where the quotes are backslash-escaped. Every form is read; none of them is guessed.
+    sr_re = re.compile(r'<span[^>]*sr-only[^>]*>([^<]{6,200}?)</span>', re.I)
+    slug_re = re.compile(r'/games/([a-z0-9\-]+)')
     for variant in (page, un, un.replace('\\"', '"')):
         for slug, inner in ANCHOR_RE.findall(variant):
-            text = strip_tags(inner)
-            m = SCORE_TEXT_RE.search(text)
+            m = SCORE_TEXT_RE.search(strip_tags(inner))
             if m:
                 out.setdefault(slug, (int(m.group("as")), int(m.group("hs")),
                                       m.group("away").strip().lower(), m.group("home").strip().lower()))
+        for m in sr_re.finditer(variant):
+            sm = SCORE_TEXT_RE.search(m.group(1))
+            if not sm:
+                continue
+            near = sorted((abs(mm.start() - m.start()), mm.group(1))
+                          for mm in slug_re.finditer(variant, max(0, m.start() - 4000), m.end() + 4000))
+            if near:
+                out.setdefault(near[0][1], (int(sm.group("as")), int(sm.group("hs")),
+                                           sm.group("away").strip().lower(),
+                                           sm.group("home").strip().lower()))
     return out
 
 

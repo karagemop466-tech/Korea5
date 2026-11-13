@@ -35,6 +35,7 @@ NAV = [
     ("method.html", "Method"),
     ("extra/index.html", "Official feeds &amp; verification"),
     ("nfl/system/index.html", "NFL decision system"),
+    ("injury-tracking.html", "Injury &amp; lineup depth"),
 ]
 
 
@@ -240,11 +241,13 @@ If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} op
 <a class="btn" href="lab/index.html">NFL Lines Lab</a>
 <a class="btn" href="nfl-lab/index.html">NFL Model &amp; back-tests</a>
 <a class="btn" href="nfl/index.html">NFL Decision Support</a>
+<a class="btn" href="injury-tracking.html">Injury &amp; lineup depth</a>
 <a class="btn" href="extra/flagged.html">Flagged for Review</a></div>
 <p>Giants, Athletics, 49ers, Stanford and Cal remain high priority. The all-games view is a conservative personal-interest scope, not proof that every game is locally broadcast.</p>
 <p><a href="research/EXECUTIVE-SUMMARY.md">Full executive summary</a> · <a href="certainty.html">Audit and source limits</a> · <a href="extra/durations.html">Duration assumptions</a> ·
 <a href="lab/index.html">NFL Lines Lab</a> · <a href="nfl-lab/index.html">NFL Model</a> ·
-<a href="nfl/index.html">NFL Decision Support</a> · <a href="lab/suggestions.html">Suggestions</a> ·
+<a href="nfl/index.html">NFL Decision Support</a> · <a href="injury-tracking.html">Injury &amp; lineup depth</a> ·
+<a href="lab/suggestions.html">Suggestions</a> ·
 <a href="lab/flags.html">Lab flagged items</a></p>
 """
     page("index.html", "Dashboard", "index.html", body)

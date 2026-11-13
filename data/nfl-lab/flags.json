@@ -99,6 +99,14 @@
    "item": "Team codes: 2026 injury and depth files use the same 32 codes",
    "detail": "Checked: both files use LA, LV, LAC and the other 29 codes. Historical team-code changes in the 2016\u20132025 injury data were not checked.",
    "source": null
+  },
+  {
+   "id": "F14",
+   "severity": "high",
+   "item": "Kerby Joseph (DET, S), Week 10: report status and practice status conflict",
+   "detail": "Our 2026 injury file lists Kerby Joseph as Out for Week 10 with practice status 'Full Participation in Practice' (Knee). Out and full practice participation is inconsistent and is not resolved. Only the first games of the fetched Week 10 page were compared; this row is not confirmed against the official page. Week 10 comparison is incomplete: 9 rows checked of 1,230 in the file.",
+   "source": "https://www.nfl.com/injuries/league/2026/reg10",
+   "source_label": "nfl.com Week 10 injury report"
   }
  ]
 }

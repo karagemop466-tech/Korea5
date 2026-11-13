@@ -182,33 +182,39 @@ def main():
                     if p["gsis_id"] in seen:
                         continue
                     seen.add(p["gsis_id"]); ordered.append(p)
-                starter = ordered[0] if ordered else None
-                if not starter:
+                if not ordered:
                     continue
-                inj = inj_by_gsis.get(starter["gsis_id"])
-                if inj:
-                    rank, repl = None, None
-                    for q in ordered[1:]:
-                        if q["gsis_id"] in inj_by_gsis:
-                            continue
-                        rank, repl = q["pos_rank"], q["player_name"]
-                        break
-                    backups.append({
-                        "team": team, "depth_slot": abb, "depth_group": starter["pos_grp"],
-                        "starter": starter["player_name"], "starter_gsis_id": starter["gsis_id"],
-                        "starter_report_status": inj["report_status"],
-                        "starter_group": inj["group"],
-                        "starter_injury": inj["primary_injury"],
-                        "first_healthy_backup": repl,
-                        "backup_depth_rank": rank,
-                        "injury_week": inj_week,
-                        "source": inj["source"],
-                        "depth_source": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
-                        "depth_snapshot_utc": latest_dt[team],
-                    })
+                injured_ahead = []
+                eff_idx = None
+                for idx, q in enumerate(ordered):
+                    qi = inj_by_gsis.get(q["gsis_id"])
+                    if qi and qi["report_status"] in ("Out", "Doubtful", "Questionable"):
+                        injured_ahead.append({"player": q["player_name"], "depth_rank": q["pos_rank"],
+                                              "status": qi["report_status"], "injury": qi["primary_injury"]})
+                        continue
+                    eff_idx = idx
+                    break
+                if not injured_ahead or eff_idx is None:
+                    continue
+                if not any(int(x["depth_rank"]) == 1 for x in injured_ahead) and eff_idx == 0:
+                    continue
+                eff = ordered[eff_idx]
+                backups.append({
+                    "team": team, "depth_slot": abb, "depth_group": eff["pos_grp"],
+                    "original_starter": ordered[0]["player_name"],
+                    "original_starter_out": any(x["depth_rank"] == "1" for x in injured_ahead),
+                    "injured_ahead": injured_ahead,
+                    "effective_starter": eff["player_name"],
+                    "effective_depth_rank": eff["pos_rank"],
+                    "effective_is_backup": eff_idx > 0,
+                    "injury_week": inj_week,
+                    "source": "https://www.nfl.com/injuries/league/2026/reg%s" % inj_week,
+                    "depth_source": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+                    "depth_snapshot_utc": latest_dt[team],
+                })
     log["depth"] = depth_log
     with open(os.path.join(OUT, "depth-backups-2026.json"), "w") as f:
-        json.dump({"description": "Latest ESPN-derived depth chart snapshot (nflverse mirror) per team, compared with the latest NFL official injury report week. Lists starters (pos_rank 1) reported Out, Doubtful or Questionable, and the first healthy player further down the same depth slot. Not week-keyed; a current tracker, not a historical record.",
+        json.dump({"description": "Latest depth chart snapshot (nflverse mirror of ESPN depth charts) per team, compared with the latest NFL official injury report week. For each depth slot where a player ahead on the chart is listed Out, Doubtful or Questionable, shows the injured players ahead and the first healthy player (the effective starter). Not week-keyed; a current tracker, not a historical record.",
                    "injury_week": inj_week,
                    "upstream_injuries": "https://github.com/nflverse/nflverse-data/releases/tag/injuries",
                    "upstream_depth": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",

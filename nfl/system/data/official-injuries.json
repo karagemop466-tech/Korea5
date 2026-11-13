@@ -1,7 +1,7 @@
 {
  "meta": {
   "sourceName": "NFL.com official injury report",
-  "retrievedUTC": "2026-11-13T13:17:49.265472Z",
+  "retrievedUTC": "2026-11-13T13:31:10.790127Z",
   "note": "Rows exactly as published. Blank cells mean the official page published no value — they are kept blank, never filled.",
   "pages": [
    "https://www.nfl.com/injuries/league/2026/reg01",

@@ -928,6 +928,87 @@ Scope: current Arena branch is fixed; no alternate branches or overlapping task 
 - Evidence limits: no historical timestamped market/prop prices, betting settlement ledger, forecast log, or verified lineup-depth series found in this repository. No performance or correlation claims made. No backup tier inferred from injury status. Research strategies are proposals, not validated edges; reward competition is only proposed as paper-first and remains gated by policy/legal review.
 - Verification: `scripts/check_links.py` reported 12 pages, 190 local links, 528 external links and zero missing; `scripts/audit_certainty.py` passed; Python unit tests 5/5; both calendar Node tests passed; `git diff --check` clean. Strategy page local destination check: 19 links, zero missing. Official injury and player-statistics pages retrieved live; no claim of comprehensive official link availability.
 
+## Session `arena/722a47cb-korea5` — NFL decision support, suggestions, leaderboard, injury/lineup depth
+
+Branch fixed by Arena: `arena/722a47cb-korea5` (base `bf2b8ca0` of `main`). Read this board before starting;
+N1–N2 are complete. New additive scope below. Every factual table row must cite an official source; unverified
+values stay blank and are flagged. No betting edge, correlation value, ROI or leaderboard result is claimed.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N3 | Suggestions page: review/choose workflow + prioritised suggestion register | arena/722a47cb-korea5 | in progress | `suggestions.html`, `research/SUGGESTIONS.md` |
+| N4 | Decision registry: questions / known info / missing info / answers / discovery steps | arena/722a47cb-korea5 | in progress | `decisions.html`, `research/DECISIONS.md` |
+| N5 | NFL leaderboard + rewards, single/parlay/prop strategy gates, correlation methodology | arena/722a47cb-korea5 | in progress | `nfl-strategy.html`, `research/NFL-STRATEGY.md` |
+| N6 | Injury + lineup-depth tracking (2nd/3rd/4th string, offense & defense) design | arena/722a47cb-korea5 | in progress | `injury-tracking.html`, `research/INJURY-TRACKING.md` |
+| N7 | Executive summary update (NFL decision-support + suggestions) | arena/722a47cb-korea5 | in progress | `research/EXECUTIVE-SUMMARY.md` |
+| N8 | Verification, irregularities, integration, PR + merge + Pages deploy | arena/722a47cb-korea5 | in progress | `COORDINATION.md`, `scripts/build_site.py`, nav |
+
+Scope note: this session works only on the fixed Arena branch. No overlapping file scope with prior sessions;
+`official/`, `extra/`, `data/` remain untouched by this session. Shared outputs (root `*.html` nav, generated
+pages) are changed only here, and only additively.
+
+### N3–N8 completion (2026-11-13) — session `arena/722a47cb-korea5`
+
+**Delivered (additive, standalone proposal; no betting edge, correlation value, ROI, or reward claimed):**
+
+- **N3 Suggestions** — `suggestions.html` + `research/SUGGESTIONS.md`: a dedicated review/choose section with a
+  5-step review workflow, a 12-item suggestion register (ID, decision served, options, recommended path, priority,
+  status, dependency) and an official-source table. Statuses: proposed → in review → approved → in progress → done / declined.
+- **N4 Decisions** — `decisions.html` + `research/DECISIONS.md`: a decision registry of 10 open decisions (D-01–D-10),
+  each with *what we know (verified)*, *what we do not have*, *answer needed to proceed*, and the suggestion (S-xx) that
+  discovers the missing information; plus 5 resolved decisions (R-01–R-05) and the evidence limits.
+- **N5 Leaderboard & bet-type gates** — `nfl-strategy.html` + `research/NFL-STRATEGY.md`: expanded leaderboard design
+  (entry rules, scoring by predeclared out-of-sample proper-score improvement over a common baseline, gated paper-only
+  rewards), a leaderboard-state table (all rows *not qualified*), a correlation-values table (all values blank/unverified),
+  and bet-type validation gates for single bets, parlays, and player-prop combinations.
+- **N6 Injury & lineup-depth tracking** — `injury-tracking.html` + `research/INJURY-TRACKING.md`: schema, tier logic
+  (1st/2nd/3rd/4th string, offense and defense, special teams), the two-condition "deficiency" rule, and a verified 49ers
+  depth-chart snapshot (updated 11/10/26) as a data-shape example. Tiers read only from official depth charts; no workload
+  or performance effect is asserted.
+- **N7 Executive summary** — `research/EXECUTIVE-SUMMARY.md` updated with the decision-support layer, status, sources and
+  irregularities. `README.md` gained an NFL decision-support section.
+- **N8 Verification & integration** — `scripts/build_site.py` NAV updated to include the four NFL decision-support pages
+  (fixing generator drift: the committed `nfl.html` had a hand-added strategy link that regeneration dropped). Full
+  pipeline re-run and green.
+
+**Sources used (all official; verified live 2026-11-13 via page fetch):**
+
+| Source | What it provided | Verification |
+|---|---|---|
+| https://www.nfl.com/injuries/ | Player, position, injury, practice status, game status by week | Fetched live — Week 10 2026 structure confirmed |
+| https://www.nfl.com/transactions/ | Trades/signings/waivers/reserve list/terminations by month/year | Fetched live — November 2026 table confirmed |
+| https://www.nfl.com/stats/player-stats/ | Passing/rushing/receiving/tackles/etc. category + year selectors | Fetched live — 2026 passing table confirmed |
+| https://www.nfl.com/stats/team-stats/ | Offense/defense/special-teams team categories | Fetched live — 2026 offense passing confirmed |
+| https://www.nfl.com/standings/ | Division/conference/league standings | Fetched live — 2026 division tables confirmed |
+| https://www.nfl.com/schedules/ | By week / by team / prime time | Fetched live — Week 10 2026 games confirmed |
+| https://www.49ers.com/team/depth-chart | Offense/defense/special-teams 1st/2nd/3rd/4th string | Fetched live — "Updated as of 11/10/26" |
+| https://operations.nfl.com/ | NFL Football Operations (rules/officiating) | Verified landing reference |
+
+**Verification performed:** `scripts/build_site.py`, `tools/build_extra.py`, `scripts/check_links.py`,
+`tools/verify_extra.py` (**31/31**), `scripts/audit_certainty.py`, Python unit tests (**5/5**), both calendar Node tests,
+`git diff --check` — all pass. Every factual table row on the new pages links to an official source; unverified values are
+blank and flagged. Local-link check across all root and extra pages: 0 missing.
+
+**Irregularities recorded (published on the Flagged for Review pages; do not block):**
+
+1. **No market/settlement/forecast data exists in the repository** — no odds, prop prices, settlement ledger, forecast log,
+   or historical injury-to-performance panel. All leaderboard and correlation values are therefore blank/unverified; no edge,
+   ROI, or leaderboard winner is claimed.
+2. **No historical depth-chart or injury series** — the 49ers depth chart is a single live snapshot (11/10/26), not a history.
+3. **Injury status ≠ workload** — "out/questionable/limited" does not imply a backup's expected snaps; opportunity share is a
+   model estimate, not asserted.
+4. **NFL.com team depth-chart URL 404** — `nfl.com/teams/.../roster/depth-chart` returned 404 in this check; the verified
+   official tier source used here is the club's own depth-chart page (e.g. 49ers.com). Flagged for review.
+5. **Rulebook URL normalization** — the NFL Football Operations rulebook returned content when requested, but the tool's
+   reported canonical URL differed from the requested one; the verified landing reference is https://operations.nfl.com/ .
+   Flagged for review.
+6. **Generator drift (fixed)** — the committed `nfl.html` carried a hand-added "NFL Strategy Lab" nav link that
+   `build_site.py` did not generate; regeneration would have dropped it. Fixed by adding the four NFL decision-support pages
+   to the `build_site.py` NAV so all generated pages keep the links.
+
+**Status: N3–N8 done.** No unclaimed or overlapping task remains. Flagged items remain published with official links and do
+not block the merge.
+
 ## Session `arena-c6eea73d` — NFL Lines Lab (own lines, signals, injury/depth tracker, suggestions)
 
 | # | Task | Owner | Status | Files |
@@ -1184,6 +1265,36 @@ task for whoever claims it, and is logged as such.
 - No PR checks ran on the branch; the `Planner certainty and site checks` workflow did not trigger for this PR. Local equivalents passed: `verify.py` (pass, 0 rows without source), unit tests (OK).
 - Integration request still open: root README link to the lab (R5). Not done by this session.
 
+
+## Merge of session `arena/722a47cb-korea5` (NFL decision support) into `main` (2026-11-13)
+
+PR #45 (`arena/722a47cb-korea5` → `main`) could not be merged cleanly because, while this session worked,
+parallel sessions landed a full **NFL Lines Lab** on `main` (`lab/*`, `nfl-lines.html`, `nfl-questions.html`,
+`nfl-strategies.html`, `nfl-suggestions.html`, `scripts/nfl_lab/*`, `tools/build_lab.py`, `tools/verify_lab.py`,
+`data/nfl-lab/*`, `curated/nfl-lab.json`) that overlaps the suggestions/decisions/leaderboard scope. A
+`git merge origin/main --no-edit` was run on the branch to bring `main` into it; conflicts were resolved
+**additively — nothing from either session was discarded**:
+
+- `suggestions.html`, `decisions.html`, `nfl-strategy.html` (add/add / generated): resolved to the lab's
+  hub versions, which consolidate the content into the canonical `lab/` section (per the prior integration
+  decision that the lab, backed by committed official records, is the single source). This session's
+  decision-support content is preserved in the research notes (`research/SUGGESTIONS.md`,
+  `research/DECISIONS.md`, `research/INJURY-TRACKING.md`, `research/NFL-STRATEGY.md`).
+- `research/EXECUTIVE-SUMMARY.md`: merged as a superset of both sessions' sections.
+- `COORDINATION.md`: append-only union of both sessions' log sections.
+- Generated pages (`calendar.html`, `index.html`, `flagged.html`, `ncaaf.html`, `nfl.html`, `radio.html`,
+  `sources.html`, `vacation.html`, `method.html`, `mlb.html`, `extra/*`, `verification/links.json`): kept at
+  `main`'s version, then rebuilt from the merged generators.
+- `scripts/build_site.py` `NAV`: consolidated to a single, non-duplicated nav (removed the duplicate
+  `Decisions`/`Suggestions` labels that the lab hub and the planner nav both carried).
+
+**Re-verified after resolution** (full canonical chain, same as CI): `analyze_lab.py` → `build_lab.py` →
+`build_site.py` → `build_extra.py` → `audit_certainty.py` → `check_links.py` → `verify_extra.py` →
+`verify_lab.py` → `audit_certainty.py`. Results: link check 0 missing; `verify_extra` **31/31**;
+`verify_lab` **0 failures** (every published row carries an official source or is an explicit placeholder);
+certainty audit passed; Python unit tests **5/5**; `node --check` + calendar-today test pass; `git diff --check`
+clean. No betting edge, correlation value, ROI or leaderboard winner is claimed anywhere.
+
 ### Scope collision with the parallel `nfl/` hub — resolved by moving, not overwriting (2026-11-13)
 
 Another session claimed `nfl/` for an **NFL Decision Support** hub (`nfl/index.html`, `requirements.html`,
@@ -1227,6 +1338,7 @@ Consequences and how they were handled:
   for this PR. After merging, those workflow files exist on `main` and subsequent PRs run them normally.
 - No gate was weakened, skipped or marked optional to get past this. Nothing in the PR deletes or edits an
   existing workflow: `certainty`, `data`, `verify`, `probe`, `extract` and the `-ef8b5b30` set are untouched.
+
 
 - Integration request still open: root README link to the lab (R5). Not done by this session.
 ### Post-merge defect found and fixed (arena-c6eea73d, 2026-11-13)
@@ -1464,3 +1576,4 @@ this one (`lab/`), `arena/1e59465a` (`nfl-lab/`), `arena/e96c5f87` (`nfl/`), `ar
 `arena/c9041d2a` (the original `nfl-*.html` set, now retained as pointer pages). The site carries four NFL surfaces
 plus the retained addresses. Nothing of any session has been removed. The duplication is real and is recorded here
 rather than resolved by deleting another session's work.
+

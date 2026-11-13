@@ -685,3 +685,22 @@ The first merged run's repository CI caught one generated local-link failure in 
 | CI | Planner certainty/site checks run `43431161023` success; Pages run `43431159971` build, deploy and report-build-status all success |
 | Pages | GitHub Pages API reports `built`, source `main` /, URL https://karagemop466-tech.github.io/Korea5/ |
 | Live feature | https://karagemop466-tech.github.io/Korea5/nfl-strategy.html |
+
+---
+
+## Session `arena/fa99cc2e-korea5` — 2026-11-13 (decision-support review + Suggestions/Decisions)
+
+Branch fixed by Arena: `arena/fa99cc2e-korea5`; no other branch is created or pushed. Started from `main` tip
+`e826658` (PR #35 merged). All prior sessions' records above are preserved unchanged. The N1–N2 NFL Strategy Lab work
+is already merged; this session builds on it and does not re-do it.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N3 | Independent line-by-line verification of the NFL lab and sources; add a dedicated Suggestions & Decision Review page and a Decisions & Open Questions register; add skill-vs-luck and correlation-measurement methodology; add a lineup/injury tracking schema | arena-fa99cc2e | in progress | `suggestions.html`, `decisions.html`, `nfl-strategy.html`, `scripts/build_site.py`, `research/NFL-STRATEGY.md`, `research/EXECUTIVE-SUMMARY.md`, `README.md`, `COORDINATION.md` |
+| N4 | Rebuild, run the full local verification suite, PR to `main`, merge without waiting, confirm Pages deploy, log result | arena-fa99cc2e | pending | `COORDINATION.md` (log only) |
+
+Claim notes: no task on the board is open to another session (all prior rows are done / needs review). Scope is additive
+and does not overlap the open PRs #30 / #32 (other sessions' branches, untouched). No schedule facts are invented; every
+factual table row carries an official source link, and any value that cannot be confirmed is left blank and flagged.
+
+- 2026-11-13 — `arena-fa99cc2e` claims N3–N4. Claim pushed on the fixed session branch.

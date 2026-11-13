@@ -51,6 +51,26 @@ def text(cell):
     return TAG_STRIP.sub("", cell).strip()
 
 
+def anchors_in(path):
+    """Every id and name attribute defined in an HTML file."""
+    body = open(path, encoding="utf-8").read()
+    found = set(re.findall(r'id="([^"]+)"', body))
+    found |= set(re.findall(r'name="([^"]+)"', body))
+    return found
+
+
+def check_anchor(page, target):
+    """A repository link with a #fragment must point at an anchor that exists."""
+    path_part, _, frag = target.partition("#")
+    base = os.path.dirname(page)
+    resolved = os.path.normpath(os.path.join(base, path_part)) if path_part else os.path.dirname(page)
+    if not os.path.exists(resolved):
+        fail(page, f"anchor link points at a file that does not exist: {target}")
+        return
+    if frag and frag not in anchors_in(resolved):
+        fail(page, f"anchor link points at a missing anchor: {target}")
+
+
 def check_row_sources(page, row_html, allow_placeholder=True):
     """A row must carry a source: an external official link, or a repository link that
     resolves to a file that exists. A row with neither has to be an explicit
@@ -69,6 +89,7 @@ def check_row_sources(page, row_html, allow_placeholder=True):
             continue
         base = os.path.dirname(page)          # page is already relative to the repo root
         if os.path.exists(os.path.normpath(os.path.join(base, target.split("#")[0]))):
+            check_anchor(page, target)
             return "linked"
         fail(page, f"row links to a repository file that does not exist: {target}")
     if allow_placeholder and ("—" in row_html or "not started" in row_html):
@@ -98,6 +119,18 @@ for name in sorted(f for f in os.listdir(LAB) if f.endswith(".html")):
     checks.append({"page": path, "rows": rows, "linkedRows": linked, "placeholderRows": placeholders})
     if rows and linked + placeholders != rows:
         fail(path, "row accounting mismatch")
+    # every in-repository link on the page must resolve, anchor included
+    for target in set(ANYLINK.findall(html_text)):
+        if target.startswith(("http://", "https://", "mailto:")):
+            continue
+        path_part = target.split("#")[0]
+        if not path_part:
+            continue
+        base = os.path.dirname(path)
+        if not os.path.exists(os.path.normpath(os.path.join(base, path_part))):
+            fail(os.path.join(LAB, name), f"page links to a file that does not exist: {target}")
+        else:
+            check_anchor(path, target)
 
 # every player link on the injury pages must point at nfl.com
 for name in ("injuries.html",):
@@ -120,13 +153,23 @@ if pair:
 else:
     fail(os.path.join(LAB, "index.html"), "the two-receiver correlation pair is missing from analysis.json")
 
-ss = [s for s in ANA["sampleSize"] if abs(s["breakEven"] - 110 / 210) < 1e-9]
+# Select the -110 rows by their price label. A tolerance comparison against
+# 110/210 matched nothing here (the stored break-even is rounded to four
+# decimals), which made the loop below skip every row and report success
+# while the published headline number was blank.
+ss = [s for s in ANA["sampleSize"] if "-110" in s["priceBasis"]]
+if not ss:
+    fail(os.path.join(LAB, "index.html"), "analysis.json has no -110 sample-size rows")
 for edge in (0.05, 0.03):
     hit = next((s for s in ss if s["edgeOverBreakEven"] == edge), None)
-    if hit and str(hit["observationsNeeded"]) not in index_html:
+    if not hit:
         fail(os.path.join(LAB, "index.html"),
-             f"sample-size headline {hit['observationsNeeded']} is not published")
-    if hit and str(hit["observationsNeeded"]) not in corr_html:
+             f"analysis.json has no sample-size row for a +{edge * 100:g} point edge")
+        continue
+    if f"{hit['observationsNeeded']:,}" not in index_html:
+        fail(os.path.join(LAB, "index.html"),
+             f"sample-size headline {hit['observationsNeeded']:,} is not published")
+    if str(hit["observationsNeeded"]) not in corr_html:
         fail(os.path.join(LAB, "correlations.html"),
              f"sample-size {hit['observationsNeeded']} is not published in the table")
 

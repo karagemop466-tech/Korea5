@@ -1046,3 +1046,42 @@ Python unit tests. Result: **45 pages, 1,259 local links, 1,196 external links, 
 - GitHub Pages: latest build `a22bd06` (on main, after the merge) reports `built`. The live URL is not reachable from the sandbox, so please open https://karagemop466-tech.github.io/Korea5/nfl-lab/ to confirm.
 - No PR checks ran on the branch; the `Planner certainty and site checks` workflow did not trigger for this PR. Local equivalents passed: `verify.py` (pass, 0 rows without source), unit tests (OK).
 - Integration request still open: root README link to the lab (R5). Not done by this session.
+- Integration request still open: root README link to the lab (R5). Not done by this session.
+### Post-merge defect found and fixed (arena-c6eea73d, 2026-11-13)
+
+After PR #40 was merged and Pages had deployed, a live read of the deployed landing page showed one headline value
+rendering blank: *"bets for a +5 point edge; for +3 points at -110"* — the 779 and 2,170 were missing.
+
+**Cause.** `tools/build_lab.py` selected the -110 sample-size rows by comparing the stored break-even probability
+(0.5238, rounded to four decimals) with `110 / 210` using a `1e-6` tolerance. The comparison matched **no** rows, so
+the two numbers interpolated as empty strings and the page published a sentence with no number in it.
+
+**The verifier passed anyway.** `tools/verify_lab.py` repeated the same comparison with an even tighter tolerance
+(`1e-9`), so its sample-size loop iterated over an empty list, `hit` was `None`, and the `if hit and ...` guard skipped
+every assertion. The check was vacuous — it reported success while testing nothing.
+
+**Fixes applied.**
+
+1. The builder now selects the rows by their price label (`"-110" in priceBasis`) and raises if the list is empty or if
+   the +5 or +3 point row is missing, so a missing number can never be published again.
+2. The verifier uses the same label-based selection and now **fails** when a required sample-size row is absent, rather
+   than skipping the check.
+3. The verifier gained page-level link resolution: every in-repository link on every lab page must resolve to a file that
+   exists, and a `#fragment` must match an `id`/`name` that actually exists in the target file.
+4. Headline numbers are now printed with thousands separators (779, 2,170).
+
+**Negative tests run to prove the verifier is no longer vacuous** (each injected, detected, then reverted):
+
+| Injected fault | Detected |
+|---|---|
+| Headline number blanked | `sample-size headline 779 is not published` |
+| Link to a non-existent file | `page links to a file that does not exist` |
+| Link to a non-existent anchor | `anchor link points at a missing anchor` |
+
+**Published impact.** One number was blank on the live site between the first deploy and this fix. No other published
+value was affected. The defect is recorded as flag **L16** on `lab/flags.html` with its cause and fix, so the record
+shows what went wrong rather than quietly correcting it.
+
+**Verified after the fix:** the full pipeline is green — 45 pages, 1,261 local links, 1,196 external links, 0 missing;
+lab verification 0 failures; certainty audit passes twice; Node syntax and calendar tests pass; 5/5 Python unit tests
+pass; `compileall` and `git diff --check` clean.

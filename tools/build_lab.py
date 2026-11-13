@@ -150,9 +150,16 @@ def build_index():
     ana = ANA.get("correlations", [])
     pair = next((c for c in ana if "Jordan Addison" in c["b"]), None)
     pair_ci = "" if not pair else f"{pair['ci95'][0]} to {pair['ci95'][1]}"
-    ss = [s for s in ANA.get("sampleSize", []) if abs(s["breakEven"] - 110 / 210) < 1e-6]
+    # The -110 rows are selected by their price label, not by comparing the
+    # rounded break-even probability to 110/210: the stored value is rounded to
+    # four decimals, so a tolerance comparison silently matched nothing.
+    ss = [s for s in ANA.get("sampleSize", []) if "-110" in s["priceBasis"]]
+    if not ss:
+        raise SystemExit("build_lab: no -110 sample-size rows in analysis.json")
     n5 = next((s["observationsNeeded"] for s in ss if s["edgeOverBreakEven"] == 0.05), None)
     n3 = next((s["observationsNeeded"] for s in ss if s["edgeOverBreakEven"] == 0.03), None)
+    if n5 is None or n3 is None:
+        raise SystemExit("build_lab: the +5 or +3 point sample-size row is missing")
     inj_status = len(INJ.get("gameStatus", []))
     teams = len(INJ.get("practice", {}))
     rows = len([r for t in INJ.get("practice", {}).values() for r in t["rows"]])
@@ -177,7 +184,7 @@ service, a price feed, or a validated strategy. The leaderboard is published emp
 parlay as the product of two marginal probabilities would be wrong, in the direction that favours the book.</td>
 <td>{srcs([pair['sourceA'], pair['sourceB']] if pair else [])}</td></tr>
 <tr><td>2</td><td>A small edge cannot be told apart from luck without a large sample</td>
-<td>{esc(n5)} bets for a +5 point edge; {esc(n3)} for +3 points at -110</td>
+<td>{esc(f"{n5:,}")} bets for a +5 point edge; {esc(f"{n3:,}")} for +3 points at -110</td>
 <td>This is the number that decides whether a strategy is skill or luck. It is now a hard entry condition on the leaderboard.</td>
 <td>{src('https://www.nfl.com/players/justin-jefferson/stats/logs/')}</td></tr>
 <tr><td>3</td><td>Player props are noisy</td>

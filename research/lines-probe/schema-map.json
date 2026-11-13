@@ -1,355 +1,14 @@
 [
  {
-  "slug": "schedule-2026-w9",
-  "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+  "slug": "schedule-2025-w1",
+  "url": "https://www.nfl.com/schedules/2025/by-week/week-1",
   "ok": true,
-  "bytes": 2279950,
+  "bytes": 2273663,
   "queryKeys": [
    {
     "queryKey": [
-     "useFetchScoreStripContainerData"
-    ],
-    "status": "success",
-    "dataShape": {
-     "data": {
-      "carouselCardPropsList": [
-       {
-        "analyticsProperties": {
-         "linkModule": "str",
-         "linkName": "str",
-         "linkPosition": "str",
-         "linkType": "str"
-        },
-        "footerTextLong": "str",
-        "footerTextShort": "str",
-        "href": "str",
-        "networkIcon": "str",
-        "networkIconAltText": "str",
-        "redZoneImage": "str",
-        "redZoneImageAltText": "str",
-        "type": "int",
-        "variant": "str"
-       },
-       "len=15"
-      ],
-      "isDomestic": "bool",
-      "isHallOfFameWeek": "bool",
-      "isPlayoffWeek": "bool",
-      "isSuperBowlWeek": "bool",
-      "promotedCardProps": {
-       "analyticsProperties": "str",
-       "footerTextLong": "str",
-       "footerTextShort": "str",
-       "href": "str",
-       "networkIcon": "str",
-       "networkIconAltText": "str",
-       "redZoneImage": "str",
-       "redZoneImageAltText": "str",
-       "type": "int",
-       "variant": "str"
-      },
-      "sectionProps": {
-       "sectionHeader": {
-        "headline": "str"
-       },
-       "sectionId": "str",
-       "visibility": {
-        "hideOnDesktop": "bool",
-        "hideOnMobile": "bool"
-       }
-      },
-      "shouldRefetch": "bool"
-     },
-     "error": "str",
-     "isError": "bool"
-    },
-    "sampleRecord": {
-     "data": {
-      "carouselCardPropsList": [
-       {
-        "analyticsProperties": {
-         "linkModule": "Score Strip",
-         "linkName": "Score Strip Redzone CTA",
-         "linkPosition": "1:15",
-         "linkType": "RedZone Access Point"
-        },
-        "footerTextLong": "SUN 6:00PM",
-        "footerTextShort": "6:00PM",
-        "href": "/redzone/watch",
-        "networkIcon": "https://static.www.nfl.com/league/apps/web/global/logos/broadcaster/broadcaster_NFLPlusPremium.svg",
-        "networkIconAltText": "NFLPlusPremium network icon",
-        "redZoneImage": "https://static.www.nfl.com/league/apps/web/global/logos/logo-league-redzone-primarylight.svg",
-        "redZoneImageAltText": "NFL RedZone Upcoming Image",
-        "type": 3,
-        "variant": "upcoming"
-       },
-       {
-        "analyticsProperties": {
-         "gameID": "ab582c2f-4feb-11f1-abca-2c54536568a9",
-         "gameState": "$undefined",
-         "linkModule": "Score Strip",
-         "linkName": "NE @ DET",
-         "linkPosition": "2:15"
-        },
-        "awayTeam": {
-         "abbreviation": "NE",
-         "abbreviationScreenReaderElementId": "sr-element-score-strip-10403200-69ab-9ea6-5af5-e240fbc08bea-new-england-patriots",
-         "abbreviationScreenReaderText": "New England Patriots",
-         "isGameWinner": "$undefined",
-         "isInPossession": "$undefined",
-         "isRedZone": "$undefined",
-         "logo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/NE",
-         "logoImageAltText": "New England Patriots Team Logo",
-         "nickName": "$undefined",
-         "primaryColor": "#002244",
-         "standings": {
-          "team": {
-           "id": "10403200-69ab-9ea6-5af5-e240fbc08bea",
-           "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/NE",
-           "fullName": "New England Patriots"
-          },
-          "clinched": {
-           "bye": false,
-           "division": false,
-           "eliminated": false,
-           "homeField": false,
-           "playoff": false,
-           "wildCard": false
-          },
-          "closeGames": {
-           "wins": 3,
-           "losses": 2,
-           "ties": 0
-          },
-          "conference": {
-           "wins": 5,
-           "winPct": 0.833,
-           "losses": 1,
-           "ties": 0,
-           "rank": 7,
-           "points": {
-            "for": 150,
-            "against": 119
-           }
-          },
-          "division": {
-           "wins": 3,
-           "winPct": 1,
-           "losses": 0,
-           "ties": 0,
-           "rank": 2,
-           "points": {
-            "for": 79,
-            "against": 64
-           }
-          },
-          "home": {
-           "wins": 3,
-           "winPct": 0.75,
-           "losses": 1,
-           "ties": 0,
-           "points": {
-            "for": 118,
-            "against": 84
-           }
-          },
-          "last5": {
-           "wins": 3,
-           "winPct": 0.6,
-           "losses": 2,
-           "ties": 0,
-           "points": {
-            "for": 146,
-            "against": 130
-           }
-          },
-          "overall": {
-           "games": 9,
-           "wins": 5,
-           "winPct": 0.556,
-           "losses": 4,
-           "ties": 0,
-           "points": {
-            "for": 211,
-            "against": 207
-           },
-           "streak": {
-            "type": "STREAK_TYPE_LOSING",
-            "length": 1
-           }
-          },
-          "road": {
-           "wins": 2,
-           "winPct": 0.4,
-           "losses": 3,
-           "ties": 0,
-           "points": {
-            "for": 93,
-            "against": 123
-           }
-          }
-         },
-         "summary": "$undefined",
-         "teamId": "10403200-69ab-9ea6-5af5-e240fbc08bea"
-        },
-        "backgroundImage": "$undefined",
-        "gameId": "ab582c2f-4feb-11f1-abca-2c54536568a9",
-        "gameSummary": {
-         "phase": "$undefined",
-         "quarter": "$undefined"
-        },
-        "gameTime": "2026-11-15T14:30:00Z",
-        "homeTeam": {
-         "abbreviation": "DET",
-         "abbreviationScreenReaderElementId": "sr-element-score-strip-10401540-f97c-2d19-6fcd-fac6490a48b7-detroit-lions",
-         "abbreviationScreenReaderText": "Detroit Lions",
-         "isGameWinner": "$undefined",
-         "isInPossession": "$undefined",
-         "isRedZone": "$undefined",
-         "logo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/DET",
-         "logoImageAltText": "Detroit Lions Team Logo",
-         "nickName": "$undefined",
-         "primaryColor": "#0076B6",
-         "standings": {
-          "team": {
-           "id": "10401540-f97c-2d19-6fcd-fac6490a48b7",
-           "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/DET",
-           "fullName": "Detroit Lions"
-          },
-          "clinched": {
-           "bye": false,
-           "division": false,
-           "eliminated": false,
-           "homeField": false,
-           "playoff": false,
-           "wildCard": false
-          },
-          "closeGames": {
-           "wins": 4,
-           "losses": 1,
-           "ties": 0
-          },
-          "conference": {
-           "wins": 4,
-           "winPct": 0.8,
-           "losses": 1,
-           "ties": 0,
-           "rank": 5,
-           "points": {
-            "for": 141,
-            "against": 115
-           }
-          },
-          "division": {
-           "wins": 2,
-           "winPct": 1,
-           "losses": 0,
-           "ties": 0,
-           "rank": 2,
-           "points": {
-            "for": 39,
-            "against": 32
-           }
-          },
-          "home": {
-           "wins": 4,
-           "winPct": 1,
-           "losses": 0,
-           "ties": 0,
-           "points": {
-            "for": 101,
-            "against": 86
-           }
-          },
-          "last5": {
-           "wins": 4,
-           "winPct": 0.8,
-           "losses": 1,
-           "ties": 0,
-           "points": {
-            "for": 129,
-            "against": 94
-           }
-          },
-          "overall": {
-           "games": 8,
-           "wins": 6,
-           "winPct": 0.75,
-           "losses": 2,
-           "ties": 0,
-           "points": {
-            "for": 222,
-            "against": 189
-           },
-           "streak": {
-            "type": "STREAK_TYPE_WINNING",
-            "length": 4
-           }
-          },
-          "road": {
-           "wins": 2,
-           "winPct": 0.5,
-           "losses": 2,
-           "ties": 0,
-           "points": {
-            "for": 121,
-            "against": 103
-           }
-          }
-         },
-         "summary": "$undefined",
-         "teamId": "10401540-f97c-2d19-6fcd-fac6490a48b7"
-        },
-        "href": "/games/patriots-at-lions-2026-reg-10",
-        "internationalGameIcon": "https://static.www.nfl.com/league/apps/shared/png/logo-events-munichgames-2026.png",
-        "internationalGameIconAltText": "NFL 2026 Munich Game",
-        "isInternationalGame": true,
-        "isRedZone": "$undefined",
-        "isSelected": false,
-        "isSuperBowlWeek": false,
-        "networkIcon": "https://static.www.nfl.com/league/apps/web/global/logos/broadcaster/broadcaster_FOX.svg",
-        "networkIconAltText": "FOX network logo",
-        "type": 1,
-        "variant": "PRE"
-       },
-       "...len=15"
-      ],
-      "isDomestic": true,
-      "isHallOfFameWeek": false,
-      "isPlayoffWeek": false,
-      "isSuperBowlWeek": false,
-      "promotedCardProps": {
-       "analyticsProperties": "$29:props:state:queries:0:state:data:data:carouselCardPropsList:0:analyticsProperties",
-       "footerTextLong": "SUN 6:00PM",
-       "footerTextShort": "6:00PM",
-       "href": "/redzone/watch",
-       "networkIcon": "https://static.www.nfl.com/league/apps/web/global/logos/broadcaster/broadcaster_NFLPlusPremium.svg",
-       "networkIconAltText": "NFLPlusPremium network icon",
-       "redZoneImage": "https://static.www.nfl.com/league/apps/web/global/logos/logo-league-redzone-primarylight.svg",
-       "redZoneImageAltText": "NFL RedZone Upcoming Image",
-       "type": 3,
-       "variant": "upcoming"
-      },
-      "sectionProps": {
-       "sectionHeader": {
-        "headline": "Score Strip"
-       },
-       "sectionId": "ScoreStrip",
-       "visibility": {
-        "hideOnDesktop": false,
-        "hideOnMobile": false
-       }
-      },
-      "shouldRefetch": true
-     },
-     "error": "$undefined",
-     "isError": false
-    }
-   },
-   {
-    "queryKey": [
      "useFetchFootballStandingsLatest",
-     "{'season': '2026', 'seasonType': 'REG'}"
+     "{'season': '2025', 'seasonType': 'REG'}"
     ],
     "status": "success",
     "dataShape": {
@@ -391,7 +50,7 @@
          },
          "division": {
           "wins": "int",
-          "winPct": "float",
+          "winPct": "int",
           "losses": "int",
           "ties": "int",
           "rank": "int",
@@ -402,7 +61,7 @@
          },
          "home": {
           "wins": "int",
-          "winPct": "int",
+          "winPct": "float",
           "losses": "int",
           "ties": "int",
           "points": {
@@ -412,7 +71,7 @@
          },
          "last5": {
           "wins": "int",
-          "winPct": "float",
+          "winPct": "int",
           "losses": "int",
           "ties": "int",
           "points": {
@@ -457,7 +116,7 @@
      }
     },
     "sampleRecord": {
-     "week": 10,
+     "week": 18,
      "standings": [
       {
        "team": {
@@ -468,81 +127,81 @@
        "clinched": {
         "bye": false,
         "division": false,
-        "eliminated": false,
+        "eliminated": true,
         "homeField": false,
         "playoff": false,
         "wildCard": false
        },
        "closeGames": {
         "wins": 2,
-        "losses": 1,
+        "losses": 8,
         "ties": 0
        },
        "conference": {
-        "wins": 2,
-        "winPct": 0.286,
-        "losses": 5,
+        "wins": 3,
+        "winPct": 0.25,
+        "losses": 9,
         "ties": 0,
-        "rank": 15,
+        "rank": 16,
         "points": {
-         "for": 136,
-         "against": 211
+         "for": 249,
+         "against": 331
         }
        },
        "division": {
-        "wins": 1,
-        "winPct": 0.25,
-        "losses": 3,
+        "wins": 0,
+        "winPct": 0,
+        "losses": 6,
         "ties": 0,
         "rank": 4,
         "points": {
-         "for": 58,
-         "against": 100
+         "for": 116,
+         "against": 206
         }
        },
        "home": {
-        "wins": 0,
-        "winPct": 0,
-        "losses": 3,
+        "wins": 1,
+        "winPct": 0.125,
+        "losses": 7,
         "ties": 0,
         "points": {
-         "for": 44,
-         "against": 106
+         "for": 173,
+         "against": 233
         }
        },
        "last5": {
-        "wins": 2,
-        "winPct": 0.4,
-        "losses": 3,
+        "wins": 0,
+        "winPct": 0,
+        "losses": 5,
         "ties": 0,
         "points": {
-         "for": 91,
-         "against": 138
+         "for": 90,
+         "against": 185
         }
        },
        "overall": {
-        "games": 9,
+        "games": 17,
         "wins": 3,
-        "winPct": 0.333,
-        "losses": 6,
+        "winPct": 0.176,
+        "losses": 14,
         "ties": 0,
         "points": {
-         "for": 178,
-         "against": 255
+         "for": 355,
+         "against": 488
         },
         "streak": {
          "type": "L",
-         "length": 1
+         "length": 9
         }
        },
        "road": {
-        "wins": 3,
-        "winPct": 0.5,
-        "losses": 3,
+        "wins": 2,
+        "winPct": 0.222,
+        "losses": 7,
         "ties": 0,
         "points": {
-         "for": 134,
-         "against": 149
+         "for": 182,
+         "against": 255
         }
        }
       },
@@ -555,111 +214,86 @@
        "clinched": {
         "bye": false,
         "division": false,
-        "eliminated": false,
+        "eliminated": true,
         "homeField": false,
         "playoff": false,
         "wildCard": false
        },
        "closeGames": {
-        "wins": 0,
-        "losses": 3,
+        "wins": 5,
+        "losses": 5,
         "ties": 0
        },
        "conference": {
+        "wins": 7,
+        "winPct": 0.583,
+        "losses": 5,
+        "ties": 0,
+        "rank": 11,
+        "points": {
+         "for": 247,
+         "against": 271
+        }
+       },
+       "division": {
         "wins": 3,
         "winPct": 0.5,
         "losses": 3,
         "ties": 0,
-        "rank": 14,
+        "rank": 3,
         "points": {
-         "for": 135,
-         "against": 139
-        }
-       },
-       "division": {
-        "wins": 1,
-        "winPct": 0.333,
-        "losses": 2,
-        "ties": 0,
-        "rank": 4,
-        "points": {
-         "for": 48,
-         "against": 74
+         "for": 119,
+         "against": 138
         }
        },
        "home": {
-        "wins": 1,
-        "winPct": 0.2,
+        "wins": 4,
+        "winPct": 0.5,
         "losses": 4,
         "ties": 0,
         "points": {
-         "for": 95,
-         "against": 149
+         "for": 170,
+         "against": 206
         }
        },
        "last5": {
-        "wins": 1,
-        "winPct": 0.2,
-        "losses": 4,
+        "wins": 4,
+        "winPct": 0.8,
+        "losses": 1,
         "ties": 0,
         "points": {
-         "for": 92,
-         "against": 131
+         "for": 110,
+         "against": 125
         }
        },
        "overall": {
-        "games": 9,
-        "wins": 3,
-        "winPct": 0.333,
-        "losses": 6,
+        "games": 17,
+        "wins": 8,
+        "winPct": 0.471,
+        "losses": 9,
         "ties": 0,
         "points": {
-         "for": 188,
-         "against": 223
+         "for": 353,
+         "against": 401
         },
         "streak": {
-         "type": "L",
-         "length": 2
+         "type": "W",
+         "length": 4
         }
        },
        "road": {
-        "wins": 2,
-        "winPct": 0.5,
-        "losses": 2,
+        "wins": 4,
+        "winPct": 0.444,
+        "losses": 5,
         "ties": 0,
         "points": {
-         "for": 93,
-         "against": 74
+         "for": 183,
+         "against": 195
         }
        }
       },
       "...len=32"
      ]
-    }
-   },
-   {
-    "queryKey": [
-     "useFetchContentMixedBySlug",
-     "{'enableMediakindForgeVod': False, 'limit': 40, 'slug': 'schedules-by-week-inline-promo'}"
-    ],
-    "status": "success",
-    "dataShape": {
-     "items": [],
-     "metadata": {
-      "generatedAt": "str"
-     },
-     "pagination": {
-      "token": "str"
-     }
-    },
-    "sampleRecord": {
-     "items": [],
-     "metadata": {
-      "generatedAt": "2026-11-13T13:13:32.881Z"
-     },
-     "pagination": {
-      "token": "eyJhbGciOiJIUzI1NiJ9.eyJsaW1pdCI6IjQwIiwib2Zmc2V0Ijo0MCwicXVlcnkiOnsibGltaXQiOiI0MCJ9fQ.MGJWsBM6nwlFeuKABWwPwp93siimFN3ZjcyuhyYBI30"
-     }
     }
    },
    {
@@ -1057,7 +691,7 @@
    {
     "queryKey": [
      "useFetchExperienceWaysToWatchGamesByWeek",
-     "{'season': '2026', 'showNflPlusItems': False, 'week': '9', 'weekType': 'REG'}"
+     "{'season': '2025', 'showNflPlusItems': False, 'week': '1', 'weekType': 'REG'}"
     ],
     "status": "success",
     "dataShape": {
@@ -1158,13 +792,22 @@
        "broadcastInfo": {
         "homeNetworkChannels": [
          "str",
-         "len=1"
+         "len=3"
         ],
         "awayNetworkChannels": [
          "str",
-         "len=1"
+         "len=3"
         ],
-        "internationalWatchOptions": [],
+        "internationalWatchOptions": [
+         {
+          "countryCode": "str",
+          "broadcasters": [
+           "str",
+           "len=4"
+          ]
+         },
+         "len=7"
+        ],
         "streamingNetworks": [
          {
           "hostNetwork": "str",
@@ -1172,9 +815,9 @@
            "str",
            "len=1"
           ],
-          "streamType": "str"
+          "streamType": "NoneType"
          },
-         "len=3"
+         "len=2"
         ],
         "territory": "str",
         "audioNetworks": [
@@ -1185,7 +828,7 @@
            "len=1"
           ]
          },
-         "len=5"
+         "len=6"
         ]
        },
        "externalIds": [
@@ -1231,9 +874,43 @@
           },
           "len=1"
          ],
-         "amazon_prime": [
+         "mvpd_synacor": [
           {
-           "PRIME VIDEO - LIVE GAME": {
+           "MVPD_SYNACOR - LIVE GAME": {
+            "requirements": {
+             "countryCode": [
+              "...",
+              "len=1"
+             ],
+             "dmaCode": [
+              "...",
+              "len=1"
+             ]
+            }
+           }
+          },
+          "len=1"
+         ],
+         "mvpd": [
+          {
+           "MVPD - LIVE GAME": {
+            "requirements": {
+             "countryCode": [
+              "...",
+              "len=1"
+             ],
+             "dmaCode": [
+              "...",
+              "len=1"
+             ]
+            }
+           }
+          },
+          "len=1"
+         ],
+         "peacock": [
+          {
+           "PEACOCK - LIVE GAME": {
             "requirements": {
              "countryCode": [
               "...",
@@ -1274,7 +951,7 @@
         "endTime": "str",
         "episodeTitle": "NoneType",
         "externalId": "str",
-        "gameCategory": "str",
+        "gameCategory": "NoneType",
         "gameId": "str",
         "gameTerritory": "str",
         "gsisId": "str",
@@ -1292,7 +969,7 @@
         "mko": [],
         "networks": [
          "str",
-         "len=1"
+         "len=3"
         ],
         "nflSeason": "int",
         "nflSeasonType": "str",
@@ -1315,7 +992,7 @@
         "week": "int"
        }
       },
-      "len=15"
+      "len=16"
      ],
      "meta": {
       "count": "int"
@@ -1325,89 +1002,89 @@
      }
     },
     "sampleRecord": {
-     "id": "ab380826-4feb-11f1-abca-2c54536568a9",
-     "date": "2026-11-06T01:15:00Z",
+     "id": "f5908b6d-311e-11f0-b670-ae1250fadad1",
+     "date": "2025-09-05T00:20:00Z",
      "homeTeam": {
-      "id": "10400325-48de-3d6a-be29-8f829437f4c8",
-      "abbreviation": "BAL",
+      "id": "10403700-b939-3cbd-3d16-24d4d6742fa2",
+      "abbreviation": "PHI",
       "season": "2026",
-      "fullName": "Baltimore Ravens",
-      "conferenceAbbr": "AFC",
-      "conferenceFullName": "American Football Conference",
-      "divisionFullName": "AFC North",
+      "fullName": "Philadelphia Eagles",
+      "conferenceAbbr": "NFC",
+      "conferenceFullName": "National Football Conference",
+      "divisionFullName": "NFC East",
       "league": "National Football League",
-      "location": "Baltimore",
-      "nickName": "Ravens",
-      "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/BAL",
-      "primaryColor": "#24135F",
-      "secondaryColor": "#9A7611",
-      "yearEstablished": 1996,
-      "nflShopUrl": "https://www.nflshop.com/baltimore-ravens/t-36590255+z-9152346-3829362677?_s=bm-nflcom-team-page-buy-gear-052220-Ravens",
-      "officialWebsiteUrl": "https://www.baltimoreravens.com/",
-      "owners": "Steve Bisciotti",
+      "location": "Philadelphia",
+      "nickName": "Eagles",
+      "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/PHI",
+      "primaryColor": "#004851",
+      "secondaryColor": "#A2AAAD",
+      "yearEstablished": 1933,
+      "nflShopUrl": "https://www.nflshop.com/philadelphia-eagles/t-25485904+z-9971978-3310177081?_s=bm-nflcom-team-page-buy-gear-052220-Eagles",
+      "officialWebsiteUrl": "https://www.philadelphiaeagles.com/",
+      "owners": "Jeffrey Lurie",
       "teamType": "TEAM",
       "socials": [
        {
         "platform": "Facebook",
-        "link": "https://www.facebook.com/baltimoreravens"
+        "link": "https://www.facebook.com/philadelphiaeagles"
        },
        {
         "platform": "Instagram",
-        "link": "https://www.instagram.com/ravens"
+        "link": "https://www.instagram.com/PhiladelphiaEagles"
        },
        "...len=4"
       ],
       "venues": [
        {
-        "id": "00083695-126e-1517-91fe-aab634a526ea",
-        "name": "M&T Bank Stadium",
-        "city": "Baltimore",
+        "id": "00082769-1a91-621b-0c2d-27234c215dc0",
+        "name": "Lincoln Financial Field",
+        "city": "Philadelphia",
         "country": "USA"
        }
       ],
-      "triCode": "BAL",
-      "logoUrl": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/BAL"
+      "triCode": "PHI",
+      "logoUrl": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/PHI"
      },
      "awayTeam": {
-      "id": "10402250-89fe-7b86-ef98-9062cd354256",
-      "abbreviation": "JAX",
+      "id": "10401200-a308-98ca-ad5f-95df2fefea68",
+      "abbreviation": "DAL",
       "season": "2026",
-      "fullName": "Jacksonville Jaguars",
-      "conferenceAbbr": "AFC",
-      "conferenceFullName": "American Football Conference",
-      "divisionFullName": "AFC South",
+      "fullName": "Dallas Cowboys",
+      "conferenceAbbr": "NFC",
+      "conferenceFullName": "National Football Conference",
+      "divisionFullName": "NFC East",
       "league": "National Football League",
-      "location": "Jacksonville",
-      "nickName": "Jaguars",
-      "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/JAX",
-      "primaryColor": "#000000",
-      "secondaryColor": "#006778",
-      "yearEstablished": 1995,
-      "nflShopUrl": "https://www.nflshop.com/jacksonville-jaguars/t-14371424+z-9736823-4280408112?_s=bm-nflcom-team-page-buy-gear-052220-Jaguars",
-      "officialWebsiteUrl": "https://www.jaguars.com/",
-      "owners": "Shahid Khan",
+      "location": "Dallas",
+      "nickName": "Cowboys",
+      "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/DAL",
+      "primaryColor": "#002244",
+      "secondaryColor": "#B0B7BC",
+      "yearEstablished": 1960,
+      "nflShopUrl": "https://www.nflshop.com/dallas-cowboys/t-36717995+z-9349787-1633145182?_s=bm-nflcom-team-page-buy-gear-052220-Cowboys",
+      "officialWebsiteUrl": "https://www.dallascowboys.com/",
+      "owners": "Jerry Jones",
       "teamType": "TEAM",
       "socials": [
        {
         "platform": "Facebook",
-        "link": "https://www.facebook.com/jacksonvillejaguars"
+        "link": "https://www.facebook.com/DallasCowboys"
        },
        {
         "platform": "Instagram",
-        "link": "https://www.instagram.com/jaguars"
+        "link": "https://www.instagram.com/DallasCowboys"
        },
        "...len=4"
       ],
       "venues": [
        {
-        "id": "00082049-e1c5-6172-a084-094f2c34a377",
-        "name": "EverBank Stadium",
-        "city": "Jacksonville",
+        "id": "00084948-addf-5f39-b283-02455f77c178",
+        "name": "AT&T Stadium",
+        "city": "Arlington",
         "country": "USA"
        }
       ],
-      "triCode": "JAX",
-      "logoUrl": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/JAX"
+      "triCode": "DAL",
+      "logoUrl": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/DAL"
      },
      "isFlexible": false,
      "isInternational": false,
@@ -1423,34 +1100,55 @@
       },
       "...len=3"
      ],
-     "week": 9,
+     "week": 1,
      "weekType": "REG",
-     "season": 2026,
+     "season": 2025,
      "seasonType": "REG",
      "broadcastInfo": {
       "homeNetworkChannels": [
-       "Prime Video"
+       "NBC",
+       "TELEMUNDO",
+       "...len=3"
       ],
       "awayNetworkChannels": [
-       "Prime Video"
+       "NBC",
+       "TELEMUNDO",
+       "...len=3"
       ],
-      "internationalWatchOptions": [],
+      "internationalWatchOptions": [
+       {
+        "countryCode": "CA",
+        "broadcasters": [
+         "CTV",
+         "DAZN Canada",
+         "...len=4"
+        ]
+       },
+       {
+        "countryCode": "GB",
+        "broadcasters": [
+         "NFL Game Pass on DAZN",
+         "Sky Sports"
+        ]
+       },
+       "...len=7"
+      ],
       "streamingNetworks": [
        {
-        "hostNetwork": "PRIME",
+        "hostNetwork": "NBC",
         "networks": [
-         "PRIME"
+         "NBC"
         ],
-        "streamType": "en-pri"
+        "streamType": null
        },
        {
-        "hostNetwork": "PRIMESPANISH",
+        "hostNetwork": "TELEMUNDO",
         "networks": [
-         "PRIMESPANISH"
+         "TELEMUNDO",
+         "UNIVERSO"
         ],
-        "streamType": "es-alt-1"
-       },
-       "...len=3"
+        "streamType": null
+       }
       ],
       "territory": "NATIONAL",
       "audioNetworks": [
@@ -1461,22 +1159,22 @@
         ]
        },
        {
-        "audience": "Home",
+        "audience": "Entravision",
         "languages": [
-         "en"
+         "es"
         ]
        },
-       "...len=5"
+       "...len=6"
       ]
      },
      "externalIds": [
       {
        "source": "elias",
-       "id": "2026110500"
+       "id": "2025090400"
       },
       {
        "source": "gsis",
-       "id": "60299"
+       "id": "59843"
       },
       "...len=3"
      ],
@@ -1514,9 +1212,41 @@
          }
         }
        ],
-       "amazon_prime": [
+       "mvpd_synacor": [
         {
-         "PRIME VIDEO - LIVE GAME": {
+         "MVPD_SYNACOR - LIVE GAME": {
+          "requirements": {
+           "countryCode": [
+            "US"
+           ],
+           "dmaCode": [
+            [
+             "{{asset.dma_codes}}"
+            ]
+           ]
+          }
+         }
+        }
+       ],
+       "mvpd": [
+        {
+         "MVPD - LIVE GAME": {
+          "requirements": {
+           "countryCode": [
+            "US"
+           ],
+           "dmaCode": [
+            [
+             "{{asset.dma_codes}}"
+            ]
+           ]
+          }
+         }
+        }
+       ],
+       "peacock": [
+        {
+         "PEACOCK - LIVE GAME": {
           "requirements": {
            "countryCode": [
             "US"
@@ -1531,10 +1261,10 @@
         }
        ]
       },
-      "awayTeamFullName": "Jacksonville Jaguars",
-      "awayTeamId": "10402250-89fe-7b86-ef98-9062cd354256",
+      "awayTeamFullName": "Dallas Cowboys",
+      "awayTeamId": "10401200-a308-98ca-ad5f-95df2fefea68",
       "broadcastAiringType": "LIVE",
-      "callSign": "Prime Video",
+      "callSign": "NBC",
       "constant": [
        "490",
        "491",
@@ -1544,27 +1274,27 @@
       "countryCodes": [
        "US"
       ],
-      "date": "2026-11-06",
+      "date": "2025-09-05",
       "deliveryMethod": "LIVE",
-      "description": "From M&T Bank Stadium in Baltimore",
+      "description": "From Lincoln Financial Field in Philadelphia",
       "dmaCodes": [
        "490",
        "491",
        "...len=215"
       ],
       "duration": 10440,
-      "eliasId": "2026110500",
-      "endTime": "2026-11-06T04:09:00.000Z",
+      "eliasId": "2025090400",
+      "endTime": "2025-09-05T03:14:00.000Z",
       "episodeTitle": null,
       "externalId": "fakeExternalId",
-      "gameCategory": "TNF",
-      "gameId": "ab380826-4feb-11f1-abca-2c54536568a9",
+      "gameCategory": null,
+      "gameId": "f5908b6d-311e-11f0-b670-ae1250fadad1",
       "gameTerritory": "NATIONAL",
-      "gsisId": "60299",
+      "gsisId": "59843",
       "hmaCodes": [],
-      "homeTeamFullName": "Baltimore Ravens",
-      "homeTeamId": "10400325-48de-3d6a-be29-8f829437f4c8",
-      "hostNetwork": "Prime Video",
+      "homeTeamFullName": "Philadelphia Eagles",
+      "homeTeamId": "10403700-b939-3cbd-3d16-24d4d6742fa2",
+      "hostNetwork": "NBC",
       "intendedAudience": null,
       "language": [
        "en"
@@ -1573,9 +1303,11 @@
       "mcpPlaybackId": "anvato19",
       "mko": [],
       "networks": [
-       "Prime Video"
+       "NBC",
+       "TELEMUNDO",
+       "...len=3"
       ],
-      "nflSeason": 2026,
+      "nflSeason": 2025,
       "nflSeasonType": "REG",
       "nonConstant": [],
       "objectOwner": {
@@ -1583,16 +1315,16 @@
        "name": "NFL",
        "teamId": ""
       },
-      "originalAirDate": "2026-11-06T01:15:00Z",
+      "originalAirDate": "2025-09-05T00:20:00Z",
       "preferredImage": null,
       "sponsorInfo": null,
-      "startTime": "2026-11-06T01:15:00Z",
+      "startTime": "2025-09-05T00:20:00Z",
       "streamingNetworks": [
-       "PRIME"
+       "NBC"
       ],
-      "time": "2026-11-06T01:15:00Z",
-      "title": "Jacksonville Jaguars at Baltimore Ravens",
-      "week": 9
+      "time": "2025-09-05T00:20:00Z",
+      "title": "Dallas Cowboys at Philadelphia Eagles",
+      "week": 1
      }
     }
    },
@@ -1615,30 +1347,38 @@
        "currentLogo": "str",
        "fullName": "str"
       },
-      "category": "str",
+      "category": "NoneType",
       "hideCategory": "bool",
       "date": "str",
       "time": "str",
       "broadcastInfo": {
        "homeNetworkChannels": [
         "str",
-        "len=1"
+        "len=3"
        ],
        "awayNetworkChannels": [
         "str",
-        "len=1"
+        "len=3"
        ],
-       "internationalWatchOptions": [],
+       "internationalWatchOptions": [
+        {
+         "countryCode": "str",
+         "broadcasters": [
+          "str",
+          "len=4"
+         ]
+        },
+        "len=7"
+       ],
        "streamingNetworks": [
         {
          "hostNetwork": "str",
          "networks": [
           "str",
           "len=1"
-         ],
-         "streamType": "str"
+         ]
         },
-        "len=3"
+        "len=2"
        ],
        "territory": "str",
        "audioNetworks": [
@@ -1649,7 +1389,7 @@
           "len=1"
          ]
         },
-        "len=5"
+        "len=6"
        ]
       },
       "gameType": "str",
@@ -1755,7 +1495,7 @@
        },
        "conference": {
         "wins": "int",
-        "winPct": "float",
+        "winPct": "int",
         "losses": "int",
         "ties": "int",
         "rank": "int",
@@ -1766,7 +1506,7 @@
        },
        "division": {
         "wins": "int",
-        "winPct": "float",
+        "winPct": "int",
         "losses": "int",
         "ties": "int",
         "rank": "int",
@@ -1777,7 +1517,7 @@
        },
        "home": {
         "wins": "int",
-        "winPct": "float",
+        "winPct": "int",
         "losses": "int",
         "ties": "int",
         "points": {
@@ -1787,7 +1527,7 @@
        },
        "last5": {
         "wins": "int",
-        "winPct": "float",
+        "winPct": "int",
         "losses": "int",
         "ties": "int",
         "points": {
@@ -1798,7 +1538,7 @@
        "overall": {
         "games": "int",
         "wins": "int",
-        "winPct": "float",
+        "winPct": "int",
         "losses": "int",
         "ties": "int",
         "points": {
@@ -1812,7 +1552,7 @@
        },
        "road": {
         "wins": "int",
-        "winPct": "float",
+        "winPct": "int",
         "losses": "int",
         "ties": "int",
         "points": {
@@ -1842,7 +1582,7 @@
        },
        "conference": {
         "wins": "int",
-        "winPct": "float",
+        "winPct": "int",
         "losses": "int",
         "ties": "int",
         "rank": "int",
@@ -1864,7 +1604,7 @@
        },
        "home": {
         "wins": "int",
-        "winPct": "float",
+        "winPct": "int",
         "losses": "int",
         "ties": "int",
         "points": {
@@ -1874,7 +1614,7 @@
        },
        "last5": {
         "wins": "int",
-        "winPct": "float",
+        "winPct": "int",
         "losses": "int",
         "ties": "int",
         "points": {
@@ -1885,7 +1625,7 @@
        "overall": {
         "games": "int",
         "wins": "int",
-        "winPct": "float",
+        "winPct": "int",
         "losses": "int",
         "ties": "int",
         "points": {
@@ -1899,7 +1639,7 @@
        },
        "road": {
         "wins": "int",
-        "winPct": "float",
+        "winPct": "int",
         "losses": "int",
         "ties": "int",
         "points": {
@@ -1909,48 +1649,67 @@
        }
       }
      },
-     "len=15"
+     "len=16"
     ],
     "sampleRecord": {
-     "id": "ab380826-4feb-11f1-abca-2c54536568a9",
+     "id": "f5908b6d-311e-11f0-b670-ae1250fadad1",
      "homeTeam": {
-      "id": "10400325-48de-3d6a-be29-8f829437f4c8",
-      "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/BAL",
-      "fullName": "Baltimore Ravens"
+      "id": "10403700-b939-3cbd-3d16-24d4d6742fa2",
+      "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/PHI",
+      "fullName": "Philadelphia Eagles"
      },
      "awayTeam": {
-      "id": "10402250-89fe-7b86-ef98-9062cd354256",
-      "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/JAX",
-      "fullName": "Jacksonville Jaguars"
+      "id": "10401200-a308-98ca-ad5f-95df2fefea68",
+      "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/DAL",
+      "fullName": "Dallas Cowboys"
      },
-     "category": "TNF",
+     "category": null,
      "hideCategory": false,
-     "date": "2026-11-06",
-     "time": "2026-11-06T01:15:00Z",
+     "date": "2025-09-05",
+     "time": "2025-09-05T00:20:00Z",
      "broadcastInfo": {
       "homeNetworkChannels": [
-       "Prime Video"
+       "NBC",
+       "TELEMUNDO",
+       "...len=3"
       ],
       "awayNetworkChannels": [
-       "Prime Video"
+       "NBC",
+       "TELEMUNDO",
+       "...len=3"
       ],
-      "internationalWatchOptions": [],
+      "internationalWatchOptions": [
+       {
+        "countryCode": "CA",
+        "broadcasters": [
+         "CTV",
+         "DAZN Canada",
+         "...len=4"
+        ]
+       },
+       {
+        "countryCode": "GB",
+        "broadcasters": [
+         "NFL Game Pass on DAZN",
+         "Sky Sports"
+        ]
+       },
+       "...len=7"
+      ],
       "streamingNetworks": [
        {
-        "hostNetwork": "PRIME",
+        "hostNetwork": "NBC",
         "networks": [
-         "PRIME"
-        ],
-        "streamType": "en-pri"
+         "NBC"
+        ]
        },
        {
-        "hostNetwork": "PRIMESPANISH",
+        "hostNetwork": "TELEMUNDO",
         "networks": [
-         "PRIMESPANISH"
-        ],
-        "streamType": "es-alt-1"
-       },
-       "...len=3"
+         "TELEMUNDO",
+         "UNIVERSO"
+        ]
+       }
       ],
       "territory": "NATIONAL",
       "audioNetworks": [
@@ -1961,94 +1720,94 @@
         ]
        },
        {
-        "audience": "AUDIO_NETWORK_AUDIENCE_HOME",
+        "audience": "AUDIO_NETWORK_AUDIENCE_ENTRAVISION",
         "languages": [
-         "en"
+         "es"
         ]
        },
-       "...len=5"
+       "...len=6"
       ]
      },
      "gameType": "UNSPECIFIED",
      "international": false,
      "neutralSite": false,
      "venue": {
-      "id": "00083695-126e-1517-91fe-aab634a526ea",
-      "name": "M&T Bank Stadium",
-      "city": "Baltimore",
+      "id": "00082769-1a91-621b-0c2d-27234c215dc0",
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia",
       "country": "USA"
      },
-     "season": 2026,
+     "season": 2025,
      "seasonType": "REG",
      "status": "SCHEDULED",
-     "week": 9,
+     "week": 1,
      "weekType": "REG",
      "externalIds": [
       {
        "source": "elias",
-       "id": "2026110500"
+       "id": "2025090400"
       },
       {
        "source": "gsis",
-       "id": "60299"
+       "id": "59843"
       },
       "...len=3"
      ],
-     "ticketUrl": "https://www.ticketmaster.com/event/1500648DB78E9D2E?wt.mc_id=NFL_LEAGUE_SCHED_PG_BAL_LINK6&utm_source=NFL.com&utm_medium=client&utm_campaign=NFL_LEAGUE&utm_content=SCHED_PG_BAL_LINK6&campaign=bal-ti-i...[truncated]",
+     "ticketUrl": "https://www.ticketmaster.com/event/0200628891581C6A?wt.mc_id=NFL_LEAGUE_SCHEDULE_PAGE_LINKS_PHI_LINK3&utm_source=NFL.com&utm_medium=client&utm_campaign=NFL_LEAGUE&utm_content=SCHEDULE_PAGE_LINKS_PHI_L...[truncated]",
      "ticketVendors": [
       {
        "vendorName": "lodgingUrl",
-       "ticketUrl": "https://www.marriott.com/search/findHotels.mi?pageType=advanced&showMore=true&destinationAddress.location=M+T+Bank+Stadium&cid=PMO_GLB0003VDI_GLE00095Q4_GLF000HKCK&deviceType=desktop-web&view=list#/0/"
+       "ticketUrl": "https://www.marriott.com/search/findHotels.mi?pageType=advanced&showMore=true&destinationAddress.location=Lincoln+Financial+Field&cid=PMO_GLB0003VDI_GLE00095QS_GLF000HKFL&deviceType=desktop-web&view=l...[truncated]"
       },
       {
        "vendorName": "oneBoxUrl",
-       "ticketUrl": "https://www.ticketmaster.com/event/1500648DB78E9D2E?wt.mc_id=NFL_LEAGUE_GOOGLE_ONEBOX_BAL_LINK6&utm_source=NFL.com&utm_medium=client&utm_campaign=NFL_LEAGUE&utm_content=GOOGLE_ONEBOX_BAL_LINK6&campaig...[truncated]"
+       "ticketUrl": "https://www.ticketmaster.com/event/0200628891581C6A?wt.mc_id=NFL_LEAGUE_GOOGLE_ONE_BOX_PHI_LINK3&utm_source=NFL.com&utm_medium=client&utm_campaign=NFL_LEAGUE&utm_content=GOOGLE_ONE_BOX_PHI_LINK3&campa...[truncated]"
       },
       "...len=3"
      ],
      "extensions": [],
-     "version": 7,
+     "version": 10,
      "summary": {
-      "gameId": "ab380826-4feb-11f1-abca-2c54536568a9",
-      "offset": 499,
-      "attendance": 70007,
-      "clock": "00:30",
-      "distance": 2,
+      "gameId": "f5908b6d-311e-11f0-b670-ae1250fadad1",
+      "offset": 480,
+      "attendance": 69879,
+      "clock": "00:33",
+      "distance": 13,
       "down": 4,
-      "gameBookUrl": "https://static.www.nfl.com/image/upload/v1793965716/gamecenter/ab380826-4feb-11f1-abca-2c54536568a9.pdf",
+      "gameBookUrl": "https://static.www.nfl.com/image/upload/v1757104719/gamecenter/f5908b6d-311e-11f0-b670-ae1250fadad1.pdf",
       "isGoalToGo": false,
       "isRedZone": false,
       "phase": "FINAL",
       "quarter": "END_OF_GAME",
-      "startTime": "2026-11-06T01:16:41.480Z",
-      "weather": "Rain Temp: 70\u00b0 F, Humidity: 92%, Wind: N 4 mph",
-      "yardLine": "BAL 49",
+      "startTime": "2025-09-05T00:23:01.813Z",
+      "weather": "Rain Temp: 75\u00b0 F, Humidity: 66%, Wind: S 11 mph",
+      "yardLine": "DAL 36",
       "awayTeam": {
-       "teamId": "10402250-89fe-7b86-ef98-9062cd354256",
+       "teamId": "10401200-a308-98ca-ad5f-95df2fefea68",
        "hasPossession": false,
        "score": {
-        "q1": 10,
-        "q2": 7,
-        "q3": 3,
-        "q4": 13,
+        "q1": 7,
+        "q2": 13,
+        "q3": 0,
+        "q4": 0,
         "ot": 0,
-        "total": 33
+        "total": 20
        },
        "timeouts": {
-        "remaining": 2,
-        "used": 1
+        "remaining": 0,
+        "used": 3
        }
       },
       "homeTeam": {
-       "teamId": "10400325-48de-3d6a-be29-8f829437f4c8",
+       "teamId": "10403700-b939-3cbd-3d16-24d4d6742fa2",
        "hasPossession": true,
        "score": {
-        "q1": 3,
-        "q2": 0,
-        "q3": 0,
-        "q4": 7,
+        "q1": 7,
+        "q2": 14,
+        "q3": 3,
+        "q4": 0,
         "ot": 0,
-        "total": 10
+        "total": 24
        },
        "timeouts": {
         "remaining": 2,
@@ -2061,9 +1820,9 @@
      "taggedVideos": null,
      "awayTeamStandings": {
       "team": {
-       "id": "10402250-89fe-7b86-ef98-9062cd354256",
-       "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/JAX",
-       "fullName": "Jacksonville Jaguars"
+       "id": "10401200-a308-98ca-ad5f-95df2fefea68",
+       "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/DAL",
+       "fullName": "Dallas Cowboys"
       },
       "clinched": {
        "bye": false,
@@ -2074,162 +1833,162 @@
        "wildCard": false
       },
       "closeGames": {
-       "wins": 2,
-       "losses": 2,
+       "wins": 0,
+       "losses": 1,
        "ties": 0
       },
       "conference": {
-       "wins": 5,
-       "winPct": 0.714,
-       "losses": 2,
-       "ties": 0,
-       "rank": 3,
-       "points": {
-        "for": 210,
-        "against": 104
-       }
-      },
-      "division": {
-       "wins": 1,
-       "winPct": 0.5,
+       "wins": 0,
+       "winPct": 0,
        "losses": 1,
        "ties": 0,
-       "rank": 1,
+       "rank": 12,
        "points": {
-        "for": 73,
-        "against": 41
-       }
-      },
-      "home": {
-       "wins": 4,
-       "winPct": 0.8,
-       "losses": 1,
-       "ties": 0,
-       "points": {
-        "for": 161,
-        "against": 74
-       }
-      },
-      "last5": {
-       "wins": 4,
-       "winPct": 0.8,
-       "losses": 1,
-       "ties": 0,
-       "points": {
-        "for": 147,
-        "against": 85
-       }
-      },
-      "overall": {
-       "games": 8,
-       "wins": 6,
-       "winPct": 0.75,
-       "losses": 2,
-       "ties": 0,
-       "points": {
-        "for": 229,
-        "against": 121
-       },
-       "streak": {
-        "type": "STREAK_TYPE_WINNING",
-        "length": 2
-       }
-      },
-      "road": {
-       "wins": 2,
-       "winPct": 0.667,
-       "losses": 1,
-       "ties": 0,
-       "points": {
-        "for": 68,
-        "against": 47
-       }
-      }
-     },
-     "homeTeamStandings": {
-      "team": {
-       "id": "10400325-48de-3d6a-be29-8f829437f4c8",
-       "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/BAL",
-       "fullName": "Baltimore Ravens"
-      },
-      "clinched": {
-       "bye": false,
-       "division": false,
-       "eliminated": false,
-       "homeField": false,
-       "playoff": false,
-       "wildCard": false
-      },
-      "closeGames": {
-       "wins": 3,
-       "losses": 2,
-       "ties": 0
-      },
-      "conference": {
-       "wins": 2,
-       "winPct": 0.333,
-       "losses": 4,
-       "ties": 0,
-       "rank": 10,
-       "points": {
-        "for": 108,
-        "against": 158
+        "for": 20,
+        "against": 24
        }
       },
       "division": {
        "wins": 0,
        "winPct": 0,
-       "losses": 2,
+       "losses": 1,
        "ties": 0,
-       "rank": 4,
+       "rank": 3,
        "points": {
-        "for": 23,
-        "against": 48
+        "for": 20,
+        "against": 24
+       }
+      },
+      "home": {
+       "wins": 0,
+       "winPct": 0,
+       "losses": 0,
+       "ties": 0,
+       "points": {
+        "for": 0,
+        "against": 0
+       }
+      },
+      "last5": {
+       "wins": 0,
+       "winPct": 0,
+       "losses": 1,
+       "ties": 0,
+       "points": {
+        "for": 20,
+        "against": 24
+       }
+      },
+      "overall": {
+       "games": 1,
+       "wins": 0,
+       "winPct": 0,
+       "losses": 1,
+       "ties": 0,
+       "points": {
+        "for": 20,
+        "against": 24
+       },
+       "streak": {
+        "type": "STREAK_TYPE_LOSING",
+        "length": 1
+       }
+      },
+      "road": {
+       "wins": 0,
+       "winPct": 0,
+       "losses": 1,
+       "ties": 0,
+       "points": {
+        "for": 20,
+        "against": 24
+       }
+      }
+     },
+     "homeTeamStandings": {
+      "team": {
+       "id": "10403700-b939-3cbd-3d16-24d4d6742fa2",
+       "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/PHI",
+       "fullName": "Philadelphia Eagles"
+      },
+      "clinched": {
+       "bye": false,
+       "division": false,
+       "eliminated": false,
+       "homeField": false,
+       "playoff": false,
+       "wildCard": false
+      },
+      "closeGames": {
+       "wins": 1,
+       "losses": 0,
+       "ties": 0
+      },
+      "conference": {
+       "wins": 1,
+       "winPct": 1,
+       "losses": 0,
+       "ties": 0,
+       "rank": 6,
+       "points": {
+        "for": 24,
+        "against": 20
+       }
+      },
+      "division": {
+       "wins": 1,
+       "winPct": 1,
+       "losses": 0,
+       "ties": 0,
+       "rank": 2,
+       "points": {
+        "for": 24,
+        "against": 20
        }
       },
       "home": {
        "wins": 1,
-       "winPct": 0.25,
-       "losses": 3,
+       "winPct": 1,
+       "losses": 0,
        "ties": 0,
        "points": {
-        "for": 64,
-        "against": 110
+        "for": 24,
+        "against": 20
        }
       },
       "last5": {
        "wins": 1,
-       "winPct": 0.2,
-       "losses": 4,
+       "winPct": 1,
+       "losses": 0,
        "ties": 0,
        "points": {
-        "for": 73,
-        "against": 140
+        "for": 24,
+        "against": 20
        }
       },
       "overall": {
-       "games": 9,
-       "wins": 4,
-       "winPct": 0.444,
-       "losses": 5,
+       "games": 1,
+       "wins": 1,
+       "winPct": 1,
+       "losses": 0,
        "ties": 0,
        "points": {
-        "for": 189,
-        "against": 236
+        "for": 24,
+        "against": 20
        },
        "streak": {
-        "type": "STREAK_TYPE_LOSING",
-        "length": 4
+        "type": "STREAK_TYPE_WINNING",
+        "length": 1
        }
       },
       "road": {
-       "wins": 3,
-       "winPct": 0.6,
-       "losses": 2,
+       "wins": 0,
+       "winPct": 0,
+       "losses": 0,
        "ties": 0,
        "points": {
-        "for": 125,
-        "against": 126
+        "for": 0,
+        "against": 0
        }
       }
      }
@@ -2238,7 +1997,7 @@
    {
     "queryKey": [
      "useFetchExperienceWeekSelectorBySeason",
-     "{'includeProBowl': True, 'season': '2026'}"
+     "{'includeProBowl': True, 'season': '2025'}"
     ],
     "status": "success",
     "dataShape": {
@@ -2252,7 +2011,7 @@
        "dateBegin": "str",
        "teamsOnBye": []
       },
-      "len=22"
+      "len=26"
      ],
      "meta": {
       "count": "int"
@@ -2265,16 +2024,16 @@
      "week": 0,
      "weekLabel": "Hall Of Fame",
      "weekType": "HOF",
-     "season": 2026,
+     "season": 2025,
      "seasonType": "PRE",
-     "dateBegin": "2026-08-07T00:00:00Z",
+     "dateBegin": "2025-08-01T00:00:00Z",
      "teamsOnBye": []
     }
    },
    {
     "queryKey": [
      "useFetchExperienceTeams",
-     "{'allteams': True, 'season': '2026'}"
+     "{'allteams': True, 'season': '2025'}"
     ],
     "status": "success",
     "dataShape": {
@@ -3479,7 +3238,7 @@
      "10408600-77a1-8b0f-8f54-99b7e0a7d1b2": {
       "id": "10408600-77a1-8b0f-8f54-99b7e0a7d1b2",
       "abbreviation": "AFC",
-      "season": "2026",
+      "season": "2025",
       "fullName": "AFC Pro Bowl Team",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -3500,8 +3259,8 @@
      },
      "10403800-517c-7b8c-65a3-c61b95d86123": {
       "id": "10403800-517c-7b8c-65a3-c61b95d86123",
-      "abbreviation": "AZ",
-      "season": "2026",
+      "abbreviation": "ARI",
+      "season": "2025",
       "fullName": "Arizona Cardinals",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -3540,7 +3299,7 @@
      "10400200-f401-4e53-5175-0974e4f16cf7": {
       "id": "10400200-f401-4e53-5175-0974e4f16cf7",
       "abbreviation": "ATL",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Atlanta Falcons",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -3579,7 +3338,7 @@
      "10400325-48de-3d6a-be29-8f829437f4c8": {
       "id": "10400325-48de-3d6a-be29-8f829437f4c8",
       "abbreviation": "BAL",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Baltimore Ravens",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -3618,7 +3377,7 @@
      "10400610-c40e-a673-1743-2ce2a5d5d731": {
       "id": "10400610-c40e-a673-1743-2ce2a5d5d731",
       "abbreviation": "BUF",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Buffalo Bills",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -3647,7 +3406,7 @@
       ],
       "venues": [
        {
-        "id": "00085780-1313-e95c-caa9-c352f75eb57e",
+        "id": "00083770-6add-eaf7-4975-0fb66a44b335",
         "name": "Highmark Stadium",
         "city": "Orchard Park",
         "country": "USA"
@@ -3657,7 +3416,7 @@
      "10400750-259b-33ac-eee3-a3852e83cd1f": {
       "id": "10400750-259b-33ac-eee3-a3852e83cd1f",
       "abbreviation": "CAR",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Carolina Panthers",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -3696,7 +3455,7 @@
      "10400810-db30-43d6-221c-620006f3ca19": {
       "id": "10400810-db30-43d6-221c-620006f3ca19",
       "abbreviation": "CHI",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Chicago Bears",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -3735,7 +3494,7 @@
      "10400920-57c1-7656-e77e-1af3d900483e": {
       "id": "10400920-57c1-7656-e77e-1af3d900483e",
       "abbreviation": "CIN",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Cincinnati Bengals",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -3774,7 +3533,7 @@
      "10401050-5e38-b907-1be1-55b91b19c057": {
       "id": "10401050-5e38-b907-1be1-55b91b19c057",
       "abbreviation": "CLE",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Cleveland Browns",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -3813,7 +3572,7 @@
      "10401200-a308-98ca-ad5f-95df2fefea68": {
       "id": "10401200-a308-98ca-ad5f-95df2fefea68",
       "abbreviation": "DAL",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Dallas Cowboys",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -3852,7 +3611,7 @@
      "10401400-b89b-96e5-55d1-caa7e18de3d8": {
       "id": "10401400-b89b-96e5-55d1-caa7e18de3d8",
       "abbreviation": "DEN",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Denver Broncos",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -3891,7 +3650,7 @@
      "10401540-f97c-2d19-6fcd-fac6490a48b7": {
       "id": "10401540-f97c-2d19-6fcd-fac6490a48b7",
       "abbreviation": "DET",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Detroit Lions",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -3930,7 +3689,7 @@
      "10401800-ab22-323d-721a-cee4713c4c2d": {
       "id": "10401800-ab22-323d-721a-cee4713c4c2d",
       "abbreviation": "GB",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Green Bay Packers",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -3969,7 +3728,7 @@
      "10402120-b0bc-693d-098a-803014096eb0": {
       "id": "10402120-b0bc-693d-098a-803014096eb0",
       "abbreviation": "HOU",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Houston Texans",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -4008,7 +3767,7 @@
      "10402200-2ea3-84c3-e627-6a6b3b39d56d": {
       "id": "10402200-2ea3-84c3-e627-6a6b3b39d56d",
       "abbreviation": "IND",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Indianapolis Colts",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -4047,7 +3806,7 @@
      "10402250-89fe-7b86-ef98-9062cd354256": {
       "id": "10402250-89fe-7b86-ef98-9062cd354256",
       "abbreviation": "JAX",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Jacksonville Jaguars",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -4086,7 +3845,7 @@
      "10402310-a47e-10ea-7442-16b633633637": {
       "id": "10402310-a47e-10ea-7442-16b633633637",
       "abbreviation": "KC",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Kansas City Chiefs",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -4125,7 +3884,7 @@
      "10402520-96bf-e9f2-4f68-8521ca896060": {
       "id": "10402520-96bf-e9f2-4f68-8521ca896060",
       "abbreviation": "LV",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Las Vegas Raiders",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -4164,7 +3923,7 @@
      "10404400-3b35-073f-197e-194bb8240723": {
       "id": "10404400-3b35-073f-197e-194bb8240723",
       "abbreviation": "LAC",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Los Angeles Chargers",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -4203,7 +3962,7 @@
      "10402510-8931-0d5f-9815-79bb79649a65": {
       "id": "10402510-8931-0d5f-9815-79bb79649a65",
       "abbreviation": "LAR",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Los Angeles Rams",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -4242,7 +4001,7 @@
      "10402700-1662-d8ad-f45c-0b0ea460d045": {
       "id": "10402700-1662-d8ad-f45c-0b0ea460d045",
       "abbreviation": "MIA",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Miami Dolphins",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -4281,7 +4040,7 @@
      "10403000-5851-f9d5-da45-78365a05b6b0": {
       "id": "10403000-5851-f9d5-da45-78365a05b6b0",
       "abbreviation": "MIN",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Minnesota Vikings",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -4320,7 +4079,7 @@
      "10403200-69ab-9ea6-5af5-e240fbc08bea": {
       "id": "10403200-69ab-9ea6-5af5-e240fbc08bea",
       "abbreviation": "NE",
-      "season": "2026",
+      "season": "2025",
       "fullName": "New England Patriots",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -4359,7 +4118,7 @@
      "10403300-f235-cf9b-6d3a-2f182be48dd1": {
       "id": "10403300-f235-cf9b-6d3a-2f182be48dd1",
       "abbreviation": "NO",
-      "season": "2026",
+      "season": "2025",
       "fullName": "New Orleans Saints",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -4398,7 +4157,7 @@
      "10403410-997c-9c75-256b-3b012f468bd0": {
       "id": "10403410-997c-9c75-256b-3b012f468bd0",
       "abbreviation": "NYG",
-      "season": "2026",
+      "season": "2025",
       "fullName": "New York Giants",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -4437,7 +4196,7 @@
      "10403430-1bc3-42c4-c7d8-39f38aed5f12": {
       "id": "10403430-1bc3-42c4-c7d8-39f38aed5f12",
       "abbreviation": "NYJ",
-      "season": "2026",
+      "season": "2025",
       "fullName": "New York Jets",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -4476,7 +4235,7 @@
      "10408700-5035-ce5c-b3dd-20413011bc6a": {
       "id": "10408700-5035-ce5c-b3dd-20413011bc6a",
       "abbreviation": "NFC",
-      "season": "2026",
+      "season": "2025",
       "fullName": "NFC Pro Bowl Team",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -4498,7 +4257,7 @@
      "10403700-b939-3cbd-3d16-24d4d6742fa2": {
       "id": "10403700-b939-3cbd-3d16-24d4d6742fa2",
       "abbreviation": "PHI",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Philadelphia Eagles",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -4537,7 +4296,7 @@
      "10403900-8251-6892-d81c-4348525c2d47": {
       "id": "10403900-8251-6892-d81c-4348525c2d47",
       "abbreviation": "PIT",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Pittsburgh Steelers",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -4576,7 +4335,7 @@
      "10404500-e7cb-7fce-3f10-4eeb269bd179": {
       "id": "10404500-e7cb-7fce-3f10-4eeb269bd179",
       "abbreviation": "SF",
-      "season": "2026",
+      "season": "2025",
       "fullName": "San Francisco 49ers",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -4615,7 +4374,7 @@
      "10404600-adcd-28ac-5826-b4d95ec2a228": {
       "id": "10404600-adcd-28ac-5826-b4d95ec2a228",
       "abbreviation": "SEA",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Seattle Seahawks",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -4654,7 +4413,7 @@
      "10404900-d59e-b449-ef75-961e09ca027e": {
       "id": "10404900-d59e-b449-ef75-961e09ca027e",
       "abbreviation": "TB",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Tampa Bay Buccaneers",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -4693,7 +4452,7 @@
      "10402100-447f-396e-8149-0a434ffb2f23": {
       "id": "10402100-447f-396e-8149-0a434ffb2f23",
       "abbreviation": "TEN",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Tennessee Titans",
       "conferenceAbbr": "AFC",
       "conferenceFullName": "American Football Conference",
@@ -4732,7 +4491,7 @@
      "10405110-ec3c-669e-2614-db3dc1736e95": {
       "id": "10405110-ec3c-669e-2614-db3dc1736e95",
       "abbreviation": "WAS",
-      "season": "2026",
+      "season": "2025",
       "fullName": "Washington Commanders",
       "conferenceAbbr": "NFC",
       "conferenceFullName": "National Football Conference",
@@ -4768,6 +4527,347 @@
        }
       ]
      }
+    }
+   },
+   {
+    "queryKey": [
+     "useFetchScoreStripContainerData"
+    ],
+    "status": "success",
+    "dataShape": {
+     "data": {
+      "carouselCardPropsList": [
+       {
+        "analyticsProperties": {
+         "linkModule": "str",
+         "linkName": "str",
+         "linkPosition": "str",
+         "linkType": "str"
+        },
+        "footerTextLong": "str",
+        "footerTextShort": "str",
+        "href": "str",
+        "networkIcon": "str",
+        "networkIconAltText": "str",
+        "redZoneImage": "str",
+        "redZoneImageAltText": "str",
+        "type": "int",
+        "variant": "str"
+       },
+       "len=15"
+      ],
+      "isDomestic": "bool",
+      "isHallOfFameWeek": "bool",
+      "isPlayoffWeek": "bool",
+      "isSuperBowlWeek": "bool",
+      "promotedCardProps": {
+       "analyticsProperties": "str",
+       "footerTextLong": "str",
+       "footerTextShort": "str",
+       "href": "str",
+       "networkIcon": "str",
+       "networkIconAltText": "str",
+       "redZoneImage": "str",
+       "redZoneImageAltText": "str",
+       "type": "int",
+       "variant": "str"
+      },
+      "sectionProps": {
+       "sectionHeader": {
+        "headline": "str"
+       },
+       "sectionId": "str",
+       "visibility": {
+        "hideOnDesktop": "bool",
+        "hideOnMobile": "bool"
+       }
+      },
+      "shouldRefetch": "bool"
+     },
+     "error": "str",
+     "isError": "bool"
+    },
+    "sampleRecord": {
+     "data": {
+      "carouselCardPropsList": [
+       {
+        "analyticsProperties": {
+         "linkModule": "Score Strip",
+         "linkName": "Score Strip Redzone CTA",
+         "linkPosition": "1:15",
+         "linkType": "RedZone Access Point"
+        },
+        "footerTextLong": "SUN 6:00PM",
+        "footerTextShort": "6:00PM",
+        "href": "/redzone/watch",
+        "networkIcon": "https://static.www.nfl.com/league/apps/web/global/logos/broadcaster/broadcaster_NFLPlusPremium.svg",
+        "networkIconAltText": "NFLPlusPremium network icon",
+        "redZoneImage": "https://static.www.nfl.com/league/apps/web/global/logos/logo-league-redzone-primarylight.svg",
+        "redZoneImageAltText": "NFL RedZone Upcoming Image",
+        "type": 3,
+        "variant": "upcoming"
+       },
+       {
+        "analyticsProperties": {
+         "gameID": "ab582c2f-4feb-11f1-abca-2c54536568a9",
+         "gameState": "$undefined",
+         "linkModule": "Score Strip",
+         "linkName": "NE @ DET",
+         "linkPosition": "2:15"
+        },
+        "awayTeam": {
+         "abbreviation": "NE",
+         "abbreviationScreenReaderElementId": "sr-element-score-strip-10403200-69ab-9ea6-5af5-e240fbc08bea-new-england-patriots",
+         "abbreviationScreenReaderText": "New England Patriots",
+         "isGameWinner": "$undefined",
+         "isInPossession": "$undefined",
+         "isRedZone": "$undefined",
+         "logo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/NE",
+         "logoImageAltText": "New England Patriots Team Logo",
+         "nickName": "$undefined",
+         "primaryColor": "#002244",
+         "standings": {
+          "team": {
+           "id": "10403200-69ab-9ea6-5af5-e240fbc08bea",
+           "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/NE",
+           "fullName": "New England Patriots"
+          },
+          "clinched": {
+           "bye": false,
+           "division": false,
+           "eliminated": false,
+           "homeField": false,
+           "playoff": false,
+           "wildCard": false
+          },
+          "closeGames": {
+           "wins": 3,
+           "losses": 2,
+           "ties": 0
+          },
+          "conference": {
+           "wins": 5,
+           "winPct": 0.833,
+           "losses": 1,
+           "ties": 0,
+           "rank": 7,
+           "points": {
+            "for": 150,
+            "against": 119
+           }
+          },
+          "division": {
+           "wins": 3,
+           "winPct": 1,
+           "losses": 0,
+           "ties": 0,
+           "rank": 2,
+           "points": {
+            "for": 79,
+            "against": 64
+           }
+          },
+          "home": {
+           "wins": 3,
+           "winPct": 0.75,
+           "losses": 1,
+           "ties": 0,
+           "points": {
+            "for": 118,
+            "against": 84
+           }
+          },
+          "last5": {
+           "wins": 3,
+           "winPct": 0.6,
+           "losses": 2,
+           "ties": 0,
+           "points": {
+            "for": 146,
+            "against": 130
+           }
+          },
+          "overall": {
+           "games": 9,
+           "wins": 5,
+           "winPct": 0.556,
+           "losses": 4,
+           "ties": 0,
+           "points": {
+            "for": 211,
+            "against": 207
+           },
+           "streak": {
+            "type": "STREAK_TYPE_LOSING",
+            "length": 1
+           }
+          },
+          "road": {
+           "wins": 2,
+           "winPct": 0.4,
+           "losses": 3,
+           "ties": 0,
+           "points": {
+            "for": 93,
+            "against": 123
+           }
+          }
+         },
+         "summary": "$undefined",
+         "teamId": "10403200-69ab-9ea6-5af5-e240fbc08bea"
+        },
+        "backgroundImage": "$undefined",
+        "gameId": "ab582c2f-4feb-11f1-abca-2c54536568a9",
+        "gameSummary": {
+         "phase": "$undefined",
+         "quarter": "$undefined"
+        },
+        "gameTime": "2026-11-15T14:30:00Z",
+        "homeTeam": {
+         "abbreviation": "DET",
+         "abbreviationScreenReaderElementId": "sr-element-score-strip-10401540-f97c-2d19-6fcd-fac6490a48b7-detroit-lions",
+         "abbreviationScreenReaderText": "Detroit Lions",
+         "isGameWinner": "$undefined",
+         "isInPossession": "$undefined",
+         "isRedZone": "$undefined",
+         "logo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/DET",
+         "logoImageAltText": "Detroit Lions Team Logo",
+         "nickName": "$undefined",
+         "primaryColor": "#0076B6",
+         "standings": {
+          "team": {
+           "id": "10401540-f97c-2d19-6fcd-fac6490a48b7",
+           "currentLogo": "https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/DET",
+           "fullName": "Detroit Lions"
+          },
+          "clinched": {
+           "bye": false,
+           "division": false,
+           "eliminated": false,
+           "homeField": false,
+           "playoff": false,
+           "wildCard": false
+          },
+          "closeGames": {
+           "wins": 4,
+           "losses": 1,
+           "ties": 0
+          },
+          "conference": {
+           "wins": 4,
+           "winPct": 0.8,
+           "losses": 1,
+           "ties": 0,
+           "rank": 5,
+           "points": {
+            "for": 141,
+            "against": 115
+           }
+          },
+          "division": {
+           "wins": 2,
+           "winPct": 1,
+           "losses": 0,
+           "ties": 0,
+           "rank": 2,
+           "points": {
+            "for": 39,
+            "against": 32
+           }
+          },
+          "home": {
+           "wins": 4,
+           "winPct": 1,
+           "losses": 0,
+           "ties": 0,
+           "points": {
+            "for": 101,
+            "against": 86
+           }
+          },
+          "last5": {
+           "wins": 4,
+           "winPct": 0.8,
+           "losses": 1,
+           "ties": 0,
+           "points": {
+            "for": 129,
+            "against": 94
+           }
+          },
+          "overall": {
+           "games": 8,
+           "wins": 6,
+           "winPct": 0.75,
+           "losses": 2,
+           "ties": 0,
+           "points": {
+            "for": 222,
+            "against": 189
+           },
+           "streak": {
+            "type": "STREAK_TYPE_WINNING",
+            "length": 4
+           }
+          },
+          "road": {
+           "wins": 2,
+           "winPct": 0.5,
+           "losses": 2,
+           "ties": 0,
+           "points": {
+            "for": 121,
+            "against": 103
+           }
+          }
+         },
+         "summary": "$undefined",
+         "teamId": "10401540-f97c-2d19-6fcd-fac6490a48b7"
+        },
+        "href": "/games/patriots-at-lions-2026-reg-10",
+        "internationalGameIcon": "https://static.www.nfl.com/league/apps/shared/png/logo-events-munichgames-2026.png",
+        "internationalGameIconAltText": "NFL 2026 Munich Game",
+        "isInternationalGame": true,
+        "isRedZone": "$undefined",
+        "isSelected": false,
+        "isSuperBowlWeek": false,
+        "networkIcon": "https://static.www.nfl.com/league/apps/web/global/logos/broadcaster/broadcaster_FOX.svg",
+        "networkIconAltText": "FOX network logo",
+        "type": 1,
+        "variant": "PRE"
+       },
+       "...len=15"
+      ],
+      "isDomestic": true,
+      "isHallOfFameWeek": false,
+      "isPlayoffWeek": false,
+      "isSuperBowlWeek": false,
+      "promotedCardProps": {
+       "analyticsProperties": "$28:props:state:queries:0:state:data:data:carouselCardPropsList:0:analyticsProperties",
+       "footerTextLong": "SUN 6:00PM",
+       "footerTextShort": "6:00PM",
+       "href": "/redzone/watch",
+       "networkIcon": "https://static.www.nfl.com/league/apps/web/global/logos/broadcaster/broadcaster_NFLPlusPremium.svg",
+       "networkIconAltText": "NFLPlusPremium network icon",
+       "redZoneImage": "https://static.www.nfl.com/league/apps/web/global/logos/logo-league-redzone-primarylight.svg",
+       "redZoneImageAltText": "NFL RedZone Upcoming Image",
+       "type": 3,
+       "variant": "upcoming"
+      },
+      "sectionProps": {
+       "sectionHeader": {
+        "headline": "Score Strip"
+       },
+       "sectionId": "ScoreStrip",
+       "visibility": {
+        "hideOnDesktop": false,
+        "hideOnMobile": false
+       }
+      },
+      "shouldRefetch": true
+     },
+     "error": "$undefined",
+     "isError": false
     }
    }
   ],
@@ -4823,7 +4923,14 @@
     ],
     "len=2"
    ],
-   "NoneType",
+   [
+    "str",
+    "len=4"
+   ],
+   [
+    "str",
+    "len=4"
+   ],
    [
     [
      "str",
@@ -4850,18 +4957,60 @@
    [
     "str",
     "len=4"
-   ],
-   [
-    "str",
-    "len=4"
    ]
   ]
  },
  {
-  "slug": "game-stats-2026-w10",
-  "url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10?tab=stats",
+  "slug": "team-roster-lions",
+  "url": "https://www.nfl.com/teams/detroit-lions/team/roster/",
+  "ok": false,
+  "error": "fetch failed",
+  "queryKeys": []
+ },
+ {
+  "slug": "team-roster-chiefs",
+  "url": "https://www.nfl.com/teams/kansas-city-chiefs/team/roster/",
+  "ok": false,
+  "error": "fetch failed",
+  "queryKeys": []
+ },
+ {
+  "slug": "players-index",
+  "url": "https://www.nfl.com/players/",
   "ok": true,
-  "bytes": 1186006,
+  "bytes": 213865,
+  "queryKeys": [],
+  "rscShapes": []
+ },
+ {
+  "slug": "player-page-maye",
+  "url": "https://www.nfl.com/players/drake-maye/stats",
+  "ok": true,
+  "bytes": 226755,
+  "queryKeys": [],
+  "rscShapes": []
+ },
+ {
+  "slug": "player-page-logs",
+  "url": "https://www.nfl.com/players/drake-maye/stats/logs/",
+  "ok": true,
+  "bytes": 226574,
+  "queryKeys": [],
+  "rscShapes": []
+ },
+ {
+  "slug": "team-page-lions",
+  "url": "https://www.nfl.com/teams/detroit-lions/",
+  "ok": true,
+  "bytes": 250568,
+  "queryKeys": [],
+  "rscShapes": []
+ },
+ {
+  "slug": "game-overview-2026-w10",
+  "url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10?tab=overview",
+  "ok": true,
+  "bytes": 1214306,
   "queryKeys": [
    {
     "queryKey": [
@@ -6444,50 +6593,10 @@
   ]
  },
  {
-  "slug": "player-stats-2026",
-  "url": "https://www.nfl.com/players/amon-ra-st-brown/stats",
-  "ok": true,
-  "bytes": 226039,
-  "queryKeys": [],
-  "rscShapes": []
- },
- {
-  "slug": "injuries",
-  "url": "https://www.nfl.com/injuries/",
-  "ok": true,
-  "bytes": 398793,
-  "queryKeys": [],
-  "rscShapes": []
- },
- {
-  "slug": "inactives",
-  "url": "https://www.nfl.com/inactives/",
-  "ok": true,
-  "bytes": 417344,
-  "queryKeys": [],
-  "rscShapes": []
- },
- {
   "slug": "standings-2026",
   "url": "https://www.nfl.com/standings/league/2026/REG",
   "ok": true,
   "bytes": 257819,
-  "queryKeys": [],
-  "rscShapes": []
- },
- {
-  "slug": "depth-chart-49ers",
-  "url": "https://www.49ers.com/team/depth-chart/",
-  "ok": true,
-  "bytes": 288758,
-  "queryKeys": [],
-  "rscShapes": []
- },
- {
-  "slug": "depth-chart-chiefs",
-  "url": "https://www.chiefs.com/team/depth-chart/",
-  "ok": true,
-  "bytes": 302185,
   "queryKeys": [],
   "rscShapes": []
  }

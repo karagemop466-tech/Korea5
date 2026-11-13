@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Questions · NFL Lines Lab</title>
+<meta name="description" content="NFL line-making, signal validation and correlation research generated from cited public data.">
+<style>
+:root{--bg:#0b1220;--panel:#111b2e;--panel2:#16243a;--line:#22334d;--ink:#e8eef8;--muted:#9aa9c2;
+--accent:#4dd4ac;--accent2:#7aa2ff;--warn:#ffc857;--bad:#ff7a6b;--free:#3ddc97;--radius:14px;--max:1180px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:radial-gradient(1200px 700px at 15% -10%,#16294a 0%,#0b1220 55%) fixed,var(--bg);
+color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(11,18,32,.94);border-bottom:1px solid var(--line)}
+.topbar{display:flex;align-items:center;gap:16px;padding:11px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.2px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+nav.main{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:6px 10px;border-radius:9px;color:var(--muted);font-size:13.5px;font-weight:600}
+nav.main a:hover{background:var(--panel2);color:var(--ink);text-decoration:none}
+nav.main a.active{background:var(--accent);color:#052015}
+main{padding:24px 0 60px}
+h1{font-size:clamp(25px,3.6vw,36px);line-height:1.15;margin:6px 0 8px;letter-spacing:-.5px}
+h2{font-size:21px;margin:28px 0 10px}
+h3{font-size:16px;margin:16px 0 8px}
+p.lede{color:var(--muted);font-size:16.5px;max-width:78ch;margin:0 0 16px}
+small,.small{font-size:12.5px;color:var(--muted)}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+border-radius:var(--radius);padding:16px}
+.card h3{margin-top:0}
+.kpi{font-size:32px;font-weight:800;letter-spacing:-1px;line-height:1.05}
+.kpi small{display:block;font-weight:600;font-size:11.5px;letter-spacing:.7px;text-transform:uppercase;margin-top:6px}
+.tag{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;font-size:11.5px;
+font-weight:700;border:1px solid var(--line);background:#0d1728;color:var(--muted);white-space:nowrap}
+.tag.pass{color:#04241a;background:var(--free);border-color:transparent}
+.tag.fail{color:#2b0b06;background:var(--bad);border-color:transparent}
+.tag.warn{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.A{color:#04241a;background:var(--free);border-color:transparent}
+.tag.C{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.D{color:#2b0b06;background:var(--bad);border-color:transparent}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{padding:8px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700;
+background:#0e1829;position:sticky;top:54px;z-index:5}
+tr:hover td{background:#121d31}
+.scroll{max-height:640px;overflow:auto;border:1px solid var(--line);border-radius:12px}
+.callout{border-left:4px solid var(--accent);background:#0e1c2e;padding:13px 15px;border-radius:0 12px 12px 0;margin:14px 0}
+.callout.warn{border-left-color:var(--warn)}.callout.bad{border-left-color:var(--bad)}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.btn{background:var(--panel2);color:var(--ink);border:1px solid var(--line);padding:8px 13px;border-radius:10px;
+font-weight:700;display:inline-block}
+.btn:hover{background:#1d2f4b;text-decoration:none}
+.mono{font-variant-numeric:tabular-nums}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:12.5px}
+.ok{color:var(--free)}.bad{color:var(--bad)}.warnc{color:var(--warn)}
+ul.clean{margin:6px 0 0 18px;padding:0}ul.clean li{margin:5px 0}
+</style></head><body>
+<header class="top"><div class="wrap topbar">
+<div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+<nav class="main"><a href="index.html" class="">Dashboard</a><a href="executive.html" class="">Executive summary</a><a href="lines.html" class="">Lines & model</a><a href="signals.html" class="">Signals</a><a href="injuries.html" class="">Injuries & lineups</a><a href="leaderboard.html" class="">Leaderboard</a><a href="parlays.html" class="">Parlays & props</a><a href="questions.html" class="active">Questions</a><a href="suggestions.html" class="">Suggestions</a><a href="data.html" class="">Data audit</a><a href="flagged.html" class="">Flagged</a><a href="sources.html" class="">Sources</a><a href="../index.html">Planner site</a></nav>
+</div></header>
+<main class="wrap"><aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. <a href="../certainty.html">Flagged for Review: certainty audit</a>.</aside>
+
+
+<h1>Questions that must be answered before a decision</h1>
+<p class="lede">Each row is a decision blocker, not a to-do. It states what is already known, what is
+missing, what would change once the gap is closed, how to close it, and who owns the answer. Nothing on
+this page is a recommendation to bet; several rows exist precisely because the information needed to
+recommend anything does not exist yet.</p>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Topic</th><th>Question</th><th>Already have</th><th>Missing</th><th>Why it matters</th><th>How to obtain</th><th>Owner</th><th>What it blocks</th></tr></thead><tbody><tr><td>Q1</td><td>Objective</td><td><strong>Is the goal forecast accuracy against a baseline, or profit against a price?</strong></td><td>Baseline-relative accuracy is computable today from nflverse schedules.</td><td>A timestamped price history to measure profit.</td><td>Decides whether this lab is a research model or a betting system. Today it is the former.</td><td>Licence a historical odds feed, then re-run the same harness against closing prices.</td><td>Owner decision</td><td>ROI, staking, bankroll, any monetary reward</td></tr><tr><td>Q2</td><td>Market</td><td><strong>Which markets and which books are in scope?</strong></td><td>Spread, total and moneyline snapshots; no props.</td><td>Book list, jurisdiction, prop market, settlement rules per book.</td><td>Parlay pricing and prop combos are undefined without exact book rules.</td><td>List the books you can legally use, then capture one pre-kickoff screen per week.</td><td>Owner decision</td><td>All combination markets</td></tr><tr><td>Q3</td><td>Timing</td><td><strong>What is the decision cutoff for a strategy to count?</strong></td><td>Injury `date_modified` from 2024; depth snapshots with timestamps from 2022.</td><td>A consistent cutoff before older seasons and a rule for late scratches.</td><td>Without a cutoff a backtest can accidentally use information that did not exist yet.</td><td>Fix a cutoff (e.g. kickoff minus 90 minutes) and drop any feature row that cannot meet it.</td><td>Lab</td><td>Every leaderboard entry&#x27;s validity</td></tr><tr><td>Q4</td><td>Rewards</td><td><strong>What may a top strategy actually win?</strong></td><td>Lab Points and research priority, defined in nfl/leaderboard.py.</td><td>Legal review before any money or prize of monetary value, and the tax/privacy handling that goes with it.</td><td>Rewards are the incentive that turns a leaderboard into a competition.</td><td>Keep rewards non-monetary until a policy review is completed; the page states this.</td><td>Owner decision</td><td>Any cash or prize-linked competition</td></tr><tr><td>Q5</td><td>Data</td><td><strong>Do we need inactives (the actual game-day list), not just the injury report?</strong></td><td>Official weekly report status; depth charts; post-game snap counts.</td><td>The per-game inactive list in a machine-readable file.</td><td>A &#x27;Questionable&#x27; player often plays; an &#x27;Out&#x27; player never does. Mixing them corrupts the lineup index.</td><td>Fetch the ESPN summary endpoint per game from CI (already reachable) and store the inactives.</td><td>Lab</td><td>Verified lineup status; currently the index separates Out/Doubtful/Questionable instead</td></tr><tr><td>Q6</td><td>Data</td><td><strong>How should a missing starter be valued?</strong></td><td>Snap share as a usage weight.</td><td>A talent measure independent of usage.</td><td>A team can lose a great player who had low usage and barely move the index.</td><td>Compute per-player EPA from play-by-play and blend it with snap share, with a published formula.</td><td>Lab</td><td>Precision of the lineup-strength index</td></tr><tr><td>Q7</td><td>Statistics</td><td><strong>How many strategies are being tried, and does the gate account for that?</strong></td><td>Best-of-K permutation deflation with K fixed per family and published.</td><td>A registry that counts every variant actually tried, including abandoned ones.</td><td>Trying many variants and reporting the best one manufactures false discovery.</td><td>Every run appends to nfl/data/attempts.json; K is recomputed from that count each run.</td><td>Lab</td><td>Deflation honesty</td></tr><tr><td>Q8</td><td>Statistics</td><td><strong>How stable must a strategy be across seasons to be promoted?</strong></td><td>Per-season skill is reported; the gate requires the sign to agree in 2 of 3 seasons.</td><td>An explicit minimum number of seasons for Tier A.</td><td>A single hot season can dominate a pooled average.</td><td>Keep the 3-season floor and report every season separately on the page.</td><td>Lab</td><td>Tier definitions</td></tr><tr><td>Q9</td><td>Injury system</td><td><strong>When does a backup officially become the starter?</strong></td><td>Depth-chart snapshots with a timestamp and a rank per position.</td><td>A rule for when a snapshot is stale, and confirmation from the team.</td><td>The &#x27;2nd/3rd/4th string&#x27; claim is only as good as the snapshot date shown next to it.</td><td>Publish the snapshot timestamp on every row and mark a snapshot older than 7 days as stale.</td><td>Lab</td><td>Confidence in the depth ranking</td></tr><tr><td>Q10</td><td>Correlation</td><td><strong>Which correlations are real and which are sample noise?</strong></td><td>Pearson r with a bootstrap 95% CI for every pair with 200+ common games.</td><td>A multiplicity correction across the many pairs tested.</td><td>With 55 signal pairs, several will look significant by chance.</td><td>Report the CI and require it to exclude zero; apply a Benjamini-Hochberg note before calling any pair established.</td><td>Lab</td><td>Any claim that two legs are genuinely correlated</td></tr><tr><td>Q11</td><td>Injury system</td><td><strong>Is a player&#x27;s absence already priced in by the market?</strong></td><td>No line history, so this cannot be tested yet.</td><td>Line movement around injury news.</td><td>A signal everyone already knows is worth nothing at the window.</td><td>Once a line history exists, measure the move in the 24 hours after each report.</td><td>Owner decision (requires odds feed)</td><td>Whether lineup signals are tradable, as opposed to merely predictive</td></tr><tr><td>Q12</td><td>Site</td><td><strong>Which numbers should be on the landing page, and which need a click?</strong></td><td>A leaderboard and a gate table.</td><td>A decision about prominence and the reading order for a non-specialist.</td><td>A dashboard that leads with a weak metric misleads at a glance.</td><td>Lead with gate status and sample size; put every score behind one click with its formula.</td><td>Owner decision</td><td>Layout only — no data dependency</td></tr></tbody></table></div>
+<h2>How missing information is discovered, not guessed</h2>
+<ul class="clean">
+<li><strong>Coverage counting.</strong> Every feature reports how many games actually have the value. A
+feature present in 40% of games is treated as missing for the other 60%, never imputed.</li>
+<li><strong>Null-and-flag.</strong> When a source returns HTTP 404 or an empty array, the field is set to
+blank and the row is listed on the flagged page. It is not filled from memory or from another site.</li>
+<li><strong>Two independent publishers.</strong> Results are cross-checked between nflverse and ESPN. A
+disagreement is published as a disagreement, not resolved by picking the more convenient number.</li>
+<li><strong>Explicit gap register.</strong> Six gaps (GAP-1 … GAP-6) are enumerated on the data audit page
+with the exact acquisition step that would close each one.</li>
+</ul>
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Lines Lab</strong> — every published number is generated from data fetched and hashed by
+the repository's own pipeline. No betting return, payout or edge is claimed anywhere: the only market
+data available is a single un-timestamped line snapshot, and no player-prop market exists in any
+reachable source. <a href="flagged.html">Flagged for review</a> · <a href="sources.html">Sources</a> ·
+<a href="questions.html">Open questions</a></p>
+<p class="small">Generated 2026-11-13 15:59 UTC by
+<code>nfl/build_site.py</code>. Pre-registration: <a href="../nfl/PREREGISTRATION.md">nfl/PREREGISTRATION.md</a>.</p>
+</div></footer></body></html>

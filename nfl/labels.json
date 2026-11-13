@@ -1,0 +1,63 @@
+{
+ "meta": {
+  "title": "Field catalogue — every published value and its provenance",
+  "generatedBy": "nfl/labels.py (static); verified status per column is computed by nfl/model.py",
+  "rule": "verified = the value exists in a named source file fetched by CI with a recorded sha256; derived = this repo computed it from verified values; unknown = blank, never inferred.",
+  "sources": {
+   "games": {
+    "name": "nflverse schedules — games.csv",
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv",
+    "official": "https://www.nfl.com/schedules/",
+    "note": "Canonical game list, scores, roof, rest days and playoff seeds. Cross-checked against NFL.com game pages (official) and ESPN scoreboard."
+   },
+   "stats_player_week": {
+    "name": "nflverse weekly player stats — stats_player_week_<season>.csv",
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv",
+    "official": "https://www.nfl.com/stats/player-stats/",
+    "note": "Weekly box score per player. Used for prop-market forecast accuracy (passing/rushing/receiving volume)."
+   },
+   "injuries": {
+    "name": "nflverse injury report table — injuries_<season>.csv",
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2025.csv",
+    "official": "https://www.nfl.com/injuries/",
+    "note": "Official Wednesday/Thursday/Friday practice status and game status per player, week by week."
+   },
+   "depth_charts": {
+    "name": "nflverse depth charts — depth_charts_<season>.csv",
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2025.csv",
+    "official": "https://www.nfl.com/teams/",
+    "note": "Per-snapshot depth position (1 = starter). A missing player is unknown, not a backup."
+   },
+   "espn_odds": {
+    "name": "ESPN scoreboard odds object",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
+    "official": "https://www.nfl.com/schedules/",
+    "note": "Single snapshot of one provider's spread/total/moneylines. No timestamped line history, so no closing-line or ROI claim."
+   },
+   "espn_summary": {
+    "name": "ESPN game summary (lineups and inactives)",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=<id>",
+    "official": "https://www.nfl.com/injuries/",
+    "note": "Starting lineups and inactives per game, used for the lineup-status cross-check."
+   }
+  }
+ },
+ "fields": [
+  {"id": "game_id", "table": "Games", "field": "nflverse game id", "status": "verified", "source": "games", "rule": "gsis_id as published; never recomputed."},
+  {"id": "game_date", "table": "Games", "field": "kickoff date", "status": "verified", "source": "games", "officialLink": "https://www.nfl.com/schedules/", "rule": "gameday from games.csv."},
+  {"id": "home_score", "table": "Games", "field": "final score", "status": "verified", "source": "games", "rule": "Only games with a final score are used for evaluation; unfinished games are dropped and counted."},
+  {"id": "result", "table": "Games", "field": "home win / home loss", "status": "derived", "source": "games", "rule": "1 if home_score > away_score else 0. Ties excluded (counted)."},
+  {"id": "rest_diff", "table": "Signals", "field": "rest-day advantage", "status": "verified", "source": "games", "rule": "home_rest minus away_rest, both published in games.csv."},
+  {"id": "injury_status", "table": "Injuries", "field": "official practice/game status", "status": "verified", "source": "injuries", "rule": "report_status / game_status strings copied verbatim from the published table."},
+  {"id": "starter", "table": "Lineups", "field": "is-listed-starter", "status": "derived", "source": "depth_charts", "rule": "depth position == 1 in the most recent snapshot before kickoff. Derived, and the snapshot date is published next to it."},
+  {"id": "backup_tier", "table": "Lineups", "field": "2nd/3rd/4th string", "status": "derived", "source": "depth_charts", "rule": "depth position 2/3/4+ in the most recent snapshot. Published only when that row exists; otherwise blank."},
+  {"id": "lineup_strength", "table": "Lineups", "field": "unit strength index", "status": "derived", "source": "depth_charts", "rule": "Snap-weighted share of the unit's Week-1 starters still listed as starters on game week. Weights are per-player snap share from snap_counts, NOT an assumed talent rating."},
+  {"id": "injured_starter_value", "table": "Lineups", "field": "value of missing starters", "status": "derived", "source": "injuries", "rule": "Share of the unit's snap-weighted starter value that appears on the official report as Out/Doubtful. Questionable is shown separately and never folded in."},
+  {"id": "market_spread", "table": "Market", "field": "published spread", "status": "verified", "source": "espn_odds", "rule": "Copied from the odds object; provider and snapshot time published with it."},
+  {"id": "model_prob", "table": "Model", "field": "pre-game home win probability", "status": "derived", "source": "games", "rule": "Fitted only on prior seasons; a unit test fails the build if a future season is visible to the fit."},
+  {"id": "prop_line", "table": "Props", "field": "player prop market line", "status": "unknown", "source": null, "rule": "No prop market exists in any reachable source. The column stays blank and is flagged; props are scored as forecast accuracy only."},
+  {"id": "prop_price", "table": "Props", "field": "prop price / vig", "status": "unknown", "source": null, "rule": "Same as above — blank, flagged, never estimated."},
+  {"id": "parlay_joint_prob", "table": "Parlays", "field": "joint probability of all legs", "status": "derived", "source": "games", "rule": "Computed from the measured correlation matrix by Gaussian copula; the marginals are the model probabilities above."},
+  {"id": "parlay_corr", "table": "Parlays", "field": "measured mean pairwise correlation", "status": "derived", "source": "games", "rule": "Pearson r over evaluated legs, with bootstrap CI. Blank if fewer than 200 common games."}
+ ]
+}

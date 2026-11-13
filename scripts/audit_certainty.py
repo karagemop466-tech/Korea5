@@ -24,7 +24,7 @@ page = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name=
 # A persistent, prominent correction on inherited pages; all generators can run first.
 def published_pages():
     pages = list(ROOT.glob('*.html'))
-    for sub in ('extra', 'lab'):
+    for sub in ('extra', 'lab', 'nfl-lines', 'nfl'):
         if (ROOT / sub).is_dir():
             pages += list((ROOT / sub).glob('*.html'))
     return pages

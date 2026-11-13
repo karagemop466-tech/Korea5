@@ -21,7 +21,11 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 NFL = ROOT / "nfl"
 DATA = NFL / "data"
 
-OFFICIAL_SUFFIXES = ("nfl.com", "gaming.ny.gov", "sbg.colorado.gov", "gaming.nv.gov")
+OFFICIAL_SUFFIXES = ("nfl.com", "gaming.ny.gov", "sbg.colorado.gov", "gaming.nv.gov",
+                     # merge 2026-11-13 (arena-02f4d067 integration): the NFL Lines Lab's registered,
+                     # verified data publishers — nflverse-data release pages on github.com and ESPN's
+                     # scoreboard API. Rule unchanged: every external link must be on this trust list.
+                     "github.com", "espn.com")
 
 
 def load(name):

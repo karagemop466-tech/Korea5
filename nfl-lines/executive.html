@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Executive summary · NFL Lines Lab</title>
+<meta name="description" content="NFL line-making, signal validation and correlation research generated from cited public data.">
+<style>
+:root{--bg:#0b1220;--panel:#111b2e;--panel2:#16243a;--line:#22334d;--ink:#e8eef8;--muted:#9aa9c2;
+--accent:#4dd4ac;--accent2:#7aa2ff;--warn:#ffc857;--bad:#ff7a6b;--free:#3ddc97;--radius:14px;--max:1180px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:radial-gradient(1200px 700px at 15% -10%,#16294a 0%,#0b1220 55%) fixed,var(--bg);
+color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(11,18,32,.94);border-bottom:1px solid var(--line)}
+.topbar{display:flex;align-items:center;gap:16px;padding:11px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.2px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+nav.main{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:6px 10px;border-radius:9px;color:var(--muted);font-size:13.5px;font-weight:600}
+nav.main a:hover{background:var(--panel2);color:var(--ink);text-decoration:none}
+nav.main a.active{background:var(--accent);color:#052015}
+main{padding:24px 0 60px}
+h1{font-size:clamp(25px,3.6vw,36px);line-height:1.15;margin:6px 0 8px;letter-spacing:-.5px}
+h2{font-size:21px;margin:28px 0 10px}
+h3{font-size:16px;margin:16px 0 8px}
+p.lede{color:var(--muted);font-size:16.5px;max-width:78ch;margin:0 0 16px}
+small,.small{font-size:12.5px;color:var(--muted)}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+border-radius:var(--radius);padding:16px}
+.card h3{margin-top:0}
+.kpi{font-size:32px;font-weight:800;letter-spacing:-1px;line-height:1.05}
+.kpi small{display:block;font-weight:600;font-size:11.5px;letter-spacing:.7px;text-transform:uppercase;margin-top:6px}
+.tag{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;font-size:11.5px;
+font-weight:700;border:1px solid var(--line);background:#0d1728;color:var(--muted);white-space:nowrap}
+.tag.pass{color:#04241a;background:var(--free);border-color:transparent}
+.tag.fail{color:#2b0b06;background:var(--bad);border-color:transparent}
+.tag.warn{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.A{color:#04241a;background:var(--free);border-color:transparent}
+.tag.C{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.D{color:#2b0b06;background:var(--bad);border-color:transparent}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{padding:8px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700;
+background:#0e1829;position:sticky;top:54px;z-index:5}
+tr:hover td{background:#121d31}
+.scroll{max-height:640px;overflow:auto;border:1px solid var(--line);border-radius:12px}
+.callout{border-left:4px solid var(--accent);background:#0e1c2e;padding:13px 15px;border-radius:0 12px 12px 0;margin:14px 0}
+.callout.warn{border-left-color:var(--warn)}.callout.bad{border-left-color:var(--bad)}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.btn{background:var(--panel2);color:var(--ink);border:1px solid var(--line);padding:8px 13px;border-radius:10px;
+font-weight:700;display:inline-block}
+.btn:hover{background:#1d2f4b;text-decoration:none}
+.mono{font-variant-numeric:tabular-nums}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:12.5px}
+.ok{color:var(--free)}.bad{color:var(--bad)}.warnc{color:var(--warn)}
+ul.clean{margin:6px 0 0 18px;padding:0}ul.clean li{margin:5px 0}
+</style></head><body>
+<header class="top"><div class="wrap topbar">
+<div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+<nav class="main"><a href="index.html" class="">Dashboard</a><a href="executive.html" class="active">Executive summary</a><a href="lines.html" class="">Lines & model</a><a href="signals.html" class="">Signals</a><a href="injuries.html" class="">Injuries & lineups</a><a href="leaderboard.html" class="">Leaderboard</a><a href="parlays.html" class="">Parlays & props</a><a href="questions.html" class="">Questions</a><a href="suggestions.html" class="">Suggestions</a><a href="data.html" class="">Data audit</a><a href="flagged.html" class="">Flagged</a><a href="sources.html" class="">Sources</a><a href="../index.html">Planner site</a></nav>
+</div></header>
+<main class="wrap"><aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. <a href="../certainty.html">Flagged for Review: certainty audit</a>.</aside>
+
+<h1>Executive summary</h1>
+<p>Generated from the repository's own pipeline outputs in <code>nfl/data/</code> — nothing on this page is typed
+by hand. Run log: <a href="https://github.com/karagemop466-tech/Korea5/actions">GitHub Actions</a>;
+full method on the <a href="signals.html">Signals</a> page.</p>
+<h2>1. Headline results</h2>
+<div class="scroll"><table><thead><tr><th>Measure</th><th>Value</th></tr></thead><tbody><tr><td>Seasons loaded</td><td>2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026</td></tr><tr><td>Out-of-sample evaluation seasons</td><td>2017, 2018, 2019, 2020, 2021, 2022</td></tr><tr><td>Games evaluated out of sample</td><td>1632</td></tr><tr><td>Accuracy (pick the higher-probability side)</td><td>0.636</td></tr><tr><td>Log loss</td><td>0.63924 vs baseline 0.68848</td></tr><tr><td>Log-loss skill vs baseline</td><td>0.07152</td></tr><tr><td>Brier skill vs baseline</td><td>0.09291</td></tr><tr><td>Luck deflation (best-of-K null)</td><td>N=200 permutations, K=9, null p95=0.02863 → computed</td></tr><tr><td>Cross-source score check</td><td>2776 of 2776 ESPN-sampled completed games match exactly, 0 differ, 0 unmatched. An unmatched game is one ESPN returned but no nflverse row could be paired with on date and both clubs; it is counted as unchecked, never as agreement.</td></tr></tbody></table></div>
+<h2>2. Where the signal comes from</h2>
+<div class="scroll"><table><thead><tr><th>Family</th><th># signals</th><th>Skill</th><th>Null p95</th><th>Deflation verdict</th><th>Claim</th></tr></thead><tbody><tr><td>Context</td><td>11</td><td>0.00060</td><td>0.05157</td><td><span class="tag">failed</span></td><td></td></tr><tr><td>Strength</td><td>9</td><td>0.07152</td><td>0.02863</td><td><span class="tag">passed</span></td><td></td></tr></tbody></table></div>
+<h2>3. Player-prop signals (base-rate baseline)</h2>
+<div class="scroll"><table><thead><tr><th>Market</th><th>Position</th><th>Line</th><th>Games</th><th>Skill vs base rate</th><th>Accuracy</th></tr></thead><tbody><tr><td>passing yards</td><td>QB</td><td>225</td><td>389</td><td>0.03940</td><td>0.62210</td></tr><tr><td>rushing yards</td><td>RB</td><td>55</td><td>1011</td><td>0.16770</td><td>0.66270</td></tr><tr><td>receiving yards</td><td>WR</td><td>45</td><td>1573</td><td>0.13440</td><td>0.65420</td></tr><tr><td>receptions</td><td>WR</td><td>4.5</td><td>1573</td><td>0.17900</td><td>0.67510</td></tr><tr><td>passing tds</td><td>QB</td><td>1.5</td><td>389</td><td>0.03120</td><td>0.58610</td></tr><tr><td>rushing tds</td><td>RB</td><td>0.5</td><td>1011</td><td>0.06820</td><td>0.53710</td></tr><tr><td>receiving tds</td><td>WR</td><td>0.5</td><td>1573</td><td>0.01690</td><td>0.53210</td></tr><tr><td>passing yards</td><td>QB</td><td>225</td><td>358</td><td>0.06460</td><td>0.63690</td></tr><tr><td>rushing yards</td><td>RB</td><td>55</td><td>1072</td><td>0.19810</td><td>0.69590</td></tr><tr><td>receiving yards</td><td>WR</td><td>45</td><td>1520</td><td>0.15390</td><td>0.66320</td></tr><tr><td>receptions</td><td>WR</td><td>4.5</td><td>1520</td><td>0.19190</td><td>0.67890</td></tr><tr><td>passing tds</td><td>QB</td><td>1.5</td><td>358</td><td>0.01910</td><td>0.59780</td></tr><tr><td>rushing tds</td><td>RB</td><td>0.5</td><td>1072</td><td>0.04970</td><td>0.53820</td></tr><tr><td>receiving tds</td><td>WR</td><td>0.5</td><td>1520</td><td>-0.01170</td><td>0.49340</td></tr></tbody></table></div>
+<h2>4. Correlation values that exclude zero</h2>
+<p>Pairwise Pearson r among the model's signals and against the home-win outcome. Pairs whose 95% bootstrap
+interval contains zero are treated as unmeasured, not as zero.</p>
+<div class="scroll"><table><thead><tr><th>Signal pair (value vs home win)</th><th>N</th><th>Pearson r</th><th>95% bootstrap CI</th></tr></thead><tbody><tr><td>off_value_diff ~ def_value_diff</td><td>1632</td><td>0.2528</td><td>[0.2025, 0.2997]</td></tr><tr><td>off_out_diff ~ def_out_diff</td><td>1632</td><td>0.2045</td><td>[0.1616, 0.2517]</td></tr><tr><td>dome ~ def_value_diff</td><td>1632</td><td>0.1243</td><td>[0.0763, 0.1719]</td></tr><tr><td>dome ~ off_value_diff</td><td>1632</td><td>0.1051</td><td>[0.0526, 0.1517]</td></tr><tr><td>away_qb_change ~ off_value_diff</td><td>1535</td><td>0.0785</td><td>[0.0313, 0.1233]</td></tr><tr><td>home_qb_change ~ off_value_diff</td><td>1537</td><td>-0.076</td><td>[-0.125, -0.022]</td></tr><tr><td>dome ~ off_out_diff</td><td>1632</td><td>0.0693</td><td>[0.0209, 0.1183]</td></tr><tr><td>off_value_diff ~ off_out_diff</td><td>1632</td><td>-0.0523</td><td>[-0.1035, -0.0054]</td></tr><tr><td>div_game ~ home_short_week</td><td>1632</td><td>0.0492</td><td>[0.0038, 0.0977]</td></tr><tr><td>div_game ~ away_short_week</td><td>1632</td><td>0.0492</td><td>[0.0038, 0.0977]</td></tr></tbody></table></div>
+<h2>5. Verification and provenance</h2>
+<div class="scroll"><table><thead><tr><th>Check</th><th>What was checked</th><th>Result</th><th>Status</th><th>Source</th></tr></thead><tbody><tr><td>provenance</td><td>Every input file fetched with a hash</td><td>352 files HTTP 200, 3 unavailable</td><td><span class="tag">partial</span></td><td>nfl/data/provenance.json</td></tr><tr><td>cross-source</td><td>nflverse result vs ESPN final score (independent publishers)</td><td>2776 of 2776 ESPN-sampled completed games match exactly, 0 differ, 0 unmatched. An unmatched game is one ESPN returned but no nflverse row could be paired with on date and both clubs; it is counted as unchecked, never as agreement.</td><td><span class="tag">pass</span></td><td><a href="https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard" title="https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard">source</a></td></tr><tr><td>market</td><td>Market reference available per game</td><td>spread present for 1.0 of games; moneylines present for 0.9997; ESPN current-season odds 26 games</td><td><span class="tag">partial</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv" title="https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv">source</a></td></tr><tr><td>lineup</td><td>Injury report and depth-chart coverage</td><td>off_value_diff 1639/1639 (1.0); def_value_diff 1639/1639 (1.0); home_off_value 1639/1639 (1.0); away_off_value 1639/1639 (1.0)</td><td><span class="tag">pass</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2025.csv">source</a></td></tr></tbody></table></div>
+<h2>6. Known gaps — information that must be found before decisions</h2>
+<p>Each gap blocks a class of decision. Acquisition suggestions are listed; nothing is filled in by guesswork.</p>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Missing information</th><th>Why it blocks decisions</th><th>How to obtain it</th></tr></thead><tbody><tr><td>GAP-1</td><td>Historical betting odds (opening and closing lines, all books)</td><td>Without a timestamped line history, no closing-line value and no return on investment can be computed. Every &#x27;edge&#x27; claim in the wider betting literature depends on this.</td><td>Licensed historical odds feed (e.g. a commercial sports-data vendor) or a manually archived daily snapshot before every kickoff, stored with a timestamp.</td></tr><tr><td>GAP-2</td><td>Player prop prices and settlement rules</td><td>Prop combos need the joint price and the exact void/push rules per book.</td><td>A prop market feed with timestamps, or an archived book screen per week.</td></tr><tr><td>GAP-3</td><td>Official starting lineups at kickoff (inactives list)</td><td>The injury report is a pre-game designation; the actual inactive list is the truth.</td><td>ESPN summary endpoint inactives per game (endpoint reachable from CI; fetch job queued), or NFL.com game books.</td></tr><tr><td>GAP-4</td><td>Player talent / value weighting</td><td>The lineup index weights players by snap share, which measures usage, not ability.</td><td>A documented player-value model (e.g. published approximate value) or per-player EPA, both derivable from play-by-play once it is fetched in full.</td></tr><tr><td>GAP-5</td><td>Referee and weather effects with adequate sample</td><td>Officiating crews and weather are plausible signals but need thousands of games per subgroup.</td><td>Already fetched; needs a dedicated gate with a minimum-subgroup size rule.</td></tr><tr><td>GAP-6</td><td>Injury report timestamps precise enough for a decision cutoff</td><td>A strategy is only usable if the information existed before the bet had to be placed.</td><td>Use date_modified where present; otherwise fall back to the week boundary and label the row.</td></tr></tbody></table></div>
+<h2>7. Open questions before any decision can be made</h2>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Question before any decision</th><th>Information missing</th><th>Impact</th></tr></thead><tbody><tr><td>Q1</td><td>Is the goal forecast accuracy against a baseline, or profit against a price?</td><td>A timestamped price history to measure profit.</td><td>Decides whether this lab is a research model or a betting system. Today it is the former.</td></tr><tr><td>Q2</td><td>Which markets and which books are in scope?</td><td>Book list, jurisdiction, prop market, settlement rules per book.</td><td>Parlay pricing and prop combos are undefined without exact book rules.</td></tr><tr><td>Q3</td><td>What is the decision cutoff for a strategy to count?</td><td>A consistent cutoff before older seasons and a rule for late scratches.</td><td>Without a cutoff a backtest can accidentally use information that did not exist yet.</td></tr><tr><td>Q4</td><td>What may a top strategy actually win?</td><td>Legal review before any money or prize of monetary value, and the tax/privacy handling that goes with it.</td><td>Rewards are the incentive that turns a leaderboard into a competition.</td></tr><tr><td>Q5</td><td>Do we need inactives (the actual game-day list), not just the injury report?</td><td>The per-game inactive list in a machine-readable file.</td><td>A &#x27;Questionable&#x27; player often plays; an &#x27;Out&#x27; player never does. Mixing them corrupts the lineup index.</td></tr><tr><td>Q6</td><td>How should a missing starter be valued?</td><td>A talent measure independent of usage.</td><td>A team can lose a great player who had low usage and barely move the index.</td></tr></tbody></table></div>
+<p>Full list with answers and owners: <a href="questions.html">Questions</a>. Improvement proposals to choose
+between before anything changes: <a href="suggestions.html">Suggestions</a>.</p>
+<h2>8. What is claimed, and what is not</h2>
+<ul class="clean">
+<li><strong>Claimed:</strong> the strength family (Elo-style ratings + form) beats its own baseline out of sample
+and survives the best-of-K luck-deflation null at the reported p95.</li>
+<li><strong>Not claimed:</strong> any profit, return, payout or edge. No timestamped price history exists
+(GAP-1), so none of those can be computed, and this lab is a research model, not a betting system.</li>
+<li><strong>Not claimed:</strong> that context-family skill is real — its deflation verdict is
+computed.</li>
+<li>Injuries and depth charts are tracked with snapshot dates and a 1st–4th-string tier table
+(<a href="injuries.html">Injuries &amp; lineups</a>); designations come from the official weekly reports via nflverse.</li>
+</ul>
+<h2>9. Reproduce</h2>
+<pre>python3 nfl/fetch_data.py --with-espn --seasons 2016:2026
+python3 nfl/model.py --perm 200
+python3 nfl/analyze.py
+python3 nfl/leaderboard.py
+python3 nfl/build_site.py
+python3 -m unittest discover -s nfl/tests</pre>
+<p>Every figure above is regenerated by these commands from fetched files whose SHA-256 hashes are published
+on the <a href="data.html">Data audit</a> page.</p>
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Lines Lab</strong> — every published number is generated from data fetched and hashed by
+the repository's own pipeline. No betting return, payout or edge is claimed anywhere: the only market
+data available is a single un-timestamped line snapshot, and no player-prop market exists in any
+reachable source. <a href="flagged.html">Flagged for review</a> · <a href="sources.html">Sources</a> ·
+<a href="questions.html">Open questions</a></p>
+<p class="small">Generated 2026-11-13 15:59 UTC by
+<code>nfl/build_site.py</code>. Pre-registration: <a href="../nfl/PREREGISTRATION.md">nfl/PREREGISTRATION.md</a>.</p>
+</div></footer></body></html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parlays and props · NFL Lines Lab</title>
+<meta name="description" content="NFL line-making, signal validation and correlation research generated from cited public data.">
+<style>
+:root{--bg:#0b1220;--panel:#111b2e;--panel2:#16243a;--line:#22334d;--ink:#e8eef8;--muted:#9aa9c2;
+--accent:#4dd4ac;--accent2:#7aa2ff;--warn:#ffc857;--bad:#ff7a6b;--free:#3ddc97;--radius:14px;--max:1180px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:radial-gradient(1200px 700px at 15% -10%,#16294a 0%,#0b1220 55%) fixed,var(--bg);
+color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(11,18,32,.94);border-bottom:1px solid var(--line)}
+.topbar{display:flex;align-items:center;gap:16px;padding:11px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.2px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+nav.main{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:6px 10px;border-radius:9px;color:var(--muted);font-size:13.5px;font-weight:600}
+nav.main a:hover{background:var(--panel2);color:var(--ink);text-decoration:none}
+nav.main a.active{background:var(--accent);color:#052015}
+main{padding:24px 0 60px}
+h1{font-size:clamp(25px,3.6vw,36px);line-height:1.15;margin:6px 0 8px;letter-spacing:-.5px}
+h2{font-size:21px;margin:28px 0 10px}
+h3{font-size:16px;margin:16px 0 8px}
+p.lede{color:var(--muted);font-size:16.5px;max-width:78ch;margin:0 0 16px}
+small,.small{font-size:12.5px;color:var(--muted)}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+border-radius:var(--radius);padding:16px}
+.card h3{margin-top:0}
+.kpi{font-size:32px;font-weight:800;letter-spacing:-1px;line-height:1.05}
+.kpi small{display:block;font-weight:600;font-size:11.5px;letter-spacing:.7px;text-transform:uppercase;margin-top:6px}
+.tag{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;font-size:11.5px;
+font-weight:700;border:1px solid var(--line);background:#0d1728;color:var(--muted);white-space:nowrap}
+.tag.pass{color:#04241a;background:var(--free);border-color:transparent}
+.tag.fail{color:#2b0b06;background:var(--bad);border-color:transparent}
+.tag.warn{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.A{color:#04241a;background:var(--free);border-color:transparent}
+.tag.C{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.D{color:#2b0b06;background:var(--bad);border-color:transparent}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{padding:8px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700;
+background:#0e1829;position:sticky;top:54px;z-index:5}
+tr:hover td{background:#121d31}
+.scroll{max-height:640px;overflow:auto;border:1px solid var(--line);border-radius:12px}
+.callout{border-left:4px solid var(--accent);background:#0e1c2e;padding:13px 15px;border-radius:0 12px 12px 0;margin:14px 0}
+.callout.warn{border-left-color:var(--warn)}.callout.bad{border-left-color:var(--bad)}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.btn{background:var(--panel2);color:var(--ink);border:1px solid var(--line);padding:8px 13px;border-radius:10px;
+font-weight:700;display:inline-block}
+.btn:hover{background:#1d2f4b;text-decoration:none}
+.mono{font-variant-numeric:tabular-nums}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:12.5px}
+.ok{color:var(--free)}.bad{color:var(--bad)}.warnc{color:var(--warn)}
+ul.clean{margin:6px 0 0 18px;padding:0}ul.clean li{margin:5px 0}
+</style></head><body>
+<header class="top"><div class="wrap topbar">
+<div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+<nav class="main"><a href="index.html" class="">Dashboard</a><a href="executive.html" class="">Executive summary</a><a href="lines.html" class="">Lines & model</a><a href="signals.html" class="">Signals</a><a href="injuries.html" class="">Injuries & lineups</a><a href="leaderboard.html" class="">Leaderboard</a><a href="parlays.html" class="active">Parlays & props</a><a href="questions.html" class="">Questions</a><a href="suggestions.html" class="">Suggestions</a><a href="data.html" class="">Data audit</a><a href="flagged.html" class="">Flagged</a><a href="sources.html" class="">Sources</a><a href="../index.html">Planner site</a></nav>
+</div></header>
+<main class="wrap"><aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. <a href="../certainty.html">Flagged for Review: certainty audit</a>.</aside>
+
+
+<h1>Parlays and prop combos — correlation-aware</h1>
+<p class="lede">Multiplying leg probabilities assumes the legs are independent. They often are not: two
+props on the same team share a game script, and a game total and a quarterback's passing yards move
+together. This page measures those relationships first, then prices the combination with a Gaussian copula
+that consumes the measured matrix.</p>
+<div class="callout bad"><strong>No payout, no ROI, no stake.</strong> There is no parlay price and no prop
+price in any reachable source. What follows is a joint <em>probability</em>. Turning that into a wager needs
+a price, and the price is missing — recorded as GAP-1 and GAP-2.</div>
+<h2>Single-bet vs parlay vs prop combo</h2>
+<div class="grid g3">
+<div class="card"><h3>Single</h3><p class="small">One probability, one price. The only market where a
+conventional edge can even be defined. Tested in the leaderboard as a probability, since the price is
+absent.</p></div>
+<div class="card"><h3>Parlay (cross-game)</h3><p class="small">Legs come from different games, so they are
+near-independent by construction. The real risk is not correlation but the compounded vig — which cannot
+be computed without prices.</p></div>
+<div class="card"><h3>Prop combo (same-game)</h3><p class="small">Legs share a game script. Correlation is
+the whole question, and it is measurable from outcomes. Measured values are on the right.</p></div>
+</div>
+<h2>Measured cross-game parlay families</h2>
+<div class="scroll"><table><thead><tr><th>Family</th><th>Seasons</th><th>Product of marginals</th><th>Copula joint</th><th>Source</th></tr></thead><tbody><tr><td>2-leg cross-game parlay (one per season, n=6)</td><td>6</td><td><span class="small">— blank —</span></td><td><span class="small">— blank —</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv" title="https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv">data</a></td></tr><tr><td>3-leg cross-game parlay (one per season, n=6)</td><td>6</td><td><span class="small">— blank —</span></td><td><span class="small">— blank —</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv" title="https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv">data</a></td></tr></tbody></table></div>
+<h2>Prop forecast accuracy (no market price exists)</h2>
+<p class="small">A player's next-game over/under on a fixed line is forecast from his own prior weeks in
+that season only. Scored against ln 2, the log loss of a coin flip. This is a forecast test, not an edge
+test.</p>
+<div class="scroll"><table><thead><tr><th>Market</th><th>Pos</th><th>Line</th><th>Games</th><th>Log loss</th><th>Accuracy</th><th>Skill vs coin flip</th><th>Source</th></tr></thead><tbody><tr><td>passing yards</td><td>QB</td><td>225</td><td>389</td><td>0.6659</td><td>0.6221</td><td>0.0394</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>rushing yards</td><td>RB</td><td>55</td><td>1011</td><td>0.4576</td><td>0.6627</td><td>0.1677</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>receiving yards</td><td>WR</td><td>45</td><td>1573</td><td>0.5452</td><td>0.6542</td><td>0.1344</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>receptions</td><td>WR</td><td>4.5</td><td>1573</td><td>0.4546</td><td>0.6751</td><td>0.179</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>passing tds</td><td>QB</td><td>1.5</td><td>389</td><td>0.6623</td><td>0.5861</td><td>0.0312</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>rushing tds</td><td>RB</td><td>0.5</td><td>1011</td><td>0.4915</td><td>0.5371</td><td>0.0682</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>receiving tds</td><td>WR</td><td>0.5</td><td>1573</td><td>0.4871</td><td>0.5321</td><td>0.0169</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>passing yards</td><td>QB</td><td>225</td><td>358</td><td>0.6481</td><td>0.6369</td><td>0.0646</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>rushing yards</td><td>RB</td><td>55</td><td>1072</td><td>0.4527</td><td>0.6959</td><td>0.1981</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>receiving yards</td><td>WR</td><td>45</td><td>1520</td><td>0.5393</td><td>0.6632</td><td>0.1539</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>receptions</td><td>WR</td><td>4.5</td><td>1520</td><td>0.4632</td><td>0.6789</td><td>0.1919</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>passing tds</td><td>QB</td><td>1.5</td><td>358</td><td>0.6632</td><td>0.5978</td><td>0.0191</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>rushing tds</td><td>RB</td><td>0.5</td><td>1072</td><td>0.48</td><td>0.5382</td><td>0.0497</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>receiving tds</td><td>WR</td><td>0.5</td><td>1520</td><td>0.4727</td><td>0.4934</td><td>-0.0117</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr></tbody></table></div>
+<h2>Measured same-team prop correlations</h2>
+<div class="scroll"><table><thead><tr><th>Leg A</th><th>Leg B</th><th>Pos</th><th>Pairs</th><th>r</th><th>95% CI</th><th>Verdict</th><th>Source</th></tr></thead><tbody><tr><td>rushing yards</td><td>rushing tds</td><td>RB</td><td>1824</td><td>-0.0811</td><td>-0.1199 … -0.0384</td><td><span class="tag pass">excludes 0</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>receiving yards</td><td>receptions</td><td>WR</td><td>4612</td><td>-0.0566</td><td>-0.0834 … -0.028</td><td><span class="tag pass">excludes 0</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>receiving yards</td><td>receiving tds</td><td>WR</td><td>4612</td><td>-0.0097</td><td>-0.0345 … 0.0184</td><td><span class="tag">includes 0</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>receptions</td><td>receiving tds</td><td>WR</td><td>4612</td><td>-0.0154</td><td>-0.0416 … 0.0144</td><td><span class="tag">includes 0</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>rushing yards</td><td>rushing tds</td><td>RB</td><td>1939</td><td>-0.0671</td><td>-0.105 … -0.0276</td><td><span class="tag pass">excludes 0</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>receiving yards</td><td>receptions</td><td>WR</td><td>4213</td><td>-0.0541</td><td>-0.0806 … -0.0262</td><td><span class="tag pass">excludes 0</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>receiving yards</td><td>receiving tds</td><td>WR</td><td>4213</td><td>-0.0259</td><td>-0.0557 … 0.0042</td><td><span class="tag">includes 0</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr><tr><td>receptions</td><td>receiving tds</td><td>WR</td><td>4213</td><td>-0.0238</td><td>-0.0518 … 0.0064</td><td><span class="tag">includes 0</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv" title="https://github.com/nflverse/nflverse-data/releases/download/player_stats/stats_player_week_2025.csv">stats</a></td></tr></tbody></table></div>
+<h2>How the joint probability is computed</h2>
+<ol class="clean">
+<li>Marginals come from the model, never from a guess.</li>
+<li>Each correlated pair contributes its measured r to a correlation matrix.</li>
+<li>A Cholesky factor of that matrix drives a Gaussian copula; the joint probability is the share of
+simulated draws in which every leg wins.</li>
+<li>If the matrix is not positive definite (which happens with noisy estimates), the code falls back to
+independence and says so in its output rather than silently producing a number.</li>
+</ol>
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Lines Lab</strong> — every published number is generated from data fetched and hashed by
+the repository's own pipeline. No betting return, payout or edge is claimed anywhere: the only market
+data available is a single un-timestamped line snapshot, and no player-prop market exists in any
+reachable source. <a href="flagged.html">Flagged for review</a> · <a href="sources.html">Sources</a> ·
+<a href="questions.html">Open questions</a></p>
+<p class="small">Generated 2026-11-13 15:59 UTC by
+<code>nfl/build_site.py</code>. Pre-registration: <a href="../nfl/PREREGISTRATION.md">nfl/PREREGISTRATION.md</a>.</p>
+</div></footer></body></html>

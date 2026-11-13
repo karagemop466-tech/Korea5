@@ -1,0 +1,107 @@
+{
+ "checked": [
+  {
+   "name": "nflverse_games_csv",
+   "url": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv",
+   "dns": "20.172.24.160",
+   "status": 200,
+   "content_length": "2190032",
+   "content_type": "application/octet-stream",
+   "first_bytes": "game_id,season,game_type,week,gameday,weekday,gametime,away_team,away_score,home_team,home_score,location,result,total,overtime,old_game_id,gsis,nfl_detail_id,pfr,pff,espn,ftn,away_rest,home_rest,away"
+  },
+  {
+   "name": "nflverse_roster",
+   "url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2026.csv",
+   "dns": "20.172.24.160",
+   "status": 200,
+   "content_length": "982988",
+   "content_type": "application/octet-stream",
+   "first_bytes": "season,team,position,depth_chart_position,jersey_number,status,full_name,first_name,last_name,birth_date,height,weight,college,gsis_id,espn_id,sportradar_id,yahoo_id,rotowire_id,pff_id,pfr_id,fantasy_"
+  },
+  {
+   "name": "nflverse_depth",
+   "url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv",
+   "dns": "20.172.24.160",
+   "status": 200,
+   "content_length": "74572683",
+   "content_type": "application/octet-stream",
+   "first_bytes": "dt,team,player_name,espn_id,gsis_id,pos_grp_id,pos_grp,pos_id,pos_name,pos_abb,pos_slot,pos_rank\n2026-11-13T07:02:06Z,ARI,Josh Sweat,3693166,00-0034381,16,Base 4-3 D,11,Left Defensive End,LDE,1,1\n2026"
+  },
+  {
+   "name": "nflverse_injuries",
+   "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
+   "dns": "20.172.24.160",
+   "status": 200,
+   "content_length": "354572",
+   "content_type": "application/octet-stream",
+   "first_bytes": "season,season_type,game_type,team,week,gsis_id,position,full_name,first_name,last_name,report_primary_injury,report_secondary_injury,report_status,practice_primary_injury,practice_secondary_injury,pra"
+  },
+  {
+   "name": "nflverse_pbp",
+   "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.csv.gz",
+   "dns": "20.172.24.160",
+   "status": 200,
+   "content_length": "19105296",
+   "content_type": "application/octet-stream",
+   "first_bytes": "\u001f\ufffd\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003\ufffdX\u06d2\ufffd&\u0010}\u03f7\ufffd\ufffd\ufffd\ufffd\ufffd\u0018\ufffdlb\u0019\ufffd\ufffdF\ufffd|}\ufffd\u0002\u0012\ufffd\ufffdI*U\ufffd\u0011\ufffd\ufffdB\u0003\r=O\ufffd)\ufffd\u0016W\ufffd0\ufffd\ufffd\ufffd\ufffd\ufffd}\ufffd\ufffdMF=\ufffdZ\ufffd\ufffdZ\u0468\ufffdL\ufffd\u0648\u0558\ufffd\ufffd}$B\ufffd2E\ufffd\ufffd\ufffd\ufffd6\u048fr\ufffdf\ufffd\u2a42\ufffd\ufffd3\ufffd\ufffd\ufffd\u000f6\ufffdU2\ufffd\ufffd\ufffdB2AF3x\ufffd\ufffd\f\u686c\ufffd\ufffd*nj\u001a;0\ufffd\ufffd\ufffd(\ufffdi4N\u000b\u001d\ufffd\u0011q\u0016\ufffdS\u0010\u06afN\\\ufffd\ufffdd\ufffd\ufffd\ufffdE\ufffd\u000f#\ufffd\ufffd\ufffd\u0013O\u001d\ufffd\u0007\b\ufffd\ufffd$\u0018A\u001c\u010c\ufffdC\u0003B\ufffd#L\f"
+  },
+  {
+   "name": "mlb_statsapi",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-04-01",
+   "dns": "151.101.201.60",
+   "status": 200,
+   "content_length": "19786",
+   "content_type": "application/json;charset=UTF-8",
+   "first_bytes": "{\"copyright\":\"Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt\",\"totalItems\":15,\"tot"
+  },
+  {
+   "name": "nfl_teams",
+   "url": "https://api.nfl.com/v1/teams",
+   "dns": "151.101.41.55",
+   "error": "HTTPError: HTTP Error 401: Unauthorized"
+  },
+  {
+   "name": "espn_scoreboard",
+   "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
+   "dns": "23.62.46.216",
+   "status": 200,
+   "content_length": null,
+   "content_type": "application/json;charset=UTF-8",
+   "first_bytes": "{\"leagues\":[{\"id\":\"28\",\"uid\":\"s:20~l:28\",\"name\":\"National Football League\",\"abbreviation\":\"NFL\",\"slug\":\"nfl\",\"season\":{\"year\":2026,\"startDate\":\"2026-08-06T07:00Z\",\"endDate\":\"2027-02-16T07:59Z\",\"displa"
+  },
+  {
+   "name": "pro_football_ref",
+   "url": "https://www.pro-football-reference.com/years/2025/",
+   "dns": "104.18.13.41",
+   "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "name": "nflcom_schedule",
+   "url": "https://www.nfl.com/schedules/2026/",
+   "dns": "151.101.201.55",
+   "status": 200,
+   "content_length": "2313075",
+   "content_type": "text/html; charset=utf-8",
+   "first_bytes": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/42ed4b7f310fd6b5.css\" da"
+  },
+  {
+   "name": "nfl_ops",
+   "url": "https://operations.nfl.com/",
+   "dns": "151.101.41.55",
+   "status": 200,
+   "content_length": "551336",
+   "content_type": "text/html; charset=utf-8",
+   "first_bytes": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"https://static.www.nfl.com/image/u"
+  },
+  {
+   "name": "pypi_nfl_data_py",
+   "url": "https://pypi.org/simple/nfl-data-py/",
+   "dns": "151.101.64.223",
+   "status": 200,
+   "content_length": "18458",
+   "content_type": "text/html",
+   "first_bytes": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta name=\"pypi:repository-version\" content=\"1.4\">\n<meta name=\"pypi:project-status\" content=\"active\">    <title>Links for nfl-data-py</title>\n  </head>\n "
+  }
+ ],
+ "dns": {}
+}

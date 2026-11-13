@@ -1,0 +1,27 @@
+name: probe-02f4d067
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/02f4d067-korea5' ]
+    paths: [ '.github/workflows/probe-02f4d067.yml', 'tools/probe_env.py' ]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/02f4d067-korea5
+      - name: probe outbound network
+        run: python3 tools/probe_env.py
+      - name: commit
+        run: |
+          git config user.name "korea5-data-bot"
+          git config user.email "korea5-data-bot@users.noreply.github.com"
+          git add nfl/probe/
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "probe: CI network reachability"
+            git pull --rebase --autostash origin arena/02f4d067-korea5
+            git push origin HEAD:arena/02f4d067-korea5
+          fi

@@ -1,7 +1,7 @@
 name: Planner certainty and site checks
 on:
   push:
-    branches: [main, arena/f9e705a1-korea5, arena/c6eea73d-korea5]
+    branches: [main, arena/f9e705a1-korea5, arena/02f4d067-korea5, arena/c6eea73d-korea5]
   pull_request:
   workflow_dispatch:
 permissions:
@@ -28,6 +28,7 @@ jobs:
           python3 scripts/nfl_lab/build_site.py
           python3 scripts/build_nfl.py
           python3 scripts/verify_nfl.py
+          python3 nfl/build_site.py
           python3 scripts/build_site.py
           python3 tools/build_extra.py
           python3 scripts/audit_certainty.py
@@ -43,5 +44,7 @@ jobs:
           node tests/test_calendar_today.js
       - name: NFL price math unit tests
         run: python3 -m unittest discover -s nfl-lab/tests -v
+      - name: NFL lines lab checks (unit tests)
+        run: python3 -m unittest discover -s nfl/tests -v
       - name: Python syntax
-        run: python3 -m compileall -q scripts tools nfl-lab/scripts nfl-lab/tests
+        run: python3 -m compileall -q scripts tools nfl nfl-lab/scripts nfl-lab/tests

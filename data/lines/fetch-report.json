@@ -1,0 +1,38 @@
+{
+ "startedUTC": "2026-11-13T13:16:45.882714+00:00",
+ "sources": {
+  "schedules": {
+   "name": "NFL.com official schedule by-week pages",
+   "example": "https://www.nfl.com/schedules/2024/by-week/preseason-week-1",
+   "pages": 78
+  },
+  "boxscores": {
+   "name": "NFL.com official box score (game page, stats tab)",
+   "example": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10?tab=stats",
+   "pages": 424
+  },
+  "injuries": {
+   "name": "NFL.com official weekly injury report",
+   "example": "https://www.nfl.com/injuries/",
+   "week": 10
+  },
+  "depthCharts": {
+   "name": "Official club depth charts, club list from the NFL.com team directory",
+   "directory": "https://www.nfl.com/teams/"
+  }
+ },
+ "counts": {
+  "games": 1170,
+  "gamesWithScore": 840,
+  "boxscoreRows": 0,
+  "injuryRows": 296,
+  "injuryWeek": 10,
+  "depthCharts": 30,
+  "depthChartsMissing": [
+   "Green Bay Packers",
+   "Houston Texans"
+  ]
+ },
+ "failures": [],
+ "finishedUTC": "2026-11-13T13:17:44.443444+00:00"
+}

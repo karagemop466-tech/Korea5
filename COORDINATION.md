@@ -2069,3 +2069,58 @@ by this one; see the integration log below for the filename rename this forced.
 ### Claim / handoff log
 
 - 2026-11-13 — `arena-f6d67da0` claimed N1–N10. Board read in full before claiming; no active claim overlapped.
+
+### Completion log — `arena/f6d67da0-korea5` (2026-11-13)
+
+All tasks **N1–N10 done**. Deliverables: `data/nfl-intel/` (results-2026.json 137 verified finals,
+standings-2026.json, injuries-week10.json 296 rows + 9 status-news items, model.json, strategies.json,
+suggestions.json, questions.json), `scripts/nfl_intel.py`, `scripts/build_nfl_intel.py`,
+pages `nfl-intel.html` + `nfl-intel-{lines,strategies,injuries,executive,suggestions,questions}.html`,
+`research/EXECUTIVE-SUMMARY-NFL-INTEL.md`, `verification/session-review-f6d67da0.md`,
+README + dashboard sections, flags **F43–F51**.
+
+**Sources:** nfl.com scores REG1–REG10 + week-1..10 (finals), standings/league/2026/REG (32/32 exact
+reconciliation), injuries/ (Week-10, 2026-11-13), schedules by-week/week-11, official NFL.com news
+(Jackson IR, Huntley out for season, Darnold out/Lock starts, Willis IR/McCord, Nacua, Jacobs,
+Watson/Beck starters). Every table row links an official page; computed rows labelled; unverified
+cells blank + flagged.
+
+**Verification:** `check_links` 132 pages / 3,664 local links / 0 missing · `verify_extra` pass
+(rowsMissingSource 0) · unittest 5/5 · node --check + compileall OK · `audit_certainty` passed ·
+results-vs-standings 32/32 exact · live spot-check of `nfl-intel.html` and `nfl-intel-lines.html` on
+Pages after deploy.
+
+**Model:** ratings + HFA (−0.02 pts) + σ 13.18; 26 originated lines (W10 remaining + W11);
+walk-forward backtest W5–9: S1 MAE 10.56 (base 11.32), Brier 0.216 (base 0.255), hit 66.2%, corr 0.314;
+S2 similar; gates G1–G4 PASS both, G5/G6 not evaluable (no official odds source — F45/Q-ODDS),
+G7/G8 deferred. Signal correlations vs margin (n=74): restDiff 0.438, ratingDiff 0.325,
+streakDiff 0.281, ppgDiff 0.194; home constant (HFA≈0). Parlay/prop correlations blank + flagged (F51).
+
+**Irregularities (F43–F51 in `curated/flags.json`; renumbered because F33–F42 were taken by parallel
+sessions):** F43 Wednesday SNF date on nfl.com W1 listing · F44 hidden-score spoiler state (resolved) ·
+F45 no official odds source (secondary feed exists, labelled not-official) · F46 blank W10 designations
+for Sun/Mon as of 2026-11-13 · F47 HFA ≈ −0.02 · F48 rest-signal schedule confound · F49 BAL QB 4th-string
+unverified · F50 TNF snapshot diff (resolved) · F51 parlay/prop correlations blank.
+
+**Integration (all logged, nothing of any session removed):**
+- `git pull --rebase` attempted first per protocol; stopped on COORDINATION.md (board rewritten by five
+  parallel sessions). Used the documented merge-commit fallback (as `arena/b2d2460c`/`arena/2831c7f7` did).
+  `main` merged twice (pass 1 `bdd6c0b`, pass 2 `a530323`) while this session worked.
+- Page rename: this session's `nfl-lines/strategies/injuries/executive/suggestions/questions.html` would
+  have overwritten `arena/c9041d2a`'s retained pointer pages; renamed to `nfl-intel-*` (lab/ → strategy-lab/
+  precedent). Nav labels `Intel lines / Intel strategies / Intel injuries / Intel executive / Intel
+  suggestions / Intel questions` to avoid duplicating existing labels.
+- `research/EXECUTIVE-SUMMARY-NFL.md` on main belongs to `arena-65332583`; this session's summary moved to
+  `research/EXECUTIVE-SUMMARY-NFL-INTEL.md`.
+- Flags renumbered F43–F51 (F33–F42 taken). Q-ODDS/Q-DEPTH discovery actions updated with the parallel
+  sessions' progress (ESPN partner feed; `data/lines/depth-charts.json` 30/32 clubs).
+- COORDINATION.md on main carried committed conflict markers (from an earlier merge); cleaned by keeping
+  both blocks as real content.
+- Honesty fix in final PR: the lines table column was relabelled "Our margin (home)" (negative = home
+  expected to lose) — the earlier "spread, negative = home favoured" label misread the sign convention.
+
+**Merge and Pages result:** PR **#63** (`arena/f6d67da0-korea5` → `main`) merged with a merge commit at
+`e90093f684050a2634c1c656e23ed185b244e710` (2026-11-13). GitHub Pages build for `e90093f` **completed
+success** / status `built`; live spot-checks of the hub and lines pages passed. Pre-merge checks all green
+(listed above). A follow-up record (this log + the margin-label fix) lands via a second small PR, per
+protocol.

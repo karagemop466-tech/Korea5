@@ -25,6 +25,32 @@ January 24 date is a Divisional playoff day, not a free day.
 See [`research/EXECUTIVE-SUMMARY.md`](research/EXECUTIVE-SUMMARY.md) for the full write-up,
 [Flagged for Review](flagged.html) for open items, and [the certainty audit](certainty.html) for what is still unverified.
 
+## NFL lines, strategies and the injury tracker (2026-11-13)
+
+Two companion sections work on the same question from opposite ends, and are meant to be read together:
+
+| Section | What it is |
+|---|---|
+| [NFL Lines Lab](https://karagemop466-tech.github.io/Korea5/lab/index.html) | The **evidence** side, built only on official NFL records — the published injury report, official player game logs, the official Game Book — with measured correlations, dispersion figures and minimum-sample rules computed from them. |
+| [NFL Lines Lab — model](https://karagemop466-tech.github.io/Korea5/nfl-lab/index.html) | The **model** side — a line model built and back-tested against third-party game data, reporting how it compares with the market spread. Market lines are left blank and flagged unverified. |
+| [NFL Decision Support](https://karagemop466-tech.github.io/Korea5/nfl/index.html) | The **structured** side — the requirements list, the method and validation-gate reference, the leaderboard reward design and the source registry. |
+
+None of the three publishes a validated edge, a win rate or a yield. Each says so on its own landing page, and each
+keeps the leaderboard empty until a strategy passes every gate. The pages cross-link, so it is clear which side of the
+question each one covers.
+
+The [NFL Lines Lab](https://karagemop466-tech.github.io/Korea5/lab/index.html) is a new section for originating your own
+NFL lines. It holds a **decision register** (15 open decisions with what is known, what is missing and how to close it),
+a **catalogue of 12 candidate strategies** (singles, player props, prop combinations, parlays) each bound to **9 validation
+gates**, **measured correlations and dispersion** computed from official NFL game data, an **injury and lineup-depth
+tracker** built on the official weekly injury report and the official Game Book, a **paper-only leaderboard design**, and a
+**suggestions register** with a recommended path so changes are decided before they are built.
+
+Two measured results drive the design: two same-team receivers are **not independent** (r = -0.82 on the six matched
+official games, 95% CI -0.98 to -0.02), and a +5 point edge at a -110 price needs **779** bets before it can be told apart
+from luck. The repository holds **no market price, no settlement record and no forecast log**, so no win rate, yield, edge
+or fair price is published anywhere, and the leaderboard is published empty on purpose.
+
 ## What is in here
 
 | Path | What it is |
@@ -38,10 +64,16 @@ See [`research/EXECUTIVE-SUMMARY.md`](research/EXECUTIVE-SUMMARY.md) for the ful
 | `verification/` | Machine-readable verification report and link check |
 | `research/` | Executive summary, probe results, and text snapshots of official pages |
 | `scripts/` | Fetch, build, analyze, verify, site and docs generators |
+| `lab/` | **NFL Lines Lab** — decision register, strategy catalogue and gates, measured correlations, injury & depth tracker, leaderboard design, suggestions |
+| `data/lab/` | Official NFL records behind the lab (Week 10 injury report, player game logs, official Game Book) and the computed analysis |
+| `curated/nfl-lab.json` | The curated lab specification: questions, strategies, gates, depth rules, leaderboard rules, suggestions, flags |
 
 ## Rebuild
 
 ```bash
+python3 scripts/analyze_lab.py    # NFL lab: dispersion, correlations, minimum-observation rules
+python3 tools/build_lab.py        # regenerate lab/ pages from curated/nfl-lab.json + data/lab/
+python3 tools/verify_lab.py       # every published lab row carries a source or is an explicit blank
 python3 scripts/fetch_mlb.py      # official MLB feed (2026-2029; 2028/29 return nothing, by design)
 python3 scripts/build_events.py   # normalize + add the labelled estimate layer
 python3 scripts/analyze.py        # free/busy windows, free streaks, vacation ranking

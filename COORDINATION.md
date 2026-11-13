@@ -655,6 +655,211 @@ date, and all prior items) remain published on `extra/flagged.html` with officia
 - **Pipeline order (finding):** `verify_extra.py` rewrites `extra/links.html`, and `audit_certainty.py` adds the certainty banner to every page. The banner is therefore only correct if the audit runs last. Required order: `build_events` → `analyze` → `build_site` → `build_extra` → `check_links` → `verify_extra` → `audit_certainty`. This is logged for the integration owner (see cross-scope note above).
 - **Verification at this commit:** `tools/verify_extra.py` 31/31; `scripts/audit_certainty.py` passed; `scripts/check_links.py` 0 missing; `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed.
 
+---
+
+## Session `arena/e96c5f87-korea5` — 2026-11-13 (NFL Lines & Strategy hub)
+
+Branch fixed by Arena: `arena/e96c5f87-korea5`; no other branch is created or pushed. Start point: `main`
+tip `13854fe` (PR #31). Open PR **#32** (`arena/7ff5d688-korea5`) touches the vacation planner's shared outputs
+(`index.html`, `scripts/*`, `data/**`, `extra/**`, `curated/**`, `*.html`). This session's scope is deliberately
+**non-overlapping**: a new self-contained `nfl/` section plus new generator/verifier scripts that PR #32 does not
+touch. The only shared file this session edits is this `COORDINATION.md` (log only) and, at final integration, a
+single navigation link in the root `index.html` (resolved by union if PR #32 has landed).
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N1 | Requirements + open questions + suggestions: full requirement list; explicit have/don't-have information inventory; questions that must be answered before any decision; suggestions aimed at discovering missing information | arena-e96c5f87 | **done** | `nfl/data/requirements.json`; questions/suggestions detail on companion `nfl-questions.html`, `nfl-suggestions.html` |
+| N2 | Strategy framework: single bet, parlay, player-prop combos; validation gates; correlation method; skill-vs-luck (luck removal) methodology | arena-e96c5f87 | **done** | `nfl/data/method.json`, `nfl/method.html`; strategy/correlation detail on companion `nfl-strategies.html`, `nfl-correlation.html` |
+| N3 | Leaderboard competition design: ranking metric, validation-gated eligibility, reward tiers | arena-e96c5f87 | **done** | `nfl/data/leaderboard.json`, `nfl/leaderboard.html` |
+| N4 | Injury & roster model: starter/backup (2nd/3rd/4th string) tracking for offense and defense; defense-deficiency signals | arena-e96c5f87 | **done** | `nfl/data/method.json` (M6); injury/depth detail on companion `nfl-injuries.html` |
+| N5 | Source registry + flagged register: every row carries an official source link; unverifiable values blank and flagged | arena-e96c5f87 | **done** | `nfl/data/sources.json`, `nfl/sources.html`; flagged register on companion `nfl-flagged.html` |
+| N6 | Executive summary: important details, verified anchors, open gaps | arena-e96c5f87 | **done** | `nfl/data/executive-summary.json` (index anchors); full summary on companion `nfl-executive-summary.html` |
+| N7 | Site build: clean dashboard landing + category subpages, tables with source links, generator | arena-e96c5f87 | **done** | `nfl/*.html`, `nfl/assets/`, `scripts/build_nfl.py` |
+| N8 | Verification: row-by-row source-link audit, blank/flag audit, link check, JSON validity | arena-e96c5f87 | **done** | `scripts/verify_nfl.py` |
+| N9 | Integration: nav link, rebuild, re-verify, PR to `main`, merge without waiting, confirm Pages deploy, log result | arena-e96c5f87 | in progress | `COORDINATION.md` (log), root `index.html` (nav only) |
+
+Claim note: no prior task on the board is open to another session; PR #32's scope is disjoint from this session's
+new `nfl/` files. No file collision is expected. Generated artifacts stay inside `nfl/` so the vacation planner's
+integration-frozen outputs are untouched.
+
+### N1–N9 execution record — session `arena/e96c5f87`
+
+**Scope.** New self-contained `nfl/` hub (landing dashboard + 10 category subpages), new generator
+`scripts/build_nfl.py`, new verifier `scripts/verify_nfl.py`, data in `nfl/data/*.json`, assets in
+`nfl/assets/`. One shared-output edit: a single navigation link from the root `index.html` to the hub. No file
+owned by PR #32 (`scripts/*` existing files, `data/**`, `extra/**`, `curated/**`, root `*.html` other than the
+nav line) was touched.
+
+**Sources used (all official; verified live 2026-11-13 via page fetch / official-domain confirmation).**
+
+| Source | What it provided | Verification |
+|---|---|---|
+| `https://www.nfl.com/schedules/` | 2026 fixtures, kickoff times, venues, records | Fetched live; Week 10 fixtures/records present |
+| `https://www.nfl.com/injuries/` | Official injury report: player/position/injury/practice/game status | Fetched live; Week 10 rows used as verified examples |
+| `https://operations.nfl.com/rules-officiating/2026-nfl-rulebook` | 2026 rulebook, game timing, roster designations | Fetched live; rule-change table + Rule 4 present |
+| `https://www.nfl.com/stats/player-stats/` | Player statistical categories | Official nfl.com/stats domain confirmed |
+| `https://nextgenstats.nfl.com/` | Play-level location/tracking data for correlation | Official domain confirmed live |
+| `https://www.nfl.com/standings/` | Division/conference standings, W-L-T, point differential | Fetched live; 2026 division standings present |
+| `https://www.nfl.com/news/players-now-eligible-to-return-from-injured-reserve-after-four-games` | IR return eligibility, practice-squad rules | Official NFL.com news confirmed |
+| `https://sbg.colorado.gov/sites/sbg/files/SBRules1_2_4_5_6_7_8_9_10forAG_0.pdf` | Official definitions: proposition bet, parlay, straight bet | Official Colorado Division of Gaming rulebook |
+| `https://gaming.ny.gov/sports-wagering` | Proposition wager definitions, wagering-menu control | Official NY State Gaming Commission page |
+| `https://www.gaming.nv.gov/siteassets/content/divisions/administration/history/regulation-22.060-22.090-22.150-adp-01.29.2026-eff-02.28.2026.pdf` | Acceptance of wagers, parlay-card wagers, house rules | Official Nevada Gaming Control Board regulation (eff. 2026-02-28) |
+
+**Verification performed.**
+
+- `scripts/verify_nfl.py`: all `nfl/data/*.json` valid; 8 source refs checked, 0 unresolved; 11 tables / 110
+  source-bearing rows checked, 0 rows missing a source link or flagged blank; 142 local links, 0 missing;
+  0 non-official external links.
+- `scripts/check_links.py`: 11 root pages, 181 local links, 521 external links, 0 missing (the new
+  `nfl/index.html` nav link resolves).
+- `scripts/audit_certainty.py`: passed; no certified future window and all pages disclose incomplete coverage.
+- `python3 -m compileall` on both new scripts: OK; `node --check nfl/assets/app.js`: OK.
+- Local static server: HTTP 200 for all 11 `nfl/*.html`, both `nfl/assets/*`, and the root `index.html`.
+
+**Design / findings.**
+
+- Requirements R1–R29, open questions Q1–Q12 (each with an explicit have / don't-have split), suggestions
+  SU1–SU15 (proposed for review), strategies ST1–ST6 (single bet / parlay / player-prop combo), method M1–M7,
+  leaderboard design, injury/roster signal model, source registry S1–S10, flags FL1–FL10.
+- Lines are **model-originated** (M5) and labelled as such; no bookmaker odds are scraped or presented as source
+  data (FL2). No strategy performance is reported until a strategy passes validation gates; those cells are
+  intentionally blank (FL5).
+- Injury example rows (Week 10, 2026) are real and sourced from the official NFL injury report; the full
+  starter/backup tracker requires the automated feed described in SU2 (FL1, FL3).
+
+**Irregularities recorded (published on `nfl/flagged.html`, non-blocking).** FL1 no unified official
+depth-chart feed; FL2 lines are model-originated not market-sourced; FL3 weekly-only injury tracking, no
+history; FL4 correlation values not yet computed; FL5 no strategy has passed validation yet; FL6 partial
+player-prop grading rules; FL7 operating jurisdiction not locked; FL8 responsible-gaming limits not set;
+FL9 standings are point-in-time; FL10 roster/IR specifics to re-confirm against the 2026 rulebook.
+
+**Cross-scope maintenance note (logged, not edited).** The root `index.html` is generated by
+`scripts/build_site.py`. The new `nfl/index.html` nav link added here is a hand edit so it is live now; the
+owner of `scripts/build_site.py` should carry this nav link forward in the generator so a future rebuild does
+not drop it. Request logged rather than editing the other session's generator.
+
+**Consolidation with a parallel session (duplicate discovered and resolved).** After the first push, merging
+`origin/main` revealed that a parallel session had already shipped a comprehensive **NFL Lines Origination**
+section on `main` (`nfl-lines.html`, `nfl-strategies.html`, `nfl-correlation.html`, `nfl-injuries.html`,
+`nfl-questions.html`, `nfl-suggestions.html`, `nfl-executive-summary.html`, `nfl-flagged.html`,
+`nfl-strategy.html`, `research/NFL-STRATEGY.md`) covering strategies, correlation, injuries, questions,
+suggestions, executive summary and flagged — the same scope this session had started. Per the parallel-session
+protocol, this session **did not ship a competing duplicate**. The two `add/add` merge conflicts
+(`COORDINATION.md`, `index.html`) were resolved by **union**, preserving both sessions' work. This session then
+**repositioned its hub as the non-duplicative "NFL Decision Support" layer**, keeping only the pieces the
+origination section does not already provide: the full requirements list (R1–R29), the method / validation-gate
+reference (M1–M7), the leaderboard reward design, and a machine-readable source registry (S1–S10) with a
+line-by-line verifier. The duplicated pages/data (questions, suggestions, strategies, injuries, flags,
+executive-summary as standalone pages) were removed; the hub's dashboard links to the companion origination
+pages so the NFL Lines area is one coherent section. The root nav carries both entries: "NFL Lines
+(origination)" and "NFL Decision Support".
+
+### N9 integration record
+
+| Step | Result |
+|---|---|
+| Pull request | **#42 — https://github.com/karagemop466-tech/Korea5/pull/42** — "NFL Decision Support hub: requirements, method, leaderboard design, source registry + verifier (consolidated with origination section)" |
+| Merge conflict during PR | `main` advanced twice while the PR was open (PRs #43/#44 added the `lab/` NFL Lab section and regenerated the link report). Resolved locally by merging `origin/main` with `git merge` (not rebase, to preserve history). Conflicts resolved by **union**: `COORDINATION.md` keeps both appended sections; `index.html` keeps `main`'s nav (NFL Lab / Decisions / Suggestions) and adds the single "NFL Decision Support" link; `verification/links.json` regenerated via `scripts/check_links.py`. No work discarded. |
+| Merge | **Merged** into `main` 2026-11-13T13:28:18Z, merge commit `0a4c0f4e4b3e2ab0651ce914e95c0b6eaba70940` (`gh pr merge 42 --merge`, no waiting) |
+| GitHub Pages build | status **built**, source `main /` |
+| Live site | https://karagemop466-tech.github.io/Korea5/nfl/ — fetched live `nfl/index.html` and confirmed the dashboard, verified anchors with official source links, requirements coverage, method, leaderboard summary and companion-origination links all render |
+
+**Status: N1–N9 done.** The NFL Lines area is one coherent section: the companion origination pages
+(`nfl-*.html`) and the `lab/` NFL Lab pages (built by parallel sessions) plus this session's `nfl/` Decision
+Support layer (requirements, method, leaderboard design, source registry + verifier). No unclaimed or
+overlapping task remains for this session. Flagged irregularities and unverified items remain published and
+non-blocking.
+
+
+
+## Session `arena/1e59465a-korea5` — 2026-11-13 (NFL lines lab, claim)
+
+Branch fixed by Arena: `arena/1e59465a-korea5` (session id `arena-1e59465a`). Scope is a **new, self-contained section** so it does not touch files owned by other sessions:
+`nfl-lab/` (site), `scripts/nfl_lab/`, `data/nfl-lab/`, `.github/workflows/nfl-lab-*.yml`. Root `index.html`, navigation and `README.md` are **not** edited; a link from the root site is logged below as a request for the integration step.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N1 | Repo review: run existing checks, record irregularities with official links | arena-1e59465a | unclaimed→in progress | `nfl-lab/flagged.html`, `data/nfl-lab/repo-review.json` |
+| N2 | Data: NFL games + market lines 1999–2026 (nflverse/nfldata mirror), official NFL schedule links | arena-1e59465a | in progress | `scripts/nfl_lab/`, `data/nfl-lab/games-*.json` |
+| N3 | Data: injury reports (nflverse mirror of NFL official injury reports) + depth-chart backup flags, via CI | arena-1e59465a | in progress | `scripts/nfl_lab/fetch_injuries.py`, `.github/workflows/nfl-lab-data.yml`, `data/nfl-lab/injuries-*.json` |
+| N4 | Own-line model (power ratings from prior results only), validation gates, leaderboard, correlations | arena-1e59465a | in progress | `scripts/nfl_lab/model.py`, `data/nfl-lab/strategies.json` |
+| N5 | Site: landing, questions, suggestions, lines, strategies, validation, correlations, injuries, sources, flagged, executive summary | arena-1e59465a | in progress | `nfl-lab/*.html`, `nfl-lab/assets/` |
+| N6 | Verification: every row has official source link, local link check, JSON checks; irregularities logged | arena-1e59465a | in progress | `scripts/nfl_lab/verify.py`, `nfl-lab/verification.html` |
+| N7 | PR `arena/1e59465a-korea5` → `main`, merge without waiting, Pages deploy confirmation, log here | arena-1e59465a | unclaimed | `COORDINATION.md` (log only) |
+
+- 2026-11-13 — `arena-1e59465a` claims N1–N7. Request for integration step (not done by this session): add a link to `nfl-lab/index.html` from the root navigation.
+
+### Completion log — session `arena-1e59465a` (2026-11-13)
+
+| Task | Status | Sources | Verification performed | Irregularities (on the Flagged page) |
+|---|---|---|---|---|
+| N1 Repo review | **done** | `data/nfl-lab/repo-review.json`; COORDINATION.md; README.md; `scripts/check_links.py`, `tools/verify_extra.py`, `scripts/audit_certainty.py`, `tests/` | Ran unit tests (5 OK), link check (0 missing), verify_extra (0 rows missing source), certainty audit (pass). `check_links.py` rewrote `verification/links.json`; restored, not committed. | R1 stale 'in progress' rows for closed sessions; R2 68 KB append-only log; R3 link check rewrites a tracked artifact; R4 two copies of the NFL 2026 feed (`data/upstream/` and `official/`); R5 root README does not link the lab. |
+| N2 Games, lines and official links | **done** | nfldata archive via codeload (SHA-256 in `data/nfl-lab/games-source.json`); nfl.com week 10 and game centers | Spot checks vs nfl.com: WAS 24–NYG 21 (Thu Nov 12), DET 19–MIA 9, BUF 23–MIN 6 — all matched. 134 of 137 final 2026 games not checked. | F01 market-line provenance unverified; F07 spot-check coverage; F08 no LICENSE in archive; F09 unplayed-game lines stored but not shown. |
+| N3 Injuries and depth | **done** | nflverse injuries and depth-chart releases (CI, run 43431290366 and later); NFL week pages `nfl.com/injuries/league/2026/reg{week}` | 9 of 9 Week 10 rows on the fetched part of the official page matched (status, injury, practice). Depth file checked for team codes (same 32 codes as injury file). | F06 depth data third-party and not week-keyed; F10 1,230 rows only partly checked; F11 release assets reachable only from CI. |
+| N4 Own lines, gates, leaderboard, correlations, parlays | **done** | `scripts/nfl_lab/model.py` outputs in `data/nfl-lab/` | Walk-forward (K from 2006–2015 only; test 2016–2025). Result: model MAE 10.17 vs market 9.79; 10 strategies, **0 validated**; parlays 10 tested, **0 validated**; points awarded 0. | F02 model below market; F03 QB signal n = 7; F04 props untestable. |
+| N5 Site | **done** | `nfl-lab/*.html`, `nfl-lab/assets/` | 12 pages built from data; no placeholder text left. | — |
+| N6 Verification | **done** | `scripts/nfl_lab/verify.py`, `data/nfl-lab/verification.json` | 1,624 table rows: 1,549 official-linked, 47 flagged (UNVERIFIED / UNOFFICIAL / NO SOURCE / FLAGGED), 28 in marked method tables, 0 without source; 0 missing local links; 15 JSON files valid. | F05 Singapore legal position (GRA sources fetched). |
+| N7 PR and merge | **done** | PR #39 (https://github.com/karagemop466-tech/Korea5/pull/39) | Merged to main with a merge commit (`6e88bd7`) at 2026-11-13T13:24:48Z, after merging origin/main to clear a COORDINATION.md conflict (both log sections kept). Correction (flag F14): the Week 10 comparison was not complete. Only 9 rows were checked (first games in the fetched listing), so 'matched' applies to those 9 only. Kerby Joseph (DET) is Out in our file with 'Full Participation in Practice' and is flagged, not resolved. Pages build for `a22bd06` (which includes the merge) reported `built` at 13:25:49Z. Live URL not checked from the sandbox (outbound to github.io blocked). | — |
+
+**Request for the integration step (not done here):** add a link to `nfl-lab/index.html` from the root navigation (R5). No root file was edited by this session.
+
+**Singapore legal basis (official):** GRA "Unlawful Remote Gambling Activities" (https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities) — only Singapore Pools is licensed for remote gambling; participating in unlicensed remote gambling is an offence. GRA "Problem Gambling" (https://www.gra.gov.sg/harm-minimisation/problem-gambling) links to NCPG (linked, not fetched in this session).
+## Session `arena/8602d76f-korea5` — NFL Lines Origination (this session)
+
+Branch constraint: Arena fixes this session to `arena/8602d76f-korea5`; no other branch is created or pushed.
+Start point: `main` tip `13854fe` (branch `arena/8602d76f-korea5`, status active). All prior sessions' records above are preserved unchanged.
+Scope: this session owns the new NFL lines origination vertical only — `index.html` (landing + nav), `nfl-lines.html`, `nfl-strategies.html`, `nfl-correlation.html`, `nfl-injuries.html`, `nfl-questions.html`, `nfl-suggestions.html`, `nfl-executive-summary.html`, `nfl-flagged.html`. It does not edit `scripts/`, `data/`, `extra/`, `official/`, `curated/` or any existing root `*.html` other than `index.html`.
+
+### Session registry (addendum)
+
+| Session ID | Branch | Role | Status |
+|---|---|---|---|
+| `arena-8602d76f` | `arena/8602d76f-korea5` | NFL lines origination vertical: landing, strategies, correlation, injuries, questions, suggestions, executive summary, flagged review; verification, PR, merge, Pages deploy | **done** |
+
+### Task board (addendum)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N1 | NFL lines origination landing/dashboard + nav | arena-8602d76f | **done** | `index.html`, `nfl-lines.html` |
+| N2 | Strategies, signals, leaderboard, validation gates, single/parlay/player-prop combos | arena-8602d76f | **done** | `nfl-strategies.html`, `nfl-lines.html` |
+| N3 | Correlation values table | arena-8602d76f | **done** | `nfl-correlation.html` |
+| N4 | Injury tracking + defense/offense depth-chart (backup) deficiencies | arena-8602d76f | **done** | `nfl-injuries.html` |
+| N5 | Pre-decision questions / information / answers + missing-information discovery | arena-8602d76f | **done** | `nfl-questions.html` |
+| N6 | Suggestions section + review-before-implement workflow | arena-8602d76f | **done** | `nfl-suggestions.html` |
+| N7 | Executive summary | arena-8602d76f | **done** | `nfl-executive-summary.html` |
+| N8 | Consolidated Flagged for Review (unverified items) + verification, PR, merge, Pages deploy, log | arena-8602d76f | **done** | `nfl-flagged.html`, `COORDINATION.md` |
+
+### Honesty rules (this session)
+
+- Every table row links to an official source (nfl.com, operations.nfl.com) or is left blank.
+- The NFL does not publish official betting lines, odds, player-prop prices or correlation values. Those cells are therefore left **blank** and flagged **unverified** — never inferred or filled in.
+- Numeric strategy performance and reward values are a framework, not published results; they are blank/unverified until sourced.
+
+### Official sources used (this session)
+
+| Source | What it provides |
+|---|---|
+| https://www.nfl.com/schedules/ | NFL schedule structure (18 weeks, kickoff Thursday after Labor Day, Thanksgiving 4th Thursday, Super Bowl 2nd Sunday of February); 2027–2029 seasons not released |
+| https://www.nfl.com/injuries/ | Official NFL injury report; weekly report required of every team; designations Out / Doubtful / Questionable; practice status Full / Limited / Did Not Participate |
+| https://operations.nfl.com/rules-officiating/2026-nfl-rulebook | Official 2026 NFL rulebook (downloadable PDF) |
+
+### Irregularities this session is adding (published on `nfl-flagged.html`, nonblocking)
+
+1. No official NFL betting line exists (moneyline / spread / total) — every odds cell blank, flagged unverified.
+2. No official player-prop price exists — blank, flagged unverified.
+3. No official correlation matrix is published by the NFL — blank, flagged unverified.
+4. No official depth-chart / backup-replacement feed is published by the NFL — blank, flagged unverified.
+5. Strategy performance history and leaderboard rewards are not official data — blank, flagged unverified.
+
+### Completion log — session `arena/8602d76f-korea5`
+
+- **2026-11-13 — Build.** Added 8 new pages (`nfl-lines.html`, `nfl-strategies.html`, `nfl-correlation.html`, `nfl-injuries.html`, `nfl-questions.html`, `nfl-suggestions.html`, `nfl-executive-summary.html`, `nfl-flagged.html`) and updated `index.html` (nav + NFL Lines landing section). Every table row cites an official source or is left blank and flagged unverified.
+- **Official sources verified live:** nfl.com/schedules (18 weeks, kickoff anchor, Thanksgiving, Super Bowl window; 2027–2029 not released), nfl.com/injuries (weekly report; Out/Doubtful/Questionable; Full/Limited/DNP), operations.nfl.com/2026-nfl-rulebook (official 2026 rulebook PDF).
+- **Verification performed:** `python3 scripts/check_links.py` — pages=19, localLinks=326, missing=0, external=523. All new + edited HTML files parse cleanly. Betting lines, props, correlations, depth charts and strategy results confirmed absent from official sources; left blank + flagged.
+- **Irregularities published:** F-NFL-01 to F-NFL-07 on `nfl-flagged.html`; nonblocking.
+- **Pull request:** #36 — https://github.com/karagemop466-tech/Korea5/pull/36 — opened from `arena/8602d76f-korea5` to `main`, merged into `main` without waiting, merge commit `e472f4e7afc68bb114f66c8ab9db51fc55259be3`.
+- **Merge / Pages deploy:** merged into `main` via `gh pr merge 36 --merge`. GitHub Pages status `built`, source `main /`, HTTPS enforced, live at https://karagemop466-tech.github.io/Korea5/ (confirmed `nfl-lines.html` served live). `verification/links.json` regenerated: pages=20, localLinks=336, external=529, missing=0.
+
 
 ## Session `arena-2cd43859` — NFL analytics and decision-support
 
@@ -672,6 +877,90 @@ Scope: current Arena branch is fixed; no alternate branches or overlapping task 
 - Evidence limits: no historical timestamped market/prop prices, betting settlement ledger, forecast log, or verified lineup-depth series found in this repository. No performance or correlation claims made. No backup tier inferred from injury status. Research strategies are proposals, not validated edges; reward competition is only proposed as paper-first and remains gated by policy/legal review.
 - Verification: `scripts/check_links.py` reported 12 pages, 190 local links, 528 external links and zero missing; `scripts/audit_certainty.py` passed; Python unit tests 5/5; both calendar Node tests passed; `git diff --check` clean. Strategy page local destination check: 19 links, zero missing. Official injury and player-statistics pages retrieved live; no claim of comprehensive official link availability.
 
+## Session `arena-c6eea73d` — NFL Lines Lab (own lines, signals, injury/depth tracker, suggestions)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N3 | Acquire official-source evidence: Week 10 2026 official injury report, official player game logs, official NFL Game Book (starters / DNP / subs / individual stats) | arena-c6eea73d | done | `data/lab/` |
+| N4 | Quantitative layer: dispersion, same-game correlations, sample-size ("remove luck") gates | arena-c6eea73d | done | `scripts/analyze_lab.py`, `data/lab/analysis.json` |
+| N5 | Curated spec: decision/question register, strategy catalogue, validation gates, leaderboard rules, depth-tier rules, suggestions register, lab flags | arena-c6eea73d | done | `curated/nfl-lab.json` |
+| N6 | Site section `lab/` (landing + subpages) + nav / certainty-banner / link-check integration | arena-c6eea73d | done | `lab/`, `tools/build_lab.py`, `nfl-strategy.html`, `scripts/build_site.py` (NAV only), `scripts/audit_certainty.py`, `scripts/check_links.py`, `.github/workflows/certainty.yml` |
+| N7 | Executive summary + research notes update | arena-c6eea73d | done | `research/EXECUTIVE-SUMMARY.md`, `research/NFL-STRATEGY.md`, `research/NFL-LINES-LAB.md`, `README.md` |
+| N8 | Integration: rebuild, re-verify line by line, link check, PR to `main`, merge, Pages deploy confirmation | arena-c6eea73d | done | all of the above |
+
+Scope note: this session is the only session with commits on the repository (`git log --all` shows
+`arena-1a5a5516`, `arena-2cd43859` history only). It therefore performs the worker and the final-integration
+roles; shared outputs (`data/`, `curated/`, root navigation, `*.html`) are touched only in this session and are
+re-verified before the pull request. No file scope overlaps an unclaimed task.
+
+Claimed 2026-11-13. Official sources retrieved live with the sandbox fetch tool (outbound shell access is limited
+to github.com / pypi / npm; official sports hosts are reachable only through the fetch proxy):
+`https://www.nfl.com/injuries/`, `https://www.nfl.com/news/nfl-week-10-injury-report-2026-season`,
+`https://www.nfl.com/players/<id>/stats/logs/`, `https://www.nfl.com/games/bills-at-vikings-2026-reg-9`
+and its official Game Book PDF on `static.www.nfl.com`.
+
+### N3-N8 completion record (arena-c6eea73d, 2026-11-13)
+
+**What was built.** A new `lab/` section (landing page plus seven subpages: decision register, strategies and gates,
+correlations, injuries and depth, leaderboard, suggestions, flagged for review), the official records behind it under
+`data/lab/`, a reproducible analysis script, and the curated specification `curated/nfl-lab.json`.
+
+**Official sources retrieved live (2026-11-13) and transcribed:**
+
+| Source | What it provided | Records committed |
+|---|---|---|
+| https://www.nfl.com/injuries/ | Official Week 10 (2026) injury report: position, injury, practice status, game status | `data/lab/injuries-week10-2026.json` — 14 games, 9 published game-status designations, 25 clubs, 275 practice rows, 3 partial tables recorded with the reason |
+| https://www.nfl.com/news/nfl-week-10-injury-report-2026-season | Published Week 10 game-status designations | same file, `gameStatus` block |
+| https://www.nfl.com/players/<id>/stats/logs/ | Official 2026 per-game statistics for Justin Jefferson, Jordan Addison, Aaron Jones, Josh Allen, Carson Wentz | `data/lab/player-logs-2026.json` |
+| https://www.nfl.com/games/bills-at-vikings-2026-reg-9 and the Game Book PDF it links | Starting lineups (both teams, offence and defence), Did Not Play, substitutions, final individual statistics | `data/lab/gamebook-bills-vikings-2026-w9.json` |
+| https://operations.nfl.com/ | Official rules and policies (2026 NFL Rulebook), important dates | cited in the lab |
+
+**Verification performed.**
+
+* Every Week 9 player-log row was cross-checked against the official Game Book PDF and matched exactly on attempts,
+  completions, yards, touchdowns, interceptions, rating and rushing.
+* `tools/verify_lab.py` (new) checks every published lab table row: it must carry a link to an official source or to a
+  repository file that exists, or be an explicit placeholder that asserts no value. It also re-checks that the headline
+  numbers on the landing page and every coefficient and interval on the correlations page equal the values in
+  `data/lab/analysis.json`, that every recorded injury row appears on the page, that every curated question, strategy,
+  gate, suggestion and flag is published, and that the leaderboard stays empty. Result: **0 failures**.
+* `scripts/check_links.py` was rewritten to scan every HTML page in the repository and resolve each relative link against
+  the directory of the page that contains it. Result: **35 pages, 897 local links, 1,196 external links, 0 missing**.
+* Full pipeline green: `analyze_lab.py` → `build_lab.py` → `build_site.py` → `build_extra.py` → `audit_certainty.py` →
+  `check_links.py` → `verify_extra.py` → `verify_lab.py` → `audit_certainty.py` → node syntax and calendar tests →
+  `python3 -m unittest discover -s tests` (5/5) → `git diff --check`.
+
+**Irregularities found and how they were handled** (all published on `lab/flags.html` with their sources, none blocking):
+
+1. **Defect found and fixed in this repository:** the old `check_links.py` only scanned root pages, so a broken relative
+   link inside `extra/summary.html` had survived every previous build. The link checker now walks the whole repository, and
+   `tools/build_extra.py` now rewrites document-relative links when it renders the executive summary into `extra/`.
+2. **No market price anywhere** (L01) — the reason the leaderboard is empty and no strategy is claimed.
+3. **Only 3 of 14 games had published Week 10 designations** at retrieval (L02); the rest are shown with an empty
+   designation column.
+4. **Three club injury tables could not be transcribed without guessing** — Kansas City (truncated mid-row), Cincinnati
+   (rows not returned) and an unattributed eight-player table (L03-L06); the New Orleans first row is truncated (L06).
+5. **Two official pages print different records for the Thursday teams** (L07); both readings are published as printed.
+6. **The Bills' Did Not Play block was not in the retrieved Game Book portion** (L08), and the kickoff-return blocks could
+   not be attributed because of a two-column page break (L09).
+7. **The Game Book PDF sits on a versioned CDN path** (L10); the stable game page URL is used as the citation.
+8. **Every correlation rests on 6-8 matched games with wide intervals** (L11); the intervals are published with every
+   coefficient and no pair is described as reliable.
+9. **Only the 2026 season was transcribed** (L12); **no snap counts were extracted** (L13); **the league publishes no depth
+   charts on the pages checked** (L14); **no legal, privacy or tax review exists** (L15).
+
+**Headline results, all computed by `scripts/analyze_lab.py` from the committed official records:**
+
+* Same-team receivers are not independent: r = -0.8192 (n = 6, 95% CI -0.9795 to -0.0227, p = 0.0461).
+* Team points and game total: r = 0.8913 (n = 8, 95% CI 0.5018 to 0.9803, p = 0.0030).
+* Minimum observations to separate an edge from luck at -110: **779** for +5 points, **2,170** for +3 points, **19,565**
+  for +1 point. A true correlation of 0.3 needs about 100 games to be detectable with 80% power.
+* Outcome dispersion (standard deviation): Jefferson 22.65 yds (n = 7), Addison 31.15 (n = 7), Jones 39.51 (n = 8),
+  Allen 42.25 (n = 8); Vikings points 10.26 (n = 8), Bills points 6.76 (n = 8).
+
+**Claim boundary kept throughout:** no win rate, yield, edge, fair price, ROI or profitable strategy is computed or
+published anywhere, because the repository holds no market quote, no settlement record and no forecast log. Every strategy
+is published as *proposed - not validated*, and the leaderboard is published empty by design.
 ### Post-merge integration correction (2026-11-13)
 
 The first merged run's repository CI caught one generated local-link failure in `extra/summary.html`: markdown converted the research-detail link to a path that did not resolve from the `extra/` directory. Corrected the executive-summary link to the site Strategy Lab and reran the exact workflow rebuild sequence. Result: certainty audit passed; link check 12 pages / 190 local / 528 external / 0 missing; extra verification 31/31, 0 missing locals, 0 missing source rows; JS syntax and calendar-today test passed; `git diff --check` clean. This fix is in a follow-up PR.
@@ -730,3 +1019,200 @@ None has an entry on this board yet. Scopes observed and **avoided** by this ses
   `verification/nfl-lines-review-6b0481c7.md`, and append-only additions to `COORDINATION.md`. The one shared-file
   change is a single nav link injected into root HTML by `scripts/nfl_lines/build_site.py` (idempotent, additive);
   announce a conflict here rather than reverting it.
+
+| Live feature | https://karagemop466-tech.github.io/Korea5/nfl-strategy.html |
+
+## Session `arena-c9041d2a` — NFL decision support (merged alongside session `arena/8602d76f` vertical)
+
+Both sessions cover the same NFL requirements (questions/information/answers, suggestions review before implementation, line origination, strategies, correlation, injuries, executive summary, flagged review). The `arena/8602d76f` pages (`nfl-lines.html`, `nfl-strategies.html`, `nfl-correlation.html`, `nfl-injuries.html`, `nfl-questions.html`, `nfl-suggestions.html`, `nfl-executive-summary.html`, `nfl-flagged.html`) are kept as the published NFL vertical; this session adds `decisions.html`, `suggestions.html`, `research/NFL-LINES.md`, extended planner navigation and the merged coordination record. Nothing from either session was discarded.
+
+| Session ID | Branch | Role | Status |
+|---|---|---|---|
+| `arena-c9041d2a` | `arena/c9041d2a-korea5` | NFL decisions page, suggestions queue, line-origination research notes, injury/lineup tracking, site integration, PR #38 to main | done |
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N3 | Repo audit: official-source link review of all pages, data and flags | arena-c9041d2a | **done** | `*.html`, `data/`, `curated/`, `research/`, `verification/` |
+| N4 | Decisions-before-implementation page: questions / information known / missing / answer / discovery step / official source | arena-c9041d2a | **done** | `decisions.html` |
+| N5 | Suggestions review section: propose → under review → chosen/rejected/blocked/implemented; reviewer decision recorded before anything is implemented | arena-c9041d2a | **done** | `suggestions.html` |
+| N6 | NFL line origination, signal families, singles/parlays/player-prop combos, correlation measurement, validation gates, injury/lineup tracker, paper-first leaderboard | arena-c9041d2a | **done** | `nfl-strategy.html`, `research/NFL-LINES.md` |
+| N7 | Site integration: navigation merged with session `arena/8602d76f`, dashboard tables, flagged additions, local link check, certainty audit | arena-c9041d2a | **done** | `index.html`, `nfl.html`, `nfl-strategy.html`, `scripts/build_site.py`, COORDINATION.md |
+| N8 | Pull request #38 to main, merge, confirm GitHub Pages deploy, record PR link and result | arena-c9041d2a | **done** | `COORDINATION.md` |
+
+Scope: this session works only on branch `arena/c9041d2a-korea5`; no `session-<id>/<task>` branches are created or pushed (fixed by the Arena session rule). All NFL analytics content is research design only: no measured edge, correlation value, ROI or top-performing strategy is claimed; no betting lines are invented; any value not published by an official source is left blank and flagged unverified.
+
+Change log:
+- **2026-11-13** — Session `arena-c9041d2a` claims N3–N8. Branch `arena/c9041d2a-korea5`, active.
+- **2026-11-13** — Merge conflict with `origin/main` (session `arena/8602d76f`, PR #36) resolved by keeping both sessions' files: planner nav extended with both link sets; COORDINATION.md sections appended; `research/EXECUTIVE-SUMMARY.md` kept at this session's superset version; `extra/data/link-report.json` and `extra/summary.html` fixes from `origin/main` retained.
+- **2026-11-13** — CI failure on the PR merge commit fixed: `tools/build_extra.py` `inline()` wrote bare links `NFL-STRATEGY.md` / `NFL-LINES.md` into `extra/summary.html` where they resolve inside `extra/` and are missing (verify_extra.py: 2 missing local links). Fixed by pointing `research/EXECUTIVE-SUMMARY.md` at `../research/NFL-STRATEGY.md` and `../research/NFL-LINES.md`, and making `inline()` in `tools/build_extra.py` rewrite bare research `.md` links to `../research/<file>` defensively. Full pipeline re-verified green on main.
+
+### Completion record — session `arena-c9041d2a` (2026-11-13)
+
+- **Pull request:** #38 — https://github.com/karagemop466-tech/Korea5/pull/38 — "NFL decision support: decisions page, suggestions queue, line-origination research", opened from `arena/c9041d2a-korea5` to `main`, merged without waiting, merge commit `d23fb1b7621420abc66d99bb0dd9579df6a65fc5` (ancestor of main tip `a22bd06`).
+- **Merge result:** merged to `main` without waiting for review; PR state MERGED at 2026-11-13T13:20:45Z.
+- **CI:** `Planner certainty and site checks` run 43433686625 — success on main tip `a22bd06` (build_site.py, build_extra.py, audit_certainty.py x2, check_links.py 22 pages / 432 local links / 0 missing, verify_extra.py 31/31 / 0 missing local / 0 rows missing source, node syntax + calendar-today tests, compileall). Earlier PR-run failure 43433107594 (bare `.md` links in generated summary.html) was fixed as noted above before the final push.
+- **GitHub Pages:** build+deploy succeeded on main tip `a22bd06`; Pages API status `built`, source `main` /, URL https://karagemop466-tech.github.io/Korea5/. Live spot checks served correctly: `/`, `/decisions.html`, `/suggestions.html` (root pages now point into the consolidated NFL Lines Lab at `/lab/`).
+- **Flagged irregularities:** published on `flagged.html` and `nfl-flagged.html` with official links; none block the merge; none silently filled.
+- No manual input was required; all work was done on branch `arena/c9041d2a-korea5`, pushed, and merged via PR #38 without waiting.
+
+### Integration of the parallel NFL sessions (arena-c6eea73d, 2026-11-13)
+
+While this session was working, two other sessions merged NFL work into `main`:
+
+* PR #36, session `arena/8602d76f-korea5` — "NFL lines origination vertical": `nfl-lines.html`, `nfl-strategies.html`,
+  `nfl-correlation.html`, `nfl-injuries.html`, `nfl-questions.html`, `nfl-suggestions.html`, `nfl-executive-summary.html`,
+  `nfl-flagged.html`.
+* PR #38, session `arena/c9041d2a-korea5` — "NFL decision support": `decisions.html`, `suggestions.html`,
+  `research/NFL-LINES.md`, navigation additions and research updates.
+
+**Merge.** `git merge origin/main` on this branch (a rebase was attempted first and stopped on the predicted
+`COORDINATION.md` add/add conflict; it was aborted and the merge used instead, so no published commit was rewritten).
+Conflicts were resolved without discarding either side: `COORDINATION.md` and `research/EXECUTIVE-SUMMARY.md` keep both
+sessions' sections, and every generated page was rebuilt from the merged generators.
+
+**Consolidation (integration-session decision).** Two parallel NFL surfaces would leave the site with duplicate,
+competing content. The lab section is the canonical one because it is backed by committed official records and computed
+numbers, while the earlier pages described the same framework without them. The ten earlier page addresses were therefore
+kept and now redirect to the lab equivalent, so no link breaks:
+
+| Address | Now points at |
+|---|---|
+| `nfl-lines.html`, `nfl-strategy.html` | `lab/index.html` |
+| `nfl-strategies.html` | `lab/strategies.html` |
+| `nfl-correlation.html` | `lab/correlations.html` |
+| `nfl-injuries.html` | `lab/injuries.html` |
+| `nfl-questions.html`, `decisions.html` | `lab/questions.html` |
+| `nfl-suggestions.html`, `suggestions.html` | `lab/suggestions.html` |
+| `nfl-executive-summary.html` | `research/NFL-LINES.md` |
+| `nfl-flagged.html` | `lab/flags.html` |
+
+`research/NFL-LINES.md` (the line-origination design memo) is kept as written and is linked from the lab landing page and
+the curated specification, and the site navigation now carries a single NFL entry point: **NFL Lab**, **Decisions**
+(`lab/questions.html`) and **Suggestions** (`lab/suggestions.html`).
+
+**Verified after the merge:** `analyze_lab.py` → `build_lab.py` → `build_site.py` → `build_extra.py` →
+`audit_certainty.py` → `check_links.py` → `verify_extra.py` → `verify_lab.py` → `audit_certainty.py` → node checks →
+Python unit tests. Result: **45 pages, 1,259 local links, 1,196 external links, 0 missing; lab verification 0 failures.**
+
+### Merge result — arena-1e59465a (2026-11-13)
+
+- PR #39 (`arena/1e59465a-korea5` → `main`): **MERGED** at 2026-11-13T13:24:48Z, merge commit `6e88bd7`.
+- Conflict: `COORDINATION.md` only, resolved by keeping both sides (append-only log). No other session's files were changed.
+- GitHub Pages: latest build `a22bd06` (on main, after the merge) reports `built`. The live URL is not reachable from the sandbox, so please open https://karagemop466-tech.github.io/Korea5/nfl-lab/ to confirm.
+- No PR checks ran on the branch; the `Planner certainty and site checks` workflow did not trigger for this PR. Local equivalents passed: `verify.py` (pass, 0 rows without source), unit tests (OK).
+- Integration request still open: root README link to the lab (R5). Not done by this session.
+- Integration request still open: root README link to the lab (R5). Not done by this session.
+### Post-merge defect found and fixed (arena-c6eea73d, 2026-11-13)
+
+After PR #40 was merged and Pages had deployed, a live read of the deployed landing page showed one headline value
+rendering blank: *"bets for a +5 point edge; for +3 points at -110"* — the 779 and 2,170 were missing.
+
+**Cause.** `tools/build_lab.py` selected the -110 sample-size rows by comparing the stored break-even probability
+(0.5238, rounded to four decimals) with `110 / 210` using a `1e-6` tolerance. The comparison matched **no** rows, so
+the two numbers interpolated as empty strings and the page published a sentence with no number in it.
+
+**The verifier passed anyway.** `tools/verify_lab.py` repeated the same comparison with an even tighter tolerance
+(`1e-9`), so its sample-size loop iterated over an empty list, `hit` was `None`, and the `if hit and ...` guard skipped
+every assertion. The check was vacuous — it reported success while testing nothing.
+
+**Fixes applied.**
+
+1. The builder now selects the rows by their price label (`"-110" in priceBasis`) and raises if the list is empty or if
+   the +5 or +3 point row is missing, so a missing number can never be published again.
+2. The verifier uses the same label-based selection and now **fails** when a required sample-size row is absent, rather
+   than skipping the check.
+3. The verifier gained page-level link resolution: every in-repository link on every lab page must resolve to a file that
+   exists, and a `#fragment` must match an `id`/`name` that actually exists in the target file.
+4. Headline numbers are now printed with thousands separators (779, 2,170).
+
+**Negative tests run to prove the verifier is no longer vacuous** (each injected, detected, then reverted):
+
+| Injected fault | Detected |
+|---|---|
+| Headline number blanked | `sample-size headline 779 is not published` |
+| Link to a non-existent file | `page links to a file that does not exist` |
+| Link to a non-existent anchor | `anchor link points at a missing anchor` |
+
+**Published impact.** One number was blank on the live site between the first deploy and this fix. No other published
+value was affected. The defect is recorded as flag **L16** on `lab/flags.html` with its cause and fix, so the record
+shows what went wrong rather than quietly correcting it.
+
+**Verified after the fix:** the full pipeline is green — 45 pages, 1,261 local links, 1,196 external links, 0 missing;
+lab verification 0 failures; certainty audit passes twice; Node syntax and calendar tests pass; 5/5 Python unit tests
+pass; `compileall` and `git diff --check` clean.
+
+### Integration of the third NFL lab (arena-c6eea73d, 2026-11-13)
+
+A third session, `arena/1e59465a-korea5`, merged its own NFL work while this branch was being finalised: **PR #39**
+(`nfl-lab/`, `data/nfl-lab/`, `scripts/nfl_lab/`), later recorded in **PR #43**. That work is a **model and back-test**
+lab: it builds a line model from third-party game data, tests it walk-forward and out-of-sample, compares it with the
+market spread, and leaves the market lines blank because their upstream source is not named.
+
+**Nothing of that session's work was removed or rewritten.** Its files, its verifier and its claims are untouched.
+
+**What was found and how it was handled.** The new section was merged into `main` but was not reachable: it was absent
+from the site navigation and from the README, which the session itself had left as an open integration request (R5).
+It also sat alongside this session's `lab/` section, giving the site two NFL surfaces with no stated relationship.
+
+**Integration applied.**
+
+1. **Navigation.** The root navigation now carries both, labelled for what they are: **NFL Lab** (`lab/index.html`,
+   the evidence workbench), **Decisions**, **Suggestions**, and **NFL Model** (`nfl-lab/index.html`, the model and
+   back-test lab).
+2. **Cross-links both ways.** Each lab landing page now states which side of the question it covers and links to the
+   other. `lab/` is the *evidence* side, built only on official NFL records (published injury report, official player
+   game logs, official Game Book), with every correlation, dispersion figure and minimum-sample rule computed from them
+   by `scripts/analyze_lab.py`. `nfl-lab/` is the *model* side, built from third-party game data with the market spread
+   left blank and flagged unverified. Both landing pages say plainly that neither publishes a validated edge.
+3. **README (the open R5 request).** The README now has a section pointing at both labs and stating that neither
+   publishes a win rate, yield or validated edge, and that both keep the leaderboard empty until a strategy passes
+   every gate.
+4. **CI.** `.github/workflows/certainty.yml` now builds and verifies the model lab as well:
+   `python3 scripts/nfl_lab/build_site.py` and `python3 scripts/nfl_lab/verify.py`, alongside the existing lab steps.
+
+**Independent check of the merged model lab.** Its own verifier passes: 1,624 table rows — 1,549 official-linked, 47
+flagged, 28 method-table rows, **0 without a source**; 0 missing local links; 15 data files parse as JSON; the only
+non-official external domain is `github.com`, used on flagged and method rows only. Its data provenance was inspected
+rather than assumed: `data/nfl-lab/games-source.json` records the archive URL, the archive SHA-256 and the per-file
+SHA-256 of `nflverse/nfldata`, and states plainly that the file's own documentation does not name the upstream source
+of the spread and total lines, so they are treated as unverified third-party input. The model reports itself as less
+accurate than the market spread (model MAE 10.17 pts against market spread MAE 9.79 pts over 2016-25), which is
+published rather than hidden.
+
+**Verified after the integration:** the full pipeline is green — **57 pages, 1,492 local links, 1,229 external links,
+0 missing**; lab verification 0 failures; model-lab verification pass; certainty audit passes twice; Node syntax and
+calendar tests pass; 5/5 Python unit tests pass; `compileall` and `git diff --check` clean; a second rebuild produced
+no further changes, so the output is deterministic.
+
+### Integration of the fourth NFL hub (arena-c6eea73d, 2026-11-13)
+
+A fourth session, `arena/e96c5f87-korea5`, merged an **NFL Decision Support** hub via **PR #42** (`nfl/` with
+`nfl/data/*.json`, `scripts/build_nfl.py`, `scripts/verify_nfl.py`). It is the structured layer of the programme: the
+R1–R9 requirements list, the method and validation-gate reference, the leaderboard reward design and the source
+registry. Its companion origination pages are the retained `nfl-*.html` addresses, which resolve into `lab/`.
+
+**Nothing of that session's work was removed or rewritten.** Its files, its data and its verifier are untouched.
+
+**What was found and how it was handled.** Like the model lab before it, the hub was merged but unreachable — absent
+from the site navigation, so a visitor had no way in except by typing the URL. Its own verifier passes
+(`scripts/verify_nfl.py`: 40 local links, 0 missing, 0 non-official external links, all checks green).
+
+**Integration applied.**
+
+1. **Navigation.** The root navigation now carries all three surfaces, each labelled for what it is:
+   **NFL Lab** (`lab/index.html`, evidence), **Decisions** (`lab/questions.html`), **Suggestions**
+   (`lab/suggestions.html`), **NFL Model** (`nfl-lab/index.html`, model and back-tests) and **NFL Decision Support**
+   (`nfl/index.html`, structured requirements/method/leaderboard design).
+2. **Cross-links.** The `nfl/` hub landing page and the `lab/` landing page each now state which layer the other two
+   cover and link to them, so a reader can tell why three sections exist and what each is authoritative for.
+3. **CI.** `.github/workflows/certainty.yml` now builds and verifies this hub too (`scripts/build_nfl.py`,
+   `scripts/verify_nfl.py`), so its pages cannot drift from their generator.
+
+**Verified after the integration:** the full pipeline is green — **62 pages, 1,550 local links, 1,235 external links,
+0 missing**; all three NFL verifiers pass (evidence lab, model lab, structured hub); certainty audit passes twice; Node
+syntax and calendar tests pass; 5/5 Python unit tests pass; `compileall` and `git diff --check` clean.
+
+**Note on the four-way duplication.** Four parallel sessions worked the same question, so the site now carries three
+NFL surfaces plus the retained pointer addresses. Nothing was deleted — each section keeps its own data, generator and
+verifier, and each is reachable and cross-linked. The duplication is recorded here rather than resolved by removing
+another session's work, which would have exceeded this session's scope.

@@ -1,0 +1,1149 @@
+{
+ "meta": {
+  "title": "NFL Lines Lab \u2014 curated specification",
+  "compiledUTC": "2026-11-13",
+  "compiledBy": "arena-c6eea73d",
+  "purpose": "Single source of truth for the NFL Lines Lab pages: decision questions, strategy catalogue, validation gates, leaderboard rules, depth-tier rules, suggestions and lab flags.",
+  "evidenceRule": "Every row that states a fact carries a link to the official source it came from. A value that could not be confirmed is left blank and listed on the Flagged for Review page. Nothing is inferred, estimated or carried over from memory.",
+  "claimRule": "No strategy in this file is validated. No win rate, yield, edge, fair price or profit is claimed anywhere, because this repository holds no market quote, no settlement record and no forecast log.",
+  "relatedDocs": [
+   {
+    "name": "Research notes \u2014 NFL Lines & Strategy Lab",
+    "url": "research/NFL-LINES-LAB.md"
+   },
+   {
+    "name": "Research notes \u2014 NFL strategy (prior session, retained)",
+    "url": "research/NFL-STRATEGY.md"
+   },
+   {
+    "name": "Executive summary",
+    "url": "research/EXECUTIVE-SUMMARY.md"
+   },
+   {
+    "name": "Research notes \u2014 NFL line origination (parallel session, retained)",
+    "url": "research/NFL-LINES.md"
+   }
+  ]
+ },
+ "officialSources": [
+  {
+   "name": "NFL.com official injury report (week selector)",
+   "url": "https://www.nfl.com/injuries/",
+   "provides": "Weekly player injury report: position, injury, practice status and game status for every club.",
+   "verifiedOn": "2026-11-13"
+  },
+  {
+   "name": "NFL Week 10 injury report article",
+   "url": "https://www.nfl.com/news/nfl-week-10-injury-report-2026-season",
+   "provides": "Published game-status designations (Out / Questionable / Doubtful) for the week's games.",
+   "verifiedOn": "2026-11-13"
+  },
+  {
+   "name": "NFL.com player game logs",
+   "url": "https://www.nfl.com/players/justin-jefferson/stats/logs/",
+   "provides": "Official per-game statistics for every player.",
+   "verifiedOn": "2026-11-13"
+  },
+  {
+   "name": "NFL.com game center \u2014 Bills at Vikings, Nov 9 2026",
+   "url": "https://www.nfl.com/games/bills-at-vikings-2026-reg-9",
+   "provides": "Official game page linking the Game Book PDF.",
+   "verifiedOn": "2026-11-13"
+  },
+  {
+   "name": "NFL official Game Book (PDF) \u2014 Bills at Vikings",
+   "url": "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf",
+   "provides": "Starting lineups for both teams, substitutions, Did Not Play list, final individual statistics, officials and weather.",
+   "verifiedOn": "2026-11-13"
+  },
+  {
+   "name": "NFL official schedules",
+   "url": "https://www.nfl.com/schedules/",
+   "provides": "Fixtures, kickoff times and broadcast assignments.",
+   "verifiedOn": "2026-11-13"
+  },
+  {
+   "name": "NFL official player statistics",
+   "url": "https://www.nfl.com/stats/player-stats/",
+   "provides": "League statistics portal used as the starting point for season and career tables.",
+   "verifiedOn": "2026-11-13"
+  },
+  {
+   "name": "NFL official transactions",
+   "url": "https://www.nfl.com/transactions/",
+   "provides": "Injured reserve, physically unable to perform, reserve/non-roster and similar roster moves.",
+   "verifiedOn": "2026-11-13"
+  },
+  {
+   "name": "NFL Football Operations",
+   "url": "https://operations.nfl.com/",
+   "provides": "Official rules and policies, including the 2026 NFL Rulebook.",
+   "verifiedOn": "2026-11-13"
+  },
+  {
+   "name": "NFL Football Operations \u2014 important dates",
+   "url": "https://operations.nfl.com/calendar-events/nfl-important-dates",
+   "provides": "Official league calendar deadlines.",
+   "verifiedOn": "2026-11-13"
+  }
+ ],
+ "questions": [
+  {
+   "id": "Q01",
+   "decision": "Which markets are in scope, and which prices are legally accessible?",
+   "known": "The league publishes no betting prices. Official NFL pages cover schedules, statistics, injuries, transactions and rules. This repository holds no quote data at all.",
+   "missing": "Market list, book list, jurisdiction, the exact quote source, and whether archiving quotes is permitted.",
+   "blocks": "Every later question about edge, pricing and validation depends on it: without prices there is nothing to beat and no way to measure a price.",
+   "discovery": "Enumerate the books that are legal in the target jurisdiction, confirm each one's terms on data retention, then archive one timestamped quote per line per day for a full season before any modelling.",
+   "owner": "unassigned",
+   "status": "open \u2014 blocks the whole line-making track",
+   "sources": [
+    "https://www.nfl.com/stats/",
+    "https://www.nfl.com/schedules/"
+   ]
+  },
+  {
+   "id": "Q02",
+   "decision": "What does \u201coriginating my own NFL lines\u201d mean as a deliverable?",
+   "known": "Nothing in the repository defines an output format, a horizon or an audience.",
+   "missing": "Whether the output is a published fair price with an uncertainty band, a bet recommendation, or a model probability; the horizon (single game, week, season); and who reads it.",
+   "blocks": "The evaluation metric, the leaderboard scoring and the reward basis all depend on the answer.",
+   "discovery": "Write a one-page output specification: input, horizon, output format, decision rule and the market it is compared against.",
+   "owner": "unassigned",
+   "status": "open",
+   "sources": [
+    "https://operations.nfl.com/"
+   ]
+  },
+  {
+   "id": "Q03",
+   "decision": "What is the decision cut-off for each bet, in UTC?",
+   "known": "The official injury report changes through the week; game-day inactive lists and starting lineups are published close to kickoff.",
+   "missing": "A fixed cut-off per market, and a rule for what happens when the cut-off passes.",
+   "blocks": "A model that is scored against prices captured after its own information arrived is not testable \u2014 it leaks the answer.",
+   "discovery": "Fix the cut-off, record the exact timestamps of every captured input, and require every stored record to carry its own capture time.",
+   "owner": "unassigned",
+   "status": "open",
+   "sources": [
+    "https://www.nfl.com/injuries/",
+    "https://operations.nfl.com/calendar-events/nfl-important-dates"
+   ]
+  },
+  {
+   "id": "Q04",
+   "decision": "Which data must be archived, at what granularity, with what timestamps?",
+   "known": "Official sources exist and are reachable: weekly injury reports, player game logs, official Game Books with starting lineups and Did Not Play lists, schedules and statistics.",
+   "missing": "The market quote archive, the settlement record, and the forecast log. None of the three exists here.",
+   "blocks": "Gate G5 (out-of-sample scoring) and the entire leaderboard.",
+   "discovery": "Define the archive schema and store every input and every forecast immutably with a capture timestamp before any evaluation begins.",
+   "owner": "unassigned",
+   "status": "open \u2014 highest-value missing artefact",
+   "sources": [
+    "https://www.nfl.com/injuries/",
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/"
+   ]
+  },
+  {
+   "id": "Q05",
+   "decision": "Where do historical betting lines come from?",
+   "known": "Nothing. The repository contains zero historical prices.",
+   "missing": "A lawful, reproducible source of past closing and opening lines for every market that will be traded.",
+   "blocks": "Without it, no backtest, no calibration check and no evidence of skill can exist for any strategy.",
+   "discovery": "Choose the source, verify its coverage for at least two full seasons, and confirm in writing that the data may be stored and published in summary form.",
+   "owner": "unassigned",
+   "status": "open \u2014 blocks the whole line-making track",
+   "sources": []
+  },
+  {
+   "id": "Q06",
+   "decision": "Which injury facts count as known at decision time?",
+   "known": "The official weekly report publishes practice status (Full / Limited / Did Not Participate) and game status (Out / Questionable / Doubtful). The official Game Book publishes the final starting lineup, the Did Not Play list and individual statistics.",
+   "missing": "A written rule per market type for which statuses count, and the clock time each source is read.",
+   "blocks": "Any injury-driven strategy, and the depth tracker.",
+   "discovery": "Adopt the rule below in this file (evidence layers A, B and C) and record the capture time for each status read.",
+   "owner": "arena-c6eea73d",
+   "status": "answered in this file \u2014 implemented as the three evidence layers on the injuries page",
+   "sources": [
+    "https://www.nfl.com/injuries/",
+    "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+   ]
+  },
+  {
+   "id": "Q07",
+   "decision": "How is a depth tier (starter, second, third, fourth string) established?",
+   "known": "The official Game Book names the starters of both teams and lists who did not play, and gives the individual statistics that show who absorbed the work.",
+   "missing": "Nothing for the rule itself; the rule has to be written down so the label is reproducible.",
+   "blocks": "Any statement that a backup filled in for an absent starter.",
+   "discovery": "Apply the tier rules on the injuries page: a tier label is never assigned from an injury report alone, and any cell without Game Book evidence stays blank and is flagged.",
+   "owner": "arena-c6eea73d",
+   "status": "answered in this file \u2014 rule published on the injuries page",
+   "sources": [
+    "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+   ]
+  },
+  {
+   "id": "Q08",
+   "decision": "How many observations are needed before an apparent edge can be told apart from luck?",
+   "known": "This is computed, not assumed. At a -110 price (break-even 52.38%) a true win rate of 57.38% (+5 points) needs 779 observations; 55.38% (+3 points) needs 2,170; 53.38% (+1 point) needs 19,565. A correlation of 0.3 needs about 100 games to be detected with 80% power.",
+   "missing": "Nothing for the arithmetic; what is missing is the agreement to enforce these minimums.",
+   "blocks": "Every ranking, every reward and every promotion decision.",
+   "discovery": "Adopt the published minimums as hard entry conditions in the leaderboard, and publish them next to the metric so a reader can check the claim against the evidence.",
+   "owner": "arena-c6eea73d",
+   "status": "answered in this file \u2014 computed and published",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/"
+   ]
+  },
+  {
+   "id": "Q09",
+   "decision": "How are joint probabilities for parlays and prop combinations computed?",
+   "known": "Independence is not a safe default. On the six matched games in the official sample, the two Vikings receivers' yardage moved in opposite directions (r = -0.82, 95% CI -0.98 to -0.02). Team points and the game total move together (r = 0.89, n = 8).",
+   "missing": "A joint model per structure, and a much larger correlation sample: 6 to 8 games is a demonstration, not an estimate to trade on.",
+   "blocks": "Every parlay and every multi-leg combination strategy.",
+   "discovery": "Archive several seasons of game-level outcomes, measure the dependence for each leg pair that will be traded, and price the joint event directly rather than multiplying marginals.",
+   "owner": "arena-c6eea73d",
+   "status": "partly answered \u2014 the measured values are published with their intervals; the joint model is still to be built",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/",
+    "https://www.nfl.com/players/jordan-addison/stats/logs/"
+   ]
+  },
+  {
+   "id": "Q10",
+   "decision": "What is the evaluation metric and what is the baseline it must beat?",
+   "known": "Proper scoring rules (log loss, Brier) and calibration are the standard answer, and the market itself is the strongest available baseline once de-vigged.",
+   "missing": "The market reference series, which requires Q01 and Q05.",
+   "blocks": "Gate G5 and the leaderboard ranking.",
+   "discovery": "Store the de-vigged market probability for every quoted line, freeze it at the decision cut-off, and score the model against it on the same bets.",
+   "owner": "unassigned",
+   "status": "open \u2014 depends on Q01 and Q05",
+   "sources": []
+  },
+  {
+   "id": "Q11",
+   "decision": "How is luck removed from the evaluation rather than argued away?",
+   "known": "Luck enters through small samples, selection after the fact, data leakage, and incomparable markets. Each has a countermeasure that can be written down.",
+   "missing": "Agreement to enforce them and to publish the audit trail of failed strategies.",
+   "blocks": "Any claim that a strategy is skill-based.",
+   "discovery": "Adopt gates G0 to G8 on the strategies page, pre-register each strategy before it is traded, keep every failed strategy in the audit history, and report uncertainty next to every number.",
+   "owner": "arena-c6eea73d",
+   "status": "answered in this file \u2014 gates published",
+   "sources": []
+  },
+  {
+   "id": "Q12",
+   "decision": "What is the reward basis for the leaderboard, and who governs it?",
+   "known": "Nothing. No competition exists yet and no policy has been written.",
+   "missing": "Reward basis, eligibility, funding, privacy terms, and a compliance review for anything involving money.",
+   "blocks": "The competition itself.",
+   "discovery": "Start paper-only. Rank on the pre-declared out-of-sample improvement over the market baseline, with a minimum-evidence rule and published uncertainty. Treat any monetary reward as blocked until a documented policy and legal review exist.",
+   "owner": "unassigned",
+   "status": "open \u2014 paper-only proposed",
+   "sources": []
+  },
+  {
+   "id": "Q13",
+   "decision": "What is the legal and compliance position?",
+   "known": "Nothing in this repository addresses jurisdiction, age, licensing, or the terms of any data source.",
+   "missing": "Everything legal: jurisdiction, age, licensing, data-provider terms, tax, privacy and record keeping.",
+   "blocks": "Real money, and the archiving of quotes.",
+   "discovery": "Obtain a written policy review before any real-money step; keep the competition paper-only until then.",
+   "owner": "unassigned",
+   "status": "open \u2014 flagged, does not block the published research",
+   "sources": [
+    "https://operations.nfl.com/"
+   ]
+  },
+  {
+   "id": "Q14",
+   "decision": "How are the official sources kept fresh without manual work?",
+   "known": "The repository already refreshes MLB and NFL schedule feeds from official APIs in GitHub Actions.",
+   "missing": "Equivalent automated refresh for the weekly injury report, the Game Books and the player logs.",
+   "blocks": "The tracker becoming stale within days of publication.",
+   "discovery": "Extend the existing fetcher pattern to the injury report and Game Book, schedule it weekly, and publish the fetch log next to the data it produced.",
+   "owner": "unassigned",
+   "status": "open \u2014 recorded as a suggestion",
+   "sources": [
+    "https://www.nfl.com/injuries/"
+   ]
+  },
+  {
+   "id": "Q15",
+   "decision": "Which markets are explicitly out of scope?",
+   "known": "Nothing is excluded yet, which makes the scope ambiguous.",
+   "missing": "An explicit exclusion list \u2014 for example in-game and live betting, player props on bench players, and markets without a published settlement rule.",
+   "blocks": "A clean definition of what the leaderboard measures.",
+   "discovery": "Declare the exclusion list in the same output specification as Q02.",
+   "owner": "unassigned",
+   "status": "open",
+   "sources": []
+  }
+ ],
+ "strategies": [
+  {
+   "id": "S01",
+   "name": "Game total (over / under)",
+   "kind": "Single bet",
+   "signal": "Expected points for both teams combined, from expected possessions, scoring efficiency and pace.",
+   "inputs": "Drive and possession-level game data; team scoring splits; the market's over/under price.",
+   "officialInputsToday": "NFL official schedules, player and team statistics. No possession-level drive data or market price is stored in this repository.",
+   "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "status": "proposed \u2014 not validated",
+   "note": "Scoring totals are the most studied and most efficiently priced NFL market. Any edge here should be expected to be small and stable, which is why the sample-size gate matters more than the signal.",
+   "sources": [
+    "https://www.nfl.com/stats/team-stats/"
+   ]
+  },
+  {
+   "id": "S02",
+   "name": "Point spread",
+   "kind": "Single bet",
+   "signal": "Expected margin of victory, from a possession-level margin model plus field-position effects.",
+   "inputs": "Same as S01, plus home-field and rest effects.",
+   "officialInputsToday": "Official schedules (dates, times, venues) and statistics. No price stored.",
+   "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "status": "proposed \u2014 not validated",
+   "note": "Spreads are priced at a standard margin, so the break-even rate for a -105 spread is 51.2%; the required sample size for a 3-point edge is 2,170 bets.",
+   "sources": [
+    "https://www.nfl.com/schedules/",
+    "https://www.nfl.com/stats/team-stats/"
+   ]
+  },
+  {
+   "id": "S03",
+   "name": "Moneyline",
+   "kind": "Single bet",
+   "signal": "Win probability for each side.",
+   "inputs": "Expected margin and its distribution; overtime rules.",
+   "officialInputsToday": "Official schedules and statistics; tie and overtime rules in the official rulebook.",
+   "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "status": "proposed \u2014 not validated",
+   "note": "At -110 the break-even rate is 52.38%. A +5 point edge needs 779 bets before it can be separated from luck at 95% confidence and 80% power.",
+   "sources": [
+    "https://operations.nfl.com/"
+   ]
+  },
+  {
+   "id": "S04",
+   "name": "Team total (one side's points)",
+   "kind": "Single bet",
+   "signal": "Expected points for a single team, separating team scoring from opponent scoring variance.",
+   "inputs": "Same as S01, plus opponent defensive allowance.",
+   "officialInputsToday": "Official team statistics and schedules.",
+   "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "status": "proposed \u2014 not validated",
+   "note": "Team totals and game totals are not independent: in the published sample the team's own points and the game total had r = 0.89 (n = 8).",
+   "sources": [
+    "https://www.nfl.com/stats/team-stats/"
+   ]
+  },
+  {
+   "id": "S05",
+   "name": "Wide receiver receiving yards",
+   "kind": "Player prop (single)",
+   "signal": "Target share multiplied by yards per target, adjusted for role, teammate availability and the opponent's coverage.",
+   "inputs": "Per-player targets, routes, air yards and opponent coverage; the prop price.",
+   "officialInputsToday": "Official per-game receiving statistics (targets, receptions, yards, touchdowns) exist on the player Logs pages. No route or coverage data is published by the league, and no prop price is stored.",
+   "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "status": "proposed \u2014 not validated",
+   "note": "Jefferson's receiving yards in the official sample had a standard deviation of 22.7 yards over 7 games. Detecting a 3-yard modelling advantage needs 58 games of the same player's history; a 5-yard advantage needs 21.",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/"
+   ]
+  },
+  {
+   "id": "S06",
+   "name": "Running back rushing yards",
+   "kind": "Player prop (single)",
+   "signal": "Rush share multiplied by yards per carry, adjusted for goal-line work and offensive line changes.",
+   "inputs": "Per-player attempts and yards; goal-line role; offensive line availability.",
+   "officialInputsToday": "Official per-game rushing statistics exist on the player Logs pages. Snap counts and goal-line splits are not published in the pages transcribed here.",
+   "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "status": "proposed \u2014 not validated",
+   "note": "Aaron Jones' rushing yards had a standard deviation of 39.5 yards over 8 games. A 3-yard modelling advantage needs 174 games; a 10-yard advantage needs 16.",
+   "sources": [
+    "https://www.nfl.com/players/aaron-jones/stats/logs/"
+   ]
+  },
+  {
+   "id": "S07",
+   "name": "Quarterback passing yards",
+   "kind": "Player prop (single)",
+   "signal": "Dropback count multiplied by yards per attempt, adjusted for pressure, pace and game script.",
+   "inputs": "Per-player attempts, completions, sacks and rating; team pace; opponent pass rush.",
+   "officialInputsToday": "Official per-game passing statistics including sacks and rating exist on the player Logs pages.",
+   "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "status": "proposed \u2014 not validated",
+   "note": "Josh Allen's passing yards had a standard deviation of 42.3 yards over 8 games, the tightest of the four props measured \u2014 quarterbacks are the most repeatable of these outcomes, which is a reason to prefer them, not a reason to assume an edge.",
+   "sources": [
+    "https://www.nfl.com/players/josh-allen/stats/logs/"
+   ]
+  },
+  {
+   "id": "S08",
+   "name": "Touchdown props (any TD, first TD)",
+   "kind": "Player prop (single)",
+   "signal": "Red-zone and goal-line opportunity share, plus position-specific scoring rates.",
+   "inputs": "Red-zone targets and carries, goal-line snaps, red-zone defence allowed.",
+   "officialInputsToday": "Official touchdown totals exist on the player Logs pages. Red-zone opportunity data is not published on the pages transcribed here.",
+   "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "status": "proposed \u2014 not validated",
+   "note": "\u201cAny touchdown\u201d is a low-variance, high-vig prop; the vig makes it a poor candidate for a small edge unless the price history is archived first.",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/"
+   ]
+  },
+  {
+   "id": "S09",
+   "name": "Two same-team receivers (over / under combinations)",
+   "kind": "Player prop combo",
+   "signal": "Joint distribution of two receivers' yardage in the same game, dominated by target distribution between them.",
+   "inputs": "Both players' target shares and the coach's allocation rule; the price of each leg and the parlay price.",
+   "officialInputsToday": "Official per-game receiving statistics for both players.",
+   "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "status": "proposed \u2014 not validated",
+   "note": "The measured dependence is negative, not independent: in the six matched official games the two Vikings receivers' yards had r = -0.82 (95% CI -0.98 to -0.02). Pricing such a pair as the product of two marginal probabilities would be wrong in a direction that favours the book.",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/",
+    "https://www.nfl.com/players/jordan-addison/stats/logs/"
+   ]
+  },
+  {
+   "id": "S10",
+   "name": "Player prop combined with a team total or game total",
+   "kind": "Player prop combo",
+   "signal": "Joint distribution of a player's production and the game environment.",
+   "inputs": "Both legs' marginals plus their measured dependence; the combined price.",
+   "officialInputsToday": "Official per-game player statistics and official scores, which give the team points and the game total for every game.",
+   "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "status": "proposed \u2014 not validated",
+   "note": "In the official sample, a receiver's yardage against the game total had r = 0.50 (n = 7, 95% CI -0.41 to 0.91) and against the team's own points r = 0.55 (n = 7). The intervals are wide; the point is that the leg is not independent of the environment and must be modelled jointly.",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/"
+   ]
+  },
+  {
+   "id": "S11",
+   "name": "Cross-game parlays (2 to 4 legs)",
+   "kind": "Parlay",
+   "signal": "Product of leg probabilities under a joint model, adjusted for book payout rules.",
+   "inputs": "Leg probabilities, leg dependence (including shared game environment), the parlay price and the push and void rules.",
+   "officialInputsToday": "Official schedules and statistics. No parlay prices or settlement rules are stored here.",
+   "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "status": "proposed \u2014 not validated",
+   "note": "A parlay multiplies the variance as well as the edge, so the required sample grows faster than for a single bet; the vig also compounds leg by leg. The measured correlation of -0.82 between two same-team receivers shows that legs which look independent are not.",
+   "sources": [
+    "https://www.nfl.com/schedules/"
+   ]
+  },
+  {
+   "id": "S12",
+   "name": "Injury and depth adjustment",
+   "kind": "Overlay on S01 to S11",
+   "signal": "Incremental effect of a missing starter on the team or player involved, estimated from timestamped status plus evidenced replacement.",
+   "inputs": "Point-in-time injury status, depth evidence, the replaced player's share, and the opponent's response.",
+   "officialInputsToday": "Official weekly injury report, official Game Books with starting lineups and Did Not Play lists, official transactions. Snap counts were not extracted in this pass.",
+   "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "status": "proposed \u2014 not validated",
+   "note": "This is the overlay the tracker exists to feed. In the official Week 9 Game Book, the Vikings' first listed quarterback did not play, the second listed quarterback started, and the third listed quarterback also threw for 58 yards in the same game \u2014 a documented, official three-deep replacement chain, not an inference.",
+   "sources": [
+    "https://www.nfl.com/injuries/",
+    "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+   ]
+  }
+ ],
+ "gates": [
+  {
+   "id": "G0",
+   "name": "Minimum evidence",
+   "requirement": "A strategy may not be ranked until it has enough resolved observations to separate its claimed edge from luck at 95% confidence and 80% power. At a -110 price: 779 bets for a +5 point edge, 2,170 for +3 points, 19,565 for +1 point. A correlation of 0.3 needs about 100 games.",
+   "why": "Small samples make luck indistinguishable from skill. Publishing the minimum next to the number lets anyone check the claim.",
+   "failureAction": "Strategy stays unpublished on the leaderboard and moves to the flagged list with its observation count.",
+   "evidence": "Computed from the published sample-size table on the correlations page.",
+   "basisUrl": "correlations.html#method",
+   "basisNote": "The published record this gate is applied to."
+  },
+  {
+   "id": "G1",
+   "name": "Provenance and point-in-time capture",
+   "requirement": "Every input and every forecast is stored immutably with the source URL, the capture timestamp and the definition used.",
+   "why": "A forecast that cannot be traced to the information available at the time cannot be tested.",
+   "failureAction": "The record is rejected and the affected bets are excluded from scoring.",
+   "evidence": "Model of data/lab/*.json, each row carrying its official source URL.",
+   "basisUrl": "../data/lab/player-logs-2026.json",
+   "basisNote": "The published record this gate is applied to."
+  },
+  {
+   "id": "G2",
+   "name": "Coverage and reconciliation",
+   "requirement": "Missing values are recorded as missing. Two official sources that disagree are published as a discrepancy, never silently reconciled.",
+   "why": "Silent fills create fake accuracy and hide the limits of the data.",
+   "failureAction": "The affected rows are blank, flagged, and listed on the Flagged for Review page.",
+   "evidence": "Example: the Washington and New York records printed differently on two official pages; both are published as printed.",
+   "basisUrl": "flags.html",
+   "basisNote": "The published record this gate is applied to."
+  },
+  {
+   "id": "G3",
+   "name": "Baseline",
+   "requirement": "A strategy must be compared with a de-vigged market reference captured at the same decision cut-off. A model that cannot beat the market on the same bets has no claim.",
+   "why": "Beating a coin flip is not the standard; beating the price is.",
+   "failureAction": "No strategy may be scored for edge until the reference series exists.",
+   "evidence": "Blocked on Q01 and Q05; no quote data exists in this repository.",
+   "basisUrl": "questions.html",
+   "basisNote": "The published record this gate is applied to."
+  },
+  {
+   "id": "G4",
+   "name": "Leakage audit and time-ordered splits",
+   "requirement": "Fitting happens inside training folds only, on data strictly earlier than the prediction. All transformations are fitted inside the fold.",
+   "why": "Leakage produces beautiful backtests and no live performance.",
+   "failureAction": "The run is discarded and repeated from a clean split.",
+   "evidence": "Rule published here; no backtest has been run.",
+   "basisUrl": "correlations.html#method",
+   "basisNote": "The published record this gate is applied to."
+  },
+  {
+   "id": "G5",
+   "name": "Out-of-sample scoring with uncertainty",
+   "requirement": "Score on data never used in fitting, with a proper scoring rule and a calibration check. Report the confidence interval. Report yield only where actual prices and actual settlements were captured.",
+   "why": "A win rate without an interval is a story, not a result.",
+   "failureAction": "No published performance claim; the strategy is flagged as unproven.",
+   "evidence": "Rule published here; no performance claim is made anywhere on this site.",
+   "basisUrl": "correlations.html#method",
+   "basisNote": "The published record this gate is applied to."
+  },
+  {
+   "id": "G6",
+   "name": "Robustness and multiple testing",
+   "requirement": "Check vig, pushes, voids, stale prices and rest rules; control for the number of strategies tried, since a family of tests produces false winners by chance; confirm the result holds across seasons and defined subgroups.",
+   "why": "Testing many variants and publishing the best one is how luck is mistaken for skill.",
+   "failureAction": "Strategy is demoted and the multiplicity is published alongside it.",
+   "evidence": "Rule published here; the number of strategies in each family is recorded when it happens.",
+   "basisUrl": "correlations.html#method",
+   "basisNote": "The published record this gate is applied to."
+  },
+  {
+   "id": "G7",
+   "name": "Locked prospective trial",
+   "requirement": "After passing G1 to G6 on history, freeze the strategy and run it forward on live bets for a pre-declared horizon with no parameter changes.",
+   "why": "The only clean test of a model is the future it has not seen.",
+   "failureAction": "The strategy returns to development and keeps its history.",
+   "evidence": "Rule published here; no trial has started.",
+   "basisUrl": "leaderboard.html",
+   "basisNote": "The published record this gate is applied to."
+  },
+  {
+   "id": "G8",
+   "name": "Independent review and audit history",
+   "requirement": "A second reviewer signs off before a strategy is ranked. Failed strategies stay in the public history with the reason they failed.",
+   "why": "A leaderboard that deletes its failures cannot be audited.",
+   "failureAction": "Ranking is withheld.",
+   "evidence": "Rule published here; no strategy has been reviewed.",
+   "basisUrl": "leaderboard.html",
+   "basisNote": "The published record this gate is applied to."
+  }
+ ],
+ "depthRules": [
+  {
+   "tier": "Starter",
+   "definition": "Named in the official Game Book starting lineup for that game.",
+   "evidenceRequired": "Game Book starting lineup entry, with position and number.",
+   "note": "This is an observation, not a model output.",
+   "basisUrl": "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+  },
+  {
+   "tier": "Did not play",
+   "definition": "Listed in the official Game Book Did Not Play block.",
+   "evidenceRequired": "Game Book Did Not Play entry.",
+   "note": "Official absence of participation. It is not the same as an injury.",
+   "basisUrl": "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+  },
+  {
+   "tier": "Second string",
+   "definition": "Did not start, appeared in the game, and absorbed work behind the starter on that position.",
+   "evidenceRequired": "Game Book individual statistics that order the players (for example targets, receptions, attempts or yards), plus the starting lineup.",
+   "note": "The ordering comes from official statistics; the tier name is a label applied to that ordering.",
+   "basisUrl": "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+  },
+  {
+   "tier": "Third / fourth string",
+   "definition": "Further depth behind the second string, ordered the same way.",
+   "evidenceRequired": "Official individual statistics for at least three players at that position in the same game.",
+   "note": "If fewer than three players have countable official statistics, the cell stays blank and is flagged.",
+   "basisUrl": "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+  },
+  {
+   "tier": "Unavailability",
+   "definition": "Game status Out, Questionable or Doubtful, and practice status Full, Limited or Did Not Participate.",
+   "evidenceRequired": "Official weekly injury report row.",
+   "note": "Status says availability. It never says who will start, and it is never used on its own to assign a tier.",
+   "basisUrl": "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+  },
+  {
+   "tier": "Blank by rule",
+   "definition": "Any depth cell without the evidence named above.",
+   "evidenceRequired": "none \u2014 the rule is to leave it blank.",
+   "note": "Blank means not established from an official source. It never means the player is unimportant.",
+   "basisUrl": "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+  }
+ ],
+ "leaderboard": {
+  "mode": "paper only",
+  "modeReason": "No policy, legal review, funding or data licence exists yet, and no strategy has passed the gates. Real-money rewards are not authorised by this site.",
+  "eligibility": [
+   "All gates G0 to G8 passed and signed off.",
+   "Every price, forecast and settlement archived with capture timestamps.",
+   "Results reported out-of-sample on a locked forward period.",
+   "Uncertainty reported next to the score.",
+   "Multiplicity of the strategy family disclosed."
+  ],
+  "primaryMetric": "Improvement in out-of-sample log loss against the de-vigged market probability for the same bets.",
+  "secondaryMetrics": [
+   "Brier score improvement",
+   "Calibration slope and intercept",
+   "Coverage of the quoted range",
+   "Observation count against the minimum evidence rule"
+  ],
+  "antiLuckRules": [
+   "Never rank by win rate alone or by streak.",
+   "Apply shrinkage toward the market baseline so a small sample cannot win the board.",
+   "Publish the observation count and the confidence interval with every rank.",
+   "Keep failed strategies in the audit history with the gate they failed.",
+   "Fix the strategy family before the trial; publish how many variants were tried.",
+   "Demote a strategy the moment it stops meeting the minimum evidence rule."
+  ],
+  "rewardBasis": "Paper points computed from the primary metric, weighted by the observation count and capped so that a single lucky month cannot take the lead. Monetary rewards require a documented policy and legal review that do not exist today.",
+  "columns": [
+   "Rank",
+   "Strategy",
+   "Type",
+   "Bets resolved",
+   "Log loss vs market",
+   "Brier vs market",
+   "Calibration",
+   "Evidence gate",
+   "Last updated",
+   "Notes"
+  ],
+  "rows": [],
+  "rowsNote": "The leaderboard is empty by design. No strategy has passed G0 to G8, because no market price, forecast log or settlement record exists in this repository. Publishing a rank today would be a fabricated result.",
+  "auditRules": [
+   "Every published rank keeps the run that produced it.",
+   "A demotion is published with the date and the reason.",
+   "The board can be rebuilt from the archived inputs alone."
+  ]
+ },
+ "suggestions": [
+  {
+   "id": "P01",
+   "title": "Publish a plain-language decision header on every page",
+   "area": "site",
+   "problem": "A reader cannot tell from a table whether it is a verified record, an estimate or a proposal, and therefore cannot decide how much weight to put on it.",
+   "proposal": "Every page opens with three lines: what the page is for, what it is not, and the date of the evidence behind it.",
+   "evidence": "The existing certainty banner already states the limits of the planner but not of each page individually.",
+   "impact": "high \u2014 every downstream decision depends on reading the right table correctly",
+   "effort": "low",
+   "risk": "low",
+   "dependencies": "none",
+   "priority": 2,
+   "recommendation": "accept",
+   "sources": [
+    "https://karagemop466-tech.github.io/Korea5/certainty.html"
+   ]
+  },
+  {
+   "id": "P02",
+   "title": "Make the Flagged for Review page reachable from every page",
+   "area": "site",
+   "problem": "The flagged register exists but sits behind a nav entry on the root pages only, so the honest caveats are one click away from some content and two clicks from the lab pages.",
+   "proposal": "Add the flagged link to the navigation of every section, including the new lab pages, and keep a single flagged register so an item is never in two places.",
+   "evidence": "The lab pages and the extra pages have their own navigation blocks, generated separately.",
+   "impact": "medium \u2014 improves the chance that caveats are read before a decision",
+   "effort": "low",
+   "risk": "low",
+   "dependencies": "none",
+   "priority": 3,
+   "recommendation": "accept",
+   "sources": []
+  },
+  {
+   "id": "P03",
+   "title": "Add one table filter box to every data page",
+   "area": "site",
+   "problem": "The official-feed pages have filters; the root pages have none, so a reader looking for one team scans a long table.",
+   "proposal": "One small client-side filter that matches any column, applied to the calendar, vacation, MLB, NFL, injury and lab tables.",
+   "evidence": "The extra pages already ship a filter implementation in extra/assets/extra.js.",
+   "impact": "medium \u2014 direct effect on time-to-answer",
+   "effort": "low",
+   "risk": "low",
+   "dependencies": "none",
+   "priority": 4,
+   "recommendation": "accept",
+   "sources": []
+  },
+  {
+   "id": "P04",
+   "title": "Show a data-freshness badge computed from the newest source timestamp",
+   "area": "site",
+   "problem": "The footer prints one build date for the whole site, so a weekly injury table looks as fresh as a 2029 estimate.",
+   "proposal": "Compute the newest official-source timestamp per dataset and print it next to the table that uses it.",
+   "evidence": "Each lab dataset already carries its own retrievedUTC value.",
+   "impact": "high \u2014 prevents acting on stale rows",
+   "effort": "low",
+   "risk": "low",
+   "dependencies": "P01",
+   "priority": 2,
+   "recommendation": "accept",
+   "sources": []
+  },
+  {
+   "id": "P05",
+   "title": "Add a side-by-side comparison view for the candidate vacation windows",
+   "area": "site",
+   "problem": "The vacation page lists years separately, so the reader has to hold 2027, 2028 and 2029 in their head to choose.",
+   "proposal": "A single comparison table: window, length, conflicts, evidence tier, uncertainty and the Pro Bowl assumption that changes it.",
+   "evidence": "The Pro Bowl date is the single assumption that changes the 2027 answer, and it is currently spread across the dashboard and the flagged page.",
+   "impact": "medium",
+   "effort": "low",
+   "risk": "low",
+   "dependencies": "none",
+   "priority": 6,
+   "recommendation": "accept",
+   "sources": [
+    "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+   ]
+  },
+  {
+   "id": "P06",
+   "title": "Create a dedicated Suggestions section with a review workflow",
+   "area": "site",
+   "problem": "Improvement ideas were scattered through the research notes, so nobody could see the whole menu, rank it, or record a decision.",
+   "proposal": "A dedicated page listing every suggestion with problem, proposal, evidence, impact, effort, risk, dependencies and a recommended order, plus a column for the reviewer's decision and note.",
+   "evidence": "Implemented on the Suggestions page of this lab.",
+   "impact": "high \u2014 it is the mechanism the brief asks for",
+   "effort": "done",
+   "risk": "low",
+   "dependencies": "none",
+   "priority": 1,
+   "recommendation": "accept \u2014 already implemented in this release",
+   "sources": []
+  },
+  {
+   "id": "P07",
+   "title": "Publish a decision register of open questions with the information needed to answer them",
+   "area": "site",
+   "problem": "Decisions were being discussed before it was clear which facts were missing, so time was spent re-litigating what was known.",
+   "proposal": "A page where each decision has what is known, what is missing, why it blocks, and the exact discovery step that would close it.",
+   "evidence": "Implemented on the Questions page of this lab.",
+   "impact": "high",
+   "effort": "done",
+   "risk": "low",
+   "dependencies": "none",
+   "priority": 1,
+   "recommendation": "accept \u2014 already implemented in this release",
+   "sources": []
+  },
+  {
+   "id": "P08",
+   "title": "Track injuries and lineup depth from official sources, with a three-layer evidence rule",
+   "area": "analytics",
+   "problem": "Availability, who actually starts, and who absorbs the work were three separate facts that nobody held together, so a \u201cbackup replacing a starter\u201d claim was easy to make and impossible to support.",
+   "proposal": "Layer A is the official weekly injury report; layer B is the official Game Book (starting lineup, Did Not Play, individual statistics); layer C is the model's own tier label, which is only filled when layer B supports it. Otherwise the cell is blank and flagged.",
+   "evidence": "Implemented on the Injuries and depth page, including the Week 9 Vikings three-deep quarterback chain taken from the official Game Book.",
+   "impact": "high \u2014 this is the input to every injury-driven strategy",
+   "effort": "done for the tracker; automation pending",
+   "risk": "medium \u2014 a wrong tier label would be a wrong signal",
+   "dependencies": "P14",
+   "priority": 1,
+   "recommendation": "accept \u2014 tracker published, refresh automation is P14",
+   "sources": [
+    "https://www.nfl.com/injuries/",
+    "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+   ]
+  },
+  {
+   "id": "P09",
+   "title": "Measure dependence between candidate legs instead of assuming independence",
+   "area": "analytics",
+   "problem": "Parlay pricing by multiplying marginal probabilities assumes legs are independent. On the official sample they were not: two same-team receivers had r = -0.82.",
+   "proposal": "Publish a correlation table with confidence intervals for each leg pair that will be traded, and refuse to price a parlay whose dependence has not been measured to an agreed standard.",
+   "evidence": "Published on the Correlations page with the intervals and the sample sizes.",
+   "impact": "high \u2014 it is the difference between a modelled parlay and a wrong one",
+   "effort": "medium",
+   "risk": "medium",
+   "dependencies": "P14",
+   "priority": 2,
+   "recommendation": "accept",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/",
+    "https://www.nfl.com/players/jordan-addison/stats/logs/"
+   ]
+  },
+  {
+   "id": "P10",
+   "title": "Fix the sample-size rule before any strategy is allowed on the leaderboard",
+   "area": "analytics",
+   "problem": "Without a minimum, a strategy with a lucky month can take the board, and the board becomes a measure of luck.",
+   "proposal": "Make the published minimum-observation rule a hard entry condition: 779 bets for a +5 point edge at -110, 2,170 for +3 points, and about 100 games before a correlation of 0.3 is meaningful.",
+   "evidence": "Computed and published on the Correlations page.",
+   "impact": "high",
+   "effort": "done",
+   "risk": "low",
+   "dependencies": "none",
+   "priority": 1,
+   "recommendation": "accept \u2014 already implemented in this release",
+   "sources": []
+  },
+  {
+   "id": "P11",
+   "title": "Archive market quotes and settlements before writing any model",
+   "area": "analytics",
+   "problem": "The repository holds no price, no settlement and no forecast log, so no strategy can be scored and no leaderboard can be honest.",
+   "proposal": "Build the quote and settlement archive first, with timestamps, then model against it. Treat this as the critical path for the whole line-making track.",
+   "evidence": "The Questions page records this as Q01, Q04, Q05 and Q10.",
+   "impact": "high \u2014 nothing measurable can happen before it",
+   "effort": "high",
+   "risk": "medium \u2014 legal review needed for the data source",
+   "dependencies": "Q13 compliance review",
+   "priority": 1,
+   "recommendation": "accept \u2014 this is the next build",
+   "sources": []
+  },
+  {
+   "id": "P12",
+   "title": "Automate the official-source refresh in CI",
+   "area": "site",
+   "problem": "The weekly injury report and the Game Books will be stale within days of publication, and a stale tracker is worse than no tracker.",
+   "proposal": "Extend the existing official-fetch pattern to the injury report and Game Books, run it on a schedule, and publish the fetch log next to the data.",
+   "evidence": "The repository already refreshes MLB and NFL schedule feeds from official endpoints in GitHub Actions.",
+   "impact": "high for the tracker, medium for the rest of the site",
+   "effort": "medium",
+   "risk": "low",
+   "dependencies": "P08",
+   "priority": 2,
+   "recommendation": "accept",
+   "sources": [
+    "https://www.nfl.com/injuries/"
+   ]
+  },
+  {
+   "id": "P13",
+   "title": "Publish every table as machine-readable JSON next to the HTML",
+   "area": "site",
+   "problem": "Anything else that wants to use this site has to scrape tables, which loses the source links and the blank-versus-unverified distinction.",
+   "proposal": "Emit a JSON file beside each page with the same rows, the same source URLs and the same evidence flags.",
+   "evidence": "The extra section already ships data/*.json beside its pages.",
+   "impact": "medium",
+   "effort": "low",
+   "risk": "low",
+   "dependencies": "none",
+   "priority": 5,
+   "recommendation": "accept",
+   "sources": []
+  },
+  {
+   "id": "P14",
+   "title": "Add a change log to the dashboard",
+   "area": "site",
+   "problem": "A reader cannot tell what changed between two visits, so stale conclusions are not noticed.",
+   "proposal": "A dated list of what was added, corrected or flagged since the previous publish, generated from the commits that touched the data.",
+   "evidence": "Every dataset in the repository already carries a generated or retrieved timestamp.",
+   "impact": "medium",
+   "effort": "low",
+   "risk": "low",
+   "dependencies": "P13",
+   "priority": 7,
+   "recommendation": "defer until the data pipeline is automated",
+   "sources": []
+  },
+  {
+   "id": "P15",
+   "title": "Print and PDF export of the vacation plan",
+   "area": "site",
+   "problem": "The plan is useful on paper \u2014 for a booking, a gift, or a screenshot \u2014 and the site has no way to produce that.",
+   "proposal": "A print stylesheet plus a one-page PDF of the chosen window, its conflicts and its evidence.",
+   "evidence": "The vacation page already has a single ranked table per year.",
+   "impact": "low",
+   "effort": "low",
+   "risk": "low",
+   "dependencies": "none",
+   "priority": 8,
+   "recommendation": "defer \u2014 nice to have, not decision-critical",
+   "sources": []
+  }
+ ],
+ "flags": [
+  {
+   "id": "L01",
+   "severity": "high",
+   "area": "pricing",
+   "finding": "The repository contains no market price, no settlement record and no forecast log. No win rate, yield, edge, fair price or profit can be computed or claimed anywhere on this site.",
+   "action": "Nothing is filled in. The leaderboard is published empty by design and every strategy is marked proposed \u2014 not validated.",
+   "sources": [
+    "https://www.nfl.com/stats/",
+    "https://www.nfl.com/schedules/"
+   ]
+  },
+  {
+   "id": "L02",
+   "severity": "medium",
+   "area": "injuries",
+   "finding": "At retrieval on 2026-11-13 the official Week 10 injury report article had published game-status designations for 3 of the 14 games (Commanders\u2013Giants, Patriots\u2013Lions and the rest of the slate not yet). The remaining games had no published designation, so none is shown.",
+   "action": "The published table carries only the designations the league had published. The games without them are listed with an empty designation column rather than an assumed one.",
+   "sources": [
+    "https://www.nfl.com/news/nfl-week-10-injury-report-2026-season",
+    "https://www.nfl.com/injuries/"
+   ]
+  },
+  {
+   "id": "L03",
+   "severity": "low",
+   "area": "injuries",
+   "finding": "The Kansas City Chiefs practice table on the official injury report page was cut off in the retrieved pagination after Omarr Norman-Lott (DT, Limited Participation in Practice). The rows that follow could not be read.",
+   "action": "The rows that were read are published as observed; the remainder is left out rather than guessed.",
+   "sources": [
+    "https://www.nfl.com/injuries/"
+   ]
+  },
+  {
+   "id": "L04",
+   "severity": "low",
+   "area": "injuries",
+   "finding": "No Cincinnati Bengals row could be transcribed: the table header was the last line of one retrieved page and its rows were not in the next.",
+   "action": "The Bengals table is published as not transcribed. No Bengals player is listed.",
+   "sources": [
+    "https://www.nfl.com/injuries/"
+   ]
+  },
+  {
+   "id": "L05",
+   "severity": "low",
+   "area": "injuries",
+   "finding": "An eight-player practice table (Jonathan Allen, Jalen Davis, Kyle Dugger, Dylan Fairchild, B.J. Hill, Andrei Iosivas, Brian Parker II, DJ Turner II) appears on the official page between the Steelers\u2013Bengals block and the Monday, November 16 block. Its club attribution could not be confirmed from the page structure.",
+   "action": "The rows are published as an unassigned table instead of being attributed to a club.",
+   "sources": [
+    "https://www.nfl.com/injuries/"
+   ]
+  },
+  {
+   "id": "L06",
+   "severity": "low",
+   "area": "injuries",
+   "finding": "The first New Orleans Saints row (Kelvin Banks Jr., T) was truncated by the same pagination, so its injury, practice status and game status could not be read.",
+   "action": "Those three cells are published blank.",
+   "sources": [
+    "https://www.nfl.com/injuries/"
+   ]
+  },
+  {
+   "id": "L07",
+   "severity": "low",
+   "area": "records",
+   "finding": "Two official pages print different records for the Thursday teams: the injury report page shows Washington 3-5-1 and New York 5-3-1, while the Week 10 report article shows Washington 2-5-1 and New York 5-2-1.",
+   "action": "Both values are published as printed and neither is adjusted. The difference is consistent with the article being written before the Thursday game and the injury report after it, but that reading is not asserted as fact.",
+   "sources": [
+    "https://www.nfl.com/injuries/",
+    "https://www.nfl.com/news/nfl-week-10-injury-report-2026-season"
+   ]
+  },
+  {
+   "id": "L08",
+   "severity": "low",
+   "area": "depth",
+   "finding": "The retrieved portion of the official Game Book contained a Did Not Play block for Minnesota Vikings but not for Buffalo Bills.",
+   "action": "The Bills' Did Not Play cell is published empty. No Bills non-participation is asserted.",
+   "sources": [
+    "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+   ]
+  },
+  {
+   "id": "L09",
+   "severity": "low",
+   "area": "depth",
+   "finding": "The extracted Game Book text places the Buffalo Bills' kickoff-return block on both sides of the Minnesota Vikings' rushing block because of a two-column page break, so the kickoff-return rows could not be attributed to a team with certainty.",
+   "action": "Kickoff-return rows are not published. Rushing, passing, receiving, interception and punting rows are published because the player names resolve the attribution.",
+   "sources": [
+    "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+   ]
+  },
+  {
+   "id": "L10",
+   "severity": "low",
+   "area": "citations",
+   "finding": "The Game Book PDF sits on a versioned CDN path that can change between publications.",
+   "action": "The stable NFL.com game page URL is used as the citation for the record, with the PDF path shown alongside it as the retrieval address.",
+   "sources": [
+    "https://www.nfl.com/games/bills-at-vikings-2026-reg-9"
+   ]
+  },
+  {
+   "id": "L11",
+   "severity": "medium",
+   "area": "analysis",
+   "finding": "Every correlation here rests on 6 to 8 matched games. The intervals are wide: the two-receiver pair spans -0.98 to -0.02, and most other pairs include zero.",
+   "action": "The intervals are published with every coefficient and no pair is described as reliable. The figures demonstrate that the legs are not independent; they do not estimate the dependence to trade on.",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/"
+   ]
+  },
+  {
+   "id": "L12",
+   "severity": "low",
+   "area": "analysis",
+   "finding": "Only the 2026 season of the official player Logs pages was transcribed in this pass. The pages are year-scoped and earlier seasons were not read.",
+   "action": "All sample sizes are stated as nine weeks of one season. Multi-season work is listed as open work in the question register.",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/"
+   ]
+  },
+  {
+   "id": "L13",
+   "severity": "medium",
+   "area": "depth",
+   "finding": "No snap counts were extracted, so opportunity share is described only through the official individual statistics that were published (targets, receptions, attempts, yards).",
+   "action": "No snap-share claim is made. Depth ordering is taken from the official statistics that do exist and is labelled as such.",
+   "sources": [
+    "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf"
+   ]
+  },
+  {
+   "id": "L14",
+   "severity": "low",
+   "area": "depth",
+   "finding": "The league does not publish depth charts on the pages checked: the team depth-chart address on nfl.com returned a 404 page during this pass. Club depth charts are published by the clubs themselves.",
+   "action": "The depth tracker relies on Game Books rather than on a published depth chart. Club depth charts were not retrieved in this pass and are listed as open work.",
+   "sources": [
+    "https://www.nfl.com/teams/minnesota-vikings/roster/depth-charts/"
+   ]
+  },
+  {
+   "id": "L15",
+   "severity": "low",
+   "area": "governance",
+   "finding": "No legal, privacy or tax review exists for this project, and no reward policy has been written.",
+   "action": "The leaderboard is paper-only and the rewards are paper points. Nothing on this site authorises real-money activity.",
+   "sources": [
+    "https://operations.nfl.com/"
+   ]
+  },
+  {
+   "id": "L16",
+   "severity": "medium",
+   "area": "presentation",
+   "finding": "The landing page picked its -110 sample-size rows by comparing the stored break-even probability (rounded to four decimals, 0.5238) with 110/210 using a 1e-6 tolerance. The comparison matched nothing, so the headline rendered as 'bets for a +5 point edge; for +3 points at -110' with no number in it.",
+   "action": "Fixed: the rows are selected by their price label, the builder refuses to emit a missing value, and the verifier now fails when a required row is absent. The verifier had repeated the same comparison with an even tighter tolerance, so its check matched no rows and passed without testing anything; it also gained page-level link and anchor resolution. Negative tests confirm it now catches a blank headline, a missing file and a dangling anchor.",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/"
+   ]
+  }
+ ]
+}

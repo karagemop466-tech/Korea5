@@ -1,0 +1,49 @@
+{
+ "train_window": "2006-2015",
+ "test_window": "2016-2025",
+ "K_selected": 0.06,
+ "K_grid": [
+  {
+   "K": 0.02,
+   "train_mae": 11.097
+  },
+  {
+   "K": 0.04,
+   "train_mae": 10.9235
+  },
+  {
+   "K": 0.06,
+   "train_mae": 10.8956
+  },
+  {
+   "K": 0.08,
+   "train_mae": 10.924
+  },
+  {
+   "K": 0.1,
+   "train_mae": 10.9877
+  },
+  {
+   "K": 0.12,
+   "train_mae": 11.0697
+  },
+  {
+   "K": 0.15,
+   "train_mae": 11.2148
+  },
+  {
+   "K": 0.2,
+   "train_mae": 11.5036
+  }
+ ],
+ "REGRESS": 0.6,
+ "HFA_points": 2.0,
+ "ALPHA_totals": 0.15,
+ "test_mae_model_margin": 10.167,
+ "test_mae_market_spread": 9.788,
+ "test_games": 2639,
+ "test_games_with_market_spread": 2639,
+ "test_mae_model_total": 10.748,
+ "forward_2026_mae_model_margin": 9.786,
+ "forward_2026_games": 137
+}

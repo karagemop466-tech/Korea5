@@ -750,7 +750,8 @@ def inline(text: str) -> str:
     text = esc(text)
     text = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
     text = _re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r'<a href="\2">\1</a>', text)
-    text = _re.sub(r"\[([^\]]+)\]\((\.\./[^)]+|[^)]+\.(?:html|md))\)", r'<a href="\2">\1</a>', text)
+    text = _re.sub(r"\[([^\]]+)\]\((\.\./[^)]+|[^)]+\.(?:html))\)", r'<a href="\2">\1</a>', text)
+    text = _re.sub(r"\[([^\]]+)\]\(([^)/]+\.md)\)", r'<a href="../research/\2">\1</a>', text)
     return text
 def md_to_html(md: str) -> str:
     out = []

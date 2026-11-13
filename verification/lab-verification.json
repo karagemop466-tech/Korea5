@@ -1,0 +1,55 @@
+{
+ "checks": [
+  {
+   "page": "lab/correlations.html",
+   "rows": 38,
+   "linkedRows": 38,
+   "placeholderRows": 0
+  },
+  {
+   "page": "lab/flags.html",
+   "rows": 16,
+   "linkedRows": 16,
+   "placeholderRows": 0
+  },
+  {
+   "page": "lab/index.html",
+   "rows": 15,
+   "linkedRows": 15,
+   "placeholderRows": 0
+  },
+  {
+   "page": "lab/injuries.html",
+   "rows": 349,
+   "linkedRows": 349,
+   "placeholderRows": 0
+  },
+  {
+   "page": "lab/leaderboard.html",
+   "rows": 12,
+   "linkedRows": 9,
+   "placeholderRows": 3
+  },
+  {
+   "page": "lab/questions.html",
+   "rows": 15,
+   "linkedRows": 10,
+   "placeholderRows": 5
+  },
+  {
+   "page": "lab/strategies.html",
+   "rows": 21,
+   "linkedRows": 21,
+   "placeholderRows": 0
+  },
+  {
+   "page": "lab/suggestions.html",
+   "rows": 30,
+   "linkedRows": 5,
+   "placeholderRows": 25
+  }
+ ],
+ "failures": [],
+ "publishedPracticeRows": 275,
+ "publishedGameStatusRows": 9
+}

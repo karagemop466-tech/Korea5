@@ -1164,7 +1164,8 @@ The first merged run's repository CI caught one generated local-link failure in 
 | Pages | GitHub Pages API reports `built`, source `main` /, URL https://karagemop466-tech.github.io/Korea5/ |
 | Live feature | https://karagemop466-tech.github.io/Korea5/nfl-strategy.html |
 
-<<<<<<< HEAD
+
+ HEAD
 ---
 
 ## Session `arena/b2d2460c-korea5` — 2026-11-13 (NFL lines & strategy lab + decision-support + suggestions board)
@@ -1275,7 +1276,7 @@ because it would overwrite README sections; it is still present and undecided.
   answer depends on, and the concrete discovery step. Eight are marked blocking.
 * `lab/suggestions.html` - 18 suggestions, each with 2-3 explicit paths, upsides, downsides and a
   recommended path, in `proposed` status awaiting a decision. Nothing has been implemented from them.
-=======
+
 | Live feature | https://karagemop466-tech.github.io/Korea5/nfl-strategy.html |
 
 ## Session `arena-c9041d2a` — NFL decision support (merged alongside session `arena/8602d76f` vertical)
@@ -1788,7 +1789,8 @@ this one (`lab/`), `arena/1e59465a` (`nfl-lab/`), `arena/e96c5f87` (`nfl/`), `ar
 plus the retained addresses. Nothing of any session has been removed. The duplication is real and is recorded here
 rather than resolved by deleting another session's work.
 
->>>>>>> origin/main
+<<<<<<< HEAD
+
 
 ### Namespace collision found and resolved - session `arena/b2d2460c-korea5` (2026-11-13)
 
@@ -1827,3 +1829,13 @@ ingests official game results and computes from them (137 verified games, reconc
 standings) and the only one that runs a chronological walk-forward backtest with significance intervals. It is
 also the only one that reports a model *failing* its gate. The other surfaces are proposals, hand-curated
 excerpts, or official-data registries.
+=======
+### Merge and Pages result (arena-2831c7f7, 2026-11-13)
+
+- PR **#54** (`arena/2831c7f7-korea5` → `main`) was merged with a merge commit at **`037311a5c4fabfebcea8eb3296ae3a4e7463924d`** at 2026-11-13T13:45:01Z. The branch was merged with `main` twice before merge because `main` moved (PR #52 landed in between); conflicts in generated root pages were resolved by regeneration, not by hand-editing.
+- GitHub Pages build for `037311a` completed with status **built**. Live checks via the fetch tool: `lines/leaderboard.html` renders the 18-row table with source links and the paper-only disclaimer; `verification/lines-verification.json` reports **82/82** checks, zero failures.
+- Pre-merge checks: `scripts/lines/verify_lines.py` 82/82; `scripts/check_links.py` 91 pages, 0 missing; `tools/verify_extra.py` passed; `tests/test_verify.py` and calendar Node tests passed; `nfl-lab/tests` passed. PR check `validate` passed on head `0e98108`.
+- Disclosure carried forward: the 18-strategy set was built iteratively, and the 2026 holdout was reported during development. The holdout is not a pristine test. No sportsbook prices or wagers are involved.
+
+>>>>>>> origin/main
+

@@ -83,6 +83,13 @@
    "provides": "Dated depth-chart snapshots (ESPN-derived)",
    "official": "No (third-party mirror)",
    "verified_how": "Downloaded in GitHub Actions; not checked against team depth charts."
+  },
+  {
+   "name": "NFL.com Terms and Conditions, section 1.3",
+   "url": "https://www.nfl.com/legal/terms/",
+   "provides": "Published permitted-use terms for NFL.com Services, including restrictions on systematic retrieval",
+   "official": "Yes (NFL legal terms)",
+   "verified_how": "Fetched 2026-11-13. Section 1.3 limits use to individual, non-commercial, informational purposes and prohibits systematic retrieval to build a collection/database absent express prior written consent. This is recorded as a source-rights flag, not a legal conclusion or proof that permission does not exist."
   }
  ]
 }

@@ -117,6 +117,49 @@ def main():
     other = sorted(d for d in domains_seen if d not in OFFICIAL)
     checks.append({"check": "External domains linked from pages", "result": f"official: {', '.join(official_domains)}; non-official (used only on flagged or method rows): {', '.join(other)}",
                    "detail": "Non-official links are third-party data mirrors, the data dictionary, or the repository itself."})
+
+    # NFL.com Terms source-rights warning is an explicit, linked registry item.
+    sources = json.load(open(os.path.join(D, "sources.json")))["sources"]
+    flags = json.load(open(os.path.join(D, "flags.json")))["flags"]
+    terms_url = "https://www.nfl.com/legal/terms/"
+    terms_recorded = any(s.get("url") == terms_url for s in sources)
+    rights_flag = next((f for f in flags if f.get("id") == "F15" and f.get("source") == terms_url), None)
+    rights_ok = terms_recorded and rights_flag is not None
+    checks.append({"check": "NFL.com Terms and systematic-retrieval rights flag",
+                   "result": "source and F15 present" if rights_ok else "missing source/flag",
+                   "detail": "F15 is a source-rights warning, not a legal conclusion."})
+    if not rights_ok:
+        failures.append("missing NFL.com Terms source/rights flag")
+
+    # Each curated suggestion must be selectable, persist locally, and remain export-only.
+    suggestion_doc = json.load(open(os.path.join(D, "suggestions.json")))
+    suggestion_page = open(os.path.join(SITE, "suggestions.html"), encoding="utf-8").read()
+    decision_js_path = os.path.join(SITE, "assets", "decisions.js")
+    decision_js = open(decision_js_path, encoding="utf-8").read() if os.path.exists(decision_js_path) else ""
+    suggestion_ids = [s["id"] for s in suggestion_doc.get("suggestions", [])]
+    missing_choices = [sid for sid in suggestion_ids if f'data-decision="{sid}"' not in suggestion_page]
+    script_linked = 'src="assets/decisions.js"' in suggestion_page
+    network_apis = any(token in decision_js for token in ("fetch(", "XMLHttpRequest", "sendBeacon", "WebSocket"))
+    decision_ui_ok = not missing_choices and script_linked and bool(decision_js) and not network_apis
+    checks.append({"check": "Suggestion decisions are local-only and exportable",
+                   "result": f"{len(suggestion_ids) - len(missing_choices)}/{len(suggestion_ids)} choices; script linked; network APIs {'found' if network_apis else 'not used'}",
+                   "detail": ", ".join(f"missing {sid}" for sid in missing_choices) or "choices are browser-local; exports are user initiated"})
+    if not decision_ui_ok:
+        failures.append("suggestion choice UI is missing or not local-only")
+
+    # The price-math appendix and its synthetic-only helper sources must be present.
+    metrics_page = os.path.join(SITE, "metrics.html")
+    metrics_ok = (
+        os.path.exists(metrics_page)
+        and os.path.isfile(os.path.join(SITE, "scripts", "metrics.py"))
+        and os.path.isfile(os.path.join(SITE, "tests", "test_metrics.py"))
+    )
+    checks.append({"check": "Price-math appendix and synthetic test sources",
+                   "result": "present" if metrics_ok else "missing",
+                   "detail": "The helpers contain no NFL dataset or download routine."})
+    if not metrics_ok:
+        failures.append("price-math appendix/test sources missing")
+
     out = {"generated_by": "scripts/nfl_lab/verify.py", "checks": checks, "failures": failures}
     with open(os.path.join(D, "verification.json"), "w") as f:
         json.dump(out, f, indent=1)

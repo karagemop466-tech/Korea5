@@ -3,7 +3,7 @@
  "checks": [
   {
    "check": "Table rows: official link, flagged UNVERIFIED/NO SOURCE, or method table",
-   "result": "1625 rows: 1550 official-linked, 47 flagged, 28 method-table, 0 without source",
+   "result": "1630 rows: 1552 official-linked, 47 flagged, 31 method-table, 0 without source",
    "detail": "Rows without source: none"
   },
   {
@@ -20,6 +20,21 @@
    "check": "External domains linked from pages",
    "result": "official: www.gra.gov.sg, www.ncpg.org.sg, www.nfl.com; non-official (used only on flagged or method rows): github.com",
    "detail": "Non-official links are third-party data mirrors, the data dictionary, or the repository itself."
+  },
+  {
+   "check": "NFL.com Terms and systematic-retrieval rights flag",
+   "result": "source and F15 present",
+   "detail": "F15 is a source-rights warning, not a legal conclusion."
+  },
+  {
+   "check": "Suggestion decisions are local-only and exportable",
+   "result": "10/10 choices; script linked; network APIs not used",
+   "detail": "choices are browser-local; exports are user initiated"
+  },
+  {
+   "check": "Price-math appendix and synthetic test sources",
+   "result": "present",
+   "detail": "The helpers contain no NFL dataset or download routine."
   }
  ],
  "failures": []

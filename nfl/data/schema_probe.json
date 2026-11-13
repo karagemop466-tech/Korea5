@@ -1,5 +1,5 @@
 {
- "generatedUTC": "2026-11-13T13:20:36Z",
+ "generatedUTC": "2026-11-13T16:00:51Z",
  "files": {
   "games.csv": {
    "bytes": 2190032,
@@ -249,8 +249,8 @@
    "bytes": 200000
   },
   "injuries_2026.csv": {
-   "bytes": 354572,
-   "rows": 3117,
+   "bytes": 355094,
+   "rows": 3121,
    "header": [
     "season",
     "season_type",
@@ -1569,8 +1569,8 @@
    "schemaError": "EOFError: Compressed file ended before the end-of-stream marker was reached"
   },
   "depth_charts_2026.csv": {
-   "bytes": 74572683,
-   "rows": 782468,
+   "bytes": 74795019,
+   "rows": 784796,
    "header": [
     "dt",
     "team",
@@ -1586,7 +1586,7 @@
     "pos_rank"
    ],
    "sample": {
-    "dt": "2026-11-13T07:02:06Z",
+    "dt": "2026-11-13T15:17:47Z",
     "team": "ARI",
     "player_name": "Josh Sweat",
     "espn_id": "3693166",
@@ -1600,7 +1600,7 @@
     "pos_rank": "1"
    },
    "sample2": {
-    "dt": "2026-11-13T07:02:06Z",
+    "dt": "2026-11-13T15:17:47Z",
     "team": "ARI",
     "player_name": "Roy Lopez",
     "espn_id": "4040805",
@@ -1629,7 +1629,7 @@
    }
   },
   "roster_2026.csv": {
-   "bytes": 982988,
+   "bytes": 983400,
    "rows": 3073,
    "header": [
     "season",
@@ -4233,7 +4233,7 @@
    "statusExample": "STATUS_FINAL"
   },
   "espn_2026_t2_w10.json": {
-   "bytes": 254476,
+   "bytes": 254475,
    "jsonTopKeys": [
     "leagues",
     "season",

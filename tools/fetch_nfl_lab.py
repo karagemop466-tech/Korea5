@@ -260,7 +260,7 @@ def parse_results(pairs, url, week_label, page_scores=None):
         # same page has the same ids but no score or status, so require a richer marker.
         walk(data, lambda d: bool(d.get("id")) and ("awayTeamStandings" in d or "summary" in d), games)
     rows, seen = [], set()
-    page_scores = page_scores or {}
+    by_slug, by_nick = page_scores if isinstance(page_scores, tuple) else ({}, {})
     for g in games:
         gid = str(g.get("id"))
         if gid in seen:

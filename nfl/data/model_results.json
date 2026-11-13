@@ -70,7 +70,7 @@
    ]
   }
  },
- "generatedUTC": "2026-11-13T15:18:57Z",
+ "generatedUTC": "2026-11-13T15:22:50Z",
  "selftest": false,
  "seasons": [
   2016,
@@ -12144,181 +12144,13 @@
  },
  "crossSource": {
   "status": "pass",
-  "summary": "2698 of 2776 ESPN-sampled completed games match exactly, 0 differ, 78 unmatched. An unmatched game is one ESPN returned but no nflverse row could be paired with on date and both clubs; it is counted as unchecked, never as agreement.",
-  "examples": [
-   {
-    "kind": "unmatched",
-    "date": "2016-09-11",
-    "home": "KC",
-    "away": "LAC",
-    "espn": "27-33",
-    "espnEvent": "400874570",
-    "shiftTried": "0,-1,1,-2,2",
-    "source": "400874570"
-   },
-   {
-    "kind": "unmatched",
-    "date": "2016-09-11",
-    "home": "NO",
-    "away": "LV",
-    "espn": "35-34",
-    "espnEvent": "400874543",
-    "shiftTried": "0,-1,1,-2,2",
-    "source": "400874543"
-   },
-   {
-    "kind": "unmatched",
-    "date": "2016-11-13",
-    "home": "LAC",
-    "away": "MIA",
-    "espn": "31-24",
-    "espnEvent": "400874544",
-    "shiftTried": "0,-1,1,-2,2",
-    "source": "400874544"
-   },
-   {
-    "kind": "unmatched",
-    "date": "2016-11-22",
-    "home": "LV",
-    "away": "HOU",
-    "espn": "20-27",
-    "espnEvent": "400874706",
-    "shiftTried": "0,-1,1,-2,2",
-    "source": "400874706"
-   },
-   {
-    "kind": "unmatched",
-    "date": "2016-11-27",
-    "home": "HOU",
-    "away": "LAC",
-    "espn": "21-13",
-    "espnEvent": "400874659",
-    "shiftTried": "0,-1,1,-2,2",
-    "source": "400874659"
-   },
-   {
-    "kind": "unmatched",
-    "date": "2016-11-27",
-    "home": "LV",
-    "away": "CAR",
-    "espn": "32-35",
-    "espnEvent": "400874670",
-    "shiftTried": "0,-1,1,-2,2",
-    "source": "400874670"
-   },
-   {
-    "kind": "unmatched",
-    "date": "2016-12-04",
-    "home": "LV",
-    "away": "BUF",
-    "espn": "24-38",
-    "espnEvent": "400874724",
-    "shiftTried": "0,-1,1,-2,2",
-    "source": "400874724"
-   },
-   {
-    "kind": "unmatched",
-    "date": "2016-12-04",
-    "home": "LAC",
-    "away": "TB",
-    "espn": "28-21",
-    "espnEvent": "400874727",
-    "shiftTried": "0,-1,1,-2,2",
-    "source": "400874727"
-   },
-   {
-    "kind": "unmatched",
-    "date": "2016-12-09",
-    "home": "KC",
-    "away": "LV",
-    "espn": "13-21",
-    "espnEvent": "400874428",
-    "shiftTried": "0,-1,1,-2,2",
-    "source": "400874428"
-   },
-   {
-    "kind": "unmatched",
-    "date": "2016-12-11",
-    "home": "CAR",
-    "away": "LAC",
-    "espn": "16-28",
-    "espnEvent": "400874559",
-    "shiftTried": "0,-1,1,-2,2",
-    "source": "400874559"
-   },
-   {
-    "kind": "unmatched",
-    "date": "2016-12-18",
-    "home": "LAC",
-    "away": "LV",
-    "espn": "19-16",
-    "espnEvent": "400874712",
-    "shiftTried": "0,-1,1,-2,2",
-    "source": "400874712"
-   },
-   {
-    "kind": "unmatched",
-    "date": "2016-12-24",
-    "home": "CLE",
-    "away": "LAC",
-    "espn": "17-20",
-    "espnEvent": "400874528",
-    "shiftTried": "0,-1,1,-2,2",
-    "source": "400874528"
-   }
-  ],
-  "agree": 2698,
+  "summary": "2776 of 2776 ESPN-sampled completed games match exactly, 0 differ, 0 unmatched. An unmatched game is one ESPN returned but no nflverse row could be paired with on date and both clubs; it is counted as unchecked, never as agreement.",
+  "examples": [],
+  "agree": 2776,
   "disagree": 0,
-  "unmatched": 78,
-  "unmatchedByDate": {
-   "2016-09-11": 2,
-   "2016-09-18": 2,
-   "2016-09-25": 2,
-   "2016-10-02": 2,
-   "2016-10-09": 1,
-   "2016-10-14": 1,
-   "2016-10-16": 1,
-   "2016-10-23": 2,
-   "2016-10-30": 2,
-   "2016-11-06": 1,
-   "2016-11-07": 1,
-   "2016-11-13": 1,
-   "2016-11-22": 1,
-   "2016-11-27": 2,
-   "2016-12-04": 2,
-   "2016-12-09": 1,
-   "2016-12-11": 1,
-   "2016-12-18": 1,
-   "2016-12-24": 2,
-   "2017-01-01": 2
-  },
-  "unmatchedPairs": {
-   "KC-LV": 4,
-   "LAC-LV": 4,
-   "DEN-LV": 4,
-   "LV-LAC": 4,
-   "LV-KC": 4,
-   "LV-DEN": 4,
-   "LV-IND": 2,
-   "TEN-LV": 2,
-   "BAL-LV": 2,
-   "MIA-LV": 2,
-   "KC-LAC": 1,
-   "NO-LV": 1,
-   "LAC-MIA": 1,
-   "LV-HOU": 1,
-   "HOU-LAC": 1,
-   "LV-CAR": 1,
-   "LV-BUF": 1,
-   "LAC-TB": 1,
-   "CAR-LAC": 1,
-   "CLE-LAC": 1,
-   "LAC-KC": 1,
-   "LV-ATL": 1,
-   "LAC-JAX": 1,
-   "IND-LAC": 1,
-   "LAC-NO": 1
-  }
+  "unmatched": 0,
+  "unmatchedByDate": {},
+  "unmatchedPairs": {}
  },
  "marketCoverage": {
   "spreadPct": 1.0,

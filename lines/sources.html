@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sources · NFL Lines Lab</title>
+<meta name="description" content="Official source registry for the NFL lines lab — official-source NFL line origination, strategy validation and depth tracking.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/lines.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="../index.html">Dashboard</a><a href="../nfl.html">NFL &amp; 49ers</a><a href="../nfl-strategy.html">Strategy design</a><a href="../extra/index.html">Official feeds</a><a href="../flagged.html">Flagged</a><span class="nav-sep">|</span><a href="index.html">Lines lab</a><a href="lines.html">Originated lines</a><a href="strategies.html">Strategies</a><a href="leaderboard.html">Leaderboard</a><a href="bets.html">Bet ledger</a><a href="validation.html">Validation</a><a href="correlations.html">Correlations</a><a href="injuries.html">Injury &amp; depth</a><a href="suggestions.html">Suggestions</a><a href="questions.html">Questions</a><a href="executive-summary.html">Executive summary</a><a href="sources.html" class="active">Sources</a><a href="flagged.html">Flagged</a></nav>
+</div></header>
+<main class="wrap">
+<div class="callout warn"><strong>Model outputs, not official values, and not betting advice.</strong> Every number on these pages is computed from official NFL.com results, official box scores and official club depth charts. The originated lines, probabilities, returns and rewards are this repository's model output - they are not published by the league and they are not a market price. The reference price of -110 per leg is a <em>declared convention</em> used so strategies can be compared with each other. No claim is made that any strategy beats a real market. See <a href="validation.html">Validation</a> and <a href="questions.html">Questions</a>.</div>
+
+<h1>Source registry</h1>
+<p class="lede">Every value in this section comes from one of the official sources below, or it is a
+model output computed from them and labelled as such.</p>
+<div class="scroll"><table class=""><thead><tr><th>Source</th><th>Official page</th><th>What it provides here</th><th>Coverage</th></tr></thead><tbody><tr><td><b>NFL.com official schedule by-week pages</b></td><td><a href="https://www.nfl.com/schedules/">open</a></td><td>game list, kickoff, venue and final score for every game</td><td>696 regular-season games with an official score</td></tr><tr><td><b>NFL.com official game pages</b></td><td><a href="https://www.nfl.com/games/">open</a></td><td>official box score, per-player per-game stats, observed weather, official game-book PDF link</td><td>29,919 player stat rows across 424 games</td></tr><tr><td><b>NFL.com official weekly injury report</b></td><td><a href="https://www.nfl.com/injuries/">open</a></td><td>player, position, injury, practice status and game status, per team per game</td><td>296 rows for the published week</td></tr><tr><td><b>NFL.com official team directory</b></td><td><a href="https://www.nfl.com/teams/">open</a></td><td>the official club website list used to reach each club&#x27;s own depth chart</td><td>32 club site URLs</td></tr><tr><td><b>NFL.com official inactives page</b></td><td><a href="https://www.nfl.com/inactives/">open</a></td><td>game-day inactive lists (listed as an open discovery step, not yet ingested)</td><td>not ingested</td></tr><tr><td><b>NFL.com official player pages</b></td><td><a href="https://www.nfl.com/players/">open</a></td><td>player identity and career statistics (listed as an open discovery step)</td><td>not ingested</td></tr><tr><td><b>NFL.com official statistics portal</b></td><td><a href="https://www.nfl.com/stats/">open</a></td><td>league statistics landing page (referenced in the open questions)</td><td>referenced</td></tr><tr><td><b>NFL Football Operations</b></td><td><a href="https://operations.nfl.com/">open</a></td><td>rules, playing time and football operations reference used for method questions</td><td>referenced</td></tr><tr><td><b>Official club depth charts (32 clubs)</b></td><td><a href="https://www.nfl.com/teams/">open</a></td><td>position-by-position tier order: 1st, 2nd, 3rd and 4th string, plus the club&#x27;s own official/unofficial label</td><td>31 of 32 clubs parsed</td></tr></tbody></table></div>
+<h2>Sources that do not exist</h2>
+<div class="callout flag"><strong>No official betting price source exists.</strong> No league, club or
+official body publishes sportsbook prices. The -110 reference price used throughout this section is a
+declared convention so that strategies can be compared with one another. It is not a market quote, and
+nothing on these pages should be read as a comparison against a real market.</div>
+
+</main>
+<footer><div class="wrap">
+  <p><strong>NFL Lines Lab</strong> · built 2026-11-13 · every table row links its official source · unconfirmed values are blank and listed on <a href="flagged.html">Flagged for Review</a>.</p>
+  <p>Official sources: <a href="https://www.nfl.com/schedules/">NFL.com schedule</a> ·
+     <a href="https://www.nfl.com/games/">NFL.com game pages and box scores</a> ·
+     <a href="https://www.nfl.com/injuries/">NFL.com weekly injury report</a> ·
+     <a href="https://www.nfl.com/teams/">NFL.com team directory</a>.</p>
+  <p>Paper research only. No wagering recommendation, no market price is claimed, and no reward has any monetary value.</p>
+</div></footer>
+<script src="assets/lines.js"></script>
+</body></html>

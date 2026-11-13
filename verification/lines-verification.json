@@ -1,0 +1,418 @@
+{
+  "generatedBy": "scripts/lines/verify_lines.py",
+  "checksPassed": 82,
+  "checksTotal": 82,
+  "failedChecks": [],
+  "checks": [
+    {
+      "name": "schema/lines.json",
+      "pass": true,
+      "detail": "required row keys present"
+    },
+    {
+      "name": "schema/strategies.json",
+      "pass": true,
+      "detail": "required row keys present"
+    },
+    {
+      "name": "schema/leaderboard.json",
+      "pass": true,
+      "detail": "required row keys present"
+    },
+    {
+      "name": "schema/correlations.json",
+      "pass": true,
+      "detail": "meta object present"
+    },
+    {
+      "name": "schema/lineup-risk.json",
+      "pass": true,
+      "detail": "meta object present"
+    },
+    {
+      "name": "schema/suggestions.json",
+      "pass": true,
+      "detail": "meta object present"
+    },
+    {
+      "name": "schema/questions.json",
+      "pass": true,
+      "detail": "meta object present"
+    },
+    {
+      "name": "schema/flags.json",
+      "pass": true,
+      "detail": "meta object present"
+    },
+    {
+      "name": "sources/lines.json",
+      "pass": true,
+      "detail": "696 rows carry an official source URL"
+    },
+    {
+      "name": "sources/strategies.json",
+      "pass": true,
+      "detail": "15352 rows carry an official source URL"
+    },
+    {
+      "name": "sources/lineup-risk.json",
+      "pass": true,
+      "detail": "207 rows carry an official source URL"
+    },
+    {
+      "name": "sources/depth-charts.json",
+      "pass": true,
+      "detail": "32 clubs carry an official source URL"
+    },
+    {
+      "name": "sources/injuries.json",
+      "pass": true,
+      "detail": "296 injury rows carry an official source URL"
+    },
+    {
+      "name": "leakage/game-reference",
+      "pass": true,
+      "detail": "every bet resolves to a scheduled game"
+    },
+    {
+      "name": "leakage/date-match",
+      "pass": true,
+      "detail": "every bet date matches the official game date"
+    },
+    {
+      "name": "leakage/split",
+      "pass": true,
+      "detail": "development [2024, 2025] and holdout 2026 are disjoint"
+    },
+    {
+      "name": "leakage/date-order",
+      "pass": true,
+      "detail": "no bet predates the official game it belongs to"
+    },
+    {
+      "name": "pages/links/index.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/index.html",
+      "pass": true,
+      "detail": "7 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/index.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/index.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "pages/links/lines.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/lines.html",
+      "pass": true,
+      "detail": "697 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/lines.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/lines.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "pages/links/strategies.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/strategies.html",
+      "pass": true,
+      "detail": "19 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/strategies.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/strategies.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "pages/links/leaderboard.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/leaderboard.html",
+      "pass": true,
+      "detail": "19 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/leaderboard.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/leaderboard.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "pages/links/bets.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/bets.html",
+      "pass": true,
+      "detail": "1 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/bets.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/bets.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "pages/links/validation.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/validation.html",
+      "pass": true,
+      "detail": "16 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/validation.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/validation.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "pages/links/correlations.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/correlations.html",
+      "pass": true,
+      "detail": "89 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/correlations.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/correlations.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "pages/links/injuries.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/injuries.html",
+      "pass": true,
+      "detail": "208 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/injuries.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/injuries.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "pages/links/suggestions.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/suggestions.html",
+      "pass": true,
+      "detail": "21 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/suggestions.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/suggestions.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "pages/links/questions.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/questions.html",
+      "pass": true,
+      "detail": "25 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/questions.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/questions.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "pages/links/executive-summary.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/executive-summary.html",
+      "pass": true,
+      "detail": "7 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/executive-summary.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/executive-summary.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "pages/links/sources.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/sources.html",
+      "pass": true,
+      "detail": "10 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/sources.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/sources.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "pages/links/flagged.html",
+      "pass": true,
+      "detail": "every internal link resolves"
+    },
+    {
+      "name": "pages/source-links/flagged.html",
+      "pass": true,
+      "detail": "14 table rows carry a source link"
+    },
+    {
+      "name": "pages/official-source/flagged.html",
+      "pass": true,
+      "detail": "official source linked"
+    },
+    {
+      "name": "pages/disclaimer/flagged.html",
+      "pass": true,
+      "detail": "disclaimer present"
+    },
+    {
+      "name": "links/official-only/index.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    },
+    {
+      "name": "links/official-only/lines.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    },
+    {
+      "name": "links/official-only/strategies.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    },
+    {
+      "name": "links/official-only/leaderboard.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    },
+    {
+      "name": "links/official-only/bets.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    },
+    {
+      "name": "links/official-only/validation.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    },
+    {
+      "name": "links/official-only/correlations.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    },
+    {
+      "name": "links/official-only/injuries.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    },
+    {
+      "name": "links/official-only/suggestions.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    },
+    {
+      "name": "links/official-only/questions.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    },
+    {
+      "name": "links/official-only/executive-summary.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    },
+    {
+      "name": "links/official-only/sources.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    },
+    {
+      "name": "links/official-only/flagged.html",
+      "pass": true,
+      "detail": "every external link points at an official host"
+    }
+  ]
+}

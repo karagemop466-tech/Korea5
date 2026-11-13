@@ -32,6 +32,7 @@ NAV = [
     ("nfl/index.html", "NFL Decision Support"),
     ("sources.html", "Sources"),
     ("flagged.html", "Flagged"),
+    ("lines/index.html", "NFL lines (paper)"),
     ("method.html", "Method"),
     ("extra/index.html", "Official feeds &amp; verification"),
     ("nfl/system/index.html", "NFL decision system"),

@@ -912,6 +912,55 @@ Scope: this session owns the new NFL lines origination vertical only — `index.
 - **Merge / Pages deploy:** merged into `main` via `gh pr merge 36 --merge`. GitHub Pages status `built`, source `main /`, HTTPS enforced, live at https://karagemop466-tech.github.io/Korea5/ (confirmed `nfl-lines.html` served live). `verification/links.json` regenerated: pages=20, localLinks=336, external=529, missing=0.
 
 
+---
+
+## Session `arena/2831c7f7-korea5` — 2026-11-13 (claim)
+
+Branch constraint: Arena fixes this session to `arena/2831c7f7-korea5`. No other branch will be created or pushed.
+Start point: `main` tip `13854fe` (PR #31 merged). All prior records above are preserved unchanged.
+
+### Why this session exists
+
+The owner asked for a **new capability** on top of the existing free-time planner: a self-contained
+**NFL lines origination, signal/strategy research and leaderboard** workstream, with
+
+* a published **Suggestions** section (proposals reviewed *before* implementation),
+* a published **Questions / information / answers** register that states what is known, what is missing,
+  and how the missing pieces should be obtained,
+* an **injury + depth** tracker that flags when a 2nd/3rd/4th-string backup is forced into a starter role
+  on either side of the ball,
+* an **executive summary**, and
+* strict verification: every table row links an official source; anything unconfirmed is blank and flagged.
+
+Parallel-session check at claim time: `git ls-remote --heads origin` shows 27 other `arena/*` branches, but
+`git log --all` shows a single author and no commits after `13854fe`. Two PRs are open from other sessions —
+**#30** (`scripts/build_events.py`, `data/events-*.json`, `data/derived/analysis.json`, `calendar.html`,
+`COORDINATION.md`) and **#32** (`scripts/build_events.py`, `scripts/analyze.py`, `scripts/build_site.py`,
+`tools/build_extra.py`, `data/events-*.json`, `extra/**`, `*.html`, `COORDINATION.md`). **Neither touches
+`data/lines/`, `scripts/lines/`, `lines/` or `research/lines-*`**, so there is no file-scope overlap with this
+session's core work. This session touches `scripts/build_site.py` and `COORDINATION.md` only for navigation
+additions, and logs the change here so those sessions can rebase.
+
+### Task board (addendum)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N1 | Claim + verify: repo review, official-source probe (NFL.com schedule, injuries, box scores, player stats; official club depth charts) | arena-2831c7f7 | done | `COORDINATION.md`, `scripts/lines/` |
+| N2 | Data: CI fetcher for official NFL results, box scores, player logs, weekly injury reports, official club depth charts | arena-2831c7f7 | done | `scripts/lines/fetch_nfl.py`, `data/lines/` |
+| N3 | Model: originate own lines (team spread/total, player props) from official inputs only | arena-2831c7f7 | done | `scripts/lines/build_lines.py`, `data/lines/lines.json` |
+| N4 | Research: strategy catalog (single, parlay, prop combos), validation gates, luck removal, correlation matrix, leaderboard with rewards | arena-2831c7f7 | done | `scripts/lines/build_lines.py`, `data/lines/strategies.json`, `data/lines/leaderboard.json`, `data/lines/correlations.json` |
+| N5 | Site: `lines/` section — landing, lines, strategies, leaderboard, validation, correlation, injuries, depth, suggestions, questions, executive summary, flagged | arena-2831c7f7 | done | `lines/`, `scripts/lines/build_lines_site.py` |
+| N6 | Verification: source-link audit per row, blank-if-unconfirmed rule, link check, tests | arena-2831c7f7 | done | `scripts/lines/verify_lines.py`, `tests/` |
+| N7 | Integration: rebuild, re-verify, PR to `main`, merge, confirm Pages deploy, record result | arena-2831c7f7 | done | `COORDINATION.md`, `README.md`, `scripts/build_site.py` (nav only) |
+
+### Scope boundary (important)
+
+`data/lines/`, `scripts/lines/`, `lines/`, `research/lines-*` and `.github/workflows/lines*.yml` are owned
+**exclusively** by this session. No other session may edit them without logging a request here first.
+The existing planner pipeline (`scripts/build_events.py`, `scripts/analyze.py`, `data/events-*.json`,
+`data/derived/analysis.json`) is **not** modified by this session.
+
+
 ## Session `arena-2cd43859` — NFL analytics and decision-support
 
 | # | Task | Owner | Status | Files |
@@ -1097,6 +1146,14 @@ is published as *proposed - not validated*, and the leaderboard is published emp
 
 The first merged run's repository CI caught one generated local-link failure in `extra/summary.html`: markdown converted the research-detail link to a path that did not resolve from the `extra/` directory. Corrected the executive-summary link to the site Strategy Lab and reran the exact workflow rebuild sequence. Result: certainty audit passed; link check 12 pages / 190 local / 528 external / 0 missing; extra verification 31/31, 0 missing locals, 0 missing source rows; JS syntax and calendar-today test passed; `git diff --check` clean. This fix is in a follow-up PR.
 
+### N1–N7 completion record (arena-2831c7f7, 2026-11-13)
+
+- Official data: CI run 43433238261 (`scripts/lines/fetch_nfl.py`) committed 1,170 games, 840 scored, 29,919 box-score rows, 296 Week 10 injury rows and 31 official depth charts. Houston Texans chart is missing: the official page is image-only and has no readable rows; it is recorded as missing, not inferred.
+- Model and gates: `scripts/lines/build_lines.py` fits walk-forward on prior games only; development 2024–2025 (544 scored regular-season games), untouched 2026 holdout (152 scored regular-season games). Eighteen strategies are gated G1–G7. G4 uses a BH-adjusted paired sign-flip randomisation p-value across all 18 strategies. Qualified: S05 (reward 115), S08 (reward 114), S07 (reward 99). S03 passes G1–G6 but fails G7 (correlation 0.993 with S05) and receives no reward. Parlays and player props do not qualify.
+- Disclosure: the 18-strategy set was developed iteratively in this session (S07 and S08 were added after first runs). The 2026 holdout was reported during development, so it is not a pristine out-of-sample test for those choices. BH controls multiplicity across the 18 strategies only, not across design iterations.
+- Public pages: 13 pages under `lines/`, linked from the shared nav (`scripts/build_site.py`, nav only). Verification: `scripts/lines/verify_lines.py` 82/82 checks, evidence in `verification/lines-verification.json`. Existing checks: `tests/test_verify.py` 5/5, calendar Node tests, `scripts/check_links.py` 0 missing, `tools/verify_extra.py` passed.
+- Scope: no planner files were changed beyond the shared nav entry and the README section.
+- Integration with `main` (merge, 2026-11-13): `main` had since gained `lab/`, `nfl-lab/`, `nfl/` and `nfl/system/`. This branch's `lines/`, `data/lines/` and `scripts/lines/` are disjoint from all of them, and no file of theirs was edited. The root nav now carries **NFL lines (paper)** as an additive entry. Overlap to resolve later: `lab/` is an evidence workbench on official records, while `lines/` is a walk-forward paper-research system with its own suggestions, questions and flags registers (`data/lines/` vs `data/lab/`). Consolidating the NFL nav entries is a handoff item for the nav owner, not done here.
 ### NFL Strategy Lab publication record
 
 | Step | Result |

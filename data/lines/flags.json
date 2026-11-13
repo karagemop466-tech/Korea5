@@ -1,0 +1,138 @@
+{
+ "meta": {
+  "policy": "Flagged items are published for review. They do not block the site, the merge or the deployment. Every item states what is unverified and the official source that would settle it.",
+  "compiled": "2026-11-13"
+ },
+ "flags": [
+  {
+   "id": "FL-01",
+   "severity": "medium",
+   "item": "Houston Texans depth chart is not machine-readable",
+   "detail": "The official Texans depth-chart page renders its entries without a readable table, so 31 of 32 clubs have a parsed official depth chart. Texans rows are left blank rather than transcribed from an image.",
+   "affects": "Depth tracker, position depth tier, any prop line on a Texan",
+   "sourceUrl": "https://www.houstontexans.com/team/depth-chart",
+   "sourceName": "Official Houston Texans depth chart",
+   "action": "Ask the club for an accessible version, or capture the published chart image and mark the entries unverified."
+  },
+  {
+   "id": "FL-02",
+   "severity": "low",
+   "item": "156 official display forms are ambiguous",
+   "detail": "The NFL.com box score shows players as initials plus surname. Where two players on one club's official depth chart share that display form, the full name cannot be confirmed from official sources, so those rows publish the display form only.",
+   "affects": "Published full name on affected player-prop rows",
+   "sourceUrl": "https://www.nfl.com/games/",
+   "sourceName": "NFL.com official box score and official club depth charts",
+   "action": "Add the official club roster page as a third join source, or keep the affected rows flagged."
+  },
+  {
+   "id": "FL-03",
+   "severity": "high",
+   "item": "No official archive of past weekly injury reports",
+   "detail": "NFL.com publishes the current week's report only, and the page ignores a week parameter. Injury-driven signals therefore cannot be backtested and are tracked prospectively only.",
+   "affects": "Every injury-driven strategy and the injury tracker's history",
+   "sourceUrl": "https://www.nfl.com/injuries/",
+   "sourceName": "NFL.com official weekly injury report",
+   "action": "Ask NFL communications for the official weekly archive, or confirm whether the league game-statistics books carry the status lists."
+  },
+  {
+   "id": "FL-04",
+   "severity": "high",
+   "item": "No official history of club depth charts",
+   "detail": "Only the current version of each club's depth chart exists in this repository, so depth-chart tiers cannot be used to backtest any earlier game.",
+   "affects": "Any historical statement about who was a starter or a backup",
+   "sourceUrl": "https://www.nfl.com/teams/",
+   "sourceName": "NFL.com official team directory (club depth charts)",
+   "action": "Ask clubs whether prior-week depth charts are archived; store each week's snapshot from now on."
+  },
+  {
+   "id": "FL-05",
+   "severity": "high",
+   "item": "No official betting prices exist for comparison",
+   "detail": "No league, club or official body publishes sportsbook prices. Every price used in this lab is a declared reference price of -110 per leg so that strategies can be compared with each other. No claim is made that any strategy beats a market.",
+   "affects": "Every ROI, reward and value claim in the lab",
+   "sourceUrl": "https://www.nfl.com/",
+   "sourceName": "NFL.com official site (no price source exists)",
+   "action": "Obtain a licensed, timestamped price feed before making any market-comparison claim."
+  },
+  {
+   "id": "FL-06",
+   "severity": "medium",
+   "item": "Home-field advantage is a declared assumption, not a verified value",
+   "detail": "The model uses a fixed 3.0 point home-field term. No official source publishes a home-field advantage value.",
+   "affects": "Every model spread and every moneyline probability",
+   "sourceUrl": "https://operations.nfl.com/",
+   "sourceName": "NFL Football Operations",
+   "action": "Publish a sensitivity table over 2.0 to 4.0 points and refuse to publish a strategy whose gates only pass at one value."
+  },
+  {
+   "id": "FL-07",
+   "severity": "medium",
+   "item": "Player-prop strategies are judged on two seasons, not three",
+   "detail": "Official box scores were fetched for the 2025 and 2026 regular seasons. The 2024 season's box scores were not fetched, so the robustness gate for prop and parlay strategies rests on one development season plus one holdout season.",
+   "affects": "Prop and parlay strategies",
+   "sourceUrl": "https://www.nfl.com/schedules/2024/by-week/week-1",
+   "sourceName": "NFL.com official 2024 schedule",
+   "action": "Extend the fetcher to 2024 and re-run the pipeline."
+  },
+  {
+   "id": "FL-08",
+   "severity": "low",
+   "item": "Several club depth charts are labelled 'unofficial' by the club itself",
+   "detail": "The chart label and 'as of' date published by each club are recorded on every depth row so a reader can weigh the evidence. A chart the club labels unofficial is not the same as an official roster.",
+   "affects": "Depth tracker and any prop line built on a depth tier",
+   "sourceUrl": "https://www.packers.com/team/depth-chart",
+   "sourceName": "Official club depth charts (each club's own label is shown on the row)",
+   "action": "No action available from public sources; the label is published instead."
+  },
+  {
+   "id": "FL-09",
+   "severity": "medium",
+   "item": "Player-prop settlement rules are not available from any official source",
+   "detail": "Void, half-action and minimum-participation rules belong to the bookmaker. Prop results in this lab therefore use the model's own over/under rule, not a bookmaker settlement rule.",
+   "affects": "Prop strategy results",
+   "sourceUrl": "https://operations.nfl.com/",
+   "sourceName": "NFL Football Operations",
+   "action": "Obtain the rule set for each book in scope before any real-money prop claim."
+  },
+  {
+   "id": "FL-10",
+   "severity": "medium",
+   "item": "The untouched 2026 holdout is nine weeks so far",
+   "detail": "The 2026 regular season has nine completed weeks at the time of this build, so the holdout gate is decided on a small sample and will change as the season continues.",
+   "affects": "Gate G5 for every strategy",
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "sourceName": "NFL.com official 2026 schedule",
+   "action": "Re-run the pipeline weekly and publish the holdout gate each time."
+  },
+  {
+   "id": "FL-11",
+   "severity": "low",
+   "item": "Model outputs are labelled as model outputs, not as official values",
+   "detail": "Originated lines, probabilities and rewards are computed from official inputs. They are not published on any official page and are labelled accordingly wherever they appear.",
+   "affects": "Every number on the lines pages",
+   "sourceUrl": "https://www.nfl.com/",
+   "sourceName": "NFL.com official site",
+   "action": "Keep the label on every model-derived table."
+  },
+  {
+   "id": "FL-12",
+   "severity": "low",
+   "item": "Unit classification for players missing from the depth chart is inferred from the position code",
+   "detail": "When an injured player is not on the club's official depth chart, the tracker classifies the position as offence, defence or special teams from the official position code on the injury report. That classification is an inference and is flagged.",
+   "affects": "Injury tracker rows for players with no depth-chart entry",
+   "sourceUrl": "https://www.nfl.com/injuries/",
+   "sourceName": "NFL.com official weekly injury report",
+   "action": "Record the chart absence explicitly so the reader can see which rows are inferred."
+  },
+  {
+   "id": "FL-13",
+   "severity": "low",
+   "item": "Observed weather is published on the official game page but is not usable in a model",
+   "detail": "Observed kickoff weather is the outcome of the forecast, so using it would leak information. Weather is therefore excluded from every model.",
+   "affects": "Model specification",
+   "sourceUrl": "https://www.nfl.com/games/",
+   "sourceName": "NFL.com official game page",
+   "action": "Leave weather out unless an official forecast usable at decision time can be found."
+  }
+ ]
+}

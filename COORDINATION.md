@@ -671,3 +671,24 @@ Scope: current Arena branch is fixed; no alternate branches or overlapping task 
 - Official-source spot checks via live fetch: NFL injury page currently publishes player position, injury, practice and game status by week; NFL player statistics page has official category/year selectors; the official NFL transactions page is linked as a source starting point. Sources: https://www.nfl.com/injuries/ ; https://www.nfl.com/stats/player-stats/ ; https://www.nfl.com/transactions/ .
 - Evidence limits: no historical timestamped market/prop prices, betting settlement ledger, forecast log, or verified lineup-depth series found in this repository. No performance or correlation claims made. No backup tier inferred from injury status. Research strategies are proposals, not validated edges; reward competition is only proposed as paper-first and remains gated by policy/legal review.
 - Verification: `scripts/check_links.py` reported 12 pages, 190 local links, 528 external links and zero missing; `scripts/audit_certainty.py` passed; Python unit tests 5/5; both calendar Node tests passed; `git diff --check` clean. Strategy page local destination check: 19 links, zero missing. Official injury and player-statistics pages retrieved live; no claim of comprehensive official link availability.
+
+
+## Session `arena-c9041d2a` — NFL decision support, line-origination research, suggestions queue
+
+| Session ID | Branch | Role | Status |
+|---|---|---|---|
+| `arena-c9041d2a` | `arena/c9041d2a-korea5` | NFL decisions page, suggestions review queue, line-origination and signal research, injury/lineup tracker design, site integration, verification, PR to main and Pages publish | **active** |
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N3 | Repo audit: official-source link review of all pages, data and flags | arena-c9041d2a | **in progress** | `*.html`, `data/`, `curated/`, `research/`, `verification/` |
+| N4 | Decisions-before-implementation page: questions / information known / missing / answer / discovery step / official source | arena-c9041d2a | **in progress** | `decisions.html` |
+| N5 | Suggestions review section: propose → under review → chosen/rejected/blocked/implemented; reviewer decision recorded before anything is implemented | arena-c9041d2a | **in progress** | `suggestions.html` |
+| N6 | NFL line origination, signal families, singles/parlays/player-prop combos, correlation measurement, validation gates, injury/lineup tracker, paper-first leaderboard | arena-c9041d2a | **in progress** | `nfl-strategy.html`, `research/NFL-LINES.md` |
+| N7 | Site integration: navigation, dashboard tables, flagged additions, local link check, certainty audit | arena-c9041d2a | **in progress** | `index.html`, `nfl.html`, `flagged.html`, `scripts/build_site.py` |
+| N8 | Pull request to main, merge, confirm GitHub Pages deploy, record PR link and result | arena-c9041d2a | unclaimed | `COORDINATION.md` |
+
+Scope: this session works only on branch `arena/c9041d2a-korea5`; no `session-<id>/<task>` branches are created or pushed (fixed by the Arena session rule). All NFL analytics content is research design only: no measured edge, correlation value, ROI or top-performing strategy is claimed; no betting lines are invented; any value not published by an official source is left blank and flagged unverified.
+
+Change log:
+- **2026-11-13** — Session `arena-c9041d2a` claims N3–N7 (in progress) and N8 (unclaimed). Branch `arena/c9041d2a-korea5`, active.

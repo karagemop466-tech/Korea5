@@ -1,43 +1,37 @@
 #!/usr/bin/env python3
 """
-NFL Lines Lab — data acquisition.
+NFL Lines Lab — data acquisition (runs in GitHub Actions).
 
-Runs in GitHub Actions, which has outbound internet access (the interactive
-sandbox used to author this file does not). Downloads only FREE, CITED sources,
-records the exact HTTP response metadata for every file, and writes a
-provenance manifest. Nothing is transcribed by hand.
+Downloads only free, citable sources, records HTTP metadata + sha256 for every
+file in nfl/data/provenance.json, and never transcribes a value by hand.
 
-Sources (each is recorded in the manifest with URL, size, sha256, HTTP status
-and the timestamp the publisher stamped on the release):
+Sources
+-------
+nflverse/nflverse-data (CC-BY-4.0)   https://github.com/nflverse/nflverse-data/releases
+  schedules/games.csv                       results, scores, roof, rest, seeds
+  stats_player_week_{y}.csv                 weekly player box scores  (2016+)
+  player_stats/player_stats_{y}.csv         consolidated player stats (fallback, 2019 gap)
+  injuries/injuries_{y}.csv                 weekly injury-report status
+  depth_charts/depth_charts_{y}.csv         weekly depth-chart position
+  rosters/roster_{y}.csv                    team membership + positions
+  snap_counts/snap_counts_{y}.csv           snap share
+  pbp/play_by_play_{y}.csv.gz               play-by-play
+  officials/officials.csv                   referee per game
 
-  nflverse/nflverse-data  (CC-BY-4.0 data release; the standard open NFL data
-  distribution, sourced from the NFL's official GSIS feed and NFL Next Gen
-  Stats):
-    schedules/games.csv                      historical results, scores, roof, rest
-    player_stats/stats_player_week_{y}.csv   weekly player box scores (props)
-    injuries/injuries_{y}.csv                weekly injury report status per player
-    injuries/injuries.csv                    all-season injury table
-    depth_charts/depth_charts_{y}.csv        weekly depth-chart position per player
-    rosters/roster_{y}.csv                   player -> team -> position / depth
-    snap_counts/snap_counts_{y}.csv          offensive/defensive snap share
-    pbp/play_by_play_{y}.csv.gz              play-by-play (EPA, win prob)
-    pfr_advstats/advstats_week_team_{y}.csv  pressure/coverage context (PFR)
-    officials/officials.csv                  referee assignment per game
+ESPN public JSON (no key)
+  site.api.espn.com/.../nfl/scoreboard      scores, final state, book odds
+                                            (spread / total / moneylines)
+  site.api.espn.com/.../nfl/summary?event=  lineups, inactives (fetched later per game)
 
-  ESPN public JSON (no key): site.api.espn.com
-    scoreboard  (historical seasons)         cross-check of scores, final state
-    summary     (per game)                   starting lineups, inactives, plays
-
-Usage:
-  python3 nfl/fetch_data.py --seasons 2015 2016 ... 2026 --check-only
-  python3 nfl/fetch_data.py --seasons ... 2026 --out nfl/raw
+Usage
+  python3 nfl/fetch_data.py --probe                 # inventory + schema snapshot, no big commits
+  python3 nfl/fetch_data.py --seasons 2016 ... 2026 # full pull into nfl/raw/ (git-ignored)
 """
 from __future__ import annotations
 
 import argparse
 import gzip
 import hashlib
-import io
 import json
 import os
 import sys
@@ -51,7 +45,26 @@ UA = {
     "User-Agent": "Korea5-NFL-Lines-Lab/1.0 (+https://github.com/karagemop466-tech/Korea5; research pipeline)",
     "Accept": "*/*",
 }
-RELEASES = "https://github.com/nflverse/nflverse-data/releases/download"
+REL = "https://github.com/nflverse/nflverse-data/releases/download"
+ESPN = "https://site.api.espn.com/apis/site/v2/sports/football/nfl"
+
+SOURCES = [
+    {"id": "nflverse", "name": "nflverse-data (open NFL data release, CC-BY-4.0)",
+     "url": "https://github.com/nflverse/nflverse-data",
+     "what": "Weekly player box scores, injury reports, depth charts, rosters, snap counts, schedules, scores. "
+             "Derived from the NFL GSIS feed and NFL Next Gen Stats.",
+     "caveat": "Redistribution, not the NFL. Used for signals; results are cross-checked against ESPN in this repo."},
+    {"id": "espn", "name": "ESPN public scoreboard JSON",
+     "url": f"{ESPN}/scoreboard",
+     "what": "Final scores, game state, and book odds (provider, spread, total, moneylines) for cross-checks and "
+             "the market-relative scoring track.",
+     "caveat": "Undocumented endpoint. Odds are a single book's published line, not a timestamped line history; "
+               "opening/closing times are therefore unknown and no closing-line-value claim is made."},
+    {"id": "nflcom", "name": "NFL.com schedule pages",
+     "url": "https://www.nfl.com/schedules/",
+     "what": "Official schedule and kickoff times used for per-row provenance links.",
+     "caveat": "HTML; matched as file snapshots with timestamps, never asserted from memory."},
+]
 
 
 def now() -> str:
@@ -59,7 +72,6 @@ def now() -> str:
 
 
 def get(url: str, timeout: int = 90, tries: int = 3) -> tuple[bytes | None, dict]:
-    """HTTP GET with retries. Returns (bytes, meta). Never raises on HTTP errors."""
     meta = {"url": url, "fetchedUTC": now(), "tries": 0}
     last = None
     for attempt in range(tries):
@@ -68,156 +80,165 @@ def get(url: str, timeout: int = 90, tries: int = 3) -> tuple[bytes | None, dict
             req = urllib.request.Request(url, headers=UA)
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 body = r.read()
-                meta.update({
-                    "status": r.status,
-                    "bytes": len(body),
-                    "contentType": r.headers.get("Content-Type"),
-                    "contentLengthHeader": r.headers.get("Content-Length"),
-                    "sha256": hashlib.sha256(body).hexdigest(),
-                    "finalUrl": r.geturl(),
-                })
+                meta.update({"status": r.status, "bytes": len(body),
+                             "contentType": r.headers.get("Content-Type"),
+                             "sha256": hashlib.sha256(body).hexdigest(),
+                             "finalUrl": r.geturl()})
                 return body, meta
         except urllib.error.HTTPError as e:
-            last = f"HTTPError {e.code}"
+            last = f"HTTP {e.code}"
             meta.update({"status": e.code, "error": last})
-            if e.code in (403, 404):
+            if e.code in (401, 403, 404):
                 break
-        except Exception as e:  # noqa: BLE001 - record everything
-            last = f"{type(e).__name__}: {str(e)[:200]}"
+        except Exception as e:  # noqa: BLE001
+            last = f"{type(e).__name__}: {str(e)[:160]}"
             meta["error"] = last
-        time.sleep(1.5 * (attempt + 1))
+        time.sleep(1.2 * (attempt + 1))
     meta.setdefault("error", last or "unknown")
     return None, meta
 
 
-def save(out_dir: str, name: str, body: bytes | None, meta: dict) -> dict:
-    if body is None:
-        return meta
-    if name.endswith(".gz") and not body[:2] == b"\x1f\x8b":
-        body_gz = gzip.compress(body, 6)
-    else:
-        body_gz = body
-    path = os.path.join(out_dir, name)
-    with open(path, "wb") as fh:
-        fh.write(body_gz)
-    meta["path"] = os.path.join("nfl/raw", name)
-    meta["storedBytes"] = len(body_gz)
-    meta["storedSha256"] = hashlib.sha256(body_gz).hexdigest()
-    return meta
+def espn_week(season: int, seasontype: int, week: int) -> str:
+    q = {"dates": str(season), "seasontype": str(seasontype), "week": str(week), "limit": "100"}
+    return f"{ESPN}/scoreboard?" + urllib.parse.urlencode(q)
 
 
-def release_url(tag: str, asset: str) -> str:
-    return f"{RELEASES}/{tag}/{asset}"
-
-
-def espn_scoreboard(season: int, week: int | None = None) -> str:
-    q = {"dates": str(season), "limit": "1000"}
-    if week:
-        q["week"] = str(week)
-    return "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?" + urllib.parse.urlencode(q)
-
-
-def plan(seasons: list[int], max_season: int) -> list[tuple[str, str, str]]:
-    """(name, url, kind). kind selects post-processing."""
-    out: list[tuple[str, str, str]] = [
-        ("games.csv", release_url("schedules", "games.csv"), "csv"),
-        ("games_timestamp.json", release_url("schedules", "timestamp.json"), "json"),
-        ("injuries_current.csv", release_url("injuries", f"injuries_{max_season}.csv"), "csv"),
-        ("officials.csv", release_url("officials", "officials.csv"), "csv"),
-        ("depth_charts_timestamp.json", release_url("depth_charts", "timestamp.json"), "json"),
+def inventory(seasons: list[int]) -> list[tuple[str, str]]:
+    """(filename, url) — verified against the release asset listing."""
+    mx = max(seasons)
+    out = [
+        ("games.csv", f"{REL}/schedules/games.csv"),
+        ("officials.csv", f"{REL}/officials/officials.csv"),
+        ("player_stats.parquet", f"{REL}/player_stats/player_stats.parquet"),
+        (f"injuries_{mx}.csv", f"{REL}/injuries/injuries_{mx}.csv"),
+        ("depth_charts_timestamp.json", f"{REL}/depth_charts/timestamp.json"),
+        ("player_stats_timestamp.json", f"{REL}/player_stats/timestamp.json"),
+        ("injuries_timestamp.json", f"{REL}/injuries/timestamp.json"),
     ]
     for y in seasons:
+        out += [(f"stats_player_week_{y}.csv", f"{REL}/player_stats/stats_player_week_{y}.csv")]
+        if y < 2016 or y == 2019:
+            out.append((f"player_stats_{y}.csv", f"{REL}/player_stats/player_stats_{y}.csv"))
         out += [
-            (f"stats_player_week_{y}.csv", release_url("player_stats", f"stats_player_week_{y}.csv"), "csv"),
-            (f"injuries_{y}.csv", release_url("injuries", f"injuries_{y}.csv"), "csv"),
-            (f"depth_charts_{y}.csv", release_url("depth_charts", f"depth_charts_{y}.csv"), "csv"),
-            (f"roster_{y}.csv", release_url("rosters", f"roster_{y}.csv"), "csv"),
-            (f"snap_counts_{y}.csv", release_url("snap_counts", f"snap_counts_{y}.csv"), "csv"),
-            (f"advstats_week_team_{y}.csv", release_url("pfr_advstats", f"advstats_week_team_{y}.csv"), "csv"),
+            (f"injuries_{y}.csv", f"{REL}/injuries/injuries_{y}.csv"),
+            (f"depth_charts_{y}.csv", f"{REL}/depth_charts/depth_charts_{y}.csv"),
+            (f"roster_{y}.csv", f"{REL}/rosters/roster_{y}.csv"),
+            (f"snap_counts_{y}.csv", f"{REL}/snap_counts/snap_counts_{y}.csv"),
         ]
-    # ESPN cross-check: one scoreboard pull per completed season + current.
+        if y < mx:
+            out.append((f"play_by_play_{y}.csv.gz", f"{REL}/pbp/play_by_play_{y}.csv.gz"))
+    return out
+
+
+def espn_inventory(seasons: list[int]) -> list[tuple[str, str]]:
+    out = []
     for y in seasons:
-        out.append((f"espn_scoreboard_{y}.json", espn_scoreboard(y), "json"))
-    return [t for t in out if t[2] != "skip"]
+        for st, weeks in ((2, range(1, 19)), (3, range(1, 5)), (1, range(1, 5))):
+            for w in weeks:
+                if y >= 2026 and st == 1:
+                    continue
+                out.append((f"espn_{y}_t{st}_w{w}.json", espn_week(y, st, w)))
+    return out
 
 
-SOURCES_DOC = [
-    {
-        "id": "nflverse",
-        "name": "nflverse-data (open NFL data release)",
-        "url": "https://github.com/nflverse/nflverse-data",
-        "license": "CC-BY-4.0 (see repository LICENSE)",
-        "what": "Weekly player box scores, injury reports, depth charts, rosters, snap counts, schedules and scores; "
-                "built from the NFL GSIS feed and NFL Next Gen Stats.",
-        "caveat": "A redistribution, not the NFL itself. Every game row is cross-checked against NFL.com / ESPN in this repo.",
-    },
-    {
-        "id": "espn",
-        "name": "ESPN public scoreboard & summary JSON",
-        "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
-        "license": "ESPN terms of service; factual data only, not redistributed raw",
-        "what": "Scores, final-state flags, starting lineups and inactives for cross-checks and lineup status.",
-        "caveat": "Undocumented public endpoint; treated as a secondary check, never as sole authority for a published number.",
-    },
-    {
-        "id": "nflcom",
-        "name": "NFL.com official schedule and game pages",
-        "url": "https://www.nfl.com/schedules/",
-        "license": "NFL.com terms",
-        "what": "Official schedule, kickoff times and game-page links used for per-row provenance.",
-        "caveat": "HTML can change without notice; matches are recorded as file snapshots with a timestamp.",
-    },
-    {
-        "id": "pfr",
-        "name": "Pro-Football-Reference",
-        "url": "https://www.pro-football-reference.com/",
-        "license": "Sports Reference terms (attribution required)",
-        "what": "Playoff seedings, closing lines for older seasons, pressure and coverage context tables.",
-        "caveat": "HTML tables; blocked to the authoring sandbox, fetched from CI only where reachable.",
-    },
-]
+def dump_schema(raw: dict[str, bytes], path: str) -> None:
+    """Record enough of each file's shape that parsers can be written without the raw file."""
+    import csv
+    import io
+
+    probe: dict[str, object] = {"generatedUTC": now(), "files": {}}
+    for name, body in raw.items():
+        info: dict[str, object] = {"bytes": len(body)}
+        try:
+            if name.endswith(".csv"):
+                text = body.decode("utf-8", "replace").splitlines()
+                info["rows"] = len(text) - 1
+                info["header"] = next(csv.reader([text[0]])) if text else []
+                rows = list(csv.DictReader(io.StringIO("\n".join(text[:400]))))
+                if rows:
+                    info["sample"] = {k: rows[0][k] for k in info["header"]}  # type: ignore[index]
+                    info["sample2"] = {k: rows[min(1, len(rows) - 1)][k] for k in info["header"]}  # type: ignore[index]
+                # column completeness across the sampled window
+                if rows:
+                    info["nonEmptyShare"] = {
+                        k: round(sum(1 for r in rows if str(r.get(k, "")).strip() not in ("", "NA", "NULL")) / len(rows), 3)
+                        for k in info["header"]}  # type: ignore[index]
+            elif name.endswith(".json"):
+                d = json.loads(body)
+                info["jsonTopKeys"] = list(d)[:12] if isinstance(d, dict) else f"list[{len(d)}]"
+                if name.startswith("espn_"):
+                    evs = d.get("events", [])
+                    info["events"] = len(evs)
+                    if evs:
+                        c = evs[0]["competitions"][0]
+                        o = (c.get("odds") or [{}])[0]
+                        info["competitionKeys"] = sorted(c)
+                        info["oddsKeys"] = sorted(o)
+                        info["oddsExample"] = {k: o.get(k) for k in
+                                               ("provider", "details", "overUnder", "spread",
+                                                "moneylineHome", "moneylineAway") if k in o}
+                        info["hasOddsShare"] = round(sum(1 for e in evs if (e["competitions"][0].get("odds") or [])
+                                                       ) / max(1, len(evs)), 3)
+                        info["statusExample"] = c["status"]["type"]["name"]
+            elif name.endswith(".gz"):
+                info["gzipOk"] = body[:2] == b"\x1f\x8b"
+                if info["gzipOk"]:
+                    head = gzip.decompress(body)[:4000].decode("utf-8", "replace").splitlines()
+                    info["header"] = next(csv.reader([head[0]])) if head else []
+                    info["rowsHead"] = len(head) - 1
+        except Exception as e:  # noqa: BLE001
+            info["schemaError"] = f"{type(e).__name__}: {str(e)[:160]}"
+        probe["files"][name] = info  # type: ignore[index]
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(probe, fh, indent=1)
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--seasons", nargs="*", type=int, default=list(range(2015, 2027)))
+    ap.add_argument("--seasons", nargs="*", type=int, default=list(range(2016, 2027)))
     ap.add_argument("--out", default="nfl/raw")
-    ap.add_argument("--check-only", action="store_true")
+    ap.add_argument("--probe", action="store_true", help="small pulls, write schema snapshot, no raw files")
+    ap.add_argument("--with-espn", action="store_true")
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
-    max_season = max(args.seasons)
+    os.makedirs("nfl/data", exist_ok=True)
 
-    manifest = {"generatedUTC": now(), "sources": SOURCES_DOC, "files": []}
-    items = plan(args.seasons, max_season)
+    items = inventory(args.seasons)
+    if args.with_espn or args.probe:
+        items += espn_inventory(args.seasons)
+
+    manifest = {"generatedUTC": now(), "sources": SOURCES, "mode": "probe" if args.probe else "full", "files": []}
+    keep: dict[str, bytes] = {}
     ok = fail = 0
-    for name, url, _kind in items:
-        if args.check_only:
-            body, meta = get(url, timeout=45, tries=1)
-        else:
-            body, meta = get(url)
+    for name, url in items:
+        body, meta = get(url, timeout=45 if args.probe else 120)
         meta["name"] = name
-        if body is not None:
-            ok += 1
-            if not args.check_only:
-                meta = save(args.out, name, body, meta)
-        else:
-            fail += 1
         manifest["files"].append(meta)
-        print(f"{meta.get('status', '-'):>4} {name:34} {meta.get('bytes', 0):>10,} bytes  "
-              f"{meta.get('error', '')[:70]}", flush=True)
+        if body is None:
+            fail += 1
+            print(f"{meta.get('status', '-'):>4} {name:32} FAIL {meta.get('error', '')[:60]}", flush=True)
+            continue
+        ok += 1
+        print(f"{meta.get('status'):>4} {name:32} {len(body):>11,} bytes", flush=True)
+        if args.probe:
+            # keep a bounded sample for the schema dump
+            if name.endswith(".csv"):
+                keep[name] = b"\n".join(body.split(b"\n")[:400])
+            elif name.endswith(".json"):
+                keep[name] = body
+            else:
+                keep[name] = body[:200000]
+        else:
+            blob = gzip.compress(body, 6) if (name.endswith(".gz") and body[:2] != b"\x1f\x8b") else body
+            with open(os.path.join(args.out, name), "wb") as fh:
+                fh.write(blob)
 
     manifest["summary"] = {"requested": len(items), "ok": ok, "failed": fail}
-    if not args.check_only:
-        os.makedirs("nfl/data", exist_ok=True)
-        with open(os.path.join("nfl/data", "provenance.json"), "w", encoding="utf-8") as fh:
-            json.dump(manifest, fh, indent=1)
-        # Backfill max_season: release timestamps for the current season.
-        for tag, fname in (("injuries", "injuries_timestamp.json"),
-                           ("player_stats", "stats_player_timestamp.json")):
-            body, meta = get(release_url(tag, "timestamp.json"), timeout=30, tries=1)
-            if body:
-                with open(os.path.join("nfl/data", fname), "w", encoding="utf-8") as fh:
-                    fh.write(body.decode("utf-8", "replace"))
+    with open("nfl/data/provenance.json", "w", encoding="utf-8") as fh:
+        json.dump(manifest, fh, indent=1)
+    if args.probe:
+        dump_schema(keep, "nfl/data/schema_probe.json")
     print(json.dumps(manifest["summary"]))
     return 0 if ok else 1
 

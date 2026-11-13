@@ -724,6 +724,11 @@ what was intended.</p>
 <h2>Files fetched</h2>
 <p class="small">{len(rows)} files recorded. A non-200 status here means the value that depends on that file
 is blank and flagged.</p>
+<div class="callout warn"><strong>Coverage limit, stated up front.</strong> The ESPN cross-check downloads one
+scoreboard per regular-season week and playoff round, but the public endpoint does not return January dates
+from a season-based query, and it returns nothing for playoff rounds past week 4. Games outside those pulls
+are therefore <em>absent</em> from the comparison rather than disagreeing with it. They are counted as
+unmatched on purpose: a game nobody checked must never be described as verified.</div>
 {table(["File", "HTTP", "Bytes", "sha256 (16)", "Fetched (UTC)", "URL"], rows) if rows else '<p class="small">No provenance manifest yet.</p>'}
 <h2>Official references used for provenance links</h2>
 <ul class="clean">

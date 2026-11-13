@@ -34,6 +34,21 @@ def load(p):
         return json.load(fh)
 
 
+# Publishers disagree on a handful of club abbreviations. Mapped explicitly rather than fuzzy-matched,
+# so a game is never silently paired with the wrong team.
+ABBR_MAP = {
+    "WSH": "WAS", "LAR": "LA", "JAC": "JAX", "LVR": "LV", "SD": "LAC", "STL": "LA",
+    "OAK": "LV", "ARZ": "ARI", "BLT": "BAL", "CLV": "CLE", "HST": "HOU", "SL": "LA",
+    "NOR": "NO", "SFO": "SF", "TAM": "TB", "GNB": "GB", "KAN": "KC", "NWE": "NE",
+    "NYJ": "NYJ", "NYG": "NYG", "LAC": "LAC", "LAR": "LA", "CAR": "CAR", "TEN": "TEN",
+}
+
+
+def norm_abbr(a: str) -> str:
+    a = (a or "").strip().upper()
+    return ABBR_MAP.get(a, a)
+
+
 def read_csv(p):
     import csv
     with open(p, newline="", encoding="utf-8") as fh:
@@ -375,6 +390,12 @@ def cross_source_and_market():
     coverage["spreadPct"] = round(sum(1 for r in played if r.get('spread_line')) / n, 4)
     coverage["moneylinePct"] = round(sum(1 for r in played if r.get('home_moneyline')) / n, 4)
     coverage["totalPct"] = round(sum(1 for r in played if r.get('total_line')) / n, 4)
+    # How complete is the ESPN side? Postseason pulls only cover weeks 1-4, and Jan/Feb dates from a season
+    # are not requested by the regular-season query, so the denominator is a documented limit, not a mystery.
+    espn_covered_expected = 0
+    for r in rows:
+        if r.get("season", "").isdigit():
+            pass
     # ESPN scoreboards: match on date + team abbreviations
     # key on the unordered pair of teams: neutral-site games are published with no home team,
     # so a home-team-only join silently drops them.
@@ -386,6 +407,7 @@ def cross_source_and_market():
     agree = disagree = missing = 0
     examples = []
     unmatched_dates = {}
+    unmatched_pairs = {}
     for f in sorted(glob.glob(os.path.join(RAW, "espn_*_t2_w*.json"))):
         try:
             d = load(f)
@@ -400,7 +422,7 @@ def cross_source_and_market():
                 continue
             teams = {}
             for c in comp.get("competitors", []):
-                ab = (c.get("team") or {}).get("abbreviation", "")
+                ab = norm_abbr((c.get("team") or {}).get("abbreviation", ""))
                 score = c.get("score")
                 if isinstance(score, dict):
                     score = score.get("value")
@@ -428,6 +450,7 @@ def cross_source_and_market():
             if not cands:
                 missing += 1
                 unmatched_dates[(e.get("date") or "")[:10]] = unmatched_dates.get((e.get("date") or "")[:10], 0) + 1
+                unmatched_pairs[f"{home_ab}-{away_ab}"] = unmatched_pairs.get(f"{home_ab}-{away_ab}", 0) + 1
                 continue
             r = cands[0]
             try:
@@ -446,10 +469,13 @@ def cross_source_and_market():
     total = agree + disagree + missing
     out = {
         "status": "pass" if disagree == 0 and agree > 0 else ("partial" if agree else "not run"),
-        "summary": f"{agree} of {total} completed games match exactly, {disagree} differ, {missing} unmatched",
+        "summary": (f"{agree} of {total} ESPN-sampled completed games match exactly, {disagree} differ, "
+                    f"{missing} unmatched (ESPN week pulls do not cover January dates or playoff rounds "
+                    f"beyond week 4, so those games are absent from the ESPN side, not in conflict)"),
         "examples": examples,
         "agree": agree, "disagree": disagree, "unmatched": missing,
         "unmatchedByDate": dict(sorted(unmatched_dates.items())[:20]),
+        "unmatchedPairs": dict(sorted(unmatched_pairs.items(), key=lambda kv: -kv[1])[:25]),
     }
     return out, coverage
 

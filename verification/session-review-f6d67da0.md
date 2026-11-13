@@ -29,19 +29,19 @@ S2: MAE 10.54, Brier 0.215, hit 63.4%, corr 0.318. **G1–G4 PASS both. G5/G6 no
 (n=74): restDiff 0.438, ratingDiff 0.325, streakDiff 0.281, ppgDiff 0.194; home constant
 (undefined; HFA −0.02 pts). Parlay/prop pair correlations blank + flagged.
 
-## Irregularities found (flags F33–F41 appended to `curated/flags.json`)
+## Irregularities found (flags F43–F51 appended to `curated/flags.json`; renumbered because F33–F42 were taken by parallel sessions on main)
 
 | Flag | Summary | Status |
 |---|---|---|
-| F33 | nfl.com Week-1 listing labels NE@SEA "SNF, September 9th" — Sept 9, 2026 is a Wednesday | needs-review |
-| F34 | Scores pages can serve "Hidden Score" placeholders (spoiler state); canonical re-fetch used | resolved |
-| F35 | **No verified market odds source** — market columns blank; G5/G6, CLV, parlay pricing blocked | needs-review |
-| F36 | Week-10 Game Status blank for Sun/Mon games as of 2026-11-13 ("not yet published") | needs-review |
-| F37 | 2026 HFA computes to −0.02 pts/game (essentially zero) | needs-review |
-| F38 | restDiff signal (0.438) partially schedule-confounded; causal claim unverified | needs-review |
-| F39 | BAL QB "3rd string" verified by news chain, "4th string" unverified | needs-review |
-| F40 | TNF WAS@NYG result postdates original snapshot ("137 vs 136" reconciliation clarified) | resolved |
-| F41 | Parlay-leg / prop-pair correlations blank (no graded market data) | needs-review |
+| F43 | nfl.com Week-1 listing labels NE@SEA "SNF, September 9th" — Sept 9, 2026 is a Wednesday | needs-review |
+| F44 | Scores pages can serve "Hidden Score" placeholders (spoiler state); canonical re-fetch used | resolved |
+| F45 | **No verified market odds source** — market columns blank; G5/G6, CLV, parlay pricing blocked | needs-review |
+| F46 | Week-10 Game Status blank for Sun/Mon games as of 2026-11-13 ("not yet published") | needs-review |
+| F47 | 2026 HFA computes to −0.02 pts/game (essentially zero) | needs-review |
+| F48 | restDiff signal (0.438) partially schedule-confounded; causal claim unverified | needs-review |
+| F49 | BAL QB "3rd string" verified by news chain, "4th string" unverified | needs-review |
+| F50 | TNF WAS@NYG result postdates original snapshot ("137 vs 136" reconciliation clarified) | resolved |
+| F51 | Parlay-leg / prop-pair correlations blank (no graded market data) | needs-review |
 
 ## Checks run (fill on final run — see pipeline step below)
 
@@ -70,7 +70,7 @@ S2: MAE 10.54, Brier 0.215, hit 63.4%, corr 0.318. **G1–G4 PASS both. G5/G6 no
 `nfl-intel.html` (hub), `nfl-intel-lines.html`, `nfl-intel-strategies.html`,
 `nfl-intel-injuries.html`, `nfl-intel-executive.html`, `nfl-intel-suggestions.html`,
 `nfl-intel-questions.html`; `scripts/build_nfl_intel.py`; `scripts/nfl_intel.py`;
-`research/EXECUTIVE-SUMMARY-NFL.md`; data files above; flags F33–F41; README + dashboard
+`research/EXECUTIVE-SUMMARY-NFL-INTEL.md`; data files above; flags F43–F51 (renumbered: F33–F42 were taken by parallel sessions on main); README + dashboard
 section; COORDINATION.md completion log.
 
 ## Integration with parallel sessions (2026-11-13)

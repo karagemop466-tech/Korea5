@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "title": "Official NFL Week 10, 2026 schedule and results",
+    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10/",
+    "sourceName": "NFL.com official by-week schedule (week-10)",
+    "fetchedUTC": "2026-11-13T13:20:00Z",
+    "notes": [
+      "Matchups, kickoff times and TV networks transcribed from the official NFL.com Week 10 page.",
+      "Thursday Night Football was final at fetch time: Commanders 24, Giants 21 (official game page: https://www.nfl.com/games/commanders-at-giants-2026-reg-10).",
+      "All remaining Week 10 games are pre-kickoff at fetch time; scores left blank, never inferred."
+    ]
+  },
+  "games": [
+    {"away": "WAS", "home": "NYG", "date": "2026-11-12", "time": "8:15 PM", "network": "Prime Video", "awayScore": 24, "homeScore": 21, "final": true, "officialGameUrl": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10"},
+    {"away": "NE", "home": "DET", "date": "2026-11-15", "time": "9:30 AM", "network": "FOX, FOX DEPORTES", "note": "International Game - Munich", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10"},
+    {"away": "KC", "home": "ATL", "date": "2026-11-15", "time": "1:00 PM", "network": "CBS", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10"},
+    {"away": "HOU", "home": "CLE", "date": "2026-11-15", "time": "1:00 PM", "network": "FOX", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/texans-at-browns-2026-reg-10"},
+    {"away": "MIN", "home": "GB", "date": "2026-11-15", "time": "1:00 PM", "network": "FOX", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10"},
+    {"away": "MIA", "home": "IND", "date": "2026-11-15", "time": "1:00 PM", "network": "CBS", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10"},
+    {"away": "CAR", "home": "NO", "date": "2026-11-15", "time": "1:00 PM", "network": "FOX", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10"},
+    {"away": "BUF", "home": "NYJ", "date": "2026-11-15", "time": "1:00 PM", "network": "CBS", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/bills-at-jets-2026-reg-10"},
+    {"away": "JAX", "home": "TEN", "date": "2026-11-15", "time": "1:00 PM", "network": "FOX", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10"},
+    {"away": "LAR", "home": "AZ", "date": "2026-11-15", "time": "4:05 PM", "network": "CBS", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10"},
+    {"away": "SEA", "home": "LV", "date": "2026-11-15", "time": "4:05 PM", "network": "CBS", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10"},
+    {"away": "SF", "home": "DAL", "date": "2026-11-15", "time": "4:25 PM", "network": "FOX, FOX DEPORTES", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10"},
+    {"away": "PIT", "home": "CIN", "date": "2026-11-15", "time": "8:20 PM", "network": "NBC, UNIVERSO", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10"},
+    {"away": "LAC", "home": "BAL", "date": "2026-11-16", "time": "8:15 PM", "network": "ESPN, ABC, ESPN2, ESPN DEPORTES", "awayScore": null, "homeScore": null, "final": false, "officialGameUrl": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10"}
+  ]
+}

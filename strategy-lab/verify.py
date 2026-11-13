@@ -13,7 +13,7 @@ Checks, in order:
   5. every JSON file under strategy-lab/data is valid
   6. no table row contains a filled-in market price
 
-Exits non-zero on any failure.  Run:  python3 strategy-strategy-lab/verify.py
+Exits non-zero on any failure.  Run:  python3 strategy-lab/verify.py
 """
 
 import json

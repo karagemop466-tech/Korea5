@@ -157,11 +157,11 @@ pass validation gates before it counts.</p>
          CMP()],
         ["Week-10 availability", "296 official injury rows; verified starter absences at BAL QB (IR + backup out for season), SEA QB, MIA QB (IR), GB RB, LAR WR",
          VER()],
-        ["Market odds", "Not used anywhere — no official source exists; all market columns are blank and flagged (Q-ODDS)",
+        ["Market odds", "Not used in this model — no officially verified source; market columns blank + flagged (Q-ODDS). A labelled secondary feed exists elsewhere in the repo",
          UNV()],
     ]))
     b.append('<p class="small">Full detail and caveats: <a href="nfl-intel-executive.html">Executive summary</a> · '
-             '<a href="research/EXECUTIVE-SUMMARY-NFL.md">summary source (markdown)</a> · '
+             '<a href="research/EXECUTIVE-SUMMARY-NFL-INTEL.md">summary source (markdown)</a> · '
              '<a href="nfl-intel-questions.html">open questions</a></p>')
     page("nfl-intel.html", "NFL Intelligence hub", "nfl-intel.html", "".join(b))
 
@@ -174,7 +174,7 @@ def build_lines():
     b.append("<h1>Originated lines &amp; power ratings</h1>")
     b.append('<aside class="callout warn" role="note"><strong>These numbers are model output, not official league data '
              'and not market prices.</strong> Every input is a verified nfl.com result; every formula is below. '
-             'Market columns are deliberately blank until a verified odds source exists (Q-ODDS).</aside>')
+             'Market columns are deliberately blank: no officially verified odds source exists (Q-ODDS); a trusted-secondary feed (labelled, not official) is captured elsewhere in the repo and is the discovery path.</aside>')
 
     b.append("<h2>Formulas (reproducible from the committed data)</h2>")
     b.append(table(["Quantity", "Formula", "Notes"], [
@@ -205,7 +205,7 @@ def build_lines():
     b.append(table(["Wk", "Date (PT)", "Kick", "Away", "Home", "Our spread (home)", "S2 spread", "Our total", "S2 total",
                     "P(home)", "Market", "Official"], rows))
     b.append('<p class="small">Spread sign: negative = home favoured. ' + CMP() +
-             ' columns; market cells are ' + UNV() + ' because no official/verified odds source exists (Q-ODDS) — never inferred.</p>')
+             ' columns; market cells are ' + UNV() + ' because no officially verified odds source exists (Q-ODDS) — never inferred. A trusted-secondary feed (DraftKings via ESPN partner feed) is captured elsewhere in the repo and labelled not-official.</p>')
 
     b.append("<h2>Power ratings (opponent-adjusted)</h2>")
     rows = [[esc(r["team"]), fmt(r["rating"]), fmt(r["rating_recency"]), fmt(r["pace"], 1), fmt(r["pace_recency"], 1),
@@ -330,7 +330,7 @@ def build_injuries():
     b.append('<aside class="callout warn" role="note"><strong>Snapshot of the official NFL.com Week-10 injury report, '
              'retrieved 2026-11-13.</strong> Blank Game Status means the official page showed no designation yet — '
              'not an inference. Depth tier (1st/2nd/3rd/4th string) is not published by the league report; '
-             'it is shown only where an official source confirms it, otherwise it is blank and flagged (Q-DEPTH).</aside>')
+             'it is shown only where an official source confirms it, otherwise it is blank and flagged (Q-DEPTH). Club-site depth charts (30 of 32 clubs, 1st-5th string) are captured at data/lines/depth-charts.json by a parallel session and are the discovery path.</aside>')
 
     b.append("<h2>Starter / backup status verified from official NFL.com news</h2>")
     rows = [[esc(n["team"]), esc(n["headline"]), esc(n["impact"]), VER(), src(n["sourceUrl"], "nfl.com news")]
@@ -418,7 +418,7 @@ def build_injuries():
 def build_exec():
     b = []
     b.append("<h1>Executive summary — NFL intelligence</h1>")
-    b.append('<p class="small">2026-11-13 · mirrors <a href="research/EXECUTIVE-SUMMARY-NFL.md">research/EXECUTIVE-SUMMARY-NFL.md</a></p>')
+    b.append('<p class="small">2026-11-13 · mirrors <a href="research/EXECUTIVE-SUMMARY-NFL-INTEL.md">research/EXECUTIVE-SUMMARY-NFL-INTEL.md</a></p>')
     b.append("""<h2>The short version</h2>
 <p>We now originate our own NFL numbers from verified league data. The 2026 season to date is fully collected and
 cross-checked: <strong>137 final scores</strong> (weeks 1–10) reproduce the official standings <strong>team-by-team,
@@ -461,7 +461,7 @@ error and pass the four evaluative validation gates.</p>""")
         ["S2 backtest", "MAE 10.54 · Brier 0.215 · hit 63.4% · corr 0.318 · G1–G4 PASS", CMP()],
         ["Strongest signal", "restDiff r=0.438 (n=74)", CMP()],
         ["Week-10 injury rows", "296 + 9 official status-news items", VER()],
-        ["Market values", "blank everywhere", UNV()],
+        ["Market values", "blank in this model (secondary feed exists, labelled not-official)", UNV()],
     ]))
     b.append('<p class="small">Sources: ' + src("https://www.nfl.com/scores/2026/week-9", "nfl.com scores") + " · " +
              src("https://www.nfl.com/standings/league/2026/REG", "nfl.com standings") + " · " +

@@ -145,7 +145,7 @@ Seven new pages: [`nfl-intel.html`](nfl-intel.html) (hub), [`nfl-intel-lines.htm
 (strategy library, leaderboard rules, validation gates, correlation values),
 [`nfl-intel-injuries.html`](nfl-intel-injuries.html) (Week-10 report + starter/backup deficiency flags),
 [`nfl-intel-executive.html`](nfl-intel-executive.html) (mirror of
-[`research/EXECUTIVE-SUMMARY-NFL.md`](research/EXECUTIVE-SUMMARY-NFL.md)),
+[`research/EXECUTIVE-SUMMARY-NFL-INTEL.md`](research/EXECUTIVE-SUMMARY-NFL-INTEL.md)),
 [`nfl-intel-suggestions.html`](nfl-intel-suggestions.html) (review-before-implement register) and
 [`nfl-intel-questions.html`](nfl-intel-questions.html) (information-gap register).
 
@@ -154,7 +154,7 @@ published on the Lines page) and is graded by a strictly walk-forward backtest �
 market numbers. Market columns are deliberately blank and flagged: no verified odds source exists
 (Q-ODDS). Validation gates G1–G4 pass for both core strategies; gates that need market data are
 marked not-evaluable rather than assumed. Injury depth tiers are shown only where an official
-source confirms them (see flags F33–F41 in `curated/flags.json`).
+source confirms them (see flags F43–F51 in `curated/flags.json`).
 
 ## Second-pass integration (session `arena/ef8b5b30-korea5`)
 
@@ -260,3 +260,60 @@ python3 strategy-lab/verify.py      # 409 sourced fact rows, 0 broken links
   the official roster carries no string order, so the 2nd/3rd/4th-string requirement cannot be met
   from an official source today.
 * The leaderboard runs **paper-only**; no rewards are authorized pending a governance review.
+## NFL Skill Lab (2026-11-13, session `arena/fb9c9608-korea5` — relocated to `lines-lab/`)
+
+A data-driven implementation of the [NFL strategy proposal](research/NFL-STRATEGY.md), published under `lines-lab/` (first drafted under `nfl-lab/`, which the parallel model-lab session owns; relocated on merge):
+
+| Path | What it is |
+|---|---|
+| `lines-lab/*.html` | Dashboard, originated lines board, strategy leaderboard, correlation values, injury/depth tracker, method & gates, decision register, suggestions review board, repo review, flagged register, sources, data index |
+| `lines-lab/data/official/` | NFL.com Week 10 injury report (296 rows), Week 10/11 schedules — fetched 2026-11-13, provenance included |
+| `lines-lab/data/nfldata/` | nflverse/nfldata results + market lines (market data, labelled as such everywhere) |
+| `lines-lab/data/derived/` | Deterministic build outputs: lines, leaderboard, correlation, depth, flags, verification |
+| `lines-lab/scripts/` | `build_nfl_lab.py` (analytics), `build_site_lab.py` (site), `verify_nfl_lab.py` (20 checks), `fetch_upstream.py` (CI-only snapshots) |
+| `.github/workflows/nfl-lab-data.yml` | Weekly CI snapshot of nflverse injuries/depth-charts/snap-counts + market lines — the discovery step that unblocks CLV, depth facts and player props |
+
+Rebuild:
+
+```bash
+python3 lines-lab/scripts/build_nfl_lab.py    # analytics -> derived JSON (deterministic, seeded)
+python3 lines-lab/scripts/build_site_lab.py   # derived JSON -> nfl-lab/*.html
+python3 lines-lab/scripts/verify_nfl_lab.py   # 20 checks: links, row sources, content
+```
+
+Honesty rules: every fact row links to its source; market lines are labelled `market`; unverified values stay
+blank and are published on `nfl-lab/flagged.html`; no betting edge is claimed — on held-out 2020–2025,
+**zero strategies passed the validation gates** (every ROI CI includes zero), which is the luck-removal
+step working as designed. Depth-chart tier is never inferred.
+
+## NFL Analytics, Line Origination & Decision Support (2026-11-13)
+
+A verified-data suite for originating **our own NFL lines**, tracking **injuries and lineup deficiencies**
+(2nd/3rd/4th-string replacements on offense and defense), and running a **validation-gated strategy leaderboard**
+that removes luck from the scoring. Live from the site nav as **NFL Analytics**.
+
+| Page | What it is |
+|---|---|
+| `nfl-analytics.html` | Suite dashboard + executive summary |
+| `lines.html` | Week-10 originated lines vs market, ratings, parameters, first validation point |
+| `injuries.html` | Every official injury row + depth-string deficiency report |
+| `strategies.html` | Signals, strategies (singles/parlays/prop combos), 7 validation gates, correlation values, luck removal |
+| `leaderboard.html` | Competition rules, anti-luck scoring, rewards (proposals pending owner decision) |
+| `questions.html` | Q1–Q20 decision prerequisites: have / missing / blocks / discovery |
+| `analytics-suggestions.html` | S1–S15 review register — choose the best path before anything is implemented |
+| `requirements.html` | R1–R18 requirements register |
+
+Data lives in `data/nfl-analytics/` (every row source-linked). Raw official snapshots + sha256 manifest:
+`research/nfl-analytics-raw/`. Verification record: `research/nfl-week10-verification.md`.
+Executive summary: `research/EXECUTIVE-SUMMARY-NFL-INTEL.md`. Flags F33–F42 on the Flagged for Review pages.
+
+```bash
+python3 scripts/fetch_nfl_analytics.py   # CI: official snapshots (injuries, standings, schedules, 32 depth charts, ESPN odds ref)
+python3 scripts/parse_nfl_analytics.py   # snapshots -> row-level JSON (296 injury rows, 137 finals, 869 depth rows)
+python3 scripts/originate_lines.py       # model lines + lineup-deficiency report
+python3 scripts/build_nfl_analytics.py   # the 8 suite pages (row-source check enforced at build time)
+```
+
+Honesty rules: every table row links to an official source; derived values are labelled `MODEL OUTPUT`;
+market odds (DraftKings via ESPN) are labelled trusted-secondary, never official; anything unverifiable stays
+blank and is published on Flagged for Review (e.g., Texans depth chart is an image, Panthers depth page is down).

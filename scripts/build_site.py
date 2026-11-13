@@ -32,6 +32,7 @@ NAV = [
     ("nfl-intel-questions.html", "Intel questions"),
     ("ncaaf.html", "Stanford &amp; Cal"),
     ("radio.html", "Radio"),
+    ("nfl-analytics.html", "NFL Analytics"),
     ("lab/index.html", "NFL Lab"),
     ("lab/questions.html", "Decisions"),
     ("lab/suggestions.html", "Suggestions"),
@@ -41,6 +42,7 @@ NAV = [
     ("flagged.html", "Flagged"),
     ("lines/index.html", "NFL lines (paper)"),
     ("method.html", "Method"),
+    ("lines-lab/index.html", "NFL Skill Lab"),
     ("extra/index.html", "Official feeds &amp; verification"),
     ("nfl/system/index.html", "NFL decision system"),
     ("strategy-lab/index.html", "Strategy Lab"),
@@ -250,6 +252,7 @@ If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} op
 </div>
 <h2>Explore by category</h2><div class="pill-row">
 <a class="btn" href="mlb.html">All 30 MLB clubs</a><a class="btn" href="extra/nfl-2026.html">NFL &amp; 49ers</a>
+<a class="btn" href="nfl-analytics.html">NFL Analytics &amp; lines</a>
 <a class="btn" href="ncaaf.html">Stanford &amp; Cal</a><a class="btn" href="extra/westwoodone.html">Westwood One · all sports</a>
 <a class="btn" href="lab/index.html">NFL Lines Lab</a>
 <a class="btn" href="nfl-lab/index.html">NFL Model &amp; back-tests</a>

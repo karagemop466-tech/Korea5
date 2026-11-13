@@ -508,6 +508,140 @@
     },
     {
       "id": "F33",
+      "severity": "medium",
+      "title": "Texans depth chart published as an image \u2014 strings unverified",
+      "detail": "houstontexans.com/team/depth-chart publishes 'Unofficial Depth Chart' as a picture, not a table. HOU replacement strings on the Week-10 deficiency tracker are left blank and flagged rather than inferred. The image link is provided for manual review.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Texans depth chart (image)",
+          "url": "https://www.houstontexans.com/team/depth-chart/"
+        }
+      ]
+    },
+    {
+      "id": "F34",
+      "severity": "medium",
+      "title": "Panthers depth-chart page unreachable \u2014 CAR rows blank",
+      "detail": "carolinapanthers.com/team/depth-chart refused CI connections twice and returned HTTP 500 on direct fetch (2026-11-13). CAR depth strings and replacements are blank/unverified on the tracker. No ESPN/secondary substitute was used.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Panthers depth chart (unreachable)",
+          "url": "https://www.carolinapanthers.com/team/depth-chart/"
+        }
+      ]
+    },
+    {
+      "id": "F35",
+      "severity": "medium",
+      "title": "Market odds are a trusted secondary source, not official league data",
+      "detail": "Spread/total/moneyline reference values come from DraftKings odds exposed through ESPN's scoreboard API (NFL official partner). They are labelled 'trusted secondary' everywhere. Sportsbook operator pages themselves were not reachable for verification.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "ESPN NFL odds",
+          "url": "https://www.espn.com/nfl/odds"
+        }
+      ]
+    },
+    {
+      "id": "F36",
+      "severity": "low",
+      "title": "Fitted home-field advantage (-0.5 pts) deviates from the traditional ~2.5 prior",
+      "detail": "The least-squares fit on 136 official Week 1-9 results estimates HFA = -0.5 points. The traditional prior is about +2.5. The model uses the fitted value; a +/-3 pt sensitivity shifts all spreads uniformly. Flagged for reviewer decision.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Official results used in the fit",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9"
+        }
+      ]
+    },
+    {
+      "id": "F37",
+      "severity": "low",
+      "title": "Model totals are not injury-adjusted in v0",
+      "detail": "Injury weights move the spread only. Totals for injury-hit games (e.g., SEA @ LV with Darnold out) are therefore stale. Documented as a limitation on lines.html; fix proposed as an accepted-path candidate.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com injuries",
+          "url": "https://www.nfl.com/injuries/"
+        }
+      ]
+    },
+    {
+      "id": "F38",
+      "severity": "medium",
+      "title": "DET S Kerby Joseph (Game Status: Out) is not on the club's published depth chart",
+      "detail": "The official injury report lists Kerby Joseph (S) as Out for NE @ DET, but the Lions' published depth chart lists only Chuck Clark and Brian Branch at S. The replacement string is left blank and flagged \u2014 never inferred.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com injuries",
+          "url": "https://www.nfl.com/injuries/"
+        },
+        {
+          "name": "Lions depth chart",
+          "url": "https://www.detroitlions.com/team/depth-chart/"
+        }
+      ]
+    },
+    {
+      "id": "F39",
+      "severity": "low",
+      "title": "Sunday/Monday game statuses not yet designated at retrieval",
+      "detail": "Only WAS @ NYG (Thu) and NE @ DET carry game-status designations in the 2026-11-13 snapshot; other games show practice status only. Blank cells are blank on the tracker \u2014 they are not filled with guesses. Re-pull on Friday/Saturday updates them (S2/S7).",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com injuries",
+          "url": "https://www.nfl.com/injuries/"
+        }
+      ]
+    },
+    {
+      "id": "F40",
+      "severity": "high",
+      "title": "Player-prop markets unavailable from verified sources \u2014 prop strategies blocked",
+      "detail": "No official or licensed-book prop board could be verified in this pass. Player-prop combo strategies (ST5, SG6/SG7) are registered but blocked (Q5). Modelled prop baselines would need Q19 usage data first.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "ESPN NFL odds (no props verified)",
+          "url": "https://www.espn.com/nfl/odds"
+        }
+      ]
+    },
+    {
+      "id": "F41",
+      "severity": "medium",
+      "title": "Correlation values are literature-anchored estimates, not computed here",
+      "detail": "The correlation matrix on strategies.html publishes rho ranges with explicit 'unverified estimate' labels. Empirical phi coefficients require the pick ledger (S3) and the correlation job (S5). Until then same-game staking uses the documented rho floor 0.35.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Correlation framework (published site page)",
+          "url": "https://karagemop466-tech.github.io/Korea5/strategies.html"
+        }
+      ]
+    },
+    {
+      "id": "F42",
+      "severity": "medium",
+      "title": "Model v0 is unproven: first out-of-sample test was a side loss",
+      "detail": "WAS @ NYG (Week 10 TNF): model NYG -2.2, final Commanders 24-21 \u2014 wrong side, 5.2-point margin error. One game proves nothing; gate G4 requires n >= 100 graded picks before any rewards. Reported straight, not hidden.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Official game page",
+          "url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10"
+        }
+      ]
+    },
+    {
+      "id": "F43",
       "severity": "low",
       "title": "nfl.com Week-1 game listing shows a Wednesday date for Sunday Night Football",
       "detail": "The official scores page lists NE at SEA as 'Sunday Night Football, September 9th, 2026', but September 9, 2026 is a Wednesday. The score is captured as shown; no date was silently corrected. Verification of the true kickoff date is pending.",
@@ -520,7 +654,7 @@
       ]
     },
     {
-      "id": "F34",
+      "id": "F44",
       "severity": "low",
       "title": "nfl.com scores pages can serve 'Hidden Score' placeholders in spoiler mode",
       "detail": "One retrieval of the Week-3 scores page returned 'Hidden Score' placeholders (client-side spoiler state). The canonical week URL was re-fetched and the full scores obtained. All 137 captured finals reconcile exactly against the standings, so no placeholder leaked into the data. Logged as a source-behavior irregularity for future collectors.",
@@ -537,10 +671,10 @@
       ]
     },
     {
-      "id": "F35",
+      "id": "F45",
       "severity": "high",
-      "title": "No official or verified market odds source exists in this system",
-      "detail": "All market columns on nfl-lines.html are deliberately blank and flagged 'unverified \u2014 flagged'. This blocks validation gates G5 (ATS record vs closing line) and G6 (bootstrap certainty on a monetary record), CLV tracking, and parlay-leg correlation measurement. Never inferred from memory; a licensed or officially logged odds source is required (see Q-ODDS).",
+      "title": "No OFFICIAL market odds source \u2014 nfl-intel market columns blank",
+      "detail": "Market columns on nfl-intel-lines.html are deliberately blank and flagged. A trusted-secondary market feed (DraftKings via ESPN partner feed) was captured by session arena-65332583 and is flagged as not-official league data (their F35) - usable for context, not for verification. This blocks validation gates G5 (ATS vs closing line) and G6 on official data, CLV tracking on official prices, and parlay-leg correlation measurement. Never inferred (see Q-ODDS).",
       "status": "needs-review",
       "sources": [
         {
@@ -550,7 +684,7 @@
       ]
     },
     {
-      "id": "F36",
+      "id": "F46",
       "severity": "low",
       "title": "Week-10 game-status designations blank for Sunday and Monday games as of 2026-11-13",
       "detail": "The official injury report shows no Game Status yet for the Sunday and Monday Week-10 games. Blank means 'not yet published' per the official page semantics; nothing was inferred. Values will refresh after Friday/Saturday designations post.",
@@ -563,7 +697,7 @@
       ]
     },
     {
-      "id": "F37",
+      "id": "F47",
       "severity": "medium",
       "title": "2026 home-field advantage computes to about zero (\u22120.02 pts/game)",
       "detail": "Across 137 verified 2026 finals the weighted home-field edge is \u22120.02 points per game \u2014 far below the historically assumed ~2.5 points. The model uses the computed value. Whether this is a season quirk, a schedule artifact or a lasting change is unverified (see Q-HFA).",
@@ -576,7 +710,7 @@
       ]
     },
     {
-      "id": "F38",
+      "id": "F48",
       "severity": "medium",
       "title": "Rest-days signal (r=0.438) may be partially schedule-confounded",
       "detail": "The rest-days difference is the strongest measured pre-game signal against 2026 margins (n=74 walk-forward). It is partially confounded: Week-12 bye teams carry a rest edge into their next game by construction. The predictive correlation is computed and reported; any causal interpretation is unverified.",
@@ -589,10 +723,10 @@
       ]
     },
     {
-      "id": "F39",
+      "id": "F49",
       "severity": "medium",
       "title": "Baltimore QB depth tier: '3rd string' verified by news chain, '4th string' unverified",
-      "detail": "Starter Lamar Jackson is on IR and backup Tyler Huntley is out for the season per official NFL.com news, so the starter for Week 10 is necessarily from the third tier or lower. The specific 4th-string designation is not confirmed by an official depth chart and is labelled unverified.",
+      "detail": "Starter Lamar Jackson is on IR and backup Tyler Huntley is out for the season per official NFL.com news, so the starter for Week 10 is necessarily from the third tier or lower. The specific 4th-string designation is not confirmed by an official depth chart and is labelled unverified. Note: club-site depth charts (1st-5th strings, 30 of 32 clubs) were captured by session arena-65332583 in data/lines/depth-charts.json with two flagged gaps (HOU image-only, CAR unreachable); club sites count as team-official sources but are not the league injury report.",
       "status": "needs-review",
       "sources": [
         {
@@ -606,7 +740,7 @@
       ]
     },
     {
-      "id": "F40",
+      "id": "F50",
       "severity": "low",
       "title": "Week-10 TNF result falls after the original data snapshot",
       "detail": "The standings snapshot includes WAS 24 @ NYG 21 (Thu Nov 12), explaining '137 games vs 136' during reconciliation; the 32/32 exact match confirms it. Data stays consistent as of 2026-11-13.",
@@ -619,7 +753,7 @@
       ]
     },
     {
-      "id": "F41",
+      "id": "F51",
       "severity": "medium",
       "title": "Parlay-leg and player-prop pair correlations are blank",
       "detail": "The strategy frameworks need empirical joint-hit correlations to price same-game parlays and prop combos. No graded market or prop data exists in this system, so all such cells are blank and flagged; conservative Frechet bounds are documented as the interim policy (see Q-PROPS, Q-ODDS).",

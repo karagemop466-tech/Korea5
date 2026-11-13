@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repo review — NFL Skill Lab</title>
+<meta name="description" content="NFL lines origination, strategy leaderboard, correlation values and injury/depth tracking with source-linked verification.">
+<link rel="stylesheet" href="assets/lab.css">
+</head>
+<body>
+<header><h1>NFL Skill Lab</h1>
+<div class="sub">Originate lines &middot; leaderboard strategies through validation gates &middot; measure correlation &middot; track injuries and depth. Built 2026-11-13 by session arena-fb9c9608; branch <code>arena/fb9c9608-korea5</code>.</div>
+</header>
+<nav><a href="index.html" class="">NFL Skill Lab</a><a href="lines.html" class="">Originated lines</a><a href="leaderboard.html" class="">Strategy leaderboard</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries & depth</a><a href="method.html" class="">Method & gates</a><a href="decisions.html" class="">Decisions needed</a><a href="suggestions.html" class="">Suggestions</a><a href="review.html" class="active">Repo review</a><a href="flagged.html" class="">Flagged for review</a><a href="sources.html" class="">Sources</a><a href="data.html" class="">Data index</a></nav>
+<main>
+<div class="banner"><strong>Honesty policy.</strong> Every fact row links to its source. Market lines (spreads/totals/moneylines) are bookmaker quotes from the open-source nflverse/nfldata dataset — labelled <span class="tag mkt">market</span>, not official NFL data. Official data comes from NFL.com pages fetched 2026-11-13 (link on each row). Values that could not be verified are left blank and listed on <a href="flagged.html">Flagged for Review</a>. No betting edge is claimed anywhere; the leaderboard is a paper research competition.</div>
+
+<h2>Repo review — scope and method (this pass)</h2>
+<p class="lede">Session arena-fb9c9608 reviewed the inherited repository with the aim of verifying the NFL-relevant
+claims line by line against official sources, then building on top. Findings below carry evidence links so
+every claim can be re-checked by hand.</p>
+<table><tr><th>#</th><th>What was checked</th><th>Method</th><th>Result</th><th>Evidence</th></tr>
+<tr><td>R1</td><td>All 14 Week 10 matchups + kickoff times (official page vs <code>games.csv</code>)</td>
+<td>Transcribed the official NFL.com Week 10 page; compared game-by-game</td>
+<td><span class="tag off">match</span> all 14 matchups and times agree</td>
+<td class='src'><a href='https://www.nfl.com/schedules/2026/by-week/week-10/' rel='noopener'>NFL.com week-10 ↗</a></td></tr>
+<tr><td>R2</td><td>All 13 Week 11 matchups + kickoff times</td>
+<td>Same method</td><td><span class="tag off">match</span> all 13 agree (incl. Mexico City SNF)</td>
+<td class='src'><a href='https://www.nfl.com/schedules/2026/by-week/week-11/' rel='noopener'>NFL.com week-11 ↗</a></td></tr>
+<tr><td>R3</td><td>Week 10 TNF result</td><td>Official game page vs <code>games.csv</code> score fields</td>
+<td><span class="tag off">match</span> Commanders 24, Giants 21 (final) in both</td>
+<td class='src'><a href='https://www.nfl.com/games/commanders-at-giants-2026-reg-10' rel='noopener'>official game page ↗</a></td></tr>
+<tr><td>R4</td><td>Team records printed on official pages vs records computed from <code>games.csv</code></td>
+<td>Computed W1–W9 records; compared against the 26 records printed on the fetched pages</td>
+<td><span class="tag off">match</span> 0 mismatches (NYG/WAS include the TNF result, which also agrees)</td>
+<td class='src'><a href='https://www.nfl.com/schedules/2026/by-week/week-11/' rel='noopener'>official pages ↗</a></td></tr>
+<tr><td>R5</td><td>Weekly injury report transcription</td><td>Row-for-row transcription of all 7 page chunks; programmatic count checks (296 rows / 28 teams / 14 games)</td>
+<td><span class="tag est">transcribed</span> one name/slug mismatch flagged (NFL-K1); LAC/BAL "No Injuries Reported" kept as published</td>
+<td class='src'><a href='https://www.nfl.com/injuries/' rel='noopener'>NFL.com injuries ↗</a></td></tr>
+<tr><td>R6</td><td>Market data provenance</td><td>Read nfldata <code>DATASETS.md</code> definition of <code>spread_line</code> and validated empirically (home favourites win 67.5% where spread_line &gt; 0)</td>
+<td><span class="tag mkt">market</span> convention documented; an initial sign-flip in this build was caught and fixed (see <a href="method.html">Method</a>)</td>
+<td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/DATASETS.md' rel='noopener'>DATASETS.md ↗</a></td></tr>
+<tr><td>R7</td><td>Inherited feeds (prior sessions)</td><td>Sampled <code>official/nfl-2026.json</code> against today's official pages; re-ran the repo's own checks (<code>check_links.py</code>, <code>verify_extra.py</code>, <code>audit_certainty.py</code>, unit tests)</td>
+<td><span class="tag off">consistent</span> inherited schedule rows agree with today's official pages; checks pass (log below)</td>
+<td class='src'><a href='https://www.nfl.com/schedules/2026/by-week/week-10/' rel='noopener'>NFL.com ↗</a></td></tr>
+<tr><td>R8</td><td>Site link integrity after this build</td><td><code>lines-lab/scripts/verify_nfl_lab.py</code> (local links, row source links, JSON validity) plus the repo's existing checks</td>
+<td>published in <code>lines-lab/data/derived/verification.json</code></td>
+<td class='src'><a href='data.html' >data index</a></td></tr>
+</table>
+<h2>Check log</h2>
+<p class="small">Populated by <code>verify_nfl_lab.py</code> at build time; the machine-readable version is
+<code>lines-lab/data/derived/verification.json</code>.</p>
+<div id="checklog"><p class='small'>PASS — all JSON files parse (11 files)</p><p class='small'>PASS — all local links resolve (12 pages, 6 external links)</p><p class='small'>PASS — nav links back to planner root</p><p class='small'>PASS — lines.html: fact rows with source links (29/29 rows carry links)</p><p class='small'>PASS — leaderboard.html: fact rows with source links (8/14 rows carry links)</p><p class='small'>PASS — correlation.html: fact rows with source links (9/24 rows carry links)</p><p class='small'>PASS — flagged.html: fact rows with source links (10/10 rows carry links)</p><p class='small'>PASS — sources.html: fact rows with source links (13/13 rows carry links)</p><p class='small'>PASS — injury report transcribed in full (296 rows, 14 games)</p><p class='small'>PASS — TNF final present and correct (official page)</p><p class='small'>PASS — Week 11 has 13 official games</p><p class='small'>PASS — leaderboard has 8 strategies with gates</p><p class='small'>PASS — correlation values present and sane</p><p class='small'>PASS — records cross-check ran with 0 mismatches</p><p class='small'>PASS — lines board covers W10 (14) + W11 (13)</p><p class='small'>PASS — no market line published for unposted weeks</p><p class='small'>PASS — depth tracker covers all 28 report teams</p><p class='small'>PASS — flag register has 10 items with sources</p><p class='small'>PASS — no build placeholders leaked</p><p class='small'>PASS — all 12 lab pages exist ([&#x27;correlation.html&#x27;, &#x27;data.html&#x27;, &#x27;decisions.html&#x27;, &#x27;flagged.html&#x27;, &#x27;index.html&#x27;, &#x27;injuries.html&#x27;, &#x27;leaderboard.html&#x27;, &#x27;lines.html&#x27;, &#x27;method.html&#x27;, &#x27;review.html&#x27;, &#x27;sources.html&#x27;, &#x27;suggestions.html&#x27;])</p></div>
+<h2>Irregularities carried into the flagged register</h2>
+<p class="small">NFL-K1 … NFL-K10 — see <a href="flagged.html">Flagged for Review</a>. Prior sessions' items
+remain published on <a href="../extra/flagged.html">the planner's flagged page</a> and are not duplicated here.</p>
+
+</main>
+<footer>NFL Skill Lab — part of <a href="../index.html">Korea5</a> (live site: karagemop466-tech.github.io/Korea5). Data build 2026-11-13T14:00:00Z. Report problems on <a href="flagged.html">Flagged for Review</a>.</footer>
+</body></html>

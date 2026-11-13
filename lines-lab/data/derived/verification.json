@@ -1,0 +1,29 @@
+{
+ "builtUTC": "2026-11-13T14:10:00Z",
+ "session": "arena-fb9c9608",
+ "passed": true,
+ "nChecks": 20,
+ "nFailures": 0,
+ "checks": [
+  "PASS \u2014 all JSON files parse (11 files)",
+  "PASS \u2014 all local links resolve (12 pages, 6 external links)",
+  "PASS \u2014 nav links back to planner root",
+  "PASS \u2014 lines.html: fact rows with source links (29/29 rows carry links)",
+  "PASS \u2014 leaderboard.html: fact rows with source links (8/14 rows carry links)",
+  "PASS \u2014 correlation.html: fact rows with source links (9/24 rows carry links)",
+  "PASS \u2014 flagged.html: fact rows with source links (10/10 rows carry links)",
+  "PASS \u2014 sources.html: fact rows with source links (13/13 rows carry links)",
+  "PASS \u2014 injury report transcribed in full (296 rows, 14 games)",
+  "PASS \u2014 TNF final present and correct (official page)",
+  "PASS \u2014 Week 11 has 13 official games",
+  "PASS \u2014 leaderboard has 8 strategies with gates",
+  "PASS \u2014 correlation values present and sane",
+  "PASS \u2014 records cross-check ran with 0 mismatches",
+  "PASS \u2014 lines board covers W10 (14) + W11 (13)",
+  "PASS \u2014 no market line published for unposted weeks",
+  "PASS \u2014 depth tracker covers all 28 report teams",
+  "PASS \u2014 flag register has 10 items with sources",
+  "PASS \u2014 no build placeholders leaked",
+  "PASS \u2014 all 12 lab pages exist (['correlation.html', 'data.html', 'decisions.html', 'flagged.html', 'index.html', 'injuries.html', 'leaderboard.html', 'lines.html', 'method.html', 'review.html', 'sources.html', 'suggestions.html'])"
+ ]
+}

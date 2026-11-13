@@ -126,3 +126,9 @@ Published, with sources, on the Flagged for Review pages. They do not block publ
 **Book Mon Jan 25 – Sat Jan 30, 2027, or Mon Feb 1 – Sat Feb 6, 2027.** Both are 6 calendar days, and both are the longest runs that are free of every
 listed game in the base case. A 13-night trip (Feb 1–13) exists only if the Pro Bowl Games are not held that week. No 1-, 2- or 3-week trip is
 fully free in any year. The 2028 and 2029 equivalents are ESTIMATION only, and should be re-checked when those schedules are released.
+
+## NFL lines and strategy research (2026-11-13)
+
+The repository had no market odds archive, player-prop prices, forecast ledger, validated injury-to-performance panel, or historical strategy test. Therefore this update reports **no measured line edge, correlation value, ROI, or proven best strategy**. A new [NFL Lines & Strategy Lab](../nfl-strategy.html) defines discovery questions, candidate signals, official injury/lineup tracking fields, pre-registered validation gates, and a paper-first leaderboard/reward proposal. All candidate signals are hypotheses only; reward implementation is not approved. Key blockers: licensed timestamped odds/prop data, historical injury/availability and role snapshots, settlement definitions, a time-aware research harness, and governance decisions. Unsupported depth-chart/replacement information must remain blank and flagged.
+
+Official starting sources reviewed: [NFL injury report](https://www.nfl.com/injuries/) (page presents current season/week and player position, injury, practice status and game status), [NFL player statistics](https://www.nfl.com/stats/player-stats/) (official category/year selector), and [NFL transactions](https://www.nfl.com/transactions/). These pages do not establish a complete retrospective book-odds history or a dated 2nd/3rd/4th-string lineup ranking; those remain missing. See the [NFL Strategy Lab](../nfl-strategy.html).

@@ -1,7 +1,7 @@
 {
  "meta": {
   "purpose": "Structural reconnaissance so parsers are developed against evidence, not guesses: which embedded payloads exist, which API URLs the page references, and the exact field names in each list.",
-  "retrievedUTC": "2026-11-13T14:00:13.167699+00:00"
+  "retrievedUTC": "2026-11-13T14:03:19.266479+00:00"
  },
  "injuries": {
   "url": "https://www.nfl.com/injuries/",
@@ -149,9 +149,17 @@
  "scheduleWeek9": {
   "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
   "fetched": true,
-  "bytes": 2277539,
+  "bytes": 2277409,
   "payloadCount": 9,
   "payloadIndex": [
+   {
+    "queryKey": "useFetchScoreStripContainerData",
+    "largestList": 15,
+    "lists": [
+     "carouselCardPropsList[15]:analyticsProperties,footerTextLong,footerTextShort,href,networkIcon,networkIconAltText,redZoneImage,redZoneImageAltText,type,variant"
+    ],
+    "sample": "{\"data\": {\"carouselCardPropsList\": [{\"analyticsProperties\": {\"linkModule\": \"Score Strip\", \"linkName\": \"Score Strip Redzone CTA\", \"linkPosition\": \"1:15\", \"linkType\": \"RedZone Access Point\"}, \"footerTextLong\": \"SUN 6:00PM\", \"footerTextShort\": \"6:00PM\", \"href\": \"/redzone/watch\", \"networkIcon\": \"https://static.www.nfl.com/league/apps/web/global/logos/broadcaster/broadcaster_NFLPlusPremium.svg\", \"networkIconAltText\": \"NFLPlusPremium network icon\", \"redZoneImage\": \"https://static.www.nfl.com/league/apps/web/global/logos/logo-league-redzone-primarylight.svg\", \"redZoneImageAltText\": \"NFL RedZone Upcoming Image\", \"type\": 3, \"variant\": \"upcoming\"}, {\"analyticsProperties\": {\"gameID\": \"ab582c2f-4feb-11f1-abca-2c54536568a9\", \"gameState\": \"$undefined\", \"linkModule\": \"Score Strip\", \"linkName\": \"NE @ DET\", \"linkPosition\": \"2:15\"}, \"awayTeam\": {\"abbreviation\": \"NE\", \"abbreviationScreenReaderElementId\": \""
+   },
    {
     "queryKey": "useFetchFootballStandingsLatest",
     "largestList": 32,
@@ -165,7 +173,7 @@
     "queryKey": "useFetchContentMixedBySlug",
     "largestList": 0,
     "lists": [],
-    "sample": "{\"items\": [], \"metadata\": {\"generatedAt\": \"2026-11-13T13:59:51.055Z\"}, \"pagination\": {\"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJsaW1pdCI6IjQwIiwib2Zmc2V0Ijo0MCwicXVlcnkiOnsibGltaXQiOiI0MCJ9fQ.MGJWsBM6nwlFeuKABWwPwp93siimFN3ZjcyuhyYBI30\"}}"
+    "sample": "{\"items\": [], \"metadata\": {\"generatedAt\": \"2026-11-13T14:02:33.718Z\"}, \"pagination\": {\"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJsaW1pdCI6IjQwIiwib2Zmc2V0Ijo0MCwicXVlcnkiOnsibGltaXQiOiI0MCJ9fQ.MGJWsBM6nwlFeuKABWwPwp93siimFN3ZjcyuhyYBI30\"}}"
    },
    {
     "queryKey": "useFetchContentMixedBySlug",
@@ -242,14 +250,6 @@
      "socials[4]:link,platform"
     ],
     "sample": "{\"10408600-77a1-8b0f-8f54-99b7e0a7d1b2\": {\"id\": \"10408600-77a1-8b0f-8f54-99b7e0a7d1b2\", \"abbreviation\": \"AFC\", \"season\": \"2026\", \"fullName\": \"AFC Pro Bowl Team\", \"conferenceAbbr\": \"AFC\", \"conferenceFullName\": \"American Football Conference\", \"divisionFullName\": null, \"league\": \"National Football League\", \"location\": \"AFC\", \"nickName\": \"AFC\", \"currentLogo\": \"https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/APR\", \"primaryColor\": null, \"secondaryColor\": null, \"yearEstablished\": 1970, \"nflShopUrl\": null, \"officialWebsiteUrl\": null, \"owners\": null, \"teamType\": \"PRO\", \"socials\": [], \"venues\": []}, \"10403800-517c-7b8c-65a3-c61b95d86123\": {\"id\": \"10403800-517c-7b8c-65a3-c61b95d86123\", \"abbreviation\": \"AZ\", \"season\": \"2026\", \"fullName\": \"Arizona Cardinals\", \"conferenceAbbr\": \"NFC\", \"conferenceFullName\": \"National Football Conference\", \"divisionFullName\": \"NFC West\", \"league\":"
-   },
-   {
-    "queryKey": "useFetchScoreStripContainerData",
-    "largestList": 15,
-    "lists": [
-     "carouselCardPropsList[15]:analyticsProperties,footerTextLong,footerTextShort,href,networkIcon,networkIconAltText,redZoneImage,redZoneImageAltText,type,variant"
-    ],
-    "sample": "{\"data\": {\"carouselCardPropsList\": [{\"analyticsProperties\": {\"linkModule\": \"Score Strip\", \"linkName\": \"Score Strip Redzone CTA\", \"linkPosition\": \"1:15\", \"linkType\": \"RedZone Access Point\"}, \"footerTextLong\": \"SUN 6:00PM\", \"footerTextShort\": \"6:00PM\", \"href\": \"/redzone/watch\", \"networkIcon\": \"https://static.www.nfl.com/league/apps/web/global/logos/broadcaster/broadcaster_NFLPlusPremium.svg\", \"networkIconAltText\": \"NFLPlusPremium network icon\", \"redZoneImage\": \"https://static.www.nfl.com/league/apps/web/global/logos/logo-league-redzone-primarylight.svg\", \"redZoneImageAltText\": \"NFL RedZone Upcoming Image\", \"type\": 3, \"variant\": \"upcoming\"}, {\"analyticsProperties\": {\"gameID\": \"ab582c2f-4feb-11f1-abca-2c54536568a9\", \"gameState\": \"$undefined\", \"linkModule\": \"Score Strip\", \"linkName\": \"NE @ DET\", \"linkPosition\": \"2:15\"}, \"awayTeam\": {\"abbreviation\": \"NE\", \"abbreviationScreenReaderElementId\": \""
    }
   ],
   "apiUrls": [

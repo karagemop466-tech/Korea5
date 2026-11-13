@@ -1,88 +1,46 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Suggestions · Free Time Vacation Planner</title>
-<meta name="description" content="Review and choose a path for NFL decision support: suggestions, options, recommended path, priority and status.">
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions · NFL Lines Lab · Free Time Vacation Planner</title>
+<meta name="description" content="NFL lines, strategy research, injury and depth tracking, decision register and suggestions.">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="lab/assets/lab.css">
 </head><body>
 <header class="top"><div class="wrap topbar">
-  <div class="brand"><span class="dot"></span> FREE TIME / VACATION</div>
-  <nav class="main"><a href="index.html" class="">Dashboard</a><a href="calendar.html" class="">Calendar</a><a href="vacation.html" class="">Vacation windows</a><a href="mlb.html" class="">MLB</a><a href="nfl.html" class="">NFL &amp; 49ers</a><a href="nfl-strategy.html" class="">NFL Strategy Lab</a><a href="suggestions.html" class="active">Suggestions</a><a href="decisions.html" class="">Decisions</a><a href="injury-tracking.html" class="">Injury &amp; lineup</a><a href="ncaaf.html" class="">Stanford &amp; Cal</a><a href="radio.html" class="">Radio</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged</a><a href="method.html" class="">Method</a><a href="extra/index.html" class="">Official feeds &amp; verification</a></nav>
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="index.html">Dashboard</a><a href="calendar.html">Calendar</a><a href="vacation.html">Vacation windows</a><a href="mlb.html">MLB</a><a href="nfl.html">NFL &amp; 49ers</a><a href="radio.html">Radio</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="method.html">Method</a><a href="extra/index.html">Official feeds</a><span class="nav-sep">|</span><a href="lab/index.html" class="">Lab home</a><a href="lab/questions.html" class="">Questions</a><a href="lab/strategies.html" class="">Strategies</a><a href="lab/correlations.html" class="">Correlations</a><a href="lab/injuries.html" class="">Injuries &amp; depth</a><a href="lab/leaderboard.html" class="">Leaderboard</a><a href="lab/suggestions.html" class="">Suggestions</a><a href="lab/flags.html" class="">Flagged for Review</a></nav>
 </div></header>
 <main class="wrap"><aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. <a href="certainty.html">Flagged for Review: certainty audit</a>.</aside>
 
-<p class="eyebrow">NFL decision support · proposal register</p>
-<h1>Suggestions — review and choose a path</h1>
-<p class="lede">A dedicated section so a reviewer can read each suggestion, compare the options, and pick the best path
-<strong>before</strong> anything is implemented. Every suggestion serves a decision in the
-<a href="decisions.html">decision registry</a> and, where it depends on missing data, it stays blocked until that data
-is resolved. Nothing here is implemented or authorized.</p>
+<h1>Suggestions</h1>
+<p class="lede">The improvement register. This page is now part of the <strong>NFL Lines Lab</strong>. The content lives in one place,
+with the official records behind it and every row linked to its source.</p>
+<div class="callout"><strong>Where it moved.</strong> The live version of this material is on the
+<a href="lab/suggestions.html">Suggestions</a> page. The lab version adds the official NFL records the earlier pages
+could only describe: the published Week 10 injury report, official player game logs, and the official Game Book, plus the
+measured correlations, dispersion figures and minimum-sample rules computed from them.</div>
+<div class="grid g3">
+<div class="card"><h3>Lab home</h3><p>Headline findings and the official sources behind them.</p>
+<a href="lab/index.html">Open →</a></div>
+<div class="card"><h3>Decision register</h3><p>What is known, what is missing, what blocks each decision, how to close it.</p>
+<a href="lab/questions.html">Open →</a></div>
+<div class="card"><h3>Strategies and gates</h3><p>Twelve candidate signals and the nine gates each must pass.</p>
+<a href="lab/strategies.html">Open →</a></div>
+<div class="card"><h3>Correlations</h3><p>Measured dependence between legs, with intervals and sample sizes.</p>
+<a href="lab/correlations.html">Open →</a></div>
+<div class="card"><h3>Injuries and depth</h3><p>The official injury report, the official Game Book and the tier rules.</p>
+<a href="lab/injuries.html">Open →</a></div>
+<div class="card"><h3>Suggestions and flags</h3><p>What to change and in what order; everything that is still unverified.</p>
+<a href="lab/suggestions.html">Suggestions →</a> · <a href="lab/flags.html">Flagged →</a></div>
+</div>
+<p class="small">Written research: <a href="research/NFL-LINES.md">line-origination notes</a> ·
+<a href="research/NFL-LINES-LAB.md">NFL Lines Lab notes</a> · <a href="research/NFL-STRATEGY.md">strategy notes</a> ·
+<a href="research/EXECUTIVE-SUMMARY.md">executive summary</a></p>
 
-<div class="callout warn"><strong>No strategy has been validated and no reward is authorized.</strong> This register proposes
-paths only. It asserts no betting edge, correlation value, ROI, or leaderboard outcome. Where an official source has not
-published a value, the cell is blank and the item is flagged.</div>
-
-<h2>How to review and choose a path</h2>
-<ol class="clean">
-  <li><strong>Read the decision it serves.</strong> Each suggestion is tied to a decision in the
-    <a href="decisions.html">decision registry</a>. A suggestion that does not close a decision or missing information is
-    not ready to implement.</li>
-  <li><strong>Check the dependency.</strong> If a suggestion depends on data that is not licensed/available (timestamped
-    odds, settlement records, a historical depth-chart series), it is <span class="tag flag">blocked</span> until resolved.</li>
-  <li><strong>Choose one path per decision.</strong> Compare the options, pick one, and record the reason. Do not implement
-    two competing paths for the same decision until one is measured.</li>
-  <li><strong>Change the status; do not delete.</strong> Statuses: <span class="tag">proposed</span> →
-    <span class="tag">in review</span> → <span class="tag ver">approved</span> →
-    <span class="tag est">in progress</span> → <span class="tag ver">done</span>, or
-    <span class="tag flag">declined</span> with a reason. “Approved” means the path is chosen, not that it is built.</li>
-  <li><strong>Re-verify before and after.</strong> Any suggestion that adds data or a model must pass the validation gates in
-    the <a href="nfl-strategy.html">NFL Lines &amp; Strategy Lab</a> before it can feed the leaderboard.</li>
-</ol>
-
-<h2>Suggestion register</h2>
-<div class="scroll"><table><thead><tr><th>ID</th><th>Suggestion</th><th>Decision</th><th>Options</th><th>Recommended path</th><th>Priority</th><th>Status</th><th>Depends on</th></tr></thead><tbody>
-<tr><td><strong>S-01</strong></td><td>Build a timestamped, source-attributed <strong>market/odds archive</strong> for eligible singles and player props.</td><td>D-01, D-02</td><td>(a) License a commercial odds feed; (b) capture closing lines from an authorized source; (c) delay until a lawful provider is chosen.</td><td>(b) Start with closing-line capture from an authorized, timestamped source; add intraday snapshots only if coverage is proven.</td><td><span class="tag high">high</span></td><td><span class="tag flag">proposed — blocked pending data rights</span></td><td>Lawful odds-data access (D-01)</td></tr>
-<tr><td><strong>S-02</strong></td><td>Build an <strong>official injury / inactive snapshot and depth-chart evidence</strong> pipeline.</td><td>D-04, D-06</td><td>(a) Club injury report + NFL injury page + game-day inactives; (b) add team-site depth charts as the tier source; (c) defer depth order to one vendor.</td><td>(a)+(b): use the official NFL injury report and each club's official depth chart, each with capture time and source URL.</td><td><span class="tag high">high</span></td><td><span class="tag flag">proposed — evidence incomplete</span></td><td>Confirmed update cadence and role/replacement proof (D-04)</td></tr>
-<tr><td><strong>S-03</strong></td><td>Implement a <strong>walk-forward research harness</strong> and an <strong>immutable prediction ledger</strong>.</td><td>D-03, D-05</td><td>(a) Run all models in CI with frozen timestamps; (b) manual ledger; (c) defer until data exists.</td><td>(a): freeze forecast cutoffs, fit inside training folds, log every prediction before outcomes.</td><td><span class="tag high">high</span></td><td><span class="tag flag">proposed — no model has passed</span></td><td>Historical data + settlement definitions (D-05)</td></tr>
-<tr><td><strong>S-04</strong></td><td>Define <strong>leaderboard scoring and minimum-evidence gates</strong> (paper-first, no rewards yet).</td><td>D-07, D-08</td><td>(a) Proper probability score improvement over a common baseline; (b) rank by accuracy; (c) rank by ROI.</td><td>(a): rank by predeclared out-of-sample score improvement over the same baseline, with calibration and coverage shown. Never rank by streak or raw win rate.</td><td><span class="tag high">high</span></td><td><span class="tag flag">proposed — no rewards authorized</span></td><td>Scoring rule, eligibility, governance (D-07, D-08)</td></tr>
-<tr><td><strong>S-05</strong></td><td>Build a <strong>parlay / player-prop-combo joint-probability and correlation</strong> pipeline.</td><td>D-05</td><td>(a) Simulation / calibrated joint model; (b) assume independence; (c) defer.</td><td>(a): model joint settlement probabilities directly; measure dependence; never multiply marginals by default.</td><td><span class="tag high">high</span></td><td><span class="tag flag">proposed — blocked pending joint outcomes</span></td><td>Leg quotes, book rules, correlation data (D-05)</td></tr>
-<tr><td><strong>S-06</strong></td><td>Build a <strong>lineup-depth tracker</strong> (1st/2nd/3rd/4th string, offense and defense).</td><td>D-06</td><td>(a) Club depth chart as the tier source; (b) infer tiers from injury status; (c) defer.</td><td>(a): read tiers only from an official depth chart; leave unsourced tiers blank and flagged. Never infer tier from injury status.</td><td><span class="tag high">high</span></td><td><span class="tag flag">proposed — incomplete evidence</span></td><td>Official depth-chart availability (D-06)</td></tr>
-<tr><td><strong>S-07</strong></td><td>Establish <strong>transparent baseline models</strong> (market-implied, league-average, team/player historical).</td><td>D-03</td><td>(a) Market-implied baseline where prices exist; (b) league-average baseline; (c) both.</td><td>(c): both, evaluated on identical eligible events, as the hurdle every strategy must beat out of sample.</td><td><span class="tag">medium</span></td><td><span class="tag flag">proposed</span></td><td>Timestamped prices (S-01)</td></tr>
-<tr><td><strong>S-08</strong></td><td>Complete <strong>legal, responsible-play, privacy and anti-gaming review</strong> before any rewards.</td><td>D-08</td><td>(a) Paper-only, no rewards; (b) restricted rewards after review; (c) no rewards ever.</td><td>(a): run paper-only first; no reward, eligibility or leaderboard prize is authorized by this proposal.</td><td><span class="tag high">high</span></td><td><span class="tag flag">proposed — blocking</span></td><td>Governance decision (D-08)</td></tr>
-<tr><td><strong>S-09</strong></td><td>Add a <strong>decision dashboard</strong> listing every open question, its missing information and the suggestion that closes it.</td><td>All</td><td>(a) This suggestions/decisions page set; (b) a generated dashboard; (c) defer.</td><td>(a): this register plus the decision registry, kept current as statuses change.</td><td><span class="tag">medium</span></td><td><span class="tag ver">done</span> — this page set</td><td>None</td></tr>
-<tr><td><strong>S-10</strong></td><td>Automate the <strong>validation gates in CI</strong> so a strategy fails closed if any gate fails.</td><td>D-03, D-07</td><td>(a) Gate script in the existing workflow; (b) manual gate checklist; (c) defer.</td><td>(a): encode gates as an automated check that blocks leaderboard entry on failure.</td><td><span class="tag">medium</span></td><td><span class="tag flag">proposed</span></td><td>Gate definitions frozen (D-03)</td></tr>
-<tr><td><strong>S-11</strong></td><td>Build a <strong>data-provenance and point-in-time snapshot</strong> system (immutable IDs, timestamps, revision history).</td><td>D-02, D-04</td><td>(a) Append-only snapshot store keyed by source + capture time; (b) CSV dumps; (c) defer.</td><td>(a): append-only, with source, capture time and definition for every field; no silent overwrites.</td><td><span class="tag high">high</span></td><td><span class="tag flag">proposed</span></td><td>Data model (D-02)</td></tr>
-<tr><td><strong>S-12</strong></td><td>Build an <strong>outcome / settlement ledger</strong> recording pushes, voids and exact payout rules per book.</td><td>D-05</td><td>(a) Store exact leg quotes and settlement rules; (b) approximate settlement; (c) defer.</td><td>(a): store exact quotes and rules; approximate settlement is never used to settle a leaderboard score.</td><td><span class="tag high">high</span></td><td><span class="tag flag">proposed — blocked</span></td><td>Book rules and settlement data (D-05)</td></tr>
-</tbody></table></div>
-
-<h2>What this register does not do</h2>
-<ul class="clean">
-  <li>It does not select a data provider, book, or jurisdiction — that is decision D-01 and must be made deliberately.</li>
-  <li>It does not rank strategies, because no strategy has passed a validation gate.</li>
-  <li>It does not authorize rewards. Any reward decision waits on D-08.</li>
-  <li>It does not fill missing values. Where an official source has not published a value, the cell stays blank and the row is
-    flagged on the <a href="flagged.html">Flagged for Review</a> page.</li>
-</ul>
-
-<h2>Official sources reviewed</h2>
-<div class="scroll"><table><thead><tr><th>Source</th><th>What it provides</th><th>Link</th></tr></thead><tbody>
-<tr><td>NFL injury report</td><td>Player, position, injury, practice status, game status, by week</td><td><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">nfl.com/injuries</a></td></tr>
-<tr><td>NFL transactions</td><td>Trades, signings, waivers, reserve list, terminations, by month/year</td><td><a href="https://www.nfl.com/transactions/" target="_blank" rel="noopener">nfl.com/transactions</a></td></tr>
-<tr><td>NFL player statistics</td><td>Passing/rushing/receiving/tackles/etc., category + year selectors</td><td><a href="https://www.nfl.com/stats/player-stats/" target="_blank" rel="noopener">nfl.com/stats/player-stats</a></td></tr>
-<tr><td>NFL team statistics</td><td>Offense/defense/special-teams team categories</td><td><a href="https://www.nfl.com/stats/team-stats/" target="_blank" rel="noopener">nfl.com/stats/team-stats</a></td></tr>
-<tr><td>NFL standings</td><td>Division/conference/league standings</td><td><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener">nfl.com/standings</a></td></tr>
-<tr><td>NFL schedules</td><td>By week, by team, prime time</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">nfl.com/schedules</a></td></tr>
-<tr><td>49ers official depth chart</td><td>Offense/defense/special-teams, 1st/2nd/3rd/4th string</td><td><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener">49ers.com/team/depth-chart</a></td></tr>
-<tr><td>NFL Football Operations</td><td>Official rules and officiating reference</td><td><a href="https://operations.nfl.com/" target="_blank" rel="noopener">operations.nfl.com</a></td></tr>
-</tbody></table></div>
-<p class="small">Verified live on 2026-11-13. These are official starting points, not proof that every historical field,
-market quote, or depth-chart version is available there. Absent values remain blank/unverified.</p>
-<p><a href="research/SUGGESTIONS.md">Readable research notes</a> · <a href="decisions.html">Decision registry</a> ·
-<a href="nfl-strategy.html">NFL Strategy Lab</a> · <a href="flagged.html">Flagged for Review</a></p>
 </main>
 <footer><div class="wrap">
-  <p><strong>Free Time Vacation Planner</strong> · Pacific time (America/Los_Angeles) · Coverage 2026-11-05 → 2030-02-28 ·
-  data rebuilt 2026-11-02T17:54:23Z</p>
-  <p>Inherited schedule records cite MLB's own StatsAPI, 49ers.com, gostanford.com, calbears.com and westwoodonesports.com.
-  Anything not published by an official source is labelled <span class="tag est">estimated</span> and explained on the
-  <a href="method.html">Method</a> page. Items that could not be confirmed are on <a href="flagged.html">Flagged for review</a>.</p>
+  <p><strong>NFL Lines Lab</strong> · part of the Free Time Vacation Planner · Pacific time · lab records retrieved 2026-11-13</p>
+  <p>Every table row links to the official source it came from. Values that could not be confirmed are blank and listed on
+  <a href="lab/flags.html">Flagged for Review</a>. No strategy on this site is validated: this repository holds no market price,
+  no settlement record and no forecast log, so no win rate, yield, edge or fair price is published anywhere.</p>
 </div></footer></body></html>

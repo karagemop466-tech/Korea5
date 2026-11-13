@@ -1,0 +1,591 @@
+{
+ "generated_utc": "2026-11-13T13:14:07Z",
+ "injuries": {
+  "2016": {
+   "rows": 5115,
+   "bytes": 674980,
+   "headers": [
+    "season",
+    "game_type",
+    "team",
+    "week",
+    "gsis_id",
+    "position",
+    "full_name",
+    "first_name",
+    "last_name",
+    "report_primary_injury",
+    "report_secondary_injury",
+    "report_status",
+    "practice_primary_injury",
+    "practice_secondary_injury",
+    "practice_status",
+    "date_modified"
+   ]
+  },
+  "2017": {
+   "rows": 5104,
+   "bytes": 665280,
+   "headers": [
+    "season",
+    "game_type",
+    "team",
+    "week",
+    "gsis_id",
+    "position",
+    "full_name",
+    "first_name",
+    "last_name",
+    "report_primary_injury",
+    "report_secondary_injury",
+    "report_status",
+    "practice_primary_injury",
+    "practice_secondary_injury",
+    "practice_status",
+    "date_modified"
+   ]
+  },
+  "2018": {
+   "rows": 5133,
+   "bytes": 665119,
+   "headers": [
+    "season",
+    "game_type",
+    "team",
+    "week",
+    "gsis_id",
+    "position",
+    "full_name",
+    "first_name",
+    "last_name",
+    "report_primary_injury",
+    "report_secondary_injury",
+    "report_status",
+    "practice_primary_injury",
+    "practice_secondary_injury",
+    "practice_status",
+    "date_modified"
+   ]
+  },
+  "2019": {
+   "rows": 5392,
+   "bytes": 700757,
+   "headers": [
+    "season",
+    "game_type",
+    "team",
+    "week",
+    "gsis_id",
+    "position",
+    "full_name",
+    "first_name",
+    "last_name",
+    "report_primary_injury",
+    "report_secondary_injury",
+    "report_status",
+    "practice_primary_injury",
+    "practice_secondary_injury",
+    "practice_status",
+    "date_modified"
+   ]
+  },
+  "2020": {
+   "rows": 5661,
+   "bytes": 737474,
+   "headers": [
+    "season",
+    "game_type",
+    "team",
+    "week",
+    "gsis_id",
+    "position",
+    "full_name",
+    "first_name",
+    "last_name",
+    "report_primary_injury",
+    "report_secondary_injury",
+    "report_status",
+    "practice_primary_injury",
+    "practice_secondary_injury",
+    "practice_status",
+    "date_modified"
+   ]
+  },
+  "2021": {
+   "rows": 5587,
+   "bytes": 737083,
+   "headers": [
+    "season",
+    "game_type",
+    "team",
+    "week",
+    "gsis_id",
+    "position",
+    "full_name",
+    "first_name",
+    "last_name",
+    "report_primary_injury",
+    "report_secondary_injury",
+    "report_status",
+    "practice_primary_injury",
+    "practice_secondary_injury",
+    "practice_status",
+    "date_modified"
+   ]
+  },
+  "2022": {
+   "rows": 5682,
+   "bytes": 752433,
+   "headers": [
+    "season",
+    "game_type",
+    "team",
+    "week",
+    "gsis_id",
+    "position",
+    "full_name",
+    "first_name",
+    "last_name",
+    "report_primary_injury",
+    "report_secondary_injury",
+    "report_status",
+    "practice_primary_injury",
+    "practice_secondary_injury",
+    "practice_status",
+    "date_modified"
+   ]
+  },
+  "2023": {
+   "rows": 5599,
+   "bytes": 738501,
+   "headers": [
+    "season",
+    "game_type",
+    "team",
+    "week",
+    "gsis_id",
+    "position",
+    "full_name",
+    "first_name",
+    "last_name",
+    "report_primary_injury",
+    "report_secondary_injury",
+    "report_status",
+    "practice_primary_injury",
+    "practice_secondary_injury",
+    "practice_status",
+    "date_modified"
+   ]
+  },
+  "2024": {
+   "rows": 6215,
+   "bytes": 816989,
+   "headers": [
+    "season",
+    "game_type",
+    "team",
+    "week",
+    "gsis_id",
+    "position",
+    "full_name",
+    "first_name",
+    "last_name",
+    "report_primary_injury",
+    "report_secondary_injury",
+    "report_status",
+    "practice_primary_injury",
+    "practice_secondary_injury",
+    "practice_status",
+    "date_modified"
+   ]
+  },
+  "2025": {
+   "rows": 6068,
+   "bytes": 696006,
+   "headers": [
+    "season",
+    "season_type",
+    "game_type",
+    "team",
+    "week",
+    "gsis_id",
+    "position",
+    "full_name",
+    "first_name",
+    "last_name",
+    "report_primary_injury",
+    "report_secondary_injury",
+    "report_status",
+    "practice_primary_injury",
+    "practice_secondary_injury",
+    "practice_status"
+   ]
+  },
+  "2026": {
+   "rows": 3117,
+   "bytes": 354572,
+   "headers": [
+    "season",
+    "season_type",
+    "game_type",
+    "team",
+    "week",
+    "gsis_id",
+    "position",
+    "full_name",
+    "first_name",
+    "last_name",
+    "report_primary_injury",
+    "report_secondary_injury",
+    "report_status",
+    "practice_primary_injury",
+    "practice_secondary_injury",
+    "practice_status"
+   ]
+  }
+ },
+ "depth": {
+  "2025": {
+   "rows": 554215
+  },
+  "2026": {
+   "rows": 782468
+  },
+  "latest_dt_by_team": {
+   "ARI": "2026-11-13T07:02:06Z",
+   "ATL": "2026-11-13T07:02:06Z",
+   "BAL": "2026-11-13T07:02:06Z",
+   "BUF": "2026-11-13T07:02:06Z",
+   "CAR": "2026-11-13T07:02:06Z",
+   "CHI": "2026-11-13T07:02:06Z",
+   "CIN": "2026-11-13T07:02:06Z",
+   "CLE": "2026-11-13T07:02:06Z",
+   "DAL": "2026-11-13T07:02:06Z",
+   "DEN": "2026-11-13T07:02:06Z",
+   "DET": "2026-11-13T07:02:06Z",
+   "GB": "2026-11-13T07:02:06Z",
+   "HOU": "2026-11-13T07:02:06Z",
+   "IND": "2026-11-13T07:02:06Z",
+   "JAX": "2026-11-13T07:02:06Z",
+   "KC": "2026-11-13T07:02:06Z",
+   "LA": "2026-11-13T07:02:06Z",
+   "LAC": "2026-11-13T07:02:06Z",
+   "LV": "2026-11-13T07:02:06Z",
+   "MIA": "2026-11-13T07:02:06Z",
+   "MIN": "2026-11-13T07:02:06Z",
+   "NE": "2026-11-13T07:02:06Z",
+   "NO": "2026-11-13T07:02:06Z",
+   "NYG": "2026-11-13T07:02:06Z",
+   "NYJ": "2026-11-13T07:02:06Z",
+   "PHI": "2026-11-13T07:02:06Z",
+   "PIT": "2026-11-13T07:02:06Z",
+   "SEA": "2026-11-13T07:02:06Z",
+   "SF": "2026-11-13T07:02:06Z",
+   "TB": "2026-11-13T07:02:06Z",
+   "TEN": "2026-11-13T07:02:06Z",
+   "WAS": "2026-11-13T07:02:06Z"
+  },
+  "groups_by_team": {
+   "ARI": {
+    "3WR 1TE": 37,
+    "Base 4-3 D": 29,
+    "Special Teams": 10
+   },
+   "ATL": {
+    "Base 3-4 D": 31,
+    "3WR 1TE": 30,
+    "Special Teams": 11
+   },
+   "BAL": {
+    "3WR 1TE": 35,
+    "Base 3-4 D": 28,
+    "Special Teams": 11
+   },
+   "BUF": {
+    "Base 3-4 D": 29,
+    "3WR 1TE": 27,
+    "Special Teams": 12
+   },
+   "CAR": {
+    "3WR 1TE": 34,
+    "Base 3-4 D": 30,
+    "Special Teams": 13
+   },
+   "CHI": {
+    "Base 4-3 D": 33,
+    "3WR 1TE": 30,
+    "Special Teams": 10
+   },
+   "CIN": {
+    "3WR 1TE": 30,
+    "Base 4-3 D": 29,
+    "Special Teams": 8
+   },
+   "CLE": {
+    "Base 4-3 D": 31,
+    "3WR 1TE": 30,
+    "Special Teams": 13
+   },
+   "DAL": {
+    "Base 3-4 D": 32,
+    "3WR 1TE": 26,
+    "Special Teams": 10
+   },
+   "DEN": {
+    "3WR 1TE": 32,
+    "Base 3-4 D": 29,
+    "Special Teams": 11
+   },
+   "DET": {
+    "Base 4-3 D": 36,
+    "3WR 1TE": 29,
+    "Special Teams": 12
+   },
+   "GB": {
+    "3WR 1TE": 42,
+    "Base 3-4 D": 30,
+    "Special Teams": 11
+   },
+   "HOU": {
+    "3WR 1TE": 35,
+    "Base 4-3 D": 31,
+    "Special Teams": 11
+   },
+   "IND": {
+    "3WR 1TE": 29,
+    "Base 4-3 D": 28,
+    "Special Teams": 10
+   },
+   "JAX": {
+    "Base 4-3 D": 34,
+    "3WR 1TE": 29,
+    "Special Teams": 8
+   },
+   "KC": {
+    "3WR 1TE": 37,
+    "Base 4-3 D": 26,
+    "Special Teams": 11
+   },
+   "LA": {
+    "3WR 1TE": 31,
+    "Base 3-4 D": 30,
+    "Special Teams": 15
+   },
+   "LAC": {
+    "3WR 1TE": 38,
+    "Base 3-4 D": 27,
+    "Special Teams": 12
+   },
+   "LV": {
+    "3WR 1TE": 32,
+    "Base 3-4 D": 29,
+    "Special Teams": 8
+   },
+   "MIA": {
+    "3WR 1TE": 31,
+    "Base 4-3 D": 29,
+    "Special Teams": 9
+   },
+   "MIN": {
+    "3WR 1TE": 31,
+    "Base 3-4 D": 28,
+    "Special Teams": 8
+   },
+   "NE": {
+    "3WR 1TE": 36,
+    "Base 3-4 D": 29,
+    "Special Teams": 13
+   },
+   "NO": {
+    "Base 3-4 D": 31,
+    "3WR 1TE": 31,
+    "Special Teams": 10
+   },
+   "NYG": {
+    "Base 3-4 D": 35,
+    "3WR 1TE": 31,
+    "Special Teams": 13
+   },
+   "NYJ": {
+    "Base 4-3 D": 32,
+    "3WR 1TE": 31,
+    "Special Teams": 8
+   },
+   "PHI": {
+    "3WR 1TE": 31,
+    "Base 3-4 D": 27,
+    "Special Teams": 10
+   },
+   "PIT": {
+    "3WR 1TE": 33,
+    "Base 3-4 D": 29,
+    "Special Teams": 10
+   },
+   "SEA": {
+    "3WR 1TE": 31,
+    "Base 3-4 D": 28,
+    "Special Teams": 9
+   },
+   "SF": {
+    "3WR 1TE": 36,
+    "Base 4-3 D": 34,
+    "Special Teams": 12
+   },
+   "TB": {
+    "Base 3-4 D": 28,
+    "3WR 1TE": 27,
+    "Special Teams": 10
+   },
+   "TEN": {
+    "Base 4-3 D": 31,
+    "3WR 1TE": 29,
+    "Special Teams": 8
+   },
+   "WAS": {
+    "3WR 1TE": 37,
+    "Base 3-4 D": 29,
+    "Special Teams": 11
+   }
+  },
+  "match_diagnostics_week": [
+   {
+    "team": "DET",
+    "player": "Cade Mays",
+    "gsis_id": "00-0037297",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "3WR 1TE",
+      "C",
+      "3"
+     ]
+    ]
+   },
+   {
+    "team": "DET",
+    "player": "D.J. Reed",
+    "gsis_id": "00-0034384",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "Base 4-3 D",
+      "LCB",
+      "1"
+     ]
+    ]
+   },
+   {
+    "team": "DET",
+    "player": "Kerby Joseph",
+    "gsis_id": "00-0037667",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "Base 4-3 D",
+      "FS",
+      "3"
+     ]
+    ]
+   },
+   {
+    "team": "NE",
+    "player": "Ben Brown",
+    "gsis_id": "00-0037413",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "3WR 1TE",
+      "LG",
+      "2"
+     ],
+     [
+      "3WR 1TE",
+      "C",
+      "2"
+     ],
+     [
+      "3WR 1TE",
+      "RG",
+      "2"
+     ]
+    ]
+   },
+   {
+    "team": "NE",
+    "player": "Carlton Davis III",
+    "gsis_id": "00-0034778",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "Base 3-4 D",
+      "LCB",
+      "1"
+     ]
+    ]
+   },
+   {
+    "team": "NE",
+    "player": "TreVeyon Henderson",
+    "gsis_id": "00-0040734",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "Special Teams",
+      "KR",
+      "4"
+     ],
+     [
+      "3WR 1TE",
+      "RB",
+      "2"
+     ]
+    ]
+   },
+   {
+    "team": "NYG",
+    "player": "Malik Harrison",
+    "gsis_id": "00-0036280",
+    "status": "Questionable",
+    "in_snapshot": [
+     [
+      "Base 3-4 D",
+      "LILB",
+      "3"
+     ]
+    ]
+   },
+   {
+    "team": "WAS",
+    "player": "Lucas Patrick",
+    "gsis_id": "00-0033082",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "3WR 1TE",
+      "LG",
+      "2"
+     ],
+     [
+      "3WR 1TE",
+      "C",
+      "4"
+     ]
+    ]
+   },
+   {
+    "team": "WAS",
+    "player": "Colson Yankoff",
+    "gsis_id": "00-0039686",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "3WR 1TE",
+      "TE",
+      "4"
+     ]
+    ]
+   }
+  ]
+ },
+ "errors": []
+}

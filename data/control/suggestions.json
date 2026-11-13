@@ -1,0 +1,416 @@
+{
+ "meta": {
+  "generatedUTC": "2026-11-13T23:12:22Z"
+ },
+ "suggestions": [
+  {
+   "id": "CS-01",
+   "area": "Consolidation",
+   "priority": "P1",
+   "title": "Make this Control Room the single entry point and mark the other eight NFL surfaces as evidence stores",
+   "problem": "Eight sessions built eight NFL surfaces. A reader cannot tell which is authoritative, and the same question is answered four ways.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Publish this page as the entry point and leave every existing surface exactly as it is",
+     "path": "Navigation points here first; each other section is labelled for what it is.",
+     "tradeoff": "Cheap, reversible, discards nothing. The duplication stays and will drift.",
+     "recommended": true
+    },
+    {
+     "id": "B",
+     "label": "Redirect the older surfaces into this one and retire their pages",
+     "path": "One section, one data pipeline.",
+     "tradeoff": "Cleanest to read, but deletes other sessions' published work and their verifiers. Not reversible in one step."
+    },
+    {
+     "id": "C",
+     "label": "Leave everything as it is",
+     "path": "No change.",
+     "tradeoff": "No cost today; the drift already found in this audit (three defects) gets worse."
+    }
+   ],
+   "evidence": "data/control/meta.json lists all nine surfaces and their row counts.",
+   "sources": [
+    "https://www.nfl.com/"
+   ],
+   "recommendedOption": "A",
+   "reviewState": "open"
+  },
+  {
+   "id": "CS-02",
+   "area": "Market data",
+   "priority": "P1",
+   "title": "Either license a price feed or rename every page so it cannot be read as a betting recommendation",
+   "problem": "D-PRICE is open. Without a stored price, no win rate, yield, edge or fair price can be computed, yet a dozen pages discuss strategies.",
+   "options": [
+    {
+     "id": "A",
+     "label": "License a timestamped open/close feed",
+     "path": "Store every quote with its timestamp and vendor; grade against the close.",
+     "tradeoff": "Cost and a licence review. Unlocks every gate at once.",
+     "recommended": true
+    },
+    {
+     "id": "B",
+     "label": "Keep the declared reference price and label the programme 'study only' everywhere",
+     "path": "No monetary claim is ever made; the -110 convention is stated as a convention.",
+     "tradeoff": "Free and already implemented. Permanently caps what can be concluded."
+    },
+    {
+     "id": "C",
+     "label": "Use the ESPN public odds block as a market reference",
+     "path": "Cite ESPN per row and label it a trusted secondary source.",
+     "tradeoff": "Not an official league feed; one session already does this on one page. Licence for storage is unclear."
+    }
+   ],
+   "evidence": "nfl/system/data/derived/market.json (priceFeedAvailable: false).",
+   "sources": [
+    "https://www.nfl.com/scores/2026/week-10"
+   ],
+   "recommendedOption": "A",
+   "reviewState": "open"
+  },
+  {
+   "id": "CS-03",
+   "area": "Validation",
+   "priority": "P1",
+   "title": "Freeze one gate set across all three strategy labs instead of three different ones",
+   "problem": "The lines lab uses G1-G7, the decision system uses G1-G10, the model lab uses G0-G9. A strategy passing in one may fail in another, and the reader cannot compare them.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Adopt one named gate set, versioned and frozen, and map the other two onto it",
+     "path": "Publish a mapping table so no result is invalidated, only relabelled.",
+     "tradeoff": "Some real work to reconcile thresholds; makes every result comparable.",
+     "recommended": true
+    },
+    {
+     "id": "B",
+     "label": "Publish a crosswalk without changing any gate",
+     "path": "A table that shows how each lab's gates correspond.",
+     "tradeoff": "Cheap. Three vocabularies remain."
+    },
+    {
+     "id": "C",
+     "label": "Keep three gate sets",
+     "path": "No change.",
+     "tradeoff": "A reader who compares two labs can reach two different conclusions about the same strategy."
+    }
+   ],
+   "evidence": "nfl/system/curated/validation-gates.json vs data/lines/strategies.json gate map.",
+   "sources": [
+    "https://www.nfl.com/standings/"
+   ],
+   "recommendedOption": "A",
+   "reviewState": "open"
+  },
+  {
+   "id": "CS-04",
+   "area": "Injury &amp; depth",
+   "priority": "P1",
+   "title": "Publish an official-snap-count join so 'next man up' is measured, not inferred from a chart",
+   "problem": "D-DEPTH is partly answered. The replacement is named from the club's own chart, but nothing proves the replacement actually played.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Parse the official Game Book PDFs for participation",
+     "path": "Every game page links a Game Book; participation is printed in it.",
+     "tradeoff": "PDF parsing is brittle, and the brief forbids guessing. Would need a per-game check.",
+     "recommended": true
+    },
+    {
+     "id": "B",
+     "label": "Use an official snap-count table if one exists",
+     "path": "Check nfl.com stats pages for a snap-count category.",
+     "tradeoff": "Only viable if such a table is published officially; not confirmed in this pass."
+    },
+    {
+     "id": "C",
+     "label": "Keep naming the chart replacement and label it 'projected'",
+     "path": "What is published today.",
+     "tradeoff": "Honest but not measured, and the owner's brief asks for the measured version."
+    }
+   ],
+   "evidence": "data/lines/lineup-risk.json (replacement populated on 71 of 165 rows; depth chart is the source).",
+   "sources": [
+    "https://www.detroitlions.com/team/depth-chart/"
+   ],
+   "recommendedOption": "A",
+   "reviewState": "open"
+  },
+  {
+   "id": "CS-05",
+   "area": "Injury &amp; depth",
+   "priority": "P2",
+   "title": "Only raise lineup-risk rows against the week the injury snapshot belongs to",
+   "problem": "The single Week 10 injury snapshot is currently applied to weeks 10 through 18 fixtures, which reads as a projection it cannot support.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Restrict the table to the current and next week",
+     "path": "Filter on week, and say so on the page.",
+     "tradeoff": "Loses the long view; removes a misleading implication.",
+     "recommended": true
+    },
+    {
+     "id": "B",
+     "label": "Keep every week and label the column 'as of Week 10'",
+     "path": "One added label.",
+     "tradeoff": "Cheap; a reader who skims still sees a Week 18 injury against a Week 18 game."
+    },
+    {
+     "id": "C",
+     "label": "Capture a new injury snapshot for every week",
+     "path": "Weekly data acquisition in CI.",
+     "tradeoff": "Correct, and more moving parts."
+    }
+   ],
+   "evidence": "data/lines/lineup-risk.json: 69 of 165 rows are for weeks 11-18. Recorded as FL-16.",
+   "sources": [
+    "https://www.nfl.com/injuries/"
+   ],
+   "recommendedOption": "A",
+   "reviewState": "open"
+  },
+  {
+   "id": "CS-06",
+   "area": "Data integrity",
+   "priority": "P1",
+   "title": "Run every cross-surface consistency check on every commit, not once",
+   "problem": "This audit found three published defects that every existing verifier had passed: a whole-file team misattribution, a leaderboard/strategy disagreement, and a statistical test that could only return 1.000.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Wire the new tests into CI and add a cross-register audit step",
+     "path": "tests/test_lines_integrity.py plus tools/audit_control.py in the existing workflow.",
+     "tradeoff": "A few seconds per run; catches the class of defect that was invisible before.",
+     "recommended": true
+    },
+    {
+     "id": "B",
+     "label": "Run the audit on demand only",
+     "path": "Manual.",
+     "tradeoff": "The same defects return on the next rebuild."
+    },
+    {
+     "id": "C",
+     "label": "Add a fourth verifier instead of extending the existing ones",
+     "path": "More code, more places to disagree.",
+     "tradeoff": "Unnecessary; the existing verifiers are healthy, they simply did not test this."
+    }
+   ],
+   "evidence": "data/control/audit.json records A01-A03 with the check that now catches each.",
+   "sources": [
+    "https://www.nfl.com/injuries/"
+   ],
+   "recommendedOption": "A",
+   "reviewState": "open"
+  },
+  {
+   "id": "CS-07",
+   "area": "Governance",
+   "priority": "P1",
+   "title": "Record the reward decision in one line before any strategy is ranked",
+   "problem": "D-REWARD is open. Three registers give three defaults (paper points, credits, honour system), so a ranking implies a claim no one has agreed to.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Paper points only, published empty until a strategy passes every gate",
+     "path": "Already implemented.",
+     "tradeoff": "Nothing to gain materially; nothing to get wrong legally.",
+     "recommended": true
+    },
+    {
+     "id": "B",
+     "label": "Non-monetary rewards (credits, badges, research access)",
+     "path": "Needs a rule for what a credit is worth, and one line on why it is not gambling.",
+     "tradeoff": "More motivating; more governance."
+    },
+    {
+     "id": "C",
+     "label": "Cash prizes",
+     "path": "Requires a legal opinion for British Columbia before anything is announced.",
+     "tradeoff": "Highest risk of the three. Not recommended without the opinion."
+    }
+   ],
+   "evidence": "nfl/system/curated/suggestions.json; lines-lab/data/derived/leaderboard.json (paper points only).",
+   "sources": [
+    "https://www.nfl.com/"
+   ],
+   "recommendedOption": "A",
+   "reviewState": "open"
+  },
+  {
+   "id": "CS-08",
+   "area": "Presentation",
+   "priority": "P2",
+   "title": "Put the honest negative result where a reader meets it first",
+   "problem": "The strongest result in the whole programme is a negative one: the leading model is not distinguishable from luck (t = 1.48, 95% interval spanning zero). It is currently buried in a back-test page.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Lead every NFL page with the negative result and the sample it would need",
+     "path": "One sentence and one number at the top.",
+     "tradeoff": "Makes the site less exciting and more trustworthy.",
+     "recommended": true
+    },
+    {
+     "id": "B",
+     "label": "Keep it on the back-test page only",
+     "path": "No change.",
+     "tradeoff": "A reader who never opens that page will assume a validated edge exists."
+    },
+    {
+     "id": "C",
+     "label": "Remove the negative result because the sample is small",
+     "path": "Not recommended.",
+     "tradeoff": "Removing a true measurement because it is inconvenient is the failure this project is built to avoid."
+    }
+   ],
+   "evidence": "data/nfl-signals/signals.json luck.S2-netpoints (nForTwoSigma 182).",
+   "sources": [
+    "https://www.nfl.com/standings/"
+   ],
+   "recommendedOption": "A",
+   "reviewState": "open"
+  },
+  {
+   "id": "CS-09",
+   "area": "Model",
+   "priority": "P2",
+   "title": "Publish one originated line per game with its uncertainty, and stop presenting the point estimate alone",
+   "problem": "Lines are published as a single number. A model whose spread standard error is over a point is being read as if it were exact.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Publish an interval with every originated line",
+     "path": "One extra column per row.",
+     "tradeoff": "Adds a column; stops a number being read as a price.",
+     "recommended": true
+    },
+    {
+     "id": "B",
+     "label": "Publish the point estimate and state the error separately",
+     "path": "Already partly done.",
+     "tradeoff": "Requires the reader to hold two pages at once."
+    },
+    {
+     "id": "C",
+     "label": "Keep one number per game",
+     "path": "No change.",
+     "tradeoff": "Encourages false precision."
+    }
+   ],
+   "evidence": "data/nfl-intel/model.json sigma_margin 13.18; data/nfl-lab/model-params.json test_mae 10.167.",
+   "sources": [
+    "https://www.nfl.com/schedules/"
+   ],
+   "recommendedOption": "A",
+   "reviewState": "open"
+  },
+  {
+   "id": "CS-10",
+   "area": "Scope",
+   "priority": "P2",
+   "title": "Decide whether the two same-team receiver correlations should be pooled before either is quoted",
+   "problem": "Two measurements of the same structure disagree by design: r = -0.82 on 6 matched games (five players, one team) and phi = +0.575 for two props on the same player across 11,446 pairs. They answer different questions but read as contradictory.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Quote both with their definitions, and quote the large-sample figure as the default for pricing",
+     "path": "One glossary row per figure.",
+     "tradeoff": "Honest; the reader must read the definitions.",
+     "recommended": true
+    },
+    {
+     "id": "B",
+     "label": "Quote only the large-sample figure",
+     "path": "Simpler.",
+     "tradeoff": "Hides that the small sample contradicts it in sign, which is itself informative."
+    },
+    {
+     "id": "C",
+     "label": "Quote only the small-sample figure",
+     "path": "Not recommended.",
+     "tradeoff": "Presents a six-game correlation as if it were a property of the league."
+    }
+   ],
+   "evidence": "data/lab/analysis.json correlations[0] vs data/lines/correlations.json parlayCorrelations[1].",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/",
+    "https://www.nfl.com/stats/player-stats/"
+   ],
+   "recommendedOption": "A",
+   "reviewState": "open"
+  },
+  {
+   "id": "CS-11",
+   "area": "Data integrity",
+   "priority": "P2",
+   "title": "Separate 'official' from 'the club says unofficial' in every depth chart row",
+   "problem": "Four clubs label their own published chart 'unofficial'. A table that shows '1st string' without that label overstates what the source says.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Show the club's own label on every row and filter by it",
+     "path": "A boolean column taken from the club's page text.",
+     "tradeoff": "One more column; removes an overstatement.",
+     "recommended": true
+    },
+    {
+     "id": "B",
+     "label": "Treat all club charts as equal",
+     "path": "No change.",
+     "tradeoff": "Flattens a distinction the clubs themselves make."
+    },
+    {
+     "id": "C",
+     "label": "Use only the clubs that label their chart official",
+     "path": "Consistent, but drops most of the league.",
+     "tradeoff": "Loses coverage the owner asked for."
+    }
+   ],
+   "evidence": "data/lines/depth-charts.json club 'chartLabel'; Detroit's page reads '2026 Unofficial Depth Chart'.",
+   "sources": [
+    "https://www.detroitlions.com/team/depth-chart/"
+   ],
+   "recommendedOption": "A",
+   "reviewState": "open"
+  },
+  {
+   "id": "CS-12",
+   "area": "Presentation",
+   "priority": "P3",
+   "title": "Put one number on the page a reader is asked to remember: how many settled bets exist",
+   "problem": "Every page explains at length that no strategy is validated. None leads with the one number that makes it concrete: zero settled bets.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Show 'settled bets: 0' as a headline tile on every NFL page",
+     "path": "Read from the forward ledger.",
+     "tradeoff": "Blunt and accurate.",
+     "recommended": true
+    },
+    {
+     "id": "B",
+     "label": "Explain it in prose",
+     "path": "What is done today.",
+     "tradeoff": "Prose is searchable but not memorable."
+    },
+    {
+     "id": "C",
+     "label": "Show the paper-bet count instead",
+     "path": "Would read as progress that does not exist.",
+     "tradeoff": "Paper candidates are not settled bets; conflating them is the mistake to avoid."
+    }
+   ],
+   "evidence": "data/nfl-signals/forward-ledger.json: 41 frozen rows, 0 settled.",
+   "sources": [
+    "https://www.nfl.com/"
+   ],
+   "recommendedOption": "A",
+   "reviewState": "open"
+  }
+ ]
+}

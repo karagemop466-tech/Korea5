@@ -1,0 +1,76 @@
+{
+ "generatedUTC": "2026-11-13T23:12:22Z",
+ "surfaces": [
+  {
+   "name": "Control Room",
+   "path": "control/index.html",
+   "what": "this page"
+  },
+  {
+   "name": "NFL Lines Lab",
+   "path": "lines/index.html",
+   "what": "strategies, gates, correlations, injuries"
+  },
+  {
+   "name": "NFL Lines Lab (evidence)",
+   "path": "lab/index.html",
+   "what": "questions, measured correlations, injuries"
+  },
+  {
+   "name": "NFL Model",
+   "path": "nfl-lab/index.html",
+   "what": "model and back-test against a third-party archive"
+  },
+  {
+   "name": "NFL Decision Support",
+   "path": "nfl/index.html",
+   "what": "requirements, method, leaderboard design"
+  },
+  {
+   "name": "NFL decision system",
+   "path": "nfl/system/index.html",
+   "what": "official ingest, questions, suggestions"
+  },
+  {
+   "name": "NFL Signals Lab",
+   "path": "nfl-signals.html",
+   "what": "walk-forward signals and a forward ledger"
+  },
+  {
+   "name": "NFL Skill Lab",
+   "path": "lines-lab/index.html",
+   "what": "held-out evaluation, own lines"
+  },
+  {
+   "name": "Strategy Lab",
+   "path": "strategy-lab/index.html",
+   "what": "walk-forward back-test on 137 finals"
+  },
+  {
+   "name": "NFL Intel",
+   "path": "nfl-intel.html",
+   "what": "ratings and originated lines"
+  },
+  {
+   "name": "NFL Analytics",
+   "path": "nfl-analytics.html",
+   "what": "market capture and requirements"
+  }
+ ],
+ "counts": {
+  "decisions": 16,
+  "decisionsBlocking": 6,
+  "decisionsAnswered": 5,
+  "suggestions": 12,
+  "evidenceDatasets": 22,
+  "strategies": 55,
+  "strategyLabs": 6,
+  "injuryRows": 296,
+  "clubsReporting": 26,
+  "deficiencyRows": 165,
+  "flagsCombined": 60,
+  "flagsLines": 16
+ },
+ "settledBets": 0,
+ "boundary": "No market price, no settlement record and no forecast settlement exist in this repository. No win rate, yield, edge or fair price is published anywhere on this site."
+}

@@ -98,7 +98,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 15,
+   "status": "failed"
   },
   {
    "id": "S02",
@@ -177,7 +179,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 9,
+   "status": "failed"
   },
   {
    "id": "S03",
@@ -255,8 +259,10 @@
      "detail": "highest |correlation| with a higher-ranked qualified strategy is +0.993 (S05, n=356)"
     }
    },
-   "reward": 72,
-   "rewardNote": "1000 x skill 0.072 x evidence 1.00 x luck guard 1.00"
+   "reward": 0,
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 4,
+   "status": "failed"
   },
   {
    "id": "S04",
@@ -330,7 +336,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 18,
+   "status": "failed"
   },
   {
    "id": "S05",
@@ -409,7 +417,9 @@
     }
    },
    "reward": 115,
-   "rewardNote": "1000 x skill 0.115 x evidence 1.00 x luck guard 1.00"
+   "rewardNote": "1000 x skill 0.115 x evidence 1.00 x luck guard 1.00",
+   "rank": 1,
+   "status": "qualified"
   },
   {
    "id": "S06",
@@ -488,7 +498,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 16,
+   "status": "failed"
   },
   {
    "id": "S07",
@@ -567,7 +579,9 @@
     }
    },
    "reward": 99,
-   "rewardNote": "1000 x skill 0.099 x evidence 1.00 x luck guard 1.00"
+   "rewardNote": "1000 x skill 0.099 x evidence 1.00 x luck guard 1.00",
+   "rank": 3,
+   "status": "qualified"
   },
   {
    "id": "S08",
@@ -646,7 +660,9 @@
     }
    },
    "reward": 114,
-   "rewardNote": "1000 x skill 0.114 x evidence 1.00 x luck guard 1.00"
+   "rewardNote": "1000 x skill 0.114 x evidence 1.00 x luck guard 1.00",
+   "rank": 2,
+   "status": "qualified"
   },
   {
    "id": "P01",
@@ -724,7 +740,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 12,
+   "status": "failed"
   },
   {
    "id": "P02",
@@ -802,7 +820,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 14,
+   "status": "failed"
   },
   {
    "id": "P03",
@@ -880,7 +900,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 10,
+   "status": "failed"
   },
   {
    "id": "P04",
@@ -958,7 +980,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 13,
+   "status": "failed"
   },
   {
    "id": "P05",
@@ -1036,7 +1060,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 17,
+   "status": "failed"
   },
   {
    "id": "P06",
@@ -1114,7 +1140,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 8,
+   "status": "failed"
   },
   {
    "id": "P07",
@@ -1192,7 +1220,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 11,
+   "status": "failed"
   },
   {
    "id": "L01",
@@ -1270,7 +1300,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 7,
+   "status": "failed"
   },
   {
    "id": "L02",
@@ -1348,7 +1380,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 5,
+   "status": "failed"
   },
   {
    "id": "L03",
@@ -1427,7 +1461,9 @@
     }
    },
    "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed"
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 6,
+   "status": "failed"
   }
  ],
  "bets": [

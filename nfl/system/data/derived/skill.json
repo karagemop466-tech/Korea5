@@ -6,10 +6,17 @@
  "brierHomePrior": 0.2513,
  "shuffleTest": {
   "draws": 2000,
-  "statistic": "count of home wins among decided games",
+  "statistic": "home win rate among decided games",
   "observed": 232,
-  "pValueOneSided": 1.0,
+  "observedRate": 0.5121,
+  "bootstrap95": [
+   0.4702,
+   0.5607
+  ],
+  "pValueTwoSided": 0.6657,
   "reading": "a home-field prior is not distinguishable from a coin at this sample",
+  "fixedOn": "2026-11-13",
+  "previousVersion": "permuted the outcomes and compared the permuted home-win COUNT with the observed count; that quantity is invariant under permutation, so the test returned p = 1.0000 by construction",
   "note": "This tests OUTCOME randomness, not strategy skill. It demonstrates the machinery the gates use; it is not evidence that any strategy is profitable."
  },
  "calibrationDemo": {

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Audit · NFL Control Room</title>
+<meta name="description" content="NFL Control Room: one decision register, one suggestion review board and one evidence ledger covering every NFL section of this repository.">
+<link rel="stylesheet" href="assets/control.css">
+<script defer src="assets/control.js"></script>
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL CONTROL ROOM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="decisions.html" class="">Decisions</a><a href="suggestions.html" class="">Suggestions</a><a href="evidence.html" class="">Evidence</a><a href="strategies.html" class="">Strategies</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="audit.html" class="active">Audit</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged for review</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No edge is published here.</strong> This repository holds no market
+price, no settlement record and no settled forecast, so no win rate, yield, edge or fair price is computed anywhere.
+Every strategy on this site is unscored. Items that could not be confirmed against an official source are left blank
+and listed on <a href="flagged.html">Flagged for review</a>.</aside>
+<h1>Audit</h1>
+<p class="lede">What was checked, what was wrong, and what is still unchecked.</p>
+
+<p class="lede">This session's job was to review the repository line by line and confirm every published number
+against an official source. Three published defects were found. All three had passed every existing verifier, which
+is the reason they are written up here rather than quietly corrected.</p>
+
+<div class="stats">
+  <div><strong>3</strong> defects found and fixed</div>
+  <div><strong>5</strong> values re-read from official pages live</div>
+  <div><strong>936</strong> rows compared across independent captures</div>
+  <div><strong>7</strong> published statistics independently recomputed</div>
+</div>
+
+<h2>Defects</h2>
+<table class="grid wide">
+<thead><tr><th>ID</th><th>Defect</th><th>Severity</th><th>How it was found</th><th>What it affected</th>
+<th>Fix</th><th>Check that now catches it</th><th>Status</th></tr></thead>
+<tbody><tr><td><code>A01</code></td><td>Every injury row was attributed to Dallas Cowboys</td><td>high</td><td>By counting distinct clubs in data/lines/injuries.json while reviewing the injury tracker: 296 rows, 1 club.</td><td>All 296 rows of the official Week 10 report carried team = &#x27;Dallas Cowboys&#x27;. The row values (player, position, injury, practice, game status) were right; the club was wrong on every row, and the lineup-risk table built from it named one club&#x27;s players against every fixture.</td><td>The parser searched the whole preceding page for a full club name and kept the last match, so every table inherited the club named last. It now binds each table to its own club title element. The rebuilt file matches the independent parse in data/nfl-analytics/injuries-week-10-2026.json on all 296 rows.</td><td><code>tests/test_lines_integrity.py::TestInjuryAttribution</code></td><td>fixed</td></tr><tr><td><code>A02</code></td><td>leaderboard.json disagreed with strategies.json on the reward for S03</td><td>medium</td><td>By comparing the two published files field by field while reviewing the strategy board.</td><td>strategies.json gave S03 a reward of 72; leaderboard.json gave 0. The whole leaderboard was built from copies taken before the redundancy gate ran, so the gate&#x27;s rewrite of G7, status and reward never reached the published leaderboard, and its ranks were computed before G7 applied.</td><td>Leaderboard rows are now the same objects as the strategy rows, with an assertion that fails the build on any drift. S03 is published as failed on both files, with reward 0.</td><td><code>tests/test_lines_integrity.py::TestLeaderboardConsistency</code></td><td>fixed</td></tr><tr><td><code>A03</code></td><td>The published shuffle test could only return p = 1.000</td><td>medium</td><td>By re-deriving the statistic from the committed outcomes while recomputing the published home-field figures.</td><td>The test permuted 453 outcomes and compared the permuted home-win count with the observed count. A permutation cannot change that count, so p was 1.0000 by construction. The conclusion it supported happens to be correct, but the test could not have failed.</td><td>Replaced with a two-sided bootstrap on the hit indicator: 0.5121 observed, 95% interval 0.4702-0.5607, p = 0.6657. Same conclusion, real test.</td><td><code>tests/test_lines_integrity.py::TestShuffleTestIsNotVacuous</code></td><td>fixed</td></tr></tbody></table>
+
+<h2>Live verification performed</h2>
+<table class="grid">
+<thead><tr><th>Check</th><th class="num">Rows</th><th class="num">Mismatches</th><th>Verdict</th></tr></thead>
+<tbody><tr><td>Official 2026 standings re-read live on nfl.com and compared club by club (W, L, T, PF, PA)</td><td class="num">32</td><td class="num">0</td><td>all 32 clubs matched</td></tr><tr><td>Official 2026 game score re-read live on the nfl.com game page</td><td class="num">1</td><td class="num">0</td><td>JAX 33 - BAL 10 matched</td></tr><tr><td>Official player game log re-read live (8 games) and compared row by row</td><td class="num">8</td><td class="num">0</td><td>all 8 rows matched, including the week with no statistics</td></tr><tr><td>Official depth-chart tiers re-read live on the club site</td><td class="num">2</td><td class="num">0</td><td>Cade Mays -&gt; Juice Scruggs and D.J. Reed -&gt; Rock Ya-Sin both confirmed</td></tr><tr><td>Week 10 injury report parsed by two independent parsers and compared row by row</td><td class="num">296</td><td class="num">0</td><td>identical on club, player, position, injury, practice and game status</td></tr><tr><td>Four independent 2026 result captures compared game by game</td><td class="num">137</td><td class="num">0</td><td>all four agree on away and home score for all 137 completed games</td></tr><tr><td>Power calculation for the number of bets needed at a -110 price recomputed from first principles</td><td class="num">5</td><td class="num">0</td><td>19,565 / 4,887 / 2,170 / 779 / 345 reproduced exactly</td></tr><tr><td>Dispersion figures behind the prop noise gates recomputed from the committed player rows</td><td class="num">2</td><td class="num">0</td><td>both variances reproduced to two decimals</td></tr><tr><td>Home-field win count recomputed from the committed official finals</td><td class="num">453</td><td class="num">0</td><td>232 home wins of 453 decided games (51.21%) reproduced</td></tr></tbody></table>
+
+<h2>What was recomputed rather than trusted</h2>
+<ul class="bullets"><li>Home-field win rate: 232 of 453 decided games (51.21%), rebuilt from nfl/system/data/official-results.json and re-read live against the official standings page (32/32 clubs matched).</li><li>The 2025-26 home-field bootstrap: 95% interval 0.4702-0.5607, two-sided p = 0.6657, after the vacuous test was replaced.</li><li>The number of bets needed to detect a +1, +2, +3, +5 and +7.5 point edge at -110: 19,565 / 4,887 / 2,170 / 779 / 345.</li><li>The receiving-yards standard deviation behind the prop noise gates (22.65 yards) and the games required for a +3, +5 and +10 yard edge.</li><li>The two-receiver correlation r = -0.8192 on the six matched games, and its leave-one-game-out range (-0.911 to -0.780), which shows the sign does not depend on a single game.</li><li>All 137 completed 2026 games, across four independently built captures.</li><li>All 296 Week 10 injury rows, across two independently written parsers.</li></ul>
+
+<h2>What this audit did not do</h2>
+<ul class="bullets"><li>No official source was read for every one of the 1,170 games in the third-party archive; only the 2026 results were compared, because those exist in four independent official captures.</li><li>No claim on the site was checked against a market price, because no market price exists in the repository.</li><li>The official Game Book PDFs were not parsed for participation, so no replacement is proven to have played.</li><li>Depth charts for 31 of 32 clubs were read as committed and only Detroit&#x27;s and San Francisco&#x27;s were re-read live. The other 29 are as captured, and Houston&#x27;s is an image and is left blank.</li><li>Nothing was verified about weeks 11-18 of the 2026 season: those fixtures have not been played.</li></ul>
+
+<footer class="foot">
+  <p>Every row links to the register or official page it came from. Regenerate with
+  <code>python3 tools/build_control.py &amp;&amp; python3 tools/build_control_site.py</code>; verify with
+  <code>python3 tools/verify_control.py</code>.</p>
+  <p>Part of the <a href="../index.html">Korea5 repository site</a>. Other NFL sections:
+  <a href="../lines/index.html">Lines Lab</a> · <a href="../lab/index.html">evidence lab</a> ·
+  <a href="../nfl-lab/index.html">model lab</a> · <a href="../nfl/index.html">decision support</a> ·
+  <a href="../nfl/system/index.html">decision system</a> · <a href="../lines-lab/index.html">skill lab</a> ·
+  <a href="../strategy-lab/index.html">strategy lab</a>.</p>
+</footer>
+</main></body></html>

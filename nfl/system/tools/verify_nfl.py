@@ -198,7 +198,7 @@ check("reward is not authorised in the leaderboard data", lb.get("rewardAuthoris
 skill = derived.get("skill", {})
 check("no strategy is certified in the skill data",
       skill.get("certifiedStrategies") == 0)
-check("shuffle test prints a p-value", "pValueOneSided" in skill.get("shuffleTest", {}))
+check("shuffle test prints a p-value", "pValueTwoSided" in skill.get("shuffleTest", {}))
 
 # curated registers
 for name in ("suggestions", "questions", "validation-gates", "strategies", "signals"):

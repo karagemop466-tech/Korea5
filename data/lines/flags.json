@@ -1,7 +1,8 @@
 {
  "meta": {
   "policy": "Flagged items are published for review. They do not block the site, the merge or the deployment. Every item states what is unverified and the official source that would settle it.",
-  "compiled": "2026-11-13"
+  "compiled": "2026-11-13",
+  "lastReviewed": "2026-11-13"
  },
  "flags": [
   {
@@ -133,6 +134,42 @@
    "sourceUrl": "https://www.nfl.com/games/",
    "sourceName": "NFL.com official game page",
    "action": "Leave weather out unless an official forecast usable at decision time can be found."
+  },
+  {
+   "id": "FL-14",
+   "severity": "high",
+   "item": "Every injury row was attributed to Dallas Cowboys (corrected 2026-11-13)",
+   "detail": "All 296 rows of the official 2026 Week 10 injury report carried team = 'Dallas Cowboys'. Cause: scripts/lines/fetch_nfl.py searched backwards across the whole page for a full club name and kept the last match, so every table inherited the club named last before the final table. Row values (player, position, injury, practice status, game status) were correct; only the club attribution was wrong. Corrected by binding each table to its own d3-o-section-sub-title club label; the rebuilt file now matches the independent parse in data/nfl-analytics/injuries-week-10-2026.json on all 296 rows across 26 reporting clubs (team abbreviation, player, position, injury, practice status and game status compared row by row). Downstream lineup-risk rows were regenerated (207 rows for one club -> 165 rows across 4 clubs).",
+   "affects": "lines/injuries.html, lines/leaderboard.html and every lineup-risk figure computed from them",
+   "sourceUrl": "https://www.nfl.com/injuries/",
+   "sourceName": "NFL.com official Week 10 injury report",
+   "action": "Corrected and verified. Reviewer should confirm the club counts on lines/injuries.html now show 26 clubs.",
+   "status": "corrected",
+   "detectedBy": "session arena-827c3da2"
+  },
+  {
+   "id": "FL-15",
+   "severity": "medium",
+   "item": "leaderboard.json disagreed with strategies.json on S03 reward (corrected 2026-11-13)",
+   "detail": "strategies.json gave S03 a reward of 72 while leaderboard.json gave it 0, because the leaderboard writer built shallow copies before the redundancy gate (G7) ran, so the gate's rewrite of G7/status/reward never reached the copies. The published rank order was therefore computed before G7 was applied. Fixed by making the leaderboard rows the same objects as the strategy rows and adding an assertion that fails the build on any drift.",
+   "affects": "lines/leaderboard.html, data/lines/leaderboard.json",
+   "sourceUrl": "https://www.nfl.com/standings/",
+   "sourceName": "No external source: internal consistency defect",
+   "action": "Corrected. S03 is now published as failed (G7 correlation +0.993 with S05) with reward 0 on both files.",
+   "status": "corrected",
+   "detectedBy": "session arena-827c3da2"
+  },
+  {
+   "id": "FL-16",
+   "severity": "medium",
+   "item": "Lineup-risk rows are raised against Week 18 fixtures for a Week 10 injury report",
+   "detail": "build_lineup_risk iterates over every 2026 game that has no score yet, which includes weeks 11-18, and applies the single stored Week 10 injury snapshot to all of them. 69 of the 165 published rows are for weeks 11-18. Those rows state a current injury against a future game date and should not be read as a projection. The rows are published with this limitation rather than filtered out, because filtering would hide the mismatch.",
+   "affects": "lines/injuries.html, lines/buzz lineup tier",
+   "sourceUrl": "https://www.nfl.com/injuries/",
+   "sourceName": "NFL.com official weekly injury report (Week 10 only)",
+   "action": "Reviewer decision: keep as-is with this label, or restrict the table to Week 10-11 fixtures.",
+   "status": "needs-review",
+   "detectedBy": "session arena-827c3da2"
   }
  ]
 }

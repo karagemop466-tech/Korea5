@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/runner/work/Korea5/Korea5/tools/fetch_nfl_lab.py", line 1305, in _entry
+    main()
+  File "/home/runner/work/Korea5/Korea5/tools/fetch_nfl_lab.py", line 1272, in main
+    "scoreLabelMismatches": [{k: r[k] for k in ("slug", "away", "home", "scoreMismatch")}
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Korea5/Korea5/tools/fetch_nfl_lab.py", line 1272, in <listcomp>
+    "scoreLabelMismatches": [{k: r[k] for k in ("slug", "away", "home", "scoreMismatch")}
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Korea5/Korea5/tools/fetch_nfl_lab.py", line 1272, in <dictcomp>
+    "scoreLabelMismatches": [{k: r[k] for k in ("slug", "away", "home", "scoreMismatch")}
+                                 ~^^^
+KeyError: 'slug'

@@ -1,0 +1,11 @@
+{
+ "meta": {
+  "dataset": "NFL 2026 official team statistics (points), cross-check for derived scoring rates",
+  "retrievedUTC": "2026-11-13T13:15:17.007678+00:00",
+  "rows": 0,
+  "sourceUrl": "https://www.nfl.com/stats/team-stats/?season=2026&statType=season&sortOrder=DESC&sort=points&category=points",
+  "sourceName": "NFL.com official statistics",
+  "note": "Empty rows array means the page renders client-side; no values were assumed."
+ },
+ "rows": []
+}

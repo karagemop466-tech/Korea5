@@ -1,6 +1,6 @@
 # NFL Lines & Strategy Lab - executive summary
 
-Season 2026. Snapshot 2026-11-13. Generated 2026-11-13T13:41:59Z.
+Season 2026. Snapshot 2026-11-13. Generated 2026-11-13T13:48:15Z.
 
 ## State of the programme
 

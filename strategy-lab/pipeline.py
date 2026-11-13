@@ -2,7 +2,7 @@
 """
 NFL Lines & Strategy Lab - data pipeline.
 
-Reads the hand-transcribed official source tables in strategy-strategy-lab/data/*-source.txt
+Reads the hand-transcribed official source tables in strategy-lab/data/*-source.txt
 (every row carries an official NFL.com source URL), cross-checks them against
 each other, then computes:
 
@@ -14,7 +14,7 @@ each other, then computes:
 Nothing here invents a market number.  Any value that cannot be confirmed from an
 official source is left blank and recorded on the Flagged for Review page.
 
-Run:  python3 strategy-strategy-lab/pipeline.py
+Run:  python3 strategy-lab/pipeline.py
 """
 
 import json

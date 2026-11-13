@@ -1,0 +1,132 @@
+{
+  "generatedUTC": "2026-11-13T13:10:32.930341Z",
+  "note": "Raw probe only. No value in this file is published on the site; it exists to prove which official fields are machine-readable.",
+  "sources": {
+    "nfl_week5": {
+      "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "httpStatus": 200,
+      "bytes": 2278840,
+      "diagnostics": {
+        "rsc_push_blocks": 37,
+        "weeklyGameDetails": 2,
+        "score_field": 0,
+        "home_score": 0,
+        "final_status": 0,
+        "odds_field": 0
+      },
+      "sampleBytes": 400000
+    },
+    "nfl_week10": {
+      "url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "httpStatus": 200,
+      "bytes": 2312722,
+      "diagnostics": {
+        "rsc_push_blocks": 40,
+        "weeklyGameDetails": 2,
+        "score_field": 0,
+        "odds_field": 0
+      },
+      "sampleBytes": 400000
+    },
+    "injuries_reg10": {
+      "url": "https://www.nfl.com/injuries/league/2026/reg10",
+      "httpStatus": 200,
+      "bytes": 398837,
+      "diagnostics": {
+        "injury_row_json": 0,
+        "table_headers": 130,
+        "rsc_push_blocks": 0
+      },
+      "sampleBytes": 398837
+    },
+    "depth_49ers": {
+      "url": "https://www.49ers.com/team/depth-chart",
+      "httpStatus": 200,
+      "bytes": 288758,
+      "diagnostics": {
+        "depth_rows": 64,
+        "updated_as_of": 1
+      },
+      "sampleBytes": 288758
+    },
+    "depth_chiefs": {
+      "url": "https://www.chiefs.com/team/depth-chart",
+      "httpStatus": 200,
+      "bytes": 302185,
+      "diagnostics": {
+        "depth_rows": 66,
+        "unofficial_note": 2
+      },
+      "sampleBytes": 302185
+    },
+    "stats_off_passing": {
+      "url": "https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all",
+      "httpStatus": 200,
+      "bytes": 245616,
+      "diagnostics": {
+        "stat_rows": 62,
+        "table_cells": 512
+      },
+      "sampleBytes": 245616
+    },
+    "stats_def_passing": {
+      "url": "https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all",
+      "httpStatus": 200,
+      "bytes": 245537,
+      "diagnostics": {
+        "stat_rows": 480,
+        "rsc_push_blocks": 0
+      },
+      "sampleBytes": 245537
+    },
+    "stats_off_scoring": {
+      "url": "https://www.nfl.com/stats/team-stats/offense/scoring/2026/reg/all",
+      "httpStatus": 200,
+      "bytes": 241089,
+      "diagnostics": {
+        "stat_rows": 160
+      },
+      "sampleBytes": 241089
+    },
+    "stats_def_scoring": {
+      "url": "https://www.nfl.com/stats/team-stats/defense/scoring/2026/reg/all",
+      "httpStatus": 200,
+      "bytes": 241004,
+      "diagnostics": {
+        "stat_rows": 128
+      },
+      "sampleBytes": 241004
+    },
+    "game_sf_dal": {
+      "url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+      "httpStatus": 200,
+      "bytes": 1173511,
+      "diagnostics": {
+        "odds_field": 0,
+        "odds_word": 0,
+        "injury_list": 42
+      },
+      "sampleBytes": 400000
+    },
+    "player_cmc": {
+      "url": "https://www.nfl.com/players/christian-mccaffrey/stats",
+      "httpStatus": 200,
+      "bytes": 228772,
+      "diagnostics": {
+        "game_log": 0,
+        "stat_table": 285,
+        "rsc_push_blocks": 0
+      },
+      "sampleBytes": 228772
+    },
+    "nfl_rulebook": {
+      "url": "https://operations.nfl.com/the-rules/2026-nfl-rulebook/",
+      "httpStatus": 404,
+      "bytes": 15167,
+      "diagnostics": {
+        "injury_report_section": 0
+      },
+      "sampleBytes": 15167
+    }
+  }
+}

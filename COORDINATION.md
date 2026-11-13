@@ -685,3 +685,30 @@ The first merged run's repository CI caught one generated local-link failure in 
 | CI | Planner certainty/site checks run `43431161023` success; Pages run `43431159971` build, deploy and report-build-status all success |
 | Pages | GitHub Pages API reports `built`, source `main` /, URL https://karagemop466-tech.github.io/Korea5/ |
 | Live feature | https://karagemop466-tech.github.io/Korea5/nfl-strategy.html |
+
+---
+
+## Session `arena/b2d2460c-korea5` — 2026-11-13 (NFL lines & strategy lab + decision-support + suggestions board)
+
+Branch constraint: Arena fixes this session to `arena/b2d2460c-korea5`; no other branch will be created or pushed.
+Start point: `main` tip `e826658`. All prior records above are preserved unchanged.
+Note: the session branch was initialised as a single grafted commit with no shared history; it was hard-reset to
+`origin/main` (`e826658`) before any work so the later PR to `main` is a clean fast-forward-style merge. No files changed.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| B1 | Repo review: line-by-line audit of existing data/pages; flag irregularities with official-source links | arena-b2d2460c | in progress | `COORDINATION.md`, `lab/data/flagged.json` |
+| B2 | NFL requirements register: collect + organise + analyse the full requirement list | arena-b2d2460c | pending | `lab/requirements.html`, `lab/data/requirements.json` |
+| B3 | Decision-support Q&A: questions / information held / information missing / answers / discovery steps | arena-b2d2460c | pending | `lab/decisions.html`, `lab/data/decisions.json` |
+| B4 | Suggestions board with review-and-approve workflow (choose a path before implementing) | arena-b2d2460c | pending | `lab/suggestions.html`, `lab/data/suggestions.json` |
+| B5 | Line origination + signal research: own NFL lines, singles, parlays, player-prop combos, correlation, validation gates, luck removal | arena-b2d2460c | pending | `lab/lines.html`, `lab/signals.html`, `lab/strategies.html`, `lab/leaderboard.html`, `lab/data/*.json` |
+| B6 | Injury & depth-chart tracking design (2nd/3rd/4th-string replacement, offense and defense) | arena-b2d2460c | pending | `lab/injuries.html`, `lab/data/injuries.json` |
+| B7 | Executive summary of important details | arena-b2d2460c | pending | `lab/index.html`, `lab/data/executive-summary.md` |
+| B8 | Site: `lab/` landing + subpages by category, tables, every row source-linked; wire into root nav | arena-b2d2460c | pending | `lab/*.html`, `lab/assets/*`, root nav |
+| B9 | Verification: line-by-line row/source audit, link check, JSON integrity, flagged page | arena-b2d2460c | pending | `lab/verify.py`, `lab/data/verification.json` |
+| B10 | Integration: PR to `main`, merge without waiting, confirm Pages deploy, record result | arena-b2d2460c | pending | `COORDINATION.md` (log only) |
+
+Scope: all new content lands under `lab/` (new, owned namespace) plus nav links added to `index.html` and
+`nfl.html`, and appended log entries in `COORDINATION.md`. No other session's schedule data or generators are edited.
+Scheduled/verified content is never invented: any value not confirmable from an official source is left blank,
+marked `unverified`, and published on the lab's Flagged for Review page.

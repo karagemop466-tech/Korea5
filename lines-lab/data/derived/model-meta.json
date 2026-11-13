@@ -1,0 +1,47 @@
+{
+ "builtUTC": "2026-11-13T13:45:00Z",
+ "params": {
+  "lam": 0.1,
+  "blowoutCap": 18.0,
+  "paceK": 3.0,
+  "seasonShrink": 0.55
+ },
+ "hfa": 2.07,
+ "source": "https://github.com/nflverse/nfldata/blob/master/data/games.csv",
+ "note": "lam/cap/paceK tuned only on 2016-2019 regular-season spread MAE; 2020-2025 held out for leaderboard evaluation.",
+ "sigmas": {
+  "sigma_model_margin": 13.5,
+  "sigma_market_margin": 13.18,
+  "sigma_model_total": 13.95,
+  "sigma_market_total": 13.41,
+  "n": 7413
+ },
+ "diagnostics": {
+  "tuning_2016_2019": {
+   "n": 1024,
+   "modelMAE_margin": 10.17,
+   "marketMAE_margin": 9.83,
+   "modelMAE_total": 11.11,
+   "marketMAE_total": 10.63
+  },
+  "heldout_2020_2025": {
+   "n": 1615,
+   "modelMAE_margin": 10.18,
+   "marketMAE_margin": 9.76,
+   "modelMAE_total": 10.92,
+   "marketMAE_total": 10.28
+  },
+  "alltime_1999_2025": {
+   "n": 6967,
+   "modelMAE_margin": 10.56,
+   "marketMAE_margin": 10.26,
+   "modelMAE_total": 11.05,
+   "marketMAE_total": 10.62
+  }
+ },
+ "recordsCrossCheck": {
+  "method": "records computed from nfldata games.csv (weeks 1-9, 2026) vs records printed on the official NFL.com Week 10/11 pages fetched 2026-11-13",
+  "mismatches": [],
+  "note": "NYG (5-3-1) and WAS (3-5-1) on the official pages include the Week 10 TNF result (WAS 24 @ NYG 21); nfldata has the same final score, so both agree after TNF."
+ }
+}

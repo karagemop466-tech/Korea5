@@ -1,0 +1,113 @@
+{
+ "builtUTC": "2026-11-13T13:45:00Z",
+ "data": "https://github.com/nflverse/nfldata/blob/master/data/games.csv",
+ "values": {
+  "pearsonMarginTotal_1999_2025": 0.0201,
+  "n": 6967,
+  "phiHomeCoverOver_2016_2025": 0.0219,
+  "n_cover": 2639,
+  "sigmaMarginPts": 13.18,
+  "sigmaTotalPts": 13.41
+ },
+ "sgpScenarios": [
+  {
+   "game": "BUF @ NYJ",
+   "modelSpreadHome": -12.2,
+   "modelTotal": 42.7,
+   "legMarginals": {
+    "over": 0.5001,
+    "under": 0.5005,
+    "favoriteSpreadCover": 0.5002,
+    "favoriteML": 0.8225
+   },
+   "joints": {
+    "favoriteSpread+over": 0.2464,
+    "favoriteSpread+under": 0.2521,
+    "dogSpread+over": 0.2528,
+    "dogSpread+under": 0.2476
+   },
+   "multipliers": {
+    "favoriteSpread+over": 0.985,
+    "favoriteSpread+under": 1.007,
+    "dogSpread+over": 1.011,
+    "dogSpread+under": 0.99
+   }
+  },
+  {
+   "game": "JAX @ TEN",
+   "modelSpreadHome": -12.4,
+   "modelTotal": 43.2,
+   "legMarginals": {
+    "over": 0.4997,
+    "under": 0.5007,
+    "favoriteSpreadCover": 0.4991,
+    "favoriteML": 0.8285
+   },
+   "joints": {
+    "favoriteSpread+over": 0.248,
+    "favoriteSpread+under": 0.2547,
+    "dogSpread+over": 0.2539,
+    "dogSpread+under": 0.2465
+   },
+   "multipliers": {
+    "favoriteSpread+over": 0.994,
+    "favoriteSpread+under": 1.019,
+    "dogSpread+over": 1.015,
+    "dogSpread+under": 0.983
+   }
+  },
+  {
+   "game": "SF @ DAL",
+   "modelSpreadHome": -3.9,
+   "modelTotal": 45.1,
+   "legMarginals": {
+    "over": 0.499,
+    "under": 0.4996,
+    "favoriteSpreadCover": 0.4984,
+    "favoriteML": 0.6153
+   },
+   "joints": {
+    "favoriteSpread+over": 0.2472,
+    "favoriteSpread+under": 0.2538,
+    "dogSpread+over": 0.2528,
+    "dogSpread+under": 0.2469
+   },
+   "multipliers": {
+    "favoriteSpread+over": 0.994,
+    "favoriteSpread+under": 1.019,
+    "dogSpread+over": 1.01,
+    "dogSpread+under": 0.985
+   }
+  },
+  {
+   "game": "PIT @ CIN",
+   "modelSpreadHome": 3.1,
+   "modelTotal": 43.3,
+   "legMarginals": {
+    "over": 0.4982,
+    "under": 0.4998,
+    "favoriteSpreadCover": 0.4988,
+    "favoriteML": 0.5934
+   },
+   "joints": {
+    "favoriteSpread+over": 0.2531,
+    "favoriteSpread+under": 0.2458,
+    "dogSpread+over": 0.2455,
+    "dogSpread+under": 0.2537
+   },
+   "multipliers": {
+    "favoriteSpread+over": 1.018,
+    "favoriteSpread+under": 0.986,
+    "dogSpread+over": 0.983,
+    "dogSpread+under": 1.013
+   }
+  }
+ ],
+ "parlayMath": {
+  "twoLegMinus110FairAtIndependence": 3.64,
+  "typicalBookPayout": 2.6,
+  "bookHoldAtIndependencePct": 28.7,
+  "note": "Book payout is fixed at 2.6 for two -110 legs; correlated legs change the FAIR price, not the payout \u2014 positive correlation on winning combos raises fair price and worsens hold."
+ },
+ "method": "Margin~N(model margin, sigma_m), Total~N(model total, sigma_t) with Pearson rho(margin,total) from 1999-2025 results; 400,000 seeded simulations per scenario."
+}

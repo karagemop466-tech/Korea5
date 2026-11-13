@@ -35,6 +35,7 @@ NAV = [
     ("flagged.html", "Flagged"),
     ("lines/index.html", "NFL lines (paper)"),
     ("method.html", "Method"),
+    ("lines-lab/index.html", "NFL Skill Lab"),
     ("extra/index.html", "Official feeds &amp; verification"),
     ("nfl/system/index.html", "NFL decision system"),
     ("strategy-lab/index.html", "Strategy Lab"),

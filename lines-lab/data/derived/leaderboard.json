@@ -1,0 +1,418 @@
+{
+ "builtUTC": "2026-11-13T13:45:00Z",
+ "evaluationWindow": "2020-2025 NFL regular seasons (held out from tuning)",
+ "pricing": "flat 1 unit; spreads/totals at -110; MLs at listed nfldata moneylines",
+ "data": "https://github.com/nflverse/nfldata/blob/master/data/games.csv",
+ "rewardPolicy": "PAPER POINTS ONLY. No monetary or real-world rewards are authorized. Strategies failing gates stay published; nothing is deleted.",
+ "rows": [
+  {
+   "strategy": "S0 market favorite ML (baseline)",
+   "bets": 1615,
+   "winPct": 66.7,
+   "roiPct": -2.94,
+   "ci95": [
+    -6.31,
+    0.52
+   ],
+   "seasonRoi": {
+    "2020": -2.48,
+    "2021": -12.31,
+    "2022": -3.17,
+    "2023": 2.18,
+    "2024": 4.82,
+    "2025": -6.67
+   },
+   "seasonsPositive": 2,
+   "nSeasons": 6,
+   "gates": [
+    {
+     "gate": "G1 sample >= 200",
+     "pass": true
+    },
+    {
+     "gate": "G2 ROI 95% CI lower > 0",
+     "pass": false
+    },
+    {
+     "gate": "G3 ROI > 0 in >= 2/3 of seasons",
+     "pass": false
+    },
+    {
+     "gate": "G4 no-leakage walk-forward audit",
+     "pass": true
+    },
+    {
+     "gate": "G5 CLV vs timestamped entry",
+     "pass": null,
+     "note": "not measurable \u2014 no entry-time quotes archived; blocks reward payout"
+    },
+    {
+     "gate": "G6 prospective paper trial",
+     "pass": null,
+     "note": "not started \u2014 pre-registered lock required"
+    }
+   ],
+   "passedAllMandatory": false,
+   "leaderboardPoints": 0.0,
+   "status": "did not qualify \u2014 retained in audit history"
+  },
+  {
+   "strategy": "S1 spread edge >= 2",
+   "bets": 372,
+   "winPct": 51.3,
+   "roiPct": -1.98,
+   "ci95": [
+    -11.73,
+    7.77
+   ],
+   "seasonRoi": {
+    "2020": -4.54,
+    "2021": -7.62,
+    "2022": 3.19,
+    "2023": -13.45,
+    "2024": 4.13,
+    "2025": -1.14
+   },
+   "seasonsPositive": 2,
+   "nSeasons": 6,
+   "gates": [
+    {
+     "gate": "G1 sample >= 200",
+     "pass": true
+    },
+    {
+     "gate": "G2 ROI 95% CI lower > 0",
+     "pass": false
+    },
+    {
+     "gate": "G3 ROI > 0 in >= 2/3 of seasons",
+     "pass": false
+    },
+    {
+     "gate": "G4 no-leakage walk-forward audit",
+     "pass": true
+    },
+    {
+     "gate": "G5 CLV vs timestamped entry",
+     "pass": null,
+     "note": "not measurable \u2014 no entry-time quotes archived; blocks reward payout"
+    },
+    {
+     "gate": "G6 prospective paper trial",
+     "pass": null,
+     "note": "not started \u2014 pre-registered lock required"
+    }
+   ],
+   "passedAllMandatory": false,
+   "leaderboardPoints": 0.0,
+   "status": "did not qualify \u2014 retained in audit history"
+  },
+  {
+   "strategy": "S2 spread edge >= 3",
+   "bets": 241,
+   "winPct": 51.0,
+   "roiPct": -2.56,
+   "ci95": [
+    -14.45,
+    10.11
+   ],
+   "seasonRoi": {
+    "2020": 1.07,
+    "2021": -0.39,
+    "2022": 2.11,
+    "2023": -24.52,
+    "2024": 6.82,
+    "2025": -7.62
+   },
+   "seasonsPositive": 3,
+   "nSeasons": 6,
+   "gates": [
+    {
+     "gate": "G1 sample >= 200",
+     "pass": true
+    },
+    {
+     "gate": "G2 ROI 95% CI lower > 0",
+     "pass": false
+    },
+    {
+     "gate": "G3 ROI > 0 in >= 2/3 of seasons",
+     "pass": false
+    },
+    {
+     "gate": "G4 no-leakage walk-forward audit",
+     "pass": true
+    },
+    {
+     "gate": "G5 CLV vs timestamped entry",
+     "pass": null,
+     "note": "not measurable \u2014 no entry-time quotes archived; blocks reward payout"
+    },
+    {
+     "gate": "G6 prospective paper trial",
+     "pass": null,
+     "note": "not started \u2014 pre-registered lock required"
+    }
+   ],
+   "passedAllMandatory": false,
+   "leaderboardPoints": 0.0,
+   "status": "did not qualify \u2014 retained in audit history"
+  },
+  {
+   "strategy": "S3 total edge >= 2",
+   "bets": 441,
+   "winPct": 49.0,
+   "roiPct": -6.49,
+   "ci95": [
+    -15.58,
+    2.6
+   ],
+   "seasonRoi": {
+    "2020": 20.57,
+    "2021": -8.88,
+    "2022": -18.95,
+    "2023": -10.26,
+    "2024": 7.81,
+    "2025": -4.54
+   },
+   "seasonsPositive": 2,
+   "nSeasons": 6,
+   "gates": [
+    {
+     "gate": "G1 sample >= 200",
+     "pass": true
+    },
+    {
+     "gate": "G2 ROI 95% CI lower > 0",
+     "pass": false
+    },
+    {
+     "gate": "G3 ROI > 0 in >= 2/3 of seasons",
+     "pass": false
+    },
+    {
+     "gate": "G4 no-leakage walk-forward audit",
+     "pass": true
+    },
+    {
+     "gate": "G5 CLV vs timestamped entry",
+     "pass": null,
+     "note": "not measurable \u2014 no entry-time quotes archived; blocks reward payout"
+    },
+    {
+     "gate": "G6 prospective paper trial",
+     "pass": null,
+     "note": "not started \u2014 pre-registered lock required"
+    }
+   ],
+   "passedAllMandatory": false,
+   "leaderboardPoints": 0.0,
+   "status": "did not qualify \u2014 retained in audit history"
+  },
+  {
+   "strategy": "S4 total edge >= 3",
+   "bets": 341,
+   "winPct": 47.2,
+   "roiPct": -9.86,
+   "ci95": [
+    -19.94,
+    0.21
+   ],
+   "seasonRoi": {
+    "2020": -23.64,
+    "2021": 1.82,
+    "2022": -18.86,
+    "2023": -10.27,
+    "2024": -1.56,
+    "2025": -9.57
+   },
+   "seasonsPositive": 1,
+   "nSeasons": 6,
+   "gates": [
+    {
+     "gate": "G1 sample >= 200",
+     "pass": true
+    },
+    {
+     "gate": "G2 ROI 95% CI lower > 0",
+     "pass": false
+    },
+    {
+     "gate": "G3 ROI > 0 in >= 2/3 of seasons",
+     "pass": false
+    },
+    {
+     "gate": "G4 no-leakage walk-forward audit",
+     "pass": true
+    },
+    {
+     "gate": "G5 CLV vs timestamped entry",
+     "pass": null,
+     "note": "not measurable \u2014 no entry-time quotes archived; blocks reward payout"
+    },
+    {
+     "gate": "G6 prospective paper trial",
+     "pass": null,
+     "note": "not started \u2014 pre-registered lock required"
+    }
+   ],
+   "passedAllMandatory": false,
+   "leaderboardPoints": 0.0,
+   "status": "did not qualify \u2014 retained in audit history"
+  },
+  {
+   "strategy": "S5 road dog + edge",
+   "bets": 269,
+   "winPct": 50.6,
+   "roiPct": -3.48,
+   "ci95": [
+    -14.84,
+    7.87
+   ],
+   "seasonRoi": {
+    "2020": -9.4,
+    "2021": 3.51,
+    "2022": 12.81,
+    "2023": -20.45,
+    "2024": -0.39,
+    "2025": -20.45
+   },
+   "seasonsPositive": 2,
+   "nSeasons": 6,
+   "gates": [
+    {
+     "gate": "G1 sample >= 200",
+     "pass": true
+    },
+    {
+     "gate": "G2 ROI 95% CI lower > 0",
+     "pass": false
+    },
+    {
+     "gate": "G3 ROI > 0 in >= 2/3 of seasons",
+     "pass": false
+    },
+    {
+     "gate": "G4 no-leakage walk-forward audit",
+     "pass": true
+    },
+    {
+     "gate": "G5 CLV vs timestamped entry",
+     "pass": null,
+     "note": "not measurable \u2014 no entry-time quotes archived; blocks reward payout"
+    },
+    {
+     "gate": "G6 prospective paper trial",
+     "pass": null,
+     "note": "not started \u2014 pre-registered lock required"
+    }
+   ],
+   "passedAllMandatory": false,
+   "leaderboardPoints": 0.0,
+   "status": "did not qualify \u2014 retained in audit history"
+  },
+  {
+   "strategy": "S6 ML model-vs-market",
+   "bets": 894,
+   "winPct": 37.4,
+   "roiPct": -14.45,
+   "ci95": [
+    -22.36,
+    -6.52
+   ],
+   "seasonRoi": {
+    "2020": -20.55,
+    "2021": -10.43,
+    "2022": -16.62,
+    "2023": -20.85,
+    "2024": -9.99,
+    "2025": -8.41
+   },
+   "seasonsPositive": 0,
+   "nSeasons": 6,
+   "gates": [
+    {
+     "gate": "G1 sample >= 200",
+     "pass": true
+    },
+    {
+     "gate": "G2 ROI 95% CI lower > 0",
+     "pass": false
+    },
+    {
+     "gate": "G3 ROI > 0 in >= 2/3 of seasons",
+     "pass": false
+    },
+    {
+     "gate": "G4 no-leakage walk-forward audit",
+     "pass": true
+    },
+    {
+     "gate": "G5 CLV vs timestamped entry",
+     "pass": null,
+     "note": "not measurable \u2014 no entry-time quotes archived; blocks reward payout"
+    },
+    {
+     "gate": "G6 prospective paper trial",
+     "pass": null,
+     "note": "not started \u2014 pre-registered lock required"
+    }
+   ],
+   "passedAllMandatory": false,
+   "leaderboardPoints": 0.0,
+   "status": "did not qualify \u2014 retained in audit history"
+  },
+  {
+   "strategy": "S7 do-nothing (control)",
+   "bets": 0,
+   "winPct": null,
+   "roiPct": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "seasonRoi": {},
+   "seasonsPositive": 0,
+   "nSeasons": 0,
+   "gates": [
+    {
+     "gate": "G1 sample >= 200",
+     "pass": false
+    },
+    {
+     "gate": "G2 ROI 95% CI lower > 0",
+     "pass": false
+    },
+    {
+     "gate": "G3 ROI > 0 in >= 2/3 of seasons",
+     "pass": false
+    },
+    {
+     "gate": "G4 no-leakage walk-forward audit",
+     "pass": true
+    },
+    {
+     "gate": "G5 CLV vs timestamped entry",
+     "pass": null,
+     "note": "not measurable \u2014 no entry-time quotes archived; blocks reward payout"
+    },
+    {
+     "gate": "G6 prospective paper trial",
+     "pass": null,
+     "note": "not started \u2014 pre-registered lock required"
+    }
+   ],
+   "passedAllMandatory": false,
+   "leaderboardPoints": 0.0,
+   "status": "did not qualify \u2014 retained in audit history"
+  }
+ ],
+ "gatesLegend": [
+  "G1 minimum sample: >= 200 resolved bets",
+  "G2 profitability: bootstrap 95% CI lower bound of ROI > 0 (10,000 resamples)",
+  "G3 stability: ROI > 0 in at least 2/3 of evaluated seasons",
+  "G4 process: walk-forward, prediction emitted before rating update (code audit)",
+  "G5 closing-line value: needs archived timestamped entry quotes (pending; blocks rewards)",
+  "G6 prospective locked paper trial with pre-declared horizon (pending)"
+ ]
+}

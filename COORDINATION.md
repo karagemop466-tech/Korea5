@@ -1213,7 +1213,7 @@ session's generator logic was changed.
 | https://www.nfl.com/standings/ | W, L, T, PCT, PF, PA, NET, HOME, ROAD, DIV, CONF, STRK for all 32 clubs | `lab/data/standings-source.txt`, team rates, luck separation, independent reconciliation |
 | https://www.nfl.com/schedules/2026/by-week/week-1 … week-10 | Final scores, dates, networks, neutral-site designation, bye teams | 137 game rows in `lab/data/results-source.txt`; 13 scheduled Week 10 games |
 | https://www.nfl.com/games/<slug>-2026-reg-<week> | Row-level game pages | The per-game source link on all 137 + 13 rows |
-| https://www.nfl.com/injuries/ | Week 10 report: player, position, injury, practice status, game status | 130 verified injury rows (12 clubs) |
+| https://www.nfl.com/injuries/ | Week 10 report: player, position, injury, practice status, game status | 113 verified injury rows (10 clubs) |
 | https://www.nfl.com/players/<slug>/ | Official player pages | Per-row source links on the injury table |
 | https://www.nfl.com/teams/<team>/roster | Roster: number, position, ACT status - **no string order** | Negative finding behind flag F01 |
 | https://www.nfl.com/teams/san-francisco-49ers/depth-chart | **HTTP 404** | Proof that no official depth chart exists (flag F01) |
@@ -1840,7 +1840,86 @@ excerpts, or official-data registries.
 >>>>>>> origin/main
 
 
----
+### Integration record - session `arena/b2d2460c-korea5`
+
+| Step | Result |
+|---|---|
+| Pull request #1 | **https://github.com/karagemop466-tech/Korea5/pull/56** - "NFL Lines & Strategy Lab (strategy-lab/): originated lines, gated backtest, decision and suggestion registers" |
+| Merge #1 | **Merged** into `main` 2026-11-13T13:46:07Z, merge commit `bdd6c0b591b738e82e96454502add6849a751968` |
+| Pull request #2 | **https://github.com/karagemop466-tech/Korea5/pull/59** - "strategy-lab: fix doubled path prefix in prose and restore extra/ nav entry" |
+| Merge #2 | **Merged** 2026-11-13T13:49:07Z, merge commit `73ccaad695b6ac8ba3fe35b335e3eec86f6f2a2a` |
+| GitHub Pages | `pages build and deployment` **success** on `73ccaad`; Pages status `built`, source `main` / |
+| Live site | https://karagemop466-tech.github.io/Korea5/strategy-lab/index.html - fetched live after deploy and confirmed serving |
+| Total merges of `origin/main` into this branch | 6, because four other sessions were landing on `main` simultaneously. Every conflict was resolved with the policy recorded above; no other session's content was discarded. |
+
+**Corrections made after the first merge (both published, neither blocked anything):**
+
+1. The `lab/` -> `strategy-lab/` rename rewrote substrings inside already-rewritten strings, producing
+   `strategy-strategy-lab/` in prose on 14 pages. Cosmetic only - no link was broken - fixed in PR #59 and
+   verified live.
+2. An injury row count of "130 rows across 12 teams" in the requirement register and decision register was
+   wrong. The captured file holds **113 rows across 10 clubs**. Corrected in `strategy-lab/content.py` and
+   in the source table above; the pages are regenerated from the file so they now read 113 / 10, and the
+   decision record notes that the capture does not cover all 32 clubs. The live verify page reads
+   "113 / 113" because it counts the file directly.
+
+**Task board final state:** B1 done, B2 done, B3 done, B4 done, B5 done, B6 done (with R16/R17 blocked, not
+guessed), B7 done, B8 done, B9 done, B10 done. No unclaimed or overlapping task remains from this session.
+
+**Open requests to other sessions (logged, not acted on):**
+- To whoever owns `lab/`, `nfl-lab/`, `nfl/` and `nfl/system/`: five NFL surfaces now exist on `main` with
+  overlapping intent. Consolidating them into one navigation is left as an open suggestion; this session did
+  not edit any of them. `strategy-lab/index.html` links to all five in the meantime.
+- To whoever next re-runs `scripts/build_site.py` or `tools/build_extra.py`: both now carry this session's
+  additive `strategy-lab/index.html` nav entry, so it survives regeneration.
+## Session `arena/fb9c9608-korea5` — NFL Skill Lab (relocated) — union addendum, 2026-11-13
+
+This session worked the NFL directive in parallel with the sessions recorded above. Our sections below were
+appended to the board before the consolidation merges landed; they are re-added here, unchanged in substance,
+after merging `origin/main` so that every session's record survives. No other session's section was edited.
+
+### Claim + completion log (session arena-fb9c9608, K1–K11)
+
+- **K1** — claimed K1–K11 on this board before starting work; scope `lines-lab/**` (originally `nfl-lab/**`),
+  `research/NFL-LAB-EXECUTIVE-SUMMARY.md`, and nav/summary integration; pushed immediately.
+- **K2** — data acquisition: `git clone --depth 1 https://github.com/nflverse/nfldata` @ `7aae940b6389125e272dec473765fd063866a4b3`;
+  eight tables (games 1999–2026, closing/initial/sc lines, standings, teams, win totals, rosters) with a provenance
+  registry (`lines-lab/data/sources.json`).
+- **K3** — official NFL.com pages fetched live 2026-11-13 and transcribed with timestamps: Week 10 injury report
+  (296 player rows / 28 teams / 14 games), Week 10 schedule + TNF final (Commanders 24, Giants 21), Week 11 schedule.
+- **K4** — originated lines: walk-forward margin/pace ratings (λ=0.10, cap ±18, k=3, shrink 0.55, HFA 2.07;
+  tuned 2016–2019 only) for all 2026 W10/W11 games vs market with edges. Held-out MAE 10.18 vs market 9.76 (spread) —
+  baseline, no edge claimed.
+- **K5** — leaderboard: 8 strategies, held-out 2020–2025, flat −110/ML pricing, 6 gates. **Zero strategies qualified**
+  (every ROI 95% CI includes zero; market-favorite baseline −2.94%, n=1,615). Paper points only; rewards suspended
+  behind G5 (CLV) and G6 (prospective trial).
+- **K6** — correlation values: Pearson r(margin, total) +0.0201 (n=6,967); phi(cover, over) +0.0219 (n=2,639);
+  residual σ 13.18/13.41 pts; SGP multipliers 0.985×–1.011× (400k seeded sims/scenario); two-leg −110 parlay arithmetic.
+- **K7** — injury/depth tracker from the official report: per-unit availability-pressure index + QB notes; depth-chart
+  tier NOT inferred (flag NFL-K4).
+- **K8** — 12 site pages + assets with honesty banners; suggestions review board (14 proposals); decision register
+  (8 questions with have/don't-have/discovery steps).
+- **K9** — `research/NFL-LAB-EXECUTIVE-SUMMARY.md` + a section in the shared executive summary (re-added above after
+  the consolidation merge).
+- **K10** — repo review (`lines-lab/review.html`, R1–R8 with evidence): 27/27 W10/W11 matchups + kickoffs agree
+  official-vs-dataset; TNF final and 26 printed records agree (0 mismatches); `spread_line` convention validated
+  against nfldata DATASETS.md. An initial sign-flip bug in our edge math produced impossible numbers and was caught
+  and fixed before publication. Flags NFL-K1…K10 published on `lines-lab/flagged.html`.
+- **K11** — integration: nav via the generators (CI rebuilds root pages); full pipeline re-run after the relocation
+  and the consolidation merge; link check 0 missing; `verify_extra.py` 31/31; lab verifier 20/20; unit tests and JS
+  checks pass; smoke test 15/15 URLs 200.
+
+### Relocation + consolidation (this session, 2026-11-13)
+
+- On merging `origin/main` (PRs #40/#45/#46/#48/#49/#50 by sessions `998582f0`, `1e59465a`, `c6eea73d`, `722a47cb`,
+  and the `lab/` + `nfl/` builders), we found the `nfl-lab/` directory is owned by the model-lab session on `main`.
+  Our lab was **relocated to `lines-lab/` and rebranded "NFL Skill Lab"** rather than overwrite their pages.
+  Their workflow `nfl-lab-data.yml` was kept untouched; ours was renamed `lines-lab-data.yml`.
+- Their `scripts/build_site.py` NAV and `tools/build_extra.py` ROOT_NAV entries were preserved; ours were added as
+  `("lines-lab/index.html", "NFL Skill Lab")`. The idempotent root-nav post-pass now injects the Skill Lab link.
+- `research/EXECUTIVE-SUMMARY.md`: their consolidated version is authoritative for their sections; ours is re-appended
+  below theirs, labelled as re-added. `research/NFL-STRATEGY.md` (2cd43859) is untouched on both sides.
+- Duplication is recorded, not deleted, matching the consolidation session's stated policy.
 
 ## MERGE LOG — session `arena-65332583` integration with parallel sessions
 

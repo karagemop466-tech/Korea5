@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [ 'arena/998582f0-korea5' ]
-    paths: [ 'nfl/tools/probe.py', 'nfl/tools/dig.py', '.github/workflows/nfl-probe.yml' ]
+    paths: [ 'nfl/tools/probe.py', 'nfl/tools/dig.py', 'nfl/tools/probe2.py', '.github/workflows/nfl-probe.yml' ]
 permissions:
   contents: write
 concurrency:
@@ -28,6 +28,9 @@ jobs:
         run: python3 nfl/tools/probe.py
       - name: Dump markup excerpts for parser design (log only)
         run: python3 nfl/tools/dig.py all
+        continue-on-error: true
+      - name: Second probe (rosters, player leaders, prior season)
+        run: python3 nfl/tools/probe2.py
         continue-on-error: true
       - name: Commit probe output
         run: |

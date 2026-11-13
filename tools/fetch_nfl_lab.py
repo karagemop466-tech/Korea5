@@ -224,23 +224,32 @@ def game_status_name(g):
     return str(st or "").upper()
 
 
-def page_scores_by_slug(page: str):
-    """Fallback score reader, keyed by the official game slug in the link.
+SCORE_TEXT_RE = re.compile(
+    r"(?P<away>[A-Za-z0-9][A-Za-z .'\-]{1,28}?)\s+(?P<as>\d{1,2})\s*,\s*"
+    r"(?P<home>[A-Za-z0-9][A-Za-z .'\-]{1,28}?)\s+(?P<hs>\d{1,2})\s*,\s*(?P<state>FINAL(?:/OT)?|FINAL, TIED)")
 
-    The by-week page renders one accessible link per game, e.g.
-    `[Jaguars 33, Ravens 10, FINAL, Thursday, November 5th](/games/jaguars-at-ravens-2026-reg-9)`.
-    Keying on the slug avoids guessing which team a nickname belongs to. Only used when the
-    structured payload carries no score, and the row records `scoreSource: pageScoreLink`.
+
+def page_scores_by_slug(page: str):
+    """Read the FINAL score labels the by-week page publishes and bind each to its game slug.
+
+    The page carries an accessible string per game of the form
+    "Jaguars 33, Ravens 10, FINAL, Thursday, November 5th" next to the link
+    "/games/jaguars-at-ravens-2026-reg-9". Both a slug index and a nickname-pair index are returned;
+    the nickname index exists only so a row can be matched when the payload gives no slug.
+    Values come from the official page text, never from a guess, and every row records which
+    fallback (if any) produced it.
     """
-    out: dict[str, tuple[int, int]] = {}
-    for href, inner in re.findall(r'<a[^>]*href="(?:https?://www\.nfl\.com)?(/games/[a-z0-9\-]+)"[^>]*>(.*?)</a>',
-                                  page, re.S | re.I):
-        slug = href.rstrip("/").split("/")[-1]
-        text = strip_tags(inner)
-        m = re.search(r"(\d{1,2})\s*,\s*(\d{1,2})\s*,\s*FINAL", text)
-        if m:
-            out.setdefault(slug, (int(m.group(1)), int(m.group(2))))
-    return out
+    by_slug: dict[str, tuple[int, int]] = {}
+    by_nick: dict[tuple[str, str], tuple[int, int]] = {}
+    for m in SCORE_TEXT_RE.finditer(page):
+        window = page[max(0, m.start() - 500):m.end() + 500]
+        href = re.search(r'(?:https?://www\.nfl\.com)?/games/([a-z0-9\-]+)', window)
+        pair = (int(m.group("as")), int(m.group("hs")))
+        if href:
+            by_slug.setdefault(href.group(1), pair)
+        nick = (m.group("away").strip().split()[-1].lower(), m.group("home").strip().split()[-1].lower())
+        by_nick.setdefault(nick, pair)
+    return by_slug, by_nick
 
 
 # ---------------------------------------------------------------------- results
@@ -293,11 +302,16 @@ def parse_results(pairs, url, week_label, page_scores=None):
         a_pts = team_points(away_obj)
         h_pts = team_points(home_obj)
         score_source = "gamePayload" if (a_pts is not None and h_pts is not None) else None
-        if (a_pts is None or h_pts is None) and slug and page_scores:
-            alt = page_scores.get(slug)
+        if a_pts is None or h_pts is None:
+            alt = by_slug.get(slug) if slug else None
+            how = "pageScoreLink"
+            if alt is None:
+                nick = lambda n: (str(n or "").strip().split()[-1].lower() if n else "")
+                alt = by_nick.get((nick(away), nick(home)))
+                how = "pageScoreText"
             if alt:
-                a_pts, h_pts, score_source = alt[0], alt[1], "pageScoreLink"
-        is_final = status in ("FINAL", "F", "FINAL_OVERTIME", "STATUS_FINAL", "FINAL/TIE") or "FINAL" in status
+                a_pts, h_pts, score_source = alt[0], alt[1], how
+        is_final = ("FINAL" in status.upper()) or (a_pts is not None and h_pts is not None)
         winner = None
         if a_pts is not None and h_pts is not None:
             winner = "away" if a_pts > h_pts else ("home" if h_pts > a_pts else "tie")
@@ -325,6 +339,7 @@ def parse_results(pairs, url, week_label, page_scores=None):
             "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
             "verification": "verified" if (a_pts is not None and h_pts is not None)
                             else ("final-without-scores" if is_final else "scheduled"),
+            "scoreSourceNote": ("official page label says FINAL" if (a_pts is not None and score_source) else None),
         })
     return rows, games
 
@@ -381,7 +396,7 @@ def parse_standings(pairs, url):
 
 # ------------------------------------------------------------- plain HTML tables
 ROW_RE = re.compile(r"<tr[^>]*>(.*?)</tr>", re.S | re.I)
-CELL_RE = re.compile(r"<t(?P<k>hd)[^>]*>(?P<v>.*?)</t\k>", re.S | re.I)
+CELL_RE = re.compile(r"<t(?P<k>[hd])[^>]*>(?P<v>.*?)</t(?P=k)>", re.S | re.I)
 LINK_RE = re.compile(r'<a[^>]*href="(?P<h>[^"]+)"[^>]*>(?P<t>.*?)</a>', re.S | re.I)
 HEAD_RE = re.compile(r"<h([1-6])[^>]*>(?P<v>.*?)</h\1>", re.S | re.I)
 
@@ -818,7 +833,8 @@ def main():
         scores = page_scores_by_slug(page)
         fallback_probe[wk] = {
             "anchorCount": len(re.findall(r'href="[^"]*/games/[a-z0-9\-]+', page)),
-            "scoreAnchorsParsed": len(scores),
+            "scoreAnchorsParsed": len(scores[0]),
+            "scorePairsParsed": len(scores[1]),
             "rawSample": (re.sub(r"\s+", " ", page[page.find("/games/") - 200:page.find("/games/") + 1400])
                           if "/games/" in page else ""),
         }

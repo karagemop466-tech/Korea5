@@ -53,6 +53,26 @@ DEFECTS = [
               "p = 0.6657. Same conclusion, real test."),
          caughtBy="tests/test_lines_integrity.py::TestShuffleTestIsNotVacuous",
          status="fixed"),
+    dict(id="A04", severity="high",
+         title="All 14 Week 10 games were stored sixteen times each",
+         found=("By counting duplicate game ids in data/lines/games.json while reviewing the lineup-risk table, "
+                "after noticing the same Detroit rows repeated on the live page."),
+         impact=("482 regular-season 2026 rows for 272 unique games. The published '1,170 games' count was inflated "
+                 "(true figure 960), and the lineup table listed every deficiency nine times."),
+         fix=("fetch_games() now de-duplicates by game id at fetch time; the committed capture was rebuilt the same "
+              "way and every derived file regenerated. Lineup rows: 207 -> 75."),
+         caughtBy="tests/test_lines_integrity.py::TestNoDuplicatedGames",
+         status="fixed"),
+    dict(id="A05", severity="medium",
+         title="A backup was named from the wrong row of the club's depth chart",
+         found=("By re-reading Detroit's official chart against the published replacement: the page said "
+                "Ennis Rakestraw Jr., the chart row says Rock Ya-Sin."),
+         impact=("The builder searched the whole position and took the alphabetically first player at the next tier, "
+                 "so a corner from a different chart row was named as the next man up. 26 rows name a replacement."),
+         fix=("Chart rows are recovered (a new row starts at each '1st' tier) and the replacement is taken from the "
+              "injured player's own row, with a sameChartRow field published. Verified live on Detroit and New England."),
+         caughtBy="tests/test_lines_integrity.py::TestReplacementComesFromTheRightChartRow",
+         status="fixed"),
 ]
 
 CHECKS = [
@@ -72,6 +92,10 @@ CHECKS = [
          rows=5, failures=0, verdict="19,565 / 4,887 / 2,170 / 779 / 345 reproduced exactly"),
     dict(check="Dispersion figures behind the prop noise gates recomputed from the committed player rows",
          rows=2, failures=0, verdict="both variances reproduced to two decimals"),
+    dict(check="New England Patriots depth chart re-read live (second club, independent of Detroit)",
+         rows=1, failures=0, verdict="Carlton Davis III -> Channing Canada confirmed on the club's own chart"),
+    dict(check="Duplicate game ids checked in the official game index after every capture",
+         rows=960, failures=0, verdict="0 duplicate ids; 272 unique 2026 regular-season games"),
     dict(check="Home-field win count recomputed from the committed official finals",
          rows=453, failures=0, verdict="232 home wins of 453 decided games (51.21%) reproduced"),
 ]
@@ -87,6 +111,7 @@ RECOMPUTED = [
     "(-0.911 to -0.780), which shows the sign does not depend on a single game.",
     "All 137 completed 2026 games, across four independently built captures.",
     "All 296 Week 10 injury rows, across two independently written parsers.",
+    "The 272-game 2026 regular season, after the de-duplication that removed 210 repeated rows.",
 ]
 
 NOT_DONE = [
@@ -97,6 +122,7 @@ NOT_DONE = [
     "Depth charts for 31 of 32 clubs were read as committed and only Detroit's and San Francisco's were re-read live. "
     "The other 29 are as captured, and Houston's is an image and is left blank.",
     "Nothing was verified about weeks 11-18 of the 2026 season: those fixtures have not been played.",
+    "Only 2 of 32 depth charts were re-read live (Detroit, New England). The other 30 are as captured.",
 ]
 
 

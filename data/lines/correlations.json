@@ -8,13 +8,13 @@
   {
    "a": "L01",
    "b": "L02",
-   "correlation": 0.6859155062513432,
+   "correlation": 0.6776493178246528,
    "n": 324,
    "ci95": [
-    0.6235584917062754,
-    0.739599877214978
+    0.6140268898999875,
+    0.7325224132541147
    ],
-   "spearman": 0.6859155062513435,
+   "spearman": 0.6776493178246525,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
@@ -32,49 +32,49 @@
   {
    "a": "L01",
    "b": "P02",
-   "correlation": 0.5471498535808068,
-   "n": 134,
+   "correlation": 0.5530354089551122,
+   "n": 135,
    "ci95": [
-    0.4161787926103048,
-    0.655879061807831
+    0.4236652410397446,
+    0.6602950564641891
    ],
-   "spearman": 0.5470197440607636,
+   "spearman": 0.5528769305154297,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "L01",
    "b": "P04",
-   "correlation": 0.5480000802330671,
-   "n": 222,
+   "correlation": 0.5443164523154223,
+   "n": 221,
    "ci95": [
-    0.44870405830642324,
-    0.6339307254598094
+    0.44425809352035883,
+    0.630963026198382
    ],
-   "spearman": 0.5481601475218866,
+   "spearman": 0.5443583954274999,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "L01",
    "b": "P05",
-   "correlation": 0.46056618647183833,
-   "n": 13,
+   "correlation": 0.3567530340063376,
+   "n": 12,
    "ci95": [
-    -0.12116711201190924,
-    0.80681094760829
+    -0.2730539637892135,
+    0.7724934575614806
    ],
-   "spearman": 0.46056618647183833,
+   "spearman": 0.3567530340063379,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "L01",
    "b": "P06",
-   "correlation": 0.4757991277422136,
-   "n": 189,
+   "correlation": 0.471807936429167,
+   "n": 188,
    "ci95": [
-    0.35733586378420396,
-    0.579195682352402
+    0.3524985923391945,
+    0.576024676788515
    ],
-   "spearman": 0.476044856117542,
+   "spearman": 0.4719827083458128,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
@@ -92,61 +92,61 @@
   {
    "a": "L02",
    "b": "P01",
-   "correlation": 0.4265166067631468,
+   "correlation": 0.413468300267628,
    "n": 199,
    "ci95": [
-    0.3055533801154306,
-    0.5339314930352438
+    0.29112050423806773,
+    0.5225091056044165
    ],
-   "spearman": 0.4208519026412517,
+   "spearman": 0.4082046764963784,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "L02",
    "b": "P02",
-   "correlation": 0.4221541160226975,
-   "n": 131,
+   "correlation": 0.415710857270983,
+   "n": 132,
    "ci95": [
-    0.27019337584961484,
-    0.5535937781823516
+    0.2635600134006515,
+    0.5476796785900504
    ],
-   "spearman": 0.42059756042968993,
+   "spearman": 0.4144284450735976,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "L02",
    "b": "P04",
-   "correlation": 0.33562887814655773,
-   "n": 211,
+   "correlation": 0.32809613215734634,
+   "n": 210,
    "ci95": [
-    0.2100840330496678,
-    0.45028472652316637
+    0.2016638231103315,
+    0.4437736613135407
    ],
-   "spearman": 0.33490157071382964,
+   "spearman": 0.32741584227174014,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "L02",
    "b": "P05",
-   "correlation": 0.3567530340063376,
-   "n": 12,
+   "correlation": null,
+   "n": 11,
    "ci95": [
-    -0.2730539637892135,
-    0.7724934575614806
+    null,
+    null
    ],
-   "spearman": 0.3567530340063379,
+   "spearman": null,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "L02",
    "b": "P06",
-   "correlation": 0.3446294863657399,
-   "n": 181,
+   "correlation": 0.33813654249802017,
+   "n": 180,
    "ci95": [
-    0.2092921979093327,
-    0.467012003468418
+    0.20185643353951907,
+    0.4615719103144211
    ],
-   "spearman": 0.3429616561339648,
+   "spearman": 0.3363750643030271,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
@@ -164,37 +164,37 @@
   {
    "a": "L03",
    "b": "S01",
-   "correlation": 0.5405067571387375,
+   "correlation": 0.5419486074538084,
    "n": 681,
    "ci95": [
-    0.4850747114472336,
-    0.5916124808728354
+    0.4866325376459832,
+    0.5929363407793341
    ],
-   "spearman": 0.5151095403681439,
+   "spearman": 0.5164020731967546,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "L03",
    "b": "S02",
-   "correlation": -0.08707118382720784,
+   "correlation": -0.08483032426281586,
    "n": 681,
    "ci95": [
-    -0.16114713708643458,
-    -0.012019688176478159
+    -0.15894742705891993,
+    -0.00976241874053049
    ],
-   "spearman": -0.06659270703508337,
+   "spearman": -0.06409081589462588,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "L03",
    "b": "S03",
-   "correlation": 0.3747753497888989,
+   "correlation": 0.3747287248351971,
    "n": 681,
    "ci95": [
-    0.30832675673376786,
-    0.4375844446371971
+    0.3082776697645237,
+    0.4375405872501763
    ],
-   "spearman": 0.35919956390109364,
+   "spearman": 0.35933536189427184,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
@@ -212,61 +212,61 @@
   {
    "a": "L03",
    "b": "S05",
-   "correlation": 0.3997264950220554,
+   "correlation": 0.40868974016903326,
    "n": 356,
    "ci95": [
-    0.3086069729510118,
-    0.48357635309916175
+    0.318268137943248,
+    0.4917421888661366
    ],
-   "spearman": 0.39490308830224474,
+   "spearman": 0.40351679263552903,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "L03",
    "b": "S06",
-   "correlation": 0.5703567343833635,
+   "correlation": 0.5726530006320766,
    "n": 483,
    "ci95": [
-    0.5069317951740969,
-    0.6276390888171309
+    0.5094611529510218,
+    0.6297013964430629
    ],
-   "spearman": 0.5393069227018207,
+   "spearman": 0.5413746094021705,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "L03",
    "b": "S07",
-   "correlation": 0.09275045406798679,
+   "correlation": 0.09298840487592115,
    "n": 633,
    "ci95": [
-    0.014929858121794858,
-    0.1694541631012488
+    0.015169824681450316,
+    0.16968728240814915
    ],
-   "spearman": 0.09625389114024391,
+   "spearman": 0.09639567748620642,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "L03",
    "b": "S08",
-   "correlation": -0.1282493235355453,
+   "correlation": -0.1226818774484674,
    "n": 633,
    "ci95": [
-    -0.20413762284026357,
-    -0.050828813310989436
+    -0.19871062878522266,
+    -0.04518536074242332
    ],
-   "spearman": -0.13070677839325445,
+   "spearman": -0.12541232091676258,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "P01",
    "b": "P02",
-   "correlation": 0.593260622977865,
-   "n": 1065,
+   "correlation": 0.5949638420198661,
+   "n": 1062,
    "ci95": [
-    0.552893723431702,
-    0.6308493721740684
+    0.554659800767375,
+    0.6324825784559841
    ],
-   "spearman": 0.5923856918472712,
+   "spearman": 0.5941202301200995,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
@@ -284,49 +284,49 @@
   {
    "a": "P01",
    "b": "P04",
-   "correlation": 0.06644942686563172,
-   "n": 350,
+   "correlation": 0.06021596257232434,
+   "n": 349,
    "ci95": [
-    -0.03864962753862894,
-    0.17009439507482918
+    -0.04504890372555989,
+    0.1641583301091043
    ],
-   "spearman": 0.06335057884238475,
+   "spearman": 0.05705779798387337,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "P01",
    "b": "P05",
-   "correlation": 0.10419912536387435,
-   "n": 11,
+   "correlation": -0.10099464540584706,
+   "n": 10,
    "ci95": [
-    -0.5287245861687025,
-    0.6626539894386301
+    -0.6869392452601428,
+    0.564529453564697
    ],
-   "spearman": 0.05634361698190111,
+   "spearman": -0.11547005383792515,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "P01",
    "b": "P06",
-   "correlation": 0.04814171250403869,
-   "n": 265,
+   "correlation": 0.04129047278616447,
+   "n": 264,
    "ci95": [
-    -0.07277911487274252,
-    0.1676677053182429
+    -0.07983450152222378,
+    0.1612138511175428
    ],
-   "spearman": 0.04428905522616657,
+   "spearman": 0.03734724724615137,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "P02",
    "b": "P04",
-   "correlation": 0.07134664535978384,
-   "n": 230,
+   "correlation": 0.07023653664001747,
+   "n": 229,
    "ci95": [
-    -0.05855225173976147,
-    0.19886971912461265
+    -0.059950511686280634,
+    0.19807412959272291
    ],
-   "spearman": 0.06885004430405461,
+   "spearman": 0.06743862451618543,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
@@ -344,97 +344,97 @@
   {
    "a": "P02",
    "b": "P06",
-   "correlation": 0.10077241865425775,
-   "n": 181,
+   "correlation": 0.09969585470680951,
+   "n": 180,
    "ci95": [
-    -0.04575790603938473,
-    0.24305760623295683
+    -0.04725655004913691,
+    0.2424241795583657
    ],
-   "spearman": 0.09890893702813643,
+   "spearman": 0.0975398102960032,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "P04",
    "b": "P05",
-   "correlation": 0.5547202298735145,
-   "n": 23,
+   "correlation": 0.5162124175487379,
+   "n": 22,
    "ci95": [
-    0.18476609296965668,
-    0.786975124817163
+    0.12092120254736177,
+    0.7701958194051022
    ],
-   "spearman": 0.5545155435172163,
+   "spearman": 0.5175491695067657,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "P04",
    "b": "P06",
-   "correlation": 0.521497571720904,
-   "n": 1037,
+   "correlation": 0.5200231763209222,
+   "n": 1035,
    "ci95": [
-    0.4757237656029095,
-    0.5644544445598774
+    0.47411131139159407,
+    0.5631147161926229
    ],
-   "spearman": 0.521899246311139,
+   "spearman": 0.5202831995226564,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "P04",
    "b": "P07",
-   "correlation": 0.007410898124636432,
+   "correlation": 0.0014737248158829801,
    "n": 407,
    "ci95": [
-    -0.08985779062332108,
-    0.10453954912725166
+    -0.09574394869967516,
+    0.0986635490908995
    ],
-   "spearman": 0.008215183249747255,
+   "spearman": 0.002018600861880093,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "P05",
    "b": "P06",
-   "correlation": 0.18931166876950814,
-   "n": 20,
+   "correlation": 0.12736992886342474,
+   "n": 19,
    "ci95": [
-    -0.2763610829387264,
-    0.5829926241765256
+    -0.34690894353761664,
+    0.5497733926958623
    ],
-   "spearman": 0.18330841753568558,
+   "spearman": 0.12354155277685021,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "P06",
    "b": "P07",
-   "correlation": 0.11559438589306432,
-   "n": 151,
+   "correlation": 0.09025193566327251,
+   "n": 150,
    "ci95": [
-    -0.04496429433613609,
-    0.27033153391332104
+    -0.07103706452704531,
+    0.24694171841450127
    ],
-   "spearman": 0.10415268307852832,
+   "spearman": 0.07888451663157174,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "S01",
    "b": "S02",
-   "correlation": -0.0075622708434245995,
+   "correlation": -0.007407360002299255,
    "n": 681,
    "ci95": [
-    -0.08264543994803743,
-    0.06760626442058226
+    -0.0824915766008455,
+    0.06776047424839284
    ],
-   "spearman": -0.02365854041237518,
+   "spearman": -0.023314783071982613,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "S01",
    "b": "S03",
-   "correlation": -0.0334671904853495,
+   "correlation": -0.033241073829287975,
    "n": 681,
    "ci95": [
-    -0.10832494334830946,
-    0.041767955088928985
+    -0.10810122564900096,
+    0.04199392652619035
    ],
-   "spearman": -0.02487100824256541,
+   "spearman": -0.0245414940346977,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
@@ -500,13 +500,13 @@
   {
    "a": "S02",
    "b": "S03",
-   "correlation": 0.0707188109718205,
+   "correlation": 0.07399133975894853,
    "n": 681,
    "ci95": [
-    -0.004434876499281066,
-    0.14507811899233006
+    -0.0011451505793830532,
+    0.14829708391887134
    ],
-   "spearman": 0.06629979600594173,
+   "spearman": 0.06942457312305873,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
@@ -524,49 +524,49 @@
   {
    "a": "S02",
    "b": "S05",
-   "correlation": 0.06051933834967272,
+   "correlation": 0.06664335963869314,
    "n": 356,
    "ci95": [
-    -0.04369712578822026,
-    0.16343285627388296
+    -0.037558396408839186,
+    0.16941143223553917
    ],
-   "spearman": 0.05735182327731562,
+   "spearman": 0.06284366041762135,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "S02",
    "b": "S06",
-   "correlation": -0.008516680837840164,
+   "correlation": -0.00828286580152464,
    "n": 483,
    "ci95": [
-    -0.09766428717069019,
-    0.08076651037515135
+    -0.09743268070844664,
+    0.08099881218266501
    ],
-   "spearman": -0.02813596498508405,
+   "spearman": -0.027595725785487444,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "S02",
    "b": "S07",
-   "correlation": -0.0628364930584272,
+   "correlation": -0.06238168504973811,
    "n": 633,
    "ci95": [
-    -0.14007906783975202,
-    0.015166280020064947
+    -0.13963140083354816,
+    0.015622769636004343
    ],
-   "spearman": -0.04995165014487459,
+   "spearman": -0.049565611271854285,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "S02",
    "b": "S08",
-   "correlation": 0.2763414681043764,
+   "correlation": 0.2798222383286113,
    "n": 633,
    "ci95": [
-    0.2027797988352191,
-    0.34680164447258854
+    0.20639439365134987,
+    0.35011606954267355
    ],
-   "spearman": 0.24428350482312308,
+   "spearman": 0.24714905429509793,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
@@ -584,49 +584,49 @@
   {
    "a": "S03",
    "b": "S05",
-   "correlation": 0.9934919421248783,
+   "correlation": 1.0,
    "n": 356,
    "ci95": [
-    0.9919881383084524,
-    0.9947142351908835
+    null,
+    null
    ],
-   "spearman": 0.9934919421248748,
+   "spearman": 1.0,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "S03",
    "b": "S06",
-   "correlation": -0.036491986809452766,
+   "correlation": -0.036141367717895966,
    "n": 483,
    "ci95": [
-    -0.12530582476213403,
-    0.052902074935783125
+    -0.12496023996901652,
+    0.05325216800806242
    ],
-   "spearman": -0.03144811682503039,
+   "spearman": -0.030900331425782232,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "S03",
    "b": "S07",
-   "correlation": -0.04980041997986516,
+   "correlation": -0.04929201443962693,
    "n": 633,
    "ci95": [
-    -0.12723514415442422,
-    0.028237674365599895
+    -0.12673370573152662,
+    0.02874691728030469
    ],
-   "spearman": -0.0594825787728746,
+   "spearman": -0.05870835242722672,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
    "a": "S03",
    "b": "S08",
-   "correlation": 0.08340030163432127,
+   "correlation": 0.08915692772917111,
    "n": 633,
    "ci95": [
-    0.0055075893609702765,
-    0.16028706171410234
+    0.011306979577415782,
+    0.16593255803304913
    ],
-   "spearman": 0.08002738606740031,
+   "spearman": 0.0851812659871989,
    "method": "Pearson on per-bet unit returns at the declared reference price"
   },
   {
@@ -778,11 +778,11 @@
   {
    "statA": "receiving_yards",
    "statB": "rushing_yards",
-   "correlation": -0.07804033299339892,
-   "n": 1182,
+   "correlation": -0.0739021992340642,
+   "n": 1180,
    "ci95": [
-    -0.13446104610781517,
-    -0.02111525553232723
+    -0.13041952200985443,
+    -0.016906144800806735
    ],
    "method": "Pearson on official per-game production, matched on player and game",
    "note": null
@@ -790,11 +790,11 @@
   {
    "statA": "receiving_yards",
    "statB": "rushing_td",
-   "correlation": -0.025621750353490968,
-   "n": 1182,
+   "correlation": -0.02353273616262577,
+   "n": 1180,
    "ci95": [
-    -0.08252023007872286,
-    0.031443221712529584
+    -0.08049199381840046,
+    0.03357971420705525
    ],
    "method": "Pearson on official per-game production, matched on player and game",
    "note": null
@@ -802,11 +802,11 @@
   {
    "statA": "receiving_yards",
    "statB": "rush_attempts",
-   "correlation": -0.127703890418749,
-   "n": 1182,
+   "correlation": -0.12294008977650586,
+   "n": 1180,
    "ci95": [
-    -0.18338757989007237,
-    -0.07120332538621044
+    -0.17875333484831005,
+    -0.06633815490174705
    ],
    "method": "Pearson on official per-game production, matched on player and game",
    "note": null
@@ -838,11 +838,11 @@
   {
    "statA": "receptions",
    "statB": "rushing_yards",
-   "correlation": -0.014588413852382071,
-   "n": 1182,
+   "correlation": -0.010647590688565661,
+   "n": 1180,
    "ci95": [
-    -0.07154793484170786,
-    0.04246594585440019
+    -0.06767382451299066,
+    0.0464479869529832
    ],
    "method": "Pearson on official per-game production, matched on player and game",
    "note": null
@@ -850,11 +850,11 @@
   {
    "statA": "receptions",
    "statB": "rushing_td",
-   "correlation": 0.0007206396512379324,
-   "n": 1182,
+   "correlation": 0.002634376231411255,
+   "n": 1180,
    "ci95": [
-    -0.05630070955365546,
-    0.05773730301388803
+    -0.054441162742299334,
+    0.05969275666752711
    ],
    "method": "Pearson on official per-game production, matched on player and game",
    "note": null
@@ -862,11 +862,11 @@
   {
    "statA": "receptions",
    "statB": "rush_attempts",
-   "correlation": -0.02771324839770754,
-   "n": 1182,
+   "correlation": -0.022908937056393155,
+   "n": 1180,
    "ci95": [
-    -0.08459860294738782,
-    0.029352169191040882
+    -0.0798718708309135,
+    0.03420313295167033
    ],
    "method": "Pearson on official per-game production, matched on player and game",
    "note": null
@@ -886,11 +886,11 @@
   {
    "statA": "receiving_td",
    "statB": "rushing_yards",
-   "correlation": 0.06011104959109884,
-   "n": 1182,
+   "correlation": 0.06223662299757659,
+   "n": 1180,
    "ci95": [
-    0.0031026480381430776,
-    0.1167299963519602
+    0.005187693563025424,
+    0.11888174759966814
    ],
    "method": "Pearson on official per-game production, matched on player and game",
    "note": null
@@ -898,11 +898,11 @@
   {
    "statA": "receiving_td",
    "statB": "rushing_td",
-   "correlation": 0.0018339006069153945,
-   "n": 1182,
+   "correlation": 0.0027471379421900827,
+   "n": 1180,
    "ci95": [
-    -0.05519090635278772,
-    0.058846782959694394
+    -0.05432873373537582,
+    0.059805116639783815
    ],
    "method": "Pearson on official per-game production, matched on player and game",
    "note": null
@@ -910,11 +910,11 @@
   {
    "statA": "receiving_td",
    "statB": "rush_attempts",
-   "correlation": 0.008161516965360847,
-   "n": 1182,
+   "correlation": 0.010562252245518043,
+   "n": 1180,
    "ci95": [
-    -0.04888026584321834,
-    0.06515023433192853
+    -0.046533150525692075,
+    0.06758886685318113
    ],
    "method": "Pearson on official per-game production, matched on player and game",
    "note": null
@@ -934,11 +934,11 @@
   {
    "statA": "rushing_yards",
    "statB": "rushing_td",
-   "correlation": 0.49777447547106146,
-   "n": 2169,
+   "correlation": 0.49744579010549395,
+   "n": 2165,
    "ci95": [
-    0.4654372471554313,
-    0.5287845448269788
+    0.4650644395114105,
+    0.5284978290470252
    ],
    "method": "Pearson on official per-game production, matched on player and game",
    "note": null
@@ -946,11 +946,11 @@
   {
    "statA": "rushing_yards",
    "statB": "rush_attempts",
-   "correlation": 0.8565090916970874,
-   "n": 2169,
+   "correlation": 0.856272914259318,
+   "n": 2165,
    "ci95": [
-    0.8448777779549945,
-    0.8673309878451114
+    0.8446128974407899,
+    0.8671210089129007
    ],
    "method": "Pearson on official per-game production, matched on player and game",
    "note": null
@@ -970,11 +970,11 @@
   {
    "statA": "rushing_td",
    "statB": "rush_attempts",
-   "correlation": 0.4297517703730338,
-   "n": 2169,
+   "correlation": 0.42934321682216364,
+   "n": 2165,
    "ci95": [
-    0.3948044362832988,
-    0.4634573411651074
+    0.3943485667828392,
+    0.4630944565156398
    ],
    "method": "Pearson on official per-game production, matched on player and game",
    "note": null
@@ -1007,33 +1007,33 @@
  "parlayCorrelations": [
   {
    "pair": "player-prop legs in the same game (different players)",
-   "rho": 0.06680902725179612,
-   "n": 184915,
+   "rho": 0.015840479986822982,
+   "n": 77799,
    "ci95": [
-    0.06227011263964899,
-    0.0713451784403138
+    0.00881458481832884,
+    0.022864811237349833
    ],
    "method": "phi coefficient on official per-game prop outcomes",
    "note": "measured across every pair of eligible prop legs in the same game"
   },
   {
    "pair": "player-prop legs for the SAME player in one game",
-   "rho": 0.5749070635179638,
-   "n": 11446,
+   "rho": 0.3600791222816524,
+   "n": 3745,
    "ci95": [
-    0.5625114853667296,
-    0.5870442528394857
+    0.33187738001117795,
+    0.387637775071041
    ],
    "method": "phi coefficient on official per-game prop outcomes",
    "note": "measured separately because two props on one player are far more correlated than two props on different players"
   },
   {
    "pair": "game total over/under x model moneyline",
-   "rho": -0.047364394152930034,
+   "rho": -0.05042853070117843,
    "n": 681,
    "ci95": [
-    -0.1220601683899125,
-    0.027864887319561167
+    -0.12508474636970468,
+    0.02479553666373135
    ],
    "method": "Pearson on official game outcomes"
   }

@@ -844,7 +844,16 @@ def main():
                 "injuries": "https://www.nfl.com/injuries/",
                 "depthChartDirectory": "https://www.nfl.com/teams/",
             },
-            "fetchReport": fetch_report.get("counts", {}),
+            # The capture report's raw record count double-counted games that appear on more
+            # than one week page (defect A04). The published figure is recomputed from the game
+            # rows actually held, so it cannot drift from them.
+            "fetchReport": dict(
+                fetch_report.get("counts", {}),
+                games=len(games_doc.get("games", [])),
+                gamesWithScore=sum(1 for g in games_doc.get("games", [])
+                                   if g.get("awayScore") is not None),
+                gamesCountedAt="build-from-committed-rows",
+            ),
         },
         "lines": lines,
     })
@@ -1241,14 +1250,31 @@ def build_lineup_risk(inj_doc, depth_doc, reg_games, games_doc):
         for team in (g["away"], g["home"]):
             club = charts.get(team)
             chart_players = {}
+            # A club chart position lists several ROWS of names (e.g. CB row 1 = Reed,
+            # Ya-Sin, Dorsey, Whiteside; CB row 2 = McCreary, Rakestraw, Abney). The stored
+            # list is flat, so rows are recovered by starting a new group at each "1st"
+            # tier. The replacement for an injured player must come from HIS OWN row, not
+            # from any player at the next tier at that position. Before 2026-11-13 the code
+            # picked the alphabetically first player at the next tier across the whole
+            # position, which named Ennis Rakestraw Jr. as D.J. Reed's replacement when the
+            # club's own row names Rock Ya-Sin (defect A05).
+            chart_rows = {}
             if club:
                 for unit, positions in club["units"].items():
                     for pos, row in positions.items():
+                        groups = []
+                        for p in row["players"]:
+                            if p.get("tier") == "1st" or not groups:
+                                groups.append([])
+                            groups[-1].append(p)
+                        chart_rows[(unit, pos)] = groups
                         for p in row["players"]:
                             chart_players[(pos, p["name"].lower())] = {
                                 "tier": p.get("tier"), "position": pos, "unit": unit,
                                 "name": p["name"], "sourceUrl": club.get("sourceUrl"),
                                 "chartLabel": club.get("chartLabel"),
+                                "rowIndex": next(i for i, gr in enumerate(groups)
+                                                 if any(x is p for x in gr)),
                             }
             for r in inj_by_team.get(team, []):
                 status = (r.get("gameStatus") or "").strip()
@@ -1264,17 +1290,31 @@ def build_lineup_risk(inj_doc, depth_doc, reg_games, games_doc):
                 unit = "Offense" if pos in OFFENSE_POS else ("Defense" if pos in DEFENSE_POS else "Special Teams")
                 replacement = None
                 if entry and entry.get("tier") == "1st":
+                    groups = chart_rows.get((entry["unit"], entry["position"])) or []
                     order = ["1st", "2nd", "3rd", "4th"]
-                    start = order.index("1st")
+                    try:
+                        start = order.index(entry.get("tier"))
+                    except ValueError:
+                        start = 0
+                    # same row first: the name printed next to the injured player
+                    same = groups[entry["rowIndex"]] if entry["rowIndex"] < len(groups) else []
                     for t in order[start + 1:]:
-                        cand = None
-                        for (p, nm), v in chart_players.items():
-                            if p == pos and v.get("tier") == t:
-                                if not cand or v["name"].lower() < cand["name"].lower():
-                                    cand = v
+                        cand = next((p for p in same if p.get("tier") == t), None)
                         if cand:
-                            replacement = cand
+                            replacement = {"name": cand["name"], "tier": cand.get("tier")}
                             break
+                    # fall back to another row at the same position, and say so in the note
+                    if replacement is None:
+                        for t in order[start + 1:]:
+                            cand = None
+                            for gr in groups:
+                                for p in gr:
+                                    if p.get("tier") == t and p.get("name"):
+                                        if not cand or p["name"].lower() < cand["name"].lower():
+                                            cand = p
+                            if cand:
+                                replacement = {"name": cand["name"], "tier": cand.get("tier")}
+                                break
                 rows.append({
                     "gameId": g["gameId"],
                     "date": g.get("date"),
@@ -1291,6 +1331,10 @@ def build_lineup_risk(inj_doc, depth_doc, reg_games, games_doc):
                     "depthTierVerified": bool(entry),
                     "replacement": (replacement or {}).get("name"),
                     "replacementTier": (replacement or {}).get("tier"),
+                    "chartRow": (entry or {}).get("rowIndex"),
+                    "sameChartRow": bool(replacement is not None and entry is not None and
+                                        any(replacement.get("name") == p.get("name")
+                                            for p in (chart_rows.get((entry["unit"], entry["position"])) or [[]])[entry["rowIndex"]])),
                     "deficiency": (None if not entry else (
                         "starter unavailable" if entry.get("tier") == "1st"
                         else f"{entry.get('tier')} string unavailable")),

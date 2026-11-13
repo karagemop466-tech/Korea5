@@ -236,17 +236,35 @@ def fetch_week(season, slug, label):
 
 
 def fetch_games():
+    """Every week page once per season, then de-duplicated by game id.
+
+    FIXED 2026-11-13 (session arena-827c3da2, defect A04): the same game object was appended
+    once per week page that happened to carry it. On the 2026 capture that duplicated all 14
+    Week 10 games sixteen times each, so `games.json` held 482 regular-season rows for 272
+    unique games. Every downstream count ("1170 games") and every row multiplied from this
+    file inherited that. De-duplication is by game id, keeping the first occurrence, which is
+    the earliest week page that listed it.
+    """
     games = []
     failures = []
     pages = []
+    seen = set()
+    dupes = 0
     for season in SEASONS:
         for slug, label in WEEK_SLUGS:
             gs, fails, url = fetch_week(season, slug, label)
-            games.extend(gs)
+            for g in gs:
+                if g["gameId"] in seen:
+                    dupes += 1
+                    continue
+                seen.add(g["gameId"])
+                games.append(g)
             failures.extend(fails)
             pages.append(url)
             if (season == 2026 and slug in ("preseason-week-1", "week-1")) or slug == "postseason-week-5":
                 time.sleep(0.2)
+    if dupes:
+        print(f"  de-duplicated {dupes} repeated game records across week pages")
     return games, failures, pages
 
 

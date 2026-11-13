@@ -2308,3 +2308,27 @@ each of which was a correctness failure in a published number. The only shared-o
 D-PRICE (no market price exists anywhere), D-REWARD (no written owner decision), the undocumented upstream source of
 the third-party line archive, 29 of 32 depth charts not re-read live this session, and FL-16 (the Week 10 snapshot is
 applied to unplayed weeks 11–18 fixtures).
+
+### Post-merge follow-up — session `arena-827c3da2-korea5` (2026-11-14)
+
+Reading the **deployed** pages back over the network (not assuming the deploy worked) exposed two further defects that
+every verifier had passed. Both are in `lines/`, and both were visible on the live page.
+
+| ID | Defect | Why it mattered | Fix | Test |
+|---|---|---|---|---|
+| **A04** | All 14 Week 10 games were stored **16 times each**: `games.json` held 482 regular-season 2026 rows for 272 unique games | The published "1,170 games" was inflated (true: **960**), and every deficiency was listed nine times in the lineup table (207 rows) | `fetch_games()` de-duplicates by game id; the capture rebuilt and all derived files regenerated. Lineup rows 207 → **75** | `TestNoDuplicatedGames` (4 tests) |
+| **A05** | D.J. Reed's next man up was published as *Ennis Rakestraw Jr.*; Detroit's own row names **Rock Ya-Sin** | The builder searched the whole position and took the alphabetically first player at the next tier, so a corner from a **different chart row** was named as the replacement | Chart rows recovered (a new row starts at each "1st" tier); the replacement is taken from the injured player's **own row**; `sameChartRow` and `chartRow` published per row | `TestReplacementComesFromTheRightChartRow` (2 tests) |
+
+**Verified live on a second, independent club** to be sure the fix was not tuned to Detroit: New England's official chart
+reads `CB | Carlton Davis III | Channing Canada`, and the rebuilt row now publishes exactly that.
+
+**Published counts corrected and locked to the rows.** `data/lines/lines.json` `fetchReport` is now computed from the
+committed game rows at build time (`gamesCountedAt: build-from-committed-rows`), with the raw capture figure retained
+for audit as `gamesRawCapture: 1170` and a note stating that the 210 repeated records were **removed, not re-fetched**
+(a network re-capture is unavailable in this environment). `TestNoDuplicatedGames.test_published_count_matches_the_rows`
+fails the build if the published count ever drifts from the rows again.
+
+**Totals after the follow-up**: **five** defects found and fixed this session (A01–A05); 62 combined flags plus 18
+lines-lab flags; `tools/verify_control.py` **358/358**; `tests/test_lines_integrity.py` **18/18**; `verify_lines.py`
+82/82; `check_links.py` **149 pages, 4,456 local, 1,983 external, 0 missing**; `verify_extra.py` 0 failures; certainty
+audit passed; `nfl/system` verifier PASS; `git diff --check` clean.

@@ -13,6 +13,87 @@
  },
  "leaderboard": [
   {
+   "id": "S08",
+   "name": "Model team points vs the team's own scoring average (model's Under pick)",
+   "family": "team",
+   "market": "team points",
+   "rule": "The model's Under selection on a team's points line. The controlled comparison against the naive model is the log-loss column, which scores both on the same events.",
+   "benchmark": "the team's own prior scoring average (pre-registered naive line)",
+   "metrics": {
+    "betsConsidered": 1266,
+    "betsPlaced": 581,
+    "wins": 382,
+    "losses": 199,
+    "pushes": 0,
+    "roi": 0.25520262869660465,
+    "unitProfit": 148.2727272727273,
+    "logLoss": 0.6101678612252907,
+    "baselineLogLoss": 0.6931471805599468,
+    "deltaLogLoss": -0.08297931933465619,
+    "brier": 0.21154733344604593,
+    "baselineBrier": 0.25,
+    "ece": 0.032888511898066276,
+    "roiCI": [
+     0.18291347207009767,
+     0.3275739320920027
+    ],
+    "deltaCI": [
+     0.13553675522064862,
+     0.14967355659395665
+    ],
+    "skillP": 4.999750012499375e-05,
+    "skillMean": 0.08297931933465454,
+    "skillReplicates": 20000,
+    "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
+    "seasonRoi": {
+     "2024": 0.19549867608120042,
+     "2025": 0.3284090909090903,
+     "2026": 0.21616161616161653
+    },
+    "maxBetShare": 0.002617801047120404,
+    "maxBetGame": "https://www.nfl.com/games/cowboys-at-giants-2024-reg-4",
+    "holdoutBets": 135,
+    "holdoutRoi": 0.21616161616161653,
+    "adjustedP": 0.00042497875106244684
+   },
+   "sourceUrl": "https://www.nfl.com/games/cowboys-at-giants-2024-reg-4",
+   "sourceName": "Official game page (Dallas Cowboys at New York Giants)",
+   "gates": {
+    "G1": {
+     "pass": true,
+     "detail": "all rows carry official source URLs"
+    },
+    "G2": {
+     "pass": true,
+     "detail": "581 bets placed (minimum 30)"
+    },
+    "G3": {
+     "pass": true,
+     "detail": "log loss 0.6102 vs baseline 0.6931"
+    },
+    "G4": {
+     "pass": true,
+     "detail": "ROI 95% CI [0.1829, 0.3276]; mean per-bet log-loss improvement over baseline 0.0830; BH adjusted p 0.0004"
+    },
+    "G5": {
+     "pass": true,
+     "detail": "2026 holdout ROI 0.2162 on 135 bets"
+    },
+    "G6": {
+     "pass": true,
+     "detail": "3 of 3 seasons positive; largest single bet carries 0.3% of gross profit"
+    },
+    "G7": {
+     "pass": true,
+     "detail": "no higher-ranked qualified strategy to compare"
+    }
+   },
+   "reward": 120,
+   "rewardNote": "1000 x skill 0.120 x evidence 1.00 x luck guard 1.00",
+   "rank": 1,
+   "status": "qualified"
+  },
+  {
    "id": "S05",
    "name": "Model moneyline, strong separation only",
    "family": "team",
@@ -54,7 +135,7 @@
     "maxBetGame": "https://www.nfl.com/games/chargers-at-panthers-2024-reg-2",
     "holdoutBets": 73,
     "holdoutRoi": 0.3075965130759654,
-    "adjustedP": 0.007012149392530373
+    "adjustedP": 0.006799660016999149
    },
    "sourceUrl": "https://www.nfl.com/games/chargers-at-panthers-2024-reg-2",
    "sourceName": "Official game page (Los Angeles Chargers at Carolina Panthers)",
@@ -73,7 +154,7 @@
     },
     "G4": {
      "pass": true,
-     "detail": "ROI 95% CI [0.2120, 0.3996]; mean per-bet log-loss improvement over baseline 0.0806; BH adjusted p 0.0070"
+     "detail": "ROI 95% CI [0.2120, 0.3996]; mean per-bet log-loss improvement over baseline 0.0806; BH adjusted p 0.0068"
     },
     "G5": {
      "pass": true,
@@ -85,92 +166,11 @@
     },
     "G7": {
      "pass": true,
-     "detail": "no higher-ranked qualified strategy to compare"
+     "detail": "highest |correlation| with a higher-ranked qualified strategy is +0.086 (S08, n=343)"
     }
    },
    "reward": 115,
    "rewardNote": "1000 x skill 0.115 x evidence 1.00 x luck guard 1.00",
-   "rank": 1,
-   "status": "qualified"
-  },
-  {
-   "id": "S08",
-   "name": "Model team points vs the team's own scoring average (model's Under pick)",
-   "family": "team",
-   "market": "team points",
-   "rule": "The model's Under selection on a team's points line. The controlled comparison against the naive model is the log-loss column, which scores both on the same events.",
-   "benchmark": "the team's own prior scoring average (pre-registered naive line)",
-   "metrics": {
-    "betsConsidered": 1296,
-    "betsPlaced": 596,
-    "wins": 382,
-    "losses": 214,
-    "pushes": 0,
-    "roi": 0.22361195851128743,
-    "unitProfit": 133.2727272727273,
-    "logLoss": 0.6143302109622969,
-    "baselineLogLoss": 0.6931471805599468,
-    "deltaLogLoss": -0.07881696959764994,
-    "brier": 0.21354986160809009,
-    "baselineBrier": 0.25,
-    "ece": 0.04564004040055514,
-    "roiCI": [
-     0.14993898718730847,
-     0.29087858450274434
-    ],
-    "deltaCI": [
-     0.13299973871048568,
-     0.14699608804536785
-    ],
-    "skillP": 4.999750012499375e-05,
-    "skillMean": 0.07881696959764838,
-    "skillReplicates": 20000,
-    "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
-    "seasonRoi": {
-     "2024": 0.19549867608120042,
-     "2025": 0.3284090909090903,
-     "2026": 0.09454545454545486
-    },
-    "maxBetShare": 0.002617801047120404,
-    "maxBetGame": "https://www.nfl.com/games/cowboys-at-giants-2024-reg-4",
-    "holdoutBets": 150,
-    "holdoutRoi": 0.09454545454545486,
-    "adjustedP": 0.00042497875106244684
-   },
-   "sourceUrl": "https://www.nfl.com/games/cowboys-at-giants-2024-reg-4",
-   "sourceName": "Official game page (Dallas Cowboys at New York Giants)",
-   "gates": {
-    "G1": {
-     "pass": true,
-     "detail": "all rows carry official source URLs"
-    },
-    "G2": {
-     "pass": true,
-     "detail": "596 bets placed (minimum 30)"
-    },
-    "G3": {
-     "pass": true,
-     "detail": "log loss 0.6143 vs baseline 0.6931"
-    },
-    "G4": {
-     "pass": true,
-     "detail": "ROI 95% CI [0.1499, 0.2909]; mean per-bet log-loss improvement over baseline 0.0788; BH adjusted p 0.0004"
-    },
-    "G5": {
-     "pass": true,
-     "detail": "2026 holdout ROI 0.0945 on 150 bets"
-    },
-    "G6": {
-     "pass": true,
-     "detail": "3 of 3 seasons positive; largest single bet carries 0.3% of gross profit"
-    },
-    "G7": {
-     "pass": true,
-     "detail": "highest |correlation| with a higher-ranked qualified strategy is +0.086 (S05, n=343)"
-    }
-   },
-   "reward": 114,
-   "rewardNote": "1000 x skill 0.114 x evidence 1.00 x luck guard 1.00",
    "rank": 2,
    "status": "qualified"
   },
@@ -182,40 +182,40 @@
    "rule": "Bets a team's modelled points over that team's own prior scoring average. Line = the team's own recency-weighted points scored.",
    "benchmark": "the team's own prior scoring average (pre-registered naive line)",
    "metrics": {
-    "betsConsidered": 1296,
-    "betsPlaced": 572,
-    "wins": 371,
+    "betsConsidered": 1266,
+    "betsPlaced": 557,
+    "wins": 356,
     "losses": 201,
     "pushes": 0,
-    "roi": 0.2382390336935792,
-    "unitProfit": 136.2727272727273,
-    "logLoss": 0.624788522939003,
+    "roi": 0.22017300473314844,
+    "unitProfit": 122.63636363636368,
+    "logLoss": 0.6249679572553399,
     "baselineLogLoss": 0.6931471805599468,
-    "deltaLogLoss": -0.06835865762094384,
-    "brier": 0.217578448603688,
+    "deltaLogLoss": -0.0681792233046069,
+    "brier": 0.21771349429785955,
     "baselineBrier": 0.25,
-    "ece": 0.027243994756947748,
+    "ece": 0.04039362433006413,
     "roiCI": [
-     0.16147488874761526,
-     0.3116656071201513
+     0.1447690550024473,
+     0.29557695446384713
     ],
     "deltaCI": [
-     0.13896521994087235,
-     0.15264721323323238
+     0.14202356625254364,
+     0.15547680339457642
     ],
     "skillP": 4.999750012499375e-05,
-    "skillMean": 0.0683586576209427,
+    "skillMean": 0.06817922330460549,
     "skillReplicates": 20000,
     "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
     "seasonRoi": {
      "2024": 0.21995565410199508,
      "2025": 0.2177328843995509,
-     "2026": 0.3086510263929622
+     "2026": 0.22602168473728157
     },
-    "maxBetShare": 0.0026954177897573987,
+    "maxBetShare": 0.0028089887640449325,
     "maxBetGame": "https://www.nfl.com/games/saints-at-falcons-2024-reg-4",
-    "holdoutBets": 124,
-    "holdoutRoi": 0.3086510263929622,
+    "holdoutBets": 109,
+    "holdoutRoi": 0.22602168473728157,
     "adjustedP": 0.00042497875106244684
    },
    "sourceUrl": "https://www.nfl.com/games/cowboys-at-giants-2024-reg-4",
@@ -227,19 +227,19 @@
     },
     "G2": {
      "pass": true,
-     "detail": "572 bets placed (minimum 30)"
+     "detail": "557 bets placed (minimum 30)"
     },
     "G3": {
      "pass": true,
-     "detail": "log loss 0.6248 vs baseline 0.6931"
+     "detail": "log loss 0.6250 vs baseline 0.6931"
     },
     "G4": {
      "pass": true,
-     "detail": "ROI 95% CI [0.1615, 0.3117]; mean per-bet log-loss improvement over baseline 0.0684; BH adjusted p 0.0004"
+     "detail": "ROI 95% CI [0.1448, 0.2956]; mean per-bet log-loss improvement over baseline 0.0682; BH adjusted p 0.0004"
     },
     "G5": {
      "pass": true,
-     "detail": "2026 holdout ROI 0.3087 on 124 bets"
+     "detail": "2026 holdout ROI 0.2260 on 109 bets"
     },
     "G6": {
      "pass": true,
@@ -250,8 +250,8 @@
      "detail": "highest |correlation| with a higher-ranked qualified strategy is -0.032 (S08, n=633)"
     }
    },
-   "reward": 99,
-   "rewardNote": "1000 x skill 0.099 x evidence 1.00 x luck guard 1.00",
+   "reward": 98,
+   "rewardNote": "1000 x skill 0.098 x evidence 1.00 x luck guard 1.00",
    "rank": 3,
    "status": "qualified"
   },
@@ -263,41 +263,41 @@
    "rule": "Bets the model-favoured team to win straight, line = 0 (pick'em).",
    "benchmark": "pick'em with the historical home win rate as the naive probability",
    "metrics": {
-    "betsConsidered": 696,
-    "betsPlaced": 615,
-    "wins": 392,
+    "betsConsidered": 681,
+    "betsPlaced": 602,
+    "wins": 379,
     "losses": 223,
     "pushes": 0,
-    "roi": 0.21685144124168515,
-    "unitProfit": 133.36363636363637,
-    "logLoss": 0.6458354448567843,
-    "baselineLogLoss": 0.6957628910864831,
-    "deltaLogLoss": -0.0499274462296988,
-    "brier": 0.22711809878328684,
-    "baselineBrier": 0.2513316781849388,
-    "ece": 0.021749348580164234,
+    "roi": 0.20190274841437636,
+    "unitProfit": 121.54545454545456,
+    "logLoss": 0.6471079150562309,
+    "baselineLogLoss": 0.7014351345951308,
+    "deltaLogLoss": -0.05432721953889996,
+    "brier": 0.22776534655779898,
+    "baselineBrier": 0.25407538652222855,
+    "ece": 0.026022493602927608,
     "roiCI": [
-     0.1392461197339242,
-     0.28832594235033093
+     0.12896405919661666,
+     0.2780126849894278
     ],
     "deltaCI": [
-     0.1421002058087379,
-     0.15902479765671546
+     0.14747899141171075,
+     0.16450191734893058
     ],
-    "skillP": 0.0016499175041247937,
-    "skillMean": 0.04992744622969924,
+    "skillP": 0.00024998750062496874,
+    "skillMean": 0.054327219538900406,
     "skillReplicates": 20000,
     "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
     "seasonRoi": {
      "2024": 0.27833400080096066,
      "2025": 0.167096061832904,
-     "2026": 0.20502901353965206
+     "2026": 0.1335227272727274
     },
-    "maxBetShare": 0.002551020408163249,
+    "maxBetShare": 0.0026385224274406184,
     "maxBetGame": "https://www.nfl.com/games/chargers-at-panthers-2024-reg-2",
-    "holdoutBets": 141,
-    "holdoutRoi": 0.20502901353965206,
-    "adjustedP": 0.007012149392530373
+    "holdoutBets": 128,
+    "holdoutRoi": 0.1335227272727274,
+    "adjustedP": 0.0014165958368748228
    },
    "sourceUrl": "https://www.nfl.com/games/raiders-at-ravens-2024-reg-2",
    "sourceName": "Official game page (Baltimore Ravens at Las Vegas Raiders)",
@@ -308,19 +308,19 @@
     },
     "G2": {
      "pass": true,
-     "detail": "615 bets placed (minimum 30)"
+     "detail": "602 bets placed (minimum 30)"
     },
     "G3": {
      "pass": true,
-     "detail": "log loss 0.6458 vs baseline 0.6958"
+     "detail": "log loss 0.6471 vs baseline 0.7014"
     },
     "G4": {
      "pass": true,
-     "detail": "ROI 95% CI [0.1392, 0.2883]; mean per-bet log-loss improvement over baseline 0.0499; BH adjusted p 0.0070"
+     "detail": "ROI 95% CI [0.1290, 0.2780]; mean per-bet log-loss improvement over baseline 0.0543; BH adjusted p 0.0014"
     },
     "G5": {
      "pass": true,
-     "detail": "2026 holdout ROI 0.2050 on 141 bets"
+     "detail": "2026 holdout ROI 0.1335 on 128 bets"
     },
     "G6": {
      "pass": true,
@@ -328,7 +328,7 @@
     },
     "G7": {
      "pass": false,
-     "detail": "highest |correlation| with a higher-ranked qualified strategy is +0.993 (S05, n=356)"
+     "detail": "highest |correlation| with a higher-ranked qualified strategy is +1.000 (S05, n=356)"
     }
    },
    "reward": 0,
@@ -346,38 +346,38 @@
    "metrics": {
     "betsConsidered": 324,
     "betsPlaced": 324,
-    "wins": 49,
-    "losses": 275,
+    "wins": 48,
+    "losses": 276,
     "pushes": 0,
-    "roi": -0.7112794612794612,
-    "unitProfit": -230.45454545454544,
-    "logLoss": 0.5145709263129296,
-    "baselineLogLoss": 0.4605930854894382,
-    "deltaLogLoss": 0.05397784082349133,
-    "brier": 0.16541125320854994,
-    "baselineBrier": 0.1320339038090389,
-    "ece": 0.1990171558813687,
+    "roi": -0.7171717171717172,
+    "unitProfit": -232.36363636363637,
+    "logLoss": 0.49970372982526473,
+    "baselineLogLoss": 0.47233785009863105,
+    "deltaLogLoss": 0.02736587972663368,
+    "brier": 0.15870485600890835,
+    "baselineBrier": 0.13122328259803875,
+    "ece": 0.1795112536242139,
     "roiCI": [
-     -0.7878787878787881,
-     -0.6346801346801352
+     -0.793771043771044,
+     -0.6464646464646469
     ],
     "deltaCI": [
-     0.24549368775330474,
-     0.2699799793481803
+     0.23810222001135625,
+     0.2614909021583658
     ],
-    "skillP": 0.2007399630018499,
-    "skillMean": -0.05397784082349116,
+    "skillP": 0.5430228488575571,
+    "skillMean": -0.02736587972663345,
     "skillReplicates": 20000,
     "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
     "seasonRoi": {
      "2025": -0.7461315280464219,
-     "2026": -0.6631016042780752
+     "2026": -0.6771390374331554
     },
-    "maxBetShare": 0.020408163265306128,
+    "maxBetShare": 0.020833333333333336,
     "maxBetGame": "https://www.nfl.com/games/cowboys-at-panthers-2025-reg-6?tab=stats",
     "holdoutBets": 136,
-    "holdoutRoi": -0.6631016042780752,
-    "adjustedP": 0.3791754856701609
+    "holdoutRoi": -0.6771390374331554,
+    "adjustedP": 0.6154258953718981
    },
    "sourceUrl": "https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats",
    "sourceName": "Official game page (Minnesota Vikings at Cleveland Browns)",
@@ -392,19 +392,19 @@
     },
     "G3": {
      "pass": false,
-     "detail": "log loss 0.5146 vs baseline 0.4606"
+     "detail": "log loss 0.4997 vs baseline 0.4723"
     },
     "G4": {
      "pass": false,
-     "detail": "ROI 95% CI [-0.7879, -0.6347]; mean per-bet log-loss improvement over baseline -0.0540; BH adjusted p 0.3792"
+     "detail": "ROI 95% CI [-0.7938, -0.6465]; mean per-bet log-loss improvement over baseline -0.0274; BH adjusted p 0.6154"
     },
     "G5": {
      "pass": false,
-     "detail": "2026 holdout ROI -0.6631 on 136 bets"
+     "detail": "2026 holdout ROI -0.6771 on 136 bets"
     },
     "G6": {
      "pass": false,
-     "detail": "0 of 2 seasons positive; largest single bet carries 2.0% of gross profit"
+     "detail": "0 of 2 seasons positive; largest single bet carries 2.1% of gross profit"
     },
     "G7": {
      "pass": true,
@@ -425,40 +425,40 @@
    "benchmark": "the same legs priced by the naive model with the same measured correlation",
    "metrics": {
     "betsConsidered": 681,
-    "betsPlaced": 383,
-    "wins": 131,
-    "losses": 252,
+    "betsPlaced": 381,
+    "wins": 130,
+    "losses": 251,
     "pushes": 0,
-    "roi": -0.3470211250890101,
-    "unitProfit": -132.90909090909088,
-    "logLoss": 0.6533456812680176,
-    "baselineLogLoss": 0.6700827743726482,
-    "deltaLogLoss": -0.016737093104630563,
-    "brier": 0.2303764970631978,
-    "baselineBrier": 0.23562850714552602,
-    "ece": 0.07808480110219113,
+    "roi": -0.34860415175375803,
+    "unitProfit": -132.8181818181818,
+    "logLoss": 0.6525225883074243,
+    "baselineLogLoss": 0.6703331428598177,
+    "deltaLogLoss": -0.017810554552393443,
+    "brier": 0.22999362095384085,
+    "baselineBrier": 0.23567630416882301,
+    "ece": 0.07549827126346724,
     "roiCI": [
-     -0.4367434132447192,
-     -0.25231426536909624
+     -0.4387974230493922,
+     -0.25340014316392345
     ],
     "deltaCI": [
-     0.16370935979495155,
-     0.1838685531725057
+     0.16459556936941708,
+     0.1851586643392335
     ],
-    "skillP": 0.463976801159942,
-    "skillMean": 0.016737093104630417,
+    "skillP": 0.43872806359682015,
+    "skillMean": 0.017810554552393637,
     "skillReplicates": 20000,
     "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
     "seasonRoi": {
-     "2024": -0.3331257783312578,
+     "2024": -0.32852664576802504,
      "2025": -0.3556818181818184,
-     "2026": -0.35537190082644604
+     "2026": -0.3720095693779902
     },
-    "maxBetShare": 0.007633587786259556,
+    "maxBetShare": 0.007692307692307707,
     "maxBetGame": "https://www.nfl.com/games/saints-at-cowboys-2024-reg-2",
-    "holdoutBets": 77,
-    "holdoutRoi": -0.35537190082644604,
-    "adjustedP": 0.5258403746479342
+    "holdoutBets": 76,
+    "holdoutRoi": -0.3720095693779902,
+    "adjustedP": 0.5327412200818531
    },
    "sourceUrl": "https://www.nfl.com/games/bills-at-dolphins-2024-reg-2",
    "sourceName": "Official game page (Miami Dolphins at Buffalo Bills)",
@@ -469,19 +469,19 @@
     },
     "G2": {
      "pass": true,
-     "detail": "383 bets placed (minimum 15)"
+     "detail": "381 bets placed (minimum 15)"
     },
     "G3": {
      "pass": true,
-     "detail": "log loss 0.6533 vs baseline 0.6701"
+     "detail": "log loss 0.6525 vs baseline 0.6703"
     },
     "G4": {
      "pass": false,
-     "detail": "ROI 95% CI [-0.4367, -0.2523]; mean per-bet log-loss improvement over baseline 0.0167; BH adjusted p 0.5258"
+     "detail": "ROI 95% CI [-0.4388, -0.2534]; mean per-bet log-loss improvement over baseline 0.0178; BH adjusted p 0.5327"
     },
     "G5": {
      "pass": false,
-     "detail": "2026 holdout ROI -0.3554 on 77 bets"
+     "detail": "2026 holdout ROI -0.3720 on 76 bets"
     },
     "G6": {
      "pass": false,
@@ -512,22 +512,22 @@
     "pushes": 0,
     "roi": -0.48863636363636365,
     "unitProfit": -164.1818181818182,
-    "logLoss": 0.6673918816267668,
-    "baselineLogLoss": 0.6191363464738834,
-    "deltaLogLoss": 0.04825553515288339,
-    "brier": 0.23673357521449181,
-    "baselineBrier": 0.2010602814472183,
-    "ece": 0.22082165390079275,
+    "logLoss": 0.6584707832890062,
+    "baselineLogLoss": 0.6329982005335675,
+    "deltaLogLoss": 0.025472582755438733,
+    "brier": 0.2323242749153541,
+    "baselineBrier": 0.20453445648875349,
+    "ece": 0.20721878999745577,
     "roiCI": [
      -0.5738636363636369,
      -0.39204545454545514
     ],
     "deltaCI": [
-     0.30582500366793613,
-     0.33258888545778664
+     0.3062535137201591,
+     0.3324278142406192
     ],
-    "skillP": 0.2816859157042148,
-    "skillMean": -0.048255535152883625,
+    "skillP": 0.5831208439578021,
+    "skillMean": -0.025472582755438258,
     "skillReplicates": 20000,
     "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
     "seasonRoi": {
@@ -538,7 +538,7 @@
     "maxBetGame": "https://www.nfl.com/games/eagles-at-giants-2025-reg-6?tab=stats",
     "holdoutBets": 137,
     "holdoutRoi": -0.40079628400796324,
-    "adjustedP": 0.4353327788156047
+    "adjustedP": 0.6195658967051647
    },
    "sourceUrl": "https://www.nfl.com/games/49ers-at-rams-2025-reg-5?tab=stats",
    "sourceName": "Official game page (Los Angeles Rams at San Francisco 49ers)",
@@ -553,11 +553,11 @@
     },
     "G3": {
      "pass": false,
-     "detail": "log loss 0.6674 vs baseline 0.6191"
+     "detail": "log loss 0.6585 vs baseline 0.6330"
     },
     "G4": {
      "pass": false,
-     "detail": "ROI 95% CI [-0.5739, -0.3920]; mean per-bet log-loss improvement over baseline -0.0483; BH adjusted p 0.4353"
+     "detail": "ROI 95% CI [-0.5739, -0.3920]; mean per-bet log-loss improvement over baseline -0.0255; BH adjusted p 0.6196"
     },
     "G5": {
      "pass": false,
@@ -578,86 +578,6 @@
    "status": "failed"
   },
   {
-   "id": "P06",
-   "name": "Rushing touchdowns over the player's own average",
-   "family": "prop",
-   "market": "player rushing touchdowns",
-   "rule": "Line = the player's own prior average rushing touchdowns; projection is opponent-adjusted.",
-   "benchmark": "the player's own prior average (pre-registered naive line)",
-   "metrics": {
-    "betsConsidered": 1145,
-    "betsPlaced": 669,
-    "wins": 345,
-    "losses": 324,
-    "pushes": 0,
-    "roi": -0.015491235222176858,
-    "unitProfit": -10.363636363636317,
-    "logLoss": 0.7323285751270338,
-    "baselineLogLoss": 0.7518420852177845,
-    "deltaLogLoss": -0.019513510090750752,
-    "brier": 0.26528678644513126,
-    "baselineBrier": 0.2745105900062501,
-    "ece": 0.12722248036910594,
-    "roiCI": [
-     -0.08119649408887132,
-     0.05870362821035447
-    ],
-    "deltaCI": [
-     0.15120496647117934,
-     0.17614309036158374
-    ],
-    "skillP": 0.32613369331533426,
-    "skillMean": 0.019513510090750835,
-    "skillReplicates": 20000,
-    "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
-    "seasonRoi": {
-     "2025": -0.13648749071092395,
-     "2026": 0.13154726068633388
-    },
-    "maxBetShare": 0.0028985507246376717,
-    "maxBetGame": "https://www.nfl.com/games/texans-at-ravens-2025-reg-5?tab=stats",
-    "holdoutBets": 302,
-    "holdoutRoi": 0.13154726068633388,
-    "adjustedP": 0.4620227321967236
-   },
-   "sourceUrl": "https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats",
-   "sourceName": "Official game page (Minnesota Vikings at Cleveland Browns)",
-   "gates": {
-    "G1": {
-     "pass": true,
-     "detail": "all rows carry official source URLs"
-    },
-    "G2": {
-     "pass": true,
-     "detail": "669 bets placed (minimum 25)"
-    },
-    "G3": {
-     "pass": true,
-     "detail": "log loss 0.7323 vs baseline 0.7518"
-    },
-    "G4": {
-     "pass": false,
-     "detail": "ROI 95% CI [-0.0812, 0.0587]; mean per-bet log-loss improvement over baseline 0.0195; BH adjusted p 0.4620"
-    },
-    "G5": {
-     "pass": true,
-     "detail": "2026 holdout ROI 0.1315 on 302 bets"
-    },
-    "G6": {
-     "pass": false,
-     "detail": "1 of 2 seasons positive; largest single bet carries 0.3% of gross profit"
-    },
-    "G7": {
-     "pass": true,
-     "detail": "not applicable (strategy is not qualified)"
-    }
-   },
-   "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed",
-   "rank": 8,
-   "status": "failed"
-  },
-  {
    "id": "S02",
    "name": "Model game total vs league average (model's Under pick)",
    "family": "team",
@@ -665,7 +585,7 @@
    "rule": "The model's Under selection: bets Under the league-average line in the games where the model expects a total below the league average. The controlled comparison against the naive model is the log-loss column, which scores both on the same events.",
    "benchmark": "league-average combined points (pre-registered naive line)",
    "metrics": {
-    "betsConsidered": 696,
+    "betsConsidered": 681,
     "betsPlaced": 323,
     "wins": 197,
     "losses": 126,
@@ -699,7 +619,7 @@
     "maxBetGame": "https://www.nfl.com/games/chargers-at-panthers-2024-reg-2",
     "holdoutBets": 66,
     "holdoutRoi": 0.15702479338843,
-    "adjustedP": 0.3231963401829908
+    "adjustedP": 0.19131126776994486
    },
    "sourceUrl": "https://www.nfl.com/games/raiders-at-ravens-2024-reg-2",
    "sourceName": "Official game page (Baltimore Ravens at Las Vegas Raiders)",
@@ -718,7 +638,7 @@
     },
     "G4": {
      "pass": false,
-     "detail": "ROI 95% CI [0.0639, 0.2648]; mean per-bet log-loss improvement over baseline -0.0438; BH adjusted p 0.3232"
+     "detail": "ROI 95% CI [0.0639, 0.2648]; mean per-bet log-loss improvement over baseline -0.0438; BH adjusted p 0.1913"
     },
     "G5": {
      "pass": true,
@@ -735,7 +655,7 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "rank": 9,
+   "rank": 8,
    "status": "failed"
   },
   {
@@ -815,131 +735,51 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "rank": 10,
+   "rank": 9,
    "status": "failed"
   },
   {
-   "id": "P07",
-   "name": "Rush attempts over the player's own average",
+   "id": "P06",
+   "name": "Rushing touchdowns over the player's own average",
    "family": "prop",
-   "market": "player rush attempts",
-   "rule": "Line = the player's own prior average rush attempts; projection is opponent-adjusted.",
+   "market": "player rushing touchdowns",
+   "rule": "Line = the player's own prior average rushing touchdowns; projection is opponent-adjusted.",
    "benchmark": "the player's own prior average (pre-registered naive line)",
    "metrics": {
-    "betsConsidered": 650,
-    "betsPlaced": 303,
-    "wins": 176,
-    "losses": 127,
+    "betsConsidered": 1075,
+    "betsPlaced": 615,
+    "wins": 292,
+    "losses": 323,
     "pushes": 0,
-    "roi": 0.10891089108910891,
-    "unitProfit": 33.0,
-    "logLoss": 0.7446003452279161,
-    "baselineLogLoss": 0.723841287188985,
-    "deltaLogLoss": 0.020759058038931077,
-    "brier": 0.26907227869211287,
-    "baselineBrier": 0.26290855373447936,
-    "ece": 0.1424783694320872,
+    "roi": -0.09356984478935691,
+    "unitProfit": -57.545454545454504,
+    "logLoss": 0.7556481885491683,
+    "baselineLogLoss": 0.7388341423410176,
+    "deltaLogLoss": 0.016814046208150635,
+    "brier": 0.27620990639830806,
+    "baselineBrier": 0.2684068243689409,
+    "ece": 0.16894025167891413,
     "roiCI": [
-     0.0018001800180019506,
-     0.20972097209720894
+     -0.16496674057649754,
+     -0.015964523281596393
     ],
     "deltaCI": [
-     0.08838738686432211,
-     0.12102913460472753
+     0.14674785857218167,
+     0.17360409027623963
     ],
-    "skillP": 0.37423128843557824,
-    "skillMean": -0.02075905474189925,
+    "skillP": 0.4229288535573221,
+    "skillMean": -0.01681404620815174,
     "skillReplicates": 20000,
     "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
     "seasonRoi": {
-     "2025": 0.0028768699654776364,
-     "2026": 0.22445141065830743
+     "2025": -0.13648749071092395,
+     "2026": -0.03005865102639254
     },
-    "maxBetShare": 0.005681818181818193,
+    "maxBetShare": 0.0034246575342465795,
     "maxBetGame": "https://www.nfl.com/games/texans-at-ravens-2025-reg-5?tab=stats",
-    "holdoutBets": 145,
-    "holdoutRoi": 0.22445141065830743,
-    "adjustedP": 0.4893793771849869
-   },
-   "sourceUrl": "https://www.nfl.com/games/texans-at-ravens-2025-reg-5?tab=stats",
-   "sourceName": "Official game page (Houston Texans at Baltimore Ravens)",
-   "gates": {
-    "G1": {
-     "pass": true,
-     "detail": "all rows carry official source URLs"
-    },
-    "G2": {
-     "pass": true,
-     "detail": "303 bets placed (minimum 25)"
-    },
-    "G3": {
-     "pass": false,
-     "detail": "log loss 0.7446 vs baseline 0.7238"
-    },
-    "G4": {
-     "pass": false,
-     "detail": "ROI 95% CI [0.0018, 0.2097]; mean per-bet log-loss improvement over baseline -0.0208; BH adjusted p 0.4894"
-    },
-    "G5": {
-     "pass": true,
-     "detail": "2026 holdout ROI 0.2245 on 145 bets"
-    },
-    "G6": {
-     "pass": true,
-     "detail": "2 of 2 seasons positive; largest single bet carries 0.6% of gross profit"
-    },
-    "G7": {
-     "pass": true,
-     "detail": "not applicable (strategy is not qualified)"
-    }
-   },
-   "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed",
-   "rank": 11,
-   "status": "failed"
-  },
-  {
-   "id": "P01",
-   "name": "Receiving yards over the player's own average",
-   "family": "prop",
-   "market": "player receiving yards",
-   "rule": "Line = the player's own prior average receiving yards. Our projection = recency-weighted average adjusted for the opponent's allowance rate.",
-   "benchmark": "the player's own prior average (pre-registered naive line)",
-   "metrics": {
-    "betsConsidered": 2901,
-    "betsPlaced": 1248,
-    "wins": 549,
-    "losses": 699,
-    "pushes": 0,
-    "roi": -0.1601835664335664,
-    "unitProfit": -199.90909090909088,
-    "logLoss": 0.7531540832252432,
-    "baselineLogLoss": 0.7479462896535681,
-    "deltaLogLoss": 0.005207793571675112,
-    "brier": 0.2779871584029914,
-    "baselineBrier": 0.2734206653899258,
-    "ece": 0.1816571572411061,
-    "roiCI": [
-     -0.21066433566433618,
-     -0.10664335664335765
-    ],
-    "deltaCI": [
-     0.11785651166316082,
-     0.1355652428109682
-    ],
-    "skillP": 0.6904154792260387,
-    "skillMean": -0.005207793571671893,
-    "skillReplicates": 20000,
-    "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
-    "seasonRoi": {
-     "2025": -0.24692338229456207,
-     "2026": -0.0539620807000492
-    },
-    "maxBetShare": 0.0018214936247722903,
-    "maxBetGame": "https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats",
-    "holdoutBets": 561,
-    "holdoutRoi": -0.0539620807000492,
-    "adjustedP": 0.7335664466776661
+    "holdoutBets": 248,
+    "holdoutRoi": -0.03005865102639254,
+    "adjustedP": 0.5327412200818531
    },
    "sourceUrl": "https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats",
    "sourceName": "Official game page (Minnesota Vikings at Cleveland Browns)",
@@ -950,19 +790,99 @@
     },
     "G2": {
      "pass": true,
-     "detail": "1248 bets placed (minimum 25)"
+     "detail": "615 bets placed (minimum 25)"
     },
     "G3": {
      "pass": false,
-     "detail": "log loss 0.7532 vs baseline 0.7479"
+     "detail": "log loss 0.7556 vs baseline 0.7388"
     },
     "G4": {
      "pass": false,
-     "detail": "ROI 95% CI [-0.2107, -0.1066]; mean per-bet log-loss improvement over baseline -0.0052; BH adjusted p 0.7336"
+     "detail": "ROI 95% CI [-0.1650, -0.0160]; mean per-bet log-loss improvement over baseline -0.0168; BH adjusted p 0.5327"
     },
     "G5": {
      "pass": false,
-     "detail": "2026 holdout ROI -0.0540 on 561 bets"
+     "detail": "2026 holdout ROI -0.0301 on 248 bets"
+    },
+    "G6": {
+     "pass": false,
+     "detail": "0 of 2 seasons positive; largest single bet carries 0.3% of gross profit"
+    },
+    "G7": {
+     "pass": true,
+     "detail": "not applicable (strategy is not qualified)"
+    }
+   },
+   "reward": 0,
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 10,
+   "status": "failed"
+  },
+  {
+   "id": "P01",
+   "name": "Receiving yards over the player's own average",
+   "family": "prop",
+   "market": "player receiving yards",
+   "rule": "Line = the player's own prior average receiving yards. Our projection = recency-weighted average adjusted for the opponent's allowance rate.",
+   "benchmark": "the player's own prior average (pre-registered naive line)",
+   "metrics": {
+    "betsConsidered": 2734,
+    "betsPlaced": 1189,
+    "wins": 493,
+    "losses": 696,
+    "pushes": 0,
+    "roi": -0.20842572062084253,
+    "unitProfit": -247.81818181818176,
+    "logLoss": 0.77029377049313,
+    "baselineLogLoss": 0.7388904505322849,
+    "deltaLogLoss": 0.03140331996084511,
+    "brier": 0.2854970403810606,
+    "baselineBrier": 0.26895773769504416,
+    "ece": 0.20328465733093795,
+    "roiCI": [
+     -0.26145156357519606,
+     -0.15700550500802915
+    ],
+    "deltaCI": [
+     0.1089432239423226,
+     0.12613884011326199
+    ],
+    "skillP": 0.013949302534873257,
+    "skillMean": -0.031403319960842654,
+    "skillReplicates": 20000,
+    "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
+    "seasonRoi": {
+     "2025": -0.24692338229456207,
+     "2026": -0.1557406736689609
+    },
+    "maxBetShare": 0.0020283975659228987,
+    "maxBetGame": "https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats",
+    "holdoutBets": 502,
+    "holdoutRoi": -0.1557406736689609,
+    "adjustedP": 0.04136459843674483
+   },
+   "sourceUrl": "https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats",
+   "sourceName": "Official game page (Minnesota Vikings at Cleveland Browns)",
+   "gates": {
+    "G1": {
+     "pass": true,
+     "detail": "all rows carry official source URLs"
+    },
+    "G2": {
+     "pass": true,
+     "detail": "1189 bets placed (minimum 25)"
+    },
+    "G3": {
+     "pass": false,
+     "detail": "log loss 0.7703 vs baseline 0.7389"
+    },
+    "G4": {
+     "pass": false,
+     "detail": "ROI 95% CI [-0.2615, -0.1570]; mean per-bet log-loss improvement over baseline -0.0314; BH adjusted p 0.0414"
+    },
+    "G5": {
+     "pass": false,
+     "detail": "2026 holdout ROI -0.1557 on 502 bets"
     },
     "G6": {
      "pass": false,
@@ -975,7 +895,7 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "rank": 12,
+   "rank": 11,
    "status": "failed"
   },
   {
@@ -986,40 +906,40 @@
    "rule": "Line = the quarterback's own prior average passing yards; projection is opponent-adjusted.",
    "benchmark": "the player's own prior average (pre-registered naive line)",
    "metrics": {
-    "betsConsidered": 1800,
-    "betsPlaced": 756,
-    "wins": 358,
+    "betsConsidered": 1709,
+    "betsPlaced": 703,
+    "wins": 305,
     "losses": 398,
     "pushes": 0,
-    "roi": -0.09595959595959591,
-    "unitProfit": -72.5454545454545,
-    "logLoss": 0.760512419545625,
-    "baselineLogLoss": 0.7385053057008893,
-    "deltaLogLoss": 0.022007113844735637,
-    "brier": 0.2765558654088563,
-    "baselineBrier": 0.2684717630857221,
-    "ece": 0.1456511598995779,
+    "roi": -0.17173154015259273,
+    "unitProfit": -120.72727272727269,
+    "logLoss": 0.777214125763097,
+    "baselineLogLoss": 0.7394299679904119,
+    "deltaLogLoss": 0.03778415777268507,
+    "brier": 0.2842851188834953,
+    "baselineBrier": 0.26860999033464256,
+    "ece": 0.1879574295644873,
     "roiCI": [
-     -0.16414141414141492,
-     -0.03282828282828254
+     -0.24233803181171681,
+     -0.1065563170826334
     ],
     "deltaCI": [
-     0.1452338851170262,
-     0.1655352208412347
+     0.1490528937398022,
+     0.17057556204281174
     ],
-    "skillP": 0.2407879606019699,
-    "skillMean": -0.02200711384473581,
+    "skillP": 0.05874706264686766,
+    "skillMean": -0.03778415777268663,
     "skillReplicates": 20000,
     "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
     "seasonRoi": {
      "2025": -0.17496573777980876,
-     "2026": -0.008125952260031035
+     "2026": -0.1675111773472435
     },
-    "maxBetShare": 0.0027932960893854632,
+    "maxBetShare": 0.003278688524590164,
     "maxBetGame": "https://www.nfl.com/games/dolphins-at-panthers-2025-reg-5?tab=stats",
-    "holdoutBets": 358,
-    "holdoutRoi": -0.008125952260031035,
-    "adjustedP": 0.40933953302334886
+    "holdoutBets": 305,
+    "holdoutRoi": -0.1675111773472435,
+    "adjustedP": 0.09079091499970457
    },
    "sourceUrl": "https://www.nfl.com/games/49ers-at-rams-2025-reg-5?tab=stats",
    "sourceName": "Official game page (Los Angeles Rams at San Francisco 49ers)",
@@ -1030,19 +950,19 @@
     },
     "G2": {
      "pass": true,
-     "detail": "756 bets placed (minimum 25)"
+     "detail": "703 bets placed (minimum 25)"
     },
     "G3": {
      "pass": false,
-     "detail": "log loss 0.7605 vs baseline 0.7385"
+     "detail": "log loss 0.7772 vs baseline 0.7394"
     },
     "G4": {
      "pass": false,
-     "detail": "ROI 95% CI [-0.1641, -0.0328]; mean per-bet log-loss improvement over baseline -0.0220; BH adjusted p 0.4093"
+     "detail": "ROI 95% CI [-0.2423, -0.1066]; mean per-bet log-loss improvement over baseline -0.0378; BH adjusted p 0.0908"
     },
     "G5": {
      "pass": false,
-     "detail": "2026 holdout ROI -0.0081 on 358 bets"
+     "detail": "2026 holdout ROI -0.1675 on 305 bets"
     },
     "G6": {
      "pass": false,
@@ -1055,87 +975,7 @@
    },
    "reward": 0,
    "rewardNote": "no reward: one or more validation gates failed",
-   "rank": 13,
-   "status": "failed"
-  },
-  {
-   "id": "P02",
-   "name": "Rushing yards over the player's own average",
-   "family": "prop",
-   "market": "player rushing yards",
-   "rule": "Line = the player's own prior average rushing yards; projection is opponent-adjusted.",
-   "benchmark": "the player's own prior average (pre-registered naive line)",
-   "metrics": {
-    "betsConsidered": 1259,
-    "betsPlaced": 677,
-    "wins": 320,
-    "losses": 357,
-    "pushes": 0,
-    "roi": -0.0976232039747549,
-    "unitProfit": -66.09090909090907,
-    "logLoss": 0.7777211658377047,
-    "baselineLogLoss": 0.7498097677058136,
-    "deltaLogLoss": 0.02791139813189103,
-    "brier": 0.2890666606232634,
-    "baselineBrier": 0.2727304449143467,
-    "ece": 0.2071810970005331,
-    "roiCI": [
-     -0.16812139116422803,
-     -0.02712501678528232
-    ],
-    "deltaCI": [
-     0.13694156033448623,
-     0.16203814301156966
-    ],
-    "skillP": 0.15209239538023098,
-    "skillMean": -0.027911398131890818,
-    "skillReplicates": 20000,
-    "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
-    "seasonRoi": {
-     "2025": -0.16199788583509578,
-     "2026": -0.031122031122030748
-    },
-    "maxBetShare": 0.003124999999999996,
-    "maxBetGame": "https://www.nfl.com/games/titans-at-cardinals-2025-reg-5?tab=stats",
-    "holdoutBets": 333,
-    "holdoutRoi": -0.031122031122030748,
-    "adjustedP": 0.3231963401829908
-   },
-   "sourceUrl": "https://www.nfl.com/games/texans-at-ravens-2025-reg-5?tab=stats",
-   "sourceName": "Official game page (Baltimore Ravens at Houston Texans)",
-   "gates": {
-    "G1": {
-     "pass": true,
-     "detail": "all rows carry official source URLs"
-    },
-    "G2": {
-     "pass": true,
-     "detail": "677 bets placed (minimum 25)"
-    },
-    "G3": {
-     "pass": false,
-     "detail": "log loss 0.7777 vs baseline 0.7498"
-    },
-    "G4": {
-     "pass": false,
-     "detail": "ROI 95% CI [-0.1681, -0.0271]; mean per-bet log-loss improvement over baseline -0.0279; BH adjusted p 0.3232"
-    },
-    "G5": {
-     "pass": false,
-     "detail": "2026 holdout ROI -0.0311 on 333 bets"
-    },
-    "G6": {
-     "pass": false,
-     "detail": "0 of 2 seasons positive; largest single bet carries 0.3% of gross profit"
-    },
-    "G7": {
-     "pass": true,
-     "detail": "not applicable (strategy is not qualified)"
-    }
-   },
-   "reward": 0,
-   "rewardNote": "no reward: one or more validation gates failed",
-   "rank": 14,
+   "rank": 12,
    "status": "failed"
   },
   {
@@ -1146,7 +986,7 @@
    "rule": "Bet Over when the model total exceeds the league-average total, Under when it is below. Line = league-average combined points from prior games only.",
    "benchmark": "league-average combined points (pre-registered naive line)",
    "metrics": {
-    "betsConsidered": 696,
+    "betsConsidered": 681,
     "betsPlaced": 291,
     "wins": 166,
     "losses": 125,
@@ -1180,7 +1020,7 @@
     "maxBetGame": "https://www.nfl.com/games/saints-at-cowboys-2024-reg-2",
     "holdoutBets": 60,
     "holdoutRoi": 0.14545454545454556,
-    "adjustedP": 0.0791877072813026
+    "adjustedP": 0.047512624368781564
    },
    "sourceUrl": "https://www.nfl.com/games/bills-at-dolphins-2024-reg-2",
    "sourceName": "Official game page (Miami Dolphins at Buffalo Bills)",
@@ -1199,7 +1039,7 @@
     },
     "G4": {
      "pass": false,
-     "detail": "ROI 95% CI [-0.0225, 0.1940]; mean per-bet log-loss improvement over baseline -0.0787; BH adjusted p 0.0792"
+     "detail": "ROI 95% CI [-0.0225, 0.1940]; mean per-bet log-loss improvement over baseline -0.0787; BH adjusted p 0.0475"
     },
     "G5": {
      "pass": true,
@@ -1208,6 +1048,166 @@
     "G6": {
      "pass": true,
      "detail": "3 of 3 seasons positive; largest single bet carries 0.6% of gross profit"
+    },
+    "G7": {
+     "pass": true,
+     "detail": "not applicable (strategy is not qualified)"
+    }
+   },
+   "reward": 0,
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 13,
+   "status": "failed"
+  },
+  {
+   "id": "P07",
+   "name": "Rush attempts over the player's own average",
+   "family": "prop",
+   "market": "player rush attempts",
+   "rule": "Line = the player's own prior average rush attempts; projection is opponent-adjusted.",
+   "benchmark": "the player's own prior average (pre-registered naive line)",
+   "metrics": {
+    "betsConsidered": 620,
+    "betsPlaced": 273,
+    "wins": 146,
+    "losses": 127,
+    "pushes": 0,
+    "roi": 0.020979020979021056,
+    "unitProfit": 5.727272727272748,
+    "logLoss": 0.7861737624212232,
+    "baselineLogLoss": 0.7285454360127981,
+    "deltaLogLoss": 0.05762832640842508,
+    "brier": 0.2878560298618203,
+    "baselineBrier": 0.264992528542006,
+    "ece": 0.172327505597745,
+    "roiCI": [
+     -0.09090909090909075,
+     0.1328671328671328
+    ],
+    "deltaCI": [
+     0.07709900176897261,
+     0.11233524650702043
+    ],
+    "skillP": 0.020748962551872405,
+    "skillMean": -0.05762832274908181,
+    "skillReplicates": 20000,
+    "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
+    "seasonRoi": {
+     "2025": 0.0028768699654776364,
+     "2026": 0.04584980237154155
+    },
+    "maxBetShare": 0.006849315068493163,
+    "maxBetGame": "https://www.nfl.com/games/texans-at-ravens-2025-reg-5?tab=stats",
+    "holdoutBets": 115,
+    "holdoutRoi": 0.04584980237154155,
+    "adjustedP": 0.04136459843674483
+   },
+   "sourceUrl": "https://www.nfl.com/games/texans-at-ravens-2025-reg-5?tab=stats",
+   "sourceName": "Official game page (Houston Texans at Baltimore Ravens)",
+   "gates": {
+    "G1": {
+     "pass": true,
+     "detail": "all rows carry official source URLs"
+    },
+    "G2": {
+     "pass": true,
+     "detail": "273 bets placed (minimum 25)"
+    },
+    "G3": {
+     "pass": false,
+     "detail": "log loss 0.7862 vs baseline 0.7285"
+    },
+    "G4": {
+     "pass": false,
+     "detail": "ROI 95% CI [-0.0909, 0.1329]; mean per-bet log-loss improvement over baseline -0.0576; BH adjusted p 0.0414"
+    },
+    "G5": {
+     "pass": true,
+     "detail": "2026 holdout ROI 0.0458 on 115 bets"
+    },
+    "G6": {
+     "pass": true,
+     "detail": "2 of 2 seasons positive; largest single bet carries 0.7% of gross profit"
+    },
+    "G7": {
+     "pass": true,
+     "detail": "not applicable (strategy is not qualified)"
+    }
+   },
+   "reward": 0,
+   "rewardNote": "no reward: one or more validation gates failed",
+   "rank": 14,
+   "status": "failed"
+  },
+  {
+   "id": "P02",
+   "name": "Rushing yards over the player's own average",
+   "family": "prop",
+   "market": "player rushing yards",
+   "rule": "Line = the player's own prior average rushing yards; projection is opponent-adjusted.",
+   "benchmark": "the player's own prior average (pre-registered naive line)",
+   "metrics": {
+    "betsConsidered": 1191,
+    "betsPlaced": 650,
+    "wins": 298,
+    "losses": 352,
+    "pushes": 0,
+    "roi": -0.12475524475524472,
+    "unitProfit": -81.09090909090907,
+    "logLoss": 0.7940981844907109,
+    "baselineLogLoss": 0.7480976110952878,
+    "deltaLogLoss": 0.04600057339542307,
+    "brier": 0.29566118955902804,
+    "baselineBrier": 0.2716556897472359,
+    "ece": 0.21353936671488594,
+    "roiCI": [
+     -0.1953181818181827,
+     -0.0513286713286713
+    ],
+    "deltaCI": [
+     0.1273015465555724,
+     0.15265697524223318
+    ],
+    "skillP": 0.016699165041747913,
+    "skillMean": -0.04600057339542336,
+    "skillReplicates": 20000,
+    "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
+    "seasonRoi": {
+     "2025": -0.16199788583509578,
+     "2026": -0.08288770053475902
+    },
+    "maxBetShare": 0.0033557046979865793,
+    "maxBetGame": "https://www.nfl.com/games/titans-at-cardinals-2025-reg-5?tab=stats",
+    "holdoutBets": 306,
+    "holdoutRoi": -0.08288770053475902,
+    "adjustedP": 0.04136459843674483
+   },
+   "sourceUrl": "https://www.nfl.com/games/texans-at-ravens-2025-reg-5?tab=stats",
+   "sourceName": "Official game page (Baltimore Ravens at Houston Texans)",
+   "gates": {
+    "G1": {
+     "pass": true,
+     "detail": "all rows carry official source URLs"
+    },
+    "G2": {
+     "pass": true,
+     "detail": "650 bets placed (minimum 25)"
+    },
+    "G3": {
+     "pass": false,
+     "detail": "log loss 0.7941 vs baseline 0.7481"
+    },
+    "G4": {
+     "pass": false,
+     "detail": "ROI 95% CI [-0.1953, -0.0513]; mean per-bet log-loss improvement over baseline -0.0460; BH adjusted p 0.0414"
+    },
+    "G5": {
+     "pass": false,
+     "detail": "2026 holdout ROI -0.0829 on 306 bets"
+    },
+    "G6": {
+     "pass": false,
+     "detail": "0 of 2 seasons positive; largest single bet carries 0.3% of gross profit"
     },
     "G7": {
      "pass": true,
@@ -1261,7 +1261,7 @@
     "maxBetGame": "https://www.nfl.com/games/saints-at-cowboys-2024-reg-2",
     "holdoutBets": 50,
     "holdoutRoi": 0.22181818181818203,
-    "adjustedP": 0.0744562771861407
+    "adjustedP": 0.04136459843674483
    },
    "sourceUrl": "https://www.nfl.com/games/saints-at-cowboys-2024-reg-2",
    "sourceName": "Official game page (Dallas Cowboys at New Orleans Saints)",
@@ -1280,7 +1280,7 @@
     },
     "G4": {
      "pass": false,
-     "detail": "ROI 95% CI [-0.0290, 0.2179]; mean per-bet log-loss improvement over baseline -0.1025; BH adjusted p 0.0745"
+     "detail": "ROI 95% CI [-0.0290, 0.2179]; mean per-bet log-loss improvement over baseline -0.1025; BH adjusted p 0.0414"
     },
     "G5": {
      "pass": true,
@@ -1308,40 +1308,40 @@
    "rule": "Line = the player's own prior average receiving touchdowns; projection is opponent-adjusted.",
    "benchmark": "the player's own prior average (pre-registered naive line)",
    "metrics": {
-    "betsConsidered": 35,
-    "betsPlaced": 34,
-    "wins": 20,
+    "betsConsidered": 22,
+    "betsPlaced": 21,
+    "wins": 7,
     "losses": 14,
     "pushes": 0,
-    "roi": 0.12299465240641716,
-    "unitProfit": 4.181818181818183,
-    "logLoss": 0.8511429527789023,
-    "baselineLogLoss": 1.0215035815380051,
-    "deltaLogLoss": -0.17036062875910285,
-    "brier": 0.3025894312047794,
-    "baselineBrier": 0.39123352253357646,
-    "ece": 0.29141230220512093,
+    "roi": -0.3636363636363636,
+    "unitProfit": -7.636363636363636,
+    "logLoss": 1.3407057921820151,
+    "baselineLogLoss": 0.7063661674988967,
+    "deltaLogLoss": 0.6343396246831184,
+    "brier": 0.48595552388303737,
+    "baselineBrier": 0.25332408886576896,
+    "ece": 0.5069332414429778,
     "roiCI": [
-     -0.213903743315508,
-     0.4037433155080218
+     -0.7272727272727273,
+     4.229421046191072e-17
     ],
     "deltaCI": [
-     0.45644659493835354,
-     0.5965810680047429
+     0.34170487328496585,
+     0.47882014289459846
     ],
-    "skillP": 0.46287685615719215,
-    "skillMean": 0.1703606287591025,
+    "skillP": 0.018499075046247686,
+    "skillMean": -0.6343396246831186,
     "skillReplicates": 20000,
     "skillMethod": "paired sign-flip randomisation test on the per-bet log-loss improvement over the pre-registered baseline",
     "seasonRoi": {
      "2025": -0.3636363636363636,
-     "2026": 0.38842975206611574
+     "2026": -0.3636363636363636
     },
-    "maxBetShare": 0.04999999999999997,
+    "maxBetShare": 0.14285714285714285,
     "maxBetGame": "https://www.nfl.com/games/colts-at-chargers-2025-reg-7?tab=stats",
-    "holdoutBets": 22,
-    "holdoutRoi": 0.38842975206611574,
-    "adjustedP": 0.5258403746479342
+    "holdoutBets": 9,
+    "holdoutRoi": -0.3636363636363636,
+    "adjustedP": 0.04136459843674483
    },
    "sourceUrl": "https://www.nfl.com/games/colts-at-chargers-2025-reg-7?tab=stats",
    "sourceName": "Official game page (Indianapolis Colts at Los Angeles Chargers)",
@@ -1351,24 +1351,24 @@
      "detail": "all rows carry official source URLs"
     },
     "G2": {
-     "pass": true,
-     "detail": "34 bets placed (minimum 25)"
+     "pass": false,
+     "detail": "21 bets placed (minimum 25)"
     },
     "G3": {
-     "pass": true,
-     "detail": "log loss 0.8511 vs baseline 1.0215"
+     "pass": false,
+     "detail": "log loss 1.3407 vs baseline 0.7064"
     },
     "G4": {
      "pass": false,
-     "detail": "ROI 95% CI [-0.2139, 0.4037]; mean per-bet log-loss improvement over baseline 0.1704; BH adjusted p 0.5258"
+     "detail": "ROI 95% CI [-0.7273, 0.0000]; mean per-bet log-loss improvement over baseline -0.6343; BH adjusted p 0.0414"
     },
     "G5": {
-     "pass": true,
-     "detail": "2026 holdout ROI 0.3884 on 22 bets"
+     "pass": false,
+     "detail": "2026 holdout ROI -0.3636 on 9 bets"
     },
     "G6": {
      "pass": false,
-     "detail": "1 of 2 seasons positive; largest single bet carries 5.0% of gross profit"
+     "detail": "0 of 2 seasons positive; largest single bet carries 14.3% of gross profit"
     },
     "G7": {
      "pass": true,
@@ -1388,7 +1388,7 @@
    "rule": "Structural control. At a -110 price the model-underdog can never carry a probability above the price-implied 52.38%, so this strategy can never clear the price filter. It is kept so the price filter is visibly applied to every strategy, not only the ones that benefit from it.",
    "benchmark": "pick'em with the historical home win rate as the naive probability",
    "metrics": {
-    "betsConsidered": 696,
+    "betsConsidered": 681,
     "betsPlaced": 0,
     "wins": 0,
     "losses": 0,

@@ -22,15 +22,18 @@
   }
  },
  "counts": {
-  "games": 1170,
-  "gamesWithScore": 840,
+  "games": 960,
+  "gamesWithScore": 825,
   "boxscoreRows": 29919,
   "injuryRows": 296,
   "injuryWeek": 10,
   "depthCharts": 31,
   "depthChartsMissing": [
    "Houston Texans"
-  ]
+  ],
+  "gamesRawCapture": 1170,
+  "gamesNote": "960 unique games after de-duplicating by game id. The raw capture returned 1,170 records because the Week 10 payload repeats across page slugs (defect A04). The 210 repeated records were removed, not re-fetched: a network re-capture is not available in this environment, so this count is the de-duplicated capture, recomputed here.",
+  "gamesWithScoreNote": "825 games carry an official score: 681 regular season (272 + 272 + 137) + 144 preseason (48 x 3), after de-duplication."
  },
  "failures": [],
  "finishedUTC": "2026-11-13T13:24:32.348056+00:00"

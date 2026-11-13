@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generatedUTC": "2026-11-13T23:12:22Z"
+  "generatedUTC": "2026-11-13T23:25:06Z"
  },
  "datasets": [
   {
@@ -9,8 +9,8 @@
    "provider": "NFL.com by-week schedule pages",
    "sourceUrl": "https://www.nfl.com/schedules/",
    "cannotTell": "Score for 2026 regular season; no price.",
-   "rows": 1170,
-   "sha256_12": "c889e56e413c",
+   "rows": 960,
+   "sha256_12": "8c0358a3b4e2",
    "exists": true
   },
   {
@@ -49,8 +49,8 @@
    "provider": "Derived from the two files above",
    "sourceUrl": "https://www.nfl.com/injuries/",
    "cannotTell": "Projection from a chart; not a snap count.",
-   "rows": 165,
-   "sha256_12": "41539fa2b7cc",
+   "rows": 75,
+   "sha256_12": "d7eee1a7e713",
    "exists": true
   },
   {
@@ -60,7 +60,7 @@
    "sourceUrl": "https://www.nfl.com/stats/player-stats/",
    "cannotTell": "Relationships, not prices.",
    "rows": null,
-   "sha256_12": "e73aba2cb60e",
+   "sha256_12": "f17239b22725",
    "exists": true
   },
   {
@@ -70,7 +70,7 @@
    "sourceUrl": "https://www.nfl.com/schedules/",
    "cannotTell": "Scored at a declared -110 reference price, not a market quote.",
    "rows": 18,
-   "sha256_12": "231cf40de83b",
+   "sha256_12": "d1c93809d4fb",
    "exists": true
   },
   {
@@ -80,7 +80,7 @@
    "sourceUrl": "https://www.nfl.com/standings/",
    "cannotTell": "Paper points only; no money.",
    "rows": 18,
-   "sha256_12": "2761a3c53ddb",
+   "sha256_12": "e79acbf31cf8",
    "exists": true
   },
   {

@@ -755,7 +755,8 @@ def build_injury_board():
         risks.append({k: r.get(k) for k in ("team", "opponent", "week", "date", "player", "position", "unit",
                                             "injury", "practiceStatus", "gameStatus", "depthTier",
                                             "depthTierVerified", "replacement", "replacementTier",
-                                            "deficiency", "severity", "injurySourceUrl",
+                                            "deficiency", "severity", "sameChartRow", "chartRow",
+                                            "injurySourceUrl",
                                             "depthChartSourceUrl", "chartLabel")})
     return {
         "meta": {"sourceName": meta.get("sourceName"), "sourceUrl": meta.get("sourceUrl"),

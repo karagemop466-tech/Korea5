@@ -443,25 +443,27 @@ def strip_jersey(name):
 def parse_depth_chart(page, url):
     """Parse an official club depth chart into unit -> position -> tier -> players.
 
-    Two official layouts exist:
-      * 'Position | 1st | 2nd | 3rd | 4th'  (tier labels present)
-      * 'Position | Player | Player | ...'  (tier implied by column order)
+    Official club charts use two layouts:
+      * 'Position | 1st | 2nd | 3rd | 4th'  (tier labels present, often inside <thead>)
+      * 'Position | Player | Player | ...'  (no header row at all; tier implied by column order)
     Rows whose position cell is empty continue the previous position.
     """
     units = {}
     tier_labels_found = False
     tables_seen = 0
+    # Class-marked depth-chart tables first: a generic table scan can be swallowed by a
+    # malformed wrapper table earlier in the document.
+    candidates = []
     for tm in re.finditer(r"<table\b([^>]*)>(.*?)</table>", page, re.S | re.I):
+        if "depthchart" in tm.group(1).lower():
+            candidates.append(tm)
+    if not candidates:
+        for tm in re.finditer(r"<table\b([^>]*)>(.*?)</table>", page, re.S | re.I):
+            candidates.append(tm)
+
+    for tm in candidates:
         attrs, block = tm.group(1), tm.group(2)
         tables_seen += 1
-        head = re.search(r"<thead\b[^>]*>(.*?)</thead>", block, re.S | re.I)
-        if not head:
-            continue
-        headers = [clean_text(h).lower() for h in re.findall(r"<th\b[^>]*>(.*?)</th>", head.group(1), re.S | re.I)]
-        has_tier = any(h in DEPTH_HEADERS for h in headers[1:])
-        has_player = any("player" in h for h in headers[1:])
-        if not headers or headers[0] != "position" or not (has_tier or has_player):
-            continue
         cap = re.search(r"<caption[^>]*>(.*?)</caption>", block, re.S | re.I)
         unit = clean_text(cap.group(1)).title() if cap else ""
         if not unit:
@@ -471,21 +473,30 @@ def parse_depth_chart(page, url):
                 if t in ("Offense", "Defense", "Special Teams"):
                     unit = t
                     break
-        tiers = []
-        for i, h in enumerate(headers[1:], start=1):
-            tiers.append(h if h in DEPTH_HEADERS else ORDINAL.get(i, f"tier{i}"))
-        if any(h in DEPTH_HEADERS for h in headers[1:]):
-            tier_labels_found = True
-        body = re.search(r"<tbody\b[^>]*>(.*?)</tbody>", block, re.S | re.I)
-        if not body:
+        trs = re.findall(r"<tr\b[^>]*>(.*?)</tr>", block, re.S | re.I)
+        if not trs:
             continue
         rows = {}
         last_position = None
-        for rm in re.finditer(r"<tr\b[^>]*>(.*?)</tr>", body.group(1), re.S | re.I):
-            cells = re.findall(r"<td\b[^>]*>(.*?)</td>", rm.group(1), re.S | re.I)
-            if len(cells) < 2:
+        tiers = None
+        for ri, rm in enumerate(trs):
+            cells = re.findall(r"<t[dh]\b[^>]*>(.*?)</t[dh]>", rm, re.S | re.I)
+            if not cells:
                 continue
-            position = clean_text(cells[0])
+            texts = [clean_text(c) for c in cells]
+            lowered = [t.lower() for t in texts]
+            # a header row names the columns
+            if ri == 0 and lowered[0] == "position" and any(
+                    x in DEPTH_HEADERS or "player" in x for x in lowered[1:]):
+                tiers = []
+                for i, h in enumerate(lowered[1:], start=1):
+                    tiers.append(h if h in DEPTH_HEADERS else ORDINAL.get(i, f"tier{i}"))
+                if any(h in DEPTH_HEADERS for h in lowered[1:]):
+                    tier_labels_found = True
+                continue
+            if len(texts) < 2:
+                continue
+            position = texts[0]
             if not position:
                 position = last_position
             if not position:
@@ -493,7 +504,10 @@ def parse_depth_chart(page, url):
             last_position = position
             row = rows.setdefault(position, {"position": position, "players": []})
             for i, cell in enumerate(cells[1:], start=1):
-                tier = tiers[i - 1] if i - 1 < len(tiers) else ORDINAL.get(i, f"tier{i}")
+                if tiers is not None:
+                    tier = tiers[i - 1] if i - 1 < len(tiers) else ORDINAL.get(i, f"tier{i}")
+                else:
+                    tier = ORDINAL.get(i, f"tier{i}")
                 found = False
                 for am in re.finditer(r"<a\b[^>]*href=\"([^\"]+)\"[^>]*>(.*?)</a>", cell, re.S | re.I):
                     nm = strip_jersey(clean_text(am.group(2)))
@@ -504,13 +518,12 @@ def parse_depth_chart(page, url):
                     nm = strip_jersey(clean_text(cell))
                     if nm:
                         row["players"].append({"tier": tier, "name": nm, "playerPath": None})
-        if not unit:
-            unit = "Depth Chart"
-        if rows:
-            units.setdefault(unit, {}).update(rows)
+        if not rows:
+            continue
+        units.setdefault(unit or "Depth Chart", {}).update(rows)
+
     note = None
     for pat in (r"Updated as of\s*([0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4})",
-                r"Unofficial[^.<]{0,40}?([0-9]{1,2}\s+[A-Za-z]+\.?\s+[0-9]{1,2},?\s*[0-9]{4})",
                 r"([0-9]{1,2}\s+[A-Za-z]+\.?\s+[0-9]{1,2},?\s*[0-9]{4})"):
         m = re.search(pat, page, re.I)
         if m:

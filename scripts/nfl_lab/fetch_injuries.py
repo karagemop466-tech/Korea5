@@ -141,6 +141,18 @@ def main():
         text = gzip.decompress(b)
         rows = list(csv.DictReader(io.StringIO(text.decode("utf-8-sig"))))
         log["depth"][str(y)] = {"rows": len(rows), "headers": list(rows[0].keys()) if rows else []}
+        if rows:
+            from collections import Counter
+            log["depth"][str(y)]["probe"] = {
+                "first_rows": rows[:3],
+                "pos_grp": Counter(r.get("pos_grp") for r in rows).most_common(20),
+                "pos_abb": Counter(r.get("pos_abb") for r in rows).most_common(40),
+                "pos_slot": Counter(r.get("pos_slot") for r in rows).most_common(40),
+                "pos_rank": Counter(r.get("pos_rank") for r in rows).most_common(12),
+                "dt_count": len({r.get("dt") for r in rows}),
+                "dt_sample": sorted({r.get("dt") for r in rows})[-12:],
+                "teams": sorted({r.get("team") for r in rows}),
+            }
         if y != 2026:
             continue
         # latest-week depth chart per team/position group, and injuries for the same week

@@ -102,11 +102,20 @@ ul.clean{margin:6px 0 0 18px;padding:0}ul.clean li{margin:5px 0}
 def esc(v):
     if v is None:
         return '<span class="small">— blank —</span>'
+    if isinstance(v, bool):
+        return "yes" if v else "no"
     if isinstance(v, float):
-        return f"{v:,.4f}".rstrip("0").rstrip(".")
+        s_ = f"{v:,.4f}".rstrip("0").rstrip(".")
+        return s_
     if isinstance(v, int):
-        return f"{v:,}"
+        return f"{v:,}" if abs(v) >= 10000 else str(v)
     return html.escape(str(v))
+
+
+def pct(v, digits=2):
+    if v is None:
+        return '<span class="small">— blank —</span>'
+    return f"{v * 100:.{digits}f}%"
 
 
 def load(name, default=None):
@@ -175,7 +184,7 @@ def build_index(mr, lb, q, hyp):
     best = mr.get("bestFamily")
     m = mr.get("model", {})
     d = mr.get("deflation", {})
-    cb = mr.get("currentBoard", {})
+    cb = mr.get("playedBoard") or mr.get("currentBoard", {})
     lbrows = (lb or {}).get("rows", [])
     tierA = [r for r in lbrows if r["tier"] == "A"]
     openq = [x for x in (q or {}).get("items", []) if x["id"] in ("Q1", "Q2", "Q4", "Q5")]
@@ -183,23 +192,24 @@ def build_index(mr, lb, q, hyp):
 <div class="grid g4">
   <div class="card"><div class="kpi">{m.get('games', 0):,}<small>out-of-sample games</small></div>
     <p class="small">Walk-forward: the model for each season is fitted only on earlier seasons.</p></div>
-  <div class="card"><div class="kpi">{m.get('accuracy', 0)*100:.1f}%<small>winner accuracy</small></div>
+  <div class="card"><div class="kpi">{pct(m.get('accuracy'), 1)}<small>winner accuracy</small></div>
     <p class="small">Accuracy is reported, never used as a gate — it is the metric that rewards luck most.</p></div>
-  <div class="card"><div class="kpi">{m.get('skill', 0)*100:.2f}%<small>log-loss skill vs baseline</small></div>
+  <div class="card"><div class="kpi">{pct(m.get('skill'), 2)}<small>log-loss skill vs baseline</small></div>
     <p class="small">1 − model log loss ÷ naive prior-season baseline log loss.</p></div>
   <div class="card"><div class="kpi">{len(tierA)}<small>Tier A strategies</small></div>
     <p class="small">Deflated skill above the best-of-K null. Everything else is published below, tiered.</p></div>
 </div>
 <div class="callout {'warn' if not d.get('passed') else ''}">
-<strong>Luck filter:</strong> the headline skill is <span class="mono">{m.get('skill')}</span> against a
-best-of-{d.get('K', '—')} permutation null whose 95th percentile is <span class="mono">{d.get('p95')}</span>
+<strong>Luck filter:</strong> the headline skill is <span class="mono">{pct(m.get('skill'), 2)}</span> against a
+best-of-{d.get('K', '—')} permutation null whose 95th percentile is <span class="mono">{pct(d.get('p95'), 2)}</span>
 ({d.get('N', 0)} shuffled-label refits). Verdict: <strong>{'passes deflation' if d.get('passed') else 'not distinguishable from luck'}</strong>.
 Features used: <code>{', '.join(fam.get(best, {}).get('features', []))}</code>.
 </div>"""
     board_rows = []
-    for g in (cb.get("games") or [])[:20]:
+    for g in (cb.get("games") or [])[:18]:
+        score = (f'{esc(g.get("awayScore"))}–{esc(g.get("homeScore"))}' if g.get("complete") else None)
         board_rows.append([esc(g["date"]), esc(g["week"]), f'{esc(g["away"])} @ {esc(g["home"])}',
-                           esc(g.get("spread")), esc(g.get("total")),
+                           esc(score), esc(g.get("spread")), esc(g.get("total")),
                            f'{esc(g.get("awayRest"))} / {esc(g.get("homeRest"))}',
                            '<span class="tag pass">final</span>' if g.get("complete") else '<span class="tag">scheduled</span>',
                            src("https://www.nfl.com/schedules/", "NFL.com")])
@@ -218,11 +228,11 @@ them, and ranks singles, parlays and player-prop combos only on what survives. N
 recommendation to bet, and no profit figure appears anywhere, because no timestamped price history
 exists in any reachable source.</p>
 {cards}
-<h2>Current season board — latest week in the data</h2>
-<p class="small">Season {esc(cb.get('season'))}, week {esc(cb.get('week'))}. Rest days are as published
-in the same schedule feed. Kickoff times and the official game links are on the planner's
-<a href="../extra/nfl-2026.html">NFL 2026 page</a>.</p>
-{table(["Date", "Wk", "Matchup", "Spread", "Total", "Rest (A/H)", "State", "Official"], board_rows) if board_rows else '<p class="small">No current-season games in the loaded slice.</p>'}
+<h2>Latest completed week in the data — season {esc(cb.get('season'))}, week {esc(cb.get('week'))}</h2>
+<p class="small">The most recent week with final scores. Scores come from the nflverse schedule file and are
+cross-checked against ESPN on the <a href="data.html">data audit</a> page. Rest days are as published in the
+same feed. Later weeks exist in the file as scheduled fixtures only, so they are not shown as results.</p>
+{table(["Date", "Wk", "Matchup", "Score", "Spread", "Total", "Rest (A/H)", "State", "Official"], board_rows) if board_rows else '<p class="small">No completed games in the loaded slice.</p>'}
 <h2>What the gates say, in one table</h2>
 {table(["ID", "Strategy hypothesis", "Family", "Verdict", "Statement"], hyp_rows)}
 <p><a class="btn" href="leaderboard.html">Full leaderboard and gate matrix →</a>
@@ -334,20 +344,31 @@ def _hyp_source(hid):
 
 
 def build_injuries(mr):
-    cb = mr.get("currentBoard", {})
+    cb = mr.get("playedBoard") or mr.get("currentBoard", {})
     rows = []
     for t in sorted(cb.get("teams", []), key=lambda x: -(x.get("offOutShare") or 0)):
         tiers = t.get("tiers", {})
         qb = tiers.get("QB", {})
-        qb_txt = " / ".join(f'{r}: {", ".join(v[:2])}' for r, v in sorted(qb.items())) or None
+        qb_txt = " · ".join(f'{r}: {", ".join(v[:2])}' for r, v in sorted(qb.items())) or None
+        snap = t.get("depthSnapshotUTC")
+        snap_txt = (f'<span class="small">{esc(snap[:10])}</span>' if snap else '<span class="tag warn">no snapshot date</span>')
         rows.append([
             esc(t["team"]), esc(t["reportCount"]), esc(t["out"]), esc(t["doubtful"]), esc(t["questionable"]),
             esc(t.get("offStarterValue")), esc(t.get("defStarterValue")),
             esc(t.get("offOutShare")), esc(t.get("defOutShare")),
             esc(t.get("offQuestionableShare")),
             f'<span class="tag {"pass" if t.get("status")=="verified" else "warn"}">{esc(t.get("status"))}</span>',
-            esc(qb_txt),
+            esc(qb_txt), snap_txt,
             src("https://www.nfl.com/injuries/", "NFL injuries")])
+    tier_rows = []
+    for t in sorted(cb.get("teams", []), key=lambda x: -(x.get("out") or 0))[:10]:
+        snap = (t.get("depthSnapshotUTC") or "")[:10] or None
+        for pos, d in sorted(t.get("tiers", {}).items()):
+            if not d:
+                continue
+            tier_rows.append([esc(t["team"]), esc(pos)] +
+                             [esc(", ".join(d.get(str(i), [])[:2]) if d.get(str(i)) else None) for i in (1, 2, 3, 4)] +
+                             [esc(snap)])
     body = f"""
 <h1>Injuries and lineup depth</h1>
 <p class="lede">Two different questions, kept apart on purpose. <strong>Injury status</strong> is the
@@ -359,10 +380,15 @@ share of the unit's snap-weighted usage held by players listed first on the dept
 <em>usage</em>, not talent. A missing star with low usage barely moves it. That limitation is registered
 as Q6 and is not papered over.</div>
 <h2>Current week by team</h2>
-<p class="small">Season {esc(cb.get('season'))}, week {esc(cb.get('week'))}. Shares are fractions of the
+<p class="small">Latest completed week in the data: season {esc(cb.get('season'))}, week {esc(cb.get('week'))}. Shares are fractions of the
 unit's snap-weighted value: Out is separated from Doubtful and from Questionable — they are never added together.</p>
 {table(["Team", "On report", "Out", "Doubtful", "Questionable", "Off starter value", "Def starter value",
-        "Off Out share", "Def Out share", "Off Q share", "Status", "Depth: QB 1st / 2nd / 3rd", "Source"], rows) if rows else '<p class="small">No board data yet — run the pipeline.</p>'}
+        "Off Out share", "Def Out share", "Off Q share", "Status", "Depth: QB 1st / 2nd / 3rd / 4th", "Chart dated", "Source"], rows) if rows else '<p class="small">No board data yet — run the pipeline.</p>'}
+<h2>Who is next man up — published depth, by tier</h2>
+<p class="small">Read straight from the depth-chart snapshot. Only positions where a tier is populated
+appear. A missing tier means the chart does not list a player there — it is not an inference that nobody
+is available.</p>
+{table(["Team", "Position", "1st", "2nd", "3rd", "4th", "Chart dated"], tier_rows) if tier_rows else ''}
 <h2>The 2nd, 3rd and 4th string problem</h2>
 <p>The depth tracker answers, per team and position: <em>who is listed first, second, third, fourth</em>,
 and is the first-string player on the report? Three states are possible and they are published separately:</p>

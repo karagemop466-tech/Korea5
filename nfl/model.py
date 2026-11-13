@@ -39,6 +39,7 @@ RAW = "nfl/raw"
 OUT = "nfl/data"
 SEED = 20261113
 POS_GROUPS = ["QB", "RB", "WR", "TE", "OL", "DL", "LB", "CB", "S", "K", "P"]
+_DEPTH_SNAPS: dict[tuple, list] = {}
 
 # ---------------------------------------------------------------- tiny numeric helpers
 
@@ -245,6 +246,17 @@ def load_injuries(raw_dir: str, seasons: list[int]) -> dict[tuple, dict]:
     return out
 
 
+def snapshot_week(team: str, week: int, snapshots: dict) -> int:
+    """Latest snapshot AT OR BEFORE the game week (0 = single snapshot with no week column)."""
+    keys = [w for (t, w) in snapshots if t == team]
+    if not keys:
+        return -1
+    if 0 in keys:
+        return 0
+    prior = [w for w in keys if w <= week]
+    return max(prior) if prior else min(keys)
+
+
 def load_depth(raw_dir: str, seasons: list[int], game_dates: dict) -> dict[tuple, dict]:
     """
     (team, week, gsis_id) -> depth position, using the latest snapshot BEFORE that week's kickoff.
@@ -266,15 +278,16 @@ def load_depth(raw_dir: str, seasons: list[int], game_dates: dict) -> dict[tuple
             if "dt" in cols:
                 ts_raw = r.get("dt") or ""
                 try:
-                    ts = datetime.fromisoformat(ts_raw.replace("Z", "+00:00"))
+                    ts = datetime.fromisoformat(ts_raw.replace("Z", "+00:00")).replace(tzinfo=None)
                 except ValueError:
                     ts = datetime(1970, 1, 1)
-                week = None
+                week = int(r.get("week") or 0) if "week" in cols else 0
             else:
                 ts = datetime(1970, 1, 1)
                 week = int(fnum(r.get("week"), 0))
-            key = (team, week if week is not None else -1)
-            snaps[key].append((ts, r))
+            snaps[(team, week)].append((ts, r))
+    global _DEPTH_SNAPS
+    _DEPTH_SNAPS = snaps
     out: dict[tuple, dict] = {}
     for (team, week), rows in snaps.items():
         # latest snapshot for that team/week
@@ -286,10 +299,16 @@ def load_depth(raw_dir: str, seasons: list[int], game_dates: dict) -> dict[tuple
             pos = (r.get("position") or r.get("pos_abb") or "").strip()
             rank = fnum(r.get("depth_team")) if r.get("depth_team") else fnum(r.get("pos_rank"))
             if gid:
+                full = (r.get("full_name") or "").strip()
+                if not full:
+                    first = (r.get("first_name") or "").strip()
+                    last = (r.get("last_name") or "").strip()
+                    full = (first + " " + last).strip()
+                if not full:
+                    full = (r.get("player_name") or r.get("football_name") or "").strip()
                 out[(team, week, gid)] = {"pos": pos, "rank": int(rank) if rank else None,
                                           "formation": (r.get("formation") or "").strip(),
-                                          "name": (r.get("football_name") or r.get("player_name") or
-                                                   r.get("full_name") or "").strip()}
+                                          "name": full}
     return out
 
 
@@ -447,19 +466,20 @@ class LineupIndex:
 
     def __init__(self, depth, snaps, injuries):
         self.by_team_week_pos: dict[tuple, list] = defaultdict(list)
-        self.snap_by_team_week: dict[tuple, dict[str, float]] = defaultdict(dict)
+        self.snap_by_team_week: dict[tuple, dict[str, tuple]] = defaultdict(dict)
         self.inj = injuries
         for (team, week, gid), v in depth.items():
             self.by_team_week_pos[(team, week, v.get("pos"))].append((gid, v))
         for (team, week, name), sv in snaps.items():
-            self.snap_by_team_week[(team, week)][name] = max(sv.get("off") or 0.0, sv.get("def") or 0.0)
+            self.snap_by_team_week[(team, week)][name] = (sv.get("off") or 0.0, sv.get("def") or 0.0)
 
     def _rows(self, team, week, pos_set):
+        snap_week = week
+        if _DEPTH_SNAPS and not any(t == team and w == week for (t, w) in _DEPTH_SNAPS):
+            snap_week = snapshot_week(team, week, _DEPTH_SNAPS)
         rows = []
         for pos in pos_set:
-            rows.extend(self.by_team_week_pos.get((team, week, pos), ()))
-            if week != -1:
-                rows.extend(self.by_team_week_pos.get((team, -1, pos), ()))
+            rows.extend(self.by_team_week_pos.get((team, snap_week, pos), ()))
         return rows
 
     def value(self, team, week, unit):
@@ -476,7 +496,7 @@ class LineupIndex:
                 last = name.split()[-1].lower()
                 for pname, pv in snapmap.items():
                     if last and last in pname.lower():
-                        w = pv
+                        w = pv[0] if unit == "off" else pv[1]
                         break
             if w == 0.0:
                 w = 0.05
@@ -1114,7 +1134,9 @@ def run(raw_dir, seasons, out_dir, selftest=False, perm_n=60):
     lb += prop_combo_family(pcorr, props, seasons_eval)
 
     coverage = feature_coverage(games, seasons_eval)
-    board = current_board(games, injuries, depth, snaps, LineupIndex(depth, snaps, injuries))
+    idx = LineupIndex(depth, snaps, injuries)
+    board = current_board(games, injuries, depth, snaps, idx)
+    board_played = played_board(games, idx, injuries)
     result = {
         "bestFamily": best,
         "families": {k: {"scores": v["scores"], "deflation": v["deflation"],
@@ -1130,6 +1152,7 @@ def run(raw_dir, seasons, out_dir, selftest=False, perm_n=60):
         "leaderboard": lb,
         "featureCoverage": coverage,
         "currentBoard": board,
+        "playedBoard": board_played,
         "modelSpec": {"features": FEATURES, "l2": 1.0, "type": "logistic regression, walk-forward by season",
                       "fill": "missing signal -> 0 (documented; never a guessed value)"},
     }
@@ -1166,6 +1189,72 @@ def family_rows(results):
             "claim": "Out-of-sample probability skill vs a prior-season win-rate baseline. No betting return claimed.",
         })
     return rows
+
+
+def played_board(games, index, injuries):
+    """Latest season that actually has completed games: results plus the injury/lineup picture for that week."""
+    seasons = sorted({g["season"] for g in games if g["complete"]})
+    if not seasons:
+        return {}
+    cur = seasons[-1]
+    weeks = [g["week"] for g in games if g["season"] == cur and g["complete"]]
+    if not weeks:
+        return {}
+    week = max(weeks)
+    sel = [g for g in games if g["season"] == cur and g["week"] == week]
+    teams = sorted({g["home"] for g in sel} | {g["away"] for g in sel})
+    games_out = []
+    for g in sel:
+        games_out.append({"gameId": g["game_id"], "date": g["date"], "week": g["week"],
+                          "away": g["away"], "home": g["home"], "roof": g["roof"],
+                          "awayRest": g["away_rest"], "homeRest": g["home_rest"],
+                          "spread": g["spread_line"], "total": g["total_line"],
+                          "awayScore": g["away_score"], "homeScore": g["home_score"],
+                          "complete": g["complete"],
+                          "source": "https://www.nfl.com/schedules/"})
+    return {"season": cur, "week": week, "teams": _team_rows(teams, week, index, injuries),
+            "games": games_out, "kind": "played"}
+
+
+def _team_rows(teams, week, index, injuries):
+    inj_by_team = defaultdict(list)
+    for (team, wk, gid), v in injuries.items():
+        if wk == week:
+            inj_by_team[team].append({"gsisId": gid, **v})
+    rows = []
+    for t in teams:
+        rep = inj_by_team.get(t, [])
+        outs = [x for x in rep if (x.get("report") or "").lower() == "out"]
+        doubts = [x for x in rep if (x.get("report") or "").lower() == "doubtful"]
+        ques = [x for x in rep if (x.get("report") or "").lower() == "questionable"]
+        off_val, off_out, off_doubt, off_ques = index.value(t, week, "off")
+        def_val, def_out, def_doubt, def_ques = index.value(t, week, "def")
+        tiers = defaultdict(lambda: defaultdict(list))
+        snap_week = week
+        if _DEPTH_SNAPS and not any(k[0] == t and k[1] == week for k in _DEPTH_SNAPS):
+            snap_week = snapshot_week(t, week, _DEPTH_SNAPS)
+        snap_ts = None
+        for ts, _r in (_DEPTH_SNAPS.get((t, snap_week)) or [])[:1]:
+            snap_ts = ts.isoformat() + "Z" if ts and ts.year > 1970 else None
+        for pos in ("QB", "RB", "WR", "TE", "OL", "DL", "LB", "CB", "S"):
+            for gid, v in index.by_team_week_pos.get((t, snap_week, pos), []):
+                rank = v.get("rank")
+                if rank and rank <= 4 and v.get("name"):
+                    tiers[pos][rank].append(v["name"])
+        rows.append({
+            "team": t, "reportCount": len(rep),
+            "out": len(outs), "doubtful": len(doubts), "questionable": len(ques),
+            "outNames": [x.get("name") or x.get("full_name") or x["gsisId"] for x in outs][:8],
+            "offStarterValue": off_val, "defStarterValue": def_val,
+            "offOutShare": off_out, "defOutShare": def_out,
+            "offDoubtfulShare": off_doubt, "defDoubtfulShare": def_doubt,
+            "offQuestionableShare": off_ques, "defQuestionableShare": def_ques,
+            "tiers": {p: {str(r): names for r, names in d.items()} for p, d in tiers.items()},
+            "depthSnapshotWeek": snap_week,
+            "depthSnapshotUTC": snap_ts,
+            "status": ("verified" if rep or off_val is not None else "unknown"),
+        })
+    return sorted(rows, key=lambda x: x["team"])
 
 
 def current_board(games, injuries, depth, snaps, index):
@@ -1214,6 +1303,8 @@ def current_board(games, injuries, depth, snaps, index):
             "offDoubtfulShare": off_doubt, "defDoubtfulShare": def_doubt,
             "offQuestionableShare": off_ques, "defQuestionableShare": def_ques,
             "tiers": {p: {str(r): names for r, names in d.items()} for p, d in tiers.items()},
+            "depthSnapshotWeek": snap_week,
+            "depthSnapshotUTC": snap_ts,
             "status": ("verified" if rep or off_val is not None else "unknown"),
         })
     for g in [x for x in cur_games if x["week"] == latest_week]:

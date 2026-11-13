@@ -1,0 +1,138 @@
+{
+ "generatedUTC": "2026-11-13T14:34:59Z",
+ "items": [
+  {
+   "id": "Q1",
+   "topic": "Objective",
+   "question": "Is the goal forecast accuracy against a baseline, or profit against a price?",
+   "have": "Baseline-relative accuracy is computable today from nflverse schedules.",
+   "missing": "A timestamped price history to measure profit.",
+   "impact": "Decides whether this lab is a research model or a betting system. Today it is the former.",
+   "how": "Licence a historical odds feed, then re-run the same harness against closing prices.",
+   "owner": "Owner decision",
+   "blocks": "ROI, staking, bankroll, any monetary reward"
+  },
+  {
+   "id": "Q2",
+   "topic": "Market",
+   "question": "Which markets and which books are in scope?",
+   "have": "Spread, total and moneyline snapshots; no props.",
+   "missing": "Book list, jurisdiction, prop market, settlement rules per book.",
+   "impact": "Parlay pricing and prop combos are undefined without exact book rules.",
+   "how": "List the books you can legally use, then capture one pre-kickoff screen per week.",
+   "owner": "Owner decision",
+   "blocks": "All combination markets"
+  },
+  {
+   "id": "Q3",
+   "topic": "Timing",
+   "question": "What is the decision cutoff for a strategy to count?",
+   "have": "Injury `date_modified` from 2024; depth snapshots with timestamps from 2022.",
+   "missing": "A consistent cutoff before older seasons and a rule for late scratches.",
+   "impact": "Without a cutoff a backtest can accidentally use information that did not exist yet.",
+   "how": "Fix a cutoff (e.g. kickoff minus 90 minutes) and drop any feature row that cannot meet it.",
+   "owner": "Lab",
+   "blocks": "Every leaderboard entry's validity"
+  },
+  {
+   "id": "Q4",
+   "topic": "Rewards",
+   "question": "What may a top strategy actually win?",
+   "have": "Lab Points and research priority, defined in nfl/leaderboard.py.",
+   "missing": "Legal review before any money or prize of monetary value, and the tax/privacy handling that goes with it.",
+   "impact": "Rewards are the incentive that turns a leaderboard into a competition.",
+   "how": "Keep rewards non-monetary until a policy review is completed; the page states this.",
+   "owner": "Owner decision",
+   "blocks": "Any cash or prize-linked competition"
+  },
+  {
+   "id": "Q5",
+   "topic": "Data",
+   "question": "Do we need inactives (the actual game-day list), not just the injury report?",
+   "have": "Official weekly report status; depth charts; post-game snap counts.",
+   "missing": "The per-game inactive list in a machine-readable file.",
+   "impact": "A 'Questionable' player often plays; an 'Out' player never does. Mixing them corrupts the lineup index.",
+   "how": "Fetch the ESPN summary endpoint per game from CI (already reachable) and store the inactives.",
+   "owner": "Lab",
+   "blocks": "Verified lineup status; currently the index separates Out/Doubtful/Questionable instead"
+  },
+  {
+   "id": "Q6",
+   "topic": "Data",
+   "question": "How should a missing starter be valued?",
+   "have": "Snap share as a usage weight.",
+   "missing": "A talent measure independent of usage.",
+   "impact": "A team can lose a great player who had low usage and barely move the index.",
+   "how": "Compute per-player EPA from play-by-play and blend it with snap share, with a published formula.",
+   "owner": "Lab",
+   "blocks": "Precision of the lineup-strength index"
+  },
+  {
+   "id": "Q7",
+   "topic": "Statistics",
+   "question": "How many strategies are being tried, and does the gate account for that?",
+   "have": "Best-of-K permutation deflation with K fixed per family and published.",
+   "missing": "A registry that counts every variant actually tried, including abandoned ones.",
+   "impact": "Trying many variants and reporting the best one manufactures false discovery.",
+   "how": "Every run appends to nfl/data/attempts.json; K is recomputed from that count each run.",
+   "owner": "Lab",
+   "blocks": "Deflation honesty"
+  },
+  {
+   "id": "Q8",
+   "topic": "Statistics",
+   "question": "How stable must a strategy be across seasons to be promoted?",
+   "have": "Per-season skill is reported; the gate requires the sign to agree in 2 of 3 seasons.",
+   "missing": "An explicit minimum number of seasons for Tier A.",
+   "impact": "A single hot season can dominate a pooled average.",
+   "how": "Keep the 3-season floor and report every season separately on the page.",
+   "owner": "Lab",
+   "blocks": "Tier definitions"
+  },
+  {
+   "id": "Q9",
+   "topic": "Injury system",
+   "question": "When does a backup officially become the starter?",
+   "have": "Depth-chart snapshots with a timestamp and a rank per position.",
+   "missing": "A rule for when a snapshot is stale, and confirmation from the team.",
+   "impact": "The '2nd/3rd/4th string' claim is only as good as the snapshot date shown next to it.",
+   "how": "Publish the snapshot timestamp on every row and mark a snapshot older than 7 days as stale.",
+   "owner": "Lab",
+   "blocks": "Confidence in the depth ranking"
+  },
+  {
+   "id": "Q10",
+   "topic": "Correlation",
+   "question": "Which correlations are real and which are sample noise?",
+   "have": "Pearson r with a bootstrap 95% CI for every pair with 200+ common games.",
+   "missing": "A multiplicity correction across the many pairs tested.",
+   "impact": "With 55 signal pairs, several will look significant by chance.",
+   "how": "Report the CI and require it to exclude zero; apply a Benjamini-Hochberg note before calling any pair established.",
+   "owner": "Lab",
+   "blocks": "Any claim that two legs are genuinely correlated"
+  },
+  {
+   "id": "Q11",
+   "topic": "Injury system",
+   "question": "Is a player's absence already priced in by the market?",
+   "have": "No line history, so this cannot be tested yet.",
+   "missing": "Line movement around injury news.",
+   "impact": "A signal everyone already knows is worth nothing at the window.",
+   "how": "Once a line history exists, measure the move in the 24 hours after each report.",
+   "owner": "Owner decision (requires odds feed)",
+   "blocks": "Whether lineup signals are tradable, as opposed to merely predictive"
+  },
+  {
+   "id": "Q12",
+   "topic": "Site",
+   "question": "Which numbers should be on the landing page, and which need a click?",
+   "have": "A leaderboard and a gate table.",
+   "missing": "A decision about prominence and the reading order for a non-specialist.",
+   "impact": "A dashboard that leads with a weak metric misleads at a glance.",
+   "how": "Lead with gate status and sample size; put every score behind one click with its formula.",
+   "owner": "Owner decision",
+   "blocks": "Layout only \u2014 no data dependency"
+  }
+ ],
+ "note": "Each row states what is already known, what is missing, and what changes once it is answered. Nothing here is a recommendation to bet."
+}

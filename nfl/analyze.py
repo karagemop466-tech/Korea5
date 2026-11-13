@@ -388,8 +388,12 @@ def cross_source_and_market():
                 teams[c.get("homeAway")] = ab
             day = (e.get("date") or "")[:10]
             home_ab = teams.get("home")
+            away_ab = teams.get("away")
+            if not home_ab or not away_ab:
+                missing += 1
+                continue
             home_score = teams.get(home_ab)
-            away_score = teams.get(teams.get("away"))
+            away_score = teams.get(away_ab)
             cands = idx.get((day, home_ab), [])
             if not cands:
                 missing += 1

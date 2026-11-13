@@ -685,3 +685,68 @@ The first merged run's repository CI caught one generated local-link failure in 
 | CI | Planner certainty/site checks run `43431161023` success; Pages run `43431159971` build, deploy and report-build-status all success |
 | Pages | GitHub Pages API reports `built`, source `main` /, URL https://karagemop466-tech.github.io/Korea5/ |
 | Live feature | https://karagemop466-tech.github.io/Korea5/nfl-strategy.html |
+
+## Session `arena-02f4d067` — 2026-11-13 (data-backed NFL lines lab)
+
+Branch fixed by Arena: `arena/02f4d067-korea5`. Read the board before starting. Sibling sessions are working the same
+NFL goal concurrently, so scopes are deliberately kept disjoint:
+
+| Session | Branch | Their scope (do not edit) |
+|---|---|---|
+| `arena-2cd43859` | merged | `nfl-strategy.html`, `research/NFL-STRATEGY.md` — proposal-only design doc (**merged**, do not rewrite) |
+| `arena-998582f0` | `arena/998582f0-korea5` | NFL.com markup probe / parser design (`nfl-probe` workflow) |
+| `arena-2831c7f7` | `arena/2831c7f7-korea5` | lines / RSC payload probe (`nfl-lines-probe` workflow) |
+| `arena-1e59465a` | `arena/1e59465a-korea5` | injury + depth-chart feasibility (`nfl-lab-injuries` workflow) |
+| `arena-02f4d067` (this) | `arena/02f4d067-korea5` | **everything under `nfl/` and `nfl-lines/`, plus the coordinated edits listed below** |
+
+### Task board — this session
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| L1 | Data engine: CI fetcher, provenance manifest, cross-source validation | arena-02f4d067 | **in progress** | `nfl/fetch_data.py`, `.github/workflows/nfl-data.yml`, `nfl/data/provenance.json` |
+| L2 | Feature build: injury/lineup strength index (starters vs backups, verified vs inferred) | arena-02f4d067 | in progress | `nfl/build_features.py`, `nfl/data/*.json` |
+| L3 | Signal research + validation gates + deflated-skill scoring + correlation matrix + correlation-aware parlay optimiser | arena-02f4d067 | in progress | `nfl/model.py`, `nfl/tests/` |
+| L4 | Leaderboard (singles / parlays / player-prop combos) with pre-registered gates and rewards | arena-02f4d067 | in progress | `nfl/leaderboard.py` |
+| L5 | Site: standalone pages under `nfl-lines/`, generated from data | arena/02f4d067 | in progress | `nfl-lines/*.html`, `nfl-lines/assets/` |
+| L6 | Questions/answers register, missing-information discovery, suggestions section | arena/02f4d067 | in progress | `nfl-questions.html`, `nfl-suggestions.html` |
+| L7 | Integration: PR, merge, Pages deploy, verify live | arena/02f4d067 | pending | `COORDINATION.md`, shared nav files |
+
+**Coordinated edits to shared (integration-owned) files — append-only, minimal, logged here for the integration owner:**
+
+1. `index.html`, `nfl.html` (and `nfl-strategy.html` if it survives): add **one** nav/toolbar link to `nfl-lines/index.html`.
+2. `scripts/check_links.py` + `scripts/audit_certainty.py`: add `nfl-lines/` to the page globs and fix the relative
+   certainty-banner prefix for the nested directory. Without this the existing CI (`certainty.yml`) would fail on the new
+   pages and the new directory would escape the certainty disclosure. Both are additive changes; no existing rule is weakened.
+3. `.github/workflows/certainty.yml`: add the `nfl-lines` verification step and widen the trigger branch list to include
+   `arena/02f4d067-korea5` (same pattern as the old `arena/f9e705a1-korea5` entry).
+
+Nothing else outside `nfl/` and `nfl-lines/` is touched. `nfl-strategy.html` and `research/NFL-STRATEGY.md` are **not**
+rewritten; the data lab links to them and states plainly which parts are proposal-only and which are now computed from data.
+
+### Design decisions taken before implementation (pre-registration)
+
+- **No verified historical betting market data is reachable from this repo.** nflverse/nflverse-data publishes no
+  odds release (checked: 25 releases, no `odds`/`lines` tag). The only no-key closing-line source is ESPN's public
+  scoreboard `competitions[].odds`, which the authoring sandbox cannot reach; CI fetches it under `nfl-data`.
+  Consequence: every headline metric is computed **first without any market** (skill vs. a naive baseline), then —
+  and only if the odds series is genuinely present for that row — restated against the de-vigged market.
+  **Anywhere the market series is missing, the row is marked `market=unavailable` and no edge/ROI is claimed.**
+- **"Luck removal" is defined, not asserted:** (a) out-of-sample only, walk-forward by season; (b) proper scoring
+  rules (log loss / Brier) instead of win rate; (c) **deflated skill** = observed out-of-sample skill minus the
+  maximum skill expected across *N* tried strategies on random labels (Bailey & López de Prado deflated Sharpe logic,
+  applied to log-loss skill); (d) sample-size and minimum-evidence gates. A strategy that fails deflation is labelled
+  **not distinguishable from luck**, not "unlucky".
+- **Correlations are measured, never assumed.** All pairwise correlations are computed on realised outcomes with
+  bootstrap CIs. The parlay optimiser consumes the measured matrix and propagates correlation into the joint
+  probability; independence is never the default.
+- **Injury/lineup index separates verified from inferred:** official report status (verified) is kept in its own
+  column and never merged into a single "strength" number without a label. Backup promotion is shown as
+  *depth-chart position + snapshot date*, and any tier not present in the source data stays blank.
+
+### L1 status log (append here as work completes)
+
+- **2026-11-13** — Claimed. Read board. First action was a CI reachability probe
+  (`.github/workflows/probe-02f4d067.yml`, `tools/probe_env.py`, result committed at `nfl/probe/reachability.json`):
+  from GitHub Actions, nflverse release assets, MLB StatsAPI, ESPN scoreboard and nfl.com all return HTTP 200; from the
+  authoring sandbox only github.com / api.github.com / pypi.org are reachable. All NFL data acquisition therefore runs
+  in Actions and commits provenance, exactly as the board's existing `data.yml` / `verify.yml` pattern does.

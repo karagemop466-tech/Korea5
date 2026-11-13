@@ -15,6 +15,7 @@ Exit code is non-zero if any check fails, so CI blocks a broken claim.
 import json
 import os
 import re
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
@@ -173,6 +174,26 @@ for edge in (0.05, 0.03):
     if str(hit["observationsNeeded"]) not in corr_html:
         fail(os.path.join(LAB, "correlations.html"),
              f"sample-size {hit['observationsNeeded']} is not published in the table")
+
+# The navigation must not drift from the canonical site navigation. This file used to
+# keep its own copy of the root links, which silently dropped a surface another session
+# had added to the navigation.
+try:
+    sys.path.insert(0, os.path.join(ROOT, "scripts"))
+    from build_site import NAV as SITE_NAV
+except Exception:
+    SITE_NAV = None
+if SITE_NAV:
+    for name in sorted(f for f in os.listdir(LAB) if f.endswith(".html")):
+        body = open(os.path.join(LAB, name), encoding="utf-8").read()
+        for href, label in SITE_NAV:
+            if href.startswith("lab/"):
+                # The lab's own pages appear in the lab strip, not the root strip.
+                wanted = href[len("lab/"):]
+                if f'href="{wanted}"' not in body:
+                    fail(os.path.join(LAB, name), f"navigation is missing the lab entry for {label} ({wanted})")
+            elif f'href="../{href}"' not in body:
+                fail(os.path.join(LAB, name), f"navigation is missing the site entry {label} ({href})")
 
 # Every stated game count must match the committed rows. A count written by hand in
 # prose once said "nine games per player" while eight rows were stored; this check

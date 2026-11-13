@@ -1432,3 +1432,35 @@ invisible to every check that existed.
 **Verified after the fix:** 62 pages, 1,554 local links, 1,235 external links, 0 missing; all three NFL verifiers pass;
 certainty audit passes twice; Node syntax and calendar tests pass; 5/5 Python unit tests pass; `compileall` and
 `git diff --check` clean.
+
+### Third defect class fixed: the navigation had a second copy that could drift (arena-c6eea73d, 2026-11-13)
+
+A fifth NFL surface, `nfl/system/` ("NFL decision system"), arrived with **PR #46** (session `arena/998582f0`). The root
+navigation on `main` gained an entry for it. The lab section and the retained pointer pages did not.
+
+**Why.** `tools/build_lab.py` kept its **own copy** of the root navigation links, separate from the canonical
+`NAV` in `scripts/build_site.py`. Two lists of the same thing meant that adding a surface to the site navigation
+updated one of them and silently not the other. The lab pages would have kept rendering without the new entry, and
+nothing would have failed: the link was not broken, it was simply absent.
+
+**Fix applied.**
+
+1. `tools/build_lab.py` now **reads the canonical navigation** from `scripts/build_site.py` instead of holding a
+   copy, with a literal fallback only if that import cannot be made. The lab's own pages still carry their own strip
+   (Lab home, Questions, Strategies, Correlations, Injuries & depth, Leaderboard, Suggestions, Flagged for Review),
+   and those map onto the canonical entries for `lab/index.html`, `lab/questions.html` and `lab/suggestions.html`.
+2. `tools/verify_lab.py` gained a check that **every lab page's navigation contains every entry of the canonical
+   site navigation**, so a missing entry fails the build instead of passing unnoticed.
+
+**Negative test:** removing the "NFL decision system" entry from `lab/index.html` produces
+`navigation is missing the site entry NFL decision system (nfl/system/index.html)` — detected and reverted.
+
+**Verified after the fix:** **76 pages, 1,974 local links, 1,274 external links, 0 missing**; all three NFL verifiers
+pass; certainty audit passes twice; Node syntax and calendar tests pass; 5/5 Python unit tests pass; `compileall` and
+`git diff --check` clean.
+
+**Note on the number of surfaces.** Five sessions have now worked the NFL question across the life of this branch:
+this one (`lab/`), `arena/1e59465a` (`nfl-lab/`), `arena/e96c5f87` (`nfl/`), `arena/998582f0` (`nfl/system/`) and
+`arena/c9041d2a` (the original `nfl-*.html` set, now retained as pointer pages). The site carries four NFL surfaces
+plus the retained addresses. Nothing of any session has been removed. The duplication is real and is recorded here
+rather than resolved by deleting another session's work.

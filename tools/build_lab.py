@@ -24,6 +24,7 @@ could not be confirmed is rendered blank and listed on the flagged page.
 import html
 import json
 import os
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
@@ -35,18 +36,26 @@ os.makedirs(ASSETS, exist_ok=True)
 SITE = "Free Time Vacation Planner"
 LAB_NAME = "NFL Lines Lab"
 
-ROOT_NAV = [
-    ("../index.html", "Dashboard"),
-    ("../calendar.html", "Calendar"),
-    ("../vacation.html", "Vacation windows"),
-    ("../mlb.html", "MLB"),
-    ("../nfl.html", "NFL &amp; 49ers"),
-    ("../radio.html", "Radio"),
-    ("../sources.html", "Sources"),
-    ("../flagged.html", "Flagged"),
-    ("../method.html", "Method"),
-    ("../extra/index.html", "Official feeds"),
-]
+# The site navigation has one source of truth: scripts/build_site.py. This file used
+# to keep its own copy of the root links, which silently dropped any surface another
+# session added to the navigation. The canonical list is read from there instead, so a
+# new section shows up here without anyone having to remember to update two places.
+try:
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts"))
+    from build_site import NAV as SITE_NAV
+except Exception:                                    # pragma: no cover - fallback only
+    SITE_NAV = [
+        ("index.html", "Dashboard"), ("calendar.html", "Calendar"), ("vacation.html", "Vacation windows"),
+        ("mlb.html", "MLB"), ("nfl.html", "NFL &amp; 49ers"), ("ncaaf.html", "Stanford &amp; Cal"),
+        ("radio.html", "Radio"), ("lab/index.html", "NFL Lab"), ("lab/questions.html", "Decisions"),
+        ("lab/suggestions.html", "Suggestions"), ("nfl-lab/index.html", "NFL Model"),
+        ("nfl/index.html", "NFL Decision Support"), ("sources.html", "Sources"), ("flagged.html", "Flagged"),
+        ("method.html", "Method"), ("extra/index.html", "Official feeds &amp; verification"),
+    ]
+
+# The lab's own pages are not part of the site navigation list; they get their own strip.
+LAB_OWN = {"lab/index.html", "lab/questions.html", "lab/suggestions.html"}
+ROOT_NAV = [(u, n) for u, n in SITE_NAV if u not in LAB_OWN]
 LAB_NAV = [
     ("index.html", "Lab home"),
     ("questions.html", "Questions"),
@@ -109,7 +118,10 @@ def table(headers, rows, cls=""):
 
 
 def nav(active, root=False):
-    parts = [f'<a href="{u if not root else u[3:]}">{n}</a>' for u, n in ROOT_NAV]
+    # root=True  -> the page sits at the repository root, links are root-relative
+    # root=False -> the page sits in lab/, links need one level up
+    prefix = "" if root else "../"
+    parts = [f'<a href="{prefix}{u}">{n}</a>' for u, n in ROOT_NAV]
     parts.append('<span class="nav-sep">|</span>')
     parts += [f'<a href="{u if not root else "lab/" + u}" class="{"active" if u == active else ""}">{n}</a>'
               for u, n in LAB_NAV]

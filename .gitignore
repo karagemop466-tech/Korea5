@@ -5,3 +5,4 @@ research-ef8b5b30/raw/
 # Python bytecode
 __pycache__/
 *.pyc
+research/lines-raw/

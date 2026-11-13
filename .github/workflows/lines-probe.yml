@@ -1,0 +1,24 @@
+name: nfl-lines-probe
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/2831c7f7-korea5' ]
+    paths: [ 'scripts/lines/probe_rsc.py', '.github/workflows/lines-probe.yml' ]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe official NFL pages and record their structure
+        run: python3 scripts/lines/probe_rsc.py
+      - name: Upload raw pages + schema map
+        uses: actions/upload-artifact@v4
+        with:
+          name: nfl-lines-probe
+          path: research/lines-raw/
+          retention-days: 7

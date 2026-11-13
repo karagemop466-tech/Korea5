@@ -130,81 +130,89 @@ def main():
                    "upstream": "https://github.com/nflverse/nflverse-data/releases/tag/injuries",
                    "rows": rows_2026}, f, indent=1)
 
-    # ---- depth charts: starters reported out and first healthy backup ----
+    # ---- depth charts: latest snapshot vs latest official injury week -------
+    # The nflverse depth file is a series of timestamped snapshots (column dt),
+    # not week-keyed. The honest tracker therefore uses the most recent snapshot
+    # per team against the most recent official injury report week.
+    inj_week = max((int(r["week"]) for r in rows_2026 if str(r["week"]).isdigit()), default=None)
+    inj_by_gsis = {r["gsis_id"]: r for r in rows_2026 if r["gsis_id"] and str(r["week"]) == str(inj_week)}
     backups = []
+    starters_out = []
+    depth_log = {}
     for y in DEPTH_SEASONS:
         try:
             b = fetch(DEPTH_URL.format(y=y))
         except Exception as e:  # noqa: BLE001
             log["errors"].append(str(e))
             continue
-        text = gzip.decompress(b)
-        rows = list(csv.DictReader(io.StringIO(text.decode("utf-8-sig"))))
-        log["depth"][str(y)] = {"rows": len(rows), "headers": list(rows[0].keys()) if rows else []}
-        if rows:
-            from collections import Counter
-            log["depth"][str(y)]["probe"] = {
-                "first_rows": rows[:3],
-                "pos_grp": Counter(r.get("pos_grp") for r in rows).most_common(20),
-                "pos_abb": Counter(r.get("pos_abb") for r in rows).most_common(40),
-                "pos_slot": Counter(r.get("pos_slot") for r in rows).most_common(40),
-                "pos_rank": Counter(r.get("pos_rank") for r in rows).most_common(12),
-                "dt_count": len({r.get("dt") for r in rows}),
-                "dt_sample": sorted({r.get("dt") for r in rows})[-12:],
-                "teams": sorted({r.get("team") for r in rows}),
-            }
-        if y != 2026:
+        rows = list(csv.DictReader(io.StringIO(gzip.decompress(b).decode("utf-8-sig"))))
+        depth_log[str(y)] = {"rows": len(rows)}
+        if y != DEPTH_SEASONS[-1]:
             continue
-        # latest-week depth chart per team/position group, and injuries for the same week
-        weeks = sorted({int(r["week"]) for r in rows if str(r.get("week", "")).isdigit()})
-        log["depth"][str(y)]["weeks"] = weeks
-        inj_by_gsis = {}
-        for r in rows_2026:
-            if r["gsis_id"]:
-                inj_by_gsis[(int(r["week"]) if str(r["week"]).isdigit() else -1, r["gsis_id"])] = r
-        for wk in weeks:
-            wk_rows = [r for r in rows if str(r.get("week")) == str(wk) and (r.get("game_type") or "REG") == "REG"]
-            chart = defaultdict(list)
-            for r in wk_rows:
-                chart[(r.get("club_code", ""), r.get("depth_position", "") or r.get("position", ""))].append(r)
-            for (team, dpos), players in chart.items():
-                players.sort(key=lambda r: int(r.get("depth_team") or 99) if str(r.get("depth_team", "")).isdigit() else 99)
-                for idx, p in enumerate(players):
-                    inj = inj_by_gsis.get((wk, p.get("gsis_id", "")))
-                    if not inj or inj["report_status"] not in ("Out", "Doubtful"):
+        latest_dt = {}
+        for r in rows:
+            t = r["team"]
+            if r["dt"] > latest_dt.get(t, ""):
+                latest_dt[t] = r["dt"]
+        # default formation groups per team (most rows in the latest snapshot)
+        from collections import Counter
+        snap = {t: [r for r in rows if r["team"] == t and r["dt"] == latest_dt[t]] for t in latest_dt}
+        depth_log["latest_dt_by_team"] = dict(sorted(latest_dt.items()))
+        depth_log["groups_by_team"] = {t: dict(Counter(r["pos_grp"] for r in v).most_common(6)) for t, v in sorted(snap.items())}
+        for team, srows in sorted(snap.items()):
+            grp_counts = Counter(r["pos_grp"] for r in srows)
+            off_grp = "3WR 1TE" if "3WR 1TE" in grp_counts else None
+            def_grp = max(["Base 4-3 D", "Base 3-4 D"], key=lambda g: grp_counts.get(g, 0))
+            keep = [r for r in srows if r["pos_grp"] in {off_grp, def_grp, "Special Teams"}]
+            by_slot = defaultdict(list)
+            for r in keep:
+                by_slot[r["pos_abb"]].append(r)
+            for abb, players in by_slot.items():
+                players.sort(key=lambda r: int(r["pos_rank"]) if str(r["pos_rank"]).isdigit() else 99)
+                # dedupe by player within the slot list
+                seen, ordered = set(), []
+                for p in players:
+                    if p["gsis_id"] in seen:
                         continue
-                    if not str(p.get("depth_team", "")).isdigit() or int(p["depth_team"]) > 1:
-                        continue  # only starters (depth 1) are tracked
-                    # first healthy backup on the same depth list
-                    rank = None
-                    replacement = None
-                    for q in players[idx + 1:]:
-                        qi = inj_by_gsis.get((wk, q.get("gsis_id", "")))
-                        if qi and qi["report_status"] in ("Out", "Doubtful"):
+                    seen.add(p["gsis_id"]); ordered.append(p)
+                starter = ordered[0] if ordered else None
+                if not starter:
+                    continue
+                inj = inj_by_gsis.get(starter["gsis_id"])
+                if inj:
+                    rank, repl = None, None
+                    for q in ordered[1:]:
+                        if q["gsis_id"] in inj_by_gsis:
                             continue
-                        rank = q.get("depth_team")
-                        replacement = q.get("full_name") or q.get("football_name")
+                        rank, repl = q["pos_rank"], q["player_name"]
                         break
                     backups.append({
-                        "season": y, "week": wk, "team": team, "depth_position": dpos,
-                        "starter": inj["player"], "starter_status": inj["report_status"],
+                        "team": team, "depth_slot": abb, "depth_group": starter["pos_grp"],
+                        "starter": starter["player_name"], "starter_gsis_id": starter["gsis_id"],
+                        "starter_report_status": inj["report_status"],
                         "starter_group": inj["group"],
                         "starter_injury": inj["primary_injury"],
-                        "first_healthy_backup": replacement,
+                        "first_healthy_backup": repl,
                         "backup_depth_rank": rank,
+                        "injury_week": inj_week,
                         "source": inj["source"],
                         "depth_source": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+                        "depth_snapshot_utc": latest_dt[team],
                     })
+    log["depth"] = depth_log
     with open(os.path.join(OUT, "depth-backups-2026.json"), "w") as f:
-        json.dump({"description": "2026 regular-season starters (depth_team 1) listed Out or Doubtful on the NFL weekly injury report, with the first healthy player further down the same depth list. Depth charts are the nflverse mirror, not an NFL-published chart; treat as third-party until checked.",
+        json.dump({"description": "Latest ESPN-derived depth chart snapshot (nflverse mirror) per team, compared with the latest NFL official injury report week. Lists starters (pos_rank 1) reported Out, Doubtful or Questionable, and the first healthy player further down the same depth slot. Not week-keyed; a current tracker, not a historical record.",
+                   "injury_week": inj_week,
                    "upstream_injuries": "https://github.com/nflverse/nflverse-data/releases/tag/injuries",
                    "upstream_depth": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+                   "official_reference": f"https://www.nfl.com/injuries/league/2026/reg{inj_week}",
                    "rows": backups}, f, indent=1)
 
     with open(os.path.join(OUT, "fetch-log.json"), "w") as f:
         json.dump(log, f, indent=1)
     print(json.dumps({k: (v if k != "injuries" else {y: d["rows"] for y, d in v.items()}) for k, v in log.items()}, indent=1))
     print("team-week rows:", len(tw_out), "2026 rows:", len(rows_2026), "backup rows:", len(backups))
+    log_path = os.path.join(OUT, "fetch-log.json")
     if not tw_out:
         sys.exit("no injury data fetched")
 

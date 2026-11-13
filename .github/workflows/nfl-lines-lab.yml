@@ -1,0 +1,95 @@
+name: nfl-lines-lab
+# Rebuilds the NFL lines lab and re-checks it on every push and pull request.
+# Also offers a manual "refresh" that runs the official-source stages from a runner,
+# which CAN reach nfl.com directly - this sandbox cannot.
+on:
+  push:
+    branches: [main]
+    paths: ['nfl-lines/**', 'scripts/nfl_lines/**', 'research/NFL-LINES-*', '.github/workflows/nfl-lines-lab.yml']
+  pull_request:
+    paths: ['nfl-lines/**', 'scripts/nfl_lines/**', '.github/workflows/nfl-lines-lab.yml']
+  workflow_dispatch:
+    inputs:
+      refresh_official:
+        description: 'Re-run the official capture + validation stages (needs network to nfl.com)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  rebuild-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Rebuild every lab artefact from committed inputs
+        run: |
+          python3 scripts/nfl_lines/stage2_validate.py
+          python3 scripts/nfl_lines/stage3_engine.py
+          python3 scripts/nfl_lines/stage4_correlation.py
+          python3 scripts/nfl_lines/stage5_injuries.py
+          python3 scripts/nfl_lines/stage6_lines.py
+          python3 scripts/nfl_lines/stage7_decision.py
+          python3 scripts/nfl_lines/sources.py
+          python3 scripts/nfl_lines/stage8_site.py
+
+      - name: Verify the lab
+        run: python3 scripts/nfl_lines/verify.py
+
+      - name: Confirm the rebuild is deterministic
+        run: |
+          echo "--- tracked artefacts (must be byte-identical) ---"
+          git diff --stat -- nfl-lines/data/backtest/leaderboard.json nfl-lines/data/backtest/summary.json             nfl-lines/data/correlation nfl-lines/data/injuries nfl-lines/data/lines nfl-lines/data/decision             nfl-lines/data/validation nfl-lines/data/sources.json
+          if ! git diff --quiet -- nfl-lines/data/backtest/leaderboard.json nfl-lines/data/backtest/summary.json             nfl-lines/data/correlation nfl-lines/data/injuries nfl-lines/data/lines nfl-lines/data/decision             nfl-lines/data/validation nfl-lines/data/sources.json ; then
+            echo "::error::A tracked lab artefact changed on rebuild - it is not reproducible."
+            exit 1
+          fi
+          echo "Rebuild reproduced every tracked artefact byte for byte."
+          echo "Per-strategy bet ledgers are gitignored by design and were regenerated ($(ls nfl-lines/data/backtest/strategies | wc -l) files)."
+
+      - name: Python syntax
+        run: python3 -m compileall -q scripts/nfl_lines
+
+      - name: Repo-wide checks that must stay green
+        run: |
+          python3 scripts/check_links.py
+          python3 tools/verify_extra.py
+          python3 scripts/audit_certainty.py
+          python3 -m unittest discover -s tests
+
+  refresh-official:
+    # Manual only: re-captures pages this project normally reads by hand, then validates.
+    # Nothing is auto-committed - the diff is left for human review.
+    if: github.event_name == 'workflow_dispatch' && inputs.refresh_official
+    runs-on: ubuntu-latest
+    needs: rebuild-and-verify
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch the official pages the lab cross-checks against
+        run: |
+          mkdir -p nfl-lines/data/official/raw
+          for u in \
+            https://www.nfl.com/injuries/ \
+            https://www.nfl.com/standings/ \
+            https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc \
+            https://www.nfl.com/teams/detroit-lions/depth-chart ; do
+            name=$(echo "$u" | sed 's#https://##; s#/#_#g')
+            code=$(curl -sS -L -o "nfl-lines/data/official/raw/$name.html" -w '%{http_code}' "$u" || echo 000)
+            echo "$code $u" >> nfl-lines/data/official/raw/fetch-log.txt
+            echo "fetched $code $u"
+          done
+      - name: Re-validate the archive against the freshly fetched pages
+        run: python3 scripts/nfl_lines/stage2_validate.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: official-raw-capture
+          path: nfl-lines/data/official/raw/
+          retention-days: 30

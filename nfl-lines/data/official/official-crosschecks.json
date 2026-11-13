@@ -1,0 +1,101 @@
+{
+ "fetchedUTC": "2026-11-13",
+ "records": [
+  {
+   "page": "https://www.nfl.com/injuries/league/2026/reg10",
+   "field": "report week",
+   "value": "Week 10 of the 2026 season",
+   "usedFor": "injury tracker header"
+  },
+  {
+   "page": "https://www.nfl.com/teams/detroit-lions/roster",
+   "field": "roster row",
+   "value": "Brian Branch | 32 | CB | ACT",
+   "usedFor": "roster presence"
+  },
+  {
+   "page": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+   "field": "injury card",
+   "value": "K. Joseph | DB #31 | O | Knee | Full participation",
+   "usedFor": "jersey number and position label cross-check against the injury report"
+  },
+  {
+   "page": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+   "field": "venue",
+   "value": "FC BAYERN MUNICH STADIUM / MUNICH",
+   "usedFor": "neutral-site identification for the 2026 Munich game"
+  },
+  {
+   "page": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+   "field": "team record",
+   "value": "New England Patriots 5-4; Detroit Lions 6-2",
+   "usedFor": "record cross-check"
+  },
+  {
+   "page": "https://www.nfl.com/teams/detroit-lions/roster",
+   "field": "roster row",
+   "value": "Cade Mays | 64 | C | ACT",
+   "usedFor": "roster presence"
+  },
+  {
+   "page": "https://www.nfl.com/teams/detroit-lions/roster",
+   "field": "roster row",
+   "value": "Jared Goff | 16 | QB | ACT",
+   "usedFor": "roster presence"
+  },
+  {
+   "page": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc",
+   "field": "season rushing yards leader",
+   "value": "Bijan Robinson 880",
+   "usedFor": "stats cross-check"
+  },
+  {
+   "page": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc",
+   "field": "rushing yards",
+   "value": "Jahmyr Gibbs 847",
+   "usedFor": "stats cross-check"
+  },
+  {
+   "page": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc",
+   "field": "rushing yards",
+   "value": "Christian McCaffrey 457",
+   "usedFor": "stats cross-check"
+  },
+  {
+   "page": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc",
+   "field": "rushing yards",
+   "value": "Bucky Irving 825",
+   "usedFor": "stats cross-check"
+  },
+  {
+   "page": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc",
+   "field": "rushing yards",
+   "value": "James Cook 814",
+   "usedFor": "stats cross-check"
+  },
+  {
+   "page": "https://www.nfl.com/standings/",
+   "field": "2026 division standings",
+   "value": "32 club rows (W-L-T, PF, PA) transcribed into stage2_validate.py",
+   "usedFor": "line-by-line archive validation"
+  },
+  {
+   "page": "https://www.nfl.com/standings/",
+   "field": "club label",
+   "value": "the standings page prints AZ; the archive uses ARI",
+   "usedFor": "explicit club alias"
+  },
+  {
+   "page": "https://www.nfl.com/games/chiefs-at-eagles-2024-post-22",
+   "field": "Super Bowl LIX result",
+   "value": "PHI 40 - KC 22",
+   "usedFor": "archive spot check"
+  },
+  {
+   "page": "https://www.nfl.com/games/seahawks-at-patriots-2025-post-22",
+   "field": "Super Bowl LX result",
+   "value": "SEA 29 - NE 13",
+   "usedFor": "archive spot check"
+  }
+ ]
+}

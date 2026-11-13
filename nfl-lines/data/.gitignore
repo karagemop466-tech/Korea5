@@ -1,0 +1,12 @@
+# Per-strategy bet ledgers are regenerated deterministically from the committed CSVs.
+# Keeping them out of Git avoids ~5 MB of churn on every rebuild; leaderboard.json (the
+# published evidence) stays tracked, and the CI job regenerates these and flags any drift.
+backtest/strategies/s1-elo-moneyline.json
+backtest/strategies/s2-elo-spread.json
+backtest/strategies/s3-totals-from-scoring-rates.json
+backtest/strategies/s4-rest-spread.json
+backtest/strategies/s5-division-under.json
+backtest/strategies/s6-dome-over.json
+backtest/strategies/s7-elo-two-leg-parlay.json
+backtest/strategies/s8-elo-three-leg-parlay.json
+backtest/strategies/s3-total-shrink.json

@@ -1,0 +1,149 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Injuries &amp; tiers · NFL lines lab</title>
+<meta name="description" content="Official injury report tracker with computed backup tiers and measured injury impact.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/lab.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="index.html">Overview</a><a href="lines.html">Fair lines</a><a href="leaderboard.html">Leaderboard</a><a href="backtest.html">Backtest</a><a href="correlation.html">Correlation</a><a href="injuries.html" class="active">Injuries &amp; tiers</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="method.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="eyebrow">Injury and backup-tier tracking · offence and defence</p>
+<h1>Injuries &amp; tiers</h1>
+<p class="lede">Two separate questions, kept separate: <em>who is officially unavailable right now</em>, and
+<em>does losing a tier-1 player actually change the score</em>. The first is official. The second is measured,
+and the measured answer is "not much".</p>
+
+<aside class="callout flag"><strong>Tiers are computed, not official.</strong> The NFL depth-chart pages return
+HTTP 404 from this environment (checked 2026-11-13). Rather than invent a depth order, tiers are ranked from last
+season's production within the same club and position group, and every row says so. A rookie or new signing with
+no production record gets a <strong>blank</strong> tier.</aside>
+
+<div class="grid g4">
+  <div class="card"><div class="kpi">65<small>officially listed players</small></div>
+    <p class="small">Three 2026 Week 10 games transcribed verbatim.</p></div>
+  <div class="card"><div class="kpi">8<small>officially OUT</small></div></div>
+  <div class="card"><div class="kpi">56<small>no game status published</small></div>
+    <p class="small">Left blank. Never inferred as available.</p></div>
+  <div class="card"><div class="kpi">414<small>2025 club-weeks measured</small></div></div>
+</div>
+
+<h2>Does a tier-1 absence cost points?</h2>
+<p>This is the question that decides whether injury data can ever be a betting input. Answer measured on
+414 club-weeks of the 2025 season, comparing club points with and without an officially
+unavailable tier-1 player.</p>
+<div class="scroll"><table><thead><tr><th>Absence</th><th>Metric</th><th>With</th><th>Without</th><th>Difference</th><th>95% interval</th></tr></thead><tbody><tr><td>Tier-1 offensive player out</td><td>own points scored</td><td>88 club-weeks</td><td>326 club-weeks</td><td>-0.97</td><td>-3.22 to 1.38</td></tr>
+<tr><td>Tier-1 defensive player out</td><td>points allowed</td><td>81 club-weeks</td><td>333 club-weeks</td><td>0.80</td><td>-1.58 to 3.14</td></tr></tbody></table></div>
+<p><strong>Both intervals include zero.</strong> On this evidence a tier-1 absence does not move the score
+measurably, in either direction. That is a real finding and it is published as one.</p>
+
+<h3>By position group</h3>
+<div class="scroll"><table><thead><tr><th>Group</th><th>Position</th><th>Side</th><th>Metric</th><th>With</th><th>Without</th><th>Mean with</th><th>Mean without</th><th>Difference</th><th>95% interval</th></tr></thead><tbody><tr><td>QB</td><td>QB</td><td>offense</td><td>own points scored</td><td>18</td><td>396</td><td>18.00</td><td>22.99</td><td>-4.99</td><td><span class="blank">sample too small</span></td></tr>
+<tr><td>RB</td><td>RB</td><td>offense</td><td>own points scored</td><td>31</td><td>383</td><td>23.84</td><td>22.69</td><td>1.15</td><td>-2.09 to 4.48</td></tr>
+<tr><td>WR</td><td>WR</td><td>offense</td><td>own points scored</td><td>36</td><td>378</td><td>23.39</td><td>22.72</td><td>0.67</td><td>-2.26 to 3.58</td></tr>
+<tr><td>TE</td><td>TE</td><td>offense</td><td>own points scored</td><td>25</td><td>389</td><td>22.24</td><td>22.81</td><td>-0.57</td><td>-4.91 to 3.60</td></tr>
+<tr><td>DL</td><td>DL</td><td>defense</td><td>points allowed</td><td>39</td><td>375</td><td>22.23</td><td>22.83</td><td>-0.60</td><td>-3.79 to 2.66</td></tr>
+<tr><td>LB</td><td>LB</td><td>defense</td><td>points allowed</td><td>16</td><td>398</td><td>23.00</td><td>22.77</td><td>0.23</td><td><span class="blank">sample too small</span></td></tr>
+<tr><td>CB</td><td>CB</td><td>defense</td><td>points allowed</td><td>13</td><td>401</td><td>25.38</td><td>22.69</td><td>2.69</td><td><span class="blank">sample too small</span></td></tr>
+<tr><td>S</td><td>S</td><td>defense</td><td>points allowed</td><td>19</td><td>395</td><td>21.11</td><td>22.86</td><td>-1.75</td><td><span class="blank">sample too small</span></td></tr></tbody></table></div>
+<p class="small">The quarterback row is the largest effect and the least reliable: 18 club-weeks cannot support an
+interval, so it is blank rather than quoted. No group clears its interval.</p>
+
+<h2>This week, officially listed</h2>
+<p>Every row below comes from <a href="https://www.nfl.com/injuries/league/2026/reg10">https://www.nfl.com/injuries/league/2026/reg10</a>. Position, injury,
+practice status and game status are as printed. Blank cells were blank on the page.</p>
+<div class="scroll"><table><thead><tr><th>Club</th><th>Pos</th><th>Player</th><th>Group</th><th>Computed tier</th><th>Game status</th><th>Practice status</th><th>Injury</th><th>Next-ranked candidate</th></tr></thead><tbody><tr><td>WAS</td><td>TE</td><td>John Bates</td><td>TE</td><td>2nd string (tier 2)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Ben Sinnott (3rd string (tier 3))</td></tr>
+<tr><td>WAS</td><td>WR</td><td>Treylon Burks</td><td>WR</td><td>6th string</td><td><span class="blank">blank</span></td><td>Did Not Participate In Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>WAS</td><td>QB</td><td>Jayden Daniels</td><td>QB</td><td>1st string (tier 1)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Marcus Mariota (2nd string (tier 2))</td></tr>
+<tr><td>WAS</td><td>C</td><td>Matt Gulbin</td><td>OL</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>WAS</td><td>TE</td><td>Chig Okonkwo</td><td>TE</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>WAS</td><td>C</td><td>Lucas Patrick</td><td>OL</td><td><span class="blank">blank</span></td><td>Out</td><td>Did Not Participate In Practice</td><td>Concussion</td><td><span class="blank">none found</span></td></tr>
+<tr><td>WAS</td><td>CB</td><td>Amik Robertson</td><td>CB</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>WAS</td><td>DT</td><td>Shy Tuttle</td><td>DL</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>WAS</td><td>TE</td><td>Colson Yankoff</td><td>TE</td><td>4th string (tier 4)</td><td>Out</td><td>Did Not Participate In Practice</td><td>Knee</td><td><span class="blank">none found</span></td></tr>
+<tr><td>NYG</td><td>LB</td><td>Abdul Carter</td><td>LB</td><td>6th string</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>NYG</td><td>T</td><td>Jermaine Eluemunor</td><td>OL</td><td>1st string (tier 1)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Marcus Mbow (2nd string (tier 2))</td></tr>
+<tr><td>NYG</td><td>LB</td><td>Malik Harrison</td><td>LB</td><td><span class="blank">blank</span></td><td>Questionable</td><td>Limited Participation in Practice</td><td>Groin</td><td><span class="blank">none found</span></td></tr>
+<tr><td>NYG</td><td>CB</td><td>Colton Hood</td><td>CB</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>NYG</td><td>TE</td><td>Theo Johnson</td><td>TE</td><td>1st string (tier 1)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Daniel Bellinger (2nd string (tier 2))</td></tr>
+<tr><td>NYG</td><td>WR</td><td>Charlie Jones</td><td>WR</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>NYG</td><td>QB</td><td>J.J. McCarthy</td><td>QB</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>NYG</td><td>WR</td><td>Darnell Mooney</td><td>WR</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>NYG</td><td>WR</td><td>Malik Nabers</td><td>WR</td><td>2nd string (tier 2)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Darius Slayton (3rd string (tier 3))</td></tr>
+<tr><td>NYG</td><td>RB</td><td>Cam Skattebo</td><td>RB</td><td>1st string (tier 1)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Tyrone Tracy Jr. (2nd string (tier 2))</td></tr>
+<tr><td>NYG</td><td>T</td><td>Andrew Thomas</td><td>OL</td><td>8th string</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>NE</td><td>C</td><td>Ben Brown</td><td>OL</td><td>7th string</td><td>Out</td><td>Did Not Participate In Practice</td><td>Knee</td><td><span class="blank">none found</span></td></tr>
+<tr><td>NE</td><td>WR</td><td>A.J. Brown</td><td>WR</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>NE</td><td>S</td><td>Kevin Byard</td><td>S</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>NE</td><td>CB</td><td>Carlton Davis III</td><td>CB</td><td>3rd string (tier 3)</td><td>Out</td><td>Did Not Participate In Practice</td><td>Knee</td><td>Alex Austin (4th string (tier 4))</td></tr>
+<tr><td>NE</td><td>FB</td><td>Reggie Gilliam</td><td>RB</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>NE</td><td>RB</td><td>TreVeyon Henderson</td><td>RB</td><td>1st string (tier 1)</td><td>Out</td><td>Did Not Participate In Practice</td><td>Illness</td><td>Rhamondre Stevenson (2nd string (tier 2))</td></tr>
+<tr><td>NE</td><td>TE</td><td>Hunter Henry</td><td>TE</td><td>1st string (tier 1)</td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td>Austin Hooper (2nd string (tier 2))</td></tr>
+<tr><td>NE</td><td>TE</td><td>Cameron Latu</td><td>TE</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>NE</td><td>QB</td><td>Drake Maye</td><td>QB</td><td>1st string (tier 1)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Joshua Dobbs (2nd string (tier 2))</td></tr>
+<tr><td>NE</td><td>T</td><td>Morgan Moses</td><td>OL</td><td>4th string (tier 4)</td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td>Jared Wilson (5th string)</td></tr>
+<tr><td>NE</td><td>T</td><td>Walter Rouse</td><td>OL</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>NE</td><td>S</td><td>Brenden Schooler</td><td>S</td><td>4th string (tier 4)</td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td>Dell Pettus (5th string)</td></tr>
+<tr><td>NE</td><td>RB</td><td>Rhamondre Stevenson</td><td>RB</td><td>2nd string (tier 2)</td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td>Antonio Gibson (3rd string (tier 3))</td></tr>
+<tr><td>NE</td><td>G</td><td>Greg Van Roten</td><td>OL</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>NE</td><td>CB</td><td>Charles Woods</td><td>CB</td><td>5th string</td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td>Dj James (6th string)</td></tr>
+<tr><td>DET</td><td>S</td><td>Brian Branch</td><td>S</td><td>1st string (tier 1)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Thomas Harper (2nd string (tier 2))</td></tr>
+<tr><td>DET</td><td>QB</td><td>Jared Goff</td><td>QB</td><td>1st string (tier 1)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Kyle Allen (2nd string (tier 2))</td></tr>
+<tr><td>DET</td><td>S</td><td>Kerby Joseph</td><td>S</td><td>3rd string (tier 3)</td><td>Out</td><td>Full Participation in Practice</td><td>Knee</td><td>Erick Hallett (4th string (tier 4))</td></tr>
+<tr><td>DET</td><td>C</td><td>Cade Mays</td><td>OL</td><td><span class="blank">blank</span></td><td>Out</td><td>Did Not Participate In Practice</td><td>Ankle</td><td><span class="blank">none found</span></td></tr>
+<tr><td>DET</td><td>CB</td><td>D.J. Reed</td><td>CB</td><td>3rd string (tier 3)</td><td>Out</td><td>Did Not Participate In Practice</td><td>Hip</td><td>Rock Ya-Sin (4th string (tier 4))</td></tr>
+<tr><td>DET</td><td>RB</td><td>Jacob Saylors</td><td>RB</td><td>3rd string (tier 3)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Craig Reynolds (4th string (tier 4))</td></tr>
+<tr><td>DET</td><td>WR</td><td>Amon-Ra St. Brown</td><td>WR</td><td>1st string (tier 1)</td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td>Jameson Williams (2nd string (tier 2))</td></tr>
+<tr><td>DET</td><td>RB</td><td>Sione Vaki</td><td>RB</td><td>5th string</td><td><span class="blank">blank</span></td><td>Did Not Participate In Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>DET</td><td>DE</td><td>DJ Wonnum</td><td>DL</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>KC</td><td>LB</td><td>Jeffrey Bassa</td><td>LB</td><td>5th string</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Jack Cochrane (6th string)</td></tr>
+<tr><td>KC</td><td>CB</td><td>Mansoor Delane</td><td>CB</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>KC</td><td>QB</td><td>Justin Fields</td><td>QB</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>KC</td><td>S</td><td>Jaden Hicks</td><td>S</td><td>3rd string (tier 3)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Kevin Knowles (4th string (tier 4))</td></tr>
+<tr><td>KC</td><td>TE</td><td>Travis Kelce</td><td>TE</td><td>1st string (tier 1)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Noah Gray (2nd string (tier 2))</td></tr>
+<tr><td>KC</td><td>QB</td><td>Patrick Mahomes</td><td>QB</td><td>1st string (tier 1)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Gardner Minshew (2nd string (tier 2))</td></tr>
+<tr><td>KC</td><td>T</td><td>Jaylon Moore</td><td>OL</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Did Not Participate In Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>KC</td><td>DT</td><td>Omarr Norman-Lott</td><td>DL</td><td>7th string</td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>KC</td><td>RB</td><td>Jaydn Ott</td><td>RB</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>KC</td><td>WR</td><td>Rashee Rice</td><td>WR</td><td>1st string (tier 1)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Marquise Brown (2nd string (tier 2))</td></tr>
+<tr><td>KC</td><td>DT</td><td>Peter Woods</td><td>DL</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Did Not Participate In Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>KC</td><td>WR</td><td>Xavier Worthy</td><td>WR</td><td>3rd string (tier 3)</td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td>Tyquan Thornton (4th string (tier 4))</td></tr>
+<tr><td>ATL</td><td>WR</td><td>Zachariah Branch</td><td>WR</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Did Not Participate In Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>ATL</td><td>LB</td><td>Kendal Daniels</td><td>LB</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>ATL</td><td>LB</td><td>Divine Deablo</td><td>LB</td><td>2nd string (tier 2)</td><td><span class="blank">blank</span></td><td>Did Not Participate In Practice</td><td><span class="blank">blank</span></td><td>Ronnie Harrison (3rd string (tier 3))</td></tr>
+<tr><td>ATL</td><td>DT</td><td>Gervon Dexter Sr.</td><td>DL</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>ATL</td><td>DE</td><td>James Pearce Jr.</td><td>DL</td><td>4th string (tier 4)</td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td>Zach Harrison (5th string)</td></tr>
+<tr><td>ATL</td><td>DE</td><td>Za&#x27;Darius Smith</td><td>DL</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Full Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>ATL</td><td>T</td><td>Jawaan Taylor</td><td>OL</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Did Not Participate In Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>ATL</td><td>DE</td><td>Cameron Thomas</td><td>DL</td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr>
+<tr><td>ATL</td><td>LB</td><td>Josh Woods</td><td>LB</td><td>6th string</td><td><span class="blank">blank</span></td><td>Limited Participation in Practice</td><td><span class="blank">blank</span></td><td><span class="blank">none found</span></td></tr></tbody></table></div>
+<p class="small"><strong>Candidate</strong> = the next player at the same club and position group by last
+season's production. It is not a lineup announcement and does not predict snaps.</p>
+
+<h2>Club summary</h2>
+<div class="scroll"><table><thead><tr><th>Club</th><th>Offence listed</th><th>Offence tier-1 OUT</th><th>Defence listed</th><th>Defence tier-1 OUT</th><th>Source</th></tr></thead><tbody><tr><td>ATL</td><td>2</td><td>0</td><td>7</td><td>0</td><td><a href="https://www.nfl.com/injuries/league/2026/reg10">official report</a></td></tr>
+<tr><td>DET</td><td>5</td><td>0</td><td>4</td><td>0</td><td><a href="https://www.nfl.com/injuries/league/2026/reg10">official report</a></td></tr>
+<tr><td>KC</td><td>7</td><td>0</td><td>5</td><td>0</td><td><a href="https://www.nfl.com/injuries/league/2026/reg10">official report</a></td></tr>
+<tr><td>NE</td><td>11</td><td>1</td><td>4</td><td>0</td><td><a href="https://www.nfl.com/injuries/league/2026/reg10">official report</a></td></tr>
+<tr><td>NYG</td><td>8</td><td>0</td><td>3</td><td>0</td><td><a href="https://www.nfl.com/injuries/league/2026/reg10">official report</a></td></tr>
+<tr><td>WAS</td><td>7</td><td>0</td><td>2</td><td>0</td><td><a href="https://www.nfl.com/injuries/league/2026/reg10">official report</a></td></tr></tbody></table></div>
+<p class="small">Scope: three of the week's games. The remaining games are absent, not blank — a tracked
+coverage gap on the <a href="flagged.html">Flagged</a> page.</p>
+
+<h2>Method and limitations</h2>
+<ul class="clean"><li>Tier-1 player for a club and position group = highest trailing 4-game production among players with a game in that group before the week in question.</li><li>An absence is counted only when the mirror records the official status Out, Doubtful or Injured Reserve for that club-week.</li><li>The comparison is a raw difference of means with a bootstrap interval. It is a measured association in one season, not a causal estimate, and it is not used as a betting input.</li><li>Offensive line is NOT included: the archive has no per-snap or per-start line data, so no line-breakdown claim is made.</li></ul>
+<h3>Limitations</h3>
+<ul class="clean"><li>Injured Reserve is a season-long designation in the mirror, so a player on IR from week 1 is counted as unavailable for every later week.</li><li>The 2025 mirror carries no practice participation or primary injury, so severity cannot be graded.</li><li>Only one season of overlap exists in the reachable archive, so the sample is about one season of club-weeks.</li><li>Name matching is exact (club + full name). Unmatched players are dropped rather than fuzzy-matched.</li></ul>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL lines &amp; strategy lab</strong> — research instrument, not betting advice. No wager is
+recommended anywhere on this site. Market prices shown are derived from a public archive and are
+labelled <strong>NOT OFFICIAL</strong>; the NFL publishes no betting prices.
+· <a href="index.html">Overview</a> · <a href="sources.html">Sources</a> ·
+<a href="flagged.html">Flagged for review</a> · <a href="method.html">Method</a></p>
+<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:30:56Z</p>
+</div></footer></body></html>

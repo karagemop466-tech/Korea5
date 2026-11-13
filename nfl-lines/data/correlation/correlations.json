@@ -1,0 +1,224 @@
+{
+ "generatedUTC": "2026-11-13T13:22:25Z",
+ "seed": 20261113,
+ "sameGame": {
+  "spreadTotal": {
+   "label": "home covers the spread  vs  total goes over",
+   "n": 7109,
+   "phi": 0.0143,
+   "pA": 0.4892,
+   "pB": 0.4947,
+   "jointObserved": 0.2456,
+   "jointIfIndependent": 0.242,
+   "jointDifference": 0.0036,
+   "relativeError": 0.0147,
+   "cells": {
+    "both": 1746,
+    "aOnly": 1732,
+    "bOnly": 1771,
+    "neither": 1860
+   },
+   "ci": {
+    "low": -0.0074,
+    "high": 0.0368,
+    "draws": 1000,
+    "note": "week-block bootstrap"
+   }
+  },
+  "moneylineTotal": {
+   "label": "home wins outright  vs  total goes over",
+   "n": 5220,
+   "phi": 0.0049,
+   "pA": 0.5534,
+   "pB": 0.4969,
+   "jointObserved": 0.2762,
+   "jointIfIndependent": 0.275,
+   "jointDifference": 0.0012,
+   "relativeError": 0.0044,
+   "cells": {
+    "both": 1442,
+    "aOnly": 1447,
+    "bOnly": 1152,
+    "neither": 1179
+   },
+   "ci": {
+    "low": -0.0202,
+    "high": 0.0326,
+    "draws": 1000,
+    "note": "week-block bootstrap"
+   }
+  },
+  "favouriteUnder": {
+   "label": "favourite covers  vs  total stays under",
+   "n": 7078,
+   "phi": -0.0012,
+   "pA": 0.4876,
+   "pB": 0.5048,
+   "jointObserved": 0.2458,
+   "jointIfIndependent": 0.2461,
+   "jointDifference": -0.0003,
+   "relativeError": -0.0012,
+   "cells": {
+    "both": 1740,
+    "aOnly": 1711,
+    "bOnly": 1833,
+    "neither": 1794
+   },
+   "ci": {
+    "low": -0.0244,
+    "high": 0.021,
+    "draws": 1000,
+    "note": "observation bootstrap (no week key available)"
+   }
+  },
+  "interpretation": "phi is the Pearson correlation of two 0/1 outcomes. jointDifference is the absolute error (in probability) of pricing the pair by multiplying the two marginals."
+ },
+ "playerPairs": {
+  "qbPassYds_wr1RecYds_sameTeam": {
+   "label": "QB passing yards over his trailing average  vs  his WR1 receiving yards over his",
+   "assumedPricing": "positive dependence",
+   "n": 307,
+   "phi": 0.2931,
+   "pA": 0.5016,
+   "pB": 0.3779,
+   "jointObserved": 0.2606,
+   "jointIfIndependent": 0.1895,
+   "jointDifference": 0.071,
+   "relativeError": 0.3748,
+   "cells": {
+    "both": 80,
+    "aOnly": 74,
+    "bOnly": 36,
+    "neither": 117
+   },
+   "ci": {
+    "low": 0.194,
+    "high": 0.3886,
+    "draws": 1000,
+    "note": "week-block bootstrap"
+   }
+  },
+  "rb1RushYds_rb2RushYds_sameTeam": {
+   "label": "RB1 rushing yards over  vs  RB2 rushing yards over (same club)",
+   "assumedPricing": "negative dependence (shared carries)",
+   "n": 311,
+   "phi": 0.0665,
+   "pA": 0.492,
+   "pB": 0.463,
+   "jointObserved": 0.2444,
+   "jointIfIndependent": 0.2278,
+   "jointDifference": 0.0166,
+   "relativeError": 0.0728,
+   "cells": {
+    "both": 76,
+    "aOnly": 77,
+    "bOnly": 68,
+    "neither": 90
+   },
+   "ci": {
+    "low": -0.0311,
+    "high": 0.1386,
+    "draws": 1000,
+    "note": "week-block bootstrap"
+   }
+  },
+  "wr1RecYds_wr2RecYds_sameTeam": {
+   "label": "WR1 receiving yards over  vs  WR2 receiving yards over (same club)",
+   "assumedPricing": "negative dependence (shared targets)",
+   "n": 321,
+   "phi": 0.0029,
+   "pA": 0.3925,
+   "pB": 0.4268,
+   "jointObserved": 0.1682,
+   "jointIfIndependent": 0.1675,
+   "jointDifference": 0.0007,
+   "relativeError": 0.0042,
+   "cells": {
+    "both": 54,
+    "aOnly": 72,
+    "bOnly": 83,
+    "neither": 112
+   },
+   "ci": {
+    "low": -0.0873,
+    "high": 0.096,
+    "draws": 1000,
+    "note": "week-block bootstrap"
+   }
+  },
+  "qbPassYds_oppWr1RecYds": {
+   "label": "QB passing yards over  vs  opposing WR1 receiving yards over",
+   "assumedPricing": "positive dependence (game script / pace)",
+   "n": 307,
+   "phi": -0.0422,
+   "pA": 0.5016,
+   "pB": 0.4625,
+   "jointObserved": 0.2215,
+   "jointIfIndependent": 0.232,
+   "jointDifference": -0.0105,
+   "relativeError": -0.0454,
+   "cells": {
+    "both": 68,
+    "aOnly": 86,
+    "bOnly": 74,
+    "neither": 79
+   },
+   "ci": {
+    "low": -0.1784,
+    "high": 0.067,
+    "draws": 1000,
+    "note": "week-block bootstrap"
+   }
+  },
+  "rb1RushYds_qbPassYds_sameTeam": {
+   "label": "RB1 rushing yards over  vs  own QB passing yards over",
+   "assumedPricing": "negative dependence (run-heavy vs pass-heavy script)",
+   "n": 307,
+   "phi": -0.0683,
+   "pA": 0.4886,
+   "pB": 0.5016,
+   "jointObserved": 0.228,
+   "jointIfIndependent": 0.2451,
+   "jointDifference": -0.0171,
+   "relativeError": -0.0697,
+   "cells": {
+    "both": 70,
+    "aOnly": 80,
+    "bOnly": 84,
+    "neither": 73
+   },
+   "ci": {
+    "low": -0.1486,
+    "high": 0.0243,
+    "draws": 1000,
+    "note": "week-block bootstrap"
+   }
+  }
+ },
+ "parlayDependence": {
+  "twoLeg": {
+   "n": 403,
+   "observedJointHitRate": 0.1439,
+   "meanModelJointProbability": 0.3081,
+   "note": "Legs are in different games, so the dependence is only through shared week-level information and market structure. Compare observed vs modelled joint rate."
+  },
+  "threeLeg": {
+   "n": 384,
+   "observedJointHitRate": 0.0807,
+   "note": "No model joint probability is published for three legs because the legs were selected by edge size, which biases any independence calculation."
+  },
+  "correlationLesson": "A parlay priced by multiplying marginals is only correct when phi = 0. Where phi is materially non-zero the fair price moves, and the direction is given by the sign of phi: positive dependence makes the product price too generous to the bettor; negative dependence makes it too generous to the book."
+ },
+ "propLineMethod": "PROXY: each player's trailing 4-game average, computed strictly from weeks before the game in question. This is not a sportsbook line and cannot be used to price a real prop. It is the only joint player outcome data this lab can construct without a prop-price archive.",
+ "officialStatus": "Correlations are model-measured from public record-level data. No official NFL source publishes correlations or prices; these are NOT official values.",
+ "sources": [
+  {
+   "id": "nfldata-games",
+   "what": "results and closing spread/total"
+  },
+  {
+   "id": "mirror-stats-player-week-2025",
+   "what": "player-week 2025 mirror"
+  }
+ ]
+}

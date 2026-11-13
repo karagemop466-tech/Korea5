@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions · NFL lines lab</title>
+<meta name="description" content="A reviewable board of improvement suggestions, scored by benefit, risk, cost and reversibility.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/lab.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="index.html">Overview</a><a href="lines.html">Fair lines</a><a href="leaderboard.html">Leaderboard</a><a href="backtest.html">Backtest</a><a href="correlation.html">Correlation</a><a href="injuries.html">Injuries &amp; tiers</a><a href="questions.html">Questions</a><a href="suggestions.html" class="active">Suggestions</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="method.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="eyebrow">Review board · 12 suggestions</p>
+<h1>Suggestions</h1>
+<p class="lede">The point of this page is to let you choose the best path <em>before</em> anything is built.
+Each row names the decision, what it buys, what it risks, and what this lab recommends. Four items are marked
+DONE because they exist in this build, so you can judge them by using them rather than by imagining them.</p>
+
+<div class="grid g4">
+  <div class="card"><div class="kpi">6<small>proposed</small></div></div>
+  <div class="card"><div class="kpi">4<small>already built</small></div></div>
+  <div class="card"><div class="kpi">2<small>blocked on a decision</small></div></div>
+  <div class="card"><div class="kpi">12<small>total</small></div></div>
+</div>
+<p class="small">Read the decision column first. Nothing is implemented until a decision is recorded here; DONE items are already live so the reviewer can judge them.</p>
+
+<div class="scroll"><table><thead><tr><th>Suggestion</th><th>Decision you have to make</th><th>Benefit</th><th>Risk</th><th>Cost</th><th>Reversible?</th><th>Recommended path</th><th>Source</th><th>Status</th></tr></thead><tbody><tr><td><strong>Publish the fair-line card before the market posts</strong><br><span class="small">SG01</span></td><td>Do you want a pre-market number or a post-market comparison?</td><td>A pre-market number is a genuine origination; a post-market number is a benchmark.</td><td>Pre-market lines have no liquidity check and will look wrong against the closing number.</td><td>Low — the model already runs from graded history only.</td><td>High</td><td>Start with the post-market comparison (today&#x27;s build) and add a frozen 24-hours-before snapshot once the schedule feed is wired to a cron job.</td><td><span class="blank">—</span></td><td><span class="b proposed">PROPOSED</span></td></tr>
+<tr><td><strong>Licence a timestamped prop and SGP price archive</strong><br><span class="small">SG02</span></td><td>Approve the spend, or accept that props stay blocked.</td><td>Unblocks prop and parlay strategies, the two families the owner explicitly asked for.</td><td>Data rights, cost, and coverage gaps for lower-profile players.</td><td>High (commercial licence)</td><td>Medium</td><td>Do not build prop models before the price history exists; a model with no price cannot be scored.</td><td><span class="blank">—</span></td><td><span class="b blocked">BLOCKED</span></td></tr>
+<tr><td><strong>Recover an official depth-chart feed</strong><br><span class="small">SG03</span></td><td>Accept computed tiers, or fund a real depth-order source.</td><td>Turns the tier column from &#x27;computed&#x27; into &#x27;official&#x27;, which is what the owner asked for.</td><td>An unofficial depth source would immediately violate the no-hallucination rule.</td><td>Medium</td><td>High</td><td>Keep computed tiers labelled as computed. Chase the official page from CI, where the 404 may not reproduce.</td><td><a href="https://www.nfl.com/teams/detroit-lions/depth-chart">source</a></td><td><span class="b proposed">PROPOSED</span></td></tr>
+<tr><td><strong>Score strategies on the interval lower bound, not ROI</strong><br><span class="small">SG04</span></td><td>Confirm the leaderboard scoring policy.</td><td>Stops the highest-variance strategy from topping the board by luck.</td><td>Conservative scoring can hide a genuinely good small-sample strategy.</td><td>none</td><td>High</td><td>Adopt it; it is already the default in this build.</td><td><span class="blank">—</span></td><td><span class="b done">DONE</span></td></tr>
+<tr><td><strong>Freeze a prospective paper trial for the two least-bad strategies</strong><br><span class="small">SG05</span></td><td>Pick a horizon (e.g. the rest of 2026) and freeze the version.</td><td>Only a prospective, pre-registered trial can promote a strategy past gate G7.</td><td>A short horizon will not settle anything; a long one delays the leaderboard.</td><td>Low</td><td>High</td><td>Freeze the totals-from-scoring-rates strategy (largest sample, smallest interval) for the remainder of 2026.</td><td><span class="blank">—</span></td><td><span class="b proposed">PROPOSED</span></td></tr>
+<tr><td><strong>Extend the injury tracker to every game of the week</strong><br><span class="small">SG06</span></td><td>Approve the extra capture effort.</td><td>Makes the tracker usable for the actual slate instead of three games.</td><td>Transcription error; each row needs its source URL and a blank-safe schema.</td><td>Medium</td><td>High</td><td>Parse the official page rather than transcribing it, and keep the verbatim capture as the audit trail.</td><td><a href="https://www.nfl.com/injuries/">source</a></td><td><span class="b proposed">PROPOSED</span></td></tr>
+<tr><td><strong>Add snap counts and participation data</strong><br><span class="small">SG07</span></td><td>Decide whether the extra data source is worth the licence/effort.</td><td>The only way to measure a backup&#x27;s actual workload rather than infer it.</td><td>Not reachable from this environment; would need CI or a licensed feed.</td><td>Medium</td><td>High</td><td>Do it before any injury-adjusted line is published.</td><td><a href="https://www.nfl.com/transactions/">source</a></td><td><span class="b blocked">BLOCKED</span></td></tr>
+<tr><td><strong>Show a model-vs-market error table per season</strong><br><span class="small">SG08</span></td><td>None — informational.</td><td>Makes it obvious where and when the model lost, instead of one summary number.</td><td>None.</td><td>Low</td><td>High</td><td>Built. The per-season splits are on the Backtest page.</td><td><span class="blank">—</span></td><td><span class="b done">DONE</span></td></tr>
+<tr><td><strong>Separate &#x27;no data&#x27; from &#x27;zero&#x27; everywhere</strong><br><span class="small">SG09</span></td><td>None — already the house rule.</td><td>Stops a blocked strategy being read as a losing strategy.</td><td>None.</td><td>none</td><td>High</td><td>Built: blocked strategies show BLOCKED and a blank profit, never 0.</td><td><span class="blank">—</span></td><td><span class="b done">DONE</span></td></tr>
+<tr><td><strong>Add a monthly re-verification job</strong><br><span class="small">SG10</span></td><td>Approve the CI cadence.</td><td>Keeps the official cross-checks (standings, injury pages, stats leaders) from going stale.</td><td>CI minutes; silent drift if a page changes markup.</td><td>Low</td><td>High</td><td>Run the validator monthly and fail loudly on any mismatch, listing both numbers.</td><td><a href="https://www.nfl.com/standings/">source</a></td><td><span class="b proposed">PROPOSED</span></td></tr>
+<tr><td><strong>Publish the licence status of the price archive</strong><br><span class="small">SG11</span></td><td>Decide whether price-derived figures may be shown publicly.</td><td>Removes a legal unknown from the project.</td><td>If the answer is &#x27;no&#x27;, the backtest pages must be removed.</td><td>Low</td><td>Medium</td><td>Ask the maintainer in writing; until then keep the figures labelled NOT OFFICIAL.</td><td><a href="https://github.com/nflverse/nfldata">source</a></td><td><span class="b proposed">PROPOSED</span></td></tr>
+<tr><td><strong>Promote only after a full-season prospective trial</strong><br><span class="small">SG12</span></td><td>Confirm the reward gate.</td><td>Prevents paying for luck.</td><td>A full season is a long wait.</td><td>none</td><td>High</td><td>Adopt; the engine already refuses to mark anything reward-eligible.</td><td><span class="blank">—</span></td><td><span class="b done">DONE</span></td></tr></tbody></table></div>
+
+<h2>If you only act on three</h2>
+<ol>
+<li><strong>SG04 — score on the interval, not the ROI.</strong> Free, reversible, and it is the difference
+between a leaderboard that rewards skill and one that rewards variance.</li>
+<li><strong>SG05 — freeze a prospective trial.</strong> No strategy can ever be promoted without it, so the
+competition cannot start until it happens.</li>
+<li><strong>SG01 — decide pre-market or post-market lines.</strong> This changes what the fair line even means,
+and everything downstream depends on the answer.</li>
+</ol>
+<p class="small">How items are scored: {&quot;benefit&quot;: &quot;expected improvement in decision quality&quot;, &quot;risk&quot;: &quot;what could go wrong, and how badly&quot;, &quot;cost&quot;: &quot;effort + money&quot;, &quot;reversibility&quot;: &quot;how cheaply it can be undone&quot;}</p>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL lines &amp; strategy lab</strong> — research instrument, not betting advice. No wager is
+recommended anywhere on this site. Market prices shown are derived from a public archive and are
+labelled <strong>NOT OFFICIAL</strong>; the NFL publishes no betting prices.
+· <a href="index.html">Overview</a> · <a href="sources.html">Sources</a> ·
+<a href="flagged.html">Flagged for review</a> · <a href="method.html">Method</a></p>
+<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:30:56Z</p>
+</div></footer></body></html>

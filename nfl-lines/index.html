@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overview · NFL lines lab</title>
+<meta name="description" content="NFL line origination, strategy leaderboard with validation gates, correlation engine and injury tracker.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/lab.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="index.html" class="active">Overview</a><a href="lines.html">Fair lines</a><a href="leaderboard.html">Leaderboard</a><a href="backtest.html">Backtest</a><a href="correlation.html">Correlation</a><a href="injuries.html">Injuries &amp; tiers</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="method.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+
+<aside class="callout flag"><strong>Read this first.</strong> Nothing on this site is a betting
+recommendation. Every market price is <strong>NOT OFFICIAL</strong>: the NFL does not publish prices, so
+the comparison numbers come from a public archive. Every model number is labelled MODEL. Where a value
+could not be confirmed it is <strong>blank</strong> and listed on <a href="flagged.html">Flagged for review</a>.</aside>
+
+<p class="eyebrow">Seasoned research build · 2026-11-13T13:30:56Z</p>
+<h1>Can I originate my own NFL lines?</h1>
+<p class="lede">Yes — and this site does it, then measures whether the number is any good. The short answer:
+the fair lines are generated and published for 2026 Week 11, the strategies are backtested on
+1999–2026, and <strong>not one of them has demonstrated skill rather
+than luck</strong>. That is the finding, not a failure of the build.</p>
+
+<div class="grid g4">
+  <div class="card"><div class="kpi">7,413<small>graded games in the archive</small></div>
+    <p class="small">1999–2026, 21 seasons with prices.</p></div>
+  <div class="card"><div class="kpi">8<small>strategies tested</small></div>
+    <p class="small">0 qualified. 2 declared but blocked for lack of data.</p></div>
+  <div class="card"><div class="kpi">8<small>hypotheses in the family</small></div>
+    <p class="small">All p-values corrected for 8 simultaneous tests.</p></div>
+  <div class="card"><div class="kpi">32/32 clubs<small>official standings agreement</small></div>
+    <p class="small">Archive checked club-by-club against nfl.com/standings.</p></div>
+</div>
+
+<h2>The three answers</h2>
+<div class="grid g3">
+  <div class="card"><h3>1 · Lines, originated</h3>
+    <p>13 Week 11 games carry a model fair spread, fair total, fair moneyline and the
+    break-even price at which the model thinks the bet is a coin flip.</p>
+    <p class="small">0 can be labelled PLAY, because no strategy has passed the release
+    gates.</p><a href="lines.html">Open the fair-line card →</a></div>
+  <div class="card"><h3>2 · Skill, measured</h3>
+    <p>The best point estimate is Dome / closed-roof over at +0.4% ROI on
+    1436 bets — with an interval of -2.7% to
+    +4.0%.</p>
+    <p class="small">An interval that straddles zero means luck cannot be ruled out.</p>
+    <a href="leaderboard.html">Open the leaderboard →</a></div>
+  <div class="card"><h3>3 · What is missing</h3>
+    <p>23 questions are logged; 5 are unverified and
+    3 need your decision.</p>
+    <p class="small">12 suggestions, 4 already built.</p>
+    <a href="questions.html">Open the question register →</a></div>
+</div>
+
+<h2>Signal quality: the model versus the market</h2>
+<p>The single most important number on this site. <strong>Signal</strong> is 1 − (Brier score ÷ the Brier score of
+always predicting the base rate). Zero means no information; higher is better. Both are scored on the same games.</p>
+<div class="scroll"><table><thead><tr><th>Scored on</th><th>Signal</th><th>Brier</th><th>Log loss</th><th>Games</th></tr></thead><tbody><tr><td>Ratings model (Elo)</td><td>0.101</td><td>0.2213</td><td>0.6326</td><td>7,413</td></tr>
+<tr><td>De-vigged closing market <span class="b notofficial">NOT OFFICIAL</span></td><td>0.143</td><td>0.2115</td><td>0.6105</td><td>5,432</td></tr></tbody></table></div>
+<p class="small">The market reference scores 0.042 higher than the model. Any
+claim that a model beats the closing market has to close that gap first. Source for results: nflverse mirror,
+validated against <a href="https://www.nfl.com/standings/">nfl.com/standings</a> — see
+<a href="sources.html">Sources</a>.</p>
+
+<h2>Injuries and backup tiers</h2>
+<div class="grid g2">
+  <div class="card"><h3>This week, officially</h3>
+    <p>65 players are officially listed across the three 2026 Week 10 games captured:
+    <strong>8 Out</strong>,
+    0 Doubtful, 1 Questionable,
+    and <strong>56</strong> with no game status published yet.</p>
+    <p class="small">Tiers are <em>computed</em> from last season's production because the official depth chart
+    page returns 404 here. That is stated on every row.</p>
+    <a href="injuries.html">Injury and tier tracker →</a></div>
+  <div class="card"><h3>Does a backup actually cost points?</h3>
+    <p>Measured on 414 club-weeks: a missing tier-1 offensive player
+    changed scoring by -0.97
+    points, with an interval that includes zero.</p>
+    <p class="small">Translation: on this evidence, tier-1 absences do not move the score measurably. The
+    quarterback-only estimate is larger but has only 18 club-weeks behind it, so it gets no interval and no
+    betting role.</p></div>
+</div>
+
+<h2>Correlation: what is real</h2>
+<div class="scroll"><table><thead><tr><th>Pair</th><th>n</th><th>φ (phi)</th><th>Joint observed</th><th>If independent</th><th>Reading</th></tr></thead><tbody><tr><td>Home covers  ×  total over</td><td>7109</td><td>0.0143</td><td>0.2456</td><td>0.2420</td><td>essentially independent</td></tr>
+<tr><td>QB passing yards  ×  his WR1 receiving yards</td><td>307</td><td>0.2931</td><td>0.2606</td><td>0.1895</td><td>strong positive — combos here are NOT independent</td></tr>
+<tr><td>RB1 rushing  ×  RB2 rushing (same club)</td><td>311</td><td>0.0665</td><td>0.2444</td><td>0.2278</td><td>weakly positive, not the negative split usually assumed</td></tr></tbody></table></div>
+<p class="small">φ is a descriptive statistic on 0/1 outcomes, not a pricing formula. Prop "lines" are each
+player's own trailing 4-game average because there are no prop prices in the archive — a stated limitation,
+not a hidden one.</p>
+
+<h2>Where to go next</h2>
+<div class="grid g3">
+  <div class="card"><h3>Decide something</h3><p>Every open question names the exact step that would settle it,
+  and every suggestion names the decision you have to make.</p>
+  <a href="suggestions.html">Suggestions board →</a></div>
+  <div class="card"><h3>Check the evidence</h3><p>Sources, rejected sources, and the line-by-line validation
+  of the archive against official NFL pages.</p><a href="sources.html">Sources and validation →</a></div>
+  <div class="card"><h3>See what failed</h3><p>Every flaw, every unverified value, every blocked strategy,
+  nothing hidden.</p><a href="flagged.html">Flagged for review →</a></div>
+</div>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL lines &amp; strategy lab</strong> — research instrument, not betting advice. No wager is
+recommended anywhere on this site. Market prices shown are derived from a public archive and are
+labelled <strong>NOT OFFICIAL</strong>; the NFL publishes no betting prices.
+· <a href="index.html">Overview</a> · <a href="sources.html">Sources</a> ·
+<a href="flagged.html">Flagged for review</a> · <a href="method.html">Method</a></p>
+<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:30:56Z</p>
+</div></footer></body></html>

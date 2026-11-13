@@ -1,0 +1,15 @@
+{
+ "twoLeg": {
+  "n": 403,
+  "observedJointHitRate": 0.1439,
+  "meanModelJointProbability": 0.3081,
+  "note": "Legs are in different games, so the dependence is only through shared week-level information and market structure. Compare observed vs modelled joint rate."
+ },
+ "threeLeg": {
+  "n": 384,
+  "observedJointHitRate": 0.0807,
+  "note": "No model joint probability is published for three legs because the legs were selected by edge size, which biases any independence calculation."
+ },
+ "correlationLesson": "A parlay priced by multiplying marginals is only correct when phi = 0. Where phi is materially non-zero the fair price moves, and the direction is given by the sign of phi: positive dependence makes the product price too generous to the bettor; negative dependence makes it too generous to the book.",
+ "generatedUTC": "2026-11-13T13:28:21Z"
+}

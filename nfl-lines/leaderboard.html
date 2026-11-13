@@ -1,0 +1,105 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leaderboard · NFL lines lab</title>
+<meta name="description" content="Strategy leaderboard ranked by evidence strength with validation gates.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/lab.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="index.html">Overview</a><a href="lines.html">Fair lines</a><a href="leaderboard.html" class="active">Leaderboard</a><a href="backtest.html">Backtest</a><a href="correlation.html">Correlation</a><a href="injuries.html">Injuries &amp; tiers</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="method.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="eyebrow">Competition · validation gates · luck removal</p>
+<h1>Leaderboard</h1>
+<p class="lede">A leaderboard that rewards luck is worse than no leaderboard. So the rank here is the
+<em>lower bound</em> of the ROI interval, not the ROI: a strategy only moves up when its worst plausible
+outcome improves. Reward eligibility sits behind all eight gates.</p>
+
+<aside class="callout flag"><strong>0 of 8 tested strategies
+qualified.</strong> 0 are reward-eligible. This is not a bug — it is the
+gate doing its job. A strategy that has not been through a frozen prospective trial cannot be promoted on
+backtest evidence alone.</aside>
+
+<div class="scroll"><table><thead><tr><th>Strategy</th><th>Market</th><th>Bets</th><th>ROI</th><th>95% ROI interval</th><th>p vs market (no skill)</th><th>p corrected (m=8)</th><th>Gates</th><th>Rank</th><th>Reward</th></tr></thead><tbody><tr><td><strong>Dome / closed-roof over</strong><br><span class="small">s6-dome-over</span></td><td>total</td><td>1,436</td><td>+0.4%</td><td>-2.7% to +4.0%</td><td>0.103</td><td>0.824</td><td>5/8</td><td><span class="b proposed">RANK 1</span></td><td><span class="b blocked">NOT ELIGIBLE</span></td></tr>
+<tr><td><strong>Own fair total from point-in-time scoring rates</strong><br><span class="small">s3-totals-from-scoring-rates</span></td><td>total</td><td>4,044</td><td>-1.5%</td><td>-3.5% to +0.5%</td><td>0.199</td><td>1.000</td><td>5/8</td><td><span class="b proposed">RANK 2</span></td><td><span class="b blocked">NOT ELIGIBLE</span></td></tr>
+<tr><td><strong>Division game under</strong><br><span class="small">s5-division-under</span></td><td>total</td><td>1,888</td><td>+1.2%</td><td>-3.6% to +5.8%</td><td>0.036</td><td>0.289</td><td>6/8</td><td><span class="b proposed">RANK 3</span></td><td><span class="b blocked">NOT ELIGIBLE</span></td></tr>
+<tr><td><strong>Ratings (Elo) spread value</strong><br><span class="small">s2-elo-spread</span></td><td>spread</td><td>3,690</td><td>-2.7%</td><td>-4.9% to -0.5%</td><td>0.502</td><td>1.000</td><td>5/8</td><td><span class="b proposed">RANK 4</span></td><td><span class="b blocked">NOT ELIGIBLE</span></td></tr>
+<tr><td><strong>Ratings (Elo) moneyline value</strong><br><span class="small">s1-elo-moneyline</span></td><td>moneyline</td><td>4,424</td><td>-2.2%</td><td>-6.5% to +2.0%</td><td>0.391</td><td>1.000</td><td>5/8</td><td><span class="b proposed">RANK 5</span></td><td><span class="b blocked">NOT ELIGIBLE</span></td></tr>
+<tr><td><strong>Rest advantage fade</strong><br><span class="small">s4-rest-spread</span></td><td>spread</td><td>549</td><td>-4.3%</td><td>-13.4% to +4.5%</td><td>0.657</td><td>1.000</td><td>5/8</td><td><span class="b proposed">RANK 6</span></td><td><span class="b blocked">NOT ELIGIBLE</span></td></tr>
+<tr><td><strong>Three-leg cross-game parlay (top-3 weekly Elo edges)</strong><br><span class="small">s8-elo-three-leg-parlay</span></td><td>parlay</td><td>384</td><td>+10.0%</td><td>-30.9% to +57.3%</td><td>0.218</td><td>1.000</td><td>5/8</td><td><span class="b proposed">RANK 7</span></td><td><span class="b blocked">NOT ELIGIBLE</span></td></tr>
+<tr><td><strong>Two-leg cross-game parlay (top-2 weekly Elo edges)</strong><br><span class="small">s7-elo-two-leg-parlay</span></td><td>parlay</td><td>403</td><td>-9.0%</td><td>-33.5% to +19.3%</td><td>0.607</td><td>1.000</td><td>5/8</td><td><span class="b proposed">RANK 8</span></td><td><span class="b blocked">NOT ELIGIBLE</span></td></tr>
+<tr><td><strong>Injury / backup-tier adjusted spread</strong><br><span class="small">s10-injury-adjusted-spread</span> <span class="b blocked">BLOCKED</span></td><td>spread</td><td><span class="blank">0 — blocked</span></td><td><span class="blank">blank</span></td><td><span class="blank">not estimable</span></td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>3/8</td><td><span class="blank">no rank</span></td><td><span class="b blocked">NOT ELIGIBLE</span></td></tr>
+<tr><td><strong>Player prop: anytime touchdown / receiving yards</strong><br><span class="small">s9-player-prop-anytime-td</span> <span class="b blocked">BLOCKED</span></td><td>player_prop</td><td><span class="blank">0 — blocked</span></td><td><span class="blank">blank</span></td><td><span class="blank">not estimable</span></td><td><span class="blank">blank</span></td><td><span class="blank">blank</span></td><td>3/8</td><td><span class="blank">no rank</span></td><td><span class="b blocked">NOT ELIGIBLE</span></td></tr></tbody></table></div>
+<p class="small"><strong>How to read the interval.</strong> Whole weeks are resampled with replacement, because
+games inside a week share conditions. If the interval includes zero, the result is consistent with a bettor who
+has no edge at all. Point estimates without intervals are not published anywhere on this site.</p>
+<p class="small"><strong>How to read "p vs market".</strong> Each bet's true win probability is set to the
+de-vigged closing market probability of the side taken, then 10,000 seeded simulations ask how often a bettor
+with <em>no information beyond the market</em> would earn at least this ROI. This is the sharpest honest null.
+Note what it does to the best-looking row: the three-leg parlay's p falls from a naive 0.0005 to
+0.218
+once mixed prices are handled correctly — the naive test was measuring price variance, not skill.</p>
+
+<h2>Gate-by-gate detail</h2>
+<div class="grid g2">
+<div class="card"><h3>Dome / closed-roof over</h3>
+<p>Bet the over in every game played under a dome or closed roof at the quoted price.</p>
+<p class="small"><strong>Inputs:</strong> Roof field from the archive (dome/closed vs outdoors/open).</p>
+<p class="small"><strong>Limits:</strong> Population bet; no interactive filter, so the multiple-testing risk is limited to the family size.</p>
+<ul class="clean gates"><li><span class=ok>PASS</span> <strong>provenance</strong> — every input dataset is in nfl-lines/data/sources.json</li><li><span class=ok>PASS</span> <strong>coverage</strong> — 1436 priced bets graded</li><li><span class=ok>PASS</span> <strong>baseline</strong> — market reference is the de-vigged closing price, not a naive guess</li><li><span class=ok>PASS</span> <strong>leakage</strong> — walk-forward: all inputs dated before kickoff</li><li><span class=ok>PASS</span> <strong>out</strong> — 1436 graded bets vs pre-declared minimum 300</li><li><span class=no>FAIL</span> <strong>robustness</strong> — 9 of 21 seasons positive</li><li><span class=no>FAIL</span> <strong>prospective</strong> — requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open</li><li><span class=no>FAIL</span> <strong>release</strong> — requires human review; not automated</li></ul></div>
+<div class="card"><h3>Own fair total from point-in-time scoring rates</h3>
+<p>Build each club&#x27;s points-scored and points-allowed rate with a 6-game prior toward the league mean, combine the two clubs into a fair total, and bet only when the fair total differs from the closing number by at least 1.5 points.</p>
+<p class="small"><strong>Inputs:</strong> Only graded results enter the rate table; the accumulator is updated after each bet is priced.</p>
+<p class="small"><strong>Limits:</strong> The fair total is compared with the closing line, not the opening line, so no line-move edge is claimed. Pushes are dropped.</p>
+<ul class="clean gates"><li><span class=ok>PASS</span> <strong>provenance</strong> — every input dataset is in nfl-lines/data/sources.json</li><li><span class=ok>PASS</span> <strong>coverage</strong> — 4044 priced bets graded</li><li><span class=ok>PASS</span> <strong>baseline</strong> — market reference is the de-vigged closing price, not a naive guess</li><li><span class=ok>PASS</span> <strong>leakage</strong> — walk-forward: all inputs dated before kickoff</li><li><span class=ok>PASS</span> <strong>out</strong> — 4044 graded bets vs pre-declared minimum 300</li><li><span class=no>FAIL</span> <strong>robustness</strong> — 7 of 21 seasons positive</li><li><span class=no>FAIL</span> <strong>prospective</strong> — requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open</li><li><span class=no>FAIL</span> <strong>release</strong> — requires human review; not automated</li></ul></div>
+<div class="card"><h3>Division game under</h3>
+<p>Bet the under in every division game at the quoted price (a fixed, pre-declared rule).</p>
+<p class="small"><strong>Inputs:</strong> Division flag from the archive; no other filter.</p>
+<p class="small"><strong>Limits:</strong> The whole population of division games is bet, so this is a pure bias test.</p>
+<ul class="clean gates"><li><span class=ok>PASS</span> <strong>provenance</strong> — every input dataset is in nfl-lines/data/sources.json</li><li><span class=ok>PASS</span> <strong>coverage</strong> — 1888 priced bets graded</li><li><span class=ok>PASS</span> <strong>baseline</strong> — market reference is the de-vigged closing price, not a naive guess</li><li><span class=ok>PASS</span> <strong>leakage</strong> — walk-forward: all inputs dated before kickoff</li><li><span class=ok>PASS</span> <strong>out</strong> — 1888 graded bets vs pre-declared minimum 300</li><li><span class=ok>PASS</span> <strong>robustness</strong> — 14 of 21 seasons positive</li><li><span class=no>FAIL</span> <strong>prospective</strong> — requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open</li><li><span class=no>FAIL</span> <strong>release</strong> — requires human review; not automated</li></ul></div>
+<div class="card"><h3>Ratings (Elo) spread value</h3>
+<p>Fit the Elo probability gap to an expected home margin with an expanding least-squares regression on already-graded games, compare that fair number with the closing line, and bet when the two differ by at least 1 point.</p>
+<p class="small"><strong>Inputs:</strong> Same Elo as s1 plus a two-parameter margin mapping refitted point-in-time. No injury, rest or weather input.</p>
+<p class="small"><strong>Limits:</strong> Pushes are dropped. The mapping has to be refitted with at least 300 graded games before the strategy can place a bet, which is why the early seasons contribute no bets.</p>
+<ul class="clean gates"><li><span class=ok>PASS</span> <strong>provenance</strong> — every input dataset is in nfl-lines/data/sources.json</li><li><span class=ok>PASS</span> <strong>coverage</strong> — 3690 priced bets graded</li><li><span class=ok>PASS</span> <strong>baseline</strong> — market reference is the de-vigged closing price, not a naive guess</li><li><span class=ok>PASS</span> <strong>leakage</strong> — walk-forward: all inputs dated before kickoff</li><li><span class=ok>PASS</span> <strong>out</strong> — 3690 graded bets vs pre-declared minimum 300</li><li><span class=no>FAIL</span> <strong>robustness</strong> — 5 of 20 seasons positive</li><li><span class=no>FAIL</span> <strong>prospective</strong> — requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open</li><li><span class=no>FAIL</span> <strong>release</strong> — requires human review; not automated</li></ul></div>
+<div class="card"><h3>Ratings (Elo) moneyline value</h3>
+<p>Bet the side whose Elo win probability exceeds the de-vigged closing moneyline probability by at least 2 percentage points.</p>
+<p class="small"><strong>Inputs:</strong> Elo from results only, margin-weighted, season regression, 48-point HFA, updated after grading.</p>
+<p class="small"><strong>Limits:</strong> Walk-forward Elo; no injury, no rest, no weather inputs. Market comparison is closing, so the strategy is evaluated against the sharpest public reference in the archive.</p>
+<ul class="clean gates"><li><span class=ok>PASS</span> <strong>provenance</strong> — every input dataset is in nfl-lines/data/sources.json</li><li><span class=ok>PASS</span> <strong>coverage</strong> — 4424 priced bets graded</li><li><span class=ok>PASS</span> <strong>baseline</strong> — market reference is the de-vigged closing price, not a naive guess</li><li><span class=ok>PASS</span> <strong>leakage</strong> — walk-forward: all inputs dated before kickoff</li><li><span class=ok>PASS</span> <strong>out</strong> — 4424 graded bets vs pre-declared minimum 300</li><li><span class=no>FAIL</span> <strong>robustness</strong> — 7 of 21 seasons positive</li><li><span class=no>FAIL</span> <strong>prospective</strong> — requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open</li><li><span class=no>FAIL</span> <strong>release</strong> — requires human review; not automated</li></ul></div>
+<div class="card"><h3>Rest advantage fade</h3>
+<p>Bet the home spread when the home club had at least three more rest days than the visitor.</p>
+<p class="small"><strong>Inputs:</strong> Rest days are in the archive (away_rest/home_rest). No injury or travel input.</p>
+<p class="small"><strong>Limits:</strong> Small cohort by construction; the gate result is reported rather than hidden.</p>
+<ul class="clean gates"><li><span class=ok>PASS</span> <strong>provenance</strong> — every input dataset is in nfl-lines/data/sources.json</li><li><span class=ok>PASS</span> <strong>coverage</strong> — 549 priced bets graded</li><li><span class=ok>PASS</span> <strong>baseline</strong> — market reference is the de-vigged closing price, not a naive guess</li><li><span class=ok>PASS</span> <strong>leakage</strong> — walk-forward: all inputs dated before kickoff</li><li><span class=ok>PASS</span> <strong>out</strong> — 549 graded bets vs pre-declared minimum 300</li><li><span class=no>FAIL</span> <strong>robustness</strong> — 7 of 21 seasons positive</li><li><span class=no>FAIL</span> <strong>prospective</strong> — requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open</li><li><span class=no>FAIL</span> <strong>release</strong> — requires human review; not automated</li></ul></div>
+<div class="card"><h3>Three-leg cross-game parlay (top-3 weekly Elo edges)</h3>
+<p>Same rule as s7 with three legs. Included to expose how parlays concentrate variance.</p>
+<p class="small"><strong>Inputs:</strong> Three legs multiply both the payout and the estimation error.</p>
+<p class="small"><strong>Limits:</strong> Included deliberately: a three-leg parlay is far more likely to look lucky than skilful, which is exactly what the luck gates below quantify.</p>
+<ul class="clean gates"><li><span class=ok>PASS</span> <strong>provenance</strong> — every input dataset is in nfl-lines/data/sources.json</li><li><span class=ok>PASS</span> <strong>coverage</strong> — 384 priced bets graded</li><li><span class=ok>PASS</span> <strong>baseline</strong> — market reference is the de-vigged closing price, not a naive guess</li><li><span class=ok>PASS</span> <strong>leakage</strong> — walk-forward: all inputs dated before kickoff</li><li><span class=ok>PASS</span> <strong>out</strong> — 384 graded bets vs pre-declared minimum 300</li><li><span class=no>FAIL</span> <strong>robustness</strong> — 0 of 0 seasons positive</li><li><span class=no>FAIL</span> <strong>prospective</strong> — requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open</li><li><span class=no>FAIL</span> <strong>release</strong> — requires human review; not automated</li></ul></div>
+<div class="card"><h3>Two-leg cross-game parlay (top-2 weekly Elo edges)</h3>
+<p>Every week, take the two largest Elo moneyline edges and combine them into one two-leg cross-game parlay at the product of the two quoted moneylines.</p>
+<p class="small"><strong>Inputs:</strong> Legs come from different games, so game-script correlation is limited but shared-week information and the product-price assumption are both measured in the correlation section.</p>
+<p class="small"><strong>Limits:</strong> Parlay payout is the product of the leg decimals; that is an upper bound on what a book usually pays and is labelled as such. Empirically measured joint dependence is published.</p>
+<ul class="clean gates"><li><span class=ok>PASS</span> <strong>provenance</strong> — every input dataset is in nfl-lines/data/sources.json</li><li><span class=ok>PASS</span> <strong>coverage</strong> — 403 priced bets graded</li><li><span class=ok>PASS</span> <strong>baseline</strong> — market reference is the de-vigged closing price, not a naive guess</li><li><span class=ok>PASS</span> <strong>leakage</strong> — walk-forward: all inputs dated before kickoff</li><li><span class=ok>PASS</span> <strong>out</strong> — 403 graded bets vs pre-declared minimum 300</li><li><span class=no>FAIL</span> <strong>robustness</strong> — 0 of 0 seasons positive</li><li><span class=no>FAIL</span> <strong>prospective</strong> — requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open</li><li><span class=no>FAIL</span> <strong>release</strong> — requires human review; not automated</li></ul></div></div>
+
+<h2>What would have to happen for a reward to be paid</h2>
+<ol>
+<li>The strategy passes data provenance, coverage, baseline, leakage, out-of-sample sample size and robustness.</li>
+<li>It is frozen — code, inputs and thresholds — and its predictions are logged <em>before</em> outcomes.</li>
+<li>The frozen trial completes a pre-declared horizon.</li>
+<li>A human review confirms there is no integrity or responsible-use problem.</li>
+</ol>
+<p>Only then does the ELIGIBLE badge appear. No amount of backtest ROI substitutes for that sequence.</p>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL lines &amp; strategy lab</strong> — research instrument, not betting advice. No wager is
+recommended anywhere on this site. Market prices shown are derived from a public archive and are
+labelled <strong>NOT OFFICIAL</strong>; the NFL publishes no betting prices.
+· <a href="index.html">Overview</a> · <a href="sources.html">Sources</a> ·
+<a href="flagged.html">Flagged for review</a> · <a href="method.html">Method</a></p>
+<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:30:56Z</p>
+</div></footer></body></html>

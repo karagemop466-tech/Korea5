@@ -246,7 +246,10 @@ def page_scores_by_slug(page: str):
     are counted and reported instead of being resolved silently.
     """
     out: dict[str, tuple[int, int, str, str]] = {}
-    for variant in (page, html_lib.unescape(page)):
+    un = html_lib.unescape(page)
+    # Some game cards are emitted as real HTML; others sit inside a JSON string in a data attribute
+    # where the quotes are backslash-escaped. Every form is read; none of them is guessed.
+    for variant in (page, un, un.replace('\\"', '"')):
         for slug, inner in ANCHOR_RE.findall(variant):
             text = strip_tags(inner)
             m = SCORE_TEXT_RE.search(text)
@@ -454,9 +457,14 @@ def game_page_scores(page: str, url: str, away: str, home: str):
     ("Jaguars 33, Ravens 10, FINAL"), the structured payload, and the page title. If none of them
     carries a score the row stays null; a missing score is reported, never estimated.
     """
-    m = SCORE_TEXT_RE.search(page)
-    if m:
-        return int(m.group("as")), int(m.group("hs")), "FINAL", "gamePageScoreText"
+    slug = (url or "").rsplit("/", 1)[-1]
+    un = html_lib.unescape(page)
+    for variant in (page, un, un.replace('\\"', '"')):
+        own = re.search(r'/games/' + re.escape(slug) + r'[^>]*>(?P<body>.*?)</a>', variant, re.S | re.I)
+        for text in ([own.group("body")] if own else []) + [variant[:200000]]:
+            m = SCORE_TEXT_RE.search(strip_tags(text) if "<" in text else text)
+            if m:
+                return int(m.group("as")), int(m.group("hs")), "FINAL", "gamePageScoreText"
     pairs = list(payload_data(page_payloads(page)))
     blocks: list[dict] = []
     for _key, data in pairs:
@@ -993,6 +1001,16 @@ def main():
     gap_context = {}
     for r in gaps[:140]:
         wk_page = get(r.get("listUrl") or "")
+        slug = (r["sourceUrl"] or "").rsplit("/", 1)[-1]
+        forms = {}
+        if wk_page:
+            un = html_lib.unescape(wk_page)
+            for vname, vtext in (("raw", wk_page), ("unescaped", un), ("dequoted", un.replace('\\"', '"'))):
+                forms[vname] = {
+                    "slugPresent": slug in vtext,
+                    "scoreLabelNear": bool(SCORE_TEXT_RE.search(strip_tags(vtext))) and slug in vtext,
+                }
+        gap_context.setdefault(slug, {"forms": forms, "away": r.get("away"), "home": r.get("home")})
         if wk_page and r["sourceUrl"].rsplit("/", 1)[-1] in wk_page:
             slug = r["sourceUrl"].rsplit("/", 1)[-1]
             i = wk_page.find(slug)

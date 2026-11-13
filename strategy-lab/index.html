@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview &middot; NFL Lines &amp; Strategy Lab</title>
+<link rel="stylesheet" href="assets/lab.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="brand"><a href="index.html">NFL Lines &amp; Strategy Lab</a>
+    <span class="tag">2026 season &middot; snapshot 2026-11-13</span></div>
+  <nav class="nav" aria-label="Sections"><a class="active" href="index.html">Overview</a>
+<a href="requirements.html">Requirements</a>
+<a href="decisions.html">Decisions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="lines.html">Lines</a>
+<a href="signals.html">Signals</a>
+<a href="strategies.html">Strategies</a>
+<a href="leaderboard.html">Leaderboard</a>
+<a href="injuries.html">Injuries</a>
+<a href="teams.html">Teams</a>
+<a href="games.html">Game log</a>
+<a href="sources.html">Sources</a>
+<a href="flagged.html">Flagged</a>
+<a href="verify.html">Verify</a></nav>
+</header>
+<main id="main">
+<h1>Overview</h1>
+<p class="sub">Executive summary for the NFL line-making and strategy programme, 2026 season.</p>
+<p class="banner"><strong>Verification rule.</strong> Every row on this site links to the official page it came from. Where an official source has not published a value the cell is left blank and the row is listed on the <a href="flagged.html">Flagged for Review</a> page. Nothing is inferred and nothing is filled in.</p>
+
+<div class="cards"><div class="card"><div class="k">Games verified</div><div class="v">137</div><div class="d">official NFL.com by-week pages</div><div class='l'><a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">official source</a></div></div>
+<div class="card"><div class="k">Standings rows reconciled</div><div class="v">32 / 32</div><div class="d">recomputed from the game log and matched to the official standings</div><div class='l'><a class="src" href="https://www.nfl.com/standings/" target="_blank" rel="noopener">official source</a></div></div>
+<div class="card"><div class="k">Out-of-sample games scored</div><div class="v">89</div><div class="d">chronological walk-forward, fit inside each fold</div><div class='l'><a class="src" href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">official source</a></div></div>
+<div class="card"><div class="k">Production model</div><div class="v">B_shrunk</div><div class="d">Only variant B_shrunk improves out-of-sample margin accuracy over both baselines with a one-sided p &lt; 0.05. C_…</div></div>
+<div class="card"><div class="k">Margin skill vs zero forecast</div><div class="v">+5.9%</div><div class="d">MAE 9.61 vs 10.21 for a constant zero forecast, p = 0.0115</div></div>
+<div class="card"><div class="k">Brier skill vs 0.50</div><div class="v">+6.0%</div><div class="d">Brier 0.235 vs 0.250, p = 0.0418</div></div>
+<div class="card"><div class="k">Totals skill</div><div class="v">+0.4%</div><div class="d">no variant beats the constant baseline - gate G6 fails</div></div>
+<div class="card"><div class="k">Market prices held</div><div class="v">0</div><div class="d">no official NFL source publishes betting prices - flag F07</div><div class='l'><a class="src" href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">official source</a></div></div></div>
+
+<h2>What this lab is</h2>
+<p>The lab originates its own NFL numbers from official league data rather than copying a bookmaker's line.
+It currently holds <strong>137 verified game results</strong> from the 2026 season, covering Weeks 1 to 10,
+plus the official standings and the Week 10 official injury report. Everything below is computed from those
+rows by <code>strategy-strategy-lab/pipeline.py</code>, and every row links back to the official page it came from.</p>
+<p>It deliberately does <em>not</em> claim a betting edge. One model clears the significance gate, one fails,
+one fails on significance, totals fail outright, and props and parlays are blocked on missing data. That is
+the honest state of the work.</p>
+
+<h2>Executive summary - the important details</h2>
+<ol class="findings"><li><strong>The naive model is worse than doing nothing.</strong> Unshrunk scoring rates produce a margin MAE of 10.55 against 10.21 for a constant zero forecast. It fails gate G3 outright and is kept only as a labelled control.</li>
+<li><strong>Shrinking team rates toward the league mean is what creates the signal.</strong> Shrunk variant: MAE 9.61 vs 10.21, a paired improvement of 0.599 points per game (t = 2.274, one-sided p = 0.0115, bootstrap 90% CI 0.166 to 1.035). This is the only strategy that clears gate G3.</li>
+<li><strong>Totals show no skill in any variant.</strong> The best total MAE is 10.91 against a constant baseline of 10.96. Gate G6 fails. Do not trade totals from this model.</li>
+<li><strong>Momentum is not a signal in this data.</strong> The lag-1 autocorrelation of a team's own game margin is r = 0.086 across 242 team-week pairs. Last week's result carries essentially no information about this week.</li>
+<li><strong>Same-game parlay legs are not independent.</strong> Home points vs game total correlates r = 0.681 and away points vs game total r = 0.782, because both legs share a team's scoring. Multiplying marginals is invalid.</li>
+<li><strong>There is no official depth chart, so backup string order cannot be known today.</strong> The NFL.com team depth-chart URL returns HTTP 404 and the official roster lists position and ACT status only. The 2nd/3rd/4th-string requirement is blocked, not implemented with a guess.</li>
+<li><strong>No market price exists anywhere in this lab.</strong> Every spread, total, moneyline and prop cell is blank and marked unverified. No official NFL source publishes betting prices, so closing-line value and ROI cannot yet be computed at all.</li>
+<li><strong>Home-field advantage is effectively zero this season.</strong> Across 137 games the mean home margin is -0.02 points and home teams are 67-69-1. On true home fields only the mean is 0.47 points. Whether that persists is unknown - flag F08.</li></ol>
+
+<h2>Read this before acting on anything</h2>
+<table class="data-table">
+<thead><tr><th>Question</th><th>Short answer</th><th>Where</th></tr></thead>
+<tbody>
+<tr><td>Can I bet this today?</td><td>No. One model clears its gate on 89 out-of-sample games from a single
+partial season, and no market price has ever been captured, so profitability is unmeasured.</td>
+<td><a href="strategies.html">Strategies</a></td></tr>
+<tr><td>What would change that?</td><td>A timestamped quote archive (SUG-01), multi-season data (SUG-16), and a
+pre-registered trial (SUG-10), in that order.</td><td><a href="suggestions.html">Suggestions</a></td></tr>
+<tr><td>Is the injury requirement met?</td><td>Partly. Statuses are tracked; backup string order is blocked
+because no official source publishes it.</td><td><a href="injuries.html">Injuries</a></td></tr>
+<tr><td>Can I review the raw data myself?</td><td>Yes. Every row on every page has a link to the official page it
+came from.</td><td><a href="games.html">Game log</a></td></tr>
+</tbody></table>
+
+<h2>Related NFL sections in this repository</h2>
+<p>Several parallel sessions have built NFL surfaces in this repo. This one is the only one that
+<strong>ingests the official results and computes from them</strong> (137 verified games reconciled against the
+official standings) and the only one that <strong>backtests</strong> a model against held-out weeks. The others are
+linked here so nothing has to be hunted for; none of their files were edited by this session.</p>
+<table class="data-table">
+<thead><tr><th>Section</th><th>Focus</th><th>Entry point</th></tr></thead>
+<tbody>
+<tr><td><code>strategy-lab/</code> (this page)</td>
+<td>Originated lines from official results, gated backtest, correlation values, injury tracker</td>
+<td><a href="index.html">Overview</a></td></tr>
+<tr><td><code>lab/</code></td>
+<td>NFL Lines Lab - decision register, correlations, injuries and depth, published by another session</td>
+<td><a href="../lab/index.html">NFL Lines Lab</a></td></tr>
+<tr><td><code>nfl-lab/</code></td>
+<td>NFL model section published by another session</td>
+<td><a href="../nfl-lab/index.html">NFL Model</a></td></tr>
+<tr><td><code>nfl/</code></td>
+<td>NFL decision support, published by another session</td>
+<td><a href="../nfl/index.html">NFL Decision Support</a></td></tr>
+<tr><td><code>nfl/system/</code></td>
+<td>NFL decision system sub-pages, published by another session</td>
+<td><a href="../nfl/system/index.html">NFL decision system</a></td></tr>
+</tbody></table>
+
+<h2>Section guide</h2>
+<table class="data-table">
+<thead><tr><th>Section</th><th>What is in it</th></tr></thead>
+<tbody><tr><td><a href='index.html'>Overview</a></td><td>Executive summary and dashboard</td></tr>
+<tr><td><a href='requirements.html'>Requirements</a></td><td>Full requirement register</td></tr>
+<tr><td><a href='decisions.html'>Decisions</a></td><td>Questions, information held, information missing</td></tr>
+<tr><td><a href='suggestions.html'>Suggestions</a></td><td>Review and choose a path before implementing</td></tr>
+<tr><td><a href='lines.html'>Lines</a></td><td>Originated lines for the next slate</td></tr>
+<tr><td><a href='signals.html'>Signals</a></td><td>Correlations, luck separation, model diagnostics</td></tr>
+<tr><td><a href='strategies.html'>Strategies</a></td><td>Strategy catalogue and validation gates</td></tr>
+<tr><td><a href='leaderboard.html'>Leaderboard</a></td><td>Ranked by a pre-declared metric</td></tr>
+<tr><td><a href='injuries.html'>Injuries</a></td><td>Injury and lineup tracking</td></tr>
+<tr><td><a href='teams.html'>Teams</a></td><td>Team rates, Pythagorean expectation, luck</td></tr>
+<tr><td><a href='games.html'>Game log</a></td><td>Every verified game result</td></tr>
+<tr><td><a href='sources.html'>Sources</a></td><td>Official source registry</td></tr>
+<tr><td><a href='flagged.html'>Flagged</a></td><td>Flagged for review</td></tr>
+<tr><td><a href='verify.html'>Verify</a></td><td>Row-by-row verification report</td></tr></tbody></table>
+
+</main>
+<footer><p>Static site generated by <code>strategy-strategy-lab/build.py</code> from official NFL sources.
+<a href="../index.html">Back to the main planner</a> &middot;
+<a href="sources.html">Sources</a> &middot; <a href="flagged.html">Flagged for review</a></p></footer>
+<script src="assets/lab.js"></script>
+</body>
+</html>

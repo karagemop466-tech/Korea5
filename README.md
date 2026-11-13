@@ -197,6 +197,48 @@ Local tests check structure and links, not complete source-fact verification. Hi
 verification reports are preserved with their original timestamps. All future vacation
 windows remain provisional. `certainty.html` lists the outstanding evidence limits.
 
+## NFL Lines & Strategy Lab (`strategy-lab/`, added 2026-11-13)
+
+A separate section that originates its own NFL numbers from official league data instead of copying a
+bookmaker's line. **Live at https://karagemop466-tech.github.io/Korea5/strategy-lab/index.html**
+
+| Path | What it is |
+|---|---|
+| `strategy-lab/index.html` | Executive summary and dashboard |
+| `strategy-lab/requirements.html` | The full requirement register, with a status and evidence for each |
+| `strategy-lab/decisions.html` | Questions, information held, information missing, and how to discover what is missing |
+| `strategy-lab/suggestions.html` | Improvement proposals with explicit paths to choose between **before** anything is built |
+| `strategy-lab/lines.html` | Originated lines for the next slate (market columns deliberately blank) |
+| `strategy-lab/signals.html` | Correlation values, model diagnostics, luck separation |
+| `strategy-lab/strategies.html` | Strategy catalogue and the eight validation gates |
+| `strategy-lab/leaderboard.html` | Strategies ranked by a pre-declared proper scoring rule (paper-only) |
+| `strategy-lab/injuries.html` | Injury and lineup tracking, and the official-source blocker on backup string order |
+| `strategy-lab/teams.html`, `strategy-lab/games.html` | Team rates and the verified game log, row by row |
+| `strategy-lab/sources.html`, `strategy-lab/flagged.html`, `strategy-lab/verify.html` | Source registry, flagged items, verification report |
+| `strategy-lab/pipeline.py` / `strategy-lab/build.py` / `strategy-lab/verify.py` | The three-step pipeline |
+
+Rebuild:
+
+```bash
+python3 strategy-lab/pipeline.py    # reconcile + compute + backtest -> strategy-lab/data/analysis.json
+python3 strategy-lab/build.py       # render every page
+python3 strategy-lab/verify.py      # 409 sourced fact rows, 0 broken links
+```
+
+### Honest state of the work
+
+* 137 games transcribed from the official NFL.com by-week pages; all 32 standings rows reconcile exactly.
+* Of three model variants, **only the shrunk adjusted-scoring model clears the out-of-sample gate**
+  (margin MAE 9.61 vs 10.21 for a constant zero forecast; paired improvement 0.599 pts/game,
+  t = 2.274, one-sided p = 0.0115, bootstrap 90% CI 0.166 to 1.035). The naive model is *worse* than
+  predicting nothing. **Totals show no skill in any variant.**
+* **No market price of any kind is held.** No official NFL source publishes betting prices, so every
+  spread, total, moneyline and prop cell is blank and flagged. Return and closing-line value cannot
+  be computed until a quote archive exists.
+* **Backup string order is blocked, not guessed.** NFL.com publishes no depth chart (verified 404) and
+  the official roster carries no string order, so the 2nd/3rd/4th-string requirement cannot be met
+  from an official source today.
+* The leaderboard runs **paper-only**; no rewards are authorized pending a governance review.
 ## NFL Skill Lab (2026-11-13, session `arena/fb9c9608-korea5` — relocated to `lines-lab/`)
 
 A data-driven implementation of the [NFL strategy proposal](research/NFL-STRATEGY.md), published under `lines-lab/` (first drafted under `nfl-lab/`, which the parallel model-lab session owns; relocated on merge):

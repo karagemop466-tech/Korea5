@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strategies &middot; NFL Lines &amp; Strategy Lab</title>
+<link rel="stylesheet" href="assets/lab.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="brand"><a href="index.html">NFL Lines &amp; Strategy Lab</a>
+    <span class="tag">2026 season &middot; snapshot 2026-11-13</span></div>
+  <nav class="nav" aria-label="Sections"><a href="index.html">Overview</a>
+<a href="requirements.html">Requirements</a>
+<a href="decisions.html">Decisions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="lines.html">Lines</a>
+<a href="signals.html">Signals</a>
+<a class="active" href="strategies.html">Strategies</a>
+<a href="leaderboard.html">Leaderboard</a>
+<a href="injuries.html">Injuries</a>
+<a href="teams.html">Teams</a>
+<a href="games.html">Game log</a>
+<a href="sources.html">Sources</a>
+<a href="flagged.html">Flagged</a>
+<a href="verify.html">Verify</a></nav>
+</header>
+<main id="main">
+<h1>Strategies</h1>
+<p class="sub">Strategy catalogue, evidence, and the validation gates every strategy must pass.</p>
+<p class="banner"><strong>Verification rule.</strong> Every row on this site links to the official page it came from. Where an official source has not published a value the cell is left blank and the row is listed on the <a href="flagged.html">Flagged for Review</a> page. Nothing is inferred and nothing is filled in.</p>
+
+<h2>Strategy catalogue</h2>
+<p>Every strategy states its hypothesis, its rule, the official inputs it uses, and the evidence for or against it.
+Statuses: <span class='pill passed-gate-3'>passed-gate-3</span> cleared the out-of-sample significance gate;
+<span class='pill failed'>failed</span> tested and did not beat its baseline;
+<span class='pill refuted'>refuted</span> the underlying effect is not present in the data;
+<span class='pill untested'>untested</span> hypothesis only;
+<span class='pill blocked'>blocked</span> cannot be built or scored with the data available.</p>
+<h3 id="strategies">Strategies</h3>
+<table class="data-table" data-filter="1" data-sourced="0">
+<thead><tr><th>ID</th><th>Strategy</th><th>Market</th><th>Hypothesis</th><th>Signal rule</th><th>Inputs (official)</th><th>Stage</th><th>Evidence</th><th>Status</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>STR-01</td><td class='wrap'><strong>Shrunk adjusted-scoring spread (Model B)</strong></td><td>Single bet: spread / moneyline</td><td class='wrap'>Team scoring rates shrunk toward the league mean predict the margin better than a constant does.</td><td class='wrap'>E[home margin] = shrunk adjusted-scoring difference + home-field constant (0.47 pts on true home fields, 0 on neutral). Shrinkage weight chosen inside each fold by leave-one-out MAE.</td><td class='wrap'>Official points for / against per game; official home/away designation; official neutral-site designation.</td><td>Tested out-of-sample, 89 games (Weeks 4-10)</td><td class='wrap'>Margin MAE 9.61 vs 10.21 (zero) and 10.33 (constant). Improvement +0.60 pts, t = 2.27, one-sided p = 0.012, bootstrap 90% CI 0.17 to 1.04. Brier 0.235 vs 0.250, p = 0.042.</td><td><span class='pill passed-gate-3'>passed-gate-3</span></td><td class='wrap'>The only strategy on the board that clears the significance gate. Result is from one 89-game window and the architecture was chosen after seeing it, so it is provisional.</td></tr>
+<tr><td>STR-02</td><td class='wrap'><strong>Naive adjusted-scoring spread (Model A)</strong></td><td>Single bet: spread</td><td class='wrap'>Raw scoring rates, unshrunk, predict the margin.</td><td class='wrap'>Same as STR-01 with shrinkage weight zero.</td><td class='wrap'>Same official inputs as STR-01.</td><td>Tested out-of-sample, 89 games</td><td class='wrap'>Margin MAE 10.55 - worse than both baselines (10.21 and 10.33). Improvement -0.34 pts, p = 0.68. Total MAE 12.23 vs 10.96 baseline.</td><td><span class='pill failed'>failed</span></td><td class='wrap'>Retained as a labelled control. Do not use.</td></tr>
+<tr><td>STR-03</td><td class='wrap'><strong>Recalibrated spread (Model C)</strong></td><td>Single bet: spread / moneyline</td><td class='wrap'>A linear recalibration of the model&#x27;s own margin output will improve accuracy.</td><td class='wrap'>As STR-01 plus an in-fold regression of actual margin on predicted margin.</td><td class='wrap'>Same official inputs.</td><td>Tested out-of-sample, 89 games</td><td class='wrap'>Best point estimate (margin MAE 9.52, Brier 0.2244) but the paired improvement has a much wider spread (sd 0.211 vs 0.082); p = 0.125 and the 90% CI includes zero.</td><td><span class='pill failed'>failed</span></td><td class='wrap'>Not promoted. Re-test only under a pre-registered protocol (see SUG-03 and SUG-10).</td></tr>
+<tr><td>STR-04</td><td class='wrap'><strong>Game totals</strong></td><td>Single bet: total</td><td class='wrap'>Scoring rates predict the combined point total better than the league average does.</td><td class='wrap'>Model total = home expected points + away expected points.</td><td class='wrap'>Official points for / against per game.</td><td>Tested out-of-sample, 89 games, three variants</td><td class='wrap'>Best total MAE 10.91 against a constant baseline of 10.96 - a 0.4% improvement, i.e. no measurable skill in any variant.</td><td><span class='pill failed'>failed</span></td><td class='wrap'>Do not trade totals from this model. See D06 and SUG-04.</td></tr>
+<tr><td>STR-05</td><td class='wrap'><strong>Pythagorean regression fade</strong></td><td>Single bet: spread</td><td class='wrap'>Teams whose actual win percentage exceeds their Pythagorean expectation are winning close games by luck and will regress.</td><td class='wrap'>Signal = actual win percentage minus Pythagorean expectation (exponent 2.37), computed from official points for and against.</td><td class='wrap'>Official points for / against; official win-loss-tie.</td><td>Hypothesis only - not backtested</td><td class='wrap'>Pythagorean expectation correlates 0.879 with actual win percentage across the 32 teams, so the residual (the luck term) is real but small and has not been tested for predictive value.</td><td><span class='pill untested'>untested</span></td><td class='wrap'>Needs a multi-season panel. Do not trade.</td></tr>
+<tr><td>STR-06</td><td class='wrap'><strong>Momentum / streak following</strong></td><td>Single bet: spread</td><td class='wrap'>A team that covered or won big last week carries that form into next week.</td><td class='wrap'>Bet in the direction of the previous week&#x27;s margin.</td><td class='wrap'>Official game margins.</td><td>Refuted on this season&#x27;s data</td><td class='wrap'>Lag-1 autocorrelation of a team&#x27;s own game margin is r = 0.086 across 274 team-week pairs - effectively zero. There is no momentum signal to harvest.</td><td><span class='pill refuted'>refuted</span></td><td class='wrap'>Do not trade. This is a direct answer to &#x27;remove luck from the equation&#x27;.</td></tr>
+<tr><td>STR-07</td><td class='wrap'><strong>Same-game parlay (side + total)</strong></td><td>Parlay</td><td class='wrap'>Two legs from the same game can be priced as independent.</td><td class='wrap'>Multiply the two marginal probabilities.</td><td class='wrap'>Official game scores (for the correlation estimates only).</td><td>Correlations measured; pricing model not built</td><td class='wrap'>Home points vs away points r = 0.076; home vs total r = 0.681; away vs total r = 0.782; absolute margin vs total r = -0.016. The total legs share a team&#x27;s scoring directly, so independence is clearly wrong.</td><td><span class='pill blocked'>blocked</span></td><td class='wrap'>Requires the joint model in SUG-08. Not priced.</td></tr>
+<tr><td>STR-08</td><td class='wrap'><strong>Player-prop combinations</strong></td><td>Parlay / props</td><td class='wrap'>Player outcomes can be forecast from opportunity and role.</td><td class='wrap'>Not defined - no data to define it with.</td><td class='wrap'>None held. Official player statistics pages exist but no official price or settlement data has been captured.</td><td>Blocked</td><td class='wrap'>No official NFL source publishes prop prices, lines or settlement rules, so no value can be estimated and nothing can be scored.</td><td><span class='pill blocked'>blocked</span></td><td class='wrap'>Schema designed; waiting on SUG-01 and SUG-09.</td></tr>
+</tbody></table>
+
+<h2>Validation gates</h2>
+<p>A strategy may only be described as having skill if it clears G1 through G6, and may only be traded after G7.
+The gates are applied in order and a failure cannot be skipped.</p>
+<h3 id="validation-gates">Validation gates</h3>
+<table class="data-table" data-filter="1" data-sourced="0">
+<thead><tr><th>Gate</th><th>Name</th><th>Requirement</th><th>Result</th><th>Verdict</th></tr></thead>
+<tbody>
+<tr><td>G1</td><td class='wrap'>Provenance and point-in-time integrity</td><td class='wrap'>Every input carries an immutable source URL, a capture date and a stated definition.</td><td class='wrap'>All 137 game rows and 32 standings rows carry an official NFL.com URL and a capture date of 2026-11-13.</td><td><span class='pill passed'>pass</span></td></tr>
+<tr><td>G2</td><td class='wrap'>Coverage and reconciliation</td><td class='wrap'>No silent fills. Independent sources must reconcile.</td><td class='wrap'>The 137-game log reproduces all 32 official standings rows exactly - W, L, T, PF and PA match on every team.</td><td><span class='pill passed'>pass</span></td></tr>
+<tr><td>G3</td><td class='wrap'>Beats a constant baseline out of sample</td><td class='wrap'>Chronological walk-forward. Fit inside the fold only. One-sided paired p &lt; 0.05 and a bootstrap 90% interval excluding zero.</td><td class='wrap'>Model B passes (p = 0.012, CI 0.17 to 1.04). Model A fails (p = 0.68). Model C fails on significance (p = 0.125).</td><td><span class='pill passed'>pass-b-only</span></td></tr>
+<tr><td>G4</td><td class='wrap'>Leakage control</td><td class='wrap'>No test-period information may enter the fit. Transformations fitted inside the training fold.</td><td class='wrap'>Each week&#x27;s fit uses only strictly earlier weeks; the shrinkage weight is chosen by leave-one-out inside the training fold.</td><td><span class='pill passed'>pass</span></td></tr>
+<tr><td>G5</td><td class='wrap'>Proper scoring, calibration and uncertainty</td><td class='wrap'>Brier and log loss against a constant 0.50 forecaster, plus calibration buckets and intervals.</td><td class='wrap'>Model B: Brier 0.235 vs 0.250 (p = 0.042). Calibration is acceptable in the tails but the 0.40-0.50 bucket is thin (n = 8).</td><td><span class='pill passed'>pass-marginal</span></td></tr>
+<tr><td>G6</td><td class='wrap'>Totals skill</td><td class='wrap'>Total MAE must beat the constant league-average baseline.</td><td class='wrap'>No variant beats it: best 10.91 vs baseline 10.96 (0.4%). Effectively zero skill.</td><td><span class='pill fail'>fail</span></td></tr>
+<tr><td>G7</td><td class='wrap'>Locked prospective paper trial</td><td class='wrap'>A pre-declared horizon, locked before any result is looked at, run on paper only.</td><td class='wrap'>Not started. No architecture has been frozen for 2027 yet.</td><td><span class='pill not-started'>not-started</span></td></tr>
+<tr><td>G8</td><td class='wrap'>Independent release review</td><td class='wrap'>A second pass re-runs the pipeline and re-checks every row against its official source.</td><td class='wrap'>Local verification exists (strategy-strategy-lab/verify.py). No live re-fetch check yet - see SUG-15.</td><td><span class='pill partial'>partial</span></td></tr>
+</tbody></table>
+
+<h2>What the backtest actually did</h2>
+<p>Chronological walk-forward. For each test week from Week 4 onwards, the model is fitted using only games from
+strictly earlier weeks, including the shrinkage weight, which is chosen by leave-one-out error inside that
+training fold. The test week is then predicted and scored. No test-week information ever reaches the fit, which
+is what gate G4 checks. Scoring uses mean absolute error on the margin against two baselines (a constant zero
+forecast and a constant equal to the training-set mean margin), and the Brier score against a constant 0.50
+forecaster.</p>
+
+</main>
+<footer><p>Static site generated by <code>strategy-strategy-lab/build.py</code> from official NFL sources.
+<a href="../index.html">Back to the main planner</a> &middot;
+<a href="sources.html">Sources</a> &middot; <a href="flagged.html">Flagged for review</a></p></footer>
+<script src="assets/lab.js"></script>
+</body>
+</html>

@@ -1044,5 +1044,16 @@ def main():
         f"injuries={len(inj_rows)} inactives={len(ina_rows)}")
 
 
+def _entry():
+    try:
+        main()
+    except Exception:  # noqa: BLE001 - surface the traceback as a committed artifact
+        import traceback
+        os.makedirs(OUT, exist_ok=True)
+        with open(os.path.join(OUT, "error.txt"), "w", encoding="utf-8") as f:
+            f.write(traceback.format_exc())
+        raise
+
+
 if __name__ == "__main__":
-    main()
+    _entry()

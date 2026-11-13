@@ -23,13 +23,14 @@ jobs:
           python-version: '3.11'
       - name: Fetch official NFL results / injury reports / team stats
         run: python3 tools/fetch_nfl_lab.py
-      - name: Commit official lab data
+      - name: Commit official lab data (even on failure, so the traceback is reviewable)
+        if: always()
         run: |
           git config user.name "korea5-data-bot"
           git config user.email "korea5-data-bot@users.noreply.github.com"
-          git add official/lab/
+          git add -f official/lab/
           if git diff --cached --quiet; then echo "no changes"; else
-            git commit -m "data(lab): refresh official NFL results, injury reports and endpoint probe"
+            git commit -m "data(lab): refresh official NFL feeds (results, standings, injuries, articles)"
             git pull --rebase --autostash origin arena/e53a4318-korea5
             git push origin HEAD:arena/e53a4318-korea5
           fi

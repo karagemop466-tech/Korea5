@@ -141,12 +141,16 @@ def espn_inventory(seasons: list[int]) -> list[tuple[str, str]]:
     return out
 
 
-def dump_samples(raw: dict[str, bytes], outdir: str) -> None:
+def dump_samples(raw: dict[str, bytes], outdir: str, rows: int = 240) -> None:
     """Commit small, real excerpts so parsers can be developed/validated offline (no network)."""
     os.makedirs(outdir, exist_ok=True)
+    caps = {"games.csv": 6000, "stats_player_week_2025.csv": 6000, "injuries_2025.csv": 6000,
+            "depth_charts_2025.csv": 8000, "snap_counts_2025.csv": 6000, "injuries_2026.csv": 6000,
+            "depth_charts_2026.csv": 8000, "snap_counts_2026.csv": 6000}
     for name, body in raw.items():
         if name.endswith(".csv"):
-            sample = b"\n".join(body.split(b"\n")[:240])
+            n = caps.get(name, rows)
+            sample = b"\n".join(body.split(b"\n")[:n])
             with open(os.path.join(outdir, name), "wb") as fh:
                 fh.write(sample)
         elif name.startswith("espn_"):
@@ -221,6 +225,7 @@ def main() -> int:
     ap.add_argument("--out", default="nfl/raw")
     ap.add_argument("--probe", action="store_true", help="small pulls, write schema snapshot, no raw files")
     ap.add_argument("--with-espn", action="store_true")
+    ap.add_argument("--sample-rows", type=int, default=240)
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
     os.makedirs("nfl/data", exist_ok=True)
@@ -245,7 +250,7 @@ def main() -> int:
         if args.probe:
             # keep a bounded sample for the schema dump
             if name.endswith(".csv"):
-                keep[name] = b"\n".join(body.split(b"\n")[:400])
+                keep[name] = body  # full bytes; dump_samples caps them
             elif name.endswith(".json"):
                 keep[name] = body
             else:
@@ -260,7 +265,7 @@ def main() -> int:
         json.dump(manifest, fh, indent=1)
     if args.probe:
         dump_schema(keep, "nfl/data/schema_probe.json")
-        dump_samples(keep, "nfl/raw/samples")
+        dump_samples(keep, "nfl/raw/samples", rows=args.sample_rows)
     print(json.dumps(manifest["summary"]))
     return 0 if ok else 1
 

@@ -40,6 +40,7 @@ NAV = [
     ("index.html", "Home"),
     ("executive-summary.html", "Executive summary"),
     ("lines-2026.html", "Our lines 2026"),
+    ("metrics.html", "Price math"),
     ("strategies.html", "Strategy leaderboard"),
     ("validation.html", "Validation gates"),
     ("correlations.html", "Correlations & parlays"),
@@ -388,14 +389,30 @@ def main():
     S = J("suggestions.json")
     srows2 = []
     for s in S["suggestions"]:
+        sid = e(s["id"])
         opts = "<br>".join(f"<b>{e(o['id'])}</b> {e(o['label'])}: {e(o['tradeoff'])}" for o in s["options"])
-        srows2.append([e(s["id"]), e(s["area"]), e(s["suggestion"]), e(s["why"]), opts, '<span class="pending">awaiting your choice</span>'])
+        choices = '<option value="">Unreviewed</option>' + "".join(
+            f'<option value="{e(o["id"])}">{e(o["id"])} — {e(o["label"])}</option>' for o in s["options"]
+        )
+        select = f'<label class="decision-label" for="choice-{sid}">Review choice</label><select id="choice-{sid}" class="decision-select" data-decision="{sid}">{choices}</select>'
+        status = f'<span class="pending" data-decision-status="{sid}">awaiting your choice</span>'
+        srows2.append([sid, e(s["area"]), e(s["suggestion"]), e(s["why"]), opts, select, status])
     body = f"""
 <h1>Suggestions</h1>
-<p class="lede">Ways to improve the site and the analysis. Each suggestion has options and trade-offs. <strong>Nothing here has been implemented.</strong> Choose an option ID for each item you want, and that choice becomes the next task.</p>
-{table(["ID", "Area", "Suggestion", "Why", "Options (choose one)", "Status"], srows2, cls="method")}
+<p class="lede">Ways to improve the site and the analysis. Each suggestion has options and trade-offs. <strong>Nothing here has been implemented.</strong> Choose an option ID for each item you want. Selections are saved in this browser only and may be exported; they are not sent to a server or applied automatically.</p>
+<div class="suggestion-tools"><button id="export-decisions" type="button">Export choices</button> <button id="clear-decisions" class="secondary" type="button">Clear local choices</button></div>
+{table(["ID", "Area", "Suggestion", "Why", "Options (choose one)", "Your selection", "Status"], srows2, cls="method")}
+<p id="decision-status" class="live-status" role="status" aria-live="polite">No review choices saved.</p>
+<p class="small">Exported choices are a review artifact only. They do not update this repository; a selected path still requires a separately authorized implementation task.</p>
 """
-    open(os.path.join(SITE, "suggestions.html"), "w").write(page("suggestions.html", "Suggestions", body))
+    suggestion_page = page(
+        "suggestions.html", "Suggestions", body,
+        extra_head='<link rel="stylesheet" href="assets/decisions.css">',
+    )
+    suggestion_page = suggestion_page.replace(
+        "</body>", '<script src="assets/decisions.js" defer></script></body>'
+    )
+    open(os.path.join(SITE, "suggestions.html"), "w").write(suggestion_page)
 
     # ------------------------------------------------------------ sources
     SRC = J("sources.json")

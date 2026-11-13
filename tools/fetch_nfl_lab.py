@@ -79,6 +79,9 @@ def log(msg: str) -> None:
     notes.append(msg[-300:])
 
 
+SOURCES: list[dict] = []
+
+
 def get(url, tries=3, timeout=45, text=True):
     last = None
     for attempt in range(tries):
@@ -86,11 +89,17 @@ def get(url, tries=3, timeout=45, text=True):
             req = urllib.request.Request(url, headers=UA)
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 body = r.read()
+            SOURCES.append({"url": url, "ok": True, "httpStatus": r.status,
+                            "bytes": len(body), "at": dt.datetime.now(dt.timezone.utc).isoformat(),
+                            "contentType": r.headers.get("Content-Type", "")})
             return body.decode("utf-8", "replace") if text else body
         except Exception as e:  # noqa: BLE001 - diagnostics only
             last = e
             time.sleep(0.8 + attempt)
     log(f"  ! fetch failed {url}: {type(last).__name__}: {last}")
+    SOURCES.append({"url": url, "ok": False, "httpStatus": None,
+                    "error": f"{type(last).__name__}: {last}",
+                    "at": dt.datetime.now(dt.timezone.utc).isoformat()})
     return None
 
 
@@ -215,16 +224,22 @@ def game_status_name(g):
     return str(st or "").upper()
 
 
-def text_scores(page: str):
-    """Fallback score reader: the by-week page also renders an accessible score string per game,
-    e.g. "Jaguars 33, Ravens 10, FINAL". Keyed by the two nicknames, matched case-insensitively.
-    Used only when the structured payload carries no score, and recorded per row as scoreSource."""
-    out: dict[tuple[str, str], tuple[int, int]] = {}
-    pat = re.compile(r"([A-Za-z0-9][A-Za-z .'\-]{1,28}?)\s+(\d{1,2})\s*,\s*"
-                     r"([A-Za-z0-9][A-Za-z .'\-]{1,28}?)\s+(\d{1,2})\s*,\s*FINAL")
-    for a, ap, h, hp in pat.findall(page):
-        key = (a.strip().split()[-1].lower(), h.strip().split()[-1].lower())
-        out.setdefault(key, (int(ap), int(hp)))
+def page_scores_by_slug(page: str):
+    """Fallback score reader, keyed by the official game slug in the link.
+
+    The by-week page renders one accessible link per game, e.g.
+    `[Jaguars 33, Ravens 10, FINAL, Thursday, November 5th](/games/jaguars-at-ravens-2026-reg-9)`.
+    Keying on the slug avoids guessing which team a nickname belongs to. Only used when the
+    structured payload carries no score, and the row records `scoreSource: pageScoreLink`.
+    """
+    out: dict[str, tuple[int, int]] = {}
+    for href, inner in re.findall(r'<a[^>]*href="(?:https?://www\.nfl\.com)?(/games/[a-z0-9\-]+)"[^>]*>(.*?)</a>',
+                                  page, re.S | re.I):
+        slug = href.rstrip("/").split("/")[-1]
+        text = strip_tags(inner)
+        m = re.search(r"(\d{1,2})\s*,\s*(\d{1,2})\s*,\s*FINAL", text)
+        if m:
+            out.setdefault(slug, (int(m.group(1)), int(m.group(2))))
     return out
 
 
@@ -270,19 +285,18 @@ def parse_results(pairs, url, week_label, page_scores=None):
                     return got
             return None
 
-        a_pts = team_points(away_obj)
-        h_pts = team_points(home_obj)
-        score_source = "gamePayload" if (a_pts is not None and h_pts is not None) else None
-        if a_pts is None or h_pts is None:
-            nick = lambda n: (str(n or "").strip().split()[-1].lower() if n else "")
-            alt = page_scores.get((nick(away), nick(home)))
-            if alt:
-                a_pts, h_pts, score_source = alt[0], alt[1], "pageScoreText"
         slug = None
         for e in (g.get("externalIds") or []):
             if isinstance(e, dict) and e.get("source") == "slug" and e.get("id"):
                 slug = e["id"]
                 break
+        a_pts = team_points(away_obj)
+        h_pts = team_points(home_obj)
+        score_source = "gamePayload" if (a_pts is not None and h_pts is not None) else None
+        if (a_pts is None or h_pts is None) and slug and page_scores:
+            alt = page_scores.get(slug)
+            if alt:
+                a_pts, h_pts, score_source = alt[0], alt[1], "pageScoreLink"
         is_final = status in ("FINAL", "F", "FINAL_OVERTIME", "STATUS_FINAL", "FINAL/TIE") or "FINAL" in status
         winner = None
         if a_pts is not None and h_pts is not None:
@@ -316,7 +330,7 @@ def parse_results(pairs, url, week_label, page_scores=None):
 
 
 def parse_standings(pairs, url):
-    """Official per-week standings snapshots: team, record, points for/against, splits."""
+    """Official standings snapshots (record, points for/against, splits) embedded on by-week pages."""
     blobs: list[dict] = []
     for key, data in pairs:
         if "Standings" not in key:
@@ -324,45 +338,44 @@ def parse_standings(pairs, url):
         walk(data, lambda d: isinstance(d.get("standings"), list), blobs)
     rows, seen = [], set()
     for blob in blobs:
+        week = blob.get("week")
         season = blob.get("season")
         season_type = blob.get("seasonType")
-        for wk in (blob.get("weeks") or []):
-            week = wk.get("week")
-            for entry in (wk.get("standings") or []):
-                team = dig(entry.get("team"), {"fullname", "nameshort"}) if isinstance(entry.get("team"), dict) else None
-                if not team:
-                    continue
-                pts = dig(entry, {"points"})
-                pfor = None
-                pag = None
-                if isinstance(pts, dict):
-                    pfor = as_int(pts.get("for"))
-                    pag = as_int(pts.get("against"))
-                if pfor is None:
-                    pfor = as_int(dig(entry, {"pointsfor", "pointsscored", "pf"}))
-                    pag = as_int(dig(entry, {"pointsagainst", "pointsallowed", "pa"}))
-                overall = entry.get("overall") or entry.get("winLossTies") or {}
-                rec = {
-                    "season": season, "seasonType": season_type, "week": week, "team": team,
-                    "abbr": dig(entry.get("team"), {"abbreviation"}),
-                    "wins": as_int(dig(overall if isinstance(overall, dict) else {}, {"wins"})),
-                    "losses": as_int(dig(overall if isinstance(overall, dict) else {}, {"losses"})),
-                    "ties": as_int(dig(overall if isinstance(overall, dict) else {}, {"ties"})),
-                    "pointsFor": pfor, "pointsAgainst": pag,
-                    "homeWins": as_int(dig(entry.get("home"), {"wins"})) if isinstance(entry.get("home"), dict) else None,
-                    "homeLosses": as_int(dig(entry.get("home"), {"losses"})) if isinstance(entry.get("home"), dict) else None,
-                    "awayWins": as_int(dig(entry.get("away"), {"wins"})) if isinstance(entry.get("away"), dict) else None,
-                    "awayLosses": as_int(dig(entry.get("away"), {"losses"})) if isinstance(entry.get("away"), dict) else None,
-                    "divisionRank": as_int(dig(entry.get("division"), {"rank"})) if isinstance(entry.get("division"), dict) else None,
-                    "sourceUrl": url,
-                    "sourceName": "NFL.com official standings (embedded by-week payload)",
-                    "verification": "verified" if (pfor is not None and pag is not None) else "partial",
-                }
-                key2 = (week, team)
-                if key2 in seen:
-                    continue
-                seen.add(key2)
-                rows.append(rec)
+        for entry in (blob.get("standings") or []):
+            team_obj = entry.get("team") if isinstance(entry.get("team"), dict) else {}
+            team = team_obj.get("fullName") or dig(team_obj, {"nameshort", "nickname"})
+            if not team:
+                continue
+            pts = entry.get("points") if isinstance(entry.get("points"), dict) else None
+            pfor = as_int((pts or {}).get("for"))
+            pag = as_int((pts or {}).get("against"))
+            overall = entry.get("overall") if isinstance(entry.get("overall"), dict) else {}
+            rec = {
+                "season": season if season is not None else SEASON,
+                "seasonType": season_type or "REG",
+                "week": week,
+                "team": team,
+                "abbr": dig(team_obj, {"abbreviation"}),
+                "wins": as_int(overall.get("wins")),
+                "losses": as_int(overall.get("losses")),
+                "ties": as_int(overall.get("ties")),
+                "pointsFor": pfor,
+                "pointsAgainst": pag,
+                "homeWins": as_int(dig(entry.get("home"), {"wins"})) if isinstance(entry.get("home"), dict) else None,
+                "homeLosses": as_int(dig(entry.get("home"), {"losses"})) if isinstance(entry.get("home"), dict) else None,
+                "awayWins": as_int(dig(entry.get("road"), {"wins"})) if isinstance(entry.get("road"), dict)
+                           else (as_int(dig(entry.get("away"), {"wins"})) if isinstance(entry.get("away"), dict) else None),
+                "divisionRank": as_int(dig(entry.get("division"), {"rank"})) if isinstance(entry.get("division"), dict) else None,
+                "playoffClinched": dig(entry.get("clinched"), {"playoff"}) if isinstance(entry.get("clinched"), dict) else None,
+                "sourceUrl": url,
+                "sourceName": "NFL.com official standings (embedded by-week payload)",
+                "verification": "verified" if (pfor is not None and pag is not None) else "record-only",
+            }
+            key2 = (week, team)
+            if key2 in seen:
+                continue
+            seen.add(key2)
+            rows.append(rec)
     return rows, blobs
 
 
@@ -442,7 +455,7 @@ def discover(url, name, extra_re=None):
     page = get(url)
     if not page:
         return {"url": url, "fetched": False}
-    pairs = list(page_payloads(page))
+    pairs = list(payload_data(page_payloads(page)))
     payload_index = []
     for key, data in pairs:
         kinds = []
@@ -553,51 +566,91 @@ def strip_tags(fragment: str) -> str:
     return re.sub(r"\s+", " ", frag).strip()
 
 
-def parse_article_players(html_text: str, page_url: str, source_label: str):
-    """Extract (heading, item) pairs from an official NFL.com news article.
+PLAYER_A = re.compile(r'<a[^>]*href="(?P<h>(?:https?://www\.nfl\.com)?/players/[^"]+)"[^>]*>(?P<t>.*?)</a>',
+                      re.S | re.I)
 
-    Items are recognised as list entries that link to nfl.com/players/... — the league's own
-    format for its weekly injury-report and game-day inactives articles. Position is read from
-    the leading token of the item text; anything the article does not state stays None.
+
+def parse_article_players(html_text: str, page_url: str, source_label: str):
+    """Rows from an official NFL.com news article (weekly injury report / game-day inactives).
+
+    One row per player link. Position is taken from a leading token when the article supplies one;
+    the note is the parenthetical the article attaches to that player; the sentence context is kept
+    verbatim so a human can re-read it. Nothing is inferred: if the article does not name a position
+    or a status, those fields stay null.
     """
     rows = []
-    pat = re.compile(r"<(?P<tag>h[1-6]|li)[^>]*>(?P<body>.*?)</(?P=tag)>", re.S | re.I)
+    pat = re.compile(r"<(?P<tag>h[1-6]|li|p)[^>]*>(?P<body>.*?)</(?P=tag)>", re.S | re.I)
     heading = None
     for m in pat.finditer(html_text):
-        body = strip_tags(m.group("body"))
-        if not body:
+        body = m.group("body")
+        links = list(PLAYER_A.finditer(body))
+        if m.group("tag").lower().startswith("h") and not links:
+            txt = strip_tags(body)
+            if txt and len(txt) <= 60:
+                heading = txt
             continue
-        if m.group("tag").lower().startswith("h"):
-            if len(body) <= 60:
-                heading = body
+        if not links:
             continue
-        link = re.search(r'href="(?P<h>https?://www\.nfl\.com/players/[^"]+|/players/[^"]+)"', m.group("body"))
-        if not link:
-            continue
-        text = body
-        pos = None
-        if POS_RE.match(text):
-            pos = re.match(r"^([A-Za-z\.]+)", text).group(1).upper().replace(".", "")
-            text = text[re.match(r"^[A-Za-z\.]+\s+", text).end():]
-        note = None
-        paren = re.findall(r"\(([^)]{2,140})\)", text)
-        if paren:
-            note = "; ".join(paren)
-            text = re.sub(r"\s*\([^)]{2,140}\)", " ", text).strip()
-        href = link.group("h")
-        if href.startswith("/"):
-            href = "https://www.nfl.com" + href
-        rows.append({
-            "section": heading,
-            "player": re.sub(r"\s+", " ", text).strip(" -"),
-            "position": pos,
-            "note": note,
-            "playerUrl": href,
-            "articleUrl": page_url,
-            "sourceName": source_label,
-            "verification": "verified",
-        })
+        names = [strip_tags(lk.group("t")).strip() for lk in links]
+        flat = body
+        for i in reversed(range(len(links))):
+            lk = links[i]
+            flat = flat[:lk.start()] + f"\x00{i}\x00{names[i]}\x01" + flat[lk.end():]
+        plain = re.sub(r"<[^>]+>", " ", flat)
+        plain = html_lib.unescape(plain)
+        plain = re.sub(r"[ \t]+", " ", plain)
+        parts = re.split(r"\x00(\d+)\x00", plain)
+        pre = re.sub(r"\s+", " ", parts[0]).strip()
+        for i in range(1, len(parts) - 1, 2):
+            idx = int(parts[i])
+            seg = parts[i + 1]
+            name, _, rest = seg.partition("\x01")
+            name = name.strip()
+            if not name:
+                continue
+            rest = re.sub(r"\s+", " ", rest).strip()
+            pos = None
+            if idx == 0:
+                mm = re.match(r"^([A-Za-z.\-]{1,14})\s+$", pre)
+                if mm and POS_RE.match(pre + " "):
+                    pos = mm.group(1).upper().replace(".", "")
+            note = None
+            pm = re.match(r"^\s*\(([^)]{2,160})\)", rest)
+            if pm:
+                note = pm.group(1).strip()
+            status = None
+            for word in ("Out", "Doubtful", "Questionable", "Probable", "did not participate",
+                         "limited participation", "full participation", "placed on injured reserve",
+                         "waived", "signed to the active roster", "elevated"):
+                if word.lower() in rest.lower():
+                    status = word.title() if word.islower() is False else word
+                    break
+            href = links[idx].group("h")
+            if href.startswith("/"):
+                href = "https://www.nfl.com" + href
+            rows.append({
+                "section": heading,
+                "player": name,
+                "position": pos,
+                "note": note,
+                "statusWord": status,
+                "context": plain.replace("\x00", " ").replace("\x01", " ").strip()[:400],
+                "playerUrl": href,
+                "articleUrl": page_url,
+                "sourceName": source_label,
+                "verification": "verified",
+            })
     return rows
+
+
+def page_diagnostics(page: str, url: str):
+    low = page.lower()
+    out = {"url": url, "bytes": len(page), "playerLinks": low.count("/players/"),
+           "liTags": low.count("<li"), "payloads": len(list(page_payloads(page)))}
+    i = low.find("/players/")
+    if i > 0:
+        out["firstPlayerLinkContext"] = re.sub(r"\s+", " ", page[max(0, i - 400):i + 400])[:800]
+    return out
 
 
 def find_article_links(page: str, kinds=("injur", "inactiv")):
@@ -611,7 +664,7 @@ def find_article_links(page: str, kinds=("injur", "inactiv")):
     return out
 
 
-def collect_articles(base_pages, max_pages=28):
+def collect_articles(base_pages, max_pages=30):
     """Follow the official links only — no URL is constructed or guessed."""
     links: list[str] = []
     for url in base_pages:
@@ -622,31 +675,36 @@ def collect_articles(base_pages, max_pages=28):
             full = "https://www.nfl.com" + href
             if full not in links:
                 links.append(full)
-    rows, failures, ok_pages = [], [], 0
+    rows, failures, ok_pages, kinds = [], [], 0, {}
     for url in links[:max_pages]:
         page = get(url)
         if not page:
-            failures.append(url)
+            failures.append({"url": url, "reason": "fetch failed"})
             continue
         candidates = [page]
         try:
             for _key, data in payload_data(page_payloads(page)):
-                candidates.extend(s for s in strings(data) if "/players/" in s and "<li" in s.lower())
+                candidates.extend(x for x in strings(data) if "/players/" in x and "<li" in x.lower())
         except Exception as e:  # noqa: BLE001
-            failures.append(f"{url}: payload error {e}")
-        got = []
+            failures.append({"url": url, "reason": f"payload error {e}"})
+        got: list[dict] = []
         for cand in candidates:
-            got = parse_article_players(cand, url, "NFL.com official news article (injury report / inactives)")
+            got = parse_article_players(cand, url, "NFL.com official news article")
             if got:
                 break
         if got:
             ok_pages += 1
+            kind = ("inactives" if "inactiv" in url.lower()
+                    else ("injury-report" if "injury-report" in url.lower() else "other"))
+            for r in got:
+                r["articleKind"] = kind
+            kinds[kind] = kinds.get(kind, 0) + len(got)
             rows.extend(got)
-            log(f"article {url.split('/news/')[1][:58]}: {len(got)} rows")
+            log(f"article {url.split('/news/')[1][:56]}: {len(got)} rows ({kind})")
         else:
-            failures.append(f"{url}: no player list parsed")
+            failures.append(dict(page_diagnostics(page, url), reason="no player link parsed"))
             log(f"article {url}: 0 rows")
-    return rows, links, failures, ok_pages
+    return rows, links, failures, ok_pages, kinds
 
 # ------------------------------------------------------------------------ main
 def main():
@@ -666,7 +724,7 @@ def main():
             per_week[f"Week {wk}"] = -1
             continue
         pairs = list(payload_data(page_payloads(page)))
-        rows, _games = parse_results(pairs, url, f"Week {wk}", text_scores(page))
+        rows, _games = parse_results(pairs, url, f"Week {wk}", page_scores_by_slug(page))
         srows, _blobs = parse_standings(pairs, url)
         per_week[f"Week {wk}"] = len(rows)
         per_week_final[f"Week {wk}"] = len([r for r in rows if r["verification"] == "verified"])
@@ -743,7 +801,7 @@ def main():
     })
 
     # 3b — official weekly injury-report and game-day inactives ARTICLES ----------------
-    art_rows, art_links, art_fail, art_ok = collect_articles([INJURY_URL, INACTIVE_URL])
+    art_rows, art_links, art_fail, art_ok, art_kinds = collect_articles([INJURY_URL, INACTIVE_URL])
     jwrite("articles-2026.json", {
         "meta": {
             "dataset": "NFL.com official news articles for weekly injury reports and game-day inactives",
@@ -752,6 +810,7 @@ def main():
             "pagesParsed": art_ok,
             "linksDiscovered": art_links,
             "failures": art_fail,
+            "rowsByKind": art_kinds,
             "sourceName": "NFL.com news article pages (league-published)",
             "method": "Links are taken from nfl.com/injuries/ and nfl.com/inactives/ themselves; the page that "
                       "carries no player list is recorded as a failure instead of being filled in.",
@@ -808,6 +867,17 @@ def main():
             "method": "HTTP GET status from the CI runner (sandbox has no outbound network)",
         },
         "endpoints": probe,
+    })
+
+    jwrite("source-registry.json", {
+        "meta": {
+            "purpose": "Audit trail of every official page this fetcher touched, with the HTTP result and "
+                       "payload size, so each dataset can be traced back to a live official source.",
+            "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat(),
+            "requests": len(SOURCES),
+            "failures": len([x for x in SOURCES if not x.get("ok")]),
+        },
+        "sources": SOURCES,
     })
 
     jwrite("fetch-report.json", {

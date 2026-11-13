@@ -655,3 +655,38 @@ date, and all prior items) remain published on `extra/flagged.html` with officia
 - **Pipeline order (finding):** `verify_extra.py` rewrites `extra/links.html`, and `audit_certainty.py` adds the certainty banner to every page. The banner is therefore only correct if the audit runs last. Required order: `build_events` → `analyze` → `build_site` → `build_extra` → `check_links` → `verify_extra` → `audit_certainty`. This is logged for the integration owner (see cross-scope note above).
 - **Verification at this commit:** `tools/verify_extra.py` 31/31; `scripts/audit_certainty.py` passed; `scripts/check_links.py` 0 missing; `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed.
 
+
+---
+
+## Session `arena-65332583-korea5` — 2026-11-13 (NFL lines, strategies, injuries, decision-support suite)
+
+Branch fixed by Arena: `arena/65332583-korea5` (branched from `13854fe` on `main`). Per the Arena session rule this
+session can only commit/push this one branch, so the generic `session-<id>/<task>` convention is logged as a deliberate
+deviation (same precedent as sessions `arena-1a5a5516`, `arena-57f0338e`): all work happens on `arena/65332583-korea5`,
+which acts as this session's integration branch, and the PR to `main` is opened from it.
+
+Board read before start: all previous tasks (T1–T11, I1–I2, A1–A4, X1–X4) are closed or non-blocking (`needs review`).
+No task below is claimed by any other session. Scope is non-overlapping with every prior session file list.
+
+### Task board — session `arena-65332583`
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N1 | Requirements inventory + questions/known/unknown register (decision prerequisites) | arena-65332583 | in progress | `requirements.html`, `questions.html`, `data/nfl-analytics/requirements.json`, `data/nfl-analytics/questions.json` |
+| N2 | Suggestions register with human review/decision workflow (choose best path before implementing) | arena-65332583 | in progress | `suggestions.html`, `data/nfl-analytics/suggestions.json` |
+| N3 | Week-10-2026 data acquisition + line-by-line verification from official sources (NFL.com injuries, standings, scores, club depth charts, market-odds attempt) | arena-65332583 | in progress | `data/nfl-analytics/*.json`, `research/nfl-week10-verification.md` |
+| N4 | Own-line origination model + strategy research (signals, validation gates, correlation values, luck-vs-skill, single/parlay/player-prop combos) | arena-65332583 | in progress | `lines.html`, `strategies.html`, `scripts/originate_lines.py`, `scripts/build_nfl_analytics.py`, `data/nfl-analytics/model-lines-*.json`, `data/nfl-analytics/strategies.json` |
+| N5 | Leaderboard competition design (gates, anti-luck scoring, rewards) | arena-65332583 | in progress | `leaderboard.html`, `data/nfl-analytics/leaderboard.json` |
+| N6 | Injury + lineup-deficiency tracker (2nd/3rd/4th-string replacements, offense & defense) | arena-65332583 | in progress | `injuries.html`, `data/nfl-analytics/depth-*.json` |
+| N7 | Executive summary + README section | arena-65332583 | in progress | `research/EXECUTIVE-SUMMARY-NFL.md`, `README.md` (append only) |
+| N8 | Site integration: dashboard cards, nav (generator + shipped pages), suite landing page | arena-65332583 | in progress | `nfl-analytics.html`, `scripts/build_site.py` (NAV + one dashboard card only) |
+| N9 | Full pipeline re-run, line-by-line re-verification, flags publish, PR to `main`, merge, Pages deploy confirmation | arena-65332583 | in progress | `curated/flags.json` (append only), `COORDINATION.md` (this log) |
+
+**Scope lock.** This session will not edit `data/events-*.json`, `data/mlb-*.json`, `data/curated/*` (except append-only
+`flags.json`), `extra/**`, `official/**`, `tools/**`, `scripts/{analyze,build_events,build_site,check_links,verify,fetch_mlb,audit_certainty,probe_sources,build_docs,extract_official}.py`
+(except the single NAV/card append in `build_site.py`), or any file another session has claimed. If a change outside this
+scope is needed it will be logged here instead of made.
+
+**Change log**
+- **2026-11-13** — Board section created; N1–N9 claimed by `arena-65332583`. Starting with N3 data acquisition
+  (official NFL.com Week 10 injury report, 2026 standings/scores, club depth charts) in parallel with N1/N2 registers.

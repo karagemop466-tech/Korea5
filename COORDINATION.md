@@ -671,3 +671,25 @@ Scope: current Arena branch is fixed; no alternate branches or overlapping task 
 - Official-source spot checks via live fetch: NFL injury page currently publishes player position, injury, practice and game status by week; NFL player statistics page has official category/year selectors; the official NFL transactions page is linked as a source starting point. Sources: https://www.nfl.com/injuries/ ; https://www.nfl.com/stats/player-stats/ ; https://www.nfl.com/transactions/ .
 - Evidence limits: no historical timestamped market/prop prices, betting settlement ledger, forecast log, or verified lineup-depth series found in this repository. No performance or correlation claims made. No backup tier inferred from injury status. Research strategies are proposals, not validated edges; reward competition is only proposed as paper-first and remains gated by policy/legal review.
 - Verification: `scripts/check_links.py` reported 12 pages, 190 local links, 528 external links and zero missing; `scripts/audit_certainty.py` passed; Python unit tests 5/5; both calendar Node tests passed; `git diff --check` clean. Strategy page local destination check: 19 links, zero missing. Official injury and player-statistics pages retrieved live; no claim of comprehensive official link availability.
+
+## Session `arena-c6eea73d` — NFL Lines Lab (own lines, signals, injury/depth tracker, suggestions)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N3 | Acquire official-source evidence: Week 10 2026 official injury report, official player game logs, official NFL Game Book (starters / DNP / subs / individual stats) | arena-c6eea73d | in progress | `data/lab/` |
+| N4 | Quantitative layer: dispersion, same-game correlations, sample-size ("remove luck") gates | arena-c6eea73d | in progress | `scripts/analyze_lab.py`, `data/lab/analysis.json` |
+| N5 | Curated spec: decision/question register, strategy catalogue, validation gates, leaderboard rules, depth-tier rules, suggestions register, lab flags | arena-c6eea73d | in progress | `curated/nfl-lab.json` |
+| N6 | Site section `lab/` (landing + subpages) + nav / certainty-banner / link-check integration | arena-c6eea73d | in progress | `lab/`, `tools/build_lab.py`, `nfl-strategy.html`, `scripts/build_site.py` (NAV only), `scripts/audit_certainty.py`, `scripts/check_links.py`, `.github/workflows/certainty.yml` |
+| N7 | Executive summary + research notes update | arena-c6eea73d | pending | `research/EXECUTIVE-SUMMARY.md`, `research/NFL-STRATEGY.md`, `research/NFL-LINES-LAB.md` |
+| N8 | Integration: rebuild, re-verify line by line, link check, PR to `main`, merge, Pages deploy confirmation | arena-c6eea73d | pending | all of the above |
+
+Scope note: this session is the only session with commits on the repository (`git log --all` shows
+`arena-1a5a5516`, `arena-2cd43859` history only). It therefore performs the worker and the final-integration
+roles; shared outputs (`data/`, `curated/`, root navigation, `*.html`) are touched only in this session and are
+re-verified before the pull request. No file scope overlaps an unclaimed task.
+
+Claimed 2026-11-13. Official sources retrieved live with the sandbox fetch tool (outbound shell access is limited
+to github.com / pypi / npm; official sports hosts are reachable only through the fetch proxy):
+`https://www.nfl.com/injuries/`, `https://www.nfl.com/news/nfl-week-10-injury-report-2026-season`,
+`https://www.nfl.com/players/<id>/stats/logs/`, `https://www.nfl.com/games/bills-at-vikings-2026-reg-9`
+and its official Game Book PDF on `static.www.nfl.com`.

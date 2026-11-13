@@ -82,3 +82,17 @@ a spectacular record over 40 games scores near zero; that is the intended behavi
 ## 7. Amendment log
 
 * *(none yet)*
+
+## 8. Amendment 1 — 2026-11-13 (before the headline result was produced)
+
+* **Optimiser swapped for speed, not for effect.** The first implementation used full-batch gradient descent; a
+  200-permutation deflation run would have taken over an hour. It was replaced with iteratively reweighted least
+  squares (Newton) with a tiny ridge. This changes the numerical route to the same logistic-regression maximum-likelihood
+  estimate, not the model, the features, the scoring rule or any gate. No gate was relaxed.
+* **`K` is fixed per family and published** (`context` = 11 signals, `strength` = 9 signals) as a conservative stand-in for
+  the number of variants a researcher would realistically have tried. Recomputing `K` from a run registry is proposed as
+  suggestion S2 and is **not** yet implemented; until it is, the published `K` is a floor, not a ceiling, and is labelled
+  as such on the site.
+* **Permutation count raised** from 60 to 200 for the headline run, which sharpens the 95th percentile. Raising the
+  resolution of a null distribution cannot make a gate easier to pass in expectation; it was raised because the optimiser
+  change made it affordable.

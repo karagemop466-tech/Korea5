@@ -96,30 +96,70 @@ def zscore_vec(cols):
     return out, means, sds
 
 
-def fit_logistic(X, y, l2=1.0, iters=120, lr=0.5):
-    """Full-batch gradient descent with L2 (no intercept penalty). Column-major accumulation."""
+def solve(A, b):
+    """Gaussian elimination with partial pivoting for a small dense system."""
+    n = len(A)
+    M = [row[:] + [b[i]] for i, row in enumerate(A)]
+    for i in range(n):
+        piv = max(range(i, n), key=lambda r: abs(M[r][i]))
+        if abs(M[piv][i]) < 1e-12:
+            return None
+        M[i], M[piv] = M[piv], M[i]
+        pv = M[i][i]
+        for j in range(i, n + 1):
+            M[i][j] /= pv
+        for r in range(n):
+            if r == i:
+                continue
+            f = M[r][i]
+            if f:
+                for j in range(i, n + 1):
+                    M[r][j] -= f * M[i][j]
+    return [M[i][n] for i in range(n)]
+
+
+def fit_logistic(X, y, l2=1.0, iters=30):
+    """
+    Iteratively reweighted least squares (Newton) with a tiny ridge on non-intercept terms.
+    Converges in ~5-8 iterations for ~10 parameters, which keeps the permutation test affordable.
+    """
     n, k = len(X), len(X[0])
     w = [0.0] * k
-    cols = [[row[j] for row in X] for j in range(k)]  # column-major: one pass per weight
     for _ in range(iters):
+        cols = [[row[j] for row in X] for j in range(k)]
         z = [0.0] * n
         for j in range(k):
             wj = w[j]
-            if wj == 0.0:
-                continue
-            cj = cols[j]
-            for i in range(n):
-                z[i] += wj * cj[i]
-        grad = [0.0] * k
+            if wj:
+                cj = cols[j]
+                for i in range(n):
+                    z[i] += wj * cj[i]
+        pw = [sigmoid(v) for v in z]
+        # gradient and Hessian
+        g = [0.0] * k
         for j in range(k):
             cj = cols[j]
             acc = 0.0
             for i in range(n):
-                acc += (sigmoid(z[i]) - y[i]) * cj[i]
-            grad[j] = acc
-        for j in range(k):
-            reg = 0.0 if j == 0 else l2 * w[j]
-            w[j] -= lr * (grad[j] / n + reg / n)
+                acc += (y[i] - pw[i]) * cj[i]
+            g[j] = acc - (0.0 if j == 0 else l2 * w[j])
+        H = [[0.0] * k for _ in range(k)]
+        for a in range(k):
+            ca = cols[a]
+            for b in range(a + 1):
+                cb = cols[b]
+                acc = 0.0
+                for i in range(n):
+                    wi = pw[i] * (1 - pw[i])
+                    if wi:
+                        acc += wi * ca[i] * cb[i]
+                H[a][b] = H[b][a] = acc + (l2 if (a == b and a != 0) else 0.0) + (1e-9 if a == b else 0.0)
+        step = solve(H, g)
+        if step is None:
+            break
+        w = [wj + sj for wj, sj in zip(w, step)]
+        if max(abs(v) for v in step) < 1e-8:
+            break
     return w
 
 
@@ -524,10 +564,10 @@ def naive_prior(games, seasons_eval, seasons_all):
 _CACHE: dict[int, tuple] = {}
 
 
-def walk_forward(games, seasons_eval, features=FEATURES, l2=1.0, y_override=None):
+def walk_forward(games, seasons_eval, features=FEATURES, l2=1.0):
     """
-    Fit on seasons < S, predict S. Standardisation uses training-season statistics only (leakage guard).
-    `y_override` lets the permutation test swap outcomes without rebuilding features.
+    Fit on seasons < S, predict S. Standardisation statistics come from the training seasons only
+    (leakage guard). Raw season blocks are cached, so refitting after a label permutation is cheap.
     """
     recs = []
     key = content_key(games)

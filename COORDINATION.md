@@ -675,3 +675,13 @@ Scope: current Arena branch is fixed; no alternate branches or overlapping task 
 ### Post-merge integration correction (2026-11-13)
 
 The first merged run's repository CI caught one generated local-link failure in `extra/summary.html`: markdown converted the research-detail link to a path that did not resolve from the `extra/` directory. Corrected the executive-summary link to the site Strategy Lab and reran the exact workflow rebuild sequence. Result: certainty audit passed; link check 12 pages / 190 local / 528 external / 0 missing; extra verification 31/31, 0 missing locals, 0 missing source rows; JS syntax and calendar-today test passed; `git diff --check` clean. This fix is in a follow-up PR.
+
+### NFL Strategy Lab publication record
+
+| Step | Result |
+|---|---|
+| Main feature PR | [#33](https://github.com/karagemop466-tech/Korea5/pull/33), merged 2026-11-13 13:08:06 UTC; merge commit `bf2b8ca0cd2fd2c2d7b025d14aac05643e494cb8` |
+| Link-fix PR | [#34](https://github.com/karagemop466-tech/Korea5/pull/34), merged 2026-11-13 13:09:02 UTC; merge commit `cececa538a567e0db6651f15c3b38d29e7e91cdc` |
+| CI | Planner certainty/site checks run `43431161023` success; Pages run `43431159971` build, deploy and report-build-status all success |
+| Pages | GitHub Pages API reports `built`, source `main` /, URL https://karagemop466-tech.github.io/Korea5/ |
+| Live feature | https://karagemop466-tech.github.io/Korea5/nfl-strategy.html |

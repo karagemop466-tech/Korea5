@@ -354,30 +354,22 @@
  200 espn_2026_t3_w3.json                   8,955 bytes
  200 espn_2026_t3_w4.json                   8,475 bytes
 {"requested": 355, "ok": 352, "failed": 3}
-{
- "games": 3033,
- "model": {
-  "games": 1632,
-  "logloss": 0.63757,
-  "baselineLogloss": 0.68848,
-  "skill": 0.07395,
-  "brier": 0.22321,
-  "baselineBrier": 0.24673,
-  "brierSkill": 0.09535,
-  "accuracy": 0.6379
- },
- "deflation": {
-  "N": 200,
-  "K": 9,
-  "p95_single": 0.02332,
-  "p95": 0.03119,
-  "median": 0.00783,
-  "blocks": 22,
-  "passed": true
- }
-}
 Traceback (most recent call last):
-  File "/home/runner/work/Korea5/Korea5/nfl/analyze.py", line 422, in <module>
+  File "/home/runner/work/Korea5/Korea5/nfl/model.py", line 1352, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/Korea5/Korea5/nfl/model.py", line 1343, in main
+    res = run(raw, args.seasons, args.out, selftest=args.selftest, perm_n=args.perm)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Korea5/Korea5/nfl/model.py", line 1138, in run
+    board = current_board(games, injuries, depth, snaps, idx)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Korea5/Korea5/nfl/model.py", line 1306, in current_board
+    "depthSnapshotWeek": snap_week,
+                         ^^^^^^^^^
+NameError: name 'snap_week' is not defined. Did you mean: 'snapshot_week'?
+Traceback (most recent call last):
+  File "/home/runner/work/Korea5/Korea5/nfl/analyze.py", line 426, in <module>
     raise SystemExit(main())
                      ^^^^^^
   File "/home/runner/work/Korea5/Korea5/nfl/analyze.py", line 336, in main
@@ -387,15 +379,12 @@ Traceback (most recent call last):
     idx[(r["gameday"], r["home"])].append(r)
                        ~^^^^^^^^
 KeyError: 'home'
-leaderboard: 16 strategies
-  #1 A    4.276 pts= 1000 Single-game model — strength features (9 signals)
-  #2 C     1.79 pts=  300 WR receptions over 4.5
-  #3 C    1.677 pts=  300 RB rushing yards over 55.0
-  #4 C    1.344 pts=  300 WR receiving yards over 45.0
-  #5 C    0.682 pts=  300 RB rushing tds over 0.5
-  #6 C    0.394 pts=  300 QB passing yards over 225.0
-  #7 C    0.312 pts=  300 QB passing tds over 1.5
-  #8 C    0.169 pts=  300 WR receiving tds over 0.5
+leaderboard: 5 strategies
+  #1 A    5.778 pts= 1000 Single-game model — strength features (9 signals)
+  #2 C      0.0 pts=  300 Model vs published spread (reference only)
+  #3 C      0.0 pts=  300 2-leg cross-game parlay (highest-confidence picks)
+  #4 C      0.0 pts=  300 3-leg cross-game parlay (highest-confidence picks)
+  #5 C      0.0 pts=  300 Single-game model — context features (11 signals)
 built 11 pages in nfl-lines/
 test_cholesky_and_copula (test_model.TestGates.test_cholesky_and_copula) ... ok
 test_deflation_rejects_pure_noise (test_model.TestGates.test_deflation_rejects_pure_noise)
@@ -413,6 +402,6 @@ test_walk_forward_ignores_future_seasons (test_model.TestNoLeakage.test_walk_for
 test_questions_have_all_resolution_fields (test_model.TestQuestions.test_questions_have_all_resolution_fields) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 18.340s
+Ran 9 tests in 18.609s
 
 OK

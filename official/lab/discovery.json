@@ -1,7 +1,7 @@
 {
  "meta": {
   "purpose": "Structural reconnaissance so parsers are developed against evidence, not guesses: which embedded payloads exist, which API URLs the page references, and the exact field names in each list.",
-  "retrievedUTC": "2026-11-13T13:38:01.521135+00:00"
+  "retrievedUTC": "2026-11-13T13:41:11.119711+00:00"
  },
  "injuries": {
   "url": "https://www.nfl.com/injuries/",
@@ -149,7 +149,7 @@
  "scheduleWeek9": {
   "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
   "fetched": true,
-  "bytes": 2280080,
+  "bytes": 2280079,
   "payloadCount": 9,
   "payloadIndex": [
    {
@@ -165,7 +165,7 @@
     "queryKey": "useFetchContentMixedBySlug",
     "largestList": 0,
     "lists": [],
-    "sample": "{\"items\": [], \"metadata\": {\"generatedAt\": \"2026-11-13T13:36:17.685Z\"}, \"pagination\": {\"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJsaW1pdCI6IjQwIiwib2Zmc2V0Ijo0MCwicXVlcnkiOnsibGltaXQiOiI0MCJ9fQ.MGJWsBM6nwlFeuKABWwPwp93siimFN3ZjcyuhyYBI30\"}}"
+    "sample": "{\"items\": [], \"metadata\": {\"generatedAt\": \"2026-11-13T13:40:02.539Z\"}, \"pagination\": {\"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJsaW1pdCI6IjQwIiwib2Zmc2V0Ijo0MCwicXVlcnkiOnsibGltaXQiOiI0MCJ9fQ.MGJWsBM6nwlFeuKABWwPwp93siimFN3ZjcyuhyYBI30\"}}"
    },
    {
     "queryKey": "useFetchContentMixedBySlug",

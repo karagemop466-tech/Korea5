@@ -1,24 +1,26 @@
 {
  "meta": {
   "script": "tools/fetch_nfl_lab.py",
-  "startedUTC": "2026-11-13T13:25:55.781477+00:00",
-  "finishedUTC": "2026-11-13T13:26:04.014302+00:00",
+  "startedUTC": "2026-11-13T13:41:00.393299+00:00",
+  "finishedUTC": "2026-11-13T13:41:12.438618+00:00",
   "python": "3.11.18"
  },
  "counts": {
   "games": 291,
-  "gamesFinalWithScores": 0,
-  "standingsRows": 576,
-  "injuryRows": 0,
+  "gamesFinalWithScores": 132,
+  "standingsRows": 32,
+  "injuryRows": 296,
   "inactivesRows": 0,
   "articleRows": 413,
   "articlePagesParsed": 11
  },
  "extraction": {
-  "gamesWithoutScores": 291,
-  "standingsWithoutPoints": 576,
+  "gamesWithoutScores": 159,
+  "standingsWithoutPoints": 32,
   "injuriesWithoutTeam": 0,
-  "injuriesWithoutPosition": 0
+  "injuriesWithoutPosition": 0,
+  "injuryUniquePlayers": 296,
+  "articleSections": 33
  },
  "perWeek": {
   "Week 1": 35,
@@ -41,16 +43,16 @@
   "Week 18": 35
  },
  "perWeekFinal": {
-  "Week 1": 0,
-  "Week 2": 0,
-  "Week 3": 0,
-  "Week 4": 0,
-  "Week 5": 0,
-  "Week 6": 0,
-  "Week 7": 0,
-  "Week 8": 0,
-  "Week 9": 0,
-  "Week 10": 0,
+  "Week 1": 16,
+  "Week 2": 15,
+  "Week 3": 15,
+  "Week 4": 15,
+  "Week 5": 15,
+  "Week 6": 13,
+  "Week 7": 14,
+  "Week 8": 14,
+  "Week 9": 14,
+  "Week 10": 1,
   "Week 11": 0,
   "Week 12": 0,
   "Week 13": 0,
@@ -61,16 +63,13 @@
   "Week 18": 0
  },
  "injuryPerRequest": {
-  "current": 0,
-  "9": 0,
-  "10": 0,
-  "11": 0
+  "current": 296
  },
  "standingsWeeks": [
   10
  ],
  "notes": [
-  "injuries 11: 0 rows",
+  "injuries current: 296 rows from 26 tables",
   "article dolphins-place-qb-malik-willis-groin-on-injured-reserve-: 4 rows (other)",
   "article rams-wr-puka-nacua-likely-to-be-placed-on-injured-reserv: 11 rows (other)",
   "article notable-injuries-news-sunday-week-9-games-2026: 36 rows (other)",

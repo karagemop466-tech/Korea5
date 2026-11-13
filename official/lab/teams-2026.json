@@ -1,0 +1,387 @@
+{
+ "meta": {
+  "dataset": "NFL 2026 club registry (official club list embedded on the by-week pages)",
+  "retrievedUTC": "2026-11-13T13:41:06.804604+00:00",
+  "clubs": 34,
+  "sourcePages": [
+   "https://www.nfl.com/schedules/2026/by-week/week-1"
+  ],
+  "usedFor": "Joining the injury-report page's /teams/<slug> context to a club name; the join key is the league's own slug, and a club that cannot be matched stays null."
+ },
+ "clubs": [
+  {
+   "id": "10408600-77a1-8b0f-8f54-99b7e0a7d1b2",
+   "fullName": "AFC Pro Bowl Team",
+   "abbreviation": "AFC",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10403800-517c-7b8c-65a3-c61b95d86123",
+   "fullName": "Arizona Cardinals",
+   "abbreviation": "AZ",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10400200-f401-4e53-5175-0974e4f16cf7",
+   "fullName": "Atlanta Falcons",
+   "abbreviation": "ATL",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10400325-48de-3d6a-be29-8f829437f4c8",
+   "fullName": "Baltimore Ravens",
+   "abbreviation": "BAL",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10400610-c40e-a673-1743-2ce2a5d5d731",
+   "fullName": "Buffalo Bills",
+   "abbreviation": "BUF",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10400750-259b-33ac-eee3-a3852e83cd1f",
+   "fullName": "Carolina Panthers",
+   "abbreviation": "CAR",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10400810-db30-43d6-221c-620006f3ca19",
+   "fullName": "Chicago Bears",
+   "abbreviation": "CHI",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10400920-57c1-7656-e77e-1af3d900483e",
+   "fullName": "Cincinnati Bengals",
+   "abbreviation": "CIN",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10401050-5e38-b907-1be1-55b91b19c057",
+   "fullName": "Cleveland Browns",
+   "abbreviation": "CLE",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10401200-a308-98ca-ad5f-95df2fefea68",
+   "fullName": "Dallas Cowboys",
+   "abbreviation": "DAL",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10401400-b89b-96e5-55d1-caa7e18de3d8",
+   "fullName": "Denver Broncos",
+   "abbreviation": "DEN",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10401540-f97c-2d19-6fcd-fac6490a48b7",
+   "fullName": "Detroit Lions",
+   "abbreviation": "DET",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10401800-ab22-323d-721a-cee4713c4c2d",
+   "fullName": "Green Bay Packers",
+   "abbreviation": "GB",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10402120-b0bc-693d-098a-803014096eb0",
+   "fullName": "Houston Texans",
+   "abbreviation": "HOU",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10402200-2ea3-84c3-e627-6a6b3b39d56d",
+   "fullName": "Indianapolis Colts",
+   "abbreviation": "IND",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10402250-89fe-7b86-ef98-9062cd354256",
+   "fullName": "Jacksonville Jaguars",
+   "abbreviation": "JAX",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10402310-a47e-10ea-7442-16b633633637",
+   "fullName": "Kansas City Chiefs",
+   "abbreviation": "KC",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10402520-96bf-e9f2-4f68-8521ca896060",
+   "fullName": "Las Vegas Raiders",
+   "abbreviation": "LV",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10404400-3b35-073f-197e-194bb8240723",
+   "fullName": "Los Angeles Chargers",
+   "abbreviation": "LAC",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10402510-8931-0d5f-9815-79bb79649a65",
+   "fullName": "Los Angeles Rams",
+   "abbreviation": "LAR",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10402700-1662-d8ad-f45c-0b0ea460d045",
+   "fullName": "Miami Dolphins",
+   "abbreviation": "MIA",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10403000-5851-f9d5-da45-78365a05b6b0",
+   "fullName": "Minnesota Vikings",
+   "abbreviation": "MIN",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10408700-5035-ce5c-b3dd-20413011bc6a",
+   "fullName": "NFC Pro Bowl Team",
+   "abbreviation": "NFC",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10403200-69ab-9ea6-5af5-e240fbc08bea",
+   "fullName": "New England Patriots",
+   "abbreviation": "NE",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10403300-f235-cf9b-6d3a-2f182be48dd1",
+   "fullName": "New Orleans Saints",
+   "abbreviation": "NO",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10403410-997c-9c75-256b-3b012f468bd0",
+   "fullName": "New York Giants",
+   "abbreviation": "NYG",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10403430-1bc3-42c4-c7d8-39f38aed5f12",
+   "fullName": "New York Jets",
+   "abbreviation": "NYJ",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10403700-b939-3cbd-3d16-24d4d6742fa2",
+   "fullName": "Philadelphia Eagles",
+   "abbreviation": "PHI",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10403900-8251-6892-d81c-4348525c2d47",
+   "fullName": "Pittsburgh Steelers",
+   "abbreviation": "PIT",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10404500-e7cb-7fce-3f10-4eeb269bd179",
+   "fullName": "San Francisco 49ers",
+   "abbreviation": "SF",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10404600-adcd-28ac-5826-b4d95ec2a228",
+   "fullName": "Seattle Seahawks",
+   "abbreviation": "SEA",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10404900-d59e-b449-ef75-961e09ca027e",
+   "fullName": "Tampa Bay Buccaneers",
+   "abbreviation": "TB",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10402100-447f-396e-8149-0a434ffb2f23",
+   "fullName": "Tennessee Titans",
+   "abbreviation": "TEN",
+   "conference": "AFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  },
+  {
+   "id": "10405110-ec3c-669e-2614-db3dc1736e95",
+   "fullName": "Washington Commanders",
+   "abbreviation": "WAS",
+   "conference": "NFC",
+   "division": null,
+   "slug": null,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+   "sourceName": "NFL.com club list (embedded schedule payload)",
+   "verification": "verified"
+  }
+ ]
+}

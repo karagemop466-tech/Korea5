@@ -100,32 +100,32 @@ Local tests check structure and links, not complete source-fact verification. Hi
 verification reports are preserved with their original timestamps. All future vacation
 windows remain provisional. `certainty.html` lists the outstanding evidence limits.
 
-## NFL Lines & Strategy Lab (`lab/`, added 2026-11-13)
+## NFL Lines & Strategy Lab (`strategy-lab/`, added 2026-11-13)
 
 A separate section that originates its own NFL numbers from official league data instead of copying a
-bookmaker's line. **Live at https://karagemop466-tech.github.io/Korea5/lab/index.html**
+bookmaker's line. **Live at https://karagemop466-tech.github.io/Korea5/strategy-lab/index.html**
 
 | Path | What it is |
 |---|---|
-| `lab/index.html` | Executive summary and dashboard |
-| `lab/requirements.html` | The full requirement register, with a status and evidence for each |
-| `lab/decisions.html` | Questions, information held, information missing, and how to discover what is missing |
-| `lab/suggestions.html` | Improvement proposals with explicit paths to choose between **before** anything is built |
-| `lab/lines.html` | Originated lines for the next slate (market columns deliberately blank) |
-| `lab/signals.html` | Correlation values, model diagnostics, luck separation |
-| `lab/strategies.html` | Strategy catalogue and the eight validation gates |
-| `lab/leaderboard.html` | Strategies ranked by a pre-declared proper scoring rule (paper-only) |
-| `lab/injuries.html` | Injury and lineup tracking, and the official-source blocker on backup string order |
-| `lab/teams.html`, `lab/games.html` | Team rates and the verified game log, row by row |
-| `lab/sources.html`, `lab/flagged.html`, `lab/verify.html` | Source registry, flagged items, verification report |
-| `lab/pipeline.py` / `lab/build.py` / `lab/verify.py` | The three-step pipeline |
+| `strategy-lab/index.html` | Executive summary and dashboard |
+| `strategy-lab/requirements.html` | The full requirement register, with a status and evidence for each |
+| `strategy-lab/decisions.html` | Questions, information held, information missing, and how to discover what is missing |
+| `strategy-lab/suggestions.html` | Improvement proposals with explicit paths to choose between **before** anything is built |
+| `strategy-lab/lines.html` | Originated lines for the next slate (market columns deliberately blank) |
+| `strategy-lab/signals.html` | Correlation values, model diagnostics, luck separation |
+| `strategy-lab/strategies.html` | Strategy catalogue and the eight validation gates |
+| `strategy-lab/leaderboard.html` | Strategies ranked by a pre-declared proper scoring rule (paper-only) |
+| `strategy-lab/injuries.html` | Injury and lineup tracking, and the official-source blocker on backup string order |
+| `strategy-lab/teams.html`, `strategy-lab/games.html` | Team rates and the verified game log, row by row |
+| `strategy-lab/sources.html`, `strategy-lab/flagged.html`, `strategy-lab/verify.html` | Source registry, flagged items, verification report |
+| `strategy-lab/pipeline.py` / `strategy-lab/build.py` / `strategy-lab/verify.py` | The three-step pipeline |
 
 Rebuild:
 
 ```bash
-python3 lab/pipeline.py    # reconcile + compute + backtest -> lab/data/analysis.json
-python3 lab/build.py       # render every page
-python3 lab/verify.py      # 409 sourced fact rows, 0 broken links
+python3 strategy-lab/pipeline.py    # reconcile + compute + backtest -> strategy-lab/data/analysis.json
+python3 strategy-lab/build.py       # render every page
+python3 strategy-lab/verify.py      # 409 sourced fact rows, 0 broken links
 ```
 
 ### Honest state of the work

@@ -10,10 +10,10 @@ Checks, in order:
   3. every external link on the site is either an official NFL domain or the
      project's own GitHub repository
   4. every local link resolves to a file that exists
-  5. every JSON file under lab/data is valid
+  5. every JSON file under strategy-lab/data is valid
   6. no table row contains a filled-in market price
 
-Exits non-zero on any failure.  Run:  python3 lab/verify.py
+Exits non-zero on any failure.  Run:  python3 strategy-strategy-lab/verify.py
 """
 
 import json
@@ -99,7 +99,7 @@ class RowParser(HTMLParser):
 
 def main():
     if not PAGES:
-        fail("no generated pages found in lab/")
+        fail("no generated pages found in strategy-lab/")
 
     all_external = []
     all_local = []

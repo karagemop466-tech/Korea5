@@ -29,7 +29,7 @@ NAV = [
     ("flagged.html", "Flagged"),
     ("method.html", "Method"),
     ("extra/index.html", "Official feeds &amp; verification"),
-    ("lab/index.html", "NFL lines lab"),
+    ("strategy-lab/index.html", "Strategy Lab"),
 ]
 
 

@@ -1,5 +1,5 @@
 {
- "generatedUTC": "2026-11-13T13:18:09.353440Z",
+ "generatedUTC": "2026-11-13T13:33:20.791202Z",
  "sources": [
   {
    "dataset": "Final scores",
@@ -8,7 +8,7 @@
     "2026": 185,
     "2025": 272
    },
-   "retrievedUTC": "2026-11-13T13:17:49.265472Z",
+   "retrievedUTC": "2026-11-13T13:31:10.790127Z",
    "url": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "official": true
   },
@@ -19,7 +19,7 @@
     "2026": 3117,
     "2025": 5783
    },
-   "retrievedUTC": "2026-11-13T13:17:49.265472Z",
+   "retrievedUTC": "2026-11-13T13:31:10.790127Z",
    "url": "https://www.nfl.com/injuries/league/2026/reg10",
    "official": true
   },

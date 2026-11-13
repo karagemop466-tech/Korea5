@@ -1,5 +1,5 @@
 {
- "fetchedUTC": "2026-11-13T13:19:57.819643+00:00",
+ "fetchedUTC": "2026-11-13T13:24:48.026253+00:00",
  "targets": [
   {
    "name": "injuries-week10",
@@ -7,7 +7,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 398806,
-   "sha256": "a532995f8f608c17d0d40552d3ea824ff89a25483ad7b80aae6cf3f96bd533f2",
+   "sha256": "fc5356f80be76f4e7542a682c2d5e89b32dc38747a58c22c8caec3567711a3aa",
    "file": "research/nfl-analytics-raw/injuries-week10.html"
   },
   {
@@ -24,8 +24,8 @@
    "url": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "kind": "html",
    "status": 200,
-   "bytes": 2295345,
-   "sha256": "abaab7ad778820b52e9557749bc67830fe8a3510abaff524719efbad2ea752bc",
+   "bytes": 2295217,
+   "sha256": "33d736b800ea622245defd68fa84beb987bd344ca2a11c77857643fd286ee3bc",
    "file": "research/nfl-analytics-raw/schedule-week-01.html"
   },
   {
@@ -33,8 +33,8 @@
    "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "kind": "html",
    "status": 200,
-   "bytes": 2285968,
-   "sha256": "1aa1a5bf430278e7c93f3ef71e273a28c05d28d70bd34664770d3b454a874025",
+   "bytes": 2285925,
+   "sha256": "729e30c5b1215531363af2e45da9e3f25a62ec12d9bed27f48ce586b07037e4a",
    "file": "research/nfl-analytics-raw/schedule-week-02.html"
   },
   {
@@ -42,8 +42,8 @@
    "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "kind": "html",
    "status": 200,
-   "bytes": 2293503,
-   "sha256": "ae92386f99009abf814ef95e880183029a25eb4715eec95e910f7a0c82f70d8b",
+   "bytes": 2293460,
+   "sha256": "dcec3af2e502f14e8a9bd8a4cdba13571af829269b634379e327252e11501edd",
    "file": "research/nfl-analytics-raw/schedule-week-03.html"
   },
   {
@@ -51,8 +51,8 @@
    "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "kind": "html",
    "status": 200,
-   "bytes": 2293714,
-   "sha256": "f95fe09904d4c1629fc783fc60d6a9ea5c2f99ce254ba72c902b6a9f69132fd6",
+   "bytes": 2293758,
+   "sha256": "bccad576fcc4cf28a4982fd79651f7d62aa5b936b5d3efe88b5b45ba261d7693",
    "file": "research/nfl-analytics-raw/schedule-week-04.html"
   },
   {
@@ -61,7 +61,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 2278942,
-   "sha256": "cb5a10b8341667bb3e3724a58a709d092eeb96c0e78d89776ae9601d8d85fbd4",
+   "sha256": "065d53d2a198f3d6d5e40d2f7014759039d61325cff055bd692db23ca5d69499",
    "file": "research/nfl-analytics-raw/schedule-week-05.html"
   },
   {
@@ -70,7 +70,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 2263754,
-   "sha256": "01386e3e41453413cf91d7a99711b98d16414b5862da0a85ac50d68cce743a4b",
+   "sha256": "ed459b3af136a460dbaf00362af247ca0650d7b8c6e96654a64449bb531f3cd4",
    "file": "research/nfl-analytics-raw/schedule-week-06.html"
   },
   {
@@ -79,7 +79,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 2263931,
-   "sha256": "97e29424ba6cf6b990b5cb83040c770cae139b0a9ccb99b9a8b94bcc4e8c762f",
+   "sha256": "68b1ec3262423a90147cce0e85bab1f946b2a681b0b9847fbdc703f7f9df6fcb",
    "file": "research/nfl-analytics-raw/schedule-week-07.html"
   },
   {
@@ -87,8 +87,8 @@
    "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "kind": "html",
    "status": 200,
-   "bytes": 2259412,
-   "sha256": "b29337b37f0b1dad7d70d6e68f9edb79a5335fb4025f9439b52957d9098b7bf2",
+   "bytes": 2259284,
+   "sha256": "e72762bc5cda2965afb54d38eaca086291bfad894258bb82998cabbaec5293ab",
    "file": "research/nfl-analytics-raw/schedule-week-08.html"
   },
   {
@@ -96,8 +96,8 @@
    "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "kind": "html",
    "status": 200,
-   "bytes": 2280098,
-   "sha256": "370d6c0ff6d3bc525cf8801eb5488c574e1d3fa5bf2e2d5adfffc43ae90e8f6e",
+   "bytes": 2280055,
+   "sha256": "22f4f64a677b7881d12e8dd58e70686af3fd909d517f2a19fa56d97d0c4cf8c3",
    "file": "research/nfl-analytics-raw/schedule-week-09.html"
   },
   {
@@ -105,8 +105,8 @@
    "url": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "kind": "html",
    "status": 200,
-   "bytes": 2312726,
-   "sha256": "1d5bb021ecc4f25c893b1acd57fafed2e328a1b628c4a87f1fbc7c401b63e3e0",
+   "bytes": 2312855,
+   "sha256": "f66a211c994b1f925c54f4de3169e020ef486edcccd16e616df10c78308fe44a",
    "file": "research/nfl-analytics-raw/schedule-week-10.html"
   },
   {
@@ -115,7 +115,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 293266,
-   "sha256": "a352df7fc8406891c57a3ac55e4185eb6b42ac22841507b2e42bfa1bf45189ca",
+   "sha256": "1c59876a9789757b514b1830c0f9dd7ed4f297667537b0731df2ef9da413c886",
    "file": "research/nfl-analytics-raw/depth-ari.html"
   },
   {
@@ -124,7 +124,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 319987,
-   "sha256": "e274bb88b85720ad1748fdabc445918d83a860b6502582fed15f0da3a0e0639e",
+   "sha256": "1d8f82c975081768a97832d18dc39cd7f3e0a9a6708355a36f9d2d60b711eb6b",
    "file": "research/nfl-analytics-raw/depth-atl.html"
   },
   {
@@ -133,7 +133,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 298556,
-   "sha256": "e3316060fa0ed49007e983c0fc67d2b89378647242ed302646ba7a87aa3e0157",
+   "sha256": "7e28d3a3a684588030cdcbe5f97f9a335d888320bab076185b36b8d3ee9b9a22",
    "file": "research/nfl-analytics-raw/depth-bal.html"
   },
   {
@@ -142,7 +142,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 301552,
-   "sha256": "bb8cabc64ad3cbf4ee43562c0fb58ca106d901ce3a27e1d02fd7966fc11aaeb7",
+   "sha256": "635c78c4d8d7359a123e90a7a2071435a9ad37bc4e2b48c91190b32dd60651a5",
    "file": "research/nfl-analytics-raw/depth-buf.html"
   },
   {
@@ -158,7 +158,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 291599,
-   "sha256": "74ccd3658cf5853ee2f75a319edc4e91eb64ff55e1d814afc1c7fc4857e3e5a7",
+   "sha256": "1c3b5d6e3bd44f34067be9f000205ffc4ef4655349e6af2080a832b6554fe559",
    "file": "research/nfl-analytics-raw/depth-chi.html"
   },
   {
@@ -167,7 +167,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 295813,
-   "sha256": "a51622a38b3a0f1abfd8c955a1d2b74bf2e6f7ba409e6c8096f2b3ac338fbb6c",
+   "sha256": "1ef6aa118699d91604c91b315b4e5245dac45ea61a8c595f66faec28021ecdcb",
    "file": "research/nfl-analytics-raw/depth-cin.html"
   },
   {
@@ -176,7 +176,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 297841,
-   "sha256": "b85e97b76991dc9db652b3f1a4583125d74bad6cd4fe28c3edc6faf92d538e80",
+   "sha256": "829cb1f0c2b07f45a7e91d24c886480fedd6aeda66b745a5f3488ba2411325b1",
    "file": "research/nfl-analytics-raw/depth-cle.html"
   },
   {
@@ -185,7 +185,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 281052,
-   "sha256": "55a74a966f9fbd7b090e4fc4d1d325c123079eb483d499e9f7c30eb08ca56a1d",
+   "sha256": "a68d9a32de3ae8a7e7117cb2ef5eb60dfdd465bc0bf9d2140d514fce5b74eb89",
    "file": "research/nfl-analytics-raw/depth-dal.html"
   },
   {
@@ -194,7 +194,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 295270,
-   "sha256": "3f5268e489e1a6922d0da6152d923e39b5e2e1a1956664e1eb674100d9256f76",
+   "sha256": "9ec1b16838b28fb5d86d3edaa605ca0f115f9ea6f6369219d6ccd2cf7076b942",
    "file": "research/nfl-analytics-raw/depth-den.html"
   },
   {
@@ -202,8 +202,8 @@
    "url": "https://www.detroitlions.com/team/depth-chart/",
    "kind": "html",
    "status": 200,
-   "bytes": 292618,
-   "sha256": "c461e21fb7637278184fa299e7bc872c5bf99edfbde68e3e237d3d5268d70390",
+   "bytes": 292479,
+   "sha256": "6ffe7fa097289cec118e04073077e51bc0c60aeec2e1f7182333b52d384c45e9",
    "file": "research/nfl-analytics-raw/depth-det.html"
   },
   {
@@ -212,7 +212,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 294131,
-   "sha256": "a8f1aa40a462dcbea550c25af51ce54c360fb20db8c664aa877f5b66a1fa2188",
+   "sha256": "436b2942402002ed4fb28d08e6d3d5362ec35a0fc8baf8806def3c013ed05890",
    "file": "research/nfl-analytics-raw/depth-gb.html"
   },
   {
@@ -221,7 +221,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 490787,
-   "sha256": "0797f0a0aaec1dc69b464fa4ffd4e36d37e9aac69e5c836b7f7fa08624db15d5",
+   "sha256": "a8b7aa0a06dd2efdc08737be92d9bc0c2c73105fe3b7b442f69df351b59bc6d8",
    "file": "research/nfl-analytics-raw/depth-hou.html"
   },
   {
@@ -230,7 +230,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 347534,
-   "sha256": "9210f98272472b04e2f9ef9d852f7bc4baa40ee714c2484f67624201febb6ac4",
+   "sha256": "fc8da025a138745c6ed0f5767b03b4b7108ce110b43e61850de74622d5f98327",
    "file": "research/nfl-analytics-raw/depth-ind.html"
   },
   {
@@ -239,7 +239,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 310383,
-   "sha256": "89e42ff497e0f76def3938c9f5754c4ebb60296a6c53b52b6f416f1b690f59e2",
+   "sha256": "de3c45c665d87d514173f97fd01493f832c7bf59a747ab3d455ce9a5bef385ea",
    "file": "research/nfl-analytics-raw/depth-jax.html"
   },
   {
@@ -248,7 +248,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 302199,
-   "sha256": "0c63f2ef6847e168728d0f2b12d845bd5c42cae4d841c30656454bd273ecef26",
+   "sha256": "d5e812484953a3af322beee9976c89df55ee7dc0d4793e6b5a00ccc096b1718f",
    "file": "research/nfl-analytics-raw/depth-kc.html"
   },
   {
@@ -256,8 +256,8 @@
    "url": "https://www.chargers.com/team/depth-chart/",
    "kind": "html",
    "status": 200,
-   "bytes": 360011,
-   "sha256": "508e57fd2123c81d8b90cd29847ee173e69834c306087cd00390c47e16d99fd6",
+   "bytes": 360150,
+   "sha256": "15a8fcd66ae906c880b022ee1c8ddcb2f1c5e9cb65625f35a8c3eaf0fafa098f",
    "file": "research/nfl-analytics-raw/depth-lac.html"
   },
   {
@@ -266,7 +266,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 293120,
-   "sha256": "b266f748586022c8f851264e8896b1b6b0adb6af1fee5729082f353d877f3ad9",
+   "sha256": "39353f2efef24f6ffdf87aca6062dbc10cdb9971e7a6f7dc53b9bc98ff99965b",
    "file": "research/nfl-analytics-raw/depth-lar.html"
   },
   {
@@ -275,7 +275,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 297614,
-   "sha256": "2385a498bf90d7abb19136fca80a283505988d9706826024469ef97854d108fc",
+   "sha256": "e6ab50275fe5a427ce2b56eb107e6aa270d1393c1a2a29849e040d2c14398100",
    "file": "research/nfl-analytics-raw/depth-lv.html"
   },
   {
@@ -284,7 +284,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 285560,
-   "sha256": "abe17aaa51fb68267f416419302bd294bb0fc27e325398202f8728b80203658c",
+   "sha256": "7ce8f89b1cd4cf42adbbccca596a8baeda9cded7a886fb7c40807b3d2f380a77",
    "file": "research/nfl-analytics-raw/depth-mia.html"
   },
   {
@@ -293,7 +293,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 307899,
-   "sha256": "7f45be03f38fdc3ca3446e974b831696ab41714a38f039d906b4fb1755ab222d",
+   "sha256": "348fd47d51cb517fe3492152e7c350e0909f0dd30436a3c96c1b5c7bc30b2ba5",
    "file": "research/nfl-analytics-raw/depth-min.html"
   },
   {
@@ -302,7 +302,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 356170,
-   "sha256": "20fecfa75ad0559c63be927b4d152f436d590613aa78d628e3a5420e3f387686",
+   "sha256": "3a39c458c69597135c9cb1a2b41560a4c426932285e1de9f6337bceb6c365d78",
    "file": "research/nfl-analytics-raw/depth-ne.html"
   },
   {
@@ -311,7 +311,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 509187,
-   "sha256": "eb1ea968890e71b37a476685d37389e62ce4a7226942d3e95cde755999655a53",
+   "sha256": "4277db2ac6a012edd04b92377babbf49cb4e657b99c26f8950db44636b64b68c",
    "file": "research/nfl-analytics-raw/depth-no.html"
   },
   {
@@ -320,15 +320,17 @@
    "kind": "html",
    "status": 200,
    "bytes": 295831,
-   "sha256": "910be678f82b2425f3b88d59a1e06f0b88fb210fa9373ac99e37ea2cd40c3864",
+   "sha256": "298265d23f1c792e5f32147918d0b6eef21f1c9290b5ed2d02652440534119fe",
    "file": "research/nfl-analytics-raw/depth-nyg.html"
   },
   {
    "name": "depth-nyj",
-   "url": "https://www.jets.com/team/depth-chart/",
+   "url": "https://www.newyorkjets.com/team/depth-chart/",
    "kind": "html",
-   "status": 404,
-   "error": "HTTP 404"
+   "status": 200,
+   "bytes": 293683,
+   "sha256": "d1ad9a2a65e33d5990323a1d42c3ee5cb82edb6eb17a3851ebf06cf88c90a9db",
+   "file": "research/nfl-analytics-raw/depth-nyj.html"
   },
   {
    "name": "depth-phi",
@@ -336,7 +338,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 361198,
-   "sha256": "99bb40a064585dc9cd2da463bd6104d08b353e7ede0e501109ebd906db54192d",
+   "sha256": "dea00daabad85673c92fda3170f9041ec377d259e12bca976713937756e9b8ee",
    "file": "research/nfl-analytics-raw/depth-phi.html"
   },
   {
@@ -345,7 +347,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 308994,
-   "sha256": "c2128da31db57381ae8a72188a17ee88f898395f62f35fc1334f72f4093b6d7f",
+   "sha256": "6b3bd7755208e2ccb050e200c7cd3a62aa3e5039e17b7fc646e253544459bb57",
    "file": "research/nfl-analytics-raw/depth-pit.html"
   },
   {
@@ -354,7 +356,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 311885,
-   "sha256": "c92b9afa024ed5072c35d324042dc1f71ab070656e9c0c2cf0918af7d478f7cf",
+   "sha256": "347ee411b5c626a898adde2a19e089a6451ecc3ad7c5a7867afd229597231870",
    "file": "research/nfl-analytics-raw/depth-sea.html"
   },
   {
@@ -363,7 +365,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 288774,
-   "sha256": "87e678bbe3168b3ec01386c36515d2c655cf9eb5c5c11290a1eb8834aa57fba1",
+   "sha256": "0568e9188cf62d55d83f2a699aa8088e5cd0885b1d5c0ae5fa6669dffc3c9687",
    "file": "research/nfl-analytics-raw/depth-sf.html"
   },
   {
@@ -371,8 +373,8 @@
    "url": "https://www.buccaneers.com/team/depth-chart/",
    "kind": "html",
    "status": 200,
-   "bytes": 295939,
-   "sha256": "9d944a01359de7eee93550a013bd2d483f9dd954d58debb6e9c3673ce5e89c86",
+   "bytes": 295800,
+   "sha256": "3cbe23c8c018c7c42b5ce32b4cde47a77517636944bf4e4e1b4b18073d41de7d",
    "file": "research/nfl-analytics-raw/depth-tb.html"
   },
   {
@@ -381,7 +383,7 @@
    "kind": "html",
    "status": 200,
    "bytes": 303887,
-   "sha256": "33817d586b6e3d5f3f35852515d204aa0926692250742be62943d6b771bfe6ec",
+   "sha256": "e0875f52d77af832839242682388042a354accd6431e20f3fc55445806454fbe",
    "file": "research/nfl-analytics-raw/depth-ten.html"
   },
   {
@@ -389,16 +391,36 @@
    "url": "https://www.commanders.com/team/depth-chart/",
    "kind": "html",
    "status": 200,
-   "bytes": 301955,
-   "sha256": "c926275cbde1d54262561f0949910f3f864922f41f60a02aa1fb61d3a4d2d06b",
+   "bytes": 302094,
+   "sha256": "3f8e39bf3554a1301a0f05a17b389167927b5b6044c879406e07a26c159b8ca8",
    "file": "research/nfl-analytics-raw/depth-was.html"
   },
   {
-   "name": "espn-scoreboard-week10",
-   "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261112-20261117",
+   "name": "espn-scoreboard-20261112",
+   "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261112",
    "kind": "json",
-   "status": 400,
-   "error": "HTTP 400"
+   "status": 200,
+   "bytes": 23016,
+   "sha256": "08aa23d0c1fcdd7eb0b2cd025186fff425897dc73a4a327bc5614bb8d00df363",
+   "file": "research/nfl-analytics-raw/espn-scoreboard-20261112.json"
+  },
+  {
+   "name": "espn-scoreboard-20261115",
+   "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261115",
+   "kind": "json",
+   "status": 200,
+   "bytes": 216771,
+   "sha256": "a4475846351787af7f86d8c3e589276dd919dcac1282a0cf8e7f82289b5ab126",
+   "file": "research/nfl-analytics-raw/espn-scoreboard-20261115.json"
+  },
+  {
+   "name": "espn-scoreboard-20261116",
+   "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261116",
+   "kind": "json",
+   "status": 200,
+   "bytes": 23001,
+   "sha256": "8b64bdb73a23f34418753153b95ecadc23fae00e238dd336f237da13698f032d",
+   "file": "research/nfl-analytics-raw/espn-scoreboard-20261116.json"
   }
  ]
 }

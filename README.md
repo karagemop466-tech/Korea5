@@ -99,3 +99,46 @@ python3 tools/verify_extra.py
 Local tests check structure and links, not complete source-fact verification. Historical
 verification reports are preserved with their original timestamps. All future vacation
 windows remain provisional. `certainty.html` lists the outstanding evidence limits.
+
+## NFL Lines & Strategy Lab (`lab/`, added 2026-11-13)
+
+A separate section that originates its own NFL numbers from official league data instead of copying a
+bookmaker's line. **Live at https://karagemop466-tech.github.io/Korea5/lab/index.html**
+
+| Path | What it is |
+|---|---|
+| `lab/index.html` | Executive summary and dashboard |
+| `lab/requirements.html` | The full requirement register, with a status and evidence for each |
+| `lab/decisions.html` | Questions, information held, information missing, and how to discover what is missing |
+| `lab/suggestions.html` | Improvement proposals with explicit paths to choose between **before** anything is built |
+| `lab/lines.html` | Originated lines for the next slate (market columns deliberately blank) |
+| `lab/signals.html` | Correlation values, model diagnostics, luck separation |
+| `lab/strategies.html` | Strategy catalogue and the eight validation gates |
+| `lab/leaderboard.html` | Strategies ranked by a pre-declared proper scoring rule (paper-only) |
+| `lab/injuries.html` | Injury and lineup tracking, and the official-source blocker on backup string order |
+| `lab/teams.html`, `lab/games.html` | Team rates and the verified game log, row by row |
+| `lab/sources.html`, `lab/flagged.html`, `lab/verify.html` | Source registry, flagged items, verification report |
+| `lab/pipeline.py` / `lab/build.py` / `lab/verify.py` | The three-step pipeline |
+
+Rebuild:
+
+```bash
+python3 lab/pipeline.py    # reconcile + compute + backtest -> lab/data/analysis.json
+python3 lab/build.py       # render every page
+python3 lab/verify.py      # 409 sourced fact rows, 0 broken links
+```
+
+### Honest state of the work
+
+* 137 games transcribed from the official NFL.com by-week pages; all 32 standings rows reconcile exactly.
+* Of three model variants, **only the shrunk adjusted-scoring model clears the out-of-sample gate**
+  (margin MAE 9.61 vs 10.21 for a constant zero forecast; paired improvement 0.599 pts/game,
+  t = 2.274, one-sided p = 0.0115, bootstrap 90% CI 0.166 to 1.035). The naive model is *worse* than
+  predicting nothing. **Totals show no skill in any variant.**
+* **No market price of any kind is held.** No official NFL source publishes betting prices, so every
+  spread, total, moneyline and prop cell is blank and flagged. Return and closing-line value cannot
+  be computed until a quote archive exists.
+* **Backup string order is blocked, not guessed.** NFL.com publishes no depth chart (verified 404) and
+  the official roster carries no string order, so the 2nd/3rd/4th-string requirement cannot be met
+  from an official source today.
+* The leaderboard runs **paper-only**; no rewards are authorized pending a governance review.

@@ -712,3 +712,87 @@ Scope: all new content lands under `lab/` (new, owned namespace) plus nav links 
 `nfl.html`, and appended log entries in `COORDINATION.md`. No other session's schedule data or generators are edited.
 Scheduled/verified content is never invented: any value not confirmable from an official source is left blank,
 marked `unverified`, and published on the lab's Flagged for Review page.
+
+### B1-B10 completion record - session `arena/b2d2460c-korea5` (2026-11-13)
+
+**Branch note (logged deviation).** The session branch was initialised as a single grafted commit with no
+shared history with `origin/main`. It was hard-reset to `origin/main` (`e826658`) before any work so the pull
+request to `main` is a clean merge. No files changed in that reset. All work then happened on
+`arena/b2d2460c-korea5`, the only branch this session created or pushed.
+
+**Scope.** All new content is under `lab/` (a new namespace this session owns). Shared outputs touched, and
+only additively: the root navigation on the 12 root `*.html` pages (one anchor each), the `NAV` list in
+`scripts/build_site.py`, the `ROOT_NAV` list in `tools/build_extra.py`, an appended README section, and this
+appended COORDINATION entry. No schedule data, no `data/events-*.json`, no `curated/` file and no other
+session's generator logic was changed.
+
+### Official sources retrieved live this session
+
+| Source | What it provided | Used for |
+|---|---|---|
+| https://www.nfl.com/standings/ | W, L, T, PCT, PF, PA, NET, HOME, ROAD, DIV, CONF, STRK for all 32 clubs | `lab/data/standings-source.txt`, team rates, luck separation, independent reconciliation |
+| https://www.nfl.com/schedules/2026/by-week/week-1 … week-10 | Final scores, dates, networks, neutral-site designation, bye teams | 137 game rows in `lab/data/results-source.txt`; 13 scheduled Week 10 games |
+| https://www.nfl.com/games/<slug>-2026-reg-<week> | Row-level game pages | The per-game source link on all 137 + 13 rows |
+| https://www.nfl.com/injuries/ | Week 10 report: player, position, injury, practice status, game status | 130 verified injury rows (12 clubs) |
+| https://www.nfl.com/players/<slug>/ | Official player pages | Per-row source links on the injury table |
+| https://www.nfl.com/teams/<team>/roster | Roster: number, position, ACT status - **no string order** | Negative finding behind flag F01 |
+| https://www.nfl.com/teams/san-francisco-49ers/depth-chart | **HTTP 404** | Proof that no official depth chart exists (flag F01) |
+| https://www.nfl.com/stats/team-stats/ | Official team statistics landing page | Source registry entry SRC-06 |
+| https://www.nfl.com/stats/player-stats/ | Official player statistics landing page | Source registry entry SRC-07 |
+| https://www.nfl.com/transactions/ | Official transactions page | Source registry entry SRC-08 |
+| https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf | 2026 Official Playing Rules (Rule 16 overtime) | Settlement-rules context (SRC-09) |
+| https://www.nfl.com/legal/flexible-scheduling-procedures | Weeks 16-18 kickoff times are fixed during the season | Flag F04 |
+
+### Verification performed
+
+* **Cross-source reconciliation (the strongest check here).** W, L, T, PF and PA were recomputed from the
+  137-game log and compared with the official standings page row by row. **32 of 32 teams match exactly.**
+  This also proves the transcription is complete: 136 wins + 136 losses + 2 tie credits = 274 team slots =
+  137 games x 2.
+* `python3 lab/verify.py`: 14 pages, **409 sourced fact rows, 409 with an official-domain link**,
+  1114 external links across 2 hosts (`nfl.com`, `www.nfl.com`), **0 broken local links**, all JSON valid,
+  and all market price cells confirmed blank.
+* `python3 scripts/check_links.py`: 12 pages, 202 local links, 528 external links, **0 missing**.
+* `python3 tools/verify_extra.py`: **31/31**. `python3 scripts/audit_certainty.py`: passed.
+  `python3 -m unittest discover -s tests`: 5/5.
+* Walk-forward discipline: every fold is fitted only on strictly earlier weeks, including the shrinkage
+  weight, which is chosen by leave-one-out error inside the training fold (gate G4).
+
+### Results (all reproducible from `lab/pipeline.py`)
+
+| Variant | Margin MAE | Zero baseline | Constant baseline | Skill | p (one-sided) | Verdict |
+|---|---|---|---|---|---|---|
+| A naive | 10.55 | 10.21 | 10.33 | **-3.3%** | 0.68 | **fails G3** - worse than doing nothing |
+| B shrunk | 9.61 | 10.21 | 10.33 | +5.9% | 0.0115 | **passes G3** (90% CI 0.166 to 1.035) |
+| C shrunk + recalibrated | 9.52 | 10.21 | 10.33 | +6.8% | 0.125 | better point estimate, CI includes zero - **not promoted** |
+
+* Totals: no variant beats the constant baseline (best 10.91 vs 10.96, 0.4%). **Gate G6 fails.**
+* Brier: B = 0.235 against 0.250 for a constant 0.50 forecaster (p = 0.042).
+* Correlations (from official data): home vs away points in the same game r = 0.076; home vs total r = 0.681;
+  away vs total r = 0.782; absolute margin vs total r = -0.016; **a team's margin in week N vs week N+1
+  r = 0.086 (n = 242) - no momentum signal**; net PPG vs win% r = 0.878; Pythagorean vs actual win% r = 0.879.
+* Season diagnostics: league mean 22.96 points per team per game; mean game total 45.92; mean home margin
+  -0.02 overall and +0.47 on true home fields; home teams 67-69-1.
+
+### Irregularities this session is adding (published on `lab/flagged.html`)
+
+F01 no official NFL depth chart exists (404) - blocks the 2nd/3rd/4th-string requirement.
+F02 four standings columns are unnamed in the official LEGEND, so they are omitted rather than guessed.
+F03 injury history is not archived (one week captured). F04 Weeks 16-18 kickoff times are not final.
+F05 neutral-site sample is only 7 games (designated home teams went 1-6, mean margin -7.9).
+F06 no bookmaker settlement rules are available. F07 every market price cell is blank - no official NFL
+source publishes betting prices. F08 home-field advantage is ~0 this season (67-69-1) - persistence unknown.
+F09 model variants were compared on the window that revealed the problem, so p-values are optimistic.
+F10 one partial season only (137 games). F11 the committed `data/upstream/nfl-2026.json` is stale - captured
+2026-11-02, every game still marked SCHEDULED, schedule data only with no scores; the official by-week pages
+do publish those results. F12 `scripts/build_docs.py` was removed from the rebuild chain by a prior session
+because it would overwrite README sections; it is still present and undecided.
+
+### Deliverables
+
+* `lab/` - 14 pages plus `EXECUTIVE-SUMMARY.md`, `assets/`, `data/`, and the three-step pipeline.
+* `lab/requirements.html` - 49 requirements, each with a status and evidence.
+* `lab/decisions.html` - 14 decision records: question, information held, information missing, what the
+  answer depends on, and the concrete discovery step. Eight are marked blocking.
+* `lab/suggestions.html` - 18 suggestions, each with 2-3 explicit paths, upsides, downsides and a
+  recommended path, in `proposed` status awaiting a decision. Nothing has been implemented from them.

@@ -1,0 +1,128 @@
+{
+ "meta": {
+  "title": "NFL Signal Lab — strategy library, validation gates and leaderboard design",
+  "created": "2026-11-13",
+  "principle": "Every strategy is a pre-registered, reproducible rule. Luck is removed by gates, not by narrative. Model outputs are labelled; unverifiable values stay blank and are flagged.",
+  "sources": [
+   "https://www.nfl.com/scores/2026/week-9",
+   "https://www.nfl.com/standings/league/2026/REG",
+   "https://www.nfl.com/injuries/"
+  ]
+ },
+ "competition": {
+  "name": "NFL Signal Lab Leaderboard",
+  "pilot": "2026 mid-season pilot (weeks 10-18): in-house strategies only, no external entries",
+  "season": "2027 regular season: open submissions",
+  "entryRules": [
+   "Each strategy is submitted as frozen code + a written rule card before its first graded pick (pre-registration prevents result-shopping).",
+   "Pick types allowed: single bets, parlays (2-5 legs), player-prop combos (2-4 legs). Mixed-type strategies are scored per type and overall.",
+   "Picks are graded against recorded lines at submission time (market lines required — see Q-ODDS; until a verified odds source exists, forecast scoring uses Brier/log-loss against outcomes only).",
+   "No entry may change after kickoff of its first graded pick; changes create a new entry."
+  ],
+  "scoring": {
+   "primary": "Cumulative Brier skill score vs the competition baseline (flat 0.55 home win prob), with log-loss as tiebreaker",
+   "monetary": "Units profit vs recorded line, reported separately and only once verified odds data exists (G5/G6)",
+   "parlays": "Scored on joint probability forecasts (Brier on the parlay event) plus units; correlated-leg inflation is corrected by the correlation policy below",
+   "minimumGradedPicks": 60
+  },
+  "rewards": [
+   "Tiered research credits: access to deeper verified datasets (gamebooks, snap counts) as they are added",
+   "Named badge on the leaderboard page and in the executive summary (no monetary prize is offered — see Q-LEGAL)",
+   "Winning rule cards are promoted into the maintained strategy library with author credit"
+  ],
+  "luckRemoval": [
+   "Minimum sample sizes (G1) kill lucky streaks",
+   "Baseline-relative gates (G2/G3) kill coin flips dressed as models",
+   "Out-of-time holdout (G8) kills overfitting",
+   "Deflated Sharpe / multiple-testing correction (G7) kills best-of-many luck",
+   "Bootstrap confidence intervals (G6) kill small-edge illusions",
+   "Closing-line comparison (G5) kills stale-price luck"
+  ],
+  "governance": "Submissions, gate results and re-scoring are logged on this page and in COORDINATION.md. Unverified claims never enter the board."
+ },
+ "gates": [
+  {"id": "G1", "name": "Sample floor", "rule": ">= 60 graded picks across >= 4 walk-forward weeks", "removes": "streak luck", "status": "defined"},
+  {"id": "G2", "name": "Spread skill", "rule": "Spread MAE strictly beats flat-home baseline on walk-forward backtest", "removes": "no-skill lines", "status": "enforced on S1/S2 (PASS)"},
+  {"id": "G3", "name": "Probability skill", "rule": "Brier strictly beats flat-0.55 baseline", "removes": "favorite-folding luck", "status": "enforced on S1/S2 (PASS)"},
+  {"id": "G4", "name": "Skill sign", "rule": "Pearson(pred, actual margin) > 0", "removes": "anti-skill models", "status": "enforced on S1/S2 (PASS)"},
+  {"id": "G5", "name": "Market gate", "rule": "ATS >= 52.4% vs recorded/closing lines over >= 200 picks", "removes": "stale-price luck", "status": "NOT EVALUABLE — no verified odds source (Q-ODDS)"},
+  {"id": "G6", "name": "Edge certainty", "rule": "Bootstrap 95% CI of ROI excludes zero (10k resamples)", "removes": "small-sample illusions", "status": "NOT EVALUABLE — needs market lines"},
+  {"id": "G7", "name": "Multiple-testing gate", "rule": "Deflated Sharpe / false-discovery-rate correction across all submitted strategies", "removes": "best-of-many luck", "status": "deferred to competition scoring"},
+  {"id": "G8", "name": "Holdout", "rule": "Weeks 14-18 of 2026 and the final 4 weeks of 2027 stay untouched until season end", "removes": "overfitting", "status": "deferred (not yet played)"}
+ ],
+ "strategies": [
+  {
+   "id": "S1", "name": "Opponent-adjusted margin (full season)", "type": "single",
+   "rule": "Team ratings R by iterative least squares on verified margins; side = sign(R_home - R_away + HFA); size flat.",
+   "data": "verified final scores (results-2026.json), official schedule",
+   "validation": "walk-forward weeks 5-9",
+   "computed": {"maeSpread": 10.56, "baselineMae": 11.32, "brier": 0.216, "baselineBrier": 0.255, "hitRate": 0.662, "corr": 0.314, "gates": "G1-G4 PASS"},
+   "modelRef": "model.json backtest.S1_fullSeason"
+  },
+  {
+   "id": "S2", "name": "Recency-weighted margin (lambda 0.9)", "type": "single",
+   "rule": "Same as S1 with weights w = 0.9^(latest_week - game_week).",
+   "data": "same as S1",
+   "validation": "walk-forward weeks 5-9",
+   "computed": {"maeSpread": 10.54, "baselineMae": 11.32, "brier": 0.215, "baselineBrier": 0.255, "hitRate": 0.634, "corr": 0.318, "gates": "G1-G4 PASS"},
+   "modelRef": "model.json backtest.S2_recency09"
+  },
+  {
+   "id": "S3", "name": "Injury/deficiency-adjusted side", "type": "single",
+   "rule": "S2 line adjusted by a position-weighted availability score from official injury reports (Out/Doubtful/Q) and verified starter-status news; adjustment per position tier is pre-registered before grading.",
+   "data": "official NFL.com weekly injury reports + official team depth charts",
+   "validation": "not yet run — injury history exists only for Week 10 in this repo (Q-INJ-HIST)",
+   "computed": {"maeSpread": null, "brier": null, "hitRate": null, "note": "blank — first graded week is Week 10, 2026"},
+   "modelRef": null
+  },
+  {
+   "id": "S4", "name": "Correlation-aware 2-3 leg parlay", "type": "parlay",
+   "rule": "Legs drawn from S1/S2 sides and totals; joint probability computed with empirical leg correlation; stake = quarter-Kelly capped at 2% bankroll; same-game legs allowed only with published correlation penalty.",
+   "data": "verified results (correlation estimation) + market prices for grading (Q-ODDS)",
+   "validation": "framework defined; grading blocked until odds source exists",
+   "computed": {"legs": null, "roi": null, "note": "blank — no verified odds source (Q-ODDS)"},
+   "modelRef": null
+  },
+  {
+   "id": "S5", "name": "Player-prop combo", "type": "prop-combo",
+   "rule": "2-4 player props (passing/rushing/receiving yards, anytime TD) combined with published correlation penalties; individual prop edge must pass G1-G4 on historical prop results before combo grading.",
+   "data": "official player statistics + prop market history",
+   "validation": "blocked — no verified player-prop data source (Q-PROPS)",
+   "computed": {"props": null, "note": "blank — prop data not available from an official source in this session"},
+   "modelRef": null
+  },
+  {
+   "id": "S6", "name": "Rest-advantage signal", "type": "single",
+   "rule": "When pre-game rest difference (days since previous game) >= 4, take the more-rested side if it is not more than one rating tier worse (|ratingDiff| <= 6).",
+   "data": "verified results + official schedule dates",
+   "validation": "signal strength measured on walk-forward weeks 5-9 (correlation 0.438 with margin — the strongest measured signal); pick-level backtest is the pilot's first graded test",
+   "computed": {"signalCorr": 0.438, "nGames": 74, "note": "correlation computed from verified data; pick-level record blank until graded"},
+   "modelRef": "model.json signalCorrelations.actualMargin.restDiff"
+  }
+ ],
+ "parlayFramework": {
+  "legRules": ["max 5 legs, min 2", "no two legs may be the same event", "same-game legs carry a published correlation penalty before joint probability is computed"],
+  "correlationPolicy": "Joint probability bounds: lower bound max(0, sum p_i - (k-1)), upper bound min(p_i). Empirical correlations are published in correlationValues when at least 60 graded pairs exist; until then combos use the conservative lower bound.",
+  "sizing": "quarter-Kelly on the joint edge, capped at 2% of bankroll per ticket",
+  "status": "defined; grading blocked on Q-ODDS"
+ },
+ "propFramework": {
+  "requiredData": ["official player game logs (nfl.com stats)", "prop market history with timestamps (licensed feed — Q-PROPS/Q-ODDS)", "official inactives 90 minutes before kickoff"],
+  "gates": "same G1-G8, with a per-player minimum of 20 graded props",
+  "status": "defined; blocked — no verified prop source"
+ },
+ "correlationValues": {
+  "computedRef": "model.json signalCorrelations (Pearson, pre-game signals vs actual margin, walk-forward weeks 5-9, n=74)",
+  "computedSummary": [
+   {"pair": "restDiff vs actualMargin", "value": 0.438, "note": "strongest measured signal"},
+   {"pair": "ratingDiff vs actualMargin", "value": 0.325, "note": "core model signal"},
+   {"pair": "streakDiff vs actualMargin", "value": 0.281, "note": "moderate"},
+   {"pair": "ppgDiff vs actualMargin", "value": 0.194, "note": "weak"},
+   {"pair": "home vs actualMargin", "value": null, "note": "undefined — constant signal this season (HFA -0.02 pts)"}
+  ],
+  "intraSignalMatrix": "published on nfl-strategies.html from model.json (ratingDiff/restDiff/streakDiff/ppgDiff pairwise)",
+  "parlayPairCorrelations": [],
+  "propPairCorrelations": [],
+  "blankNote": "Parlay and prop-pair correlation VALUES are left blank: they require graded market or prop data that this session could not verify from an official source (Q-ODDS, Q-PROPS). Framework and conservative bounds are defined above."
+ }
+}

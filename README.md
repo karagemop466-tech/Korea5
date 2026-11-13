@@ -33,6 +33,7 @@ See [`research/EXECUTIVE-SUMMARY.md`](research/EXECUTIVE-SUMMARY.md) for the ful
 | `assets/` | Stylesheet and the calendar JavaScript |
 | `data/mlb-2026.json`, `data/mlb-2027.json` | Official MLB schedules pulled from the MLB StatsAPI |
 | `data/curated/` | Hand-checked NFL, Westwood One and NCAAF rows, each with `verifyTokens` and a source URL |
+| `data/nfl-intel/` | NFL intelligence dataset: 137 verified 2026 finals, standings, Week-10 injuries, model output (ratings, originated lines, backtest), strategies, suggestions, questions |
 | `data/events-<year>.json` | Normalized event feed the site reads (verified + estimated layers) |
 | `data/derived/analysis.json` | Per-day free/busy windows, free streaks and ranked vacation windows |
 | `verification/` | Machine-readable verification report and link check |
@@ -46,6 +47,8 @@ python3 scripts/fetch_mlb.py      # official MLB feed (2026-2029; 2028/29 return
 python3 scripts/build_events.py   # normalize + add the labelled estimate layer
 python3 scripts/analyze.py        # free/busy windows, free streaks, vacation ranking
 python3 scripts/build_site.py     # regenerate the HTML
+python3 scripts/nfl_intel.py      # NFL ratings, originated lines, walk-forward backtest (writes data/nfl-intel/model.json)
+python3 scripts/build_nfl_intel.py # regenerate the NFL intelligence pages
 python3 tools/build_extra.py      # regenerate extra/ pages (calendar, stations, flagged, summary)
 python3 scripts/check_links.py    # fail if any local link is broken
 python3 tools/verify_extra.py     # 31 link, schema and UI checks
@@ -60,6 +63,24 @@ reachable from a normal network. Everything the site needs is committed, so Page
 * Every table row links to an official source.
 * Where an official source has not published a value, the cell is blank and the row is listed on the Flagged page.
 * Estimated rows are labelled and never invent matchups.
+
+## NFL intelligence section (session `arena/f6d67da0-korea5`, 2026-11-13)
+
+Seven new pages: [`nfl-intel.html`](nfl-intel.html) (hub), [`nfl-lines.html`](nfl-lines.html)
+(originated spreads/totals, ratings, backtest), [`nfl-strategies.html`](nfl-strategies.html)
+(strategy library, leaderboard rules, validation gates, correlation values),
+[`nfl-injuries.html`](nfl-injuries.html) (Week-10 report + starter/backup deficiency flags),
+[`nfl-executive.html`](nfl-executive.html) (mirror of
+[`research/EXECUTIVE-SUMMARY-NFL.md`](research/EXECUTIVE-SUMMARY-NFL.md)),
+[`suggestions.html`](suggestions.html) (review-before-implement register) and
+[`questions.html`](questions.html) (information-gap register).
+
+The model originates its own lines from verified results (opponent-adjusted margins; formulas
+published on the Lines page) and is graded by a strictly walk-forward backtest — never by copying
+market numbers. Market columns are deliberately blank and flagged: no verified odds source exists
+(Q-ODDS). Validation gates G1–G4 pass for both core strategies; gates that need market data are
+marked not-evaluable rather than assumed. Injury depth tiers are shown only where an official
+source confirms them (see flags F33–F41 in `curated/flags.json`).
 
 ## Second-pass integration (session `arena/ef8b5b30-korea5`)
 

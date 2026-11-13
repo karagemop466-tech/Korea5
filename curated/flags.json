@@ -1,16 +1,16 @@
 {
   "meta": {
-    "name": "Flagged for Review — combined irregularity register",
+    "name": "Flagged for Review \u2014 combined irregularity register",
     "compiledUTC": "2026-11-02",
     "note": "Items here are published for manual review. Per the project brief, flagged / unverified / needs-review items do NOT block the PR merge or the GitHub Pages deployment. Every row links to an official source; a value that could not be confirmed is left blank rather than inferred.",
-    "label": "ESTIMATION — not a real verified released schedule"
+    "label": "ESTIMATION \u2014 not a real verified released schedule"
   },
   "flags": [
     {
       "id": "F01",
       "severity": "high",
       "title": "2028 and 2029 MLB schedules are not released",
-      "detail": "MLB StatsAPI returns 0 regular-season games for 2028 and 2029. All 2028/2029 MLB rows on this site are ESTIMATION — not a real verified released schedule. Dates, opponents and times are blank on verified tables.",
+      "detail": "MLB StatsAPI returns 0 regular-season games for 2028 and 2029. All 2028/2029 MLB rows on this site are ESTIMATION \u2014 not a real verified released schedule. Dates, opponents and times are blank on verified tables.",
       "status": "needs-review",
       "sources": [
         {
@@ -30,8 +30,8 @@
     {
       "id": "F02",
       "severity": "high",
-      "title": "2027 NFL schedule and 2027–29 Westwood One postseason schedules are not released",
-      "detail": "No official 2027 NFL schedule or 2027–2029 Westwood One postseason broadcast schedule exists as of 2026-11-02. These are left blank and labelled ESTIMATION — not a real verified released schedule.",
+      "title": "2027 NFL schedule and 2027\u201329 Westwood One postseason schedules are not released",
+      "detail": "No official 2027 NFL schedule or 2027\u20132029 Westwood One postseason broadcast schedule exists as of 2026-11-02. These are left blank and labelled ESTIMATION \u2014 not a real verified released schedule.",
       "status": "needs-review",
       "sources": [
         {
@@ -82,11 +82,11 @@
       "id": "F05",
       "severity": "medium",
       "title": "Super Bowl LXIII (2029) exact date still not on an official page; LXII (2028) date now verified",
-      "detail": "Update 2026-11-05: the Mercedes-Benz Stadium official event page publishes Super Bowl LXII as February 13, 2028 (a Sunday) — the planner's modelled 2028 date already matched and is now anchored to that page (kickoff time still TBA). For Super Bowl LXIII the official release (NFL.com and media.nfl.com, Mar 30, 2026) confirms only Las Vegas / Allegiant Stadium in 2029; On Location's official page says only 'February 2029'. The exact date — reported as Sunday, February 11, 2029 by press coverage of the NFL's social announcement — does not appear on any official page reviewed, so the 2029 date fields stay blank and the modelled 2029-02-11 block remains labelled ESTIMATION.",
+      "detail": "Update 2026-11-05: the Mercedes-Benz Stadium official event page publishes Super Bowl LXII as February 13, 2028 (a Sunday) \u2014 the planner's modelled 2028 date already matched and is now anchored to that page (kickoff time still TBA). For Super Bowl LXIII the official release (NFL.com and media.nfl.com, Mar 30, 2026) confirms only Las Vegas / Allegiant Stadium in 2029; On Location's official page says only 'February 2029'. The exact date \u2014 reported as Sunday, February 11, 2029 by press coverage of the NFL's social announcement \u2014 does not appear on any official page reviewed, so the 2029 date fields stay blank and the modelled 2029-02-11 block remains labelled ESTIMATION.",
       "status": "needs-review",
       "sources": [
         {
-          "name": "Super Bowl LXII event page — February 13, 2028 (Mercedes-Benz Stadium, official)",
+          "name": "Super Bowl LXII event page \u2014 February 13, 2028 (Mercedes-Benz Stadium, official)",
           "url": "https://www.mercedesbenzstadium.com/events/super-bowl-lxii"
         },
         {
@@ -183,8 +183,8 @@
     {
       "id": "F11",
       "severity": "medium",
-      "title": "Dashboard copy says Feb 8–13 2027 gap is 'after the Super Bowl'",
-      "detail": "Super Bowl LXI is officially Feb 14 2027, so the Feb 8–13 2027 window is BEFORE the Super Bowl. The root dashboard wording is corrected on our combined analysis page; the original wording is retained here as a documented irregularity.",
+      "title": "Dashboard copy says Feb 8\u201313 2027 gap is 'after the Super Bowl'",
+      "detail": "Super Bowl LXI is officially Feb 14 2027, so the Feb 8\u201313 2027 window is BEFORE the Super Bowl. The root dashboard wording is corrected on our combined analysis page; the original wording is retained here as a documented irregularity.",
       "status": "needs-review",
       "sources": [
         {
@@ -347,7 +347,7 @@
       "id": "F22",
       "severity": "high",
       "title": "2028 and 2029 vacation windows are model output",
-      "detail": "The recommended 2028 (base case: Jan 24–29 or Jan 31–Feb 5, 6 calendar days each) and 2029 (base case: Jan 22–27 or Jan 29–Feb 3, 6 calendar days each) windows are computed from a modelled MLB daily slate and a modelled NFL calendar, not from released schedules. They will move when those schedules are published and must be re-checked before booking. Only the 2027 window is anchored to officially released values (MLB 2027 season, NFL playoff round windows, Super Bowl LXI). Update 2026-11-05: the 2028 Super Bowl LXII date (Sunday, February 13, 2028, Mercedes-Benz Stadium event page) is now verified and the model uses it; every other 2028/2029 input remains model output.",
+      "detail": "The recommended 2028 (base case: Jan 24\u201329 or Jan 31\u2013Feb 5, 6 calendar days each) and 2029 (base case: Jan 22\u201327 or Jan 29\u2013Feb 3, 6 calendar days each) windows are computed from a modelled MLB daily slate and a modelled NFL calendar, not from released schedules. They will move when those schedules are published and must be re-checked before booking. Only the 2027 window is anchored to officially released values (MLB 2027 season, NFL playoff round windows, Super Bowl LXI). Update 2026-11-05: the 2028 Super Bowl LXII date (Sunday, February 13, 2028, Mercedes-Benz Stadium event page) is now verified and the model uses it; every other 2028/2029 input remains model output.",
       "status": "needs-review",
       "sources": [
         {
@@ -503,6 +503,131 @@
         {
           "name": "NFL.com: 2026-27 important dates",
           "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
+        }
+      ]
+    },
+    {
+      "id": "F33",
+      "severity": "low",
+      "title": "nfl.com Week-1 game listing shows a Wednesday date for Sunday Night Football",
+      "detail": "The official scores page lists NE at SEA as 'Sunday Night Football, September 9th, 2026', but September 9, 2026 is a Wednesday. The score is captured as shown; no date was silently corrected. Verification of the true kickoff date is pending.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com: 2026 week 1 scores",
+          "url": "https://www.nfl.com/scores/2026/week-1"
+        }
+      ]
+    },
+    {
+      "id": "F34",
+      "severity": "low",
+      "title": "nfl.com scores pages can serve 'Hidden Score' placeholders in spoiler mode",
+      "detail": "One retrieval of the Week-3 scores page returned 'Hidden Score' placeholders (client-side spoiler state). The canonical week URL was re-fetched and the full scores obtained. All 137 captured finals reconcile exactly against the standings, so no placeholder leaked into the data. Logged as a source-behavior irregularity for future collectors.",
+      "status": "resolved",
+      "sources": [
+        {
+          "name": "NFL.com: 2026 week 3 scores",
+          "url": "https://www.nfl.com/scores/2026/week-3"
+        },
+        {
+          "name": "NFL.com: 2026 standings",
+          "url": "https://www.nfl.com/standings/league/2026/REG"
+        }
+      ]
+    },
+    {
+      "id": "F35",
+      "severity": "high",
+      "title": "No official or verified market odds source exists in this system",
+      "detail": "All market columns on nfl-lines.html are deliberately blank and flagged 'unverified \u2014 flagged'. This blocks validation gates G5 (ATS record vs closing line) and G6 (bootstrap certainty on a monetary record), CLV tracking, and parlay-leg correlation measurement. Never inferred from memory; a licensed or officially logged odds source is required (see Q-ODDS).",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Questions register: Q-ODDS",
+          "url": "https://karagemop466-tech.github.io/Korea5/questions.html"
+        }
+      ]
+    },
+    {
+      "id": "F36",
+      "severity": "low",
+      "title": "Week-10 game-status designations blank for Sunday and Monday games as of 2026-11-13",
+      "detail": "The official injury report shows no Game Status yet for the Sunday and Monday Week-10 games. Blank means 'not yet published' per the official page semantics; nothing was inferred. Values will refresh after Friday/Saturday designations post.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com: Week-10 injuries",
+          "url": "https://www.nfl.com/injuries/"
+        }
+      ]
+    },
+    {
+      "id": "F37",
+      "severity": "medium",
+      "title": "2026 home-field advantage computes to about zero (\u22120.02 pts/game)",
+      "detail": "Across 137 verified 2026 finals the weighted home-field edge is \u22120.02 points per game \u2014 far below the historically assumed ~2.5 points. The model uses the computed value. Whether this is a season quirk, a schedule artifact or a lasting change is unverified (see Q-HFA).",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com: 2026 standings (PF/PA reconciliation)",
+          "url": "https://www.nfl.com/standings/league/2026/REG"
+        }
+      ]
+    },
+    {
+      "id": "F38",
+      "severity": "medium",
+      "title": "Rest-days signal (r=0.438) may be partially schedule-confounded",
+      "detail": "The rest-days difference is the strongest measured pre-game signal against 2026 margins (n=74 walk-forward). It is partially confounded: Week-12 bye teams carry a rest edge into their next game by construction. The predictive correlation is computed and reported; any causal interpretation is unverified.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com: 2026 schedule",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-11"
+        }
+      ]
+    },
+    {
+      "id": "F39",
+      "severity": "medium",
+      "title": "Baltimore QB depth tier: '3rd string' verified by news chain, '4th string' unverified",
+      "detail": "Starter Lamar Jackson is on IR and backup Tyler Huntley is out for the season per official NFL.com news, so the starter for Week 10 is necessarily from the third tier or lower. The specific 4th-string designation is not confirmed by an official depth chart and is labelled unverified.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com: Top stories from Week 9",
+          "url": "https://www.nfl.com/news/top-stories-from-week-9-of-the-2026-nfl-season"
+        },
+        {
+          "name": "NFL.com: Huntley out for season",
+          "url": "https://www.nfl.com/news/ravens-qb-tyler-huntley-out-for-season-after-suffering-turf-toe-injury"
+        }
+      ]
+    },
+    {
+      "id": "F40",
+      "severity": "low",
+      "title": "Week-10 TNF result falls after the original data snapshot",
+      "detail": "The standings snapshot includes WAS 24 @ NYG 21 (Thu Nov 12), explaining '137 games vs 136' during reconciliation; the 32/32 exact match confirms it. Data stays consistent as of 2026-11-13.",
+      "status": "resolved",
+      "sources": [
+        {
+          "name": "NFL.com: 2026 week 10 scores",
+          "url": "https://www.nfl.com/scores/2026/week-10"
+        }
+      ]
+    },
+    {
+      "id": "F41",
+      "severity": "medium",
+      "title": "Parlay-leg and player-prop pair correlations are blank",
+      "detail": "The strategy frameworks need empirical joint-hit correlations to price same-game parlays and prop combos. No graded market or prop data exists in this system, so all such cells are blank and flagged; conservative Frechet bounds are documented as the interim policy (see Q-PROPS, Q-ODDS).",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Strategies & correlation values",
+          "url": "https://karagemop466-tech.github.io/Korea5/nfl-strategies.html"
         }
       ]
     }

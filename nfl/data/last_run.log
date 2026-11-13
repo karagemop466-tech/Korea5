@@ -340,8 +340,8 @@
  200 espn_2026_t2_w7.json                 126,932 bytes
  200 espn_2026_t2_w8.json                 126,088 bytes
  200 espn_2026_t2_w9.json                 133,973 bytes
- 200 espn_2026_t2_w10.json                254,476 bytes
- 200 espn_2026_t2_w11.json                236,508 bytes
+ 200 espn_2026_t2_w10.json                254,518 bytes
+ 200 espn_2026_t2_w11.json                236,550 bytes
  200 espn_2026_t2_w12.json                182,869 bytes
  200 espn_2026_t2_w13.json                163,033 bytes
  200 espn_2026_t2_w14.json                172,371 bytes
@@ -389,7 +389,7 @@ leaderboard: 14 strategies
   #6 C    0.169 pts=  300 WR receiving tds over 0.5
   #7 C    0.153 pts=  300 QB passing yards over 225.0
   #8 C    0.121 pts=  300 QB passing tds over 1.5
-built 11 pages in nfl-lines/
+built 12 pages in nfl-lines/
 test_cholesky_and_copula (test_model.TestGates.test_cholesky_and_copula) ... ok
 test_deflation_rejects_pure_noise (test_model.TestGates.test_deflation_rejects_pure_noise)
 A model fitted on shuffled labels must not clear the null. ... ok
@@ -406,6 +406,6 @@ test_walk_forward_ignores_future_seasons (test_model.TestNoLeakage.test_walk_for
 test_questions_have_all_resolution_fields (test_model.TestQuestions.test_questions_have_all_resolution_fields) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 19.305s
+Ran 9 tests in 17.547s
 
 OK

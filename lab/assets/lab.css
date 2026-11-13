@@ -1,0 +1,8 @@
+/* NFL Lines Lab — additions on top of assets/style.css */
+.nav-sep{color:var(--muted);padding:0 4px;align-self:center}
+.lab-nav{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 18px}
+.lab-nav a{display:inline-block;padding:4px 8px;border-radius:8px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none}
+.lab-nav a:hover{background:var(--accent);color:#052015}
+td code{font-size:12px}
+table td{vertical-align:top}
+.reco-accept{background:rgba(60,200,120,.08)}

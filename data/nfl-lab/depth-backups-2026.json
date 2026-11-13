@@ -1,0 +1,53 @@
+{
+ "description": "Latest depth chart snapshot (nflverse mirror of ESPN depth charts) per team, compared with the latest NFL official injury report week. For each depth slot where a player ahead on the chart is listed Out, Doubtful or Questionable, shows the injured players ahead and the first healthy player (the effective starter). Not week-keyed; a current tracker, not a historical record.",
+ "injury_week": 10,
+ "upstream_injuries": "https://github.com/nflverse/nflverse-data/releases/tag/injuries",
+ "upstream_depth": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+ "official_reference": "https://www.nfl.com/injuries/league/2026/reg10",
+ "rows": [
+  {
+   "team": "DET",
+   "depth_slot": "LCB",
+   "depth_group": "Base 4-3 D",
+   "original_starter": "D.J. Reed",
+   "original_starter_out": true,
+   "injured_ahead": [
+    {
+     "player": "D.J. Reed",
+     "depth_rank": "1",
+     "status": "Out",
+     "injury": "Hip"
+    }
+   ],
+   "effective_starter": "Khalil Dorsey",
+   "effective_depth_rank": "2",
+   "effective_is_backup": true,
+   "injury_week": 10,
+   "source": "https://www.nfl.com/injuries/league/2026/reg10",
+   "depth_source": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+   "depth_snapshot_utc": "2026-11-13T07:02:06Z"
+  },
+  {
+   "team": "NE",
+   "depth_slot": "LCB",
+   "depth_group": "Base 3-4 D",
+   "original_starter": "Carlton Davis III",
+   "original_starter_out": true,
+   "injured_ahead": [
+    {
+     "player": "Carlton Davis III",
+     "depth_rank": "1",
+     "status": "Out",
+     "injury": "Knee"
+    }
+   ],
+   "effective_starter": "Charles Woods",
+   "effective_depth_rank": "2",
+   "effective_is_backup": true,
+   "injury_week": 10,
+   "source": "https://www.nfl.com/injuries/league/2026/reg10",
+   "depth_source": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+   "depth_snapshot_utc": "2026-11-13T07:02:06Z"
+  }
+ ]
+}

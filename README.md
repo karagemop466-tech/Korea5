@@ -25,6 +25,61 @@ January 24 date is a Divisional playoff day, not a free day.
 See [`research/EXECUTIVE-SUMMARY.md`](research/EXECUTIVE-SUMMARY.md) for the full write-up,
 [Flagged for Review](flagged.html) for open items, and [the certainty audit](certainty.html) for what is still unverified.
 
+## NFL lines, strategies and the injury tracker (2026-11-13)
+
+Two companion sections work on the same question from opposite ends, and are meant to be read together:
+
+| Section | What it is |
+|---|---|
+| [NFL Lines Lab](https://karagemop466-tech.github.io/Korea5/lab/index.html) | The **evidence** side, built only on official NFL records — the published injury report, official player game logs, the official Game Book — with measured correlations, dispersion figures and minimum-sample rules computed from them. |
+| [NFL Lines Lab — model](https://karagemop466-tech.github.io/Korea5/nfl-lab/index.html) | The **model** side — a line model built and back-tested against third-party game data, reporting how it compares with the market spread. Market lines are left blank and flagged unverified. |
+| [NFL Decision Support](https://karagemop466-tech.github.io/Korea5/nfl/index.html) | The **structured** side — the requirements list, the method and validation-gate reference, the leaderboard reward design and the source registry. |
+
+None of the three publishes a validated edge, a win rate or a yield. Each says so on its own landing page, and each
+keeps the leaderboard empty until a strategy passes every gate. The pages cross-link, so it is clear which side of the
+question each one covers.
+
+The [NFL Lines Lab](https://karagemop466-tech.github.io/Korea5/lab/index.html) is a new section for originating your own
+NFL lines. It holds a **decision register** (15 open decisions with what is known, what is missing and how to close it),
+a **catalogue of 12 candidate strategies** (singles, player props, prop combinations, parlays) each bound to **9 validation
+gates**, **measured correlations and dispersion** computed from official NFL game data, an **injury and lineup-depth
+tracker** built on the official weekly injury report and the official Game Book, a **paper-only leaderboard design**, and a
+**suggestions register** with a recommended path so changes are decided before they are built.
+
+Two measured results drive the design: two same-team receivers are **not independent** (r = -0.82 on the six matched
+official games, 95% CI -0.98 to -0.02), and a +5 point edge at a -110 price needs **779** bets before it can be told apart
+from luck. The repository holds **no market price, no settlement record and no forecast log**, so no win rate, yield, edge
+or fair price is published anywhere, and the leaderboard is published empty on purpose.
+
+
+### The data-backed NFL section (`nfl/system/`)
+
+The **[NFL decision system](https://karagemop466-tech.github.io/Korea5/nfl/system/index.html)** is the part of this
+repository that ingests official data rather than curating excerpts. It pulls, in CI, every completed final score
+(**185** from 2026, **272** from 2025), the **full official injury report** (3,117 rows for 2026 weeks 1–10 and
+5,783 for 2025), **all 32 club depth charts** (1,762 entries; 31 clubs parse — Houston publishes its chart as an
+image and is left blank rather than guessed), **7 official team-stat tables**, player-stat leaders and all 32
+rosters, then computes rest days, scoring rates, de-vig arithmetic and a shuffle test from those files.
+
+Three findings worth reading first:
+
+1. **The home-field "edge" is a coin at this sample.** 232 of 453 decided games went to the home team in 2025–26
+   (51.2%, 90% CI 47.4–55.1%), and the shuffle test returns p = 1.000. That is the correct reading and the reason
+   the skill-vs-luck gate exists.
+2. **No price exists, so nothing is certified.** The official NFL week, game and stat pages were probed by exact
+   regex for odds fields: **zero hits**. With no price no bet can be settled, so the leaderboard ranks nobody and
+   says so on every row instead of printing a zero.
+3. **Two facts are kept apart on purpose.** Injury status is not a lineup and a depth chart is not a snap count.
+   The "next man up" table names a replacement only when the club's own chart names the next tier — verified live
+   against Detroit's chart (Cade Mays → Juice Scruggs, D.J. Reed → Rock Ya-Sin).
+
+Start with the [executive summary](https://karagemop466-tech.github.io/Korea5/nfl/system/summary.html), then the
+[questions and gaps](https://karagemop466-tech.github.io/Korea5/nfl/system/questions.html) (18 decisions, each with what we
+have, what we lack and the official source that would close it), the
+[suggestions register](https://karagemop466-tech.github.io/Korea5/nfl/system/suggestions.html) (22 proposals with options,
+cost, risk and gate), and the [flagged page](https://karagemop466-tech.github.io/Korea5/nfl/system/flagged.html) for what
+remains unresolved.
+
 ## What is in here
 
 | Path | What it is |
@@ -38,10 +93,16 @@ See [`research/EXECUTIVE-SUMMARY.md`](research/EXECUTIVE-SUMMARY.md) for the ful
 | `verification/` | Machine-readable verification report and link check |
 | `research/` | Executive summary, probe results, and text snapshots of official pages |
 | `scripts/` | Fetch, build, analyze, verify, site and docs generators |
+| `lab/` | **NFL Lines Lab** — decision register, strategy catalogue and gates, measured correlations, injury & depth tracker, leaderboard design, suggestions |
+| `data/lab/` | Official NFL records behind the lab (Week 10 injury report, player game logs, official Game Book) and the computed analysis |
+| `curated/nfl-lab.json` | The curated lab specification: questions, strategies, gates, depth rules, leaderboard rules, suggestions, flags |
 
 ## Rebuild
 
 ```bash
+python3 scripts/analyze_lab.py    # NFL lab: dispersion, correlations, minimum-observation rules
+python3 tools/build_lab.py        # regenerate lab/ pages from curated/nfl-lab.json + data/lab/
+python3 tools/verify_lab.py       # every published lab row carries a source or is an explicit blank
 python3 scripts/fetch_mlb.py      # official MLB feed (2026-2029; 2028/29 return nothing, by design)
 python3 scripts/build_events.py   # normalize + add the labelled estimate layer
 python3 scripts/analyze.py        # free/busy windows, free streaks, vacation ranking
@@ -50,6 +111,9 @@ python3 tools/build_extra.py      # regenerate extra/ pages (calendar, stations,
 python3 scripts/check_links.py    # fail if any local link is broken
 python3 tools/verify_extra.py     # 31 link, schema and UI checks
 python3 scripts/verify.py         # re-check every curated row against its official page (needs network)
+python3 nfl/system/tools/analyze_market.py   # recompute the NFL section's numbers
+python3 nfl/system/tools/build_nfl.py        # regenerate nfl/system/*.html
+python3 nfl/system/tools/verify_nfl.py       # 99 link, source, badge and no-false-claim checks
 ```
 
 Data acquisition and verification run in GitHub Actions (`.github/workflows/`), because the schedule sources are only
@@ -74,6 +138,10 @@ Prev/Next/Today day scoreboard and a clearly labelled **Flagged for Review** pag
 | `extra/data/` | Generated combined calendar, vacation ranking and verification/link reports |
 | `tools/*-ef8b5b30.yml` / `tools/fetch_official.py` / `tools/extract_rules.py` | CI fetchers (GitHub Actions has outbound internet; the sandbox does not) |
 | `tools/build_extra.py` / `tools/verify_extra.py` | Generate the extra pages and re-verify every row, source link and local link line by line |
+|  `nfl/system/` | The data-backed NFL decision system: 14 pages, curated registers, 96+ checked assertions |
+|  `nfl/system/tools/` | `probe.py` (what each official page really returns), `fetch_official.py` (CI ingest), `analyze_market.py` (every published number), `build_nfl.py` (pages), `verify_nfl.py` (99 checks) |
+|  `nfl/system/data/` | Official feeds (`official-*.json`) + the committed fetch report |
+|  `nfl/system/data/derived/` | Every computed value, each with its n, interval and label |
 
 Rebuild the second pass after the first-pass scripts:
 
@@ -85,6 +153,25 @@ python3 tools/verify_extra.py      # 31 checks: local links, source links, JSON 
 The exact label **ESTIMATION — not a real verified released schedule** appears on every row whose schedule has
 not been officially released (2028/2029 MLB, 2027 NFL, 2027–2029 Westwood One postseason). Flagged items are
 published and do **not** block the Pages deployment.
+
+## NFL decision support (2026-11-13)
+
+A proposal layer for originating NFL lines, evaluating strategies, and tracking injuries/lineup depth. **Nothing here is
+validated and no reward is authorized** — the repository has no odds, prop prices, settlement, forecast, or
+injury-to-performance data, so no edge, correlation value, ROI, or leaderboard winner is claimed.
+
+| Path | What it is |
+|---|---|
+| `nfl-strategy.html` | NFL Lines & Strategy Lab — signals, validation gates, leaderboard, correlation, bet-type gates |
+| `suggestions.html` | Suggestions register — review and choose a path before implementing (options, priority, status) |
+| `decisions.html` | Decision registry — questions, known/missing information, answer needed, discovery suggestion |
+| `injury-tracking.html` | Injury & lineup-depth tracking — 1st/2nd/3rd/4th string, offense and defense, from official sources |
+| `research/SUGGESTIONS.md`, `DECISIONS.md`, `INJURY-TRACKING.md` | Readable research notes for the pages above |
+
+Leaderboard ranking uses predeclared out-of-sample probability-score improvement over a common baseline (never streaks or
+raw win rate); every strategy must pass validation gates; any reward waits on legal/responsible-play review. Tier
+(2nd/3rd/4th string) is read **only** from an official club depth chart; a "lineup deficiency" requires both a sourced
+tier change and a sourced availability change. See [Flagged for Review](flagged.html) for evidence limits.
 
 ## Certainty audit (2026-11-03)
 

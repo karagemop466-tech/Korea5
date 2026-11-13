@@ -1,11 +1,11 @@
 {
-  "generatedUTC": "2026-11-13T13:11:42.141832Z",
+  "generatedUTC": "2026-11-13T13:12:15.461875Z",
   "note": "Raw probe only. No value in this file is published on the site; it exists to prove which official fields are machine-readable.",
   "sources": {
     "nfl_week5": {
       "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
       "httpStatus": 200,
-      "bytes": 2278840,
+      "bytes": 2278841,
       "diagnostics": {
         "rsc_push_blocks": 37,
         "weeklyGameDetails": 2,
@@ -100,7 +100,7 @@
     "game_sf_dal": {
       "url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
       "httpStatus": 200,
-      "bytes": 1173554,
+      "bytes": 1173382,
       "diagnostics": {
         "odds_field": 0,
         "odds_word": 0,
@@ -122,11 +122,11 @@
     "nfl_rulebook": {
       "url": "https://operations.nfl.com/the-rules/2026-nfl-rulebook/",
       "httpStatus": 404,
-      "bytes": 15167,
+      "bytes": 15169,
       "diagnostics": {
         "injury_report_section": 0
       },
-      "sampleBytes": 15167
+      "sampleBytes": 15169
     }
   }
 }

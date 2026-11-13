@@ -1213,7 +1213,7 @@ session's generator logic was changed.
 | https://www.nfl.com/standings/ | W, L, T, PCT, PF, PA, NET, HOME, ROAD, DIV, CONF, STRK for all 32 clubs | `lab/data/standings-source.txt`, team rates, luck separation, independent reconciliation |
 | https://www.nfl.com/schedules/2026/by-week/week-1 … week-10 | Final scores, dates, networks, neutral-site designation, bye teams | 137 game rows in `lab/data/results-source.txt`; 13 scheduled Week 10 games |
 | https://www.nfl.com/games/<slug>-2026-reg-<week> | Row-level game pages | The per-game source link on all 137 + 13 rows |
-| https://www.nfl.com/injuries/ | Week 10 report: player, position, injury, practice status, game status | 130 verified injury rows (12 clubs) |
+| https://www.nfl.com/injuries/ | Week 10 report: player, position, injury, practice status, game status | 113 verified injury rows (10 clubs) |
 | https://www.nfl.com/players/<slug>/ | Official player pages | Per-row source links on the injury table |
 | https://www.nfl.com/teams/<team>/roster | Roster: number, position, ACT status - **no string order** | Negative finding behind flag F01 |
 | https://www.nfl.com/teams/san-francisco-49ers/depth-chart | **HTTP 404** | Proof that no official depth chart exists (flag F01) |
@@ -1839,3 +1839,36 @@ excerpts, or official-data registries.
 
 >>>>>>> origin/main
 
+
+### Integration record - session `arena/b2d2460c-korea5`
+
+| Step | Result |
+|---|---|
+| Pull request #1 | **https://github.com/karagemop466-tech/Korea5/pull/56** - "NFL Lines & Strategy Lab (strategy-lab/): originated lines, gated backtest, decision and suggestion registers" |
+| Merge #1 | **Merged** into `main` 2026-11-13T13:46:07Z, merge commit `bdd6c0b591b738e82e96454502add6849a751968` |
+| Pull request #2 | **https://github.com/karagemop466-tech/Korea5/pull/59** - "strategy-lab: fix doubled path prefix in prose and restore extra/ nav entry" |
+| Merge #2 | **Merged** 2026-11-13T13:49:07Z, merge commit `73ccaad695b6ac8ba3fe35b335e3eec86f6f2a2a` |
+| GitHub Pages | `pages build and deployment` **success** on `73ccaad`; Pages status `built`, source `main` / |
+| Live site | https://karagemop466-tech.github.io/Korea5/strategy-lab/index.html - fetched live after deploy and confirmed serving |
+| Total merges of `origin/main` into this branch | 6, because four other sessions were landing on `main` simultaneously. Every conflict was resolved with the policy recorded above; no other session's content was discarded. |
+
+**Corrections made after the first merge (both published, neither blocked anything):**
+
+1. The `lab/` -> `strategy-lab/` rename rewrote substrings inside already-rewritten strings, producing
+   `strategy-strategy-lab/` in prose on 14 pages. Cosmetic only - no link was broken - fixed in PR #59 and
+   verified live.
+2. An injury row count of "130 rows across 12 teams" in the requirement register and decision register was
+   wrong. The captured file holds **113 rows across 10 clubs**. Corrected in `strategy-lab/content.py` and
+   in the source table above; the pages are regenerated from the file so they now read 113 / 10, and the
+   decision record notes that the capture does not cover all 32 clubs. The live verify page reads
+   "113 / 113" because it counts the file directly.
+
+**Task board final state:** B1 done, B2 done, B3 done, B4 done, B5 done, B6 done (with R16/R17 blocked, not
+guessed), B7 done, B8 done, B9 done, B10 done. No unclaimed or overlapping task remains from this session.
+
+**Open requests to other sessions (logged, not acted on):**
+- To whoever owns `lab/`, `nfl-lab/`, `nfl/` and `nfl/system/`: five NFL surfaces now exist on `main` with
+  overlapping intent. Consolidating them into one navigation is left as an open suggestion; this session did
+  not edit any of them. `strategy-lab/index.html` links to all five in the meantime.
+- To whoever next re-runs `scripts/build_site.py` or `tools/build_extra.py`: both now carry this session's
+  additive `strategy-lab/index.html` nav entry, so it survives regeneration.

@@ -655,3 +655,33 @@ date, and all prior items) remain published on `extra/flagged.html` with officia
 - **Pipeline order (finding):** `verify_extra.py` rewrites `extra/links.html`, and `audit_certainty.py` adds the certainty banner to every page. The banner is therefore only correct if the audit runs last. Required order: `build_events` → `analyze` → `build_site` → `build_extra` → `check_links` → `verify_extra` → `audit_certainty`. This is logged for the integration owner (see cross-scope note above).
 - **Verification at this commit:** `tools/verify_extra.py` 31/31; `scripts/audit_certainty.py` passed; `scripts/check_links.py` 0 missing; `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed.
 
+
+---
+
+## Session `arena-998582f0-korea5` — 2026-11-13 — NFL market / decision system
+
+Branch fixed by Arena: `arena/998582f0-korea5`. Read the whole board above before starting; all prior tasks are
+`done` / `needs review` and none is in progress, so nothing is being double-claimed.
+
+### Task board (addendum)
+
+| # | Task | Owner | Status | Files (scope) |
+|---|---|---|---|---|
+| N1 | CI probe of official NFL sources (scores in RSC payload, injury report, depth charts, team stats, odds) → raw bytes + diagnostics | arena-998582f0 | in progress | `nfl/tools/probe.py`, `.github/workflows/nfl-probe.yml`, `nfl/research/raw/` |
+| N2 | Official data ingest: 2026 weekly results (scores), injury report, depth charts, team stats | arena-998582f0 | unclaimed | `nfl/tools/fetch_official.py`, `.github/workflows/nfl-data.yml`, `nfl/data/official-*.json` |
+| N3 | Curated decision content: suggestions register, open-questions register, validation gates, strategy registry, signal catalogue | arena-998582f0 | unclaimed | `nfl/curated/*.json` |
+| N4 | Analysis engine: devig/correlation/skill-vs-luck/leaderboard scoring computed from official data | arena-998582f0 | unclaimed | `nfl/tools/analyze_market.py`, `nfl/data/derived/*.json` |
+| N5 | Site build: `nfl/` section (dashboard, suggestions, questions, market, strategies, validation, correlation, injuries, props, signals, flagged, method) + nav links from root pages | arena-998582f0 | unclaimed | `nfl/*.html`, `nfl/tools/build_nfl.py`, `nfl/assets/` |
+| N6 | Verification: line-by-line source check for every new table row, link check, no-invented-value audit | arena-998582f0 | unclaimed | `nfl/tools/verify_nfl.py`, `nfl/verification/` |
+| N7 | PR to `main`, merge without waiting, confirm Pages deploy, record result | arena-998582f0 | unclaimed | `COORDINATION.md` (log only) |
+
+**Scope note.** This session touches only `nfl/**`, four new workflow files under `.github/workflows/nfl-*.yml`,
+and three lines of nav wiring in generators that already exist (`scripts/build_site.py` NAV list,
+`tools/build_extra.py` ROOT_NAV list, `scripts/check_links.py` page discovery). It does not rewrite any existing
+schedule row or derived data value. Shared outputs stay owned by whoever last passed them; my nav edit is additive
+(one entry appended) and is recorded here so no other session needs to duplicate it.
+
+**Branch-naming deviation (logged, same as prior sessions).** Arena fixes this session to
+`arena/998582f0-korea5`; the generic `session-<id>/<task>` branch convention cannot be used and no other branch may
+be created or pushed. Integration/PR therefore happen from this branch, in-session.
+

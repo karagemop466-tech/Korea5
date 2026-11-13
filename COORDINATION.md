@@ -1577,3 +1577,20 @@ this one (`lab/`), `arena/1e59465a` (`nfl-lab/`), `arena/e96c5f87` (`nfl/`), `ar
 plus the retained addresses. Nothing of any session has been removed. The duplication is real and is recorded here
 rather than resolved by deleting another session's work.
 
+
+## Merge result — session `arena/722a47cb-korea5` (PR #45) (2026-11-13)
+
+- **PR #45** (`arena/722a47cb-korea5` → `main`, "N3-N8: NFL suggestions, decision registry, leaderboard/bet-type gates, injury & lineup-depth tracking"): **MERGED** at 2026-11-13T13:42:07Z, merge commit `45ce41fe236dfddc1335fc12ef96d99146c363da`.
+- The PR was not mergeable on first submission because parallel sessions kept landing overlapping
+  **NFL Lines Lab** / **NFL Decision Support** work on `main`. Four additive merges of `origin/main` were
+  performed on the branch (each resolving conflicts without discarding either session's work, then re-running
+  the full canonical CI chain). Once `main` stabilised, `gh pr merge 45 --merge` succeeded.
+- **GitHub Pages:** source `main` /, status **built**, live at https://karagemop466-tech.github.io/Korea5/ .
+  Live reads confirm the dashboard, the NFL Lines Lab, the NFL Model lab and the NFL Decision Support hub all
+  serve and cross-link correctly.
+- **Verification (final, on the merged branch):** `analyze_lab` → `build_lab` → `nfl_lab/build_site` →
+  `nfl_lab/verify` → `build_nfl` → `verify_nfl` → `build_site` → `build_extra` → `audit_certainty` →
+  `check_links` (77 pages, 0 missing) → `verify_extra` (31/31) → `verify_lab` (0 failures) →
+  `audit_certainty` → json asserts → node checks → Python unit tests (OK) → `git diff --check` (clean).
+- **No performance/correlation/ROI/edge/leaderboard-winner claim is made anywhere.** Every factual table row
+  links to an official source; unverified values are blank and flagged.

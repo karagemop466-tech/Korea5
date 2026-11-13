@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions · NFL Control Room</title>
+<meta name="description" content="NFL Control Room: one decision register, one suggestion review board and one evidence ledger covering every NFL section of this repository.">
+<link rel="stylesheet" href="assets/control.css">
+<script defer src="assets/control.js"></script>
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL CONTROL ROOM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="decisions.html" class="">Decisions</a><a href="suggestions.html" class="active">Suggestions</a><a href="evidence.html" class="">Evidence</a><a href="strategies.html" class="">Strategies</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="audit.html" class="">Audit</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged for review</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No edge is published here.</strong> This repository holds no market
+price, no settlement record and no settled forecast, so no win rate, yield, edge or fair price is computed anywhere.
+Every strategy on this site is unscored. Items that could not be confirmed against an official source are left blank
+and listed on <a href="flagged.html">Flagged for review</a>.</aside>
+<h1>Suggestions</h1>
+<p class="lede">Improve the site, improve decision making, and discover the information that is missing — with the options laid out so the best path is chosen before any change is made.</p>
+
+<p class="lede">Twelve proposals, each with at least three options, the cost of each and a recommended default. This is
+the review board: read a row, pick an option, and the path is decided before anything is implemented.</p>
+<div class="callout note">
+  <strong>How a decision is taken here.</strong> Selections are stored in your browser only
+  (<code>localStorage</code>) and can be exported as JSON. Nothing is sent to a server and no source file is modified
+  by clicking. To make a choice binding, record it in <code>COORDINATION.md</code> and in the owning data file.
+  <div class="btnrow">
+    <button id="export" type="button">Export selections (JSON)</button>
+    <button id="clear" type="button" class="ghost">Clear</button>
+    <span id="status" class="muted" role="status"></span>
+  </div>
+</div>
+
+<article class="card" id="CS-01">
+  <div class="cardhead">
+    <h3>CS-01 · Make this Control Room the single entry point and mark the other eight NFL surfaces as evidence stores</h3>
+    <div class="badges"><span class="pill">Consolidation</span><span class="pill">P1</span>
+      <span class="pill st-open">open</span></div>
+  </div>
+  <dl>
+    <dt>Problem</dt><dd>Eight sessions built eight NFL surfaces. A reader cannot tell which is authoritative, and the same question is answered four ways.</dd>
+    <dt>Evidence</dt><dd>data/control/meta.json lists all nine surfaces and their row counts.</dd>
+    <dt>Official source</dt><dd><a href="https://www.nfl.com/" rel="noopener">www.nfl.com</a></dd>
+  </dl>
+  <table class="grid opts">
+    <thead><tr><th style="width:5.5rem">Option</th><th>Path</th><th>Trade-off if chosen</th><th style="width:6rem">Select</th></tr></thead>
+    <tbody>
+  <tr class="rec">
+    <td><strong>A</strong> <span class="pill recpill">recommended</span></td>
+    <td>Publish this page as the entry point and leave every existing surface exactly as it is<div class="muted">Navigation points here first; each other section is labelled for what it is.</div></td>
+    <td>Cheap, reversible, discards nothing. The duplication stays and will drift.</td>
+    <td><label class="pick"><input type="radio" name="CS-01" value="A" checked> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>B</strong></td>
+    <td>Redirect the older surfaces into this one and retire their pages<div class="muted">One section, one data pipeline.</div></td>
+    <td>Cleanest to read, but deletes other sessions&#x27; published work and their verifiers. Not reversible in one step.</td>
+    <td><label class="pick"><input type="radio" name="CS-01" value="B"> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>C</strong></td>
+    <td>Leave everything as it is<div class="muted">No change.</div></td>
+    <td>No cost today; the drift already found in this audit (three defects) gets worse.</td>
+    <td><label class="pick"><input type="radio" name="CS-01" value="C"> choose</label></td>
+  </tr></tbody>
+  </table>
+</article>
+<article class="card" id="CS-02">
+  <div class="cardhead">
+    <h3>CS-02 · Either license a price feed or rename every page so it cannot be read as a betting recommendation</h3>
+    <div class="badges"><span class="pill">Market data</span><span class="pill">P1</span>
+      <span class="pill st-open">open</span></div>
+  </div>
+  <dl>
+    <dt>Problem</dt><dd>D-PRICE is open. Without a stored price, no win rate, yield, edge or fair price can be computed, yet a dozen pages discuss strategies.</dd>
+    <dt>Evidence</dt><dd>nfl/system/data/derived/market.json (priceFeedAvailable: false).</dd>
+    <dt>Official source</dt><dd><a href="https://www.nfl.com/scores/2026/week-10" rel="noopener">www.nfl.com</a></dd>
+  </dl>
+  <table class="grid opts">
+    <thead><tr><th style="width:5.5rem">Option</th><th>Path</th><th>Trade-off if chosen</th><th style="width:6rem">Select</th></tr></thead>
+    <tbody>
+  <tr class="rec">
+    <td><strong>A</strong> <span class="pill recpill">recommended</span></td>
+    <td>License a timestamped open/close feed<div class="muted">Store every quote with its timestamp and vendor; grade against the close.</div></td>
+    <td>Cost and a licence review. Unlocks every gate at once.</td>
+    <td><label class="pick"><input type="radio" name="CS-02" value="A" checked> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>B</strong></td>
+    <td>Keep the declared reference price and label the programme &#x27;study only&#x27; everywhere<div class="muted">No monetary claim is ever made; the -110 convention is stated as a convention.</div></td>
+    <td>Free and already implemented. Permanently caps what can be concluded.</td>
+    <td><label class="pick"><input type="radio" name="CS-02" value="B"> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>C</strong></td>
+    <td>Use the ESPN public odds block as a market reference<div class="muted">Cite ESPN per row and label it a trusted secondary source.</div></td>
+    <td>Not an official league feed; one session already does this on one page. Licence for storage is unclear.</td>
+    <td><label class="pick"><input type="radio" name="CS-02" value="C"> choose</label></td>
+  </tr></tbody>
+  </table>
+</article>
+<article class="card" id="CS-03">
+  <div class="cardhead">
+    <h3>CS-03 · Freeze one gate set across all three strategy labs instead of three different ones</h3>
+    <div class="badges"><span class="pill">Validation</span><span class="pill">P1</span>
+      <span class="pill st-open">open</span></div>
+  </div>
+  <dl>
+    <dt>Problem</dt><dd>The lines lab uses G1-G7, the decision system uses G1-G10, the model lab uses G0-G9. A strategy passing in one may fail in another, and the reader cannot compare them.</dd>
+    <dt>Evidence</dt><dd>nfl/system/curated/validation-gates.json vs data/lines/strategies.json gate map.</dd>
+    <dt>Official source</dt><dd><a href="https://www.nfl.com/standings/" rel="noopener">www.nfl.com</a></dd>
+  </dl>
+  <table class="grid opts">
+    <thead><tr><th style="width:5.5rem">Option</th><th>Path</th><th>Trade-off if chosen</th><th style="width:6rem">Select</th></tr></thead>
+    <tbody>
+  <tr class="rec">
+    <td><strong>A</strong> <span class="pill recpill">recommended</span></td>
+    <td>Adopt one named gate set, versioned and frozen, and map the other two onto it<div class="muted">Publish a mapping table so no result is invalidated, only relabelled.</div></td>
+    <td>Some real work to reconcile thresholds; makes every result comparable.</td>
+    <td><label class="pick"><input type="radio" name="CS-03" value="A" checked> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>B</strong></td>
+    <td>Publish a crosswalk without changing any gate<div class="muted">A table that shows how each lab&#x27;s gates correspond.</div></td>
+    <td>Cheap. Three vocabularies remain.</td>
+    <td><label class="pick"><input type="radio" name="CS-03" value="B"> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>C</strong></td>
+    <td>Keep three gate sets<div class="muted">No change.</div></td>
+    <td>A reader who compares two labs can reach two different conclusions about the same strategy.</td>
+    <td><label class="pick"><input type="radio" name="CS-03" value="C"> choose</label></td>
+  </tr></tbody>
+  </table>
+</article>
+<article class="card" id="CS-04">
+  <div class="cardhead">
+    <h3>CS-04 · Publish an official-snap-count join so &#x27;next man up&#x27; is measured, not inferred from a chart</h3>
+    <div class="badges"><span class="pill">Injury &amp;amp; depth</span><span class="pill">P1</span>
+      <span class="pill st-open">open</span></div>
+  </div>
+  <dl>
+    <dt>Problem</dt><dd>D-DEPTH is partly answered. The replacement is named from the club&#x27;s own chart, but nothing proves the replacement actually played.</dd>
+    <dt>Evidence</dt><dd>data/lines/lineup-risk.json (replacement populated on 71 of 165 rows; depth chart is the source).</dd>
+    <dt>Official source</dt><dd><a href="https://www.detroitlions.com/team/depth-chart/" rel="noopener">www.detroitlions.com</a></dd>
+  </dl>
+  <table class="grid opts">
+    <thead><tr><th style="width:5.5rem">Option</th><th>Path</th><th>Trade-off if chosen</th><th style="width:6rem">Select</th></tr></thead>
+    <tbody>
+  <tr class="rec">
+    <td><strong>A</strong> <span class="pill recpill">recommended</span></td>
+    <td>Parse the official Game Book PDFs for participation<div class="muted">Every game page links a Game Book; participation is printed in it.</div></td>
+    <td>PDF parsing is brittle, and the brief forbids guessing. Would need a per-game check.</td>
+    <td><label class="pick"><input type="radio" name="CS-04" value="A" checked> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>B</strong></td>
+    <td>Use an official snap-count table if one exists<div class="muted">Check nfl.com stats pages for a snap-count category.</div></td>
+    <td>Only viable if such a table is published officially; not confirmed in this pass.</td>
+    <td><label class="pick"><input type="radio" name="CS-04" value="B"> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>C</strong></td>
+    <td>Keep naming the chart replacement and label it &#x27;projected&#x27;<div class="muted">What is published today.</div></td>
+    <td>Honest but not measured, and the owner&#x27;s brief asks for the measured version.</td>
+    <td><label class="pick"><input type="radio" name="CS-04" value="C"> choose</label></td>
+  </tr></tbody>
+  </table>
+</article>
+<article class="card" id="CS-05">
+  <div class="cardhead">
+    <h3>CS-05 · Only raise lineup-risk rows against the week the injury snapshot belongs to</h3>
+    <div class="badges"><span class="pill">Injury &amp;amp; depth</span><span class="pill">P2</span>
+      <span class="pill st-open">open</span></div>
+  </div>
+  <dl>
+    <dt>Problem</dt><dd>The single Week 10 injury snapshot is currently applied to weeks 10 through 18 fixtures, which reads as a projection it cannot support.</dd>
+    <dt>Evidence</dt><dd>data/lines/lineup-risk.json: 69 of 165 rows are for weeks 11-18. Recorded as FL-16.</dd>
+    <dt>Official source</dt><dd><a href="https://www.nfl.com/injuries/" rel="noopener">www.nfl.com</a></dd>
+  </dl>
+  <table class="grid opts">
+    <thead><tr><th style="width:5.5rem">Option</th><th>Path</th><th>Trade-off if chosen</th><th style="width:6rem">Select</th></tr></thead>
+    <tbody>
+  <tr class="rec">
+    <td><strong>A</strong> <span class="pill recpill">recommended</span></td>
+    <td>Restrict the table to the current and next week<div class="muted">Filter on week, and say so on the page.</div></td>
+    <td>Loses the long view; removes a misleading implication.</td>
+    <td><label class="pick"><input type="radio" name="CS-05" value="A" checked> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>B</strong></td>
+    <td>Keep every week and label the column &#x27;as of Week 10&#x27;<div class="muted">One added label.</div></td>
+    <td>Cheap; a reader who skims still sees a Week 18 injury against a Week 18 game.</td>
+    <td><label class="pick"><input type="radio" name="CS-05" value="B"> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>C</strong></td>
+    <td>Capture a new injury snapshot for every week<div class="muted">Weekly data acquisition in CI.</div></td>
+    <td>Correct, and more moving parts.</td>
+    <td><label class="pick"><input type="radio" name="CS-05" value="C"> choose</label></td>
+  </tr></tbody>
+  </table>
+</article>
+<article class="card" id="CS-06">
+  <div class="cardhead">
+    <h3>CS-06 · Run every cross-surface consistency check on every commit, not once</h3>
+    <div class="badges"><span class="pill">Data integrity</span><span class="pill">P1</span>
+      <span class="pill st-open">open</span></div>
+  </div>
+  <dl>
+    <dt>Problem</dt><dd>This audit found three published defects that every existing verifier had passed: a whole-file team misattribution, a leaderboard/strategy disagreement, and a statistical test that could only return 1.000.</dd>
+    <dt>Evidence</dt><dd>data/control/audit.json records A01-A03 with the check that now catches each.</dd>
+    <dt>Official source</dt><dd><a href="https://www.nfl.com/injuries/" rel="noopener">www.nfl.com</a></dd>
+  </dl>
+  <table class="grid opts">
+    <thead><tr><th style="width:5.5rem">Option</th><th>Path</th><th>Trade-off if chosen</th><th style="width:6rem">Select</th></tr></thead>
+    <tbody>
+  <tr class="rec">
+    <td><strong>A</strong> <span class="pill recpill">recommended</span></td>
+    <td>Wire the new tests into CI and add a cross-register audit step<div class="muted">tests/test_lines_integrity.py plus tools/audit_control.py in the existing workflow.</div></td>
+    <td>A few seconds per run; catches the class of defect that was invisible before.</td>
+    <td><label class="pick"><input type="radio" name="CS-06" value="A" checked> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>B</strong></td>
+    <td>Run the audit on demand only<div class="muted">Manual.</div></td>
+    <td>The same defects return on the next rebuild.</td>
+    <td><label class="pick"><input type="radio" name="CS-06" value="B"> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>C</strong></td>
+    <td>Add a fourth verifier instead of extending the existing ones<div class="muted">More code, more places to disagree.</div></td>
+    <td>Unnecessary; the existing verifiers are healthy, they simply did not test this.</td>
+    <td><label class="pick"><input type="radio" name="CS-06" value="C"> choose</label></td>
+  </tr></tbody>
+  </table>
+</article>
+<article class="card" id="CS-07">
+  <div class="cardhead">
+    <h3>CS-07 · Record the reward decision in one line before any strategy is ranked</h3>
+    <div class="badges"><span class="pill">Governance</span><span class="pill">P1</span>
+      <span class="pill st-open">open</span></div>
+  </div>
+  <dl>
+    <dt>Problem</dt><dd>D-REWARD is open. Three registers give three defaults (paper points, credits, honour system), so a ranking implies a claim no one has agreed to.</dd>
+    <dt>Evidence</dt><dd>nfl/system/curated/suggestions.json; lines-lab/data/derived/leaderboard.json (paper points only).</dd>
+    <dt>Official source</dt><dd><a href="https://www.nfl.com/" rel="noopener">www.nfl.com</a></dd>
+  </dl>
+  <table class="grid opts">
+    <thead><tr><th style="width:5.5rem">Option</th><th>Path</th><th>Trade-off if chosen</th><th style="width:6rem">Select</th></tr></thead>
+    <tbody>
+  <tr class="rec">
+    <td><strong>A</strong> <span class="pill recpill">recommended</span></td>
+    <td>Paper points only, published empty until a strategy passes every gate<div class="muted">Already implemented.</div></td>
+    <td>Nothing to gain materially; nothing to get wrong legally.</td>
+    <td><label class="pick"><input type="radio" name="CS-07" value="A" checked> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>B</strong></td>
+    <td>Non-monetary rewards (credits, badges, research access)<div class="muted">Needs a rule for what a credit is worth, and one line on why it is not gambling.</div></td>
+    <td>More motivating; more governance.</td>
+    <td><label class="pick"><input type="radio" name="CS-07" value="B"> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>C</strong></td>
+    <td>Cash prizes<div class="muted">Requires a legal opinion for British Columbia before anything is announced.</div></td>
+    <td>Highest risk of the three. Not recommended without the opinion.</td>
+    <td><label class="pick"><input type="radio" name="CS-07" value="C"> choose</label></td>
+  </tr></tbody>
+  </table>
+</article>
+<article class="card" id="CS-08">
+  <div class="cardhead">
+    <h3>CS-08 · Put the honest negative result where a reader meets it first</h3>
+    <div class="badges"><span class="pill">Presentation</span><span class="pill">P2</span>
+      <span class="pill st-open">open</span></div>
+  </div>
+  <dl>
+    <dt>Problem</dt><dd>The strongest result in the whole programme is a negative one: the leading model is not distinguishable from luck (t = 1.48, 95% interval spanning zero). It is currently buried in a back-test page.</dd>
+    <dt>Evidence</dt><dd>data/nfl-signals/signals.json luck.S2-netpoints (nForTwoSigma 182).</dd>
+    <dt>Official source</dt><dd><a href="https://www.nfl.com/standings/" rel="noopener">www.nfl.com</a></dd>
+  </dl>
+  <table class="grid opts">
+    <thead><tr><th style="width:5.5rem">Option</th><th>Path</th><th>Trade-off if chosen</th><th style="width:6rem">Select</th></tr></thead>
+    <tbody>
+  <tr class="rec">
+    <td><strong>A</strong> <span class="pill recpill">recommended</span></td>
+    <td>Lead every NFL page with the negative result and the sample it would need<div class="muted">One sentence and one number at the top.</div></td>
+    <td>Makes the site less exciting and more trustworthy.</td>
+    <td><label class="pick"><input type="radio" name="CS-08" value="A" checked> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>B</strong></td>
+    <td>Keep it on the back-test page only<div class="muted">No change.</div></td>
+    <td>A reader who never opens that page will assume a validated edge exists.</td>
+    <td><label class="pick"><input type="radio" name="CS-08" value="B"> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>C</strong></td>
+    <td>Remove the negative result because the sample is small<div class="muted">Not recommended.</div></td>
+    <td>Removing a true measurement because it is inconvenient is the failure this project is built to avoid.</td>
+    <td><label class="pick"><input type="radio" name="CS-08" value="C"> choose</label></td>
+  </tr></tbody>
+  </table>
+</article>
+<article class="card" id="CS-09">
+  <div class="cardhead">
+    <h3>CS-09 · Publish one originated line per game with its uncertainty, and stop presenting the point estimate alone</h3>
+    <div class="badges"><span class="pill">Model</span><span class="pill">P2</span>
+      <span class="pill st-open">open</span></div>
+  </div>
+  <dl>
+    <dt>Problem</dt><dd>Lines are published as a single number. A model whose spread standard error is over a point is being read as if it were exact.</dd>
+    <dt>Evidence</dt><dd>data/nfl-intel/model.json sigma_margin 13.18; data/nfl-lab/model-params.json test_mae 10.167.</dd>
+    <dt>Official source</dt><dd><a href="https://www.nfl.com/schedules/" rel="noopener">www.nfl.com</a></dd>
+  </dl>
+  <table class="grid opts">
+    <thead><tr><th style="width:5.5rem">Option</th><th>Path</th><th>Trade-off if chosen</th><th style="width:6rem">Select</th></tr></thead>
+    <tbody>
+  <tr class="rec">
+    <td><strong>A</strong> <span class="pill recpill">recommended</span></td>
+    <td>Publish an interval with every originated line<div class="muted">One extra column per row.</div></td>
+    <td>Adds a column; stops a number being read as a price.</td>
+    <td><label class="pick"><input type="radio" name="CS-09" value="A" checked> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>B</strong></td>
+    <td>Publish the point estimate and state the error separately<div class="muted">Already partly done.</div></td>
+    <td>Requires the reader to hold two pages at once.</td>
+    <td><label class="pick"><input type="radio" name="CS-09" value="B"> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>C</strong></td>
+    <td>Keep one number per game<div class="muted">No change.</div></td>
+    <td>Encourages false precision.</td>
+    <td><label class="pick"><input type="radio" name="CS-09" value="C"> choose</label></td>
+  </tr></tbody>
+  </table>
+</article>
+<article class="card" id="CS-10">
+  <div class="cardhead">
+    <h3>CS-10 · Decide whether the two same-team receiver correlations should be pooled before either is quoted</h3>
+    <div class="badges"><span class="pill">Scope</span><span class="pill">P2</span>
+      <span class="pill st-open">open</span></div>
+  </div>
+  <dl>
+    <dt>Problem</dt><dd>Two measurements of the same structure disagree by design: r = -0.82 on 6 matched games (five players, one team) and phi = +0.575 for two props on the same player across 11,446 pairs. They answer different questions but read as contradictory.</dd>
+    <dt>Evidence</dt><dd>data/lab/analysis.json correlations[0] vs data/lines/correlations.json parlayCorrelations[1].</dd>
+    <dt>Official source</dt><dd><a href="https://www.nfl.com/players/justin-jefferson/stats/logs/" rel="noopener">www.nfl.com</a> · <a href="https://www.nfl.com/stats/player-stats/" rel="noopener">www.nfl.com</a></dd>
+  </dl>
+  <table class="grid opts">
+    <thead><tr><th style="width:5.5rem">Option</th><th>Path</th><th>Trade-off if chosen</th><th style="width:6rem">Select</th></tr></thead>
+    <tbody>
+  <tr class="rec">
+    <td><strong>A</strong> <span class="pill recpill">recommended</span></td>
+    <td>Quote both with their definitions, and quote the large-sample figure as the default for pricing<div class="muted">One glossary row per figure.</div></td>
+    <td>Honest; the reader must read the definitions.</td>
+    <td><label class="pick"><input type="radio" name="CS-10" value="A" checked> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>B</strong></td>
+    <td>Quote only the large-sample figure<div class="muted">Simpler.</div></td>
+    <td>Hides that the small sample contradicts it in sign, which is itself informative.</td>
+    <td><label class="pick"><input type="radio" name="CS-10" value="B"> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>C</strong></td>
+    <td>Quote only the small-sample figure<div class="muted">Not recommended.</div></td>
+    <td>Presents a six-game correlation as if it were a property of the league.</td>
+    <td><label class="pick"><input type="radio" name="CS-10" value="C"> choose</label></td>
+  </tr></tbody>
+  </table>
+</article>
+<article class="card" id="CS-11">
+  <div class="cardhead">
+    <h3>CS-11 · Separate &#x27;official&#x27; from &#x27;the club says unofficial&#x27; in every depth chart row</h3>
+    <div class="badges"><span class="pill">Data integrity</span><span class="pill">P2</span>
+      <span class="pill st-open">open</span></div>
+  </div>
+  <dl>
+    <dt>Problem</dt><dd>Four clubs label their own published chart &#x27;unofficial&#x27;. A table that shows &#x27;1st string&#x27; without that label overstates what the source says.</dd>
+    <dt>Evidence</dt><dd>data/lines/depth-charts.json club &#x27;chartLabel&#x27;; Detroit&#x27;s page reads &#x27;2026 Unofficial Depth Chart&#x27;.</dd>
+    <dt>Official source</dt><dd><a href="https://www.detroitlions.com/team/depth-chart/" rel="noopener">www.detroitlions.com</a></dd>
+  </dl>
+  <table class="grid opts">
+    <thead><tr><th style="width:5.5rem">Option</th><th>Path</th><th>Trade-off if chosen</th><th style="width:6rem">Select</th></tr></thead>
+    <tbody>
+  <tr class="rec">
+    <td><strong>A</strong> <span class="pill recpill">recommended</span></td>
+    <td>Show the club&#x27;s own label on every row and filter by it<div class="muted">A boolean column taken from the club&#x27;s page text.</div></td>
+    <td>One more column; removes an overstatement.</td>
+    <td><label class="pick"><input type="radio" name="CS-11" value="A" checked> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>B</strong></td>
+    <td>Treat all club charts as equal<div class="muted">No change.</div></td>
+    <td>Flattens a distinction the clubs themselves make.</td>
+    <td><label class="pick"><input type="radio" name="CS-11" value="B"> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>C</strong></td>
+    <td>Use only the clubs that label their chart official<div class="muted">Consistent, but drops most of the league.</div></td>
+    <td>Loses coverage the owner asked for.</td>
+    <td><label class="pick"><input type="radio" name="CS-11" value="C"> choose</label></td>
+  </tr></tbody>
+  </table>
+</article>
+<article class="card" id="CS-12">
+  <div class="cardhead">
+    <h3>CS-12 · Put one number on the page a reader is asked to remember: how many settled bets exist</h3>
+    <div class="badges"><span class="pill">Presentation</span><span class="pill">P3</span>
+      <span class="pill st-open">open</span></div>
+  </div>
+  <dl>
+    <dt>Problem</dt><dd>Every page explains at length that no strategy is validated. None leads with the one number that makes it concrete: zero settled bets.</dd>
+    <dt>Evidence</dt><dd>data/nfl-signals/forward-ledger.json: 41 frozen rows, 0 settled.</dd>
+    <dt>Official source</dt><dd><a href="https://www.nfl.com/" rel="noopener">www.nfl.com</a></dd>
+  </dl>
+  <table class="grid opts">
+    <thead><tr><th style="width:5.5rem">Option</th><th>Path</th><th>Trade-off if chosen</th><th style="width:6rem">Select</th></tr></thead>
+    <tbody>
+  <tr class="rec">
+    <td><strong>A</strong> <span class="pill recpill">recommended</span></td>
+    <td>Show &#x27;settled bets: 0&#x27; as a headline tile on every NFL page<div class="muted">Read from the forward ledger.</div></td>
+    <td>Blunt and accurate.</td>
+    <td><label class="pick"><input type="radio" name="CS-12" value="A" checked> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>B</strong></td>
+    <td>Explain it in prose<div class="muted">What is done today.</div></td>
+    <td>Prose is searchable but not memorable.</td>
+    <td><label class="pick"><input type="radio" name="CS-12" value="B"> choose</label></td>
+  </tr>
+  <tr class="">
+    <td><strong>C</strong></td>
+    <td>Show the paper-bet count instead<div class="muted">Would read as progress that does not exist.</div></td>
+    <td>Paper candidates are not settled bets; conflating them is the mistake to avoid.</td>
+    <td><label class="pick"><input type="radio" name="CS-12" value="C"> choose</label></td>
+  </tr></tbody>
+  </table>
+</article>
+
+<footer class="foot">
+  <p>Every row links to the register or official page it came from. Regenerate with
+  <code>python3 tools/build_control.py &amp;&amp; python3 tools/build_control_site.py</code>; verify with
+  <code>python3 tools/verify_control.py</code>.</p>
+  <p>Part of the <a href="../index.html">Korea5 repository site</a>. Other NFL sections:
+  <a href="../lines/index.html">Lines Lab</a> · <a href="../lab/index.html">evidence lab</a> ·
+  <a href="../nfl-lab/index.html">model lab</a> · <a href="../nfl/index.html">decision support</a> ·
+  <a href="../nfl/system/index.html">decision system</a> · <a href="../lines-lab/index.html">skill lab</a> ·
+  <a href="../strategy-lab/index.html">strategy lab</a>.</p>
+</footer>
+</main></body></html>

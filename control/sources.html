@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sources · NFL Control Room</title>
+<meta name="description" content="NFL Control Room: one decision register, one suggestion review board and one evidence ledger covering every NFL section of this repository.">
+<link rel="stylesheet" href="assets/control.css">
+<script defer src="assets/control.js"></script>
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL CONTROL ROOM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="decisions.html" class="">Decisions</a><a href="suggestions.html" class="">Suggestions</a><a href="evidence.html" class="">Evidence</a><a href="strategies.html" class="">Strategies</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="audit.html" class="">Audit</a><a href="sources.html" class="active">Sources</a><a href="flagged.html" class="">Flagged for review</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No edge is published here.</strong> This repository holds no market
+price, no settlement record and no settled forecast, so no win rate, yield, edge or fair price is computed anywhere.
+Every strategy on this site is unscored. Items that could not be confirmed against an official source are left blank
+and listed on <a href="flagged.html">Flagged for review</a>.</aside>
+<h1>Sources</h1>
+<p class="lede">Where every figure comes from, and what no source can give us.</p>
+
+<p class="lede">Every source this site uses, and what it is used for. Official league and club sources are listed
+first; the one trusted secondary source is labelled as such and is never presented as an official feed.</p>
+<table class="grid wide">
+<thead><tr><th>Source</th><th>URL</th><th>What it provides</th></tr></thead>
+<tbody><tr><td><a href="https://www.nfl.com/injuries/" rel="noopener">NFL.com official injury report</a></td><td class="muted"><code>https://www.nfl.com/injuries/</code></td><td>Weekly injury report by club: player, position, injury, practice status, game status.</td></tr><tr><td><a href="https://www.nfl.com/standings/league/2026/REG" rel="noopener">NFL.com official standings</a></td><td class="muted"><code>https://www.nfl.com/standings/league/2026/REG</code></td><td>W-L-T, points for and against per club. Re-read live this session: 32/32 rows matched.</td></tr><tr><td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">NFL.com official schedule by week</a></td><td class="muted"><code>https://www.nfl.com/schedules/2026/by-week/week-10</code></td><td>Fixtures, kickoff times and final scores.</td></tr><tr><td><a href="https://www.nfl.com/scores/2026/week-10" rel="noopener">NFL.com official scores</a></td><td class="muted"><code>https://www.nfl.com/scores/2026/week-10</code></td><td>Week results as printed on the scores page.</td></tr><tr><td><a href="https://www.nfl.com/games/jaguars-at-ravens-2026-reg-9" rel="noopener">NFL.com game center</a></td><td class="muted"><code>https://www.nfl.com/games/jaguars-at-ravens-2026-reg-9</code></td><td>Per-game final score and box score; re-read live this session.</td></tr><tr><td><a href="https://www.nfl.com/players/justin-jefferson/stats/logs/" rel="noopener">NFL.com player statistics logs</a></td><td class="muted"><code>https://www.nfl.com/players/justin-jefferson/stats/logs/</code></td><td>Per-game player statistics; re-read live this session, all 8 rows matched.</td></tr><tr><td><a href="https://www.nfl.com/teams/" rel="noopener">NFL.com team directory</a></td><td class="muted"><code>https://www.nfl.com/teams/</code></td><td>The list of 32 clubs and their official websites, used to find each club&#x27;s depth chart.</td></tr><tr><td><a href="https://www.detroitlions.com/team/depth-chart/" rel="noopener">Detroit Lions official depth chart</a></td><td class="muted"><code>https://www.detroitlions.com/team/depth-chart/</code></td><td>Chart tiers used to verify the next-man-up rows live this session.</td></tr><tr><td><a href="https://www.49ers.com/team/depth-chart" rel="noopener">San Francisco 49ers official depth chart</a></td><td class="muted"><code>https://www.49ers.com/team/depth-chart</code></td><td>Chart used as a second tier source.</td></tr><tr><td><a href="https://www.espn.com/nfl/scoreboard" rel="noopener">ESPN NFL scoreboard (trusted secondary, not official)</a></td><td class="muted"><code>https://www.espn.com/nfl/scoreboard</code></td><td>The only market price anywhere in this repository. Labelled secondary on every row that uses it.</td></tr><tr><td><a href="https://github.com/nflverse/nfldata" rel="noopener">nflverse/nfldata (third party)</a></td><td class="muted"><code>https://github.com/nflverse/nfldata</code></td><td>Historical game archive used by two labs. Its own documentation does not name the source of its line columns.</td></tr></tbody></table>
+<h2>What no source provides</h2>
+<ul class="bullets">
+<li><strong>A price.</strong> No official NFL page publishes a spread, total, moneyline or player prop. Probed by exact
+regex on week, game and stat pages: zero hits. This is the reason no win rate or yield is published anywhere.</li>
+<li><strong>Snap counts.</strong> No official machine-readable snap count was found, so "who replaced whom" cannot be
+proven from participation; the site names the chart's next man up and says so.</li>
+<li><strong>A licence for the third-party archive.</strong> Two labs use it and both publish the gap.</li>
+</ul>
+
+<footer class="foot">
+  <p>Every row links to the register or official page it came from. Regenerate with
+  <code>python3 tools/build_control.py &amp;&amp; python3 tools/build_control_site.py</code>; verify with
+  <code>python3 tools/verify_control.py</code>.</p>
+  <p>Part of the <a href="../index.html">Korea5 repository site</a>. Other NFL sections:
+  <a href="../lines/index.html">Lines Lab</a> · <a href="../lab/index.html">evidence lab</a> ·
+  <a href="../nfl-lab/index.html">model lab</a> · <a href="../nfl/index.html">decision support</a> ·
+  <a href="../nfl/system/index.html">decision system</a> · <a href="../lines-lab/index.html">skill lab</a> ·
+  <a href="../strategy-lab/index.html">strategy lab</a>.</p>
+</footer>
+</main></body></html>

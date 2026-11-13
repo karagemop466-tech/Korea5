@@ -1,0 +1,227 @@
+{
+ "meta": {
+  "generatedUTC": "2026-11-13T23:09:10Z"
+ },
+ "datasets": [
+  {
+   "path": "data/lines/games.json",
+   "what": "Official NFL game index (2024-2026) with scores where final",
+   "provider": "NFL.com by-week schedule pages",
+   "sourceUrl": "https://www.nfl.com/schedules/",
+   "cannotTell": "Score for 2026 regular season; no price.",
+   "rows": 1170,
+   "sha256_12": "c889e56e413c",
+   "exists": true
+  },
+  {
+   "path": "data/lines/boxscores.json",
+   "what": "Official per-player box score rows",
+   "provider": "NFL.com game pages",
+   "sourceUrl": "https://www.nfl.com/games/",
+   "cannotTell": "Printed statistics only; no snap counts.",
+   "rows": 29919,
+   "sha256_12": "629e64e429c8",
+   "exists": true
+  },
+  {
+   "path": "data/lines/injuries.json",
+   "what": "Official Week 10 2026 injury report",
+   "provider": "NFL.com official injury report",
+   "sourceUrl": "https://www.nfl.com/injuries/",
+   "cannotTell": "One point-in-time snapshot; no history.",
+   "rows": 296,
+   "sha256_12": "98587f2c242c",
+   "exists": true
+  },
+  {
+   "path": "data/lines/depth-charts.json",
+   "what": "Official club depth charts (32 clubs)",
+   "provider": "Club websites, list from nfl.com/teams",
+   "sourceUrl": "https://www.nfl.com/teams/",
+   "cannotTell": "Charts, not lineups. Houston is an image.",
+   "rows": 32,
+   "sha256_12": "3be0dadfb3ef",
+   "exists": true
+  },
+  {
+   "path": "data/lines/lineup-risk.json",
+   "what": "Injury x depth deficiency ledger for upcoming fixtures",
+   "provider": "Derived from the two files above",
+   "sourceUrl": "https://www.nfl.com/injuries/",
+   "cannotTell": "Projection from a chart; not a snap count.",
+   "rows": 165,
+   "sha256_12": "41539fa2b7cc",
+   "exists": true
+  },
+  {
+   "path": "data/lines/correlations.json",
+   "what": "Measured correlations between stats and between bet legs",
+   "provider": "Derived from official box scores",
+   "sourceUrl": "https://www.nfl.com/stats/player-stats/",
+   "cannotTell": "Relationships, not prices.",
+   "rows": null,
+   "sha256_12": "e73aba2cb60e",
+   "exists": true
+  },
+  {
+   "path": "data/lines/strategies.json",
+   "what": "18 candidate strategies with gate results and per-bet ledger",
+   "provider": "Derived from official games and box scores",
+   "sourceUrl": "https://www.nfl.com/schedules/",
+   "cannotTell": "Scored at a declared -110 reference price, not a market quote.",
+   "rows": 18,
+   "sha256_12": "231cf40de83b",
+   "exists": true
+  },
+  {
+   "path": "data/lines/leaderboard.json",
+   "what": "Ranked strategies and paper reward",
+   "provider": "Derived from strategies.json",
+   "sourceUrl": "https://www.nfl.com/standings/",
+   "cannotTell": "Paper points only; no money.",
+   "rows": 18,
+   "sha256_12": "2761a3c53ddb",
+   "exists": true
+  },
+  {
+   "path": "data/lab/player-logs-2026.json",
+   "what": "Official player game logs, 5 players, 2026 weeks 1-9",
+   "provider": "NFL.com player log pages",
+   "sourceUrl": "https://www.nfl.com/players/justin-jefferson/stats/logs/",
+   "cannotTell": "8 games per player; a small sample.",
+   "rows": 5,
+   "sha256_12": "53b792478beb",
+   "exists": true
+  },
+  {
+   "path": "data/lab/analysis.json",
+   "what": "Dispersion, correlations and sample-size arithmetic",
+   "provider": "Derived from the player logs",
+   "sourceUrl": "https://www.nfl.com/players/justin-jefferson/stats/logs/",
+   "cannotTell": "Descriptive statistics only.",
+   "rows": null,
+   "sha256_12": "e05f1ff4d28e",
+   "exists": true
+  },
+  {
+   "path": "data/nfl-signals/signals.json",
+   "what": "Walk-forward model signals, leaderboard, gates and luck tests",
+   "provider": "Derived from the official capture",
+   "sourceUrl": "https://www.nfl.com/scores/2026/week-10",
+   "cannotTell": "100 scoreable games; the leader is not distinguishable from luck.",
+   "rows": 40,
+   "sha256_12": "b24bed4ad5b1",
+   "exists": true
+  },
+  {
+   "path": "data/nfl-signals/forward-ledger.json",
+   "what": "Frozen forward predictions awaiting settlement",
+   "provider": "Derived",
+   "sourceUrl": "https://www.nfl.com/scores/",
+   "cannotTell": "0 settled. Nothing can be graded yet.",
+   "rows": 41,
+   "sha256_12": "e41a13572d5a",
+   "exists": true
+  },
+  {
+   "path": "data/nfl-intel/model.json",
+   "what": "Opponent-adjusted ratings and originated lines",
+   "provider": "Derived from verified finals",
+   "sourceUrl": "https://www.nfl.com/schedules/",
+   "cannotTell": "16.9% of 32 clubs complete 2026 data at capture; market columns blank.",
+   "rows": null,
+   "sha256_12": "3283eabd5572",
+   "exists": true
+  },
+  {
+   "path": "data/nfl-analytics/market-odds-week-10-2026.json",
+   "what": "ESPN public odds block, copied verbatim",
+   "provider": "ESPN scoreboard API (trusted secondary, not official)",
+   "sourceUrl": "https://www.espn.com/nfl/scoreboard",
+   "cannotTell": "Not an official league feed; licence to store is unclear.",
+   "rows": 14,
+   "sha256_12": "db1e3ee5aa9f",
+   "exists": true
+  },
+  {
+   "path": "nfl/system/data/official-results.json",
+   "what": "Official finals for 2025 and 2026",
+   "provider": "NFL.com by-week pages",
+   "sourceUrl": "https://www.nfl.com/schedules/",
+   "cannotTell": "Only cards that read FINAL.",
+   "rows": 457,
+   "sha256_12": "4cc6b613c2d2",
+   "exists": true
+  },
+  {
+   "path": "nfl/system/data/official-injuries.json",
+   "what": "Official injury report, two seasons",
+   "provider": "NFL.com injury pages",
+   "sourceUrl": "https://www.nfl.com/injuries/",
+   "cannotTell": "Snapshot; week 1-10 2026 and all 2025.",
+   "rows": 8900,
+   "sha256_12": "1ab1f1027552",
+   "exists": true
+  },
+  {
+   "path": "nfl/system/data/derived/skill.json",
+   "what": "Home-field, Brier and shuffle-test arithmetic",
+   "provider": "Derived from official finals",
+   "sourceUrl": "https://www.nfl.com/standings/",
+   "cannotTell": "Outcome randomness only; not strategy skill.",
+   "rows": null,
+   "sha256_12": "917da17424bc",
+   "exists": true
+  },
+  {
+   "path": "nfl/system/data/derived/depth.json",
+   "what": "Depth-chart entries by club and tier",
+   "provider": "Club sites via nfl.com/teams",
+   "sourceUrl": "https://www.nfl.com/teams/",
+   "cannotTell": "A chart is not a lineup.",
+   "rows": null,
+   "sha256_12": "ad35160e9ef4",
+   "exists": true
+  },
+  {
+   "path": "lines-lab/data/nfldata",
+   "what": "Third-party game archive with spread and total columns",
+   "provider": "nflverse/nfldata on GitHub (third party)",
+   "sourceUrl": "https://github.com/nflverse/nfldata",
+   "cannotTell": "Upstream source of the line columns is not documented by the archive.",
+   "rows": 8,
+   "sha256_12": "3571e1c9fc8d",
+   "exists": true
+  },
+  {
+   "path": "lines-lab/data/derived/leaderboard.json",
+   "what": "Held-out model evaluation 2020-2025",
+   "provider": "Derived from the third-party archive",
+   "sourceUrl": "https://github.com/nflverse/nfldata",
+   "cannotTell": "Paper points only; no monetary reward authorised.",
+   "rows": 8,
+   "sha256_12": "7261e1699078",
+   "exists": true
+  },
+  {
+   "path": "strategy-lab/data/analysis.json",
+   "what": "137 verified finals, ratings, walk-forward back-test",
+   "provider": "NFL.com pages",
+   "sourceUrl": "https://www.nfl.com/scores/",
+   "cannotTell": "One partial season.",
+   "rows": 137,
+   "sha256_12": "0c12b89b8bba",
+   "exists": true
+  },
+  {
+   "path": "data/nfl-lab/games-source.json",
+   "what": "Provenance record for the third-party archive",
+   "provider": "nflverse/nfldata",
+   "sourceUrl": "https://github.com/nflverse/nfldata",
+   "cannotTell": "Records SHA-256 of every archived file.",
+   "rows": null,
+   "sha256_12": "820bc904ce4f",
+   "exists": true
+  }
+ ]
+}

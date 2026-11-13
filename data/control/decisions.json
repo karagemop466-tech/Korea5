@@ -1,0 +1,1106 @@
+{
+ "meta": {
+  "generatedUTC": "2026-11-13T23:09:10Z"
+ },
+ "decisions": [
+  {
+   "key": "PRICE",
+   "area": "Market data",
+   "blocking": true,
+   "status": "open",
+   "question": "Which market price will our own lines be compared against, and are we permitted to store and cite it?",
+   "why": "Without a stored price there is no settlement, so no win rate, yield, edge or fair price can exist. This single decision blocks every monetary claim on every NFL page in this repository.",
+   "have": "Nothing. No official NFL page publishes odds (probed by exact regex on week, game and stat pages: zero hits). One session parsed ESPN's public scoreboard odds block and labelled it a trusted secondary source, not an official feed.",
+   "missing": "A licensed, timestamped feed of open and closing lines, plus permission to store and republish it.",
+   "close": "Obtain a licensed feed, or decide in writing to run a study-only programme with no betting conclusion.",
+   "detracts": "6 registers raise it",
+   "evidence_files": [
+    "nfl/system/data/derived/market.json",
+    "data/nfl-analytics/market-odds-week-10-2026.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/scores/2026/week-10"
+   ],
+   "id": "D-PRICE",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-01",
+     "question": "Which market are our lines intended to be compared against?",
+     "raisedText": "NFL.com publishes the schedule, results, box scores and injury reports. It does not publish betting prices. Every price in this lab is therefore a declared reference price, not a market quote.",
+     "missingText": "Any official, licenseable sportsbook price feed. No league source exists for it."
+    },
+    {
+     "register": "lines",
+     "id": "QN-20",
+     "question": "Which reference price should the leaderboard use?",
+     "raisedText": "-110 per leg is declared and used consistently for every strategy and every leg.",
+     "missingText": "A justification from evidence, because there is no official price to justify it against."
+    },
+    {
+     "register": "lines",
+     "id": "QN-24",
+     "question": "What is the acceptable standard for publishing a line at all?",
+     "raisedText": "The current standard in this repository: every table row links an official source, and anything unconfirmed is blank and flagged.",
+     "missingText": "A written rule for model outputs. A model number is not an official value, so it needs its own labelling rule and its own provenance link back to the inputs."
+    },
+    {
+     "register": "analytics",
+     "id": "Q1",
+     "question": "What is the minimum verified data needed to originate an NFL line?",
+     "raisedText": "Official 2026 results (nfl.com by-week pages), standings PF/PA (nfl.com/standings), Week 10 injury report (nfl.com/injuries), club depth charts (club sites), full schedule (data/upstream/nfl-2026.json, NFL.com).",
+     "missingText": "Play-by-play efficiency (EPA/play, success rate) is not published as an official league table; market closing lines are not available from an official source."
+    },
+    {
+     "register": "analytics",
+     "id": "Q4",
+     "question": "Can a market line be verified from an official/official-partner source for comparison?",
+     "raisedText": "ESPN (NFL official partner; ESPN BET) exposes week-10 odds on espn.com/nfl/odds — extraction attempted 2026-11-13 (see market-odds file).",
+     "missingText": "Sportsbook operator pages (DraftKings/FanDuel/etc.) were not reachable for verification in this session; if ESPN extraction yields no spread/total/ML values, all market cells stay blank and flagged."
+    },
+    {
+     "register": "intel",
+     "id": "Q-ODDS",
+     "question": "Which licensed source will supply market spreads, totals and player props, with timestamps (open and close)?",
+     "raisedText": "Nothing. Market columns on nfl-lines.html are deliberately blank.",
+     "missingText": "A licensed odds feed or a manual recorded-line log with timestamps."
+    },
+    {
+     "register": "intel",
+     "id": "Q-CLV",
+     "question": "What counts as 'closing line' for grading — which book, which timestamp?",
+     "raisedText": "Nothing.",
+     "missingText": "A written grading policy tied to Q-ODDS."
+    },
+    {
+     "register": "lab",
+     "id": "Q02",
+     "question": "Where do spread_line and total_line come from?",
+     "raisedText": "The nfldata DATASETS.md documents both columns (positive spread = home favoured) but does not name an upstream source.",
+     "missingText": "A named, documented, licensed or official source for the lines."
+    },
+    {
+     "register": "lab",
+     "id": "Q03",
+     "question": "Are the lines opening or closing lines, and at what time were they captured?",
+     "raisedText": "games.csv has one spread and one total per game. A separate initial_lines.csv exists in the archive but covers 2021 only (1,088 rows, all under one sportsbook label, WSGT).",
+     "missingText": "Timestamps and an opening/closing flag for every game."
+    },
+    {
+     "register": "system",
+     "id": "Q01",
+     "question": "Which official source publishes NFL point spreads, moneylines or totals that we are allowed to cite row by row?",
+     "raisedText": "Nothing. nfl.com game pages, week pages and team stat pages were probed by exact regex (nfl/research/probe.json): odds/spread/moneyline field counts are all 0.",
+     "missingText": "No official NFL price feed is available in this repository. Any price must therefore be typed in by the owner with the book, timestamp and screenshot, or the system publishes a model number and labels it MODEL — not a market line."
+    },
+    {
+     "register": "system",
+     "id": "Q02",
+     "question": "What does 'originating my own line' mean for this project: a fair-price model, or a tradable two-way price with a hold?",
+     "raisedText": "The engine can produce win probabilities and devigged fair prices from any two-way price pair (functions implemented in nfl/tools/analyze_market.py and unit-tested).",
+     "missingText": "The owner has not stated whether the published number must include a margin (juice) and, if so, whether it should be a fixed hold or a per-market hold."
+    }
+   ],
+   "mergeCount": 11
+  },
+  {
+   "key": "SKILL",
+   "area": "Validation",
+   "blocking": true,
+   "status": "open",
+   "question": "How many settled bets before a strategy may be called skill-based rather than lucky, and what correction is applied for testing many strategies?",
+   "why": "A 55% hit rate over 40 bets is indistinguishable from a coin. Publishing one as skill is the failure mode this project exists to avoid.",
+   "have": "A frozen gate set with explicit thresholds: minimum bets per family (30 team, 25 prop, 15 parlay), a paired sign-flip randomisation test and Benjamini-Hochberg across the whole family.",
+   "missing": "Settled bets. Zero strategies have 100 settled bets against a stored price.",
+   "close": "Run the forward ledger until the gate's own sample requirement is met, then read the gate rather than the ROI.",
+   "detracts": "",
+   "evidence_files": [
+    "nfl/system/curated/validation-gates.json",
+    "data/lines/leaderboard.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/standings/"
+   ],
+   "id": "D-SKILL",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-02",
+     "question": "What exactly does a strategy's probability mean, and is it calibrated?",
+     "raisedText": "Every strategy publishes its own probability for every bet, and the leaderboard reports log loss, Brier score and expected calibration error against the realised outcome.",
+     "missingText": "Calibration judged on data that was never used to fit anything. The 2026 season is the untouched holdout, so this is partly answered already."
+    },
+    {
+     "register": "lines",
+     "id": "QN-03",
+     "question": "How much of a strategy's result is luck rather than skill?",
+     "raisedText": "Gate G6 refuses a strategy whose profit is concentrated in one bet, and G4 requires a bootstrap interval that excludes zero after multiple-testing correction.",
+     "missingText": "A longer untouched period. Two seasons of development and one holdout season is a small sample for parlay strategies in particular."
+    },
+    {
+     "register": "lines",
+     "id": "QN-22",
+     "question": "Do we need a freeze date before publishing a strategy ranking?",
+     "raisedText": "The development and holdout split is declared in the published data.",
+     "missingText": "An explicit public freeze date and a rule for what happens when a strategy changes after the freeze."
+    },
+    {
+     "register": "analytics",
+     "id": "Q9",
+     "question": "How much sample is needed before a strategy result is skill rather than luck?",
+     "raisedText": "Method defined: bootstrap confidence intervals + shrinkage toward the mean + closing-line-value check; variance of a 50/50 bet is 1.0 units² per unit stake.",
+     "missingText": "Actual pick volume (competition not yet running)."
+    },
+    {
+     "register": "system",
+     "id": "Q03",
+     "question": "How many settled bets are needed before a strategy may be called skill-based rather than lucky?",
+     "raisedText": "A statistical gate is implemented (binomial test against the break-even probability implied by the price, plus a Monte-Carlo shuffle test that destroys any real edge).",
+     "missingText": "The threshold is a policy choice, not a fact. The gate currently refuses to certify anything below 100 settled bets and reports the p-value so the owner can see how weak the evidence is."
+    },
+    {
+     "register": "system",
+     "id": "Q10",
+     "question": "What is the minimum sample and the multiple-testing correction before a strategy is promoted?",
+     "raisedText": "A gate list with explicit pass/fail logic, including a Benjamini-Hochberg style false-discovery guard when many strategies are tested at once.",
+     "missingText": "The reward rule and the promotion threshold are policy, not fact. Defaults are proposed and marked as defaults."
+    },
+    {
+     "register": "system",
+     "id": "Q18",
+     "question": "What happens when two strategies claim the same edge, or when a strategy's live results diverge from its backtest?",
+     "raisedText": "A probation rule: a strategy whose live scoring diverges from its declared expectation by more than the stated tolerance is demoted to probation and its reward is withheld.",
+     "missingText": "The tolerance value is a policy choice, not a fact."
+    }
+   ],
+   "mergeCount": 7
+  },
+  {
+   "key": "REWARD",
+   "area": "Governance",
+   "blocking": true,
+   "status": "open",
+   "question": "Is the leaderboard reward real money, an honour scoreboard, or paper points - and is any of it lawful for the owner in British Columbia?",
+   "why": "Three registers ask the same thing and give three different defaults. Until it is answered the leaderboard cannot rank anybody without implying a claim it may not make.",
+   "have": "A paper-only scoring design that is implemented and published empty, plus an explicit statement that no monetary reward is authorised.",
+   "missing": "A written owner decision, and a legal check for the owner's jurisdiction (British Columbia, Canada).",
+   "close": "Answer in one line and record it; the scoring code already supports either answer.",
+   "detracts": "Low",
+   "evidence_files": [
+    "nfl/system/curated/suggestions.json",
+    "lines-lab/data/derived/leaderboard.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/"
+   ],
+   "id": "D-REWARD",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-12",
+     "question": "Should the leaderboard reward points, money, or something else?",
+     "raisedText": "A declared, published formula turns out-of-sample skill into leaderboard points.",
+     "missingText": "Any governance decision: reward pool, eligibility, privacy, responsible-play controls, anti-gaming rules, legal review."
+    },
+    {
+     "register": "analytics",
+     "id": "Q11",
+     "question": "What bankroll, unit size and reward budget govern the leaderboard?",
+     "raisedText": "Nothing from the owner; a paper-unit default (1 unit = 1% of notional bankroll) is proposed.",
+     "missingText": "Owner decision on real reward budget and eligibility."
+    },
+    {
+     "register": "analytics",
+     "id": "Q13",
+     "question": "Is the leaderboard graded weekly, season-long, or both?",
+     "raisedText": "Proposed: weekly leaderboards + season-long table, both skill-adjusted.",
+     "missingText": "Owner preference."
+    },
+    {
+     "register": "intel",
+     "id": "Q-LEGAL",
+     "question": "What reward structure is lawful for a forecasting competition in the owner's jurisdiction (and for participants)?",
+     "raisedText": "A non-monetary design (credits, badges, research access) in strategies.json.",
+     "missingText": "A compliance answer for the 2027 open season."
+    },
+    {
+     "register": "lab",
+     "id": "Q07",
+     "question": "What counts as a reward for a top strategy?",
+     "raisedText": "The brief asks for rewards for top performers. No strategy has passed every gate, so none has earned any reward yet.",
+     "missingText": "The owner's definition of a reward (points only, public ranking, or something else)."
+    },
+    {
+     "register": "system",
+     "id": "Q04",
+     "question": "Are the rewards real money, an honour system, or a paper scoreboard?",
+     "raisedText": "A leaderboard schema with scoring formulas (Brier score, log loss, ROI, closing-line value, calibration error) and a demotion/probation rule.",
+     "missingText": "No reward currency, no payout rule and no eligibility rule exists. The site therefore publishes ranks only and states that no monetary reward is promised."
+    }
+   ],
+   "mergeCount": 6
+  },
+  {
+   "key": "TESTS",
+   "area": "Market data",
+   "blocking": true,
+   "status": "open",
+   "question": "Which archive of closing lines is legitimate for back-testing, and are we allowed to reuse it?",
+   "why": "The only historical line archive in this repository is a third-party GitHub dataset whose own documentation does not name the upstream source of its spread and total columns.",
+   "have": "A model comparison against that archive (model MAE 10.17 points vs market 9.79 over 2016-25), published with the provenance gap stated.",
+   "missing": "The archive's upstream source and licence, or a licensed replacement.",
+   "close": "Identify the upstream provider and licence, or license a feed and rebuild the comparison.",
+   "detracts": "",
+   "evidence_files": [
+    "data/nfl-lab/games-source.json"
+   ],
+   "sources": [
+    "https://github.com/nflverse/nfldata"
+   ],
+   "id": "D-TESTS",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-14",
+     "question": "Is the model better than a coin flip, or just better than a bad baseline?",
+     "raisedText": "Every strategy is scored against a pre-registered naive model on the same events, and the log-loss difference is published with a confidence interval.",
+     "missingText": "A comparison against a strong public baseline such as a market-implied probability, because no market price is available."
+    },
+    {
+     "register": "lines",
+     "id": "QN-21",
+     "question": "How many seasons of official box scores can we rely on for player props?",
+     "raisedText": "Official box scores were fetched for the 2025 and 2026 regular seasons.",
+     "missingText": "The 2024 season, which would give prop strategies a third season for the robustness gate."
+    },
+    {
+     "register": "lab",
+     "id": "Q02",
+     "question": "Where do spread_line and total_line come from?",
+     "raisedText": "The nfldata DATASETS.md documents both columns (positive spread = home favoured) but does not name an upstream source.",
+     "missingText": "A named, documented, licensed or official source for the lines."
+    },
+    {
+     "register": "lab",
+     "id": "Q13",
+     "question": "Is the nfldata archive licensed for reuse?",
+     "raisedText": "The downloaded archive contains README.md, DATASETS.md and a data folder, but no LICENSE file.",
+     "missingText": "A stated license for the data and the code."
+    },
+    {
+     "register": "lab",
+     "id": "Q10",
+     "question": "Can any of our own models beat the closing market spread?",
+     "raisedText": "Walk-forward 2016–2025: model MAE 10.17 points vs market spread 9.79 points on 2,639 games.",
+     "missingText": "A feature set that adds information the market lacks (for example verified weather or QB quality measures)."
+    },
+    {
+     "register": "system",
+     "id": "Q11",
+     "question": "Is there enough history to backtest at all?",
+     "raisedText": "2025 and 2026 official results and player logs are loaded on demand by CI.",
+     "missingText": "Two partial seasons with no historical prices is not a backtest of a betting strategy; it is a backtest of a probability model. Any strategy that needs prices cannot be backtested yet (see Q01)."
+    }
+   ],
+   "mergeCount": 6
+  },
+  {
+   "key": "DEPTH",
+   "area": "Injury &amp; depth",
+   "blocking": true,
+   "status": "partly-answered",
+   "question": "Where do verified 1st/2nd/3rd/4th string depth charts come from for all 32 clubs, and can a backup's quality be measured?",
+   "why": "The owner's brief asks the system to know when a 2nd, 3rd or 4th string player replaces a starter. That needs a chart per club and a way to measure the drop-off.",
+   "have": "32 club depth charts fetched from the clubs' own official sites; 31 parse (Houston publishes an image). Four clubs are marked 'unofficial' by the club itself. Replacement naming works and was verified live on Detroit.",
+   "missing": "An official snap count per player, so 'who actually replaced whom' can be shown rather than inferred from a chart.",
+   "close": "Ingest the official Game Book PDFs (they contain participation) or an official snap-count table, then join to the chart.",
+   "detracts": "",
+   "evidence_files": [
+    "data/lines/depth-charts.json",
+    "nfl/system/data/derived/depth.json"
+   ],
+   "sources": [
+    "https://www.detroitlions.com/team/depth-chart/",
+    "https://www.49ers.com/team/depth-chart"
+   ],
+   "id": "D-DEPTH",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-05",
+     "question": "Are the club depth charts official or unofficial, and are they point-in-time?",
+     "raisedText": "Each club publishes a depth chart on its own official site. We capture the club's own label and the 'as of' date.",
+     "missingText": "A history of past depth charts. We hold only the current version, so a depth chart can only inform today's tracker, not a backtest."
+    },
+    {
+     "register": "lines",
+     "id": "QN-08",
+     "question": "How should a player prop line be set when the player is a listed backup rather than the starter?",
+     "raisedText": "The official depth chart gives the tier (1st to 4th string) for every charted player.",
+     "missingText": "An official rule linking tier to expected workload. No league source states that a second-string player receives X percent of the carries."
+    },
+    {
+     "register": "lines",
+     "id": "QN-16",
+     "question": "What is the official definition of a starter for the depth tracker?",
+     "raisedText": "Club depth charts order players by tier (1st, 2nd, 3rd, 4th string) per position group.",
+     "missingText": "A league-wide definition. Clubs disagree on granularity: some list a position twice (a first and a second tight end), others list eleven offensive positions only."
+    },
+    {
+     "register": "lines",
+     "id": "QN-19",
+     "question": "Are the club depth charts we publish complete for all 32 clubs?",
+     "raisedText": "31 of 32 clubs publish a machine-readable depth chart on their official site.",
+     "missingText": "The Houston Texans depth chart, whose page is rendered without a readable table."
+    },
+    {
+     "register": "analytics",
+     "id": "Q7",
+     "question": "Are club depth charts official, and what does the string column mean?",
+     "raisedText": "Each club publishes a depth chart on its official site; the Lions page labels it '2026 Unofficial Depth Chart Compiled by Lions Football Communications' — club-official publication, explicitly unofficial in NFL terms. Columns are 1st-4th string.",
+     "missingText": "Nothing structural; but depth charts are not updated on a fixed cadence and may lag roster moves."
+    },
+    {
+     "register": "analytics",
+     "id": "Q8",
+     "question": "What happens when an injured player does not appear on the published depth chart?",
+     "raisedText": "Observed case: DET S Kerby Joseph (Game Status: Out) is not on the Lions' published depth chart (2026-11-13).",
+     "missingText": "The club's intended replacement alignment."
+    },
+    {
+     "register": "analytics",
+     "id": "Q14",
+     "question": "Do we track IR/designation/transaction moves that change depth charts?",
+     "raisedText": "Official transactions exist at nfl.com/transactions and club sites; news items this week (e.g., 'Dolphins place QB Malik Willis on injured reserve') show the impact.",
+     "missingText": "A fetched transactions feed (not ingested in this pass)."
+    },
+    {
+     "register": "intel",
+     "id": "Q-DEPTH",
+     "question": "Where will verified depth charts (1st/2nd/3rd/4th string) come from for all 32 teams?",
+     "raisedText": "Verified starter/backup facts only where official NFL.com news names them (e.g., BAL QB chain, SEA QB, MIA QB — see nfl-injuries.html).",
+     "missingText": "Depth tier for most players; cells are blank and flagged."
+    },
+    {
+     "register": "intel",
+     "id": "Q-SNAPS",
+     "question": "Will official gamebooks/snap counts be ingested to prove who replaced a starter on the field?",
+     "raisedText": "Nothing.",
+     "missingText": "Gamebook PDFs or official snap-count pages per game."
+    },
+    {
+     "register": "lab",
+     "id": "Q05",
+     "question": "Who was the starter at each slot on each game day in past seasons?",
+     "raisedText": "The nflverse mirror of depth charts is a series of dated snapshots, not week-keyed. Only the latest snapshot is used on the injuries page.",
+     "missingText": "Weekly, game-day depth charts for the historical period, and an official definition of 'starter'."
+    },
+    {
+     "register": "lab",
+     "id": "Q11",
+     "question": "Who counts as a starter?",
+     "raisedText": "In the mirror, depth position rank 1 is the starter on the snapshot.",
+     "missingText": "An official definition, or confirmation that rank 1 matches the team's published depth chart."
+    },
+    {
+     "register": "system",
+     "id": "Q05",
+     "question": "Does the official injury report tell us who will actually start?",
+     "raisedText": "The NFL official report gives player, position, injury, practice status and game status (Out / Doubtful / Questionable) per team per week. 2026 weeks 1-10 and 2025 weeks 1-18 are loaded.",
+     "missingText": "It does not name the replacement. 'Questionable' is not a probability. Practice status is not a snap count."
+    },
+    {
+     "register": "system",
+     "id": "Q06",
+     "question": "How deep is each defence and offence behind the listed starter — is the 2nd string a real drop-off or a coin flip?",
+     "raisedText": "Official club depth charts give 1st/2nd/3rd/4th string at every position for each club that publishes one, with the club's own 'updated as of' date.",
+     "missingText": "A depth chart is a projection by the club, not a performance measurement. Several clubs label theirs 'Unofficial Depth Chart'. Depth is not quality: the 2nd string is not always worse."
+    },
+    {
+     "register": "system",
+     "id": "Q07",
+     "question": "Which players actually played, and how many snaps?",
+     "raisedText": "Nothing official in this repository yet. Player season stat pages publish per-game logs (WK, OPP, RESULT and stat columns) which imply participation.",
+     "missingText": "No official snap-count feed is loaded. Absence from a game log is not proof of zero snaps — a player can play and record no stat."
+    },
+    {
+     "register": "system",
+     "id": "Q12",
+     "question": "Are the depth charts the same thing across all 32 clubs?",
+     "raisedText": "Per-club pages with per-club 'updated as of' dates and per-club naming (some say 'Unofficial').",
+     "missingText": "They are not normalised: some clubs publish 4 tiers, some 3; some list 11 defensive positions, some 12. Cross-club comparison of 'depth' is therefore approximate and is flagged as such."
+    }
+   ],
+   "mergeCount": 15
+  },
+  {
+   "key": "INJURY-TIMING",
+   "area": "Injury &amp; depth",
+   "blocking": false,
+   "status": "partly-answered",
+   "question": "When is the official injury report published and updated, and which version is the one a decision may rely on?",
+   "why": "A Friday practice report and a Sunday inactive list are different facts. Using the wrong one changes a line.",
+   "have": "The official weekly report, captured as a point-in-time snapshot with the retrieval timestamp and per-row source URL.",
+   "missing": "Any history before Week 10, and the 90-minute inactive list in machine-readable form.",
+   "close": "Re-run the weekly capture before each decision point; treat the snapshot timestamp as part of the value.",
+   "detracts": "",
+   "evidence_files": [
+    "data/lines/injuries.json",
+    "nfl/system/data/derived/injuries.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/injuries/"
+   ],
+   "id": "D-INJURY-TIMING",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-04",
+     "question": "Where is the official historical archive of weekly injury reports?",
+     "raisedText": "NFL.com publishes the current week's injury report, with player, position, injury, practice status and game status.",
+     "missingText": "Any week-by-week history from an official source. The current-week page ignores a week parameter, so past weeks cannot be read from it."
+    },
+    {
+     "register": "lines",
+     "id": "QN-09",
+     "question": "Does a team's injury actually change its line, and by how much?",
+     "raisedText": "The official injury report and the official depth chart together identify which starter is replaced by which tier.",
+     "missingText": "The size of the effect. This requires the historical injury archive from QN-04."
+    },
+    {
+     "register": "analytics",
+     "id": "Q6",
+     "question": "When are official injury designations published, and what do the columns mean?",
+     "raisedText": "NFL policy: practice reports Wed/Thu/Fri, game designations (Out/Doubtful/Questionable) after Friday practice, inactives 90 minutes before kickoff — operations.nfl.com is the official rulebook source; the nfl.com/injuries page shows Practice Status and Game Status columns.",
+     "missingText": "Saturday inactives for week 10 are not yet published as of 2026-11-13 retrieval."
+    },
+    {
+     "register": "analytics",
+     "id": "Q20",
+     "question": "How often is verified data re-pulled and re-checked?",
+     "raisedText": "This session: one verified snapshot dated 2026-11-13 (week 10). CI fetcher committed (scripts/fetch_nfl_analytics.py).",
+     "missingText": "A cron schedule and post-game re-verification runs."
+    },
+    {
+     "register": "intel",
+     "id": "Q-INJ-HIST",
+     "question": "Can weekly injury reports for weeks 1-9 be retrieved retrospectively, or must history start at week 10?",
+     "raisedText": "Week 10 official report only (296 rows, verified).",
+     "missingText": "Weeks 1-9 reports (archive pages exist per week on nfl.com/injuries — manual capture or CI)."
+    },
+    {
+     "register": "intel",
+     "id": "Q-ROSTER",
+     "question": "How are mid-week roster moves (IR, trades, waivers) captured between weekly reports?",
+     "raisedText": "Official NFL.com news items captured with links (see nfl-injuries.html status news).",
+     "missingText": "A structured transactions feed."
+    },
+    {
+     "register": "lab",
+     "id": "Q09",
+     "question": "When is the official injury report published and updated, and which version matters for a decision?",
+     "raisedText": "Week pages exist at nfl.com/injuries/league/2026/reg followed by the week number. The mirror CSV has no per-row update timestamp (its columns are listed in data/nfl-lab/fetch-log.json).",
+     "missingText": "The official publication schedule and the timing rule for the final status."
+    },
+    {
+     "register": "lab",
+     "id": "Q14",
+     "question": "Is the official NFL injury report identical to the nflverse mirror?",
+     "raisedText": "The 9 Week 10 rows in our file that appear on the part of the official Week 10 page we fetched (first games in the listing) match on status, injury and practice status. Other rows are not checked.",
+     "missingText": "Row-by-row check of all 1,230 rows."
+    },
+    {
+     "register": "system",
+     "id": "Q13",
+     "question": "Could a page change between two fetches in the same day?",
+     "raisedText": "Every record carries the fetch time and the exact source URL it came from.",
+     "missingText": "Yes — injury reports and depth charts change during the week, and week pages gain scores. The site therefore stamps each table with its retrieval time."
+    }
+   ],
+   "mergeCount": 9
+  },
+  {
+   "key": "PROPS",
+   "area": "Markets",
+   "blocking": true,
+   "status": "open",
+   "question": "Which official or licensed source provides historical player-prop lines, and how is a prop settled when the player does not play?",
+   "why": "The brief asks for player prop bets and prop combinations. Without a prop line there is nothing to bet against.",
+   "have": "Measured relationships between official per-game player statistics: receiving yards and receptions r = 0.817 (n = 4,468); receiving yards and receiving touchdowns r = 0.429 (n = 4,468).",
+   "missing": "Any prop price. No official NFL page publishes one.",
+   "close": "License a prop feed; until then publish the statistical relationships and no prop recommendation.",
+   "detracts": "",
+   "evidence_files": [
+    "data/lines/correlations.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/stats/player-stats/"
+   ],
+   "id": "D-PROPS",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-07",
+     "question": "Which official source resolves a player name to a stable identifier?",
+     "raisedText": "The NFL.com box score identifies each player by an official image id and shows a display form such as 'A. ST. BROWN'. Club depth charts give the full name.",
+     "missingText": "A direct official name-to-id mapping. We join the two through the display form, which is ambiguous for 156 display forms where two charted players share initials."
+    },
+    {
+     "register": "lines",
+     "id": "QN-10",
+     "question": "How are player prop payouts settled when a player does not play?",
+     "raisedText": "Nothing in any official source we can reach. Settlement rules belong to the bookmaker.",
+     "missingText": "The exact rules (void, half action, minimum participation) that would be needed to score a prop bet."
+    },
+    {
+     "register": "analytics",
+     "id": "Q5",
+     "question": "Can player prop markets be verified from any official source?",
+     "raisedText": "Nothing verified. Books do not publish on official league domains.",
+     "missingText": "All prop market data (lines, limits, hold)."
+    },
+    {
+     "register": "analytics",
+     "id": "Q19",
+     "question": "What player-usage data is verifiable (for prop baselines)?",
+     "raisedText": "NFL.com player stat pages (targets, carries, yards) and game pages publish team leaders; official gamebooks list full participation.",
+     "missingText": "Snap counts / route participation as an official table."
+    },
+    {
+     "register": "intel",
+     "id": "Q-PROPS",
+     "question": "Which official or licensed source provides historical player-prop lines and results?",
+     "raisedText": "Nothing. Prop strategy is defined but its metrics are blank.",
+     "missingText": "Prop market history + official player game logs with timestamps."
+    },
+    {
+     "register": "lab",
+     "id": "Q06",
+     "question": "Can player-prop combinations be tested?",
+     "raisedText": "No official NFL source publishes historical player prop prices. Player stats are not reachable from the sandbox; only CI can fetch the mirrors.",
+     "missingText": "Historical prop prices with timestamps, and player-level game logs."
+    },
+    {
+     "register": "system",
+     "id": "Q08",
+     "question": "Which player props in the same game are positively correlated, and by how much?",
+     "raisedText": "Official per-game player stat logs for the loaded seasons, which is exactly the input a correlation estimate needs.",
+     "missingText": "The sample is small (a partial season), so any correlation estimate carries a wide confidence interval. Estimates are published with n and a bootstrap interval, and are withheld below n=8 games."
+    }
+   ],
+   "mergeCount": 7
+  },
+  {
+   "key": "CORR",
+   "area": "Markets",
+   "blocking": false,
+   "status": "partly-answered",
+   "question": "What correlation applies between parlay legs, and should a same-game parlay be priced from the joint or from multiplied legs?",
+   "why": "Multiplying legs assumes independence. Two legs on the same player are not independent, so the multiplied price is wrong in a known direction.",
+   "have": "Measured: legs on the same player phi = 0.575 (n = 11,446); legs on different players in one game phi = 0.067 (n = 184,915); game total vs model moneyline rho = -0.047 (n = 681); margin vs total r = 0.0201 (n = 6,967).",
+   "missing": "Prices, so the correlation can be turned into a hold figure that is quoted rather than declared.",
+   "close": "Price from the measured joint; keep the measured phi as the input and never assume independence.",
+   "detracts": "",
+   "evidence_files": [
+    "data/lines/correlations.json",
+    "lines-lab/data/derived/correlation.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/stats/player-stats/"
+   ],
+   "id": "D-CORR",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-11",
+     "question": "What is the correct correlation to use between parlay legs?",
+     "raisedText": "We measure the correlation from official per-game outcomes and publish the value with its sample size and confidence interval.",
+     "missingText": "A correlation that is stable across seasons and situations. The within-game prop correlation is small, but the estimate pools every player pair."
+    },
+    {
+     "register": "analytics",
+     "id": "Q10",
+     "question": "What are the correlation values between bet legs (parlays, prop combos)?",
+     "raisedText": "Framework and estimator defined (strategies.html#correlation); same-game positive-correlation structure is well documented in industry literature but NOT verifiable from official league sources.",
+     "missingText": "Empirical correlations require (a) our tracked picks and (b) market prices — both unavailable today."
+    },
+    {
+     "register": "system",
+     "id": "Q08",
+     "question": "Which player props in the same game are positively correlated, and by how much?",
+     "raisedText": "Official per-game player stat logs for the loaded seasons, which is exactly the input a correlation estimate needs.",
+     "missingText": "The sample is small (a partial season), so any correlation estimate carries a wide confidence interval. Estimates are published with n and a bootstrap interval, and are withheld below n=8 games."
+    },
+    {
+     "register": "system",
+     "id": "Q09",
+     "question": "Do game-level outcomes correlate with the props inside them (e.g. a big favourite rushing more)?",
+     "raisedText": "Final scores for every played 2025 and 2026 game, plus per-game player logs.",
+     "missingText": "Mapping a player log row to a specific game requires the opponent and week to match the schedule; that join is implemented but only covers games where both official pages exist."
+    }
+   ],
+   "mergeCount": 4
+  },
+  {
+   "key": "HFA",
+   "area": "Model",
+   "blocking": false,
+   "status": "answered",
+   "question": "What is the correct home-field advantage, and is the near-zero 2026 figure real or a small-sample artefact?",
+   "why": "Home-field is a free parameter in every spread model; guessing it moves every line.",
+   "have": "Official finals for 2025 and 2026: 232 of 453 decided games went to the home team (51.2%; 90% Wilson interval 47.4-55.1%; 95% bootstrap interval 47.0-56.1%; two-sided bootstrap p = 0.666). A separate model fit puts home advantage at 2.0 points.",
+   "missing": "Nothing for a descriptive answer. It is not evidence of an edge because there is no price to beat.",
+   "close": "Answered as a description. Re-run each season.",
+   "detracts": "",
+   "evidence_files": [
+    "nfl/system/data/derived/homefield.json",
+    "nfl/system/data/derived/skill.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/standings/league/2026/REG"
+   ],
+   "id": "D-HFA",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-06",
+     "question": "What is the correct home-field advantage?",
+     "raisedText": "The model uses a fixed 3.0 point home-field term, declared on the validation page.",
+     "missingText": "An official value. No league publishes home-field advantage, and it is not a fact we can verify - it is a modelling assumption."
+    },
+    {
+     "register": "intel",
+     "id": "Q-HFA",
+     "question": "Is the measured near-zero home-field advantage (-0.02 pts through week 10) a real 2026 phenomenon or small-sample noise?",
+     "raisedText": "Computed HFA from 137 verified games; sigma 13.18.",
+     "missingText": "Multi-season HFA history for context (prior seasons need separate verified collection)."
+    },
+    {
+     "register": "intel",
+     "id": "Q-REST",
+     "question": "Why is restDiff the strongest measured signal (r=0.438) — scheduling artifact, opponent quality confound, or genuine availability effect?",
+     "raisedText": "The correlation itself (computed, n=74 walk-forward).",
+     "missingText": "A confound-controlled regression (rest vs opponent rating vs margin) and multi-week confirmation."
+    }
+   ],
+   "mergeCount": 3
+  },
+  {
+   "key": "BASELINE",
+   "area": "Validation",
+   "blocking": false,
+   "status": "answered",
+   "question": "What baseline must every strategy beat, and why that one?",
+   "why": "A model that beats a bad baseline proves nothing. The baseline has to be stated before the result is seen.",
+   "have": "A pre-registered naive baseline per family, plus proper scoring (log loss, Brier, calibration error) rather than hit rate alone.",
+   "missing": "Nothing.",
+   "close": "Answered. Two independent strategy labs use the same rule, which is a cross-check rather than a duplicate.",
+   "detracts": "",
+   "evidence_files": [
+    "nfl/system/curated/validation-gates.json",
+    "data/lines/strategies.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/standings/"
+   ],
+   "id": "D-BASELINE",
+   "mergedFrom": [
+    {
+     "register": "system",
+     "id": "Q15",
+     "question": "What is the baseline every strategy must beat?",
+     "raisedText": "Baselines defined: coin flip (50% ATS), home-field prior from official results, and the market's own devigged price when a price exists.",
+     "missingText": "With no prices (Q01), the only baselines available are probability-scoring baselines, not ROI baselines."
+    }
+   ],
+   "mergeCount": 1
+  },
+  {
+   "key": "SAMPLE",
+   "area": "Model",
+   "blocking": false,
+   "status": "answered",
+   "question": "How much official history exists, and is it enough to back-test at all?",
+   "why": "A back-test on one partial season is a description, not a test.",
+   "have": "1,170 official NFL games across 2024-2026 in the lines lab (840 with scores); 457 official finals in the decision system (272 from 2025, 185 from 2026).",
+   "missing": "Full seasons before 2024 in the lines lab; the model lab uses 2016-2025 from a third-party archive.",
+   "close": "Answered for what exists. Extending it is a data-acquisition task, not an open question.",
+   "detracts": "",
+   "evidence_files": [
+    "data/lines/games.json",
+    "nfl/system/data/official-results.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/schedules/"
+   ],
+   "id": "D-SAMPLE",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-15",
+     "question": "Do the two NFL datasets inside this repository agree with each other?",
+     "raisedText": "The planner already holds an official NFL 2026 feed, and this lab holds an independently fetched one.",
+     "missingText": "A published side-by-side reconciliation between the two feeds."
+    },
+    {
+     "register": "lines",
+     "id": "QN-23",
+     "question": "Can the free-time planner and the lines lab share one NFL dataset?",
+     "raisedText": "Both use official NFL.com data; the planner's feed covers 2026 and this lab's feed covers 2024 to 2026.",
+     "missingText": "A decision on which feed is canonical, so the two halves of the site cannot drift apart."
+    },
+    {
+     "register": "analytics",
+     "id": "Q2",
+     "question": "Do we have official game-by-game results for rating computation?",
+     "raisedText": "Yes — nfl.com/schedules/2026/by-week/week-N pages list every final score with a per-game official URL (weeks 1-10 fetched 2026-11-13).",
+     "missingText": "Nothing for results; margins are all that a rating needs."
+    },
+    {
+     "register": "analytics",
+     "id": "Q3",
+     "question": "Which team efficiency stats can be verified from official sources?",
+     "raisedText": "NFL.com game pages publish points per game, yards per game, time of possession, sacks, INTs, turnover differential with league ranks (verified on steelers-at-bengals-2026-reg-10).",
+     "missingText": "EPA/play, success rate, pace — no official league table found; do not infer them."
+    },
+    {
+     "register": "lab",
+     "id": "Q12",
+     "question": "Should playoff games be in the evaluation?",
+     "raisedText": "Playoff games (WC, DIV, CON, SB) are in the file but excluded from all evaluations here.",
+     "missingText": "Owner's decision."
+    },
+    {
+     "register": "system",
+     "id": "Q14",
+     "question": "How do the two partial-season datasets compare in size and shape?",
+     "raisedText": "Counts per dataset are published on the Data health page and in nfl/data/fetch-report.json.",
+     "missingText": "Coverage is not completeness. A missing week page means missing games, not zero games; the report lists every failed fetch."
+    }
+   ],
+   "mergeCount": 6
+  },
+  {
+   "key": "REST",
+   "area": "Model",
+   "blocking": false,
+   "status": "partly-answered",
+   "question": "Which situational factors (rest, short weeks, travel) are derivable from official data, and are they signal or confound?",
+   "why": "Rest is the factor most often claimed as an edge and most often a proxy for opponent quality.",
+   "have": "Exact rest days from official kickoff dates (32 short-week games, minimum 4 days rest). One lab reports rest differential as its strongest measured signal with a wide interval; the same lab's leader is not distinguishable from luck.",
+   "missing": "A design that separates rest from opponent strength, which needs a larger sample.",
+   "close": "Pre-register a rest-only test and let the gate judge it; do not promote it on correlation alone.",
+   "detracts": "",
+   "evidence_files": [
+    "nfl/system/data/derived/rest.json",
+    "data/nfl-intel/model.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/schedules/2026/by-week/week-10"
+   ],
+   "id": "D-REST",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-13",
+     "question": "Which teams and games should the tracker watch next week?",
+     "raisedText": "The official schedule publishes the full 2026 regular season, and the official injury report publishes this week's status for every game.",
+     "missingText": "Nothing for this week. The tracker is limited to the current week's report because that is the only week the league publishes."
+    },
+    {
+     "register": "analytics",
+     "id": "Q16",
+     "question": "Which schedule-situational factors are derivable from official data?",
+     "raisedText": "Rest days, travel, international games (Madrid W9), bye weeks (CHI/DEN/PHI/TB in W10), kickoff windows — all derivable from data/upstream/nfl-2026.json (NFL.com).",
+     "missingText": "Nothing blocking; lookahead/look-ahead motivation is subjective and excluded."
+    },
+    {
+     "register": "intel",
+     "id": "Q-REST",
+     "question": "Why is restDiff the strongest measured signal (r=0.438) — scheduling artifact, opponent quality confound, or genuine availability effect?",
+     "raisedText": "The correlation itself (computed, n=74 walk-forward).",
+     "missingText": "A confound-controlled regression (rest vs opponent rating vs margin) and multi-week confirmation."
+    },
+    {
+     "register": "system",
+     "id": "Q16",
+     "question": "How should rest, travel and short weeks be handled?",
+     "raisedText": "Official kickoff dates and venues for every 2026 game, from which rest days can be derived exactly.",
+     "missingText": "Travel distance is not published; deriving it means adding a venue-coordinate source, which is not an official NFL page."
+    }
+   ],
+   "mergeCount": 4
+  },
+  {
+   "key": "MODEL-CHECK",
+   "area": "Model",
+   "blocking": false,
+   "status": "answered",
+   "question": "Do the separate NFL datasets in this repository agree with each other?",
+   "why": "Eight sessions built eight surfaces. If their numbers disagree, none of them can be trusted and the reader cannot tell which to believe.",
+   "have": "All four independent 2026 result captures agree on all 137 completed games (away score and home score, game by game). The Week 10 injury report parses identically in two independent parsers on all 296 rows, once a team-attribution defect was fixed.",
+   "missing": "A standing check that runs on every commit - this session adds one for the injury and leaderboard files.",
+   "close": "Answered, and now enforced: see tests/test_lines_integrity.py.",
+   "detracts": "",
+   "evidence_files": [
+    "data/control/evidence.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/scores/2026/week-10"
+   ],
+   "id": "D-MODEL-CHECK",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-15",
+     "question": "Do the two NFL datasets inside this repository agree with each other?",
+     "raisedText": "The planner already holds an official NFL 2026 feed, and this lab holds an independently fetched one.",
+     "missingText": "A published side-by-side reconciliation between the two feeds."
+    },
+    {
+     "register": "lines",
+     "id": "QN-23",
+     "question": "Can the free-time planner and the lines lab share one NFL dataset?",
+     "raisedText": "Both use official NFL.com data; the planner's feed covers 2026 and this lab's feed covers 2024 to 2026.",
+     "missingText": "A decision on which feed is canonical, so the two halves of the site cannot drift apart."
+    },
+    {
+     "register": "lab",
+     "id": "Q08",
+     "question": "Do the final scores in the games file match nfl.com for every 2026 game?",
+     "raisedText": "Three final games were checked against nfl.com in this session and all matched. 134 final 2026 games were not checked.",
+     "missingText": "Full reconciliation of the 137 final 2026 games and the 2016–2025 test window."
+    },
+    {
+     "register": "system",
+     "id": "Q14",
+     "question": "How do the two partial-season datasets compare in size and shape?",
+     "raisedText": "Counts per dataset are published on the Data health page and in nfl/data/fetch-report.json.",
+     "missingText": "Coverage is not completeness. A missing week page means missing games, not zero games; the report lists every failed fetch."
+    }
+   ],
+   "mergeCount": 4
+  },
+  {
+   "key": "CHART-LABEL",
+   "area": "Injury &amp; depth",
+   "blocking": false,
+   "status": "partly-answered",
+   "question": "Are the club depth charts official or unofficial, and does the published table say which?",
+   "why": "Four clubs label their own published chart 'unofficial'. Showing '1st string' without that label claims more than the source does.",
+   "have": "The club's own label is captured per row (chartLabel) and published on the control page. 32 charts fetched, 31 parsed.",
+   "missing": "A consistent definition across clubs: the chart formats differ, so '1st' means what each club means by it.",
+   "close": "Keep the club's own label on every row and filter by it; do not normalise tiers across clubs.",
+   "detracts": "",
+   "evidence_files": [
+    "data/lines/depth-charts.json"
+   ],
+   "sources": [
+    "https://www.detroitlions.com/team/depth-chart/"
+   ],
+   "id": "D-CHART-LABEL",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-05",
+     "question": "Are the club depth charts official or unofficial, and are they point-in-time?",
+     "raisedText": "Each club publishes a depth chart on its own official site. We capture the club's own label and the 'as of' date.",
+     "missingText": "A history of past depth charts. We hold only the current version, so a depth chart can only inform today's tracker, not a backtest."
+    },
+    {
+     "register": "lines",
+     "id": "QN-19",
+     "question": "Are the club depth charts we publish complete for all 32 clubs?",
+     "raisedText": "31 of 32 clubs publish a machine-readable depth chart on their official site.",
+     "missingText": "The Houston Texans depth chart, whose page is rendered without a readable table."
+    },
+    {
+     "register": "lines",
+     "id": "QN-16",
+     "question": "What is the official definition of a starter for the depth tracker?",
+     "raisedText": "Club depth charts order players by tier (1st, 2nd, 3rd, 4th string) per position group.",
+     "missingText": "A league-wide definition. Clubs disagree on granularity: some list a position twice (a first and a second tight end), others list eleven offensive positions only."
+    },
+    {
+     "register": "analytics",
+     "id": "Q7",
+     "question": "Are club depth charts official, and what does the string column mean?",
+     "raisedText": "Each club publishes a depth chart on its official site; the Lions page labels it '2026 Unofficial Depth Chart Compiled by Lions Football Communications' — club-official publication, explicitly unofficial in NFL terms. Columns are 1st-4th string.",
+     "missingText": "Nothing structural; but depth charts are not updated on a fixed cadence and may lag roster moves."
+    },
+    {
+     "register": "intel",
+     "id": "Q-DEPTH",
+     "question": "Where will verified depth charts (1st/2nd/3rd/4th string) come from for all 32 teams?",
+     "raisedText": "Verified starter/backup facts only where official NFL.com news names them (e.g., BAL QB chain, SEA QB, MIA QB — see nfl-injuries.html).",
+     "missingText": "Depth tier for most players; cells are blank and flagged."
+    },
+    {
+     "register": "lab",
+     "id": "Q05",
+     "question": "Who was the starter at each slot on each game day in past seasons?",
+     "raisedText": "The nflverse mirror of depth charts is a series of dated snapshots, not week-keyed. Only the latest snapshot is used on the injuries page.",
+     "missingText": "Weekly, game-day depth charts for the historical period, and an official definition of 'starter'."
+    },
+    {
+     "register": "system",
+     "id": "Q12",
+     "question": "Are the depth charts the same thing across all 32 clubs?",
+     "raisedText": "Per-club pages with per-club 'updated as of' dates and per-club naming (some say 'Unofficial').",
+     "missingText": "They are not normalised: some clubs publish 4 tiers, some 3; some list 11 defensive positions, some 12. Cross-club comparison of 'depth' is therefore approximate and is flagged as such."
+    }
+   ],
+   "mergeCount": 7
+  },
+  {
+   "key": "GOVERNANCE",
+   "area": "Governance",
+   "blocking": false,
+   "status": "open",
+   "question": "Who signs off a suggestion, on what service level, and what stops an accepted suggestion from contradicting a verified table?",
+   "why": "Six suggestion registers exist with six different review vocabularies. A reviewer cannot tell which one is authoritative.",
+   "have": "This page: one merged register with a stated decision rule and a recommended default for every row.",
+   "missing": "A named reviewer and a turnaround.",
+   "close": "Record the reviewer in COORDINATION.md and use this page as the single decision log.",
+   "detracts": "",
+   "evidence_files": [
+    "data/control/suggestions.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/"
+   ],
+   "id": "D-GOVERNANCE",
+   "mergedFrom": [
+    {
+     "register": "analytics",
+     "id": "Q18",
+     "question": "How do strategy authors submit entries to the leaderboard?",
+     "raisedText": "Proposed: a JSON file per strategy in data/nfl-analytics/submissions/ (or a GitHub issue), locked before kickoff.",
+     "missingText": "Owner preference."
+    },
+    {
+     "register": "intel",
+     "id": "Q-REVIEW",
+     "question": "Who signs off each suggestion in the suggestions register, and what is the SLA?",
+     "raisedText": "The workflow and statuses (suggestions.json); default owner = site owner.",
+     "missingText": "A named reviewer and cadence confirmation."
+    },
+    {
+     "register": "intel",
+     "id": "Q-REFRESH",
+     "question": "Who refreshes results, injuries and lines each week, and when is the cut-off for picks?",
+     "raisedText": "Manual session snapshots (2026-11-13).",
+     "missingText": "An automated weekly job and a published cut-off time (e.g., Thursday 12:00 PT)."
+    },
+    {
+     "register": "system",
+     "id": "Q17",
+     "question": "Who reviews a suggestion, and what stops a suggestion contradicting a verified table?",
+     "raisedText": "A suggestions register with status, owner, review gate and a check that a suggestion touching a verified row must cite its source.",
+     "missingText": "No reviewer is assigned. The register therefore defaults every row to 'awaiting review' and nothing is auto-accepted."
+    }
+   ],
+   "mergeCount": 4
+  },
+  {
+   "key": "SCOPE",
+   "area": "Governance",
+   "blocking": false,
+   "status": "answered",
+   "question": "Is this a betting programme or a research programme?",
+   "why": "The brief asks to remove luck and build skill-based strategies; the honest answer depends on whether real money is involved.",
+   "have": "Every page states the same boundary: no edge, no win rate and no yield is published, because no price and no settlement exist.",
+   "missing": "Nothing.",
+   "close": "Answered by the published boundary. Changing it is a decision above, not a data task.",
+   "detracts": "",
+   "evidence_files": [
+    "data/control/meta.json"
+   ],
+   "sources": [
+    "https://www.nfl.com/"
+   ],
+   "id": "D-SCOPE",
+   "mergedFrom": [
+    {
+     "register": "lines",
+     "id": "QN-24",
+     "question": "What is the acceptable standard for publishing a line at all?",
+     "raisedText": "The current standard in this repository: every table row links an official source, and anything unconfirmed is blank and flagged.",
+     "missingText": "A written rule for model outputs. A model number is not an official value, so it needs its own labelling rule and its own provenance link back to the inputs."
+    },
+    {
+     "register": "intel",
+     "id": "Q-LEGAL",
+     "question": "What reward structure is lawful for a forecasting competition in the owner's jurisdiction (and for participants)?",
+     "raisedText": "A non-monetary design (credits, badges, research access) in strategies.json.",
+     "missingText": "A compliance answer for the 2027 open season."
+    },
+    {
+     "register": "intel",
+     "id": "Q-SCALE",
+     "question": "Should the pilot grade only sides/totals, or also count props once Q-PROPS lands mid-season?",
+     "raisedText": "Pilot = in-house, sides/totals only (strategies.json).",
+     "missingText": "Owner decision for mid-season scope changes."
+    },
+    {
+     "register": "lab",
+     "id": "Q01",
+     "question": "Can a Singapore resident legally place NFL wagers?",
+     "raisedText": "Only Singapore Pools (Private) Limited is licensed by the GRA to provide remote gambling services. Participating in unlicensed remote gambling is an offence (fine up to $10,000 and/or 6 months).",
+     "missingText": "Whether Singapore Pools offers any NFL market. Not checked in this session."
+    }
+   ],
+   "mergeCount": 4
+  }
+ ],
+ "notMerged": [
+  {
+   "register": "lines/QN-17",
+   "question": "Should weather be part of the model?",
+   "reason": "No official machine-readable weather archive is cited anywhere in the repository, so there is no source to decide on. Deferred, not dropped: it is listed here.",
+   "owner": "unassigned"
+  },
+  {
+   "register": "lines/QN-18",
+   "question": "How should trades, promotions and roster moves be handled?",
+   "reason": "Folded into D-DEPTH as an input requirement rather than a separate decision.",
+   "owner": "D-DEPTH"
+  },
+  {
+   "register": "intel/Q-WEATHER",
+   "question": "Which official weather source will totals origination use per stadium?",
+   "reason": "Duplicate of lines/QN-17; same blocking fact (no cited archive).",
+   "owner": "unassigned"
+  },
+  {
+   "register": "intel/Q-TEAMSHEETS",
+   "question": "Do official 90-minute inactives exist in machine-readable form?",
+   "reason": "Folded into D-INJURY-TIMING as the specific artefact that would close it.",
+   "owner": "D-INJURY-TIMING"
+  },
+  {
+   "register": "intel/Q-BANKROLL",
+   "question": "What bankroll and unit size does the leaderboard assume for the quarter-Kelly parlay cap?",
+   "reason": "Only meaningful once D-REWARD is answered. Listed here so it is not lost.",
+   "owner": "D-REWARD"
+  },
+  {
+   "register": "analytics/Q12",
+   "question": "What staking rule removes overfitting and blow-up risk?",
+   "reason": "Only meaningful once D-REWARD is answered.",
+   "owner": "D-REWARD"
+  },
+  {
+   "register": "analytics/Q17",
+   "question": "How can closing-line value be measured without a verified market source?",
+   "reason": "It cannot. Folded into D-PRICE.",
+   "owner": "D-PRICE"
+  },
+  {
+   "register": "lab/Q04",
+   "question": "Is there enough history to test starting-QB injury signals?",
+   "reason": "A sample-size question inside D-SAMPLE; the repository holds 11 seasons of QB injury rows (data/nfl-lab/injuries-qb-2016-2026.json).",
+   "owner": "D-SAMPLE"
+  }
+ ]
+}

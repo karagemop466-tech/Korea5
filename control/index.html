@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NFL Control Room · NFL Control Room</title>
+<meta name="description" content="NFL Control Room: one decision register, one suggestion review board and one evidence ledger covering every NFL section of this repository.">
+<link rel="stylesheet" href="assets/control.css">
+<script defer src="assets/control.js"></script>
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL CONTROL ROOM</div>
+  <nav class="main"><a href="index.html" class="active">Overview</a><a href="decisions.html" class="">Decisions</a><a href="suggestions.html" class="">Suggestions</a><a href="evidence.html" class="">Evidence</a><a href="strategies.html" class="">Strategies</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="audit.html" class="">Audit</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged for review</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No edge is published here.</strong> This repository holds no market
+price, no settlement record and no settled forecast, so no win rate, yield, edge or fair price is computed anywhere.
+Every strategy on this site is unscored. Items that could not be confirmed against an official source are left blank
+and listed on <a href="flagged.html">Flagged for review</a>.</aside>
+<h1>NFL Control Room</h1>
+<p class="lede">One page-set for the whole NFL programme: what is known, what is open, and which path to take. Built from the registers and datasets already committed, with every figure recomputed rather than copied.</p>
+
+<div class="tiles"><a class="tile" href="decisions.html"><div class="tnum">11</div><div class="tlabel">Decisions open</div><div class="tsub">6 blocking</div></a><a class="tile" href="strategies.html"><div class="tnum">0</div><div class="tlabel">Settled bets</div><div class="tsub">nothing can be graded yet</div></a><a class="tile" href="suggestions.html"><div class="tnum">12</div><div class="tlabel">Suggestion rows</div><div class="tsub">each with options and a default</div></a><a class="tile" href="evidence.html"><div class="tnum">22</div><div class="tlabel">Evidence datasets</div><div class="tsub">audited, hashed, sourced</div></a><a class="tile" href="strategies.html"><div class="tnum">55</div><div class="tlabel">Strategies tracked</div><div class="tsub">across 6 labs</div></a><a class="tile" href="injuries.html"><div class="tnum">296</div><div class="tlabel">Injury rows live</div><div class="tsub">across 26 clubs</div></a><a class="tile" href="flagged.html"><div class="tnum">76</div><div class="tlabel">Flags for review</div><div class="tsub">published, non-blocking</div></a></div>
+
+<h2>The short answer</h2>
+<table class="grid">
+<thead><tr><th>Question</th><th>Answer</th><th>Why</th></tr></thead>
+<tbody><tr><th scope="row">Can I trust a published win rate or yield here?</th><td><strong>No.</strong></td><td>No price and no settlement exist, so none is published. Every leaderboard is deliberately empty.</td></tr><tr><th scope="row">Is any strategy validated as skill?</th><td><strong>No.</strong></td><td>All 55 strategy rows across 6 labs are unscored or failing at least one gate. The one lab with a positive result reports it as not distinguishable from luck (t = 1.48; 95% interval spanning zero).</td></tr><tr><th scope="row">Do the separate NFL sections agree?</th><td><strong>Yes, on the facts that can be compared.</strong></td><td>All four independent 2026 result captures agree on all 137 completed games; the Week 10 injury report parses identically in two parsers on all 296 rows after one defect was fixed.</td></tr><tr><th scope="row">Does the injury/depth tracker answer the brief?</th><td><strong>Partly.</strong></td><td>It names a replacement from the club&#x27;s own depth chart (verified live on Detroit: Cade Mays → Juice Scruggs, D.J. Reed → Rock Ya-Sin) but no snap count proves the replacement played.</td></tr><tr><th scope="row">What is the single biggest blocker?</th><td><strong>A price.</strong></td><td>D-PRICE is named by 11 separate questions across 5 registers. Until it is answered, nothing else can be graded.</td></tr></tbody></table>
+
+<h2>What blocks a decision right now</h2>
+<p>These are the decisions that cannot be delegated to code. Each has been asked, in some form, by between two and
+eleven separate registers; this page merges them so the same question is answered once.</p>
+<table class="grid">
+<thead><tr><th>ID</th><th>Question</th><th>Status</th><th>Registers merged</th></tr></thead>
+<tbody><tr><td><a href="decisions.html#D-PRICE">D-PRICE</a></td><td>Which market price will our own lines be compared against, and are we permitted to store and cite it?</td><td>open</td><td>11</td></tr><tr><td><a href="decisions.html#D-SKILL">D-SKILL</a></td><td>How many settled bets before a strategy may be called skill-based rather than lucky, and what correction is applied for testing many strategies?</td><td>open</td><td>7</td></tr><tr><td><a href="decisions.html#D-REWARD">D-REWARD</a></td><td>Is the leaderboard reward real money, an honour scoreboard, or paper points - and is any of it lawful for the owner in British Columbia?</td><td>open</td><td>6</td></tr><tr><td><a href="decisions.html#D-TESTS">D-TESTS</a></td><td>Which archive of closing lines is legitimate for back-testing, and are we allowed to reuse it?</td><td>open</td><td>6</td></tr><tr><td><a href="decisions.html#D-DEPTH">D-DEPTH</a></td><td>Where do verified 1st/2nd/3rd/4th string depth charts come from for all 32 clubs, and can a backup's quality be measured?</td><td>partly-answered</td><td>15</td></tr><tr><td><a href="decisions.html#D-PROPS">D-PROPS</a></td><td>Which official or licensed source provides historical player-prop lines, and how is a prop settled when the player does not play?</td><td>open</td><td>7</td></tr></tbody></table>
+<p><a href="decisions.html">All 16 decisions, with what is known, what is missing and how to close each →</a></p>
+
+<h2>Recommended path, in order</h2>
+<table class="grid">
+<thead><tr><th>ID</th><th>Area</th><th>Suggestion</th><th>Priority</th><th>Default option</th></tr></thead>
+<tbody><tr><td><a href="suggestions.html#CS-01">CS-01</a></td><td>Consolidation</td><td>Make this Control Room the single entry point and mark the other eight NFL surfaces as evidence stores</td><td><span class="pill">P1</span></td><td>A</td></tr><tr><td><a href="suggestions.html#CS-02">CS-02</a></td><td>Market data</td><td>Either license a price feed or rename every page so it cannot be read as a betting recommendation</td><td><span class="pill">P1</span></td><td>A</td></tr><tr><td><a href="suggestions.html#CS-03">CS-03</a></td><td>Validation</td><td>Freeze one gate set across all three strategy labs instead of three different ones</td><td><span class="pill">P1</span></td><td>A</td></tr><tr><td><a href="suggestions.html#CS-04">CS-04</a></td><td>Injury &amp;amp; depth</td><td>Publish an official-snap-count join so &#x27;next man up&#x27; is measured, not inferred from a chart</td><td><span class="pill">P1</span></td><td>A</td></tr><tr><td><a href="suggestions.html#CS-05">CS-05</a></td><td>Injury &amp;amp; depth</td><td>Only raise lineup-risk rows against the week the injury snapshot belongs to</td><td><span class="pill">P2</span></td><td>A</td></tr><tr><td><a href="suggestions.html#CS-06">CS-06</a></td><td>Data integrity</td><td>Run every cross-surface consistency check on every commit, not once</td><td><span class="pill">P1</span></td><td>A</td></tr><tr><td><a href="suggestions.html#CS-07">CS-07</a></td><td>Governance</td><td>Record the reward decision in one line before any strategy is ranked</td><td><span class="pill">P1</span></td><td>A</td></tr><tr><td><a href="suggestions.html#CS-08">CS-08</a></td><td>Presentation</td><td>Put the honest negative result where a reader meets it first</td><td><span class="pill">P2</span></td><td>A</td></tr><tr><td><a href="suggestions.html#CS-09">CS-09</a></td><td>Model</td><td>Publish one originated line per game with its uncertainty, and stop presenting the point estimate alone</td><td><span class="pill">P2</span></td><td>A</td></tr><tr><td><a href="suggestions.html#CS-10">CS-10</a></td><td>Scope</td><td>Decide whether the two same-team receiver correlations should be pooled before either is quoted</td><td><span class="pill">P2</span></td><td>A</td></tr><tr><td><a href="suggestions.html#CS-11">CS-11</a></td><td>Data integrity</td><td>Separate &#x27;official&#x27; from &#x27;the club says unofficial&#x27; in every depth chart row</td><td><span class="pill">P2</span></td><td>A</td></tr><tr><td><a href="suggestions.html#CS-12">CS-12</a></td><td>Presentation</td><td>Put one number on the page a reader is asked to remember: how many settled bets exist</td><td><span class="pill">P3</span></td><td>A</td></tr></tbody></table>
+<p>Each is a proposal with a recommended option and a stated trade-off. Nothing on this list is implemented by
+merging it: <a href="suggestions.html">open the review board</a> and pick an option, or reject the row.</p>
+
+<h2>The nine NFL sections this page covers</h2>
+<p>Eight earlier sessions built eight NFL surfaces. This page does not replace them; it states what each one is
+authoritative for, so a reader knows where to look and where not to.</p>
+<table class="grid">
+<thead><tr><th>Section</th><th>What it is</th><th>Path</th></tr></thead>
+<tbody><tr><td><a href="../control/index.html">Control Room</a></td><td>this page</td><td><code>control/index.html</code></td></tr><tr><td><a href="../lines/index.html">NFL Lines Lab</a></td><td>strategies, gates, correlations, injuries</td><td><code>lines/index.html</code></td></tr><tr><td><a href="../lab/index.html">NFL Lines Lab (evidence)</a></td><td>questions, measured correlations, injuries</td><td><code>lab/index.html</code></td></tr><tr><td><a href="../nfl-lab/index.html">NFL Model</a></td><td>model and back-test against a third-party archive</td><td><code>nfl-lab/index.html</code></td></tr><tr><td><a href="../nfl/index.html">NFL Decision Support</a></td><td>requirements, method, leaderboard design</td><td><code>nfl/index.html</code></td></tr><tr><td><a href="../nfl/system/index.html">NFL decision system</a></td><td>official ingest, questions, suggestions</td><td><code>nfl/system/index.html</code></td></tr><tr><td><a href="../nfl-signals.html">NFL Signals Lab</a></td><td>walk-forward signals and a forward ledger</td><td><code>nfl-signals.html</code></td></tr><tr><td><a href="../lines-lab/index.html">NFL Skill Lab</a></td><td>held-out evaluation, own lines</td><td><code>lines-lab/index.html</code></td></tr><tr><td><a href="../strategy-lab/index.html">Strategy Lab</a></td><td>walk-forward back-test on 137 finals</td><td><code>strategy-lab/index.html</code></td></tr><tr><td><a href="../nfl-intel.html">NFL Intel</a></td><td>ratings and originated lines</td><td><code>nfl-intel.html</code></td></tr><tr><td><a href="../nfl-analytics.html">NFL Analytics</a></td><td>market capture and requirements</td><td><code>nfl-analytics.html</code></td></tr></tbody></table>
+
+<h2>How to read this site</h2>
+<ul class="bullets">
+<li><strong>Decisions</strong> — every open question, merged, with what we have, what we lack and the source that would close it.</li>
+<li><strong>Suggestions</strong> — every proposal from every register, with options, cost and a recommended default, so a path is chosen before anything is built.</li>
+<li><strong>Evidence</strong> — every dataset this site rests on, with its row count, its source and what it cannot tell you.</li>
+<li><strong>Strategies</strong> — all 55 strategy rows from all 6 labs side by side, with gate counts, so a reader can see that none passes.</li>
+<li><strong>Injuries &amp; depth</strong> — the official weekly report by club, and the next-man-up rows the exact chart tier supports.</li>
+<li><strong>Audit</strong> — three published defects found this session, how each was found, and the check that now catches it.</li>
+<li><strong>Flagged for review</strong> — everything unverified, with the official source that would settle it. Non-blocking, by the project's own rule.</li>
+</ul>
+
+<footer class="foot">
+  <p>Every row links to the register or official page it came from. Regenerate with
+  <code>python3 tools/build_control.py &amp;&amp; python3 tools/build_control_site.py</code>; verify with
+  <code>python3 tools/verify_control.py</code>.</p>
+  <p>Part of the <a href="../index.html">Korea5 repository site</a>. Other NFL sections:
+  <a href="../lines/index.html">Lines Lab</a> · <a href="../lab/index.html">evidence lab</a> ·
+  <a href="../nfl-lab/index.html">model lab</a> · <a href="../nfl/index.html">decision support</a> ·
+  <a href="../nfl/system/index.html">decision system</a> · <a href="../lines-lab/index.html">skill lab</a> ·
+  <a href="../strategy-lab/index.html">strategy lab</a>.</p>
+</footer>
+</main></body></html>

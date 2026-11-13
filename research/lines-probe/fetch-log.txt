@@ -10,87 +10,47 @@
     400/424 games, 28197 rows
 [3/4] injuries ...
 [4/4] depth charts ...
-  ! failed https://www.azcardinals.com/team/depth-charts/: HTTP Error 404: Not Found
-  ! failed https://www.bengals.com/team/depth-charts/: HTTP Error 404: Not Found
-  ! failed https://www.chicagobears.com/team/depth-charts/: HTTP Error 404: Not Found
-  ! failed https://www.buffalobills.com/team/depth-charts/: HTTP Error 404: Not Found
-    Arizona Cardinals: unverified-not-fetched (0 units)
+    Arizona Cardinals: verified (3 units)
     Atlanta Falcons: verified (3 units)
     Baltimore Ravens: verified (3 units)
-    Buffalo Bills: unverified-not-fetched (0 units)
+    Buffalo Bills: verified (3 units)
     Carolina Panthers: verified (3 units)
-    Chicago Bears: unverified-not-fetched (0 units)
-    Cincinnati Bengals: unverified-not-fetched (0 units)
+    Chicago Bears: verified (3 units)
+    Cincinnati Bengals: verified (3 units)
     Cleveland Browns: verified (3 units)
-  ! failed https://www.denverbroncos.com/team/depth-charts/: HTTP Error 404: Not Found
-  ! failed https://www.dallascowboys.com/team/depth-charts/: HTTP Error 404: Not Found
-    Dallas Cowboys: unverified-not-fetched (0 units)
-    Denver Broncos: unverified-not-fetched (0 units)
+    Dallas Cowboys: verified (3 units)
+    Denver Broncos: verified (3 units)
     Detroit Lions: verified (3 units)
     Green Bay Packers: verified (3 units)
-  ! failed https://www.colts.com/team/depth-charts/: HTTP Error 404: Not Found
   ! failed https://www.houstontexans.com/team/depth-charts/: HTTP Error 404: Not Found
     Houston Texans: unverified-not-fetched (0 units)
-    Indianapolis Colts: unverified-not-fetched (0 units)
-  ! failed https://www.raiders.com/team/depth-charts/: HTTP Error 404: Not Found
-  ! failed https://www.chiefs.com/team/depth-charts/: HTTP Error 404: Not Found
-  ! failed https://www.jaguars.com/team/depth-charts/: HTTP Error 404: Not Found
-    Jacksonville Jaguars: unverified-not-fetched (0 units)
-    Kansas City Chiefs: unverified-not-fetched (0 units)
-    Las Vegas Raiders: unverified-not-fetched (0 units)
+    Indianapolis Colts: verified (3 units)
+    Jacksonville Jaguars: verified (3 units)
+    Kansas City Chiefs: verified (3 units)
+    Las Vegas Raiders: verified (3 units)
     Los Angeles Chargers: verified (3 units)
-  ! failed https://www.therams.com/team/depth-charts/: HTTP Error 404: Not Found
-    Los Angeles Rams: unverified-not-fetched (0 units)
+    Los Angeles Rams: verified (3 units)
     Miami Dolphins: verified (3 units)
     Minnesota Vikings: verified (3 units)
-  ! failed https://www.patriots.com/team/depth-charts/: HTTP Error 404: Not Found
-    New England Patriots: unverified-not-fetched (0 units)
-  ! failed https://www.newyorkjets.com/team/depth-charts/: HTTP Error 404: Not Found
-  ! failed https://www.neworleanssaints.com/team/depth-charts/: HTTP Error 404: Not Found
-    New Orleans Saints: unverified-not-fetched (0 units)
+    New England Patriots: verified (3 units)
+    New Orleans Saints: verified (3 units)
     New York Giants: verified (3 units)
-    New York Jets: unverified-not-fetched (0 units)
-  ! failed https://www.philadelphiaeagles.com/team/depth-charts/: HTTP Error 404: Not Found
-    Philadelphia Eagles: unverified-not-fetched (0 units)
-  ! failed https://www.steelers.com/team/depth-charts/: HTTP Error 404: Not Found
-    Pittsburgh Steelers: unverified-not-fetched (0 units)
+    New York Jets: verified (3 units)
+    Philadelphia Eagles: verified (3 units)
+    Pittsburgh Steelers: verified (3 units)
     San Francisco 49ers: verified (3 units)
-  ! failed https://www.seahawks.com/team/depth-charts/: HTTP Error 404: Not Found
-  ! failed https://www.buccaneers.com/team/depth-charts/: HTTP Error 404: Not Found
-    Seattle Seahawks: unverified-not-fetched (0 units)
-    Tampa Bay Buccaneers: unverified-not-fetched (0 units)
-  ! failed https://www.commanders.com/team/depth-charts/: HTTP Error 404: Not Found
-  ! failed https://www.tennesseetitans.com/team/depth-charts/: HTTP Error 404: Not Found
-    Tennessee Titans: unverified-not-fetched (0 units)
-    Washington Commanders: unverified-not-fetched (0 units)
+    Seattle Seahawks: verified (3 units)
+    Tampa Bay Buccaneers: verified (3 units)
+    Tennessee Titans: verified (3 units)
+    Washington Commanders: verified (3 units)
 {
  "games": 1170,
  "gamesWithScore": 840,
  "boxscoreRows": 29919,
  "injuryRows": 296,
  "injuryWeek": 10,
- "depthCharts": 11,
+ "depthCharts": 31,
  "depthChartsMissing": [
-  "Arizona Cardinals",
-  "Buffalo Bills",
-  "Chicago Bears",
-  "Cincinnati Bengals",
-  "Dallas Cowboys",
-  "Denver Broncos",
-  "Houston Texans",
-  "Indianapolis Colts",
-  "Jacksonville Jaguars",
-  "Kansas City Chiefs",
-  "Las Vegas Raiders",
-  "Los Angeles Rams",
-  "New England Patriots",
-  "New Orleans Saints",
-  "New York Jets",
-  "Philadelphia Eagles",
-  "Pittsburgh Steelers",
-  "Seattle Seahawks",
-  "Tampa Bay Buccaneers",
-  "Tennessee Titans",
-  "Washington Commanders"
+  "Houston Texans"
  ]
 }

@@ -685,3 +685,48 @@ The first merged run's repository CI caught one generated local-link failure in 
 | CI | Planner certainty/site checks run `43431161023` success; Pages run `43431159971` build, deploy and report-build-status all success |
 | Pages | GitHub Pages API reports `built`, source `main` /, URL https://karagemop466-tech.github.io/Korea5/ |
 | Live feature | https://karagemop466-tech.github.io/Korea5/nfl-strategy.html |
+
+---
+
+## Session `arena-6b0481c7-korea5` — 2026-11-13 (NFL lines lab: real data, strategies, leaderboard)
+
+Branch constraint: Arena fixes this session to `arena/6b0481c7-korea5`; no other branch is created or pushed.
+Start point: `main` tip `e826658` (PR #35). All prior records above are preserved unchanged.
+
+### Parallel-session scan performed before claiming (evidence)
+
+`gh run list` / `gh api .../branches` show **seven other branches active today (2026-11-13)** by other sessions:
+`arena/02f4d067` (nfl-data fetcher + provenance), `arena/1e59465a` (nfl-lab injuries/depth backups + `scripts/nfl_lab/`),
+`arena/2831c7f7` (nfl.com RSC lines probe), `arena/998582f0` (nfl.com markup digger), plus `68d62c2a`, `722a47cb`,
+`8602d76f`, `b2d2460c`, `c9041d2a`, `e53a4318`, `abf74fdd`, `e96c5f87` (created minutes apart, no pushed work yet).
+None has an entry on this board yet. Scopes observed and **avoided** by this session:
+`nfl/` (fetchers and `nfl/research/`), `data/nfl-lab/`, `scripts/nfl_lab/`, `scripts/lines/`, `research/lines-probe/`,
+`.github/workflows/*-0f530dc5*`, `nfl-data.yml`, `nfl-lab-data.yml`, `nfl-probe.yml`, `lines-probe.yml`.
+
+### Task board (addendum)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| L1 | Data provenance + point-in-time market/result/injury/depth archive from reachable public mirrors, with a machine-readable source registry | arena-6b0481c7 | in progress | `scripts/nfl_lines/` (except `render.py`), `nfl-lines/data/` |
+| L2 | Signal research: baseline/ratings model, walk-forward backtest over 1999–2025, de-vigged market reference, validation gates, gate status per strategy | arena-6b0481c7 | in progress | `nfl-lines/strategies/*.json`, `nfl-lines/data/backtest/` |
+| L3 | Correlation engine: empirical single-leg, parlay and player-prop combo correlations from joint outcomes; honesty limits published | arena-6b0481c7 | in progress | `nfl-lines/correlation/` |
+| L4 | Injury + lineup tracker: official injury report snapshots, depth-chart tier replacement (1st/2nd/3rd/4th string), offense and defense | arena-6b0481c7 | in progress | `nfl-lines/injuries/` |
+| L5 | Decision-support: questions/information/answers register, suggestions board with scoring, executive summary | arena-6b0481c7 | in progress | `nfl-lines/questions/`, `research/NFL-LINES-EXECUTIVE-SUMMARY.md` |
+| L6 | Repo review report: line-by-line verification against reachable official sources, irregularities flagged with links | arena-6b0481c7 | in progress | `verification/nfl-lines-review-6b0481c7.md` |
+| L7 | Site: new pages under `nfl-lines/` only + one additive nav link; no shared-file edits except `COORDINATION.md` | arena-6b0481c7 | in progress | `nfl-lines/*.html`, `nfl-lines/assets/` |
+| L8 | Integration, PR, merge, Pages confirmation, log | arena-6b0481c7 | in progress | `COORDINATION.md` (log only) |
+
+### Requests to other sessions (logged, not edited by us)
+
+- `arena/1e59465a` (injury/depth): your branch is the closest overlap. We are **not** editing `data/nfl-lab/` or
+  `scripts/nfl_lab/`. If you want the official NFL injury snapshots this session builds under `nfl-lines/injuries/`,
+  copy them read-only and credit this session. Please do not edit `nfl-lines/` or `COORDINATION.md` rows L1–L8.
+- `arena/02f4d067`: your `nfl/fetch_data.py` + `nfl/data/provenance.json` overlaps our L1 only in purpose. We will not
+  edit `nfl/`. If you land first, we will cross-link rather than duplicate.
+- `arena/2831c7f7` / `arena/998582f0`: nfl.com RSC probes show no `spread`/`moneyline`/`odds` keys, i.e. nfl.com
+  schedule pages carry **no** betting lines. This session therefore does not reuse that route for prices; it is
+  logged as a finding rather than duplicated work.
+- **All sessions:** this session writes only `nfl-lines/**`, `scripts/nfl_lines/**`, `research/NFL-LINES-*`,
+  `verification/nfl-lines-review-6b0481c7.md`, and append-only additions to `COORDINATION.md`. The one shared-file
+  change is a single nav link injected into root HTML by `scripts/nfl_lines/build_site.py` (idempotent, additive);
+  announce a conflict here rather than reverting it.

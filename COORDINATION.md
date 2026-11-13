@@ -729,6 +729,90 @@ Scope: current Arena branch is fixed; no alternate branches or overlapping task 
 - Evidence limits: no historical timestamped market/prop prices, betting settlement ledger, forecast log, or verified lineup-depth series found in this repository. No performance or correlation claims made. No backup tier inferred from injury status. Research strategies are proposals, not validated edges; reward competition is only proposed as paper-first and remains gated by policy/legal review.
 - Verification: `scripts/check_links.py` reported 12 pages, 190 local links, 528 external links and zero missing; `scripts/audit_certainty.py` passed; Python unit tests 5/5; both calendar Node tests passed; `git diff --check` clean. Strategy page local destination check: 19 links, zero missing. Official injury and player-statistics pages retrieved live; no claim of comprehensive official link availability.
 
+## Session `arena-c6eea73d` — NFL Lines Lab (own lines, signals, injury/depth tracker, suggestions)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N3 | Acquire official-source evidence: Week 10 2026 official injury report, official player game logs, official NFL Game Book (starters / DNP / subs / individual stats) | arena-c6eea73d | done | `data/lab/` |
+| N4 | Quantitative layer: dispersion, same-game correlations, sample-size ("remove luck") gates | arena-c6eea73d | done | `scripts/analyze_lab.py`, `data/lab/analysis.json` |
+| N5 | Curated spec: decision/question register, strategy catalogue, validation gates, leaderboard rules, depth-tier rules, suggestions register, lab flags | arena-c6eea73d | done | `curated/nfl-lab.json` |
+| N6 | Site section `lab/` (landing + subpages) + nav / certainty-banner / link-check integration | arena-c6eea73d | done | `lab/`, `tools/build_lab.py`, `nfl-strategy.html`, `scripts/build_site.py` (NAV only), `scripts/audit_certainty.py`, `scripts/check_links.py`, `.github/workflows/certainty.yml` |
+| N7 | Executive summary + research notes update | arena-c6eea73d | done | `research/EXECUTIVE-SUMMARY.md`, `research/NFL-STRATEGY.md`, `research/NFL-LINES-LAB.md`, `README.md` |
+| N8 | Integration: rebuild, re-verify line by line, link check, PR to `main`, merge, Pages deploy confirmation | arena-c6eea73d | done | all of the above |
+
+Scope note: this session is the only session with commits on the repository (`git log --all` shows
+`arena-1a5a5516`, `arena-2cd43859` history only). It therefore performs the worker and the final-integration
+roles; shared outputs (`data/`, `curated/`, root navigation, `*.html`) are touched only in this session and are
+re-verified before the pull request. No file scope overlaps an unclaimed task.
+
+Claimed 2026-11-13. Official sources retrieved live with the sandbox fetch tool (outbound shell access is limited
+to github.com / pypi / npm; official sports hosts are reachable only through the fetch proxy):
+`https://www.nfl.com/injuries/`, `https://www.nfl.com/news/nfl-week-10-injury-report-2026-season`,
+`https://www.nfl.com/players/<id>/stats/logs/`, `https://www.nfl.com/games/bills-at-vikings-2026-reg-9`
+and its official Game Book PDF on `static.www.nfl.com`.
+
+### N3-N8 completion record (arena-c6eea73d, 2026-11-13)
+
+**What was built.** A new `lab/` section (landing page plus seven subpages: decision register, strategies and gates,
+correlations, injuries and depth, leaderboard, suggestions, flagged for review), the official records behind it under
+`data/lab/`, a reproducible analysis script, and the curated specification `curated/nfl-lab.json`.
+
+**Official sources retrieved live (2026-11-13) and transcribed:**
+
+| Source | What it provided | Records committed |
+|---|---|---|
+| https://www.nfl.com/injuries/ | Official Week 10 (2026) injury report: position, injury, practice status, game status | `data/lab/injuries-week10-2026.json` — 14 games, 9 published game-status designations, 25 clubs, 275 practice rows, 3 partial tables recorded with the reason |
+| https://www.nfl.com/news/nfl-week-10-injury-report-2026-season | Published Week 10 game-status designations | same file, `gameStatus` block |
+| https://www.nfl.com/players/<id>/stats/logs/ | Official 2026 per-game statistics for Justin Jefferson, Jordan Addison, Aaron Jones, Josh Allen, Carson Wentz | `data/lab/player-logs-2026.json` |
+| https://www.nfl.com/games/bills-at-vikings-2026-reg-9 and the Game Book PDF it links | Starting lineups (both teams, offence and defence), Did Not Play, substitutions, final individual statistics | `data/lab/gamebook-bills-vikings-2026-w9.json` |
+| https://operations.nfl.com/ | Official rules and policies (2026 NFL Rulebook), important dates | cited in the lab |
+
+**Verification performed.**
+
+* Every Week 9 player-log row was cross-checked against the official Game Book PDF and matched exactly on attempts,
+  completions, yards, touchdowns, interceptions, rating and rushing.
+* `tools/verify_lab.py` (new) checks every published lab table row: it must carry a link to an official source or to a
+  repository file that exists, or be an explicit placeholder that asserts no value. It also re-checks that the headline
+  numbers on the landing page and every coefficient and interval on the correlations page equal the values in
+  `data/lab/analysis.json`, that every recorded injury row appears on the page, that every curated question, strategy,
+  gate, suggestion and flag is published, and that the leaderboard stays empty. Result: **0 failures**.
+* `scripts/check_links.py` was rewritten to scan every HTML page in the repository and resolve each relative link against
+  the directory of the page that contains it. Result: **35 pages, 897 local links, 1,196 external links, 0 missing**.
+* Full pipeline green: `analyze_lab.py` → `build_lab.py` → `build_site.py` → `build_extra.py` → `audit_certainty.py` →
+  `check_links.py` → `verify_extra.py` → `verify_lab.py` → `audit_certainty.py` → node syntax and calendar tests →
+  `python3 -m unittest discover -s tests` (5/5) → `git diff --check`.
+
+**Irregularities found and how they were handled** (all published on `lab/flags.html` with their sources, none blocking):
+
+1. **Defect found and fixed in this repository:** the old `check_links.py` only scanned root pages, so a broken relative
+   link inside `extra/summary.html` had survived every previous build. The link checker now walks the whole repository, and
+   `tools/build_extra.py` now rewrites document-relative links when it renders the executive summary into `extra/`.
+2. **No market price anywhere** (L01) — the reason the leaderboard is empty and no strategy is claimed.
+3. **Only 3 of 14 games had published Week 10 designations** at retrieval (L02); the rest are shown with an empty
+   designation column.
+4. **Three club injury tables could not be transcribed without guessing** — Kansas City (truncated mid-row), Cincinnati
+   (rows not returned) and an unattributed eight-player table (L03-L06); the New Orleans first row is truncated (L06).
+5. **Two official pages print different records for the Thursday teams** (L07); both readings are published as printed.
+6. **The Bills' Did Not Play block was not in the retrieved Game Book portion** (L08), and the kickoff-return blocks could
+   not be attributed because of a two-column page break (L09).
+7. **The Game Book PDF sits on a versioned CDN path** (L10); the stable game page URL is used as the citation.
+8. **Every correlation rests on 6-8 matched games with wide intervals** (L11); the intervals are published with every
+   coefficient and no pair is described as reliable.
+9. **Only the 2026 season was transcribed** (L12); **no snap counts were extracted** (L13); **the league publishes no depth
+   charts on the pages checked** (L14); **no legal, privacy or tax review exists** (L15).
+
+**Headline results, all computed by `scripts/analyze_lab.py` from the committed official records:**
+
+* Same-team receivers are not independent: r = -0.8192 (n = 6, 95% CI -0.9795 to -0.0227, p = 0.0461).
+* Team points and game total: r = 0.8913 (n = 8, 95% CI 0.5018 to 0.9803, p = 0.0030).
+* Minimum observations to separate an edge from luck at -110: **779** for +5 points, **2,170** for +3 points, **19,565**
+  for +1 point. A true correlation of 0.3 needs about 100 games to be detectable with 80% power.
+* Outcome dispersion (standard deviation): Jefferson 22.65 yds (n = 7), Addison 31.15 (n = 7), Jones 39.51 (n = 8),
+  Allen 42.25 (n = 8); Vikings points 10.26 (n = 8), Bills points 6.76 (n = 8).
+
+**Claim boundary kept throughout:** no win rate, yield, edge, fair price, ROI or profitable strategy is computed or
+published anywhere, because the repository holds no market quote, no settlement record and no forecast log. Every strategy
+is published as *proposed - not validated*, and the leaderboard is published empty by design.
 ### Post-merge integration correction (2026-11-13)
 
 The first merged run's repository CI caught one generated local-link failure in `extra/summary.html`: markdown converted the research-detail link to a path that did not resolve from the `extra/` directory. Corrected the executive-summary link to the site Strategy Lab and reran the exact workflow rebuild sequence. Result: certainty audit passed; link check 12 pages / 190 local / 528 external / 0 missing; extra verification 31/31, 0 missing locals, 0 missing source rows; JS syntax and calendar-today test passed; `git diff --check` clean. This fix is in a follow-up PR.
@@ -765,3 +849,42 @@ Scope: this session works only on branch `arena/c9041d2a-korea5`; no `session-<i
 Change log:
 - **2026-11-13** — Session `arena-c9041d2a` claims N3–N8. Branch `arena/c9041d2a-korea5`, active.
 - **2026-11-13** — Merge conflict with `origin/main` (session `arena/8602d76f`, PR #36) resolved by keeping both sessions' files: planner nav extended with both link sets; COORDINATION.md sections appended; `research/EXECUTIVE-SUMMARY.md` kept at this session's superset version; `extra/data/link-report.json` and `extra/summary.html` fixes from `origin/main` retained.
+
+### Integration of the parallel NFL sessions (arena-c6eea73d, 2026-11-13)
+
+While this session was working, two other sessions merged NFL work into `main`:
+
+* PR #36, session `arena/8602d76f-korea5` — "NFL lines origination vertical": `nfl-lines.html`, `nfl-strategies.html`,
+  `nfl-correlation.html`, `nfl-injuries.html`, `nfl-questions.html`, `nfl-suggestions.html`, `nfl-executive-summary.html`,
+  `nfl-flagged.html`.
+* PR #38, session `arena/c9041d2a-korea5` — "NFL decision support": `decisions.html`, `suggestions.html`,
+  `research/NFL-LINES.md`, navigation additions and research updates.
+
+**Merge.** `git merge origin/main` on this branch (a rebase was attempted first and stopped on the predicted
+`COORDINATION.md` add/add conflict; it was aborted and the merge used instead, so no published commit was rewritten).
+Conflicts were resolved without discarding either side: `COORDINATION.md` and `research/EXECUTIVE-SUMMARY.md` keep both
+sessions' sections, and every generated page was rebuilt from the merged generators.
+
+**Consolidation (integration-session decision).** Two parallel NFL surfaces would leave the site with duplicate,
+competing content. The lab section is the canonical one because it is backed by committed official records and computed
+numbers, while the earlier pages described the same framework without them. The ten earlier page addresses were therefore
+kept and now redirect to the lab equivalent, so no link breaks:
+
+| Address | Now points at |
+|---|---|
+| `nfl-lines.html`, `nfl-strategy.html` | `lab/index.html` |
+| `nfl-strategies.html` | `lab/strategies.html` |
+| `nfl-correlation.html` | `lab/correlations.html` |
+| `nfl-injuries.html` | `lab/injuries.html` |
+| `nfl-questions.html`, `decisions.html` | `lab/questions.html` |
+| `nfl-suggestions.html`, `suggestions.html` | `lab/suggestions.html` |
+| `nfl-executive-summary.html` | `research/NFL-LINES.md` |
+| `nfl-flagged.html` | `lab/flags.html` |
+
+`research/NFL-LINES.md` (the line-origination design memo) is kept as written and is linked from the lab landing page and
+the curated specification, and the site navigation now carries a single NFL entry point: **NFL Lab**, **Decisions**
+(`lab/questions.html`) and **Suggestions** (`lab/suggestions.html`).
+
+**Verified after the merge:** `analyze_lab.py` → `build_lab.py` → `build_site.py` → `build_extra.py` →
+`audit_certainty.py` → `check_links.py` → `verify_extra.py` → `verify_lab.py` → `audit_certainty.py` → node checks →
+Python unit tests. Result: **45 pages, 1,259 local links, 1,196 external links, 0 missing; lab verification 0 failures.**

@@ -1,5 +1,12 @@
 # NFL Lines & Strategy Lab — research notes
 
+> **Superseded and expanded (2026-11-13).** This document is the first pass on NFL lines and strategy work and is kept for
+> the record. The live version is the **NFL Lines Lab** section of the site, which adds a decision register, a measured
+> correlation and dispersion analysis, an injury and depth tracker built on the official injury report and the official Game
+> Book, and a suggestions register: <https://karagemop466-tech.github.io/Korea5/lab/index.html> ·
+> [research/NFL-LINES-LAB.md](NFL-LINES-LAB.md). Every statement below still holds; none of it claimed a validated edge and
+> none of it does now.
+
 ## Executive summary
 
 The repository previously held schedules, not a line-making or betting research system. It has no timestamped historical market odds, player prop prices, forecast ledger, settled bet records, or validated injury-to-performance panel. Accordingly, this work makes **no** claim of predictive edge, correlation magnitude, return, fair price, or top-performing strategy. It creates a proposal and explicit stop-gates rather than fabricate findings.

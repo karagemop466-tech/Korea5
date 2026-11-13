@@ -67,16 +67,16 @@ ul.clean{margin:6px 0 0 18px;padding:0}ul.clean li{margin:5px 0}
 <p class="lede">What was fetched, what it contains, whether two independent publishers agree, and what is
 missing. A gap is listed even when it would be embarrassing to list it — especially then.</p>
 <h2>Source-to-source cross-check</h2>
-<div class="callout pass"><strong>2086 of 2776 completed games match exactly, 0 differ, 690 unmatched</strong>
+<div class="callout pass"><strong>2432 of 2776 completed games match exactly, 0 differ, 344 unmatched</strong>
 nflverse and ESPN publish independently. Every completed game in the fetched seasons was compared on final
 score. Disagreements are shown rather than resolved.</div>
-<div class="scroll"><table><thead><tr><th>Check</th><th>Result</th><th>Status</th><th>Source</th></tr></thead><tbody><tr><td>Every input file fetched with a hash</td><td>352 files HTTP 200, 3 unavailable</td><td><span class="tag warn">partial</span></td><td><span class="small">— unverified —</span></td></tr><tr><td>nflverse result vs ESPN final score (independent publishers)</td><td>2086 of 2776 completed games match exactly, 0 differ, 690 unmatched</td><td><span class="tag pass">pass</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv" title="https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv">source</a></td></tr><tr><td>Market reference available per game</td><td>spread present for 0.9641 of games; moneylines present for 0.9637; ESPN current-season odds 26 games</td><td><span class="tag warn">partial</span></td><td><span class="small">— unverified —</span></td></tr><tr><td>Injury report and depth-chart coverage</td><td>off_value_diff 1591/1639 (0.971); def_value_diff 1591/1639 (0.971); home_off_value 1615/1639 (0.985); away_off_value 1615/1639 (0.985)</td><td><span class="tag pass">pass</span></td><td><span class="small">— unverified —</span></td></tr></tbody></table></div>
+<div class="scroll"><table><thead><tr><th>Check</th><th>Result</th><th>Status</th><th>Source</th></tr></thead><tbody><tr><td>Every input file fetched with a hash</td><td>352 files HTTP 200, 3 unavailable</td><td><span class="tag warn">partial</span></td><td><span class="small">— unverified —</span></td></tr><tr><td>nflverse result vs ESPN final score (independent publishers)</td><td>2432 of 2776 completed games match exactly, 0 differ, 344 unmatched</td><td><span class="tag pass">pass</span></td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv" title="https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv">source</a></td></tr><tr><td>Market reference available per game</td><td>spread present for 1.0 of games; moneylines present for 0.9997; ESPN current-season odds 26 games</td><td><span class="tag warn">partial</span></td><td><span class="small">— unverified —</span></td></tr><tr><td>Injury report and depth-chart coverage</td><td>off_value_diff 1591/1639 (0.971); def_value_diff 1591/1639 (0.971); home_off_value 1615/1639 (0.985); away_off_value 1615/1639 (0.985)</td><td><span class="tag pass">pass</span></td><td><span class="small">— unverified —</span></td></tr></tbody></table></div>
 
 <h2>Market coverage</h2>
 <div class="grid g3">
-<div class="card"><div class="kpi">96.41%<small>of games have a spread</small></div>
+<div class="card"><div class="kpi">100.00%<small>of games have a spread</small></div>
 <p class="small">From nflverse schedules. One value per game, no timestamp.</p></div>
-<div class="card"><div class="kpi">96.37%<small>have moneylines</small></div>
+<div class="card"><div class="kpi">99.97%<small>have moneylines</small></div>
 <p class="small">Empty, so vig cannot be measured from this source.</p></div>
 <div class="card"><div class="kpi">26<small>games with ESPN odds</small></div>
 <p class="small">Of 2913 games fetched. Odds exist only for the current week on screen.</p></div>
@@ -93,6 +93,6 @@ the repository's own pipeline. No betting return, payout or edge is claimed anyw
 data available is a single un-timestamped line snapshot, and no player-prop market exists in any
 reachable source. <a href="flagged.html">Flagged for review</a> · <a href="sources.html">Sources</a> ·
 <a href="questions.html">Open questions</a></p>
-<p class="small">Generated 2026-11-13 14:45 UTC by
+<p class="small">Generated 2026-11-13 14:50 UTC by
 <code>nfl/build_site.py</code>. Pre-registration: <a href="../nfl/PREREGISTRATION.md">nfl/PREREGISTRATION.md</a>.</p>
 </div></footer></body></html>

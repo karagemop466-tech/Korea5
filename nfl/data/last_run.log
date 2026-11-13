@@ -394,6 +394,6 @@ test_walk_forward_ignores_future_seasons (test_model.TestNoLeakage.test_walk_for
 test_questions_have_all_resolution_fields (test_model.TestQuestions.test_questions_have_all_resolution_fields) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 15.138s
+Ran 9 tests in 14.379s
 
 OK

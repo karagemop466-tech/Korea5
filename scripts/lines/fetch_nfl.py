@@ -401,48 +401,81 @@ def fetch_injuries():
 
 # ------------------------------------------------------------------ depth charts
 DEPTH_HEADERS = ("1st", "2nd", "3rd", "4th")
+ORDINAL = {1: "1st", 2: "2nd", 3: "3rd", 4: "4th", 5: "5th"}
+
+
+def strip_jersey(name):
+    """Some club charts print the jersey number before the name ('9 Christian Watson')."""
+    return re.sub(r"^\s*\d{1,2}\s+", "", name or "").strip()
 
 
 def parse_depth_chart(page, url):
-    """Parse an official club depth chart into unit -> position -> tier -> players."""
+    """Parse an official club depth chart into unit -> position -> tier -> players.
+
+    Two official layouts exist:
+      * 'Position | 1st | 2nd | 3rd | 4th'  (tier labels present)
+      * 'Position | Player | Player | ...'  (tier implied by column order)
+    Rows whose position cell is empty continue the previous position.
+    """
     units = {}
-    for tm in re.finditer(r"<table\b[^>]*d3-o-depthchart[^>]*>(.*?)</table>", page, re.S | re.I):
-        block = tm.group(1)
-        cap = re.search(r"<caption[^>]*>(.*?)</caption>", block, re.S | re.I)
-        unit = clean_text(cap.group(1)) if cap else ""
-        if not unit:
-            continue
-        unit = unit.title()
+    tier_labels_found = False
+    for tm in re.finditer(r"<table\b([^>]*)>(.*?)</table>", page, re.S | re.I):
+        attrs, block = tm.group(1), tm.group(2)
         head = re.search(r"<thead\b[^>]*>(.*?)</thead>", block, re.S | re.I)
+        if not head:
+            continue
+        headers = [clean_text(h).lower() for h in re.findall(r"<th\b[^>]*>(.*?)</th>", head.group(1), re.S | re.I)]
+        if not headers or headers[0] != "position" or not any("player" in h for h in headers[1:]):
+            continue
+        cap = re.search(r"<caption[^>]*>(.*?)</caption>", block, re.S | re.I)
+        unit = clean_text(cap.group(1)).title() if cap else ""
         tiers = []
-        if head:
-            for hm in re.finditer(r"<th\b[^>]*>(.*?)</th>", head.group(1), re.S | re.I):
-                t = clean_text(hm.group(1)).lower()
-                tiers.append(t)
-        rows = {}
+        for i, h in enumerate(headers[1:], start=1):
+            tiers.append(h if h in DEPTH_HEADERS else ORDINAL.get(i, f"tier{i}"))
+        if any(h in DEPTH_HEADERS for h in headers[1:]):
+            tier_labels_found = True
         body = re.search(r"<tbody\b[^>]*>(.*?)</tbody>", block, re.S | re.I)
         if not body:
             continue
+        rows = {}
+        last_position = None
         for rm in re.finditer(r"<tr\b[^>]*>(.*?)</tr>", body.group(1), re.S | re.I):
             cells = re.findall(r"<td\b[^>]*>(.*?)</td>", rm.group(1), re.S | re.I)
             if len(cells) < 2:
                 continue
             position = clean_text(cells[0])
             if not position:
+                position = last_position
+            if not position:
                 continue
-            row = {"position": position, "players": []}
+            last_position = position
+            row = rows.setdefault(position, {"position": position, "players": []})
             for i, cell in enumerate(cells[1:], start=1):
-                tier = tiers[i] if i < len(tiers) else f"tier{i}"
+                tier = tiers[i - 1] if i - 1 < len(tiers) else ORDINAL.get(i, f"tier{i}")
+                found = False
                 for am in re.finditer(r"<a\b[^>]*href=\"([^\"]+)\"[^>]*>(.*?)</a>", cell, re.S | re.I):
-                    nm = clean_text(am.group(2))
+                    nm = strip_jersey(clean_text(am.group(2)))
                     if nm:
                         row["players"].append({"tier": tier, "name": nm, "playerPath": am.group(1)})
-            rows[position] = row
+                        found = True
+                if not found:
+                    nm = strip_jersey(clean_text(cell))
+                    if nm:
+                        row["players"].append({"tier": tier, "name": nm, "playerPath": None})
+        if not unit:
+            unit = "Depth Chart"
         if rows:
-            units[unit] = rows
-    m = re.search(r"Updated as of\s*([0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4})", page)
-    asof = m.group(1) if m else None
-    return units, asof
+            units.setdefault(unit, {}).update(rows)
+    note = None
+    for pat in (r"Updated as of\s*([0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4})",
+                r"Unofficial[^.<]{0,40}?([0-9]{1,2}\s+[A-Za-z]+\.?\s+[0-9]{1,2},?\s*[0-9]{4})",
+                r"([0-9]{1,2}\s+[A-Za-z]+\.?\s+[0-9]{1,2},?\s*[0-9]{4})"):
+        m = re.search(pat, page, re.I)
+        if m:
+            note = m.group(1)
+            break
+    label = "unofficial" if re.search(r"\bunofficial\b", page, re.I) else "official"
+    return units, note, label, tier_labels_found
 
 
 def fetch_depth_chart(club):
@@ -456,13 +489,15 @@ def fetch_depth_chart(club):
         page = get(url, tries=2)
         if page is None:
             continue
-        units, asof = parse_depth_chart(page, url)
+        units, note, label, tier_labels = parse_depth_chart(page, url)
         if units:
             return {
                 "team": full,
                 "abbr": abbr,
                 "units": units,
-                "asOf": asof,
+                "asOf": note,
+                "chartLabel": label,
+                "tierLabelsInSource": tier_labels,
                 "sourceUrl": url,
                 "sourceName": f"Official {full} depth chart",
                 "verification": "verified",
@@ -472,6 +507,8 @@ def fetch_depth_chart(club):
         "abbr": abbr,
         "units": {},
         "asOf": None,
+        "chartLabel": None,
+        "tierLabelsInSource": False,
         "sourceUrl": None,
         "sourceName": f"Official {full} depth chart",
         "verification": "unverified-not-fetched",

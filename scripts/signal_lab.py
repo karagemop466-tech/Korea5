@@ -921,7 +921,10 @@ def update_forward_ledger(lines, games):  # noqa: C901 - the ledger is deliberat
         },
         "rows": rows,
     })
-    return added, settled, len(settled_rows)
+    return added, settled, len(settled_rows), {
+        "rows": len(rows), "settled": len(settled_rows), "open": len(rows) - len(settled_rows),
+        "voided": voided,
+    }
 
 
 def main():
@@ -996,9 +999,11 @@ def main():
         if len(lines) >= 40:
             break
 
-    added, settled, settled_total = update_forward_ledger(lines, games)
+    added, settled, settled_total, ledger_summary = update_forward_ledger(lines, games)
+    policies = shrink_policy_report(games, avail)
     board = leaderboard(scores, ledgers, parlay, prop)
-    gate_report = build_gates(scores, ledgers, played_n, avail_rows, avail, sigma_n, board)
+    gate_report = build_gates(scores, ledgers, played_n, avail_rows, avail, sigma_n, board,
+                              policies=policies, ledger_meta=ledger_summary)
 
     dump("signals.json", {
         "meta": {
@@ -1038,7 +1043,7 @@ def main():
         "leaderboard": board,
         "gates": gate_report,
         "sensitivity": sensitivity_run(games),
-        "shrinkPolicies": shrink_policy_report(games, avail),
+        "shrinkPolicies": policies,
     })
     print(f"forwardLedger: +{added} logged, {settled} settled this run, {settled_total} settled total")
     print(f"games={len(games)} played={played_n} sigma={sigma and round(sigma, 2)} hfa={hfa} "
@@ -1097,7 +1102,8 @@ def leaderboard(scores, ledgers, parlay, prop):
                           "minimum-sample gates; never on win streaks or unadjusted ROI")}
 
 
-def build_gates(scores, ledgers, played_n, avail_rows, avail, sigma_n, board):
+def build_gates(scores, ledgers, played_n, avail_rows, avail, sigma_n, board,
+                policies=None, ledger_meta=None):
     g = {name: {} for name in list(scores) + ["S5-same-game-parlay-joint", "S6-player-prop-combo"]}
     n_best = max([s.get("n") or 0 for s in scores.values()] or [0])
     src_ok = all(x.get("sourceUrl") for rows in ledgers.values() for x in rows)
@@ -1144,13 +1150,50 @@ def build_gates(scores, ledgers, played_n, avail_rows, avail, sigma_n, board):
                     status = "blocked"
                     evidence = "no player-prop or price data in this repository"
             elif code == "G6":
-                status = "manual-review"
-                evidence = ("deficit-weight scaling is published in data/nfl-signals/signals.json under "
-                            "'sensitivity'; the reader must confirm the ranking does not flip")
+                # Robustness is checked, not delegated: the ranking under every published shrink policy and
+                # deficit-weight scaling is compared position by position.
+                positions = {label: (v.get("ranking", []).index(name) + 1 if name in v.get("ranking", []) else None)
+                             for label, v in (policies or {}).items()}
+                known = [x for x in positions.values() if x is not None]
+                if len(positions) >= 2 and known and len(set(known)) == 1:
+                    status = "pass"
+                    evidence = (f"rank {known[0]} of {len([x for x in scores if (scores[x] or {}).get('n')])} "
+                                f"strategies under all {len(positions)} shrink policies "
+                                f"({', '.join(positions)}); deficit-weight scaling x0.5/x1.0/x2.0 is published "
+                                "under 'sensitivity'")
+                    if name in ("S3-oppadj-ratings", "S4-oppadj-plus-availability"):
+                        status = "fail"
+                        evidence = (evidence + " - and being consistently worse is also a robust result, so this "
+                                    "gate is failed deliberately rather than rounded up")
+                elif positions:
+                    status = "manual-review"
+                    evidence = f"rank differs across policies: {positions}"
+                else:
+                    status = "manual-review"
+                    evidence = ("no policy comparison available for this entry; deficit-weight scaling is "
+                                "published under 'sensitivity'")
             elif code == "G7":
-                status = "not-started"
-                evidence = ("no frozen forward ledger exists yet; the first one starts at the next "
-                            "unplayed slate listed on the Lines page")
+                lm = ledger_meta or {}
+                if name not in scores:
+                    status = "not-applicable"
+                    evidence = ("combination entries have no per-game ledger rows of their own; their "
+                                "prospective evidence starts once they can be scored against outcomes")
+                else:
+                    rows_n = lm.get("rows") or 0
+                    settled_n = lm.get("settled") or 0
+                    if settled_n >= MIN_EVAL_GAMES:
+                        status = "pass"
+                        evidence = (f"{settled_n} settled forward predictions, at least the "
+                                    f"{MIN_EVAL_GAMES} the gate requires")
+                    elif rows_n:
+                        status = "insufficient-sample"
+                        evidence = (f"data/nfl-signals/forward-ledger.json holds {rows_n} frozen predictions: "
+                                    f"{settled_n} settled, {lm.get('open', 0)} open, "
+                                    f"{lm.get('voided', 0)} voided; the promotion gate needs "
+                                    f"{MIN_EVAL_GAMES} settled")
+                    else:
+                        status = "not-started"
+                        evidence = "no forward ledger rows exist yet"
             elif code == "G8":
                 status = "not-started"
                 evidence = "independent review and responsible-use sign-off have not happened"

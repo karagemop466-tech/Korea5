@@ -2181,8 +2181,7 @@ from the joint rather than from multiplied legs. Forward ledger: 41 frozen rows,
 "past-dated rows are voided, never deleted" rule.
 
 **Deliberate failures, left failing.** G4 (leakage) is marked **fail** for the availability strategy because the
-only availability file is today's snapshot; G7 (prospective evidence) reports the real settled count; G8
-(governance/reward) stays `manual-review`. Gate G5 reads `insufficient-sample` below 60 games. No gate was
+only availability file is today's snapshot; G7 (prospective evidence) reports the real settled count; G8 (governance/reward) stays `not-started`. Gate G5 reads `insufficient-sample` below 60 games. No gate was
 reworded to pass.
 
 **Verification performed.** `python3 -m unittest discover tests` 37/37 (5 pre-existing + 32 new, incl. a leakage
@@ -2214,3 +2213,23 @@ growing the shared flag register to F51. Resolution taken in the merge commit:
 
 The hub page now states how this lab differs from the sibling NFL pages, and links to them, so a reader can tell
 which numbers came from which pipeline.
+
+### NFL Signals Lab publication record (2026-11-13, L9)
+
+| Step | Result |
+|---|---|
+| Main PR | [#65](https://github.com/karagemop466-tech/Korea5/pull/65) — merged 2026-11-13 14:40:25 UTC, merge commit `f618f50ea40732e83ed962d88106d970ebf576ac` |
+| Repository CI on the merge | `Planner certainty and site checks` run `43444967498` success; `nfl-site` run `43444967604` success |
+| Pages | `pages build and deployment` run `43444965263` — build, deploy and report-build-status all success; Pages API reports `built`, source `main` `/`, commit `f618f50e` |
+| Live pages verified by fetch | [hub](https://karagemop466-tech.github.io/Korea5/nfl-signals.html),
+[requirements](https://karagemop466-tech.github.io/Korea5/nfl-signals-requirements.html),
+[data pipeline](https://karagemop466-tech.github.io/Korea5/nfl-signals-data.html),
+[availability](https://karagemop466-tech.github.io/Korea5/nfl-signals-injuries.html),
+[backtest](https://karagemop466-tech.github.io/Korea5/nfl-signals-backtest.html),
+[lines](https://karagemop466-tech.github.io/Korea5/nfl-signals-lines.html),
+[suggestions](https://karagemop466-tech.github.io/Korea5/nfl-signals-suggestions.html) |
+| Follow-up PR (this record) | gates G6/G7 computed from the run instead of declared: G6 compares each strategy's rank across all three published shrink policies, G7 reads the real forward-ledger counts (41 frozen / 0 settled / 1 voided), and combination entries get `not-applicable` rather than a boilerplate line |
+
+Post-merge state checked again on this branch: `check_links.py` 139 pages / 4 014 local links / 1 978 external /
+**0 missing**; `verify_extra.py` failures `[]`, `rowsMissingSource` 0; `unittest` 37/37; both Node calendar tests
+pass; `audit_certainty.py` passes; `git diff --check` clean.

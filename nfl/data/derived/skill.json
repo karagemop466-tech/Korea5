@@ -1,0 +1,22 @@
+{
+ "n": 453,
+ "sourceUrl": "https://www.nfl.com/standings/",
+ "observedHomeWinRate": 0.5121,
+ "brierCoin": 0.25,
+ "brierHomePrior": 0.2513,
+ "shuffleTest": {
+  "draws": 2000,
+  "statistic": "count of home wins among decided games",
+  "observed": 232,
+  "pValueOneSided": 1.0,
+  "reading": "a home-field prior is not distinguishable from a coin at this sample",
+  "note": "This tests OUTCOME randomness, not strategy skill. It demonstrates the machinery the gates use; it is not evidence that any strategy is profitable."
+ },
+ "calibrationDemo": {
+  "eceCoin": 0.0121,
+  "eceHomePrior": 0.0379,
+  "note": "A constant 55% prior needs at least 20 games in a decile to be scored; with almost all mass in one bin this is a weak calibration test, shown to prove the method runs."
+ },
+ "certifiedStrategies": 0,
+ "whyNoneCertified": "No strategy has 100 settled bets against a stored price. Certifying one would require inventing both the price and the settlement."
+}

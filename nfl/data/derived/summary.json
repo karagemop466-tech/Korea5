@@ -1,0 +1,26 @@
+{
+ "generatedUTC": "2026-11-13T13:19:21.100555Z",
+ "finalGames2026": 185,
+ "finalGames2025": 272,
+ "injuryRows2026": 3117,
+ "injuryWeek": 10,
+ "depthRows": 1762,
+ "depthClubs": 31,
+ "depthClubsUnavailable": 1,
+ "teamStatTables": 7,
+ "homeWinRate2026": 0.4725,
+ "homeWinRate2026Ci": [
+  0.4125,
+  0.5334
+ ],
+ "homeWinRateAll": 0.5121,
+ "homeWinRateAllCi": [
+  0.4736,
+  0.5506
+ ],
+ "leagueMeanPPG": 21.81,
+ "priceFeed": "none",
+ "certifiedStrategies": 0,
+ "shortWeekGames": 32,
+ "minRestDays": 4
+}

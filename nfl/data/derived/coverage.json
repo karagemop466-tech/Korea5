@@ -1,0 +1,63 @@
+{
+ "generatedUTC": "2026-11-13T13:19:21.100555Z",
+ "sources": [
+  {
+   "dataset": "Final scores",
+   "rows": 457,
+   "bySeason": {
+    "2026": 185,
+    "2025": 272
+   },
+   "retrievedUTC": "2026-11-13T13:17:49.265472Z",
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "official": true
+  },
+  {
+   "dataset": "Injury report rows",
+   "rows": 8900,
+   "bySeason": {
+    "2026": 3117,
+    "2025": 5783
+   },
+   "retrievedUTC": "2026-11-13T13:17:49.265472Z",
+   "url": "https://www.nfl.com/injuries/league/2026/reg10",
+   "official": true
+  },
+  {
+   "dataset": "Depth-chart entries",
+   "rows": 1762,
+   "clubs": 31,
+   "url": "https://www.49ers.com/team/depth-chart",
+   "official": true
+  },
+  {
+   "dataset": "Team stat tables",
+   "rows": 7,
+   "url": "https://www.nfl.com/stats/team-stats/",
+   "official": true
+  },
+  {
+   "dataset": "Player stat categories",
+   "rows": 3,
+   "url": "https://www.nfl.com/stats/player-stats/",
+   "official": true
+  },
+  {
+   "dataset": "Roster players",
+   "rows": 2850,
+   "url": "https://www.nfl.com/teams/san-francisco-49ers/roster",
+   "official": true
+  }
+ ],
+ "fetchFailures": 0,
+ "unavailableDepthCharts": [
+  {
+   "team": "HOU",
+   "url": "https://www.houstontexans.com/team/depth-chart",
+   "reason": "no parseable depth-chart table on the official page",
+   "imageOnly": false
+  }
+ ],
+ "priceFeedAvailable": false,
+ "priceFeedNote": "No official NFL page publishes odds (probe: 0 odds fields on week, game and stats pages). No price data exists in this repository."
+}

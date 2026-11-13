@@ -1,0 +1,168 @@
+{
+ "boards": {
+  "single": {
+   "label": "Single bets",
+   "minSettledSample": 100,
+   "entrants": [
+    {
+     "id": "ST01",
+     "name": "Rest differential",
+     "status": "blocked-no-price",
+     "blockedBy": "G9 / Q01 — spread outcomes need a spread. Rest days are computable today; outcomes against a number are not.",
+     "settled": 0,
+     "brier": null,
+     "logLoss": null,
+     "roi": null,
+     "clv": null,
+     "rank": null,
+     "reward": "not authorised",
+     "reason": "0 settled bets; no stored price"
+    },
+    {
+     "id": "ST02",
+     "name": "Short-week fade",
+     "status": "blocked-no-price",
+     "blockedBy": "G9 / Q01",
+     "settled": 0,
+     "brier": null,
+     "logLoss": null,
+     "roi": null,
+     "clv": null,
+     "rank": null,
+     "reward": "not authorised",
+     "reason": "0 settled bets; no stored price"
+    },
+    {
+     "id": "ST03",
+     "name": "Scoring-form baseline",
+     "status": "blocked-sample",
+     "blockedBy": "G3 minimum sample of 100 settled bets; the 2026 season has 185 finals but no prices to settle against.",
+     "settled": 0,
+     "brier": null,
+     "logLoss": null,
+     "roi": null,
+     "clv": null,
+     "rank": null,
+     "reward": "not authorised",
+     "reason": "0 settled bets; no stored price"
+    },
+    {
+     "id": "ST04",
+     "name": "Turnover-regression fade",
+     "status": "blocked-sample",
+     "blockedBy": "Data not ingested (G1) + prices (Q01).",
+     "settled": 0,
+     "brier": null,
+     "logLoss": null,
+     "roi": null,
+     "clv": null,
+     "rank": null,
+     "reward": "not authorised",
+     "reason": "0 settled bets; no stored price"
+    },
+    {
+     "id": "ST08",
+     "name": "Injury-status prior",
+     "status": "blocked-sample",
+     "blockedBy": "Depth coverage is 30 of 32 clubs (HOU publishes an image, GB uses a different table layout now parsed); QB-out games are few per season.",
+     "settled": 0,
+     "brier": null,
+     "logLoss": null,
+     "roi": null,
+     "clv": null,
+     "rank": null,
+     "reward": "not authorised",
+     "reason": "0 settled bets; no stored price"
+    },
+    {
+     "id": "ST09",
+     "name": "Depth-tier mismatch",
+     "status": "blocked-sample",
+     "blockedBy": "Depth charts are club projections, several self-labelled 'Unofficial'; 'starting' is not published anywhere as a fact (Q07).",
+     "settled": 0,
+     "brier": null,
+     "logLoss": null,
+     "roi": null,
+     "clv": null,
+     "rank": null,
+     "reward": "not authorised",
+     "reason": "0 settled bets; no stored price"
+    },
+    {
+     "id": "ST10",
+     "name": "Home-field prior",
+     "status": "blocked-no-price",
+     "blockedBy": "It is a baseline, not an edge; it cannot be a 'top strategy' and is listed so the leaderboard has a floor.",
+     "settled": 0,
+     "brier": null,
+     "logLoss": null,
+     "roi": null,
+     "clv": null,
+     "rank": null,
+     "reward": "not authorised",
+     "reason": "0 settled bets; no stored price"
+    }
+   ],
+   "eligible": 0
+  },
+  "parlay": {
+   "label": "Parlays",
+   "minSettledSample": 150,
+   "entrants": [
+    {
+     "id": "ST07",
+     "name": "Anti-correlated game script",
+     "status": "blocked-no-price",
+     "blockedBy": "Q01",
+     "settled": 0,
+     "brier": null,
+     "logLoss": null,
+     "roi": null,
+     "clv": null,
+     "rank": null,
+     "reward": "not authorised",
+     "reason": "0 settled bets; no stored price"
+    }
+   ],
+   "eligible": 0
+  },
+  "propCombo": {
+   "label": "Player-prop combos",
+   "minSettledSample": 120,
+   "entrants": [
+    {
+     "id": "ST05",
+     "name": "Workload-first rushing prop",
+     "status": "blocked-sample",
+     "blockedBy": "G5 — game logs cover fewer than 8 games for most players, below the suppression floor.",
+     "settled": 0,
+     "brier": null,
+     "logLoss": null,
+     "roi": null,
+     "clv": null,
+     "rank": null,
+     "reward": "not authorised",
+     "reason": "0 settled bets; no stored price"
+    },
+    {
+     "id": "ST06",
+     "name": "Same-drive stacking (QB passing + WR receiving)",
+     "status": "not-certifiable-yet",
+     "blockedBy": "G2 is evaluable (the joint can be estimated), but G3/G7 need settled bets and prices.",
+     "settled": 0,
+     "brier": null,
+     "logLoss": null,
+     "roi": null,
+     "clv": null,
+     "rank": null,
+     "reward": "not authorised",
+     "reason": "0 settled bets; no stored price"
+    }
+   ],
+   "eligible": 0
+  }
+ },
+ "rewardAuthorised": false,
+ "rewardNote": "No reward is authorised (Q04). Ranks would attach to the same scoring without re-running anything.",
+ "sourceUrl": "https://www.nfl.com/standings/"
+}

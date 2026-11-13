@@ -1,0 +1,38 @@
+name: nfl-probe
+
+# Probe official NFL sources (scores, injuries, depth charts, team stats, odds fields).
+# Runs on Actions because the dev sandbox has no outbound network.
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/998582f0-korea5' ]
+    paths: [ 'nfl/tools/probe.py', '.github/workflows/nfl-probe.yml' ]
+permissions:
+  contents: write
+concurrency:
+  group: nfl-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/998582f0-korea5
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe official sources
+        run: python3 nfl/tools/probe.py
+      - name: Commit probe output
+        run: |
+          git config user.name "korea5-nfl-bot"
+          git config user.email "korea5-nfl-bot@users.noreply.github.com"
+          git add -A nfl/research/
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "nfl: probe official sources (raw bytes + diagnostics)"
+            git pull --rebase --autostash origin arena/998582f0-korea5
+            git push origin HEAD:arena/998582f0-korea5
+          fi

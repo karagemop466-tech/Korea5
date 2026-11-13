@@ -655,3 +655,44 @@ date, and all prior items) remain published on `extra/flagged.html` with officia
 - **Pipeline order (finding):** `verify_extra.py` rewrites `extra/links.html`, and `audit_certainty.py` adds the certainty banner to every page. The banner is therefore only correct if the audit runs last. Required order: `build_events` → `analyze` → `build_site` → `build_extra` → `check_links` → `verify_extra` → `audit_certainty`. This is logged for the integration owner (see cross-scope note above).
 - **Verification at this commit:** `tools/verify_extra.py` 31/31; `scripts/audit_certainty.py` passed; `scripts/check_links.py` 0 missing; `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed.
 
+
+---
+
+## Session `arena/f6d67da0-korea5` — 2026-11-13 (NFL intelligence: lines origination, strategies, injuries, suggestions)
+
+Branch constraint: Arena fixes this session to `arena/f6d67da0-korea5` (branched from `main` @ `13854fe`); no other
+branch will be created or pushed. Read the board above first: all prior tasks (T1–T12, E1–E10, U1–U2, R1–R3, G1–G4,
+A1–A4, X1–X4, I1–I2) are complete and merged. `git log --all` shows no unmerged commits and no other session is
+active, so no claim conflicts with this work.
+
+### Task board (addendum — NFL intelligence section)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N1 | Claim + coordination entry | arena-f6d67da0 | **done** | `COORDINATION.md` |
+| N2 | Research: NFL line-origination methods, signal design, validation gates, correlation, skill-vs-luck (research doc with official links) | arena-f6d67da0 | in progress | `research/nfl-intel/`, `research/EXECUTIVE-SUMMARY-NFL.md` |
+| N3 | Data: verified 2026 results weeks 1–10 (official NFL.com scores pages) + official standings/records | arena-f6d67da0 | in progress | `data/nfl-intel/`, `research/nfl-intel/` |
+| N4 | Data: official Week-10 NFL injury report (all reportable rows) + depth-deficiency flags | arena-f6d67da0 | in progress | `data/nfl-intel/injuries-week10.json` |
+| N5 | Model: own power ratings + originated Week 10/11 lines & totals + backtest validation gates + signal correlation matrix | arena-f6d67da0 | in progress | `scripts/nfl_intel.py`, `data/nfl-intel/model.json` |
+| N6 | Strategy library + leaderboard competition design (single, parlay, player-prop combos), gate rules, anti-luck scoring | arena-f6d67da0 | in progress | `data/nfl-intel/strategies.json` |
+| N7 | Suggestions section (site/decision improvements, review-and-choose workflow) + Questions/information-gaps register + discovery suggestions | arena-f6d67da0 | in progress | `data/nfl-intel/suggestions.json`, `data/nfl-intel/questions.json` |
+| N8 | Site: NFL intel hub, lines, strategies/leaderboard, injuries, suggestions, questions, executive summary pages + nav integration | arena-f6d67da0 | in progress | `scripts/build_nfl_intel.py`, `nfl-intel.html`, `nfl-lines.html`, `nfl-strategies.html`, `nfl-injuries.html`, `nfl-executive.html`, `suggestions.html`, `questions.html`, `scripts/build_site.py` (NAV only), `index.html` |
+| N9 | Line-by-line verification pass + tests + repo review record + flagged updates | arena-f6d67da0 | in progress | `verification/session-review-f6d67da0.md`, `curated/flags.json`, `extra/flagged.html` |
+| N10 | Integration: full rebuild in documented order, PR to `main`, merge without waiting, Pages deploy confirmation, record here | arena-f6d67da0 | unclaimed→ arena-f6d67da0 | `COORDINATION.md` (log only) |
+
+### Scope notes (this session)
+
+- New files listed above are exclusively owned by this session. Shared files touched only where listed:
+  `scripts/build_site.py` (NAV list only), `index.html` (new NFL Intelligence section + nav links),
+  `COORDINATION.md` (append-only), `README.md` (new section), `curated/flags.json` (append flags F33+).
+- Per the Arena branch rule, all work happens on `arena/f6d67da0-korea5`; this session is also its own final
+  integration session (same logged deviation pattern as `arena-1a5a5516`).
+- Verification standard for this session: every factual table row must link to an official source page
+  (nfl.com, team official sites, operations.nfl.com). Model-computed values (ratings, originated lines,
+  backtest metrics, correlation coefficients) are labelled **model output — computed from verified results** and
+  link to the verified inputs + formula documentation. Anything that cannot be confirmed is left blank and
+  flagged on the Flagged for Review page. No inferred values.
+
+### Claim / handoff log
+
+- 2026-11-13 — `arena-f6d67da0` claimed N1–N10. Board read in full before claiming; no active claim overlapped.

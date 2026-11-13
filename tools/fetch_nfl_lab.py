@@ -724,13 +724,19 @@ PLAYER_A = re.compile(r'<a[^>]*href="(?P<h>(?:https?://www\.nfl\.com)?/players/[
                       re.S | re.I)
 
 
+POSITIONS = {"QB", "RB", "FB", "WR", "TE", "LT", "LG", "C", "RG", "RT", "OL", "DL", "DE", "DT", "NT",
+             "LB", "ILB", "OLB", "MLB", "CB", "S", "FS", "SS", "DB", "K", "P", "LS", "G", "T", "EDGE",
+             "OT", "OG", "OLB", "WR-RB", "ATH"}
+
+
 def parse_article_players(html_text: str, page_url: str, source_label: str):
     """Rows from an official NFL.com news article (weekly injury report / game-day inactives).
 
-    One row per player link. Position is taken from a leading token when the article supplies one;
+    One row per player link. Position is taken from the token the article puts directly before the
+    name (list style "OUT: CB Name (injury)" and prose style "Denver Broncos cornerback Riley Moss");
     the note is the parenthetical the article attaches to that player; the sentence context is kept
-    verbatim so a human can re-read it. Nothing is inferred: if the article does not name a position
-    or a status, those fields stay null.
+    verbatim so a human can re-read the source. Nothing is inferred — if the article does not state a
+    position or a status, the field stays null.
     """
     rows = []
     pat = re.compile(r"<(?P<tag>h[1-6]|li|p)[^>]*>(?P<body>.*?)</(?P=tag)>", re.S | re.I)
@@ -745,6 +751,7 @@ def parse_article_players(html_text: str, page_url: str, source_label: str):
             continue
         if not links:
             continue
+        text_only = re.sub(r"\s+", " ", strip_tags(body)).strip()
         names = [strip_tags(lk.group("t")).strip() for lk in links]
         flat = body
         for i in reversed(range(len(links))):
@@ -755,6 +762,13 @@ def parse_article_players(html_text: str, page_url: str, source_label: str):
         plain = re.sub(r"[ \t]+", " ", plain)
         parts = re.split(r"\x00(\d+)\x00", plain)
         pre = re.sub(r"\s+", " ", parts[0]).strip()
+
+        def position_from(before_text):
+            toks = [t for t in re.findall(r"[A-Za-z\-]{1,6}", before_text) if t.upper() in POSITIONS]
+            if toks:
+                return toks[-1].upper()
+            return None
+
         for i in range(1, len(parts) - 1, 2):
             idx = int(parts[i])
             seg = parts[i + 1]
@@ -763,22 +777,30 @@ def parse_article_players(html_text: str, page_url: str, source_label: str):
             if not name:
                 continue
             rest = re.sub(r"\s+", " ", rest).strip()
-            pos = None
-            if idx == 0:
-                mm = re.match(r"^([A-Za-z.\-]{1,14})\s+$", pre)
-                if mm and POS_RE.match(pre + " "):
-                    pos = mm.group(1).upper().replace(".", "")
+            before = pre if idx == 0 else re.sub(r"\s+", " ", parts[i - 1].split("\x01")[-1]).strip()
+            pos = position_from(before)
             note = None
             pm = re.match(r"^\s*\(([^)]{2,160})\)", rest)
             if pm:
                 note = pm.group(1).strip()
             status = None
-            for word in ("Out", "Doubtful", "Questionable", "Probable", "did not participate",
-                         "limited participation", "full participation", "placed on injured reserve",
-                         "waived", "signed to the active roster", "elevated"):
-                if word.lower() in rest.lower():
-                    status = word.title() if word.islower() is False else word
+            low_before = before.lower()
+            for word in ("did not participate", "limited participation", "full participation",
+                         "placed on injured reserve", "on injured reserve", "waived", "elevated",
+                         "practice squad"):
+                if word in low_before:
+                    status = word.title()
                     break
+            if not status:
+                up = before.upper().replace(":", " ").split()
+                if "OUT" in up:
+                    status = "Out"
+                elif "DOUBTFUL" in up:
+                    status = "Doubtful"
+                elif "QUESTIONABLE" in up:
+                    status = "Questionable"
+                elif "PROBABLE" in up:
+                    status = "Probable"
             href = links[idx].group("h")
             if href.startswith("/"):
                 href = "https://www.nfl.com" + href
@@ -788,7 +810,7 @@ def parse_article_players(html_text: str, page_url: str, source_label: str):
                 "position": pos,
                 "note": note,
                 "statusWord": status,
-                "context": plain.replace("\x00", " ").replace("\x01", " ").strip()[:400],
+                "context": text_only[:400],
                 "playerUrl": href,
                 "articleUrl": page_url,
                 "sourceName": source_label,

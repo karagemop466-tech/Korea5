@@ -34,6 +34,7 @@ import sys
 import time
 import urllib.error
 import urllib.parse
+import html as html_lib
 import urllib.request
 
 OUT = "official/lab"
@@ -151,7 +152,7 @@ def page_payloads(page: str):
 
 
 def payload_data(pairs):
-    """Every payload `data` object, from both react-query and __NEXT_DATA__ shapes."""
+    """(key, data) for every payload on a page, from both react-query and __NEXT_DATA__ shapes."""
     for origin, q in pairs:
         if origin == "rsc":
             data = (q.get("state") or {}).get("data")
@@ -219,8 +220,8 @@ def text_scores(page: str):
     e.g. "Jaguars 33, Ravens 10, FINAL". Keyed by the two nicknames, matched case-insensitively.
     Used only when the structured payload carries no score, and recorded per row as scoreSource."""
     out: dict[tuple[str, str], tuple[int, int]] = {}
-    pat = re.compile(r"([A-Z][A-Za-z0-9 .'\-]{2,28}?)\s+(\d{1,2})\s*,\s*"
-                     r"([A-Z][A-Za-z0-9 .'\-]{2,28}?)\s+(\d{1,2})\s*,\s*FINAL")
+    pat = re.compile(r"([A-Za-z0-9][A-Za-z .'\-]{1,28}?)\s+(\d{1,2})\s*,\s*"
+                     r"([A-Za-z0-9][A-Za-z .'\-]{1,28}?)\s+(\d{1,2})\s*,\s*FINAL")
     for a, ap, h, hp in pat.findall(page):
         key = (a.strip().split()[-1].lower(), h.strip().split()[-1].lower())
         out.setdefault(key, (int(ap), int(hp)))
@@ -525,6 +526,128 @@ def parse_inactives(pairs, url):
     return rows, cands
 
 
+
+# ------------------------------------------------------------- news-article pages
+POS_RE = re.compile(r"^(QB|RB|FB|WR|TE|LT|LG|C|RG|RT|OL|DL|DE|DT|NT|LB|ILB|OLB|MLB|CB|S|FS|SS|DB|"
+                    r"K|P|LS|G|T|EDGE|OT|OG)[\.\s]", re.I)
+
+
+def strings(node, depth=0):
+    if depth > 26:
+        return
+    if isinstance(node, str):
+        yield node
+    elif isinstance(node, dict):
+        for v in node.values():
+            yield from strings(v, depth + 1)
+    elif isinstance(node, list):
+        for v in node:
+            yield from strings(v, depth + 1)
+
+
+def strip_tags(fragment: str) -> str:
+    frag = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", fragment, flags=re.S | re.I)
+    frag = re.sub(r"<br\s*/?>", " ", frag, flags=re.I)
+    frag = re.sub(r"<[^>]+>", " ", frag)
+    frag = html_lib.unescape(frag)
+    return re.sub(r"\s+", " ", frag).strip()
+
+
+def parse_article_players(html_text: str, page_url: str, source_label: str):
+    """Extract (heading, item) pairs from an official NFL.com news article.
+
+    Items are recognised as list entries that link to nfl.com/players/... — the league's own
+    format for its weekly injury-report and game-day inactives articles. Position is read from
+    the leading token of the item text; anything the article does not state stays None.
+    """
+    rows = []
+    pat = re.compile(r"<(?P<tag>h[1-6]|li)[^>]*>(?P<body>.*?)</(?P=tag)>", re.S | re.I)
+    heading = None
+    for m in pat.finditer(html_text):
+        body = strip_tags(m.group("body"))
+        if not body:
+            continue
+        if m.group("tag").lower().startswith("h"):
+            if len(body) <= 60:
+                heading = body
+            continue
+        link = re.search(r'href="(?P<h>https?://www\.nfl\.com/players/[^"]+|/players/[^"]+)"', m.group("body"))
+        if not link:
+            continue
+        text = body
+        pos = None
+        if POS_RE.match(text):
+            pos = re.match(r"^([A-Za-z\.]+)", text).group(1).upper().replace(".", "")
+            text = text[re.match(r"^[A-Za-z\.]+\s+", text).end():]
+        note = None
+        paren = re.findall(r"\(([^)]{2,140})\)", text)
+        if paren:
+            note = "; ".join(paren)
+            text = re.sub(r"\s*\([^)]{2,140}\)", " ", text).strip()
+        href = link.group("h")
+        if href.startswith("/"):
+            href = "https://www.nfl.com" + href
+        rows.append({
+            "section": heading,
+            "player": re.sub(r"\s+", " ", text).strip(" -"),
+            "position": pos,
+            "note": note,
+            "playerUrl": href,
+            "articleUrl": page_url,
+            "sourceName": source_label,
+            "verification": "verified",
+        })
+    return rows
+
+
+def find_article_links(page: str, kinds=("injur", "inactiv")):
+    """Official nfl.com/news article links discovered on the league's own injury/inactives pages."""
+    out = []
+    for href in re.findall(r'href="(/news/[^"]+)"', page):
+        low = href.lower()
+        if any(k in low for k in kinds):
+            if href not in out:
+                out.append(href)
+    return out
+
+
+def collect_articles(base_pages, max_pages=28):
+    """Follow the official links only — no URL is constructed or guessed."""
+    links: list[str] = []
+    for url in base_pages:
+        page = get(url)
+        if not page:
+            continue
+        for href in find_article_links(page):
+            full = "https://www.nfl.com" + href
+            if full not in links:
+                links.append(full)
+    rows, failures, ok_pages = [], [], 0
+    for url in links[:max_pages]:
+        page = get(url)
+        if not page:
+            failures.append(url)
+            continue
+        candidates = [page]
+        try:
+            for _key, data in payload_data(page_payloads(page)):
+                candidates.extend(s for s in strings(data) if "/players/" in s and "<li" in s.lower())
+        except Exception as e:  # noqa: BLE001
+            failures.append(f"{url}: payload error {e}")
+        got = []
+        for cand in candidates:
+            got = parse_article_players(cand, url, "NFL.com official news article (injury report / inactives)")
+            if got:
+                break
+        if got:
+            ok_pages += 1
+            rows.extend(got)
+            log(f"article {url.split('/news/')[1][:58]}: {len(got)} rows")
+        else:
+            failures.append(f"{url}: no player list parsed")
+            log(f"article {url}: 0 rows")
+    return rows, links, failures, ok_pages
+
 # ------------------------------------------------------------------------ main
 def main():
     started = dt.datetime.now(dt.timezone.utc).isoformat()
@@ -542,7 +665,7 @@ def main():
         if page is None:
             per_week[f"Week {wk}"] = -1
             continue
-        pairs = list(page_payloads(page))
+        pairs = list(payload_data(page_payloads(page)))
         rows, _games = parse_results(pairs, url, f"Week {wk}", text_scores(page))
         srows, _blobs = parse_standings(pairs, url)
         per_week[f"Week {wk}"] = len(rows)
@@ -552,6 +675,16 @@ def main():
         standing_rows.extend(srows)
         log(f"week {wk}: games={len(rows)} final={per_week_final[f'Week {wk}']} standingsRows={len(srows)}")
 
+    best: dict[str, dict] = {}
+    for r in all_rows:
+        cur = best.get(r["gameId"])
+        if cur is None:
+            best[r["gameId"]] = r
+        else:
+            rank = lambda x: (x["awayPoints"] is not None, x["verification"] == "verified")
+            if rank(r) > rank(cur):
+                best[r["gameId"]] = r
+    all_rows = sorted(best.values(), key=lambda r: (r["dateUTC"] or "", str(r["gameId"])))
     finals = [r for r in all_rows if r["verification"] == "verified"]
     jwrite("results-2026.json", {
         "meta": {
@@ -591,7 +724,7 @@ def main():
         if page is None:
             inj_counts[label] = -1
             continue
-        rows, _c = parse_injury_like(list(page_payloads(page)), INJURY_URL, label)
+        rows, _c = parse_injury_like(list(payload_data(page_payloads(page))), url, label)
         inj_counts[label] = len(rows)
         inj_rows.extend(rows)
         log(f"injuries {label}: {len(rows)} rows")
@@ -609,11 +742,27 @@ def main():
         "rows": inj_rows,
     })
 
+    # 3b — official weekly injury-report and game-day inactives ARTICLES ----------------
+    art_rows, art_links, art_fail, art_ok = collect_articles([INJURY_URL, INACTIVE_URL])
+    jwrite("articles-2026.json", {
+        "meta": {
+            "dataset": "NFL.com official news articles for weekly injury reports and game-day inactives",
+            "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat(),
+            "rows": len(art_rows),
+            "pagesParsed": art_ok,
+            "linksDiscovered": art_links,
+            "failures": art_fail,
+            "sourceName": "NFL.com news article pages (league-published)",
+            "method": "Links are taken from nfl.com/injuries/ and nfl.com/inactives/ themselves; the page that "
+                      "carries no player list is recorded as a failure instead of being filled in.",
+        },
+        "rows": art_rows,
+    })
     # 4 — inactives + structural discovery dumps -------------------------------
     page = get(INACTIVE_URL)
     ina_rows: list[dict] = []
     if page:
-        ina_rows, _ = parse_inactives(list(page_payloads(page)), INACTIVE_URL)
+        ina_rows, _ = parse_inactives(list(payload_data(page_payloads(page))), INACTIVE_URL)
     jwrite("inactives-2026.json", {
         "meta": {
             "dataset": "NFL.com inactives page rows (game-day inactive designations)",
@@ -674,6 +823,8 @@ def main():
             "standingsRows": len(standing_rows),
             "injuryRows": len(inj_rows),
             "inactivesRows": len(ina_rows),
+            "articleRows": len(art_rows),
+            "articlePagesParsed": art_ok,
         },
         "extraction": {
             "gamesWithoutScores": len([r for r in all_rows if r["awayPoints"] is None]),

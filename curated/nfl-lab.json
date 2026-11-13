@@ -1099,8 +1099,8 @@
    "id": "L12",
    "severity": "low",
    "area": "analysis",
-   "finding": "Only the 2026 season of the official player Logs pages was transcribed in this pass. The pages are year-scoped and earlier seasons were not read.",
-   "action": "All sample sizes are stated as nine weeks of one season. Multi-season work is listed as open work in the question register.",
+   "finding": "Only the 2026 season of the official player Logs pages was transcribed in this pass. The pages are year-scoped and earlier seasons were not read. The sample is eight games per player, spanning weeks 1-9 of the season with one week absent from each player's list, because the official page omits games the player did not appear in.",
+   "action": "All sample sizes are stated as eight games of one season. This page and the correlations page originally said \"nine games\" / \"nine weeks\" while eight rows were stored, which was wrong; the count is now derived from the committed rows rather than written by hand, and the verifier fails if a published count disagrees with the data. Multi-season work is listed as open work in the question register.",
    "sources": [
     "https://www.nfl.com/players/justin-jefferson/stats/logs/"
    ]
@@ -1133,6 +1133,16 @@
    "action": "The leaderboard is paper-only and the rewards are paper points. Nothing on this site authorises real-money activity.",
    "sources": [
     "https://operations.nfl.com/"
+   ]
+  },
+  {
+   "id": "L16",
+   "severity": "medium",
+   "area": "presentation",
+   "finding": "The landing page picked its -110 sample-size rows by comparing the stored break-even probability (rounded to four decimals, 0.5238) with 110/210 using a 1e-6 tolerance. The comparison matched nothing, so the headline rendered as 'bets for a +5 point edge; for +3 points at -110' with no number in it.",
+   "action": "Fixed: the rows are selected by their price label, the builder refuses to emit a missing value, and the verifier now fails when a required row is absent. The verifier had repeated the same comparison with an even tighter tolerance, so its check matched no rows and passed without testing anything; it also gained page-level link and anchor resolution. Negative tests confirm it now catches a blank headline, a missing file and a dangling anchor.",
+   "sources": [
+    "https://www.nfl.com/players/justin-jefferson/stats/logs/"
    ]
   }
  ]

@@ -1,0 +1,687 @@
+{
+ "leagueMeanPointsPerGame": 21.81,
+ "leagueMeanPointsPerGame2025": 23.01,
+ "shrinkK": 9.0,
+ "shrinkNote": "weight = n/(n+K). With 8 games the club's own rate gets ~47% weight, so a hot start cannot masquerade as a season-long truth.",
+ "teams": {
+  "ARI": {
+   "team": "ARI",
+   "games": 12,
+   "pointsFor": 256,
+   "pointsAgainst": 345,
+   "ppgFor": 21.33,
+   "ppgAgainst": 28.75,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 21.54,
+   "shrunkPpgAgainst": 25.78,
+   "shrinkWeight": 0.571
+  },
+  "ATL": {
+   "team": "ATL",
+   "games": 12,
+   "pointsFor": 246,
+   "pointsAgainst": 268,
+   "ppgFor": 20.5,
+   "ppgAgainst": 22.33,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 21.06,
+   "shrunkPpgAgainst": 22.11,
+   "shrinkWeight": 0.571
+  },
+  "BAL": {
+   "team": "BAL",
+   "games": 12,
+   "pointsFor": 267,
+   "pointsAgainst": 249,
+   "ppgFor": 22.25,
+   "ppgAgainst": 20.75,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 22.06,
+   "shrunkPpgAgainst": 21.2,
+   "shrinkWeight": 0.571
+  },
+  "BUF": {
+   "team": "BUF",
+   "games": 11,
+   "pointsFor": 344,
+   "pointsAgainst": 235,
+   "ppgFor": 31.27,
+   "ppgAgainst": 21.36,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 27.01,
+   "shrunkPpgAgainst": 21.56,
+   "shrinkWeight": 0.55
+  },
+  "CAR": {
+   "team": "CAR",
+   "games": 11,
+   "pointsFor": 263,
+   "pointsAgainst": 278,
+   "ppgFor": 23.91,
+   "ppgAgainst": 25.27,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 22.96,
+   "shrunkPpgAgainst": 23.71,
+   "shrinkWeight": 0.55
+  },
+  "CHI": {
+   "team": "CHI",
+   "games": 12,
+   "pointsFor": 308,
+   "pointsAgainst": 236,
+   "ppgFor": 25.67,
+   "ppgAgainst": 19.67,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 24.02,
+   "shrunkPpgAgainst": 20.59,
+   "shrinkWeight": 0.571
+  },
+  "CIN": {
+   "team": "CIN",
+   "games": 11,
+   "pointsFor": 313,
+   "pointsAgainst": 211,
+   "ppgFor": 28.45,
+   "ppgAgainst": 19.18,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 25.46,
+   "shrunkPpgAgainst": 20.36,
+   "shrinkWeight": 0.55
+  },
+  "CLE": {
+   "team": "CLE",
+   "games": 12,
+   "pointsFor": 215,
+   "pointsAgainst": 274,
+   "ppgFor": 17.92,
+   "ppgAgainst": 22.83,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 19.59,
+   "shrunkPpgAgainst": 22.39,
+   "shrinkWeight": 0.571
+  },
+  "DAL": {
+   "team": "DAL",
+   "games": 12,
+   "pointsFor": 321,
+   "pointsAgainst": 283,
+   "ppgFor": 26.75,
+   "ppgAgainst": 23.58,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 24.63,
+   "shrunkPpgAgainst": 22.82,
+   "shrinkWeight": 0.571
+  },
+  "DEN": {
+   "team": "DEN",
+   "games": 12,
+   "pointsFor": 272,
+   "pointsAgainst": 232,
+   "ppgFor": 22.67,
+   "ppgAgainst": 19.33,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 22.3,
+   "shrunkPpgAgainst": 20.39,
+   "shrinkWeight": 0.571
+  },
+  "DET": {
+   "team": "DET",
+   "games": 11,
+   "pointsFor": 278,
+   "pointsAgainst": 234,
+   "ppgFor": 25.27,
+   "ppgAgainst": 21.27,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 23.71,
+   "shrunkPpgAgainst": 21.51,
+   "shrinkWeight": 0.55
+  },
+  "GB": {
+   "team": "GB",
+   "games": 12,
+   "pointsFor": 300,
+   "pointsAgainst": 270,
+   "ppgFor": 25.0,
+   "ppgAgainst": 22.5,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 23.63,
+   "shrunkPpgAgainst": 22.2,
+   "shrinkWeight": 0.571
+  },
+  "HOU": {
+   "team": "HOU",
+   "games": 11,
+   "pointsFor": 249,
+   "pointsAgainst": 257,
+   "ppgFor": 22.64,
+   "ppgAgainst": 23.36,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 22.27,
+   "shrunkPpgAgainst": 22.66,
+   "shrinkWeight": 0.55
+  },
+  "IND": {
+   "team": "IND",
+   "games": 12,
+   "pointsFor": 219,
+   "pointsAgainst": 321,
+   "ppgFor": 18.25,
+   "ppgAgainst": 26.75,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 19.78,
+   "shrunkPpgAgainst": 24.63,
+   "shrinkWeight": 0.571
+  },
+  "JAX": {
+   "team": "JAX",
+   "games": 11,
+   "pointsFor": 289,
+   "pointsAgainst": 175,
+   "ppgFor": 26.27,
+   "ppgAgainst": 15.91,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 24.26,
+   "shrunkPpgAgainst": 18.56,
+   "shrinkWeight": 0.55
+  },
+  "KC": {
+   "team": "KC",
+   "games": 11,
+   "pointsFor": 238,
+   "pointsAgainst": 188,
+   "ppgFor": 21.64,
+   "ppgAgainst": 17.09,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 21.72,
+   "shrunkPpgAgainst": 19.21,
+   "shrinkWeight": 0.55
+  },
+  "LA": {
+   "team": "LA",
+   "games": 12,
+   "pointsFor": 288,
+   "pointsAgainst": 211,
+   "ppgFor": 24.0,
+   "ppgAgainst": 17.58,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 23.06,
+   "shrunkPpgAgainst": 19.39,
+   "shrinkWeight": 0.571
+  },
+  "LAC": {
+   "team": "LAC",
+   "games": 11,
+   "pointsFor": 183,
+   "pointsAgainst": 287,
+   "ppgFor": 16.64,
+   "ppgAgainst": 26.09,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 18.97,
+   "shrunkPpgAgainst": 24.16,
+   "shrinkWeight": 0.55
+  },
+  "LV": {
+   "team": "LV",
+   "games": 12,
+   "pointsFor": 286,
+   "pointsAgainst": 333,
+   "ppgFor": 23.83,
+   "ppgAgainst": 27.75,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 22.96,
+   "shrunkPpgAgainst": 25.2,
+   "shrinkWeight": 0.571
+  },
+  "MIA": {
+   "team": "MIA",
+   "games": 11,
+   "pointsFor": 148,
+   "pointsAgainst": 263,
+   "ppgFor": 13.45,
+   "ppgAgainst": 23.91,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 17.21,
+   "shrunkPpgAgainst": 22.96,
+   "shrinkWeight": 0.55
+  },
+  "MIN": {
+   "team": "MIN",
+   "games": 11,
+   "pointsFor": 168,
+   "pointsAgainst": 173,
+   "ppgFor": 15.27,
+   "ppgAgainst": 15.73,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 18.21,
+   "shrunkPpgAgainst": 18.47,
+   "shrinkWeight": 0.55
+  },
+  "NE": {
+   "team": "NE",
+   "games": 12,
+   "pointsFor": 261,
+   "pointsAgainst": 278,
+   "ppgFor": 21.75,
+   "ppgAgainst": 23.17,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 21.78,
+   "shrunkPpgAgainst": 22.59,
+   "shrinkWeight": 0.571
+  },
+  "NO": {
+   "team": "NO",
+   "games": 11,
+   "pointsFor": 232,
+   "pointsAgainst": 298,
+   "ppgFor": 21.09,
+   "ppgAgainst": 27.09,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 21.41,
+   "shrunkPpgAgainst": 24.71,
+   "shrinkWeight": 0.55
+  },
+  "NYG": {
+   "team": "NYG",
+   "games": 12,
+   "pointsFor": 262,
+   "pointsAgainst": 218,
+   "ppgFor": 21.83,
+   "ppgAgainst": 18.17,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 21.82,
+   "shrunkPpgAgainst": 19.73,
+   "shrinkWeight": 0.571
+  },
+  "NYJ": {
+   "team": "NYJ",
+   "games": 12,
+   "pointsFor": 221,
+   "pointsAgainst": 270,
+   "ppgFor": 18.42,
+   "ppgAgainst": 22.5,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 19.87,
+   "shrunkPpgAgainst": 22.2,
+   "shrinkWeight": 0.571
+  },
+  "PHI": {
+   "team": "PHI",
+   "games": 12,
+   "pointsFor": 189,
+   "pointsAgainst": 299,
+   "ppgFor": 15.75,
+   "ppgAgainst": 24.92,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 18.35,
+   "shrunkPpgAgainst": 23.59,
+   "shrinkWeight": 0.571
+  },
+  "PIT": {
+   "team": "PIT",
+   "games": 11,
+   "pointsFor": 235,
+   "pointsAgainst": 198,
+   "ppgFor": 21.36,
+   "ppgAgainst": 18.0,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 21.56,
+   "shrunkPpgAgainst": 19.71,
+   "shrinkWeight": 0.55
+  },
+  "SEA": {
+   "team": "SEA",
+   "games": 12,
+   "pointsFor": 234,
+   "pointsAgainst": 207,
+   "ppgFor": 19.5,
+   "ppgAgainst": 17.25,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 20.49,
+   "shrunkPpgAgainst": 19.2,
+   "shrinkWeight": 0.571
+  },
+  "SF": {
+   "team": "SF",
+   "games": 11,
+   "pointsFor": 307,
+   "pointsAgainst": 204,
+   "ppgFor": 27.91,
+   "ppgAgainst": 18.55,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 25.16,
+   "shrunkPpgAgainst": 20.02,
+   "shrinkWeight": 0.55
+  },
+  "TB": {
+   "team": "TB",
+   "games": 12,
+   "pointsFor": 242,
+   "pointsAgainst": 228,
+   "ppgFor": 20.17,
+   "ppgAgainst": 19.0,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 20.87,
+   "shrunkPpgAgainst": 20.2,
+   "shrinkWeight": 0.571
+  },
+  "TEN": {
+   "team": "TEN",
+   "games": 11,
+   "pointsFor": 197,
+   "pointsAgainst": 252,
+   "ppgFor": 17.91,
+   "ppgAgainst": 22.91,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 11 completed games, not a full season",
+   "shrunkPpgFor": 19.66,
+   "shrunkPpgAgainst": 22.41,
+   "shrinkWeight": 0.55
+  },
+  "WAS": {
+   "team": "WAS",
+   "games": 12,
+   "pointsFor": 232,
+   "pointsAgainst": 288,
+   "ppgFor": 19.33,
+   "ppgAgainst": 24.0,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "label": "COMPUTED from official 2026 final scores only; n = 12 completed games, not a full season",
+   "shrunkPpgFor": 20.39,
+   "shrunkPpgAgainst": 23.06,
+   "shrinkWeight": 0.571
+  }
+ },
+ "priorSeasonTeams": {
+  "ARI": {
+   "team": "ARI",
+   "games": 17,
+   "ppgFor": 20.88,
+   "ppgAgainst": 28.71,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "ATL": {
+   "team": "ATL",
+   "games": 17,
+   "ppgFor": 20.76,
+   "ppgAgainst": 23.59,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "BAL": {
+   "team": "BAL",
+   "games": 17,
+   "ppgFor": 24.94,
+   "ppgAgainst": 23.41,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "BUF": {
+   "team": "BUF",
+   "games": 17,
+   "ppgFor": 28.29,
+   "ppgAgainst": 21.47,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "CAR": {
+   "team": "CAR",
+   "games": 17,
+   "ppgFor": 18.29,
+   "ppgAgainst": 22.35,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "CHI": {
+   "team": "CHI",
+   "games": 17,
+   "ppgFor": 25.94,
+   "ppgAgainst": 24.41,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "CIN": {
+   "team": "CIN",
+   "games": 17,
+   "ppgFor": 24.35,
+   "ppgAgainst": 28.94,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "CLE": {
+   "team": "CLE",
+   "games": 17,
+   "ppgFor": 16.41,
+   "ppgAgainst": 22.29,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "DAL": {
+   "team": "DAL",
+   "games": 17,
+   "ppgFor": 27.71,
+   "ppgAgainst": 30.06,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "DEN": {
+   "team": "DEN",
+   "games": 17,
+   "ppgFor": 23.59,
+   "ppgAgainst": 18.29,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "DET": {
+   "team": "DET",
+   "games": 17,
+   "ppgFor": 28.29,
+   "ppgAgainst": 24.29,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "GB": {
+   "team": "GB",
+   "games": 17,
+   "ppgFor": 23.0,
+   "ppgAgainst": 21.18,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "HOU": {
+   "team": "HOU",
+   "games": 17,
+   "ppgFor": 23.76,
+   "ppgAgainst": 17.35,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "IND": {
+   "team": "IND",
+   "games": 17,
+   "ppgFor": 27.41,
+   "ppgAgainst": 24.24,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "JAX": {
+   "team": "JAX",
+   "games": 17,
+   "ppgFor": 27.88,
+   "ppgAgainst": 19.76,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "KC": {
+   "team": "KC",
+   "games": 17,
+   "ppgFor": 21.29,
+   "ppgAgainst": 19.29,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "LA": {
+   "team": "LA",
+   "games": 17,
+   "ppgFor": 30.47,
+   "ppgAgainst": 20.35,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "LAC": {
+   "team": "LAC",
+   "games": 17,
+   "ppgFor": 21.65,
+   "ppgAgainst": 20.0,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "LV": {
+   "team": "LV",
+   "games": 17,
+   "ppgFor": 14.18,
+   "ppgAgainst": 25.41,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "MIA": {
+   "team": "MIA",
+   "games": 17,
+   "ppgFor": 20.41,
+   "ppgAgainst": 24.94,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "MIN": {
+   "team": "MIN",
+   "games": 17,
+   "ppgFor": 20.24,
+   "ppgAgainst": 19.59,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "NE": {
+   "team": "NE",
+   "games": 17,
+   "ppgFor": 28.82,
+   "ppgAgainst": 18.82,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "NO": {
+   "team": "NO",
+   "games": 17,
+   "ppgFor": 18.0,
+   "ppgAgainst": 22.53,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "NYG": {
+   "team": "NYG",
+   "games": 17,
+   "ppgFor": 22.41,
+   "ppgAgainst": 25.82,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "NYJ": {
+   "team": "NYJ",
+   "games": 17,
+   "ppgFor": 17.65,
+   "ppgAgainst": 29.59,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "PHI": {
+   "team": "PHI",
+   "games": 17,
+   "ppgFor": 22.29,
+   "ppgAgainst": 19.12,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "PIT": {
+   "team": "PIT",
+   "games": 17,
+   "ppgFor": 23.35,
+   "ppgAgainst": 22.76,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "SEA": {
+   "team": "SEA",
+   "games": 17,
+   "ppgFor": 28.41,
+   "ppgAgainst": 17.18,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "SF": {
+   "team": "SF",
+   "games": 17,
+   "ppgFor": 25.71,
+   "ppgAgainst": 21.82,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "TB": {
+   "team": "TB",
+   "games": 17,
+   "ppgFor": 22.35,
+   "ppgAgainst": 24.18,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "TEN": {
+   "team": "TEN",
+   "games": 17,
+   "ppgFor": 16.71,
+   "ppgAgainst": 28.12,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  },
+  "WAS": {
+   "team": "WAS",
+   "games": 17,
+   "ppgFor": 20.94,
+   "ppgAgainst": 26.53,
+   "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-10",
+   "label": "COMPUTED from official 2025 final scores only"
+  }
+ },
+ "officialTeamScoringTableWarning": "The official team-stats 'scoring' pages publish touchdowns, not points. Points here are computed from official final scores. Both are official; the distinction is stated so no reader mistakes a touchdown count for a points-per-game figure.",
+ "sourceUrls": [
+  "https://www.nfl.com/stats/team-stats/offense/scoring/2026/reg/all",
+  "https://www.nfl.com/schedules/2026/by-week/week-10"
+ ]
+}

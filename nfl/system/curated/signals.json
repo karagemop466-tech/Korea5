@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "name": "Signal catalogue — how to generate useful signals, and which ones this data can actually support",
+    "compiledUTC": "2026-11-13",
+    "definition": "A signal is a rule that maps information available before kickoff to a probability. A signal is useful only if it is (a) computable from a named source, (b) available before the decision cutoff, and (c) calibratable with n and uncertainty.",
+    "tiers": {
+      "T1-computable-now": "Every input is ingested from an official source and the signal can be computed with published n and interval today.",
+      "T2-computable-after-one-more-source": "One named official source is missing; the gap is stated.",
+      "T3-not-computable": "Requires information that is not published by any official source; listed so it is not attempted."
+    },
+    "killerRule": "Any signal whose input arrives after the decision cutoff is not a signal — it is a leak. That is why publication time, not just content, is part of every input definition."
+  },
+  "signals": [
+    {
+      "id": "SIG01",
+      "tier": "T1-computable-now",
+      "name": "Exact rest days",
+      "definition": "Days between a team's previous official kickoff date and its next one.",
+      "input": "Official kickoff date per game (nfl.com by-week pages).",
+      "availability": "Published with the schedule, months before kickoff.",
+      "leakRisk": "None.",
+      "limitation": "Does not adjust for travel or for a bye beyond the rest count itself.",
+      "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+    },
+    {
+      "id": "SIG02",
+      "tier": "T1-computable-now",
+      "name": "Short-week indicator",
+      "definition": "Flag when rest <= 4 days (a Thursday game after a Sunday game).",
+      "input": "Same as SIG01.",
+      "availability": "Schedule time.",
+      "leakRisk": "None.",
+      "limitation": "Small number of Thursday games per season, so the sample stays tiny for years.",
+      "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+    },
+    {
+      "id": "SIG03",
+      "tier": "T1-computable-now",
+      "name": "Scoring rate, shrunk",
+      "definition": "Points scored and allowed per game, each shrunk toward the league mean by a fixed weight so an 8-game sample cannot look like a 17-game truth.",
+      "input": "Official team scoring stats (offence and defence, all 32 clubs).",
+      "availability": "Official season-to-date page.",
+      "leakRisk": "Low — but the page is 'season to date', so a mid-season historical backtest must use archived pages, not today's numbers. Using today's page to test a week-3 game is a leak.",
+      "limitation": "League-mean opponent adjustment is crude; a proper opponent-adjusted rating needs play-by-play.",
+      "sourceUrl": "https://www.nfl.com/stats/team-stats/offense/scoring/2026/reg/all"
+    },
+    {
+      "id": "SIG04",
+      "tier": "T1-computable-now",
+      "name": "Pass/run efficiency split",
+      "definition": "Yards per attempt and yards per carry, offence and defence, as a two-factor profile.",
+      "input": "Official team passing/rushing stats, offence and defence.",
+      "availability": "Official season-to-date page.",
+      "leakRisk": "Same archived-page caveat as SIG03.",
+      "limitation": "Rate stats without opponent adjustment and without garbage-time filtering overstate blowout teams.",
+      "sourceUrl": "https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all"
+    },
+    {
+      "id": "SIG05",
+      "tier": "T1-computable-now",
+      "name": "Turnover differential (defence side)",
+      "definition": "Interceptions and fumble recoveries per game, defence side, as a regression candidate.",
+      "input": "Official team defence passing stats (interceptions) and defensive scoring columns.",
+      "availability": "Official season-to-date page.",
+      "leakRisk": "Archived-page caveat.",
+      "limitation": "The official team pages do not publish a single turnover-differential column; it must be assembled from the defensive columns and labelled as assembled.",
+      "sourceUrl": "https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all"
+    },
+    {
+      "id": "SIG06",
+      "tier": "T1-computable-now",
+      "name": "Injury load by unit",
+      "definition": "Count of players listed Out / Doubtful / Questionable on the official report, split by offence and defence, using the official report's own positions.",
+      "input": "Official NFL injury report, latest published week.",
+      "availability": "Published during the week; final game-status update 90 minutes before kickoff per NFL rules.",
+      "leakRisk": "HIGH. If a bet is placed before the final update, the later update is a leak. The site therefore stamps the report's week and never mixes weeks.",
+      "limitation": "A count is not a value: three Questionable backups matter less than one Out quarterback. The count is published as a count, with the positions listed, never as a severity score.",
+      "sourceUrl": "https://www.nfl.com/injuries/league/2026/reg10"
+    },
+    {
+      "id": "SIG07",
+      "tier": "T1-computable-now",
+      "name": "Depth-tier exposure",
+      "definition": "For each club, how many published tiers exist at each position, and which tier the official injury report suggests is next up.",
+      "input": "Club depth charts (1st/2nd/3rd/4th) joined to the official injury report.",
+      "availability": "Club charts carry their own 'updated as of' date; those dates differ across clubs.",
+      "leakRisk": "Medium — a chart updated after the bet is a leak. The chart date is shown next to every row so staleness is visible.",
+      "limitation": "Charts are club projections; several clubs label them 'Unofficial'. A depth chart is not a snap count (Q07).",
+      "sourceUrl": "https://www.49ers.com/team/depth-chart"
+    },
+    {
+      "id": "SIG08",
+      "tier": "T1-computable-now",
+      "name": "Player usage stability",
+      "definition": "Game-to-game standard deviation of a player's attempts/receptions relative to his mean — a stability score, not a forecast.",
+      "input": "Official per-game player logs.",
+      "availability": "Published after each game.",
+      "leakRisk": "None for a historical description; using the full season to forecast week 5 is a leak.",
+      "limitation": "Below the suppression floor of 8 games the score is withheld.",
+      "sourceUrl": "https://www.nfl.com/players/christian-mccaffrey/stats"
+    },
+    {
+      "id": "SIG09",
+      "tier": "T1-computable-now",
+      "name": "Teammate dependence",
+      "definition": "Correlation between two teammates' weekly volumes (QB passing vs WR1 receiving), which is the input a same-game parlay needs.",
+      "input": "Two official per-game logs joined by week and opponent.",
+      "availability": "Post-game.",
+      "leakRisk": "None historically; the forecast version must use only prior weeks.",
+      "limitation": "Needs both players' logs on the same club for the same weeks; the join rate is published, unmatched rows are excluded and counted.",
+      "sourceUrl": "https://www.nfl.com/stats/player-stats/category/receiving/2026/reg/all/receivingreceptions/desc"
+    },
+    {
+      "id": "SIG10",
+      "tier": "T1-computable-now",
+      "name": "Home-field prior",
+      "definition": "The realised home-team win rate over the loaded official finals.",
+      "input": "Official final scores.",
+      "availability": "Post-game.",
+      "leakRisk": "None historically.",
+      "limitation": "A prior, not an edge. Published with n so its uncertainty is visible.",
+      "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+      "id": "SIG11",
+      "tier": "T2-computable-after-one-more-source",
+      "name": "Travel distance",
+      "definition": "Great-circle distance between a team's home city and the venue.",
+      "input": "Official venue per game (present) + venue coordinates (not published by the NFL).",
+      "availability": "Venue is official; coordinates are not.",
+      "leakRisk": "None.",
+      "limitation": "Adding a coordinate list means adding a non-official source. That is a decision for the owner, not a silent import.",
+      "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+    },
+    {
+      "id": "SIG12",
+      "tier": "T2-computable-after-one-more-source",
+      "name": "Actual participation / snap share",
+      "definition": "Whether the nominal backup actually played and how much.",
+      "input": "Needs the official snap-count or gamebook publication.",
+      "availability": "Not loaded in this repository.",
+      "leakRisk": "High if used retrospectively without an archive.",
+      "limitation": "Without it, 'the 2nd string replaced the starter' is an inference from a depth chart, not a fact.",
+      "sourceUrl": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10"
+    },
+    {
+      "id": "SIG13",
+      "tier": "T2-computable-after-one-more-source",
+      "name": "Weather",
+      "definition": "Temperature, wind and precipitation at kickoff.",
+      "input": "Needs an official weather source; the official NFL pages publish a short forecast line for some games only.",
+      "availability": "Inconsistent — a weather line appeared on one probed week page and not another.",
+      "leakRisk": "Forecast vs actual is a leak if mixed.",
+      "limitation": "Not uniformly published; only dome/outdoor venue type would be reliably derivable.",
+      "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+    },
+    {
+      "id": "SIG14",
+      "tier": "T2-computable-after-one-more-source",
+      "name": "Market price itself",
+      "definition": "The de-vigged market probability, which is the strongest known baseline.",
+      "input": "Needs a licensed or owner-recorded two-way price (Q01).",
+      "availability": "Not available.",
+      "leakRisk": "Closing vs pre-game price must be timestamped or CLV is meaningless.",
+      "limitation": "Without it, no strategy can be shown to beat anything resembling a market.",
+      "sourceUrl": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10"
+    },
+    {
+      "id": "SIG15",
+      "tier": "T3-not-computable",
+      "name": "Referee assignment effects",
+      "definition": "Penalty-rate effects by officiating crew.",
+      "input": "Crew assignments are not published as a machine-readable official feed on the pages probed.",
+      "availability": "Not machine-readable.",
+      "leakRisk": "n/a",
+      "limitation": "Listed so nobody spends a session on it. The official rulebook was probed and the 2026 rulebook URL returned 404 — the exact current URL must be found before quoting any rule.",
+      "sourceUrl": "https://operations.nfl.com/the-rules/"
+    },
+    {
+      "id": "SIG16",
+      "tier": "T3-not-computable",
+      "name": "In-game live betting signals",
+      "definition": "Any signal that updates during a game.",
+      "input": "Needs a live feed with a timestamped tick history.",
+      "availability": "None in this repository.",
+      "leakRisk": "Total — a live signal cannot be evaluated with post-game data.",
+      "limitation": "Out of scope until a live feed exists.",
+      "sourceUrl": "https://www.nfl.com/scores/"
+    }
+  ],
+  "combinationRules": [
+    {
+      "id": "C1",
+      "rule": "Never multiply leg probabilities unless the legs are on different games, different teams and different players, and even then publish the empirical joint as the primary number.",
+      "why": "Independence is an assumption; the empirical joint is a measurement. When both are available, the measurement wins."
+    },
+    {
+      "id": "C2",
+      "rule": "A parlay's price must show the hold compounding: a three-leg parlay at the same hold has roughly three times the margin of a single.",
+      "why": "Parlays are usually a worse deal per unit staked, and that is a computable fact rather than an opinion. The market page computes it for any stated price pair."
+    },
+    {
+      "id": "C3",
+      "rule": "Correlation between legs must be reported with its interval, and a correlation whose interval spans zero must be printed as 'indistinguishable from zero'.",
+      "why": "With 8 games, almost every correlation spans zero. Saying so is the honest output."
+    },
+    {
+      "id": "C4",
+      "rule": "A player-prop combo on one player (e.g. rushing yards over AND receptions over) is a single joint event and must be estimated from that player's joint outcomes, never from two marginals.",
+      "why": "Same-player legs can be strongly positive or negative depending on game script."
+    }
+  ]
+}

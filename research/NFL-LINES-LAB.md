@@ -58,7 +58,7 @@ analysis is reproducible without that tool.
 
 A strategy that claims to predict a player's yardage has to predict inside a 23-to-42 yard spread, game after game. To see a
 **3-yard** modelling advantage at all, a player needs **58 to 199 games** of their own history (n ≥ (σ ÷ edge)²). That is the
-arithmetic behind refusing to call a nine-game sample a signal.
+arithmetic behind refusing to call an eight-game sample a signal.
 
 ### 3.2 Dependence — the legs of a parlay are not independent
 
@@ -95,7 +95,7 @@ Two-sided one-proportion z test, α = 0.05, power = 0.80, normal approximation. 
 | 50/50 | 0.5000 | 0.5500 | +5.0 pts | 783 |
 
 And for dependence: a true correlation of **0.3** needs roughly **100 games** to be detected with 80% power (8 games: 11%;
-17 games: 21%; 33 games: 40%). At nine games of one season, a real relationship would be found roughly one time in ten.
+17 games: 21%; 33 games: 40%). At eight games of one season, a real relationship would be found roughly one time in ten.
 
 **This is the single most important number in the project.** It is now a hard entry condition (gate G0) rather than a footnote.
 

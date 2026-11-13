@@ -50,6 +50,7 @@ NAV = [
     ("sources.html", "Sources"),
     ("verification.html", "Verification"),
     ("flagged.html", "Flagged for review"),
+    ("../lab/index.html", "Evidence workbench"),
 ]
 
 
@@ -162,6 +163,11 @@ def main():
   {card(f"Week {wk_now} starters out", str(len([r for r in depth['rows'] if r['original_starter_out']])), "depth slots where a starter is out (current snapshot)")}
   {card("Open questions", str(len(J('questions.json')['questions'])) if os.path.exists(os.path.join(D,'questions.json')) else "see page", "information still missing")}
 </section>
+<div class="callout"><strong>Two labs, one question.</strong> This section builds and back-tests a line model from
+third-party game data. The companion <a href="../lab/index.html">NFL Lines Lab</a> holds the evidence side of the same
+question, built only on official NFL records: the published injury report, official player game logs and the official
+Game Book, with the measured correlations, dispersion figures and minimum-sample rules computed from them. Read them
+together — neither one publishes a validated edge on its own.</div>
 <h2>Start here</h2>
 <div class="grid">
   <a class="tile" href="executive-summary.html"><b>Executive summary</b><span>What we found, in plain language.</span></a>

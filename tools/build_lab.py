@@ -24,6 +24,7 @@ could not be confirmed is rendered blank and listed on the flagged page.
 import html
 import json
 import os
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
@@ -35,18 +36,26 @@ os.makedirs(ASSETS, exist_ok=True)
 SITE = "Free Time Vacation Planner"
 LAB_NAME = "NFL Lines Lab"
 
-ROOT_NAV = [
-    ("../index.html", "Dashboard"),
-    ("../calendar.html", "Calendar"),
-    ("../vacation.html", "Vacation windows"),
-    ("../mlb.html", "MLB"),
-    ("../nfl.html", "NFL &amp; 49ers"),
-    ("../radio.html", "Radio"),
-    ("../sources.html", "Sources"),
-    ("../flagged.html", "Flagged"),
-    ("../method.html", "Method"),
-    ("../extra/index.html", "Official feeds"),
-]
+# The site navigation has one source of truth: scripts/build_site.py. This file used
+# to keep its own copy of the root links, which silently dropped any surface another
+# session added to the navigation. The canonical list is read from there instead, so a
+# new section shows up here without anyone having to remember to update two places.
+try:
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts"))
+    from build_site import NAV as SITE_NAV
+except Exception:                                    # pragma: no cover - fallback only
+    SITE_NAV = [
+        ("index.html", "Dashboard"), ("calendar.html", "Calendar"), ("vacation.html", "Vacation windows"),
+        ("mlb.html", "MLB"), ("nfl.html", "NFL &amp; 49ers"), ("ncaaf.html", "Stanford &amp; Cal"),
+        ("radio.html", "Radio"), ("lab/index.html", "NFL Lab"), ("lab/questions.html", "Decisions"),
+        ("lab/suggestions.html", "Suggestions"), ("nfl-lab/index.html", "NFL Model"),
+        ("nfl/index.html", "NFL Decision Support"), ("sources.html", "Sources"), ("flagged.html", "Flagged"),
+        ("method.html", "Method"), ("extra/index.html", "Official feeds &amp; verification"),
+    ]
+
+# The lab's own pages are not part of the site navigation list; they get their own strip.
+LAB_OWN = {"lab/index.html", "lab/questions.html", "lab/suggestions.html"}
+ROOT_NAV = [(u, n) for u, n in SITE_NAV if u not in LAB_OWN]
 LAB_NAV = [
     ("index.html", "Lab home"),
     ("questions.html", "Questions"),
@@ -72,6 +81,14 @@ INJ = load("data/lab/injuries-week10-2026.json", {})
 LOGS = load("data/lab/player-logs-2026.json", {})
 BOOK = load("data/lab/gamebook-bills-vikings-2026-w9.json", {})
 ANA = load("data/lab/analysis.json", {})
+
+# The number of games per player is derived from the committed records, never typed,
+# so a stated count can never drift away from the rows it describes.
+PLAYER_GAMES = sorted({len(p.get("games", [])) for p in LOGS.get("players", [])})
+if len(PLAYER_GAMES) != 1:
+    raise SystemExit(f"build_lab: players have differing game counts: {PLAYER_GAMES}")
+GAMES_PER_PLAYER = PLAYER_GAMES[0]
+GAMES_WORD = {8: "eight", 9: "nine", 7: "seven", 10: "ten", 6: "six", 12: "twelve"}.get(GAMES_PER_PLAYER, str(GAMES_PER_PLAYER))
 
 
 def esc(v):
@@ -101,7 +118,10 @@ def table(headers, rows, cls=""):
 
 
 def nav(active, root=False):
-    parts = [f'<a href="{u if not root else u[3:]}">{n}</a>' for u, n in ROOT_NAV]
+    # root=True  -> the page sits at the repository root, links are root-relative
+    # root=False -> the page sits in lab/, links need one level up
+    prefix = "" if root else "../"
+    parts = [f'<a href="{prefix}{u}">{n}</a>' for u, n in ROOT_NAV]
     parts.append('<span class="nav-sep">|</span>')
     parts += [f'<a href="{u if not root else "lab/" + u}" class="{"active" if u == active else ""}">{n}</a>'
               for u, n in LAB_NAV]
@@ -150,9 +170,16 @@ def build_index():
     ana = ANA.get("correlations", [])
     pair = next((c for c in ana if "Jordan Addison" in c["b"]), None)
     pair_ci = "" if not pair else f"{pair['ci95'][0]} to {pair['ci95'][1]}"
-    ss = [s for s in ANA.get("sampleSize", []) if abs(s["breakEven"] - 110 / 210) < 1e-6]
+    # The -110 rows are selected by their price label, not by comparing the
+    # rounded break-even probability to 110/210: the stored value is rounded to
+    # four decimals, so a tolerance comparison silently matched nothing.
+    ss = [s for s in ANA.get("sampleSize", []) if "-110" in s["priceBasis"]]
+    if not ss:
+        raise SystemExit("build_lab: no -110 sample-size rows in analysis.json")
     n5 = next((s["observationsNeeded"] for s in ss if s["edgeOverBreakEven"] == 0.05), None)
     n3 = next((s["observationsNeeded"] for s in ss if s["edgeOverBreakEven"] == 0.03), None)
+    if n5 is None or n3 is None:
+        raise SystemExit("build_lab: the +5 or +3 point sample-size row is missing")
     inj_status = len(INJ.get("gameStatus", []))
     teams = len(INJ.get("practice", {}))
     rows = len([r for t in INJ.get("practice", {}).values() for r in t["rows"]])
@@ -177,7 +204,7 @@ service, a price feed, or a validated strategy. The leaderboard is published emp
 parlay as the product of two marginal probabilities would be wrong, in the direction that favours the book.</td>
 <td>{srcs([pair['sourceA'], pair['sourceB']] if pair else [])}</td></tr>
 <tr><td>2</td><td>A small edge cannot be told apart from luck without a large sample</td>
-<td>{esc(n5)} bets for a +5 point edge; {esc(n3)} for +3 points at -110</td>
+<td>{esc(f"{n5:,}")} bets for a +5 point edge; {esc(f"{n3:,}")} for +3 points at -110</td>
 <td>This is the number that decides whether a strategy is skill or luck. It is now a hard entry condition on the leaderboard.</td>
 <td>{src('https://www.nfl.com/players/justin-jefferson/stats/logs/')}</td></tr>
 <tr><td>3</td><td>Player props are noisy</td>
@@ -212,6 +239,14 @@ recommended order — so a decision can be made before any code is written.</p><
 
 <h2>Official sources used</h2>
 {source_table()}
+<div class="callout"><strong>Two labs, one question.</strong> This lab is the <em>evidence</em> side: official NFL records
+only — the published injury report, official player game logs, the official Game Book — and every correlation, dispersion
+figure and minimum-sample rule is computed from them by <code>scripts/analyze_lab.py</code>. The companion
+<a href="../nfl-lab/index.html">NFL Lines Lab (model)</a> is the <em>model</em> side: it builds and back-tests a line
+model against third-party game data and reports how it compares with the market spread. A third page,
+<a href="../nfl/index.html">NFL Decision Support</a>, holds the structured layer: the requirements list, the method and
+validation-gate reference, the leaderboard reward design and the source registry. None of the three publishes a
+validated edge, and each says so on its own landing page.</div>
 <p class="small">Checklist of what was verified and how: see <a href="flags.html">Flagged for Review</a> and
 <a href="../research/NFL-LINES-LAB.md">the research notes</a>. The parallel line-origination design memo is kept at
 <a href="../research/NFL-LINES.md">research/NFL-LINES.md</a>, with the earlier strategy notes at
@@ -363,7 +398,7 @@ claimed.</p>
 <h2>How many games before a correlation estimate means anything</h2>
 <p class="small">Power of a two-sided Fisher-z test against a true correlation of zero, alpha 0.05.</p>
 {table(["True correlation", "n = 8", "n = 17", "n = 33", "n = 65", "n = 100", "n = 200", "Basis"], power_rows)}
-<p class="small">Read this as: with nine games of a single season, a real correlation of 0.3 would be detected only about
+<p class="small">Read this as: with {GAMES_WORD} games of a single season, a real correlation of 0.3 would be detected only about
 one time in ten. Any strategy that claims to have found a dependable relationship from one season of data is reading noise.</p>
 
 <h2 id="method">Method and limits</h2>

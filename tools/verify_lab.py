@@ -15,6 +15,7 @@ Exit code is non-zero if any check fails, so CI blocks a broken claim.
 import json
 import os
 import re
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
@@ -35,6 +36,7 @@ def load(path):
 SPEC = load("curated/nfl-lab.json")
 INJ = load("data/lab/injuries-week10-2026.json")
 ANA = load("data/lab/analysis.json")
+LOGS = load("data/lab/player-logs-2026.json")
 
 OFFICIAL_HOSTS = ("nfl.com", "www.nfl.com", "static.www.nfl.com", "operations.nfl.com",
                   "karagemop466-tech.github.io", "github.com")
@@ -49,6 +51,26 @@ def fail(page, detail):
 
 def text(cell):
     return TAG_STRIP.sub("", cell).strip()
+
+
+def anchors_in(path):
+    """Every id and name attribute defined in an HTML file."""
+    body = open(path, encoding="utf-8").read()
+    found = set(re.findall(r'id="([^"]+)"', body))
+    found |= set(re.findall(r'name="([^"]+)"', body))
+    return found
+
+
+def check_anchor(page, target):
+    """A repository link with a #fragment must point at an anchor that exists."""
+    path_part, _, frag = target.partition("#")
+    base = os.path.dirname(page)
+    resolved = os.path.normpath(os.path.join(base, path_part)) if path_part else os.path.dirname(page)
+    if not os.path.exists(resolved):
+        fail(page, f"anchor link points at a file that does not exist: {target}")
+        return
+    if frag and frag not in anchors_in(resolved):
+        fail(page, f"anchor link points at a missing anchor: {target}")
 
 
 def check_row_sources(page, row_html, allow_placeholder=True):
@@ -69,6 +91,7 @@ def check_row_sources(page, row_html, allow_placeholder=True):
             continue
         base = os.path.dirname(page)          # page is already relative to the repo root
         if os.path.exists(os.path.normpath(os.path.join(base, target.split("#")[0]))):
+            check_anchor(page, target)
             return "linked"
         fail(page, f"row links to a repository file that does not exist: {target}")
     if allow_placeholder and ("—" in row_html or "not started" in row_html):
@@ -98,6 +121,18 @@ for name in sorted(f for f in os.listdir(LAB) if f.endswith(".html")):
     checks.append({"page": path, "rows": rows, "linkedRows": linked, "placeholderRows": placeholders})
     if rows and linked + placeholders != rows:
         fail(path, "row accounting mismatch")
+    # every in-repository link on the page must resolve, anchor included
+    for target in set(ANYLINK.findall(html_text)):
+        if target.startswith(("http://", "https://", "mailto:")):
+            continue
+        path_part = target.split("#")[0]
+        if not path_part:
+            continue
+        base = os.path.dirname(path)
+        if not os.path.exists(os.path.normpath(os.path.join(base, path_part))):
+            fail(os.path.join(LAB, name), f"page links to a file that does not exist: {target}")
+        else:
+            check_anchor(path, target)
 
 # every player link on the injury pages must point at nfl.com
 for name in ("injuries.html",):
@@ -120,15 +155,68 @@ if pair:
 else:
     fail(os.path.join(LAB, "index.html"), "the two-receiver correlation pair is missing from analysis.json")
 
-ss = [s for s in ANA["sampleSize"] if abs(s["breakEven"] - 110 / 210) < 1e-9]
+# Select the -110 rows by their price label. A tolerance comparison against
+# 110/210 matched nothing here (the stored break-even is rounded to four
+# decimals), which made the loop below skip every row and report success
+# while the published headline number was blank.
+ss = [s for s in ANA["sampleSize"] if "-110" in s["priceBasis"]]
+if not ss:
+    fail(os.path.join(LAB, "index.html"), "analysis.json has no -110 sample-size rows")
 for edge in (0.05, 0.03):
     hit = next((s for s in ss if s["edgeOverBreakEven"] == edge), None)
-    if hit and str(hit["observationsNeeded"]) not in index_html:
+    if not hit:
         fail(os.path.join(LAB, "index.html"),
-             f"sample-size headline {hit['observationsNeeded']} is not published")
-    if hit and str(hit["observationsNeeded"]) not in corr_html:
+             f"analysis.json has no sample-size row for a +{edge * 100:g} point edge")
+        continue
+    if f"{hit['observationsNeeded']:,}" not in index_html:
+        fail(os.path.join(LAB, "index.html"),
+             f"sample-size headline {hit['observationsNeeded']:,} is not published")
+    if str(hit["observationsNeeded"]) not in corr_html:
         fail(os.path.join(LAB, "correlations.html"),
              f"sample-size {hit['observationsNeeded']} is not published in the table")
+
+# The navigation must not drift from the canonical site navigation. This file used to
+# keep its own copy of the root links, which silently dropped a surface another session
+# had added to the navigation.
+try:
+    sys.path.insert(0, os.path.join(ROOT, "scripts"))
+    from build_site import NAV as SITE_NAV
+except Exception:
+    SITE_NAV = None
+if SITE_NAV:
+    for name in sorted(f for f in os.listdir(LAB) if f.endswith(".html")):
+        body = open(os.path.join(LAB, name), encoding="utf-8").read()
+        for href, label in SITE_NAV:
+            if href.startswith("lab/"):
+                # The lab's own pages appear in the lab strip, not the root strip.
+                wanted = href[len("lab/"):]
+                if f'href="{wanted}"' not in body:
+                    fail(os.path.join(LAB, name), f"navigation is missing the lab entry for {label} ({wanted})")
+            elif f'href="../{href}"' not in body:
+                fail(os.path.join(LAB, name), f"navigation is missing the site entry {label} ({href})")
+
+# Every stated game count must match the committed rows. A count written by hand in
+# prose once said "nine games per player" while eight rows were stored; this check
+# makes that impossible to publish.
+GAME_COUNTS = {len(p.get("games", [])) for p in LOGS.get("players", [])}
+if len(GAME_COUNTS) != 1:
+    fail(os.path.join(LAB, "index.html"),
+         f"players have differing game counts in player-logs-2026.json: {sorted(GAME_COUNTS)}")
+else:
+    games = GAME_COUNTS.pop()
+    words = {6: "six", 7: "seven", 8: "eight", 9: "nine", 10: "ten", 12: "twelve"}
+    for page_name in ("correlations.html", "flags.html"):
+        body = open(os.path.join(LAB, page_name), encoding="utf-8").read()
+        for match in re.findall(r"with ([a-z]+) games of a single season", body):
+            if match != words.get(games, str(games)):
+                fail(os.path.join(LAB, page_name),
+                     f"published game count \"{match}\" does not match the {games} stored rows")
+    meta = LOGS.get("meta", {})
+    limits = meta.get("limits", "")
+    for match in re.findall(r"([A-Z][a-z]+) games per player", limits):
+        if match.lower() != words.get(games, str(games)).lower():
+            fail("data/lab/player-logs-2026.json",
+                 f"metadata says \"{match} games per player\" but {games} rows are stored")
 
 # the correlation table on the page must match the analysis row for row
 for c in ANA["correlations"]:

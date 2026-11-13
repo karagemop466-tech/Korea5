@@ -656,6 +656,28 @@ date, and all prior items) remain published on `extra/flagged.html` with officia
 - **Verification at this commit:** `tools/verify_extra.py` 31/31; `scripts/audit_certainty.py` passed; `scripts/check_links.py` 0 missing; `python3 -m unittest discover -s tests` OK; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed.
 
 
+## Session `arena/abf74fdd-korea5` — NFL strategy decision lab (2026-11-13)
+
+Branch constraint: Arena fixes this session to `arena/abf74fdd-korea5`; all work stays on that branch. Existing root `*.html`/`data/` outputs are shared integration outputs; this session owns the new `nfl-lab/` portal, its landing-page/navigation integration through the site generator (generated root `*.html` and link report only), and this coordination record. No source data feeds were edited. Historical board rows marked in progress belong to old sessions; current checkout has no corresponding active agent claim.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| NFL1 | Build an NFL lines/strategy research portal: executive summary, evidence-backed data requirements, questions/missing information, injury/depth-chart monitoring, candidate single/parlay/player-prop signals, correlation and validation gates, leaderboard/rewards proposal, dedicated Suggestions review page, and flagged items | arena-abf74fdd | done | `nfl-lab/**` |
+| NFL2 | Integrate a discoverable link into the site dashboard while preserving generated-page source of truth | arena-abf74fdd | done | `scripts/build_site.py`, root `*.html`, `verification/links.json` |
+| NFL3 | Verify every factual/strategy table row's official citations, run local site checks, publish PR/merge/deploy if checks pass, record outcomes | arena-abf74fdd | in progress | `COORDINATION.md`, `nfl-lab/**` |
+
+Initial claim committed on the Arena-fixed branch before implementation. No live betting/injury data will be invented: the portal will distinguish documented methods from data not currently available, leave unknown observations blank, and mark open source/coverage questions for review. This is an NFL strategy/research addition, not an assertion of validated profitability or an automated real-time line service.
+
+### NFL strategy lab — research and verification record (2026-11-13)
+
+- **NFL1/NFL2 complete.** Added `nfl-lab/` static portal: overview/executive summary, signals and validation, lineups/data, leaderboard/rewards, Suggestions review queue, Flagged for Review, source register, custom styles/scripts and structural source-link verifier. Added the dashboard link and root navigation via `scripts/build_site.py`; regenerated root HTML and reran certainty disclosure last. Suggestions controls save locally in the browser only; they do not transmit or synchronize decisions.
+- **Official sources fetched and reviewed live 2026-11-13:** NFL official Week 10 injury report (`https://www.nfl.com/injuries/league/2026/reg10`; columns include player/position/injury/practice/game status); NFL player stats (`https://www.nfl.com/stats/player-stats/`); NFL team stats (`https://www.nfl.com/stats/team-stats/`); team offense scoring/rushing and defense scoring/rushing/passing pages under `https://www.nfl.com/stats/team-stats/`; NFL weekly schedule/game pages (`https://www.nfl.com/schedules/` and `/2026/by-week/week-10`); NFL 49ers roster page (`https://www.nfl.com/teams/san-francisco-49ers/roster`); 2026 NFL rulebook (`https://operations.nfl.com/rules-officiating/2026-nfl-rulebook`). This verifies source page/field existence at retrieval time only—not complete season coverage or individual stat rows in the portal. No numeric NFL player/team values were transcribed into the new portal.
+- **Irregularity found and corrected:** an initially proposed player scoring-category URL returned NFL 404. Removed it and replaced it with the fetched official player-stats page (which displays TD fields). No unresolved broken cited source URL remains among the portal's official NFL links reviewed.
+- **Important evidence gaps flagged, not filled:** no licensed/timestamped odds or prop archive; no market settlement rules; no project prediction/settlement log or model results; no archived point-in-time injury history; no verified all-team official depth chart/string feed or snap coverage; no measured correlation; no legal/reward approval. Correlation, ROI, CLV, edge and strategy leaderboard values are blank. Research strategies are explicitly proposals, not proven profitable.
+- **Verification:** `python3 nfl-lab/verify.py` — 7 portal pages, all internal anchor links resolve, 58 table data rows each have at least one first-party NFL/NFL Operations link. `python3 scripts/check_links.py` — 11 root pages, 191 local / 521 external, 0 missing. `python3 tools/verify_extra.py` — 31/31; `python3 scripts/audit_certainty.py` passed; Python unit tests 5/5; `node tests/test_calendar.js` and `node tests/test_calendar_today.js` passed; `git diff --check` clean. Local HTTP smoke test returned 200 for root, all 7 portal pages and both assets. No strategy backtest or complete inherited-data line re-verification was claimed.
+
+NFL3 (PR/merge/deploy record) remains in progress until the GitHub checks and Pages deployment are confirmed.
+
 ## Session `arena-2cd43859` — NFL analytics and decision-support
 
 | # | Task | Owner | Status | Files |
@@ -685,3 +707,13 @@ The first merged run's repository CI caught one generated local-link failure in 
 | CI | Planner certainty/site checks run `43431161023` success; Pages run `43431159971` build, deploy and report-build-status all success |
 | Pages | GitHub Pages API reports `built`, source `main` /, URL https://karagemop466-tech.github.io/Korea5/ |
 | Live feature | https://karagemop466-tech.github.io/Korea5/nfl-strategy.html |
+
+### Parallel-session integration note (2026-11-13)
+
+After PR #37 was opened, `origin/main` advanced with the independent NFL strategy work (PRs #33–#35, session `arena-2cd43859`) that had not yet appeared in this branch's initial coordination snapshot. PR #37 was marked non-mergeable until synchronized. Merged `origin/main` into this branch and kept both workstreams: the earlier standalone `nfl-strategy.html` / `research/NFL-STRATEGY.md` report and this session's navigable `nfl-lab/` multi-page portal. No files or findings were discarded. Added a link from the new portal to the earlier memo. Rebuilt the combined site and reran checks; updated root link report is 12 pages, 201 local links, 528 external links, zero missing. The new NFL lab owns the dedicated Suggestions and Flagged review subpages and detailed data/correlation/lineup source register.
+
+### NFL3 branch/PR status (2026-11-13)
+
+- Synchronization: after integrating `origin/main`, a required `git pull --rebase origin arena/abf74fdd-korea5` attempted to replay already-merged session commits because this checkout is shallow and stopped on `COORDINATION.md`, `nfl.html` and link-report conflicts. Immediately ran `git rebase --abort`; no changes were discarded. Preserved the explicit merge commit, confirmed the remote session-branch tip was its ancestor, then pushed that merge commit normally. This deviation is recorded to avoid repeating the same destructive history rewrite.
+- PR #37: https://github.com/karagemop466-tech/Korea5/pull/37 — open; merged-main synchronization made it mergeable. Pull-request workflow `Planner certainty and site checks`, run **43432077147**, completed **successfully** after the combined build.
+- Pending at this entry: merge PR #37 and confirm the GitHub Pages deployment before marking NFL3 done; the live portal has not yet been claimed as deployed by this session.

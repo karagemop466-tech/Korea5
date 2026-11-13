@@ -23,6 +23,7 @@ NAV = [
     ("vacation.html", "Vacation windows"),
     ("mlb.html", "MLB"),
     ("nfl.html", "NFL &amp; 49ers"),
+    ("nfl-lab/index.html", "NFL Decision Lab"),
     ("ncaaf.html", "Stanford &amp; Cal"),
     ("radio.html", "Radio"),
     ("sources.html", "Sources"),
@@ -230,7 +231,7 @@ If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} op
 
 <h2>Explore by category</h2><div class="pill-row">
 <a class="btn" href="mlb.html">All 30 MLB clubs</a><a class="btn" href="extra/nfl-2026.html">NFL &amp; 49ers</a>
-<a class="btn" href="ncaaf.html">Stanford &amp; Cal</a><a class="btn" href="extra/westwoodone.html">Westwood One · all sports</a>
+<a class="btn" href="nfl-lab/index.html">NFL lines &amp; strategy lab</a><a class="btn" href="ncaaf.html">Stanford &amp; Cal</a><a class="btn" href="extra/westwoodone.html">Westwood One · all sports</a>
 <a class="btn" href="extra/flagged.html">Flagged for Review</a></div>
 <p>Giants, Athletics, 49ers, Stanford and Cal remain high priority. The all-games view is a conservative personal-interest scope, not proof that every game is locally broadcast.</p>
 <p><a href="research/EXECUTIVE-SUMMARY.md">Full executive summary</a> · <a href="certainty.html">Audit and source limits</a> · <a href="extra/durations.html">Duration assumptions</a></p>

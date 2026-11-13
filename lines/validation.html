@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Validation · NFL Lines Lab</title>
+<meta name="description" content="Validation gates and method for the NFL lines lab — official-source NFL line origination, strategy validation and depth tracking.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/lines.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="../index.html">Dashboard</a><a href="../nfl.html">NFL &amp; 49ers</a><a href="../nfl-strategy.html">Strategy design</a><a href="../extra/index.html">Official feeds</a><a href="../flagged.html">Flagged</a><span class="nav-sep">|</span><a href="index.html">Lines lab</a><a href="lines.html">Originated lines</a><a href="strategies.html">Strategies</a><a href="leaderboard.html">Leaderboard</a><a href="bets.html">Bet ledger</a><a href="validation.html" class="active">Validation</a><a href="correlations.html">Correlations</a><a href="injuries.html">Injury &amp; depth</a><a href="suggestions.html">Suggestions</a><a href="questions.html">Questions</a><a href="executive-summary.html">Executive summary</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+</div></header>
+<main class="wrap">
+<div class="callout warn"><strong>Model outputs, not official values, and not betting advice.</strong> Every number on these pages is computed from official NFL.com results, official box scores and official club depth charts. The originated lines, probabilities, returns and rewards are this repository's model output - they are not published by the league and they are not a market price. The reference price of -110 per leg is a <em>declared convention</em> used so strategies can be compared with each other. No claim is made that any strategy beats a real market. See <a href="validation.html">Validation</a> and <a href="questions.html">Questions</a>.</div>
+
+<h1>Validation gates and method</h1>
+<p class="lede">A strategy is only allowed to compete if it passes every gate below. The gates exist to
+separate repeatable skill from a lucky stretch, and they are applied in order.</p>
+<h2>The seven gates</h2>
+<div class="scroll"><table class=""><thead><tr><th>Gate</th><th>Requirement</th><th>Official source</th></tr></thead><tbody><tr><td><b>G1</b></td><td>Provenance - every input carries an official source URL (checked by scripts/lines/verify_lines.py)</td><td><a href="https://www.nfl.com/games/">NFL.com official results</a></td></tr><tr><td><b>G2</b></td><td>Evidence - minimum number of bets placed after the price filter</td><td><a href="https://www.nfl.com/games/">NFL.com official results</a></td></tr><tr><td><b>G3</b></td><td>Baseline - beats the pre-registered naive model out of sample (log loss lower than the baseline)</td><td><a href="https://www.nfl.com/games/">NFL.com official results</a></td></tr><tr><td><b>G4</b></td><td>Significance - bootstrap 95% CI on ROI lies entirely above zero AND a paired sign-flip randomisation test shows the strategy beats its baseline (Benjamini-Hochberg adjusted p &lt; 0.05 across the whole family)</td><td><a href="https://www.nfl.com/games/">NFL.com official results</a></td></tr><tr><td><b>G5</b></td><td>Holdout - positive ROI on the untouched 2026 regular season</td><td><a href="https://www.nfl.com/games/">NFL.com official results</a></td></tr><tr><td><b>G6</b></td><td>Robustness - positive ROI in at least two seasons and no single bet carries more than 40% of gross profit</td><td><a href="https://www.nfl.com/games/">NFL.com official results</a></td></tr><tr><td><b>G7</b></td><td>Non-redundancy - |correlation| below 0.50 with every higher-ranked qualified strategy</td><td><a href="https://www.nfl.com/games/">NFL.com official results</a></td></tr></tbody></table></div>
+<h2>How the test is set up</h2>
+<div class="scroll"><table><thead><tr><th>Design choice</th><th>What was done</th><th>Why it matters</th><th>Official source</th></tr></thead><tbody>
+<tr><td>Time-ordered splits</td><td>The 2024 and 2025 regular seasons are the development period; the 2026 regular season is the untouched holdout.</td><td>A holdout that was ever looked at is no longer a holdout.</td><td><a href="https://www.nfl.com/schedules/">NFL.com schedule</a></td></tr>
+<tr><td>Walk-forward inside a season</td><td>Every game is predicted only from games played strictly earlier. No statistic used for a game is computed from that game.</td><td>Removes hindsight leakage from the model itself.</td><td><a href="https://www.nfl.com/games/">NFL.com official results</a></td></tr>
+<tr><td>Pre-registered baseline</td><td>Each strategy is compared with a naive model — league-average total, pick'em, or the player's own prior average — on the identical events.</td><td>A strategy only earns credit for adding something to a rule a reader could write themselves.</td><td><a href="https://www.nfl.com/games/">NFL.com official box scores</a></td></tr>
+<tr><td>Declared reference price</td><td>-110 per leg, compounded for parlays. A strategy only places a bet when its own probability exceeds the price-implied probability.</td><td>Selection is part of the strategy. It also means no claim is made about any real market.</td><td><a href="https://www.nfl.com/games/">NFL.com official game pages</a></td></tr>
+<tr><td>Uncertainty, not point estimates</td><td>Bootstrap confidence intervals on return, a paired sign-flip randomisation test on the skill a strategy adds over its baseline, Benjamini-Hochberg correction across the whole family, calibration error and Brier score all published.</td><td>With 18 strategies tested, one lucky result is expected. Correction for that is the difference between a finding and a coincidence.</td><td><a href="https://www.nfl.com/games/">NFL.com official results</a></td></tr>
+<tr><td>Luck control</td><td>Gate G6 refuses a strategy whose gross profit is concentrated in a single bet, and requires a positive result in at least two seasons.</td><td>Removes the most common way a backtest is fooling itself.</td><td><a href="https://www.nfl.com/schedules/">NFL.com official schedule by season</a></td></tr>
+<tr><td>Redundancy control</td><td>Gate G7 compares each qualified strategy with every better-ranked qualified strategy and refuses to pay twice for the same signal.</td><td>Stops a leaderboard from paying one idea three times.</td><td><a href="https://www.nfl.com/games/">NFL.com official results</a></td></tr>
+</tbody></table></div>
+<h2>What this method cannot tell you</h2>
+<ul class="clean">
+<li>It cannot tell you whether a strategy beats a real market, because no official market price exists to compare against. See <a href="questions.html">QN-01</a> and <a href="flagged.html">FL-05</a>.</li>
+<li>It cannot tell you whether injury information adds value, because the league publishes only the current week's injury report. See <a href="flagged.html">FL-03</a>.</li>
+<li>It cannot tell you whether a depth chart is right, because the chart belongs to the club and several clubs label theirs unofficial. See <a href="flagged.html">FL-04</a> and <a href="flagged.html">FL-08</a>.</li>
+<li>It cannot tell you how a prop bet would actually settle, because settlement rules are bookmaker rules. See <a href="flagged.html">FL-09</a>.</li>
+</ul>
+
+</main>
+<footer><div class="wrap">
+  <p><strong>NFL Lines Lab</strong> · built 2026-11-13 · every table row links its official source · unconfirmed values are blank and listed on <a href="flagged.html">Flagged for Review</a>.</p>
+  <p>Official sources: <a href="https://www.nfl.com/schedules/">NFL.com schedule</a> ·
+     <a href="https://www.nfl.com/games/">NFL.com game pages and box scores</a> ·
+     <a href="https://www.nfl.com/injuries/">NFL.com weekly injury report</a> ·
+     <a href="https://www.nfl.com/teams/">NFL.com team directory</a>.</p>
+  <p>Paper research only. No wagering recommendation, no market price is claimed, and no reward has any monetary value.</p>
+</div></footer>
+<script src="assets/lines.js"></script>
+</body></html>

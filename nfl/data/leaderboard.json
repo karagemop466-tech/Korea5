@@ -1,0 +1,17 @@
+{
+  "description": "Leaderboard competition design. Ranking, eligibility and rewards are defined here. No strategy is ranked until it passes validation gates; performance cells are blank and flagged until then.",
+  "leaderboard": {
+    "name": "NFL Strategy Leaderboard",
+    "rankingMetric": "Risk-adjusted, luck-adjusted correlation-adjusted edge vs market (closing-line value), selectivity-penalised. Raw hit rate is not the primary rank.",
+    "eligibility": "A strategy is eligible only if it has passed every validation gate (M1) and meets the minimum out-of-sample sample size.",
+    "tieBreak": "1) correlation-adjusted edge vs market; 2) selectivity; 3) fewer bets (higher confidence); 4) alphabetical strategy name.",
+    "rewardTiers": [
+      { "tier": 1, "name": "Top strategy", "criteria": "Highest rank among eligible strategies at the evaluation window." },
+      { "tier": 2, "name": "Top 3", "criteria": "Top three eligible strategies by rank." },
+      { "tier": 3, "name": "Validated", "criteria": "Any eligible strategy that passes all gates and clears the edge threshold." }
+    ],
+    "evaluationWindow": "Rolling, out-of-sample only; no in-sample ranking is published.",
+    "disclaimer": "This is a decision-support research competition, not a wagering service. Rewards are illustrative of the design; no real-money wagering is performed by this tool. Betting carries risk.",
+    "source": "S8"
+  }
+}

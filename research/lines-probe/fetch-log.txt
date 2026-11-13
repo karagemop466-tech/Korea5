@@ -1,0 +1,56 @@
+[1/4] schedules ...
+[2/4] box scores ...
+    50/424 games, 3507 rows
+    100/424 games, 7026 rows
+    150/424 games, 10555 rows
+    200/424 games, 14082 rows
+    250/424 games, 17578 rows
+    300/424 games, 21088 rows
+    350/424 games, 24646 rows
+    400/424 games, 28197 rows
+[3/4] injuries ...
+[4/4] depth charts ...
+    Arizona Cardinals: verified (3 units)
+    Atlanta Falcons: verified (3 units)
+    Baltimore Ravens: verified (3 units)
+    Buffalo Bills: verified (3 units)
+    Carolina Panthers: verified (3 units)
+    Chicago Bears: verified (3 units)
+    Cincinnati Bengals: verified (3 units)
+    Cleveland Browns: verified (3 units)
+    Dallas Cowboys: verified (3 units)
+    Denver Broncos: verified (3 units)
+    Detroit Lions: verified (3 units)
+    Green Bay Packers: verified (3 units)
+  ! failed https://www.houstontexans.com/team/depth-charts/: HTTP Error 404: Not Found
+    Houston Texans: unverified-not-fetched (0 units)
+    Indianapolis Colts: verified (3 units)
+    Jacksonville Jaguars: verified (3 units)
+    Kansas City Chiefs: verified (3 units)
+    Las Vegas Raiders: verified (3 units)
+    Los Angeles Chargers: verified (3 units)
+    Los Angeles Rams: verified (3 units)
+    Miami Dolphins: verified (3 units)
+    Minnesota Vikings: verified (3 units)
+    New England Patriots: verified (3 units)
+    New Orleans Saints: verified (3 units)
+    New York Giants: verified (3 units)
+    New York Jets: verified (3 units)
+    Philadelphia Eagles: verified (3 units)
+    Pittsburgh Steelers: verified (3 units)
+    San Francisco 49ers: verified (3 units)
+    Seattle Seahawks: verified (3 units)
+    Tampa Bay Buccaneers: verified (3 units)
+    Tennessee Titans: verified (3 units)
+    Washington Commanders: verified (3 units)
+{
+ "games": 1170,
+ "gamesWithScore": 840,
+ "boxscoreRows": 29919,
+ "injuryRows": 296,
+ "injuryWeek": 10,
+ "depthCharts": 31,
+ "depthChartsMissing": [
+  "Houston Texans"
+ ]
+}

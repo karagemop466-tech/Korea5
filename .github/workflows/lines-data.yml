@@ -1,0 +1,38 @@
+name: nfl-lines-official-data
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/2831c7f7-korea5' ]
+    paths: [ 'scripts/lines/fetch_nfl.py', '.github/workflows/lines-data.yml' ]
+permissions:
+  contents: write
+concurrency:
+  group: nfl-lines-data-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/2831c7f7-korea5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch official NFL results, box scores, injuries and club depth charts
+        run: |
+          set -o pipefail
+          mkdir -p research/lines-probe
+          python3 scripts/lines/fetch_nfl.py 2>&1 | tee research/lines-probe/fetch-log.txt
+      - name: Commit official NFL lines data
+        if: always()
+        run: |
+          git config user.name "korea5-lines-bot"
+          git config user.email "korea5-lines-bot@users.noreply.github.com"
+          git add data/lines/ research/lines-probe/fetch-log.txt
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "lines: refresh official NFL results, box scores, injuries and depth charts"
+            git pull --rebase --autostash origin arena/2831c7f7-korea5
+            git push origin HEAD:arena/2831c7f7-korea5
+          fi

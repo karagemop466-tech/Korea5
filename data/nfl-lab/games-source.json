@@ -1,0 +1,25 @@
+{
+ "fetched_utc": "2026-11-13T13:14:35Z",
+ "archive_url": "https://codeload.github.com/nflverse/nfldata/tar.gz/refs/heads/master",
+ "archive_sha256": "ab3bc17f3aa2f43a2b6278fe7208104eac4f4882b9838b4b4428a55137aabe97",
+ "repo": "https://github.com/nflverse/nfldata",
+ "data_dictionary": "https://github.com/nflverse/nfldata/blob/master/DATASETS.md",
+ "files": {
+  "data/games.csv": {
+   "sha256": "a255185b07959fc496a3e38e30c6116b7be49a26d2888b9c39b5400fbe793d6b",
+   "bytes": 2190037,
+   "path_in_archive": "nfldata-master/data/games.csv"
+  },
+  "DATASETS.md": {
+   "sha256": "8835ca9c15784a2cdc04c2c599c54b373629f8fbe91117acd5b7d0c615e03bf4",
+   "bytes": 17642,
+   "path_in_archive": "nfldata-master/DATASETS.md"
+  },
+  "README.md": {
+   "sha256": "42035b4ee0e548389ef91509bc672a861b43c6226a7317507d41536816c9f88a",
+   "bytes": 1017,
+   "path_in_archive": "nfldata-master/README.md"
+  }
+ },
+ "provenance_note": "DATASETS.md documents spread_line and total_line but does not name their upstream source. Treated as UNVERIFIED third-party input."
+}

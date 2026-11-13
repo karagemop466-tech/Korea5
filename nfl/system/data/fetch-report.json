@@ -1,0 +1,46 @@
+{
+ "startedUTC": "2026-11-13T13:31:10.790127Z",
+ "failures": [],
+ "results": {
+  "2026": 185,
+  "2025": 272
+ },
+ "injuries": {
+  "2026": 3117,
+  "2025": 5783
+ },
+ "depth": {
+  "rows": 1762,
+  "teams": 31,
+  "teamsMissing": [
+   "HOU"
+  ],
+  "missingReasons": [
+   {
+    "team": "HOU",
+    "url": "https://www.houstontexans.com/team/depth-chart",
+    "reason": "no parseable depth-chart table on the official page",
+    "imageOnly": false
+   }
+  ]
+ },
+ "teamStats": {
+  "offense_passing": 32,
+  "offense_rushing": 32,
+  "offense_receiving": 32,
+  "offense_scoring": 32,
+  "defense_passing": 32,
+  "defense_rushing": 32,
+  "defense_scoring": 32
+ },
+ "playerStats": {
+  "passing": 25,
+  "rushing": 25,
+  "receiving": 25
+ },
+ "rosters": {
+  "teams": 32,
+  "players": 2850
+ },
+ "finishedUTC": "2026-11-13T13:33:20.791202Z"
+}

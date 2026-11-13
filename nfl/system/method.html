@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Method · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="active">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Method</h1><p class="lede">The seven rules, the five-stage pipeline, every statistical method named, and what this system deliberately is not.</p>
+
+<div class="card prose">
+<h2 style="margin-top:0">The rules this system is built on</h2>
+<ol>
+<li><strong>Official sources only, and only these:</strong> nfl.com, the 32 official club domains, and
+operations.nfl.com. A value with no page behind it does not exist here.</li>
+<li><strong>Never infer a missing value.</strong> If the official page did not publish it, the cell is blank and
+badged <span class="badge unverified">unverified</span>. Not zero, not "likely", not "approximately".</li>
+<li><strong>Label every computed number.</strong> Anything this system calculates carries
+<span class="badge model">model</span>. Anything read straight off an official page carries
+<span class="badge official">official</span>. A judgement carries <span class="badge judgement">judgement</span>.</li>
+<li><strong>Print the sample.</strong> Every estimate carries n. Estimates below the suppression floor are
+withheld entirely rather than published with a warning.</li>
+<li><strong>Separate facts that are separate.</strong> Injury status is not a lineup. A depth chart is not a snap
+count. A touchdown count is not a points total. Each has its own column.</li>
+<li><strong>Freeze thresholds before results.</strong> The gate thresholds carry a version and a date, and a
+change is logged with the note "results seen at the time".</li>
+<li><strong>Refuse rather than fabricate.</strong> Where the data cannot support a number — no price, no per-game
+logs, no snap counts — the page says so in the place the number would have been.</li>
+</ol>
+</div>
+
+<h2>How a value reaches this site</h2>
+<div class="card prose"><ol>
+<li><strong>Probe.</strong> <code>nfl/tools/probe.py</code> fetches each official page and counts the regex hits
+for the fields we need, so a parser is never written against an assumption. Findings are in
+<code>nfl/research/probe.json</code>.</li>
+<li><strong>Ingest.</strong> <code>nfl/tools/fetch_official.py</code> runs in CI, parses, and writes JSON with a
+<code>sourceUrl</code> and retrieval stamp on every record, plus a fetch report listing every failure.</li>
+<li><strong>Compute.</strong> <code>nfl/tools/analyze_market.py</code> derives the statistics. Fixed random seed,
+so every published interval is reproducible.</li>
+<li><strong>Build.</strong> <code>nfl/tools/build_nfl.py</code> renders the pages from the JSON, so no number is
+typed by hand anywhere.</li>
+<li><strong>Verify.</strong> <code>nfl/tools/verify_nfl.py</code> re-checks every row for a source link, every
+computed value for a MODEL badge, every blank for an UNVERIFIED badge, and every internal link.</li>
+</ol></div>
+
+<h2>Statistical methods, named</h2>
+<p class="small">This table lists methods, not values, so its "applied on" column points at the page where each
+method is used on a sourced number.</p>
+<table class="tight"><thead><tr><th>Method</th><th>Where used</th><th>Why this one</th><th>Applied here</th></tr></thead><tbody>
+<tr><td>Wilson score interval</td><td>Home win rate</td><td>Correct at small n and near 0/1, unlike the normal
+approximation.</td><td><a href="index.html">Overview</a></td></tr>
+<tr><td>Brier score / log loss</td><td>Skill scoring</td><td>Proper scoring rules — they cannot be improved by
+hedging or by refusing to commit.</td><td><a href="validation.html">Validation gates</a></td></tr>
+<tr><td>Expected calibration error</td><td>Calibration gate</td><td>Measures whether a stated 60% happens 60%
+of the time, which a win rate cannot.</td><td><a href="validation.html">Validation gates</a></td></tr>
+<tr><td>Monte-Carlo shuffle test</td><td>Skill vs luck</td><td>Destroys any real edge by permuting outcomes; if
+the strategy still scores as well, the edge was noise.</td><td><a href="validation.html">Validation gates</a></td></tr>
+<tr><td>Bootstrap interval</td><td>Correlation</td><td>Makes no distributional assumption and exposes how wide
+the uncertainty really is at small n.</td><td><a href="correlation.html">Correlation</a></td></tr>
+<tr><td>Shrinkage n/(n+k)</td><td>Scoring rates</td><td>Stops an 11-game hot start from being treated as a
+season truth.</td><td><a href="market.html">Lines &amp; market</a></td></tr>
+<tr><td>Multiplicative &amp; additive de-vig</td><td>Fair price</td><td>Both are standard; showing both exposes
+the modelling choice instead of hiding it.</td><td><a href="market.html">Lines &amp; market</a></td></tr>
+<tr><td>Benjamini&ndash;Hochberg style FDR</td><td>Multiple testing</td><td>Raises the bar as the number of tested
+strategies grows.</td><td><a href="validation.html">Validation gates</a></td></tr>
+</tbody></table>
+
+<h2>What this system is not</h2>
+<div class="card prose"><ul>
+<li>Not betting advice, and not a claim of edge.</li>
+<li>Not a backtest: there is no price history to backtest against.</li>
+<li>Not a live odds service: the official NFL sources publish none.</li>
+<li>Not complete: 0 failed fetches this run, 1 club depth
+chart unavailable, no participation data, no per-game player logs yet.</li>
+</ul></div>
+
+<h2>How to reproduce</h2>
+<pre style="background:#0d1728;border:1px solid var(--line);border-radius:10px;padding:14px;overflow:auto;font-size:13px">
+python3 nfl/tools/fetch_official.py   # CI only: needs outbound network
+python3 nfl/tools/analyze_market.py   # recompute every published number
+python3 nfl/tools/build_nfl.py        # regenerate nfl/*.html
+python3 nfl/tools/verify_nfl.py       # re-check links, sources and badges
+</pre>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · data retrieved 2026-11-13T13:33:20.791202Z (newest official fetch) · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../../index.html">Korea5 planner</a> · also see the
+<a href="../../nfl-strategy.html">strategy lab proposal</a> and the
+<a href="../index.html">NFL Decision Support hub</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

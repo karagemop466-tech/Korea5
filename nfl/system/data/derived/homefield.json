@@ -1,0 +1,37 @@
+{
+ "2025": {
+  "games": 272,
+  "tiesExcluded": 1,
+  "decided": 271,
+  "homeWins": 146,
+  "homeWinRate": 0.5387,
+  "ci90": [
+   0.4888,
+   0.5879
+  ],
+  "sourceUrl": "https://www.nfl.com/standings/",
+  "label": "official finals; rate is a descriptive statistic, not a forecast"
+ },
+ "2026": {
+  "games": 185,
+  "tiesExcluded": 3,
+  "decided": 182,
+  "homeWins": 86,
+  "homeWinRate": 0.4725,
+  "ci90": [
+   0.4125,
+   0.5334
+  ],
+  "sourceUrl": "https://www.nfl.com/standings/",
+  "label": "official finals; rate is a descriptive statistic, not a forecast"
+ },
+ "combined": {
+  "decided": 453,
+  "homeWins": 232,
+  "homeWinRate": 0.5121,
+  "ci90": [
+   0.4736,
+   0.5506
+  ]
+ }
+}

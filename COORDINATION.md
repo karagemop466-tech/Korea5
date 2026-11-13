@@ -685,3 +685,34 @@ The first merged run's repository CI caught one generated local-link failure in 
 | CI | Planner certainty/site checks run `43431161023` success; Pages run `43431159971` build, deploy and report-build-status all success |
 | Pages | GitHub Pages API reports `built`, source `main` /, URL https://karagemop466-tech.github.io/Korea5/ |
 | Live feature | https://karagemop466-tech.github.io/Korea5/nfl-strategy.html |
+
+---
+
+## Session `arena/e53a4318-korea5` — 2026-11-13 (NFL decision-support build-out)
+
+Branch fixed by Arena: `arena/e53a4318-korea5`. Started from `main` tip `13854fe`, fast-forwarded to `e826658`
+(PR #33/#34/#35 — the `arena-2cd43859` proposal-only NFL Strategy Lab) before claiming work, so nothing is duplicated.
+Two PRs are open from other sessions (`#30`, `#32`, both 2026-11-05, untouched scope: `extra/` radio + high-priority
+invariant). This session does not edit their files.
+
+Difference from `arena-2cd43859` (already merged, `nfl-strategy.html`): that page is a **written proposal** with no data
+pipeline and no engine. This session builds the **working layer** on top of it: an official-source fetcher, a runnable
+line-origination / validation / correlation / leaderboard engine with tests, live verified injury + availability data,
+the requirements ledger, the questions register, the dedicated suggestions review board, and an executive summary.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| L1 | Requirements ledger: full requirement list from the owner brief, coverage status, evidence gap for each | arena-e53a4318 | in progress | `data/nfl-signals/requirements.json`, `nfl-signals-requirements.html`, `scripts/build_signals.py` |
+| L2 | Official NFL data pipeline run in CI (2026 by-week results incl. scores, weekly official injury reports, team statistics) + fetch report | arena-e53a4318 | in progress | `tools/fetch_nfl_lab.py`, `.github/workflows/nfl-lab.yml`, `official/lab/*.json` |
+| L3 | Line origination + validation gates + correlation + leaderboard engine (stdlib Python, tested) | arena-e53a4318 | in progress | `scripts/signal_lab.py`, `data/nfl-signals/*.json`, `tests/test_signal_lab.py` |
+| L4 | Injury / depth-deficiency module: availability index, positional depletion, backup-replacement flags, blanks where unofficial | arena-e53a4318 | in progress | `data/nfl-signals/availability-2026.json`, `nfl-signals-injuries.html` |
+| L5 | Site: Signal Desk hub + strategy/gates/leaderboard + injuries + questions + suggestions + requirements pages, nav integration | arena-e53a4318 | pending | `nfl-signals*.html`, `scripts/build_signals.py`, `scripts/build_site.py` (NAV only), `tools/build_extra.py` (ROOT_NAV only) |
+| L6 | Suggestions review board (dedicated, reviewable, no implementation without owner decision) | arena-e53a4318 | pending | `data/nfl-signals/suggestions.json`, `nfl-signals-suggestions.html` |
+| L7 | Executive summary for the NFL workstream (page + markdown) | arena-e53a4318 | pending | `nfl-signals.html`, `research/NFL-SIGNALS-EXEC-SUMMARY.md` |
+| L8 | Repo review line-by-line of the NFL/odds-relevant files, irregularities to the Flagged page | arena-e53a4318 | pending | `research/NFL-SIGNALS-REVIEW.md`, `curated/flags.json` |
+| L9 | Full verification run, PR to `main`, merge without waiting, Pages deploy confirmation, log here | arena-e53a4318 | pending | `COORDINATION.md` |
+
+Scope rules: this session writes only the files above. `nfl-strategy.html` and `research/NFL-STRATEGY.md` (owned by
+`arena-2cd43859`, merged) are **not** edited — the new pages link to them instead. `data/events-*.json`,
+`data/derived/analysis.json` and the vacation-planner pages are untouched except for the nav entry, which is a shared
+output owned by the integration step; this session is the integration session.

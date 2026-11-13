@@ -716,3 +716,46 @@ Scope rules: this session writes only the files above. `nfl-strategy.html` and `
 `arena-2cd43859`, merged) are **not** edited — the new pages link to them instead. `data/events-*.json`,
 `data/derived/analysis.json` and the vacation-planner pages are untouched except for the nav entry, which is a shared
 output owned by the integration step; this session is the integration session.
+
+### L1–L9 completion (2026-11-13)
+
+| # | Task | Status | What exists now |
+|---|---|---|---|
+| L1 | Requirements ledger | **done** | `data/nfl-signals/requirements.json` — R1–R20, each with a status earned by a committed artefact, an evidence list and a stated limit; rendered at `nfl-signals-requirements.html`. |
+| L2 | Official data pipeline in CI | **done** | `tools/fetch_nfl_lab.py` + `.github/workflows/nfl-lab.yml` → `official/lab/*.json`. Latest committed capture: 291 games, **132 with official FINAL scores** (weeks 1–10), 296 injury players in 32 per-club tables, 281 article rows from 10 news pages, 32 standings rows, 34 clubs. Coverage counters and `scoreLabelMismatches` are published so a parser regression is visible without reading code. |
+| L3 | Line origination + gates + correlation + leaderboard engine, tested | **done** | `scripts/signal_lab.py` (stdlib only, offline from the capture) writes `data/nfl-signals/signals.json` and `forward-ledger.json`; 32 new tests in `tests/test_signal_lab.py`. |
+| L4 | Injury / depth-deficiency module | **done, with a named gap** | Availability is a section of `signals.json` (`availability`, `teams.ratings[*].injuryShift`) rendered at `nfl-signals-injuries.html`. Backup-tier / replacement quality is **not** computed: there is no official depth-chart page (`nfl.com/depth-charts/` and per-club paths 404), so it is recorded as a gap (F36) rather than inferred. |
+| L5 | Site pages + nav | **done** | Seven root pages from `scripts/build_signals.py`; nav added only through `scripts/build_site.py` `NAV` and `tools/build_extra.py` `ROOT_NAV`. |
+| L6 | Suggestions review board | **done** | `data/nfl-signals/suggestions.json` → `nfl-signals-suggestions.html`: SG-01…SG-13, each with status, reason, artefacts and where the outcome is visible. Tests require a real reason and a visible outcome. |
+| L7 | Executive summary | **done** | `nfl-signals.html` hub + `research/NFL-SIGNALS-EXEC-SUMMARY.md`. |
+| L8 | Line-by-line review + flags | **done** | `research/NFL-SIGNALS-REVIEW.md` (what is solid / what a reader must not conclude / method critiques / owner decisions) and flags **F33–F40** in `curated/flags.json`. |
+| L9 | Verification, PR, merge, Pages | **done** | see the publication record below. |
+
+**Engine findings (run `signal-lab-1.1.0`, capture 2026-11-13).** Walk-forward over 100 scoreable games:
+`S2-netpoints` 0.6681 log loss (best), `S1-homefield` 0.6979, `S3-oppadj-ratings` 0.7202,
+`S4-oppadj-plus-availability` 0.7189. Paired improvement of the leader over the baseline: t = 1.48, 95%
+block-bootstrap interval [−0.005, 0.073] → **not distinguishable from luck**; ≈182 paired games needed at the
+observed effect size. The leader stays the same under all three shrink policies (nested-validated, fixed 0.5,
+fixed 1.0) and under ×0.5 / ×2.0 deficit-weight scaling, so the negative result is robust rather than fragile.
+Same-game dependence measured: φ = −0.22 on 101 rows, joint 22.8% **below** independence, fair parlay decimal
+from the joint rather than from multiplied legs. Forward ledger: 41 frozen rows, 0 settled, 1 voided under the
+"past-dated rows are voided, never deleted" rule.
+
+**Deliberate failures, left failing.** G4 (leakage) is marked **fail** for the availability strategy because the
+only availability file is today's snapshot; G7 (prospective evidence) reports the real settled count; G8
+(governance/reward) stays `manual-review`. Gate G5 reads `insufficient-sample` below 60 games. No gate was
+reworded to pass.
+
+**Verification performed.** `python3 -m unittest discover tests` 37/37 (5 pre-existing + 32 new, incl. a leakage
+test that flips weeks 7–8 results and asserts earlier forecasts do not move); `scripts/check_links.py`
+19 pages / 389 local links / 571 external / **0 missing**; `tools/verify_extra.py` failures `[]`,
+`rowsMissingSource` 0; `scripts/audit_certainty.py` passed; both Node calendar tests passed; full rebuild in
+pipeline order (`build_events` → `analyze` → `build_site` → `build_extra` → **`build_signals`** → `check_links` →
+`verify_extra` → `audit_certainty`) with no drift; `git diff --check` clean.
+
+**Capture corrections made this session** (each CI-verified, no local HTTP in the sandbox): scores are bound only
+inside a game's own `/games/<slug>` link or its screen-reader label **and** only when both club nicknames agree
+(this closed a live bug where a neighbouring card could lend its number); digit-prefixed nicknames ("49ers") are
+matched on their letter tail; entity-escaped and backslash-escaped card forms are both read; `gap-context.json`
+preserves the exact markup of the five games the official page never labels, and their recovery attempt from the
+game page itself is reported as `gapFilledFromGamePages: 0` rather than guessed around.

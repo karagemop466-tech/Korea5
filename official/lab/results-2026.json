@@ -1,9 +1,9 @@
 {
  "meta": {
   "dataset": "NFL 2026 games captured from official nfl.com by-week pages (embedded payload)",
-  "retrievedUTC": "2026-11-13T13:25:55.781477+00:00",
+  "retrievedUTC": "2026-11-13T13:37:47.320266+00:00",
   "games": 291,
-  "final": 0,
+  "final": 132,
   "perWeek": {
    "Week 1": 35,
    "Week 2": 35,
@@ -25,16 +25,16 @@
    "Week 18": 35
   },
   "perWeekFinal": {
-   "Week 1": 0,
-   "Week 2": 0,
-   "Week 3": 0,
-   "Week 4": 0,
-   "Week 5": 0,
-   "Week 6": 0,
-   "Week 7": 0,
-   "Week 8": 0,
-   "Week 9": 0,
-   "Week 10": 0,
+   "Week 1": 16,
+   "Week 2": 15,
+   "Week 3": 15,
+   "Week 4": 15,
+   "Week 5": 15,
+   "Week 6": 13,
+   "Week 7": 14,
+   "Week 8": 14,
+   "Week 9": 14,
+   "Week 10": 1,
    "Week 11": 0,
    "Week 12": 0,
    "Week 13": 0,
@@ -90,7 +90,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "1925aac0-54a8-49be-9630-6a37f83c25e0",
@@ -114,7 +115,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "1946f822-1b25-4a7f-92e2-731b32def6fa",
@@ -138,7 +140,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "1b7cf604-1cd9-4acb-bfdc-d7431cdd8040",
@@ -162,7 +165,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "2cfa330c-5538-46a0-a549-06bb20ce43ce",
@@ -186,7 +190,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "5f08149d-b5c8-419e-90de-53878d2a6f33",
@@ -210,7 +215,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "83e70bf3-4dc7-4412-babf-944f696ad1ad",
@@ -234,7 +240,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "a0e32410-7cad-47c0-ab3d-773553803c89",
@@ -258,7 +265,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "a41816cc-cd9f-425e-ab96-9f3a8a04d366",
@@ -282,7 +290,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac7f7b15-4feb-11f1-abca-2c54536568a9",
@@ -306,7 +315,8 @@
    "sourceUrl": "https://www.nfl.com/games/buccaneers-at-falcons-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac7f7ddf-4feb-11f1-abca-2c54536568a9",
@@ -330,7 +340,8 @@
    "sourceUrl": "https://www.nfl.com/games/bengals-at-colts-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac9e2a00-4feb-11f1-abca-2c54536568a9",
@@ -354,7 +365,8 @@
    "sourceUrl": "https://www.nfl.com/games/commanders-at-vikings-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac9e330f-4feb-11f1-abca-2c54536568a9",
@@ -378,7 +390,8 @@
    "sourceUrl": "https://www.nfl.com/games/panthers-at-steelers-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acc1dc59-4feb-11f1-abca-2c54536568a9",
@@ -402,7 +415,8 @@
    "sourceUrl": "https://www.nfl.com/games/commanders-at-jaguars-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acc1e08e-4feb-11f1-abca-2c54536568a9",
@@ -426,7 +440,8 @@
    "sourceUrl": "https://www.nfl.com/games/chiefs-at-chargers-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acc1e3de-4feb-11f1-abca-2c54536568a9",
@@ -450,7 +465,8 @@
    "sourceUrl": "https://www.nfl.com/games/broncos-at-patriots-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acc1e702-4feb-11f1-abca-2c54536568a9",
@@ -474,7 +490,8 @@
    "sourceUrl": "https://www.nfl.com/games/rams-at-buccaneers-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ace0b1ad-4feb-11f1-abca-2c54536568a9",
@@ -498,7 +515,8 @@
    "sourceUrl": "https://www.nfl.com/games/49ers-at-cardinals-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ace0b48a-4feb-11f1-abca-2c54536568a9",
@@ -522,7 +540,8 @@
    "sourceUrl": "https://www.nfl.com/games/steelers-at-ravens-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ace0b74f-4feb-11f1-abca-2c54536568a9",
@@ -546,7 +565,8 @@
    "sourceUrl": "https://www.nfl.com/games/jets-at-bills-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ace0ba82-4feb-11f1-abca-2c54536568a9",
@@ -570,7 +590,8 @@
    "sourceUrl": "https://www.nfl.com/games/falcons-at-panthers-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acff782d-4feb-11f1-abca-2c54536568a9",
@@ -594,7 +615,8 @@
    "sourceUrl": "https://www.nfl.com/games/browns-at-bengals-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acff8054-4feb-11f1-abca-2c54536568a9",
@@ -618,7 +640,8 @@
    "sourceUrl": "https://www.nfl.com/games/chargers-at-broncos-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acff837c-4feb-11f1-abca-2c54536568a9",
@@ -642,7 +665,8 @@
    "sourceUrl": "https://www.nfl.com/games/lions-at-packers-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acff8654-4feb-11f1-abca-2c54536568a9",
@@ -666,7 +690,8 @@
    "sourceUrl": "https://www.nfl.com/games/titans-at-texans-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acff8914-4feb-11f1-abca-2c54536568a9",
@@ -690,7 +715,8 @@
    "sourceUrl": "https://www.nfl.com/games/jaguars-at-colts-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acff8bba-4feb-11f1-abca-2c54536568a9",
@@ -714,7 +740,8 @@
    "sourceUrl": "https://www.nfl.com/games/raiders-at-chiefs-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acff8e70-4feb-11f1-abca-2c54536568a9",
@@ -738,7 +765,8 @@
    "sourceUrl": "https://www.nfl.com/games/seahawks-at-rams-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acff9123-4feb-11f1-abca-2c54536568a9",
@@ -762,7 +790,8 @@
    "sourceUrl": "https://www.nfl.com/games/bears-at-vikings-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acff93c4-4feb-11f1-abca-2c54536568a9",
@@ -786,7 +815,8 @@
    "sourceUrl": "https://www.nfl.com/games/dolphins-at-patriots-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acff9659-4feb-11f1-abca-2c54536568a9",
@@ -810,7 +840,8 @@
    "sourceUrl": "https://www.nfl.com/games/buccaneers-at-saints-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ad1f1cde-4feb-11f1-abca-2c54536568a9",
@@ -834,7 +865,8 @@
    "sourceUrl": "https://www.nfl.com/games/eagles-at-giants-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ad1f2595-4feb-11f1-abca-2c54536568a9",
@@ -858,7 +890,8 @@
    "sourceUrl": "https://www.nfl.com/games/cowboys-at-commanders-2026-reg-18",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-18",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "af9fe025-f0a3-4285-b6d1-ee696941f405",
@@ -882,7 +915,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "b5dd2758-50e4-4078-b411-857128c128b7",
@@ -906,7 +940,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "bc4ab4af-d930-4ce1-b47c-766c8a583319",
@@ -930,7 +965,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "c5288247-4ec7-4ecb-aadd-c28d287153f2",
@@ -954,7 +990,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "cc4f5b44-6b81-467b-9352-8ac12b7342f4",
@@ -978,7 +1015,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "e47b584d-9a35-4070-9a0a-8c10f46febf4",
@@ -1002,7 +1040,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "e7f56136-0c1a-4ab1-998c-df046b7cd2e1",
@@ -1026,7 +1065,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ebf7d4a7-5a2d-4a87-997a-8d8e58265b9b",
@@ -1050,7 +1090,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ef6e1f20-edb6-472c-bfbb-7aff485d369c",
@@ -1074,7 +1115,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "f9e0ec2f-1bf2-4a4f-808e-4fb4b197a2d9",
@@ -1098,7 +1140,8 @@
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "a8fb0d78-4feb-11f1-abca-2c54536568a9",
@@ -1112,17 +1155,18 @@
    "home": "Seattle Seahawks",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 10,
+   "homePoints": 13,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Lumen Field",
    "category": "SNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/patriots-at-seahawks-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a8fc08da-4feb-11f1-abca-2c54536568a9",
@@ -1136,17 +1180,18 @@
    "home": "Los Angeles Rams",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 27,
+   "homePoints": 7,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Melbourne Cricket Ground",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/49ers-at-rams-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a8fc0e5c-4feb-11f1-abca-2c54536568a9",
@@ -1160,17 +1205,18 @@
    "home": "Carolina Panthers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 59,
+   "homePoints": 37,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Bank of America Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bears-at-panthers-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a8fc106b-4feb-11f1-abca-2c54536568a9",
@@ -1184,17 +1230,18 @@
    "home": "Cincinnati Bengals",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 27,
+   "homePoints": 33,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Paycor Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/buccaneers-at-bengals-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a8fc1203-4feb-11f1-abca-2c54536568a9",
@@ -1208,17 +1255,18 @@
    "home": "Detroit Lions",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 30,
+   "homePoints": 31,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Ford Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/saints-at-lions-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a8fc1393-4feb-11f1-abca-2c54536568a9",
@@ -1232,17 +1280,18 @@
    "home": "Houston Texans",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 36,
+   "homePoints": 31,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Reliant Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bills-at-texans-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a8fc15bd-4feb-11f1-abca-2c54536568a9",
@@ -1256,17 +1305,18 @@
    "home": "Indianapolis Colts",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 41,
+   "homePoints": 23,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Lucas Oil Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/ravens-at-colts-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a8fc1728-4feb-11f1-abca-2c54536568a9",
@@ -1280,17 +1330,18 @@
    "home": "Jacksonville Jaguars",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 10,
+   "homePoints": 34,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "EverBank Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/browns-at-jaguars-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a8fc1864-4feb-11f1-abca-2c54536568a9",
@@ -1304,17 +1355,18 @@
    "home": "Pittsburgh Steelers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 13,
+   "homePoints": 20,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Acrisure Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/falcons-at-steelers-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a8fc1998-4feb-11f1-abca-2c54536568a9",
@@ -1328,17 +1380,18 @@
    "home": "Tennessee Titans",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 23,
+   "homePoints": 10,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Nissan Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/jets-at-titans-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9a87603-4feb-11f1-abca-2c54536568a9",
@@ -1352,17 +1405,18 @@
    "home": "Los Angeles Chargers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 26,
+   "homePoints": 14,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "SoFi Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/cardinals-at-chargers-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9a881ca-4feb-11f1-abca-2c54536568a9",
@@ -1376,17 +1430,18 @@
    "home": "Las Vegas Raiders",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 13,
+   "homePoints": 27,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Allegiant Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/dolphins-at-raiders-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9a88631-4feb-11f1-abca-2c54536568a9",
@@ -1400,17 +1455,18 @@
    "home": "Minnesota Vikings",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 22,
+   "homePoints": 39,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "U.S. Bank Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/packers-at-vikings-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9a889dd-4feb-11f1-abca-2c54536568a9",
@@ -1424,17 +1480,18 @@
    "home": "Philadelphia Eagles",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 22,
+   "homePoints": 24,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Lincoln Financial Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/commanders-at-eagles-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9a88d52-4feb-11f1-abca-2c54536568a9",
@@ -1448,17 +1505,18 @@
    "home": "New York Giants",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 20,
+   "homePoints": 28,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "MetLife Stadium",
    "category": "SNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/cowboys-at-giants-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9a890ed-4feb-11f1-abca-2c54536568a9",
@@ -1472,17 +1530,18 @@
    "home": "Kansas City Chiefs",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 10,
+   "homePoints": 31,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Arrowhead Stadium",
    "category": "MNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/broncos-at-chiefs-2026-reg-1",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9a8944e-4feb-11f1-abca-2c54536568a9",
@@ -1496,17 +1555,18 @@
    "home": "Buffalo Bills",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 31,
+   "homePoints": 41,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Highmark Stadium",
    "category": "TNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/lions-at-bills-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9a89841-4feb-11f1-abca-2c54536568a9",
@@ -1520,17 +1580,18 @@
    "home": "Atlanta Falcons",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 34,
+   "homePoints": 3,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Mercedes-Benz Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/panthers-at-falcons-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9a89baa-4feb-11f1-abca-2c54536568a9",
@@ -1544,17 +1605,18 @@
    "home": "Baltimore Ravens",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 17,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "M&T Bank Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/saints-at-ravens-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9a89edd-4feb-11f1-abca-2c54536568a9",
@@ -1568,17 +1630,18 @@
    "home": "Chicago Bears",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 9,
+   "homePoints": 3,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Soldier Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/vikings-at-bears-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9e0c7c0-4feb-11f1-abca-2c54536568a9",
@@ -1592,17 +1655,18 @@
    "home": "Houston Texans",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 20,
+   "homePoints": 6,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Reliant Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bengals-at-texans-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9e0d18f-4feb-11f1-abca-2c54536568a9",
@@ -1616,17 +1680,18 @@
    "home": "New England Patriots",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 3,
+   "homePoints": 20,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Gillette Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/steelers-at-patriots-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9e0d5a5-4feb-11f1-abca-2c54536568a9",
@@ -1640,17 +1705,18 @@
    "home": "New York Jets",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 20,
+   "homePoints": 17,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "MetLife Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/packers-at-jets-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9e0d930-4feb-11f1-abca-2c54536568a9",
@@ -1664,17 +1730,18 @@
    "home": "Tampa Bay Buccaneers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 23,
+   "homePoints": 19,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Raymond James Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/browns-at-buccaneers-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9e0dc7c-4feb-11f1-abca-2c54536568a9",
@@ -1688,17 +1755,18 @@
    "home": "Tennessee Titans",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 20,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Nissan Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/eagles-at-titans-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9e0dff8-4feb-11f1-abca-2c54536568a9",
@@ -1712,17 +1780,18 @@
    "home": "Denver Broncos",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 13,
+   "homePoints": 20,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Empower Field at Mile High",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/jaguars-at-broncos-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9e0e3dd-4feb-11f1-abca-2c54536568a9",
@@ -1736,17 +1805,18 @@
    "home": "Los Angeles Chargers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 26,
+   "homePoints": 14,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "SoFi Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/raiders-at-chargers-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9e0e78e-4feb-11f1-abca-2c54536568a9",
@@ -1760,17 +1830,18 @@
    "home": "Arizona Cardinals",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 31,
+   "homePoints": 7,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "State Farm Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/seahawks-at-cardinals-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9e0eb90-4feb-11f1-abca-2c54536568a9",
@@ -1784,17 +1855,18 @@
    "home": "Dallas Cowboys",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 20,
+   "homePoints": 37,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "AT&T Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/commanders-at-cowboys-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "a9e0ef5d-4feb-11f1-abca-2c54536568a9",
@@ -1818,7 +1890,8 @@
    "sourceUrl": "https://www.nfl.com/games/dolphins-at-49ers-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "aa048ee1-4feb-11f1-abca-2c54536568a9",
@@ -1832,17 +1905,18 @@
    "home": "Kansas City Chiefs",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 30,
+   "homePoints": 33,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Arrowhead Stadium",
    "category": "SNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/colts-at-chiefs-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa04989c-4feb-11f1-abca-2c54536568a9",
@@ -1856,17 +1930,18 @@
    "home": "Los Angeles Rams",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 6,
+   "homePoints": 28,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "SoFi Stadium",
    "category": "MNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/giants-at-rams-2026-reg-2",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-2",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa049c95-4feb-11f1-abca-2c54536568a9",
@@ -1880,17 +1955,18 @@
    "home": "Green Bay Packers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 35,
+   "homePoints": 14,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Lambeau Field",
    "category": "TNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/falcons-at-packers-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa04a02f-4feb-11f1-abca-2c54536568a9",
@@ -1904,17 +1980,18 @@
    "home": "Buffalo Bills",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 16,
+   "homePoints": 24,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Highmark Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/chargers-at-bills-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa04a395-4feb-11f1-abca-2c54536568a9",
@@ -1928,17 +2005,18 @@
    "home": "Cleveland Browns",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 18,
+   "homePoints": 21,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Huntington Bank Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/panthers-at-browns-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa04a6ca-4feb-11f1-abca-2c54536568a9",
@@ -1952,17 +2030,18 @@
    "home": "Detroit Lions",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 31,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Ford Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/jets-at-lions-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa04aa26-4feb-11f1-abca-2c54536568a9",
@@ -1976,17 +2055,18 @@
    "home": "Indianapolis Colts",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 17,
+   "homePoints": 19,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Lucas Oil Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/texans-at-colts-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa04ad75-4feb-11f1-abca-2c54536568a9",
@@ -2000,17 +2080,18 @@
    "home": "Jacksonville Jaguars",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 6,
+   "homePoints": 35,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "EverBank Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/patriots-at-jaguars-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa04b0d8-4feb-11f1-abca-2c54536568a9",
@@ -2024,17 +2105,18 @@
    "home": "Miami Dolphins",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 10,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Hard Rock Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/chiefs-at-dolphins-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa04b4d9-4feb-11f1-abca-2c54536568a9",
@@ -2048,17 +2130,18 @@
    "home": "New York Giants",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 7,
+   "homePoints": 12,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "MetLife Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/titans-at-giants-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa29b6b0-4feb-11f1-abca-2c54536568a9",
@@ -2072,17 +2155,18 @@
    "home": "Pittsburgh Steelers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 27,
+   "homePoints": 30,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Acrisure Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bengals-at-steelers-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa29c0fa-4feb-11f1-abca-2c54536568a9",
@@ -2096,17 +2180,18 @@
    "home": "Washington Commanders",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 31,
+   "homePoints": 33,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Northwest Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/seahawks-at-commanders-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa29c59c-4feb-11f1-abca-2c54536568a9",
@@ -2130,7 +2215,8 @@
    "sourceUrl": "https://www.nfl.com/games/cardinals-at-49ers-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "aa29c929-4feb-11f1-abca-2c54536568a9",
@@ -2144,17 +2230,18 @@
    "home": "Tampa Bay Buccaneers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 23,
+   "homePoints": 16,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Raymond James Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/vikings-at-buccaneers-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa29cd02-4feb-11f1-abca-2c54536568a9",
@@ -2168,17 +2255,18 @@
    "home": "Dallas Cowboys",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 34,
+   "homePoints": 31,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Maracana Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/ravens-at-cowboys-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa29d062-4feb-11f1-abca-2c54536568a9",
@@ -2192,17 +2280,18 @@
    "home": "New Orleans Saints",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 35,
+   "homePoints": 27,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Caesars Superdome",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/raiders-at-saints-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa29d387-4feb-11f1-abca-2c54536568a9",
@@ -2216,17 +2305,18 @@
    "home": "Denver Broncos",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 26,
+   "homePoints": 30,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Empower Field at Mile High",
    "category": "SNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/rams-at-broncos-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa29d6db-4feb-11f1-abca-2c54536568a9",
@@ -2240,17 +2330,18 @@
    "home": "Chicago Bears",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 7,
+   "homePoints": 27,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Soldier Field",
    "category": "MNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/eagles-at-bears-2026-reg-3",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-3",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa29da01-4feb-11f1-abca-2c54536568a9",
@@ -2264,17 +2355,18 @@
    "home": "Cleveland Browns",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 27,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Huntington Bank Field",
    "category": "TNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/steelers-at-browns-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa29dd21-4feb-11f1-abca-2c54536568a9",
@@ -2288,17 +2380,18 @@
    "home": "Washington Commanders",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 30,
+   "homePoints": 13,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Tottenham Hotspur Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/colts-at-commanders-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa4b4811-4feb-11f1-abca-2c54536568a9",
@@ -2312,17 +2405,18 @@
    "home": "Baltimore Ravens",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 18,
+   "homePoints": 24,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "M&T Bank Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/titans-at-ravens-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa4b51c9-4feb-11f1-abca-2c54536568a9",
@@ -2336,17 +2430,18 @@
    "home": "Buffalo Bills",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 29,
+   "homePoints": 26,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Highmark Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/patriots-at-bills-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa4b55ce-4feb-11f1-abca-2c54536568a9",
@@ -2360,17 +2455,18 @@
    "home": "Chicago Bears",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 12,
+   "homePoints": 23,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Soldier Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/jets-at-bears-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa4b5943-4feb-11f1-abca-2c54536568a9",
@@ -2384,17 +2480,18 @@
    "home": "Cincinnati Bengals",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 22,
+   "homePoints": 17,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Paycor Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/jaguars-at-bengals-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa4b5c96-4feb-11f1-abca-2c54536568a9",
@@ -2408,17 +2505,18 @@
    "home": "Houston Texans",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 34,
+   "homePoints": 30,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Reliant Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/cowboys-at-texans-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa4b607b-4feb-11f1-abca-2c54536568a9",
@@ -2432,17 +2530,18 @@
    "home": "New York Giants",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 36,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "MetLife Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/cardinals-at-giants-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa4b63de-4feb-11f1-abca-2c54536568a9",
@@ -2456,17 +2555,18 @@
    "home": "Philadelphia Eagles",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 20,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Lincoln Financial Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/rams-at-eagles-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa4b671b-4feb-11f1-abca-2c54536568a9",
@@ -2480,17 +2580,18 @@
    "home": "Tampa Bay Buccaneers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 17,
+   "homePoints": 14,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Raymond James Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/packers-at-buccaneers-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa4b6a4b-4feb-11f1-abca-2c54536568a9",
@@ -2504,17 +2605,18 @@
    "home": "Minnesota Vikings",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 10,
+   "homePoints": 15,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "U.S. Bank Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/dolphins-at-vikings-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa4b6d71-4feb-11f1-abca-2c54536568a9",
@@ -2528,17 +2630,18 @@
    "home": "Las Vegas Raiders",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 30,
+   "homePoints": 27,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Allegiant Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/chiefs-at-raiders-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa6b4255-4feb-11f1-abca-2c54536568a9",
@@ -2552,17 +2655,18 @@
    "home": "Seattle Seahawks",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 23,
+   "homePoints": 30,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Lumen Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/chargers-at-seahawks-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa6b4cf4-4feb-11f1-abca-2c54536568a9",
@@ -2586,7 +2690,8 @@
    "sourceUrl": "https://www.nfl.com/games/broncos-at-49ers-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "aa6b512d-4feb-11f1-abca-2c54536568a9",
@@ -2600,17 +2705,18 @@
    "home": "Carolina Panthers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 26,
+   "homePoints": 32,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Bank of America Stadium",
    "category": "SNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/lions-at-panthers-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa6b5517-4feb-11f1-abca-2c54536568a9",
@@ -2624,17 +2730,18 @@
    "home": "New Orleans Saints",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 45,
+   "homePoints": 24,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Caesars Superdome",
    "category": "MNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/falcons-at-saints-2026-reg-4",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa6b58bf-4feb-11f1-abca-2c54536568a9",
@@ -2648,17 +2755,18 @@
    "home": "Dallas Cowboys",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 16,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "AT&T Stadium",
    "category": "TNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/buccaneers-at-cowboys-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa6b5c2b-4feb-11f1-abca-2c54536568a9",
@@ -2672,17 +2780,18 @@
    "home": "Jacksonville Jaguars",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 17,
+   "homePoints": 19,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Tottenham Hotspur Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/eagles-at-jaguars-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa6b5f66-4feb-11f1-abca-2c54536568a9",
@@ -2696,17 +2805,18 @@
    "home": "Miami Dolphins",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 31,
+   "homePoints": 24,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Hard Rock Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bengals-at-dolphins-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa6b6286-4feb-11f1-abca-2c54536568a9",
@@ -2720,17 +2830,18 @@
    "home": "New England Patriots",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 17,
+   "homePoints": 45,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Gillette Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/raiders-at-patriots-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa6b65b1-4feb-11f1-abca-2c54536568a9",
@@ -2744,17 +2855,18 @@
    "home": "New Orleans Saints",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 23,
+   "homePoints": 13,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Caesars Superdome",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/vikings-at-saints-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa6b69bb-4feb-11f1-abca-2c54536568a9",
@@ -2768,17 +2880,18 @@
    "home": "New York Jets",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 12,
+   "homePoints": 17,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "MetLife Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/browns-at-jets-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa94ac06-4feb-11f1-abca-2c54536568a9",
@@ -2792,17 +2905,18 @@
    "home": "Pittsburgh Steelers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 22,
+   "homePoints": 34,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Acrisure Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/colts-at-steelers-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa94b527-4feb-11f1-abca-2c54536568a9",
@@ -2816,17 +2930,18 @@
    "home": "Tennessee Titans",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 26,
+   "homePoints": 3,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Nissan Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/texans-at-titans-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa94b906-4feb-11f1-abca-2c54536568a9",
@@ -2840,17 +2955,18 @@
    "home": "Washington Commanders",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 27,
+   "homePoints": 27,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "tie",
    "venue": "Northwest Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/giants-at-commanders-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa94c2ef-4feb-11f1-abca-2c54536568a9",
@@ -2864,17 +2980,18 @@
    "home": "Green Bay Packers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 7,
+   "homePoints": 31,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Lambeau Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bears-at-packers-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa94bc51-4feb-11f1-abca-2c54536568a9",
@@ -2888,17 +3005,18 @@
    "home": "Los Angeles Chargers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 23,
+   "homePoints": 17,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "SoFi Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/broncos-at-chargers-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa94bfce-4feb-11f1-abca-2c54536568a9",
@@ -2912,17 +3030,18 @@
    "home": "Arizona Cardinals",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 45,
+   "homePoints": 21,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "State Farm Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/lions-at-cardinals-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa94c647-4feb-11f1-abca-2c54536568a9",
@@ -2936,17 +3055,18 @@
    "home": "Seattle Seahawks",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 32,
+   "homePoints": 29,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Lumen Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/49ers-at-seahawks-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa94c94d-4feb-11f1-abca-2c54536568a9",
@@ -2960,17 +3080,18 @@
    "home": "Atlanta Falcons",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 30,
+   "homePoints": 23,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Mercedes-Benz Stadium",
    "category": "SNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/ravens-at-falcons-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa94ccd3-4feb-11f1-abca-2c54536568a9",
@@ -2984,17 +3105,18 @@
    "home": "Los Angeles Rams",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 37,
+   "homePoints": 34,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "SoFi Stadium",
    "category": "MNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bills-at-rams-2026-reg-5",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aa94cffe-4feb-11f1-abca-2c54536568a9",
@@ -3008,17 +3130,18 @@
    "home": "Denver Broncos",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 14,
+   "homePoints": 17,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Empower Field at Mile High",
    "category": "TNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/seahawks-at-broncos-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aab56e82-4feb-11f1-abca-2c54536568a9",
@@ -3032,17 +3155,18 @@
    "home": "Jacksonville Jaguars",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 34,
+   "homePoints": 31,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Wembley Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/texans-at-jaguars-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aab577eb-4feb-11f1-abca-2c54536568a9",
@@ -3056,17 +3180,18 @@
    "home": "Atlanta Falcons",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 31,
+   "homePoints": 23,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Mercedes-Benz Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bears-at-falcons-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aab57bb8-4feb-11f1-abca-2c54536568a9",
@@ -3080,17 +3205,18 @@
    "home": "Cleveland Browns",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 10,
+   "homePoints": 13,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Huntington Bank Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/ravens-at-browns-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aab57f15-4feb-11f1-abca-2c54536568a9",
@@ -3104,17 +3230,18 @@
    "home": "Indianapolis Colts",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 26,
+   "homePoints": 20,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Lucas Oil Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/titans-at-colts-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aab58261-4feb-11f1-abca-2c54536568a9",
@@ -3128,17 +3255,18 @@
    "home": "New England Patriots",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 19,
+   "homePoints": 26,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Gillette Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/jets-at-patriots-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aab5857e-4feb-11f1-abca-2c54536568a9",
@@ -3152,17 +3280,18 @@
    "home": "New York Giants",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 34,
+   "homePoints": 27,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "MetLife Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/saints-at-giants-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aab588fe-4feb-11f1-abca-2c54536568a9",
@@ -3176,17 +3305,18 @@
    "home": "Philadelphia Eagles",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 25,
+   "homePoints": 14,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Lincoln Financial Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/panthers-at-eagles-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aab58c4b-4feb-11f1-abca-2c54536568a9",
@@ -3200,17 +3330,18 @@
    "home": "Tampa Bay Buccaneers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 26,
+   "homePoints": 19,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Raymond James Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/steelers-at-buccaneers-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aab58f7e-4feb-11f1-abca-2c54536568a9",
@@ -3224,17 +3355,18 @@
    "home": "Los Angeles Rams",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 18,
+   "homePoints": 16,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "SoFi Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/cardinals-at-rams-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aab59281-4feb-11f1-abca-2c54536568a9",
@@ -3248,17 +3380,18 @@
    "home": "Kansas City Chiefs",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 6,
+   "homePoints": 22,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Arrowhead Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/chargers-at-chiefs-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aad57852-4feb-11f1-abca-2c54536568a9",
@@ -3272,17 +3405,18 @@
    "home": "Las Vegas Raiders",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 33,
+   "homePoints": 30,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Allegiant Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bills-at-raiders-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aad58264-4feb-11f1-abca-2c54536568a9",
@@ -3296,17 +3430,18 @@
    "home": "Green Bay Packers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 13,
+   "homePoints": 23,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Lambeau Field",
    "category": "SNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/cowboys-at-packers-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aad58635-4feb-11f1-abca-2c54536568a9",
@@ -3330,7 +3465,8 @@
    "sourceUrl": "https://www.nfl.com/games/commanders-at-49ers-2026-reg-6",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-6",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "aad58a18-4feb-11f1-abca-2c54536568a9",
@@ -3344,17 +3480,18 @@
    "home": "Chicago Bears",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 30,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Soldier Field",
    "category": "TNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/patriots-at-bears-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aad58d7d-4feb-11f1-abca-2c54536568a9",
@@ -3368,17 +3505,18 @@
    "home": "New Orleans Saints",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 16,
+   "homePoints": 10,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Stade de France",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/steelers-at-saints-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aad59092-4feb-11f1-abca-2c54536568a9",
@@ -3392,17 +3530,18 @@
    "home": "Atlanta Falcons",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 20,
+   "homePoints": 29,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Mercedes-Benz Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/49ers-at-falcons-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aad594ee-4feb-11f1-abca-2c54536568a9",
@@ -3416,17 +3555,18 @@
    "home": "Baltimore Ravens",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 35,
+   "homePoints": 13,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "M&T Bank Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bengals-at-ravens-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aad59a67-4feb-11f1-abca-2c54536568a9",
@@ -3440,17 +3580,18 @@
    "home": "Carolina Panthers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 43,
+   "homePoints": 13,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Bank of America Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/buccaneers-at-panthers-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aad59e95-4feb-11f1-abca-2c54536568a9",
@@ -3464,17 +3605,18 @@
    "home": "Houston Texans",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 27,
+   "homePoints": 21,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Reliant Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/giants-at-texans-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aad5a2ac-4feb-11f1-abca-2c54536568a9",
@@ -3488,17 +3630,18 @@
    "home": "Minnesota Vikings",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 10,
+   "homePoints": 16,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "U.S. Bank Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/colts-at-vikings-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aaf6ec9e-4feb-11f1-abca-2c54536568a9",
@@ -3512,17 +3655,18 @@
    "home": "New York Jets",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 28,
+   "homePoints": 25,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "MetLife Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/dolphins-at-jets-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aaf6f621-4feb-11f1-abca-2c54536568a9",
@@ -3536,17 +3680,18 @@
    "home": "Tennessee Titans",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 27,
+   "homePoints": 24,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Nissan Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/browns-at-titans-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aaf6fa3b-4feb-11f1-abca-2c54536568a9",
@@ -3560,17 +3705,18 @@
    "home": "Arizona Cardinals",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 30,
+   "homePoints": 16,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "State Farm Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/broncos-at-cardinals-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aaf6fda2-4feb-11f1-abca-2c54536568a9",
@@ -3584,17 +3730,18 @@
    "home": "Detroit Lions",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 17,
+   "homePoints": 20,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Ford Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/packers-at-lions-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aaf700e5-4feb-11f1-abca-2c54536568a9",
@@ -3608,17 +3755,18 @@
    "home": "Las Vegas Raiders",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 35,
+   "homePoints": 21,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Allegiant Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/rams-at-raiders-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aaf7040e-4feb-11f1-abca-2c54536568a9",
@@ -3632,17 +3780,18 @@
    "home": "Seattle Seahawks",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 3,
+   "homePoints": 20,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Lumen Field",
    "category": "SNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/chiefs-at-seahawks-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aaf70733-4feb-11f1-abca-2c54536568a9",
@@ -3656,17 +3805,18 @@
    "home": "Philadelphia Eagles",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 38,
+   "homePoints": 21,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Lincoln Financial Field",
    "category": "MNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/cowboys-at-eagles-2026-reg-7",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-7",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aaf70a66-4feb-11f1-abca-2c54536568a9",
@@ -3680,17 +3830,18 @@
    "home": "Green Bay Packers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 19,
+   "homePoints": 27,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Lambeau Field",
    "category": "TNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/panthers-at-packers-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aaf70dac-4feb-11f1-abca-2c54536568a9",
@@ -3704,17 +3855,18 @@
    "home": "Buffalo Bills",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 10,
+   "homePoints": 36,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Highmark Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/ravens-at-bills-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "aaf71176-4feb-11f1-abca-2c54536568a9",
@@ -3728,17 +3880,18 @@
    "home": "Cincinnati Bengals",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 36,
+   "homePoints": 43,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Paycor Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/titans-at-bengals-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab16512c-4feb-11f1-abca-2c54536568a9",
@@ -3752,17 +3905,18 @@
    "home": "Dallas Cowboys",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 33,
+   "homePoints": 30,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "AT&T Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/cardinals-at-cowboys-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab165aa8-4feb-11f1-abca-2c54536568a9",
@@ -3776,17 +3930,18 @@
    "home": "Detroit Lions",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 15,
+   "homePoints": 19,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Ford Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/vikings-at-lions-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab165e6a-4feb-11f1-abca-2c54536568a9",
@@ -3800,17 +3955,18 @@
    "home": "Jacksonville Jaguars",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 7,
+   "homePoints": 42,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "EverBank Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/colts-at-jaguars-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab1661ac-4feb-11f1-abca-2c54536568a9",
@@ -3824,17 +3980,18 @@
    "home": "New York Jets",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 38,
+   "homePoints": 33,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "MetLife Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/raiders-at-jets-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab1664ca-4feb-11f1-abca-2c54536568a9",
@@ -3848,17 +4005,18 @@
    "home": "Pittsburgh Steelers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 6,
+   "homePoints": 27,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Acrisure Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/browns-at-steelers-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab1667cd-4feb-11f1-abca-2c54536568a9",
@@ -3872,17 +4030,18 @@
    "home": "Tampa Bay Buccaneers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 0,
+   "homePoints": 16,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Raymond James Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/falcons-at-buccaneers-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab166ac0-4feb-11f1-abca-2c54536568a9",
@@ -3896,17 +4055,18 @@
    "home": "Los Angeles Rams",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 9,
+   "homePoints": 24,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "SoFi Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/chargers-at-rams-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab166dc7-4feb-11f1-abca-2c54536568a9",
@@ -3920,17 +4080,18 @@
    "home": "Denver Broncos",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 28,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Empower Field at Mile High",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/chiefs-at-broncos-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab1670ad-4feb-11f1-abca-2c54536568a9",
@@ -3944,17 +4105,18 @@
    "home": "Miami Dolphins",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 19,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Hard Rock Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/patriots-at-dolphins-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab167386-4feb-11f1-abca-2c54536568a9",
@@ -3968,17 +4130,18 @@
    "home": "Washington Commanders",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 10,
+   "homePoints": 27,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Northwest Stadium",
    "category": "SNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/eagles-at-commanders-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab37feaa-4feb-11f1-abca-2c54536568a9",
@@ -3992,17 +4155,18 @@
    "home": "Seattle Seahawks",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 34,
+   "homePoints": 17,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Lumen Field",
    "category": "MNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bears-at-seahawks-2026-reg-8",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-8",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab380826-4feb-11f1-abca-2c54536568a9",
@@ -4016,17 +4180,18 @@
    "home": "Baltimore Ravens",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 33,
+   "homePoints": 10,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "M&T Bank Stadium",
    "category": "TNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/jaguars-at-ravens-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab380bc7-4feb-11f1-abca-2c54536568a9",
@@ -4040,17 +4205,18 @@
    "home": "Atlanta Falcons",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 34,
+   "homePoints": 17,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Bernabeu",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bengals-at-falcons-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab380efd-4feb-11f1-abca-2c54536568a9",
@@ -4064,17 +4230,18 @@
    "home": "Carolina Panthers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 26,
+   "homePoints": 21,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Bank of America Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/broncos-at-panthers-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab38123a-4feb-11f1-abca-2c54536568a9",
@@ -4088,17 +4255,18 @@
    "home": "Indianapolis Colts",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 27,
+   "homePoints": 23,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Lucas Oil Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/cowboys-at-colts-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab381724-4feb-11f1-abca-2c54536568a9",
@@ -4112,17 +4280,18 @@
    "home": "Kansas City Chiefs",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 12,
+   "homePoints": 35,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Arrowhead Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/jets-at-chiefs-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab381a59-4feb-11f1-abca-2c54536568a9",
@@ -4136,17 +4305,18 @@
    "home": "Miami Dolphins",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 19,
+   "homePoints": 9,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Hard Rock Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/lions-at-dolphins-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab381d58-4feb-11f1-abca-2c54536568a9",
@@ -4160,17 +4330,18 @@
    "home": "New Orleans Saints",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 22,
+   "homePoints": 23,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Caesars Superdome",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/browns-at-saints-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab38203e-4feb-11f1-abca-2c54536568a9",
@@ -4184,17 +4355,18 @@
    "home": "Philadelphia Eagles",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 19,
+   "homePoints": 11,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Lincoln Financial Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/giants-at-eagles-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab382331-4feb-11f1-abca-2c54536568a9",
@@ -4208,17 +4380,18 @@
    "home": "Washington Commanders",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 20,
+   "homePoints": 13,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Northwest Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/rams-at-commanders-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab580cb7-4feb-11f1-abca-2c54536568a9",
@@ -4232,17 +4405,18 @@
    "home": "Los Angeles Chargers",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 44,
+   "homePoints": 22,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "SoFi Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/texans-at-chargers-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab581766-4feb-11f1-abca-2c54536568a9",
@@ -4266,7 +4440,8 @@
    "sourceUrl": "https://www.nfl.com/games/raiders-at-49ers-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab581b93-4feb-11f1-abca-2c54536568a9",
@@ -4280,17 +4455,18 @@
    "home": "New England Patriots",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 45,
+   "homePoints": 27,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "Gillette Stadium",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/packers-at-patriots-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab581f17-4feb-11f1-abca-2c54536568a9",
@@ -4304,17 +4480,18 @@
    "home": "Seattle Seahawks",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 3,
+   "homePoints": 17,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Lumen Field",
    "category": null,
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/cardinals-at-seahawks-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab582247-4feb-11f1-abca-2c54536568a9",
@@ -4328,17 +4505,18 @@
    "home": "Chicago Bears",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 27,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "home",
    "venue": "Soldier Field",
    "category": "SNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/buccaneers-at-bears-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab5825a7-4feb-11f1-abca-2c54536568a9",
@@ -4352,17 +4530,18 @@
    "home": "Minnesota Vikings",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 23,
+   "homePoints": 6,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "U.S. Bank Stadium",
    "category": "MNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/bills-at-vikings-2026-reg-9",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-9",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab5828d9-4feb-11f1-abca-2c54536568a9",
@@ -4376,17 +4555,18 @@
    "home": "New York Giants",
    "awayAbbr": null,
    "homeAbbr": null,
-   "awayPoints": null,
-   "homePoints": null,
+   "awayPoints": 24,
+   "homePoints": 21,
    "status": "SCHEDULED",
-   "winner": null,
+   "winner": "away",
    "venue": "MetLife Stadium",
    "category": "TNF",
-   "scoreSource": null,
+   "scoreSource": "pageScoreLink",
    "sourceUrl": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "verified",
+   "scoreSourceNote": "official page label says FINAL"
   },
   {
    "gameId": "ab582c2f-4feb-11f1-abca-2c54536568a9",
@@ -4410,7 +4590,8 @@
    "sourceUrl": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab582f5b-4feb-11f1-abca-2c54536568a9",
@@ -4434,7 +4615,8 @@
    "sourceUrl": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab583279-4feb-11f1-abca-2c54536568a9",
@@ -4458,7 +4640,8 @@
    "sourceUrl": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab788967-4feb-11f1-abca-2c54536568a9",
@@ -4482,7 +4665,8 @@
    "sourceUrl": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab789365-4feb-11f1-abca-2c54536568a9",
@@ -4506,7 +4690,8 @@
    "sourceUrl": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab789769-4feb-11f1-abca-2c54536568a9",
@@ -4530,7 +4715,8 @@
    "sourceUrl": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab789ac9-4feb-11f1-abca-2c54536568a9",
@@ -4554,7 +4740,8 @@
    "sourceUrl": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab789e15-4feb-11f1-abca-2c54536568a9",
@@ -4578,7 +4765,8 @@
    "sourceUrl": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab78a133-4feb-11f1-abca-2c54536568a9",
@@ -4602,7 +4790,8 @@
    "sourceUrl": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab78a43c-4feb-11f1-abca-2c54536568a9",
@@ -4626,7 +4815,8 @@
    "sourceUrl": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab78a748-4feb-11f1-abca-2c54536568a9",
@@ -4650,7 +4840,8 @@
    "sourceUrl": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab78aa48-4feb-11f1-abca-2c54536568a9",
@@ -4674,7 +4865,8 @@
    "sourceUrl": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab78ad5a-4feb-11f1-abca-2c54536568a9",
@@ -4698,7 +4890,8 @@
    "sourceUrl": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab997d97-4feb-11f1-abca-2c54536568a9",
@@ -4722,7 +4915,8 @@
    "sourceUrl": "https://www.nfl.com/games/colts-at-texans-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab998769-4feb-11f1-abca-2c54536568a9",
@@ -4746,7 +4940,8 @@
    "sourceUrl": "https://www.nfl.com/games/dolphins-at-bills-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab998b7f-4feb-11f1-abca-2c54536568a9",
@@ -4770,7 +4965,8 @@
    "sourceUrl": "https://www.nfl.com/games/ravens-at-panthers-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab998f5e-4feb-11f1-abca-2c54536568a9",
@@ -4794,7 +4990,8 @@
    "sourceUrl": "https://www.nfl.com/games/saints-at-bears-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab99929a-4feb-11f1-abca-2c54536568a9",
@@ -4818,7 +5015,8 @@
    "sourceUrl": "https://www.nfl.com/games/titans-at-cowboys-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab999586-4feb-11f1-abca-2c54536568a9",
@@ -4842,7 +5040,8 @@
    "sourceUrl": "https://www.nfl.com/games/buccaneers-at-lions-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab999891-4feb-11f1-abca-2c54536568a9",
@@ -4866,7 +5065,8 @@
    "sourceUrl": "https://www.nfl.com/games/cardinals-at-chiefs-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abbf1908-4feb-11f1-abca-2c54536568a9",
@@ -4890,7 +5090,8 @@
    "sourceUrl": "https://www.nfl.com/games/steelers-at-eagles-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab999e6f-4feb-11f1-abca-2c54536568a9",
@@ -4914,7 +5115,8 @@
    "sourceUrl": "https://www.nfl.com/games/jets-at-chargers-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab999b80-4feb-11f1-abca-2c54536568a9",
@@ -4938,7 +5140,8 @@
    "sourceUrl": "https://www.nfl.com/games/jaguars-at-giants-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ab99a17b-4feb-11f1-abca-2c54536568a9",
@@ -4962,7 +5165,8 @@
    "sourceUrl": "https://www.nfl.com/games/raiders-at-broncos-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abbf2213-4feb-11f1-abca-2c54536568a9",
@@ -4986,7 +5190,8 @@
    "sourceUrl": "https://www.nfl.com/games/vikings-at-49ers-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abbf25b8-4feb-11f1-abca-2c54536568a9",
@@ -5010,7 +5215,8 @@
    "sourceUrl": "https://www.nfl.com/games/bengals-at-commanders-2026-reg-11",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-11",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abbf28ed-4feb-11f1-abca-2c54536568a9",
@@ -5034,7 +5240,8 @@
    "sourceUrl": "https://www.nfl.com/games/packers-at-rams-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abbf2c16-4feb-11f1-abca-2c54536568a9",
@@ -5058,7 +5265,8 @@
    "sourceUrl": "https://www.nfl.com/games/bears-at-lions-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abbf2f12-4feb-11f1-abca-2c54536568a9",
@@ -5082,7 +5290,8 @@
    "sourceUrl": "https://www.nfl.com/games/eagles-at-cowboys-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abbf321b-4feb-11f1-abca-2c54536568a9",
@@ -5106,7 +5315,8 @@
    "sourceUrl": "https://www.nfl.com/games/chiefs-at-bills-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abbf352d-4feb-11f1-abca-2c54536568a9",
@@ -5130,7 +5340,8 @@
    "sourceUrl": "https://www.nfl.com/games/broncos-at-steelers-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abbf3917-4feb-11f1-abca-2c54536568a9",
@@ -5154,7 +5365,8 @@
    "sourceUrl": "https://www.nfl.com/games/saints-at-bengals-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abbf3c97-4feb-11f1-abca-2c54536568a9",
@@ -5178,7 +5390,8 @@
    "sourceUrl": "https://www.nfl.com/games/raiders-at-browns-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abdfc3c2-4feb-11f1-abca-2c54536568a9",
@@ -5202,7 +5415,8 @@
    "sourceUrl": "https://www.nfl.com/games/ravens-at-texans-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abdfccbb-4feb-11f1-abca-2c54536568a9",
@@ -5226,7 +5440,8 @@
    "sourceUrl": "https://www.nfl.com/games/giants-at-colts-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abdfd040-4feb-11f1-abca-2c54536568a9",
@@ -5250,7 +5465,8 @@
    "sourceUrl": "https://www.nfl.com/games/jets-at-dolphins-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abdfd363-4feb-11f1-abca-2c54536568a9",
@@ -5274,7 +5490,8 @@
    "sourceUrl": "https://www.nfl.com/games/falcons-at-vikings-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abdfd663-4feb-11f1-abca-2c54536568a9",
@@ -5298,7 +5515,8 @@
    "sourceUrl": "https://www.nfl.com/games/titans-at-jaguars-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abdfd959-4feb-11f1-abca-2c54536568a9",
@@ -5322,7 +5540,8 @@
    "sourceUrl": "https://www.nfl.com/games/commanders-at-cardinals-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abdfdd00-4feb-11f1-abca-2c54536568a9",
@@ -5346,7 +5565,8 @@
    "sourceUrl": "https://www.nfl.com/games/seahawks-at-49ers-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abdfe0ab-4feb-11f1-abca-2c54536568a9",
@@ -5370,7 +5590,8 @@
    "sourceUrl": "https://www.nfl.com/games/patriots-at-chargers-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abdfe629-4feb-11f1-abca-2c54536568a9",
@@ -5394,7 +5615,8 @@
    "sourceUrl": "https://www.nfl.com/games/panthers-at-buccaneers-2026-reg-12",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-12",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "abdfe9fb-4feb-11f1-abca-2c54536568a9",
@@ -5418,7 +5640,8 @@
    "sourceUrl": "https://www.nfl.com/games/chiefs-at-rams-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac014f46-4feb-11f1-abca-2c54536568a9",
@@ -5442,7 +5665,8 @@
    "sourceUrl": "https://www.nfl.com/games/lions-at-falcons-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac015881-4feb-11f1-abca-2c54536568a9",
@@ -5466,7 +5690,8 @@
    "sourceUrl": "https://www.nfl.com/games/jaguars-at-bears-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac015cdc-4feb-11f1-abca-2c54536568a9",
@@ -5490,7 +5715,8 @@
    "sourceUrl": "https://www.nfl.com/games/bengals-at-browns-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac01603b-4feb-11f1-abca-2c54536568a9",
@@ -5514,7 +5740,8 @@
    "sourceUrl": "https://www.nfl.com/games/packers-at-saints-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac016348-4feb-11f1-abca-2c54536568a9",
@@ -5538,7 +5765,8 @@
    "sourceUrl": "https://www.nfl.com/games/49ers-at-giants-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac01664b-4feb-11f1-abca-2c54536568a9",
@@ -5562,7 +5790,8 @@
    "sourceUrl": "https://www.nfl.com/games/chargers-at-buccaneers-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac016953-4feb-11f1-abca-2c54536568a9",
@@ -5586,7 +5815,8 @@
    "sourceUrl": "https://www.nfl.com/games/commanders-at-titans-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac016c40-4feb-11f1-abca-2c54536568a9",
@@ -5610,7 +5840,8 @@
    "sourceUrl": "https://www.nfl.com/games/eagles-at-cardinals-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac016f2b-4feb-11f1-abca-2c54536568a9",
@@ -5634,7 +5865,8 @@
    "sourceUrl": "https://www.nfl.com/games/dolphins-at-broncos-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac017212-4feb-11f1-abca-2c54536568a9",
@@ -5658,7 +5890,8 @@
    "sourceUrl": "https://www.nfl.com/games/panthers-at-vikings-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac207191-4feb-11f1-abca-2c54536568a9",
@@ -5682,7 +5915,8 @@
    "sourceUrl": "https://www.nfl.com/games/bills-at-patriots-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac207ad3-4feb-11f1-abca-2c54536568a9",
@@ -5706,7 +5940,8 @@
    "sourceUrl": "https://www.nfl.com/games/texans-at-steelers-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac207eae-4feb-11f1-abca-2c54536568a9",
@@ -5730,7 +5965,8 @@
    "sourceUrl": "https://www.nfl.com/games/cowboys-at-seahawks-2026-reg-13",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-13",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac208212-4feb-11f1-abca-2c54536568a9",
@@ -5754,7 +5990,8 @@
    "sourceUrl": "https://www.nfl.com/games/vikings-at-patriots-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac208548-4feb-11f1-abca-2c54536568a9",
@@ -5778,7 +6015,8 @@
    "sourceUrl": "https://www.nfl.com/games/buccaneers-at-ravens-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac208883-4feb-11f1-abca-2c54536568a9",
@@ -5802,7 +6040,8 @@
    "sourceUrl": "https://www.nfl.com/games/saints-at-panthers-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac208bad-4feb-11f1-abca-2c54536568a9",
@@ -5826,7 +6065,8 @@
    "sourceUrl": "https://www.nfl.com/games/falcons-at-browns-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac208ebc-4feb-11f1-abca-2c54536568a9",
@@ -5850,7 +6090,8 @@
    "sourceUrl": "https://www.nfl.com/games/titans-at-lions-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac2091af-4feb-11f1-abca-2c54536568a9",
@@ -5874,7 +6115,8 @@
    "sourceUrl": "https://www.nfl.com/games/bears-at-dolphins-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac2094c8-4feb-11f1-abca-2c54536568a9",
@@ -5898,7 +6140,8 @@
    "sourceUrl": "https://www.nfl.com/games/broncos-at-jets-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac411814-4feb-11f1-abca-2c54536568a9",
@@ -5922,7 +6165,8 @@
    "sourceUrl": "https://www.nfl.com/games/colts-at-eagles-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac4122e2-4feb-11f1-abca-2c54536568a9",
@@ -5946,7 +6190,8 @@
    "sourceUrl": "https://www.nfl.com/games/texans-at-commanders-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac4128a9-4feb-11f1-abca-2c54536568a9",
@@ -5970,7 +6215,8 @@
    "sourceUrl": "https://www.nfl.com/games/chargers-at-raiders-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac412c64-4feb-11f1-abca-2c54536568a9",
@@ -5994,7 +6240,8 @@
    "sourceUrl": "https://www.nfl.com/games/chiefs-at-bengals-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac413167-4feb-11f1-abca-2c54536568a9",
@@ -6018,7 +6265,8 @@
    "sourceUrl": "https://www.nfl.com/games/giants-at-seahawks-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac4134f5-4feb-11f1-abca-2c54536568a9",
@@ -6042,7 +6290,8 @@
    "sourceUrl": "https://www.nfl.com/games/rams-at-49ers-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac41381d-4feb-11f1-abca-2c54536568a9",
@@ -6066,7 +6315,8 @@
    "sourceUrl": "https://www.nfl.com/games/bills-at-packers-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac413b2b-4feb-11f1-abca-2c54536568a9",
@@ -6090,7 +6340,8 @@
    "sourceUrl": "https://www.nfl.com/games/steelers-at-jaguars-2026-reg-14",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-14",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac413e34-4feb-11f1-abca-2c54536568a9",
@@ -6114,7 +6365,8 @@
    "sourceUrl": "https://www.nfl.com/games/49ers-at-chargers-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac414151-4feb-11f1-abca-2c54536568a9",
@@ -6138,7 +6390,8 @@
    "sourceUrl": "https://www.nfl.com/games/seahawks-at-eagles-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac603d57-4feb-11f1-abca-2c54536568a9",
@@ -6162,7 +6415,8 @@
    "sourceUrl": "https://www.nfl.com/games/bears-at-bills-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac6046a8-4feb-11f1-abca-2c54536568a9",
@@ -6186,7 +6440,8 @@
    "sourceUrl": "https://www.nfl.com/games/bengals-at-panthers-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac604a6e-4feb-11f1-abca-2c54536568a9",
@@ -6210,7 +6465,8 @@
    "sourceUrl": "https://www.nfl.com/games/dolphins-at-packers-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac604e37-4feb-11f1-abca-2c54536568a9",
@@ -6234,7 +6490,8 @@
    "sourceUrl": "https://www.nfl.com/games/jaguars-at-texans-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac6051b9-4feb-11f1-abca-2c54536568a9",
@@ -6258,7 +6515,8 @@
    "sourceUrl": "https://www.nfl.com/games/browns-at-giants-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac60550d-4feb-11f1-abca-2c54536568a9",
@@ -6282,7 +6540,8 @@
    "sourceUrl": "https://www.nfl.com/games/ravens-at-steelers-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac60584b-4feb-11f1-abca-2c54536568a9",
@@ -6306,7 +6565,8 @@
    "sourceUrl": "https://www.nfl.com/games/saints-at-buccaneers-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac605b63-4feb-11f1-abca-2c54536568a9",
@@ -6330,7 +6590,8 @@
    "sourceUrl": "https://www.nfl.com/games/colts-at-titans-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac605e66-4feb-11f1-abca-2c54536568a9",
@@ -6354,7 +6615,8 @@
    "sourceUrl": "https://www.nfl.com/games/falcons-at-commanders-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac60617b-4feb-11f1-abca-2c54536568a9",
@@ -6378,7 +6640,8 @@
    "sourceUrl": "https://www.nfl.com/games/jets-at-cardinals-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac7f5336-4feb-11f1-abca-2c54536568a9",
@@ -6402,7 +6665,8 @@
    "sourceUrl": "https://www.nfl.com/games/cowboys-at-rams-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac7f60fe-4feb-11f1-abca-2c54536568a9",
@@ -6426,7 +6690,8 @@
    "sourceUrl": "https://www.nfl.com/games/broncos-at-raiders-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac7f6703-4feb-11f1-abca-2c54536568a9",
@@ -6450,7 +6715,8 @@
    "sourceUrl": "https://www.nfl.com/games/lions-at-vikings-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac7f6aff-4feb-11f1-abca-2c54536568a9",
@@ -6474,7 +6740,8 @@
    "sourceUrl": "https://www.nfl.com/games/patriots-at-chiefs-2026-reg-15",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-15",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac7f6e6e-4feb-11f1-abca-2c54536568a9",
@@ -6498,7 +6765,8 @@
    "sourceUrl": "https://www.nfl.com/games/texans-at-eagles-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac7f71a4-4feb-11f1-abca-2c54536568a9",
@@ -6522,7 +6790,8 @@
    "sourceUrl": "https://www.nfl.com/games/packers-at-bears-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac7f74ca-4feb-11f1-abca-2c54536568a9",
@@ -6546,7 +6815,8 @@
    "sourceUrl": "https://www.nfl.com/games/bills-at-broncos-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac7f77ed-4feb-11f1-abca-2c54536568a9",
@@ -6570,7 +6840,8 @@
    "sourceUrl": "https://www.nfl.com/games/rams-at-seahawks-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac9e36ff-4feb-11f1-abca-2c54536568a9",
@@ -6594,7 +6865,8 @@
    "sourceUrl": "https://www.nfl.com/games/browns-at-ravens-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac9e3acb-4feb-11f1-abca-2c54536568a9",
@@ -6618,7 +6890,8 @@
    "sourceUrl": "https://www.nfl.com/games/chargers-at-dolphins-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac9e3e14-4feb-11f1-abca-2c54536568a9",
@@ -6642,7 +6915,8 @@
    "sourceUrl": "https://www.nfl.com/games/cardinals-at-saints-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac9e4134-4feb-11f1-abca-2c54536568a9",
@@ -6666,7 +6940,8 @@
    "sourceUrl": "https://www.nfl.com/games/patriots-at-jets-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac9e442c-4feb-11f1-abca-2c54536568a9",
@@ -6690,7 +6965,8 @@
    "sourceUrl": "https://www.nfl.com/games/titans-at-raiders-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac9e473f-4feb-11f1-abca-2c54536568a9",
@@ -6714,7 +6990,8 @@
    "sourceUrl": "https://www.nfl.com/games/49ers-at-chiefs-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac9e4a3a-4feb-11f1-abca-2c54536568a9",
@@ -6738,7 +7015,8 @@
    "sourceUrl": "https://www.nfl.com/games/jaguars-at-cowboys-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ac9e4d51-4feb-11f1-abca-2c54536568a9",
@@ -6762,7 +7040,8 @@
    "sourceUrl": "https://www.nfl.com/games/giants-at-lions-2026-reg-16",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-16",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acc1d288-4feb-11f1-abca-2c54536568a9",
@@ -6786,7 +7065,8 @@
    "sourceUrl": "https://www.nfl.com/games/ravens-at-bengals-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acc1e9f7-4feb-11f1-abca-2c54536568a9",
@@ -6810,7 +7090,8 @@
    "sourceUrl": "https://www.nfl.com/games/saints-at-falcons-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acc1ed66-4feb-11f1-abca-2c54536568a9",
@@ -6834,7 +7115,8 @@
    "sourceUrl": "https://www.nfl.com/games/seahawks-at-panthers-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acc1f09a-4feb-11f1-abca-2c54536568a9",
@@ -6858,7 +7140,8 @@
    "sourceUrl": "https://www.nfl.com/games/colts-at-browns-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acc1f3c0-4feb-11f1-abca-2c54536568a9",
@@ -6882,7 +7165,8 @@
    "sourceUrl": "https://www.nfl.com/games/giants-at-cowboys-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "acc1f6d4-4feb-11f1-abca-2c54536568a9",
@@ -6906,7 +7190,8 @@
    "sourceUrl": "https://www.nfl.com/games/bills-at-dolphins-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ace0969b-4feb-11f1-abca-2c54536568a9",
@@ -6930,7 +7215,8 @@
    "sourceUrl": "https://www.nfl.com/games/vikings-at-jets-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ace0a08e-4feb-11f1-abca-2c54536568a9",
@@ -6954,7 +7240,8 @@
    "sourceUrl": "https://www.nfl.com/games/steelers-at-titans-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ace0a457-4feb-11f1-abca-2c54536568a9",
@@ -6978,7 +7265,8 @@
    "sourceUrl": "https://www.nfl.com/games/raiders-at-cardinals-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ace0a7e7-4feb-11f1-abca-2c54536568a9",
@@ -7002,7 +7290,8 @@
    "sourceUrl": "https://www.nfl.com/games/lions-at-bears-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ace0ab32-4feb-11f1-abca-2c54536568a9",
@@ -7026,7 +7315,8 @@
    "sourceUrl": "https://www.nfl.com/games/eagles-at-49ers-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   },
   {
    "gameId": "ace0ae7b-4feb-11f1-abca-2c54536568a9",
@@ -7050,7 +7340,8 @@
    "sourceUrl": "https://www.nfl.com/games/texans-at-packers-2026-reg-17",
    "listUrl": "https://www.nfl.com/schedules/2026/by-week/week-17",
    "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
-   "verification": "scheduled"
+   "verification": "scheduled",
+   "scoreSourceNote": null
   }
  ]
 }

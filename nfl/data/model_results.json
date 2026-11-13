@@ -4,21 +4,21 @@
   "context": {
    "scores": {
     "games": 1632,
-    "logloss": 0.68545,
+    "logloss": 0.68612,
     "baselineLogloss": 0.68848,
-    "skill": 0.00441,
-    "brier": 0.24581,
+    "skill": 0.00343,
+    "brier": 0.24627,
     "baselineBrier": 0.24673,
-    "brierSkill": 0.00376,
-    "accuracy": 0.565
+    "brierSkill": 0.0019,
+    "accuracy": 0.5668
    },
    "deflation": {
-    "N": 16,
+    "N": 200,
     "K": 11,
-    "p95_single": 0.04208,
-    "p95": 0.0446,
-    "median": 0.03428,
-    "blocks": 1,
+    "p95_single": 0.04874,
+    "p95": 0.0534,
+    "median": 0.0342,
+    "blocks": 18,
     "passed": false
    },
    "features": [
@@ -38,21 +38,21 @@
   "strength": {
    "scores": {
     "games": 1632,
-    "logloss": 0.63786,
+    "logloss": 0.63757,
     "baselineLogloss": 0.68848,
-    "skill": 0.07352,
-    "brier": 0.22336,
+    "skill": 0.07395,
+    "brier": 0.22321,
     "baselineBrier": 0.24673,
-    "brierSkill": 0.09474,
-    "accuracy": 0.6385
+    "brierSkill": 0.09535,
+    "accuracy": 0.6379
    },
    "deflation": {
-    "N": 16,
+    "N": 200,
     "K": 9,
-    "p95_single": 0.01671,
-    "p95": 0.0163,
-    "median": 0.0128,
-    "blocks": 1,
+    "p95_single": 0.02332,
+    "p95": 0.03119,
+    "median": 0.00783,
+    "blocks": 22,
     "passed": true
    },
    "features": [
@@ -68,8 +68,8 @@
    ]
   }
  },
- "generatedUTC": "2026-11-13T13:49:14Z",
- "selftest": true,
+ "generatedUTC": "2026-11-13T14:22:16Z",
+ "selftest": false,
  "seasons": [
   2016,
   2017,
@@ -96,21 +96,21 @@
  "droppedIncomplete": 146,
  "model": {
   "games": 1632,
-  "logloss": 0.63786,
+  "logloss": 0.63757,
   "baselineLogloss": 0.68848,
-  "skill": 0.07352,
-  "brier": 0.22336,
+  "skill": 0.07395,
+  "brier": 0.22321,
   "baselineBrier": 0.24673,
-  "brierSkill": 0.09474,
-  "accuracy": 0.6385
+  "brierSkill": 0.09535,
+  "accuracy": 0.6379
  },
  "deflation": {
-  "N": 16,
+  "N": 200,
   "K": 9,
-  "p95_single": 0.01671,
-  "p95": 0.0163,
-  "median": 0.0128,
-  "blocks": 1,
+  "p95_single": 0.02332,
+  "p95": 0.03119,
+  "median": 0.00783,
+  "blocks": 22,
   "passed": true
  },
  "correlation": {
@@ -197,44 +197,44 @@
    {
     "a": "rest_diff",
     "b": "off_value_diff",
-    "n": 1584,
-    "r": 0.014,
+    "n": 1632,
+    "r": 0.0337,
     "ci": [
-     -0.0403,
-     0.0666
+     -0.015,
+     0.0806
     ],
     "excludesZero": false
    },
    {
     "a": "rest_diff",
     "b": "def_value_diff",
-    "n": 1584,
-    "r": 0.0091,
+    "n": 1632,
+    "r": 0.0083,
     "ci": [
-     -0.0408,
-     0.0604
+     -0.0332,
+     0.0508
     ],
     "excludesZero": false
    },
    {
     "a": "rest_diff",
     "b": "off_out_diff",
-    "n": 1584,
-    "r": -0.0109,
+    "n": 1632,
+    "r": -0.0114,
     "ci": [
-     -0.0671,
-     0.0436
+     -0.0636,
+     0.0423
     ],
     "excludesZero": false
    },
    {
     "a": "rest_diff",
     "b": "def_out_diff",
-    "n": 1584,
-    "r": 0.022,
+    "n": 1632,
+    "r": 0.028,
     "ci": [
-     -0.0236,
-     0.0639
+     -0.0197,
+     0.0737
     ],
     "excludesZero": false
    },
@@ -296,44 +296,44 @@
    {
     "a": "div_game",
     "b": "off_value_diff",
-    "n": 1584,
-    "r": -0.0054,
+    "n": 1632,
+    "r": 0.027,
     "ci": [
-     -0.0549,
-     0.0414
+     -0.0218,
+     0.0788
     ],
     "excludesZero": false
    },
    {
     "a": "div_game",
     "b": "def_value_diff",
-    "n": 1584,
-    "r": 0.0097,
+    "n": 1632,
+    "r": 0.0179,
     "ci": [
-     -0.0348,
-     0.059
+     -0.031,
+     0.0685
     ],
     "excludesZero": false
    },
    {
     "a": "div_game",
     "b": "off_out_diff",
-    "n": 1584,
-    "r": 0.0362,
+    "n": 1632,
+    "r": 0.0059,
     "ci": [
-     -0.0089,
-     0.0804
+     -0.0447,
+     0.0565
     ],
     "excludesZero": false
    },
    {
     "a": "div_game",
     "b": "def_out_diff",
-    "n": 1584,
-    "r": -0.0119,
+    "n": 1632,
+    "r": 0.015,
     "ci": [
-     -0.0599,
-     0.0379
+     -0.0345,
+     0.0628
     ],
     "excludesZero": false
    },
@@ -384,46 +384,46 @@
    {
     "a": "dome",
     "b": "off_value_diff",
-    "n": 1584,
-    "r": 0.0977,
+    "n": 1632,
+    "r": 0.0773,
     "ci": [
-     0.0472,
-     0.149
+     0.0298,
+     0.1213
     ],
     "excludesZero": true
    },
    {
     "a": "dome",
     "b": "def_value_diff",
-    "n": 1584,
-    "r": 0.0296,
+    "n": 1632,
+    "r": 0.2058,
     "ci": [
-     -0.0165,
-     0.0742
+     0.1596,
+     0.2499
     ],
-    "excludesZero": false
+    "excludesZero": true
    },
    {
     "a": "dome",
     "b": "off_out_diff",
-    "n": 1584,
-    "r": 0.0196,
+    "n": 1632,
+    "r": 0.0753,
     "ci": [
-     -0.0312,
-     0.0688
+     0.0287,
+     0.1254
     ],
-    "excludesZero": false
+    "excludesZero": true
    },
    {
     "a": "dome",
     "b": "def_out_diff",
-    "n": 1584,
-    "r": -0.0648,
+    "n": 1632,
+    "r": -0.0027,
     "ci": [
-     -0.1081,
-     -0.0172
+     -0.0503,
+     0.0465
     ],
-    "excludesZero": true
+    "excludesZero": false
    },
    {
     "a": "home_short_week",
@@ -461,44 +461,44 @@
    {
     "a": "home_short_week",
     "b": "off_value_diff",
-    "n": 1584,
-    "r": 0.0209,
+    "n": 1632,
+    "r": 0.0325,
     "ci": [
-     -0.0297,
-     0.0718
+     -0.0155,
+     0.0773
     ],
     "excludesZero": false
    },
    {
     "a": "home_short_week",
     "b": "def_value_diff",
-    "n": 1584,
-    "r": 0.0568,
+    "n": 1632,
+    "r": 0.0412,
     "ci": [
-     0.0014,
-     0.1089
+     -0.0057,
+     0.081
     ],
-    "excludesZero": true
+    "excludesZero": false
    },
    {
     "a": "home_short_week",
     "b": "off_out_diff",
-    "n": 1584,
-    "r": 0.0039,
+    "n": 1632,
+    "r": -0.0227,
     "ci": [
-     -0.0475,
-     0.0611
+     -0.0749,
+     0.0341
     ],
     "excludesZero": false
    },
    {
     "a": "home_short_week",
     "b": "def_out_diff",
-    "n": 1584,
-    "r": -0.0035,
+    "n": 1632,
+    "r": -0.0084,
     "ci": [
-     -0.0601,
-     0.0533
+     -0.0554,
+     0.0326
     ],
     "excludesZero": false
    },
@@ -527,44 +527,44 @@
    {
     "a": "away_short_week",
     "b": "off_value_diff",
-    "n": 1584,
-    "r": 0.0209,
+    "n": 1632,
+    "r": 0.0325,
     "ci": [
-     -0.0297,
-     0.0718
+     -0.0155,
+     0.0773
     ],
     "excludesZero": false
    },
    {
     "a": "away_short_week",
     "b": "def_value_diff",
-    "n": 1584,
-    "r": 0.0568,
+    "n": 1632,
+    "r": 0.0412,
     "ci": [
-     0.0014,
-     0.1089
+     -0.0057,
+     0.081
     ],
-    "excludesZero": true
+    "excludesZero": false
    },
    {
     "a": "away_short_week",
     "b": "off_out_diff",
-    "n": 1584,
-    "r": 0.0039,
+    "n": 1632,
+    "r": -0.0227,
     "ci": [
-     -0.0475,
-     0.0611
+     -0.0749,
+     0.0341
     ],
     "excludesZero": false
    },
    {
     "a": "away_short_week",
     "b": "def_out_diff",
-    "n": 1584,
-    "r": -0.0035,
+    "n": 1632,
+    "r": -0.0084,
     "ci": [
-     -0.0601,
-     0.0533
+     -0.0554,
+     0.0326
     ],
     "excludesZero": false
    },
@@ -582,177 +582,407 @@
    {
     "a": "home_qb_change",
     "b": "off_value_diff",
-    "n": 1492,
-    "r": -0.0487,
+    "n": 1537,
+    "r": -0.0859,
     "ci": [
-     -0.0964,
-     0.0007
+     -0.1367,
+     -0.0329
     ],
-    "excludesZero": false
+    "excludesZero": true
    },
    {
     "a": "home_qb_change",
     "b": "def_value_diff",
-    "n": 1492,
-    "r": -0.0224,
+    "n": 1537,
+    "r": -0.0275,
     "ci": [
-     -0.0763,
-     0.0315
+     -0.0714,
+     0.0176
     ],
     "excludesZero": false
    },
    {
     "a": "home_qb_change",
     "b": "off_out_diff",
-    "n": 1492,
-    "r": -0.0035,
+    "n": 1537,
+    "r": 0.0085,
     "ci": [
-     -0.0524,
-     0.0486
+     -0.0425,
+     0.0578
     ],
     "excludesZero": false
    },
    {
     "a": "home_qb_change",
     "b": "def_out_diff",
-    "n": 1492,
-    "r": -0.0399,
+    "n": 1537,
+    "r": 0.014,
     "ci": [
-     -0.0871,
-     0.0101
+     -0.0425,
+     0.0657
     ],
     "excludesZero": false
    },
    {
     "a": "away_qb_change",
     "b": "off_value_diff",
-    "n": 1490,
-    "r": 0.0611,
+    "n": 1535,
+    "r": 0.0914,
     "ci": [
-     0.0125,
-     0.1093
+     0.046,
+     0.139
     ],
     "excludesZero": true
    },
    {
     "a": "away_qb_change",
     "b": "def_value_diff",
-    "n": 1490,
-    "r": 0.0156,
+    "n": 1535,
+    "r": -0.009,
     "ci": [
-     -0.0466,
-     0.0673
+     -0.0571,
+     0.0466
     ],
     "excludesZero": false
    },
    {
     "a": "away_qb_change",
     "b": "off_out_diff",
-    "n": 1490,
-    "r": -0.0045,
+    "n": 1535,
+    "r": -0.0024,
     "ci": [
-     -0.0553,
-     0.0477
+     -0.0527,
+     0.045
     ],
     "excludesZero": false
    },
    {
     "a": "away_qb_change",
     "b": "def_out_diff",
-    "n": 1490,
-    "r": -0.0432,
+    "n": 1535,
+    "r": -0.0219,
     "ci": [
-     -0.0985,
-     0.0075
+     -0.0682,
+     0.0215
     ],
     "excludesZero": false
    },
    {
     "a": "off_value_diff",
     "b": "def_value_diff",
-    "n": 1584,
-    "r": 0.1968,
+    "n": 1632,
+    "r": 0.2085,
     "ci": [
-     0.1389,
-     0.2513
+     0.1584,
+     0.2449
     ],
     "excludesZero": true
    },
    {
     "a": "off_value_diff",
     "b": "off_out_diff",
-    "n": 1584,
-    "r": -0.0196,
+    "n": 1632,
+    "r": -0.0396,
     "ci": [
-     -0.072,
-     0.0269
+     -0.0857,
+     0.0079
     ],
     "excludesZero": false
    },
    {
     "a": "off_value_diff",
     "b": "def_out_diff",
-    "n": 1584,
-    "r": 0.0557,
+    "n": 1632,
+    "r": -0.121,
     "ci": [
-     0.0103,
-     0.1055
+     -0.1671,
+     -0.0735
     ],
     "excludesZero": true
    },
    {
     "a": "def_value_diff",
     "b": "off_out_diff",
-    "n": 1584,
-    "r": 0.0859,
+    "n": 1632,
+    "r": 0.0102,
     "ci": [
-     0.0328,
-     0.1341
+     -0.0383,
+     0.0632
     ],
-    "excludesZero": true
+    "excludesZero": false
    },
    {
     "a": "def_value_diff",
     "b": "def_out_diff",
-    "n": 1584,
-    "r": 0.1468,
+    "n": 1632,
+    "r": 0.0212,
     "ci": [
-     0.1018,
-     0.1939
+     -0.029,
+     0.0702
     ],
-    "excludesZero": true
+    "excludesZero": false
    },
    {
     "a": "off_out_diff",
     "b": "def_out_diff",
-    "n": 1584,
-    "r": 0.0926,
+    "n": 1632,
+    "r": 0.1859,
     "ci": [
-     0.0329,
-     0.147
+     0.1389,
+     0.2358
     ],
     "excludesZero": true
    }
   ],
   "note": "Pearson r between the signal value and the realised home win."
  },
- "propCorrelation": [],
- "props": [],
+ "propCorrelation": [
+  {
+   "a": "rushing_yards",
+   "b": "rushing_tds",
+   "position": "RB",
+   "n": 1824,
+   "r": -0.0811,
+   "ci": [
+    -0.1199,
+    -0.0384
+   ]
+  },
+  {
+   "a": "receiving_yards",
+   "b": "receptions",
+   "position": "WR",
+   "n": 4612,
+   "r": -0.0566,
+   "ci": [
+    -0.0834,
+    -0.028
+   ]
+  },
+  {
+   "a": "receiving_yards",
+   "b": "receiving_tds",
+   "position": "WR",
+   "n": 4612,
+   "r": -0.0097,
+   "ci": [
+    -0.0345,
+    0.0184
+   ]
+  },
+  {
+   "a": "receptions",
+   "b": "receiving_tds",
+   "position": "WR",
+   "n": 4612,
+   "r": -0.0154,
+   "ci": [
+    -0.0416,
+    0.0144
+   ]
+  },
+  {
+   "a": "rushing_yards",
+   "b": "rushing_tds",
+   "position": "RB",
+   "n": 1939,
+   "r": -0.0671,
+   "ci": [
+    -0.105,
+    -0.0276
+   ]
+  },
+  {
+   "a": "receiving_yards",
+   "b": "receptions",
+   "position": "WR",
+   "n": 4213,
+   "r": -0.0541,
+   "ci": [
+    -0.0806,
+    -0.0262
+   ]
+  },
+  {
+   "a": "receiving_yards",
+   "b": "receiving_tds",
+   "position": "WR",
+   "n": 4213,
+   "r": -0.0259,
+   "ci": [
+    -0.0557,
+    0.0042
+   ]
+  },
+  {
+   "a": "receptions",
+   "b": "receiving_tds",
+   "position": "WR",
+   "n": 4213,
+   "r": -0.0238,
+   "ci": [
+    -0.0518,
+    0.0064
+   ]
+  }
+ ],
+ "props": [
+  {
+   "market": "passing_yards",
+   "position": "QB",
+   "line": 225.0,
+   "games": 389,
+   "logloss": 0.6659,
+   "accuracy": 0.6221,
+   "skill": 0.0393,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "rushing_yards",
+   "position": "RB",
+   "line": 55.0,
+   "games": 1011,
+   "logloss": 0.4576,
+   "accuracy": 0.7844,
+   "skill": 0.3398,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "receiving_yards",
+   "position": "WR",
+   "line": 45.0,
+   "games": 1573,
+   "logloss": 0.5452,
+   "accuracy": 0.7203,
+   "skill": 0.2135,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "receptions",
+   "position": "WR",
+   "line": 4.5,
+   "games": 1573,
+   "logloss": 0.4546,
+   "accuracy": 0.7839,
+   "skill": 0.3442,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "passing_tds",
+   "position": "QB",
+   "line": 1.5,
+   "games": 389,
+   "logloss": 0.6623,
+   "accuracy": 0.6375,
+   "skill": 0.0445,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "rushing_tds",
+   "position": "RB",
+   "line": 0.5,
+   "games": 1011,
+   "logloss": 0.4915,
+   "accuracy": 0.7695,
+   "skill": 0.291,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "receiving_tds",
+   "position": "WR",
+   "line": 0.5,
+   "games": 1573,
+   "logloss": 0.4871,
+   "accuracy": 0.773,
+   "skill": 0.2972,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "passing_yards",
+   "position": "QB",
+   "line": 225.0,
+   "games": 358,
+   "logloss": 0.6481,
+   "accuracy": 0.6369,
+   "skill": 0.065,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "rushing_yards",
+   "position": "RB",
+   "line": 55.0,
+   "games": 1072,
+   "logloss": 0.4527,
+   "accuracy": 0.7575,
+   "skill": 0.3469,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "receiving_yards",
+   "position": "WR",
+   "line": 45.0,
+   "games": 1520,
+   "logloss": 0.5393,
+   "accuracy": 0.7283,
+   "skill": 0.2219,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "receptions",
+   "position": "WR",
+   "line": 4.5,
+   "games": 1520,
+   "logloss": 0.4632,
+   "accuracy": 0.7855,
+   "skill": 0.3317,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "passing_tds",
+   "position": "QB",
+   "line": 1.5,
+   "games": 358,
+   "logloss": 0.6632,
+   "accuracy": 0.5894,
+   "skill": 0.0432,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "rushing_tds",
+   "position": "RB",
+   "line": 0.5,
+   "games": 1072,
+   "logloss": 0.48,
+   "accuracy": 0.7826,
+   "skill": 0.3075,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  },
+  {
+   "market": "receiving_tds",
+   "position": "WR",
+   "line": 0.5,
+   "games": 1520,
+   "logloss": 0.4727,
+   "accuracy": 0.7967,
+   "skill": 0.318,
+   "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+  }
+ ],
  "leaderboard": [
   {
    "family": "single",
    "name": "Home-win model (walk-forward, prior info only)",
    "tier": "A",
-   "score": 6.11,
+   "score": 4.601,
    "metrics": {
     "games": 1632,
-    "logloss": 0.63786,
+    "logloss": 0.63757,
     "baselineLogloss": 0.68848,
-    "skill": 0.07352,
-    "brier": 0.22336,
+    "skill": 0.07395,
+    "brier": 0.22321,
     "baselineBrier": 0.24673,
-    "brierSkill": 0.09474,
-    "accuracy": 0.6385
+    "brierSkill": 0.09535,
+    "accuracy": 0.6379
    },
    "gates": {
     "G3_sample": {
@@ -761,25 +991,25 @@
     },
     "G4_skill": {
      "pass": true,
-     "value": 0.07352
+     "value": 0.07395
     },
     "G5_deflation": {
      "pass": true,
-     "value": "observed 0.07352 vs null p95 0.0163 (N=16)"
+     "value": "observed 0.07395 vs null p95 0.03119 (N=200)"
     },
     "G6_calibration": {
      "pass": true,
-     "value": 0.8678
+     "value": 0.8759
     },
     "G7_stability": {
      "pass": true,
      "value": {
-      "2017": 0.08556,
-      "2018": 0.07343,
-      "2019": 0.07094,
-      "2020": 0.10278,
-      "2021": 0.0361,
-      "2022": 0.07339
+      "2017": 0.08467,
+      "2018": 0.06881,
+      "2019": 0.07721,
+      "2020": 0.10734,
+      "2021": 0.0345,
+      "2022": 0.07218
      }
     },
     "G8_market": {
@@ -792,73 +1022,73 @@
      {
       "bin": "0.0-0.1",
       "n": 2,
-      "predicted": 0.0858,
+      "predicted": 0.0778,
       "observed": 0.0
      },
      {
       "bin": "0.1-0.2",
-      "n": 52,
-      "predicted": 0.1671,
-      "observed": 0.3462
-     },
-     {
-      "bin": "0.2-0.3",
-      "n": 91,
-      "predicted": 0.2593,
-      "observed": 0.2637
-     },
-     {
-      "bin": "0.3-0.4",
-      "n": 168,
-      "predicted": 0.3559,
+      "n": 48,
+      "predicted": 0.1608,
       "observed": 0.3333
      },
      {
+      "bin": "0.2-0.3",
+      "n": 102,
+      "predicted": 0.2555,
+      "observed": 0.2451
+     },
+     {
+      "bin": "0.3-0.4",
+      "n": 167,
+      "predicted": 0.3541,
+      "observed": 0.3353
+     },
+     {
       "bin": "0.4-0.5",
-      "n": 247,
-      "predicted": 0.4522,
-      "observed": 0.4291
+      "n": 246,
+      "predicted": 0.454,
+      "observed": 0.4472
      },
      {
       "bin": "0.5-0.6",
-      "n": 305,
-      "predicted": 0.5482,
-      "observed": 0.5049
+      "n": 300,
+      "predicted": 0.5472,
+      "observed": 0.51
      },
      {
       "bin": "0.6-0.7",
-      "n": 328,
-      "predicted": 0.6504,
-      "observed": 0.6372
+      "n": 323,
+      "predicted": 0.6506,
+      "observed": 0.6192
      },
      {
       "bin": "0.7-0.8",
-      "n": 273,
-      "predicted": 0.7478,
-      "observed": 0.685
+      "n": 271,
+      "predicted": 0.746,
+      "observed": 0.6937
      },
      {
       "bin": "0.8-0.9",
-      "n": 142,
-      "predicted": 0.844,
-      "observed": 0.8028
+      "n": 155,
+      "predicted": 0.8457,
+      "observed": 0.8065
      },
      {
       "bin": "0.9-1.0",
-      "n": 24,
-      "predicted": 0.9218,
-      "observed": 0.9167
+      "n": 18,
+      "predicted": 0.927,
+      "observed": 0.9444
      }
     ],
-    "slope": 0.8678
+    "slope": 0.8759
    },
    "stability": {
-    "2017": 0.08556,
-    "2018": 0.07343,
-    "2019": 0.07094,
-    "2020": 0.10278,
-    "2021": 0.0361,
-    "2022": 0.07339
+    "2017": 0.08467,
+    "2018": 0.06881,
+    "2019": 0.07721,
+    "2020": 0.10734,
+    "2021": 0.0345,
+    "2022": 0.07218
    },
    "claim": "Out-of-sample probability skill against a prior-season win-rate baseline. No betting return is claimed: the market columns in the source data are a single un-timestamped snapshot, so no closing price or vig is known."
   },
@@ -869,9 +1099,9 @@
    "score": 0.0,
    "metrics": {
     "games": 1632,
-    "modelLogloss": 0.6379,
+    "modelLogloss": 0.6376,
     "spreadImpliedLogloss": 0.9288,
-    "skill": 0.3133
+    "skill": 0.3136
    },
    "gates": {
     "G8_market": {
@@ -888,8 +1118,8 @@
    "score": 0.0,
    "metrics": {
     "seasonsTested": 6,
-    "expectedJointIndependent": 0.8424,
-    "expectedJointCorrelationAware": 0.8419,
+    "expectedJointIndependent": 0.8399,
+    "expectedJointCorrelationAware": 0.8394,
     "note": "Cross-game legs are near-independent by construction; the copula path is exercised so the same code can price same-game legs."
    },
    "gates": {
@@ -907,8 +1137,8 @@
    "score": 0.0,
    "metrics": {
     "seasonsTested": 6,
-    "expectedJointIndependent": 0.7631,
-    "expectedJointCorrelationAware": 0.764,
+    "expectedJointIndependent": 0.7562,
+    "expectedJointCorrelationAware": 0.7568,
     "note": "Cross-game legs are near-independent by construction; the copula path is exercised so the same code can price same-game legs."
    },
    "gates": {
@@ -920,28 +1150,245 @@
    "claim": "Joint probability only. No payout, no vig, no ROI, because no parlay price exists in any reachable source."
   },
   {
+   "family": "prop",
+   "name": "QB passing yards over 225.0",
+   "tier": "C",
+   "score": 0.393,
+   "metrics": {
+    "market": "passing_yards",
+    "position": "QB",
+    "line": 225.0,
+    "games": 389,
+    "logloss": 0.6659,
+    "accuracy": 0.6221,
+    "skill": 0.0393,
+    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 389
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.0393
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "prop",
+   "name": "RB rushing yards over 55.0",
+   "tier": "C",
+   "score": 3.398,
+   "metrics": {
+    "market": "rushing_yards",
+    "position": "RB",
+    "line": 55.0,
+    "games": 1011,
+    "logloss": 0.4576,
+    "accuracy": 0.7844,
+    "skill": 0.3398,
+    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 1011
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.3398
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "prop",
+   "name": "WR receiving yards over 45.0",
+   "tier": "C",
+   "score": 2.135,
+   "metrics": {
+    "market": "receiving_yards",
+    "position": "WR",
+    "line": 45.0,
+    "games": 1573,
+    "logloss": 0.5452,
+    "accuracy": 0.7203,
+    "skill": 0.2135,
+    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 1573
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.2135
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "prop",
+   "name": "WR receptions over 4.5",
+   "tier": "C",
+   "score": 3.442,
+   "metrics": {
+    "market": "receptions",
+    "position": "WR",
+    "line": 4.5,
+    "games": 1573,
+    "logloss": 0.4546,
+    "accuracy": 0.7839,
+    "skill": 0.3442,
+    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 1573
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.3442
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "prop",
+   "name": "QB passing tds over 1.5",
+   "tier": "C",
+   "score": 0.445,
+   "metrics": {
+    "market": "passing_tds",
+    "position": "QB",
+    "line": 1.5,
+    "games": 389,
+    "logloss": 0.6623,
+    "accuracy": 0.6375,
+    "skill": 0.0445,
+    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 389
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.0445
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "prop",
+   "name": "RB rushing tds over 0.5",
+   "tier": "C",
+   "score": 2.91,
+   "metrics": {
+    "market": "rushing_tds",
+    "position": "RB",
+    "line": 0.5,
+    "games": 1011,
+    "logloss": 0.4915,
+    "accuracy": 0.7695,
+    "skill": 0.291,
+    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 1011
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.291
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
+   "family": "prop",
+   "name": "WR receiving tds over 0.5",
+   "tier": "C",
+   "score": 2.972,
+   "metrics": {
+    "market": "receiving_tds",
+    "position": "WR",
+    "line": 0.5,
+    "games": 1573,
+    "logloss": 0.4871,
+    "accuracy": 0.773,
+    "skill": 0.2972,
+    "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."
+   },
+   "gates": {
+    "G3_sample": {
+     "pass": true,
+     "value": 1573
+    },
+    "G4_skill": {
+     "pass": true,
+     "value": 0.2972
+    },
+    "G8_market": {
+     "pass": false,
+     "value": "market=unavailable"
+    }
+   },
+   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction."
+  },
+  {
    "family": "single",
    "name": "Single-game model \u2014 context features (11 signals)",
    "tier": "C",
    "score": 0.0,
    "metrics": {
     "games": 1632,
-    "logloss": 0.68545,
+    "logloss": 0.68612,
     "baselineLogloss": 0.68848,
-    "skill": 0.00441,
-    "brier": 0.24581,
+    "skill": 0.00343,
+    "brier": 0.24627,
     "baselineBrier": 0.24673,
-    "brierSkill": 0.00376,
-    "accuracy": 0.565
+    "brierSkill": 0.0019,
+    "accuracy": 0.5668
    },
    "gates": {
     "G4_skill": {
      "pass": true,
-     "value": 0.00441
+     "value": 0.00343
     },
     "G5_deflation": {
      "pass": false,
-     "value": "observed 0.00441 vs best-of-11 null p95 0.0446"
+     "value": "observed 0.00343 vs best-of-11 null p95 0.0534"
     },
     "G7_stability": {
      "pass": true,
@@ -954,25 +1401,25 @@
    "family": "single",
    "name": "Single-game model \u2014 strength features (9 signals)",
    "tier": "A",
-   "score": 5.722,
+   "score": 4.276,
    "metrics": {
     "games": 1632,
-    "logloss": 0.63786,
+    "logloss": 0.63757,
     "baselineLogloss": 0.68848,
-    "skill": 0.07352,
-    "brier": 0.22336,
+    "skill": 0.07395,
+    "brier": 0.22321,
     "baselineBrier": 0.24673,
-    "brierSkill": 0.09474,
-    "accuracy": 0.6385
+    "brierSkill": 0.09535,
+    "accuracy": 0.6379
    },
    "gates": {
     "G4_skill": {
      "pass": true,
-     "value": 0.07352
+     "value": 0.07395
     },
     "G5_deflation": {
      "pass": true,
-     "value": "observed 0.07352 vs best-of-9 null p95 0.0163"
+     "value": "observed 0.07395 vs best-of-9 null p95 0.03119"
     },
     "G7_stability": {
      "pass": true,
@@ -1034,75 +1481,5609 @@
   },
   {
    "feature": "off_value_diff",
-   "present": 1591,
+   "present": 1639,
    "total": 1639,
-   "share": 0.971,
-   "status": "partial \u2014 blank where absent"
+   "share": 1.0,
+   "status": "verified"
   },
   {
    "feature": "def_value_diff",
-   "present": 1591,
+   "present": 1639,
    "total": 1639,
-   "share": 0.971,
-   "status": "partial \u2014 blank where absent"
+   "share": 1.0,
+   "status": "verified"
   },
   {
    "feature": "off_out_diff",
-   "present": 1591,
+   "present": 1639,
    "total": 1639,
-   "share": 0.971,
-   "status": "partial \u2014 blank where absent"
+   "share": 1.0,
+   "status": "verified"
   },
   {
    "feature": "def_out_diff",
-   "present": 1591,
+   "present": 1639,
    "total": 1639,
-   "share": 0.971,
-   "status": "partial \u2014 blank where absent"
+   "share": 1.0,
+   "status": "verified"
   },
   {
    "feature": "home_off_value",
-   "present": 1615,
+   "present": 1639,
    "total": 1639,
-   "share": 0.985,
-   "status": "partial \u2014 blank where absent"
+   "share": 1.0,
+   "status": "verified"
   },
   {
    "feature": "away_off_value",
-   "present": 1615,
+   "present": 1639,
    "total": 1639,
-   "share": 0.985,
-   "status": "partial \u2014 blank where absent"
+   "share": 1.0,
+   "status": "verified"
   },
   {
    "feature": "home_def_value",
-   "present": 1615,
+   "present": 1639,
    "total": 1639,
-   "share": 0.985,
-   "status": "partial \u2014 blank where absent"
+   "share": 1.0,
+   "status": "verified"
   },
   {
    "feature": "away_def_value",
-   "present": 1615,
+   "present": 1639,
    "total": 1639,
-   "share": 0.985,
-   "status": "partial \u2014 blank where absent"
+   "share": 1.0,
+   "status": "verified"
   },
   {
    "feature": "home_off_out_share",
-   "present": 1615,
+   "present": 1639,
    "total": 1639,
-   "share": 0.985,
-   "status": "partial \u2014 blank where absent"
+   "share": 1.0,
+   "status": "verified"
   },
   {
    "feature": "home_def_out_share",
-   "present": 1615,
+   "present": 1639,
    "total": 1639,
-   "share": 0.985,
-   "status": "partial \u2014 blank where absent"
+   "share": 1.0,
+   "status": "verified"
   }
  ],
+ "currentBoard": {
+  "season": 2026,
+  "week": 18,
+  "teams": [
+   {
+    "team": "ARI",
+    "reportCount": 49,
+    "out": 16,
+    "doubtful": 0,
+    "questionable": 14,
+    "outNames": [
+     "00-0034681",
+     "00-0036936",
+     "00-0031557",
+     "00-0036884",
+     "00-0035248",
+     "00-0033553",
+     "00-0032688",
+     "00-0036933"
+    ],
+    "offStarterValue": 0.5328,
+    "defStarterValue": 0.5323,
+    "offOutShare": 0.0637,
+    "defOutShare": 0.0982,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0155,
+    "defQuestionableShare": 0.0339,
+    "tiers": {
+     "QB": {
+      "1": [
+       "Carson",
+       "Drew",
+       "Josh",
+       "Kyler",
+       "Trace"
+      ],
+      "2": [
+       "Blaine",
+       "Mike",
+       "Brett",
+       "Chris",
+       "Colt",
+       "David",
+       "Clayton"
+      ],
+      "3": [
+       "Matt"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Andre",
+       "David",
+       "Elijhaa",
+       "D.J.",
+       "Chase",
+       "Keaontay",
+       "Emari"
+      ],
+      "1": [
+       "Kerwynn",
+       "T.J.",
+       "Kenyan",
+       "James",
+       "DeeJay"
+      ],
+      "3": [
+       "Stepfan",
+       "Bronson",
+       "Jonathan",
+       "Eno",
+       "Corey",
+       "Michael"
+      ]
+     },
+     "WR": {
+      "2": [
+       "J.J.",
+       "Brittan",
+       "John",
+       "Trent",
+       "Andy",
+       "Damiere",
+       "Antoine",
+       "Zach",
+       "Zay"
+      ],
+      "1": [
+       "Larry",
+       "Chad",
+       "Jaron",
+       "Pharoh",
+       "Christian",
+       "KeeSean",
+       "DeAndre",
+       "Rondale",
+       "A.J.",
+       "Greg",
+       "Robbie",
+       "Marquise",
+       "Michael",
+       "Marvin"
+      ],
+      "3": [
+       "Jeremy",
+       "Jalen",
+       "Malachi"
+      ]
+     },
+     "TE": {
+      "2": [
+       "Hakeem",
+       "Jermaine",
+       "Gabe",
+       "Dan",
+       "Demetrius",
+       "Stephen",
+       "Elijah"
+      ],
+      "1": [
+       "Darren",
+       "Troy",
+       "Ricky",
+       "Zach",
+       "Trey"
+      ],
+      "3": [
+       "John",
+       "Darrell",
+       "Maxx",
+       "Seth",
+       "Blake",
+       "Tip"
+      ]
+     },
+     "CB": {
+      "2": [
+       "Brandon",
+       "Harlan",
+       "Justin",
+       "Trevon",
+       "Chris",
+       "Jalen",
+       "Kevin",
+       "Christian",
+       "Kei'Trel",
+       "Max"
+      ],
+      "1": [
+       "Patrick",
+       "Marcus",
+       "Tramon",
+       "David",
+       "Byron",
+       "Dre",
+       "Antonio",
+       "Marco",
+       "Jace",
+       "Starling",
+       "Garrett",
+       "Sean"
+      ],
+      "3": [
+       "C.J.",
+       "Josh",
+       "Qwuantrezz"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "ATL",
+    "reportCount": 49,
+    "out": 8,
+    "doubtful": 0,
+    "questionable": 11,
+    "outNames": [
+     "00-0033676",
+     "00-0036957",
+     "00-0038628",
+     "00-0037810",
+     "00-0039859",
+     "00-0034779",
+     "00-0037298",
+     "00-0038568"
+    ],
+    "offStarterValue": 0.5592,
+    "defStarterValue": 0.6631,
+    "offOutShare": 0.0195,
+    "defOutShare": 0.0223,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0772,
+    "defQuestionableShare": 0.0011,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Matt",
+       "Josh",
+       "Desmond",
+       "Kirk"
+      ],
+      "1": [
+       "Matt",
+       "Taylor",
+       "Michael"
+      ],
+      "3": [
+       "Logan"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Devonta",
+       "Tevin",
+       "Kenjon",
+       "Todd",
+       "Mike",
+       "Cordarrelle",
+       "Bijan"
+      ],
+      "3": [
+       "Terron",
+       "Jeremy",
+       "Qadree",
+       "Ito",
+       "Avery",
+       "Carlos"
+      ],
+      "2": [
+       "Brian",
+       "Tyler"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Justin",
+       "Aldrick",
+       "Taylor",
+       "Laquon",
+       "Damiere",
+       "KhaDarel",
+       "Scott",
+       "Casey",
+       "Chris"
+      ],
+      "1": [
+       "Eric",
+       "Julio",
+       "Mohamed",
+       "Russell",
+       "Calvin",
+       "Marvin",
+       "Christian",
+       "Olamide",
+       "Brandon",
+       "Drake",
+       "Mack",
+       "Ray-Ray",
+       "Darnell"
+      ],
+      "3": [
+       "Nick",
+       "Andre",
+       "Frank",
+       "Van"
+      ]
+     },
+     "TE": {
+      "2": [
+       "Joshua",
+       "Levine",
+       "Logan",
+       "Jaeden",
+       "Lee",
+       "MyCole",
+       "John",
+       "Ross"
+      ],
+      "1": [
+       "Austin",
+       "Hayden",
+       "Kyle",
+       "Parker",
+       "Jonnu",
+       "Charlie"
+      ],
+      "3": [
+       "Eric",
+       "Luke",
+       "Anthony",
+       "Tucker"
+      ]
+     },
+     "CB": {
+      "2": [
+       "C.J.",
+       "Sharrod",
+       "Brian",
+       "Blidi",
+       "Isaiah",
+       "Jamar",
+       "Clark",
+       "Tre",
+       "Kevin"
+      ],
+      "1": [
+       "Jalen",
+       "Robert",
+       "Desmond",
+       "A.J.",
+       "Fabian",
+       "Darren",
+       "Dee",
+       "Mike",
+       "Jeff"
+      ],
+      "3": [
+       "Deji",
+       "Justin",
+       "Kendall",
+       "Mike",
+       "Rashad",
+       "Cornell",
+       "Natrone"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "BAL",
+    "reportCount": 61,
+    "out": 7,
+    "doubtful": 2,
+    "questionable": 24,
+    "outNames": [
+     "00-0029592",
+     "00-0034265",
+     "00-0031235",
+     "00-0036280",
+     "00-0032891",
+     "00-0034975",
+     "00-0038119"
+    ],
+    "offStarterValue": 0.5059,
+    "defStarterValue": 0.6157,
+    "offOutShare": 0.021,
+    "defOutShare": 0.024,
+    "offDoubtfulShare": 0.0393,
+    "defDoubtfulShare": 0.0119,
+    "offQuestionableShare": 0.0585,
+    "defQuestionableShare": 0.115,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Joe",
+       "Ryan",
+       "Trace",
+       "Tyler",
+       "Josh",
+       "Anthony"
+      ],
+      "1": [
+       "Robert",
+       "Lamar"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Terrance",
+       "Kenneth",
+       "Danny",
+       "Justice",
+       "Latavius"
+      ],
+      "3": [
+       "Javorius",
+       "Mark",
+       "Ty'Son",
+       "Keaton",
+       "Rasheen"
+      ],
+      "1": [
+       "Alex",
+       "Gus",
+       "J.K.",
+       "Devonta",
+       "Derrick"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Steve",
+       "Mike",
+       "Jeremy",
+       "John",
+       "Michael",
+       "Marquise",
+       "De'Anthony",
+       "Devin",
+       "James",
+       "Sammy",
+       "Rashod",
+       "Demarcus",
+       "Zay",
+       "Odell"
+      ],
+      "2": [
+       "Kamar",
+       "Michael",
+       "Breshad",
+       "Chris",
+       "Quincy",
+       "Jordan",
+       "Ty",
+       "Seth",
+       "Tylan",
+       "DeSean",
+       "Nelson"
+      ],
+      "3": [
+       "Willie",
+       "Miles",
+       "Jaleel",
+       "Dez",
+       "Devontez"
+      ]
+     },
+     "TE": {
+      "2": [
+       "Nick",
+       "Darren",
+       "Vince",
+       "Bronson",
+       "Hayden",
+       "Isaiah",
+       "Josh"
+      ],
+      "1": [
+       "Dennis",
+       "Benjamin",
+       "Mark"
+      ],
+      "3": [
+       "Maxx",
+       "Eric",
+       "Charlie"
+      ]
+     },
+     "CB": {
+      "2": [
+       "Shareece",
+       "Tavon",
+       "Chris",
+       "Stanley",
+       "Jimmy",
+       "Damarion",
+       "Ronald",
+       "Nate",
+       "Tre'Davious"
+      ],
+      "1": [
+       "Jerraud",
+       "Marlon",
+       "Brandon",
+       "Anthony",
+       "Marcus",
+       "Chris",
+       "Rock"
+      ],
+      "3": [
+       "Maurice",
+       "Cyrus",
+       "Iman",
+       "Tramon",
+       "Kevon",
+       "Arthur",
+       "Jalyn"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "BUF",
+    "reportCount": 61,
+    "out": 5,
+    "doubtful": 1,
+    "questionable": 14,
+    "outNames": [
+     "00-0028027",
+     "00-0031500",
+     "00-0030114",
+     "00-0037254",
+     "00-0031054"
+    ],
+    "offStarterValue": 0.4538,
+    "defStarterValue": 0.4514,
+    "offOutShare": 0.0,
+    "defOutShare": 0.0561,
+    "offDoubtfulShare": 0.001,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0578,
+    "defQuestionableShare": 0.0215,
+    "tiers": {
+     "QB": {
+      "1": [
+       "E.J.",
+       "Tyrod",
+       "Josh"
+      ],
+      "3": [
+       "Cardale",
+       "Joe",
+       "Derek",
+       "Jake"
+      ],
+      "2": [
+       "Nathan",
+       "Matt",
+       "Mitchell",
+       "Case",
+       "Kyle"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Mike",
+       "Reggie",
+       "Marcus",
+       "Chris",
+       "Zack",
+       "Latavius",
+       "Ty"
+      ],
+      "3": [
+       "Jonathan",
+       "Keith",
+       "Senorise",
+       "T.J.",
+       "Antonio",
+       "Taiwan",
+       "Matt",
+       "Ray"
+      ],
+      "1": [
+       "LeSean",
+       "Frank",
+       "Devin",
+       "James",
+       "Nyheim"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Marquise",
+       "Justin",
+       "Deonte",
+       "Isaiah",
+       "D'haquille",
+       "Andre",
+       "Jake",
+       "Trent",
+       "Curtis",
+       "Amari"
+      ],
+      "1": [
+       "Robert",
+       "Brandon",
+       "Sammy",
+       "Kelvin",
+       "Zay",
+       "John",
+       "Cole",
+       "Stefon",
+       "Gabe",
+       "Emmanuel",
+       "Marquez",
+       "Khalil",
+       "Deonte",
+       "Keon",
+       "Mack"
+      ],
+      "3": [
+       "Dezmin",
+       "Malachi",
+       "Brandon",
+       "Victor",
+       "Robert",
+       "Da'Mari",
+       "Ray-Ray"
+      ]
+     },
+     "TE": {
+      "3": [
+       "Logan",
+       "Gerald",
+       "Khari",
+       "Tommy",
+       "Nate",
+       "Quintin"
+      ],
+      "2": [
+       "Nick",
+       "Jason",
+       "Tyler",
+       "Lee",
+       "Dawson"
+      ],
+      "1": [
+       "Charles",
+       "Dalton"
+      ]
+     },
+     "CB": {
+      "2": [
+       "Nickell",
+       "Kevon",
+       "Leonard",
+       "Lafayette",
+       "Shareece",
+       "Ryan",
+       "Kevin",
+       "Josh",
+       "Dane",
+       "Xavier",
+       "Kaiir",
+       "Cole",
+       "Ja'Marcus"
+      ],
+      "3": [
+       "Marcus",
+       "Corey",
+       "Breon",
+       "Siran",
+       "Denzel"
+      ],
+      "1": [
+       "Stephon",
+       "Ronald",
+       "E.J.",
+       "Tre'Davious",
+       "Levi",
+       "Taron",
+       "Rasul",
+       "Christian",
+       "Brandon"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "CAR",
+    "reportCount": 59,
+    "out": 7,
+    "doubtful": 3,
+    "questionable": 19,
+    "outNames": [
+     "00-0034382",
+     "00-0036944",
+     "00-0037043",
+     "00-0034368",
+     "00-0035244",
+     "00-0036904",
+     "00-0038493"
+    ],
+    "offStarterValue": 0.5635,
+    "defStarterValue": 0.5901,
+    "offOutShare": 0.0,
+    "defOutShare": 0.0275,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.1052,
+    "defQuestionableShare": 0.077,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Joe",
+       "Derek",
+       "Kyle",
+       "P.J.",
+       "Bryce"
+      ],
+      "1": [
+       "Cam",
+       "Teddy",
+       "Sam",
+       "Andy"
+      ],
+      "3": [
+       "Garrett",
+       "Will"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Jonathan",
+       "Christian",
+       "Alex",
+       "Trenton",
+       "Chuba",
+       "Ameer",
+       "D'Onta",
+       "Raheem"
+      ],
+      "3": [
+       "Fozzy",
+       "Travaris",
+       "Rodney"
+      ],
+      "2": [
+       "Cameron",
+       "Reggie",
+       "Mike",
+       "Miles"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Ted",
+       "Kelvin",
+       "Russell",
+       "D.J.",
+       "DeAndrew",
+       "Robbie",
+       "Alex",
+       "Shi",
+       "D.J.",
+       "Jonathan",
+       "Adam",
+       "David",
+       "Xavier"
+      ],
+      "2": [
+       "Brenton",
+       "Corey",
+       "Kaelin",
+       "Torrey",
+       "Jarius",
+       "Curtis",
+       "Pharoh",
+       "Terrace",
+       "Laviska",
+       "Ihmir",
+       "Mike",
+       "Jalen"
+      ],
+      "3": [
+       "Mose",
+       "Brandon",
+       "Chris",
+       "Rashard"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Chris",
+       "Greg",
+       "Devin",
+       "Tommy",
+       "Ja'Tavion"
+      ],
+      "2": [
+       "Ed",
+       "Ian",
+       "Giovanni",
+       "Stephen",
+       "Feleipe"
+      ],
+      "3": [
+       "Jason",
+       "Colin"
+      ]
+     },
+     "LB": {
+      "3": [
+       "Kamal"
+      ]
+     },
+     "CB": {
+      "2": [
+       "Travell",
+       "Leonard",
+       "Lou",
+       "Captain",
+       "Kevon",
+       "Corn",
+       "Javien",
+       "Ross",
+       "Keith",
+       "C.J.",
+       "T.J.",
+       "D'Shawn",
+       "Dane"
+      ],
+      "1": [
+       "James",
+       "Donte",
+       "Rasul",
+       "Stephon",
+       "Jaycee",
+       "Michael"
+      ],
+      "3": [
+       "Ladarius",
+       "Lorenzo",
+       "T.J.",
+       "Stantley",
+       "Natrell",
+       "Troy",
+       "Shaquill",
+       "Shemar"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "CHI",
+    "reportCount": 58,
+    "out": 7,
+    "doubtful": 2,
+    "questionable": 20,
+    "outNames": [
+     "00-0028075",
+     "00-0036309",
+     "00-0036945",
+     "00-0029657",
+     "00-0037106",
+     "00-0037406",
+     "00-0036967"
+    ],
+    "offStarterValue": 0.4553,
+    "defStarterValue": 0.5668,
+    "offOutShare": 0.0318,
+    "defOutShare": 0.017,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0193,
+    "offQuestionableShare": 0.0571,
+    "defQuestionableShare": 0.0816,
+    "tiers": {
+     "QB": {
+      "1": [
+       "Matt",
+       "Mitchell",
+       "Justin",
+       "Caleb"
+      ],
+      "2": [
+       "David",
+       "Mike",
+       "Chase",
+       "Andy",
+       "Tyson"
+      ],
+      "3": [
+       "Mark",
+       "Nick",
+       "Tim",
+       "Nathan"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Ka'Deem",
+       "Benny",
+       "Ryan",
+       "Artavis",
+       "Darrynton",
+       "Travis"
+      ],
+      "2": [
+       "Jeremy",
+       "Taquan",
+       "Cordarrelle",
+       "Damien",
+       "D'Onta",
+       "Roschon"
+      ],
+      "1": [
+       "Jordan",
+       "Tarik",
+       "David",
+       "Khalil",
+       "Trestan",
+       "D'Andre"
+      ]
+     },
+     "WR": {
+      "3": [
+       "Josh",
+       "Deonte",
+       "Bralon",
+       "DeAndre",
+       "Byron",
+       "Chase",
+       "Rome"
+      ],
+      "2": [
+       "Daniel",
+       "Dontrelle",
+       "Markus",
+       "Kevin",
+       "Javon",
+       "Taylor",
+       "Riley",
+       "Damiere",
+       "Jakeem",
+       "Velus",
+       "N'Keal",
+       "Equanimeous",
+       "Tyler",
+       "Collin"
+      ],
+      "1": [
+       "Alshon",
+       "Cameron",
+       "Kendall",
+       "Allen",
+       "Anthony",
+       "Darnell",
+       "Marquise",
+       "Dante",
+       "D.J.",
+       "Trent",
+       "Keenan"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Logan",
+       "Dion",
+       "Trey",
+       "Cole"
+      ],
+      "3": [
+       "MyCole",
+       "Daniel",
+       "Ben",
+       "Bradley",
+       "J.P.",
+       "Eric",
+       "Demetrius",
+       "Jesse",
+       "Trevon",
+       "Marcedes"
+      ],
+      "2": [
+       "Adam",
+       "Jesper",
+       "Jimmy",
+       "Ryan",
+       "Robert",
+       "Gerald"
+      ]
+     },
+     "CB": {
+      "3": [
+       "Cre'von",
+       "Deiondre'",
+       "Demontre",
+       "Johnthan",
+       "Marcus",
+       "Michael",
+       "Jaylon"
+      ],
+      "1": [
+       "Tracy",
+       "Kyle",
+       "Prince",
+       "Kindle",
+       "Jaylon",
+       "Kyler",
+       "Josh"
+      ],
+      "2": [
+       "Bryce",
+       "Marcus",
+       "Kevin",
+       "Duke",
+       "Buster",
+       "Artie",
+       "Thomas",
+       "Michael",
+       "Tyrique",
+       "Terell",
+       "Ameer"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "CIN",
+    "reportCount": 33,
+    "out": 7,
+    "doubtful": 0,
+    "questionable": 12,
+    "outNames": [
+     "00-0036850",
+     "00-0034834",
+     "00-0039810",
+     "00-0038576",
+     "00-0036902",
+     "00-0039375",
+     "00-0039426"
+    ],
+    "offStarterValue": 0.5396,
+    "defStarterValue": 0.453,
+    "offOutShare": 0.0,
+    "defOutShare": 0.0207,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.062,
+    "defQuestionableShare": 0.0898,
+    "tiers": {
+     "QB": {
+      "1": [
+       "Andy",
+       "Jeff",
+       "Joe"
+      ],
+      "2": [
+       "AJ",
+       "Tom",
+       "Ryan",
+       "Brandon",
+       "Jake"
+      ],
+      "3": [
+       "Jacob"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Cedric",
+       "Brian",
+       "Jarveon",
+       "Mark",
+       "Chris",
+       "Khalil"
+      ],
+      "2": [
+       "Rex",
+       "Trayveon",
+       "Samaje"
+      ],
+      "1": [
+       "Jeremy",
+       "Joe",
+       "Giovani",
+       "Chase"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Brandon",
+       "Cody",
+       "A.J.",
+       "Tee",
+       "Ja'Marr",
+       "Andrei"
+      ],
+      "3": [
+       "Tyler",
+       "Jake",
+       "Damion",
+       "Trent",
+       "Charlie"
+      ],
+      "2": [
+       "Alex",
+       "James",
+       "Josh",
+       "Auden",
+       "John",
+       "Stanley",
+       "Mike",
+       "Trenton",
+       "Jermaine"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Ryan",
+       "C.J.",
+       "Tyler",
+       "Drew",
+       "Hayden"
+      ],
+      "2": [
+       "Cethan",
+       "Matt",
+       "Tyler",
+       "Irv",
+       "Mike"
+      ],
+      "3": [
+       "Mason",
+       "Mitchell",
+       "Devin",
+       "Tanner",
+       "Tanner"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Adam",
+       "Darqueze",
+       "Dre",
+       "William",
+       "Darius",
+       "B.W.",
+       "Mackensie",
+       "Eli",
+       "Chidobe",
+       "Mike",
+       "Cam",
+       "D.J."
+      ],
+      "2": [
+       "KeiVarae",
+       "Torry",
+       "LeShaun",
+       "Tony",
+       "Jalen",
+       "Vernon",
+       "Tre",
+       "Josh"
+      ],
+      "3": [
+       "Tony",
+       "Davontae",
+       "Greg"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "CLE",
+    "reportCount": 72,
+    "out": 16,
+    "doubtful": 0,
+    "questionable": 21,
+    "outNames": [
+     "00-0033057",
+     "00-0031364",
+     "00-0033885",
+     "00-0034856",
+     "00-0031544",
+     "00-0037314",
+     "00-0034639",
+     "00-0030098"
+    ],
+    "offStarterValue": 0.5064,
+    "defStarterValue": 0.4849,
+    "offOutShare": 0.0819,
+    "defOutShare": 0.0591,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0202,
+    "defQuestionableShare": 0.0492,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Josh",
+       "Kevin",
+       "Tyrod",
+       "Garrett",
+       "Case",
+       "Jacoby",
+       "Dorian"
+      ],
+      "3": [
+       "Robert",
+       "Cody",
+       "Drew",
+       "Kellen",
+       "Bailey"
+      ],
+      "1": [
+       "DeShone",
+       "Baker",
+       "Deshaun",
+       "Joe",
+       "Jameis"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Isaiah",
+       "Matthew",
+       "Nick",
+       "Jerome"
+      ],
+      "2": [
+       "George",
+       "Duke",
+       "Dontrell",
+       "Kareem",
+       "Demetric",
+       "Pierre"
+      ],
+      "3": [
+       "Darius",
+       "D'Ernest",
+       "D'Onta"
+      ]
+     },
+     "WR": {
+      "3": [
+       "Mario",
+       "Matt",
+       "Sammie",
+       "Damion",
+       "Taywan",
+       "Alexander",
+       "Ja'Marcus",
+       "David",
+       "Jaelon"
+      ],
+      "2": [
+       "Andrew",
+       "Rashard",
+       "Ricardo",
+       "Breshad",
+       "Antonio",
+       "KhaDarel",
+       "Marvin",
+       "Mike",
+       "Cedric"
+      ],
+      "1": [
+       "Terrelle",
+       "Corey",
+       "Josh",
+       "Jarvis",
+       "Odell",
+       "Donovan",
+       "Anthony",
+       "Amari",
+       "James",
+       "Elijah",
+       "Jerry"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Gary",
+       "Randall",
+       "David",
+       "Darren",
+       "Austin"
+      ],
+      "2": [
+       "Seth",
+       "Matt",
+       "Pharaoh",
+       "Demetrius",
+       "Harrison",
+       "Jordan"
+      ],
+      "3": [
+       "Ricky",
+       "Stephen",
+       "Blake"
+      ]
+     },
+     "LB": {
+      "2": [
+       "Lavar"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Joe",
+       "Tramon",
+       "Jamar",
+       "Terrance",
+       "Denzel",
+       "Greg",
+       "Martin"
+      ],
+      "3": [
+       "Trey",
+       "C.J.",
+       "Robert",
+       "A.J.",
+       "Thomas",
+       "Kahlef"
+      ],
+      "2": [
+       "Marcus",
+       "Tracy",
+       "Michael",
+       "Tavierre",
+       "Phillip",
+       "T.J.",
+       "Greedy",
+       "Brian",
+       "Mike",
+       "Chigozie",
+       "Cameron"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "DAL",
+    "reportCount": 56,
+    "out": 7,
+    "doubtful": 1,
+    "questionable": 14,
+    "outNames": [
+     "00-0031997",
+     "00-0034674",
+     "00-0038731",
+     "00-0036997",
+     "00-0037563",
+     "00-0038556",
+     "00-0040008"
+    ],
+    "offStarterValue": 0.5325,
+    "defStarterValue": 0.5747,
+    "offOutShare": 0.0232,
+    "defOutShare": 0.0231,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.047,
+    "defQuestionableShare": 0.1143,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Tony",
+       "Garrett",
+       "Trey"
+      ],
+      "3": [
+       "Mark",
+       "Mike",
+       "Ben",
+       "Will"
+      ],
+      "1": [
+       "Dak",
+       "Cooper",
+       "Andy"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Darren",
+       "Darius",
+       "Malik",
+       "Deuce"
+      ],
+      "2": [
+       "Lance",
+       "Alfred",
+       "Ezekiel",
+       "Rod",
+       "Corey"
+      ],
+      "1": [
+       "Tony",
+       "Rico"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Cole",
+       "Dez",
+       "Terrance",
+       "Noah",
+       "Michael",
+       "Allen",
+       "Tavon",
+       "Amari",
+       "CeeDee",
+       "Kavontae",
+       "Brandin",
+       "Jalen"
+      ],
+      "3": [
+       "Lucky"
+      ],
+      "2": [
+       "Brice",
+       "Ryan",
+       "Randall",
+       "Ventell",
+       "Devin",
+       "Malik",
+       "Cedrick",
+       "Simi",
+       "T.Y.",
+       "Jalen",
+       "Ryan",
+       "Jonathan"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Jason",
+       "Dalton",
+       "Jake"
+      ],
+      "2": [
+       "Gavin",
+       "James",
+       "Blake",
+       "Rico",
+       "Blake",
+       "Jeremy",
+       "Luke"
+      ],
+      "3": [
+       "Geoff",
+       "Sean",
+       "Peyton",
+       "Brevyn"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Orlando",
+       "Morris",
+       "Byron",
+       "Anthony",
+       "Brandon",
+       "Jourdan",
+       "Chidobe",
+       "Trevon",
+       "Kelvin",
+       "Daron",
+       "Stephon"
+      ],
+      "2": [
+       "Leon",
+       "Bene'",
+       "Deante",
+       "Rashard",
+       "Reggie",
+       "Maurice",
+       "Nahshon",
+       "Trayvon",
+       "Noah",
+       "Eric"
+      ],
+      "3": [
+       "C.J.",
+       "Donovan"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "DEN",
+    "reportCount": 47,
+    "out": 10,
+    "doubtful": 0,
+    "questionable": 9,
+    "outNames": [
+     "00-0032195",
+     "00-0036874",
+     "00-0034957",
+     "00-0035864",
+     "00-0033297",
+     "00-0031484",
+     "00-0034847",
+     "00-0039568"
+    ],
+    "offStarterValue": 0.4488,
+    "defStarterValue": 0.4987,
+    "offOutShare": 0.0125,
+    "defOutShare": 0.045,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0223,
+    "defQuestionableShare": 0.0122,
+    "tiers": {
+     "QB": {
+      "1": [
+       "Trevor",
+       "Paxton",
+       "Case",
+       "Teddy",
+       "Bo"
+      ],
+      "2": [
+       "Brock",
+       "Kevin",
+       "Drew",
+       "Brandon",
+       "Brett",
+       "Russell",
+       "Jarrett"
+      ],
+      "3": [
+       "Jeff",
+       "Jarrett",
+       "Zach"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Justin",
+       "Devontae",
+       "Jamaal",
+       "Royce",
+       "Chase",
+       "Samaje"
+      ],
+      "3": [
+       "Juwan",
+       "De'Angelo",
+       "LeVante",
+       "Mike",
+       "Marlon",
+       "Jaleel",
+       "Audric"
+      ],
+      "1": [
+       "C.J.",
+       "Phillip",
+       "Melvin",
+       "Javonte",
+       "Latavius"
+      ]
+     },
+     "WR": {
+      "3": [
+       "Jordan",
+       "Jordan",
+       "Emmanuel",
+       "Fred",
+       "Tyrie",
+       "Brandon",
+       "Devaughn"
+      ],
+      "1": [
+       "Demaryius",
+       "Kalif",
+       "Courtland",
+       "Tim",
+       "Diontae",
+       "Jerry",
+       "Montrell",
+       "Marvin"
+      ],
+      "2": [
+       "Bennie",
+       "Cody",
+       "Brendan",
+       "Isaiah",
+       "DaeSean",
+       "River",
+       "Kendall",
+       "Freddie",
+       "Jalen",
+       "Lil'Jordan",
+       "Troy"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Virgil",
+       "Jeff",
+       "Matt",
+       "Noah",
+       "Adam"
+      ],
+      "2": [
+       "A.J.",
+       "Brian",
+       "Nick",
+       "Eric",
+       "Lucas",
+       "Chris",
+       "Nate"
+      ],
+      "3": [
+       "Henry",
+       "Austin",
+       "Temarrick",
+       "Troy",
+       "Albert",
+       "Eric"
+      ]
+     },
+     "LB": {
+      "3": [
+       "Quentin"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Aqib",
+       "Chris",
+       "Bradley",
+       "Tramaine",
+       "Isaac",
+       "De'Vante",
+       "Ronald",
+       "Patrick",
+       "Riley",
+       "Ja'Quan",
+       "Fabian"
+      ],
+      "2": [
+       "Lorenzo",
+       "Davontae",
+       "Duke",
+       "Parnell",
+       "Kyle",
+       "Essang",
+       "Damarri",
+       "K'Waun",
+       "Tremon"
+      ],
+      "3": [
+       "Taurean",
+       "Marcus",
+       "Michael",
+       "Jamar",
+       "Craig",
+       "Nate",
+       "Michael",
+       "Kris"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "DET",
+    "reportCount": 41,
+    "out": 11,
+    "doubtful": 0,
+    "questionable": 21,
+    "outNames": [
+     "00-0036880",
+     "00-0036754",
+     "00-0037240",
+     "00-0037310",
+     "00-0036624",
+     "00-0035685",
+     "00-0034096",
+     "00-0033914"
+    ],
+    "offStarterValue": 0.5335,
+    "defStarterValue": 0.4728,
+    "offOutShare": 0.0482,
+    "defOutShare": 0.026,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.1428,
+    "defQuestionableShare": 0.0378,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Dan",
+       "Jake",
+       "Matt",
+       "Kyle",
+       "Chase",
+       "Tim",
+       "Nate",
+       "Teddy",
+       "Hendon"
+      ],
+      "1": [
+       "Matthew",
+       "Jared"
+      ],
+      "3": [
+       "David"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Dwayne",
+       "Zach",
+       "J.D.",
+       "D'Andre",
+       "Jahmyr"
+      ],
+      "3": [
+       "Joique",
+       "Tion",
+       "Kerryon",
+       "Wes",
+       "Ty",
+       "Jermar",
+       "Craig",
+       "Sione"
+      ],
+      "1": [
+       "Ameer",
+       "Theo",
+       "LeGarrette",
+       "Bo",
+       "Adrian",
+       "Jamaal",
+       "Godwin",
+       "Justin",
+       "David"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Anquan",
+       "Andre",
+       "Marvin",
+       "T.J.",
+       "Kenny",
+       "Jamal",
+       "Mohamed",
+       "Amon-Ra",
+       "Tom",
+       "D.J.",
+       "Josh",
+       "Jameson",
+       "Kalif",
+       "Tim"
+      ],
+      "2": [
+       "Golden",
+       "Jace",
+       "Andy",
+       "Brandon",
+       "Chris",
+       "Travis",
+       "Danny",
+       "Quintez",
+       "KhaDarel",
+       "Antoine",
+       "Donovan",
+       "Allen"
+      ],
+      "3": [
+       "Bradley"
+      ]
+     },
+     "TE": {
+      "3": [
+       "Matthew",
+       "Hakeem",
+       "Michael",
+       "Jerome",
+       "Hunter",
+       "James",
+       "Shane"
+      ],
+      "2": [
+       "Clay",
+       "Darren",
+       "Levine",
+       "Isaac",
+       "Jesse",
+       "Brock"
+      ],
+      "1": [
+       "Eric",
+       "Luke",
+       "Logan",
+       "T.J.",
+       "Jared",
+       "Sam"
+      ]
+     },
+     "CB": {
+      "2": [
+       "Johnson",
+       "Crezdon",
+       "Asa",
+       "D.J.",
+       "Mike",
+       "Amani",
+       "Rashaan",
+       "Justin",
+       "Ifeatu",
+       "Saivion",
+       "Mike",
+       "Emmanuel"
+      ],
+      "1": [
+       "Darius",
+       "Nevin",
+       "Darryl",
+       "A.J.",
+       "Jerry",
+       "Jeff",
+       "Khalil",
+       "Kindle",
+       "Cameron",
+       "Terrion",
+       "Amik"
+      ],
+      "3": [
+       "Alex",
+       "Adairius",
+       "Marcus",
+       "Dee",
+       "Michael",
+       "Mark",
+       "Steven"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "GB",
+    "reportCount": 62,
+    "out": 14,
+    "doubtful": 2,
+    "questionable": 17,
+    "outNames": [
+     "00-0031937",
+     "00-0027791",
+     "00-0034984",
+     "00-0034728",
+     "00-0033792",
+     "00-0036677",
+     "00-0037074",
+     "00-0036265"
+    ],
+    "offStarterValue": 0.4826,
+    "defStarterValue": 0.4242,
+    "offOutShare": 0.0206,
+    "defOutShare": 0.0088,
+    "offDoubtfulShare": 0.0162,
+    "defDoubtfulShare": 0.0095,
+    "offQuestionableShare": 0.0581,
+    "defQuestionableShare": 0.0508,
+    "tiers": {
+     "QB": {
+      "1": [
+       "Aaron",
+       "Brett",
+       "Jordan"
+      ],
+      "2": [
+       "Joe",
+       "Tim",
+       "DeShone",
+       "Sean",
+       "Malik"
+      ]
+     },
+     "RB": {
+      "1": [
+       "James",
+       "Jamaal",
+       "Aaron",
+       "Tyler",
+       "Josh"
+      ],
+      "3": [
+       "Christine",
+       "Devante",
+       "Lavon",
+       "Dexter",
+       "Patrick",
+       "Christopher"
+      ],
+      "2": [
+       "Kapri",
+       "A.J.",
+       "Emanuel"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Jordy",
+       "Davante",
+       "Geronimo",
+       "Randall",
+       "Ty",
+       "Allen",
+       "Marquez",
+       "Romeo",
+       "Dontayvion",
+       "Jayden"
+      ],
+      "2": [
+       "Jeff",
+       "Equanimeous",
+       "Jake",
+       "Malik",
+       "Christian",
+       "Bo",
+       "Samori",
+       "Malik"
+      ],
+      "3": [
+       "Trevor",
+       "Michael",
+       "J'Mon",
+       "Ryan",
+       "Tavon",
+       "Juwann"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Jared",
+       "Jimmy",
+       "Marcedes",
+       "Tucker"
+      ],
+      "2": [
+       "Richard",
+       "Lance",
+       "Robert",
+       "Jace",
+       "Dominique",
+       "Josiah",
+       "Ben"
+      ],
+      "3": [
+       "Emanuel",
+       "Tyler",
+       "John"
+      ]
+     },
+     "LB": {
+      "2": [
+       "Kamal"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Ladarius",
+       "Davon",
+       "Rasul",
+       "Eric",
+       "Keisean"
+      ],
+      "2": [
+       "Quinten",
+       "Josh",
+       "Lenzy",
+       "Bashaud",
+       "Josh",
+       "Tramon",
+       "Tony",
+       "Kevin",
+       "Chandon",
+       "Shemar",
+       "Corey",
+       "Carrington"
+      ],
+      "3": [
+       "Makinton",
+       "Herb",
+       "Donatello",
+       "Natrell",
+       "Jaire",
+       "Ka'dar",
+       "Isaac",
+       "Robert",
+       "David"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "HOU",
+    "reportCount": 74,
+    "out": 12,
+    "doubtful": 0,
+    "questionable": 19,
+    "outNames": [
+     "00-0031064",
+     "00-0030442",
+     "00-0036224",
+     "00-0033537",
+     "00-0032208",
+     "00-0036859",
+     "00-0033591",
+     "00-0039343"
+    ],
+    "offStarterValue": 0.5166,
+    "defStarterValue": 0.5048,
+    "offOutShare": 0.0008,
+    "defOutShare": 0.024,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0723,
+    "defQuestionableShare": 0.0824,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Brandon",
+       "Tom",
+       "Taylor",
+       "AJ",
+       "Davis",
+       "Tyrod",
+       "Jeff"
+      ],
+      "1": [
+       "Brock",
+       "T.J.",
+       "C.J."
+      ],
+      "3": [
+       "Josh",
+       "Joe",
+       "Deshaun",
+       "Kyle",
+       "Case"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Akeem",
+       "Lamar",
+       "Duke",
+       "David",
+       "Dontrell",
+       "Jaylen",
+       "Dameon",
+       "Joe"
+      ],
+      "2": [
+       "Tyler",
+       "Alfred",
+       "Buddy",
+       "Carlos",
+       "Taiwan",
+       "Royce",
+       "Devin"
+      ],
+      "3": [
+       "Jonathan",
+       "Jordan",
+       "Andre",
+       "D'Onta",
+       "Scottie",
+       "Rex",
+       "Dare"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Wendall",
+       "Keith",
+       "Braxton",
+       "Steven",
+       "Chad",
+       "Jalen",
+       "Amari",
+       "Phillip",
+       "Xavier",
+       "Noah",
+       "Jared"
+      ],
+      "1": [
+       "Will",
+       "DeAndre",
+       "Chris",
+       "DeAndre",
+       "Vyncint",
+       "Keke",
+       "Kenny",
+       "Brandin",
+       "Chris",
+       "Nico",
+       "Chris",
+       "Robert"
+      ],
+      "3": [
+       "Cobi",
+       "DeAndrew",
+       "Isaiah",
+       "Jordan",
+       "John"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Ryan",
+       "C.J.",
+       "Stephen",
+       "Jordan",
+       "Darren",
+       "Pharaoh",
+       "Brevin",
+       "Dalton"
+      ],
+      "2": [
+       "Ryan",
+       "Kahale",
+       "Teagan",
+       "Eric",
+       "Irv"
+      ],
+      "3": [
+       "Jordan",
+       "O.J."
+      ]
+     },
+     "CB": {
+      "1": [
+       "Johnathan",
+       "Bradley",
+       "Vernon",
+       "Lonnie",
+       "John",
+       "Terrance",
+       "Steven",
+       "Derek",
+       "Kamari"
+      ],
+      "2": [
+       "A.J.",
+       "Robert",
+       "Marcus",
+       "Kevin",
+       "Mike",
+       "Shareece",
+       "Aaron",
+       "Keion",
+       "Gareon",
+       "Mark",
+       "Tremon",
+       "Tavierre",
+       "Desmond",
+       "D'Angelo",
+       "Ka'dar",
+       "Myles",
+       "Jeff"
+      ],
+      "3": [
+       "Denzel",
+       "Treston",
+       "Johnson",
+       "Deante",
+       "Cornell",
+       "Jimmy",
+       "Jacobi",
+       "Kris"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "IND",
+    "reportCount": 63,
+    "out": 10,
+    "doubtful": 1,
+    "questionable": 11,
+    "outNames": [
+     "00-0031068",
+     "00-0033788",
+     "00-0035637",
+     "00-0030575",
+     "00-0029567",
+     "00-0036876",
+     "00-0039164",
+     "00-0037190"
+    ],
+    "offStarterValue": 0.5263,
+    "defStarterValue": 0.5799,
+    "offOutShare": 0.0482,
+    "defOutShare": 0.0227,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0308,
+    "defQuestionableShare": 0.0854,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Scott",
+       "Jacoby",
+       "Brian",
+       "Joe"
+      ],
+      "1": [
+       "Andrew",
+       "Philip",
+       "Carson",
+       "Nick",
+       "Gardner",
+       "Anthony"
+      ],
+      "3": [
+       "Brad",
+       "Chad",
+       "Jacob",
+       "Sam",
+       "Brett",
+       "Matt"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Josh",
+       "Matt",
+       "Marlon",
+       "Jordan",
+       "Jonathan",
+       "Darius",
+       "Zack"
+      ],
+      "1": [
+       "Frank",
+       "Jordan",
+       "Jonathan",
+       "Deon",
+       "Tyler"
+      ],
+      "2": [
+       "Robert",
+       "Nyheim",
+       "Trey"
+      ]
+     },
+     "WR": {
+      "3": [
+       "Devin",
+       "Donte",
+       "Daurice",
+       "Dontrelle",
+       "Ashton",
+       "Chad"
+      ],
+      "1": [
+       "Phillip",
+       "T.Y.",
+       "Kamar",
+       "Zach",
+       "Michael",
+       "Dezmon",
+       "Alec",
+       "Parris",
+       "Josh"
+      ],
+      "2": [
+       "Chester",
+       "K.J.",
+       "Ryan",
+       "Marcus",
+       "DeMichael",
+       "Mike",
+       "D.J.",
+       "Anthony",
+       "Adonai"
+      ]
+     },
+     "TE": {
+      "2": [
+       "Erik",
+       "Jason",
+       "Ross",
+       "Trey",
+       "Noah",
+       "Nikola",
+       "Jelani",
+       "Will",
+       "Andrew"
+      ],
+      "1": [
+       "Dwayne",
+       "Jack",
+       "Darrell",
+       "Ryan",
+       "Eric",
+       "Mo",
+       "Kylen"
+      ]
+     },
+     "LB": {
+      "3": [
+       "Deon"
+      ]
+     },
+     "CB": {
+      "3": [
+       "Chris",
+       "Charles",
+       "Quincy",
+       "D.J."
+      ],
+      "2": [
+       "T.J.",
+       "Rashaan",
+       "Nate",
+       "Marvell",
+       "Isaiah",
+       "Tremon",
+       "Dallis",
+       "Darrell",
+       "Tony",
+       "David",
+       "Chris"
+      ],
+      "1": [
+       "Vontae",
+       "Darryl",
+       "Kenny",
+       "Pierre",
+       "Xavier",
+       "T.J.",
+       "Rock",
+       "Brandon",
+       "Stephon",
+       "Jaylon",
+       "Julius",
+       "Samuel"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "JAX",
+    "reportCount": 40,
+    "out": 4,
+    "doubtful": 0,
+    "questionable": 12,
+    "outNames": [
+     "00-0031951",
+     "00-0036975",
+     "00-0035112",
+     "00-0040209"
+    ],
+    "offStarterValue": 0.5779,
+    "defStarterValue": 0.6111,
+    "offOutShare": 0.0,
+    "defOutShare": 0.0,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0628,
+    "defQuestionableShare": 0.0564,
+    "tiers": {
+     "QB": {
+      "1": [
+       "Blake",
+       "Mike",
+       "Trevor"
+      ],
+      "3": [
+       "Brandon",
+       "Joshua",
+       "Jake"
+      ],
+      "2": [
+       "Chad",
+       "Cody",
+       "Gardner",
+       "Nick",
+       "C.J.",
+       "Mac"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Denard",
+       "Corey",
+       "Joe",
+       "Leonard",
+       "David",
+       "Dare",
+       "Travis"
+      ],
+      "3": [
+       "Bronson",
+       "Daryl",
+       "Carlos",
+       "James",
+       "Mekhi",
+       "Snoop",
+       "D'Ernest"
+      ],
+      "2": [
+       "Chris",
+       "T.J.",
+       "Devine",
+       "Ryquell",
+       "Nathan",
+       "Jamycal",
+       "Tank"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Allen",
+       "Allen",
+       "Marqise",
+       "Dede",
+       "Keelan",
+       "Donte",
+       "Chris",
+       "Laviska",
+       "Tavon",
+       "Laquon",
+       "Marvin",
+       "Zay",
+       "Calvin",
+       "Brian"
+      ],
+      "3": [
+       "Tony",
+       "Shane",
+       "Jaydon",
+       "Montay",
+       "Rashad"
+      ],
+      "2": [
+       "Bryan",
+       "Arrelious",
+       "D.J.",
+       "C.J.",
+       "Kendric",
+       "Jamal",
+       "Christian",
+       "Tim",
+       "Parker",
+       "Elijah"
+      ]
+     },
+     "TE": {
+      "3": [
+       "Neal",
+       "Ben",
+       "Charles",
+       "Tyler",
+       "Eric",
+       "Kahale",
+       "Josiah"
+      ],
+      "2": [
+       "Alex",
+       "James",
+       "Blake",
+       "Nick",
+       "Tyler",
+       "Dan",
+       "Brenton"
+      ],
+      "1": [
+       "Marcedes",
+       "Seth",
+       "Chris",
+       "Luke",
+       "Evan"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Jalen",
+       "Prince",
+       "A.J.",
+       "Tre",
+       "Greg",
+       "Tyson",
+       "Darious",
+       "Montaric",
+       "Ronald"
+      ],
+      "2": [
+       "Davon",
+       "Josh",
+       "Tyler",
+       "Aaron",
+       "D.J.",
+       "Quenton",
+       "Brandon",
+       "Parry",
+       "Nevin",
+       "Tevaughn",
+       "Deantre",
+       "Jarrian"
+      ],
+      "3": [
+       "Jalen",
+       "Josiah",
+       "Chris",
+       "Luq",
+       "Gregory"
+      ]
+     },
+     "S": {
+      "3": [
+       "Akeem"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "KC",
+    "reportCount": 47,
+    "out": 11,
+    "doubtful": 9,
+    "questionable": 10,
+    "outNames": [
+     "00-0036374",
+     "00-0036367",
+     "00-0038090",
+     "00-0035140",
+     "00-0036660",
+     "00-0039067",
+     "00-0032217",
+     "00-0036913"
+    ],
+    "offStarterValue": 0.3752,
+    "defStarterValue": 0.5009,
+    "offOutShare": 0.0331,
+    "defOutShare": 0.021,
+    "offDoubtfulShare": 0.0612,
+    "defDoubtfulShare": 0.1015,
+    "offQuestionableShare": 0.0081,
+    "defQuestionableShare": 0.0149,
+    "tiers": {
+     "QB": {
+      "1": [
+       "Alex",
+       "Patrick"
+      ],
+      "2": [
+       "Nick",
+       "Chad",
+       "Blaine",
+       "Carson"
+      ],
+      "3": [
+       "Tyler",
+       "Matt",
+       "Shane"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Anthony",
+       "Spencer",
+       "Damien",
+       "Isiah",
+       "Carson",
+       "Samaje"
+      ],
+      "2": [
+       "Knile",
+       "Kareem",
+       "Akeem",
+       "Darrel",
+       "LeSean",
+       "Clyde",
+       "Le'Veon",
+       "Jerick"
+      ],
+      "3": [
+       "Charcandrick",
+       "C.J.",
+       "Darwin",
+       "Derrick",
+       "Ronald",
+       "La'Mical",
+       "Keaontay"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Jeremy",
+       "De'Anthony",
+       "Tyreek",
+       "Sammy",
+       "Mecole",
+       "Kadarius",
+       "Marquez",
+       "Richie",
+       "Xavier",
+       "DeAndre"
+      ],
+      "2": [
+       "Albert",
+       "Chris",
+       "Demarcus",
+       "Jehu",
+       "Byron",
+       "Skyy",
+       "JuJu",
+       "Rashee",
+       "Marquise",
+       "Nikko"
+      ],
+      "3": [
+       "Marcus",
+       "Kelvin",
+       "Gehrig",
+       "Josh",
+       "Justin",
+       "Justyn"
+      ]
+     },
+     "TE": {
+      "2": [
+       "Demetrius",
+       "Nick",
+       "Noah"
+      ],
+      "1": [
+       "Travis"
+      ],
+      "3": [
+       "James",
+       "Orson",
+       "Deon",
+       "Blake"
+      ]
+     },
+     "CB": {
+      "3": [
+       "Phillip",
+       "Kenneth",
+       "Keith",
+       "Alex",
+       "Thakarius",
+       "Chris",
+       "Ekow",
+       "Nic",
+       "Christian"
+      ],
+      "2": [
+       "Terrance",
+       "Darrelle",
+       "Orlando",
+       "Rashad",
+       "Morris",
+       "Deandre",
+       "Antonio",
+       "Mike",
+       "Jaylen",
+       "Keith"
+      ],
+      "1": [
+       "Steven",
+       "Marcus",
+       "Charvarius",
+       "Tremon",
+       "Kendall",
+       "Bashaud",
+       "L'Jarius",
+       "Joshua",
+       "Trent"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "LA",
+    "reportCount": 46,
+    "out": 7,
+    "doubtful": 8,
+    "questionable": 9,
+    "outNames": [
+     "00-0035669",
+     "00-0032242",
+     "00-0036862",
+     "00-0035696",
+     "00-0036339",
+     "00-0037841",
+     "00-0039772"
+    ],
+    "offStarterValue": 0.61,
+    "defStarterValue": 0.55,
+    "offOutShare": 0.0138,
+    "defOutShare": 0.0102,
+    "offDoubtfulShare": 0.0752,
+    "defDoubtfulShare": 0.0328,
+    "offQuestionableShare": 0.0986,
+    "defQuestionableShare": 0.0117,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Sean",
+       "John",
+       "Bryce",
+       "Carson",
+       "Jimmy"
+      ],
+      "1": [
+       "Jared",
+       "Matthew",
+       "Baker"
+      ],
+      "3": [
+       "Blake"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Todd",
+       "C.J.",
+       "Cam",
+       "Sony",
+       "Kyren"
+      ],
+      "3": [
+       "Aaron",
+       "Chase",
+       "Malcolm",
+       "John",
+       "Raymond",
+       "Xavier",
+       "Ronnie",
+       "Zach"
+      ],
+      "2": [
+       "Lance",
+       "Justin",
+       "Jake",
+       "Royce",
+       "Blake"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Pharoh",
+       "Tavon",
+       "Brian",
+       "Mike",
+       "KhaDarel",
+       "JoJo",
+       "Trishton",
+       "Ben",
+       "Tutu",
+       "Lance",
+       "Austin",
+       "Jordan"
+      ],
+      "1": [
+       "Cooper",
+       "Josh",
+       "Sammy",
+       "Robert",
+       "Brandin",
+       "Nsimba",
+       "Van",
+       "Odell",
+       "Brandon",
+       "Puka",
+       "Demarcus",
+       "Xavier"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Lance",
+       "Tyler"
+      ],
+      "2": [
+       "Temarrick",
+       "Gerald",
+       "Brycen",
+       "Colby"
+      ],
+      "3": [
+       "Derek",
+       "Johnny",
+       "Davis",
+       "Hunter"
+      ]
+     },
+     "LB": {
+      "2": [
+       "Chris"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Trumaine",
+       "Troy",
+       "E.J.",
+       "Nickell",
+       "Marcus",
+       "Darious",
+       "Aqib",
+       "Jalen",
+       "Derion",
+       "Cobie"
+      ],
+      "2": [
+       "Michael",
+       "Kevin",
+       "Sam",
+       "Donte",
+       "David",
+       "Robert",
+       "Shaun",
+       "Tre'Vius",
+       "Ahkello",
+       "Josh"
+      ],
+      "3": [
+       "Emmanuel"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "LAC",
+    "reportCount": 47,
+    "out": 9,
+    "doubtful": 6,
+    "questionable": 12,
+    "outNames": [
+     "00-0032895",
+     "00-0035903",
+     "00-0036988",
+     "00-0033156",
+     "00-0035591",
+     "00-0030500",
+     "00-0034184",
+     "00-0040471"
+    ],
+    "offStarterValue": 0.4715,
+    "defStarterValue": 0.5431,
+    "offOutShare": 0.0024,
+    "defOutShare": 0.0142,
+    "offDoubtfulShare": 0.0012,
+    "defDoubtfulShare": 0.015,
+    "offQuestionableShare": 0.0443,
+    "defQuestionableShare": 0.0439,
+    "tiers": {
+     "QB": {
+      "1": [
+       "Philip",
+       "Kellen",
+       "Justin"
+      ],
+      "2": [
+       "Geno",
+       "Tyrod",
+       "Chase",
+       "Will",
+       "Taylor"
+      ],
+      "3": [
+       "Easton"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Austin",
+       "Melvin",
+       "Justin",
+       "Zander",
+       "Gus"
+      ],
+      "3": [
+       "Branden",
+       "Troymaine",
+       "Kalen",
+       "Isaiah",
+       "Kimani"
+      ],
+      "2": [
+       "Detrez",
+       "Joshua",
+       "Larry",
+       "Hassan"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Mike",
+       "Tyrell",
+       "Keenan",
+       "K.J.",
+       "Quentin",
+       "Derius"
+      ],
+      "2": [
+       "Travis",
+       "Jason",
+       "Andre",
+       "Jalen",
+       "Joe",
+       "Tyron",
+       "Josh",
+       "DeAndre",
+       "Alex",
+       "D.J.",
+       "Ladd"
+      ],
+      "3": [
+       "Geremy",
+       "Michael"
+      ]
+     },
+     "TE": {
+      "3": [
+       "Jeff",
+       "Sean",
+       "Dylan",
+       "Lance",
+       "Tre'",
+       "Nick",
+       "Tucker"
+      ],
+      "2": [
+       "Sean",
+       "Antonio",
+       "Virgil",
+       "Stephen",
+       "Donald",
+       "Stone"
+      ],
+      "1": [
+       "Hunter",
+       "Gerald",
+       "Will"
+      ]
+     },
+     "LB": {
+      "2": [
+       "Kyle"
+      ]
+     },
+     "CB": {
+      "2": [
+       "Michael",
+       "Brandon",
+       "Davontae",
+       "Essang",
+       "Ja'Sir",
+       "Bryce",
+       "Tarheeb"
+      ],
+      "1": [
+       "Trevor",
+       "Casey",
+       "Desmond",
+       "Chris",
+       "Asante",
+       "Elijah",
+       "Cam",
+       "Kristian"
+      ],
+      "3": [
+       "Craig",
+       "Jeff",
+       "Tevaughn",
+       "Deane"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "LV",
+    "reportCount": 46,
+    "out": 7,
+    "doubtful": 1,
+    "questionable": 8,
+    "outNames": [
+     "00-0035700",
+     "00-0037503",
+     "00-0039066",
+     "00-0032104",
+     "00-0030565",
+     "00-0033381",
+     "00-0037255"
+    ],
+    "offStarterValue": 0.6418,
+    "defStarterValue": 0.5628,
+    "offOutShare": 0.055,
+    "defOutShare": 0.0855,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0248,
+    "defQuestionableShare": 0.0732,
+    "tiers": {
+     "QB": {
+      "3": [
+       "Nathan",
+       "Brian"
+      ],
+      "2": [
+       "Marcus",
+       "Jarrett",
+       "Jimmy",
+       "Desmond"
+      ],
+      "1": [
+       "Derek",
+       "Aidan"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Devontae",
+       "Peyton",
+       "Ameer",
+       "Dylan"
+      ],
+      "3": [
+       "Theo",
+       "Josh",
+       "Brittain",
+       "Brandon"
+      ],
+      "1": [
+       "Jalen",
+       "Zamir"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Bryan",
+       "Henry",
+       "Zay",
+       "Davante",
+       "Mack",
+       "DeAndre",
+       "Tre",
+       "Jakobi"
+      ],
+      "2": [
+       "Hunter",
+       "Nelson",
+       "DeSean",
+       "Keelan",
+       "D.J.",
+       "Ramel"
+      ],
+      "3": [
+       "Terrace"
+      ]
+     },
+     "TE": {
+      "3": [
+       "Jason",
+       "Derek",
+       "Nick",
+       "Jesper"
+      ],
+      "2": [
+       "Foster",
+       "Daniel",
+       "Harrison",
+       "Justin"
+      ],
+      "1": [
+       "Darren",
+       "Austin",
+       "Michael",
+       "Brock"
+      ]
+     },
+     "CB": {
+      "2": [
+       "Nevin",
+       "Amik",
+       "Keisean",
+       "Isaiah",
+       "Sam",
+       "Jakorian",
+       "Darnay"
+      ],
+      "1": [
+       "Damon",
+       "Trayvon",
+       "Brandon",
+       "Nate",
+       "Casey",
+       "Jack",
+       "Decamerion"
+      ],
+      "3": [
+       "Desmond",
+       "Sidney",
+       "Tyler"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "MIA",
+    "reportCount": 54,
+    "out": 6,
+    "doubtful": 5,
+    "questionable": 20,
+    "outNames": [
+     "00-0029701",
+     "00-0034832",
+     "00-0033050",
+     "00-0033570",
+     "00-0034789",
+     "00-0034794"
+    ],
+    "offStarterValue": 0.4716,
+    "defStarterValue": 0.5935,
+    "offOutShare": 0.0009,
+    "defOutShare": 0.0395,
+    "offDoubtfulShare": 0.0185,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.1041,
+    "defQuestionableShare": 0.1263,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Matt",
+       "T.J.",
+       "Brock",
+       "Josh",
+       "Reid",
+       "Jacoby",
+       "Mike",
+       "Tyler"
+      ],
+      "1": [
+       "Ryan",
+       "Jay",
+       "Ryan",
+       "Tua",
+       "Teddy"
+      ],
+      "3": [
+       "David",
+       "Jake",
+       "Skylar"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Damien",
+       "Kenyan",
+       "De'Veon",
+       "Brandon",
+       "Kalen",
+       "De'Lance",
+       "Patrick",
+       "DeAndre",
+       "Phillip",
+       "Duke",
+       "Christopher"
+      ],
+      "1": [
+       "Jay",
+       "Myles",
+       "Malcolm",
+       "Raheem"
+      ],
+      "2": [
+       "Senorise",
+       "Samaje",
+       "Salvon",
+       "Matt",
+       "Jeffery",
+       "Devon",
+       "Jaylen"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Jarvis",
+       "DeVante",
+       "Kenny",
+       "Trevor",
+       "Allen",
+       "Albert",
+       "Jaylen",
+       "Tyreek",
+       "Malik"
+      ],
+      "3": [
+       "Jakeem",
+       "Marcus",
+       "Kirk",
+       "Tanner",
+       "Erik",
+       "Cedrick",
+       "Chase"
+      ],
+      "2": [
+       "Leonte",
+       "Rashawn",
+       "Brice",
+       "Danny",
+       "Isaiah",
+       "Mack",
+       "Lynn",
+       "Trent",
+       "River",
+       "Robbie",
+       "Braxton",
+       "D'Wayne"
+      ]
+     },
+     "TE": {
+      "3": [
+       "Dominique",
+       "Thomas",
+       "A.J.",
+       "Nick",
+       "Clive",
+       "Hunter",
+       "Julian",
+       "Jack"
+      ],
+      "2": [
+       "MarQueis",
+       "Durham",
+       "Cethan"
+      ],
+      "1": [
+       "Dion",
+       "Anthony",
+       "Mike",
+       "Adam",
+       "Jonnu"
+      ]
+     },
+     "CB": {
+      "3": [
+       "Byron",
+       "Lafayette",
+       "Tony",
+       "Tae",
+       "Jamal",
+       "Noah",
+       "Justin",
+       "Eli",
+       "Ethan"
+      ],
+      "1": [
+       "Xavien",
+       "Cordrea",
+       "Torry",
+       "Byron",
+       "Kader",
+       "Keion",
+       "Jalen"
+      ],
+      "2": [
+       "Alterraun",
+       "Cornell",
+       "Jalen",
+       "Nate",
+       "Nik",
+       "Trill",
+       "Justin",
+       "Cam",
+       "Storm",
+       "Siran"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "MIN",
+    "reportCount": 51,
+    "out": 13,
+    "doubtful": 1,
+    "questionable": 11,
+    "outNames": [
+     "00-0034843",
+     "00-0035588",
+     "00-0036337",
+     "00-0038565",
+     "00-0037301",
+     "00-0035236",
+     "00-0037291",
+     "00-0038584"
+    ],
+    "offStarterValue": 0.4894,
+    "defStarterValue": 0.4785,
+    "offOutShare": 0.0785,
+    "defOutShare": 0.0305,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0221,
+    "offQuestionableShare": 0.0247,
+    "defQuestionableShare": 0.0022,
+    "tiers": {
+     "QB": {
+      "3": [
+       "Taylor",
+       "Kyle",
+       "Joshua",
+       "Brett"
+      ],
+      "2": [
+       "Shaun",
+       "Teddy",
+       "Trevor",
+       "Kellen",
+       "Nick"
+      ],
+      "1": [
+       "Sam",
+       "Case",
+       "Kirk",
+       "Sean",
+       "Jaren",
+       "Sam"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Cordarrelle",
+       "Dalvin",
+       "Ty",
+       "Aaron"
+      ],
+      "2": [
+       "Jerick",
+       "Matt",
+       "Latavius",
+       "Ameer",
+       "Alexander",
+       "Cam"
+      ],
+      "3": [
+       "Adrian",
+       "Mack",
+       "Mike",
+       "Kene",
+       "Wayne"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Stefon",
+       "Adam",
+       "Justin",
+       "Jalen",
+       "Jordan",
+       "Brandon"
+      ],
+      "2": [
+       "Jarius",
+       "Charles",
+       "Chad",
+       "Olabisi",
+       "K.J.",
+       "Dede",
+       "Ihmir",
+       "Jalen"
+      ],
+      "3": [
+       "Laquon",
+       "Stacy",
+       "Michael",
+       "Brandon",
+       "Aldrick",
+       "Alexander",
+       "Dan",
+       "Lucky",
+       "Trent"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Kyle",
+       "Tyler",
+       "Irv",
+       "T.J."
+      ],
+      "2": [
+       "Rhett",
+       "David",
+       "Christopher",
+       "Josh"
+      ],
+      "3": [
+       "Kyle",
+       "Hale",
+       "Luke",
+       "Johnny",
+       "Nick"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Xavier",
+       "Trae",
+       "Mike",
+       "Dylan",
+       "Jeff",
+       "Patrick",
+       "Cameron",
+       "Mekhi",
+       "Akayleb",
+       "Byron",
+       "Stephon"
+      ],
+      "2": [
+       "Terence",
+       "Captain",
+       "Mackensie",
+       "Holton",
+       "Duke",
+       "Chandon",
+       "Andrew",
+       "Jaylin",
+       "Fabian",
+       "Shaquill"
+      ],
+      "3": [
+       "Marcus",
+       "Tramaine",
+       "Craig",
+       "Kris",
+       "Harrison",
+       "Kalon",
+       "NaJee",
+       "Dwight"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "NE",
+    "reportCount": 57,
+    "out": 9,
+    "doubtful": 0,
+    "questionable": 29,
+    "outNames": [
+     "00-0032071",
+     "00-0033883",
+     "00-0037413",
+     "00-0039147",
+     "00-0039907",
+     "00-0034720",
+     "00-0034828",
+     "00-0036909"
+    ],
+    "offStarterValue": 0.4497,
+    "defStarterValue": 0.4969,
+    "offOutShare": 0.0109,
+    "defOutShare": 0.0162,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0966,
+    "defQuestionableShare": 0.1077,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Jacoby",
+       "Jimmy",
+       "Brian",
+       "Mac"
+      ],
+      "1": [
+       "Tom",
+       "Cam",
+       "Bailey",
+       "Drake"
+      ],
+      "3": [
+       "Jarrett",
+       "Cody",
+       "Nathan",
+       "Joe"
+      ]
+     },
+     "RB": {
+      "1": [
+       "LeGarrette",
+       "Dion",
+       "James",
+       "Cordarrelle",
+       "Sony",
+       "Damien",
+       "Rhamondre",
+       "Ezekiel"
+      ],
+      "2": [
+       "Brandon",
+       "Rex",
+       "Kevin",
+       "Pierre",
+       "Jamycal"
+      ],
+      "3": [
+       "D.J.",
+       "Mike",
+       "J.J.",
+       "Terrell",
+       "Antonio"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Danny",
+       "Julian",
+       "Malcolm",
+       "Mohamed",
+       "Damiere",
+       "Gunner",
+       "Nelson",
+       "Alex",
+       "Ja'Lynn"
+      ],
+      "3": [
+       "Matt",
+       "Michael",
+       "Kenny",
+       "N'Keal",
+       "Raleigh"
+      ],
+      "1": [
+       "Chris",
+       "Phillip",
+       "Brandin",
+       "Jakobi",
+       "Donte",
+       "Kendrick",
+       "DeVante",
+       "Tyquan",
+       "Demario",
+       "Jalen",
+       "Kayshon",
+       "Javon"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Martellus",
+       "Rob",
+       "Benjamin",
+       "Hunter",
+       "Mike"
+      ],
+      "2": [
+       "Matt",
+       "Dwayne",
+       "Matt",
+       "Dalton",
+       "Jonnu",
+       "Pharaoh",
+       "Austin"
+      ],
+      "3": [
+       "Jacob",
+       "Ryan",
+       "Devin",
+       "Matt",
+       "Jaheim"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Cyrus",
+       "Jonathan",
+       "Malcolm",
+       "Stephon",
+       "J.C.",
+       "Christian",
+       "Marcellas"
+      ],
+      "2": [
+       "Justin",
+       "Joejuan",
+       "Justin",
+       "Myles",
+       "Jalen",
+       "Shaun",
+       "Marcus",
+       "Alex",
+       "Isaiah"
+      ],
+      "3": [
+       "Johnson",
+       "Keion",
+       "Duke",
+       "Michael"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "NO",
+    "reportCount": 57,
+    "out": 17,
+    "doubtful": 0,
+    "questionable": 18,
+    "outNames": [
+     "00-0030067",
+     "00-0033935",
+     "00-0032379",
+     "00-0029931",
+     "00-0031765",
+     "00-0031372",
+     "00-0032059",
+     "00-0036937"
+    ],
+    "offStarterValue": 0.4598,
+    "defStarterValue": 0.5917,
+    "offOutShare": 0.0905,
+    "defOutShare": 0.0418,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0555,
+    "defQuestionableShare": 0.1067,
+    "tiers": {
+     "QB": {
+      "1": [
+       "Drew",
+       "Ian",
+       "Andy",
+       "Derek"
+      ],
+      "2": [
+       "Luke",
+       "Chase",
+       "Teddy",
+       "Jameis",
+       "Spencer"
+      ],
+      "3": [
+       "Taysom",
+       "Jake"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Marcus",
+       "Alvin"
+      ],
+      "2": [
+       "Tim",
+       "Mark",
+       "Travaris",
+       "Dwayne",
+       "Latavius",
+       "Jamaal"
+      ],
+      "3": [
+       "Trey",
+       "Jonathan",
+       "Tony",
+       "David",
+       "Eno",
+       "Kendre",
+       "Jordan"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Brandin",
+       "Michael",
+       "Ted",
+       "Tre'Quan",
+       "Emmanuel",
+       "Marquez",
+       "Chris",
+       "Rashid",
+       "Marquez",
+       "Cedrick"
+      ],
+      "2": [
+       "Tommylee",
+       "Willie",
+       "Brandon",
+       "Keith",
+       "Deonte",
+       "Lil'Jordan",
+       "Ty",
+       "Kirk",
+       "A.T.",
+       "Dante",
+       "Kevin"
+      ],
+      "3": [
+       "Austin",
+       "Simmie",
+       "Kenny",
+       "Lynn",
+       "Mason"
+      ]
+     },
+     "TE": {
+      "3": [
+       "John",
+       "Dan",
+       "Jimmy"
+      ],
+      "1": [
+       "Coby",
+       "Josh",
+       "Benjamin",
+       "Jared",
+       "Adam",
+       "Juwan"
+      ],
+      "2": [
+       "Garrett",
+       "Michael",
+       "Foster",
+       "Dallin"
+      ]
+     },
+     "CB": {
+      "1": [
+       "B.W.",
+       "Marshon",
+       "Eli",
+       "Janoris",
+       "Paulson",
+       "Alontae",
+       "Kool-Aid"
+      ],
+      "3": [
+       "Sterling",
+       "Ken",
+       "Justin",
+       "Arthur",
+       "Chris",
+       "Shemar"
+      ],
+      "2": [
+       "De'Vante",
+       "P.J.",
+       "Patrick",
+       "Bradley",
+       "Isaac",
+       "Rico"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "NYG",
+    "reportCount": 57,
+    "out": 16,
+    "doubtful": 3,
+    "questionable": 6,
+    "outNames": [
+     "00-0030520",
+     "00-0033460",
+     "00-0036913",
+     "00-0036552",
+     "00-0031933",
+     "00-0036502",
+     "00-0039019",
+     "00-0037259"
+    ],
+    "offStarterValue": 0.4208,
+    "defStarterValue": 0.451,
+    "offOutShare": 0.012,
+    "defOutShare": 0.0775,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0103,
+    "offQuestionableShare": 0.0236,
+    "defQuestionableShare": 0.0165,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Eli",
+       "Josh",
+       "Davis",
+       "Colt",
+       "Jake",
+       "Tommy"
+      ],
+      "3": [
+       "Geno",
+       "Kyle",
+       "Alex",
+       "Tim"
+      ],
+      "1": [
+       "Daniel",
+       "Mike",
+       "Tyrod",
+       "Drew"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Rashad",
+       "Wayne",
+       "Shane",
+       "Orleans",
+       "Saquon",
+       "Elijhaa",
+       "Dion",
+       "Gary",
+       "Eric",
+       "Devin"
+      ],
+      "2": [
+       "Bobby",
+       "Javorius",
+       "Devontae",
+       "Matt"
+      ],
+      "3": [
+       "George",
+       "Paul",
+       "Shane",
+       "Alfred",
+       "Jashaun",
+       "Tyrone"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Odell",
+       "Victor",
+       "Dwayne",
+       "Roger",
+       "Hunter",
+       "Cody",
+       "Golden",
+       "Kadarius",
+       "Kenny",
+       "Gunner",
+       "Malik"
+      ],
+      "2": [
+       "Tavarres",
+       "Sterling",
+       "Travis",
+       "Corey",
+       "Russell",
+       "Da'Mari",
+       "Austin",
+       "C.J.",
+       "Collin",
+       "Isaiah",
+       "Marcus",
+       "Richie",
+       "Jalin",
+       "Parris",
+       "Bryce"
+      ],
+      "3": [
+       "Marquis",
+       "Kalif",
+       "Bennie",
+       "Cody",
+       "Darius",
+       "David",
+       "Dante",
+       "John",
+       "Wan'Dale",
+       "Ihmir"
+      ]
+     },
+     "TE": {
+      "3": [
+       "Larry",
+       "Jerell",
+       "Levine",
+       "Lawrence"
+      ],
+      "1": [
+       "Will",
+       "Evan",
+       "Rhett",
+       "Garrett",
+       "Kyle",
+       "Daniel",
+       "Darren"
+      ],
+      "2": [
+       "Scott",
+       "Kaden",
+       "Chris",
+       "Nick",
+       "Chris"
+      ]
+     },
+     "LB": {
+      "2": [
+       "Eric"
+      ]
+     },
+     "CB": {
+      "2": [
+       "Trevin",
+       "Eli",
+       "Darryl",
+       "Brandon",
+       "Tony",
+       "Antonio",
+       "Corey",
+       "Aaron",
+       "Jarren",
+       "Greg"
+      ],
+      "3": [
+       "Coty",
+       "Grant",
+       "Darnay",
+       "Adoree'",
+       "Keion",
+       "Nick",
+       "Rodarius",
+       "Tre",
+       "Dee",
+       "Art",
+       "Divaad"
+      ],
+      "1": [
+       "Janoris",
+       "Leon",
+       "Dominique",
+       "Ross",
+       "B.W.",
+       "Deandre",
+       "Sam",
+       "James",
+       "Isaac",
+       "Cordale",
+       "Fabian",
+       "Deonte",
+       "Andru"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "NYJ",
+    "reportCount": 49,
+    "out": 18,
+    "doubtful": 3,
+    "questionable": 11,
+    "outNames": [
+     "00-0026166",
+     "00-0036504",
+     "00-0032466",
+     "00-0035383",
+     "00-0031389",
+     "00-0036273",
+     "00-0037805",
+     "00-0037013"
+    ],
+    "offStarterValue": 0.4836,
+    "defStarterValue": 0.384,
+    "offOutShare": 0.0652,
+    "defOutShare": 0.0161,
+    "offDoubtfulShare": 0.0008,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.1173,
+    "defQuestionableShare": 0.0107,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Christian",
+       "Josh",
+       "David",
+       "Joe",
+       "Trevor",
+       "Tyrod"
+      ],
+      "1": [
+       "Ryan",
+       "Bryce",
+       "Sam",
+       "Zach",
+       "Mike",
+       "Aaron"
+      ],
+      "3": [
+       "Davis",
+       "Chris",
+       "Brett"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Brandon",
+       "Trenton",
+       "Kenneth",
+       "Josh",
+       "Ty",
+       "Michael",
+       "Dalvin",
+       "Braelon",
+       "Isaiah"
+      ],
+      "3": [
+       "Bilal",
+       "De'Angelo",
+       "Austin",
+       "La'Mical",
+       "James",
+       "Israel"
+      ],
+      "1": [
+       "Elijah",
+       "Le'Veon",
+       "Zonovan",
+       "Breece"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Quincy",
+       "Jalin",
+       "Robbie",
+       "Brandon",
+       "JoJo",
+       "Jermaine",
+       "Braxton",
+       "Josh",
+       "Jamison",
+       "Breshad",
+       "Keelan",
+       "Garrett",
+       "Corey",
+       "Allen",
+       "Davante"
+      ],
+      "2": [
+       "Devin",
+       "Charone",
+       "Chad",
+       "ArDarius",
+       "Andre",
+       "Deontay",
+       "Ty",
+       "Demaryius",
+       "Vyncint",
+       "Denzel",
+       "Jeff",
+       "Elijah",
+       "Xavier",
+       "Randall",
+       "Malachi"
+      ],
+      "3": [
+       "D.J.",
+       "Jason",
+       "Irvin"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Austin",
+       "Brandon",
+       "Jordan",
+       "Christopher",
+       "C.J.",
+       "Tyler"
+      ],
+      "2": [
+       "Eric",
+       "Trevon",
+       "Daniel",
+       "Jeremy"
+      ],
+      "3": [
+       "Neal",
+       "Bronson",
+       "Ross",
+       "Kenny"
+      ]
+     },
+     "CB": {
+      "2": [
+       "Marcus",
+       "Nick",
+       "Buster",
+       "Rashard",
+       "Blessuan",
+       "Brian",
+       "Corey",
+       "Javelin",
+       "Bryce",
+       "Brandin",
+       "Isaiah",
+       "Qwan'tez"
+      ],
+      "3": [
+       "Dexter",
+       "Derrick",
+       "Jeremy",
+       "Parry",
+       "Maurice",
+       "Nate",
+       "Lamar",
+       "Rachad",
+       "Justin",
+       "D.J.",
+       "Jarrick",
+       "Kendall",
+       "Isaiah"
+      ],
+      "1": [
+       "Darryl",
+       "Darrelle",
+       "Morris",
+       "Trumaine",
+       "Arthur",
+       "Michael",
+       "Ahmad"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "PHI",
+    "reportCount": 55,
+    "out": 13,
+    "doubtful": 7,
+    "questionable": 6,
+    "outNames": [
+     "00-0031950",
+     "00-0032950",
+     "00-0026901",
+     "00-0031549",
+     "00-0030561",
+     "00-0036401",
+     "00-0036389",
+     "00-0036878"
+    ],
+    "offStarterValue": 0.3054,
+    "defStarterValue": 0.4829,
+    "offOutShare": 0.0502,
+    "defOutShare": 0.0702,
+    "offDoubtfulShare": 0.0319,
+    "defDoubtfulShare": 0.0207,
+    "offQuestionableShare": 0.0357,
+    "defQuestionableShare": 0.0165,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Chase",
+       "Carson",
+       "Nick",
+       "Josh",
+       "Ian",
+       "Marcus",
+       "Kenny"
+      ],
+      "3": [
+       "Nate",
+       "Reid",
+       "Tanner"
+      ],
+      "1": [
+       "Jalen",
+       "Gardner"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Darren",
+       "Kenjon",
+       "LeGarrette",
+       "Josh",
+       "Miles",
+       "Kenneth",
+       "D'Andre",
+       "Saquon"
+      ],
+      "2": [
+       "Byron",
+       "Jay",
+       "Jason",
+       "Will"
+      ],
+      "3": [
+       "Corey",
+       "Wendell",
+       "Boston",
+       "Jordan",
+       "Trey",
+       "Rashaad"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Nelson",
+       "Dorial",
+       "Alshon",
+       "DeVonta",
+       "Britain",
+       "A.J.",
+       "Julio",
+       "Jahan"
+      ],
+      "2": [
+       "Bryce",
+       "Marcus",
+       "Shelton",
+       "Torrey",
+       "Mack",
+       "Golden",
+       "Mike",
+       "Deontay",
+       "Robert",
+       "J.J.",
+       "Quez",
+       "Jalen",
+       "Travis",
+       "John",
+       "Zach",
+       "Olamide",
+       "Ainias",
+       "Johnny"
+      ],
+      "3": [
+       "Paul",
+       "Greg"
+      ]
+     },
+     "TE": {
+      "2": [
+       "Brent",
+       "Jordan",
+       "Jack",
+       "C.J."
+      ],
+      "1": [
+       "Zach",
+       "Dallas",
+       "Grant"
+      ],
+      "3": [
+       "Trey",
+       "Richard",
+       "Joshua",
+       "Tyree",
+       "E.J."
+      ]
+     },
+     "LB": {
+      "3": [
+       "Bryan"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Leodis",
+       "Nolan",
+       "Jalen",
+       "Ronald",
+       "Rasul",
+       "Darius",
+       "Josiah",
+       "Steven",
+       "James",
+       "Bradley",
+       "Quinyon"
+      ],
+      "3": [
+       "Dwayne",
+       "Cre'von",
+       "Josh",
+       "Craig",
+       "Tay",
+       "Eli",
+       "Isaiah"
+      ],
+      "2": [
+       "C.J.",
+       "Patrick",
+       "Avonte",
+       "Sidney",
+       "Deiondre'",
+       "Michael",
+       "Zech",
+       "Kary",
+       "Josh",
+       "Kelee",
+       "Cooper"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "PIT",
+    "reportCount": 52,
+    "out": 8,
+    "doubtful": 1,
+    "questionable": 6,
+    "outNames": [
+     "00-0031956",
+     "00-0027829",
+     "00-0035219",
+     "00-0036870",
+     "00-0036846",
+     "00-0039739",
+     "00-0035286",
+     "00-0039389"
+    ],
+    "offStarterValue": 0.528,
+    "defStarterValue": 0.6335,
+    "offOutShare": 0.0,
+    "defOutShare": 0.0012,
+    "offDoubtfulShare": 0.0041,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0,
+    "defQuestionableShare": 0.0357,
+    "tiers": {
+     "QB": {
+      "1": [
+       "Ben",
+       "Devlin",
+       "Kenny",
+       "Russell"
+      ],
+      "2": [
+       "Landry",
+       "Mason",
+       "Paxton",
+       "Justin"
+      ],
+      "3": [
+       "Zach",
+       "Joshua",
+       "Dwayne",
+       "Mitchell",
+       "Kyle"
+      ]
+     },
+     "RB": {
+      "2": [
+       "DeAngelo",
+       "Fitzgerald",
+       "Anthony",
+       "Jaylen"
+      ],
+      "1": [
+       "Le'Veon",
+       "James",
+       "Trey",
+       "Kerrith",
+       "Najee",
+       "Cordarrelle"
+      ],
+      "3": [
+       "Stevan",
+       "Jaylen",
+       "Benny",
+       "Kalen",
+       "Godwin"
+      ]
+     },
+     "WR": {
+      "3": [
+       "Darrius",
+       "Cobi",
+       "Eli",
+       "Demarcus",
+       "Justin",
+       "Amara",
+       "Deon",
+       "Ben"
+      ],
+      "2": [
+       "Antonio",
+       "Ryan",
+       "Johnny",
+       "Cody",
+       "Gunner",
+       "Miles",
+       "Mike",
+       "Scott"
+      ],
+      "1": [
+       "Sammie",
+       "Martavis",
+       "JuJu",
+       "James",
+       "Diontae",
+       "Ray-Ray",
+       "Chase",
+       "George",
+       "Steven",
+       "Calvin",
+       "Allen",
+       "Van"
+      ]
+     },
+     "TE": {
+      "2": [
+       "David",
+       "Jesse",
+       "Vance",
+       "Zach",
+       "Nick",
+       "Darnell",
+       "MyCole"
+      ],
+      "3": [
+       "Ladarius",
+       "Xavier",
+       "Connor",
+       "Rod"
+      ],
+      "1": [
+       "Eric",
+       "Pat"
+      ]
+     },
+     "LB": {
+      "2": [
+       "Tegray"
+      ]
+     },
+     "CB": {
+      "2": [
+       "William",
+       "Justin",
+       "Cameron",
+       "Justin",
+       "James",
+       "Levi",
+       "Cory"
+      ],
+      "1": [
+       "Ross",
+       "Joe",
+       "Mike",
+       "Coty",
+       "Steven",
+       "Arthur",
+       "Patrick",
+       "Joey",
+       "Chandon",
+       "Beanie",
+       "Donte"
+      ],
+      "3": [
+       "Al-Hajj",
+       "Artie",
+       "Brian",
+       "Ahkello",
+       "Darius"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "SEA",
+    "reportCount": 90,
+    "out": 12,
+    "doubtful": 3,
+    "questionable": 13,
+    "outNames": [
+     "00-0024102",
+     "00-0032393",
+     "00-0035141",
+     "00-0029409",
+     "00-0034867",
+     "00-0032420",
+     "00-0036304",
+     "00-0029255"
+    ],
+    "offStarterValue": 0.5848,
+    "defStarterValue": 0.5807,
+    "offOutShare": 0.0186,
+    "defOutShare": 0.022,
+    "offDoubtfulShare": 0.0002,
+    "defDoubtfulShare": 0.0183,
+    "offQuestionableShare": 0.0399,
+    "defQuestionableShare": 0.0612,
+    "tiers": {
+     "QB": {
+      "1": [
+       "Russell",
+       "Geno"
+      ],
+      "2": [
+       "Trevone",
+       "Austin",
+       "Brett",
+       "Drew",
+       "Sam"
+      ],
+      "3": [
+       "Jacob"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Terrence",
+       "C.J.",
+       "Eddie",
+       "Bo",
+       "Travis",
+       "Robert"
+      ],
+      "2": [
+       "Thomas",
+       "Alex",
+       "J.D.",
+       "Mike",
+       "Carlos",
+       "Kenny"
+      ],
+      "1": [
+       "Rashaad",
+       "Chris",
+       "Marshawn",
+       "DeeJay",
+       "Kenneth",
+       "Godwin",
+       "Zach"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Doug",
+       "Jermaine",
+       "Tyler",
+       "DK",
+       "Freddie",
+       "Jaxon"
+      ],
+      "2": [
+       "Paul",
+       "Tanner",
+       "Kasen",
+       "David",
+       "Jaron",
+       "Penny",
+       "D'Wayne",
+       "Dareke",
+       "Jake",
+       "Jaelon"
+      ],
+      "3": [
+       "Devin",
+       "Amara",
+       "Malik",
+       "John",
+       "Laquon",
+       "Cody"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Jimmy",
+       "Nick",
+       "Will",
+       "Gerald",
+       "Noah"
+      ],
+      "2": [
+       "Bradley",
+       "Luke",
+       "Ed",
+       "Greg",
+       "Pharaoh"
+      ],
+      "3": [
+       "Brandon",
+       "Tyrone",
+       "Jacob",
+       "Colby",
+       "Brady",
+       "A.J."
+      ]
+     },
+     "CB": {
+      "1": [
+       "Richard",
+       "Byron",
+       "Shaquill",
+       "John",
+       "Coby",
+       "Tariq",
+       "Devon"
+      ],
+      "3": [
+       "DeShawn",
+       "Neiko",
+       "DeAndre",
+       "Justin",
+       "Mike",
+       "Kalan",
+       "D.J.",
+       "Jayson",
+       "Artie",
+       "Xavier",
+       "Nehemiah"
+      ],
+      "2": [
+       "Jeremy",
+       "Akeem",
+       "Tre",
+       "Tre",
+       "Michael",
+       "Josh"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "SF",
+    "reportCount": 42,
+    "out": 12,
+    "doubtful": 1,
+    "questionable": 17,
+    "outNames": [
+     "00-0031345",
+     "00-0034982",
+     "00-0037834",
+     "00-0035719",
+     "00-0037008",
+     "00-0035026",
+     "00-0032164",
+     "00-0034073"
+    ],
+    "offStarterValue": 0.4779,
+    "defStarterValue": 0.4416,
+    "offOutShare": 0.0597,
+    "defOutShare": 0.0286,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0809,
+    "defQuestionableShare": 0.0519,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Blaine",
+       "Nick",
+       "Josh",
+       "Trey",
+       "Sam",
+       "Joshua"
+      ],
+      "3": [
+       "Christian",
+       "Nate",
+       "Josh",
+       "Brandon"
+      ],
+      "1": [
+       "Colin",
+       "Jimmy",
+       "C.J.",
+       "Brock"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Shaun",
+       "Carlos",
+       "Tevin",
+       "Jamycal",
+       "Christian",
+       "Isaac"
+      ],
+      "2": [
+       "DuJuan",
+       "Jeffery",
+       "Alfred",
+       "Jerick",
+       "Elijah",
+       "Tyrion",
+       "Patrick"
+      ],
+      "3": [
+       "Mike",
+       "Matt",
+       "Jeremy",
+       "Matthew",
+       "Godwin",
+       "Raheem",
+       "Austin",
+       "Jordan"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Jeremy",
+       "Aaron",
+       "Aldrick",
+       "Steven",
+       "Dante",
+       "Trent",
+       "Travis",
+       "Danny",
+       "Ronnie",
+       "Chris"
+      ],
+      "1": [
+       "Rod",
+       "Chris",
+       "Kendrick",
+       "Trent",
+       "Marquise",
+       "Louis",
+       "Richie",
+       "Emmanuel",
+       "Deebo",
+       "Brandon",
+       "Jauan",
+       "Ray-Ray",
+       "Jacob"
+      ],
+      "3": [
+       "Max",
+       "Matt",
+       "River",
+       "Ricky"
+      ]
+     },
+     "TE": {
+      "3": [
+       "Jim",
+       "Logan",
+       "Ross",
+       "Levine",
+       "Jordan",
+       "Daniel",
+       "Tyler",
+       "Brayden",
+       "Jake"
+      ],
+      "2": [
+       "Garrett",
+       "Je'Ron",
+       "Charlie",
+       "Jordan",
+       "Tanner",
+       "Eric"
+      ],
+      "1": [
+       "George"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Tramaine",
+       "Dontae",
+       "Rashard",
+       "K'Waun",
+       "Richard",
+       "Jason",
+       "Josh",
+       "Charvarius",
+       "Isaiah"
+      ],
+      "3": [
+       "Prince Charles",
+       "Ahkello",
+       "D.J.",
+       "Darrell",
+       "Renardo",
+       "Nick"
+      ],
+      "2": [
+       "Keith",
+       "Leon",
+       "Greg",
+       "Emmanuel",
+       "Ambry",
+       "Deommodore",
+       "Samuel",
+       "Isaac",
+       "Rock"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "TB",
+    "reportCount": 49,
+    "out": 14,
+    "doubtful": 2,
+    "questionable": 13,
+    "outNames": [
+     "00-0034816",
+     "00-0027867",
+     "00-0033582",
+     "00-0032410",
+     "00-0034386",
+     "00-0030411",
+     "00-0032217",
+     "00-0034773"
+    ],
+    "offStarterValue": 0.5375,
+    "defStarterValue": 0.4602,
+    "offOutShare": 0.0188,
+    "defOutShare": 0.146,
+    "offDoubtfulShare": 0.0389,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0316,
+    "defQuestionableShare": 0.0479,
+    "tiers": {
+     "QB": {
+      "3": [
+       "Ryan",
+       "John"
+      ],
+      "2": [
+       "Mike",
+       "Ryan",
+       "Blaine",
+       "Kyle"
+      ],
+      "1": [
+       "Jameis",
+       "Tom",
+       "Baker"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Peyton",
+       "Doug",
+       "Ke'Shawn",
+       "Giovani",
+       "Chase"
+      ],
+      "3": [
+       "Russell",
+       "Charles",
+       "LeSean",
+       "Kenjon",
+       "Le'Veon"
+      ],
+      "1": [
+       "Jacquizz",
+       "Ronald",
+       "Dare",
+       "Leonard",
+       "Rachaad",
+       "Sean",
+       "Bucky"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Russell",
+       "Adam",
+       "Mike",
+       "Chris",
+       "DeSean",
+       "Jaydon",
+       "Antonio",
+       "Scott",
+       "Julio",
+       "Deven",
+       "Sterling"
+      ],
+      "3": [
+       "Josh",
+       "Freddie",
+       "Bernard",
+       "Bobo",
+       "Justin",
+       "Cyril",
+       "Tyler"
+      ],
+      "2": [
+       "John",
+       "Breshad",
+       "Russell",
+       "Trey",
+       "Ryan",
+       "Jalen",
+       "Rakim"
+      ]
+     },
+     "TE": {
+      "2": [
+       "Alan",
+       "Antony",
+       "Tanner",
+       "Payne"
+      ],
+      "1": [
+       "Brandon",
+       "Luke",
+       "Cameron",
+       "O.J.",
+       "Rob",
+       "Cade"
+      ],
+      "3": [
+       "Donnie",
+       "Codey",
+       "Ko",
+       "Kyle",
+       "Devin"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Brent",
+       "Vernon",
+       "Carlton",
+       "Jamel",
+       "Zyon",
+       "Josh"
+      ],
+      "2": [
+       "Alterraun",
+       "Robert",
+       "Sean",
+       "Dee",
+       "Richard",
+       "Tyrek"
+      ],
+      "3": [
+       "Josh",
+       "Javien",
+       "Ryan",
+       "David",
+       "De'Vante",
+       "Mazzi",
+       "Ross",
+       "Herb",
+       "Rashard",
+       "Pierre",
+       "Anthony",
+       "Tavierre"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "TEN",
+    "reportCount": 73,
+    "out": 19,
+    "doubtful": 1,
+    "questionable": 16,
+    "outNames": [
+     "00-0028009",
+     "00-0032009",
+     "00-0036695",
+     "00-0036181",
+     "00-0034388",
+     "00-0038853",
+     "00-0038632",
+     "00-0038848"
+    ],
+    "offStarterValue": 0.5071,
+    "defStarterValue": 0.4678,
+    "offOutShare": 0.0048,
+    "defOutShare": 0.0233,
+    "offDoubtfulShare": 0.0,
+    "defDoubtfulShare": 0.0176,
+    "offQuestionableShare": 0.0741,
+    "defQuestionableShare": 0.0191,
+    "tiers": {
+     "QB": {
+      "2": [
+       "Matt",
+       "Alex",
+       "Marcus",
+       "Blaine",
+       "Logan",
+       "Will"
+      ],
+      "3": [
+       "Brandon",
+       "Austin",
+       "Malik"
+      ],
+      "1": [
+       "Ryan",
+       "Joshua",
+       "Mason"
+      ]
+     },
+     "RB": {
+      "1": [
+       "DeMarco",
+       "Derrick",
+       "D'Onta",
+       "Julius",
+       "Tony"
+      ],
+      "2": [
+       "Antonio",
+       "Dion",
+       "Jeremy",
+       "Dontrell",
+       "Hassan",
+       "Tyjae"
+      ],
+      "3": [
+       "David",
+       "Khalfani",
+       "Darrynton",
+       "Senorise",
+       "Joshua"
+      ]
+     },
+     "WR": {
+      "3": [
+       "Harry",
+       "Marc",
+       "Tre",
+       "Darius",
+       "Rashard",
+       "Racey",
+       "Colton",
+       "Jha'Quan"
+      ],
+      "1": [
+       "Rishard",
+       "Tajae",
+       "Corey",
+       "Cameron",
+       "A.J.",
+       "Adam",
+       "Nick",
+       "Chester",
+       "Treylon",
+       "Robert",
+       "DeAndre",
+       "Calvin",
+       "Mason",
+       "Tyler"
+      ],
+      "2": [
+       "Kendall",
+       "Eric",
+       "Taywan",
+       "Eric",
+       "Kalif",
+       "Cody",
+       "Dez",
+       "Chris",
+       "Chris",
+       "Kyle",
+       "Bryce"
+      ]
+     },
+     "TE": {
+      "2": [
+       "Phillip",
+       "Anthony",
+       "Anthony",
+       "Kevin",
+       "Josh"
+      ],
+      "1": [
+       "Delanie",
+       "Jonnu",
+       "Luke",
+       "MyCole",
+       "Geoff",
+       "Chigoziem",
+       "Austin",
+       "Trevon"
+      ],
+      "3": [
+       "Jace",
+       "David",
+       "Nick"
+      ]
+     },
+     "CB": {
+      "2": [
+       "Brice",
+       "Antwon",
+       "LeShaun",
+       "Tye",
+       "Desmond",
+       "Greg",
+       "Tre",
+       "Darrell",
+       "Jarvis"
+      ],
+      "3": [
+       "D'Joun",
+       "Kalan",
+       "Kenneth",
+       "Tramaine",
+       "Chris",
+       "Kareem",
+       "Chris",
+       "John",
+       "Davontae",
+       "Lonnie",
+       "Anthony",
+       "Justin"
+      ],
+      "1": [
+       "Adoree'",
+       "Malcolm",
+       "Kristian",
+       "Janoris",
+       "Elijah",
+       "Roger",
+       "Eric",
+       "Sean",
+       "Chidobe"
+      ]
+     }
+    },
+    "status": "verified"
+   },
+   {
+    "team": "WAS",
+    "reportCount": 54,
+    "out": 14,
+    "doubtful": 2,
+    "questionable": 14,
+    "outNames": [
+     "00-0033084",
+     "00-0023448",
+     "00-0036351",
+     "00-0036334",
+     "00-0033611",
+     "00-0037746",
+     "00-0037833",
+     "00-0037095"
+    ],
+    "offStarterValue": 0.3926,
+    "defStarterValue": 0.4863,
+    "offOutShare": 0.026,
+    "defOutShare": 0.0331,
+    "offDoubtfulShare": 0.0008,
+    "defDoubtfulShare": 0.0,
+    "offQuestionableShare": 0.0358,
+    "defQuestionableShare": 0.0304,
+    "tiers": {
+     "QB": {
+      "3": [
+       "Colt",
+       "Nate",
+       "Steven",
+       "Garrett",
+       "Jeff"
+      ],
+      "1": [
+       "Kirk",
+       "Josh",
+       "Dwayne",
+       "Alex",
+       "Carson",
+       "Sam",
+       "Jayden"
+      ],
+      "2": [
+       "Mark",
+       "Case",
+       "Taylor",
+       "Kyle",
+       "Jacoby",
+       "Marcus"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Chris",
+       "Kapri",
+       "Josh",
+       "Wendell",
+       "Jaret",
+       "Jeremy"
+      ],
+      "3": [
+       "Matt",
+       "Mack",
+       "Samaje",
+       "Dare",
+       "Byron",
+       "Peyton",
+       "Lamar",
+       "Jonathan",
+       "Derrick",
+       "Chris"
+      ],
+      "1": [
+       "Rob",
+       "Adrian",
+       "J.D.",
+       "Antonio",
+       "Brian",
+       "Alex"
+      ]
+     },
+     "WR": {
+      "1": [
+       "Ryan",
+       "Pierre",
+       "DeSean",
+       "Josh",
+       "Michael",
+       "Terry",
+       "Kelvin",
+       "Steven",
+       "DeAndre",
+       "Dyami",
+       "Curtis",
+       "Luke"
+      ],
+      "2": [
+       "Jamison",
+       "Maurice",
+       "Robert",
+       "Brian",
+       "Jehu",
+       "Darvin",
+       "Cam",
+       "Isaiah",
+       "Robert",
+       "Antonio",
+       "Adam",
+       "Dax",
+       "Jahan",
+       "Byron",
+       "Olamide",
+       "K.J."
+      ],
+      "3": [
+       "Mitchell"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Vernon",
+       "Jordan",
+       "Logan",
+       "Ricky",
+       "Zach"
+      ],
+      "3": [
+       "Derek",
+       "Manasseh",
+       "Matt",
+       "Caleb",
+       "Marcus",
+       "Sammis",
+       "Cole",
+       "Ben"
+      ],
+      "2": [
+       "Jeremy",
+       "Niles",
+       "Hale",
+       "John"
+      ]
+     },
+     "LB": {
+      "3": [
+       "Otha"
+      ]
+     },
+     "CB": {
+      "1": [
+       "Josh",
+       "Bashaud",
+       "Kendall",
+       "Greg",
+       "Dee",
+       "Aaron",
+       "Ronald",
+       "William",
+       "Emmanuel",
+       "Marshon",
+       "Mike"
+      ],
+      "2": [
+       "Gregory",
+       "Quinton",
+       "Fabian",
+       "Harlan",
+       "Adonis",
+       "Coty",
+       "Jimmy",
+       "Danny",
+       "Benjamin",
+       "Christian",
+       "Tariq",
+       "Michael",
+       "Noah"
+      ],
+      "3": [
+       "Dashaun",
+       "Joshua",
+       "Alex",
+       "Breon",
+       "Kayvon",
+       "Corn",
+       "Rachad",
+       "Kyu Blu"
+      ]
+     }
+    },
+    "status": "verified"
+   }
+  ],
+  "games": [
+   {
+    "gameId": "2026_18_SF_ARI",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "SF",
+    "home": "ARI",
+    "roof": "",
+    "awayRest": 7.0,
+    "homeRest": 7.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_PIT_BAL",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "PIT",
+    "home": "BAL",
+    "roof": "outdoors",
+    "awayRest": 7.0,
+    "homeRest": 10.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_NYJ_BUF",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "NYJ",
+    "home": "BUF",
+    "roof": "outdoors",
+    "awayRest": 7.0,
+    "homeRest": 7.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_ATL_CAR",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "ATL",
+    "home": "CAR",
+    "roof": "outdoors",
+    "awayRest": 7.0,
+    "homeRest": 7.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_CLE_CIN",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "CLE",
+    "home": "CIN",
+    "roof": "outdoors",
+    "awayRest": 7.0,
+    "homeRest": 10.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_LAC_DEN",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "LAC",
+    "home": "DEN",
+    "roof": "outdoors",
+    "awayRest": 7.0,
+    "homeRest": 7.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_DET_GB",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "DET",
+    "home": "GB",
+    "roof": "outdoors",
+    "awayRest": 7.0,
+    "homeRest": 6.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_TEN_HOU",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "TEN",
+    "home": "HOU",
+    "roof": "",
+    "awayRest": 7.0,
+    "homeRest": 6.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_JAX_IND",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "JAX",
+    "home": "IND",
+    "roof": "",
+    "awayRest": 7.0,
+    "homeRest": 7.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_LV_KC",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "LV",
+    "home": "KC",
+    "roof": "outdoors",
+    "awayRest": 7.0,
+    "homeRest": 7.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_SEA_LA",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "SEA",
+    "home": "LA",
+    "roof": "dome",
+    "awayRest": 7.0,
+    "homeRest": 7.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_CHI_MIN",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "CHI",
+    "home": "MIN",
+    "roof": "dome",
+    "awayRest": 7.0,
+    "homeRest": 7.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_MIA_NE",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "MIA",
+    "home": "NE",
+    "roof": "outdoors",
+    "awayRest": 7.0,
+    "homeRest": 7.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_TB_NO",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "TB",
+    "home": "NO",
+    "roof": "dome",
+    "awayRest": 7.0,
+    "homeRest": 7.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_PHI_NYG",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "PHI",
+    "home": "NYG",
+    "roof": "outdoors",
+    "awayRest": 7.0,
+    "homeRest": 7.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   },
+   {
+    "gameId": "2026_18_DAL_WAS",
+    "date": "2027-01-10",
+    "week": 18,
+    "away": "DAL",
+    "home": "WAS",
+    "roof": "outdoors",
+    "awayRest": 7.0,
+    "homeRest": 7.0,
+    "spread": null,
+    "total": null,
+    "complete": false,
+    "modelHomeWinProb": null
+   }
+  ]
+ },
  "modelSpec": {
   "features": [
    "rest_diff",

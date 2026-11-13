@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged · NFL Lines Lab</title>
+<meta name="description" content="NFL line-making, signal validation and correlation research generated from cited public data.">
+<style>
+:root{--bg:#0b1220;--panel:#111b2e;--panel2:#16243a;--line:#22334d;--ink:#e8eef8;--muted:#9aa9c2;
+--accent:#4dd4ac;--accent2:#7aa2ff;--warn:#ffc857;--bad:#ff7a6b;--free:#3ddc97;--radius:14px;--max:1180px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:radial-gradient(1200px 700px at 15% -10%,#16294a 0%,#0b1220 55%) fixed,var(--bg);
+color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(11,18,32,.94);border-bottom:1px solid var(--line)}
+.topbar{display:flex;align-items:center;gap:16px;padding:11px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.2px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+nav.main{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:6px 10px;border-radius:9px;color:var(--muted);font-size:13.5px;font-weight:600}
+nav.main a:hover{background:var(--panel2);color:var(--ink);text-decoration:none}
+nav.main a.active{background:var(--accent);color:#052015}
+main{padding:24px 0 60px}
+h1{font-size:clamp(25px,3.6vw,36px);line-height:1.15;margin:6px 0 8px;letter-spacing:-.5px}
+h2{font-size:21px;margin:28px 0 10px}
+h3{font-size:16px;margin:16px 0 8px}
+p.lede{color:var(--muted);font-size:16.5px;max-width:78ch;margin:0 0 16px}
+small,.small{font-size:12.5px;color:var(--muted)}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+border-radius:var(--radius);padding:16px}
+.card h3{margin-top:0}
+.kpi{font-size:32px;font-weight:800;letter-spacing:-1px;line-height:1.05}
+.kpi small{display:block;font-weight:600;font-size:11.5px;letter-spacing:.7px;text-transform:uppercase;margin-top:6px}
+.tag{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;font-size:11.5px;
+font-weight:700;border:1px solid var(--line);background:#0d1728;color:var(--muted);white-space:nowrap}
+.tag.pass{color:#04241a;background:var(--free);border-color:transparent}
+.tag.fail{color:#2b0b06;background:var(--bad);border-color:transparent}
+.tag.warn{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.A{color:#04241a;background:var(--free);border-color:transparent}
+.tag.C{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.D{color:#2b0b06;background:var(--bad);border-color:transparent}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{padding:8px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700;
+background:#0e1829;position:sticky;top:54px;z-index:5}
+tr:hover td{background:#121d31}
+.scroll{max-height:640px;overflow:auto;border:1px solid var(--line);border-radius:12px}
+.callout{border-left:4px solid var(--accent);background:#0e1c2e;padding:13px 15px;border-radius:0 12px 12px 0;margin:14px 0}
+.callout.warn{border-left-color:var(--warn)}.callout.bad{border-left-color:var(--bad)}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.btn{background:var(--panel2);color:var(--ink);border:1px solid var(--line);padding:8px 13px;border-radius:10px;
+font-weight:700;display:inline-block}
+.btn:hover{background:#1d2f4b;text-decoration:none}
+.mono{font-variant-numeric:tabular-nums}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:12.5px}
+.ok{color:var(--free)}.bad{color:var(--bad)}.warnc{color:var(--warn)}
+ul.clean{margin:6px 0 0 18px;padding:0}ul.clean li{margin:5px 0}
+</style></head><body>
+<header class="top"><div class="wrap topbar">
+<div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+<nav class="main"><a href="index.html" class="">Dashboard</a><a href="lines.html" class="">Lines & model</a><a href="signals.html" class="">Signals</a><a href="injuries.html" class="">Injuries & lineups</a><a href="leaderboard.html" class="">Leaderboard</a><a href="parlays.html" class="">Parlays & props</a><a href="questions.html" class="">Questions</a><a href="suggestions.html" class="">Suggestions</a><a href="data.html" class="">Data audit</a><a href="flagged.html" class="active">Flagged</a><a href="sources.html" class="">Sources</a><a href="../index.html">Planner site</a></nav>
+</div></header>
+<main class="wrap">
+
+<h1>Flagged for review</h1>
+<p class="lede">Everything that is blank, unverified, contradictory or merely insufficient — published
+instead of hidden. None of these block publication; all of them block a confident claim.</p>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Item</th><th>Finding</th><th>State</th><th>Where it is recorded</th><th>Reference</th></tr></thead><tbody><tr><td>F1</td><td>Player prop market price</td><td>No prop market exists in any reachable source. Every prop 'edge' is therefore blank.</td><td>blank</td><td>nfl/data/model_results.json props[].market</td><td>https://www.nfl.com/stats/player-stats/</td></tr><tr><td>F2</td><td>Moneyline history</td><td>The moneyline columns in the schedules file are empty for every season checked, so vig is unknown.</td><td>blank</td><td>nfl/data/data_audit.json</td><td>https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv</td></tr><tr><td>F3</td><td>Line timing</td><td>The spread and total are a single snapshot with no timestamp, so no closing-line value can be computed.</td><td>unverified</td><td>nfl/data/data_audit.json</td><td>https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv</td></tr><tr><td>F4</td><td>Game-day inactive list</td><td>The official inactive list is not in the dataset; the injury report is a pre-game designation only.</td><td>missing</td><td>nfl/data/questions.json Q5</td><td>https://www.nfl.com/injuries/</td></tr><tr><td>F5</td><td>Player talent weighting</td><td>The lineup index weights by snap share, which measures usage, not ability.</td><td>limitation</td><td>nfl/data/questions.json Q6</td><td>https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2025.csv</td></tr><tr><td>F6</td><td>Depth-chart staleness</td><td>Snapshots carry a timestamp but no staleness rule is enforced yet.</td><td>limitation</td><td>nfl/data/questions.json Q9</td><td>https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2025.csv</td></tr><tr><td>F7</td><td>Multiplicity across correlation pairs</td><td>Many pairs are tested; a correction is registered but not yet applied.</td><td>open</td><td>nfl/data/questions.json Q10</td><td>https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv</td></tr><tr><td>F8</td><td>Rewards legality</td><td>A monetary reward tied to betting performance is a regulated activity. Rewards here are points only.</td><td>open</td><td>nfl/data/questions.json Q4</td><td>https://www.nfl.com/</td></tr><tr><td>F9</td><td>Historical odds feed</td><td>Without a licensed odds history, ROI and vig-adjusted edge cannot be computed at all.</td><td>missing</td><td>nfl/data/data_audit.json GAP-1</td><td>https://www.nfl.com/schedules/</td></tr><tr><td>F10</td><td>Referee and weather subgroup size</td><td>Registered as a strategy family but not tested; subgroup samples are too small to gate honestly.</td><td>registered</td><td>nfl/data/hypotheses.json H10</td><td>https://github.com/nflverse/nflverse-data/releases/download/officials/officials.csv</td></tr></tbody></table></div>
+<h2>How a blank is produced</h2>
+<p>When a source returns nothing for a field, the pipeline writes <code>null</code>. The site renders the
+literal text <em>— blank —</em>. No value is ever inferred, averaged in from another site, or filled from a
+previous season. Where a model needs a number and the value is missing, the fill is documented on the
+<a href="lines.html">lines page</a> and counted in the coverage table.</p>
+<h2>Contradiction policy</h2>
+<p>If two publishers disagree on a score, both values are shown and the disagreement is counted. If a
+source disappears (404), the field becomes blank and the row is flagged — the previous value is not carried
+forward silently.</p>
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Lines Lab</strong> — every published number is generated from data fetched and hashed by
+the repository's own pipeline. No betting return, payout or edge is claimed anywhere: the only market
+data available is a single un-timestamped line snapshot, and no player-prop market exists in any
+reachable source. <a href="flagged.html">Flagged for review</a> · <a href="sources.html">Sources</a> ·
+<a href="questions.html">Open questions</a></p>
+<p class="small">Generated 2026-11-13 14:22 UTC by
+<code>nfl/build_site.py</code>. Pre-registration: <a href="../nfl/PREREGISTRATION.md">nfl/PREREGISTRATION.md</a>.</p>
+</div></footer></body></html>

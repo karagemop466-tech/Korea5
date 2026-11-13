@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Injuries and lineups · NFL Lines Lab</title>
+<meta name="description" content="NFL line-making, signal validation and correlation research generated from cited public data.">
+<style>
+:root{--bg:#0b1220;--panel:#111b2e;--panel2:#16243a;--line:#22334d;--ink:#e8eef8;--muted:#9aa9c2;
+--accent:#4dd4ac;--accent2:#7aa2ff;--warn:#ffc857;--bad:#ff7a6b;--free:#3ddc97;--radius:14px;--max:1180px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:radial-gradient(1200px 700px at 15% -10%,#16294a 0%,#0b1220 55%) fixed,var(--bg);
+color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(11,18,32,.94);border-bottom:1px solid var(--line)}
+.topbar{display:flex;align-items:center;gap:16px;padding:11px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.2px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+nav.main{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:6px 10px;border-radius:9px;color:var(--muted);font-size:13.5px;font-weight:600}
+nav.main a:hover{background:var(--panel2);color:var(--ink);text-decoration:none}
+nav.main a.active{background:var(--accent);color:#052015}
+main{padding:24px 0 60px}
+h1{font-size:clamp(25px,3.6vw,36px);line-height:1.15;margin:6px 0 8px;letter-spacing:-.5px}
+h2{font-size:21px;margin:28px 0 10px}
+h3{font-size:16px;margin:16px 0 8px}
+p.lede{color:var(--muted);font-size:16.5px;max-width:78ch;margin:0 0 16px}
+small,.small{font-size:12.5px;color:var(--muted)}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+border-radius:var(--radius);padding:16px}
+.card h3{margin-top:0}
+.kpi{font-size:32px;font-weight:800;letter-spacing:-1px;line-height:1.05}
+.kpi small{display:block;font-weight:600;font-size:11.5px;letter-spacing:.7px;text-transform:uppercase;margin-top:6px}
+.tag{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;font-size:11.5px;
+font-weight:700;border:1px solid var(--line);background:#0d1728;color:var(--muted);white-space:nowrap}
+.tag.pass{color:#04241a;background:var(--free);border-color:transparent}
+.tag.fail{color:#2b0b06;background:var(--bad);border-color:transparent}
+.tag.warn{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.A{color:#04241a;background:var(--free);border-color:transparent}
+.tag.C{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.D{color:#2b0b06;background:var(--bad);border-color:transparent}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{padding:8px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700;
+background:#0e1829;position:sticky;top:54px;z-index:5}
+tr:hover td{background:#121d31}
+.scroll{max-height:640px;overflow:auto;border:1px solid var(--line);border-radius:12px}
+.callout{border-left:4px solid var(--accent);background:#0e1c2e;padding:13px 15px;border-radius:0 12px 12px 0;margin:14px 0}
+.callout.warn{border-left-color:var(--warn)}.callout.bad{border-left-color:var(--bad)}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.btn{background:var(--panel2);color:var(--ink);border:1px solid var(--line);padding:8px 13px;border-radius:10px;
+font-weight:700;display:inline-block}
+.btn:hover{background:#1d2f4b;text-decoration:none}
+.mono{font-variant-numeric:tabular-nums}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:12.5px}
+.ok{color:var(--free)}.bad{color:var(--bad)}.warnc{color:var(--warn)}
+ul.clean{margin:6px 0 0 18px;padding:0}ul.clean li{margin:5px 0}
+</style></head><body>
+<header class="top"><div class="wrap topbar">
+<div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+<nav class="main"><a href="index.html" class="">Dashboard</a><a href="lines.html" class="">Lines & model</a><a href="signals.html" class="">Signals</a><a href="injuries.html" class="active">Injuries & lineups</a><a href="leaderboard.html" class="">Leaderboard</a><a href="parlays.html" class="">Parlays & props</a><a href="questions.html" class="">Questions</a><a href="suggestions.html" class="">Suggestions</a><a href="data.html" class="">Data audit</a><a href="flagged.html" class="">Flagged</a><a href="sources.html" class="">Sources</a><a href="../index.html">Planner site</a></nav>
+</div></header>
+<main class="wrap">
+
+<h1>Injuries and lineup depth</h1>
+<p class="lede">Two different questions, kept apart on purpose. <strong>Injury status</strong> is the
+official weekly designation (Out / Doubtful / Questionable) and is verified. <strong>Lineup depth</strong> is
+a separate published artefact — the depth chart — and is shown with its snapshot date because a chart from
+three weeks ago is not evidence about tonight.</p>
+<div class="callout warn"><strong>What the numbers do and do not mean.</strong> "Starter value" is the
+share of the unit's snap-weighted usage held by players listed first on the depth chart. It measures
+<em>usage</em>, not talent. A missing star with low usage barely moves it. That limitation is registered
+as Q6 and is not papered over.</div>
+<h2>Current week by team</h2>
+<p class="small">Season 2,026, week 18. Shares are fractions of the
+unit's snap-weighted value: Out is separated from Doubtful and from Questionable — they are never added together.</p>
+<div class="scroll"><table><thead><tr><th>Team</th><th>On report</th><th>Out</th><th>Doubtful</th><th>Questionable</th><th>Off starter value</th><th>Def starter value</th><th>Off Out share</th><th>Def Out share</th><th>Off Q share</th><th>Status</th><th>Depth: QB 1st / 2nd / 3rd</th><th>Source</th></tr></thead><tbody><tr><td>NO</td><td>57</td><td>17</td><td>0</td><td>18</td><td>0.4598</td><td>0.5917</td><td>0.0905</td><td>0.0418</td><td>0.0555</td><td><span class="tag pass">verified</span></td><td>1: Drew, Ian / 2: Luke, Chase / 3: Taysom, Jake</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>CLE</td><td>72</td><td>16</td><td>0</td><td>21</td><td>0.5064</td><td>0.4849</td><td>0.0819</td><td>0.0591</td><td>0.0202</td><td><span class="tag pass">verified</span></td><td>1: DeShone, Baker / 2: Josh, Kevin / 3: Robert, Cody</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>MIN</td><td>51</td><td>13</td><td>1</td><td>11</td><td>0.4894</td><td>0.4785</td><td>0.0785</td><td>0.0305</td><td>0.0247</td><td><span class="tag pass">verified</span></td><td>1: Sam, Case / 2: Shaun, Teddy / 3: Taylor, Kyle</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>NYJ</td><td>49</td><td>18</td><td>3</td><td>11</td><td>0.4836</td><td>0.384</td><td>0.0652</td><td>0.0161</td><td>0.1173</td><td><span class="tag pass">verified</span></td><td>1: Ryan, Bryce / 2: Christian, Josh / 3: Davis, Chris</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>ARI</td><td>49</td><td>16</td><td>0</td><td>14</td><td>0.5328</td><td>0.5323</td><td>0.0637</td><td>0.0982</td><td>0.0155</td><td><span class="tag pass">verified</span></td><td>1: Carson, Drew / 2: Blaine, Mike / 3: Matt</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>SF</td><td>42</td><td>12</td><td>1</td><td>17</td><td>0.4779</td><td>0.4416</td><td>0.0597</td><td>0.0286</td><td>0.0809</td><td><span class="tag pass">verified</span></td><td>1: Colin, Jimmy / 2: Blaine, Nick / 3: Christian, Nate</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>LV</td><td>46</td><td>7</td><td>1</td><td>8</td><td>0.6418</td><td>0.5628</td><td>0.055</td><td>0.0855</td><td>0.0248</td><td><span class="tag pass">verified</span></td><td>1: Derek, Aidan / 2: Marcus, Jarrett / 3: Nathan, Brian</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>PHI</td><td>55</td><td>13</td><td>7</td><td>6</td><td>0.3054</td><td>0.4829</td><td>0.0502</td><td>0.0702</td><td>0.0357</td><td><span class="tag pass">verified</span></td><td>1: Jalen, Gardner / 2: Chase, Carson / 3: Nate, Reid</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>DET</td><td>41</td><td>11</td><td>0</td><td>21</td><td>0.5335</td><td>0.4728</td><td>0.0482</td><td>0.026</td><td>0.1428</td><td><span class="tag pass">verified</span></td><td>1: Matthew, Jared / 2: Dan, Jake / 3: David</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>IND</td><td>63</td><td>10</td><td>1</td><td>11</td><td>0.5263</td><td>0.5799</td><td>0.0482</td><td>0.0227</td><td>0.0308</td><td><span class="tag pass">verified</span></td><td>1: Andrew, Philip / 2: Scott, Jacoby / 3: Brad, Chad</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>KC</td><td>47</td><td>11</td><td>9</td><td>10</td><td>0.3752</td><td>0.5009</td><td>0.0331</td><td>0.021</td><td>0.0081</td><td><span class="tag pass">verified</span></td><td>1: Alex, Patrick / 2: Nick, Chad / 3: Tyler, Matt</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>CHI</td><td>58</td><td>7</td><td>2</td><td>20</td><td>0.4553</td><td>0.5668</td><td>0.0318</td><td>0.017</td><td>0.0571</td><td><span class="tag pass">verified</span></td><td>1: Matt, Mitchell / 2: David, Mike / 3: Mark, Nick</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>WAS</td><td>54</td><td>14</td><td>2</td><td>14</td><td>0.3926</td><td>0.4863</td><td>0.026</td><td>0.0331</td><td>0.0358</td><td><span class="tag pass">verified</span></td><td>1: Kirk, Josh / 2: Mark, Case / 3: Colt, Nate</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>DAL</td><td>56</td><td>7</td><td>1</td><td>14</td><td>0.5325</td><td>0.5747</td><td>0.0232</td><td>0.0231</td><td>0.047</td><td><span class="tag pass">verified</span></td><td>1: Dak, Cooper / 2: Tony, Garrett / 3: Mark, Mike</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>BAL</td><td>61</td><td>7</td><td>2</td><td>24</td><td>0.5059</td><td>0.6157</td><td>0.021</td><td>0.024</td><td>0.0585</td><td><span class="tag pass">verified</span></td><td>1: Robert, Lamar / 2: Joe, Ryan</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>GB</td><td>62</td><td>14</td><td>2</td><td>17</td><td>0.4826</td><td>0.4242</td><td>0.0206</td><td>0.0088</td><td>0.0581</td><td><span class="tag pass">verified</span></td><td>1: Aaron, Brett / 2: Joe, Tim</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>ATL</td><td>49</td><td>8</td><td>0</td><td>11</td><td>0.5592</td><td>0.6631</td><td>0.0195</td><td>0.0223</td><td>0.0772</td><td><span class="tag pass">verified</span></td><td>1: Matt, Taylor / 2: Matt, Josh / 3: Logan</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>TB</td><td>49</td><td>14</td><td>2</td><td>13</td><td>0.5375</td><td>0.4602</td><td>0.0188</td><td>0.146</td><td>0.0316</td><td><span class="tag pass">verified</span></td><td>1: Jameis, Tom / 2: Mike, Ryan / 3: Ryan, John</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>SEA</td><td>90</td><td>12</td><td>3</td><td>13</td><td>0.5848</td><td>0.5807</td><td>0.0186</td><td>0.022</td><td>0.0399</td><td><span class="tag pass">verified</span></td><td>1: Russell, Geno / 2: Trevone, Austin / 3: Jacob</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>LA</td><td>46</td><td>7</td><td>8</td><td>9</td><td>0.61</td><td>0.55</td><td>0.0138</td><td>0.0102</td><td>0.0986</td><td><span class="tag pass">verified</span></td><td>1: Jared, Matthew / 2: Sean, John / 3: Blake</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>DEN</td><td>47</td><td>10</td><td>0</td><td>9</td><td>0.4488</td><td>0.4987</td><td>0.0125</td><td>0.045</td><td>0.0223</td><td><span class="tag pass">verified</span></td><td>1: Trevor, Paxton / 2: Brock, Kevin / 3: Jeff, Jarrett</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>NYG</td><td>57</td><td>16</td><td>3</td><td>6</td><td>0.4208</td><td>0.451</td><td>0.012</td><td>0.0775</td><td>0.0236</td><td><span class="tag pass">verified</span></td><td>1: Daniel, Mike / 2: Eli, Josh / 3: Geno, Kyle</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>NE</td><td>57</td><td>9</td><td>0</td><td>29</td><td>0.4497</td><td>0.4969</td><td>0.0109</td><td>0.0162</td><td>0.0966</td><td><span class="tag pass">verified</span></td><td>1: Tom, Cam / 2: Jacoby, Jimmy / 3: Jarrett, Cody</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>TEN</td><td>73</td><td>19</td><td>1</td><td>16</td><td>0.5071</td><td>0.4678</td><td>0.0048</td><td>0.0233</td><td>0.0741</td><td><span class="tag pass">verified</span></td><td>1: Ryan, Joshua / 2: Matt, Alex / 3: Brandon, Austin</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>LAC</td><td>47</td><td>9</td><td>6</td><td>12</td><td>0.4715</td><td>0.5431</td><td>0.0024</td><td>0.0142</td><td>0.0443</td><td><span class="tag pass">verified</span></td><td>1: Philip, Kellen / 2: Geno, Tyrod / 3: Easton</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>MIA</td><td>54</td><td>6</td><td>5</td><td>20</td><td>0.4716</td><td>0.5935</td><td>0.0009</td><td>0.0395</td><td>0.1041</td><td><span class="tag pass">verified</span></td><td>1: Ryan, Jay / 2: Matt, T.J. / 3: David, Jake</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>HOU</td><td>74</td><td>12</td><td>0</td><td>19</td><td>0.5166</td><td>0.5048</td><td>0.0008</td><td>0.024</td><td>0.0723</td><td><span class="tag pass">verified</span></td><td>1: Brock, T.J. / 2: Brandon, Tom / 3: Josh, Joe</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>BUF</td><td>61</td><td>5</td><td>1</td><td>14</td><td>0.4538</td><td>0.4514</td><td>0</td><td>0.0561</td><td>0.0578</td><td><span class="tag pass">verified</span></td><td>1: E.J., Tyrod / 2: Nathan, Matt / 3: Cardale, Joe</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>CAR</td><td>59</td><td>7</td><td>3</td><td>19</td><td>0.5635</td><td>0.5901</td><td>0</td><td>0.0275</td><td>0.1052</td><td><span class="tag pass">verified</span></td><td>1: Cam, Teddy / 2: Joe, Derek / 3: Garrett, Will</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>CIN</td><td>33</td><td>7</td><td>0</td><td>12</td><td>0.5396</td><td>0.453</td><td>0</td><td>0.0207</td><td>0.062</td><td><span class="tag pass">verified</span></td><td>1: Andy, Jeff / 2: AJ, Tom / 3: Jacob</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>JAX</td><td>40</td><td>4</td><td>0</td><td>12</td><td>0.5779</td><td>0.6111</td><td>0</td><td>0</td><td>0.0628</td><td><span class="tag pass">verified</span></td><td>1: Blake, Mike / 2: Chad, Cody / 3: Brandon, Joshua</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr><tr><td>PIT</td><td>52</td><td>8</td><td>1</td><td>6</td><td>0.528</td><td>0.6335</td><td>0</td><td>0.0012</td><td>0</td><td><span class="tag pass">verified</span></td><td>1: Ben, Devlin / 2: Landry, Mason / 3: Zach, Joshua</td><td><a href="https://www.nfl.com/injuries/" title="https://www.nfl.com/injuries/">NFL injuries</a></td></tr></tbody></table></div>
+<h2>The 2nd, 3rd and 4th string problem</h2>
+<p>The depth tracker answers, per team and position: <em>who is listed first, second, third, fourth</em>,
+and is the first-string player on the report? Three states are possible and they are published separately:</p>
+<div class="grid g3">
+<div class="card"><h3>Starter available</h3><p class="small">Listed 1st on the latest snapshot and not
+marked Out. No adjustment is made — the model already rates the team.</p></div>
+<div class="card"><h3>Starter out, backup promoted</h3><p class="small">Listed 1st but marked Out. The
+snap-weighted value of that absence enters the model as an Out share, and the next man up is shown by
+tier.</p></div>
+<div class="card"><h3>Unknown</h3><p class="small">No depth row or no report row. Left blank. The model
+uses the documented neutral fill, and the coverage table on the lines page shows how often that happens.</p></div>
+</div>
+<h2>Known gaps in this tracker</h2>
+<ul class="clean">
+<li>The <strong>inactive list at kickoff</strong> is not in this dataset. A Questionable player may play; an
+Out player never does. Q5 covers obtaining the official inactives.</li>
+<li>Depth-chart snapshots have a timestamp, but <strong>staleness is not yet enforced</strong> — Q9 proposes
+a 7-day rule.</li>
+<li>The tracker covers the <strong>latest week only</strong> for the live board. Historical index values are
+used in the model for every evaluated game.</li>
+</ul>
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Lines Lab</strong> — every published number is generated from data fetched and hashed by
+the repository's own pipeline. No betting return, payout or edge is claimed anywhere: the only market
+data available is a single un-timestamped line snapshot, and no player-prop market exists in any
+reachable source. <a href="flagged.html">Flagged for review</a> · <a href="sources.html">Sources</a> ·
+<a href="questions.html">Open questions</a></p>
+<p class="small">Generated 2026-11-13 14:22 UTC by
+<code>nfl/build_site.py</code>. Pre-registration: <a href="../nfl/PREREGISTRATION.md">nfl/PREREGISTRATION.md</a>.</p>
+</div></footer></body></html>

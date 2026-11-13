@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data audit · NFL Lines Lab</title>
+<meta name="description" content="NFL line-making, signal validation and correlation research generated from cited public data.">
+<style>
+:root{--bg:#0b1220;--panel:#111b2e;--panel2:#16243a;--line:#22334d;--ink:#e8eef8;--muted:#9aa9c2;
+--accent:#4dd4ac;--accent2:#7aa2ff;--warn:#ffc857;--bad:#ff7a6b;--free:#3ddc97;--radius:14px;--max:1180px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:radial-gradient(1200px 700px at 15% -10%,#16294a 0%,#0b1220 55%) fixed,var(--bg);
+color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(11,18,32,.94);border-bottom:1px solid var(--line)}
+.topbar{display:flex;align-items:center;gap:16px;padding:11px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.2px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+nav.main{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:6px 10px;border-radius:9px;color:var(--muted);font-size:13.5px;font-weight:600}
+nav.main a:hover{background:var(--panel2);color:var(--ink);text-decoration:none}
+nav.main a.active{background:var(--accent);color:#052015}
+main{padding:24px 0 60px}
+h1{font-size:clamp(25px,3.6vw,36px);line-height:1.15;margin:6px 0 8px;letter-spacing:-.5px}
+h2{font-size:21px;margin:28px 0 10px}
+h3{font-size:16px;margin:16px 0 8px}
+p.lede{color:var(--muted);font-size:16.5px;max-width:78ch;margin:0 0 16px}
+small,.small{font-size:12.5px;color:var(--muted)}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+border-radius:var(--radius);padding:16px}
+.card h3{margin-top:0}
+.kpi{font-size:32px;font-weight:800;letter-spacing:-1px;line-height:1.05}
+.kpi small{display:block;font-weight:600;font-size:11.5px;letter-spacing:.7px;text-transform:uppercase;margin-top:6px}
+.tag{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;font-size:11.5px;
+font-weight:700;border:1px solid var(--line);background:#0d1728;color:var(--muted);white-space:nowrap}
+.tag.pass{color:#04241a;background:var(--free);border-color:transparent}
+.tag.fail{color:#2b0b06;background:var(--bad);border-color:transparent}
+.tag.warn{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.A{color:#04241a;background:var(--free);border-color:transparent}
+.tag.C{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.D{color:#2b0b06;background:var(--bad);border-color:transparent}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{padding:8px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700;
+background:#0e1829;position:sticky;top:54px;z-index:5}
+tr:hover td{background:#121d31}
+.scroll{max-height:640px;overflow:auto;border:1px solid var(--line);border-radius:12px}
+.callout{border-left:4px solid var(--accent);background:#0e1c2e;padding:13px 15px;border-radius:0 12px 12px 0;margin:14px 0}
+.callout.warn{border-left-color:var(--warn)}.callout.bad{border-left-color:var(--bad)}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.btn{background:var(--panel2);color:var(--ink);border:1px solid var(--line);padding:8px 13px;border-radius:10px;
+font-weight:700;display:inline-block}
+.btn:hover{background:#1d2f4b;text-decoration:none}
+.mono{font-variant-numeric:tabular-nums}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:12.5px}
+.ok{color:var(--free)}.bad{color:var(--bad)}.warnc{color:var(--warn)}
+ul.clean{margin:6px 0 0 18px;padding:0}ul.clean li{margin:5px 0}
+</style></head><body>
+<header class="top"><div class="wrap topbar">
+<div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+<nav class="main"><a href="index.html" class="">Dashboard</a><a href="lines.html" class="">Lines & model</a><a href="signals.html" class="">Signals</a><a href="injuries.html" class="">Injuries & lineups</a><a href="leaderboard.html" class="">Leaderboard</a><a href="parlays.html" class="">Parlays & props</a><a href="questions.html" class="">Questions</a><a href="suggestions.html" class="">Suggestions</a><a href="data.html" class="active">Data audit</a><a href="flagged.html" class="">Flagged</a><a href="sources.html" class="">Sources</a><a href="../index.html">Planner site</a></nav>
+</div></header>
+<main class="wrap">
+
+<h1>Data audit</h1>
+<p class="lede">What was fetched, what it contains, whether two independent publishers agree, and what is
+missing. A gap is listed even when it would be embarrassing to list it — especially then.</p>
+<h2>Source-to-source cross-check</h2>
+<div class="callout warn"><strong><span class="small">— blank —</span></strong>
+nflverse and ESPN publish independently. Every completed game in the fetched seasons was compared on final
+score. Disagreements are shown rather than resolved.</div>
+<div class="scroll"><table><thead><tr><th>Check</th><th>Result</th><th>Status</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+
+<h2>Market coverage</h2>
+<div class="grid g3">
+<div class="card"><div class="kpi"><span class="small">— blank —</span><small>of games have a spread and total</small></div>
+<p class="small">From nflverse schedules. One value per game, no timestamp.</p></div>
+<div class="card"><div class="kpi"><span class="small">— blank —</span><small>have moneylines</small></div>
+<p class="small">Empty, so vig cannot be measured from this source.</p></div>
+<div class="card"><div class="kpi"><span class="small">— blank —</span><small>games with ESPN odds</small></div>
+<p class="small">Of <span class="small">— blank —</span> games fetched. Odds exist only for the current week on screen.</p></div>
+</div>
+<h2>Gap register — what would have to be acquired</h2>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Missing item</th><th>Why it matters</th><th>What we have</th><th>How to obtain</th><th>What it blocks</th></tr></thead><tbody></tbody></table></div>
+<h2>Provenance</h2>
+<p>Every file the pipeline used is listed on the <a href="sources.html">sources page</a> with its URL, HTTP
+status, byte count and a sha256 prefix. A file that returned an error is listed too, with the error.</p>
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Lines Lab</strong> — every published number is generated from data fetched and hashed by
+the repository's own pipeline. No betting return, payout or edge is claimed anywhere: the only market
+data available is a single un-timestamped line snapshot, and no player-prop market exists in any
+reachable source. <a href="flagged.html">Flagged for review</a> · <a href="sources.html">Sources</a> ·
+<a href="questions.html">Open questions</a></p>
+<p class="small">Generated 2026-11-13 14:22 UTC by
+<code>nfl/build_site.py</code>. Pre-registration: <a href="../nfl/PREREGISTRATION.md">nfl/PREREGISTRATION.md</a>.</p>
+</div></footer></body></html>

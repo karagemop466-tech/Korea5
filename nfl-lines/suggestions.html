@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions · NFL Lines Lab</title>
+<meta name="description" content="NFL line-making, signal validation and correlation research generated from cited public data.">
+<style>
+:root{--bg:#0b1220;--panel:#111b2e;--panel2:#16243a;--line:#22334d;--ink:#e8eef8;--muted:#9aa9c2;
+--accent:#4dd4ac;--accent2:#7aa2ff;--warn:#ffc857;--bad:#ff7a6b;--free:#3ddc97;--radius:14px;--max:1180px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:radial-gradient(1200px 700px at 15% -10%,#16294a 0%,#0b1220 55%) fixed,var(--bg);
+color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(11,18,32,.94);border-bottom:1px solid var(--line)}
+.topbar{display:flex;align-items:center;gap:16px;padding:11px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.2px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+nav.main{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:6px 10px;border-radius:9px;color:var(--muted);font-size:13.5px;font-weight:600}
+nav.main a:hover{background:var(--panel2);color:var(--ink);text-decoration:none}
+nav.main a.active{background:var(--accent);color:#052015}
+main{padding:24px 0 60px}
+h1{font-size:clamp(25px,3.6vw,36px);line-height:1.15;margin:6px 0 8px;letter-spacing:-.5px}
+h2{font-size:21px;margin:28px 0 10px}
+h3{font-size:16px;margin:16px 0 8px}
+p.lede{color:var(--muted);font-size:16.5px;max-width:78ch;margin:0 0 16px}
+small,.small{font-size:12.5px;color:var(--muted)}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+border-radius:var(--radius);padding:16px}
+.card h3{margin-top:0}
+.kpi{font-size:32px;font-weight:800;letter-spacing:-1px;line-height:1.05}
+.kpi small{display:block;font-weight:600;font-size:11.5px;letter-spacing:.7px;text-transform:uppercase;margin-top:6px}
+.tag{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;font-size:11.5px;
+font-weight:700;border:1px solid var(--line);background:#0d1728;color:var(--muted);white-space:nowrap}
+.tag.pass{color:#04241a;background:var(--free);border-color:transparent}
+.tag.fail{color:#2b0b06;background:var(--bad);border-color:transparent}
+.tag.warn{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.A{color:#04241a;background:var(--free);border-color:transparent}
+.tag.C{color:#241a00;background:var(--warn);border-color:transparent}
+.tag.D{color:#2b0b06;background:var(--bad);border-color:transparent}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{padding:8px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700;
+background:#0e1829;position:sticky;top:54px;z-index:5}
+tr:hover td{background:#121d31}
+.scroll{max-height:640px;overflow:auto;border:1px solid var(--line);border-radius:12px}
+.callout{border-left:4px solid var(--accent);background:#0e1c2e;padding:13px 15px;border-radius:0 12px 12px 0;margin:14px 0}
+.callout.warn{border-left-color:var(--warn)}.callout.bad{border-left-color:var(--bad)}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.btn{background:var(--panel2);color:var(--ink);border:1px solid var(--line);padding:8px 13px;border-radius:10px;
+font-weight:700;display:inline-block}
+.btn:hover{background:#1d2f4b;text-decoration:none}
+.mono{font-variant-numeric:tabular-nums}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:12.5px}
+.ok{color:var(--free)}.bad{color:var(--bad)}.warnc{color:var(--warn)}
+ul.clean{margin:6px 0 0 18px;padding:0}ul.clean li{margin:5px 0}
+</style></head><body>
+<header class="top"><div class="wrap topbar">
+<div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+<nav class="main"><a href="index.html" class="">Dashboard</a><a href="lines.html" class="">Lines & model</a><a href="signals.html" class="">Signals</a><a href="injuries.html" class="">Injuries & lineups</a><a href="leaderboard.html" class="">Leaderboard</a><a href="parlays.html" class="">Parlays & props</a><a href="questions.html" class="">Questions</a><a href="suggestions.html" class="active">Suggestions</a><a href="data.html" class="">Data audit</a><a href="flagged.html" class="">Flagged</a><a href="sources.html" class="">Sources</a><a href="../index.html">Planner site</a></nav>
+</div></header>
+<main class="wrap">
+
+<h1>Suggestions — review before implementing</h1>
+<p class="lede">A review queue, not a wish list. Each suggestion states the improvement to decision
+making, why it matters, the cheapest test that would show whether it works, its cost, and whether it is
+already implemented here or still proposed. Nothing in this list has been implemented on the owner's
+behalf beyond the items marked <em>implemented</em>, which are composition and layout choices inside this
+new section.</p>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Area</th><th>Suggestion</th><th>Why it improves decisions</th><th>How to test it</th><th>Status</th><th>Cost</th></tr></thead><tbody><tr><td>S1</td><td>Decision making</td><td><strong>Lead every page with gate status and sample size, not with a score</strong></td><td>A score without its sample size and gate state invites over-trust. The dashboard therefore shows games, deflation verdict and Tier counts before any ranking.</td><td>A/B the landing layout: does a reader correctly state &#x27;not established&#x27; for a Tier C strategy?</td><td><span class="tag pass">implemented</span></td><td>low</td></tr><tr><td>S2</td><td>Statistics</td><td><strong>Register every variant tried and recompute K from the registry</strong></td><td>Deflation is only honest if K counts the strategies actually tried, including abandoned ones. Today K is fixed per family and published.</td><td>Compare the null threshold when K=9 versus K=200 on the same data; the threshold must rise.</td><td><span class="tag warn">proposed</span></td><td>low</td></tr><tr><td>S3</td><td>Data</td><td><strong>Capture one pre-kickoff market snapshot per game with a timestamp</strong></td><td>This is the single change that unlocks ROI, vig, closing-line value and everything the user asked about line-making. Without a timestamp, a &#x27;line&#x27; is not a price.</td><td>After 4 weeks, verify that every stored snapshot has a timestamp before kickoff and a value for every game.</td><td><span class="tag warn">proposed</span></td><td>medium</td></tr><tr><td>S4</td><td>Lineup tracking</td><td><strong>Add the official inactive list per game and reconcile it with the injury report</strong></td><td>A Questionable player can play; an inactive never does. Reconciling the two turns the lineup index from a proxy into a fact.</td><td>Report the reconciliation rate: share of Out players who are indeed inactive, and of actives not on the report.</td><td><span class="tag warn">proposed</span></td><td>medium</td></tr><tr><td>S5</td><td>Lineup tracking</td><td><strong>Publish the depth-chart snapshot age on every row and mark anything older than 7 days as stale</strong></td><td>A depth chart is a snapshot, not a live feed. Showing its age prevents a three-week-old chart from being read as tonight&#x27;s lineup.</td><td>Count rows with a snapshot older than 7 days each week; the count should be visible, not zero-by-omission.</td><td><span class="tag pass">implemented</span></td><td>low</td></tr><tr><td>S6</td><td>Lineup tracking</td><td><strong>Weight missing players by talent, not only by usage</strong></td><td>Snap share measures opportunity. A high-EPA player lost for the season should move the index more than a high-snap, low-impact player.</td><td>Blend per-player EPA from play-by-play with snap share; compare out-of-sample skill against the usage-only index.</td><td><span class="tag warn">proposed</span></td><td>high</td></tr><tr><td>S7</td><td>Correlation</td><td><strong>Apply a multiplicity correction and publish it</strong></td><td>Testing 55 signal pairs guarantees false positives at the 5% level. The CI is shown today; a Benjamini-Hochberg adjusted threshold is the next step.</td><td>Re-run the pair table with the adjusted threshold and report how many pairs survive both.</td><td><span class="tag warn">proposed</span></td><td>low</td></tr><tr><td>S8</td><td>Competition</td><td><strong>Run a locked prospective paper trial before any reward is paid</strong></td><td>A backtest, however deflated, is not a live record. A pre-declared horizon with frozen picks is the only way to show a strategy works forward.</td><td>Freeze picks for 6 weeks before kickoff; compare realised log loss with the pre-registered expectation.</td><td><span class="tag warn">proposed</span></td><td>medium</td></tr><tr><td>S9</td><td>Site</td><td><strong>Keep a single canonical page per category and one shared stylesheet</strong></td><td>Parallel sessions duplicating dashboards is how two sites with two different numbers appear. This lab owns nfl-lines/ and links to the planner rather than restating it.</td><td>A link check that fails if any number appears on more than one page without being generated from the same JSON.</td><td><span class="tag pass">implemented</span></td><td>low</td></tr><tr><td>S10</td><td>Decision making</td><td><strong>Convert each open question into a dated decision with an owner and a trigger</strong></td><td>A question register that nobody closes becomes decoration. Q1–Q12 need a decision date and a named owner before the next release.</td><td>At each release, count questions closed versus opened. A rising open count with no closures means the lab is stuck.</td><td><span class="tag warn">proposed</span></td><td>low</td></tr></tbody></table></div>
+<h2>Recommended reading order for a decision</h2>
+<ol class="clean">
+<li><strong>Questions</strong> — is a decision even possible? Q1 and Q2 gate everything else.</li>
+<li><strong>Data audit</strong> — do the inputs exist and do two publishers agree?</li>
+<li><strong>Leaderboard</strong> — what survives deflation, with what sample size?</li>
+<li><strong>Signals</strong> — are the inputs distinct, or the same input twice?</li>
+<li><strong>Parlays</strong> — if combining, is the correlation measured or assumed?</li>
+<li><strong>Flagged</strong> — what is blank, contradictory or stale?</li>
+</ol>
+<h2>What I would do first, if this were my decision</h2>
+<ol class="clean">
+<li><strong>S3</strong> — start capturing timestamped market snapshots. Nothing else converts this from a
+research lab into a line-making system.</li>
+<li><strong>S4</strong> — add the inactive list, so the injury index becomes a fact rather than a proxy.</li>
+<li><strong>S8</strong> — run the paper trial before spending anything on rewards.</li>
+<li><strong>S2 and S7</strong> — tighten the statistics before adding more strategies. More strategies on
+the same data is how a lab manufactures a winner.</li>
+</ol>
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Lines Lab</strong> — every published number is generated from data fetched and hashed by
+the repository's own pipeline. No betting return, payout or edge is claimed anywhere: the only market
+data available is a single un-timestamped line snapshot, and no player-prop market exists in any
+reachable source. <a href="flagged.html">Flagged for review</a> · <a href="sources.html">Sources</a> ·
+<a href="questions.html">Open questions</a></p>
+<p class="small">Generated 2026-11-13 14:22 UTC by
+<code>nfl/build_site.py</code>. Pre-registration: <a href="../nfl/PREREGISTRATION.md">nfl/PREREGISTRATION.md</a>.</p>
+</div></footer></body></html>

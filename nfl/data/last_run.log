@@ -1,0 +1,418 @@
+ 200 games.csv                          2,190,032 bytes
+ 200 officials.csv                      1,293,787 bytes
+ 200 player_stats.parquet               5,621,855 bytes
+ 200 injuries_2026.csv                    354,572 bytes
+ 200 depth_charts_timestamp.json               43 bytes
+ 200 player_stats_timestamp.json               43 bytes
+ 200 injuries_timestamp.json                   43 bytes
+ 200 stats_player_week_2016.csv         6,302,267 bytes
+ 200 injuries_2016.csv                    674,980 bytes
+ 200 depth_charts_2016.csv              3,366,662 bytes
+ 200 roster_2016.csv                      875,173 bytes
+ 200 snap_counts_2016.csv               2,157,110 bytes
+ 200 play_by_play_2016.csv.gz          18,230,362 bytes
+ 200 stats_player_week_2017.csv         6,339,786 bytes
+ 200 injuries_2017.csv                    665,280 bytes
+ 200 depth_charts_2017.csv              3,367,336 bytes
+ 200 roster_2017.csv                      958,517 bytes
+ 200 snap_counts_2017.csv               2,157,818 bytes
+ 200 play_by_play_2017.csv.gz          17,973,428 bytes
+ 200 stats_player_week_2018.csv         6,318,715 bytes
+ 200 injuries_2018.csv                    665,119 bytes
+ 200 depth_charts_2018.csv              3,365,843 bytes
+ 200 roster_2018.csv                      997,735 bytes
+ 200 snap_counts_2018.csv               2,157,555 bytes
+ 200 play_by_play_2018.csv.gz          17,920,627 bytes
+ 404 stats_player_week_2019.csv       FAIL HTTP 404
+ 200 player_stats_2019.csv              1,580,008 bytes
+ 200 injuries_2019.csv                    700,757 bytes
+ 200 depth_charts_2019.csv              3,335,603 bytes
+ 200 roster_2019.csv                    1,001,234 bytes
+ 200 snap_counts_2019.csv               2,156,311 bytes
+ 200 play_by_play_2019.csv.gz          17,992,849 bytes
+ 200 stats_player_week_2020.csv         6,395,671 bytes
+ 200 injuries_2020.csv                    737,474 bytes
+ 200 depth_charts_2020.csv              3,327,076 bytes
+ 200 roster_2020.csv                      988,000 bytes
+ 200 snap_counts_2020.csv               2,257,664 bytes
+ 200 play_by_play_2020.csv.gz          18,143,553 bytes
+ 200 stats_player_week_2021.csv         6,874,967 bytes
+ 200 injuries_2021.csv                    737,083 bytes
+ 200 depth_charts_2021.csv              3,447,809 bytes
+ 200 roster_2021.csv                      953,822 bytes
+ 200 snap_counts_2021.csv               2,388,493 bytes
+ 200 play_by_play_2021.csv.gz          19,022,201 bytes
+ 200 stats_player_week_2022.csv         6,817,192 bytes
+ 200 injuries_2022.csv                    752,433 bytes
+ 200 depth_charts_2022.csv              3,467,936 bytes
+ 200 roster_2022.csv                      980,115 bytes
+ 200 snap_counts_2022.csv               2,379,719 bytes
+ 200 play_by_play_2022.csv.gz          19,093,961 bytes
+ 200 stats_player_week_2023.csv         6,756,467 bytes
+ 200 injuries_2023.csv                    738,501 bytes
+ 200 depth_charts_2023.csv              3,426,502 bytes
+ 200 roster_2023.csv                      967,354 bytes
+ 200 snap_counts_2023.csv               2,394,875 bytes
+ 200 play_by_play_2023.csv.gz          19,169,807 bytes
+ 200 stats_player_week_2024.csv         6,863,480 bytes
+ 200 injuries_2024.csv                    816,989 bytes
+ 200 depth_charts_2024.csv              3,391,616 bytes
+ 200 roster_2024.csv                    1,005,701 bytes
+ 200 snap_counts_2024.csv               2,402,841 bytes
+ 200 play_by_play_2024.csv.gz          19,362,351 bytes
+ 404 stats_player_week_2025.csv       FAIL HTTP 404
+ 200 injuries_2025.csv                    696,006 bytes
+ 200 depth_charts_2025.csv             52,917,870 bytes
+ 200 roster_2025.csv                    1,010,039 bytes
+ 200 snap_counts_2025.csv               2,401,290 bytes
+ 200 play_by_play_2025.csv.gz          19,105,296 bytes
+ 404 stats_player_week_2026.csv       FAIL HTTP 404
+ 200 injuries_2026.csv                    354,572 bytes
+ 200 depth_charts_2026.csv             74,572,683 bytes
+ 200 roster_2026.csv                      982,988 bytes
+ 200 snap_counts_2026.csv               1,147,455 bytes
+ 200 espn_2016_t2_w1.json                 142,247 bytes
+ 200 espn_2016_t2_w2.json                 141,051 bytes
+ 200 espn_2016_t2_w3.json                 140,604 bytes
+ 200 espn_2016_t2_w4.json                 133,984 bytes
+ 200 espn_2016_t2_w5.json                 127,541 bytes
+ 200 espn_2016_t2_w6.json                 134,919 bytes
+ 200 espn_2016_t2_w7.json                 134,394 bytes
+ 200 espn_2016_t2_w8.json                 120,663 bytes
+ 200 espn_2016_t2_w9.json                 119,696 bytes
+ 200 espn_2016_t2_w10.json                126,402 bytes
+ 200 espn_2016_t2_w11.json                126,926 bytes
+ 200 espn_2016_t2_w12.json                142,095 bytes
+ 200 espn_2016_t2_w13.json                134,502 bytes
+ 200 espn_2016_t2_w14.json                141,974 bytes
+ 200 espn_2016_t2_w15.json                142,280 bytes
+ 200 espn_2016_t2_w16.json                142,391 bytes
+ 200 espn_2016_t2_w17.json                140,869 bytes
+ 200 espn_2016_t2_w18.json                  5,352 bytes
+ 200 espn_2016_t3_w1.json                  39,892 bytes
+ 200 espn_2016_t3_w2.json                  39,341 bytes
+ 200 espn_2016_t3_w3.json                  22,451 bytes
+ 200 espn_2016_t3_w4.json                   5,404 bytes
+ 200 espn_2016_t1_w1.json                  11,719 bytes
+ 200 espn_2016_t1_w2.json                 139,546 bytes
+ 200 espn_2016_t1_w3.json                 137,856 bytes
+ 200 espn_2016_t1_w4.json                 138,143 bytes
+ 200 espn_2017_t2_w1.json                 138,423 bytes
+ 200 espn_2017_t2_w2.json                 141,144 bytes
+ 200 espn_2017_t2_w3.json                 141,364 bytes
+ 200 espn_2017_t2_w4.json                 142,416 bytes
+ 200 espn_2017_t2_w5.json                 125,562 bytes
+ 200 espn_2017_t2_w6.json                 127,373 bytes
+ 200 espn_2017_t2_w7.json                 133,780 bytes
+ 200 espn_2017_t2_w8.json                 118,094 bytes
+ 200 espn_2017_t2_w9.json                 118,390 bytes
+ 200 espn_2017_t2_w10.json                126,606 bytes
+ 200 espn_2017_t2_w11.json                126,052 bytes
+ 200 espn_2017_t2_w12.json                139,381 bytes
+ 200 espn_2017_t2_w13.json                141,143 bytes
+ 200 espn_2017_t2_w14.json                141,244 bytes
+ 200 espn_2017_t2_w15.json                142,203 bytes
+ 200 espn_2017_t2_w16.json                140,511 bytes
+ 200 espn_2017_t2_w17.json                140,719 bytes
+ 200 espn_2017_t2_w18.json                  5,353 bytes
+ 200 espn_2017_t3_w1.json                  39,505 bytes
+ 200 espn_2017_t3_w2.json                  39,568 bytes
+ 200 espn_2017_t3_w3.json                  22,545 bytes
+ 200 espn_2017_t3_w4.json                  10,935 bytes
+ 200 espn_2017_t1_w1.json                  13,653 bytes
+ 200 espn_2017_t1_w2.json                 140,724 bytes
+ 200 espn_2017_t1_w3.json                 140,091 bytes
+ 200 espn_2017_t1_w4.json                 145,382 bytes
+ 200 espn_2018_t2_w1.json                 142,790 bytes
+ 200 espn_2018_t2_w2.json                 141,902 bytes
+ 200 espn_2018_t2_w3.json                 141,289 bytes
+ 200 espn_2018_t2_w4.json                 135,131 bytes
+ 200 espn_2018_t2_w5.json                 134,268 bytes
+ 200 espn_2018_t2_w6.json                 133,785 bytes
+ 200 espn_2018_t2_w7.json                 126,981 bytes
+ 200 espn_2018_t2_w8.json                 127,158 bytes
+ 200 espn_2018_t2_w9.json                 118,874 bytes
+ 200 espn_2018_t2_w10.json                125,542 bytes
+ 200 espn_2018_t2_w11.json                118,743 bytes
+ 200 espn_2018_t2_w12.json                134,737 bytes
+ 200 espn_2018_t2_w13.json                141,183 bytes
+ 200 espn_2018_t2_w14.json                141,758 bytes
+ 200 espn_2018_t2_w15.json                141,946 bytes
+ 200 espn_2018_t2_w16.json                141,745 bytes
+ 200 espn_2018_t2_w17.json                140,448 bytes
+ 200 espn_2018_t2_w18.json                  5,356 bytes
+ 200 espn_2018_t3_w1.json                  39,739 bytes
+ 200 espn_2018_t3_w2.json                  40,119 bytes
+ 200 espn_2018_t3_w3.json                  22,819 bytes
+ 200 espn_2018_t3_w4.json                  11,030 bytes
+ 200 espn_2018_t1_w1.json                  13,990 bytes
+ 200 espn_2018_t1_w2.json                 138,812 bytes
+ 200 espn_2018_t1_w3.json                 140,065 bytes
+ 200 espn_2018_t1_w4.json                 139,468 bytes
+ 200 espn_2019_t2_w1.json                 141,031 bytes
+ 200 espn_2019_t2_w2.json                 141,461 bytes
+ 200 espn_2019_t2_w3.json                 141,121 bytes
+ 200 espn_2019_t2_w4.json                 134,796 bytes
+ 200 espn_2019_t2_w5.json                 133,804 bytes
+ 200 espn_2019_t2_w6.json                 126,239 bytes
+ 200 espn_2019_t2_w7.json                 126,272 bytes
+ 200 espn_2019_t2_w8.json                 133,486 bytes
+ 200 espn_2019_t2_w9.json                 127,246 bytes
+ 200 espn_2019_t2_w10.json                118,415 bytes
+ 200 espn_2019_t2_w11.json                126,591 bytes
+ 200 espn_2019_t2_w12.json                126,086 bytes
+ 200 espn_2019_t2_w13.json                140,980 bytes
+ 200 espn_2019_t2_w14.json                141,397 bytes
+ 200 espn_2019_t2_w15.json                141,146 bytes
+ 200 espn_2019_t2_w16.json                141,741 bytes
+ 200 espn_2019_t2_w17.json                141,157 bytes
+ 200 espn_2019_t2_w18.json                  5,357 bytes
+ 200 espn_2019_t3_w1.json                  40,126 bytes
+ 200 espn_2019_t3_w2.json                  39,626 bytes
+ 200 espn_2019_t3_w3.json                  22,799 bytes
+ 200 espn_2019_t3_w4.json                  10,952 bytes
+ 200 espn_2019_t1_w1.json                  13,725 bytes
+ 200 espn_2019_t1_w2.json                 139,078 bytes
+ 200 espn_2019_t1_w3.json                 138,901 bytes
+ 200 espn_2019_t1_w4.json                 138,550 bytes
+ 200 espn_2020_t2_w1.json                 140,463 bytes
+ 200 espn_2020_t2_w2.json                 140,443 bytes
+ 200 espn_2020_t2_w3.json                 140,303 bytes
+ 200 espn_2020_t2_w4.json                 133,085 bytes
+ 200 espn_2020_t2_w5.json                 119,167 bytes
+ 200 espn_2020_t2_w6.json                 118,719 bytes
+ 200 espn_2020_t2_w7.json                 118,508 bytes
+ 200 espn_2020_t2_w8.json                 118,707 bytes
+ 200 espn_2020_t2_w9.json                 118,643 bytes
+ 200 espn_2020_t2_w10.json                118,719 bytes
+ 200 espn_2020_t2_w11.json                118,783 bytes
+ 200 espn_2020_t2_w12.json                139,977 bytes
+ 200 espn_2020_t2_w13.json                131,500 bytes
+ 200 espn_2020_t2_w14.json                140,360 bytes
+ 200 espn_2020_t2_w15.json                141,027 bytes
+ 200 espn_2020_t2_w16.json                140,683 bytes
+ 200 espn_2020_t2_w17.json                140,473 bytes
+ 200 espn_2020_t2_w18.json                  5,356 bytes
+ 200 espn_2020_t3_w1.json                  56,223 bytes
+ 200 espn_2020_t3_w2.json                  38,962 bytes
+ 200 espn_2020_t3_w3.json                  21,976 bytes
+ 200 espn_2020_t3_w4.json                   7,988 bytes
+ 200 espn_2020_t1_w1.json                  10,513 bytes
+ 200 espn_2020_t1_w2.json                  83,448 bytes
+ 200 espn_2020_t1_w3.json                  84,327 bytes
+ 200 espn_2020_t1_w4.json                  83,970 bytes
+ 200 espn_2021_t2_w1.json                 140,543 bytes
+ 200 espn_2021_t2_w2.json                 139,761 bytes
+ 200 espn_2021_t2_w3.json                 139,970 bytes
+ 200 espn_2021_t2_w4.json                 139,319 bytes
+ 200 espn_2021_t2_w5.json                 140,390 bytes
+ 200 espn_2021_t2_w6.json                 124,561 bytes
+ 200 espn_2021_t2_w7.json                 117,809 bytes
+ 200 espn_2021_t2_w8.json                 132,567 bytes
+ 200 espn_2021_t2_w9.json                 125,164 bytes
+ 200 espn_2021_t2_w10.json                125,100 bytes
+ 200 espn_2021_t2_w11.json                132,277 bytes
+ 200 espn_2021_t2_w12.json                132,046 bytes
+ 200 espn_2021_t2_w13.json                125,108 bytes
+ 200 espn_2021_t2_w14.json                125,405 bytes
+ 200 espn_2021_t2_w15.json                140,494 bytes
+ 200 espn_2021_t2_w16.json                140,522 bytes
+ 200 espn_2021_t2_w17.json                139,680 bytes
+ 200 espn_2021_t2_w18.json                140,785 bytes
+ 200 espn_2021_t3_w1.json                  56,714 bytes
+ 200 espn_2021_t3_w2.json                  39,039 bytes
+ 200 espn_2021_t3_w3.json                  21,772 bytes
+ 200 espn_2021_t3_w4.json                  10,497 bytes
+ 200 espn_2021_t1_w1.json                  13,843 bytes
+ 200 espn_2021_t1_w2.json                 139,403 bytes
+ 200 espn_2021_t1_w3.json                 139,828 bytes
+ 200 espn_2021_t1_w4.json                 135,815 bytes
+ 200 espn_2022_t2_w1.json                 140,516 bytes
+ 200 espn_2022_t2_w2.json                 140,949 bytes
+ 200 espn_2022_t2_w3.json                 139,737 bytes
+ 200 espn_2022_t2_w4.json                 138,807 bytes
+ 200 espn_2022_t2_w5.json                 139,819 bytes
+ 200 espn_2022_t2_w6.json                 124,788 bytes
+ 200 espn_2022_t2_w7.json                 124,235 bytes
+ 200 espn_2022_t2_w8.json                 132,541 bytes
+ 200 espn_2022_t2_w9.json                 117,378 bytes
+ 200 espn_2022_t2_w10.json                125,705 bytes
+ 200 espn_2022_t2_w11.json                125,022 bytes
+ 200 espn_2022_t2_w12.json                140,045 bytes
+ 200 espn_2022_t2_w13.json                131,949 bytes
+ 200 espn_2022_t2_w14.json                117,842 bytes
+ 200 espn_2022_t2_w15.json                141,196 bytes
+ 200 espn_2022_t2_w16.json                140,290 bytes
+ 200 espn_2022_t2_w17.json                136,762 bytes
+ 200 espn_2022_t2_w18.json                140,362 bytes
+ 200 espn_2022_t3_w1.json                  56,321 bytes
+ 200 espn_2022_t3_w2.json                  39,175 bytes
+ 200 espn_2022_t3_w3.json                  21,876 bytes
+ 200 espn_2022_t3_w4.json                   8,323 bytes
+ 200 espn_2022_t1_w1.json                  13,756 bytes
+ 200 espn_2022_t1_w2.json                 139,713 bytes
+ 200 espn_2022_t1_w3.json                 140,101 bytes
+ 200 espn_2022_t1_w4.json                 138,729 bytes
+ 200 espn_2023_t2_w1.json                 140,908 bytes
+ 200 espn_2023_t2_w2.json                 142,230 bytes
+ 200 espn_2023_t2_w3.json                 141,830 bytes
+ 200 espn_2023_t2_w4.json                 141,675 bytes
+ 200 espn_2023_t2_w5.json                 126,632 bytes
+ 200 espn_2023_t2_w6.json                 133,941 bytes
+ 200 espn_2023_t2_w7.json                 119,482 bytes
+ 200 espn_2023_t2_w8.json                 141,015 bytes
+ 200 espn_2023_t2_w9.json                 126,477 bytes
+ 200 espn_2023_t2_w10.json                126,500 bytes
+ 200 espn_2023_t2_w11.json                126,898 bytes
+ 200 espn_2023_t2_w12.json                141,355 bytes
+ 200 espn_2023_t2_w13.json                119,190 bytes
+ 200 espn_2023_t2_w14.json                135,161 bytes
+ 200 espn_2023_t2_w15.json                142,113 bytes
+ 200 espn_2023_t2_w16.json                142,086 bytes
+ 200 espn_2023_t2_w17.json                141,890 bytes
+ 200 espn_2023_t2_w18.json                142,527 bytes
+ 200 espn_2023_t3_w1.json                  56,981 bytes
+ 200 espn_2023_t3_w2.json                  40,234 bytes
+ 200 espn_2023_t3_w3.json                  22,393 bytes
+ 200 espn_2023_t3_w4.json                   8,638 bytes
+ 200 espn_2023_t1_w1.json                  13,865 bytes
+ 200 espn_2023_t1_w2.json                 141,741 bytes
+ 200 espn_2023_t1_w3.json                 140,422 bytes
+ 200 espn_2023_t1_w4.json                 140,891 bytes
+ 200 espn_2024_t2_w1.json                 142,642 bytes
+ 200 espn_2024_t2_w2.json                 142,333 bytes
+ 200 espn_2024_t2_w3.json                 142,532 bytes
+ 200 espn_2024_t2_w4.json                 142,265 bytes
+ 200 espn_2024_t2_w5.json                 127,293 bytes
+ 200 espn_2024_t2_w6.json                 127,405 bytes
+ 200 espn_2024_t2_w7.json                 134,846 bytes
+ 200 espn_2024_t2_w8.json                 142,431 bytes
+ 200 espn_2024_t2_w9.json                 134,605 bytes
+ 200 espn_2024_t2_w10.json                127,103 bytes
+ 200 espn_2024_t2_w11.json                126,851 bytes
+ 200 espn_2024_t2_w12.json                119,650 bytes
+ 200 espn_2024_t2_w13.json                142,052 bytes
+ 200 espn_2024_t2_w14.json                120,272 bytes
+ 200 espn_2024_t2_w15.json                142,389 bytes
+ 200 espn_2024_t2_w16.json                141,901 bytes
+ 200 espn_2024_t2_w17.json                143,554 bytes
+ 200 espn_2024_t2_w18.json                143,733 bytes
+ 200 espn_2024_t3_w1.json                  57,807 bytes
+ 200 espn_2024_t3_w2.json                  40,515 bytes
+ 200 espn_2024_t3_w3.json                  22,917 bytes
+ 200 espn_2024_t3_w4.json                   8,636 bytes
+ 200 espn_2024_t1_w1.json                  14,592 bytes
+ 200 espn_2024_t1_w2.json                 143,589 bytes
+ 200 espn_2024_t1_w3.json                 141,920 bytes
+ 200 espn_2024_t1_w4.json                 142,102 bytes
+ 200 espn_2025_t2_w1.json                 141,282 bytes
+ 200 espn_2025_t2_w2.json                 141,155 bytes
+ 200 espn_2025_t2_w3.json                 141,650 bytes
+ 200 espn_2025_t2_w4.json                 141,122 bytes
+ 200 espn_2025_t2_w5.json                 126,923 bytes
+ 200 espn_2025_t2_w6.json                 133,298 bytes
+ 200 espn_2025_t2_w7.json                 134,460 bytes
+ 200 espn_2025_t2_w8.json                 119,097 bytes
+ 200 espn_2025_t2_w9.json                 126,569 bytes
+ 200 espn_2025_t2_w10.json                126,030 bytes
+ 200 espn_2025_t2_w11.json                135,163 bytes
+ 200 espn_2025_t2_w12.json                126,685 bytes
+ 200 espn_2025_t2_w13.json                140,973 bytes
+ 200 espn_2025_t2_w14.json                126,646 bytes
+ 200 espn_2025_t2_w15.json                141,261 bytes
+ 200 espn_2025_t2_w16.json                141,604 bytes
+ 200 espn_2025_t2_w17.json                140,843 bytes
+ 200 espn_2025_t2_w18.json                141,127 bytes
+ 200 espn_2025_t3_w1.json                  57,102 bytes
+ 200 espn_2025_t3_w2.json                  40,531 bytes
+ 200 espn_2025_t3_w3.json                  22,650 bytes
+ 200 espn_2025_t3_w4.json                   8,517 bytes
+ 200 espn_2025_t1_w1.json                  14,012 bytes
+ 200 espn_2025_t1_w2.json                 143,575 bytes
+ 200 espn_2025_t1_w3.json                 144,253 bytes
+ 200 espn_2025_t1_w4.json                 145,612 bytes
+ 200 espn_2026_t2_w1.json                 141,248 bytes
+ 200 espn_2026_t2_w2.json                 141,116 bytes
+ 200 espn_2026_t2_w3.json                 140,445 bytes
+ 200 espn_2026_t2_w4.json                 142,679 bytes
+ 200 espn_2026_t2_w5.json                 135,394 bytes
+ 200 espn_2026_t2_w6.json                 126,555 bytes
+ 200 espn_2026_t2_w7.json                 126,932 bytes
+ 200 espn_2026_t2_w8.json                 126,088 bytes
+ 200 espn_2026_t2_w9.json                 133,973 bytes
+ 200 espn_2026_t2_w10.json                254,476 bytes
+ 200 espn_2026_t2_w11.json                236,508 bytes
+ 200 espn_2026_t2_w12.json                182,869 bytes
+ 200 espn_2026_t2_w13.json                163,033 bytes
+ 200 espn_2026_t2_w14.json                172,371 bytes
+ 200 espn_2026_t2_w15.json                183,165 bytes
+ 200 espn_2026_t2_w16.json                182,170 bytes
+ 200 espn_2026_t2_w17.json                182,555 bytes
+ 200 espn_2026_t2_w18.json                179,655 bytes
+ 200 espn_2026_t3_w1.json                  16,675 bytes
+ 200 espn_2026_t3_w2.json                  12,821 bytes
+ 200 espn_2026_t3_w3.json                   8,955 bytes
+ 200 espn_2026_t3_w4.json                   8,475 bytes
+{"requested": 355, "ok": 352, "failed": 3}
+{
+ "games": 3033,
+ "model": {
+  "games": 1632,
+  "logloss": 0.63757,
+  "baselineLogloss": 0.68848,
+  "skill": 0.07395,
+  "brier": 0.22321,
+  "baselineBrier": 0.24673,
+  "brierSkill": 0.09535,
+  "accuracy": 0.6379
+ },
+ "deflation": {
+  "N": 200,
+  "K": 9,
+  "p95_single": 0.02332,
+  "p95": 0.03119,
+  "median": 0.00783,
+  "blocks": 22,
+  "passed": true
+ }
+}
+Traceback (most recent call last):
+  File "/home/runner/work/Korea5/Korea5/nfl/analyze.py", line 422, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/Korea5/Korea5/nfl/analyze.py", line 336, in main
+    mr["crossSource"], mr["marketCoverage"] = cross_source_and_market()
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Korea5/Korea5/nfl/analyze.py", line 366, in cross_source_and_market
+    idx[(r["gameday"], r["home"])].append(r)
+                       ~^^^^^^^^
+KeyError: 'home'
+leaderboard: 13 strategies
+  #1 A    4.601 pts= 1000 Home-win model (walk-forward, prior info only)
+  #2 A    4.276 pts= 1000 Single-game model — strength features (9 signals)
+  #3 C    3.442 pts=  300 WR receptions over 4.5
+  #4 C    3.398 pts=  300 RB rushing yards over 55.0
+  #5 C    2.972 pts=  300 WR receiving tds over 0.5
+  #6 C     2.91 pts=  300 RB rushing tds over 0.5
+  #7 C    2.135 pts=  300 WR receiving yards over 45.0
+  #8 C    0.445 pts=  300 QB passing tds over 1.5
+built 11 pages in nfl-lines/
+test_cholesky_and_copula (test_model.TestGates.test_cholesky_and_copula) ... ok
+test_deflation_rejects_pure_noise (test_model.TestGates.test_deflation_rejects_pure_noise)
+A model fitted on shuffled labels must not clear the null. ... ok
+test_logloss_and_skill (test_model.TestGates.test_logloss_and_skill) ... ok
+test_pearson_and_ci (test_model.TestGates.test_pearson_and_ci) ... ok
+test_every_field_has_a_rule_and_status (test_model.TestLabels.test_every_field_has_a_rule_and_status) ... /home/runner/work/Korea5/Korea5/nfl/tests/test_model.py:97: ResourceWarning: unclosed file <_io.TextIOWrapper name='nfl/labels.json' mode='r' encoding='utf-8'>
+  cat = json.load(open("nfl/labels.json", encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_elo_is_pregame (test_model.TestNoLeakage.test_elo_is_pregame)
+Truncating later games must not change any earlier game's Elo features. ... ok
+test_result_not_a_feature (test_model.TestNoLeakage.test_result_not_a_feature) ... ok
+test_walk_forward_ignores_future_seasons (test_model.TestNoLeakage.test_walk_forward_ignores_future_seasons) ... ok
+test_questions_have_all_resolution_fields (test_model.TestQuestions.test_questions_have_all_resolution_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 12.193s
+
+OK

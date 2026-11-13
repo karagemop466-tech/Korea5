@@ -202,9 +202,9 @@ def build_lines():
             UNV(),  # market spread
             src(l["gameUrl"], "game") + " " + src(l["weekUrl"], "week"),
         ])
-    b.append(table(["Wk", "Date (PT)", "Kick", "Away", "Home", "Our spread (home)", "S2 spread", "Our total", "S2 total",
+    b.append(table(["Wk", "Date (PT)", "Kick", "Away", "Home", "Our margin (home)", "S2 margin", "Our total", "S2 total",
                     "P(home)", "Market", "Official"], rows))
-    b.append('<p class="small">Spread sign: negative = home favoured. ' + CMP() +
+    b.append('<p class="small">Margin = predicted home score minus away score (formulas above); negative = home expected to lose, e.g. BUF @ NYJ &minus;12.7 means NYJ is expected to lose by 12.7. Convert to a betting line by flipping the sign onto the favourite. ' + CMP() +
              ' columns; market cells are ' + UNV() + ' because no officially verified odds source exists (Q-ODDS) — never inferred. A trusted-secondary feed (DraftKings via ESPN partner feed) is captured elsewhere in the repo and labelled not-official.</p>')
 
     b.append("<h2>Power ratings (opponent-adjusted)</h2>")

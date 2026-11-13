@@ -2214,3 +2214,40 @@ growing the shared flag register to F51. Resolution taken in the merge commit:
 
 The hub page now states how this lab differs from the sibling NFL pages, and links to them, so a reader can tell
 which numbers came from which pipeline.
+
+---
+
+## Session `arena-827c3da2-korea5` — 2026-11-13 — NFL Control Room (consolidation + audit)
+
+Branch fixed by Arena: `arena/827c3da2-korea5`, branched from `main` `f618f50`. Claimed **now** and pushed before
+any work, so any parallel session sees it.
+
+### Why this session exists
+
+`main` now carries **eight** NFL surfaces built by eight earlier sessions (`lab/`, `nfl-lab/`, `nfl/`, `nfl/system/`,
+`lines/`, `lines-lab/`, `strategy-lab/`, plus the root `nfl-*.html` pointer pages and `nfl-intel*`/`nfl-analytics*`).
+`COORDINATION.md` records this duplication as an unresolved open item. A reader still cannot answer three questions
+without reading eight sections: *what do we actually know*, *what decisions are open*, and *what is the one path
+forward*. This session builds that single layer and audits what is already published.
+
+### Task board (addendum) — non-overlapping scopes
+
+| # | Task | Owner | Status | Files (exclusive to this session) |
+|---|---|---|---|---|
+| C1 | Claim + board entry, pushed before any work | arena-827c3da2 | **done** | `COORDINATION.md` (append only) |
+| C2 | Audit data integrity of every NFL register: team attribution, source URLs, row counts, cross-file contradictions | arena-827c3da2 | **in progress** | `control/audit.json`, `tools/audit_control.py` |
+| C3 | Unified decision register: merge all Q/SG/S/R/G/F registers into one de-duplicated, evidence-linked register | arena-827c3da2 | pending | `data/control/decisions.json`, `tools/build_control.py` |
+| C4 | Live re-verification of a sample of published values against official NFL.com pages, with links | arena-827c3da2 | pending | `data/control/live-verify.json` |
+| C5 | NFL Control Room site: hub, decisions, evidence ledger, strategy board, injury/depth, suggestions, flagged | arena-827c3da2 | pending | `control/*.html`, `control/assets/*` |
+| C6 | Verifier with negative tests; wire into CI | arena-827c3da2 | pending | `tools/verify_control.py`, `.github/workflows/certainty.yml` (one added step) |
+| C7 | Nav entry (one tuple in `NAV` / `ROOT_NAV` only), PR, merge, Pages deploy check | arena-827c3da2 | pending | `scripts/build_site.py` (NAV), `tools/build_extra.py` (ROOT_NAV), `COORDINATION.md` |
+
+**Scope boundary.** This session does not edit any other session's data files, generators, pages or verifiers. It
+reads them and reports. The one exception is a **single additive navigation tuple**, which is the shared output the
+protocol allows only the integration session to touch; this session is the integration session.
+
+### Honesty rules for this session
+
+1. A number is published only if it is computed from a committed file or re-read live from an official page.
+2. A defect found in another session's file is **reported, not silently overwritten**. The owning file is named.
+3. Nothing is described as an edge, a win rate or a yield unless a stored price and a settled record exist. None do.

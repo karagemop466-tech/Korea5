@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Correlation — NFL Skill Lab</title>
+<meta name="description" content="NFL lines origination, strategy leaderboard, correlation values and injury/depth tracking with source-linked verification.">
+<link rel="stylesheet" href="assets/lab.css">
+</head>
+<body>
+<header><h1>NFL Skill Lab</h1>
+<div class="sub">Originate lines &middot; leaderboard strategies through validation gates &middot; measure correlation &middot; track injuries and depth. Built 2026-11-13 by session arena-fb9c9608; branch <code>arena/fb9c9608-korea5</code>.</div>
+</header>
+<nav><a href="index.html" class="">NFL Skill Lab</a><a href="lines.html" class="">Originated lines</a><a href="leaderboard.html" class="">Strategy leaderboard</a><a href="correlation.html" class="active">Correlation</a><a href="injuries.html" class="">Injuries & depth</a><a href="method.html" class="">Method & gates</a><a href="decisions.html" class="">Decisions needed</a><a href="suggestions.html" class="">Suggestions</a><a href="review.html" class="">Repo review</a><a href="flagged.html" class="">Flagged for review</a><a href="sources.html" class="">Sources</a><a href="data.html" class="">Data index</a></nav>
+<main>
+<div class="banner"><strong>Honesty policy.</strong> Every fact row links to its source. Market lines (spreads/totals/moneylines) are bookmaker quotes from the open-source nflverse/nfldata dataset — labelled <span class="tag mkt">market</span>, not official NFL data. Official data comes from NFL.com pages fetched 2026-11-13 (link on each row). Values that could not be verified are left blank and listed on <a href="flagged.html">Flagged for Review</a>. No betting edge is claimed anywhere; the leaderboard is a paper research competition.</div>
+
+<h2>Why correlation values matter here</h2>
+<p class="lede">A parlay is priced as the product of leg probabilities only when the legs are independent.
+Same-game legs are not independent in general, so the joint probability must be measured, not assumed.
+This page publishes the measured values for this dataset and the pricing arithmetic that follows from them.</p>
+<table><tr><th>Quantity</th><th class='num'>Value</th><th>Sample</th><th>Method</th><th>Source</th></tr>
+<tr><td>Pearson correlation, game margin vs total</td><td class='num'>+0.0201</td>
+<td>6967 regular-season games 1999–2025</td><td>direct Pearson r on realized (margin, total)</td>
+<td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr>
+<tr><td>Phi coefficient, home-covers × over-hits</td><td class='num'>+0.0219</td>
+<td>2639 games with closing lines, 2016–2025</td><td>2×2 correlation of cover indicators at the market number</td>
+<td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr>
+<tr><td>Residual σ, margin vs market spread</td><td class='num'>13.18 pts</td>
+<td>7,413 games with lines</td><td>std dev of (actual margin − market spread)</td>
+<td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr>
+<tr><td>Residual σ, total vs market total</td><td class='num'>13.41 pts</td>
+<td>same sample</td><td>std dev of (actual total − market total)</td>
+<td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr></table><h3>Same-game parlay correlation (seeded simulation, 400,000 draws/scenario)</h3><table><tr><th>Game (model spread, total)</th><th>Combo</th><th class='num'>Joint P</th><th class='num'>Marginal product</th><th class='num'>Correlation multiplier</th></tr><tr><td rowspan=4><strong>BUF @ NYJ</strong><br><span class="small">model -12.2 / 42.7</span></td><td>favoriteSpread + over</td><td class='num'>0.2464</td><td class='num'>—</td><td class='num'>0.985×</td><td rowspan=4 class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a><br><span class='small'>sim of model board</span></td></tr><tr><td>favoriteSpread + under</td><td class='num'>0.2521</td><td class='num'>—</td><td class='num'>1.007×</td></tr><tr><td>dogSpread + over</td><td class='num'>0.2528</td><td class='num'>—</td><td class='num'>1.011×</td></tr><tr><td>dogSpread + under</td><td class='num'>0.2476</td><td class='num'>—</td><td class='num'>0.990×</td></tr><tr><td rowspan=4><strong>JAX @ TEN</strong><br><span class="small">model -12.4 / 43.2</span></td><td>favoriteSpread + over</td><td class='num'>0.2480</td><td class='num'>—</td><td class='num'>0.994×</td><td rowspan=4 class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a><br><span class='small'>sim of model board</span></td></tr><tr><td>favoriteSpread + under</td><td class='num'>0.2547</td><td class='num'>—</td><td class='num'>1.019×</td></tr><tr><td>dogSpread + over</td><td class='num'>0.2539</td><td class='num'>—</td><td class='num'>1.015×</td></tr><tr><td>dogSpread + under</td><td class='num'>0.2465</td><td class='num'>—</td><td class='num'>0.983×</td></tr><tr><td rowspan=4><strong>SF @ DAL</strong><br><span class="small">model -3.9 / 45.1</span></td><td>favoriteSpread + over</td><td class='num'>0.2472</td><td class='num'>—</td><td class='num'>0.994×</td><td rowspan=4 class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a><br><span class='small'>sim of model board</span></td></tr><tr><td>favoriteSpread + under</td><td class='num'>0.2538</td><td class='num'>—</td><td class='num'>1.019×</td></tr><tr><td>dogSpread + over</td><td class='num'>0.2528</td><td class='num'>—</td><td class='num'>1.010×</td></tr><tr><td>dogSpread + under</td><td class='num'>0.2469</td><td class='num'>—</td><td class='num'>0.985×</td></tr><tr><td rowspan=4><strong>PIT @ CIN</strong><br><span class="small">model +3.1 / 43.3</span></td><td>favoriteSpread + over</td><td class='num'>0.2531</td><td class='num'>—</td><td class='num'>1.018×</td><td rowspan=4 class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a><br><span class='small'>sim of model board</span></td></tr><tr><td>favoriteSpread + under</td><td class='num'>0.2458</td><td class='num'>—</td><td class='num'>0.986×</td></tr><tr><td>dogSpread + over</td><td class='num'>0.2455</td><td class='num'>—</td><td class='num'>0.983×</td></tr><tr><td>dogSpread + under</td><td class='num'>0.2537</td><td class='num'>—</td><td class='num'>1.013×</td></tr></table><h3>Two-leg parlay math (both legs −110)</h3>
+<table><tr><th>Quantity</th><th class='num'>Value</th><th>Notes</th></tr>
+<tr><td>Fair joint probability at independence</td><td class='num'>0.2744</td><td>(110/210)² — fair probability implied by −110 per leg</td></tr>
+<tr><td>Fair parlay profit at independence</td><td class='num'>+2.64 per unit</td><td>book standard is +260</td></tr>
+<tr><td>EV of +260 at independence</td><td class='num'>-0.012 per unit</td><td>p²·(2.6+1) − 1</td></tr>
+<tr><td>Correlation effect</td><td class='num'>—</td><td>Book payout is fixed at 2.6 for two -110 legs; correlated legs change the FAIR price, not the payout — positive correlation on winning combos raises fair price and worsens hold. <a class='src' href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr></table>
+<div class="note"><strong>Honest finding.</strong> On this dataset (6,967 games), margin–total correlation is
++0.0201 and the cover×over phi is +0.0219;
+same-game parlay multipliers land between 0.985× and 1.011× — near-independence. Do not import
+"typical" correlation folklore from elsewhere; re-measure on the data actually being used and record the sample.</div>
+
+</main>
+<footer>NFL Skill Lab — part of <a href="../index.html">Korea5</a> (live site: karagemop466-tech.github.io/Korea5). Data build 2026-11-13T14:00:00Z. Report problems on <a href="flagged.html">Flagged for Review</a>.</footer>
+</body></html>

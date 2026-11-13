@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strategy leaderboard — NFL Skill Lab</title>
+<meta name="description" content="NFL lines origination, strategy leaderboard, correlation values and injury/depth tracking with source-linked verification.">
+<link rel="stylesheet" href="assets/lab.css">
+</head>
+<body>
+<header><h1>NFL Skill Lab</h1>
+<div class="sub">Originate lines &middot; leaderboard strategies through validation gates &middot; measure correlation &middot; track injuries and depth. Built 2026-11-13 by session arena-fb9c9608; branch <code>arena/fb9c9608-korea5</code>.</div>
+</header>
+<nav><a href="index.html" class="">NFL Skill Lab</a><a href="lines.html" class="">Originated lines</a><a href="leaderboard.html" class="active">Strategy leaderboard</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries & depth</a><a href="method.html" class="">Method & gates</a><a href="decisions.html" class="">Decisions needed</a><a href="suggestions.html" class="">Suggestions</a><a href="review.html" class="">Repo review</a><a href="flagged.html" class="">Flagged for review</a><a href="sources.html" class="">Sources</a><a href="data.html" class="">Data index</a></nav>
+<main>
+<div class="banner"><strong>Honesty policy.</strong> Every fact row links to its source. Market lines (spreads/totals/moneylines) are bookmaker quotes from the open-source nflverse/nfldata dataset — labelled <span class="tag mkt">market</span>, not official NFL data. Official data comes from NFL.com pages fetched 2026-11-13 (link on each row). Values that could not be verified are left blank and listed on <a href="flagged.html">Flagged for Review</a>. No betting edge is claimed anywhere; the leaderboard is a paper research competition.</div>
+
+<h2>Rules of the competition</h2>
+<p class="lede">A strategy is a mechanical rule over the same inputs everyone gets (results, market numbers,
+ratings, availability pressure). Each walk-forward season, it bets flat 1 unit per qualifying game. The
+leaderboard ranks by points; only strategies that pass every mandatory gate score points. Failed strategies
+stay published — deleting failures would reintroduce luck via selection bias.</p>
+<table><tr><th>Gate</th><th>Definition</th><th>Status</th></tr><tr><td><strong>G1 sample</strong></td><td>≥ 200 resolved bets</td><td>enforced</td></tr><tr><td><strong>G2 profitability</strong></td><td>bootstrap 95% CI lower bound of flat-bet ROI > 0 (10,000 resamples)</td><td>enforced</td></tr><tr><td><strong>G3 stability</strong></td><td>ROI > 0 in at least 2/3 of evaluated seasons</td><td>enforced</td></tr><tr><td><strong>G4 process</strong></td><td>walk-forward: every prediction emitted before the rating update; tuning only on 2016–2019</td><td>enforced</td></tr><tr><td><strong>G5 closing-line value</strong></td><td>requires archived timestamped entry quotes</td><td><span class="tag est">pending — blocks rewards</span></td></tr><tr><td><strong>G6 prospective trial</strong></td><td>pre-registered locked paper trial with declared horizon</td><td><span class="tag est">pending</span></td></tr></table>
+<h2>Leaderboard — 2020–2025 held-out walk-forward</h2>
+<p class="small">Pricing: flat 1 unit; spreads/totals at −110; moneylines at the listed nfldata prices.
+CI by 10,000-sample bootstrap over bets. Points = 100 × ROI%, awarded only when G1–G4 all pass.
+PAPER POINTS ONLY. No monetary or real-world rewards are authorized. Strategies failing gates stay published; nothing is deleted.</p>
+<table><tr><th>Rank</th><th>Strategy</th><th class='num'>Bets</th><th class='num'>Win %</th><th class='num'>ROI %</th><th class='num'>ROI 95% CI</th><th>Seasons positive</th><th class='num'>Points</th><th>Status</th><th>Source</th></tr><tr><td>1</td><td>S0 market favorite ML (baseline)</td><td class='num'>1615</td><td class='num'>66.7</td><td class='num'>-2.94</td><td class='num'>[-6.3, +0.5]</td><td>2020: -2.5%, 2021: -12.3%, 2022: -3.2%, 2023: +2.2%, 2024: +4.8%, 2025: -6.7%</td><td class='num'>0</td><td><span class="tag bad">failed gates</span></td><td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr><tr><td>2</td><td>S1 spread edge &gt;= 2</td><td class='num'>372</td><td class='num'>51.3</td><td class='num'>-1.98</td><td class='num'>[-11.7, +7.8]</td><td>2020: -4.5%, 2021: -7.6%, 2022: +3.2%, 2023: -13.4%, 2024: +4.1%, 2025: -1.1%</td><td class='num'>0</td><td><span class="tag bad">failed gates</span></td><td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr><tr><td>3</td><td>S2 spread edge &gt;= 3</td><td class='num'>241</td><td class='num'>51.0</td><td class='num'>-2.56</td><td class='num'>[-14.4, +10.1]</td><td>2020: +1.1%, 2021: -0.4%, 2022: +2.1%, 2023: -24.5%, 2024: +6.8%, 2025: -7.6%</td><td class='num'>0</td><td><span class="tag bad">failed gates</span></td><td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr><tr><td>4</td><td>S3 total edge &gt;= 2</td><td class='num'>441</td><td class='num'>49.0</td><td class='num'>-6.49</td><td class='num'>[-15.6, +2.6]</td><td>2020: +20.6%, 2021: -8.9%, 2022: -18.9%, 2023: -10.3%, 2024: +7.8%, 2025: -4.5%</td><td class='num'>0</td><td><span class="tag bad">failed gates</span></td><td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr><tr><td>5</td><td>S4 total edge &gt;= 3</td><td class='num'>341</td><td class='num'>47.2</td><td class='num'>-9.86</td><td class='num'>[-19.9, +0.2]</td><td>2020: -23.6%, 2021: +1.8%, 2022: -18.9%, 2023: -10.3%, 2024: -1.6%, 2025: -9.6%</td><td class='num'>0</td><td><span class="tag bad">failed gates</span></td><td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr><tr><td>6</td><td>S5 road dog + edge</td><td class='num'>269</td><td class='num'>50.6</td><td class='num'>-3.48</td><td class='num'>[-14.8, +7.9]</td><td>2020: -9.4%, 2021: +3.5%, 2022: +12.8%, 2023: -20.4%, 2024: -0.4%, 2025: -20.4%</td><td class='num'>0</td><td><span class="tag bad">failed gates</span></td><td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr><tr><td>7</td><td>S6 ML model-vs-market</td><td class='num'>894</td><td class='num'>37.4</td><td class='num'>-14.45</td><td class='num'>[-22.4, -6.5]</td><td>2020: -20.6%, 2021: -10.4%, 2022: -16.6%, 2023: -20.9%, 2024: -10.0%, 2025: -8.4%</td><td class='num'>0</td><td><span class="tag bad">failed gates</span></td><td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr><tr><td>8</td><td>S7 do-nothing (control)</td><td class='num'>0</td><td class='num'>—</td><td class='num'>+0.00</td><td class='num'>[+0.0, +0.0]</td><td>—</td><td class='num'>0</td><td><span class="tag bad">failed gates</span></td><td class='src'><a href='https://github.com/nflverse/nfldata/blob/master/data/games.csv' rel='noopener'>games.csv ↗</a></td></tr></table>
+<h2>How to submit a strategy</h2>
+<ol class="tight">
+<li>Write the rule in plain language + code (deterministic; no look-ahead; inputs from the <a href="data.html">data index</a> only).</li>
+<li>Open a PR adding it to <code>lines-lab/scripts/build_nfl_lab.py</code>'s strategy table (or a sibling module) with its entry conditions and pricing.</li>
+<li>The build re-runs the walk-forward automatically; the result lands on this page with all gates evaluated.</li>
+<li>Propose via the <a href="suggestions.html">Suggestions board</a> first if the rule needs a new data source — new sources need a provenance row.</li>
+</ol>
+<div class="banner"><strong>Reward policy (paper only).</strong> Leaderboard points are paper research credit.
+No monetary or real-world reward is authorized by this repository. Gate G5 (closing-line value against
+archived entry quotes) and G6 (prospective locked trial) must exist before any reward concept is even
+reviewed — see <a href="suggestions.html">S12–S14</a> and flag <a href="flagged.html">NFL-K6</a>.</div>
+
+</main>
+<footer>NFL Skill Lab — part of <a href="../index.html">Korea5</a> (live site: karagemop466-tech.github.io/Korea5). Data build 2026-11-13T14:00:00Z. Report problems on <a href="flagged.html">Flagged for Review</a>.</footer>
+</body></html>

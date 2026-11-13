@@ -239,3 +239,28 @@ python3 strategy-lab/verify.py      # 409 sourced fact rows, 0 broken links
   the official roster carries no string order, so the 2nd/3rd/4th-string requirement cannot be met
   from an official source today.
 * The leaderboard runs **paper-only**; no rewards are authorized pending a governance review.
+## NFL Skill Lab (2026-11-13, session `arena/fb9c9608-korea5` — relocated to `lines-lab/`)
+
+A data-driven implementation of the [NFL strategy proposal](research/NFL-STRATEGY.md), published under `lines-lab/` (first drafted under `nfl-lab/`, which the parallel model-lab session owns; relocated on merge):
+
+| Path | What it is |
+|---|---|
+| `lines-lab/*.html` | Dashboard, originated lines board, strategy leaderboard, correlation values, injury/depth tracker, method & gates, decision register, suggestions review board, repo review, flagged register, sources, data index |
+| `lines-lab/data/official/` | NFL.com Week 10 injury report (296 rows), Week 10/11 schedules — fetched 2026-11-13, provenance included |
+| `lines-lab/data/nfldata/` | nflverse/nfldata results + market lines (market data, labelled as such everywhere) |
+| `lines-lab/data/derived/` | Deterministic build outputs: lines, leaderboard, correlation, depth, flags, verification |
+| `lines-lab/scripts/` | `build_nfl_lab.py` (analytics), `build_site_lab.py` (site), `verify_nfl_lab.py` (20 checks), `fetch_upstream.py` (CI-only snapshots) |
+| `.github/workflows/nfl-lab-data.yml` | Weekly CI snapshot of nflverse injuries/depth-charts/snap-counts + market lines — the discovery step that unblocks CLV, depth facts and player props |
+
+Rebuild:
+
+```bash
+python3 lines-lab/scripts/build_nfl_lab.py    # analytics -> derived JSON (deterministic, seeded)
+python3 lines-lab/scripts/build_site_lab.py   # derived JSON -> nfl-lab/*.html
+python3 lines-lab/scripts/verify_nfl_lab.py   # 20 checks: links, row sources, content
+```
+
+Honesty rules: every fact row links to its source; market lines are labelled `market`; unverified values stay
+blank and are published on `nfl-lab/flagged.html`; no betting edge is claimed — on held-out 2020–2025,
+**zero strategies passed the validation gates** (every ROI CI includes zero), which is the luck-removal
+step working as designed. Depth-chart tier is never inferred.

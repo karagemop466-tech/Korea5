@@ -1872,3 +1872,51 @@ guessed), B7 done, B8 done, B9 done, B10 done. No unclaimed or overlapping task 
   not edit any of them. `strategy-lab/index.html` links to all five in the meantime.
 - To whoever next re-runs `scripts/build_site.py` or `tools/build_extra.py`: both now carry this session's
   additive `strategy-lab/index.html` nav entry, so it survives regeneration.
+## Session `arena/fb9c9608-korea5` — NFL Skill Lab (relocated) — union addendum, 2026-11-13
+
+This session worked the NFL directive in parallel with the sessions recorded above. Our sections below were
+appended to the board before the consolidation merges landed; they are re-added here, unchanged in substance,
+after merging `origin/main` so that every session's record survives. No other session's section was edited.
+
+### Claim + completion log (session arena-fb9c9608, K1–K11)
+
+- **K1** — claimed K1–K11 on this board before starting work; scope `lines-lab/**` (originally `nfl-lab/**`),
+  `research/NFL-LAB-EXECUTIVE-SUMMARY.md`, and nav/summary integration; pushed immediately.
+- **K2** — data acquisition: `git clone --depth 1 https://github.com/nflverse/nfldata` @ `7aae940b6389125e272dec473765fd063866a4b3`;
+  eight tables (games 1999–2026, closing/initial/sc lines, standings, teams, win totals, rosters) with a provenance
+  registry (`lines-lab/data/sources.json`).
+- **K3** — official NFL.com pages fetched live 2026-11-13 and transcribed with timestamps: Week 10 injury report
+  (296 player rows / 28 teams / 14 games), Week 10 schedule + TNF final (Commanders 24, Giants 21), Week 11 schedule.
+- **K4** — originated lines: walk-forward margin/pace ratings (λ=0.10, cap ±18, k=3, shrink 0.55, HFA 2.07;
+  tuned 2016–2019 only) for all 2026 W10/W11 games vs market with edges. Held-out MAE 10.18 vs market 9.76 (spread) —
+  baseline, no edge claimed.
+- **K5** — leaderboard: 8 strategies, held-out 2020–2025, flat −110/ML pricing, 6 gates. **Zero strategies qualified**
+  (every ROI 95% CI includes zero; market-favorite baseline −2.94%, n=1,615). Paper points only; rewards suspended
+  behind G5 (CLV) and G6 (prospective trial).
+- **K6** — correlation values: Pearson r(margin, total) +0.0201 (n=6,967); phi(cover, over) +0.0219 (n=2,639);
+  residual σ 13.18/13.41 pts; SGP multipliers 0.985×–1.011× (400k seeded sims/scenario); two-leg −110 parlay arithmetic.
+- **K7** — injury/depth tracker from the official report: per-unit availability-pressure index + QB notes; depth-chart
+  tier NOT inferred (flag NFL-K4).
+- **K8** — 12 site pages + assets with honesty banners; suggestions review board (14 proposals); decision register
+  (8 questions with have/don't-have/discovery steps).
+- **K9** — `research/NFL-LAB-EXECUTIVE-SUMMARY.md` + a section in the shared executive summary (re-added above after
+  the consolidation merge).
+- **K10** — repo review (`lines-lab/review.html`, R1–R8 with evidence): 27/27 W10/W11 matchups + kickoffs agree
+  official-vs-dataset; TNF final and 26 printed records agree (0 mismatches); `spread_line` convention validated
+  against nfldata DATASETS.md. An initial sign-flip bug in our edge math produced impossible numbers and was caught
+  and fixed before publication. Flags NFL-K1…K10 published on `lines-lab/flagged.html`.
+- **K11** — integration: nav via the generators (CI rebuilds root pages); full pipeline re-run after the relocation
+  and the consolidation merge; link check 0 missing; `verify_extra.py` 31/31; lab verifier 20/20; unit tests and JS
+  checks pass; smoke test 15/15 URLs 200.
+
+### Relocation + consolidation (this session, 2026-11-13)
+
+- On merging `origin/main` (PRs #40/#45/#46/#48/#49/#50 by sessions `998582f0`, `1e59465a`, `c6eea73d`, `722a47cb`,
+  and the `lab/` + `nfl/` builders), we found the `nfl-lab/` directory is owned by the model-lab session on `main`.
+  Our lab was **relocated to `lines-lab/` and rebranded "NFL Skill Lab"** rather than overwrite their pages.
+  Their workflow `nfl-lab-data.yml` was kept untouched; ours was renamed `lines-lab-data.yml`.
+- Their `scripts/build_site.py` NAV and `tools/build_extra.py` ROOT_NAV entries were preserved; ours were added as
+  `("lines-lab/index.html", "NFL Skill Lab")`. The idempotent root-nav post-pass now injects the Skill Lab link.
+- `research/EXECUTIVE-SUMMARY.md`: their consolidated version is authoritative for their sections; ours is re-appended
+  below theirs, labelled as re-added. `research/NFL-STRATEGY.md` (2cd43859) is untouched on both sides.
+- Duplication is recorded, not deleted, matching the consolidation session's stated policy.

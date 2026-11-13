@@ -1,0 +1,37 @@
+name: nfl-lab-data-e53a4318
+# Official NFL data fetch for the Signal Lab. Runs on GitHub Actions because the
+# Arena sandbox has no outbound network; the committed JSON is what the site reads.
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/e53a4318-korea5' ]
+    paths: [ 'tools/fetch_nfl_lab.py', '.github/workflows/nfl-lab.yml' ]
+concurrency:
+  group: nfl-lab-data-e53a4318
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/e53a4318-korea5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch official NFL results / injury reports / team stats
+        run: python3 tools/fetch_nfl_lab.py
+      - name: Commit official lab data
+        run: |
+          git config user.name "korea5-data-bot"
+          git config user.email "korea5-data-bot@users.noreply.github.com"
+          git add official/lab/
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "data(lab): refresh official NFL results, injury reports and endpoint probe"
+            git pull --rebase --autostash origin arena/e53a4318-korea5
+            git push origin HEAD:arena/e53a4318-korea5
+          fi
+      - name: Show fetch report
+        run: cat official/lab/fetch-report.json

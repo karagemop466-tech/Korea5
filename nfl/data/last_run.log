@@ -340,8 +340,8 @@
  200 espn_2026_t2_w7.json                 126,932 bytes
  200 espn_2026_t2_w8.json                 126,088 bytes
  200 espn_2026_t2_w9.json                 133,973 bytes
- 200 espn_2026_t2_w10.json                254,476 bytes
- 200 espn_2026_t2_w11.json                236,508 bytes
+ 200 espn_2026_t2_w10.json                254,518 bytes
+ 200 espn_2026_t2_w11.json                236,550 bytes
  200 espn_2026_t2_w12.json                182,869 bytes
  200 espn_2026_t2_w13.json                163,033 bytes
  200 espn_2026_t2_w14.json                172,371 bytes
@@ -406,6 +406,6 @@ test_walk_forward_ignores_future_seasons (test_model.TestNoLeakage.test_walk_for
 test_questions_have_all_resolution_fields (test_model.TestQuestions.test_questions_have_all_resolution_fields) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 19.161s
+Ran 9 tests in 15.314s
 
 OK

@@ -1,0 +1,78 @@
+{
+  "results": {
+    "roster_49ers:https://www.nfl.com/teams/san-francisco-49ers/roster": {
+      "url": "https://www.nfl.com/teams/san-francisco-49ers/roster",
+      "http": 200,
+      "bytes": 381295,
+      "playerLinks": 97,
+      "sampleSlugs": [
+        "brandon-aiyuk",
+        "isaac-alarcon",
+        "keenan-allen",
+        "vincent-anthony-jr",
+        "eugene-asante",
+        "robert-beal-jr"
+      ]
+    },
+    "leaders_passing:https://www.nfl.com/stats/player-stats/category/passing/2026/reg/all": {
+      "url": "https://www.nfl.com/stats/player-stats/category/passing/2026/reg/all",
+      "http": 404,
+      "bytes": 0,
+      "playerLinks": 0,
+      "thead": null,
+      "jsonPlayerId": 0
+    },
+    "leaders_passing:https://www.nfl.com/stats/player-stats/category/passing/2026/reg/all?sort=passingYards": {
+      "url": "https://www.nfl.com/stats/player-stats/category/passing/2026/reg/all?sort=passingYards",
+      "http": 404,
+      "bytes": 0,
+      "playerLinks": 0,
+      "thead": null,
+      "jsonPlayerId": 0
+    },
+    "leaders_passing:https://www.nfl.com/stats/2026/reg/passing": {
+      "url": "https://www.nfl.com/stats/2026/reg/passing",
+      "http": 404,
+      "bytes": 0,
+      "playerLinks": 0,
+      "thead": null,
+      "jsonPlayerId": 0
+    },
+    "leaders_rushing:https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all": {
+      "url": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all",
+      "http": 404,
+      "bytes": 0,
+      "playerLinks": 0,
+      "thead": null,
+      "jsonPlayerId": 0
+    },
+    "leaders_receiving:https://www.nfl.com/stats/player-stats/category/receiving/2026/reg/all": {
+      "url": "https://www.nfl.com/stats/player-stats/category/receiving/2026/reg/all",
+      "http": 404,
+      "bytes": 0,
+      "playerLinks": 0,
+      "thead": null,
+      "jsonPlayerId": 0
+    },
+    "week2025:https://www.nfl.com/schedules/2025/by-week/week-5": {
+      "url": "https://www.nfl.com/schedules/2025/by-week/week-5",
+      "http": 200,
+      "bytes": 2242284,
+      "finalLinks": 15,
+      "sampleLinkName": "GET MORE FOOTBALL WITH NFL+ PREMIUM"
+    },
+    "injuries_2025:https://www.nfl.com/injuries/league/2025/reg01": {
+      "url": "https://www.nfl.com/injuries/league/2025/reg01",
+      "http": 200,
+      "bytes": 384358,
+      "tables": 32
+    },
+    "depth_2025_packers:https://www.packers.com/team/depth-chart": {
+      "url": "https://www.packers.com/team/depth-chart",
+      "http": 200,
+      "bytes": 294255,
+      "rosterRows": 6,
+      "sectionTitles": []
+    }
+  }
+}

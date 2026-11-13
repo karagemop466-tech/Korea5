@@ -364,9 +364,14 @@ def run():
     pos_unit = POSITION_UNIT
     team_load = defaultdict(lambda: {"offense": 0, "defense": 0, "specialteams": 0, "out": 0,
                                      "doubtful": 0, "questionable": 0, "players": []})
+    unmapped_teams = set()
     for r in cur:
         unit = pos_unit.get((r.get("position") or "").upper(), "unknown")
-        key = r["team"]
+        key = TEAM_NAME_TO_ABBR.get((r["team"] or "").strip().lower())
+        if key is None:
+            unmapped_teams.add(r["team"])
+            key = r["team"]
+        r["teamAbbr"] = key
         team_load[key][unit] = team_load[key].get(unit, 0) + 1
         gs = (r.get("gameStatus") or "").strip().lower()
         if gs in ("out", "doubtful", "questionable"):
@@ -417,8 +422,18 @@ def run():
                 "injurySourceUrl": f"https://www.nfl.com/injuries/league/2026/reg{latest_week:02d}",
             })
 
+    joined = sum(1 for r in next_up if r["chartStarter"])
     write("injuries.json", {
         "week": latest_week,
+        "joinIntegrity": {
+            "nextUpRows": len(next_up),
+            "rowsWithDepthChartMatch": joined,
+            "rowsWithoutDepthChartMatch": len(next_up) - joined,
+            "unmappedTeamNames": sorted(x for x in unmapped_teams if x),
+            "note": "The injury report prints club display names; the depth charts are keyed by "
+                    "abbreviation. The mapping is explicit and any unmapped name is listed here "
+                    "instead of silently producing an empty join.",
+        },
         "teams": {t: {k: v for k, v in d.items() if k != "players"} | {"playerCount": len(d["players"])}
                   for t, d in sorted(team_load.items())},
         "players": [dict(p, team=t) for t, d in sorted(team_load.items()) for p in d["players"]],
@@ -652,6 +667,19 @@ ABBR_TO_TEAMSTATS = {
     "MIN": "Vikings", "NE": "Patriots", "NO": "Saints", "NYG": "Giants", "NYJ": "Jets",
     "PHI": "Eagles", "PIT": "Steelers", "SEA": "Seahawks", "SF": "49ers", "TB": "Buccaneers",
     "TEN": "Titans", "WAS": "Commanders",
+}
+
+# The official injury report prints the club's display name ("Commanders"); the depth charts
+# are keyed by abbreviation ("WAS"). Joining on the wrong key silently empties every row, so the
+# map is explicit and a missing key is reported rather than swallowed.
+TEAM_NAME_TO_ABBR = {
+    "cardinals": "ARI", "falcons": "ATL", "ravens": "BAL", "bills": "BUF", "panthers": "CAR",
+    "bears": "CHI", "bengals": "CIN", "browns": "CLE", "cowboys": "DAL", "broncos": "DEN",
+    "lions": "DET", "packers": "GB", "texans": "HOU", "colts": "IND", "jaguars": "JAX",
+    "chiefs": "KC", "rams": "LA", "chargers": "LAC", "raiders": "LV", "dolphins": "MIA",
+    "vikings": "MIN", "patriots": "NE", "saints": "NO", "giants": "NYG", "jets": "NYJ",
+    "eagles": "PHI", "steelers": "PIT", "seahawks": "SEA", "49ers": "SF", "buccaneers": "TB",
+    "titans": "TEN", "commanders": "WAS",
 }
 
 POSITION_UNIT = {

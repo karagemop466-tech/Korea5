@@ -161,6 +161,15 @@ check("no injury row has an invented game status",
           ("", "Out", "Doubtful", "Questionable", "Questionable ", "Out ", None)
           or r.get("gameStatus") for r in inj.get("players", [])[:2000]))
 
+ji = derived.get("injuries", {}).get("joinIntegrity", {})
+check("injury-report to depth-chart join actually matched rows", ji.get("rowsWithDepthChartMatch", 0) > 0,
+      f"{ji.get('rowsWithDepthChartMatch')} of {ji.get('nextUpRows')} matched")
+check("no injury-report club name failed to map to an abbreviation",
+      not ji.get("unmappedTeamNames"), ji.get("unmappedTeamNames"))
+check("a replacement is never a player who is himself listed Out/Doubtful",
+      not [r for r in derived.get("injuries", {}).get("nextUp", [])
+           if r.get("chartReplacement") and r["chartReplacement"] in r["listedOutOrDoubtful"]])
+
 dep = derived.get("depth", {})
 check("depth charts record clubs that could not be parsed",
       isinstance(dep.get("unavailable"), list) and len(dep["unavailable"]) >= 1,

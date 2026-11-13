@@ -4,13 +4,13 @@
     "note": "Structural, labelling and sourcing checks. These do NOT re-fetch the official pages; a green result means every published row has a source link and every computed value is labelled, not that the source content was re-read today."
   },
   "summary": {
-    "checks": 96,
-    "passed": 96,
+    "checks": 99,
+    "passed": 99,
     "failed": 0
   },
   "counts": {
     "pages": 14,
-    "externalHosts": 7,
+    "externalHosts": 10,
     "rowsWithoutSource": 0,
     "brokenLocal": 0
   },
@@ -363,6 +363,21 @@
     },
     {
       "name": "no injury row has an invented game status",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "injury-report to depth-chart join actually matched rows",
+      "ok": true,
+      "detail": "8 of 8 matched"
+    },
+    {
+      "name": "no injury-report club name failed to map to an abbreviation",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "a replacement is never a player who is himself listed Out/Doubtful",
       "ok": true,
       "detail": ""
     },

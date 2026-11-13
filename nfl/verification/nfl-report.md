@@ -1,8 +1,8 @@
 # NFL section verification
 
-Checks: **96** · passed **96** · failed **0**
+Checks: **99** · passed **99** · failed **0**
 
-Pages: 14 · external hosts: 7 · rows without a source link: 0 · broken local links: 0
+Pages: 14 · external hosts: 10 · rows without a source link: 0 · broken local links: 0
 
 | Check | Result | Detail |
 |---|---|---|
@@ -76,6 +76,9 @@ Pages: 14 · external hosts: 7 · rows without a source link: 0 · broken local 
 | injury rows are counted per unit, not scored | PASS |  |
 | injury page states counts are not a severity score | PASS |  |
 | no injury row has an invented game status | PASS |  |
+| injury-report to depth-chart join actually matched rows | PASS | 8 of 8 matched |
+| no injury-report club name failed to map to an abbreviation | PASS | [] |
+| a replacement is never a player who is himself listed Out/Doubtful | PASS |  |
 | depth charts record clubs that could not be parsed | PASS | [{'team': 'HOU', 'url': 'https://www.houstontexans.com/team/depth-chart', 'reason': 'no parseable depth-chart table on the official page', 'imageOnly': False}] |
 | every depth position row names its club source | PASS |  |
 | correlation is not published as a real finding | PASS |  |

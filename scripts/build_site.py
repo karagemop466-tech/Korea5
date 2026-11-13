@@ -23,7 +23,7 @@ NAV = [
     ("vacation.html", "Vacation windows"),
     ("mlb.html", "MLB"),
     ("nfl.html", "NFL &amp; 49ers"),
-    ("nfl-lab/index.html", "NFL Decision Lab"),
+    ("nfl-lines.html", "NFL Lines (origination)"),
     ("ncaaf.html", "Stanford &amp; Cal"),
     ("radio.html", "Radio"),
     ("sources.html", "Sources"),
@@ -229,9 +229,14 @@ If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} op
 <div class="card"><h3>NFL — 2026 released, 2027+ not</h3><p>All 2026 NFL games are loaded. nfl.com has no 2027 season page yet. The 2027 playoff round windows (Jan 9–10, Jan 16–18, Jan 23–24, Jan 31) and Super Bowl LXI (Sun Feb 14, 2027, SoFi Stadium) come from the official NFL 2026–27 calendar; game-day splits and kickoffs are modelled. The 2027 Pro Bowl date is not published.</p><a href="https://www.nfl.com/news/2026-27-national-football-league-important-dates">NFL 2026–27 important dates</a></div>
 </div>
 
+<h2>NFL Lines Origination</h2>
+<p class="small">Research framework for originating NFL lines: signals, strategies, validation gates, correlation, injuries and depth tracking. Unsupported prices, correlation values and depth-chart replacements remain blank and flagged unverified.</p>
+<div class="pill-row"><a class="btn" href="nfl-lines.html">NFL Lines dashboard →</a><a class="btn" href="nfl-strategies.html">Strategies &amp; gates →</a><a class="btn" href="nfl-executive-summary.html">Executive summary →</a><a class="btn" href="nfl-flagged.html">Flagged review →</a><a class="btn" href="nfl-lab/sources.html">Official source register →</a></div>
+<p class="small">No betting prices, correlation values or replacement-string observations have been loaded or verified in this repository; unknowns are left blank and flagged.</p>
+
 <h2>Explore by category</h2><div class="pill-row">
 <a class="btn" href="mlb.html">All 30 MLB clubs</a><a class="btn" href="extra/nfl-2026.html">NFL &amp; 49ers</a>
-<a class="btn" href="nfl-lab/index.html">NFL lines &amp; strategy lab</a><a class="btn" href="ncaaf.html">Stanford &amp; Cal</a><a class="btn" href="extra/westwoodone.html">Westwood One · all sports</a>
+<a class="btn" href="nfl-lines.html">NFL Lines &amp; Strategy</a><a class="btn" href="ncaaf.html">Stanford &amp; Cal</a><a class="btn" href="extra/westwoodone.html">Westwood One · all sports</a>
 <a class="btn" href="extra/flagged.html">Flagged for Review</a></div>
 <p>Giants, Athletics, 49ers, Stanford and Cal remain high priority. The all-games view is a conservative personal-interest scope, not proof that every game is locally broadcast.</p>
 <p><a href="research/EXECUTIVE-SUMMARY.md">Full executive summary</a> · <a href="certainty.html">Audit and source limits</a> · <a href="extra/durations.html">Duration assumptions</a></p>

@@ -658,25 +658,82 @@ date, and all prior items) remain published on `extra/flagged.html` with officia
 
 ## Session `arena/abf74fdd-korea5` — NFL strategy decision lab (2026-11-13)
 
-Branch constraint: Arena fixes this session to `arena/abf74fdd-korea5`; all work stays on that branch. Existing root `*.html`/`data/` outputs are shared integration outputs; this session owns the new `nfl-lab/` portal, its landing-page/navigation integration through the site generator (generated root `*.html` and link report only), and this coordination record. No source data feeds were edited. Historical board rows marked in progress belong to old sessions; current checkout has no corresponding active agent claim.
+Branch constraint: Arena fixes this session to `arena/abf74fdd-korea5`; all work stays on that branch. Existing root `*.html`/`data/` outputs are shared integration outputs; after the parallel merge, this session owns the NFL source register/audit tool in `nfl-lab/`, generated dashboard/navigation integration, selected evidence-wording corrections to canonical NFL pages, link-report updates, and this coordination record. No source data feeds were edited. Historical board rows marked in progress belong to old sessions; current checkout has no corresponding active agent claim.
 
 | # | Task | Owner | Status | Files |
 |---|---|---|---|---|
-| NFL1 | Build an NFL lines/strategy research portal: executive summary, evidence-backed data requirements, questions/missing information, injury/depth-chart monitoring, candidate single/parlay/player-prop signals, correlation and validation gates, leaderboard/rewards proposal, dedicated Suggestions review page, and flagged items | arena-abf74fdd | done | `nfl-lab/**` |
-| NFL2 | Integrate a discoverable link into the site dashboard while preserving generated-page source of truth | arena-abf74fdd | done | `scripts/build_site.py`, root `*.html`, `verification/links.json` |
+| NFL1 | Integrate and independently source-audit the NFL lines vertical; preserve dedicated strategy, injury, correlation, questions, Suggestions, executive summary and flagged pages; add first-party source register | arena-abf74fdd | done | `nfl-lab/sources.html`, canonical NFL pages |
+| NFL2 | Keep canonical NFL Lines vertical discoverable from generated navigation/dashboard and link to source register | arena-abf74fdd | done | `scripts/build_site.py`, root `*.html`, `verification/links.json` |
 | NFL3 | Verify every factual/strategy table row's official citations, run local site checks, publish PR/merge/deploy if checks pass, record outcomes | arena-abf74fdd | in progress | `COORDINATION.md`, `nfl-lab/**` |
 
 Initial claim committed on the Arena-fixed branch before implementation. No live betting/injury data will be invented: the portal will distinguish documented methods from data not currently available, leave unknown observations blank, and mark open source/coverage questions for review. This is an NFL strategy/research addition, not an assertion of validated profitability or an automated real-time line service.
 
 ### NFL strategy lab — research and verification record (2026-11-13)
 
-- **NFL1/NFL2 complete.** Added `nfl-lab/` static portal: overview/executive summary, signals and validation, lineups/data, leaderboard/rewards, Suggestions review queue, Flagged for Review, source register, custom styles/scripts and structural source-link verifier. Added the dashboard link and root navigation via `scripts/build_site.py`; regenerated root HTML and reran certainty disclosure last. Suggestions controls save locally in the browser only; they do not transmit or synchronize decisions.
+- **NFL1/NFL2 integration revised after the parallel merge.** A standalone draft portal was initially created, then `origin/main` advanced with PR #36, which already supplied the canonical NFL lines landing, strategies, correlation, injuries, questions, Suggestions, executive summary and flagged pages. To avoid duplicate user-facing portals, removed the redundant draft subpages and retained only the source register (`nfl-lab/sources.html`) plus cross-page audit tool (`nfl-lab/verify.py`). The generated dashboard/navigation points to the canonical NFL Lines vertical and source register.
 - **Official sources fetched and reviewed live 2026-11-13:** NFL official Week 10 injury report (`https://www.nfl.com/injuries/league/2026/reg10`; columns include player/position/injury/practice/game status); NFL player stats (`https://www.nfl.com/stats/player-stats/`); NFL team stats (`https://www.nfl.com/stats/team-stats/`); team offense scoring/rushing and defense scoring/rushing/passing pages under `https://www.nfl.com/stats/team-stats/`; NFL weekly schedule/game pages (`https://www.nfl.com/schedules/` and `/2026/by-week/week-10`); NFL 49ers roster page (`https://www.nfl.com/teams/san-francisco-49ers/roster`); 2026 NFL rulebook (`https://operations.nfl.com/rules-officiating/2026-nfl-rulebook`). This verifies source page/field existence at retrieval time only—not complete season coverage or individual stat rows in the portal. No numeric NFL player/team values were transcribed into the new portal.
 - **Irregularity found and corrected:** an initially proposed player scoring-category URL returned NFL 404. Removed it and replaced it with the fetched official player-stats page (which displays TD fields). No unresolved broken cited source URL remains among the portal's official NFL links reviewed.
 - **Important evidence gaps flagged, not filled:** no licensed/timestamped odds or prop archive; no market settlement rules; no project prediction/settlement log or model results; no archived point-in-time injury history; no verified all-team official depth chart/string feed or snap coverage; no measured correlation; no legal/reward approval. Correlation, ROI, CLV, edge and strategy leaderboard values are blank. Research strategies are explicitly proposals, not proven profitable.
-- **Verification:** `python3 nfl-lab/verify.py` — 7 portal pages, all internal anchor links resolve, 58 table data rows each have at least one first-party NFL/NFL Operations link. `python3 scripts/check_links.py` — 11 root pages, 191 local / 521 external, 0 missing. `python3 tools/verify_extra.py` — 31/31; `python3 scripts/audit_certainty.py` passed; Python unit tests 5/5; `node tests/test_calendar.js` and `node tests/test_calendar_today.js` passed; `git diff --check` clean. Local HTTP smoke test returned 200 for root, all 7 portal pages and both assets. No strategy backtest or complete inherited-data line re-verification was claimed.
+- **Initial-draft verification (superseded):** the first portal version passed its local checks, but its page set was removed after the canonical NFL vertical merged to avoid duplicate user-facing content. See the combined cross-page audit below for final counts.
 
 NFL3 (PR/merge/deploy record) remains in progress until the GitHub checks and Pages deployment are confirmed.
+
+## Session `arena/8602d76f-korea5` — NFL Lines Origination (this session)
+
+Branch constraint: Arena fixes this session to `arena/8602d76f-korea5`; no other branch is created or pushed.
+Start point: `main` tip `13854fe` (branch `arena/8602d76f-korea5`, status active). All prior sessions' records above are preserved unchanged.
+Scope: this session owns the new NFL lines origination vertical only — `index.html` (landing + nav), `nfl-lines.html`, `nfl-strategies.html`, `nfl-correlation.html`, `nfl-injuries.html`, `nfl-questions.html`, `nfl-suggestions.html`, `nfl-executive-summary.html`, `nfl-flagged.html`. It does not edit `scripts/`, `data/`, `extra/`, `official/`, `curated/` or any existing root `*.html` other than `index.html`.
+
+### Session registry (addendum)
+
+| Session ID | Branch | Role | Status |
+|---|---|---|---|
+| `arena-8602d76f` | `arena/8602d76f-korea5` | NFL lines origination vertical: landing, strategies, correlation, injuries, questions, suggestions, executive summary, flagged review; verification, PR, merge, Pages deploy | **done** |
+
+### Task board (addendum)
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N1 | NFL lines origination landing/dashboard + nav | arena-8602d76f | **done** | `index.html`, `nfl-lines.html` |
+| N2 | Strategies, signals, leaderboard, validation gates, single/parlay/player-prop combos | arena-8602d76f | **done** | `nfl-strategies.html`, `nfl-lines.html` |
+| N3 | Correlation values table | arena-8602d76f | **done** | `nfl-correlation.html` |
+| N4 | Injury tracking + defense/offense depth-chart (backup) deficiencies | arena-8602d76f | **done** | `nfl-injuries.html` |
+| N5 | Pre-decision questions / information / answers + missing-information discovery | arena-8602d76f | **done** | `nfl-questions.html` |
+| N6 | Suggestions section + review-before-implement workflow | arena-8602d76f | **done** | `nfl-suggestions.html` |
+| N7 | Executive summary | arena-8602d76f | **done** | `nfl-executive-summary.html` |
+| N8 | Consolidated Flagged for Review (unverified items) + verification, PR, merge, Pages deploy, log | arena-8602d76f | **done** | `nfl-flagged.html`, `COORDINATION.md` |
+
+### Honesty rules (this session)
+
+- Every table row links to an official source (nfl.com, operations.nfl.com) or is left blank.
+- The NFL does not publish official betting lines, odds, player-prop prices or correlation values. Those cells are therefore left **blank** and flagged **unverified** — never inferred or filled in.
+- Numeric strategy performance and reward values are a framework, not published results; they are blank/unverified until sourced.
+
+### Official sources used (this session)
+
+| Source | What it provides |
+|---|---|
+| https://www.nfl.com/schedules/ | NFL schedule structure (18 weeks, kickoff Thursday after Labor Day, Thanksgiving 4th Thursday, Super Bowl 2nd Sunday of February); 2027–2029 seasons not released |
+| https://www.nfl.com/injuries/ | Official NFL injury report; weekly report required of every team; designations Out / Doubtful / Questionable; practice status Full / Limited / Did Not Participate |
+| https://operations.nfl.com/rules-officiating/2026-nfl-rulebook | Official 2026 NFL rulebook (downloadable PDF) |
+
+### Irregularities this session is adding (published on `nfl-flagged.html`, nonblocking)
+
+1. No official NFL betting line exists (moneyline / spread / total) — every odds cell blank, flagged unverified.
+2. No official player-prop price exists — blank, flagged unverified.
+3. No official correlation matrix is published by the NFL — blank, flagged unverified.
+4. No official depth-chart / backup-replacement feed is published by the NFL — blank, flagged unverified.
+5. Strategy performance history and leaderboard rewards are not official data — blank, flagged unverified.
+
+### Completion log — session `arena/8602d76f-korea5`
+
+- **2026-11-13 — Build.** Added 8 new pages (`nfl-lines.html`, `nfl-strategies.html`, `nfl-correlation.html`, `nfl-injuries.html`, `nfl-questions.html`, `nfl-suggestions.html`, `nfl-executive-summary.html`, `nfl-flagged.html`) and updated `index.html` (nav + NFL Lines landing section). Every table row cites an official source or is left blank and flagged unverified.
+- **Official sources verified live:** nfl.com/schedules (18 weeks, kickoff anchor, Thanksgiving, Super Bowl window; 2027–2029 not released), nfl.com/injuries (weekly report; Out/Doubtful/Questionable; Full/Limited/DNP), operations.nfl.com/2026-nfl-rulebook (official 2026 rulebook PDF).
+- **Verification performed:** `python3 scripts/check_links.py` — pages=19, localLinks=326, missing=0, external=523. All new + edited HTML files parse cleanly. Betting lines, props, correlations, depth charts and strategy results confirmed absent from official sources; left blank + flagged.
+- **Irregularities published:** F-NFL-01 to F-NFL-07 on `nfl-flagged.html`; nonblocking.
+- **Pull request:** to be opened from `arena/8602d76f-korea5` to `main`.
+- **Merge / Pages deploy:** pending.
+
 
 ## Session `arena-2cd43859` — NFL analytics and decision-support
 
@@ -690,7 +747,7 @@ Scope: current Arena branch is fixed; no alternate branches or overlapping task 
 ### N1–N2 completion (2026-11-13)
 
 - Added `nfl-strategy.html` and `research/NFL-STRATEGY.md`; linked the lab from the NFL page and appended an NFL analytics subsection to the executive summary.
-- Official-source spot checks via live fetch: NFL injury page currently publishes player position, injury, practice and game status by week; NFL player statistics page has official category/year selectors; the official NFL transactions page is linked as a source starting point. Sources: https://www.nfl.com/injuries/ ; https://www.nfl.com/stats/player-stats/ ; https://www.nfl.com/transactions/ .
+- Official-source spot checks via live fetch: NFL injury page currently publishes player position, injury, practice and game status by week; NFL player statistics page has official category/year selectors; official transactions page lists league transactions. Sources: https://www.nfl.com/injuries/ ; https://www.nfl.com/stats/player-stats/ ; https://www.nfl.com/transactions/ .
 - Evidence limits: no historical timestamped market/prop prices, betting settlement ledger, forecast log, or verified lineup-depth series found in this repository. No performance or correlation claims made. No backup tier inferred from injury status. Research strategies are proposals, not validated edges; reward competition is only proposed as paper-first and remains gated by policy/legal review.
 - Verification: `scripts/check_links.py` reported 12 pages, 190 local links, 528 external links and zero missing; `scripts/audit_certainty.py` passed; Python unit tests 5/5; both calendar Node tests passed; `git diff --check` clean. Strategy page local destination check: 19 links, zero missing. Official injury and player-statistics pages retrieved live; no claim of comprehensive official link availability.
 
@@ -710,10 +767,23 @@ The first merged run's repository CI caught one generated local-link failure in 
 
 ### Parallel-session integration note (2026-11-13)
 
-After PR #37 was opened, `origin/main` advanced with the independent NFL strategy work (PRs #33–#35, session `arena-2cd43859`) that had not yet appeared in this branch's initial coordination snapshot. PR #37 was marked non-mergeable until synchronized. Merged `origin/main` into this branch and kept both workstreams: the earlier standalone `nfl-strategy.html` / `research/NFL-STRATEGY.md` report and this session's navigable `nfl-lab/` multi-page portal. No files or findings were discarded. Added a link from the new portal to the earlier memo. Rebuilt the combined site and reran checks; updated root link report is 12 pages, 201 local links, 528 external links, zero missing. The new NFL lab owns the dedicated Suggestions and Flagged review subpages and detailed data/correlation/lineup source register.
+After PR #37 was opened, `origin/main` advanced with NFL strategy work in PRs #33–#35 (`arena-2cd43859`) and the complete NFL Lines vertical in PR #36 (`arena-8602d76f`). These merges were absent from the initial checkout snapshot. PR #37 was marked non-mergeable until synchronized. The latest `origin/main` history is merged into this branch; earlier work and coordination records are preserved. Canonical user-facing pages from PR #36 remain; this session removed its duplicate multi-page draft and retained a distinct official source register plus cross-page verifier. The regenerated dashboard links to the canonical NFL pages and source register.
 
 ### NFL3 branch/PR status (2026-11-13)
 
 - Synchronization: after integrating `origin/main`, a required `git pull --rebase origin arena/abf74fdd-korea5` attempted to replay already-merged session commits because this checkout is shallow and stopped on `COORDINATION.md`, `nfl.html` and link-report conflicts. Immediately ran `git rebase --abort`; no changes were discarded. Preserved the explicit merge commit, confirmed the remote session-branch tip was its ancestor, then pushed that merge commit normally. This deviation is recorded to avoid repeating the same destructive history rewrite.
 - PR #37: https://github.com/karagemop466-tech/Korea5/pull/37 — open; merged-main synchronization made it mergeable. Pull-request workflow `Planner certainty and site checks`, run **43432077147**, completed **successfully** after the combined build.
 - Pending at this entry: merge PR #37 and confirm the GitHub Pages deployment before marking NFL3 done; the live portal has not yet been claimed as deployed by this session.
+
+### Combined NFL vertical audit after PR #36 (2026-11-13)
+
+- **Source review:** fetched NFL.com injury reports (including 2026 Week 10), player/team statistics, 2026 schedule, transactions and 49ers roster pages, plus NFL Operations home and 2026 rulebook. Also fetched the offense/defense scoring, rushing and passing endpoints cited by the earlier research. `nfl-lab/sources.html` records verified fields and limits. Pages are dynamic; this confirms page/field presence on retrieval date, not complete historical coverage or all individual values.
+- **Corrected overstatement:** “Luck is excluded” was scientifically unsupportable; copy now says randomness remains and uncertainty-aware evaluation can only test repeatable skill. Claims of universal absence of an NFL depth-chart/correlation source were narrowed to “not verified in this project/review.” Market-value gaps are scoped to missing data in this project.
+- **Table audit:** cross-page source/flag checker identified source-less strategy/process rows and missing explicit uncertainty labels in executive-summary, question, suggestion, strategy-gate and flagged tables. Unsupported values remain blank; affected rows are now marked `unverified`, `pending` or `proposal`. `nfl-lab/verify.py` requires a first-party citation or a clear uncertainty/proposal marker and checks local links.
+- **Combined verification after final rebuild:** `python3 scripts/check_links.py` — 20 pages, 364 local links, 530 external links, 0 missing; `python3 tools/verify_extra.py` — 31/31; `python3 scripts/audit_certainty.py` passed; `python3 nfl-lab/verify.py` — 10 NFL pages, 125 table rows, 77 explicitly flagged/proposal rows; Python unit tests 5/5; both calendar JS tests passed; `python3 -m compileall -q scripts tools nfl-lab` and `git diff --check` passed. Full pipeline included `build_site.py`, `build_extra.py`, link checks and certainty audit in the documented order.
+
+- **PR #37** remains open for the additive source-register / cross-page audit / cautious-wording integration. Final PR checks and merge/deploy outcomes are recorded after synchronization.
+
+### Source-page irregularity follow-up (2026-11-13)
+
+The first-party source scan also found and removed an NFL 404 player-scoring URL from the initial draft. `https://www.nfl.com/stats/player-stats/`, `https://www.nfl.com/transactions/`, `https://www.nfl.com/stats/`, `https://operations.nfl.com/`, the Week 10 2026 injury page, schedule, 49ers roster, official team-stat endpoints, and the 2026 NFL rulebook were fetched live. The new source register names exact page coverage and explicitly does not claim complete archive coverage, official sportsbook prices, lineup depth string, market correlation or strategy performance.

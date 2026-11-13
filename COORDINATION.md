@@ -685,3 +685,30 @@ The first merged run's repository CI caught one generated local-link failure in 
 | CI | Planner certainty/site checks run `43431161023` success; Pages run `43431159971` build, deploy and report-build-status all success |
 | Pages | GitHub Pages API reports `built`, source `main` /, URL https://karagemop466-tech.github.io/Korea5/ |
 | Live feature | https://karagemop466-tech.github.io/Korea5/nfl-strategy.html |
+
+## Session `arena/fb9c9608-korea5` — NFL Lines Lab: data-driven build (2026-11-13)
+
+Branch fixed by Arena: `arena/fb9c9608-korea5`. Branched from `13854fe`; fast-forwarded to `origin/main` (`e826658`)
+before starting, so all prior sessions' work is inherited. No other session is mid-task; the NFL proposal page
+(`nfl-strategy.html`, session `2cd43859`) is inherited read-only — this session builds the **data-driven implementation**
+in a new `nfl-lab/` namespace and does not modify that page.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| K1 | Coordination claim + scoping | arena-fb9c9608 | done | `COORDINATION.md` |
+| K2 | NFL data acquisition: nflverse/nfldata tables + provenance registry | arena-fb9c9608 | claimed | `nfl-lab/data/nfldata/`, `nfl-lab/data/sources.json` |
+| K3 | Official verification pass: NFL.com Week 10 injury report, Week 10/11 schedules, standings (live fetch + tokens) | arena-fb9c9608 | claimed | `nfl-lab/data/official/` |
+| K4 | Lines origination engine: power ratings, Week 10/11 originated lines vs market | arena-fb9c9608 | claimed | `nfl-lab/scripts/`, `nfl-lab/data/derived/lines.json` |
+| K5 | Strategy leaderboard + validation gates: walk-forward backtest harness, gates, scoring | arena-fb9c9608 | claimed | `nfl-lab/scripts/`, `nfl-lab/data/derived/leaderboard.json` |
+| K6 | Correlation analysis: spread/total, same-game parlay correlation values | arena-fb9c9608 | claimed | `nfl-lab/data/derived/correlation.json` |
+| K7 | Injury & depth-deficiency tracker from official NFL.com report | arena-fb9c9608 | claimed | `nfl-lab/data/official/injuries-2026-w10.json`, `nfl-lab/data/derived/depth.json` |
+| K8 | Site: `nfl-lab/` pages (dashboard, lines, leaderboard, injuries, correlation, method, decisions, suggestions, sources, flagged) | arena-fb9c9608 | claimed | `nfl-lab/*.html`, `nfl-lab/assets/` |
+| K9 | Executive summary for the NFL Lines Lab | arena-fb9c9608 | claimed | `research/NFL-LAB-EXECUTIVE-SUMMARY.md` |
+| K10 | Repo line-by-line review + flagged irregularities register (NFL-lab scope) | arena-fb9c9608 | claimed | `nfl-lab/repo-review.html`, `nfl-lab/data/derived/flags.json` |
+| K11 | Integration: nav links, checks, PR, merge, Pages deploy, record here | arena-fb9c9608 | claimed | root `index.html` (nav only), `nfl.html` (nav only), `COORDINATION.md` |
+
+Scope discipline: everything new lives under `nfl-lab/`, `research/NFL-LAB-EXECUTIVE-SUMMARY.md` and this log.
+Root HTML edits are deferred to K11 (final integration step, this session) and limited to nav additions.
+Data-fetch network reality: bash can reach only github.com/api.github.com (release-asset redirects are blocked),
+so bulk data comes from `git clone https://github.com/nflverse/nfldata` (committed CSVs) and official NFL.com
+pages are fetched via the Arena fetch tool into `nfl-lab/data/official/` with retrieval timestamps.

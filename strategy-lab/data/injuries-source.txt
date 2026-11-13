@@ -1,0 +1,118 @@
+# NFL 2026 Week 10 official injury report - verified sample.
+# Source: https://www.nfl.com/injuries/ ("2026 NFL Injury Report", WEEK 10 tab), retrieved 2026-11-13.
+# Columns: gameDateET|team|player|pos|injury|practiceStatus|gameStatus|playerUrlSlug
+# Blank injury / game status cells are blank ON THE OFFICIAL PAGE. They are reproduced blank here;
+# nothing has been filled in.
+2026-11-12|WAS|John Bates|TE||Full Participation in Practice||john-bates
+2026-11-12|WAS|Treylon Burks|WR||Did Not Participate In Practice||treylon-burks
+2026-11-12|WAS|Jayden Daniels|QB||Full Participation in Practice||jayden-daniels
+2026-11-12|WAS|Matt Gulbin|C||Full Participation in Practice||matt-gulbin
+2026-11-12|WAS|Chig Okonkwo|TE||Full Participation in Practice||chigoziem-okonkwo
+2026-11-12|WAS|Lucas Patrick|C|Concussion|Did Not Participate In Practice|Out|lucas-patrick
+2026-11-12|WAS|Amik Robertson|CB||Limited Participation in Practice||amik-robertson
+2026-11-12|WAS|Shy Tuttle|DT||Full Participation in Practice||shy-tuttle
+2026-11-12|WAS|Colson Yankoff|TE|Knee|Did Not Participate In Practice|Out|colson-yankoff
+2026-11-12|NYG|Abdul Carter|LB||Full Participation in Practice||abdul-carter
+2026-11-12|NYG|Jermaine Eluemunor|T||Full Participation in Practice||jermaine-eluemunor
+2026-11-12|NYG|Malik Harrison|LB|Groin|Limited Participation in Practice|Questionable|malik-harrison
+2026-11-12|NYG|Colton Hood|CB||Full Participation in Practice||colton-hood
+2026-11-12|NYG|Theo Johnson|TE||Full Participation in Practice||theo-johnson
+2026-11-12|NYG|Charlie Jones|WR||Full Participation in Practice||charlie-jones-3
+2026-11-12|NYG|J.J. McCarthy|QB||Full Participation in Practice||j-j-mccarthy
+2026-11-12|NYG|Darnell Mooney|WR||Full Participation in Practice||darnell-mooney
+2026-11-12|NYG|Malik Nabers|WR||Full Participation in Practice||malik-nabers
+2026-11-12|NYG|Cam Skattebo|RB||Full Participation in Practice||cam-skattebo
+2026-11-12|NYG|Andrew Thomas|T||Full Participation in Practice||andrew-thomas
+2026-11-15|NE|Ben Brown|C|Knee|Did Not Participate In Practice|Out|ben-brown-2
+2026-11-15|NE|A.J. Brown|WR||Limited Participation in Practice||a-j-brown
+2026-11-15|NE|Kevin Byard|S||Limited Participation in Practice||kevin-byard
+2026-11-15|NE|Carlton Davis III|CB|Knee|Did Not Participate In Practice|Out|carlton-davis
+2026-11-15|NE|Reggie Gilliam|FB||Limited Participation in Practice||reggie-gilliam
+2026-11-15|NE|TreVeyon Henderson|RB|Illness|Did Not Participate In Practice|Out|treveyon-henderson
+2026-11-15|NE|Hunter Henry|TE||Limited Participation in Practice||hunter-henry
+2026-11-15|NE|Cameron Latu|TE||Limited Participation in Practice||cameron-latu
+2026-11-15|NE|Drake Maye|QB||Full Participation in Practice||drake-maye
+2026-11-15|NE|Morgan Moses|T||Limited Participation in Practice||morgan-moses
+2026-11-15|NE|Walter Rouse|T||Limited Participation in Practice||walter-rouse
+2026-11-15|NE|Brenden Schooler|S||Limited Participation in Practice||brenden-schooler
+2026-11-15|NE|Rhamondre Stevenson|RB||Limited Participation in Practice||rhamondre-stevenson
+2026-11-15|NE|Greg Van Roten|G||Limited Participation in Practice||greg-van-roten
+2026-11-15|NE|Charles Woods|CB||Limited Participation in Practice||charles-woods
+2026-11-15|DET|Brian Branch|S||Full Participation in Practice||brian-branch
+2026-11-15|DET|Jared Goff|QB||Full Participation in Practice||jared-goff
+2026-11-15|DET|Kerby Joseph|S|Knee|Full Participation in Practice|Out|kerby-joseph
+2026-11-15|DET|Cade Mays|C|Ankle|Did Not Participate In Practice|Out|cade-mays
+2026-11-15|DET|D.J. Reed|CB|Hip|Did Not Participate In Practice|Out|d-j-reed
+2026-11-15|DET|Jacob Saylors|RB||Full Participation in Practice||jacob-saylors
+2026-11-15|DET|Amon-Ra St. Brown|WR||Limited Participation in Practice||amon-ra-st-brown
+2026-11-15|DET|Sione Vaki|RB||Did Not Participate In Practice||sione-vaki
+2026-11-15|DET|DJ Wonnum|DE||Full Participation in Practice||d-j-wonnum
+2026-11-15|KC|Jeffrey Bassa|LB||Full Participation in Practice||jeffrey-bassa
+2026-11-15|KC|Mansoor Delane|CB||Full Participation in Practice||mansoor-delane
+2026-11-15|KC|Justin Fields|QB||Full Participation in Practice||justin-fields
+2026-11-15|KC|Jaden Hicks|S||Full Participation in Practice||jaden-hicks
+2026-11-15|KC|Travis Kelce|TE||Full Participation in Practice||travis-kelce
+2026-11-15|KC|Patrick Mahomes|QB||Full Participation in Practice||patrick-mahomes
+2026-11-15|KC|Jaylon Moore|T||Did Not Participate In Practice||jaylon-moore-2
+2026-11-15|KC|Omarr Norman-Lott|DT||Limited Participation in Practice||omarr-norman-lott
+2026-11-15|KC|Jaydn Ott|RB||Limited Participation in Practice||jaydn-ott
+2026-11-15|KC|Rashee Rice|WR||Full Participation in Practice||rashee-rice
+2026-11-15|KC|Peter Woods|DT||Did Not Participate In Practice||peter-woods
+2026-11-15|KC|Xavier Worthy|WR||Full Participation in Practice||xavier-worthy
+2026-11-15|ATL|Zachariah Branch|WR||Did Not Participate In Practice||zachariah-branch
+2026-11-15|ATL|Kendal Daniels|LB||Limited Participation in Practice||kendal-daniels
+2026-11-15|ATL|Divine Deablo|LB||Did Not Participate In Practice||divine-deablo
+2026-11-15|ATL|Gervon Dexter Sr.|DT||Limited Participation in Practice||gervon-dexter
+2026-11-15|ATL|James Pearce Jr.|DE||Limited Participation in Practice||james-pearce-jr
+2026-11-15|ATL|Za'Darius Smith|DE||Full Participation in Practice||za-darius-smith
+2026-11-15|ATL|Jawaan Taylor|T||Did Not Participate In Practice||jawaan-taylor
+2026-11-15|ATL|Cameron Thomas|DE||Limited Participation in Practice||cameron-thomas
+2026-11-15|ATL|Josh Woods|LB||Limited Participation in Practice||josh-woods
+2026-11-15|MIN|Blake Cashman|LB||Did Not Participate In Practice||blake-cashman
+2026-11-15|MIN|T.J. Hockenson|TE||Did Not Participate In Practice||t-j-hockenson
+2026-11-15|MIN|Tyrion Ingram-Dawkins|DT||Did Not Participate In Practice||tyrion-ingram-dawkins
+2026-11-15|MIN|Theo Jackson|S||Full Participation in Practice||theo-jackson
+2026-11-15|MIN|Jauan Jennings|WR||Did Not Participate In Practice||jauan-jennings
+2026-11-15|MIN|Kyler Murray|QB||Did Not Participate In Practice||kyler-murray
+2026-11-15|MIN|Kyle Van Noy|LB||Did Not Participate In Practice||kyle-van-noy
+2026-11-15|MIN|Jay Ward|S||Limited Participation in Practice||jay-ward
+2026-11-15|MIN|Carson Wentz|QB||Limited Participation in Practice||carson-wentz
+2026-11-15|GB|Aaron Banks|G||Limited Participation in Practice||aaron-banks
+2026-11-15|GB|Chris Brooks|RB||Limited Participation in Practice||christopher-brooks
+2026-11-15|GB|Javon Bullard|S||Did Not Participate In Practice||javon-bullard
+2026-11-15|GB|Zaire Franklin|LB||Did Not Participate In Practice||zaire-franklin
+2026-11-15|GB|Travis Glover|G||Limited Participation in Practice||travis-glover
+2026-11-15|GB|Ty'Ron Hopper|LB||Limited Participation in Practice||ty-ron-hopper
+2026-11-15|GB|Josh Jacobs|RB||Did Not Participate In Practice||josh-jacobs-x3315
+2026-11-15|GB|Bo Melton|WR||Full Participation in Practice||bo-melton
+2026-11-15|GB|Skyy Moore|WR||Limited Participation in Practice||skyy-moore
+2026-11-15|GB|Micah Parsons|LB||Limited Participation in Practice||micah-parsons
+2026-11-15|GB|Sean Rhyan|C||Did Not Participate In Practice||sean-rhyan
+2026-11-15|GB|Trey Smack|K||Full Participation in Practice||trey-smack
+2026-11-15|GB|Lukas Van Ness|LB||Did Not Participate In Practice||lukas-van-ness
+2026-11-15|GB|Josh Whyle|TE||Did Not Participate In Practice||josh-whyle
+2026-11-15|GB|Savion Williams|WR||Limited Participation in Practice||savion-williams
+2026-11-15|GB|Kevin Zeitler|G||Limited Participation in Practice||kevin-zeitler
+2026-11-15|JAX|Jessie Bates|S||Did Not Participate In Practice||jessie-bates
+2026-11-15|JAX|Ezra Cleveland|G||Limited Participation in Practice||ezra-cleveland
+2026-11-15|JAX|Branson Combs|LB||Limited Participation in Practice||branson-combs
+2026-11-15|JAX|Jordan Davis|DT||Did Not Participate In Practice||jordan-davis
+2026-11-15|JAX|BJ Green II|DE||Full Participation in Practice||bj-green-ii
+2026-11-15|JAX|Robert Hainsey|C||Limited Participation in Practice||robert-hainsey
+2026-11-15|JAX|Antonio Johnson|S||Limited Participation in Practice||antonio-johnson-3
+2026-11-15|JAX|Jakobi Meyers|WR||Limited Participation in Practice||jakobi-meyers
+2026-11-15|JAX|Chris Rodriguez Jr.|RB||Limited Participation in Practice||chris-rodriguez-jr
+2026-11-15|JAX|Bhayshul Tuten|RB||Did Not Participate In Practice||bhayshul-tuten
+2026-11-15|JAX|Travon Walker|DE||Limited Participation in Practice||travon-walker
+2026-11-15|TEN|Cody Barton|LB||Did Not Participate In Practice||cody-barton
+2026-11-15|TEN|John Franklin-Myers|DE||Full Participation in Practice||john-franklin-myers
+2026-11-15|TEN|Marcus Harris|CB||Full Participation in Practice||marcus-harris-4
+2026-11-15|TEN|Anthony Hill Jr.|LB||Did Not Participate In Practice||anthony-hill-jr
+2026-11-15|TEN|Jaylon Jones|CB||Full Participation in Practice||jaylon-jones-2
+2026-11-15|TEN|JC Latham|T||Full Participation in Practice||jc-latham
+2026-11-15|TEN|Tony Pollard|RB||Did Not Participate In Practice||tony-pollard
+2026-11-15|TEN|Peter Skoronski|G||Did Not Participate In Practice||peter-skoronski
+2026-11-15|TEN|Tyjae Spears|RB||Limited Participation in Practice||tyjae-spears
+2026-11-15|TEN|Carnell Tate|WR||Did Not Participate In Practice||carnell-tate
+2026-11-15|TEN|Tommy Townsend|P||Full Participation in Practice||tommy-townsend
+2026-11-15|TEN|Kevin Winston Jr.|S||Limited Participation in Practice||kevin-winston-jr

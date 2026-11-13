@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Injury &amp; Lineup Depth · Free Time Vacation Planner</title>
+<meta name="description" content="Design for tracking NFL injuries and lineup deficiencies: 1st/2nd/3rd/4th string tiers for offense and defense, sourced from official depth charts and injury reports.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> FREE TIME / VACATION</div>
+  <nav class="main"><a href="index.html" class="">Dashboard</a><a href="calendar.html" class="">Calendar</a><a href="vacation.html" class="">Vacation windows</a><a href="mlb.html" class="">MLB</a><a href="nfl.html" class="">NFL &amp; 49ers</a><a href="nfl-strategy.html" class="">NFL Strategy Lab</a><a href="suggestions.html" class="">Suggestions</a><a href="decisions.html" class="">Decisions</a><a href="injury-tracking.html" class="active">Injury &amp; lineup</a><a href="ncaaf.html" class="">Stanford &amp; Cal</a><a href="radio.html" class="">Radio</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged</a><a href="method.html" class="">Method</a><a href="extra/index.html" class="">Official feeds &amp; verification</a><a href="lines-lab/index.html">NFL Skill Lab</a></nav>
+</div></header>
+<main class="wrap"><aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. <a href="certainty.html">Flagged for Review: certainty audit</a>.</aside>
+
+<p class="eyebrow">NFL decision support · tracking design</p>
+<h1>Injury &amp; lineup-depth tracking</h1>
+<p class="lede">Track injuries and lineup deficiencies so a strategy can know when a <strong>2nd, 3rd or 4th string</strong>
+player is replacing a starter — on <strong>defense and offense alike</strong> — and what that means. This is a
+<strong>design</strong>, not a validated predictive model. It defines what is verified, what is estimated, and what stays
+blank.</p>
+
+<div class="callout warn"><strong>No performance effect is claimed.</strong> The effect of a backup replacing a starter on
+scoring, yardage or prop outcomes is <strong>not measured</strong> here. It requires a validated injury-to-performance
+panel that does not yet exist (decision D-10).</div>
+
+<h2>Core rules</h2>
+<ol class="clean">
+  <li><strong>Tier comes from an official depth chart, never from injury status.</strong> “Out”, “limited” or “questionable”
+    does not tell you who is the 2nd string. Tier is read from the club's official depth chart (1st/2nd/3rd/4th string).</li>
+  <li><strong>Availability comes from an official injury report / inactive list.</strong> Official status and actual
+    participation are separate observations and are stored separately.</li>
+  <li><strong>A “lineup deficiency” requires both a sourced tier change and a sourced availability change.</strong> If either
+    link is missing, the deficiency is <span class="tag flag">unverified</span>, not asserted.</li>
+  <li><strong>Missing values stay blank and are flagged.</strong> No backup tier is inferred, no workload is invented, no
+    performance effect is claimed without data.</li>
+  <li><strong>Offense and defense are tracked symmetrically.</strong> The same fields and rules apply to both.</li>
+</ol>
+
+<h2>Verified official sources</h2>
+<div class="scroll"><table><thead><tr><th>Source</th><th>What it provides</th><th>Field/selection</th><th>Link</th></tr></thead><tbody>
+<tr><td>NFL injury report</td><td>Player, position, injury, practice status, game status</td><td>Season + week selector</td><td><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">nfl.com/injuries</a></td></tr>
+<tr><td>Club official depth chart (e.g. 49ers)</td><td>1st/2nd/3rd/4th string by position, offense/defense/special teams</td><td>Updated date shown on page</td><td><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener">49ers.com/team/depth-chart</a></td></tr>
+<tr><td>NFL transactions</td><td>Trades, signings, waivers, reserve list, terminations</td><td>Year + month selector</td><td><a href="https://www.nfl.com/transactions/" target="_blank" rel="noopener">nfl.com/transactions</a></td></tr>
+<tr><td>NFL player statistics</td><td>Per-player production by category</td><td>Category + year selector</td><td><a href="https://www.nfl.com/stats/player-stats/" target="_blank" rel="noopener">nfl.com/stats/player-stats</a></td></tr>
+<tr><td>NFL team statistics</td><td>Offense/defense/special-teams team categories</td><td>Category + year selector</td><td><a href="https://www.nfl.com/stats/team-stats/" target="_blank" rel="noopener">nfl.com/stats/team-stats</a></td></tr>
+<tr><td>NFL schedules / game pages</td><td>Game metadata; gamebooks/play-by-play for actual participation</td><td>By week / by team</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">nfl.com/schedules</a></td></tr>
+</tbody></table></div>
+<p class="small">Verified as live on 2026-11-13. These are starting points; a particular historical field must still be
+checked before it is used.</p>
+
+<h2>Record schema</h2>
+<p class="small">Every injury/lineup record carries the same provenance fields (see the <a href="nfl-strategy.html">NFL Strategy
+Lab</a>, gate 1).</p>
+<div class="scroll"><table><thead><tr><th>Field</th><th>Meaning</th><th>Source</th><th>Status</th></tr></thead><tbody>
+<tr><td><code>gameId, playerId, teamId, position</code></td><td>Identifiers</td><td>Official roster/schedule</td><td>Verified where resolvable</td></tr>
+<tr><td><code>tier</code></td><td>1st / 2nd / 3rd / 4th string at the position</td><td>Club official depth chart</td><td><strong>Verified only from official depth chart</strong></td></tr>
+<tr><td><code>tierUpdated</code></td><td>Timestamp the depth chart was published/updated</td><td>Club depth chart page</td><td>Verified (page shows “Updated as of …”)</td></tr>
+<tr><td><code>injury, practiceStatus, gameStatus</code></td><td>Official status as published</td><td>NFL injury report</td><td>Verified as published</td></tr>
+<tr><td><code>reportPublished</code></td><td>Publication time of the injury report</td><td>NFL injury report</td><td>Verified as published</td></tr>
+<tr><td><code>inactiveConfirmed</code></td><td>Game-day inactive/active confirmation</td><td>Official inactive list</td><td>Verified where published</td></tr>
+<tr><td><code>transaction</code></td><td>Roster move that changes depth</td><td>NFL transactions</td><td>Verified where published</td></tr>
+<tr><td><code>replacementPlayer</code></td><td>Who moves up when a starter is unavailable</td><td>Depth chart order</td><td>Verified from depth chart only</td></tr>
+<tr><td><code>expectedOpportunityShare</code></td><td>Modelled share of snaps/targets</td><td>Model estimate</td><td><span class="tag est">estimate — labelled, never asserted as fact</span></td></tr>
+<tr><td><code>actualParticipation</code></td><td>Real snaps/targets from gamebook</td><td>Official gamebook/play-by-play</td><td>Verified where available</td></tr>
+<tr><td><code>sourceUrl, capturedAt, revision</code></td><td>Provenance and immutability</td><td>Capture pipeline</td><td>Verified</td></tr>
+</tbody></table></div>
+
+<h2>Tier logic (offense and defense)</h2>
+<p>For each position, read the depth chart columns <strong>1st, 2nd, 3rd, 4th</strong>:</p>
+<ul class="clean">
+  <li><strong>1st string</strong> = projected starter at that position.</li>
+  <li><strong>2nd string</strong> = first backup; steps in for a full-time starter absence.</li>
+  <li><strong>3rd string</strong> = second backup; steps in when 1st and 2nd are both unavailable.</li>
+  <li><strong>4th string</strong> = third backup; depth-thin situations.</li>
+</ul>
+<p>A <strong>deficiency flag</strong> is raised for a team/position when <strong>all</strong> of the following hold:</p>
+<ol class="clean">
+  <li>The depth chart shows a <strong>lower tier</strong> (2nd/3rd/4th) listed as the top available name for that position —
+    i.e. the 1st string is unavailable; <strong>and</strong></li>
+  <li>An official injury report or inactive list confirms the 1st string is <strong>out</strong> (or otherwise confirmed
+    unavailable); <strong>and</strong></li>
+  <li>The record ties the two with timestamps so the tier change is point-in-time.</li>
+</ol>
+<p>If (1) or (2) is not confirmed, the deficiency is <span class="tag flag">unverified</span> and the cell stays blank.</p>
+
+<h2>Position groups tracked</h2>
+<div class="scroll"><table><thead><tr><th>Side</th><th>Position groups</th></tr></thead><tbody>
+<tr><td>Offense</td><td>QB; RB/FB; WR; TE; OL (LT/LG/C/RG/RT)</td></tr>
+<tr><td>Defense</td><td>Defensive line (LDE/LDT/RDT/RDE); LB (SAM/MIKE/WILL); CB (LCB/RCB/NB); S (FS/SS)</td></tr>
+<tr><td>Special teams</td><td>P; K; H; PR; KOR; LS</td></tr>
+</tbody></table></div>
+
+<h2>Worked example — source data shape (verified snapshot, not a prediction)</h2>
+<p>The table below is the <strong>shape</strong> of the data an official depth chart provides. It is a verbatim snapshot of
+the San Francisco 49ers official depth chart, <strong>Updated as of 11/10/26</strong>, cited to the official page. It is
+shown to make the schema concrete; it is <strong>not</strong> a line, a signal, or a performance claim. No tier is inferred
+beyond what the chart prints, and blanks are left blank.</p>
+<div class="scroll"><table><thead><tr><th>Side</th><th>Position</th><th>1st string</th><th>2nd string</th><th>3rd string</th><th>4th string</th><th>Source</th></tr></thead><tbody>
+<tr><td>Offense</td><td>WR</td><td>Mike Evans</td><td>Jordan Watkins</td><td>Brandin Cooks</td><td>(blank)</td><td><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener">49ers.com</a></td></tr>
+<tr><td>Offense</td><td>LT</td><td>Trent Williams</td><td>Vederian Lowe</td><td>Enrique Cruz Jr.</td><td>(blank)</td><td><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener">49ers.com</a></td></tr>
+<tr><td>Offense</td><td>QB</td><td>Brock Purdy</td><td>Mac Jones</td><td>Kurtis Rourke</td><td>(blank)</td><td><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener">49ers.com</a></td></tr>
+<tr><td>Offense</td><td>RB</td><td>Christian McCaffrey</td><td>Kaelon Black</td><td>Jordan James</td><td>(blank)</td><td><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener">49ers.com</a></td></tr>
+<tr><td>Defense</td><td>LDE</td><td>Keion White</td><td>Mykel Williams</td><td>Khalid Kareem</td><td>(blank)</td><td><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener">49ers.com</a></td></tr>
+<tr><td>Defense</td><td>RDE</td><td>Nick Bosa</td><td>Romello Height</td><td>(blank)</td><td>(blank)</td><td><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener">49ers.com</a></td></tr>
+<tr><td>Defense</td><td>MIKE</td><td>Fred Warner</td><td>Tatum Bethune</td><td>(blank)</td><td>(blank)</td><td><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener">49ers.com</a></td></tr>
+<tr><td>Defense</td><td>RCB</td><td>Deommodore Lenoir</td><td>Ephesians Prysock</td><td>(blank)</td><td>(blank)</td><td><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener">49ers.com</a></td></tr>
+<tr><td>Defense</td><td>SS</td><td>Malik Mustapha</td><td>Marques Sigle</td><td>Ashtyn Davis</td><td>(blank)</td><td><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener">49ers.com</a></td></tr>
+</tbody></table></div>
+<p class="small">Depth is <strong>uneven</strong>: e.g. the 49ers list a 3rd string at WR and LT but only a 2nd string at RDE
+and MIKE. That is the kind of sourced deficiency the tracker is built to expose — without claiming any expected
+performance effect.</p>
+
+<h2>What is NOT established</h2>
+<ul class="clean">
+  <li><strong>No historical depth-chart or injury series</strong> exists in this repository. The worked example is a single
+    live snapshot, not a time series. Tier changes cannot be backfilled from injury status.</li>
+  <li><strong>Injury status does not imply workload.</strong> A “questionable” starter does not mean a backup will take a
+    fixed share of snaps. <code>expectedOpportunityShare</code> is a model estimate that is <strong>not</strong> asserted here.</li>
+  <li><strong>No performance link is validated.</strong> The effect of a 2nd/3rd/4th string replacing a starter on scoring,
+    yardage or prop outcomes is <strong>not measured</strong> and is <strong>not claimed</strong>. It requires a validated
+    injury-to-performance panel that does not exist yet (decision D-10).</li>
+  <li><strong>Official source availability may vary by team/week.</strong> The NFL.com team depth-chart URL pattern returned
+    404 in this check; the verified tier source used here is the club's own depth-chart page. Flagged for review.</li>
+</ul>
+<p><a href="research/INJURY-TRACKING.md">Readable research notes</a> · <a href="nfl-strategy.html">NFL Strategy Lab</a> ·
+<a href="decisions.html">Decision registry</a> · <a href="flagged.html">Flagged for Review</a></p>
+</main>
+<footer><div class="wrap">
+  <p><strong>Free Time Vacation Planner</strong> · Pacific time (America/Los_Angeles) · Coverage 2026-11-05 → 2030-02-28 ·
+  data rebuilt 2026-11-02T17:54:23Z</p>
+  <p>Inherited schedule records cite MLB's own StatsAPI, 49ers.com, gostanford.com, calbears.com and westwoodonesports.com.
+  Anything not published by an official source is labelled <span class="tag est">estimated</span> and explained on the
+  <a href="method.html">Method</a> page. Items that could not be confirmed are on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

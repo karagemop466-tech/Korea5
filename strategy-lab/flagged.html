@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged &middot; NFL Lines &amp; Strategy Lab</title>
+<link rel="stylesheet" href="assets/lab.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="brand"><a href="index.html">NFL Lines &amp; Strategy Lab</a>
+    <span class="tag">2026 season &middot; snapshot 2026-11-13</span></div>
+  <nav class="nav" aria-label="Sections"><a href="index.html">Overview</a>
+<a href="requirements.html">Requirements</a>
+<a href="decisions.html">Decisions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="lines.html">Lines</a>
+<a href="signals.html">Signals</a>
+<a href="strategies.html">Strategies</a>
+<a href="leaderboard.html">Leaderboard</a>
+<a href="injuries.html">Injuries</a>
+<a href="teams.html">Teams</a>
+<a href="games.html">Game log</a>
+<a href="sources.html">Sources</a>
+<a class="active" href="flagged.html">Flagged</a>
+<a href="verify.html">Verify</a></nav>
+</header>
+<main id="main">
+<h1>Flagged</h1>
+<p class="sub">Irregularities and unverified values, published for manual review.</p>
+<p class="banner"><strong>Verification rule.</strong> Every row on this site links to the official page it came from. Where an official source has not published a value the cell is left blank and the row is listed on the <a href="flagged.html">Flagged for Review</a> page. Nothing is inferred and nothing is filled in.</p>
+
+<p>Irregularities, gaps and unverifiable values. These are published rather than hidden, and they do not block
+the site or the merge. Each row links to the official page involved where one exists, so it can be checked
+manually.</p>
+<h3 id="flagged-for-review">Flagged for review</h3>
+<table class="data-table" data-filter="1" data-sourced="1">
+<thead><tr><th>ID</th><th>Area</th><th>Issue</th><th>Detail</th><th>Status</th><th>Suggested action</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>F01</td><td>Injuries</td><td class='wrap'><strong>No official NFL depth chart exists</strong></td><td class='wrap'>https://www.nfl.com/teams/san-francisco-49ers/depth-chart returns HTTP 404, and the official roster page lists position and ACT status with no string order. The requirement to know 2nd, 3rd and 4th string replacements cannot be met from an official source today.</td><td><span class='pill open'>open</span></td><td class='wrap'>SUG-05</td><td class="nowrap"><a class="src" href="https://www.nfl.com/teams/san-francisco-49ers/roster" target="_blank" rel="noopener">official source</a></td></tr>
+<tr><td>F02</td><td>Standings</td><td class='wrap'><strong>Four standings columns are unnamed in the official LEGEND</strong></td><td class='wrap'>The official standings page prints 16 columns but its own LEGEND names only 12. The division percentage, conference percentage, non-conference record and last-5 record columns are therefore omitted rather than guessed.</td><td><span class='pill open'>open</span></td><td class='wrap'>None - left blank by policy</td><td class="nowrap"><a class="src" href="https://www.nfl.com/standings/" target="_blank" rel="noopener">official source</a></td></tr>
+<tr><td>F03</td><td>Injuries</td><td class='wrap'><strong>Injury history is not archived</strong></td><td class='wrap'>Only the Week 10 report has been captured. Status changes, and the moment each status became public, cannot be reconstructed yet.</td><td><span class='pill open'>open</span></td><td class='wrap'>SUG-06</td><td class="nowrap"><a class="src" href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">official source</a></td></tr>
+<tr><td>F04</td><td>Schedule</td><td class='wrap'><strong>Weeks 16 to 18 kickoff times are not final</strong></td><td class='wrap'>The official schedule states that specific dates, start times and networks for the designated Week 16, 17 and 18 matchups are determined during the season, no later than immediately after Weeks 14, 15 and 17 respectively.</td><td><span class='pill open'>open</span></td><td class='wrap'>None - informational</td><td class="nowrap"><a class="src" href="https://www.nfl.com/legal/flexible-scheduling-procedures" target="_blank" rel="noopener">official source</a></td></tr>
+<tr><td>F05</td><td>Model</td><td class='wrap'><strong>Neutral-site sample is very small</strong></td><td class='wrap'>The 2026 designated home teams went 1-6 at neutral sites (mean margin -7.9 points, n = 7). The model already applies zero home-field at neutral sites, but this observation is far too small to act on.</td><td><span class='pill open'>open</span></td><td class='wrap'>SUG-17</td><td class="nowrap"><a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">official source</a></td></tr>
+<tr><td>F06</td><td>Markets</td><td class='wrap'><strong>No settlement rules are available</strong></td><td class='wrap'>Push, void, overtime treatment and inactive-player rules are bookmaker house rules. No official NFL source publishes them, and none have been captured.</td><td><span class='pill open'>open</span></td><td class='wrap'>SUG-01</td><td class="nowrap"><a class="src" href="https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf" target="_blank" rel="noopener">official source</a></td></tr>
+<tr><td>F07</td><td>Markets</td><td class='wrap'><strong>Every market price cell is blank</strong></td><td class='wrap'>No spread, total, moneyline or prop price appears anywhere in this lab. No official NFL source publishes betting prices, so the columns are left blank and marked unverified rather than filled with an estimate.</td><td><span class='pill open'>open</span></td><td class='wrap'>SUG-01</td><td class="nowrap"><a class="src" href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">official source</a></td></tr>
+<tr><td>F08</td><td>Statistics</td><td class='wrap'><strong>Home-field advantage is near zero this season</strong></td><td class='wrap'>Across all 137 games the mean home margin is -0.02 points and home teams are 67-69-1. On true home fields only, the mean home margin is +0.47 points. Whether this is a 2026 peculiarity or a lasting change is unknown.</td><td><span class='pill open'>open</span></td><td class='wrap'>SUG-16</td><td class="nowrap"><a class="src" href="https://www.nfl.com/standings/" target="_blank" rel="noopener">official source</a></td></tr>
+<tr><td>F09</td><td>Model</td><td class='wrap'><strong>Model variants were compared on the window that revealed the problem</strong></td><td class='wrap'>Three variants were scored on the same 89-game out-of-sample window used to diagnose the naive model&#x27;s failure. Reported p-values are therefore optimistic.</td><td><span class='pill open'>open</span></td><td class='wrap'>SUG-10</td><td class="nowrap"><a class="src" href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">official source</a></td></tr>
+<tr><td>F10</td><td>Data</td><td class='wrap'><strong>One partial season only</strong></td><td class='wrap'>137 games from a single season. Bootstrap intervals are wide and almost nothing can clear a significance gate on this sample.</td><td><span class='pill open'>open</span></td><td class='wrap'>SUG-16</td><td class="nowrap"><a class="src" href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">official source</a></td></tr>
+<tr><td>F11</td><td>Repo</td><td class='wrap'><strong>The committed upstream NFL feed is stale</strong></td><td class='wrap'>The committed upstream NFL feed (data/upstream/nfl-2026.json) was captured 2026-11-02 and every game still carries status SCHEDULED, including games that have since been played. It holds schedule data only, with no scores. Re-checked against the official by-week pages, which do publish those results.</td><td><span class='pill open'>open</span></td><td class='wrap'>Re-fetch, or supersede it with this lab&#x27;s verified game log</td><td class="nowrap"><a class="src" href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">official source</a></td></tr>
+<tr><td>F12</td><td>Process</td><td class='wrap'><strong>The site generator that writes the README is retired</strong></td><td class='wrap'>A prior session logged that scripts/build_docs.py would overwrite README sections added by other sessions, so it was removed from the rebuild chain. It is still present in the repository.</td><td><span class='pill open'>open</span></td><td class='wrap'>Decide whether to retire or repair it</td><td class="nowrap"><a class="src" href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">official source</a></td></tr>
+</tbody></table>
+
+</main>
+<footer><p>Static site generated by <code>strategy-lab/build.py</code> from official NFL sources.
+<a href="../index.html">Back to the main planner</a> &middot;
+<a href="sources.html">Sources</a> &middot; <a href="flagged.html">Flagged for review</a></p></footer>
+<script src="assets/lab.js"></script>
+</body>
+</html>

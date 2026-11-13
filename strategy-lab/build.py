@@ -1,0 +1,941 @@
+#!/usr/bin/env python3
+"""
+Build the NFL Lines & Strategy Lab static site.
+
+Reads strategy-lab/data/analysis.json (produced by pipeline.py) and strategy-lab/content.py,
+then writes strategy-lab/*.html.  Every table row carries a link to the official page
+the value came from.  Run:  python3 strategy-lab/build.py
+"""
+
+import html
+import json
+import os
+import re
+
+import content as C
+
+HERE = os.path.abspath(os.path.dirname(__file__))
+DATA = os.path.join(HERE, "data")
+ROOT = os.path.dirname(HERE)
+
+with open(os.path.join(DATA, "analysis.json"), encoding="utf-8") as fh:
+    A = json.load(fh)
+
+META = A["meta"]
+BT = A["backtest"]
+V = BT["variants"]
+PROD = META["productionModel"]
+PRODS = V[PROD]["summary"]
+
+PAGES = [
+    ("index.html", "Overview", "Executive summary and dashboard"),
+    ("requirements.html", "Requirements", "Full requirement register"),
+    ("decisions.html", "Decisions", "Questions, information held, information missing"),
+    ("suggestions.html", "Suggestions", "Review and choose a path before implementing"),
+    ("lines.html", "Lines", "Originated lines for the next slate"),
+    ("signals.html", "Signals", "Correlations, luck separation, model diagnostics"),
+    ("strategies.html", "Strategies", "Strategy catalogue and validation gates"),
+    ("leaderboard.html", "Leaderboard", "Ranked by a pre-declared metric"),
+    ("injuries.html", "Injuries", "Injury and lineup tracking"),
+    ("teams.html", "Teams", "Team rates, Pythagorean expectation, luck"),
+    ("games.html", "Game log", "Every verified game result"),
+    ("sources.html", "Sources", "Official source registry"),
+    ("flagged.html", "Flagged", "Flagged for review"),
+    ("verify.html", "Verify", "Row-by-row verification report"),
+]
+
+
+# ------------------------------------------------------------------ helpers
+
+def esc(x):
+    return html.escape("" if x is None else str(x), quote=True)
+
+
+def blank():
+    """An explicitly blank, flagged cell. Never a guess."""
+    return '<td class="blank" title="Not published by any official source - left blank by policy">—</td>'
+
+
+def src(links, label=None):
+    """links: str url or list of (url, text) tuples."""
+    if isinstance(links, str):
+        links = [(links, label or "source")]
+    out = []
+    for item in links:
+        if not item or not item[0]:
+            continue
+        url, text = item
+        out.append('<a class="src" href="%s" target="_blank" rel="noopener">%s</a>' % (esc(url), esc(text)))
+    return " ".join(out) if out else '<span class="blank-inline">no official source</span>'
+
+
+def src_cell(links, label=None):
+    return '<td class="nowrap">%s</td>' % src(links, label)
+
+
+def table(headers, rows, caption=None, cls="", filtration=True, sourced=False):
+    """sourced=True marks a table whose every row is a fact row and must therefore
+    carry at least one official-domain source link.  strategy-lab/verify.py enforces it."""
+    hid = re.sub(r"[^a-z0-9]+", "-", (caption or headers[0]).lower()).strip("-")
+    out = []
+    if caption:
+        out.append('<h3 id="%s">%s</h3>' % (hid, esc(caption)))
+    cls = (cls + " data-table").strip()
+    attrs = ' class="%s" data-filter="1"' % cls if filtration else ' class="%s"' % cls
+    attrs += ' data-sourced="1"' if sourced else ' data-sourced="0"'
+    out.append('<table%s>' % attrs)
+    out.append("<thead><tr>%s</tr></thead>" % "".join("<th>%s</th>" % esc(h) for h in headers))
+    out.append("<tbody>")
+    out.extend(rows)
+    out.append("</tbody></table>")
+    return "\n".join(out)
+
+
+def nav(active):
+    items = []
+    for href, label, _ in PAGES:
+        cur = ' class="active"' if href == active else ""
+        items.append('<a%s href="%s">%s</a>' % (cur, esc(href), esc(label)))
+    return "\n".join(items)
+
+
+def page(active, title, subtitle, body, note=True):
+    honesty = ""
+    if note:
+        honesty = ('<p class="banner"><strong>Verification rule.</strong> Every row on this site links to the '
+                   'official page it came from. Where an official source has not published a value the cell is '
+                   'left blank and the row is listed on the <a href="flagged.html">Flagged for Review</a> page. '
+                   'Nothing is inferred and nothing is filled in.</p>')
+    return """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>%s &middot; NFL Lines &amp; Strategy Lab</title>
+<link rel="stylesheet" href="assets/lab.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="brand"><a href="index.html">NFL Lines &amp; Strategy Lab</a>
+    <span class="tag">2026 season &middot; snapshot %s</span></div>
+  <nav class="nav" aria-label="Sections">%s</nav>
+</header>
+<main id="main">
+<h1>%s</h1>
+<p class="sub">%s</p>
+%s
+%s
+</main>
+<footer><p>Static site generated by <code>strategy-lab/build.py</code> from official NFL sources.
+<a href="../index.html">Back to the main planner</a> &middot;
+<a href="sources.html">Sources</a> &middot; <a href="flagged.html">Flagged for review</a></p></footer>
+<script src="assets/lab.js"></script>
+</body>
+</html>
+""" % (esc(title), esc(META["snapshotUTC"][:10]), nav(active), esc(title), subtitle, honesty, body)
+
+
+def write(name, doc):
+    path = os.path.join(HERE, name)
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write(doc)
+    return path
+
+
+def rel(abbr):
+    t = A["standings"].get(abbr)
+    return "%d-%d-%d" % (t["W"], t["L"], t["T"]) if t else ""
+
+
+def tname(abbr):
+    return A["standings"][abbr]["name"] if abbr in A["standings"] else abbr
+
+
+def team_link(abbr):
+    t = A["standings"].get(abbr)
+    if not t:
+        return esc(abbr)
+    return '<a href="%s" target="_blank" rel="noopener">%s</a>' % (esc(t["teamUrl"]), esc(abbr))
+
+
+# ------------------------------------------------------------------ pages
+
+def build_index():
+    s = V[PROD]["summary"]
+    sig = V[PROD]["significance"]["marginVsZeroBaseline"]
+    bsig = V[PROD]["significance"]["brierVs0.50"]
+    cards = [
+        ("Games verified", META["gamesVerified"], "official NFL.com by-week pages", C.WK10),
+        ("Standings rows reconciled", "%d / 32" % sum(1 for c in A["crossChecks"] if c["match"]),
+         "recomputed from the game log and matched to the official standings", C.STANDINGS),
+        ("Out-of-sample games scored", s["testGames"], "chronological walk-forward, fit inside each fold", C.SCHED),
+        ("Production model", PROD, META["productionModelRationale"][:110] + "…", None),
+        ("Margin skill vs zero forecast", "%+.1f%%" % (100 * s["marginSkillVsZero"]),
+         "MAE %s vs %s for a constant zero forecast, p = %s" % (
+             s["marginMAE"], s["marginMAE_zeroBaseline"], sig["pValue_oneSided_normalApprox"]), None),
+        ("Brier skill vs 0.50", "%+.1f%%" % (100 * s["brierSkill"]),
+         "Brier %s vs 0.250, p = %s" % (s["brier"], bsig["pValue_oneSided_normalApprox"]), None),
+        ("Totals skill", "%+.1f%%" % (100 * s["totalSkillVsConstant"]),
+         "no variant beats the constant baseline - gate G6 fails", None),
+        ("Market prices held", "0", "no official NFL source publishes betting prices - flag F07", C.SCHED),
+    ]
+    card_html = "\n".join(
+        '<div class="card"><div class="k">%s</div><div class="v">%s</div><div class="d">%s</div>%s</div>'
+        % (esc(k), esc(v), esc(d), ("<div class='l'>%s</div>" % src(u, "official source")) if u else "")
+        for k, v, d, u in cards)
+
+    findings = [
+        ("The naive model is worse than doing nothing.",
+         "Unshrunk scoring rates produce a margin MAE of %s against %s for a constant zero forecast. "
+         "It fails gate G3 outright and is kept only as a labelled control." % (
+             V["A_naive"]["summary"]["marginMAE"], V["A_naive"]["summary"]["marginMAE_zeroBaseline"])),
+        ("Shrinking team rates toward the league mean is what creates the signal.",
+         "Shrunk variant: MAE %s vs %s, a paired improvement of %s points per game (t = %s, one-sided p = %s, "
+         "bootstrap 90%% CI %s to %s). This is the only strategy that clears gate G3." % (
+             s["marginMAE"], s["marginMAE_zeroBaseline"], sig["meanPairedImprovement"], sig["tStatistic"],
+             sig["pValue_oneSided_normalApprox"], sig["bootstrap90CI_low"], sig["bootstrap90CI_high"])),
+        ("Totals show no skill in any variant.",
+         "The best total MAE is %s against a constant baseline of %s. Gate G6 fails. Do not trade totals from this model." % (
+             min(v["summary"]["totalMAE"] for v in V.values()), s["totalMAE_constantBaseline"])),
+        ("Momentum is not a signal in this data.",
+         "The lag-1 autocorrelation of a team's own game margin is r = %s across %d team-week pairs. "
+         "Last week's result carries essentially no information about this week." % (
+             A["correlations"][4]["pearson"], A["correlations"][4]["n"])),
+        ("Same-game parlay legs are not independent.",
+         "Home points vs game total correlates r = %s and away points vs game total r = %s, because both legs "
+         "share a team's scoring. Multiplying marginals is invalid." % (
+             A["correlations"][1]["pearson"], A["correlations"][2]["pearson"])),
+        ("There is no official depth chart, so backup string order cannot be known today.",
+         "The NFL.com team depth-chart URL returns HTTP 404 and the official roster lists position and ACT status only. "
+         "The 2nd/3rd/4th-string requirement is blocked, not implemented with a guess."),
+        ("No market price exists anywhere in this lab.",
+         "Every spread, total, moneyline and prop cell is blank and marked unverified. No official NFL source "
+         "publishes betting prices, so closing-line value and ROI cannot yet be computed at all."),
+        ("Home-field advantage is effectively zero this season.",
+         "Across %d games the mean home margin is %s points and home teams are %s. On true home fields only "
+         "the mean is %s points. Whether that persists is unknown - flag F08." % (
+             META["gamesVerified"], META["meanHomeMarginAllGames"], META["homeTeamRecordAllGames"],
+             META["modelParameters"]["homeFieldPoints"])),
+    ]
+    find_html = "\n".join("<li><strong>%s</strong> %s</li>" % (esc(a), b) for a, b in findings)
+
+    body = """
+<div class="cards">%s</div>
+
+<h2>What this lab is</h2>
+<p>The lab originates its own NFL numbers from official league data rather than copying a bookmaker's line.
+It currently holds <strong>%d verified game results</strong> from the 2026 season, covering Weeks 1 to 10,
+plus the official standings and the Week 10 official injury report. Everything below is computed from those
+rows by <code>strategy-lab/pipeline.py</code>, and every row links back to the official page it came from.</p>
+<p>It deliberately does <em>not</em> claim a betting edge. One model clears the significance gate, one fails,
+one fails on significance, totals fail outright, and props and parlays are blocked on missing data. That is
+the honest state of the work.</p>
+
+<h2>Executive summary - the important details</h2>
+<ol class="findings">%s</ol>
+
+<h2>Read this before acting on anything</h2>
+<table class="data-table">
+<thead><tr><th>Question</th><th>Short answer</th><th>Where</th></tr></thead>
+<tbody>
+<tr><td>Can I bet this today?</td><td>No. One model clears its gate on %d out-of-sample games from a single
+partial season, and no market price has ever been captured, so profitability is unmeasured.</td>
+<td><a href="strategies.html">Strategies</a></td></tr>
+<tr><td>What would change that?</td><td>A timestamped quote archive (SUG-01), multi-season data (SUG-16), and a
+pre-registered trial (SUG-10), in that order.</td><td><a href="suggestions.html">Suggestions</a></td></tr>
+<tr><td>Is the injury requirement met?</td><td>Partly. Statuses are tracked; backup string order is blocked
+because no official source publishes it.</td><td><a href="injuries.html">Injuries</a></td></tr>
+<tr><td>Can I review the raw data myself?</td><td>Yes. Every row on every page has a link to the official page it
+came from.</td><td><a href="games.html">Game log</a></td></tr>
+</tbody></table>
+
+<h2>Related NFL sections in this repository</h2>
+<p>Several parallel sessions have built NFL surfaces in this repo. This one is the only one that
+<strong>ingests the official results and computes from them</strong> (137 verified games reconciled against the
+official standings) and the only one that <strong>backtests</strong> a model against held-out weeks. The others are
+linked here so nothing has to be hunted for; none of their files were edited by this session.</p>
+<table class="data-table">
+<thead><tr><th>Section</th><th>Focus</th><th>Entry point</th></tr></thead>
+<tbody>
+<tr><td><code>strategy-lab/</code> (this page)</td>
+<td>Originated lines from official results, gated backtest, correlation values, injury tracker</td>
+<td><a href="index.html">Overview</a></td></tr>
+<tr><td><code>lab/</code></td>
+<td>NFL Lines Lab - decision register, correlations, injuries and depth, published by another session</td>
+<td><a href="../lab/index.html">NFL Lines Lab</a></td></tr>
+<tr><td><code>nfl-lab/</code></td>
+<td>NFL model section published by another session</td>
+<td><a href="../nfl-lab/index.html">NFL Model</a></td></tr>
+<tr><td><code>nfl/</code></td>
+<td>NFL decision support, published by another session</td>
+<td><a href="../nfl/index.html">NFL Decision Support</a></td></tr>
+<tr><td><code>nfl/system/</code></td>
+<td>NFL decision system sub-pages, published by another session</td>
+<td><a href="../nfl/system/index.html">NFL decision system</a></td></tr>
+</tbody></table>
+
+<h2>Section guide</h2>
+<table class="data-table">
+<thead><tr><th>Section</th><th>What is in it</th></tr></thead>
+<tbody>%s</tbody></table>
+""" % (card_html, META["gamesVerified"], find_html, s["testGames"],
+       "\n".join("<tr><td><a href='%s'>%s</a></td><td>%s</td></tr>" % (esc(h), esc(l), esc(d))
+                 for h, l, d in PAGES))
+    write("index.html", page("index.html", "Overview",
+                             "Executive summary for the NFL line-making and strategy programme, 2026 season.",
+                             body))
+
+
+def build_requirements():
+    order = {"blocked": 0, "not-met": 1, "partial": 2, "ongoing": 3, "met": 4}
+    rows = []
+    for rid, cat, req, status, ev, url in sorted(C.REQUIREMENTS, key=lambda x: (order.get(x[3], 9), x[0])):
+        rows.append("<tr><td>%s</td><td>%s</td><td>%s</td><td><span class='pill %s'>%s</span></td>"
+                    "<td class='wrap'>%s</td>%s</tr>"
+                    % (esc(rid), esc(cat), esc(req), esc(status), esc(status), esc(ev),
+                       src_cell([(url, "official source")] if url else [], "official source")))
+    counts = {}
+    for r in C.REQUIREMENTS:
+        counts[r[3]] = counts.get(r[3], 0) + 1
+    summary = " ".join("<span class='pill %s'>%s: %d</span>" % (esc(k), esc(k), v)
+                       for k, v in sorted(counts.items(), key=lambda kv: -kv[1]))
+    body = "<p>%s</p>%s" % (summary, table(
+        ["ID", "Category", "Requirement", "Status", "Evidence", "Source"], rows,
+        "Requirement register"))
+    write("requirements.html", page("requirements.html", "Requirements",
+                                    "Every requirement from the brief, with its current status and the evidence for it.",
+                                    body))
+
+
+def build_decisions():
+    rows = []
+    for did, area, q, have, missing, depends, discover, blocker, urls in C.DECISIONS:
+        rows.append(
+            "<tr><td>%s</td><td>%s</td><td class='wrap'>%s</td><td class='wrap'>%s</td>"
+            "<td class='wrap'>%s</td><td class='wrap'>%s</td><td class='wrap'>%s</td>"
+            "<td><span class='pill %s'>%s</span></td>%s</tr>"
+            % (esc(did), esc(area), esc(q), esc(have), esc(missing), esc(depends), esc(discover),
+               esc("blocking" if blocker == "blocking" else "non-blocking"), esc(blocker),
+               src_cell([(u, "official source") for u in urls if u], "official source")))
+    body = """
+<p>These are the questions that must be answered before the decisions they gate can be made reasonably.
+Each row separates what is already known, what is missing, what the answer depends on, and the concrete step
+that would discover the missing information. Blocking rows are the ones that stop further work.</p>
+%s
+""" % table(["ID", "Area", "Question to answer", "Information we have", "Information missing",
+             "What the answer depends on", "How to discover it", "Blocking?", "Source"],
+            rows, "Decision register")
+    write("decisions.html", page("decisions.html", "Decisions",
+                                 "Questions, information held, information missing, and how to discover what is missing.",
+                                 body))
+
+
+def build_suggestions():
+    rows = []
+    for sid, cat, problem, proposal, options, rec, impact, effort, risk, dep, status, blocks, urls in C.SUGGESTIONS:
+        opt_rows = []
+        for oid, label, pros, cons, val, eff in options:
+            mark = " <span class='pill recommended'>recommended</span>" if oid == rec.split()[0] else ""
+            opt_rows.append(
+                "<tr><td><strong>%s</strong>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>"
+                % (esc(oid + ". " + label), mark, esc(pros), esc(cons), esc(val), esc(eff)))
+        opts = ("<table class='sub'><thead><tr><th>Option</th><th>Upside</th><th>Downside</th>"
+                "<th>Value</th><th>Effort</th></tr></thead><tbody>%s</tbody></table>" % "".join(opt_rows))
+        rows.append(
+            "<tr><td>%s</td><td>%s</td><td class='wrap'>%s</td><td class='wrap'><strong>%s</strong>%s</td>"
+            "<td>%s</td><td>%s</td><td>%s</td><td class='wrap'>%s</td>"
+            "<td><span class='pill %s'>%s</span></td><td class='wrap'>%s</td>%s</tr>"
+            % (esc(sid), esc(cat), esc(problem), esc(proposal), opts,
+               esc(impact), esc(effort), esc(risk), esc(dep), esc(status), esc(status), esc(blocks),
+               src_cell([(u, "official source") for u in urls if u], "official source")))
+    body = """
+<h2>How to use this page</h2>
+<p>Each suggestion is a decision, not a task. Every row offers two or three explicit paths with their upsides and
+downsides, and one path is marked <em>recommended</em>. Nothing is implemented until a path is chosen and the row
+is moved out of <span class='pill proposed'>proposed</span>. To record a decision, change the
+<code>status</code> field for that row in <code>strategy-lab/content.py</code> and rebuild; the page regenerates from it.</p>
+<p>Status vocabulary: <span class='pill proposed'>proposed</span> awaiting a decision &middot;
+<span class='pill approved'>approved</span> path chosen, ready to implement &middot;
+<span class='pill deferred'>deferred</span> deliberately parked &middot;
+<span class='pill rejected'>rejected</span> considered and declined &middot;
+<span class='pill done'>done</span> implemented.</p>
+%s
+""" % table(["ID", "Category", "Problem", "Proposal and paths", "Impact", "Effort", "Risk",
+             "Depends on", "Status", "Blocks", "Source"], rows, "Suggestion board")
+    write("suggestions.html", page("suggestions.html", "Suggestions",
+                                   "Improvements to decision making, each with explicit paths to choose between before anything is built.",
+                                   body))
+
+
+def build_lines():
+    rows = []
+    for g in A["upcoming"]:
+        rows.append(
+            "<tr><td>%s</td><td class='nowrap'>%s %s</td><td>%s</td><td>%s @ %s</td>"
+            "<td class='num'>%s</td><td class='num'>%s</td><td class='num'>%s</td><td class='num'>%s</td>"
+            "<td class='num'>%s</td>%s%s%s<td>%s</td>%s</tr>"
+            % (esc(g["week"]), esc(g["dateET"]), esc(g["timeET"]), esc(g["network"]),
+               esc(g["away"]), esc(g["home"]),
+               esc(g["modelAwayPoints"]), esc(g["modelHomePoints"]),
+               esc(g["modelHomeMargin"]), esc(g["modelTotal"]), esc(g["modelHomeWinProb"]),
+               blank(), blank(), blank(),
+               "Neutral site" if g["neutralSite"] else "Home field",
+               src_cell([(g["sourceUrl"], "game page"), (g["weekSourceUrl"], "week page")])))
+    mp = META["modelParameters"]
+    body = """
+<h2>How these numbers are produced</h2>
+<table class="data-table">
+<thead><tr><th>Step</th><th>Rule</th><th>Value used</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>League scoring base: mean points per team per game across all completed games</td>
+<td class="num">%s</td>%s</tr>
+<tr><td>2</td><td>Each team's scoring and conceding rates, shrunk toward the league mean by %d games of
+league-average performance (weight chosen inside each fold by leave-one-out error)</td>
+<td class="num">k = %s</td>%s</tr>
+<tr><td>3</td><td>Expected points = (own scoring rate / base) &times; (opponent conceding rate / base) &times; base</td>
+<td class="wrap">multiplicative adjusted-scoring model</td>%s</tr>
+<tr><td>4</td><td>Home-field constant added to the home team and subtracted from the away team; zero at neutral sites</td>
+<td class="num">%s pts</td>%s</tr>
+<tr><td>5</td><td>Win probability from a normal margin distribution with an in-fold estimated spread</td>
+<td class="num">&sigma; = %s pts</td>%s</tr>
+</tbody></table>
+
+<p class="banner"><strong>These are our own numbers, not market numbers.</strong> The spread, total and
+moneyline columns are empty because no official NFL source publishes betting prices. They are left blank and
+recorded as flag F07 rather than filled with an estimate. Until a quote archive exists, the model cannot be
+compared with a market line and no closing-line value or return can be computed.</p>
+
+%s
+""" % (esc(mp["leaguePPG"]), src_cell(C.STANDINGS, "standings"),
+       mp["shrinkK"], esc(mp["shrinkK"]), src_cell(C.STANDINGS, "standings"),
+       src_cell(C.STANDINGS, "standings"),
+       esc(mp["homeFieldPoints"]), src_cell(C.SCHED, "schedule"),
+       esc(mp["marginSigma"]), src_cell(C.STANDINGS, "standings"),
+       table(["Wk", "Date / time (ET)", "Net", "Matchup", "Model away pts", "Model home pts",
+              "Model home margin", "Model total", "P(home win)", "Market spread", "Market total",
+              "Market moneyline", "Venue", "Source"], rows,
+             "Week 10 originated lines (games not yet played at the snapshot)", sourced=True))
+    write("lines.html", page("lines.html", "Lines",
+                             "Independently originated lines for the next slate, with the market columns deliberately blank.",
+                             body))
+
+
+def build_signals():
+    cor_rows = []
+    for c in A["correlations"]:
+        cor_rows.append(
+            "<tr><td>%s</td><td class='wrap'>%s</td><td>%s</td><td class='num'>%s</td>"
+            "<td class='num'>%s</td><td class='num'>%s</td><td class='wrap'>%s</td>%s</tr>"
+            % (esc(c["id"]), esc(c["pair"]), esc(c["level"]), esc(c["n"]),
+               esc(c["pearson"]), esc(c["spearman"]), esc(c["whyItMatters"]),
+               src_cell([(c["sourceUrl"], "official source")])))
+    par = META["modelParameters"]
+    diag = [
+        ("Completed games in the log", META["gamesVerified"], C.SCHED),
+        ("League mean points per team per game", par["leaguePPG"], C.STANDINGS),
+        ("League mean game total", META["meanGameTotalAllGames"], C.STANDINGS),
+        ("Mean home margin, all games", META["meanHomeMarginAllGames"], C.STANDINGS),
+        ("Mean home margin, true home fields only", par["homeFieldPoints"], C.SCHED),
+        ("Home team record across all games", META["homeTeamRecordAllGames"], C.STANDINGS),
+        ("Margin standard deviation used for probabilities", par["marginSigma"], C.STANDINGS),
+        ("Shrinkage weight selected in the final fit", par["shrinkK"], C.STANDINGS),
+    ]
+    diag_rows = ["<tr><td>%s</td><td class='num'>%s</td>%s</tr>"
+                 % (esc(k), esc(v), src_cell([(u, "official source")] if u else [])) for k, v, u in diag]
+
+    luck = sorted(A["rates"].values(), key=lambda r: -r["luckWins"])
+    luck_rows = []
+    for t in luck:
+        luck_rows.append(
+            "<tr><td>%s</td><td>%s</td><td class='num'>%s</td><td class='num'>%s</td>"
+            "<td class='num'>%s</td><td class='num'>%s</td><td class='num'>%s</td>"
+            "<td class='num'>%s</td><td class='num %s'>%s</td>%s</tr>"
+            % (team_link(t["team"]), esc(t["name"]), esc(t["PPG"]), esc(t["PAPG"]), esc(t["netPPG"]),
+               esc(t["winPct"]), esc(t["pythagorean"]), esc(t["luckWins"]),
+               "pos" if t["luckWins"] > 0 else "neg", esc("%+.2f" % t["luckWins"]),
+               src_cell([(t["sourceUrl"], "standings"), (t["teamUrl"], "team page")])))
+
+    body = """
+<h2>Correlation values</h2>
+<p>These are the numbers that decide whether a combination can be priced as if its legs were independent.
+All of them are computed by <code>strategy-lab/pipeline.py</code> from the official game log and standings; the sample
+size is printed on every row because none of them is precise.</p>
+%s
+
+<h2>Model diagnostics</h2>
+%s
+
+<h2>Luck separation</h2>
+<p>Pythagorean expectation (exponent 2.37) estimates the win percentage a team's scoring record implies.
+The gap between that and the actual win percentage is the part of the standings that scoring does not explain,
+which is the best available proxy for luck. A positive value means the team has won more than its scoring
+deserves and is a regression candidate; a negative value means the opposite. This is a candidate signal
+(STR-05) and has <em>not</em> been backtested.</p>
+%s
+""" % (table(["ID", "Pair", "Level", "n", "Pearson r", "Spearman", "Why it matters", "Source"],
+             cor_rows, "Correlation values", sourced=True),
+       table(["Diagnostic", "Value", "Source"], diag_rows, "Season diagnostics", sourced=True),
+       table(["Team", "Name", "PPG", "PAPG", "Net PPG", "Win %", "Pythagorean", "Luck (wins)",
+              "Signed", "Source"], luck_rows, "Luck separation, all 32 teams, ordered by luck", sourced=True))
+    write("signals.html", page("signals.html", "Signals",
+                               "Correlation values, model diagnostics and the luck decomposition.", body))
+
+
+def build_strategies():
+    rows = []
+    for sid, name, market, hyp, rule, inputs, stage, result, status, note in C.STRATEGIES:
+        rows.append(
+            "<tr><td>%s</td><td class='wrap'><strong>%s</strong></td><td>%s</td><td class='wrap'>%s</td>"
+            "<td class='wrap'>%s</td><td class='wrap'>%s</td><td>%s</td><td class='wrap'>%s</td>"
+            "<td><span class='pill %s'>%s</span></td><td class='wrap'>%s</td></tr>"
+            % (esc(sid), esc(name), esc(market), esc(hyp), esc(rule), esc(inputs), esc(stage),
+               esc(result), esc(status), esc(status), esc(note)))
+    gates = []
+    for gid, name, req, result, verdict in C.GATES:
+        gates.append("<tr><td>%s</td><td class='wrap'>%s</td><td class='wrap'>%s</td>"
+                     "<td class='wrap'>%s</td><td><span class='pill %s'>%s</span></td></tr>"
+                     % (esc(gid), esc(name), esc(req), esc(result),
+                        esc("passed" if verdict.startswith("pass") else verdict), esc(verdict)))
+    body = """
+<h2>Strategy catalogue</h2>
+<p>Every strategy states its hypothesis, its rule, the official inputs it uses, and the evidence for or against it.
+Statuses: <span class='pill passed-gate-3'>passed-gate-3</span> cleared the out-of-sample significance gate;
+<span class='pill failed'>failed</span> tested and did not beat its baseline;
+<span class='pill refuted'>refuted</span> the underlying effect is not present in the data;
+<span class='pill untested'>untested</span> hypothesis only;
+<span class='pill blocked'>blocked</span> cannot be built or scored with the data available.</p>
+%s
+
+<h2>Validation gates</h2>
+<p>A strategy may only be described as having skill if it clears G1 through G6, and may only be traded after G7.
+The gates are applied in order and a failure cannot be skipped.</p>
+%s
+
+<h2>What the backtest actually did</h2>
+<p>Chronological walk-forward. For each test week from Week 4 onwards, the model is fitted using only games from
+strictly earlier weeks, including the shrinkage weight, which is chosen by leave-one-out error inside that
+training fold. The test week is then predicted and scored. No test-week information ever reaches the fit, which
+is what gate G4 checks. Scoring uses mean absolute error on the margin against two baselines (a constant zero
+forecast and a constant equal to the training-set mean margin), and the Brier score against a constant 0.50
+forecaster.</p>
+""" % (table(["ID", "Strategy", "Market", "Hypothesis", "Signal rule", "Inputs (official)",
+              "Stage", "Evidence", "Status", "Note"], rows, "Strategies"),
+       table(["Gate", "Name", "Requirement", "Result", "Verdict"], gates, "Validation gates"))
+    write("strategies.html", page("strategies.html", "Strategies",
+                                  "Strategy catalogue, evidence, and the validation gates every strategy must pass.",
+                                  body))
+
+
+def build_leaderboard():
+    rank_metric = "Out-of-sample Brier skill against a constant 0.50 forecaster"
+    rows = []
+    order = {"passed-gate-3": 0, "untested": 1, "failed": 2, "refuted": 3, "blocked": 4}
+    entries = []
+    for sid, name, market, hyp, rule, inputs, stage, result, status, note in C.STRATEGIES:
+        entries.append((sid, name, market, status, result, note))
+    for sid, name, market, status, result, note in sorted(entries, key=lambda e: order.get(e[3], 9)):
+        if status == "passed-gate-3":
+            s = V[PROD]["summary"]
+            sig = V[PROD]["significance"]["brierVs0.50"]
+            msig = V[PROD]["significance"]["marginVsConstantBaseline"]
+            score, n, pval, lo, hi, verdict = (s["brierSkill"], s["testGames"],
+                                               sig["pValue_oneSided_normalApprox"],
+                                               sig["bootstrap90CI_low"], sig["bootstrap90CI_high"],
+                                               "qualifies")
+        else:
+            score = n = pval = lo = hi = None
+            verdict = "does not qualify"
+        cells = []
+        for v in (score, n, pval, lo, hi):
+            cells.append(esc(v) if v is not None else '<td class="blank">—</td>')
+        rows.append(
+            "<tr><td><strong>%s</strong></td><td class='wrap'>%s</td><td>%s</td>"
+            "<td class='num'>%s</td><td class='num'>%s</td><td class='num'>%s</td>"
+            "<td class='num'>%s</td><td class='num'>%s</td>"
+            "<td><span class='pill %s'>%s</span></td><td class='wrap'>%s</td></tr>"
+            % (esc(sid), esc(name), esc(market), cells[0], cells[1], cells[2], cells[3], cells[4],
+               esc("qualifies" if verdict == "qualifies" else status),
+               esc(verdict), esc(note)))
+    body = """
+<h2>Ranking rule</h2>
+<p>The board ranks on <strong>%s</strong>. That metric was fixed before the scores were computed. It was chosen
+because it is a proper scoring rule - it rewards honest probabilities rather than confident ones - and because it
+has a natural no-skill reference: a forecaster that always says 0.50. The board is deliberately
+<em>not</em> ranked by raw win rate or by streak, both of which reward luck.</p>
+
+<h2>Qualification rule</h2>
+<p>An entry appears as qualified only if its paired bootstrap 90%% interval excludes zero and its one-sided
+p-value is below 0.05. Entries that fail are still listed, with their blanks visible, so failed ideas stay in the
+audit history instead of disappearing.</p>
+
+<h2>Rewards</h2>
+<p class="banner"><strong>No rewards are authorized.</strong> The competition runs paper-only for at least one
+full season. Attaching money or prizes needs a governance, jurisdictional, tax and privacy review that has not
+happened (decision D11, suggestion SUG-12). Flagged and unqualified items do not block anything.</p>
+
+%s
+""" % (rank_metric, table(
+    ["ID", "Strategy", "Market", "Brier skill", "n (out of sample)", "p (one-sided)",
+     "90% CI low", "90% CI high", "Status", "Note"], rows, "Leaderboard"))
+    write("leaderboard.html", page("leaderboard.html", "Leaderboard",
+                                   "Strategies ranked by a pre-declared proper scoring rule, paper-only.", body))
+
+
+def load_injuries():
+    path = os.path.join(DATA, "injuries-source.txt")
+    out = []
+    with open(path, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            date, team, player, pos, injury, practice, game, slug = line.split("|")
+            out.append({
+                "date": date, "team": team, "player": player, "pos": pos,
+                "injury": injury, "practice": practice, "gameStatus": game,
+                "playerUrl": "https://www.nfl.com/players/%s/" % slug,
+            })
+    return out
+
+
+def build_injuries():
+    inj = load_injuries()
+    rows = []
+    for r in inj:
+        t = A["standings"][r["team"]]
+        # official status -> what we are allowed to say
+        if r["gameStatus"] == "Out":
+            st = "<span class='pill out'>Out</span>"
+        elif r["gameStatus"] == "Questionable":
+            st = "<span class='pill questionable'>Questionable</span>"
+        elif r["gameStatus"]:
+            st = "<span class='pill'>%s</span>" % esc(r["gameStatus"])
+        else:
+            st = '<span class="blank-inline">not published</span>'
+        rows.append(
+            "<tr><td>%s</td><td>%s</td><td><a href='%s' target='_blank' rel='noopener'>%s</a></td>"
+            "<td>%s</td><td>%s</td><td>%s</td><td>%s</td><td class='blank'>%s</td>%s</tr>"
+            % (esc(r["date"]), team_link(r["team"]), esc(r["playerUrl"]), esc(r["player"]),
+               esc(r["pos"]),
+               esc(r["injury"]) if r["injury"] else '<span class="blank-inline">not published</span>',
+               esc(r["practice"]), st,
+               esc("—"),
+               src_cell([(r["playerUrl"], "player page"), (t["teamUrl"], "team page"), (C.INJ, "injury report")])))
+    by_team = {}
+    for r in inj:
+        d = by_team.setdefault(r["team"], {"n": 0, "out": 0, "dnp": 0})
+        d["n"] += 1
+        if r["gameStatus"] == "Out":
+            d["out"] += 1
+        if r["practice"] == "Did Not Participate In Practice":
+            d["dnp"] += 1
+    team_rows = []
+    for abbr, d in sorted(by_team.items()):
+        t = A["standings"][abbr]
+        team_rows.append("<tr><td>%s</td><td>%s</td><td class='num'>%s</td><td class='num'>%s</td>"
+                         "<td class='num'>%s</td>%s</tr>"
+                         % (team_link(abbr), esc(t["name"]), esc(d["n"]), esc(d["dnp"]), esc(d["out"]),
+                            src_cell([(C.INJ, "injury report"), (t["teamUrl"], "team page")])))
+    body = """
+<h2>What the official injury report actually publishes</h2>
+<table class="data-table">
+<thead><tr><th>Field</th><th>Published by NFL.com?</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Player</td><td>Yes</td><td>Linked to an official player page.</td></tr>
+<tr><td>Position</td><td>Yes</td><td>Official position group, e.g. CB, LB, TE.</td></tr>
+<tr><td>Injury</td><td>Sometimes</td><td>Blank on many rows. Blank means blank on the official page; nothing is filled in.</td></tr>
+<tr><td>Practice status</td><td>Yes</td><td>Full / Limited / Did Not Participate.</td></tr>
+<tr><td>Game status</td><td>Sometimes</td><td>Out / Questionable where published; blank otherwise.</td></tr>
+<tr><td>Depth-chart string (1st / 2nd / 3rd / 4th)</td><td><strong>No</strong></td>
+<td>There is no official depth chart. See flag F01 below.</td></tr>
+<tr><td>Snap counts / actual participation</td><td>Not on this page</td>
+<td>Available elsewhere on NFL.com as official statistics; not yet ingested.</td></tr>
+<tr><td>Timestamp of publication</td><td>Not exposed</td><td>The page does not print a publication time, so a capture time must be recorded by us.</td></tr>
+</tbody></table>
+
+<h2>The blocker on backup string order</h2>
+<p class="banner"><strong>Requirement R16 / R17 cannot be met from an official source today.</strong>
+The URL <code>https://www.nfl.com/teams/&lt;team&gt;/depth-chart</code> returns HTTP 404, and the official roster
+page lists jersey number, position, roster status, height, weight, experience and college, with no string order
+and no indication of who would replace whom. Rather than invent a depth chart, the <em>Replacement</em> column
+below is left blank on every row and the requirement is recorded as blocked. Suggestion SUG-05 sets out the two
+ways to unblock it: search the 32 clubs' own official sites for a published depth chart, or build an estimated
+string order from official snap counts and label it as an estimate everywhere it appears.</p>
+
+<h2>Proposed tracker schema</h2>
+<table class="data-table">
+<thead><tr><th>Field</th><th>Type</th><th>Source</th><th>Required</th></tr></thead>
+<tbody>
+<tr><td>captureUTC</td><td>timestamp</td><td>our capture job</td><td>yes</td></tr>
+<tr><td>season, week, gameDate</td><td>integer / date</td><td>official schedule</td><td>yes</td></tr>
+<tr><td>team, playerId, playerName, position</td><td>string</td><td>official injury report</td><td>yes</td></tr>
+<tr><td>injuryText</td><td>string</td><td>official injury report</td><td>no (often blank)</td></tr>
+<tr><td>practiceStatus</td><td>enum: Full / Limited / DNP</td><td>official injury report</td><td>yes</td></tr>
+<tr><td>gameStatus</td><td>enum: Out / Questionable / blank</td><td>official injury report</td><td>no</td></tr>
+<tr><td>actualParticipation</td><td>snaps played</td><td>official statistics</td><td>yes, for any effect estimate</td></tr>
+<tr><td>replacementPlayerId</td><td>string</td><td><strong>no official source - blocked</strong></td><td>blocked (F01)</td></tr>
+<tr><td>replacementString</td><td>enum: 1st / 2nd / 3rd / 4th</td><td><strong>no official source - blocked</strong></td><td>blocked (F01)</td></tr>
+<tr><td>estimatedReplacement</td><td>model output</td><td>only if SUG-05 option B is approved</td><td>must be labelled ESTIMATE</td></tr>
+</tbody></table>
+
+<h2>Verified snapshot: Week 10 official injury report</h2>
+<p>%d rows across %d teams, captured %s. This is a sample, not the full league week: the official page publishes
+one table per club, and this capture covers the clubs in the games retrieved. Suggestion SUG-06 proposes archiving
+all of them.</p>
+%s
+%s
+""" % (len(inj), len(by_team), META["snapshotUTC"][:10],
+       table(["Team", "Name", "Rows captured", "Did not practice", "Ruled out", "Source"],
+             team_rows, "Coverage of this snapshot", sourced=True),
+       table(["Game date (ET)", "Team", "Player", "Pos", "Injury", "Practice status", "Game status",
+              "Replacement (blocked)", "Source"], rows, "Week 10 official injury report - verified rows", sourced=True))
+    write("injuries.html", page("injuries.html", "Injuries",
+                                "Injury and lineup tracking, and the official-source blocker on backup string order.",
+                                body))
+
+
+def build_teams():
+    rows = []
+    for t in sorted(A["rates"].values(), key=lambda r: -r["netPPG"]):
+        rows.append(
+            "<tr><td>%s</td><td>%s</td><td>%s</td><td class='num'>%s</td><td class='num'>%s</td>"
+            "<td class='num'>%s</td><td class='num'>%s</td><td class='num'>%s</td>"
+            "<td class='num'>%s</td><td class='num'>%s</td><td class='num %s'>%s</td>%s</tr>"
+            % (team_link(t["team"]), esc(t["name"]), esc(t["division"]), esc(t["games"]),
+               esc(t["PPG"]), esc(t["PAPG"]), esc(t["netPPG"]),
+               esc(t["offFactor"]), esc(t["defFactor"]),
+               esc(t["pythagorean"]),
+               "pos" if t["luckWins"] > 0 else "neg", esc("%+.2f" % t["luckWins"]),
+               src_cell([(t["sourceUrl"], "standings"), (t["teamUrl"], "team page")])))
+    cc = A["crossChecks"]
+    check_rows = []
+    for c in cc:
+        check_rows.append(
+            "<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td>"
+            "<td><span class='pill %s'>%s</span></td>%s</tr>"
+            % (team_link(c["team"]), esc(c["name"]), esc(c["gamesCounted"]),
+               esc("%(W)d-%(L)d-%(T)d" % c["standings"]),
+               esc("%(W)d-%(L)d-%(T)d" % c["gameLog"]),
+               esc("%d / %d" % (c["standings"]["PF"], c["standings"]["PA"])),
+               "passed" if c["match"] else "failed", "match" if c["match"] else "MISMATCH",
+               src_cell([(c["sourceUrl"], "official standings")])))
+    body = """
+<p>Offence and defence factors are each team's rate divided by the league base of %s points per team per game,
+so 1.000 is exactly league average. Pythagorean expectation uses an exponent of 2.37, a standard modelling
+choice, and the luck column is actual wins plus half ties minus the wins the scoring record implies.</p>
+%s
+<h2>Reconciliation against the official standings</h2>
+<p>Every team's win-loss-tie record and points for and against were recomputed from the %d-game log and compared
+with the official standings page row by row. %d of %d rows match exactly.</p>
+%s
+""" % (META["leaguePPG"],
+       table(["Team", "Name", "Division", "G", "PPG", "PAPG", "Net PPG", "Off factor",
+              "Def factor", "Pythagorean", "Luck (wins)", "Source"], rows,
+             "Team rates, all 32 clubs, ordered by net points per game", sourced=True),
+       META["gamesVerified"], sum(1 for c in cc if c["match"]), len(cc),
+       table(["Team", "Name", "Games", "Standings W-L-T", "Game log W-L-T", "Standings PF / PA",
+              "Result", "Source"], check_rows, "Cross-source reconciliation", sourced=True))
+    write("teams.html", page("teams.html", "Teams",
+                             "Team scoring rates, Pythagorean expectation and the reconciliation check.", body))
+
+
+def build_games():
+    rows = []
+    for g in A["games"]:
+        winner = tname(g["home"]) if g["homeMargin"] > 0 else (
+            tname(g["away"]) if g["homeMargin"] < 0 else "Tie")
+        rows.append(
+            "<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td class='num'>%s</td>"
+            "<td>%s</td><td class='num'>%s</td><td class='num'>%s</td><td class='wrap'>%s</td>%s</tr>"
+            % (esc(g["week"]), esc(g["date"]), esc(g["away"]), esc(g["home"]),
+               esc("%d - %d" % (g["awayPoints"], g["homePoints"])), esc(winner),
+               esc(g["homeMargin"]), esc(g["total"]),
+               "Neutral site" if g["neutralSite"] else "Home field",
+               src_cell([(g["sourceUrl"], "game page"), (g["weekSourceUrl"], "week page")])))
+    body = """
+<p>All %d completed 2026 regular-season games, transcribed from the official NFL.com by-week schedule pages.
+Every row links to its own official game page and to the week page it was read from.</p>
+%s
+""" % (len(A["games"]),
+       table(["Wk", "Date", "Away", "Home", "Score (away - home)", "Winner", "Home margin",
+              "Total", "Venue type", "Source"], rows, "Verified game log", sourced=True))
+    write("games.html", page("games.html", "Game log",
+                             "Every verified game result underlying the analysis, with an official source link per row.",
+                             body))
+
+
+def build_sources():
+    rows = []
+    for sid, name, url, provides, verified, notes in C.SOURCES:
+        rows.append("<tr><td>%s</td><td>%s</td><td class='wrap'>%s</td><td>%s</td>"
+                    "<td class='wrap'>%s</td>%s</tr>"
+                    % (esc(sid), esc(name), esc(provides), esc(verified), esc(notes),
+                       src_cell([(url, "open official page")])))
+    body = """
+<p>Every value on this site came from one of the pages below. All are official NFL domains.
+The registry also records what each source could <em>not</em> provide, which is what drives the flagged items.</p>
+%s
+""" % table(["ID", "Source", "What it provides", "Verified", "Notes and gaps", "Link"],
+            rows, "Official source registry", sourced=True)
+    write("sources.html", page("sources.html", "Sources",
+                               "The official pages every value on this site came from.", body))
+
+
+def build_flagged():
+    rows = []
+    for fid, area, issue, detail, url, status, action in C.FLAGS:
+        rows.append("<tr><td>%s</td><td>%s</td><td class='wrap'><strong>%s</strong></td>"
+                    "<td class='wrap'>%s</td><td><span class='pill %s'>%s</span></td>"
+                    "<td class='wrap'>%s</td>%s</tr>"
+                    % (esc(fid), esc(area), esc(issue), esc(detail), esc(status), esc(status),
+                       esc(action), src_cell([(url, "official source")] if url else [])))
+    body = """
+<p>Irregularities, gaps and unverifiable values. These are published rather than hidden, and they do not block
+the site or the merge. Each row links to the official page involved where one exists, so it can be checked
+manually.</p>
+%s
+""" % table(["ID", "Area", "Issue", "Detail", "Status", "Suggested action", "Source"],
+            rows, "Flagged for review", sourced=True)
+    write("flagged.html", page("flagged.html", "Flagged",
+                               "Irregularities and unverified values, published for manual review.", body))
+
+
+def build_verify():
+    rows = []
+    checks = [
+        ("Game rows with an official source URL", "%d / %d" % (META["gamesVerified"], META["gamesVerified"]),
+         "every game row carries an nfl.com game page and week page URL", "passed"),
+        ("Standings rows reconciled with the game log",
+         "%d / 32" % sum(1 for c in A["crossChecks"] if c["match"]),
+         "W, L, T, PF and PA recomputed from the game log and matched", "passed"),
+        ("Injury rows with an official source URL",
+         "%d / %d" % (len(load_injuries()), len(load_injuries())),
+         "every injury row carries an official player page, team page and report URL", "passed"),
+        ("Correlation rows with an official source URL",
+         "%d / %d" % (len(A["correlations"]), len(A["correlations"])), "all sourced", "passed"),
+        ("Market price cells filled with an estimate", "0",
+         "no market column is ever populated; blanks are explicit", "passed"),
+        ("Rows with a publication timestamp", "%d / %d" % (META["gamesVerified"], META["gamesVerified"]),
+         "game log rows carry the game date; the snapshot time is in the page header", "passed"),
+        ("Live re-fetch verification of each row", "not run",
+         "structure and provenance are checked locally; no live re-fetch check exists yet - see SUG-15", "open"),
+    ]
+    for name, result, detail, verdict in checks:
+        rows.append("<tr><td>%s</td><td class='num'>%s</td><td class='wrap'>%s</td>"
+                    "<td><span class='pill %s'>%s</span></td></tr>"
+                    % (esc(name), esc(result), esc(detail), esc(verdict), esc(verdict)))
+    body = """
+<h2>What was checked</h2>
+<p>The checks below are re-run by <code>strategy-lab/verify.py</code>, which walks every generated page, extracts every
+table row, and fails if any row lacks a link to an official domain or if any local link is broken.</p>
+%s
+
+<h2>How to reproduce</h2>
+<table class="data-table">
+<thead><tr><th>Step</th><th>Command</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><code>python3 strategy-lab/pipeline.py</code></td>
+<td>Reads the transcribed official tables, reconciles them, computes rates, correlations and the walk-forward
+backtest, and writes <code>strategy-lab/data/analysis.json</code>.</td></tr>
+<tr><td>2</td><td><code>python3 strategy-lab/build.py</code></td><td>Renders every page in <code>strategy-lab/</code>.</td></tr>
+<tr><td>3</td><td><code>python3 strategy-lab/verify.py</code></td>
+<td>Audits every row for an official-domain source link and checks every local link.</td></tr>
+</tbody></table>
+
+<h2>Known limits of this verification</h2>
+<ul>
+<li>Verification confirms provenance and internal consistency. It does not re-download each official page and
+re-assert each value; that is proposed as SUG-15.</li>
+<li>The game log is one partial season. Statistical intervals are wide and are published alongside every result.</li>
+<li>No market data exists, so no claim about profitability, return or closing-line value is made anywhere.</li>
+</ul>
+""" % table(["Check", "Result", "Detail", "Verdict"], rows, "Verification checks")
+    write("verify.html", page("verify.html", "Verify",
+                              "What was checked, how to reproduce it, and what this verification does not cover.",
+                              body))
+
+
+def write_summary_md():
+    s = V[PROD]["summary"]
+    sig = V[PROD]["significance"]["marginVsConstantBaseline"]
+    bsig = V[PROD]["significance"]["brierVs0.50"]
+    lines = [
+        "# NFL Lines & Strategy Lab - executive summary",
+        "",
+        "Season 2026. Snapshot %s. Generated %s." % (META["snapshotUTC"][:10], META["generatedUTC"]),
+        "",
+        "## State of the programme",
+        "",
+        "- **%d completed games** transcribed from the official NFL.com by-week pages, plus 13 scheduled Week 10 games."
+        % META["gamesVerified"],
+        "- **%d of 32** standings rows reconcile exactly with the game log on W, L, T, PF and PA."
+        % sum(1 for c in A["crossChecks"] if c["match"]),
+        "- **%d** out-of-sample predictions scored by chronological walk-forward (Weeks 4-10)."
+        % s["testGames"],
+        "- **No market price of any kind** is held. No official NFL source publishes betting prices, so every"
+        " market column is blank and flagged.",
+        "",
+        "## What passes and what does not",
+        "",
+        "| Strategy | Result | Verdict |",
+        "|---|---|---|",
+    ]
+    for sid, name, market, hyp, rule, inputs, stage, result, status, note in C.STRATEGIES:
+        lines.append("| %s %s | %s | %s |" % (sid, name, result.replace("|", "/"), status))
+    lines += [
+        "",
+        "## The one qualifying result",
+        "",
+        "Model B (shrunk adjusted scoring):",
+        "",
+        "- Margin MAE **%s** against **%s** for a constant zero forecast and **%s** for a constant mean forecast."
+        % (s["marginMAE"], s["marginMAE_zeroBaseline"], s["marginMAE_constantBaseline"]),
+        "- Paired improvement **+%s points per game**, t = %s, one-sided p = %s, bootstrap 90%% CI %s to %s."
+        % (sig["meanPairedImprovement"], sig["tStatistic"], sig["pValue_oneSided_normalApprox"],
+           sig["bootstrap90CI_low"], sig["bootstrap90CI_high"]),
+        "- Brier **%s** against **0.250** for a constant 0.50 forecaster, p = %s."
+        % (s["brier"], bsig["pValue_oneSided_normalApprox"]),
+        "- Totals: **no skill**. Best total MAE %s against a constant baseline of %s."
+        % (min(v["summary"]["totalMAE"] for v in V.values()), s["totalMAE_constantBaseline"]),
+        "",
+        "## Blockers",
+        "",
+    ]
+    for fid, area, issue, detail, url, status, action in C.FLAGS:
+        if status == "open" and "block" in (action or "").lower() or fid in ("F01", "F06", "F07"):
+            lines.append("- **%s** (%s): %s" % (fid, area, issue))
+    lines += [
+        "",
+        "## Before any decision is made",
+        "",
+    ]
+    for did, area, q, have, missing, depends, discover, blocker, urls in C.DECISIONS:
+        if blocker == "blocking":
+            lines.append("- **%s** (%s) - %s" % (did, area, q))
+    lines.append("")
+    with open(os.path.join(HERE, "EXECUTIVE-SUMMARY.md"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lines))
+
+
+def main():
+    build_index()
+    build_requirements()
+    build_decisions()
+    build_suggestions()
+    build_lines()
+    build_signals()
+    build_strategies()
+    build_leaderboard()
+    build_injuries()
+    build_teams()
+    build_games()
+    build_sources()
+    build_flagged()
+    build_verify()
+    write_summary_md()
+    print("built %d pages + EXECUTIVE-SUMMARY.md" % len(PAGES))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,102 @@
+#!/usr/bin/env python3
+"""Build the NFL Lines Lab odds/math explainer without fetching sports data."""
+from __future__ import annotations
+
+import html
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+LAB = ROOT / "nfl-lab"
+SOURCES = ROOT / "data" / "nfl-lab" / "sources.json"
+
+NAV = [
+    ("index.html", "Home"),
+    ("executive-summary.html", "Executive summary"),
+    ("lines-2026.html", "Our lines 2026"),
+    ("metrics.html", "Price math"),
+    ("strategies.html", "Strategy leaderboard"),
+    ("validation.html", "Validation gates"),
+    ("correlations.html", "Correlations & parlays"),
+    ("injuries.html", "Injuries & depth"),
+    ("questions.html", "Open questions"),
+    ("suggestions.html", "Suggestions"),
+    ("sources.html", "Sources"),
+    ("verification.html", "Verification"),
+    ("flagged.html", "Flagged for review"),
+]
+
+
+def esc(value: object) -> str:
+    return html.escape(str(value if value is not None else ""), quote=True)
+
+
+def build() -> None:
+    source_doc = json.loads(SOURCES.read_text(encoding="utf-8"))
+    terms = next((item for item in source_doc["sources"] if item["url"] == "https://www.nfl.com/legal/terms/"), None)
+    if not terms:
+        raise SystemExit("NFL.com Terms record must exist in data/nfl-lab/sources.json")
+
+    nav_parts = []
+    for href, label in NAV:
+        active = ' class="on"' if href == "metrics.html" else ""
+        nav_parts.append(f'<a href="{esc(href)}"{active}>{esc(label)}</a>')
+    nav = "".join(nav_parts)
+    body = f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Price math · NFL Lines Lab</title><meta name="description" content="Transparent odds conversions, fair probability, expected value, scoring, and joint probability methods for NFL research.">
+<link rel="stylesheet" href="assets/style.css"></head><body>
+<header class="top"><div class="brand"><a href="index.html">NFL Lines Lab</a> <span class="tag">research only</span></div><nav>{nav}</nav></header>
+<div class="banner">Research and education only. Not betting advice. Current market prices and expected values are not verified; see <a href="flagged.html">Flagged for review</a>.</div>
+<main>
+<h1>Price math: from quoted odds to a fair probability</h1>
+<p class="lede">These are explicit calculation definitions for single markets and combinations. They do not generate a prediction, imply an advantage, validate a price source, or say randomness can be removed.</p>
+<div class="callout"><strong>No current quote or fair price is published.</strong> The repository's 2026 model uses third-party market-line fields with a provenance flag; the visible market spread/total cells remain blank. No player-prop quotes or settled prop history are present. NFL.com Terms §1.3 is recorded as a source-rights warning; do not enable systematic collection without appropriate authorization.</div>
+
+<h2>1. American odds: raw implied probability</h2>
+<div class="grid">
+  <div class="card"><h3>Plus odds</h3><code>p_raw = 100 / (A + 100)</code><p class="small">For American price +A, where A &gt; 0.</p></div>
+  <div class="card"><h3>Minus odds</h3><code>p_raw = |A| / (|A| + 100)</code><p class="small">For American price −A, where A &gt; 0.</p></div>
+  <div class="card"><h3>Decimal return</h3><code>d = 1 + A/100</code><p class="small">For plus odds. For negative American price −A, use <code>d = 1 + 100/A</code>. Decimal odds include the returned stake.</p></div>
+</div>
+<p>The raw implied probabilities include the bookmaker's margin (vig). For example, a quoted two-way market is not fair merely because each side's implied probability is calculated correctly.</p>
+
+<h2>2. One explicit no-vig method</h2>
+<div class="card"><code>p_fair(i) = p_raw(i) / Σ p_raw(j)</code></div>
+<p>For mutually exclusive and exhaustive outcomes, this proportional method rescales the raw probabilities to sum to one. It is a convention, not the unique true probability estimator. Preserve the original quotes and compare sensitivity to other documented methods when an authorized complete market is available.</p>
+
+<h2>3. Fair decimal price and single-bet expected value</h2>
+<div class="grid">
+  <div class="card"><h3>Model fair decimal price</h3><code>d_fair = 1 / p_model</code><p>Only defined for 0 &lt; p_model &lt; 1. A model probability must be calibrated and timestamped; this equation does not validate it.</p></div>
+  <div class="card"><h3>Net expected profit per unit</h3><code>EV = p_win × (d − 1) − p_loss</code><p>Here <code>d</code> is the exact offered decimal price. A push has zero net profit; voids, limits and market-specific grading need explicit settlement rules.</p></div>
+</div>
+<p>For parlays, replace the single-event win probability with the probability of the complete joint settlement outcome and use the exact offered payout. Do not multiply leg probabilities by default.</p>
+
+<h2>4. Probability scoring and paired dependence</h2>
+<div class="grid">
+  <div class="card"><h3>Brier score (binary event)</h3><code>mean((p_i − y_i)²)</code><p>Lower is better; score only forecasts frozen before the outcome.</p></div>
+  <div class="card"><h3>Binary log loss</h3><code>−mean(y log p + (1−y) log(1−p))</code><p>Lower is better; extreme probabilities are strongly penalized.</p></div>
+  <div class="card"><h3>Observed joint win probability</h3><code>count(A win and B win) / paired N</code><p>Keep exact thresholds, settlement rules, event IDs and as-of times. This empirical frequency is not itself out-of-sample calibration.</p></div>
+  <div class="card"><h3>Binary phi association</h3><code>corr(1[A wins], 1[B wins])</code><p>A descriptive dependence statistic; a coefficient alone does not determine the payout probability of a multi-leg combination.</p></div>
+</div>
+<p>When observations share a game or week, uncertainty should preserve those clusters. Use predeclared chronological holdouts, show sample size and interval, and account for multiple tested variants. A high/low correlation estimate cannot erase variance in any individual game.</p>
+
+<h2>Inputs and source limits</h2>
+<ul>
+<li>Official NFL statistics can define event/player outcome fields; they do not provide a complete sportsbook price archive. See <a href="https://www.nfl.com/stats/team-stats/">NFL team stats</a> and <a href="https://www.nfl.com/stats/player-stats/">NFL player stats</a>.</li>
+<li>The third-party nflverse games archive and its market fields are explicitly flagged because the spread/total provenance and licence are not documented in this repository. Do not describe those fields as official NFL lines.</li>
+<li><a href="{esc(terms['url'])}">{esc(terms['name'])}</a> is the official source-rights reference. Its public availability is not permission to retrieve, retain, model or redistribute records. See <a href="flagged.html">F15</a> and the <a href="sources.html">source register</a>.</li>
+</ul>
+<p>Auditable implementation: <a href="scripts/metrics.py">nfl-lab/scripts/metrics.py</a>. Regression tests use synthetic examples only: <a href="tests/test_metrics.py">nfl-lab/tests/test_metrics.py</a>. No NFL prices, wagers, profits, probabilities or correlation estimates are computed by this helper module.</p>
+<p><a href="lines-2026.html">View model margin/total outputs</a> · <a href="correlations.html">View the empirical correlation study</a> · <a href="validation.html">Review validation gates</a>.</p>
+</main>
+<footer>Price construction methods · NFL Lines Lab · Research only. All current unverified prices remain blank and flagged.</footer>
+<script src="assets/app.js"></script>
+</body></html>
+'''
+    (LAB / "metrics.html").write_text(body, encoding="utf-8")
+    print("Built nfl-lab/metrics.html from documented formulas; no sports data fetched.")
+
+
+if __name__ == "__main__":
+    build()

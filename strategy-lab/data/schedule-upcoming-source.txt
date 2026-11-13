@@ -1,0 +1,16 @@
+# NFL 2026 Week 10 remaining games (not yet played as of the 2026-11-13 snapshot).
+# Transcribed from https://www.nfl.com/schedules/2026/by-week/week-10
+# Columns: week|dateET|timeET|away|home|urlSlug|neutralSite|network|venueNote
+10|2026-11-15|09:30|NE|DET|patriots-at-lions|1|FOX|Munich (NFL International Game)
+10|2026-11-15|13:00|KC|ATL|chiefs-at-falcons|0|CBS|
+10|2026-11-15|13:00|HOU|CLE|texans-at-browns|0|FOX|
+10|2026-11-15|13:00|MIN|GB|vikings-at-packers|0|FOX|
+10|2026-11-15|13:00|MIA|IND|dolphins-at-colts|0|CBS|
+10|2026-11-15|13:00|CAR|NO|panthers-at-saints|0|FOX|
+10|2026-11-15|13:00|BUF|NYJ|bills-at-jets|0|CBS|
+10|2026-11-15|13:00|JAX|TEN|jaguars-at-titans|0|FOX|
+10|2026-11-15|16:05|LA|ARI|rams-at-cardinals|0|CBS|
+10|2026-11-15|16:05|SEA|LV|seahawks-at-raiders|0|CBS|
+10|2026-11-15|16:25|SF|DAL|49ers-at-cowboys|0|FOX|
+10|2026-11-15|20:20|PIT|CIN|steelers-at-bengals|0|NBC|
+10|2026-11-16|20:15|LAC|BAL|chargers-at-ravens|0|ESPN|

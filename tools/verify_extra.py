@@ -38,6 +38,10 @@ APPROVED_DOMAINS = {
     "profootballnetwork.com", "www.profootballnetwork.com",
     "mercedesbenzstadium.com", "www.mercedesbenzstadium.com",
     "github.com", "www.github.com",
+    # Official club depth-chart pages cited by the NFL analytics flagged register (session arena-65332583)
+    "detroitlions.com", "www.detroitlions.com",
+    "houstontexans.com", "www.houstontexans.com",
+    "carolinapanthers.com", "www.carolinapanthers.com",
     "images.sidearmdev.com", "dxbhsrqyrr690.cloudfront.net",
 }
 

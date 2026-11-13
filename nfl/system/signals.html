@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Signal catalogue · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="active">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Signal catalogue</h1><p class="lede">Sixteen candidate signals, each with its input, its availability, its leak risk and whether the official data can support it today.</p>
+
+<div class="callout"><strong>The killer rule.</strong> Any signal whose input arrives after the decision cutoff is not a signal — it is a leak. That is why publication time, not just content, is part of every input definition.</div>
+<p class="prose">A signal is a rule that maps information available before kickoff to a probability. A signal is useful only if it is (a) computable from a named source, (b) available before the decision cutoff, and (c) calibratable with n and uncertainty.</p>
+<div class="grid g3">
+
+</div>
+
+<h2>Signal catalogue</h2>
+<div class="scroll" style="max-height:none"><table class="tight"><thead><tr>
+<th>ID</th><th>Tier</th><th>Signal</th><th>Input</th><th>Availability</th><th>Leak risk</th>
+<th>Limitation</th><th>Source</th></tr></thead><tbody><tr>
+<td class="nowrap"><strong>SIG01</strong></td>
+<td><span class="badge official">T1</span></td>
+<td><strong>Exact rest days</strong><br><span class="small dim">Days between a team&#x27;s previous official kickoff date and its next one.</span></td>
+<td class="small">Official kickoff date per game (nfl.com by-week pages).</td>
+<td class="small">Published with the schedule, months before kickoff.</td>
+<td class="small">None.</td>
+<td class="small">Does not adjust for travel or for a bye beyond the rest count itself.</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG02</strong></td>
+<td><span class="badge official">T1</span></td>
+<td><strong>Short-week indicator</strong><br><span class="small dim">Flag when rest &lt;= 4 days (a Thursday game after a Sunday game).</span></td>
+<td class="small">Same as SIG01.</td>
+<td class="small">Schedule time.</td>
+<td class="small">None.</td>
+<td class="small">Small number of Thursday games per season, so the sample stays tiny for years.</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG03</strong></td>
+<td><span class="badge official">T1</span></td>
+<td><strong>Scoring rate, shrunk</strong><br><span class="small dim">Points scored and allowed per game, each shrunk toward the league mean by a fixed weight so an 8-game sample cannot look like a 17-game truth.</span></td>
+<td class="small">Official team scoring stats (offence and defence, all 32 clubs).</td>
+<td class="small">Official season-to-date page.</td>
+<td class="small">Low — but the page is &#x27;season to date&#x27;, so a mid-season historical backtest must use archived pages, not today&#x27;s numbers. Using today&#x27;s page to test a week-3 game is a leak.</td>
+<td class="small">League-mean opponent adjustment is crude; a proper opponent-adjusted rating needs play-by-play.</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/team-stats/offense/scoring/2026/reg/all" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG04</strong></td>
+<td><span class="badge official">T1</span></td>
+<td><strong>Pass/run efficiency split</strong><br><span class="small dim">Yards per attempt and yards per carry, offence and defence, as a two-factor profile.</span></td>
+<td class="small">Official team passing/rushing stats, offence and defence.</td>
+<td class="small">Official season-to-date page.</td>
+<td class="small">Same archived-page caveat as SIG03.</td>
+<td class="small">Rate stats without opponent adjustment and without garbage-time filtering overstate blowout teams.</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG05</strong></td>
+<td><span class="badge official">T1</span></td>
+<td><strong>Turnover differential (defence side)</strong><br><span class="small dim">Interceptions and fumble recoveries per game, defence side, as a regression candidate.</span></td>
+<td class="small">Official team defence passing stats (interceptions) and defensive scoring columns.</td>
+<td class="small">Official season-to-date page.</td>
+<td class="small">Archived-page caveat.</td>
+<td class="small">The official team pages do not publish a single turnover-differential column; it must be assembled from the defensive columns and labelled as assembled.</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG06</strong></td>
+<td><span class="badge official">T1</span></td>
+<td><strong>Injury load by unit</strong><br><span class="small dim">Count of players listed Out / Doubtful / Questionable on the official report, split by offence and defence, using the official report&#x27;s own positions.</span></td>
+<td class="small">Official NFL injury report, latest published week.</td>
+<td class="small">Published during the week; final game-status update 90 minutes before kickoff per NFL rules.</td>
+<td class="small">HIGH. If a bet is placed before the final update, the later update is a leak. The site therefore stamps the report&#x27;s week and never mixes weeks.</td>
+<td class="small">A count is not a value: three Questionable backups matter less than one Out quarterback. The count is published as a count, with the positions listed, never as a severity score.</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG07</strong></td>
+<td><span class="badge official">T1</span></td>
+<td><strong>Depth-tier exposure</strong><br><span class="small dim">For each club, how many published tiers exist at each position, and which tier the official injury report suggests is next up.</span></td>
+<td class="small">Club depth charts (1st/2nd/3rd/4th) joined to the official injury report.</td>
+<td class="small">Club charts carry their own &#x27;updated as of&#x27; date; those dates differ across clubs.</td>
+<td class="small">Medium — a chart updated after the bet is a leak. The chart date is shown next to every row so staleness is visible.</td>
+<td class="small">Charts are club projections; several clubs label them &#x27;Unofficial&#x27;. A depth chart is not a snap count (Q07).</td>
+<td class="nowrap"><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.49ers.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG08</strong></td>
+<td><span class="badge official">T1</span></td>
+<td><strong>Player usage stability</strong><br><span class="small dim">Game-to-game standard deviation of a player&#x27;s attempts/receptions relative to his mean — a stability score, not a forecast.</span></td>
+<td class="small">Official per-game player logs.</td>
+<td class="small">Published after each game.</td>
+<td class="small">None for a historical description; using the full season to forecast week 5 is a leak.</td>
+<td class="small">Below the suppression floor of 8 games the score is withheld.</td>
+<td class="nowrap"><a href="https://www.nfl.com/players/christian-mccaffrey/stats" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG09</strong></td>
+<td><span class="badge official">T1</span></td>
+<td><strong>Teammate dependence</strong><br><span class="small dim">Correlation between two teammates&#x27; weekly volumes (QB passing vs WR1 receiving), which is the input a same-game parlay needs.</span></td>
+<td class="small">Two official per-game logs joined by week and opponent.</td>
+<td class="small">Post-game.</td>
+<td class="small">None historically; the forecast version must use only prior weeks.</td>
+<td class="small">Needs both players&#x27; logs on the same club for the same weeks; the join rate is published, unmatched rows are excluded and counted.</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/player-stats/category/receiving/2026/reg/all/receivingreceptions/desc" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG10</strong></td>
+<td><span class="badge official">T1</span></td>
+<td><strong>Home-field prior</strong><br><span class="small dim">The realised home-team win rate over the loaded official finals.</span></td>
+<td class="small">Official final scores.</td>
+<td class="small">Post-game.</td>
+<td class="small">None historically.</td>
+<td class="small">A prior, not an edge. Published with n so its uncertainty is visible.</td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG11</strong></td>
+<td><span class="badge judgement">T2</span></td>
+<td><strong>Travel distance</strong><br><span class="small dim">Great-circle distance between a team&#x27;s home city and the venue.</span></td>
+<td class="small">Official venue per game (present) + venue coordinates (not published by the NFL).</td>
+<td class="small">Venue is official; coordinates are not.</td>
+<td class="small">None.</td>
+<td class="small">Adding a coordinate list means adding a non-official source. That is a decision for the owner, not a silent import.</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG12</strong></td>
+<td><span class="badge judgement">T2</span></td>
+<td><strong>Actual participation / snap share</strong><br><span class="small dim">Whether the nominal backup actually played and how much.</span></td>
+<td class="small">Needs the official snap-count or gamebook publication.</td>
+<td class="small">Not loaded in this repository.</td>
+<td class="small">High if used retrospectively without an archive.</td>
+<td class="small">Without it, &#x27;the 2nd string replaced the starter&#x27; is an inference from a depth chart, not a fact.</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG13</strong></td>
+<td><span class="badge judgement">T2</span></td>
+<td><strong>Weather</strong><br><span class="small dim">Temperature, wind and precipitation at kickoff.</span></td>
+<td class="small">Needs an official weather source; the official NFL pages publish a short forecast line for some games only.</td>
+<td class="small">Inconsistent — a weather line appeared on one probed week page and not another.</td>
+<td class="small">Forecast vs actual is a leak if mixed.</td>
+<td class="small">Not uniformly published; only dome/outdoor venue type would be reliably derivable.</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG14</strong></td>
+<td><span class="badge judgement">T2</span></td>
+<td><strong>Market price itself</strong><br><span class="small dim">The de-vigged market probability, which is the strongest known baseline.</span></td>
+<td class="small">Needs a licensed or owner-recorded two-way price (Q01).</td>
+<td class="small">Not available.</td>
+<td class="small">Closing vs pre-game price must be timestamped or CLV is meaningless.</td>
+<td class="small">Without it, no strategy can be shown to beat anything resembling a market.</td>
+<td class="nowrap"><a href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG15</strong></td>
+<td><span class="badge unverified">T3</span></td>
+<td><strong>Referee assignment effects</strong><br><span class="small dim">Penalty-rate effects by officiating crew.</span></td>
+<td class="small">Crew assignments are not published as a machine-readable official feed on the pages probed.</td>
+<td class="small">Not machine-readable.</td>
+<td class="small">n/a</td>
+<td class="small">Listed so nobody spends a session on it. The official rulebook was probed and the 2026 rulebook URL returned 404 — the exact current URL must be found before quoting any rule.</td>
+<td class="nowrap"><a href="https://operations.nfl.com/the-rules/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">operations.nfl.com</span></td></tr><tr>
+<td class="nowrap"><strong>SIG16</strong></td>
+<td><span class="badge unverified">T3</span></td>
+<td><strong>In-game live betting signals</strong><br><span class="small dim">Any signal that updates during a game.</span></td>
+<td class="small">Needs a live feed with a timestamped tick history.</td>
+<td class="small">None in this repository.</td>
+<td class="small">Total — a live signal cannot be evaluated with post-game data.</td>
+<td class="small">Out of scope until a live feed exists.</td>
+<td class="nowrap"><a href="https://www.nfl.com/scores/" target="_blank" rel="noopener noreferrer">official</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table></div>
+
+<h2>Rules for combining signals</h2>
+<div class="card prose"><ol>
+<li><strong>C1.</strong> Never multiply leg probabilities unless the legs are on different games, different teams and different players, and even then publish the empirical joint as the primary number.<br><span class="small dim">Independence is an assumption; the empirical joint is a measurement. When both are available, the measurement wins.</span></li><li><strong>C2.</strong> A parlay&#x27;s price must show the hold compounding: a three-leg parlay at the same hold has roughly three times the margin of a single.<br><span class="small dim">Parlays are usually a worse deal per unit staked, and that is a computable fact rather than an opinion. The market page computes it for any stated price pair.</span></li><li><strong>C3.</strong> Correlation between legs must be reported with its interval, and a correlation whose interval spans zero must be printed as &#x27;indistinguishable from zero&#x27;.<br><span class="small dim">With 8 games, almost every correlation spans zero. Saying so is the honest output.</span></li><li><strong>C4.</strong> A player-prop combo on one player (e.g. rushing yards over AND receptions over) is a single joint event and must be estimated from that player&#x27;s joint outcomes, never from two marginals.<br><span class="small dim">Same-player legs can be strongly positive or negative depending on game script.</span></li>
+</ol></div>
+
+<h2>Tier counts</h2>
+<div class="statline">
+<div><b>10</b><span>T1</span></div><div><b>4</b><span>T2</span></div><div><b>2</b><span>T3</span></div>
+</div>
+<p class="small">The point of the tiers is honesty about coverage: 10
+signals can be generated today from official data; the rest are named so nobody spends a session building on a
+source that does not exist.</p>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · data retrieved 2026-11-13T13:33:20.791202Z (newest official fetch) · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../../index.html">Korea5 planner</a> · also see the
+<a href="../../nfl-strategy.html">strategy lab proposal</a> and the
+<a href="../index.html">NFL Decision Support hub</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

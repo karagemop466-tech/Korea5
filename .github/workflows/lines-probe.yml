@@ -1,0 +1,33 @@
+name: nfl-lines-probe
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/2831c7f7-korea5' ]
+    paths: [ 'scripts/lines/probe_rsc.py', '.github/workflows/lines-probe.yml' ]
+permissions:
+  contents: write
+concurrency:
+  group: nfl-lines-probe-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/2831c7f7-korea5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe official NFL pages and record their structure
+        run: python3 scripts/lines/probe_rsc.py
+      - name: Commit schema map
+        run: |
+          git config user.name "korea5-lines-bot"
+          git config user.email "korea5-lines-bot@users.noreply.github.com"
+          git add research/lines-probe/
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "lines: record official NFL page structure (probe)"
+            git pull --rebase --autostash origin arena/2831c7f7-korea5
+            git push origin HEAD:arena/2831c7f7-korea5
+          fi

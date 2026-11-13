@@ -64,9 +64,9 @@ Written against model signal-lab-1.1.0, capture 2026-11-13. The pages render the
 
 ## Flags raised by this build
 
-F33 no market prices ⇒ no edge/ROI/CLV · F34 availability is a snapshot, leakage gate failed on purpose ·
-F35 five 2026 games unlabelled · F36 no official depth chart · F37 sample cannot separate models from
-luck · F38 standings carry no points · F39 inactives only via articles · F40 prop combos uncomputed.
+F52 no market prices ⇒ no edge/ROI/CLV · F53 availability is a snapshot, leakage gate failed on purpose ·
+F54 five 2026 games unlabelled · F55 no official depth chart · F56 sample cannot separate models from
+luck · F57 standings carry no points · F58 inactives only via articles · F59 prop combos uncomputed.
 See [`curated/flags.json`](../curated/flags.json) and the site's
 [Flagged for review](../flagged.html) page.
 

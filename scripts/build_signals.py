@@ -223,6 +223,16 @@ def build_hub(sig, ledger, reqs):
         body.append("<h3>What is not satisfied, and why</h3>")
         body.append(table(["Strategy", "Gate", "Name", "Status", "Evidence from this run"], fails))
     body += [
+        callout("info", "How this lab differs from the other NFL efforts in this repository.",
+                "Several independent NFL pages have landed here — an <a href=\"nfl-intel.html\">intel desk</a>, an "
+                "<a href=\"nfl-analytics.html\">analytics page</a>, a <a href=\"lines-lab/index.html\">paper skill "
+                "lab</a>, and the <a href=\"" + STRATEGY_PAGE + "\">strategy proposal</a> this build implements. "
+                "This lab's difference is not vocabulary. Every row is bound to the official nfl.com page it came "
+                "from; a score is attached to a game only when it sits inside that game's own link and both club "
+                "nicknames agree; every modelled quantity is scored walk-forward and published with its standard "
+                "error; and the gates that fail are printed as failures. Where an input does not exist — market "
+                "prices, a dated availability archive, a depth chart — the page states the gap instead of "
+                "estimating across it."),
         "<h2>Where this goes next</h2>",
         bullets([
             "The forward ledger settles itself once this runs after each game week; six settled slates is what "

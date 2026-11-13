@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NFL Lines Lab · NFL Lines Lab</title>
+<meta name="description" content="NFL line origination and strategy leaderboard — official-source NFL line origination, strategy validation and depth tracking.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/lines.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="../index.html">Dashboard</a><a href="../nfl.html">NFL &amp; 49ers</a><a href="../nfl-strategy.html">Strategy design</a><a href="../extra/index.html">Official feeds</a><a href="../flagged.html">Flagged</a><span class="nav-sep">|</span><a href="index.html" class="active">Lines lab</a><a href="lines.html">Originated lines</a><a href="strategies.html">Strategies</a><a href="leaderboard.html">Leaderboard</a><a href="bets.html">Bet ledger</a><a href="validation.html">Validation</a><a href="correlations.html">Correlations</a><a href="injuries.html">Injury &amp; depth</a><a href="suggestions.html">Suggestions</a><a href="questions.html">Questions</a><a href="executive-summary.html">Executive summary</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+</div></header>
+<main class="wrap">
+<div class="callout warn"><strong>Model outputs, not official values, and not betting advice.</strong> Every number on these pages is computed from official NFL.com results, official box scores and official club depth charts. The originated lines, probabilities, returns and rewards are this repository's model output - they are not published by the league and they are not a market price. The reference price of -110 per leg is a <em>declared convention</em> used so strategies can be compared with each other. No claim is made that any strategy beats a real market. See <a href="validation.html">Validation</a> and <a href="questions.html">Questions</a>.</div>
+
+<h1>NFL lines, strategy research and a skill leaderboard</h1>
+<p class="lede">This section originates its own NFL lines from official results, box scores and club depth
+charts, then tests a catalogue of betting strategies — singles, parlays and player-prop combinations —
+against a pre-registered naive baseline with seven validation gates. Anything that cannot be confirmed
+from an official source is left blank and flagged rather than filled in.</p>
+<div class="grid g4"><div class="card"><div class="kpi">696<small>originated game lines</small></div></div><div class="card"><div class="kpi">3<small>strategies that passed every gate</small></div></div><div class="card"><div class="kpi">115<small>top leaderboard reward (points)</small></div></div><div class="card"><div class="kpi">0<small>starter depth deficiencies flagged</small></div></div></div>
+<h2>What the leaderboard says</h2>
+<p>Full detail on the <a href="leaderboard.html">leaderboard</a>. A strategy earns a reward only if it
+passes every gate: enough evidence, beats the naive model out of sample, a bootstrap interval that
+excludes zero after multiple-testing correction, a positive result on the untouched 2026 holdout,
+robustness across seasons without luck concentrated in one bet, and no duplication of a better
+strategy.</p>
+<div class="scroll"><table class=""><thead><tr><th>#</th><th>ID</th><th>Strategy</th><th>ROI</th><th>2026 holdout ROI</th><th>Log-loss gain vs baseline</th><th>Reward (pts)</th><th>Status</th><th>Official source</th></tr></thead><tbody><tr><td>1</td><td><b>S05</b></td><td>Model moneyline, strong separation only</td><td>0.308</td><td>0.308</td><td>-0.0806</td><td>115</td><td><span class="tag ver">qualified</span></td><td><a href="https://www.nfl.com/games/chargers-at-panthers-2024-reg-2">Official game page (Los Angeles Chargers at Carolina Panthers)</a></td></tr><tr><td>2</td><td><b>S08</b></td><td>Model team points vs the team&#x27;s own scoring average (model&#x27;s Under pick)</td><td>0.224</td><td>0.095</td><td>-0.0788</td><td>114</td><td><span class="tag ver">qualified</span></td><td><a href="https://www.nfl.com/games/cowboys-at-giants-2024-reg-4">Official game page (Dallas Cowboys at New York Giants)</a></td></tr><tr><td>3</td><td><b>S07</b></td><td>Model team points vs the team&#x27;s own scoring average (model&#x27;s Over pick)</td><td>0.238</td><td>0.309</td><td>-0.0684</td><td>99</td><td><span class="tag ver">qualified</span></td><td><a href="https://www.nfl.com/games/cowboys-at-giants-2024-reg-4">Official game page (New York Giants at Dallas Cowboys)</a></td></tr><tr><td>4</td><td><b>S03</b></td><td>Model moneyline vs pick&#x27;em (follow the model)</td><td>0.217</td><td>0.205</td><td>-0.0499</td><td>0</td><td><span class="tag ver">failed</span></td><td><a href="https://www.nfl.com/games/raiders-at-ravens-2024-reg-2">Official game page (Baltimore Ravens at Las Vegas Raiders)</a></td></tr><tr><td>5</td><td><b>L02</b></td><td>Three-leg player-prop parlay</td><td>-0.711</td><td>-0.663</td><td>0.0540</td><td>0</td><td><span class="tag ver">failed</span></td><td><a href="https://www.nfl.com/games/vikings-at-browns-2025-reg-5?tab=stats">Official game page (Minnesota Vikings at Cleveland Browns)</a></td></tr><tr><td>6</td><td><b>L03</b></td><td>Game total + model moneyline parlay</td><td>-0.347</td><td>-0.355</td><td>-0.0167</td><td>0</td><td><span class="tag ver">failed</span></td><td><a href="https://www.nfl.com/games/bills-at-dolphins-2024-reg-2">Official game page (Miami Dolphins at Buffalo Bills)</a></td></tr></tbody></table></div>
+<div class="callout"><strong>Read this first.</strong> The three qualified strategies are team-level
+selections, not player props. Every player-prop strategy failed the baseline gate, and every parlay
+strategy lost money, which is what a compounded price does to a parlay. Those results are published
+rather than hidden — the <a href="strategies.html">strategy page</a> lists all 18
+strategies including the ones that failed and why.</div>
+<h2>How the pieces fit together</h2>
+<div class="grid g3">
+  <div class="card"><h3><a href="lines.html">Originated lines</a></h3><p class="small">Model spread, model total and the pre-registered benchmark line for every regular-season game from 2024 to date.</p></div>
+  <div class="card"><h3><a href="strategies.html">Strategies</a></h3><p class="small">The full catalogue: rule, benchmark line, bet count, return, calibration, holdout and every gate result.</p></div>
+  <div class="card"><h3><a href="bets.html">Bet ledger</a></h3><p class="small">Every candidate bet with its line, probability, outcome, units and the official game page it came from.</p></div>
+  <div class="card"><h3><a href="validation.html">Validation</a></h3><p class="small">The seven gates, the walk-forward design, the declared reference price and the evidence limits.</p></div>
+  <div class="card"><h3><a href="correlations.html">Correlations</a></h3><p class="small">Measured correlation between strategies and between player-prop production, with sample sizes and intervals.</p></div>
+  <div class="card"><h3><a href="injuries.html">Injury &amp; depth</a></h3><p class="small">Which starter is unavailable, which tier replaces them, and where the depth is thin on both sides of the ball.</p></div>
+  <div class="card"><h3><a href="suggestions.html">Suggestions</a></h3><p class="small">Proposals to review before anything is changed, each with its evidence and the decision it unblocks.</p></div>
+  <div class="card"><h3><a href="questions.html">Questions</a></h3><p class="small">What must be answered before a decision can reasonably be made, what is known, what is missing and how to find it.</p></div>
+  <div class="card"><h3><a href="executive-summary.html">Executive summary</a></h3><p class="small">The short version: what was built, what it found, what it cannot yet answer.</p></div>
+</div>
+
+</main>
+<footer><div class="wrap">
+  <p><strong>NFL Lines Lab</strong> · built 2026-11-13 · every table row links its official source · unconfirmed values are blank and listed on <a href="flagged.html">Flagged for Review</a>.</p>
+  <p>Official sources: <a href="https://www.nfl.com/schedules/">NFL.com schedule</a> ·
+     <a href="https://www.nfl.com/games/">NFL.com game pages and box scores</a> ·
+     <a href="https://www.nfl.com/injuries/">NFL.com weekly injury report</a> ·
+     <a href="https://www.nfl.com/teams/">NFL.com team directory</a>.</p>
+  <p>Paper research only. No wagering recommendation, no market price is claimed, and no reward has any monetary value.</p>
+</div></footer>
+<script src="assets/lines.js"></script>
+</body></html>

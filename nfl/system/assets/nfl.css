@@ -1,0 +1,29 @@
+/* NFL decision system — extends the planner's stylesheet, does not replace it. */
+.badge{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;
+  font-size:11px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;white-space:nowrap}
+.badge.model{background:#1c3a5e;color:#a9cdff;border:1px solid #2f5480}
+.badge.official{background:#0c2f22;color:#5fe0b0;border:1px solid #17553d}
+.badge.unverified{background:#3a1a17;color:#ffab9c;border:1px solid #5e2a24}
+.badge.judgement{background:#33280f;color:#ffd27a;border:1px solid #5a4718}
+.badge.none{background:#241f33;color:#c4b5fd;border:1px solid #3f3560}
+.prose{max-width:78ch}
+.prose p{color:#c9d6ea}
+.prose li{margin:5px 0;color:#c9d6ea}
+.kv{display:grid;grid-template-columns:180px 1fr;gap:6px 16px;font-size:14px}
+.kv dt{color:var(--muted);font-weight:700}
+.kv dd{margin:0}
+.statline{display:flex;gap:22px;flex-wrap:wrap;margin:6px 0 2px}
+.statline div{min-width:120px}
+.statline b{display:block;font-size:22px;letter-spacing:-.4px}
+.statline span{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted)}
+.sec{padding:4px 0 2px}
+table.tight td,table.tight th{padding:7px 8px;font-size:13px}
+.nowrap{white-space:nowrap}
+.dim{color:var(--muted)}
+.ok{color:#5fe0b0;font-weight:700}
+.no{color:#ff8b7a;font-weight:700}
+.mid{color:#ffd27a;font-weight:700}
+.subnav{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 4px}
+.subnav a{font-size:13px;padding:5px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.subnav a:hover{color:var(--ink);text-decoration:none;background:var(--panel2)}
+.subnav a.on{background:var(--accent);color:#052015;border-color:transparent;font-weight:700}

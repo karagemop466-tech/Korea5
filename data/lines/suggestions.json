@@ -1,0 +1,230 @@
+{
+ "meta": {
+  "purpose": "Suggestions are proposals for review BEFORE any change is implemented. Nothing in this register has been built unless a separate page shows the built result.",
+  "reviewFlow": "1) read the suggestion and its evidence 2) mark ACCEPT / DECLINE / NEED MORE INFO in the Decision column when you decide 3) only then open a task to implement it",
+  "scope": ["Free-time planner site", "NFL lines and strategy lab", "Data acquisition", "Verification"],
+  "compiled": "2026-11-13"
+ },
+ "suggestions": [
+  {
+   "id": "SG-01",
+   "area": "Navigation",
+   "suggestion": "Add a single top-level 'NFL Lines Lab' entry to the main navigation instead of burying the lab inside the NFL page.",
+   "decisionUnblocked": "Whether the lines workstream is a first-class section of the site or a sub-page of the planner.",
+   "effort": "Small",
+   "riskIfWrong": "Very low. Navigation only; no data changes.",
+   "evidence": "https://www.nfl.com/",
+   "officialSource": "https://www.nfl.com/",
+   "status": "Proposed - implemented in this pass, listed here for review of the choice"
+  },
+  {
+   "id": "SG-02",
+   "area": "Decision support",
+   "suggestion": "Publish a single 'today' decision card on the dashboard that states the next free window, the next busy window and what would change each one.",
+   "decisionUnblocked": "Whether the owner needs 'what do I do next' rather than 'what is free'.",
+   "effort": "Medium",
+   "riskIfWrong": "Low. Presentation only; the underlying free/busy engine is unchanged.",
+   "evidence": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "officialSource": "https://www.nfl.com/schedules/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-03",
+   "area": "Decision support",
+   "suggestion": "Show every future window with a confidence grade (verified / estimated) directly in the ranking table instead of only in a legend.",
+   "decisionUnblocked": "Whether a reader can rank windows without opening the certainty page.",
+   "effort": "Small",
+   "riskIfWrong": "Low. Existing certainty policy already exists in the repository.",
+   "evidence": "https://operations.nfl.com/",
+   "officialSource": "https://operations.nfl.com/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-04",
+   "area": "Data acquisition",
+   "suggestion": "Archive the official NFL Game Statistics PDF for every game instead of only parsing the web box score.",
+   "decisionUnblocked": "Whether the lines lab can be extended to play-by-play features (drive, red zone, third down) that the web box score does not carry.",
+   "effort": "Medium",
+   "riskIfWrong": "Medium. PDFs need a parser and the archive is large; the game-book URL is already published in the official schedule feed, so the discovery step is cheap.",
+   "evidence": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+   "officialSource": "https://www.nfl.com/games/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-05",
+   "area": "Data acquisition",
+   "suggestion": "Fetch the official NFL game book for 2024 as well, so player-prop strategies get a third season instead of two.",
+   "decisionUnblocked": "Whether the prop strategy gates can be judged on three seasons rather than two.",
+   "effort": "Medium",
+   "riskIfWrong": "Low. The 2024 schedule and box scores are already reachable; only the fetch volume grows.",
+   "evidence": "https://www.nfl.com/schedules/2024/by-week/week-1",
+   "officialSource": "https://www.nfl.com/schedules/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-06",
+   "area": "Verification",
+   "suggestion": "Add a per-row provenance hash for every figure on the lines pages so a published value can be traced to the exact official page and capture time.",
+   "decisionUnblocked": "Whether a reader can trust a number without re-fetching the source themselves.",
+   "effort": "Medium",
+   "riskIfWrong": "Low. The source URL and capture timestamp are already stored per row.",
+   "evidence": "https://www.nfl.com/injuries/",
+   "officialSource": "https://www.nfl.com/injuries/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-07",
+   "area": "Data acquisition",
+   "suggestion": "Record the depth chart 'as of' date and the club's own official/unofficial label on every depth-derived row.",
+   "decisionUnblocked": "How much weight a reader should give a depth chart that the club itself labels unofficial.",
+   "effort": "Small",
+   "riskIfWrong": "Very low. The label is already captured in the fetch.",
+   "evidence": "https://www.packers.com/team/depth-chart",
+   "officialSource": "https://www.nfl.com/teams/",
+   "status": "Proposed - implemented in this pass, listed here for review of the choice"
+  },
+  {
+   "id": "SG-08",
+   "area": "Injury tracking",
+   "suggestion": "Archive the official weekly injury report for every week of the season, not only the current week.",
+   "decisionUnblocked": "Whether injury-driven signals can be backtested at all, rather than only tracked prospectively.",
+   "effort": "Medium",
+   "riskIfWrong": "Medium. NFL.com publishes the current week only; the historical archive location is an open question (see QN-04).",
+   "evidence": "https://www.nfl.com/injuries/",
+   "officialSource": "https://www.nfl.com/injuries/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-09",
+   "area": "Injury tracking",
+   "suggestion": "Add official game-day inactive lists so 'expected to play' can be separated from 'actually dressed'.",
+   "decisionUnblocked": "Whether a starter who is removed from the game-day roster is caught before the line moves.",
+   "effort": "Small",
+   "riskIfWrong": "Low. NFL.com publishes an inactives page.",
+   "evidence": "https://www.nfl.com/inactives/",
+   "officialSource": "https://www.nfl.com/inactives/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-10",
+   "area": "Strategy research",
+   "suggestion": "Add a second model family (an opponent-adjusted possessions model) so the leaderboard can tell whether skill comes from the rating model or from the matchup adjustment.",
+   "decisionUnblocked": "Whether the leaderboard rewards a genuinely new signal or one model with several parameterisations.",
+   "effort": "Large",
+   "riskIfWrong": "Medium. A second model raises the multiple-testing burden, so the Benjamini-Hochberg step must be re-declared.",
+   "evidence": "https://www.nfl.com/stats/team-stats/",
+   "officialSource": "https://www.nfl.com/stats/team-stats/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-11",
+   "area": "Strategy research",
+   "suggestion": "Replace the fixed -110 reference price with a table of declared reference prices (-110, -105, -120) so strategy rankings can be shown against more than one assumed price.",
+   "decisionUnblocked": "Whether the leaderboard order is an artefact of one assumed price.",
+   "effort": "Small",
+   "riskIfWrong": "Low. Pure recomputation; no new data needed.",
+   "evidence": "https://www.nfl.com/games/",
+   "officialSource": "https://www.nfl.com/games/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-12",
+   "area": "Strategy research",
+   "suggestion": "Report a risk-adjusted leaderboard metric (Sharpe ratio of per-bet units) next to the raw reward so a high-variance strategy cannot win on one lucky run.",
+   "decisionUnblocked": "Whether the reward ranking is dominated by variance.",
+   "effort": "Small",
+   "riskIfWrong": "Low. The per-bet unit series already exists in the committed data.",
+   "evidence": "https://www.nfl.com/games/",
+   "officialSource": "https://www.nfl.com/games/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-13",
+   "area": "Strategy research",
+   "suggestion": "Add a walk-forward 'paper trial' period that freezes the current leaderboard and scores only bets placed after the freeze date.",
+   "decisionUnblocked": "Whether the lab can move from historical backtest to prospective evidence.",
+   "effort": "Medium",
+   "riskIfWrong": "Low. The freeze date and schedule already exist in the data.",
+   "evidence": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "officialSource": "https://www.nfl.com/schedules/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-14",
+   "area": "Leaderboard governance",
+   "suggestion": "Define the reward pool, eligibility, privacy and responsible-play policy before any strategy can earn anything.",
+   "decisionUnblocked": "Whether the leaderboard stays a paper exercise or becomes something with consequences.",
+   "effort": "Small",
+   "riskIfWrong": "High if skipped. This is the one item that must not be automated.",
+   "evidence": "https://operations.nfl.com/",
+   "officialSource": "https://operations.nfl.com/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-15",
+   "area": "Site usability",
+   "suggestion": "Add a 'what changed' panel that lists every figure that moved since the previous deployment, with the reason.",
+   "decisionUnblocked": "Whether a reader can trust that the numbers they saw last week are still current.",
+   "effort": "Medium",
+   "riskIfWrong": "Low. Deployment history is already recorded in COORDINATION.md.",
+   "evidence": "Deployment history recorded in COORDINATION.md; the live site is published from this repository.",
+   "officialSource": "https://www.nfl.com/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-16",
+   "area": "Site usability",
+   "suggestion": "Give every table a column chooser and a CSV export so the same data can be pasted into a spreadsheet.",
+   "decisionUnblocked": "Whether the tables are usable for actual analysis rather than reading.",
+   "effort": "Small",
+   "riskIfWrong": "Very low. Client-side only.",
+   "evidence": "https://www.nfl.com/",
+   "officialSource": "https://www.nfl.com/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-17",
+   "area": "Site usability",
+   "suggestion": "Add a print stylesheet so the executive summary and the leaderboard can be printed cleanly for a meeting.",
+   "decisionUnblocked": "Whether the review can happen without the site being open.",
+   "effort": "Small",
+   "riskIfWrong": "Very low.",
+   "evidence": "https://www.nfl.com/",
+   "officialSource": "https://www.nfl.com/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-18",
+   "area": "Planner correctness",
+   "suggestion": "Publish the reconciliation count between the official NFL feed used here and the NFL feed already in the planner, side by side.",
+   "decisionUnblocked": "Whether the two NFL datasets in this repository agree, or whether one is stale.",
+   "effort": "Medium",
+   "riskIfWrong": "Low. Both feeds are official and already committed.",
+   "evidence": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "officialSource": "https://www.nfl.com/schedules/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-19",
+   "area": "Planner correctness",
+   "suggestion": "Move the 49ers, Giants, A's and Stanford/Cal rows out of the 'high priority' scope as soon as their schedules are officially released, and record the release date that triggers the change.",
+   "decisionUnblocked": "How long the planner keeps treating a released schedule as an estimate.",
+   "effort": "Small",
+   "riskIfWrong": "Low. The release anchors are already tracked in curated/anchors-2026-11-05.json.",
+   "evidence": "https://www.49ers.com/schedule/2026/",
+   "officialSource": "https://www.49ers.com/schedule/2026/",
+   "status": "Proposed - not implemented"
+  },
+  {
+   "id": "SG-20",
+   "area": "Injury tracking",
+   "suggestion": "Publish a 'depth deficiency board' that ranks upcoming games by how many starter positions are down to a second, third or fourth string.",
+   "decisionUnblocked": "Which games are most exposed to lineup-driven line movement.",
+   "effort": "Medium",
+   "riskIfWrong": "Medium. Ranking implies a magnitude claim; it should publish the underlying counts only until a magnitude model exists.",
+   "evidence": "https://www.nfl.com/injuries/",
+   "officialSource": "https://www.nfl.com/injuries/",
+   "status": "Proposed - not implemented"
+  }
+ ]
+}

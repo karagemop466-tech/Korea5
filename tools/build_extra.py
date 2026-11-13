@@ -401,6 +401,11 @@ ROOT_NAV = [
     ("../index.html", "Dashboard"), ("../calendar.html", "Calendar"), ("../vacation.html", "Vacation windows"),
     ("../mlb.html", "MLB"), ("../nfl.html", "NFL &amp; 49ers"), ("../nfl-signals.html", "NFL Signals Lab"), ("../ncaaf.html", "Stanford &amp; Cal"),
     ("../radio.html", "Radio"), ("../sources.html", "Sources"), ("../flagged.html", "Flagged"), ("../method.html", "Method"),
+    ("../nfl-lab/index.html", "NFL Model"),
+    ("../nfl/index.html", "NFL Decision Support"),
+    ("../nfl/system/index.html", "NFL decision system"),
+    ("../lines-lab/index.html", "NFL Skill Lab"),
+    ("../strategy-lab/index.html", "Strategy Lab"),
 ]
 EXTRA_NAV = [
     ("index.html", "Official feeds"), ("calendar.html", "Day scoreboard"), ("vacation.html", "Free windows"),
@@ -750,7 +755,8 @@ def inline(text: str) -> str:
     text = esc(text)
     text = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
     text = _re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r'<a href="\2">\1</a>', text)
-    text = _re.sub(r"\[([^\]]+)\]\((\.\./[^)]+|[^)]+\.(?:html|md))\)", r'<a href="\2">\1</a>', text)
+    text = _re.sub(r"\[([^\]]+)\]\((\.\./[^)]+|[^)]+\.(?:html))\)", r'<a href="\2">\1</a>', text)
+    text = _re.sub(r"\[([^\]]+)\]\(([^)/]+\.md)\)", r'<a href="../research/\2">\1</a>', text)
     return text
 def md_to_html(md: str) -> str:
     out = []
@@ -1013,11 +1019,15 @@ footer a{color:var(--accent2)}
 
 # ---------------------------------------------------------------- root nav + exact labels (idempotent)
 nav_link = '<a href="extra/index.html">Official feeds &amp; verification</a>'
+lab_link = '<a href="lines-lab/index.html">NFL Skill Lab</a>'
 for p in sorted(ROOT.glob("*.html")):
     txt = p.read_text(encoding="utf-8")
     orig = txt
     if "extra/index.html" not in txt:
         txt = txt.replace("</nav>", nav_link + "</nav>", 1)
+    if "lines-lab/index.html" not in txt:
+        # the skill lab (session arena-fb9c9608) links into hand-written root pages too
+        txt = txt.replace("</nav>", lab_link + "</nav>", 1)
     txt = txt.replace('<button id="prev">← Yesterday</button>', '<button id="prev">← Prev</button>')
     txt = txt.replace('<button id="tomorrow">Tomorrow →</button>', '<button id="tomorrow">Next →</button>')
     txt = txt.replace('<button id="next">Tomorrow +1 →</button>', '<button id="next">+2 days →</button>')

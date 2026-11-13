@@ -1,0 +1,1869 @@
+{
+ "builtUTC": "2026-11-13T13:45:00Z",
+ "source": "https://www.nfl.com/injuries/",
+ "week": "2026-10",
+ "teams": {
+  "WAS": {
+   "totalRows": 9,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 1,
+      "out": 1,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "elevated"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 2,
+      "limited": 0,
+      "full": 3,
+      "out": 1,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 5
+     },
+     "pressure": "critical"
+    }
+   },
+   "qbRows": [
+    {
+     "player": "Jayden Daniels",
+     "practice": "Full Participation in Practice",
+     "status": ""
+    }
+   ]
+  },
+  "NYG": {
+   "totalRows": 11,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 1,
+      "out": 0,
+      "questionable": 1,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 6,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 6
+     },
+     "pressure": "clear"
+    }
+   },
+   "qbRows": [
+    {
+     "player": "J.J. McCarthy",
+     "practice": "Full Participation in Practice",
+     "status": ""
+    }
+   ]
+  },
+  "NE": {
+   "totalRows": 15,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 3,
+      "full": 0,
+      "out": 1,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "elevated"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 3,
+      "full": 0,
+      "out": 1,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "elevated"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 1,
+      "limited": 5,
+      "full": 1,
+      "out": 1,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 7
+     },
+     "pressure": "elevated"
+    }
+   },
+   "qbRows": [
+    {
+     "player": "Drake Maye",
+     "practice": "Full Participation in Practice",
+     "status": ""
+    }
+   ]
+  },
+  "DET": {
+   "totalRows": 9,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 2,
+      "out": 2,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "critical"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 0,
+      "out": 1,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "elevated"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "watch"
+    }
+   },
+   "qbRows": [
+    {
+     "player": "Jared Goff",
+     "practice": "Full Participation in Practice",
+     "status": ""
+    }
+   ]
+  },
+  "KC": {
+   "totalRows": 12,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "watch"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 5,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 6
+     },
+     "pressure": "clear"
+    }
+   },
+   "qbRows": [
+    {
+     "player": "Justin Fields",
+     "practice": "Full Participation in Practice",
+     "status": ""
+    },
+    {
+     "player": "Patrick Mahomes",
+     "practice": "Full Participation in Practice",
+     "status": ""
+    }
+   ]
+  },
+  "ATL": {
+   "totalRows": 9,
+   "units": {
+    "DL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 3,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "clear"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 2,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "watch"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "watch"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "watch"
+    }
+   },
+   "qbRows": []
+  },
+  "MIN": {
+   "totalRows": 9,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "watch"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 2,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "elevated"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 3,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "critical"
+    }
+   },
+   "qbRows": [
+    {
+     "player": "Kyler Murray",
+     "practice": "Did Not Participate In Practice",
+     "status": ""
+    },
+    {
+     "player": "Carson Wentz",
+     "practice": "Limited Participation in Practice",
+     "status": ""
+    }
+   ]
+  },
+  "GB": {
+   "totalRows": 16,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "watch"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 2,
+      "limited": 2,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "elevated"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 3,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "watch"
+    },
+    "ST": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 2,
+      "limited": 3,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 6
+     },
+     "pressure": "elevated"
+    }
+   },
+   "qbRows": []
+  },
+  "JAX": {
+   "totalRows": 11,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "watch"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 2,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 1,
+      "limited": 2,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "watch"
+    }
+   },
+   "qbRows": []
+  },
+  "TEN": {
+   "totalRows": 12,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "clear"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 2,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "elevated"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    },
+    "ST": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 2,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "elevated"
+    }
+   },
+   "qbRows": []
+  },
+  "BUF": {
+   "totalRows": 12,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 2,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "clear"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 3,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 5
+     },
+     "pressure": "watch"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    }
+   },
+   "qbRows": []
+  },
+  "NYJ": {
+   "totalRows": 8,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "watch"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "watch"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 0,
+      "limited": 2,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    }
+   },
+   "qbRows": []
+  },
+  "MIA": {
+   "totalRows": 11,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "clear"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 1,
+      "limited": 2,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 5
+     },
+     "pressure": "watch"
+    }
+   },
+   "qbRows": []
+  },
+  "IND": {
+   "totalRows": 13,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 3,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "clear"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 2,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "elevated"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 2,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "elevated"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 2,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "elevated"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    }
+   },
+   "qbRows": []
+  },
+  "CAR": {
+   "totalRows": 12,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "clear"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 4,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "clear"
+    }
+   },
+   "qbRows": []
+  },
+  "NO": {
+   "totalRows": 12,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 2,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "watch"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 3,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 5
+     },
+     "pressure": "watch"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "watch"
+    }
+   },
+   "qbRows": []
+  },
+  "HOU": {
+   "totalRows": 13,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 2,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "watch"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 2,
+      "limited": 3,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 5
+     },
+     "pressure": "elevated"
+    }
+   },
+   "qbRows": []
+  },
+  "CLE": {
+   "totalRows": 12,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 2,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "watch"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 2,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 3,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "clear"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 2,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "elevated"
+    }
+   },
+   "qbRows": []
+  },
+  "LAR": {
+   "totalRows": 10,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 2,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "elevated"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 2,
+      "limited": 2,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 5
+     },
+     "pressure": "elevated"
+    }
+   },
+   "qbRows": [
+    {
+     "player": "Matthew Stafford",
+     "practice": "Full Participation in Practice",
+     "status": ""
+    }
+   ]
+  },
+  "AZ": {
+   "totalRows": 15,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "watch"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 2,
+      "limited": 2,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "elevated"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 2,
+      "limited": 1,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "elevated"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    }
+   },
+   "qbRows": []
+  },
+  "SEA": {
+   "totalRows": 15,
+   "units": {
+    "DL": {
+     "counts": {
+      "dnp": 3,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "critical"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 4,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "clear"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 2,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "elevated"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 2,
+      "limited": 1,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 5
+     },
+     "pressure": "elevated"
+    }
+   },
+   "qbRows": [
+    {
+     "player": "Sam Darnold",
+     "practice": "Did Not Participate In Practice",
+     "status": ""
+    },
+    {
+     "player": "Drew Lock",
+     "practice": "Limited Participation in Practice",
+     "status": ""
+    }
+   ]
+  },
+  "LV": {
+   "totalRows": 4,
+   "units": {
+    "DL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    }
+   },
+   "qbRows": []
+  },
+  "SF": {
+   "totalRows": 12,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 2,
+      "limited": 2,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 5
+     },
+     "pressure": "elevated"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "watch"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "watch"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 2,
+      "limited": 1,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "elevated"
+    }
+   },
+   "qbRows": []
+  },
+  "DAL": {
+   "totalRows": 18,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 4,
+      "limited": 1,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 6
+     },
+     "pressure": "critical"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 2,
+      "limited": 0,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 4
+     },
+     "pressure": "elevated"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 3,
+      "limited": 2,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 7
+     },
+     "pressure": "critical"
+    }
+   },
+   "qbRows": []
+  },
+  "PIT": {
+   "totalRows": 8,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 3,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "clear"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    },
+    "LB": {
+     "counts": {
+      "dnp": 0,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    }
+   },
+   "qbRows": []
+  },
+  "CIN": {
+   "totalRows": 8,
+   "units": {
+    "DB": {
+     "counts": {
+      "dnp": 1,
+      "limited": 0,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 3
+     },
+     "pressure": "watch"
+    },
+    "DL": {
+     "counts": {
+      "dnp": 1,
+      "limited": 1,
+      "full": 0,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "watch"
+    },
+    "OL": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 2,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 2
+     },
+     "pressure": "clear"
+    },
+    "Skill": {
+     "counts": {
+      "dnp": 0,
+      "limited": 0,
+      "full": 1,
+      "out": 0,
+      "questionable": 0,
+      "doubtful": 0,
+      "rows": 1
+     },
+     "pressure": "clear"
+    }
+   },
+   "qbRows": []
+  },
+  "LAC": {
+   "totalRows": 0,
+   "units": {},
+   "qbRows": []
+  },
+  "BAL": {
+   "totalRows": 0,
+   "units": {},
+   "qbRows": []
+  }
+ },
+ "qbNotes": {
+  "method": "Games.csv lists the recorded starter for each game (secondary source); the official report lists players on the injury report. Where they conflict, the cell stays blank and the item is flagged \u2014 the starting QB is never inferred here.",
+  "w10": {
+   "WAS@NYG": {
+    "away": {
+     "recordedStarter": "Jayden Daniels",
+     "datasetStarts": 28
+    },
+    "home": {
+     "recordedStarter": "J.J. McCarthy",
+     "datasetStarts": 13
+    }
+   },
+   "BUF@NYJ": {
+    "away": {
+     "recordedStarter": "Josh Allen",
+     "datasetStarts": 132
+    },
+    "home": {
+     "recordedStarter": "Geno Smith",
+     "datasetStarts": 107
+    }
+   },
+   "CAR@NO": {
+    "away": {
+     "recordedStarter": "Bryce Young",
+     "datasetStarts": 49
+    },
+    "home": {
+     "recordedStarter": "Tyler Shough",
+     "datasetStarts": 17
+    }
+   },
+   "HOU@CLE": {
+    "away": {
+     "recordedStarter": "C.J. Stroud",
+     "datasetStarts": 53
+    },
+    "home": {
+     "recordedStarter": "Deshaun Watson",
+     "datasetStarts": 80
+    }
+   },
+   "JAX@TEN": {
+    "away": {
+     "recordedStarter": "Trevor Lawrence",
+     "datasetStarts": 85
+    },
+    "home": {
+     "recordedStarter": "Cam Ward",
+     "datasetStarts": 25
+    }
+   },
+   "KC@ATL": {
+    "away": {
+     "recordedStarter": "Patrick Mahomes",
+     "datasetStarts": 134
+    },
+    "home": {
+     "recordedStarter": "Michael Penix Jr.",
+     "datasetStarts": 10
+    }
+   },
+   "LA@ARI": {
+    "away": {
+     "recordedStarter": "Matthew Stafford",
+     "datasetStarts": 248
+    },
+    "home": {
+     "recordedStarter": "Gardner Minshew",
+     "datasetStarts": 44
+    }
+   },
+   "MIA@IND": {
+    "away": {
+     "recordedStarter": "Malik Willis",
+     "datasetStarts": 14
+    },
+    "home": {
+     "recordedStarter": "Daniel Jones",
+     "datasetStarts": 91
+    }
+   },
+   "MIN@GB": {
+    "away": {
+     "recordedStarter": "Kirk Cousins",
+     "datasetStarts": 176
+    },
+    "home": {
+     "recordedStarter": "Jordan Love",
+     "datasetStarts": 57
+    }
+   },
+   "NE@DET": {
+    "away": {
+     "recordedStarter": "Drake Maye",
+     "datasetStarts": 37
+    },
+    "home": {
+     "recordedStarter": "Jared Goff",
+     "datasetStarts": 159
+    }
+   },
+   "PIT@CIN": {
+    "away": {
+     "recordedStarter": "Aaron Rodgers",
+     "datasetStarts": 264
+    },
+    "home": {
+     "recordedStarter": "Joe Burrow",
+     "datasetStarts": 85
+    }
+   },
+   "SEA@LV": {
+    "away": {
+     "recordedStarter": "Sam Darnold",
+     "datasetStarts": 94
+    },
+    "home": {
+     "recordedStarter": "Fernando Mendoza",
+     "datasetStarts": 0
+    }
+   },
+   "SF@DAL": {
+    "away": {
+     "recordedStarter": "Brock Purdy",
+     "datasetStarts": 53
+    },
+    "home": {
+     "recordedStarter": "Dak Prescott",
+     "datasetStarts": 147
+    }
+   },
+   "LAC@BAL": {
+    "away": {
+     "recordedStarter": "Justin Herbert",
+     "datasetStarts": 102
+    },
+    "home": {
+     "recordedStarter": "Tyler Huntley",
+     "datasetStarts": 17
+    }
+   }
+  },
+  "w11": {
+   "IND@HOU": {
+    "away": {
+     "recordedStarter": "Daniel Jones",
+     "datasetStarts": 91
+    },
+    "home": {
+     "recordedStarter": "C.J. Stroud",
+     "datasetStarts": 53
+    }
+   },
+   "ARI@KC": {
+    "away": {
+     "recordedStarter": "Gardner Minshew",
+     "datasetStarts": 44
+    },
+    "home": {
+     "recordedStarter": "Patrick Mahomes",
+     "datasetStarts": 134
+    }
+   },
+   "BAL@CAR": {
+    "away": {
+     "recordedStarter": "Tyler Huntley",
+     "datasetStarts": 17
+    },
+    "home": {
+     "recordedStarter": "Bryce Young",
+     "datasetStarts": 49
+    }
+   },
+   "JAX@NYG": {
+    "away": {
+     "recordedStarter": "Trevor Lawrence",
+     "datasetStarts": 85
+    },
+    "home": {
+     "recordedStarter": "J.J. McCarthy",
+     "datasetStarts": 13
+    }
+   },
+   "LV@DEN": {
+    "away": {
+     "recordedStarter": "Fernando Mendoza",
+     "datasetStarts": 0
+    },
+    "home": {
+     "recordedStarter": "Bo Nix",
+     "datasetStarts": 43
+    }
+   },
+   "MIA@BUF": {
+    "away": {
+     "recordedStarter": "Malik Willis",
+     "datasetStarts": 14
+    },
+    "home": {
+     "recordedStarter": "Josh Allen",
+     "datasetStarts": 132
+    }
+   },
+   "MIN@SF": {
+    "away": {
+     "recordedStarter": "Kirk Cousins",
+     "datasetStarts": 176
+    },
+    "home": {
+     "recordedStarter": "Brock Purdy",
+     "datasetStarts": 53
+    }
+   },
+   "NO@CHI": {
+    "away": {
+     "recordedStarter": "Tyler Shough",
+     "datasetStarts": 17
+    },
+    "home": {
+     "recordedStarter": "Caleb Williams",
+     "datasetStarts": 40
+    }
+   },
+   "NYJ@LAC": {
+    "away": {
+     "recordedStarter": "Geno Smith",
+     "datasetStarts": 107
+    },
+    "home": {
+     "recordedStarter": "Justin Herbert",
+     "datasetStarts": 102
+    }
+   },
+   "PIT@PHI": {
+    "away": {
+     "recordedStarter": "Aaron Rodgers",
+     "datasetStarts": 264
+    },
+    "home": {
+     "recordedStarter": "Joe Milton III",
+     "datasetStarts": 2
+    }
+   },
+   "TB@DET": {
+    "away": {
+     "recordedStarter": "Baker Mayfield",
+     "datasetStarts": 126
+    },
+    "home": {
+     "recordedStarter": "Jared Goff",
+     "datasetStarts": 159
+    }
+   },
+   "TEN@DAL": {
+    "away": {
+     "recordedStarter": "Cam Ward",
+     "datasetStarts": 25
+    },
+    "home": {
+     "recordedStarter": "Dak Prescott",
+     "datasetStarts": 147
+    }
+   },
+   "CIN@WAS": {
+    "away": {
+     "recordedStarter": "Joe Burrow",
+     "datasetStarts": 85
+    },
+    "home": {
+     "recordedStarter": "Jayden Daniels",
+     "datasetStarts": 28
+    }
+   }
+  }
+ }
+}

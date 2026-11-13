@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "title": "Official NFL Week 11, 2026 schedule",
+    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-11/",
+    "sourceName": "NFL.com official by-week schedule (week-11)",
+    "fetchedUTC": "2026-11-13T13:20:00Z",
+    "notes": [
+      "Matchups, kickoff times and TV networks transcribed from the official NFL.com Week 11 page.",
+      "Records shown on the official page at fetch time (pre-Week 10 completion) recorded separately; team records are recomputed from results each build.",
+      "The Mexico City game is listed by NFL.com under Sunday Night Football branding: Vikings at 49ers, 8:20 PM NBC."
+    ]
+  },
+  "games": [
+    {"away": "IND", "home": "HOU", "date": "2026-11-19", "time": "8:15 PM", "network": "Prime Video", "slot": "TNF", "recordsAsShown": {"IND": "2-7", "HOU": "3-5"}, "officialGameUrl": "https://www.nfl.com/games/colts-at-texans-2026-reg-11"},
+    {"away": "MIA", "home": "BUF", "date": "2026-11-22", "time": "1:00 PM", "network": "CBS", "recordsAsShown": {"MIA": "1-7", "BUF": "7-1"}, "officialGameUrl": "https://www.nfl.com/games/dolphins-at-bills-2026-reg-11"},
+    {"away": "BAL", "home": "CAR", "date": "2026-11-22", "time": "1:00 PM", "network": "FOX", "recordsAsShown": {"BAL": "4-5", "CAR": "3-5"}, "officialGameUrl": "https://www.nfl.com/games/ravens-at-panthers-2026-reg-11"},
+    {"away": "NO", "home": "CHI", "date": "2026-11-22", "time": "1:00 PM", "network": "FOX", "recordsAsShown": {"NO": "3-5", "CHI": "7-2"}, "officialGameUrl": "https://www.nfl.com/games/saints-at-bears-2026-reg-11"},
+    {"away": "TEN", "home": "DAL", "date": "2026-11-22", "time": "1:00 PM", "network": "FOX", "recordsAsShown": {"TEN": "1-7", "DAL": "4-5"}, "officialGameUrl": "https://www.nfl.com/games/titans-at-cowboys-2026-reg-11"},
+    {"away": "TB", "home": "DET", "date": "2026-11-22", "time": "1:00 PM", "network": "FOX", "recordsAsShown": {"TB": "3-6", "DET": "6-2"}, "officialGameUrl": "https://www.nfl.com/games/buccaneers-at-lions-2026-reg-11"},
+    {"away": "AZ", "home": "KC", "date": "2026-11-22", "time": "1:00 PM", "network": "CBS", "recordsAsShown": {"AZ": "3-6", "KC": "6-2"}, "officialGameUrl": "https://www.nfl.com/games/cardinals-at-chiefs-2026-reg-11"},
+    {"away": "PIT", "home": "PHI", "date": "2026-11-22", "time": "1:00 PM", "network": "CBS", "recordsAsShown": {"PIT": "6-2", "PHI": "2-7"}, "officialGameUrl": "https://www.nfl.com/games/steelers-at-eagles-2026-reg-11"},
+    {"away": "NYJ", "home": "LAC", "date": "2026-11-22", "time": "4:05 PM", "network": "FOX", "recordsAsShown": {"NYJ": "2-7", "LAC": "0-8"}, "officialGameUrl": "https://www.nfl.com/games/jets-at-chargers-2026-reg-11"},
+    {"away": "JAX", "home": "NYG", "date": "2026-11-22", "time": "4:25 PM", "network": "CBS", "recordsAsShown": {"JAX": "6-2", "NYG": "5-3-1"}, "officialGameUrl": "https://www.nfl.com/games/jaguars-at-giants-2026-reg-11"},
+    {"away": "LV", "home": "DEN", "date": "2026-11-22", "time": "4:25 PM", "network": "CBS", "recordsAsShown": {"LV": "4-5", "DEN": "7-2"}, "officialGameUrl": "https://www.nfl.com/games/raiders-at-broncos-2026-reg-11"},
+    {"away": "MIN", "home": "SF", "date": "2026-11-22", "time": "8:20 PM", "network": "NBC", "slot": "SNF — Mexico City International Game", "recordsAsShown": {"MIN": "6-2", "SF": "7-1"}, "officialGameUrl": "https://www.nfl.com/games/vikings-at-49ers-2026-reg-11"},
+    {"away": "CIN", "home": "WAS", "date": "2026-11-23", "time": "8:15 PM", "network": "ESPN", "slot": "MNF", "recordsAsShown": {"CIN": "6-2", "WAS": "3-5-1"}, "officialGameUrl": "https://www.nfl.com/games/bengals-at-commanders-2026-reg-11"}
+  ]
+}

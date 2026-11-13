@@ -1,0 +1,140 @@
+{
+  "registry": "NFL Lines Lab — data provenance",
+  "updatedUTC": "2026-11-13T13:20:00Z",
+  "session": "arena-fb9c9608",
+  "datasets": [
+    {
+      "id": "nfldata-games",
+      "path": "nfl-lab/data/nfldata/games.csv",
+      "title": "Game results, schedules, closing spreads/totals, weather, QBs, 1999-2026",
+      "source": "nflverse/nfldata repository (Lee Sharpe), committed file",
+      "url": "https://github.com/nflverse/nfldata/blob/master/data/games.csv",
+      "fetch": "git clone --depth 1 https://github.com/nflverse/nfldata",
+      "fetchedCommit": "7aae940b6389125e272dec473765fd063866a4b3",
+      "fetchedUTC": "2026-11-13T11:45:21Z",
+      "tier": "secondary-open-source",
+      "note": "Open-source canonical dataset compiled from NFL GSIS feeds. Not an official NFL property; every fact used in a published table row is cross-checked against an official NFL.com page or flagged unverified. Closing spread/total lines are bookmaker quotes, not league data; they are labeled as market data wherever used."
+    },
+    {
+      "id": "nfldata-closing-lines",
+      "path": "nfl-lab/data/nfldata/closing_lines.csv",
+      "title": "Per-book closing moneylines, 2006-2026",
+      "source": "nflverse/nfldata repository (Lee Sharpe), committed file",
+      "url": "https://github.com/nflverse/nfldata/blob/master/data/closing_lines.csv",
+      "fetchedCommit": "7aae940b6389125e272dec473765fd063866a4b3",
+      "fetchedUTC": "2026-11-13T11:45:21Z",
+      "tier": "secondary-open-source"
+    },
+    {
+      "id": "nfldata-initial-lines",
+      "path": "nfl-lab/data/nfldata/initial_lines.csv",
+      "title": "Opening lines for the 2026 season (WSGT)",
+      "source": "nflverse/nfldata repository (Lee Sharpe), committed file",
+      "url": "https://github.com/nflverse/nfldata/blob/master/data/initial_lines.csv",
+      "fetchedCommit": "7aae940b6389125e272dec473765fd063866a4b3",
+      "fetchedUTC": "2026-11-13T11:45:21Z",
+      "tier": "secondary-open-source"
+    },
+    {
+      "id": "nfldata-sc-lines",
+      "path": "nfl-lab/data/nfldata/sc_lines.csv",
+      "title": "Spread movement since opening, 2013-2026",
+      "source": "nflverse/nfldata repository (Lee Sharpe), committed file",
+      "url": "https://github.com/nflverse/nfldata/blob/master/data/sc_lines.csv",
+      "fetchedCommit": "7aae940b6389125e272dec473765fd063866a4b3",
+      "fetchedUTC": "2026-11-13T11:45:21Z",
+      "tier": "secondary-open-source"
+    },
+    {
+      "id": "nfldata-standings",
+      "path": "nfl-lab/data/nfldata/standings.csv",
+      "title": "Final weekly standings with points scored/allowed, 2002-2025",
+      "source": "nflverse/nfldata repository (Lee Sharpe), committed file",
+      "url": "https://github.com/nflverse/nfldata/blob/master/data/standings.csv",
+      "fetchedCommit": "7aae940b6389125e272dec473765fd063866a4b3",
+      "fetchedUTC": "2026-11-13T11:45:21Z",
+      "tier": "secondary-open-source"
+    },
+    {
+      "id": "nfldata-rosters",
+      "path": "nfl-lab/data/nfldata/rosters.csv",
+      "title": "Career roster/appearance records (games, starts, years, AV) for current players",
+      "source": "nflverse/nfldata repository (Lee Sharpe), committed file",
+      "url": "https://github.com/nflverse/nfldata/blob/master/data/rosters.csv",
+      "fetchedCommit": "7aae940b6389125e272dec473765fd063866a4b3",
+      "fetchedUTC": "2026-11-13T11:45:21Z",
+      "tier": "secondary-open-source"
+    },
+    {
+      "id": "nfldata-teams",
+      "path": "nfl-lab/data/nfldata/teams.csv",
+      "title": "Team abbreviation crosswalk (NFL, ESPN, PFR, PFF)",
+      "source": "nflverse/nfldata repository (Lee Sharpe), committed file",
+      "url": "https://github.com/nflverse/nfldata/blob/master/data/teams.csv",
+      "fetchedCommit": "7aae940b6389125e272dec473765fd063866a4b3",
+      "fetchedUTC": "2026-11-13T11:45:21Z",
+      "tier": "secondary-open-source"
+    },
+    {
+      "id": "nfldata-win-totals",
+      "path": "nfl-lab/data/nfldata/win_totals.csv",
+      "title": "Preseason win totals, 2003-2026",
+      "source": "nflverse/nfldata repository (Lee Sharpe), committed file",
+      "url": "https://github.com/nflverse/nfldata/blob/master/data/win_totals.csv",
+      "fetchedCommit": "7aae940b6389125e272dec473765fd063866a4b3",
+      "fetchedUTC": "2026-11-13T11:45:21Z",
+      "tier": "secondary-open-source"
+    },
+    {
+      "id": "official-injuries-2026-w10",
+      "path": "nfl-lab/data/official/injuries-2026-w10.json",
+      "title": "Official NFL injury report, Week 10 2026 (all 32 clubs, player/position/injury/practice status/game status)",
+      "source": "NFL.com official injury report",
+      "url": "https://www.nfl.com/injuries/",
+      "fetchedUTC": "2026-11-13T13:15:00Z",
+      "tier": "official",
+      "note": "Fetched live with the Arena fetch tool on 2026-11-13; structured rows extracted verbatim from the published tables."
+    },
+    {
+      "id": "official-schedule-2026-w10",
+      "path": "nfl-lab/data/official/schedule-2026-w10.json",
+      "title": "Official NFL Week 10 2026 schedule and results",
+      "source": "NFL.com official by-week schedule",
+      "url": "https://www.nfl.com/schedules/2026/by-week/week-10/",
+      "tier": "official"
+    },
+    {
+      "id": "official-schedule-2026-w11",
+      "path": "nfl-lab/data/official/schedule-2026-w11.json",
+      "title": "Official NFL Week 11 2026 schedule",
+      "source": "NFL.com official by-week schedule",
+      "url": "https://www.nfl.com/schedules/2026/by-week/week-11/",
+      "tier": "official"
+    },
+    {
+      "id": "official-standings-2026",
+      "path": "nfl-lab/data/official/standings-2026.json",
+      "title": "Official NFL standings through Week 9 2026 (verification of derived records)",
+      "source": "NFL.com official standings",
+      "url": "https://www.nfl.com/standings/",
+      "tier": "official"
+    },
+    {
+      "id": "repo-nfl-2026-schedule",
+      "path": "official/nfl-2026.json",
+      "title": "All 321 NFL 2026 HOF/preseason/regular games with NFL.com game URLs (pre-existing repo asset)",
+      "source": "NFL.com official by-week schedule pages (fetched in CI by session ef8b5b30, 2026-11-02)",
+      "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "tier": "official-inherited"
+    }
+  ],
+  "officialReferencePages": [
+    {"title": "NFL.com injury report", "url": "https://www.nfl.com/injuries/"},
+    {"title": "NFL.com team stats", "url": "https://www.nfl.com/stats/team-stats/"},
+    {"title": "NFL.com player stats", "url": "https://www.nfl.com/stats/player-stats/"},
+    {"title": "NFL.com transactions", "url": "https://www.nfl.com/transactions/"},
+    {"title": "NFL Football Operations rulebook", "url": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook/"},
+    {"title": "NFL.com schedule by week", "url": "https://www.nfl.com/schedules/"},
+    {"title": "NFL.com standings", "url": "https://www.nfl.com/standings/"}
+  ]
+}

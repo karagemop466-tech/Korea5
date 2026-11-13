@@ -711,3 +711,9 @@ The first merged run's repository CI caught one generated local-link failure in 
 ### Parallel-session integration note (2026-11-13)
 
 After PR #37 was opened, `origin/main` advanced with the independent NFL strategy work (PRs #33–#35, session `arena-2cd43859`) that had not yet appeared in this branch's initial coordination snapshot. PR #37 was marked non-mergeable until synchronized. Merged `origin/main` into this branch and kept both workstreams: the earlier standalone `nfl-strategy.html` / `research/NFL-STRATEGY.md` report and this session's navigable `nfl-lab/` multi-page portal. No files or findings were discarded. Added a link from the new portal to the earlier memo. Rebuilt the combined site and reran checks; updated root link report is 12 pages, 201 local links, 528 external links, zero missing. The new NFL lab owns the dedicated Suggestions and Flagged review subpages and detailed data/correlation/lineup source register.
+
+### NFL3 branch/PR status (2026-11-13)
+
+- Synchronization: after integrating `origin/main`, a required `git pull --rebase origin arena/abf74fdd-korea5` attempted to replay already-merged session commits because this checkout is shallow and stopped on `COORDINATION.md`, `nfl.html` and link-report conflicts. Immediately ran `git rebase --abort`; no changes were discarded. Preserved the explicit merge commit, confirmed the remote session-branch tip was its ancestor, then pushed that merge commit normally. This deviation is recorded to avoid repeating the same destructive history rewrite.
+- PR #37: https://github.com/karagemop466-tech/Korea5/pull/37 — open; merged-main synchronization made it mergeable. Pull-request workflow `Planner certainty and site checks`, run **43432077147**, completed **successfully** after the combined build.
+- Pending at this entry: merge PR #37 and confirm the GitHub Pages deployment before marking NFL3 done; the live portal has not yet been claimed as deployed by this session.

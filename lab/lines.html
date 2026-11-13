@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lines &middot; NFL Lines &amp; Strategy Lab</title>
+<link rel="stylesheet" href="assets/lab.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="brand"><a href="index.html">NFL Lines &amp; Strategy Lab</a>
+    <span class="tag">2026 season &middot; snapshot 2026-11-13</span></div>
+  <nav class="nav" aria-label="Sections"><a href="index.html">Overview</a>
+<a href="requirements.html">Requirements</a>
+<a href="decisions.html">Decisions</a>
+<a href="suggestions.html">Suggestions</a>
+<a class="active" href="lines.html">Lines</a>
+<a href="signals.html">Signals</a>
+<a href="strategies.html">Strategies</a>
+<a href="leaderboard.html">Leaderboard</a>
+<a href="injuries.html">Injuries</a>
+<a href="teams.html">Teams</a>
+<a href="games.html">Game log</a>
+<a href="sources.html">Sources</a>
+<a href="flagged.html">Flagged</a>
+<a href="verify.html">Verify</a></nav>
+</header>
+<main id="main">
+<h1>Lines</h1>
+<p class="sub">Independently originated lines for the next slate, with the market columns deliberately blank.</p>
+<p class="banner"><strong>Verification rule.</strong> Every row on this site links to the official page it came from. Where an official source has not published a value the cell is left blank and the row is listed on the <a href="flagged.html">Flagged for Review</a> page. Nothing is inferred and nothing is filled in.</p>
+
+<h2>How these numbers are produced</h2>
+<table class="data-table">
+<thead><tr><th>Step</th><th>Rule</th><th>Value used</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>League scoring base: mean points per team per game across all completed games</td>
+<td class="num">22.96</td><td class="nowrap"><a class="src" href="https://www.nfl.com/standings/" target="_blank" rel="noopener">standings</a></td></tr>
+<tr><td>2</td><td>Each team's scoring and conceding rates, shrunk toward the league mean by 8 games of
+league-average performance (weight chosen inside each fold by leave-one-out error)</td>
+<td class="num">k = 8</td><td class="nowrap"><a class="src" href="https://www.nfl.com/standings/" target="_blank" rel="noopener">standings</a></td></tr>
+<tr><td>3</td><td>Expected points = (own scoring rate / base) &times; (opponent conceding rate / base) &times; base</td>
+<td class="wrap">multiplicative adjusted-scoring model</td><td class="nowrap"><a class="src" href="https://www.nfl.com/standings/" target="_blank" rel="noopener">standings</a></td></tr>
+<tr><td>4</td><td>Home-field constant added to the home team and subtracted from the away team; zero at neutral sites</td>
+<td class="num">0.47 pts</td><td class="nowrap"><a class="src" href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">schedule</a></td></tr>
+<tr><td>5</td><td>Win probability from a normal margin distribution with an in-fold estimated spread</td>
+<td class="num">&sigma; = 10.97 pts</td><td class="nowrap"><a class="src" href="https://www.nfl.com/standings/" target="_blank" rel="noopener">standings</a></td></tr>
+</tbody></table>
+
+<p class="banner"><strong>These are our own numbers, not market numbers.</strong> The spread, total and
+moneyline columns are empty because no official NFL source publishes betting prices. They are left blank and
+recorded as flag F07 rather than filled with an estimate. Until a quote archive exists, the model cannot be
+compared with a market line and no closing-line value or return can be computed.</p>
+
+<h3 id="week-10-originated-lines-games-not-yet-played-at-the-snapshot">Week 10 originated lines (games not yet played at the snapshot)</h3>
+<table class="data-table" data-filter="1" data-sourced="1">
+<thead><tr><th>Wk</th><th>Date / time (ET)</th><th>Net</th><th>Matchup</th><th>Model away pts</th><th>Model home pts</th><th>Model home margin</th><th>Model total</th><th>P(home win)</th><th>Market spread</th><th>Market total</th><th>Market moneyline</th><th>Venue</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>10</td><td class='nowrap'>2026-11-15 09:30</td><td>FOX</td><td>NE @ DET</td><td class='num'>23.6</td><td class='num'>25.4</td><td class='num'>1.8</td><td class='num'>48.9</td><td class='num'>0.566</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Neutral site</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/patriots-at-lions-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+<tr><td>10</td><td class='nowrap'>2026-11-15 13:00</td><td>CBS</td><td>KC @ ATL</td><td class='num'>24.9</td><td class='num'>19.7</td><td class='num'>-5.2</td><td class='num'>44.6</td><td class='num'>0.318</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Home field</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+<tr><td>10</td><td class='nowrap'>2026-11-15 13:00</td><td>FOX</td><td>HOU @ CLE</td><td class='num'>23.6</td><td class='num'>21.0</td><td class='num'>-2.7</td><td class='num'>44.6</td><td class='num'>0.404</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Home field</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/texans-at-browns-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+<tr><td>10</td><td class='nowrap'>2026-11-15 13:00</td><td>FOX</td><td>MIN @ GB</td><td class='num'>19.5</td><td class='num'>19.4</td><td class='num'>-0.1</td><td class='num'>39.0</td><td class='num'>0.495</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Home field</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/vikings-at-packers-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+<tr><td>10</td><td class='nowrap'>2026-11-15 13:00</td><td>CBS</td><td>MIA @ IND</td><td class='num'>21.2</td><td class='num'>22.8</td><td class='num'>1.6</td><td class='num'>44.0</td><td class='num'>0.558</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Home field</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/dolphins-at-colts-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+<tr><td>10</td><td class='nowrap'>2026-11-15 13:00</td><td>FOX</td><td>CAR @ NO</td><td class='num'>25.8</td><td class='num'>25.5</td><td class='num'>-0.3</td><td class='num'>51.3</td><td class='num'>0.489</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Home field</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/panthers-at-saints-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+<tr><td>10</td><td class='nowrap'>2026-11-15 13:00</td><td>CBS</td><td>BUF @ NYJ</td><td class='num'>28.4</td><td class='num'>21.9</td><td class='num'>-6.5</td><td class='num'>50.3</td><td class='num'>0.278</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Home field</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/bills-at-jets-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+<tr><td>10</td><td class='nowrap'>2026-11-15 13:00</td><td>FOX</td><td>JAX @ TEN</td><td class='num'>26.6</td><td class='num'>17.2</td><td class='num'>-9.4</td><td class='num'>43.9</td><td class='num'>0.195</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Home field</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/jaguars-at-titans-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+<tr><td>10</td><td class='nowrap'>2026-11-15 16:05</td><td>CBS</td><td>LA @ ARI</td><td class='num'>26.1</td><td class='num'>20.1</td><td class='num'>-5.9</td><td class='num'>46.2</td><td class='num'>0.294</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Home field</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/rams-at-cardinals-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+<tr><td>10</td><td class='nowrap'>2026-11-15 16:05</td><td>CBS</td><td>SEA @ LV</td><td class='num'>26.0</td><td class='num'>22.2</td><td class='num'>-3.8</td><td class='num'>48.2</td><td class='num'>0.364</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Home field</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+<tr><td>10</td><td class='nowrap'>2026-11-15 16:25</td><td>FOX</td><td>SF @ DAL</td><td class='num'>27.9</td><td class='num'>23.6</td><td class='num'>-4.3</td><td class='num'>51.5</td><td class='num'>0.348</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Home field</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+<tr><td>10</td><td class='nowrap'>2026-11-15 20:20</td><td>NBC</td><td>PIT @ CIN</td><td class='num'>22.0</td><td class='num'>23.9</td><td class='num'>1.9</td><td class='num'>45.8</td><td class='num'>0.569</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Home field</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/steelers-at-bengals-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+<tr><td>10</td><td class='nowrap'>2026-11-16 20:15</td><td>ESPN</td><td>LAC @ BAL</td><td class='num'>20.2</td><td class='num'>24.3</td><td class='num'>4.0</td><td class='num'>44.5</td><td class='num'>0.643</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td class="blank" title="Not published by any official source - left blank by policy">—</td><td>Home field</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/chargers-at-ravens-2026-reg-10" target="_blank" rel="noopener">game page</a> <a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">week page</a></td></tr>
+</tbody></table>
+
+</main>
+<footer><p>Static site generated by <code>lab/build.py</code> from official NFL sources.
+<a href="../index.html">Back to the main planner</a> &middot;
+<a href="sources.html">Sources</a> &middot; <a href="flagged.html">Flagged for review</a></p></footer>
+<script src="assets/lab.js"></script>
+</body>
+</html>

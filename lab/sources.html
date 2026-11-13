@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources &middot; NFL Lines &amp; Strategy Lab</title>
+<link rel="stylesheet" href="assets/lab.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="brand"><a href="index.html">NFL Lines &amp; Strategy Lab</a>
+    <span class="tag">2026 season &middot; snapshot 2026-11-13</span></div>
+  <nav class="nav" aria-label="Sections"><a href="index.html">Overview</a>
+<a href="requirements.html">Requirements</a>
+<a href="decisions.html">Decisions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="lines.html">Lines</a>
+<a href="signals.html">Signals</a>
+<a href="strategies.html">Strategies</a>
+<a href="leaderboard.html">Leaderboard</a>
+<a href="injuries.html">Injuries</a>
+<a href="teams.html">Teams</a>
+<a href="games.html">Game log</a>
+<a class="active" href="sources.html">Sources</a>
+<a href="flagged.html">Flagged</a>
+<a href="verify.html">Verify</a></nav>
+</header>
+<main id="main">
+<h1>Sources</h1>
+<p class="sub">The official pages every value on this site came from.</p>
+<p class="banner"><strong>Verification rule.</strong> Every row on this site links to the official page it came from. Where an official source has not published a value the cell is left blank and the row is listed on the <a href="flagged.html">Flagged for Review</a> page. Nothing is inferred and nothing is filled in.</p>
+
+<p>Every value on this site came from one of the pages below. All are official NFL domains.
+The registry also records what each source could <em>not</em> provide, which is what drives the flagged items.</p>
+<h3 id="official-source-registry">Official source registry</h3>
+<table class="data-table" data-filter="1" data-sourced="1">
+<thead><tr><th>ID</th><th>Source</th><th>What it provides</th><th>Verified</th><th>Notes and gaps</th><th>Link</th></tr></thead>
+<tbody>
+<tr><td>SRC-01</td><td>NFL.com standings</td><td class='wrap'>W, L, T, PCT, PF, PA, NET PTS, HOME, ROAD, DIV, CONF, STRK for all 32 clubs</td><td>2026-11-13</td><td class='wrap'>Four further columns printed on the page have no name in the page&#x27;s own LEGEND and are therefore omitted (flag F02).</td><td class="nowrap"><a class="src" href="https://www.nfl.com/standings/" target="_blank" rel="noopener">open official page</a></td></tr>
+<tr><td>SRC-02</td><td>NFL.com by-week schedule</td><td class='wrap'>Final scores, kickoff times, networks, neutral-site designation, bye teams for every week</td><td>2026-11-13</td><td class='wrap'>Weeks 1-10 retrieved. This is the source for all 137 game rows.</td><td class="nowrap"><a class="src" href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener">open official page</a></td></tr>
+<tr><td>SRC-03</td><td>NFL.com individual game pages</td><td class='wrap'>Per-game result and replay link; the row-level source URL for every game</td><td>2026-11-13</td><td class='wrap'>One URL per game, constructed from the official by-week page links.</td><td class="nowrap"><a class="src" href="https://www.nfl.com/games/commanders-at-giants-2026-reg-10" target="_blank" rel="noopener">open official page</a></td></tr>
+<tr><td>SRC-04</td><td>NFL.com official injury report</td><td class='wrap'>Player, position, injury, practice status and game status by club and week</td><td>2026-11-13</td><td class='wrap'>Week 10 report only. A week selector exists, so history is retrievable, but none has been archived (flag F03).</td><td class="nowrap"><a class="src" href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">open official page</a></td></tr>
+<tr><td>SRC-05</td><td>NFL.com team roster</td><td class='wrap'>Player, jersey number, position, roster status, height, weight, experience, college</td><td>2026-11-13</td><td class='wrap'>Verified to contain no depth-chart or string-order information.</td><td class="nowrap"><a class="src" href="https://www.nfl.com/teams/san-francisco-49ers/roster" target="_blank" rel="noopener">open official page</a></td></tr>
+<tr><td>SRC-06</td><td>NFL.com team statistics</td><td class='wrap'>Official team offensive, defensive and special-teams statistics with year and season-type selectors</td><td>2026-11-13</td><td class='wrap'>Retrieved and available. Not yet used as a model input.</td><td class="nowrap"><a class="src" href="https://www.nfl.com/stats/team-stats/" target="_blank" rel="noopener">open official page</a></td></tr>
+<tr><td>SRC-07</td><td>NFL.com player statistics</td><td class='wrap'>Official player statistics with category and year selectors</td><td>2026-11-13</td><td class='wrap'>The starting point for any future prop work; no prices here.</td><td class="nowrap"><a class="src" href="https://www.nfl.com/stats/player-stats/" target="_blank" rel="noopener">open official page</a></td></tr>
+<tr><td>SRC-08</td><td>NFL.com transactions</td><td class='wrap'>Official league transactions</td><td>2026-11-13</td><td class='wrap'>Linked as a source starting point for roster movement; not yet ingested.</td><td class="nowrap"><a class="src" href="https://www.nfl.com/transactions/" target="_blank" rel="noopener">open official page</a></td></tr>
+<tr><td>SRC-09</td><td>2026 Official Playing Rules (NFL PDF)</td><td class='wrap'>Official rulebook including Rule 16 overtime procedures</td><td>2026-11-13</td><td class='wrap'>Rules are official; bookmaker settlement rules are not and are not available (flag F06).</td><td class="nowrap"><a class="src" href="https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf" target="_blank" rel="noopener">open official page</a></td></tr>
+<tr><td>SRC-10</td><td>NFL flexible scheduling procedures</td><td class='wrap'>How and when late-season game times are fixed</td><td>2026-11-13</td><td class='wrap'>Relevant because Weeks 16-18 kickoff times are not final yet (flag F04).</td><td class="nowrap"><a class="src" href="https://www.nfl.com/legal/flexible-scheduling-procedures" target="_blank" rel="noopener">open official page</a></td></tr>
+</tbody></table>
+
+</main>
+<footer><p>Static site generated by <code>lab/build.py</code> from official NFL sources.
+<a href="../index.html">Back to the main planner</a> &middot;
+<a href="sources.html">Sources</a> &middot; <a href="flagged.html">Flagged for review</a></p></footer>
+<script src="assets/lab.js"></script>
+</body>
+</html>

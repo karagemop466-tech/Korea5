@@ -1,7 +1,7 @@
 {
  "meta": {
   "dataset": "NFL 2026 games captured from official nfl.com by-week pages (embedded payload)",
-  "retrievedUTC": "2026-11-13T14:11:18.858132+00:00",
+  "retrievedUTC": "2026-11-13T14:35:36.093669+00:00",
   "games": 291,
   "final": 132,
   "perWeek": {

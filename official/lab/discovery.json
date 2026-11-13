@@ -1,12 +1,12 @@
 {
  "meta": {
   "purpose": "Structural reconnaissance so parsers are developed against evidence, not guesses: which embedded payloads exist, which API URLs the page references, and the exact field names in each list.",
-  "retrievedUTC": "2026-11-13T14:11:27.672987+00:00"
+  "retrievedUTC": "2026-11-13T14:35:48.559236+00:00"
  },
  "injuries": {
   "url": "https://www.nfl.com/injuries/",
   "fetched": true,
-  "bytes": 398793,
+  "bytes": 398843,
   "payloadCount": 0,
   "payloadIndex": [],
   "apiUrls": [
@@ -43,7 +43,6 @@
   "relatedHrefs": [
    "/news/dolphins-place-qb-malik-willis-groin-on-injured-reserve-kyle-mccord-in-line-for-first-start",
    "/news/nfl-week-8-inactives-players-ruled-out-sunday-2026-season",
-   "/news/nfl-week-8-injury-report-2026-season",
    "/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
    "/news/nfl-week-9-injury-report-2026-season",
    "/news/notable-injuries-news-sunday-week-8-games-2026",
@@ -57,7 +56,7 @@
  "inactives": {
   "url": "https://www.nfl.com/inactives/",
   "fetched": true,
-  "bytes": 417389,
+  "bytes": 417453,
   "payloadCount": 0,
   "payloadIndex": [],
   "apiUrls": [
@@ -173,7 +172,7 @@
     "queryKey": "useFetchContentMixedBySlug",
     "largestList": 0,
     "lists": [],
-    "sample": "{\"items\": [], \"metadata\": {\"generatedAt\": \"2026-11-13T14:11:15.168Z\"}, \"pagination\": {\"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJsaW1pdCI6IjQwIiwib2Zmc2V0Ijo0MCwicXVlcnkiOnsibGltaXQiOiI0MCJ9fQ.MGJWsBM6nwlFeuKABWwPwp93siimFN3ZjcyuhyYBI30\"}}"
+    "sample": "{\"items\": [], \"metadata\": {\"generatedAt\": \"2026-11-13T14:34:33.176Z\"}, \"pagination\": {\"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJsaW1pdCI6IjQwIiwib2Zmc2V0Ijo0MCwicXVlcnkiOnsibGltaXQiOiI0MCJ9fQ.MGJWsBM6nwlFeuKABWwPwp93siimFN3ZjcyuhyYBI30\"}}"
    },
    {
     "queryKey": "useFetchContentMixedBySlug",

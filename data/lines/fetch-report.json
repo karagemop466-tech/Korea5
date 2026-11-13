@@ -1,5 +1,5 @@
 {
- "startedUTC": "2026-11-13T13:16:45.882714+00:00",
+ "startedUTC": "2026-11-13T13:18:31.506690+00:00",
  "sources": {
   "schedules": {
    "name": "NFL.com official schedule by-week pages",
@@ -27,12 +27,39 @@
   "boxscoreRows": 0,
   "injuryRows": 296,
   "injuryWeek": 10,
-  "depthCharts": 30,
+  "depthCharts": 3,
   "depthChartsMissing": [
-   "Green Bay Packers",
-   "Houston Texans"
+   "Arizona Cardinals",
+   "Atlanta Falcons",
+   "Baltimore Ravens",
+   "Buffalo Bills",
+   "Carolina Panthers",
+   "Chicago Bears",
+   "Cincinnati Bengals",
+   "Cleveland Browns",
+   "Dallas Cowboys",
+   "Denver Broncos",
+   "Houston Texans",
+   "Indianapolis Colts",
+   "Jacksonville Jaguars",
+   "Kansas City Chiefs",
+   "Las Vegas Raiders",
+   "Los Angeles Chargers",
+   "Los Angeles Rams",
+   "Miami Dolphins",
+   "Minnesota Vikings",
+   "New England Patriots",
+   "New Orleans Saints",
+   "New York Jets",
+   "Philadelphia Eagles",
+   "Pittsburgh Steelers",
+   "San Francisco 49ers",
+   "Seattle Seahawks",
+   "Tampa Bay Buccaneers",
+   "Tennessee Titans",
+   "Washington Commanders"
   ]
  },
  "failures": [],
- "finishedUTC": "2026-11-13T13:17:44.443444+00:00"
+ "finishedUTC": "2026-11-13T13:19:01.057503+00:00"
 }

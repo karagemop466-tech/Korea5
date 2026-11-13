@@ -1036,7 +1036,16 @@ def main():
             }
         gpage = get(r["sourceUrl"])
         if not gpage:
+            gap_context.setdefault(slug, {})["gamePageFetched"] = False
             continue
+        gap_context.setdefault(slug, {}).update({
+            "gamePageFetched": True,
+            "gamePageBytes": len(gpage),
+            "gamePageHasFinalWord": "FINAL" in gpage,
+            "gamePageScoreLike": re.findall(r"[A-Za-z'. ]{3,24}\s+\d{1,2}\s*[-–]\s*\d{1,2}", gpage)[:4],
+            "gamePageSrLabels": [x for x in re.findall(
+                r'<span[^>]*sr-only[^>]*>([^<]{6,160}?)</span>', gpage) if re.search(r"\d", x)][:6],
+        })
         a, h, st, how = game_page_scores(gpage, r["sourceUrl"], r.get("away") or "", r.get("home") or "")
         if a is None or h is None:
             continue

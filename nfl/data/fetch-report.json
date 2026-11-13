@@ -1,5 +1,5 @@
 {
- "startedUTC": "2026-11-13T13:14:35.925072Z",
+ "startedUTC": "2026-11-13T13:17:49.265472Z",
  "failures": [],
  "results": {
   "2026": 185,
@@ -10,11 +10,18 @@
   "2025": 5783
  },
  "depth": {
-  "rows": 1707,
-  "teams": 30,
+  "rows": 1762,
+  "teams": 31,
   "teamsMissing": [
-   "GB",
    "HOU"
+  ],
+  "missingReasons": [
+   {
+    "team": "HOU",
+    "url": "https://www.houstontexans.com/team/depth-chart",
+    "reason": "no parseable depth-chart table on the official page",
+    "imageOnly": false
+   }
   ]
  },
  "teamStats": {
@@ -35,5 +42,5 @@
   "teams": 32,
   "players": 2850
  },
- "finishedUTC": "2026-11-13T13:16:53.851369Z"
+ "finishedUTC": "2026-11-13T13:18:09.353440Z"
 }

@@ -1,7 +1,7 @@
 {
  "meta": {
   "sourceName": "NFL.com official by-week schedule pages",
-  "retrievedUTC": "2026-11-13T13:14:35.925072Z",
+  "retrievedUTC": "2026-11-13T13:17:49.265472Z",
   "note": "Only games whose official card reads FINAL are included. Scores are as printed by nfl.com; nothing is inferred.",
   "pages": [
    "https://www.nfl.com/schedules/2026/by-week/preseason-week-1",

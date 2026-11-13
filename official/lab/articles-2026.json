@@ -1,0 +1,1834 @@
+{
+ "meta": {
+  "dataset": "NFL.com official news articles for weekly injury reports and game-day inactives",
+  "retrievedUTC": "2026-11-13T13:23:16.231309+00:00",
+  "rows": 180,
+  "pagesParsed": 8,
+  "linksDiscovered": [
+   "https://www.nfl.com/news/dolphins-place-qb-malik-willis-groin-on-injured-reserve-kyle-mccord-in-line-for-first-start",
+   "https://www.nfl.com/news/rams-wr-puka-nacua-likely-to-be-placed-on-injured-reserve-with-turf-toe-sprained-mcl-and-pcl",
+   "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
+   "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+   "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "https://www.nfl.com/news/ravens-qb-tyler-huntley-out-for-season-turf-toe-injury",
+   "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "https://www.nfl.com/news/nfl-week-8-inactives-players-ruled-out-sunday-2026-season",
+   "https://www.nfl.com/news/week-8-injuries-sunday-pregame-2026-nfl-season",
+   "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "https://www.nfl.com/news/nfl-week-10-injury-report-2026-season"
+  ],
+  "failures": [
+   "https://www.nfl.com/news/dolphins-place-qb-malik-willis-groin-on-injured-reserve-kyle-mccord-in-line-for-first-start: no player list parsed",
+   "https://www.nfl.com/news/rams-wr-puka-nacua-likely-to-be-placed-on-injured-reserve-with-turf-toe-sprained-mcl-and-pcl: no player list parsed",
+   "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season: no player list parsed",
+   "https://www.nfl.com/news/ravens-qb-tyler-huntley-out-for-season-turf-toe-injury: no player list parsed",
+   "https://www.nfl.com/news/nfl-week-8-inactives-players-ruled-out-sunday-2026-season: no player list parsed"
+  ],
+  "sourceName": "NFL.com news article pages (league-published)",
+  "method": "Links are taken from nfl.com/injuries/ and nfl.com/inactives/ themselves; the page that carries no player list is recorded as a failure instead of being filled in."
+ },
+ "rows": [
+  {
+   "section": null,
+   "player": "Arizona Cardinals defensive lineman Roy Lopez was ruled out of Sunday's loss to Seattle.",
+   "position": null,
+   "note": "toe",
+   "playerUrl": "https://www.nfl.com/players/roy-lopez",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Chicago Bears defensive back Tyrique Stevenson did not return to Sunday's win against the Buccaneers. Wide receiver Luther Burden III suffered a concussion late in Sunday's loss.",
+   "position": null,
+   "note": "hand",
+   "playerUrl": "https://www.nfl.com/players/tyrique-stevenson",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Dallas Cowboys safety P.J. Locke suffered a concussion in Sunday's win over the Colts, head coach Brian Schottenheimer said . Tight end Jake Ferguson will undergo tests on his knee on Monday, per Schottenheimer.",
+   "position": null,
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/p-j-locke",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Denver Broncos wide receiver Jaylen Waddle and cornerback Riley Moss were ruled out after suffering concussions in the first half of Sunday's win over Carolina.",
+   "position": null,
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/jaylen-waddle",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Green Bay Packers running back Josh Jacobs suffered a fractured finger in the first quarter of Sunday's win over New England, head coach Matt LaFleur said. Jacobs did not return to the game, but LaFleur told reporters the team is hoping to find a way for him to play through the broken finger in the future. Linebacker Ty'Ron Hopper was ruled out.",
+   "position": null,
+   "note": "hand; chest",
+   "playerUrl": "https://www.nfl.com/players/josh-jacobs-x3315",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Indianapolis Colts linebacker Jaylon Carlies and offensive tackle Jalen Travis were ruled out of Sunday's loss to Dallas.",
+   "position": null,
+   "note": "neck; knee",
+   "playerUrl": "https://www.nfl.com/players/jaylon-carlies",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Kansas City Chiefs quarterback Patrick Mahomes suffered an elbow sprain in Sunday's win over the Jets but an MRI did not reveal a major injury, per NFL Network Insider Ian Rapoport, who added Mahomes' elbow will be monitored over the next few days for pain and swelling. Mahomes was able to re-enter the game following the injury, which took place in the second quarter. Wide receiver Xavier Worthy was ruled out. Offensive tackle Jaylon Moore did not return.",
+   "position": null,
+   "note": "hamstring; ankle",
+   "playerUrl": "https://www.nfl.com/players/patrick-mahomes",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Las Vegas Raiders guard Trey Zuhn III was ruled out of Sunday's loss to San Francisco.",
+   "position": null,
+   "note": "concussion",
+   "playerUrl": "https://www.nfl.com/players/trey-zuhn-iii",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Los Angeles Chargers quarterback Justin Herbert injured the middle finger on his left hand in Sunday's loss to Houston, head coach Jim Harbaugh said. Herbert, who was removed from the game while trailing, 41-15, told reporters he doesn't expect his finger to cause an issue moving forward. Wide receiver Ladd McConkey experienced back spasms during pregame warmups and did not play. Cornerback Isas Waxter was ruled out. Cornerback Cam Hart and defensive lineman Justin Eboigbe did not return.",
+   "position": null,
+   "note": "ankle; ankle; ankle",
+   "playerUrl": "https://www.nfl.com/players/justin-herbert",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Los Angeles Rams wide receiver Puka Nacua suffered a knee injury on the team's final offensive snap of Sunday's win over Washington and will undergo testing on Monday to determine the injury's severity, NFL Network Insider Mike Garafolo and ESPN's Adam Schefter reported . The Rams do not believe Nacua suffered a torn ACL, per Garafolo and Schefter. Offensive lineman Steve Avila was ruled out.",
+   "position": null,
+   "note": "hamstring",
+   "playerUrl": "https://www.nfl.com/players/puka-nacua",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Miami Dolphins quarterback Malik Willis told reporters after Sunday's loss to Detroit he was dealing with groin tightness.",
+   "position": null,
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/malik-willis",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "New England Patriots running back Rhamondre Stevenson , offensive lineman Ben Brown and safety Brenden Schooler were ruled out of Sunday's loss to Green Bay. Cornerback Carlton Davis and offensive tackle Will Campbell did not return.",
+   "position": null,
+   "note": "knee; knee; hamstring; knee; knee",
+   "playerUrl": "https://www.nfl.com/players/rhamondre-stevenson",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "New Orleans Saints center Erik McCoy did not return to Sunday's win over Cleveland.",
+   "position": null,
+   "note": "bicep",
+   "playerUrl": "https://www.nfl.com/players/erik-mccoy",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Philadelphia Eagles linebacker Zack Baun did not return to Sunday's loss to the Giants.",
+   "position": null,
+   "note": "back",
+   "playerUrl": "https://www.nfl.com/players/zack-baun",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "San Francisco 49ers defensive lineman Gracen Halton suffered a fractured ankle in Sunday's win over Las Vegas and is out for the season, head coach Kyle Shanahan said. Halton was carted off the field wearing an air cast late in the fourth quarter. Cornerbacks Renardo Green and Deommodore Lenoir did not return.",
+   "position": null,
+   "note": "back; foot",
+   "playerUrl": "https://www.nfl.com/players/gracen-halton",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Seattle Seahawks quarterback Drew Lock suffered an oblique injury in Sunday's win over Arizona and his availability is up in the air for Week 10, head coach Mike Macdonald said.",
+   "position": null,
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/drew-lock",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Tampa Bay Buccaneers safety Antoine Winfield Jr. was ruled out of Sunday night's loss against the Bears.",
+   "position": null,
+   "note": "ankle",
+   "playerUrl": "https://www.nfl.com/players/antoine-winfield-jr",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Washington Commanders center Lucas Patrick was ruled out of Sunday's loss to the Rams.",
+   "position": null,
+   "note": "concussion",
+   "playerUrl": "https://www.nfl.com/players/lucas-patrick",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-9-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 9 injuries to monitor for Sunday's games",
+   "player": "Kyle Monangai won't play Sunday against Tampa Bay, but is expected to return in Week 11 after Chicago's bye, NFL Network's Ian Rapoport reported.",
+   "position": "RB",
+   "note": "thumb/toe; questionable",
+   "playerUrl": "https://www.nfl.com/players/kyle-monangai",
+   "articleUrl": "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 9 injuries to monitor for Sunday's games",
+   "player": "Tyrique Stevenson should play Sunday vs. the Bucs, per Rapoport. Stevenson will play with a splint.",
+   "position": "CB",
+   "note": "thumb; questionable",
+   "playerUrl": "https://www.nfl.com/players/tyrique-stevenson",
+   "articleUrl": "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 9 injuries to monitor for Sunday's games",
+   "player": "Malik Muhammad should play against Tampa Bay, Rapoport reported.",
+   "position": "DB",
+   "note": "toe; questionable",
+   "playerUrl": "https://www.nfl.com/players/malik-muhammad",
+   "articleUrl": "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 9 injuries to monitor for Sunday's games",
+   "player": "Deshaun Watson is expected to be inactive Sunday against New Orleans despite clearing concussion protocol, NFL Network's Ian Rapoport reported. Watson is officially inactive.",
+   "position": "QB",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/deshaun-watson",
+   "articleUrl": "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 9 injuries to monitor for Sunday's games",
+   "player": "George Pickens is inactive for Sunday's game against Indianapolis.",
+   "position": "WR",
+   "note": "hamstring; questionable",
+   "playerUrl": "https://www.nfl.com/players/george-pickens",
+   "articleUrl": "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 9 injuries to monitor for Sunday's games",
+   "player": "DeMarvion Overshown inactive",
+   "position": "LB",
+   "note": "hamstring/back; questionable",
+   "playerUrl": "https://www.nfl.com/players/demarvion-overshown",
+   "articleUrl": "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 9 injuries to monitor for Sunday's games",
+   "player": "Joey Porter Jr. inactive",
+   "position": "CB",
+   "note": "ankle; questionable",
+   "playerUrl": "https://www.nfl.com/players/joey-porter-jr",
+   "articleUrl": "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 9 injuries to monitor for Sunday's games",
+   "player": "Amon-Ra St. Brown is expected to play Sunday against Miami, NFL Network's Ian Rapoport reported. St. Brown is officially active.",
+   "position": "WR",
+   "note": "ribs; questionable",
+   "playerUrl": "https://www.nfl.com/players/amon-ra-st-brown",
+   "articleUrl": "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 9 injuries to monitor for Sunday's games",
+   "player": "Jaylen Wright won't play Sunday against the Lions, NFL Network's Ian Rapoport reported. Wright is officially inactive.",
+   "position": "RB",
+   "note": "quad; questionable",
+   "playerUrl": "https://www.nfl.com/players/jaylen-wright",
+   "articleUrl": "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 9 injuries to monitor for Sunday's games",
+   "player": "Tanner McKee will be active and serve as Joe Milton III 's backup Sunday against the Giants, NFL Network's Ian Rapoport reported. McKee is officially active.",
+   "position": "QB",
+   "note": "ribs; questionable",
+   "playerUrl": "https://www.nfl.com/players/tanner-mckee",
+   "articleUrl": "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 9 injuries to monitor for Sunday's games",
+   "player": "Emeka Egbuka will play Sunday against Chicago, NFL Network's Ian Rapoport reported.",
+   "position": "WR",
+   "note": "foot; questionable",
+   "playerUrl": "https://www.nfl.com/players/emeka-egbuka",
+   "articleUrl": "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BENGALS",
+   "player": "OUT: S Kyle Dugger",
+   "position": null,
+   "note": "quadricep",
+   "playerUrl": "https://www.nfl.com/players/kyle-dugger",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BENGALS",
+   "player": "QUESTIONABLE: DE Cedric Johnson",
+   "position": null,
+   "note": "ankle/foot",
+   "playerUrl": "https://www.nfl.com/players/cedric-johnson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "FALCONS",
+   "player": "OUT: RB Brian Robinson , WR Zachariah Branch , OT Cameron Williams",
+   "position": null,
+   "note": "hamstring; hamstring; ankle",
+   "playerUrl": "https://www.nfl.com/players/brian-robinson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "FALCONS",
+   "player": "QUESTIONABLE: WR Beaux Collins , DE James Pearce Jr. , LB Yasir Abdullah , LB Divine Deablo",
+   "position": null,
+   "note": "hip; back; hamstring; forearm",
+   "playerUrl": "https://www.nfl.com/players/beaux-collins",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BRONCOS",
+   "player": "OUT: DL Eyioma Uwazurike , CB Kris Abrams-Draine , S Brandon Jones",
+   "position": null,
+   "note": "shoulder; ankle; hamstring",
+   "playerUrl": "https://www.nfl.com/players/eyioma-uwazurike",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BRONCOS",
+   "player": "QUESTIONABLE: WR Pat Bryant , OLB Dondrea Tillman , S Talanoa Hufanga",
+   "position": null,
+   "note": "ankle; hip; ankle",
+   "playerUrl": "https://www.nfl.com/players/pat-bryant",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PANTHERS",
+   "player": "OUT: G Damien Lewis , OLB Jaelan Phillips , LB Bobby Okereke , CB Will Lee III",
+   "position": null,
+   "note": "knee; hamstring; foot; hamstring",
+   "playerUrl": "https://www.nfl.com/players/damien-lewis",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PANTHERS",
+   "player": "QUESTIONABLE: OL Corey Bullock , OL Brady Christensen , OL Torricelli Simpkins III",
+   "position": null,
+   "note": "quad; hamstring; ankle",
+   "playerUrl": "https://www.nfl.com/players/corey-bullock",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COWBOYS",
+   "player": "OUT: WR KaVontae Turpin , LB Malachi Lawrence",
+   "position": null,
+   "note": "ribs; ankle",
+   "playerUrl": "https://www.nfl.com/players/kavontae-turpin",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COWBOYS",
+   "player": "QUESTIONABLE: WR George Pickens , TE Jake Ferguson , TE Luke Schoonmaker , DT Jonathan Bullard , LB Marist Liufau , LB DeMarvion Overshown , CB Joey Porter Jr.",
+   "position": null,
+   "note": "hamstring; ankle; groin; calf; forearm; hamstring/back; ankle",
+   "playerUrl": "https://www.nfl.com/players/george-pickens",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COLTS",
+   "player": "OUT: LB Akeem Davis-Gaither , CB Justin Walley , S A.J. Haulcy",
+   "position": null,
+   "note": "knee; knee; ankle",
+   "playerUrl": "https://www.nfl.com/players/akeem-davis-gaither",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COLTS",
+   "player": "QUESTIONABLE: OT Jalen Travis",
+   "position": null,
+   "note": "thumb, hamstring",
+   "playerUrl": "https://www.nfl.com/players/jalen-travis",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "JETS",
+   "player": "OUT: WR Garrett Wilson , LB Joseph Ossai , LB Trevin Wallace , CB Nahshon Wright , S VJ Payne",
+   "position": null,
+   "note": "concussion; ankle; groin; back; knee",
+   "playerUrl": "https://www.nfl.com/players/garrett-wilson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "JETS",
+   "player": "QUESTIONABLE: DL Harrison Phillips",
+   "position": null,
+   "note": "ankle",
+   "playerUrl": "https://www.nfl.com/players/harrison-phillips",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "CHIEFS",
+   "player": "OUT: DT Omarr Norman-Lott , DL Peter Woods , CB Mansoor Delane",
+   "position": null,
+   "note": "knee; neck; shoulder",
+   "playerUrl": "https://www.nfl.com/players/omarr-norman-lott",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "CHIEFS",
+   "player": "QUESTIONABLE: WR Nikko Remigio",
+   "position": null,
+   "note": "hip",
+   "playerUrl": "https://www.nfl.com/players/nikko-remigio",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "LIONS",
+   "player": "OUT: C Cade Mays , EDGE D.J. Wonnum , LB Jack Campbell , CB D.J. Reed , S Kerby Joseph",
+   "position": null,
+   "note": "ankle; concussion; neck; hip; knee",
+   "playerUrl": "https://www.nfl.com/players/cade-mays",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "LIONS",
+   "player": "QUESTIONABLE: RB Jacob Saylors , RB Sione Vaki , WR Amon-Ra St. Brown",
+   "position": null,
+   "note": "neck; ankle; rib",
+   "playerUrl": "https://www.nfl.com/players/jacob-saylors",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "DOLPHINS",
+   "player": "QUESTIONABLE: RB Kaytron Allen , RB Jaylen Wright , EDGE Malik Herring",
+   "position": null,
+   "note": "quad; quad; neck",
+   "playerUrl": "https://www.nfl.com/players/kaytron-allen",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BROWNS",
+   "player": "OUT: DT Maliek Collins",
+   "position": null,
+   "note": "elbow, illness",
+   "playerUrl": "https://www.nfl.com/players/maliek-collins",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BROWNS",
+   "player": "QUESTIONABLE: QB Deshaun Watson",
+   "position": null,
+   "note": "concussion",
+   "playerUrl": "https://www.nfl.com/players/deshaun-watson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "SAINTS",
+   "player": "OUT: RB CJ Donaldson",
+   "position": null,
+   "note": "shoulder, concussion",
+   "playerUrl": "https://www.nfl.com/players/cj-donaldson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "SAINTS",
+   "player": "QUESTIONABLE: WR Jordyn Tyson , OT Kelvin Banks Jr. , OT Asim Richards , CB Martin Emerson",
+   "position": null,
+   "note": "hamstring; ankle; thumb; shin",
+   "playerUrl": "https://www.nfl.com/players/jordyn-tyson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "GIANTS",
+   "player": "DOUBTFUL: RB Cam Skattebo",
+   "position": null,
+   "note": "hamstring",
+   "playerUrl": "https://www.nfl.com/players/cam-skattebo",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "GIANTS",
+   "player": "QUESTIONABLE: WR Charlie Jones",
+   "position": null,
+   "note": "hand",
+   "playerUrl": "https://www.nfl.com/players/charlie-jones-3",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "EAGLES",
+   "player": "OUT: WR Britain Covey , WR DeVonta Smith , WR Dontayvion Wicks , LB Jihaad Campbell , CB Jonathan Jones , DB Michael Carter II",
+   "position": null,
+   "note": "knee; hamstring; ankle; hamstring/quad; hamstring; abdomen",
+   "playerUrl": "https://www.nfl.com/players/britain-covey",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "EAGLES",
+   "player": "QUESTIONABLE: QB Tanner McKee",
+   "position": null,
+   "note": "rib",
+   "playerUrl": "https://www.nfl.com/players/tanner-mckee",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAMS",
+   "player": "OUT: TE Terrance Ferguson , CB Jaylen Watson",
+   "position": null,
+   "note": "ankle/hamstring; shoulder",
+   "playerUrl": "https://www.nfl.com/players/terrance-ferguson-2",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAMS",
+   "player": "DOUBTFUL: LS Joe Cardona",
+   "position": null,
+   "note": "ankle",
+   "playerUrl": "https://www.nfl.com/players/joe-cardona",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAMS",
+   "player": "QUESTIONABLE: WR Jordan Whittington , TE Colby Parkinson , LB Grant Stuard , CB Trent McDuffie , S Kamren Curl",
+   "position": null,
+   "note": "back; ribs; hamstring; back; foot",
+   "playerUrl": "https://www.nfl.com/players/jordan-whittington",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COMMANDERS",
+   "player": "OUT: WR Dyami Brown , WR Treylon Burks",
+   "position": null,
+   "note": "calf; foot",
+   "playerUrl": "https://www.nfl.com/players/dyami-brown",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "TEXANS",
+   "player": "OUT: RB David Montgomery , S Reed Blankenship",
+   "position": null,
+   "note": "groin; concussion/hand",
+   "playerUrl": "https://www.nfl.com/players/david-montgomery",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "CHARGERS",
+   "player": "OUT: CB Deane Leonard , S Kendall Williamson",
+   "position": null,
+   "note": "concussion; calf",
+   "playerUrl": "https://www.nfl.com/players/deane-leonard",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "CHARGERS",
+   "player": "QUESTIONABLE: WR Brenen Thompson , TE David Njoku , G Kayode Awosika , LB Denzel Perryman",
+   "position": null,
+   "note": "quad/hamstring; fibula; fibula; pectoral",
+   "playerUrl": "https://www.nfl.com/players/brenen-thompson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAIDERS",
+   "player": "OUT: DT Thomas Booker",
+   "position": null,
+   "note": "ankle",
+   "playerUrl": "https://www.nfl.com/players/thomas-booker",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAIDERS",
+   "player": "QUESTIONABLE: CB Darien Porter",
+   "position": null,
+   "note": "groin",
+   "playerUrl": "https://www.nfl.com/players/darien-porter-2",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "49ERS",
+   "player": "OUT: WR Mike Evans , WR Christian Kirk , WR Deebo Samuel",
+   "position": null,
+   "note": "Achilles; knee; hamstring",
+   "playerUrl": "https://www.nfl.com/players/mike-evans",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "49ERS",
+   "player": "QUESTIONABLE: CB Upton Stout , DB Nate Hobbs , DB Siran Neal",
+   "position": null,
+   "note": "shoulder; adductor; knee, foot",
+   "playerUrl": "https://www.nfl.com/players/upton-stout",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PACKERS",
+   "player": "OUT: TE Josh Whyle , OL Sean Rhyan , EDGE Micah Parsons , LB Zaire Franklin",
+   "position": null,
+   "note": "concussion, OL Travis Glover (knee; ankle; knee; shin",
+   "playerUrl": "https://www.nfl.com/players/josh-whyle",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PACKERS",
+   "player": "QUESTIONABLE: RB Chris Brooks , RB MarShawn Lloyd , CB Keisean Nixon",
+   "position": null,
+   "note": "ankle; knee; groin",
+   "playerUrl": "https://www.nfl.com/players/chris-brooks",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PATRIOTS",
+   "player": "OUT: RB TreVeyon Henderson , WR A.J. Brown",
+   "position": null,
+   "note": "illness; ankle/knee",
+   "playerUrl": "https://www.nfl.com/players/treveyon-henderson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PATRIOTS",
+   "player": "QUESTIONABLE: WR Mack Hollins , TE Hunter Henry , OT Morgan Moses , OL Greg Van Roten , CB Carlton Davis , S Kevin Byard , S Brenden Schooler",
+   "position": null,
+   "note": "calf; foot; foot; hamstring; neck; chest; hamstring",
+   "playerUrl": "https://www.nfl.com/players/mack-hollins",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "CARDINALS",
+   "player": "OUT: RB Bam Knight , OL Jon Gaines II , OL Jayden Williams",
+   "position": null,
+   "note": "concussion; ankle; knee",
+   "playerUrl": "https://www.nfl.com/players/bam-knight",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "CARDINALS",
+   "player": "QUESTIONABLE: OL Isaiah Adams , DL Walter Nolen , CB Max Melton",
+   "position": null,
+   "note": "ankle; ankle; knee",
+   "playerUrl": "https://www.nfl.com/players/isaiah-adams",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "SEAHAWKS",
+   "player": "OUT: QB Sam Darnold , WR Rashid Shaheed , OT Charles Cross , G Quenton Nelson , DT Brandon Pili , DT Leonard Williams , LB Uchenna Nwosu",
+   "position": null,
+   "note": "quadricep, ribs; knee; ankle; knee; back; stinger; ankle",
+   "playerUrl": "https://www.nfl.com/players/sam-darnold",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "SEAHAWKS",
+   "player": "QUESTIONABLE: LB Connor O'Toole",
+   "position": null,
+   "note": "foot",
+   "playerUrl": "https://www.nfl.com/players/connor-o-toole",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BUCCANEERS",
+   "player": "OUT: OLB YaYa Diaby",
+   "position": null,
+   "note": "knee",
+   "playerUrl": "https://www.nfl.com/players/yaya-diaby",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BUCCANEERS",
+   "player": "QUESTIONABLE: WR Emeka Egbuka",
+   "position": null,
+   "note": "foot",
+   "playerUrl": "https://www.nfl.com/players/emeka-egbuka",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BEARS",
+   "player": "QUESTIONABLE: RB Kyle Monangai , DB Malik Muhammad , DB Tyrique Stevenson",
+   "position": null,
+   "note": "thumb/toe; toe; thumb",
+   "playerUrl": "https://www.nfl.com/players/kyle-monangai",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BILLS",
+   "player": "OUT: WR Josh Palmer",
+   "position": null,
+   "note": "hamstring",
+   "playerUrl": "https://www.nfl.com/players/josh-palmer",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BILLS",
+   "player": "QUESTIONABLE: WR Tyrell Shavers , OL Alec Anderson , OT Dion Dawkins , DL Greg Gaines , DB Jordan Hancock",
+   "position": null,
+   "note": "knee; ankle; rib; calf; hamstring",
+   "playerUrl": "https://www.nfl.com/players/tyrell-shavers",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "VIKINGS",
+   "player": "OUT: QB Kyler Murray , RB Demond Claiborne , WR Jauan Jennings",
+   "position": null,
+   "note": "hamstring; knee; calf",
+   "playerUrl": "https://www.nfl.com/players/kyler-murray",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "VIKINGS",
+   "player": "QUESTIONABLE: S Theo Jackson , S Jay Ward",
+   "position": null,
+   "note": "quad; knee",
+   "playerUrl": "https://www.nfl.com/players/theo-jackson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "JAGUARS",
+   "player": "QUESTIONABLE: RB Bhayshul Tuten , DE Travon Walker",
+   "position": null,
+   "note": "ankle/foot; rib",
+   "playerUrl": "https://www.nfl.com/players/bhayshul-tuten",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAVENS",
+   "player": "OUT: QB Tyler Huntley , QB Lamar Jackson , S Jaylinn Hawkins",
+   "position": null,
+   "note": "toe; right thumb; knee",
+   "playerUrl": "https://www.nfl.com/players/tyler-huntley",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAVENS",
+   "player": "QUESTIONABLE: RB Adam Randall , CB Nate Wiggins",
+   "position": null,
+   "note": "neck; stringer/illness",
+   "playerUrl": "https://www.nfl.com/players/adam-randall",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Arizona Cardinals quarterback Gardner Minshew replaced Jacoby Brissett in the second half of Sunday's win over Dallas. Brissett was 10 of 23 for 119 yards and an interception at the time of his benching with Arizona trailing 17-3. Running back Jeremiyah Love left early and did not return. Running back Bam Knight and wide receiver Kendrick Bourne were ruled out.",
+   "position": null,
+   "note": "ankle; concussion; ankle",
+   "playerUrl": "https://www.nfl.com/players/gardner-minshew",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Baltimore Ravens quarterback Lamar Jackson was ruled out from Sunday's game against Buffalo. Jackson needs surgery on his injured thumb and will be placed on injured reserve, coach Jesse Minter said after the game. QB Tyler Huntley was also ruled out and suffered what is thought to be a turf-toe injury, per ESPN's Adam Schefter . Huntley is expected to undergo an MRI on Monday, Schefter reported.",
+   "position": null,
+   "note": "right thumb",
+   "playerUrl": "https://www.nfl.com/players/lamar-jackson",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Buffalo Bills wide receiver Josh Palmer was ruled out of Sunday's win over Baltimore.",
+   "position": null,
+   "note": "hamstring",
+   "playerUrl": "https://www.nfl.com/players/josh-palmer",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Cincinnati Bengals defensive end Cashius Howell and defensive end Cedric Johnson were ruled out of Sunday's win over Tennessee.",
+   "position": null,
+   "note": "right wrist; left ankle",
+   "playerUrl": "https://www.nfl.com/players/cashius-howell",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Cleveland Browns defensive tackle Maliek Collins did not return to Sunday's loss to Pittsburgh.",
+   "position": null,
+   "note": "elbow",
+   "playerUrl": "https://www.nfl.com/players/maliek-collins",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Dallas Cowboys tight end Jake Ferguson was ruled out of Sunday's loss to Arizona. Cornerback Joey Porter Jr. did not return, while safety Caleb Downs was evaluated for a concussion and ruled out.",
+   "position": null,
+   "note": "ankle; ankle",
+   "playerUrl": "https://www.nfl.com/players/jake-ferguson",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Detroit Lions linebacker Jack Campbell was transported to a local hospital to be evaluated for a neck injury suffered in the second half of Sunday's win over Minnesota. The team announced Campbell is resting and will remain in the hospital on Sunday night for continued evaluation and monitoring. Campbell left the field on a stretcher after suffering the injury. Center Cade Mays , running back Jacob Saylors , edge rusher D.J. Wonnum and safety Brian Branch also were ruled out. Cornerback D.J. Reed did not return.",
+   "position": null,
+   "note": "ankle; neck; concussion; concussion; hip",
+   "playerUrl": "https://www.nfl.com/players/jack-campbell-3",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Jacksonville Jaguars defensive tackle DaVon Hamilton and safety Eric Murray were ruled out from Sunday's win over Indianapolis.",
+   "position": null,
+   "note": "knee; elbow",
+   "playerUrl": "https://www.nfl.com/players/davon-hamilton",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Kansas City Chiefs defensive lineman Peter Woods was ruled out of Sunday's loss to the Broncos.",
+   "position": null,
+   "note": "neck",
+   "playerUrl": "https://www.nfl.com/players/peter-woods",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Las Vegas Raiders cornerback Darien Porter was ruled out of Sunday's win over the Jets.",
+   "position": null,
+   "note": "groin",
+   "playerUrl": "https://www.nfl.com/players/darien-porter-2",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Los Angeles Rams cornerback Jaylen Watson was ruled out of Sunday's win over the Chargers. Cornerback Trent McDuffie did not return to the game.",
+   "position": null,
+   "note": "shoulder; back",
+   "playerUrl": "https://www.nfl.com/players/jaylen-watson",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Minnesota Vikings safety Theo Jackson was ruled out of Sunday's loss to Detroit.",
+   "position": null,
+   "note": "quad",
+   "playerUrl": "https://www.nfl.com/players/theo-jackson",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Philadelphia Eagles defensive back Michael Carter II did not return to Sunday night's loss against the Commanders.",
+   "position": null,
+   "note": "abdomen",
+   "playerUrl": "https://www.nfl.com/players/michael-carter-ii",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Tampa Bay Buccaneers linebacker YaYa Diaby was ruled out of Sunday's win over Atlanta.",
+   "position": null,
+   "note": "knee",
+   "playerUrl": "https://www.nfl.com/players/yaya-diaby",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": null,
+   "player": "Washington Commanders running back Jeremy McNichols did not return to Sunday night's win against the Eagles.",
+   "position": null,
+   "note": "foot",
+   "playerUrl": "https://www.nfl.com/players/jeremy-mcnichols",
+   "articleUrl": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 8 injuries to monitor for Sunday's games",
+   "player": "DJ Moore is expected to play Sunday against Baltimore, ESPN's Adam Schefter reported. Moore is active.",
+   "position": "WR",
+   "note": "shoulder; questionable",
+   "playerUrl": "https://www.nfl.com/players/d-j-moore",
+   "articleUrl": "https://www.nfl.com/news/week-8-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 8 injuries to monitor for Sunday's games",
+   "player": "George Pickens is expected to play Sunday against the Cardinals, ESPN's Adam Schefter reported. Pickens is active.",
+   "position": "WR",
+   "note": "shoulder/hamstring; questionable",
+   "playerUrl": "https://www.nfl.com/players/george-pickens",
+   "articleUrl": "https://www.nfl.com/news/week-8-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 8 injuries to monitor for Sunday's games",
+   "player": "Jaylen Waddle is trending toward playing Sunday against Kansas City, NFL Network's Ian Rapoport reported.",
+   "position": "WR",
+   "note": "chest; questionable",
+   "playerUrl": "https://www.nfl.com/players/jaylen-waddle",
+   "articleUrl": "https://www.nfl.com/news/week-8-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 8 injuries to monitor for Sunday's games",
+   "player": "Jakobi Meyers will play Sunday against Indianapolis, NFL Network's Ian Rapoport reported. Meyers is active.",
+   "position": "WR",
+   "note": "hamstring/ankle; questionable",
+   "playerUrl": "https://www.nfl.com/players/jakobi-meyers",
+   "articleUrl": "https://www.nfl.com/news/week-8-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 8 injuries to monitor for Sunday's games",
+   "player": "Breece Hall is not expected to play Sunday against Las Vegas, NFL Network's Ian Rapoport reported. Hall is inactive.",
+   "position": "RB",
+   "note": "quad; questionable",
+   "playerUrl": "https://www.nfl.com/players/breece-hall",
+   "articleUrl": "https://www.nfl.com/news/week-8-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 8 injuries to monitor for Sunday's games",
+   "player": "Kenneth Gainwell is expected to play against Atlanta, ESPN's Jeremy Fowler reported. Gainwell is active.",
+   "position": "RB",
+   "note": "hip; questionable",
+   "playerUrl": "https://www.nfl.com/players/kenneth-gainwell",
+   "articleUrl": "https://www.nfl.com/news/week-8-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 8 injuries to monitor for Sunday's games",
+   "player": "Calvin Ridley is expected to play Sunday vs. the Bengals, NFL Network's Ian Rapoport reported. Ridley is active.",
+   "position": "WR",
+   "note": "hip; questionable",
+   "playerUrl": "https://www.nfl.com/players/calvin-ridley",
+   "articleUrl": "https://www.nfl.com/news/week-8-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "NFL Week 8 injuries to monitor for Sunday's games",
+   "player": "Treylon Burks is expected to play against Philadelphia, ESPN's Adam Schefter reported.",
+   "position": "WR",
+   "note": "foot; questionable",
+   "playerUrl": "https://www.nfl.com/players/treylon-burks",
+   "articleUrl": "https://www.nfl.com/news/week-8-injuries-sunday-pregame-2026-nfl-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAVENS",
+   "player": "OUT: G Olaivavega Ioane , S Jaylinn Hawkins",
+   "position": null,
+   "note": "knee; knee",
+   "playerUrl": "https://www.nfl.com/players/olaivavega-ioane",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAVENS",
+   "player": "QUESTIONABLE: RB Adam Randall , CB T.J. Tampa",
+   "position": null,
+   "note": "neck; knee",
+   "playerUrl": "https://www.nfl.com/players/adam-randall",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BILLS",
+   "player": "OUT: WR Tyrell Shavers",
+   "position": null,
+   "note": "knee",
+   "playerUrl": "https://www.nfl.com/players/tyrell-shavers",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BILLS",
+   "player": "QUESTIONABLE: WR DJ Moore , TE Dalton Kincaid , OT Spencer Brown , DL Greg Gaines , LB TJ Parker , CB Dee Alford",
+   "position": null,
+   "note": "shoulder; chest; back; calf; knee",
+   "playerUrl": "https://www.nfl.com/players/d-j-moore",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "TITANS",
+   "player": "OUT: RB Tyjae Spears , WR Carnell Tate , P Tommy Townsend",
+   "position": null,
+   "note": "knee; shoulder; left knee",
+   "playerUrl": "https://www.nfl.com/players/tyjae-spears",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "TITANS",
+   "player": "QUESTIONABLE: WR Calvin Ridley , DL John Franklin-Myers , LB Dorian Mausi , CB Jaylon Jones",
+   "position": null,
+   "note": "hip; groin/back; foot; knee",
+   "playerUrl": "https://www.nfl.com/players/calvin-ridley",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BENGALS",
+   "player": "OUT: S Kyle Dugger",
+   "position": null,
+   "note": "quadricep",
+   "playerUrl": "https://www.nfl.com/players/kyle-dugger",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BENGALS",
+   "player": "QUESTIONABLE: LB Joe Giles-Harris",
+   "position": null,
+   "note": "calf",
+   "playerUrl": "https://www.nfl.com/players/joe-giles-harris",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "CARDINALS",
+   "player": "OUT: OL Jon Gaines II , DL Walter Nolen",
+   "position": null,
+   "note": "ankle; ankle",
+   "playerUrl": "https://www.nfl.com/players/jon-gaines-ii",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "CARDINALS",
+   "player": "QUESTIONABLE: OL Hjalte Froholdt , CB Max Melton , S Andrew Wingard",
+   "position": null,
+   "note": "knee; knee; knee",
+   "playerUrl": "https://www.nfl.com/players/hjalte-froholdt",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COWBOYS",
+   "player": "OUT: WR KaVontae Turpin , LB Dee Winters",
+   "position": null,
+   "note": "ribs; calf",
+   "playerUrl": "https://www.nfl.com/players/kavontae-turpin",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COWBOYS",
+   "player": "QUESTIONABLE: WR George Pickens , TE Luke Schoonmaker , DT Jonathan Bullard , DT Kenny Clark , OLB Marist Liufau , S P.J. Locke",
+   "position": null,
+   "note": "shoulder/hamstring; groin; calf; back; forearm; foot",
+   "playerUrl": "https://www.nfl.com/players/george-pickens",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "VIKINGS",
+   "player": "QUESTIONABLE: S Jay Ward",
+   "position": null,
+   "note": "knee",
+   "playerUrl": "https://www.nfl.com/players/jay-ward",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "LIONS",
+   "player": "OUT: S Kerby Joseph",
+   "position": null,
+   "note": "knee",
+   "playerUrl": "https://www.nfl.com/players/kerby-joseph",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "LIONS",
+   "player": "QUESTIONABLE: CB Roger McCreary",
+   "position": null,
+   "note": "foot",
+   "playerUrl": "https://www.nfl.com/players/roger-mccreary",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COLTS",
+   "player": "OUT: WR Anthony Gould , CB Justin Walley",
+   "position": null,
+   "note": "concussion; knee",
+   "playerUrl": "https://www.nfl.com/players/anthony-gould",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COLTS",
+   "player": "QUESTIONABLE: TE Andrew Ogletree , LB Bryce Boettcher",
+   "position": null,
+   "note": "knee; groin",
+   "playerUrl": "https://www.nfl.com/players/andrew-ogletree",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "JAGUARS",
+   "player": "OUT: S Antonio Johnson",
+   "position": null,
+   "note": "ankle",
+   "playerUrl": "https://www.nfl.com/players/antonio-johnson-2",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "JAGUARS",
+   "player": "QUESTIONABLE: WR Jakobi Meyers",
+   "position": null,
+   "note": "hamstring/ankle",
+   "playerUrl": "https://www.nfl.com/players/jakobi-meyers",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAIDERS",
+   "player": "OUT: TE Carter Runyon , DE Patrick Johnson",
+   "position": null,
+   "note": "foot; stinger",
+   "playerUrl": "https://www.nfl.com/players/carter-runyon-2",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAIDERS",
+   "player": "QUESTIONABLE: WR Jack Bech , OL Jackson Powers-Johnson",
+   "position": null,
+   "note": "forearm; back",
+   "playerUrl": "https://www.nfl.com/players/jack-bech",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "JETS",
+   "player": "OUT: OL Max Mitchell , DL T'Vondre Sweat , LB Joseph Ossai",
+   "position": null,
+   "note": "concussion; knee; ankle",
+   "playerUrl": "https://www.nfl.com/players/max-mitchell",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "JETS",
+   "player": "DOUBTFUL: LB David Bailey",
+   "position": null,
+   "note": "groin",
+   "playerUrl": "https://www.nfl.com/players/david-bailey-2",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "JETS",
+   "player": "QUESTIONABLE: RB Breece Hall , OL Dylan Parham",
+   "position": null,
+   "note": "quad; knee",
+   "playerUrl": "https://www.nfl.com/players/breece-hall",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BROWNS",
+   "player": "QUESTIONABLE: CB Myles Harden , S Daniel Thomas",
+   "position": null,
+   "note": "hamstring; ankle",
+   "playerUrl": "https://www.nfl.com/players/myles-harden",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "STEELERS",
+   "player": "OUT: CB Brandin Echols , DB Doneiko Slaughter",
+   "position": null,
+   "note": "hamstring; hamstring",
+   "playerUrl": "https://www.nfl.com/players/brandin-echols",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "STEELERS",
+   "player": "QUESTIONABLE: CB Ben Skowronek",
+   "position": null,
+   "note": "calf",
+   "playerUrl": "https://www.nfl.com/players/ben-skowronek",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "FALCONS",
+   "player": "OUT: RB Brian Robinson , WR Beaux Collins , OT Cameron Williams , LB Divine Deablo , DB Billy Bowman Jr.",
+   "position": null,
+   "note": "hamstring; hip; ankle; forearm; hamstring",
+   "playerUrl": "https://www.nfl.com/players/brian-robinson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "FALCONS",
+   "player": "QUESTIONABLE: WR Olamide Zaccheaus , DE Samson Ebukam , DE Charles Snowden , CB Avieon Terrell ,",
+   "position": null,
+   "note": "shoulder; hamstring; back; illness",
+   "playerUrl": "https://www.nfl.com/players/olamide-zaccheaus",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BUCCANEERS",
+   "player": "OUT: WR Emeka Egbuka",
+   "position": null,
+   "note": "foot",
+   "playerUrl": "https://www.nfl.com/players/emeka-egbuka",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BUCCANEERS",
+   "player": "QUESTIONABLE: RB Kenneth Gainwell , OT Luke Goedeke",
+   "position": null,
+   "note": "hip; calf",
+   "playerUrl": "https://www.nfl.com/players/kenneth-gainwell",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "CHARGERS",
+   "player": "OUT: WR Brenen Thompson , G Kayode Awosika , S Derwin James , DB Deane Leonard",
+   "position": null,
+   "note": "quad/hamstring; fibula; hamstring; concussion",
+   "playerUrl": "https://www.nfl.com/players/brenen-thompson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "CHARGERS",
+   "player": "QUESTIONABLE: CB Donte Jackson , CB Rodney Shelley",
+   "position": null,
+   "note": "hamstring; hamstring",
+   "playerUrl": "https://www.nfl.com/players/donte-jackson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAMS",
+   "player": "DOUBTFUL: LS Joe Cardona",
+   "position": null,
+   "note": "ankle",
+   "playerUrl": "https://www.nfl.com/players/joe-cardona",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "RAMS",
+   "player": "QUESTIONABLE: TE Colby Parkinson , OL Coleman Shelton , CB Trent McDuffie",
+   "position": null,
+   "note": "rib; hip; groin",
+   "playerUrl": "https://www.nfl.com/players/colby-parkinson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "CHIEFS",
+   "player": "OUT: DT Omarr Norman-Lott , CB Mansoor Delane , CB L'Jarius Sneed",
+   "position": null,
+   "note": "knee; shoulder; knee",
+   "playerUrl": "https://www.nfl.com/players/omarr-norman-lott",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "CHIEFS",
+   "player": "QUESTIONABLE: DE R Mason Thomas",
+   "position": null,
+   "note": "personal",
+   "playerUrl": "https://www.nfl.com/players/r-mason-thomas",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BRONCOS",
+   "player": "OUT: RB RJ Harvey , S Talanoa Hufanga",
+   "position": null,
+   "note": "knee; ankle",
+   "playerUrl": "https://www.nfl.com/players/rj-harvey",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BRONCOS",
+   "player": "QUESTIONABLE: WR Jaylen Waddle , OT Garett Bolles , DL Zach Allen , S Brandon Jones",
+   "position": null,
+   "note": "chest; hip; hamstring; hamstring",
+   "playerUrl": "https://www.nfl.com/players/jaylen-waddle",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PATRIOTS",
+   "player": "OUT: RB TreVeyon Henderson , WR A.J. Brown",
+   "position": null,
+   "note": "illness; ankle/knee, OT Marcus Bryant (ankle",
+   "playerUrl": "https://www.nfl.com/players/treveyon-henderson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PATRIOTS",
+   "player": "QUESTIONABLE: LB Christian Elliss , CB Carlton Davis",
+   "position": null,
+   "note": "chest; neck",
+   "playerUrl": "https://www.nfl.com/players/christian-elliss",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "DOLPHINS",
+   "player": "OUT: OL Kadyn Proctor",
+   "position": null,
+   "note": "concussion",
+   "playerUrl": "https://www.nfl.com/players/kadyn-proctor",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "DOLPHINS",
+   "player": "QUESTIONABLE: CB Julius Brents , CB Reese Taylor",
+   "position": null,
+   "note": "neck/concussion; quad",
+   "playerUrl": "https://www.nfl.com/players/julius-brents",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "EAGLES",
+   "player": "OUT: WR Britain Covey , WR DeVonta Smith , WR Dontayvion Wicks , LB Jihaad Campbell , CB Jakorian Bennett , CB Jonathan Jones",
+   "position": null,
+   "note": "knee; hamstring; ankle; hamstring/quad; knee; hamstring",
+   "playerUrl": "https://www.nfl.com/players/britain-covey",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COMMANDERS",
+   "player": "OUT: DT Javon Kinlaw , DT Jer'Zhan Newton , DT Daron Payne",
+   "position": null,
+   "note": "knee; pectoral; foot",
+   "playerUrl": "https://www.nfl.com/players/javon-kinlaw",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COMMANDERS",
+   "player": "QUESTIONABLE: WR Treylon Burks , TE John Bates",
+   "position": null,
+   "note": "foot; shoulder",
+   "playerUrl": "https://www.nfl.com/players/treylon-burks",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BEARS",
+   "player": "OUT: RB Kyle Monangai",
+   "position": null,
+   "note": "thumb/toe",
+   "playerUrl": "https://www.nfl.com/players/kyle-monangai",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "BEARS",
+   "player": "QUESTIONABLE: LB D'Marco Jackson , DB Malik Muhammad",
+   "position": null,
+   "note": "ankle; toe",
+   "playerUrl": "https://www.nfl.com/players/d-marco-jackson",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "SEAHAWKS",
+   "player": "OUT: RB Velus Jones , WR Rashid Shaheed , OT Charles Cross",
+   "position": null,
+   "note": "hamstring; knee; ankle",
+   "playerUrl": "https://www.nfl.com/players/velus-jones",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "SEAHAWKS",
+   "player": "DOUBTFUL: LB Uchenna Nwosu",
+   "position": null,
+   "note": "ankle",
+   "playerUrl": "https://www.nfl.com/players/uchenna-nwosu",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "SEAHAWKS",
+   "player": "QUESTIONABLE: QB Drew Lock , G Anthony Bradford , DT Brandon Pili , LB Patrick O'Connell",
+   "position": null,
+   "note": "right elbow; knee; back; toe",
+   "playerUrl": "https://www.nfl.com/players/drew-lock",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PANTHERS",
+   "player": "OUT: G Damien Lewis , OL Torricelli Simpkins III , OLB Jaelan Phillips , CB Akayleb Evans",
+   "position": null,
+   "note": "knee; ankle; hamstring; triceps/knee",
+   "playerUrl": "https://www.nfl.com/players/damien-lewis",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PANTHERS",
+   "player": "QUESTIONABLE: DT Bobby Brown III",
+   "position": null,
+   "note": "hand",
+   "playerUrl": "https://www.nfl.com/players/bobby-brown-iii",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PACKERS",
+   "player": "OUT: OL Travis Glover , OL Sean Rhyan , LB Zaire Franklin",
+   "position": null,
+   "note": "knee; ankle; shin",
+   "playerUrl": "https://www.nfl.com/players/travis-glover",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PACKERS",
+   "player": "QUESTIONABLE: WR Matthew Golden , EDGE Brenton Cox , DT Anthony Campbell , DT Devonte Wyatt , CB Keisean Nixon",
+   "position": null,
+   "note": "shoulder/foot; quadricep; ankle; ankle; shoulder",
+   "playerUrl": "https://www.nfl.com/players/matthew-golden",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-8-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COMMANDERS",
+   "player": "Athan Kaliakmanis",
+   "position": "QB",
+   "note": "emergency third QB",
+   "playerUrl": "https://www.nfl.com/players/athan-kaliakmanis",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COMMANDERS",
+   "player": "Colson Yankoff",
+   "position": "TE",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/colson-yankoff",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COMMANDERS",
+   "player": "Lucas Patrick",
+   "position": "C",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/lucas-patrick",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COMMANDERS",
+   "player": "Isaac Yiadom",
+   "position": "CB",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/isaac-yiadom",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COMMANDERS",
+   "player": "Ricky Barber",
+   "position": "DT",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/ricky-barber",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COMMANDERS",
+   "player": "Tanoa Togiai",
+   "position": "G",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/tanoa-togiai",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "GIANTS",
+   "player": "Paulson Adebo",
+   "position": "CB",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/paulson-adebo",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "GIANTS",
+   "player": "Nikko Reed",
+   "position": "CB",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/nikko-reed",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "GIANTS",
+   "player": "Malik Harrison",
+   "position": "LB",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/malik-harrison",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "GIANTS",
+   "player": "Josh Sills",
+   "position": "OL",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/josh-sills",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "GIANTS",
+   "player": "J.C. Davis",
+   "position": "OL",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/j-c-davis",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "GIANTS",
+   "player": "Thomas Fidone II",
+   "position": "TE",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/thomas-fidone-ii",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "GIANTS",
+   "player": "Basil Okoye",
+   "position": "DL",
+   "note": null,
+   "playerUrl": "https://www.nfl.com/players/basil-okoye",
+   "articleUrl": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "COMMANDERS",
+   "player": "OUT: TE Colson Yankoff , C Lucas Patrick",
+   "position": null,
+   "note": "knee; concussion",
+   "playerUrl": "https://www.nfl.com/players/colson-yankoff",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-10-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "GIANTS",
+   "player": "QUESTIONABLE: LB Malik Harrison",
+   "position": null,
+   "note": "groin",
+   "playerUrl": "https://www.nfl.com/players/malik-harrison",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-10-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "PATRIOTS",
+   "player": "OUT: OL Ben Brown , CB Carlton Davis , RB TreVeyon Henderson",
+   "position": null,
+   "note": "knee; knee; illness",
+   "playerUrl": "https://www.nfl.com/players/ben-brown-2",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-10-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  },
+  {
+   "section": "LIONS",
+   "player": "OUT: S Kerby Joseph , C Cade Mays , CB D.J. Reed",
+   "position": null,
+   "note": "knee; ankle; hip",
+   "playerUrl": "https://www.nfl.com/players/kerby-joseph",
+   "articleUrl": "https://www.nfl.com/news/nfl-week-10-injury-report-2026-season",
+   "sourceName": "NFL.com official news article (injury report / inactives)",
+   "verification": "verified"
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions · Review Before Implementing · NFL Lines Origination · Korea5</title>
+<meta name="description" content="Suggestions section: site-improvement and strategy suggestions that someone can review and choose the best path from before implementing any changes. Includes review workflow and decision gate.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES / ORIGINATION</div>
+  <nav class="main"><a href="index.html">Dashboard</a><a href="nfl-lines.html">NFL Lines</a><a href="nfl-strategies.html">Strategies</a><a href="nfl-correlation.html">Correlation</a><a href="nfl-injuries.html">Injuries</a><a href="nfl-questions.html">Questions</a><a href="nfl-suggestions.html" class="active">Suggestions</a><a href="nfl-executive-summary.html">Executive Summary</a><a href="nfl-flagged.html">Flagged</a><a href="flagged.html">Planner Flagged</a></nav>
+</div></header>
+<main class="wrap"><aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. <a href="certainty.html">Flagged for Review: certainty audit</a>.</aside>
+
+
+<h1>Suggestions &amp; Review Before Implementing</h1>
+<p class="lede">A dedicated section for suggestions: how the site and the originating-line framework can be improved, and the review process someone follows to choose the best path before any change is implemented.</p>
+
+<h2>Review-before-implement workflow</h2>
+<div class="scroll"><table><thead><tr><th>Step</th><th>Action</th><th>Owner</th><th>Exit criterion</th></tr></thead><tbody>
+<tr><td>1</td><td>Log the suggestion in the register below (site, signal, strategy, gate, correlation, or injury data)</td><td>Anyone</td><td>Suggestion has an ID and a source link</td></tr>
+<tr><td>2</td><td>Review: verify any claimed fact against an official source; mark unverified claims</td><td>Reviewer</td><td>Every row sourced or flagged unverified</td></tr>
+<tr><td>3</td><td>Compare paths: implement / defer / reject, with reasons recorded</td><td>Reviewer + decision-maker</td><td>A chosen path is recorded</td></tr>
+<tr><td>4</td><td>Implement only the chosen path, then re-verify the affected pages</td><td>Implementer</td><td>Build + link checks pass</td></tr>
+<tr><td>5</td><td>Close the suggestion and record the result here</td><td>Reviewer</td><td>Status = closed</td></tr>
+</tbody></table></div>
+<p class="small">No change to the site, strategy register or data is made straight from a suggestion. A reviewer must choose the best path and record it.</p>
+
+<h2>Suggestion register</h2>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Suggestion</th><th>Category</th><th>Suggested path</th><th>Chosen path</th><th>Reason</th><th>Source / evidence</th><th>Status</th></tr></thead><tbody>
+<tr><td>SUGG-01</td><td>Add a "suggestions" review page so changes are not made directly</td><td>Site</td><td>Implement</td><td>Implemented (this page)</td><td>Creates a review gate before changes</td><td><span class="small">—</span></td><td><span class="tag ver">closed</span></td></tr>
+<tr><td>SUGG-02</td><td>Add an executive summary of important details</td><td>Site</td><td>Implement</td><td>Implemented (nfl-executive-summary.html)</td><td>Gives decision-makers a one-page view</td><td><span class="small">—</span></td><td><span class="tag ver">closed</span></td></tr>
+<tr><td>SUGG-03</td><td>Add a pre-decision questions register (have vs. do not have)</td><td>Site</td><td>Implement</td><td>Implemented (nfl-questions.html)</td><td>Blocks decisions until values are sourced</td><td><span class="small">—</span></td><td><span class="tag ver">closed</span></td></tr>
+<tr><td>SUGG-04</td><td>Connect a licensed odds feed for lines and props</td><td>Data</td><td>Defer</td><td>Deferred</td><td>Not an official NFL source; values must stay flagged unverified</td><td><span class="small">—</span></td><td><span class="tag flag">open</span></td></tr>
+<tr><td>SUGG-05</td><td>Build depth-chart replacement register from club roster pages</td><td>Injuries</td><td>Defer</td><td>Deferred</td><td>No official NFL depth feed exists yet</td><td><span class="small">—</span></td><td><span class="tag flag">open</span></td></tr>
+<tr><td>SUGG-06</td><td>Back-test candidate strategies vs settled 2026 games</td><td>Strategy</td><td>Defer</td><td>Deferred</td><td>Requires recorded lines (not official)</td><td><span class="small">—</span></td><td><span class="tag flag">open</span></td></tr>
+<tr><td>SUGG-07</td><td>Publish correlation register with disclosed inputs</td><td>Correlation</td><td>Defer</td><td>Deferred</td><td>No official NFL correlation matrix</td><td><span class="small">—</span></td><td><span class="tag flag">open</span></td></tr>
+</tbody></table></div>
+
+<h2>Site-improvement suggestions (this vertical)</h2>
+<ul class="clean">
+<li><strong>Add a suggestions review page (done):</strong> this page forces a chosen path before any implementation.</li>
+<li><strong>Add an executive summary (done):</strong> <a href="nfl-executive-summary.html">nfl-executive-summary.html</a> gives decision-makers the important details on one page.</li>
+<li><strong>Add pre-decision questions (done):</strong> <a href="nfl-questions.html">nfl-questions.html</a> separates what we have from what we do not have.</li>
+<li><strong>Flag unverified values (done):</strong> every page leaves non-official cells blank and flags them, per the verification rule.</li>
+<li><strong>Still open:</strong> licensed odds feed, depth-chart register, back-testing, correlation register &rarr; see SUGG-04 to SUGG-07 above.</li>
+</ul>
+
+<h2>How to submit a new suggestion</h2>
+<p class="small">Open a pull request on this repo (<code>arena/8602d76f-korea5</code> against <code>main</code>) adding a row to the suggestion register with: ID, suggestion, category, suggested path, and source/evidence. A reviewer will choose the best path, record it, and only then implement.</p>
+
+<p><a href="nfl-lines.html">&larr; Back to NFL Lines dashboard</a> &middot; <a href="nfl-executive-summary.html">Executive summary &rarr;</a> &middot; <a href="nfl-flagged.html">Flagged unverified items &rarr;</a></p>
+</main>
+<footer><div class="wrap">
+  <p><strong>NFL Lines Origination &mdash; Suggestions</strong> &middot; Pacific time (America/Los_Angeles) &middot; Part of Korea5</p>
+  <p>No suggestion is implemented without a recorded review and a chosen path.</p>
+</div></footer></body></html>

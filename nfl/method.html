@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Method · NFL Lines &amp; Strategy</title>
+<title>Method · NFL Decision Support</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<nav class="topnav"><a href="index.html">Dashboard</a><a href="executive-summary.html">Executive Summary</a><a href="requirements.html">Requirements</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="strategies.html">Strategies</a><a href="method.html" class="active">Method</a><a href="leaderboard.html">Leaderboard</a><a href="injuries.html">Injuries &amp; Roster</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+<nav class="topnav"><a href="index.html">Dashboard</a><a href="requirements.html">Requirements</a><a href="method.html" class="active">Method</a><a href="leaderboard.html">Leaderboard</a><a href="sources.html">Sources</a></nav>
 <main class="wrap">
 <header class="hero">
 <h1>Method</h1>
 
 <p class="meta">Sources verified 2026-11-13 · every fact-bearing row links to an official source</p>
 </header>
-<p>Methodology: validation gates, correlation, luck removal, ranking and the honesty rules.</p><table class="grid">
+<p>Methodology: validation gates, correlation, luck removal, ranking, line origination, the injury/roster signal model and the honesty rules. This is the reference the strategies must satisfy.</p><table class="grid">
 <thead><tr><th>ID</th><th>Method</th><th>Detail</th><th>Source</th></tr></thead>
 <tbody>
 <tr><td class="">M1</td><td class="">Validation gates</td><td class="">A strategy is eligible only if it passes every gate. Default gates: (1) minimum out-of-sample sample size; (2) no look-ahead bias check; (3) model edge versus market above a threshold; (4) minimum selectivity (the strategy does not bet every game); (5) statistical significance on the realised edge. Gates are configurable and each strategy records its own gate results.</td><td class=""><span class="blank">—</span></td></tr>
@@ -28,7 +28,7 @@
 </table>
 <footer class="foot">
 <p><strong>Responsible gaming:</strong> this is decision-support research, not a wagering service. No real-money wagers are placed. Betting carries risk; please gamble responsibly.</p>
-<p>Built from <code>nfl/data/*.json</code> by <code>scripts/build_nfl.py</code>. Values that cannot be confirmed from an official source are left blank and flagged on the Flagged page.</p>
+<p>Built from <code>nfl/data/*.json</code> by <code>scripts/build_nfl.py</code>. Values that cannot be confirmed from an official source are left blank and flagged on the companion Flagged page.</p>
 </footer>
 </main>
 <script src="assets/app.js"></script>

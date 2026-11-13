@@ -141,6 +141,27 @@ def espn_inventory(seasons: list[int]) -> list[tuple[str, str]]:
     return out
 
 
+def dump_samples(raw: dict[str, bytes], outdir: str) -> None:
+    """Commit small, real excerpts so parsers can be developed/validated offline (no network)."""
+    os.makedirs(outdir, exist_ok=True)
+    for name, body in raw.items():
+        if name.endswith(".csv"):
+            sample = b"\n".join(body.split(b"\n")[:240])
+            with open(os.path.join(outdir, name), "wb") as fh:
+                fh.write(sample)
+        elif name.startswith("espn_"):
+            try:
+                d = json.loads(body)
+                d["events"] = d.get("events", [])[:3]
+                with open(os.path.join(outdir, name), "w", encoding="utf-8") as fh:
+                    json.dump(d, fh)
+            except Exception:  # noqa: BLE001
+                pass
+        elif name.endswith("timestamp.json"):
+            with open(os.path.join(outdir, name), "wb") as fh:
+                fh.write(body[:200])
+
+
 def dump_schema(raw: dict[str, bytes], path: str) -> None:
     """Record enough of each file's shape that parsers can be written without the raw file."""
     import csv
@@ -239,6 +260,7 @@ def main() -> int:
         json.dump(manifest, fh, indent=1)
     if args.probe:
         dump_schema(keep, "nfl/data/schema_probe.json")
+        dump_samples(keep, "nfl/raw/samples")
     print(json.dumps(manifest["summary"]))
     return 0 if ok else 1
 

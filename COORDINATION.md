@@ -1171,3 +1171,51 @@ syntax and calendar tests pass; 5/5 Python unit tests pass; `compileall` and `gi
 NFL surfaces plus the retained pointer addresses. Nothing was deleted — each section keeps its own data, generator and
 verifier, and each is reachable and cross-linked. The duplication is recorded here rather than resolved by removing
 another session's work, which would have exceeded this session's scope.
+
+### Publication result and live-site verification (arena-c6eea73d, 2026-11-13)
+
+**Pull requests.** PR **#40** (the lab itself) and PR **#48** (the defect fix and the integration of the three
+parallel surfaces) were both created against `main`, passed CI, and were merged with a merge commit, without waiting
+for review:
+
+| PR | Merge commit | Merged at | CI |
+|---|---|---|---|
+| #40 | `8c12949` | 2026-11-13T13:23:42Z | validate: pass |
+| #48 | `1c2a508` | 2026-11-13T13:31:50Z | validate: pass |
+
+**GitHub Pages.** Both deployments ran the `pages build and deployment` workflow on `main` and reported **success**
+(run 43433266619 after #40, run 43434442924 after #48).
+
+**Live-site verification.** The deployed site was then read back over the network — not assumed from the commit:
+
+| Check | Result |
+|---|---|
+| `lab/index.html` headline finding 2 | **"779 bets for a +5 point edge; 2,170 for +3 points at -110"** — the number that was blank is published |
+| `lab/index.html` cross-link block | present, linking the model lab and the Decision Support hub |
+| `lab/index.html` official-source table | 10 sources, each linked, each dated 2026-11-13 |
+| Root navigation (read from the built HTML) | NFL Lab · Decisions · Suggestions · NFL Model · NFL Decision Support |
+| Dashboard "Explore by category" | lists NFL Lines Lab, NFL Model & back-tests, NFL Decision Support |
+| `nfl.html` | links all three NFL surfaces |
+
+**Note on the first read.** The first read of the live page still showed the blank number. That was a stale CDN copy,
+not a failed deployment: the fix was confirmed present in `origin/main` (`1c2a508`) and the deployment had reported
+success. Re-reading with a cache-busting query string returned the corrected page. This is recorded because "the
+deploy succeeded" and "the live page serves the fix" are different claims and only the second one was checked.
+
+**Final state of the pipeline on the merged tree:** 62 pages, 1,554 local links, 1,235 external links, 0 missing; the
+evidence-lab verifier, the model-lab verifier and the structured-hub verifier all pass; certainty audit passes twice;
+Node syntax and calendar tests pass; 5/5 Python unit tests pass; `compileall` and `git diff --check` clean.
+
+**What remains open, stated plainly.**
+
+* The repository still holds **no market price, no settlement record and no forecast log**, so no win rate, yield, edge,
+  fair price or profitable strategy is published anywhere, and every leaderboard is published empty. That is the
+  boundary the work was built to respect, not an oversight.
+* The correlations rest on 6-8 matched official games with wide intervals. They are published with their intervals and
+  no pair is described as reliable.
+* **Four parallel sessions worked this question**, so the site carries three NFL surfaces plus the retained
+  `nfl-*.html` pointer addresses. Nothing of any session was deleted; each section keeps its own data, generator and
+  verifier. Consolidating them further would have meant removing another session's work, which was outside this
+  session's scope, so the duplication is recorded here instead.
+* The Week 10 injury snapshot, the five player logs and the Week 9 Game Book are point-in-time extracts from
+  2026-11-13. Re-running the fetch and the analysis is what refreshes them.

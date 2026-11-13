@@ -704,3 +704,23 @@ additions, and logs the change here so those sessions can rebase.
 The existing planner pipeline (`scripts/build_events.py`, `scripts/analyze.py`, `data/events-*.json`,
 `data/derived/analysis.json`) is **not** modified by this session.
 
+
+## Session `arena-2cd43859` — NFL analytics and decision-support
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N1 | Create NFL strategy research, validation gates, injury/lineup tracking design, questions and recommendations | arena-2cd43859 | done | `nfl-strategy.html`, `research/NFL-STRATEGY.md`, `nfl.html`, `COORDINATION.md` |
+| N2 | Run local validation and source-link review; record irregularities | arena-2cd43859 | done | same |
+
+Scope: current Arena branch is fixed; no alternate branches or overlapping task claims. New page is an additive, standalone proposal; do not treat proposed methods as tested betting edges. Official sources cited on every factual table row.
+
+### N1–N2 completion (2026-11-13)
+
+- Added `nfl-strategy.html` and `research/NFL-STRATEGY.md`; linked the lab from the NFL page and appended an NFL analytics subsection to the executive summary.
+- Official-source spot checks via live fetch: NFL injury page currently publishes player position, injury, practice and game status by week; NFL player statistics page has official category/year selectors; the official NFL transactions page is linked as a source starting point. Sources: https://www.nfl.com/injuries/ ; https://www.nfl.com/stats/player-stats/ ; https://www.nfl.com/transactions/ .
+- Evidence limits: no historical timestamped market/prop prices, betting settlement ledger, forecast log, or verified lineup-depth series found in this repository. No performance or correlation claims made. No backup tier inferred from injury status. Research strategies are proposals, not validated edges; reward competition is only proposed as paper-first and remains gated by policy/legal review.
+- Verification: `scripts/check_links.py` reported 12 pages, 190 local links, 528 external links and zero missing; `scripts/audit_certainty.py` passed; Python unit tests 5/5; both calendar Node tests passed; `git diff --check` clean. Strategy page local destination check: 19 links, zero missing. Official injury and player-statistics pages retrieved live; no claim of comprehensive official link availability.
+
+### Post-merge integration correction (2026-11-13)
+
+The first merged run's repository CI caught one generated local-link failure in `extra/summary.html`: markdown converted the research-detail link to a path that did not resolve from the `extra/` directory. Corrected the executive-summary link to the site Strategy Lab and reran the exact workflow rebuild sequence. Result: certainty audit passed; link check 12 pages / 190 local / 528 external / 0 missing; extra verification 31/31, 0 missing locals, 0 missing source rows; JS syntax and calendar-today test passed; `git diff --check` clean. This fix is in a follow-up PR.

@@ -996,7 +996,8 @@ def build_leaderboard(games, recs, base, corr, prop_results, prop_corr, deflatio
         p0 = pr[0]
         g_pass = p0["games"] >= 200 and (p0["skill"] or 0) > 0
         lb.append({"family": "prop", "name": f"{spec[1]} {spec[0].replace('_', ' ')} over {spec[2]}",
-                   "tier": "C" if g_pass else "D", "score": round(max(0.0, (p0["skill"] or 0)) * 10, 3),
+                   "tier": "C" if g_pass else "D",
+                   "score": round(max(0.0, (p0["skill"] or 0)) * min(1.0, p0["games"] / 1000) * 10, 3),
                    "metrics": p0, "gates": {"G3_sample": {"pass": p0["games"] >= 200, "value": p0["games"]},
                                             "G4_skill": {"pass": (p0["skill"] or 0) > 0, "value": p0["skill"]},
                                             "G8_market": {"pass": False, "value": "market=unavailable"}},
@@ -1058,7 +1059,7 @@ def parlay_family(games, recs, corr):
             n += 1
         if n == 0:
             continue
-        out.append({"family": "parlay", "name": f"{k}-leg cross-game parlay (highest-confidence picks)",
+        out.append({"family": "parlay", "name": f"{k}-leg cross-game parlay (one per season, n={n})",
                     "tier": "C", "score": 0.0,
                     "metrics": {"legs": k, "seasonsTested": n,
                                 "expectedJoint": round(exp / n, 4),
@@ -1080,7 +1081,14 @@ def prop_combo_family(prop_corr, props, seasons):
     r — and the gap is the size of the error that multiplying marginals would introduce.
     """
     out = []
-    for pc in prop_corr[:6]:
+    seen_pairs = set()
+    for pc in prop_corr:
+        key = (pc["a"], pc["b"], pc.get("position"))
+        if key in seen_pairs:
+            continue
+        seen_pairs.add(key)
+        if len(out) >= 4:
+            break
         lo, hi = pc.get("ci") or [None, None]
         if lo is None or not (lo > 0 or hi < 0):
             continue

@@ -1,5 +1,5 @@
 {
- "generatedUTC": "2026-11-13T15:22:52Z",
+ "generatedUTC": "2026-11-13T15:27:21Z",
  "competition": {
   "title": "NFL Lines Lab strategy competition",
   "basis": "Score = pre-registered deflated skill \u00d7 sample-size shrink \u00d7 calibration factor. Raw win rate is never a ranking input.",
@@ -15,47 +15,46 @@
   {
    "name": "Single-game model \u2014 strength features (9 signals)",
    "family": "single",
-   "tier": "A",
-   "tierLabel": "Tier A \u2014 passes every pre-registered gate",
-   "score": 4.289,
-   "labPoints": 1000,
+   "tier": "C",
+   "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
+   "score": 7.311,
+   "labPoints": 300,
    "perks": [
-    "Featured on the dashboard",
-    "Automatic entry into the locked prospective paper trial",
-    "Named methodology review by a second session"
+    "Listed on the watch list",
+    "Eligible for the next prospective trial window"
    ],
    "metrics": {
     "games": 1632,
-    "logloss": 0.63924,
+    "logloss": 0.63815,
     "baselineLogloss": 0.68848,
-    "skill": 0.07152,
-    "brier": 0.22381,
+    "skill": 0.07311,
+    "brier": 0.22341,
     "baselineBrier": 0.24673,
-    "brierSkill": 0.09291,
-    "accuracy": 0.636
+    "brierSkill": 0.09453,
+    "accuracy": 0.6391
    },
    "gates": {
     "G4_skill": {
      "pass": true,
-     "value": 0.07152
+     "value": 0.07311
     },
     "G5_deflation": {
-     "pass": true,
-     "value": "observed 0.07152 vs best-of-9 null p95 0.02863"
+     "pass": false,
+     "value": "observed 0.07311 vs best-of-9 null p95 None"
     },
     "G6_calibration": {
      "pass": true,
-     "value": 0.8464
+     "value": 0.859
     },
     "G7_stability": {
      "pass": true,
      "value": {
-      "2017": 0.06871,
-      "2018": 0.06805,
-      "2019": 0.07841,
-      "2020": 0.10306,
-      "2021": 0.03927,
-      "2022": 0.0725
+      "2017": 0.08168,
+      "2018": 0.06999,
+      "2019": 0.07508,
+      "2020": 0.10256,
+      "2021": 0.03588,
+      "2022": 0.07438
      }
     }
    },
@@ -63,291 +62,53 @@
    "rank": 1
   },
   {
-   "name": "WR receptions over 4.5",
-   "family": "prop",
+   "name": "Single-game model \u2014 context features (11 signals)",
+   "family": "single",
    "tier": "C",
    "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
-   "score": 1.79,
+   "score": 0.388,
    "labPoints": 300,
    "perks": [
     "Listed on the watch list",
     "Eligible for the next prospective trial window"
    ],
    "metrics": {
-    "market": "receptions",
-    "position": "WR",
-    "line": 4.5,
-    "games": 1573,
-    "logloss": 0.4546,
-    "baseRate": 0.2251,
-    "baseRateLogloss": 0.5537,
-    "accuracy": 0.6751,
-    "skill": 0.179,
-    "priorGames": 6752,
-    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
+    "games": 1632,
+    "logloss": 0.68581,
+    "baselineLogloss": 0.68848,
+    "skill": 0.00388,
+    "brier": 0.24596,
+    "baselineBrier": 0.24673,
+    "brierSkill": 0.00312,
+    "accuracy": 0.5643
    },
    "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 1573
-    },
     "G4_skill": {
      "pass": true,
-     "value": 0.179
+     "value": 0.00388
     },
-    "G8_market": {
+    "G5_deflation": {
      "pass": false,
-     "value": "market=unavailable"
+     "value": "observed 0.00388 vs best-of-11 null p95 None"
+    },
+    "G6_calibration": {
+     "pass": false,
+     "value": 0.5927
+    },
+    "G7_stability": {
+     "pass": true,
+     "value": {
+      "2017": 0.00337,
+      "2018": 0.013,
+      "2019": 0.00589,
+      "2020": 0.00333,
+      "2021": -0.0018,
+      "2022": 0.00012
+     }
     }
    },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction.",
+   "claim": "Out-of-sample probability skill vs a prior-season win-rate baseline. No betting return claimed.",
    "rank": 2
-  },
-  {
-   "name": "RB rushing yards over 55.0",
-   "family": "prop",
-   "tier": "C",
-   "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
-   "score": 1.677,
-   "labPoints": 300,
-   "perks": [
-    "Listed on the watch list",
-    "Eligible for the next prospective trial window"
-   ],
-   "metrics": {
-    "market": "rushing_yards",
-    "position": "RB",
-    "line": 55.0,
-    "games": 1011,
-    "logloss": 0.4576,
-    "baseRate": 0.205,
-    "baseRateLogloss": 0.5498,
-    "accuracy": 0.6627,
-    "skill": 0.1677,
-    "priorGames": 4793,
-    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 1011
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.1677
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction.",
-   "rank": 3
-  },
-  {
-   "name": "WR receiving yards over 45.0",
-   "family": "prop",
-   "tier": "C",
-   "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
-   "score": 1.344,
-   "labPoints": 300,
-   "perks": [
-    "Listed on the watch list",
-    "Eligible for the next prospective trial window"
-   ],
-   "metrics": {
-    "market": "receiving_yards",
-    "position": "WR",
-    "line": 45.0,
-    "games": 1573,
-    "logloss": 0.5452,
-    "baseRate": 0.3126,
-    "baseRateLogloss": 0.6298,
-    "accuracy": 0.6542,
-    "skill": 0.1344,
-    "priorGames": 6752,
-    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 1573
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.1344
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction.",
-   "rank": 4
-  },
-  {
-   "name": "RB rushing tds over 0.5",
-   "family": "prop",
-   "tier": "C",
-   "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
-   "score": 0.682,
-   "labPoints": 300,
-   "perks": [
-    "Listed on the watch list",
-    "Eligible for the next prospective trial window"
-   ],
-   "metrics": {
-    "market": "rushing_tds",
-    "position": "RB",
-    "line": 0.5,
-    "games": 1011,
-    "logloss": 0.4915,
-    "baseRate": 0.1781,
-    "baseRateLogloss": 0.5274,
-    "accuracy": 0.5371,
-    "skill": 0.0682,
-    "priorGames": 4793,
-    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 1011
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.0682
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction.",
-   "rank": 5
-  },
-  {
-   "name": "QB passing yards over 225.0",
-   "family": "prop",
-   "tier": "C",
-   "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
-   "score": 0.394,
-   "labPoints": 300,
-   "perks": [
-    "Listed on the watch list",
-    "Eligible for the next prospective trial window"
-   ],
-   "metrics": {
-    "market": "passing_yards",
-    "position": "QB",
-    "line": 225.0,
-    "games": 389,
-    "logloss": 0.6659,
-    "baseRate": 0.4907,
-    "baseRateLogloss": 0.6933,
-    "accuracy": 0.6221,
-    "skill": 0.0394,
-    "priorGames": 1818,
-    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 389
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.0394
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction.",
-   "rank": 6
-  },
-  {
-   "name": "QB passing tds over 1.5",
-   "family": "prop",
-   "tier": "C",
-   "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
-   "score": 0.312,
-   "labPoints": 300,
-   "perks": [
-    "Listed on the watch list",
-    "Eligible for the next prospective trial window"
-   ],
-   "metrics": {
-    "market": "passing_tds",
-    "position": "QB",
-    "line": 1.5,
-    "games": 389,
-    "logloss": 0.6623,
-    "baseRate": 0.4132,
-    "baseRateLogloss": 0.6837,
-    "accuracy": 0.5861,
-    "skill": 0.0312,
-    "priorGames": 1818,
-    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 389
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.0312
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction.",
-   "rank": 7
-  },
-  {
-   "name": "WR receiving tds over 0.5",
-   "family": "prop",
-   "tier": "C",
-   "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
-   "score": 0.169,
-   "labPoints": 300,
-   "perks": [
-    "Listed on the watch list",
-    "Eligible for the next prospective trial window"
-   ],
-   "metrics": {
-    "market": "receiving_tds",
-    "position": "WR",
-    "line": 0.5,
-    "games": 1573,
-    "logloss": 0.4871,
-    "baseRate": 0.1919,
-    "baseRateLogloss": 0.4955,
-    "accuracy": 0.5321,
-    "skill": 0.0169,
-    "priorGames": 6752,
-    "note": "Baseline is the league base rate on the same line from strictly prior seasons. No prop price exists in any reachable source, so no edge is claimed."
-   },
-   "gates": {
-    "G3_sample": {
-     "pass": true,
-     "value": 1573
-    },
-    "G4_skill": {
-     "pass": true,
-     "value": 0.0169
-    },
-    "G8_market": {
-     "pass": false,
-     "value": "market=unavailable"
-    }
-   },
-   "claim": "Forecast accuracy against a 50/50 baseline. There is no prop price in any reachable source, so this is Tier C at best by construction.",
-   "rank": 8
   },
   {
    "name": "Model vs published spread (reference only)",
@@ -362,9 +123,9 @@
    ],
    "metrics": {
     "games": 1632,
-    "modelLogloss": 0.6392,
+    "modelLogloss": 0.6381,
     "spreadImpliedLogloss": 0.9288,
-    "skill": 0.3118,
+    "skill": 0.313,
     "note": "Reference only: the spread is a single un-timestamped snapshot, so this cannot be converted into a return."
    },
    "gates": {
@@ -374,10 +135,10 @@
     }
    },
    "claim": "Compares the model with a probability implied by the published spread. Reference only: the timing of that line is unknown, so beating it would not establish a tradable edge.",
-   "rank": 9
+   "rank": 3
   },
   {
-   "name": "2-leg cross-game parlay (highest-confidence picks)",
+   "name": "2-leg cross-game parlay (one per season, n=6)",
    "family": "parlay",
    "tier": "C",
    "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
@@ -390,9 +151,9 @@
    "metrics": {
     "legs": 2,
     "seasonsTested": 6,
-    "expectedJoint": 0.8326,
+    "expectedJoint": 0.8435,
     "realisedHitRate": 1.0,
-    "difference": 0.1674,
+    "difference": 0.1565,
     "note": "One combination per season; a joint probability is not a payout. With this sample the realised rate is far too noisy to confirm calibration."
    },
    "gates": {
@@ -406,10 +167,10 @@
     }
    },
    "claim": "Joint probability and realised hit rate only. No payout, no vig, no ROI.",
-   "rank": 10
+   "rank": 4
   },
   {
-   "name": "3-leg cross-game parlay (highest-confidence picks)",
+   "name": "3-leg cross-game parlay (one per season, n=6)",
    "family": "parlay",
    "tier": "C",
    "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
@@ -422,9 +183,9 @@
    "metrics": {
     "legs": 3,
     "seasonsTested": 6,
-    "expectedJoint": 0.7482,
+    "expectedJoint": 0.7629,
     "realisedHitRate": 0.8333,
-    "difference": 0.0851,
+    "difference": 0.0704,
     "note": "One combination per season; a joint probability is not a payout. With this sample the realised rate is far too noisy to confirm calibration."
    },
    "gates": {
@@ -438,184 +199,7 @@
     }
    },
    "claim": "Joint probability and realised hit rate only. No payout, no vig, no ROI.",
-   "rank": 11
-  },
-  {
-   "name": "Single-game model \u2014 context features (11 signals)",
-   "family": "single",
-   "tier": "C",
-   "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
-   "score": 0.0,
-   "labPoints": 300,
-   "perks": [
-    "Listed on the watch list",
-    "Eligible for the next prospective trial window"
-   ],
-   "metrics": {
-    "games": 1632,
-    "logloss": 0.68807,
-    "baselineLogloss": 0.68848,
-    "skill": 0.0006,
-    "brier": 0.24705,
-    "baselineBrier": 0.24673,
-    "brierSkill": -0.0013,
-    "accuracy": 0.5674
-   },
-   "gates": {
-    "G4_skill": {
-     "pass": true,
-     "value": 0.0006
-    },
-    "G5_deflation": {
-     "pass": false,
-     "value": "observed 0.0006 vs best-of-11 null p95 0.05157"
-    },
-    "G6_calibration": {
-     "pass": false,
-     "value": 0.6117
-    },
-    "G7_stability": {
-     "pass": true,
-     "value": {
-      "2017": -0.01695,
-      "2018": 0.01443,
-      "2019": 0.00285,
-      "2020": 0.00707,
-      "2021": -0.00801,
-      "2022": 0.00489
-     }
-    }
-   },
-   "claim": "Out-of-sample probability skill vs a prior-season win-rate baseline. No betting return claimed.",
-   "rank": 12
-  },
-  {
-   "name": "Same-game combo: rushing_yards + rushing_tds (RB)",
-   "family": "prop-combo",
-   "tier": "C",
-   "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
-   "score": 0.0,
-   "labPoints": 300,
-   "perks": [
-    "Listed on the watch list",
-    "Eligible for the next prospective trial window"
-   ],
-   "metrics": {
-    "r": -0.0811,
-    "ci": [
-     -0.1199,
-     -0.0384
-    ],
-    "pairs": 1824,
-    "jointIfIndependent": 0.3025,
-    "jointWithMeasuredCorrelation": 0.2903,
-    "errorFromAssumingIndependence": -0.0122,
-    "note": "Marginals are illustrative (0.55 each). The published quantity is the gap between the copula joint and the naive product, not a price."
-   },
-   "gates": {
-    "G8_market": {
-     "pass": false,
-     "value": "no prop price exists"
-    }
-   },
-   "claim": "Measures how wrong independence would be. No price, no payout, no edge.",
-   "rank": 13
-  },
-  {
-   "name": "Same-game combo: receiving_yards + receptions (WR)",
-   "family": "prop-combo",
-   "tier": "C",
-   "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
-   "score": 0.0,
-   "labPoints": 300,
-   "perks": [
-    "Listed on the watch list",
-    "Eligible for the next prospective trial window"
-   ],
-   "metrics": {
-    "r": -0.0566,
-    "ci": [
-     -0.0834,
-     -0.028
-    ],
-    "pairs": 4612,
-    "jointIfIndependent": 0.3025,
-    "jointWithMeasuredCorrelation": 0.2946,
-    "errorFromAssumingIndependence": -0.0079,
-    "note": "Marginals are illustrative (0.55 each). The published quantity is the gap between the copula joint and the naive product, not a price."
-   },
-   "gates": {
-    "G8_market": {
-     "pass": false,
-     "value": "no prop price exists"
-    }
-   },
-   "claim": "Measures how wrong independence would be. No price, no payout, no edge.",
-   "rank": 14
-  },
-  {
-   "name": "Same-game combo: rushing_yards + rushing_tds (RB)",
-   "family": "prop-combo",
-   "tier": "C",
-   "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
-   "score": 0.0,
-   "labPoints": 300,
-   "perks": [
-    "Listed on the watch list",
-    "Eligible for the next prospective trial window"
-   ],
-   "metrics": {
-    "r": -0.0671,
-    "ci": [
-     -0.105,
-     -0.0276
-    ],
-    "pairs": 1939,
-    "jointIfIndependent": 0.3025,
-    "jointWithMeasuredCorrelation": 0.2922,
-    "errorFromAssumingIndependence": -0.0104,
-    "note": "Marginals are illustrative (0.55 each). The published quantity is the gap between the copula joint and the naive product, not a price."
-   },
-   "gates": {
-    "G8_market": {
-     "pass": false,
-     "value": "no prop price exists"
-    }
-   },
-   "claim": "Measures how wrong independence would be. No price, no payout, no edge.",
-   "rank": 15
-  },
-  {
-   "name": "Same-game combo: receiving_yards + receptions (WR)",
-   "family": "prop-combo",
-   "tier": "C",
-   "tierLabel": "Tier C \u2014 promising, not yet distinguishable from luck",
-   "score": 0.0,
-   "labPoints": 300,
-   "perks": [
-    "Listed on the watch list",
-    "Eligible for the next prospective trial window"
-   ],
-   "metrics": {
-    "r": -0.0541,
-    "ci": [
-     -0.0806,
-     -0.0262
-    ],
-    "pairs": 4213,
-    "jointIfIndependent": 0.3025,
-    "jointWithMeasuredCorrelation": 0.2948,
-    "errorFromAssumingIndependence": -0.0077,
-    "note": "Marginals are illustrative (0.55 each). The published quantity is the gap between the copula joint and the naive product, not a price."
-   },
-   "gates": {
-    "G8_market": {
-     "pass": false,
-     "value": "no prop price exists"
-    }
-   },
-   "claim": "Measures how wrong independence would be. No price, no payout, no edge.",
-   "rank": 16
+   "rank": 5
   }
  ]
 }

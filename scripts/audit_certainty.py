@@ -26,9 +26,7 @@ for path in list(ROOT.glob('*.html')) + list((ROOT/'extra').glob('*.html')) + li
     if path.name == 'certainty.html':
         continue
     text = path.read_text()
-    prefix = '../' if path.parent.name == 'extra' else ''
-    if path.parent.name == 'nfl-lines':
-        continue  # handled below with the section's own disclosure text
+    prefix = '../' if path.parent.name in ('extra', 'nfl-lines') else ''
     warning = ('<aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> '
                'Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. '
                f'<a href="{prefix}certainty.html">Flagged for Review: certainty audit</a>.</aside>')

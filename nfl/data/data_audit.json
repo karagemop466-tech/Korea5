@@ -1,5 +1,5 @@
 {
- "generatedUTC": "2026-11-13T15:22:52Z",
+ "generatedUTC": "2026-11-13T15:27:21Z",
  "checks": [
   {
    "id": "provenance",
@@ -2498,25 +2498,25 @@
   {
    "id": "cross-source",
    "name": "nflverse result vs ESPN final score (independent publishers)",
-   "result": "2776 of 2776 ESPN-sampled completed games match exactly, 0 differ, 0 unmatched. An unmatched game is one ESPN returned but no nflverse row could be paired with on date and both clubs; it is counted as unchecked, never as agreement.",
-   "status": "pass",
+   "result": "no raw data",
+   "status": "not run",
    "detail": [],
    "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
   },
   {
    "id": "market",
    "name": "Market reference available per game",
-   "result": "spread present for 1.0 of games; moneylines present for 0.9997; ESPN current-season odds 26 games",
+   "result": "spread present for None of games; moneylines present for None; ESPN current-season odds 0 games",
    "status": "partial",
    "detail": [
     {
      "item": "Spread and total line (nflverse schedules)",
-     "value": "1.0 of completed games",
+     "value": "None of completed games",
      "caveat": "Single un-timestamped snapshot per game. No opening line, no closing line, no price."
     },
     {
      "item": "Moneylines",
-     "value": "0.9997 of completed games",
+     "value": "None of completed games",
      "caveat": "Present for both sides but published as a single un-timestamped price per game, so the vig is implied by that one price and no line movement can be measured."
     },
     {
@@ -2526,7 +2526,7 @@
     },
     {
      "item": "ESPN current-season odds",
-     "value": "26 games",
+     "value": "0 games",
      "caveat": "Only the week on screen has odds; older weeks return an empty odds array."
     }
    ],
@@ -2535,64 +2535,64 @@
   {
    "id": "lineup",
    "name": "Injury report and depth-chart coverage",
-   "result": "off_value_diff 1639/1639 (1.0); def_value_diff 1639/1639 (1.0); home_off_value 1639/1639 (1.0); away_off_value 1639/1639 (1.0)",
+   "result": "off_value_diff 1591/1639 (0.971); def_value_diff 1591/1639 (0.971); home_off_value 1615/1639 (0.985); away_off_value 1615/1639 (0.985)",
    "status": "pass",
    "detail": [
     {
      "feature": "off_value_diff",
-     "present": 1639,
+     "present": 1591,
      "total": 1639,
-     "share": 1.0,
-     "status": "verified"
+     "share": 0.971,
+     "status": "partial \u2014 blank where absent"
     },
     {
      "feature": "def_value_diff",
-     "present": 1639,
+     "present": 1591,
      "total": 1639,
-     "share": 1.0,
-     "status": "verified"
+     "share": 0.971,
+     "status": "partial \u2014 blank where absent"
     },
     {
      "feature": "home_off_value",
-     "present": 1639,
+     "present": 1615,
      "total": 1639,
-     "share": 1.0,
-     "status": "verified"
+     "share": 0.985,
+     "status": "partial \u2014 blank where absent"
     },
     {
      "feature": "away_off_value",
-     "present": 1639,
+     "present": 1615,
      "total": 1639,
-     "share": 1.0,
-     "status": "verified"
+     "share": 0.985,
+     "status": "partial \u2014 blank where absent"
     },
     {
      "feature": "home_def_value",
-     "present": 1639,
+     "present": 1615,
      "total": 1639,
-     "share": 1.0,
-     "status": "verified"
+     "share": 0.985,
+     "status": "partial \u2014 blank where absent"
     },
     {
      "feature": "away_def_value",
-     "present": 1639,
+     "present": 1615,
      "total": 1639,
-     "share": 1.0,
-     "status": "verified"
+     "share": 0.985,
+     "status": "partial \u2014 blank where absent"
     },
     {
      "feature": "home_off_out_share",
-     "present": 1639,
+     "present": 1615,
      "total": 1639,
-     "share": 1.0,
-     "status": "verified"
+     "share": 0.985,
+     "status": "partial \u2014 blank where absent"
     },
     {
      "feature": "home_def_out_share",
-     "present": 1639,
+     "present": 1615,
      "total": 1639,
-     "share": 1.0,
-     "status": "verified"
+     "share": 0.985,
+     "status": "partial \u2014 blank where absent"
     }
    ],
    "source": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2025.csv"

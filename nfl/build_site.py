@@ -139,6 +139,7 @@ def page(name, title, body, active, extra_head=""):
 <nav class="main">{nav}<a href="../index.html">Planner site</a></nav>
 </div></header>
 <main class="wrap">
+<aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> Schedules and local AM/FM carriage are incomplete. Any &ldquo;free&rdquo;, &ldquo;fully free&rdquo;, &ldquo;exact&rdquo; or &ldquo;verified gap&rdquo; wording below describes loaded records only; it does not certify absence of games. <a href="../certainty.html">Flagged for Review: certainty audit</a>.</aside>
 {body}
 </main>
 <footer><div class="wrap">

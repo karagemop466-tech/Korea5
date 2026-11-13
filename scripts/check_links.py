@@ -10,6 +10,7 @@ LOCAL_OK = re.compile(r'^(?:[a-z]+:|#|mailto:)', re.I)
 
 
 def main():
+    missing, checked, external = [], 0, set()
     pages = sorted(f for f in os.listdir(".") if f.endswith(".html"))
     # nested generated sections are link-checked from their own directory
     for sub in ("nfl-lines",):
@@ -26,7 +27,6 @@ def main():
                     if not os.path.exists(os.path.join(base, target)):
                         missing.append({"page": f"{base}/{f}", "link": link})
                     checked += 1
-    missing, checked, external = [], 0, set()
     for p in pages:
         html = open(p, encoding="utf-8").read()
         for link in HREF.findall(html):

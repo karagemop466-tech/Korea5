@@ -1,0 +1,114 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Method · NFL lines lab</title>
+<meta name="description" content="Method, definitions, validation gates and rebuild instructions.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/lab.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="index.html">Overview</a><a href="lines.html">Fair lines</a><a href="leaderboard.html">Leaderboard</a><a href="backtest.html">Backtest</a><a href="correlation.html">Correlation</a><a href="injuries.html">Injuries &amp; tiers</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="method.html" class="active">Method</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="eyebrow">Method · definitions · gates</p>
+<h1>Method</h1>
+<p class="lede">The rules this lab follows, so that every number can be audited or attacked.</p>
+
+<h2>The seven honesty rules</h2>
+<ol>
+<li><strong>No invented value.</strong> If an official source has not published it, the cell is blank and the
+row is on <a href="flagged.html">Flagged</a>.</li>
+<li><strong>Every row carries a source.</strong> Official where one exists; MIRROR where a documented public
+mirror was used; MODEL where the lab computed it; NOT OFFICIAL where no source can exist (market prices).</li>
+<li><strong>Walk-forward only.</strong> A model for a game may use only games that kicked off before it. No
+random splits, no future information.</li>
+<li><strong>No point estimate without an interval.</strong> Whole weeks are resampled, because games in a week
+share conditions.</li>
+<li><strong>Correct for the family.</strong> Every p-value is multiplied by the number of strategies tested.</li>
+<li><strong>Blocked is not zero.</strong> A strategy with no data shows BLOCKED and a blank profit. Zero would
+imply it was tested and lost.</li>
+<li><strong>No reward without a prospective trial.</strong> Backtest evidence can never promote a strategy on
+its own.</li>
+</ol>
+
+<h2>Definitions</h2>
+<h3>Signal</h3>
+<p>1 − (Brier score ÷ Brier score of always predicting the base rate). Zero means the forecast carries no
+information; 1 would be perfect. It is computed on the same games for the model and the market, so the two are
+comparable.</p>
+<h3>De-vigged probability</h3>
+<p>The implied probabilities of both sides of a price are normalised so they sum to one, removing the book's
+margin. Without this, any comparison against the market would be biased in the model's favour.</p>
+<h3>phi (φ)</h3>
+<p>The Pearson correlation of two 0/1 outcomes. It describes dependence; it is not a pricing formula. Pricing
+uses the observed joint probability.</p>
+<h3>Fair price</h3>
+<p>The reciprocal of the model probability, expressed as American odds. It is the price at which the model
+thinks the bet is a coin flip — hold-free, and therefore never an offer you can take.</p>
+<h3>Computed tier</h3>
+<p>Rank by the previous full season's production within the same club and position group. A player with no
+production record gets a blank tier. This is <em>not</em> an official depth chart.</p>
+
+<h2>One correction worth reading</h2>
+<p>An earlier build of this lab tested luck with a pooled break-even win rate: it assumed every bet needed the
+same win probability, taken as the average implied by the prices. That is wrong whenever prices differ. A win on a
++900 long shot and a win on a -300 favourite count equally in a win count but not in the profit, so the test can
+declare significance that the money does not support.</p>
+<p>The test was replaced with a per-bet null: each bet's true win probability is the de-vigged closing market
+probability of the side taken, which is the sharpest honest benchmark. The three-leg parlay moved from
+p = 0.0005 to p = 0.218. Both the old and new numbers are recorded here rather than quietly overwritten — the
+correction is part of the evidence.</p>
+
+<h2>Second correction: a sign error in the Week 11 card</h2>
+<p>The first build of the fair-lines table computed the gap between the model and the market as
+<code>fair_margin + spread_line</code>. That is wrong. The archive's <code>spread_line</code> <em>is</em> the home
+handicap — a positive number means the home club is favoured — so the gap is a subtraction. Adding the two produced
+absurd gaps: 18.6 points on <code>IND @ HOU</code> and 29.6 on <code>MIA @ BUF</code>, on a model whose own mean
+absolute error on the home margin is 10.5 points.</p>
+<p>The convention is now tested in the pipeline rather than asserted in a comment, on all 7,413 graded rows:
+regressing the actual home margin on the archive number gives a slope of 1.045 and an intercept of -0.04,
+and the home club covers <code>(margin − line) &gt; 0</code> on 47.6% of games. A priced market has to land near
+50%; the mirrored form, <code>(margin + line) &gt; 0</code>, lands on 59.2%, which is the tell. Both numbers are
+printed on the <a href="lines.html">Fair lines</a> page so anyone can repeat the check by eye.</p>
+<p>Corrected, the largest disagreement on the Week 11 card is 4.2 points and most are under three — inside the
+model's own error. That is a far less exciting result, and it is the true one. <strong>The backtest engine already
+had the convention right</strong> (it subtracts the line in <code>outcome_spread</code>), so the leaderboard, the ROI
+figures and the luck tests are unaffected; only the Week 11 origination card was wrong.</p>
+
+<h2>The eight validation gates</h2>
+<ol>
+<li><strong>Provenance</strong> — every input is in the source registry with an access route.</li>
+<li><strong>Coverage</strong> — the strategy produced priced, graded bets.</li>
+<li><strong>Baseline</strong> — the comparison is the de-vigged closing price, not a naive guess.</li>
+<li><strong>Leakage</strong> — every input predates kickoff.</li>
+<li><strong>Out-of-sample size</strong> — at least 300 graded bets, pre-declared.</li>
+<li><strong>Robustness</strong> — positive in at least half of the seasons.</li>
+<li><strong>Prospective trial</strong> — frozen version, predictions logged before outcomes.</li>
+<li><strong>Release review</strong> — human sign-off. Never automated.</li>
+</ol>
+<p>Gates 7 and 8 cannot be self-certified by this lab, which is why nothing is reward-eligible.</p>
+
+<h2>Reproduce it</h2>
+<pre>python3 scripts/nfl_lines/stage1_official.py     # official captures
+python3 scripts/nfl_lines/stage2_validate.py     # archive vs official
+python3 scripts/nfl_lines/stage3_engine.py       # strategies, gates, leaderboard
+python3 scripts/nfl_lines/stage4_correlation.py  # measured correlations
+python3 scripts/nfl_lines/stage5_injuries.py     # tracker + impact
+python3 scripts/nfl_lines/stage6_lines.py        # week-11 fair lines
+python3 scripts/nfl_lines/stage7_decision.py     # questions + suggestions
+python3 scripts/nfl_lines/sources.py             # source registry
+python3 scripts/nfl_lines/stage8_site.py         # this site
+python3 scripts/nfl_lines/verify.py              # build the verification report</pre>
+<p class="small">The random seed is fixed, so re-running produces byte-identical numbers unless an input file
+changes.</p>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL lines &amp; strategy lab</strong> — research instrument, not betting advice. No wager is
+recommended anywhere on this site. Market prices shown are derived from a public archive and are
+labelled <strong>NOT OFFICIAL</strong>; the NFL publishes no betting prices.
+· <a href="index.html">Overview</a> · <a href="sources.html">Sources</a> ·
+<a href="flagged.html">Flagged for review</a> · <a href="method.html">Method</a></p>
+<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:37:43Z</p>
+</div></footer></body></html>

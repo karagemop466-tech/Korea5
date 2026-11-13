@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Correlation · NFL lines lab</title>
+<meta name="description" content="Measured correlation between markets and players, and its effect on parlay pricing.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/lab.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="index.html">Overview</a><a href="lines.html">Fair lines</a><a href="leaderboard.html">Leaderboard</a><a href="backtest.html">Backtest</a><a href="correlation.html" class="active">Correlation</a><a href="injuries.html">Injuries &amp; tiers</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="method.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="eyebrow">Correlation engine · measured, not assumed</p>
+<h1>Correlation</h1>
+<p class="lede">A parlay priced by multiplying the legs is only correct when the legs are independent. This page
+measures the dependence instead of assuming it: first for markets within one game, then for players on the same
+club, then for the actual parlays the lab placed.</p>
+
+<aside class="callout warn"><strong>Prop lines on this page are proxies.</strong> There are no player-prop
+prices in the archive, so "over" means "over his own trailing 4-game average". These correlations are real
+measurements of player dependence, but they cannot price a real prop bet.</aside>
+
+<h2>Same-game markets</h2>
+<div class="scroll"><table><thead><tr><th>Pair</th><th>Games</th><th>φ</th><th>Joint observed</th><th>If independent</th><th>Error of assuming independence</th><th>95% interval</th></tr></thead><tbody><tr><td>home covers the spread  vs  total goes over</td><td>7,109</td><td>0.0143</td><td>0.2456</td><td>0.2420</td><td>0.0036</td><td>-0.0074 to 0.0368</td></tr>
+<tr><td>home wins outright  vs  total goes over</td><td>5,220</td><td>0.0049</td><td>0.2762</td><td>0.2750</td><td>0.0012</td><td>-0.0202 to 0.0326</td></tr>
+<tr><td>favourite covers  vs  total stays under</td><td>7,078</td><td>-0.0012</td><td>0.2458</td><td>0.2461</td><td>-0.0003</td><td>-0.0244 to 0.0210</td></tr></tbody></table></div>
+<p class="small">Read <strong>Error of assuming independence</strong> as the probability error you would carry into
+a price. It is small for these pairs — which is worth knowing, because it means the "correlated same-game parlay"
+story is mostly about <em>players</em>, not about spread-versus-total.</p>
+
+<h2>Player pairs (2025 season)</h2>
+<div class="scroll"><table><thead><tr><th>Pair</th><th>n</th><th>φ</th><th>Joint observed</th><th>If independent</th><th>Expected direction</th><th>Verdict</th></tr></thead><tbody><tr><td>QB passing yards over his trailing average  vs  his WR1 receiving yards over his</td><td>307</td><td>0.2931</td><td>0.2606</td><td>0.1895</td><td>positive dependence</td><td>confirmed</td></tr>
+<tr><td>RB1 rushing yards over  vs  RB2 rushing yards over (same club)</td><td>311</td><td>0.0665</td><td>0.2444</td><td>0.2278</td><td>negative dependence (shared carries)</td><td>confirmed</td></tr>
+<tr><td>WR1 receiving yards over  vs  WR2 receiving yards over (same club)</td><td>321</td><td>0.0029</td><td>0.1682</td><td>0.1675</td><td>negative dependence (shared targets)</td><td>not supported</td></tr>
+<tr><td>QB passing yards over  vs  opposing WR1 receiving yards over</td><td>307</td><td>-0.0422</td><td>0.2215</td><td>0.2320</td><td>positive dependence (game script / pace)</td><td>not supported</td></tr>
+<tr><td>RB1 rushing yards over  vs  own QB passing yards over</td><td>307</td><td>-0.0683</td><td>0.2280</td><td>0.2451</td><td>negative dependence (run-heavy vs pass-heavy script)</td><td>confirmed (negative)</td></tr></tbody></table></div>
+<p class="small">Sample sizes are one season of one club-week per team. Treat any φ under about 0.1 as
+indistinguishable from noise at this sample size.</p>
+
+<h2>The parlays actually placed</h2>
+<div class="grid g2">
+  <div class="card"><h3>Two legs</h3>
+    <p>403 parlays placed. Observed joint hit rate
+    <strong>+14.4%</strong> against a modelled joint probability of
+    +30.8%.</p>
+    <p class="small">Legs are in different games, so the dependence is only through shared week-level information and market structure. Compare observed vs modelled joint rate.</p></div>
+  <div class="card"><h3>Three legs</h3>
+    <p>384 parlays placed. Observed joint hit rate
+    <strong>+8.1%</strong>.</p>
+    <p class="small">No model joint probability is published for three legs because the legs were selected by edge size, which biases any independence calculation.</p></div>
+</div>
+<aside class="callout">A parlay priced by multiplying marginals is only correct when phi = 0. Where phi is materially non-zero the fair price moves, and the direction is given by the sign of phi: positive dependence makes the product price too generous to the bettor; negative dependence makes it too generous to the book.</aside>
+
+<h2>Why this matters for pricing</h2>
+<p>Take the strongest measured pair: a quarterback's passing yards and his WR1's receiving yards, φ ≈
+0.29. Multiplying the two marginal
+probabilities gives 0.190;
+the observed joint rate is 0.261.
+A parlay that pays as if the joint rate were the smaller number is paying too much on the winning side — which
+sounds generous until you notice the losing side is where the money is made.</p>
+
+<h2>Status</h2>
+<p><span class="b notofficial">NOT OFFICIAL</span> Correlations are model-measured from public record-level data. No official NFL source publishes correlations or prices; these are NOT official values.</p>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL lines &amp; strategy lab</strong> — research instrument, not betting advice. No wager is
+recommended anywhere on this site. Market prices shown are derived from a public archive and are
+labelled <strong>NOT OFFICIAL</strong>; the NFL publishes no betting prices.
+· <a href="index.html">Overview</a> · <a href="sources.html">Sources</a> ·
+<a href="flagged.html">Flagged for review</a> · <a href="method.html">Method</a></p>
+<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:37:43Z</p>
+</div></footer></body></html>

@@ -1,0 +1,162 @@
+{
+ "generatedUTC": "2026-11-13T13:37:52Z",
+ "suggestions": [
+  {
+   "id": "SG01",
+   "title": "Publish the fair-line card before the market posts",
+   "decision": "Do you want a pre-market number or a post-market comparison?",
+   "benefit": "A pre-market number is a genuine origination; a post-market number is a benchmark.",
+   "risk": "Pre-market lines have no liquidity check and will look wrong against the closing number.",
+   "cost": "Low \u2014 the model already runs from graded history only.",
+   "reversibility": "High",
+   "recommended": "Start with the post-market comparison (today's build) and add a frozen 24-hours-before snapshot once the schedule feed is wired to a cron job.",
+   "source": "/home/user/Korea5/nfl-lines/lines.html",
+   "status": "PROPOSED"
+  },
+  {
+   "id": "SG02",
+   "title": "Licence a timestamped prop and SGP price archive",
+   "decision": "Approve the spend, or accept that props stay blocked.",
+   "benefit": "Unblocks prop and parlay strategies, the two families the owner explicitly asked for.",
+   "risk": "Data rights, cost, and coverage gaps for lower-profile players.",
+   "cost": "High (commercial licence)",
+   "reversibility": "Medium",
+   "recommended": "Do not build prop models before the price history exists; a model with no price cannot be scored.",
+   "source": "",
+   "status": "BLOCKED-PENDING"
+  },
+  {
+   "id": "SG03",
+   "title": "Recover an official depth-chart feed",
+   "decision": "Accept computed tiers, or fund a real depth-order source.",
+   "benefit": "Turns the tier column from 'computed' into 'official', which is what the owner asked for.",
+   "risk": "An unofficial depth source would immediately violate the no-hallucination rule.",
+   "cost": "Medium",
+   "reversibility": "High",
+   "recommended": "Keep computed tiers labelled as computed. Chase the official page from CI, where the 404 may not reproduce.",
+   "source": "https://www.nfl.com/teams/detroit-lions/depth-chart",
+   "status": "PROPOSED"
+  },
+  {
+   "id": "SG04",
+   "title": "Score strategies on the interval lower bound, not ROI",
+   "decision": "Confirm the leaderboard scoring policy.",
+   "benefit": "Stops the highest-variance strategy from topping the board by luck.",
+   "risk": "Conservative scoring can hide a genuinely good small-sample strategy.",
+   "cost": "none",
+   "reversibility": "High",
+   "recommended": "Adopt it; it is already the default in this build.",
+   "source": "/home/user/Korea5/nfl-lines/leaderboard.html",
+   "status": "DONE"
+  },
+  {
+   "id": "SG05",
+   "title": "Freeze a prospective paper trial for the two least-bad strategies",
+   "decision": "Pick a horizon (e.g. the rest of 2026) and freeze the version.",
+   "benefit": "Only a prospective, pre-registered trial can promote a strategy past gate G7.",
+   "risk": "A short horizon will not settle anything; a long one delays the leaderboard.",
+   "cost": "Low",
+   "reversibility": "High",
+   "recommended": "Freeze the totals-from-scoring-rates strategy (largest sample, smallest interval) for the remainder of 2026.",
+   "source": "/home/user/Korea5/nfl-lines/gates.html",
+   "status": "PROPOSED"
+  },
+  {
+   "id": "SG06",
+   "title": "Extend the injury tracker to every game of the week",
+   "decision": "Approve the extra capture effort.",
+   "benefit": "Makes the tracker usable for the actual slate instead of three games.",
+   "risk": "Transcription error; each row needs its source URL and a blank-safe schema.",
+   "cost": "Medium",
+   "reversibility": "High",
+   "recommended": "Parse the official page rather than transcribing it, and keep the verbatim capture as the audit trail.",
+   "source": "https://www.nfl.com/injuries/",
+   "status": "PROPOSED"
+  },
+  {
+   "id": "SG07",
+   "title": "Add snap counts and participation data",
+   "decision": "Decide whether the extra data source is worth the licence/effort.",
+   "benefit": "The only way to measure a backup's actual workload rather than infer it.",
+   "risk": "Not reachable from this environment; would need CI or a licensed feed.",
+   "cost": "Medium",
+   "reversibility": "High",
+   "recommended": "Do it before any injury-adjusted line is published.",
+   "source": "https://www.nfl.com/transactions/",
+   "status": "BLOCKED-PENDING"
+  },
+  {
+   "id": "SG08",
+   "title": "Show a model-vs-market error table per season",
+   "decision": "None \u2014 informational.",
+   "benefit": "Makes it obvious where and when the model lost, instead of one summary number.",
+   "risk": "None.",
+   "cost": "Low",
+   "reversibility": "High",
+   "recommended": "Built. The per-season splits are on the Backtest page.",
+   "source": "/home/user/Korea5/nfl-lines/backtest.html",
+   "status": "DONE"
+  },
+  {
+   "id": "SG09",
+   "title": "Separate 'no data' from 'zero' everywhere",
+   "decision": "None \u2014 already the house rule.",
+   "benefit": "Stops a blocked strategy being read as a losing strategy.",
+   "risk": "None.",
+   "cost": "none",
+   "reversibility": "High",
+   "recommended": "Built: blocked strategies show BLOCKED and a blank profit, never 0.",
+   "source": "/home/user/Korea5/nfl-lines/leaderboard.html",
+   "status": "DONE"
+  },
+  {
+   "id": "SG10",
+   "title": "Add a monthly re-verification job",
+   "decision": "Approve the CI cadence.",
+   "benefit": "Keeps the official cross-checks (standings, injury pages, stats leaders) from going stale.",
+   "risk": "CI minutes; silent drift if a page changes markup.",
+   "cost": "Low",
+   "reversibility": "High",
+   "recommended": "Run the validator monthly and fail loudly on any mismatch, listing both numbers.",
+   "source": "https://www.nfl.com/standings/",
+   "status": "PROPOSED"
+  },
+  {
+   "id": "SG11",
+   "title": "Publish the licence status of the price archive",
+   "decision": "Decide whether price-derived figures may be shown publicly.",
+   "benefit": "Removes a legal unknown from the project.",
+   "risk": "If the answer is 'no', the backtest pages must be removed.",
+   "cost": "Low",
+   "reversibility": "Medium",
+   "recommended": "Ask the maintainer in writing; until then keep the figures labelled NOT OFFICIAL.",
+   "source": "https://github.com/nflverse/nfldata",
+   "status": "PROPOSED"
+  },
+  {
+   "id": "SG12",
+   "title": "Promote only after a full-season prospective trial",
+   "decision": "Confirm the reward gate.",
+   "benefit": "Prevents paying for luck.",
+   "risk": "A full season is a long wait.",
+   "cost": "none",
+   "reversibility": "High",
+   "recommended": "Adopt; the engine already refuses to mark anything reward-eligible.",
+   "source": "/home/user/Korea5/nfl-lines/gates.html",
+   "status": "DONE"
+  }
+ ],
+ "counts": {
+  "total": 12,
+  "PROPOSED": 6,
+  "BLOCKED-PENDING": 2,
+  "DONE": 4
+ },
+ "howToUse": "Read the decision column first. Nothing is implemented until a decision is recorded here; DONE items are already live so the reviewer can judge them.",
+ "scoring": {
+  "benefit": "expected improvement in decision quality",
+  "risk": "what could go wrong, and how badly",
+  "cost": "effort + money",
+  "reversibility": "how cheaply it can be undone"
+ }
+}

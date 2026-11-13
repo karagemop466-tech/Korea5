@@ -1,0 +1,773 @@
+[
+ {
+  "id": "s6-dome-over",
+  "name": "Dome / closed-roof over",
+  "market": "total",
+  "family": "single",
+  "declaredStatus": "TESTED",
+  "rank": 1,
+  "qualified": false,
+  "rewardEligible": false,
+  "stats": {
+   "n": 1436,
+   "wins": 743,
+   "stake": 1436.0,
+   "profit": 5.7,
+   "roi": 0.004,
+   "avgDecimal": 1.9397
+  },
+  "interval": {
+   "low": -0.0268,
+   "high": 0.0396,
+   "note": "2000 week-block bootstrap draws"
+  },
+  "luck": {
+   "n": 1436,
+   "wins": 743,
+   "winRate": 0.5174,
+   "observedRoi": 0.004,
+   "betsWithMarketProbability": 1436,
+   "marketProbabilityKind": "per-leg market products for parlays, de-vigged single price otherwise",
+   "null": "per-bet Bernoulli with p = de-vigged market probability of the side taken",
+   "pValueVsMarket": 0.103,
+   "nullMeanRoi": -0.0292,
+   "null95Roi": [
+    -0.0798,
+    0.0212
+   ],
+   "interpretation": "pValueVsMarket = probability that a bettor with NO information beyond the closing market would earn at least this ROI. Small values are the only defensible evidence of skill.",
+   "pValueBonferroni": 0.824,
+   "familySize": 8
+  },
+  "gates": {
+   "G1_provenance": {
+    "pass": true,
+    "detail": "every input dataset is in nfl-lines/data/sources.json"
+   },
+   "G2_coverage": {
+    "pass": true,
+    "detail": "1436 priced bets graded"
+   },
+   "G3_baseline": {
+    "pass": true,
+    "detail": "market reference is the de-vigged closing price, not a naive guess"
+   },
+   "G4_leakage": {
+    "pass": true,
+    "detail": "walk-forward: all inputs dated before kickoff"
+   },
+   "G5_out_of_sample": {
+    "pass": true,
+    "detail": "1436 graded bets vs pre-declared minimum 300"
+   },
+   "G6_robustness": {
+    "pass": false,
+    "detail": "9 of 21 seasons positive"
+   },
+   "G7_prospective_trial": {
+    "pass": false,
+    "detail": "requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open"
+   },
+   "G8_release_review": {
+    "pass": false,
+    "detail": "requires human review; not automated"
+   }
+  },
+  "coverage": {
+   "domeGamesGraded": 1436
+  },
+  "description": "Bet the over in every game played under a dome or closed roof at the quoted price.",
+  "features": "Roof field from the archive (dome/closed vs outdoors/open).",
+  "gateNote": "Population bet; no interactive filter, so the multiple-testing risk is limited to the family size."
+ },
+ {
+  "id": "s3-totals-from-scoring-rates",
+  "name": "Own fair total from point-in-time scoring rates",
+  "market": "total",
+  "family": "single",
+  "declaredStatus": "TESTED",
+  "rank": 2,
+  "qualified": false,
+  "rewardEligible": false,
+  "stats": {
+   "n": 4044,
+   "wins": 2051,
+   "stake": 4044.0,
+   "profit": -60.54,
+   "roi": -0.015,
+   "avgDecimal": 1.9419
+  },
+  "interval": {
+   "low": -0.0346,
+   "high": 0.005,
+   "note": "2000 week-block bootstrap draws"
+  },
+  "luck": {
+   "n": 4044,
+   "wins": 2051,
+   "winRate": 0.5072,
+   "observedRoi": -0.015,
+   "betsWithMarketProbability": 4044,
+   "marketProbabilityKind": "per-leg market products for parlays, de-vigged single price otherwise",
+   "null": "per-bet Bernoulli with p = de-vigged market probability of the side taken",
+   "pValueVsMarket": 0.1992,
+   "nullMeanRoi": -0.0281,
+   "null95Roi": [
+    -0.0578,
+    0.002
+   ],
+   "interpretation": "pValueVsMarket = probability that a bettor with NO information beyond the closing market would earn at least this ROI. Small values are the only defensible evidence of skill.",
+   "pValueBonferroni": 1.0,
+   "familySize": 8
+  },
+  "gates": {
+   "G1_provenance": {
+    "pass": true,
+    "detail": "every input dataset is in nfl-lines/data/sources.json"
+   },
+   "G2_coverage": {
+    "pass": true,
+    "detail": "4044 priced bets graded"
+   },
+   "G3_baseline": {
+    "pass": true,
+    "detail": "market reference is the de-vigged closing price, not a naive guess"
+   },
+   "G4_leakage": {
+    "pass": true,
+    "detail": "walk-forward: all inputs dated before kickoff"
+   },
+   "G5_out_of_sample": {
+    "pass": true,
+    "detail": "4044 graded bets vs pre-declared minimum 300"
+   },
+   "G6_robustness": {
+    "pass": false,
+    "detail": "7 of 21 seasons positive"
+   },
+   "G7_prospective_trial": {
+    "pass": false,
+    "detail": "requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open"
+   },
+   "G8_release_review": {
+    "pass": false,
+    "detail": "requires human review; not automated"
+   }
+  },
+  "coverage": {
+   "gamesGraded": 5290
+  },
+  "description": "Build each club's points-scored and points-allowed rate with a 6-game prior toward the league mean, combine the two clubs into a fair total, and bet only when the fair total differs from the closing number by at least 1.5 points.",
+  "features": "Only graded results enter the rate table; the accumulator is updated after each bet is priced.",
+  "gateNote": "The fair total is compared with the closing line, not the opening line, so no line-move edge is claimed. Pushes are dropped."
+ },
+ {
+  "id": "s5-division-under",
+  "name": "Division game under",
+  "market": "total",
+  "family": "single",
+  "declaredStatus": "TESTED",
+  "rank": 3,
+  "qualified": false,
+  "rewardEligible": false,
+  "stats": {
+   "n": 1888,
+   "wins": 981,
+   "stake": 1888.0,
+   "profit": 22.79,
+   "roi": 0.0121,
+   "avgDecimal": 1.9467
+  },
+  "interval": {
+   "low": -0.0361,
+   "high": 0.0581,
+   "note": "2000 week-block bootstrap draws"
+  },
+  "luck": {
+   "n": 1888,
+   "wins": 981,
+   "winRate": 0.5196,
+   "observedRoi": 0.0121,
+   "betsWithMarketProbability": 1888,
+   "marketProbabilityKind": "per-leg market products for parlays, de-vigged single price otherwise",
+   "null": "per-bet Bernoulli with p = de-vigged market probability of the side taken",
+   "pValueVsMarket": 0.0361,
+   "nullMeanRoi": -0.0282,
+   "null95Roi": [
+    -0.072,
+    0.0157
+   ],
+   "interpretation": "pValueVsMarket = probability that a bettor with NO information beyond the closing market would earn at least this ROI. Small values are the only defensible evidence of skill.",
+   "pValueBonferroni": 0.2888,
+   "familySize": 8
+  },
+  "gates": {
+   "G1_provenance": {
+    "pass": true,
+    "detail": "every input dataset is in nfl-lines/data/sources.json"
+   },
+   "G2_coverage": {
+    "pass": true,
+    "detail": "1888 priced bets graded"
+   },
+   "G3_baseline": {
+    "pass": true,
+    "detail": "market reference is the de-vigged closing price, not a naive guess"
+   },
+   "G4_leakage": {
+    "pass": true,
+    "detail": "walk-forward: all inputs dated before kickoff"
+   },
+   "G5_out_of_sample": {
+    "pass": true,
+    "detail": "1888 graded bets vs pre-declared minimum 300"
+   },
+   "G6_robustness": {
+    "pass": true,
+    "detail": "14 of 21 seasons positive"
+   },
+   "G7_prospective_trial": {
+    "pass": false,
+    "detail": "requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open"
+   },
+   "G8_release_review": {
+    "pass": false,
+    "detail": "requires human review; not automated"
+   }
+  },
+  "coverage": {
+   "divisionGamesGraded": 1888
+  },
+  "description": "Bet the under in every division game at the quoted price (a fixed, pre-declared rule).",
+  "features": "Division flag from the archive; no other filter.",
+  "gateNote": "The whole population of division games is bet, so this is a pure bias test."
+ },
+ {
+  "id": "s2-elo-spread",
+  "name": "Ratings (Elo) spread value",
+  "market": "spread",
+  "family": "single",
+  "declaredStatus": "TESTED",
+  "rank": 4,
+  "qualified": false,
+  "rewardEligible": false,
+  "stats": {
+   "n": 3690,
+   "wins": 1845,
+   "stake": 3690.0,
+   "profit": -98.33,
+   "roi": -0.0266,
+   "avgDecimal": 1.9466
+  },
+  "interval": {
+   "low": -0.0488,
+   "high": -0.0048,
+   "note": "2000 week-block bootstrap draws"
+  },
+  "luck": {
+   "n": 3690,
+   "wins": 1845,
+   "winRate": 0.5,
+   "observedRoi": -0.0266,
+   "betsWithMarketProbability": 3690,
+   "marketProbabilityKind": "per-leg market products for parlays, de-vigged single price otherwise",
+   "null": "per-bet Bernoulli with p = de-vigged market probability of the side taken",
+   "pValueVsMarket": 0.5018,
+   "nullMeanRoi": -0.0265,
+   "null95Roi": [
+    -0.0581,
+    0.0047
+   ],
+   "interpretation": "pValueVsMarket = probability that a bettor with NO information beyond the closing market would earn at least this ROI. Small values are the only defensible evidence of skill.",
+   "pValueBonferroni": 1.0,
+   "familySize": 8
+  },
+  "gates": {
+   "G1_provenance": {
+    "pass": true,
+    "detail": "every input dataset is in nfl-lines/data/sources.json"
+   },
+   "G2_coverage": {
+    "pass": true,
+    "detail": "3690 priced bets graded"
+   },
+   "G3_baseline": {
+    "pass": true,
+    "detail": "market reference is the de-vigged closing price, not a naive guess"
+   },
+   "G4_leakage": {
+    "pass": true,
+    "detail": "walk-forward: all inputs dated before kickoff"
+   },
+   "G5_out_of_sample": {
+    "pass": true,
+    "detail": "3690 graded bets vs pre-declared minimum 300"
+   },
+   "G6_robustness": {
+    "pass": false,
+    "detail": "5 of 20 seasons positive"
+   },
+   "G7_prospective_trial": {
+    "pass": false,
+    "detail": "requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open"
+   },
+   "G8_release_review": {
+    "pass": false,
+    "detail": "requires human review; not automated"
+   }
+  },
+  "coverage": {
+   "gamesWithSpreadMarket": 5293
+  },
+  "description": "Fit the Elo probability gap to an expected home margin with an expanding least-squares regression on already-graded games, compare that fair number with the closing line, and bet when the two differ by at least 1 point.",
+  "features": "Same Elo as s1 plus a two-parameter margin mapping refitted point-in-time. No injury, rest or weather input.",
+  "gateNote": "Pushes are dropped. The mapping has to be refitted with at least 300 graded games before the strategy can place a bet, which is why the early seasons contribute no bets."
+ },
+ {
+  "id": "s1-elo-moneyline",
+  "name": "Ratings (Elo) moneyline value",
+  "market": "moneyline",
+  "family": "single",
+  "declaredStatus": "TESTED",
+  "rank": 5,
+  "qualified": false,
+  "rewardEligible": false,
+  "stats": {
+   "n": 4424,
+   "wins": 1941,
+   "stake": 4424.0,
+   "profit": -95.54,
+   "roi": -0.0216,
+   "avgDecimal": 2.7812
+  },
+  "interval": {
+   "low": -0.065,
+   "high": 0.0201,
+   "note": "2000 week-block bootstrap draws"
+  },
+  "luck": {
+   "n": 4424,
+   "wins": 1941,
+   "winRate": 0.4387,
+   "observedRoi": -0.0216,
+   "betsWithMarketProbability": 4424,
+   "marketProbabilityKind": "per-leg market products for parlays, de-vigged single price otherwise",
+   "null": "per-bet Bernoulli with p = de-vigged market probability of the side taken",
+   "pValueVsMarket": 0.3906,
+   "nullMeanRoi": -0.0268,
+   "null95Roi": [
+    -0.065,
+    0.0128
+   ],
+   "interpretation": "pValueVsMarket = probability that a bettor with NO information beyond the closing market would earn at least this ROI. Small values are the only defensible evidence of skill.",
+   "pValueBonferroni": 1.0,
+   "familySize": 8
+  },
+  "gates": {
+   "G1_provenance": {
+    "pass": true,
+    "detail": "every input dataset is in nfl-lines/data/sources.json"
+   },
+   "G2_coverage": {
+    "pass": true,
+    "detail": "4424 priced bets graded"
+   },
+   "G3_baseline": {
+    "pass": true,
+    "detail": "market reference is the de-vigged closing price, not a naive guess"
+   },
+   "G4_leakage": {
+    "pass": true,
+    "detail": "walk-forward: all inputs dated before kickoff"
+   },
+   "G5_out_of_sample": {
+    "pass": true,
+    "detail": "4424 graded bets vs pre-declared minimum 300"
+   },
+   "G6_robustness": {
+    "pass": false,
+    "detail": "7 of 21 seasons positive"
+   },
+   "G7_prospective_trial": {
+    "pass": false,
+    "detail": "requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open"
+   },
+   "G8_release_review": {
+    "pass": false,
+    "detail": "requires human review; not automated"
+   }
+  },
+  "coverage": {
+   "gamesWithMarket": 5432,
+   "gamesGraded": 7413
+  },
+  "description": "Bet the side whose Elo win probability exceeds the de-vigged closing moneyline probability by at least 2 percentage points.",
+  "features": "Elo from results only, margin-weighted, season regression, 48-point HFA, updated after grading.",
+  "gateNote": "Walk-forward Elo; no injury, no rest, no weather inputs. Market comparison is closing, so the strategy is evaluated against the sharpest public reference in the archive."
+ },
+ {
+  "id": "s4-rest-spread",
+  "name": "Rest advantage fade",
+  "market": "spread",
+  "family": "single",
+  "declaredStatus": "TESTED",
+  "rank": 6,
+  "qualified": false,
+  "rewardEligible": false,
+  "stats": {
+   "n": 549,
+   "wins": 270,
+   "stake": 549.0,
+   "profit": -23.58,
+   "roi": -0.043,
+   "avgDecimal": 1.9496
+  },
+  "interval": {
+   "low": -0.1339,
+   "high": 0.0449,
+   "note": "2000 week-block bootstrap draws"
+  },
+  "luck": {
+   "n": 549,
+   "wins": 270,
+   "winRate": 0.4918,
+   "observedRoi": -0.043,
+   "betsWithMarketProbability": 549,
+   "marketProbabilityKind": "per-leg market products for parlays, de-vigged single price otherwise",
+   "null": "per-bet Bernoulli with p = de-vigged market probability of the side taken",
+   "pValueVsMarket": 0.6574,
+   "nullMeanRoi": -0.0263,
+   "null95Roi": [
+    -0.109,
+    0.0562
+   ],
+   "interpretation": "pValueVsMarket = probability that a bettor with NO information beyond the closing market would earn at least this ROI. Small values are the only defensible evidence of skill.",
+   "pValueBonferroni": 1.0,
+   "familySize": 8
+  },
+  "gates": {
+   "G1_provenance": {
+    "pass": true,
+    "detail": "every input dataset is in nfl-lines/data/sources.json"
+   },
+   "G2_coverage": {
+    "pass": true,
+    "detail": "549 priced bets graded"
+   },
+   "G3_baseline": {
+    "pass": true,
+    "detail": "market reference is the de-vigged closing price, not a naive guess"
+   },
+   "G4_leakage": {
+    "pass": true,
+    "detail": "walk-forward: all inputs dated before kickoff"
+   },
+   "G5_out_of_sample": {
+    "pass": true,
+    "detail": "549 graded bets vs pre-declared minimum 300"
+   },
+   "G6_robustness": {
+    "pass": false,
+    "detail": "7 of 21 seasons positive"
+   },
+   "G7_prospective_trial": {
+    "pass": false,
+    "detail": "requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open"
+   },
+   "G8_release_review": {
+    "pass": false,
+    "detail": "requires human review; not automated"
+   }
+  },
+  "coverage": {
+   "gamesGraded": 5293
+  },
+  "description": "Bet the home spread when the home club had at least three more rest days than the visitor.",
+  "features": "Rest days are in the archive (away_rest/home_rest). No injury or travel input.",
+  "gateNote": "Small cohort by construction; the gate result is reported rather than hidden."
+ },
+ {
+  "id": "s8-elo-three-leg-parlay",
+  "name": "Three-leg cross-game parlay (top-3 weekly Elo edges)",
+  "market": "parlay",
+  "family": "parlay",
+  "declaredStatus": "TESTED",
+  "rank": 7,
+  "qualified": false,
+  "rewardEligible": false,
+  "stats": {
+   "n": 384,
+   "wins": 31,
+   "stake": 384.0,
+   "profit": 38.33,
+   "roi": 0.0998,
+   "avgDecimal": 26.8806
+  },
+  "interval": {
+   "low": -0.3087,
+   "high": 0.5731,
+   "note": "2000 week-block bootstrap draws"
+  },
+  "luck": {
+   "n": 384,
+   "wins": 31,
+   "winRate": 0.0807,
+   "observedRoi": 0.0998,
+   "betsWithMarketProbability": 384,
+   "marketProbabilityKind": "per-leg market products for parlays, de-vigged single price otherwise",
+   "null": "per-bet Bernoulli with p = de-vigged market probability of the side taken",
+   "pValueVsMarket": 0.2181,
+   "nullMeanRoi": -0.0779,
+   "null95Roi": [
+    -0.5077,
+    0.4755
+   ],
+   "interpretation": "pValueVsMarket = probability that a bettor with NO information beyond the closing market would earn at least this ROI. Small values are the only defensible evidence of skill.",
+   "pValueBonferroni": 1.0,
+   "familySize": 8
+  },
+  "gates": {
+   "G1_provenance": {
+    "pass": true,
+    "detail": "every input dataset is in nfl-lines/data/sources.json"
+   },
+   "G2_coverage": {
+    "pass": true,
+    "detail": "384 priced bets graded"
+   },
+   "G3_baseline": {
+    "pass": true,
+    "detail": "market reference is the de-vigged closing price, not a naive guess"
+   },
+   "G4_leakage": {
+    "pass": true,
+    "detail": "walk-forward: all inputs dated before kickoff"
+   },
+   "G5_out_of_sample": {
+    "pass": true,
+    "detail": "384 graded bets vs pre-declared minimum 300"
+   },
+   "G6_robustness": {
+    "pass": false,
+    "detail": "0 of 0 seasons positive"
+   },
+   "G7_prospective_trial": {
+    "pass": false,
+    "detail": "requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open"
+   },
+   "G8_release_review": {
+    "pass": false,
+    "detail": "requires human review; not automated"
+   }
+  },
+  "coverage": {
+   "weeksWithThreeLegs": 384
+  },
+  "description": "Same rule as s7 with three legs. Included to expose how parlays concentrate variance.",
+  "features": "Three legs multiply both the payout and the estimation error.",
+  "gateNote": "Included deliberately: a three-leg parlay is far more likely to look lucky than skilful, which is exactly what the luck gates below quantify."
+ },
+ {
+  "id": "s7-elo-two-leg-parlay",
+  "name": "Two-leg cross-game parlay (top-2 weekly Elo edges)",
+  "market": "parlay",
+  "family": "parlay",
+  "declaredStatus": "TESTED",
+  "rank": 8,
+  "qualified": false,
+  "rewardEligible": false,
+  "stats": {
+   "n": 403,
+   "wins": 58,
+   "stake": 403.0,
+   "profit": -36.34,
+   "roi": -0.0902,
+   "avgDecimal": 8.8594
+  },
+  "interval": {
+   "low": -0.3354,
+   "high": 0.1927,
+   "note": "2000 week-block bootstrap draws"
+  },
+  "luck": {
+   "n": 403,
+   "wins": 58,
+   "winRate": 0.1439,
+   "observedRoi": -0.0902,
+   "betsWithMarketProbability": 403,
+   "marketProbabilityKind": "per-leg market products for parlays, de-vigged single price otherwise",
+   "null": "per-bet Bernoulli with p = de-vigged market probability of the side taken",
+   "pValueVsMarket": 0.6066,
+   "nullMeanRoi": -0.0504,
+   "null95Roi": [
+    -0.3062,
+    0.2354
+   ],
+   "interpretation": "pValueVsMarket = probability that a bettor with NO information beyond the closing market would earn at least this ROI. Small values are the only defensible evidence of skill.",
+   "pValueBonferroni": 1.0,
+   "familySize": 8
+  },
+  "gates": {
+   "G1_provenance": {
+    "pass": true,
+    "detail": "every input dataset is in nfl-lines/data/sources.json"
+   },
+   "G2_coverage": {
+    "pass": true,
+    "detail": "403 priced bets graded"
+   },
+   "G3_baseline": {
+    "pass": true,
+    "detail": "market reference is the de-vigged closing price, not a naive guess"
+   },
+   "G4_leakage": {
+    "pass": true,
+    "detail": "walk-forward: all inputs dated before kickoff"
+   },
+   "G5_out_of_sample": {
+    "pass": true,
+    "detail": "403 graded bets vs pre-declared minimum 300"
+   },
+   "G6_robustness": {
+    "pass": false,
+    "detail": "0 of 0 seasons positive"
+   },
+   "G7_prospective_trial": {
+    "pass": false,
+    "detail": "requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open"
+   },
+   "G8_release_review": {
+    "pass": false,
+    "detail": "requires human review; not automated"
+   }
+  },
+  "coverage": {
+   "weeksWithTwoLegs": 403
+  },
+  "description": "Every week, take the two largest Elo moneyline edges and combine them into one two-leg cross-game parlay at the product of the two quoted moneylines.",
+  "features": "Legs come from different games, so game-script correlation is limited but shared-week information and the product-price assumption are both measured in the correlation section.",
+  "gateNote": "Parlay payout is the product of the leg decimals; that is an upper bound on what a book usually pays and is labelled as such. Empirically measured joint dependence is published."
+ },
+ {
+  "id": "s10-injury-adjusted-spread",
+  "name": "Injury / backup-tier adjusted spread",
+  "market": "spread",
+  "family": "injury",
+  "declaredStatus": "BLOCKED_NO_DATA",
+  "rank": null,
+  "qualified": false,
+  "rewardEligible": false,
+  "stats": {
+   "n": 0
+  },
+  "interval": {
+   "low": null,
+   "high": null,
+   "note": "fewer than 30 bets - interval not stable"
+  },
+  "luck": {
+   "n": 0
+  },
+  "gates": {
+   "G1_provenance": {
+    "pass": true,
+    "detail": "every input dataset is in nfl-lines/data/sources.json"
+   },
+   "G2_coverage": {
+    "pass": false,
+    "detail": "0 priced bets graded"
+   },
+   "G3_baseline": {
+    "pass": true,
+    "detail": "market reference is the de-vigged closing price, not a naive guess"
+   },
+   "G4_leakage": {
+    "pass": true,
+    "detail": "walk-forward: all inputs dated before kickoff"
+   },
+   "G5_out_of_sample": {
+    "pass": false,
+    "detail": "0 graded bets vs pre-declared minimum 300"
+   },
+   "G6_robustness": {
+    "pass": false,
+    "detail": "0 of 0 seasons positive"
+   },
+   "G7_prospective_trial": {
+    "pass": false,
+    "detail": "requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open"
+   },
+   "G8_release_review": {
+    "pass": false,
+    "detail": "requires human review; not automated"
+   }
+  },
+  "coverage": {
+   "depthChartTiers": 0
+  },
+  "description": "Shift the baseline spread by the measured value of the players officially ruled out, weighted by depth-chart tier (1st/2nd/3rd/4th string).",
+  "features": "Would need: official status per player, depth-chart order, and an estimated points-per-tiers lot.",
+  "gateNote": "BLOCKED: no official depth chart is retrievable from this environment (nfl.com/teams/<club>/depth-chart returns 404), and the injury archive available in the sandbox is a 5-column mirror with no practice or game status. No adjustment value is invented."
+ },
+ {
+  "id": "s9-player-prop-anytime-td",
+  "name": "Player prop: anytime touchdown / receiving yards",
+  "market": "player_prop",
+  "family": "player_prop",
+  "declaredStatus": "BLOCKED_NO_DATA",
+  "rank": null,
+  "qualified": false,
+  "rewardEligible": false,
+  "stats": {
+   "n": 0
+  },
+  "interval": {
+   "low": null,
+   "high": null,
+   "note": "fewer than 30 bets - interval not stable"
+  },
+  "luck": {
+   "n": 0
+  },
+  "gates": {
+   "G1_provenance": {
+    "pass": true,
+    "detail": "every input dataset is in nfl-lines/data/sources.json"
+   },
+   "G2_coverage": {
+    "pass": false,
+    "detail": "0 priced bets graded"
+   },
+   "G3_baseline": {
+    "pass": true,
+    "detail": "market reference is the de-vigged closing price, not a naive guess"
+   },
+   "G4_leakage": {
+    "pass": true,
+    "detail": "walk-forward: all inputs dated before kickoff"
+   },
+   "G5_out_of_sample": {
+    "pass": false,
+    "detail": "0 graded bets vs pre-declared minimum 300"
+   },
+   "G6_robustness": {
+    "pass": false,
+    "detail": "0 of 0 seasons positive"
+   },
+   "G7_prospective_trial": {
+    "pass": false,
+    "detail": "requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open"
+   },
+   "G8_release_review": {
+    "pass": false,
+    "detail": "requires human review; not automated"
+   }
+  },
+  "coverage": {
+   "propPricesAvailable": 0
+  },
+  "description": "Model player opportunity and per-opportunity production and price the prop against a quoted line.",
+  "features": "Would need player-week participation plus a timestamped prop price.",
+  "gateNote": "BLOCKED: this lab holds no player-prop price archive. Player-week statistics exist for 2025 only, from a mirror, and carry no prices. The strategy is declared but returns no bets and no profit figure \u2014 not zero, blank."
+ }
+]

@@ -1,0 +1,237 @@
+{
+ "meta": {
+  "generatedUTC": "2026-11-13T13:37:52Z",
+  "lab": "NFL lines & strategy lab",
+  "session": "arena-6b0481c7-korea5",
+  "environment": {
+   "allowedHosts": [
+    "github.com",
+    "codeload.github.com",
+    "api.github.com",
+    "registry.npmjs.org",
+    "pypi.org",
+    "files.pythonhosted.org"
+   ],
+   "pageFetchTool": "available (markdown extraction of public pages)",
+   "releaseAssetCDN": "release-assets.githubusercontent.com is NOT reachable; GitHub release binaries cannot be downloaded to this sandbox."
+  }
+ },
+ "datasets": [
+  {
+   "id": "nfldata-closing-lines",
+   "title": "Closing lines, moneylines and totals (2006-2018)",
+   "file": "nfl-lines/data/closing_lines.csv",
+   "bytes": 942229,
+   "rows": 20490,
+   "accessUrl": "https://codeload.github.com/nflverse/nfldata/tar.gz/refs/heads/master",
+   "accessMethod": "codeload GitHub tarball of the repository working tree (reachable host)",
+   "repoUrl": "https://github.com/nflverse/nfldata",
+   "license": "Repository published publicly by nflverse (Lee Sharpe); no explicit licence file in the tree at the pinned commit. Recorded as an unresolved rights question (see flags).",
+   "upstream": "nflverse/nfldata data/closing_lines.csv",
+   "columns": [
+    "game_id",
+    "alt_game_id",
+    "type",
+    "side",
+    "line",
+    "odds",
+    "outcome"
+   ],
+   "types": [
+    "MONEYLINE",
+    "SPREAD",
+    "TOTAL"
+   ],
+   "covers": "2006-2018 regular and post-season; one closing price per side per market",
+   "cannotEstablish": [
+    "no player-prop prices of any kind",
+    "no line movement / open-to-close path",
+    "no same-game-parlay prices",
+    "no book identity for the quoted price",
+    "prices are not timestamped to the minute"
+   ],
+   "officialVerification": "Sportsbook prices are commercial, not published by the NFL. No official league source exists for them; document not official."
+  },
+  {
+   "id": "nfldata-games",
+   "title": "Game schedule + results + closing spread/total/moneyline (1999-2026)",
+   "file": "nfl-lines/data/games.csv",
+   "bytes": 2190037,
+   "rows": 7548,
+   "accessUrl": "https://codeload.github.com/nflverse/nfldata/tar.gz/refs/heads/master",
+   "accessMethod": "codeload GitHub tarball",
+   "repoUrl": "https://github.com/nflverse/nfldata",
+   "license": "no explicit licence file pinned in this tree (see flags)",
+   "upstream": "nflverse/nfldata data/games.csv, itself built from nflverse/nflverse-data schedules",
+   "covers": "1999-2026 incl. 2026 Week 11 lines, scores, rest days, roof/surface, QB ids, coaches, refs",
+   "officialVerification": "Results and schedule structure can be checked against https://www.nfl.com/schedules/ (official). Spread/total/moneyline cannot: the official NFL schedule pages carry no betting prices (verified: RSC payload probe on 2026 week 9, keys present = broadcastInfo/odds-free, see verification report).",
+   "rows_2026_played": null
+  },
+  {
+   "id": "nflverse-schedules-mirror",
+   "title": "nflverse schedules (games) mirror - provenance route demo",
+   "accessUrl": "https://api.github.com/repos/nflverse/nflverse-data/releases/tags/schedules",
+   "accessMethod": "api.github.com release metadata; the binary itself is on release-assets.githubusercontent.com (blocked). Mirrored copy fetched from mgiancola9/nfl-predictions data/raw/games.csv via api.github.com contents API.",
+   "repoUrl": "https://github.com/nflverse/nflverse-data/releases/tag/schedules",
+   "license": "CC-BY-4.0 (nflverse-data repository licence, verified via GitHub API)",
+   "upstream": "nflverse-data release 'schedules' -> games.csv",
+   "officialVerification": "nfl.com schedules (official) for dates/teams/kickoffs"
+  },
+  {
+   "id": "mirror-stats-player-week-2025",
+   "title": "nflverse player-week statistics 2025 (mirror)",
+   "file": "nfl-lines/data/stats_player_week_2025.csv",
+   "accessUrl": "https://api.github.com/repos/mgiancola9/nfl-predictions/contents/data/raw/stats_player_week_2025.csv?ref=main",
+   "accessMethod": "api.github.com contents API (raw media type) - mirror of a nflverse-data release asset",
+   "upstream": "nflverse-data release 'stats_player' -> stats_player_week_2025.csv (CC-BY-4.0)",
+   "mirrorRepo": "https://github.com/mgiancola9/nfl-predictions",
+   "mirrorPushedAt": "2025-12-15T04:29:04Z",
+   "covers": "2025 regular season player-week box score (passing/rushing/receiving/fantasy)",
+   "cannotEstablish": [
+    "no prop lines",
+    "no snap counts",
+    "no target share vs route share distinction"
+   ],
+   "officialVerification": "https://www.nfl.com/stats/player-stats/ (official) publishes season and game-log totals per player; week-level cross-check performed for the leaders used in this lab (see verification report).",
+   "bytes": 4767290,
+   "rows": 13221
+  },
+  {
+   "id": "mirror-injuries-2025",
+   "title": "nflverse injury reports 2025 (mirror, partial - 6 columns)",
+   "file": "nfl-lines/data/injuries_2025_mirror.csv",
+   "accessUrl": "https://api.github.com/repos/mgiancola9/nfl-predictions/contents/data/raw/injuries_2025.csv?ref=main",
+   "accessMethod": "api.github.com contents API raw",
+   "upstream": "nflverse-data release 'injuries' -> injuries_2025.csv (CC-BY-4.0)",
+   "covers": "season, week, team, player, report_status only",
+   "cannotEstablish": [
+    "no practice participation",
+    "no primary injury",
+    "no position (must be joined from elsewhere)",
+    "no depth-chart tier",
+    "no timestamp of publication"
+   ],
+   "officialVerification": "https://www.nfl.com/injuries/league/2025/reg<week> publishes the official report with position, injury, practice and game status.",
+   "bytes": 169327,
+   "rows": 4442
+  },
+  {
+   "id": "official-injury-report-nfl",
+   "title": "NFL official injury report (live page, per season/week)",
+   "accessUrl": "https://www.nfl.com/injuries/league/2026/reg10",
+   "accessMethod": "page fetch tool (markdown extraction); the raw HTML host is blocked for curl",
+   "official": true,
+   "covers": "current week: player, position, injury, practice status, game status, per club, per game",
+   "cannotEstablish": [
+    "does not state depth-chart rank",
+    "does not state who replaces an absent starter",
+    "practice status blank lines are published as blanks and stay blank here"
+   ]
+  },
+  {
+   "id": "official-nfl-player-stats",
+   "title": "NFL official player statistics (season + game logs)",
+   "accessUrl": "https://www.nfl.com/stats/player-stats/",
+   "accessMethod": "page fetch tool",
+   "official": true,
+   "covers": "season-to-date category leaderboards, per-player game logs",
+   "cannotEstablish": [
+    "no historical player prop lines",
+    "no odds of any kind",
+    "pagination limits bulk extraction"
+   ]
+  },
+  {
+   "id": "official-nfl-team-stats",
+   "title": "NFL official team statistics",
+   "accessUrl": "https://www.nfl.com/stats/team-stats/",
+   "accessMethod": "page fetch tool",
+   "official": true,
+   "cannotEstablish": [
+    "no betting lines",
+    "no injury impact attribution"
+   ]
+  },
+  {
+   "id": "official-nfl-transactions",
+   "title": "NFL official transactions",
+   "accessUrl": "https://www.nfl.com/transactions/",
+   "accessMethod": "page fetch tool",
+   "official": true,
+   "covers": "roster moves by date; useful to date a signing that fills a vacated starting role",
+   "cannotEstablish": [
+    "no depth-chart order",
+    "no snap expectation"
+   ]
+  },
+  {
+   "id": "official-nfl-depth-chart",
+   "title": "NFL.com team depth chart",
+   "accessUrl": "https://www.nfl.com/teams/detroit-lions/depth-chart",
+   "accessMethod": "page fetch tool",
+   "official": true,
+   "verifiedStatus": "404 on 2026-11-13 (checked: /teams/<club>/depth-chart). The official roster page https://www.nfl.com/teams/detroit-lions/roster returns 200 and lists position groups with status ACT but no 1st/2nd/3rd string order.",
+   "cannotEstablish": [
+    "starting order (this session could not retrieve an official depth chart)"
+   ]
+  },
+  {
+   "id": "official-nfl-schedules",
+   "title": "NFL official schedules",
+   "accessUrl": "https://www.nfl.com/schedules/",
+   "accessMethod": "page fetch tool",
+   "official": true,
+   "cannotEstablish": [
+    "no betting lines anywhere in the schedule payloads (probed)"
+   ]
+  },
+  {
+   "id": "nfl-ops-rules",
+   "title": "NFL Football Operations rules",
+   "accessUrl": "https://operations.nfl.com/the-rules/",
+   "accessMethod": "page fetch tool",
+   "official": true,
+   "covers": "scoring rules relevant to totals and overtime (used only for definitions)"
+  },
+  {
+   "id": "nfl-com-official-2026-feed",
+   "title": "Committed official NFL 2026 by-week feed in this repository",
+   "file": "official/nfl-2026.json",
+   "accessUrl": "https://github.com/karagemop466-tech/Korea5/blob/main/official/nfl-2026.json",
+   "accessMethod": "repository file, fetched from nfl.com by an earlier session's CI",
+   "upstream": "https://www.nfl.com/schedules/2026/by-week/week-<n>",
+   "covers": "2026 kickoff times in PT, TV and audio networks, 321 games",
+   "cannotEstablish": [
+    "no betting lines"
+   ],
+   "bytes": 302649,
+   "rows": 10794
+  }
+ ],
+ "rejectedSources": [
+  {
+   "id": "release-assets-cdn",
+   "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.csv",
+   "reason": "301 redirect to release-assets.githubusercontent.com, which is outside this environment's host allowlist (TLS handshake refused). Documented, not worked around.",
+   "evidence": "curl exit 35 SSL_ERROR_SYSCALL on release-assets.githubusercontent.com"
+  },
+  {
+   "id": "raw-githubusercontent",
+   "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
+   "reason": "host not reachable from this sandbox (connection refused); replaced with codeload tarball",
+   "evidence": "curl exit 35"
+  },
+  {
+   "id": "sportsbook-pages",
+   "url": "https://www.nfl.com/",
+   "reason": "nfl.com does not publish betting prices, and commercial sportsbooks are not reachable and not official. No prop or parlay price is claimed anywhere in this lab.",
+   "evidence": "RSC payload probe: zero keys containing 'spread', 'moneyline', 'odds' resolved by a parallel session's probe (research/lines-probe/schema-map.json)."
+  }
+ ],
+ "citationPolicy": [
+  "A value that comes from a mirror is labelled MIRROR and links the mirror plus the upstream release.",
+  "A value that comes from nfl.com is labelled OFFICIAL and links the exact page.",
+  "A value that cannot be confirmed is blank and listed on the Flagged for Review page.",
+  "Market prices are labelled NOT OFFICIAL - no league source exists for them."
+ ]
+}

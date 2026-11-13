@@ -1,0 +1,914 @@
+{
+ "generatedUTC": "2026-11-13T13:37:25Z",
+ "checks": {
+  "internalConsistency": {
+   "resultMismatches": 0,
+   "totalMismatches": 0,
+   "duplicateIds": 0,
+   "missingClubsBySeason": {},
+   "rows": 7548,
+   "expectedClubCounts": {
+    "1999": 31,
+    "2000": 31,
+    "2001": 31
+   },
+   "fewerClubsNote": "1999-2001 have 31 clubs because the Houston Texans did not exist before 2002; that is expected, not a defect."
+  },
+  "standings2026": {
+   "rows": [
+    {
+     "club": "BUF",
+     "officialClubLabel": "BUF",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 7,
+      "l": 1,
+      "t": 0,
+      "pf": 256,
+      "pa": 187
+     },
+     "official": {
+      "w": 7,
+      "l": 1,
+      "t": 0,
+      "pf": 256,
+      "pa": 187
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "NE",
+     "officialClubLabel": "NE",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 5,
+      "l": 4,
+      "t": 0,
+      "pf": 211,
+      "pa": 207
+     },
+     "official": {
+      "w": 5,
+      "l": 4,
+      "t": 0,
+      "pf": 211,
+      "pa": 207
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "NYJ",
+     "officialClubLabel": "NYJ",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 2,
+      "l": 7,
+      "t": 0,
+      "pf": 182,
+      "pa": 223
+     },
+     "official": {
+      "w": 2,
+      "l": 7,
+      "t": 0,
+      "pf": 182,
+      "pa": 223
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "MIA",
+     "officialClubLabel": "MIA",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 1,
+      "l": 7,
+      "t": 0,
+      "pf": 126,
+      "pa": 200
+     },
+     "official": {
+      "w": 1,
+      "l": 7,
+      "t": 0,
+      "pf": 126,
+      "pa": 200
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "PIT",
+     "officialClubLabel": "PIT",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pf": 180,
+      "pa": 144
+     },
+     "official": {
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pf": 180,
+      "pa": 144
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "CIN",
+     "officialClubLabel": "CIN",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pf": 240,
+      "pa": 175
+     },
+     "official": {
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pf": 240,
+      "pa": 175
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "CLE",
+     "officialClubLabel": "CLE",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 5,
+      "l": 4,
+      "t": 0,
+      "pf": 161,
+      "pa": 196
+     },
+     "official": {
+      "w": 5,
+      "l": 4,
+      "t": 0,
+      "pf": 161,
+      "pa": 196
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "BAL",
+     "officialClubLabel": "BAL",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 4,
+      "l": 5,
+      "t": 0,
+      "pf": 189,
+      "pa": 236
+     },
+     "official": {
+      "w": 4,
+      "l": 5,
+      "t": 0,
+      "pf": 189,
+      "pa": 236
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "JAX",
+     "officialClubLabel": "JAX",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pf": 229,
+      "pa": 121
+     },
+     "official": {
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pf": 229,
+      "pa": 121
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "HOU",
+     "officialClubLabel": "HOU",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 3,
+      "l": 5,
+      "t": 0,
+      "pf": 209,
+      "pa": 192
+     },
+     "official": {
+      "w": 3,
+      "l": 5,
+      "t": 0,
+      "pf": 209,
+      "pa": 192
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "IND",
+     "officialClubLabel": "IND",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 2,
+      "l": 7,
+      "t": 0,
+      "pf": 184,
+      "pa": 249
+     },
+     "official": {
+      "w": 2,
+      "l": 7,
+      "t": 0,
+      "pf": 184,
+      "pa": 249
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "TEN",
+     "officialClubLabel": "TEN",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 1,
+      "l": 7,
+      "t": 0,
+      "pf": 144,
+      "pa": 199
+     },
+     "official": {
+      "w": 1,
+      "l": 7,
+      "t": 0,
+      "pf": 144,
+      "pa": 199
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "DEN",
+     "officialClubLabel": "DEN",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 7,
+      "l": 2,
+      "t": 0,
+      "pf": 198,
+      "pa": 186
+     },
+     "official": {
+      "w": 7,
+      "l": 2,
+      "t": 0,
+      "pf": 198,
+      "pa": 186
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "KC",
+     "officialClubLabel": "KC",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pf": 202,
+      "pa": 143
+     },
+     "official": {
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pf": 202,
+      "pa": 143
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "LV",
+     "officialClubLabel": "LV",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 4,
+      "l": 5,
+      "t": 0,
+      "pf": 238,
+      "pa": 268
+     },
+     "official": {
+      "w": 4,
+      "l": 5,
+      "t": 0,
+      "pf": 238,
+      "pa": 268
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "LAC",
+     "officialClubLabel": "LAC",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 0,
+      "l": 8,
+      "t": 0,
+      "pf": 121,
+      "pa": 219
+     },
+     "official": {
+      "w": 0,
+      "l": 8,
+      "t": 0,
+      "pf": 121,
+      "pa": 219
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "NYG",
+     "officialClubLabel": "NYG",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 5,
+      "l": 3,
+      "t": 1,
+      "pf": 203,
+      "pa": 196
+     },
+     "official": {
+      "w": 5,
+      "l": 3,
+      "t": 1,
+      "pf": 203,
+      "pa": 196
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "DAL",
+     "officialClubLabel": "DAL",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 4,
+      "l": 5,
+      "t": 0,
+      "pf": 246,
+      "pa": 236
+     },
+     "official": {
+      "w": 4,
+      "l": 5,
+      "t": 0,
+      "pf": 246,
+      "pa": 236
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "WAS",
+     "officialClubLabel": "WAS",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 3,
+      "l": 5,
+      "t": 1,
+      "pf": 196,
+      "pa": 223
+     },
+     "official": {
+      "w": 3,
+      "l": 5,
+      "t": 1,
+      "pf": 196,
+      "pa": 223
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "PHI",
+     "officialClubLabel": "PHI",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 2,
+      "l": 7,
+      "t": 0,
+      "pf": 148,
+      "pa": 221
+     },
+     "official": {
+      "w": 2,
+      "l": 7,
+      "t": 0,
+      "pf": 148,
+      "pa": 221
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "CHI",
+     "officialClubLabel": "CHI",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 7,
+      "l": 2,
+      "t": 0,
+      "pf": 241,
+      "pa": 184
+     },
+     "official": {
+      "w": 7,
+      "l": 2,
+      "t": 0,
+      "pf": 241,
+      "pa": 184
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "DET",
+     "officialClubLabel": "DET",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pf": 222,
+      "pa": 189
+     },
+     "official": {
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pf": 222,
+      "pa": 189
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "MIN",
+     "officialClubLabel": "MIN",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pf": 146,
+      "pa": 116
+     },
+     "official": {
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pf": 146,
+      "pa": 116
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "GB",
+     "officialClubLabel": "GB",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 6,
+      "l": 3,
+      "t": 0,
+      "pf": 216,
+      "pa": 191
+     },
+     "official": {
+      "w": 6,
+      "l": 3,
+      "t": 0,
+      "pf": 216,
+      "pa": 191
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "CAR",
+     "officialClubLabel": "CAR",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 3,
+      "l": 5,
+      "t": 0,
+      "pf": 199,
+      "pa": 219
+     },
+     "official": {
+      "w": 3,
+      "l": 5,
+      "t": 0,
+      "pf": 199,
+      "pa": 219
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "NO",
+     "officialClubLabel": "NO",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 3,
+      "l": 5,
+      "t": 0,
+      "pf": 185,
+      "pa": 216
+     },
+     "official": {
+      "w": 3,
+      "l": 5,
+      "t": 0,
+      "pf": 185,
+      "pa": 216
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "TB",
+     "officialClubLabel": "TB",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 3,
+      "l": 6,
+      "t": 0,
+      "pf": 202,
+      "pa": 178
+     },
+     "official": {
+      "w": 3,
+      "l": 6,
+      "t": 0,
+      "pf": 202,
+      "pa": 178
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "ATL",
+     "officialClubLabel": "ATL",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 3,
+      "l": 6,
+      "t": 0,
+      "pf": 188,
+      "pa": 223
+     },
+     "official": {
+      "w": 3,
+      "l": 6,
+      "t": 0,
+      "pf": 188,
+      "pa": 223
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "SF",
+     "officialClubLabel": "SF",
+     "aliasApplied": false,
+     "gamesArchive": 8,
+     "archive": {
+      "w": 7,
+      "l": 1,
+      "t": 0,
+      "pf": 235,
+      "pa": 156
+     },
+     "official": {
+      "w": 7,
+      "l": 1,
+      "t": 0,
+      "pf": 235,
+      "pa": 156
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "SEA",
+     "officialClubLabel": "SEA",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 5,
+      "l": 4,
+      "t": 0,
+      "pf": 202,
+      "pa": 162
+     },
+     "official": {
+      "w": 5,
+      "l": 4,
+      "t": 0,
+      "pf": 202,
+      "pa": 162
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "LA",
+     "officialClubLabel": "LA",
+     "aliasApplied": false,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 5,
+      "l": 4,
+      "t": 0,
+      "pf": 214,
+      "pa": 181
+     },
+     "official": {
+      "w": 5,
+      "l": 4,
+      "t": 0,
+      "pf": 214,
+      "pa": 181
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    },
+    {
+     "club": "ARI",
+     "officialClubLabel": "AZ",
+     "aliasApplied": true,
+     "gamesArchive": 9,
+     "archive": {
+      "w": 3,
+      "l": 6,
+      "t": 0,
+      "pf": 178,
+      "pa": 255
+     },
+     "official": {
+      "w": 3,
+      "l": 6,
+      "t": 0,
+      "pf": 178,
+      "pa": 255
+     },
+     "match": true,
+     "differences": [],
+     "sourceUrl": "https://www.nfl.com/standings/"
+    }
+   ],
+   "mismatches": 0,
+   "checked": 32,
+   "sourceUrl": "https://www.nfl.com/standings/"
+  },
+  "playerStats2026": {
+   "rows": [
+    {
+     "player": "Bijan Robinson",
+     "club": "ATL",
+     "officialRushYards": 880,
+     "officialAttempts": 169,
+     "officialRushTds": 5,
+     "archiveSeason": "2025 only - the reachable mirror holds no 2026 week-level player file",
+     "archiveValue": null,
+     "match": null,
+     "note": "recorded as an official value for cross-reference, not as an archive match",
+     "sourceUrl": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc"
+    },
+    {
+     "player": "Kenneth Walker III",
+     "club": "SEA",
+     "officialRushYards": 872,
+     "officialAttempts": 159,
+     "officialRushTds": 7,
+     "archiveSeason": "2025 only - the reachable mirror holds no 2026 week-level player file",
+     "archiveValue": null,
+     "match": null,
+     "note": "recorded as an official value for cross-reference, not as an archive match",
+     "sourceUrl": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc"
+    },
+    {
+     "player": "Jahmyr Gibbs",
+     "club": "DET",
+     "officialRushYards": 847,
+     "officialAttempts": 177,
+     "officialRushTds": 9,
+     "archiveSeason": "2025 only - the reachable mirror holds no 2026 week-level player file",
+     "archiveValue": null,
+     "match": null,
+     "note": "recorded as an official value for cross-reference, not as an archive match",
+     "sourceUrl": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc"
+    },
+    {
+     "player": "Bucky Irving",
+     "club": "TB",
+     "officialRushYards": 825,
+     "officialAttempts": 167,
+     "officialRushTds": 7,
+     "archiveSeason": "2025 only - the reachable mirror holds no 2026 week-level player file",
+     "archiveValue": null,
+     "match": null,
+     "note": "recorded as an official value for cross-reference, not as an archive match",
+     "sourceUrl": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc"
+    },
+    {
+     "player": "James Cook",
+     "club": "BUF",
+     "officialRushYards": 814,
+     "officialAttempts": 169,
+     "officialRushTds": 8,
+     "archiveSeason": "2025 only - the reachable mirror holds no 2026 week-level player file",
+     "archiveValue": null,
+     "match": null,
+     "note": "recorded as an official value for cross-reference, not as an archive match",
+     "sourceUrl": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc"
+    }
+   ],
+   "sourceUrl": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc",
+   "note": "The reachable mirror contains 2025 player-week data only, so no archive-vs-official match is claimed for 2026 player totals."
+  },
+  "superBowls": {
+   "rows": [
+    {
+     "season": 2024,
+     "gameId": "2024_22_KC_PHI",
+     "archive": {
+      "away": "KC",
+      "awayScore": 22,
+      "home": "PHI",
+      "homeScore": 40,
+      "date": "2025-02-09"
+     },
+     "official": {
+      "away": "KC",
+      "awayScore": 22,
+      "home": "PHI",
+      "homeScore": 40,
+      "date": "2025-02-09"
+     },
+     "archiveFound": true,
+     "match": true,
+     "sourceUrl": "https://www.nfl.com/games/chiefs-at-eagles-2024-post-22"
+    },
+    {
+     "season": 2025,
+     "gameId": "2025_22_SEA_NE",
+     "archive": {
+      "away": "SEA",
+      "awayScore": 29,
+      "home": "NE",
+      "homeScore": 13,
+      "date": "2026-02-08"
+     },
+     "official": {
+      "away": "SEA",
+      "awayScore": 29,
+      "home": "NE",
+      "homeScore": 13,
+      "date": "2026-02-08"
+     },
+     "archiveFound": true,
+     "match": true,
+     "sourceUrl": "https://www.nfl.com/games/seahawks-at-patriots-2025-post-22"
+    }
+   ],
+   "matches": 2
+  },
+  "injuryMirror2025": {
+   "rows": 4442,
+   "weeksCovered": [
+    1,
+    13
+   ],
+   "clubs": 32,
+   "statusCounts": {
+    "Doubtful": 82,
+    "Injured Reserve": 2674,
+    "Out": 879,
+    "Questionable": 807
+   },
+   "columns": [
+    "season",
+    "week",
+    "team",
+    "full_name",
+    "report_status"
+   ],
+   "missingOfficialColumns": [
+    "practice_status",
+    "report_primary_injury",
+    "position",
+    "game_status distinction",
+    "publication timestamp"
+   ],
+   "sourceUrl": "https://www.nfl.com/injuries/league/2025/reg{week}",
+   "note": "The 2025 mirror carries five columns. The official page carries position, injury, practice status and game status. Statuses present here are report_status values, so an 'Out' in the mirror means the official report listed the player as Out for that week."
+  }
+ },
+ "verdict": {
+  "standingsAgreement": "32/32 clubs",
+  "superBowlAgreement": "2/2 games",
+  "internalErrors": 0
+ },
+ "notVerified": [
+  "2026 player-level totals from the archive (no 2026 week-level player file is reachable).",
+  "historical betting prices (no official source exists at all).",
+  "practice participation and injury severity in the 2025 mirror (columns absent)."
+ ]
+}

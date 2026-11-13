@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review · NFL lines lab</title>
+<meta name="description" content="Every flaw, irregularity and unverified value, with sources.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/lab.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="index.html">Overview</a><a href="lines.html">Fair lines</a><a href="leaderboard.html">Leaderboard</a><a href="backtest.html">Backtest</a><a href="correlation.html">Correlation</a><a href="injuries.html">Injuries &amp; tiers</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a><a href="flagged.html" class="active">Flagged</a><a href="method.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="eyebrow">Flagged for review · 31 items</p>
+<h1>Flagged for review</h1>
+<p class="lede">Everything below is a flaw, an irregularity, or a value that could not be confirmed from an
+official source. None of it blocks publication — that is the point of the page. Review it after the fact and
+ask for changes.</p>
+
+<aside class="callout flag"><strong>Severity is the lab's own judgement.</strong> HIGH means a reader could draw
+a materially wrong conclusion. MEDIUM means the conclusion is right but weaker than it looks. LOW means it is a
+documentation matter.</aside>
+
+<div class="scroll"><table><thead><tr><th>ID</th><th>Area</th><th>What</th><th>Why it matters</th><th>Source</th><th>Severity</th></tr></thead><tbody><tr><td><strong>F01</strong></td><td>Market data</td><td>Betting prices are not official NFL values</td><td>The league publishes no prices; the archive used here is a public community mirror. No official verification is possible for any price.</td><td><a href="https://api.github.com/repos/nflverse/nflverse-data/releases/tags/schedules" rel="noopener">source</a></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F02</strong></td><td>Licensing</td><td>The nfldata repository has no licence file at the commit used</td><td>Derived figures are published, so the rights question has to be resolved. nflverse-data itself is CC-BY-4.0; nfldata is not stated.</td><td><a href="https://github.com/nflverse/nfldata" rel="noopener">source</a></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F03</strong></td><td>Data access</td><td>GitHub release binaries are unreachable from this environment</td><td>release-assets.githubusercontent.com refuses the connection, so a third-party mirror was used for the 2025 player and injury files. Those rows are labelled MIRROR.</td><td><a href="https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.csv" rel="noopener">source</a></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F04</strong></td><td>Depth charts</td><td>Official depth chart pages return HTTP 404</td><td>nfl.com/teams/&lt;club&gt;/depth-chart is unavailable, so 1st/2nd/3rd/4th string order could not be read from the league. Tiers are computed from production and labelled as computed.</td><td><a href="https://www.nfl.com/teams/detroit-lions/depth-chart" rel="noopener">source</a></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F05</strong></td><td>Injuries</td><td>56 of 65 officially listed players have a blank game status</td><td>The official page leaves the field empty; it is left empty here and never read as &#x27;available&#x27;.</td><td><a href="https://www.nfl.com/injuries/league/2026/reg10" rel="noopener">source</a></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F06</strong></td><td>Injuries</td><td>Three of the week-10 games were transcribed; the rest are absent</td><td>Coverage gap. The other games are not shown as empty, they are simply not present.</td><td><a href="https://www.nfl.com/injuries/" rel="noopener">source</a></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F07</strong></td><td>Injury impact</td><td>Injury impact intervals include zero for every position group</td><td>The measured effect of a tier-1 absence is not distinguishable from noise on one season of data. No injury adjustment is applied to any line.</td><td><a href="https://www.nfl.com/injuries/" rel="noopener">source</a></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F08</strong></td><td>Player props</td><td>No player-prop prices exist in the archive</td><td>Prop and same-game-parlay strategies are therefore declared but BLOCKED. Their profit is blank, not zero.</td><td><span class="blank">no official source exists</span></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F09</strong></td><td>Parlays</td><td>Two- and three-leg parlays are priced at the product of the leg decimals</td><td>That is an upper bound, not a book&#x27;s correlated same-game price. The measured ROI is therefore an optimistic figure.</td><td><span class="blank">no official source exists</span></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F10</strong></td><td>Player correlation</td><td>Prop &#x27;lines&#x27; are each player&#x27;s trailing 4-game average</td><td>They are not sportsbook lines, so the measured player correlations describe dependence but cannot price a prop.</td><td><span class="blank">no official source exists</span></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F11</strong></td><td>Model</td><td>The model loses to the closing market</td><td>Model Brier 0.22131 vs market 0.21153. Any line published here is a benchmark, not an alternative to the market.</td><td><a href="https://www.nfl.com/stats/" rel="noopener">source</a></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F12</strong></td><td>Model</td><td>No weather, rest-travel, or injury inputs</td><td>They are absent from the archive. Adding a guessed value would violate the no-invention rule.</td><td><span class="blank">no official source exists</span></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F13</strong></td><td>Backtest</td><td>Line prices carry no capture timestamp</td><td>It is unknown whether the stored price is an open, a close, or an in-progress quote.</td><td><a href="https://github.com/nflverse/nfldata" rel="noopener">source</a></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F14</strong></td><td>Leaderboard</td><td>Zero strategies qualified</td><td>No strategy passes all eight gates, so no rank above &#x27;unproven&#x27; and no reward eligibility exists.</td><td><a href="leaderboard.html">lab page</a></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F15</strong></td><td>Good-looking result</td><td>The three-leg parlay shows a positive ROI of +10.0% on 384 bets</td><td>Its bootstrap interval runs from -30.9% to +57.3%, and against a per-bet market null the p-value is 0.218. It looked significant only under a luck test this lab has since rejected as invalid. It is the single most likely result on this site to be luck, and it is kept visible on purpose.</td><td><a href="leaderboard.html">lab page</a></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F16</strong></td><td>Data validation</td><td>The exact number of 2026 games in the mirror is 163 with prices of 272 scheduled</td><td>Weeks 12-18 carry no prices yet, so nothing downstream can be priced for them.</td><td><span class="blank">no official source exists</span></td><td><span class="b low">LOW</span></td></tr>
+<tr><td><strong>F17</strong></td><td>Club labels</td><td>The official standings page prints AZ while the archive uses ARI</td><td>An explicit alias map is applied so a rename can never silently hide a disagreement.</td><td><a href="https://www.nfl.com/standings/" rel="noopener">source</a></td><td><span class="b low">LOW</span></td></tr>
+<tr><td><strong>F18</strong></td><td>Coverage</td><td>1999–2001 seasons contain 31 clubs</td><td>The Houston Texans did not exist before 2002. This is expected and documented, not a data defect.</td><td><a href="https://www.nfl.com/teams/houston-texans/" rel="noopener">source</a></td><td><span class="b low">LOW</span></td></tr>
+<tr><td><strong>F19</strong></td><td>Line card</td><td>All 13 Week 11 rows are labelled WATCH and none PLAY</td><td>WATCH means the model and the number disagree; it does not mean the model is right. In 7,413 graded games the market was better, so a WATCH row is at least as likely to be the model&#x27;s error.</td><td><a href="lines.html">lab page</a></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F20</strong></td><td>Fair price</td><td>Fair prices are break-even prices, not offers</td><td>A fair price implies zero hold. A real book charges a margin, so a fair price is never a price you can actually take.</td><td><a href="method.html">lab page</a></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F21</strong></td><td>Official cross-check</td><td>2026 player-level totals were not checked against the archive</td><td>The mirror holds 2025 player-week data only. Official 2026 leaderboard values are recorded for reference but no archive match is claimed.</td><td><a href="https://www.nfl.com/stats/player-stats/" rel="noopener">source</a></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F22</strong></td><td>Injury mirror</td><td>The 2025 injury mirror lacks practice status and injury type</td><td>Severity cannot be graded, so &#x27;Out&#x27; and &#x27;Injured Reserve&#x27; are treated alike. That weakens the measured impact.</td><td><a href="https://www.nfl.com/injuries/" rel="noopener">source</a></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F23</strong></td><td>Rate model</td><td>Team scoring rates use a fixed 6-game prior</td><td>The prior weight is a documented choice, not an estimated parameter. It is not tuned on outcomes, which is the safer error, but it is a choice.</td><td><span class="blank">no official source exists</span></td><td><span class="b low">LOW</span></td></tr>
+<tr><td><strong>F24</strong></td><td>Correlation</td><td>Player correlation samples are one season</td><td>Around 300 club-weeks per pair. Any phi under about 0.1 should be treated as noise at this size.</td><td><a href="https://www.nfl.com/stats/player-stats/" rel="noopener">source</a></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F25</strong></td><td>Model</td><td>Elo season regression and home-field constant are fixed conventions</td><td>20-point K, 48-point home field and a one-third regression are public conventions, not fitted here. They are stated so the model can be reproduced and criticised.</td><td><span class="blank">no official source exists</span></td><td><span class="b low">LOW</span></td></tr>
+<tr><td><strong>F26</strong></td><td>Neutral sites</td><td>Neutral-site games are identified from the archive&#x27;s location field only</td><td>The 2026 Munich game is confirmed from the official game page, but every other neutral game relies on the archive flag.</td><td><a href="https://www.nfl.com/games/patriots-at-lions-2026-reg-10" rel="noopener">source</a></td><td><span class="b low">LOW</span></td></tr>
+<tr><td><strong>F27</strong></td><td>Fair total</td><td>The fair total ignores weather and pace</td><td>It is a scoring-rate average with a prior. Wind and dome effects are not modelled.</td><td><a href="https://operations.nfl.com/the-rules/" rel="noopener">source</a></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F28</strong></td><td>Coverage</td><td>The 2026 Week 11 market was captured on 2026-11-13 and may move</td><td>Any gap will change. The card is a snapshot, not a standing price.</td><td><a href="lines.html">lab page</a></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F29</strong></td><td>Process</td><td>Multiple sessions work on this repository concurrently</td><td>A parallel session may be building overlapping NFL data in other paths. This lab writes only under nfl-lines/, scripts/nfl_lines/, and appends to COORDINATION.md.</td><td><a href="https://github.com/karagemop466-tech/Korea5/blob/main/COORDINATION.md" rel="noopener">source</a></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F31</strong></td><td>Corrected error</td><td>The first Week 11 card added the market handicap instead of subtracting it</td><td>Gaps of 18.6 and 29.6 points were published on a model whose own margin error is 10.5 points. The sign convention is now proven in the pipeline and asserted by verifier check V13, which recomputes every gap from its two inputs. The backtest engine was already correct, so ROI, gates and luck tests are unaffected.</td><td><a href="method.html">lab page</a></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F32</strong></td><td>Origination card</td><td>The spread and moneyline views disagree in sign on 2 of 13 Week 11 games</td><td>TEN @ DAL and CIN @ WAS have gaps of about a point and a fraction of a percentage point respectively. Both are far inside the model&#x27;s own error, so this is mapping noise, but it is published rather than smoothed away.</td><td><a href="lines.html">lab page</a></td><td><span class="b low">LOW</span></td></tr></tbody></table></div>
+
+<h2>Unverified values, listed explicitly</h2>
+<ul class="clean">
+<li>Every market price: no official source exists. <span class="blank">unverified by definition</span>.</li>
+<li>56 game-status cells in the 2026 week-10 injury tracker:
+<span class="blank">blank on the official page</span>.</li>
+<li>All 2026 player-level season totals in the archive: <span class="blank">not checked</span> (see F21).</li>
+<li>Every depth-chart tier: <span class="blank">computed, not official</span> (see F04).</li>
+<li>Every player-prop line: <span class="blank">does not exist</span> (see F08).</li>
+</ul>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL lines &amp; strategy lab</strong> — research instrument, not betting advice. No wager is
+recommended anywhere on this site. Market prices shown are derived from a public archive and are
+labelled <strong>NOT OFFICIAL</strong>; the NFL publishes no betting prices.
+· <a href="index.html">Overview</a> · <a href="sources.html">Sources</a> ·
+<a href="flagged.html">Flagged for review</a> · <a href="method.html">Method</a></p>
+<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:37:43Z</p>
+</div></footer></body></html>

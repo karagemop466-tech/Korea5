@@ -167,3 +167,67 @@ python3 tools/verify_extra.py
 Local tests check structure and links, not complete source-fact verification. Historical
 verification reports are preserved with their original timestamps. All future vacation
 windows remain provisional. `certainty.html` lists the outstanding evidence limits.
+
+---
+
+# NFL lines lab (added 2026-11-13)
+
+A separate section under `nfl-lines/` that answers the NFL question directly: *can I originate my own lines, and
+are the strategies any good?* It is a research instrument, not betting advice, and it is linked from every page of
+the planner above.
+
+**Start here:** [`nfl-lines/index.html`](nfl-lines/index.html) ·
+[executive summary](research/NFL-LINES-EXECUTIVE-SUMMARY.md) ·
+[repo review](verification/nfl-lines-review-6b0481c7.md)
+
+## What it says in one line
+
+Fair lines are produced for all 13 priced 2026 Week 11 games, and **none of the 8 backtested strategies has
+demonstrated skill rather than luck** — every 95% interval includes zero and no p-value survives correction across
+the family. Player props and same-game parlays are **blocked** because no prop prices exist anywhere reachable.
+Measured injury / backup-tier effects are indistinguishable from zero.
+
+## Pages
+
+| Page | What it holds |
+|---|---|
+| `nfl-lines/index.html` | Dashboard: model vs market signal, the three answers, what is missing |
+| `nfl-lines/lines.html` | Week 11 fair spread / total / moneyline / break-even price vs the market number |
+| `nfl-lines/leaderboard.html` | 8-gate validation, evidence-weighted rank, luck test, reward eligibility |
+| `nfl-lines/backtest.html` | Walk-forward 1999–2026, per-season splits, calibration, no-model benchmarks |
+| `nfl-lines/correlation.html` | Measured φ for market pairs and player pairs, with the pricing consequence |
+| `nfl-lines/injuries.html` | Official 2026 Week 10 tracker (65 rows) + measured 2025 injury impact |
+| `nfl-lines/questions.html` | 24 questions: known / unknown / missing / what it would change / how to settle it |
+| `nfl-lines/suggestions.html` | 12 scored suggestions, each naming the decision you have to make |
+| `nfl-lines/sources.html` | 13 registered datasets, 3 rejected sources, 32/32-club official validation |
+| `nfl-lines/flagged.html` | 32 flagged irregularities and unverified values, with sources |
+| `nfl-lines/method.html` | Definitions, the eight gates, and the one statistical correction |
+
+## Data and provenance rules
+
+* Market prices **are not official** — the NFL publishes none. Every price-derived figure is labelled
+  `NOT OFFICIAL` and links the public archive it came from.
+* Archive vs official: all **32/32** 2026 club records and points match `nfl.com/standings`; both recent Super Bowl
+  results match their official game pages; 0 internal arithmetic errors across 7,548 games.
+* Official depth charts return **HTTP 404**, so 1st/2nd/3rd/4th-string tiers are computed from production and
+  labelled as computed everywhere. A player with no production record gets a blank tier.
+* Blank is not zero: a blocked strategy shows `BLOCKED` and a blank profit, never `0`.
+
+## Rebuild
+
+```bash
+python3 scripts/nfl_lines/stage1_official.py     # official captures (injury report, cross-checks)
+python3 scripts/nfl_lines/stage2_validate.py     # archive vs nfl.com/standings and Super Bowls
+python3 scripts/nfl_lines/stage3_engine.py       # strategies, gates, leaderboard, luck tests
+python3 scripts/nfl_lines/stage4_correlation.py  # measured correlations
+python3 scripts/nfl_lines/stage5_injuries.py     # 2026 tracker + 2025 impact
+python3 scripts/nfl_lines/stage6_lines.py        # Week 11 fair lines
+python3 scripts/nfl_lines/stage7_decision.py     # questions + suggestions registers
+python3 scripts/nfl_lines/sources.py             # source registry
+python3 scripts/nfl_lines/stage8_site.py         # the 11 pages
+python3 scripts/nfl_lines/verify.py              # 14 structural checks, exits non-zero on failure
+```
+
+The seed is fixed (`20261113`), so a rebuild reproduces the numbers byte for byte unless an input file changes.
+`.github/workflows/nfl-lines-lab.yml` runs exactly this sequence on every push and pull request, and can
+optionally re-fetch the official pages from a runner, which can reach hosts this sandbox cannot.

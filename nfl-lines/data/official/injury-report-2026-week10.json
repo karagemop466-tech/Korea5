@@ -1,0 +1,517 @@
+{
+ "season": 2026,
+ "week": 10,
+ "sourceUrl": "https://www.nfl.com/injuries/league/2026/reg10",
+ "fetchedUTC": "2026-11-13",
+ "notes": "Official NFL injury report page. Practice Status and Game Status are blank on the page for many players and are left blank here (never inferred). SCOPE: three games of week 10 were transcribed verbatim in this session (WAS@NYG, NE@DET, KC@ATL). The other week-10 games are NOT transcribed and are therefore absent rather than blank - a tracked coverage gap.",
+ "games": [
+  {
+   "date": "2026-11-12",
+   "kickoffET": "8:15 PM",
+   "tv": [
+    "Prime Video"
+   ],
+   "away": "WAS",
+   "awayRecord": "3-5-1",
+   "home": "NYG",
+   "homeRecord": "5-3-1",
+   "teams": {
+    "WAS": [
+     [
+      "John Bates",
+      "TE",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Treylon Burks",
+      "WR",
+      "",
+      "Did Not Participate In Practice",
+      ""
+     ],
+     [
+      "Jayden Daniels",
+      "QB",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Matt Gulbin",
+      "C",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Chig Okonkwo",
+      "TE",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Lucas Patrick",
+      "C",
+      "Concussion",
+      "Did Not Participate In Practice",
+      "Out"
+     ],
+     [
+      "Amik Robertson",
+      "CB",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Shy Tuttle",
+      "DT",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Colson Yankoff",
+      "TE",
+      "Knee",
+      "Did Not Participate In Practice",
+      "Out"
+     ]
+    ],
+    "NYG": [
+     [
+      "Abdul Carter",
+      "LB",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Jermaine Eluemunor",
+      "T",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Malik Harrison",
+      "LB",
+      "Groin",
+      "Limited Participation in Practice",
+      "Questionable"
+     ],
+     [
+      "Colton Hood",
+      "CB",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Theo Johnson",
+      "TE",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Charlie Jones",
+      "WR",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "J.J. McCarthy",
+      "QB",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Darnell Mooney",
+      "WR",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Malik Nabers",
+      "WR",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Cam Skattebo",
+      "RB",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Andrew Thomas",
+      "T",
+      "",
+      "Full Participation in Practice",
+      ""
+     ]
+    ]
+   }
+  },
+  {
+   "date": "2026-11-15",
+   "kickoffET": "9:30 AM",
+   "tv": [
+    "FOX",
+    "FOX DEPORTES"
+   ],
+   "away": "NE",
+   "awayRecord": "5-4",
+   "home": "DET",
+   "homeRecord": "6-2",
+   "teams": {
+    "NE": [
+     [
+      "Ben Brown",
+      "C",
+      "Knee",
+      "Did Not Participate In Practice",
+      "Out"
+     ],
+     [
+      "A.J. Brown",
+      "WR",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Kevin Byard",
+      "S",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Carlton Davis III",
+      "CB",
+      "Knee",
+      "Did Not Participate In Practice",
+      "Out"
+     ],
+     [
+      "Reggie Gilliam",
+      "FB",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "TreVeyon Henderson",
+      "RB",
+      "Illness",
+      "Did Not Participate In Practice",
+      "Out"
+     ],
+     [
+      "Hunter Henry",
+      "TE",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Cameron Latu",
+      "TE",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Drake Maye",
+      "QB",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Morgan Moses",
+      "T",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Walter Rouse",
+      "T",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Brenden Schooler",
+      "S",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Rhamondre Stevenson",
+      "RB",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Greg Van Roten",
+      "G",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Charles Woods",
+      "CB",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ]
+    ],
+    "DET": [
+     [
+      "Brian Branch",
+      "S",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Jared Goff",
+      "QB",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Kerby Joseph",
+      "S",
+      "Knee",
+      "Full Participation in Practice",
+      "Out"
+     ],
+     [
+      "Cade Mays",
+      "C",
+      "Ankle",
+      "Did Not Participate In Practice",
+      "Out"
+     ],
+     [
+      "D.J. Reed",
+      "CB",
+      "Hip",
+      "Did Not Participate In Practice",
+      "Out"
+     ],
+     [
+      "Jacob Saylors",
+      "RB",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Amon-Ra St. Brown",
+      "WR",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Sione Vaki",
+      "RB",
+      "",
+      "Did Not Participate In Practice",
+      ""
+     ],
+     [
+      "DJ Wonnum",
+      "DE",
+      "",
+      "Full Participation in Practice",
+      ""
+     ]
+    ]
+   }
+  },
+  {
+   "date": "2026-11-15",
+   "kickoffET": "1:00 PM",
+   "tv": [
+    "CBS"
+   ],
+   "away": "KC",
+   "awayRecord": "6-2",
+   "home": "ATL",
+   "homeRecord": "3-6",
+   "teams": {
+    "KC": [
+     [
+      "Jeffrey Bassa",
+      "LB",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Mansoor Delane",
+      "CB",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Justin Fields",
+      "QB",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Jaden Hicks",
+      "S",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Travis Kelce",
+      "TE",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Patrick Mahomes",
+      "QB",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Jaylon Moore",
+      "T",
+      "",
+      "Did Not Participate In Practice",
+      ""
+     ],
+     [
+      "Omarr Norman-Lott",
+      "DT",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Jaydn Ott",
+      "RB",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Rashee Rice",
+      "WR",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Peter Woods",
+      "DT",
+      "",
+      "Did Not Participate In Practice",
+      ""
+     ],
+     [
+      "Xavier Worthy",
+      "WR",
+      "",
+      "Full Participation in Practice",
+      ""
+     ]
+    ],
+    "ATL": [
+     [
+      "Zachariah Branch",
+      "WR",
+      "",
+      "Did Not Participate In Practice",
+      ""
+     ],
+     [
+      "Kendal Daniels",
+      "LB",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Divine Deablo",
+      "LB",
+      "",
+      "Did Not Participate In Practice",
+      ""
+     ],
+     [
+      "Gervon Dexter Sr.",
+      "DT",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "James Pearce Jr.",
+      "DE",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Za'Darius Smith",
+      "DE",
+      "",
+      "Full Participation in Practice",
+      ""
+     ],
+     [
+      "Jawaan Taylor",
+      "T",
+      "",
+      "Did Not Participate In Practice",
+      ""
+     ],
+     [
+      "Cameron Thomas",
+      "DE",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ],
+     [
+      "Josh Woods",
+      "LB",
+      "",
+      "Limited Participation in Practice",
+      ""
+     ]
+    ]
+   }
+  }
+ ],
+ "generatedUTC": "2026-11-13T13:25:18Z"
+}

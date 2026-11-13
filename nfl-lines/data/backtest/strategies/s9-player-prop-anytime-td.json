@@ -1,0 +1,77 @@
+{
+ "id": "s9-player-prop-anytime-td",
+ "name": "Player prop: anytime touchdown / receiving yards",
+ "market": "player_prop",
+ "family": "player_prop",
+ "description": "Model player opportunity and per-opportunity production and price the prop against a quoted line.",
+ "features": "Would need player-week participation plus a timestamped prop price.",
+ "gateNote": "BLOCKED: this lab holds no player-prop price archive. Player-week statistics exist for 2025 only, from a mirror, and carry no prices. The strategy is declared but returns no bets and no profit figure \u2014 not zero, blank.",
+ "gradedRows": {
+  "signal": null,
+  "n": 0
+ },
+ "bets": [],
+ "sources": [
+  {
+   "id": "mirror-stats-player-week-2025",
+   "what": "player-week stats only, no prices"
+  },
+  {
+   "id": "official-nfl-player-stats",
+   "what": "official season leaderboards"
+  }
+ ],
+ "declaredStatus": "BLOCKED_NO_DATA",
+ "coverage": {
+  "propPricesAvailable": 0
+ },
+ "stats": {
+  "n": 0
+ },
+ "interval": {
+  "low": null,
+  "high": null,
+  "note": "fewer than 30 bets - interval not stable"
+ },
+ "seasonSplits": [],
+ "gates": {
+  "G1_provenance": {
+   "pass": true,
+   "detail": "every input dataset is in nfl-lines/data/sources.json"
+  },
+  "G2_coverage": {
+   "pass": false,
+   "detail": "0 priced bets graded"
+  },
+  "G3_baseline": {
+   "pass": true,
+   "detail": "market reference is the de-vigged closing price, not a naive guess"
+  },
+  "G4_leakage": {
+   "pass": true,
+   "detail": "walk-forward: all inputs dated before kickoff"
+  },
+  "G5_out_of_sample": {
+   "pass": false,
+   "detail": "0 graded bets vs pre-declared minimum 300"
+  },
+  "G6_robustness": {
+   "pass": false,
+   "detail": "0 of 0 seasons positive"
+  },
+  "G7_prospective_trial": {
+   "pass": false,
+   "detail": "requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open"
+  },
+  "G8_release_review": {
+   "pass": false,
+   "detail": "requires human review; not automated"
+  }
+ },
+ "luck": {
+  "n": 0
+ },
+ "rank": null,
+ "qualified": false,
+ "rewardEligible": false
+}

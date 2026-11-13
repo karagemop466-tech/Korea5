@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Backtest · NFL lines lab</title>
+<meta name="description" content="Walk-forward backtest of every strategy with per-season splits.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/lab.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="index.html">Overview</a><a href="lines.html">Fair lines</a><a href="leaderboard.html">Leaderboard</a><a href="backtest.html" class="active">Backtest</a><a href="correlation.html">Correlation</a><a href="injuries.html">Injuries &amp; tiers</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="method.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="eyebrow">Evidence · walk-forward · 1999–2026</p>
+<h1>Backtest</h1>
+<p class="lede">Every result is walk-forward: the model for a game only ever sees games that kicked off before it.
+The seed is fixed at 20261113 and the code is in the repository, so any number here can be reproduced.</p>
+
+<div class="grid g4">
+  <div class="card"><div class="kpi">7,548<small>games in archive</small></div></div>
+  <div class="card"><div class="kpi">7,413<small>graded (played) games</small></div></div>
+  <div class="card"><div class="kpi">300<small>pre-declared minimum bets</small></div></div>
+  <div class="card"><div class="kpi">0.02<small>minimum probability edge</small></div></div>
+</div>
+
+<h2>The benchmark nobody beats</h2>
+<p>Before a strategy means anything, it has to beat a bettor with no model. These are fixed-rule bets placed on
+every eligible game at the quoted price.</p>
+<div class="scroll"><table><thead><tr><th>Fixed rule</th><th>Bets</th><th>ROI</th><th>Average decimal price</th><th>Comment</th></tr></thead><tbody><tr><td>Bet every home moneyline</td><td>5,417</td><td>-4.5%</td><td>2.002</td><td>a bettor with no model at all</td></tr>
+<tr><td>Bet every away moneyline</td><td>5,417</td><td>-1.9%</td><td>2.833</td><td>a bettor with no model at all</td></tr>
+<tr><td>Bet every over</td><td>5,353</td><td>-3.5%</td><td>1.941</td><td>a bettor with no model at all</td></tr>
+<tr><td>Bet every under</td><td>5,353</td><td>-2.1%</td><td>1.947</td><td>a bettor with no model at all</td></tr>
+<tr><td>Bet every home spread</td><td>5,293</td><td>-5.1%</td><td>1.950</td><td>a bettor with no model at all</td></tr></tbody></table></div>
+<p class="small">Every blanket rule loses — which is the house edge appearing exactly where it should. A strategy
+that claims to win has to explain why it escapes it.</p>
+
+<h2>Strategy results with per-season splits</h2>
+<div class="scroll"><table><thead><tr><th>Strategy</th><th>Bets</th><th>ROI</th><th>Interval low</th><th>Interval high</th><th>Seasons positive</th><th>Season detail</th></tr></thead><tbody><tr><td>Dome / closed-roof over</td><td>1,436</td><td>0.0040</td><td>-0.0268</td><td>0.0396</td><td>0/0</td><td><span class="small"></span></td></tr>
+<tr><td>Own fair total from point-in-time scoring rates</td><td>4,044</td><td>-0.0150</td><td>-0.0346</td><td>0.0050</td><td>0/0</td><td><span class="small"></span></td></tr>
+<tr><td>Division game under</td><td>1,888</td><td>0.0121</td><td>-0.0361</td><td>0.0581</td><td>0/0</td><td><span class="small"></span></td></tr>
+<tr><td>Ratings (Elo) spread value</td><td>3,690</td><td>-0.0266</td><td>-0.0488</td><td>-0.0048</td><td>0/0</td><td><span class="small"></span></td></tr>
+<tr><td>Ratings (Elo) moneyline value</td><td>4,424</td><td>-0.0216</td><td>-0.0650</td><td>0.0201</td><td>0/0</td><td><span class="small"></span></td></tr>
+<tr><td>Rest advantage fade</td><td>549</td><td>-0.0430</td><td>-0.1339</td><td>0.0449</td><td>0/0</td><td><span class="small"></span></td></tr>
+<tr><td>Three-leg cross-game parlay (top-3 weekly Elo edges)</td><td>384</td><td>0.0998</td><td>-0.3087</td><td>0.5731</td><td>0/0</td><td><span class="small"></span></td></tr>
+<tr><td>Two-leg cross-game parlay (top-2 weekly Elo edges)</td><td>403</td><td>-0.0902</td><td>-0.3354</td><td>0.1927</td><td>0/0</td><td><span class="small"></span></td></tr></tbody></table></div>
+<p class="small">A strategy that is strongly positive in one season and strongly negative in the next is mostly
+noise. The "seasons positive" column is the cheap version of that check; the interval is the honest one.</p>
+
+<h2>Calibration of the underlying model</h2>
+<p>Before any bet sizing, the probability estimate has to be calibrated: of the games the model gives about a
+60% chance, about 60% should be won.</p>
+<div class="scroll"><table><thead><tr><th>Predicted probability bin</th><th>Games</th><th>Mean predicted</th><th>Actually won</th></tr></thead><tbody><tr><td>0.0-0.1</td><td>3</td><td>0.094</td><td>0.333</td></tr>
+<tr><td>0.1-0.2</td><td>76</td><td>0.163</td><td>0.237</td></tr>
+<tr><td>0.2-0.3</td><td>290</td><td>0.254</td><td>0.300</td></tr>
+<tr><td>0.3-0.4</td><td>508</td><td>0.356</td><td>0.341</td></tr>
+<tr><td>0.4-0.5</td><td>710</td><td>0.452</td><td>0.437</td></tr>
+<tr><td>0.5-0.6</td><td>898</td><td>0.551</td><td>0.560</td></tr>
+<tr><td>0.6-0.7</td><td>878</td><td>0.650</td><td>0.611</td></tr>
+<tr><td>0.7-0.8</td><td>668</td><td>0.747</td><td>0.728</td></tr>
+<tr><td>0.8-0.9</td><td>354</td><td>0.839</td><td>0.842</td></tr>
+<tr><td>0.9-1.0</td><td>39</td><td>0.916</td><td>0.923</td></tr></tbody></table></div>
+
+<h2>What is not in this backtest, and why that matters</h2>
+<ul class="clean">
+<li><strong>No injuries.</strong> The archive's injury data is a five-column mirror with no practice status, and
+no official depth chart could be retrieved. Adding a fake injury feature would be worse than adding none.</li>
+<li><strong>No weather.</strong> Indoor/outdoor is known; conditions are not.</li>
+<li><strong>No player props.</strong> There are no prop prices, so a prop backtest is impossible rather than
+merely absent.</li>
+<li><strong>No line movement.</strong> Only one price per game exists, so no open-to-close analysis is possible.</li>
+</ul>
+<p>Each of those is a <a href="flagged.html">flagged item</a>, not a silent gap.</p>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL lines &amp; strategy lab</strong> — research instrument, not betting advice. No wager is
+recommended anywhere on this site. Market prices shown are derived from a public archive and are
+labelled <strong>NOT OFFICIAL</strong>; the NFL publishes no betting prices.
+· <a href="index.html">Overview</a> · <a href="sources.html">Sources</a> ·
+<a href="flagged.html">Flagged for review</a> · <a href="method.html">Method</a></p>
+<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:37:43Z</p>
+</div></footer></body></html>

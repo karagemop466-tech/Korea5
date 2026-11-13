@@ -1,0 +1,96 @@
+{
+ "generatedUTC": "2026-11-13T13:38:25Z",
+ "checks": [
+  {
+   "id": "V00",
+   "name": "pages exist",
+   "ok": true,
+   "detail": "11 pages"
+  },
+  {
+   "id": "V01",
+   "name": "local links resolve",
+   "ok": true,
+   "detail": "0 missing"
+  },
+  {
+   "id": "V02",
+   "name": "external links on allow-listed official/repo domains",
+   "ok": true,
+   "detail": "26 unique external links; 0 off-allowlist"
+  },
+  {
+   "id": "V03",
+   "name": "every registered dataset file exists",
+   "ok": true,
+   "detail": "0 missing"
+  },
+  {
+   "id": "V04",
+   "name": "all data JSON parses",
+   "ok": true,
+   "detail": "24 files; []"
+  },
+  {
+   "id": "V05",
+   "name": "no template artefacts in rendered HTML",
+   "ok": true,
+   "detail": "clean"
+  },
+  {
+   "id": "V06",
+   "name": "honesty labels present",
+   "ok": true,
+   "detail": "all present"
+  },
+  {
+   "id": "V07",
+   "name": "no reward-eligible strategy; blocked strategies have no bets",
+   "ok": true,
+   "detail": "eligible=[] blockedWithBets=[]"
+  },
+  {
+   "id": "V08",
+   "name": "every tested strategy publishes an interval or an explicit reason",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "id": "V09",
+   "name": "no Week 11 row labelled PLAY",
+   "ok": true,
+   "detail": "13 rows; play=[]"
+  },
+  {
+   "id": "V10",
+   "name": "questions and suggestions complete",
+   "ok": true,
+   "detail": "q=[] s=[]"
+  },
+  {
+   "id": "V11",
+   "name": "root pages link into the lab and the lab links back",
+   "ok": true,
+   "detail": "22 root pages link in; 1 back-links"
+  },
+  {
+   "id": "V13",
+   "name": "spread-gap sign convention proven and gaps plausible",
+   "ok": true,
+   "detail": "slope 1.0447, cover 0.4761, mirrored 0.5917, max gap <= 3x MAE 10.516"
+  },
+  {
+   "id": "V14",
+   "name": "no page promises a value the data withholds",
+   "ok": true,
+   "detail": "blank states are disclosed, not implied"
+  }
+ ],
+ "summary": {
+  "total": 14,
+  "passed": 14,
+  "failed": 0
+ },
+ "scope": "Structural verification only: links, labels, schema, honesty invariants. It does NOT re-fetch official sources; source facts are documented in data/validation/validation.json and data/official/official-crosschecks.json with the exact page URL for each value.",
+ "rowsWithoutSource": 0
+}

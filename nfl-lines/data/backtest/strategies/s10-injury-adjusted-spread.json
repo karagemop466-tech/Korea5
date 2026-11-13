@@ -1,0 +1,73 @@
+{
+ "id": "s10-injury-adjusted-spread",
+ "name": "Injury / backup-tier adjusted spread",
+ "market": "spread",
+ "family": "injury",
+ "description": "Shift the baseline spread by the measured value of the players officially ruled out, weighted by depth-chart tier (1st/2nd/3rd/4th string).",
+ "features": "Would need: official status per player, depth-chart order, and an estimated points-per-tiers lot.",
+ "gateNote": "BLOCKED: no official depth chart is retrievable from this environment (nfl.com/teams/<club>/depth-chart returns 404), and the injury archive available in the sandbox is a 5-column mirror with no practice or game status. No adjustment value is invented.",
+ "gradedRows": {
+  "signal": null,
+  "n": 0
+ },
+ "bets": [],
+ "sources": [
+  {
+   "id": "official-nfl-depth-chart",
+   "what": "404 - unavailable"
+  }
+ ],
+ "declaredStatus": "BLOCKED_NO_DATA",
+ "coverage": {
+  "depthChartTiers": 0
+ },
+ "stats": {
+  "n": 0
+ },
+ "interval": {
+  "low": null,
+  "high": null,
+  "note": "fewer than 30 bets - interval not stable"
+ },
+ "seasonSplits": [],
+ "gates": {
+  "G1_provenance": {
+   "pass": true,
+   "detail": "every input dataset is in nfl-lines/data/sources.json"
+  },
+  "G2_coverage": {
+   "pass": false,
+   "detail": "0 priced bets graded"
+  },
+  "G3_baseline": {
+   "pass": true,
+   "detail": "market reference is the de-vigged closing price, not a naive guess"
+  },
+  "G4_leakage": {
+   "pass": true,
+   "detail": "walk-forward: all inputs dated before kickoff"
+  },
+  "G5_out_of_sample": {
+   "pass": false,
+   "detail": "0 graded bets vs pre-declared minimum 300"
+  },
+  "G6_robustness": {
+   "pass": false,
+   "detail": "0 of 0 seasons positive"
+  },
+  "G7_prospective_trial": {
+   "pass": false,
+   "detail": "requires a frozen version and predictions logged before outcomes; no trial has been run, so this gate is always open"
+  },
+  "G8_release_review": {
+   "pass": false,
+   "detail": "requires human review; not automated"
+  }
+ },
+ "luck": {
+  "n": 0
+ },
+ "rank": null,
+ "qualified": false,
+ "rewardEligible": false
+}

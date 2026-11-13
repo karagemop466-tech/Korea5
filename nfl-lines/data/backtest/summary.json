@@ -1,0 +1,127 @@
+{
+ "generatedUTC": "2026-11-13T13:37:43Z",
+ "seed": 20261113,
+ "minBetsGate": 300,
+ "edgeThreshold": 0.02,
+ "gamesInArchive": 7548,
+ "gamesGraded": 7413,
+ "seasonsInArchive": [
+  1999,
+  2026
+ ],
+ "seasonsWithOdds": [
+  2006,
+  2007,
+  2008,
+  2009,
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "diagnostics": {
+  "eloAll": {
+   "signal": 0.1011,
+   "brier": 0.22131,
+   "brierBaseline": 0.24619,
+   "logLoss": 0.63261,
+   "n": 7413,
+   "meanPredicted": 0.561,
+   "meanActual": 0.5617
+  },
+  "marketMoneyline": {
+   "signal": 0.1434,
+   "brier": 0.21153,
+   "brierBaseline": 0.24695,
+   "logLoss": 0.61048,
+   "n": 5432,
+   "meanPredicted": 0.5662,
+   "meanActual": 0.5552
+  },
+  "note": "Signal = 1 - Brier/Brier(climatology). Positive => better than always predicting the base rate. The market block is the de-vigged closing moneyline over the same seasons where both exist."
+ },
+ "familySize": 8,
+ "strategiesTested": 8,
+ "strategiesBlocked": 2,
+ "qualifiedStrategies": 0,
+ "rewardEligibleStrategies": 0,
+ "marketReferenceNote": "De-vigged closing prices from the archive; these are NOT official NFL values and no league source publishes prices.",
+ "propArchiveRows": 0,
+ "benchmarks": [
+  {
+   "label": "Bet every home moneyline",
+   "market": "moneyline",
+   "side": "home",
+   "n": 5417,
+   "wins": 3016,
+   "stake": 5417.0,
+   "profit": -245.53,
+   "roi": -0.0453,
+   "avgDecimal": 2.0015
+  },
+  {
+   "label": "Bet every away moneyline",
+   "market": "moneyline",
+   "side": "away",
+   "n": 5417,
+   "wins": 2401,
+   "stake": 5417.0,
+   "profit": -102.2,
+   "roi": -0.0189,
+   "avgDecimal": 2.8328
+  },
+  {
+   "label": "Bet every over",
+   "market": "total",
+   "side": "over",
+   "n": 5353,
+   "wins": 2663,
+   "stake": 5353.0,
+   "profit": -184.42,
+   "roi": -0.0345,
+   "avgDecimal": 1.9411
+  },
+  {
+   "label": "Bet every under",
+   "market": "total",
+   "side": "under",
+   "n": 5353,
+   "wins": 2690,
+   "stake": 5353.0,
+   "profit": -114.35,
+   "roi": -0.0214,
+   "avgDecimal": 1.9474
+  },
+  {
+   "label": "Bet every home spread",
+   "market": "spread",
+   "side": "home",
+   "n": 5293,
+   "wins": 2579,
+   "stake": 5293.0,
+   "profit": -267.8,
+   "roi": -0.0506,
+   "avgDecimal": 1.9495
+  }
+ ],
+ "notes": [
+  "Every ROI figure is reported next to its week-block bootstrap interval. A point estimate without an interval is not published.",
+  "The luck test compares the strategy with a null in which the true probability of each bet is the de-vigged closing market probability. p = P(no-information bettor earns at least this ROI).",
+  "A pooled break-even win rate is deliberately NOT used as a significance test: with mixed prices a win-count test and a profit test disagree, and the profit is what matters.",
+  "No strategy is reward-eligible. Reward eligibility requires gates G7 (frozen prospective trial) and G8 (human release review), neither of which this lab can self-certify.",
+  "Player props and same-game parlays are declared but BLOCKED because the archive contains no prop prices."
+ ]
+}

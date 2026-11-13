@@ -1,0 +1,33 @@
+name: nfl-analytics-fetch
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/65332583-korea5' ]
+    paths: [ 'scripts/fetch_nfl_analytics.py', '.github/workflows/nfl-analytics.yml' ]
+concurrency:
+  group: korea5-nfl-analytics-${{ github.ref }}
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch official NFL analytics sources
+        run: python3 scripts/fetch_nfl_analytics.py
+      - name: Commit snapshots
+        run: |
+          git config user.name "korea5-data-bot"
+          git config user.email "korea5-data-bot@users.noreply.github.com"
+          git add research/nfl-analytics-raw/
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "data: refresh NFL analytics source snapshots (injuries, standings, schedules, depth charts)"
+            git pull --rebase --autostash origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi

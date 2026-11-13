@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suite dashboard · NFL Analytics</title>
+<meta name="description" content="NFL line origination, strategy research, injury and lineup-deficiency tracking, with verified sources on every row.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> FREE TIME / VACATION</div>
+  <nav class="main"><a href="index.html" class="">Dashboard</a><a href="calendar.html" class="">Calendar</a><a href="vacation.html" class="">Vacation windows</a><a href="mlb.html" class="">MLB</a><a href="nfl.html" class="">NFL &amp; 49ers</a><a href="ncaaf.html" class="">Stanford &amp; Cal</a><a href="radio.html" class="">Radio</a><a href="nfl-analytics.html" class="active">NFL Analytics</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged</a><a href="method.html" class="">Method</a><a href="extra/index.html" class="">Official feeds &amp; verification</a></nav>
+</div></header>
+<main class="wrap"><aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. <a href="certainty.html">Flagged for Review: certainty audit</a>.</aside>
+<nav class="pill-row"><a href="nfl-analytics.html" class="active">Suite dashboard</a><a href="lines.html" class="">Lines &amp; model</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="strategies.html" class="">Strategies &amp; gates</a><a href="leaderboard.html" class="">Leaderboard</a><a href="questions.html" class="">Questions</a><a href="analytics-suggestions.html" class="">Suggestions</a><a href="requirements.html" class="">Requirements</a></nav>
+
+<section class="hero"><div><p class="small">NFL ANALYTICS &amp; DECISION SUPPORT · 2026 SEASON · WEEK 10 SNAPSHOT 2026-11-13</p>
+<h1>Originate the lines.<br>Grade the skill.</h1>
+<p class="lede">A verified-data pipeline for NFL line origination, injury/lineup-deficiency tracking and a
+validation-gated strategy leaderboard. Every row links to an official source. Nothing inferred.</p>
+<div class="pill-row"><a class="btn" href="lines.html">Week 10 lines board</a>
+<a class="btn" href="injuries.html">Injury tracker</a>
+<a class="btn" href="strategies.html">Strategies &amp; gates</a></div></div>
+<div class="card"><h2>Executive summary</h2>
+<p><strong>14 Week-10 games tracked</strong> from the official NFL injury report; <strong>296 injury rows</strong>;
+<strong>8 OUT</strong> and <strong>9 designated</strong> players; <strong>96</strong> lineup-deficiency rows joined to club depth charts.</p>
+<p>Our own v0 model (least-squares margin ratings + documented injury weights) produced a full week-10 board with
+<strong>13 market comparisons</strong> (DraftKings via ESPN, labelled secondary). First out-of-sample check:
+model -2.2 on WAS @ NYG vs final Commanders 24 - Giants 21 —
+margin error 5.2 pts, side lost. Reported straight.</p>
+<a href="research/EXECUTIVE-SUMMARY-NFL.md">Full executive summary →</a></div></section>
+
+<h2>This week at a glance</h2>
+<div class="grid g4">
+<div class="card"><div class="kpi">14<small>Week-10 games (official slate)</small></div></div>
+<div class="card"><div class="kpi">8<small>Players ruled OUT</small></div></div>
+<div class="card"><div class="kpi">58<small>Lineup deficiencies flagged</small></div></div>
+<div class="card"><div class="kpi">13<small>Market lines compared</small></div></div>
+</div>
+
+<h2>Explore by category</h2>
+<div class="grid g3">
+<div class="card"><h3>Lines &amp; model</h3><p>Our own week-10 spreads/totals, market comparison, edge table, ratings, parameters and the first validation point.</p><a href="lines.html">Lines board →</a></div>
+<div class="card"><h3>Injuries &amp; depth</h3><p>Every official injury row, depth-chart strings (1st–4th), who replaces whom, and which defenses/offenses are on backups.</p><a href="injuries.html">Deficiency tracker →</a></div>
+<div class="card"><h3>Strategies &amp; gates</h3><p>Signal library, single/parlay/prop strategies, seven validation gates, correlation values and luck-removal method.</p><a href="strategies.html">Strategy register →</a></div>
+<div class="card"><h3>Leaderboard</h3><p>Competition rules, anti-luck scoring and rewards. No entries yet — the table opens when the pick ledger launches.</p><a href="leaderboard.html">Competition →</a></div>
+<div class="card"><h3>Questions</h3><p>What we have, what is missing, and which decision each gap blocks — with discovery suggestions.</p><a href="questions.html">Open questions →</a></div>
+<div class="card"><h3>Suggestions</h3><p>Improvements proposed for review. Nothing is implemented before a reviewer picks the best path.</p><a href="analytics-suggestions.html">Review suggestions →</a></div>
+</div>
+
+<div class="callout flag"><strong>Flagged this week.</strong> Texans depth chart is published as an image (strings unverified);
+Panthers depth-chart page unreachable from CI and direct fetch (rows blank); market odds are a trusted secondary source
+(DraftKings via ESPN), not official league data; fitted home-field is −0.5 pts vs a traditional ≈2.5 prior;
+totals are not injury-adjusted in v0. Full list on <a href="flagged.html">Flagged for review</a>.</div>
+
+</main>
+<footer><div class="wrap">
+  <p><strong>NFL Analytics &amp; Decision Support</strong> · 2026 season · data snapshot 2026-11-13 (Week 10) ·
+  every table row links to its official source; derived values are labelled <span class="tag est">MODEL OUTPUT</span>; unverified values stay blank and are on
+  <a href="flagged.html">Flagged for review</a>.</p>
+  <p>Injury report: <a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">nfl.com/injuries</a> ·
+  standings &amp; results: <a href="https://www.nfl.com/standings/league/2026/REG" target="_blank" rel="noopener">nfl.com/standings</a> ·
+  depth charts: each club's official site (row links) · market reference: DraftKings via ESPN (labelled secondary).</p>
+</div></footer></body></html>

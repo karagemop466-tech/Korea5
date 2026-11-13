@@ -1,0 +1,176 @@
+{
+ "generatedUTC": "2026-11-13T13:32:42.423521+00:00",
+ "sources": {
+  "injuries-week10": {
+   "games": 14,
+   "rows": 296,
+   "teams": [
+    "ARI",
+    "ATL",
+    "BUF",
+    "CAR",
+    "CIN",
+    "CLE",
+    "DAL",
+    "DET",
+    "GB",
+    "HOU",
+    "IND",
+    "JAX",
+    "KC",
+    "LAR",
+    "LV",
+    "MIA",
+    "MIN",
+    "NE",
+    "NO",
+    "NYG",
+    "NYJ",
+    "PIT",
+    "SEA",
+    "SF",
+    "TEN",
+    "WAS"
+   ]
+  },
+  "schedule-week-01": {
+   "finals": 16
+  },
+  "schedule-week-02": {
+   "finals": 16
+  },
+  "schedule-week-03": {
+   "finals": 16
+  },
+  "schedule-week-04": {
+   "finals": 16
+  },
+  "schedule-week-05": {
+   "finals": 15
+  },
+  "schedule-week-06": {
+   "finals": 14
+  },
+  "schedule-week-07": {
+   "finals": 14
+  },
+  "schedule-week-08": {
+   "finals": 14
+  },
+  "schedule-week-09": {
+   "finals": 15
+  },
+  "schedule-week-10": {
+   "finals": 1
+  },
+  "results": {
+   "finals": 137
+  },
+  "depth-ARI": {
+   "rows": 29
+  },
+  "depth-ATL": {
+   "rows": 28
+  },
+  "depth-BAL": {
+   "rows": 29
+  },
+  "depth-BUF": {
+   "rows": 29
+  },
+  "depth-CHI": {
+   "rows": 29
+  },
+  "depth-CIN": {
+   "rows": 28
+  },
+  "depth-CLE": {
+   "rows": 28
+  },
+  "depth-DAL": {
+   "rows": 30
+  },
+  "depth-DEN": {
+   "rows": 31
+  },
+  "depth-DET": {
+   "rows": 28
+  },
+  "depth-GB": {
+   "rows": 28
+  },
+  "depth-HOU": {
+   "rows": 0
+  },
+  "depth-IND": {
+   "rows": 28
+  },
+  "depth-JAX": {
+   "rows": 29
+  },
+  "depth-KC": {
+   "rows": 28
+  },
+  "depth-LAC": {
+   "rows": 29
+  },
+  "depth-LAR": {
+   "rows": 28
+  },
+  "depth-LV": {
+   "rows": 28
+  },
+  "depth-MIA": {
+   "rows": 29
+  },
+  "depth-MIN": {
+   "rows": 29
+  },
+  "depth-NE": {
+   "rows": 29
+  },
+  "depth-NO": {
+   "rows": 30
+  },
+  "depth-NYG": {
+   "rows": 29
+  },
+  "depth-NYJ": {
+   "rows": 30
+  },
+  "depth-PHI": {
+   "rows": 29
+  },
+  "depth-PIT": {
+   "rows": 30
+  },
+  "depth-SEA": {
+   "rows": 29
+  },
+  "depth-SF": {
+   "rows": 29
+  },
+  "depth-TB": {
+   "rows": 30
+  },
+  "depth-TEN": {
+   "rows": 30
+  },
+  "depth-WAS": {
+   "rows": 29
+  },
+  "depth-charts": {
+   "rows": 869,
+   "teams": 30
+  },
+  "standings-2026-reg": {
+   "rows": 32
+  },
+  "espn-scoreboard": {
+   "events": 14
+  }
+ },
+ "anomalies": [
+  "depth: missing depth-car.html"
+ ]
+}

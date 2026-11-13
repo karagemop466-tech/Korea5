@@ -17,7 +17,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def pages():
     found = []
     for dirpath, dirnames, filenames in os.walk(ROOT):
-        dirnames[:] = [d for d in dirnames if d not in ('.git', 'node_modules', '__pycache__')]
+        # 'research' holds raw source snapshots (evidence archives), not site pages.
+        dirnames[:] = [d for d in dirnames if d not in ('.git', 'node_modules', '__pycache__', 'research')]
         for name in filenames:
             if name.endswith('.html'):
                 found.append(os.path.join(dirpath, name))

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leaderboard · NFL Analytics</title>
+<meta name="description" content="NFL line origination, strategy research, injury and lineup-deficiency tracking, with verified sources on every row.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> FREE TIME / VACATION</div>
+  <nav class="main"><a href="index.html" class="">Dashboard</a><a href="calendar.html" class="">Calendar</a><a href="vacation.html" class="">Vacation windows</a><a href="mlb.html" class="">MLB</a><a href="nfl.html" class="">NFL &amp; 49ers</a><a href="ncaaf.html" class="">Stanford &amp; Cal</a><a href="radio.html" class="">Radio</a><a href="nfl-analytics.html" class="">NFL Analytics</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged</a><a href="method.html" class="">Method</a><a href="extra/index.html" class="">Official feeds &amp; verification</a></nav>
+</div></header>
+<main class="wrap"><aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. <a href="certainty.html">Flagged for Review: certainty audit</a>.</aside>
+<nav class="pill-row"><a href="nfl-analytics.html" class="">Suite dashboard</a><a href="lines.html" class="">Lines &amp; model</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="strategies.html" class="">Strategies &amp; gates</a><a href="leaderboard.html" class="active">Leaderboard</a><a href="questions.html" class="">Questions</a><a href="analytics-suggestions.html" class="">Suggestions</a><a href="requirements.html" class="">Requirements</a></nav>
+
+<h1>Strategy leaderboard</h1>
+<p class="lede">Rank selectively skill-based strategies, not lucky ones. Raw ROI never determines rewards on its own (R10). <span class="tag est">DESIGN PUBLISHED — competition opens once the pick ledger exists (S3). No entries yet; the table below is the scaffold.</span></p>
+
+<div class="grid g2">
+<div class="card"><h3>Competition</h3>
+<p><strong>Unit:</strong> 1 unit = 1% of a notional 100-unit bankroll (paper units; owner may set real budget — Q11)</p>
+<p><strong>Windows:</strong> Weekly leaderboard (Week 10 onward) · Season leaderboard 2026-27 · Multi-season rolling (from 2027)</p>
+<p><strong>Eligibility</strong></p><ul class="clean"><li>Strategy registered with a unique ID and pre-kickoff lock (G1)</li><li>All inputs from verified rows or labelled MODEL OUTPUT (G2)</li><li>Published parameters (G3)</li><li>Exposure caps respected (G6)</li><li>Multi-leg tickets declare correlation assumptions (G7)</li></ul></div>
+<div class="card"><h3>Scoring — skill, not ROI</h3>
+<p class="mono small">rawROI = net units / staked<br>
+shrunkROI = (n·ROI + 25·0)/(n+25)<br>
+skillScore = 100·(0.6·z(shrunkROI) + 0.4·z(CLV))</p>
+<p class="small">Tie-breaks: higher shrunkROI → larger n → lower exposure used → earlier registration.
+any rule-violation week voids that week from scoring.</p></div></div>
+
+<h2>Anti-luck rules</h2>
+<ul class="clean"><li>Rewards require 95% bootstrap CI of ROI to clear zero (G5)</li><li>Parlays count as their leg count for sample size</li><li>One lucky outlier week is winsorized at the 99th percentile of weekly ROI before scoring</li><li>Rank display shows n and CI width beside every strategy so readers see precision</li></ul>
+
+<h2>Current standings</h2>
+<div class="callout"><strong>No entries yet.</strong> The ledger opens with the pick-lock system
+(<a href="analytics-suggestions.html">S3</a>). The table below is the published scaffold; a row is added only for a strategy that
+passed gates G1–G7.</div>
+<div class="scroll"><table><thead><tr><th>Rank</th><th>Strategy</th><th>Type</th><th>n</th><th>Raw ROI</th><th>Shrunk ROI</th><th>95% CI</th><th>CLV</th><th>Skill</th><th>Status</th></tr></thead>
+<tbody><tr><td colspan="10">— no registered entries — <a href="analytics-suggestions.html" target="_blank" rel="noopener">ledger opens with S3</a></td></tr></tbody></table></div>
+
+<h2>Rewards (<span class="tag flag">proposal — owner decision Q11</span>)</h2>
+<div class="scroll"><table><thead><tr><th>Rank</th><th>Proposed reward</th><th>Confirmed?</th><th>Decision</th></tr></thead>
+<tbody><tr><td>1</td><td>Named season champion + review-priority for strategy ideas</td><td><span class="tag flag">not confirmed</span></td><td><a href="questions.html#Q11" target="_blank" rel="noopener">Q11 decision</a></td></tr><tr><td>2-3</td><td>Named podium finish</td><td><span class="tag flag">not confirmed</span></td><td><a href="questions.html#Q11" target="_blank" rel="noopener">Q11 decision</a></td></tr><tr><td>weekly winners</td><td>Weekly shout-out on the dashboard</td><td><span class="tag flag">not confirmed</span></td><td><a href="questions.html#Q11" target="_blank" rel="noopener">Q11 decision</a></td></tr></tbody></table></div>
+<p class="small">No reward is paid to a strategy whose skillScore CI includes zero, regardless of raw rank.</p>
+
+</main>
+<footer><div class="wrap">
+  <p><strong>NFL Analytics &amp; Decision Support</strong> · 2026 season · data snapshot 2026-11-13 (Week 10) ·
+  every table row links to its official source; derived values are labelled <span class="tag est">MODEL OUTPUT</span>; unverified values stay blank and are on
+  <a href="flagged.html">Flagged for review</a>.</p>
+  <p>Injury report: <a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">nfl.com/injuries</a> ·
+  standings &amp; results: <a href="https://www.nfl.com/standings/league/2026/REG" target="_blank" rel="noopener">nfl.com/standings</a> ·
+  depth charts: each club's official site (row links) · market reference: DraftKings via ESPN (labelled secondary).</p>
+</div></footer></body></html>

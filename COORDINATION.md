@@ -672,3 +672,19 @@ Branch fixed by Arena: `arena/1e59465a-korea5` (session id `arena-1e59465a`). Sc
 | N7 | PR `arena/1e59465a-korea5` → `main`, merge without waiting, Pages deploy confirmation, log here | arena-1e59465a | unclaimed | `COORDINATION.md` (log only) |
 
 - 2026-11-13 — `arena-1e59465a` claims N1–N7. Request for integration step (not done by this session): add a link to `nfl-lab/index.html` from the root navigation.
+
+### Completion log — session `arena-1e59465a` (2026-11-13)
+
+| Task | Status | Sources | Verification performed | Irregularities (on the Flagged page) |
+|---|---|---|---|---|
+| N1 Repo review | **done** | `data/nfl-lab/repo-review.json`; COORDINATION.md; README.md; `scripts/check_links.py`, `tools/verify_extra.py`, `scripts/audit_certainty.py`, `tests/` | Ran unit tests (5 OK), link check (0 missing), verify_extra (0 rows missing source), certainty audit (pass). `check_links.py` rewrote `verification/links.json`; restored, not committed. | R1 stale 'in progress' rows for closed sessions; R2 68 KB append-only log; R3 link check rewrites a tracked artifact; R4 two copies of the NFL 2026 feed (`data/upstream/` and `official/`); R5 root README does not link the lab. |
+| N2 Games, lines and official links | **done** | nfldata archive via codeload (SHA-256 in `data/nfl-lab/games-source.json`); nfl.com week 10 and game centers | Spot checks vs nfl.com: WAS 24–NYG 21 (Thu Nov 12), DET 19–MIA 9, BUF 23–MIN 6 — all matched. 134 of 137 final 2026 games not checked. | F01 market-line provenance unverified; F07 spot-check coverage; F08 no LICENSE in archive; F09 unplayed-game lines stored but not shown. |
+| N3 Injuries and depth | **done** | nflverse injuries and depth-chart releases (CI, run 43431290366 and later); NFL week pages `nfl.com/injuries/league/2026/reg{week}` | 9 of 9 Week 10 rows on the fetched part of the official page matched (status, injury, practice). Depth file checked for team codes (same 32 codes as injury file). | F06 depth data third-party and not week-keyed; F10 1,230 rows only partly checked; F11 release assets reachable only from CI. |
+| N4 Own lines, gates, leaderboard, correlations, parlays | **done** | `scripts/nfl_lab/model.py` outputs in `data/nfl-lab/` | Walk-forward (K from 2006–2015 only; test 2016–2025). Result: model MAE 10.17 vs market 9.79; 10 strategies, **0 validated**; parlays 10 tested, **0 validated**; points awarded 0. | F02 model below market; F03 QB signal n = 7; F04 props untestable. |
+| N5 Site | **done** | `nfl-lab/*.html`, `nfl-lab/assets/` | 12 pages built from data; no placeholder text left. | — |
+| N6 Verification | **done** | `scripts/nfl_lab/verify.py`, `data/nfl-lab/verification.json` | 1,624 table rows: 1,549 official-linked, 47 flagged (UNVERIFIED / UNOFFICIAL / NO SOURCE / FLAGGED), 28 in marked method tables, 0 without source; 0 missing local links; 15 JSON files valid. | F05 Singapore legal position (GRA sources fetched). |
+| N7 PR and merge | in progress | — | — | — |
+
+**Request for the integration step (not done here):** add a link to `nfl-lab/index.html` from the root navigation (R5). No root file was edited by this session.
+
+**Singapore legal basis (official):** GRA "Unlawful Remote Gambling Activities" (https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities) — only Singapore Pools is licensed for remote gambling; participating in unlicensed remote gambling is an offence. GRA "Problem Gambling" (https://www.gra.gov.sg/harm-minimisation/problem-gambling) links to NCPG (linked, not fetched in this session).

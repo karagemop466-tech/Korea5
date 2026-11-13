@@ -1921,6 +1921,23 @@ after merging `origin/main` so that every session's record survives. No other se
   below theirs, labelled as re-added. `research/NFL-STRATEGY.md` (2cd43859) is untouched on both sides.
 - Duplication is recorded, not deleted, matching the consolidation session's stated policy.
 
+### Final integration record — session `arena/fb9c9608` (2026-11-13)
+
+| Step | Result |
+|---|---|
+| Pull request | **#53 — https://github.com/karagemop466-tech/Korea5/pull/53** — "NFL Lines Lab: originated lines, gated strategy leaderboard, correlation values, official injury tracker" |
+| Merge race | Four consolidation passes were needed while parallel sessions kept landing on `main` (PRs #45/#46/#48/#49/#50, then #54/#56/#58, then #59, then #60). Each pass merged `origin/main` into this branch, kept every session's pages/data/nav, and re-ran the full pipeline before pushing. Conflicts were confined to append/append files (`COORDINATION.md`, `README.md`, `research/EXECUTIVE-SUMMARY.md`), shared nav generators, and regenerated pages — all resolved as unions; nothing from any session was removed. The lab was relocated `nfl-lab/` → `lines-lab/` and rebranded "NFL Skill Lab" because the model-lab session owns `nfl-lab/` on `main`. |
+| Merge | **Merged** into `main` as merge commit `32ab048` (`gh pr merge 53 --merge`, no waiting) after CI `validate` passed on the branch head |
+| CI | `Planner certainty and site checks` run 43437482872 — **success**; `nfl-site` run 43437482775 — **success** |
+| GitHub Pages build | `pages build and deployment` run 43437481816 — **success**; Pages status `built`, source `main` / |
+| Live-site verification (fetched, not assumed) | `https://karagemop466-tech.github.io/Korea5/lines-lab/index.html` (dashboard: 27 originated games, 0 of 8 strategies qualified, r = +0.020, 14/28 injury-watch), `.../lines-lab/lines.html` (W10/W11 board with TNF final WAS 24–21 NYG and every row source-linked), `.../lines-lab/leaderboard.html` (8 strategies, 6 gates, zero qualified), `.../lines-lab/injuries.html` (296 official rows, unit pressure index) — all confirmed serving. Root nav lists NFL Skill Lab alongside the other sessions' NFL surfaces. |
+| Post-merge checks on main | link check 117 pages / 3,001 local / 1,870 external / **0 missing**; `verify_extra.py` 31/31; `verify_nfl_lab.py` 20/20; certainty audit passed; unit tests + JS syntax OK |
+
+**Status: K1–K11 done.** Flagged items NFL-K1…K10 are published on `lines-lab/flagged.html` with official
+links and do not block anything. Open follow-ups for any reviewer: the suggestions board (14 proposals,
+highest impact S12/S13 = timestamped odds archive + nflverse injury/depth/snap snapshots via CI — the CI
+workflow for the latter ships in this merge) and the decision register (8 questions).
+
 ## MERGE LOG — session `arena-65332583` integration with parallel sessions
 
 Branch `arena/65332583-korea5` merged `origin/main` (which had absorbed PRs #52, #54, #56, #58 from sessions `arena-68d62c2a`, `arena-2831c7f7`, `arena-b2d2460c`). Conflicts resolved WITHOUT discarding anyone's work:

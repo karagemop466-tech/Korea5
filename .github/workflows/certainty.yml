@@ -23,6 +23,7 @@ jobs:
           python3 scripts/audit_certainty.py
           python3 scripts/check_links.py
           python3 tools/verify_extra.py
+          python3 tools/verify_lab.py
           python3 scripts/audit_certainty.py
           python3 -c "import json;a=json.load(open('data/lab/analysis.json'));assert len(a['correlations'])>=8;assert all(c['ci95'] for c in a['correlations']);print('lab analysis ok')"
           python3 -c "import json;d=json.load(open('data/lab/injuries-week10-2026.json'));assert d['gameStatus'] and d['practice'];print('lab records ok')"

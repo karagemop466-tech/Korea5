@@ -149,6 +149,7 @@ def source_table():
 def build_index():
     ana = ANA.get("correlations", [])
     pair = next((c for c in ana if "Jordan Addison" in c["b"]), None)
+    pair_ci = "" if not pair else f"{pair['ci95'][0]} to {pair['ci95'][1]}"
     ss = [s for s in ANA.get("sampleSize", []) if abs(s["breakEven"] - 110 / 210) < 1e-6]
     n5 = next((s["observationsNeeded"] for s in ss if s["edgeOverBreakEven"] == 0.05), None)
     n3 = next((s["observationsNeeded"] for s in ss if s["edgeOverBreakEven"] == 0.03), None)
@@ -171,7 +172,7 @@ service, a price feed, or a validated strategy. The leaderboard is published emp
 <h2>Headline findings from the official data</h2>
 <div class="scroll"><table><thead><tr><th>#</th><th>Finding</th><th>Value</th><th>What it means</th><th>Source</th></tr></thead><tbody>
 <tr><td>1</td><td>Two same-team receivers are not independent</td>
-<td>r = {esc(pair['r']) if pair else '—'} (n = {esc(pair['n']) if pair else '—'}, 95% CI {esc(pair['ci95']) if pair else '—'})</td>
+<td>r = {esc(pair['r']) if pair else '—'} (n = {esc(pair['n']) if pair else '—'}, 95% CI {esc(pair_ci) if pair_ci else '—'})</td>
 <td>On the matched official games the two Vikings receivers' yardage moved in opposite directions. Pricing a two-leg receiver
 parlay as the product of two marginal probabilities would be wrong, in the direction that favours the book.</td>
 <td>{srcs([pair['sourceA'], pair['sourceB']] if pair else [])}</td></tr>
@@ -267,7 +268,7 @@ def build_strategies():
             srcs(s.get("sources", [])),
         ])
     gate_rows = [[esc(g["id"]), f"<strong>{esc(g['name'])}</strong>", esc(g["requirement"]), esc(g["why"]),
-                  esc(g["failureAction"]), esc(g["evidence"])] for g in SPEC.get("gates", [])]
+                  esc(g["failureAction"]), esc(g["evidence"]), src(g.get("basisUrl"), "basis")] for g in SPEC.get("gates", [])]
     body = f"""
 <h1>Strategy catalogue and validation gates</h1>
 <p class="lede">Twelve candidate signals: single bets, player props, prop combinations and parlays, plus the injury overlay
@@ -279,7 +280,7 @@ passed the gates below.</p>
         "Gates", "Status", "Note", "Source"], rows)}
 
 <h2>Validation gates — each one must pass, in order</h2>
-{table(["ID", "Gate", "What it requires", "Why it exists", "What happens on failure", "Evidence in this repository"], gate_rows)}
+{table(["ID", "Gate", "What it requires", "Why it exists", "What happens on failure", "Evidence in this repository", "Basis"], gate_rows)}
 
 <div class="callout flag"><strong>Gate G3 is currently unpassable.</strong> A strategy must beat the market on the same bets,
 and there is no market reference in this repository yet. That is not a defect in the strategy; it is the missing artefact
@@ -306,11 +307,12 @@ def build_correlations():
             esc(c["a"]), esc(c["b"]), esc(c["n"]), esc(c["r"]), esc(ci_txt), esc(c.get("pValue")), esc(verdict),
             esc(c["pairNote"]), f"{src(c['sourceA'], 'logs A')} {src(c['sourceB'], 'logs B')}",
         ])
+    basis_link = '<a href="#method">Derived — method below</a>'
     ss_rows = [[esc(s["priceBasis"]), esc(s["breakEven"]), esc(s["trueWinRate"]), esc(s["edgeOverBreakEven"]),
-                esc(s["observationsNeeded"]), esc(s["note"])] for s in ANA.get("sampleSize", [])]
+                esc(s["observationsNeeded"]), esc(s["note"]), basis_link] for s in ANA.get("sampleSize", [])]
     noise_rows = [[esc(n["prop"]), esc(n["stdev"]), esc(n["gamesNeededForPlus3YardEdge"]),
-                   esc(n["gamesNeededForPlus5YardEdge"]), esc(n["gamesNeededForPlus10YardEdge"]), esc(n["note"])]
-                  for n in ANA.get("noiseGates", [])]
+                   esc(n["gamesNeededForPlus5YardEdge"]), esc(n["gamesNeededForPlus10YardEdge"]), esc(n["note"]),
+                   basis_link] for n in ANA.get("noiseGates", [])]
     power_rows = []
     for rho in (0.2, 0.3, 0.4, 0.5, 0.7):
         row = [esc(rho)]
@@ -318,7 +320,7 @@ def build_correlations():
             hit = next((c for c in ANA.get("correlationPower", [])
                         if c["trueCorrelation"] == rho and c["n"] == n), None)
             row.append(esc(hit["powerVsZero"]) if hit else "—")
-        power_rows.append(row)
+        power_rows.append(row + [basis_link])
 
     body = f"""
 <h1>Correlation, dispersion and the cost of luck</h1>
@@ -349,20 +351,20 @@ than a usable estimate. Either way, independence is the wrong model, and the dir
 <h2>How many observations before an edge can be told apart from luck</h2>
 <p class="small">Two-sided one-proportion z test, alpha 0.05, power 0.80, normal approximation. The break-even rate already
 contains the book margin.</p>
-{table(["Price basis", "Break-even rate", "True win rate", "Edge over break-even", "Observations needed", "Method"], ss_rows)}
+{table(["Price basis", "Break-even rate", "True win rate", "Edge over break-even", "Observations needed", "Method", "Basis"], ss_rows)}
 
 <h2>How many games of one player's own history before a modelled edge is visible</h2>
 <p class="small">n ≥ (standard deviation ÷ modelled edge)², so that the standard error of the mean falls below the edge being
 claimed.</p>
-{table(["Outcome", "Std dev", "Games for a 3-yard edge", "Games for a 5-yard edge", "Games for a 10-yard edge", "Method"], noise_rows)}
+{table(["Outcome", "Std dev", "Games for a 3-yard edge", "Games for a 5-yard edge", "Games for a 10-yard edge", "Method", "Basis"], noise_rows)}
 
 <h2>How many games before a correlation estimate means anything</h2>
 <p class="small">Power of a two-sided Fisher-z test against a true correlation of zero, alpha 0.05.</p>
-{table(["True correlation", "n = 8", "n = 17", "n = 33", "n = 65", "n = 100", "n = 200"], power_rows)}
+{table(["True correlation", "n = 8", "n = 17", "n = 33", "n = 65", "n = 100", "n = 200", "Basis"], power_rows)}
 <p class="small">Read this as: with nine games of a single season, a real correlation of 0.3 would be detected only about
 one time in ten. Any strategy that claims to have found a dependable relationship from one season of data is reading noise.</p>
 
-<h2>Method and limits</h2>
+<h2 id="method">Method and limits</h2>
 <ul class="clean">
 <li>Inputs: <code>data/lab/player-logs-2026.json</code> and <code>data/lab/gamebook-bills-vikings-2026-w9.json</code>; the code is <code>scripts/analyze_lab.py</code> and is re-run in CI.</li>
 <li>Every Week 9 row was cross-checked against the official Game Book PDF and matched exactly on attempts, completions, yards, touchdowns, interceptions, rating and rushing.</li>
@@ -442,8 +444,8 @@ def build_injuries():
                 for row in st.get(cat, []):
                     stat_rows.append([esc(label), esc(cat), " · ".join(esc(x) for x in row),
                                       esc(", ".join(b["statColumns"][cols])), src(b["meta"]["gamePageUrl"], "Game Book")])
-    rules = [[esc(r["tier"]), f"<strong>{esc(r['definition'])}</strong>", esc(r["evidenceRequired"]), esc(r["note"])]
-             for r in SPEC.get("depthRules", [])]
+    rules = [[esc(r["tier"]), f"<strong>{esc(r['definition'])}</strong>", esc(r["evidenceRequired"]), esc(r["note"]),
+              src(r.get("basisUrl"), "official Game Book")] for r in SPEC.get("depthRules", [])]
 
     body = f"""
 <h1>Injuries and lineup depth</h1>
@@ -482,7 +484,7 @@ reason in the partial-tables table below.</p>
 {table(["Club", "Category", "Official row", "Column order", "Source"], stat_rows)}
 
 <h2>Layer C — depth-tier rules</h2>
-{table(["Tier", "Definition", "Evidence required", "Note"], rules)}
+{table(["Tier", "Definition", "Evidence required", "Note", "Basis"], rules)}
 
 <div class="callout flag"><strong>The documented three-deep replacement.</strong> In the November 9, 2026 Game Book the Vikings'
 listed quarterback K. Murray is in the Did Not Play block, the listed starting quarterback C. Wentz started, and the listed
@@ -547,9 +549,9 @@ needs 779 resolved bets to be distinguishable from luck at 95% confidence and 80
 claiming a smaller edge needs proportionally more bets, and the row would say so.</p>
 
 <h2>Where the entry conditions come from</h2>
-{table(["ID", "Gate", "What it requires", "Why it exists", "Failure action", "Evidence"], [
+{table(["ID", "Gate", "What it requires", "Why it exists", "Failure action", "Evidence", "Basis"], [
     [esc(g["id"]), f"<strong>{esc(g['name'])}</strong>", esc(g["requirement"]), esc(g["why"]), esc(g["failureAction"]),
-     esc(g["evidence"])] for g in SPEC.get("gates", [])])}
+     esc(g["evidence"]), src(g.get("basisUrl"), "basis")] for g in SPEC.get("gates", [])])}
 """
     write(os.path.join(LAB, "leaderboard.html"), page("Leaderboard", "leaderboard.html", body))
 

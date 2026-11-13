@@ -1,0 +1,3272 @@
+{
+ "summary": {
+  "gamesWithBothTeams": 464,
+  "shortWeekGames": 32,
+  "restDayHistogram": {
+   "4": 32,
+   "5": 6,
+   "6": 37,
+   "7": 283,
+   "8": 24,
+   "9": 5,
+   "10": 30,
+   "11": 12,
+   "13": 2,
+   "14": 33
+  },
+  "minRestDays": 4,
+  "maxRestDays": 14,
+  "teamsCovered": 32,
+  "label": "COMPUTED from official kickoff dates; rest days are exact, travel is not included"
+ },
+ "rows": [
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-09-09",
+   "date": "2026-09-20",
+   "restDays": 11,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-22",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-10-22",
+   "date": "2026-11-01",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-29",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-10",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-12-10",
+   "date": "2026-12-21",
+   "restDays": 11,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New England Patriots",
+   "prevDate": "2026-12-21",
+   "date": "2026-12-27",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-09-09",
+   "date": "2026-09-20",
+   "restDays": 11,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-15",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-10-15",
+   "date": "2026-10-25",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-02",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-11-02",
+   "date": "2026-11-08",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-29",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-07",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-12-07",
+   "date": "2026-12-13",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-19",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-12-19",
+   "date": "2026-12-25",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Seattle Seahawks",
+   "prevDate": "2026-12-25",
+   "date": "2027-01-03",
+   "restDays": 9,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-09-10",
+   "date": "2026-09-20",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-19",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-10-19",
+   "date": "2026-10-25",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-08",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-29",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-17",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-12-17",
+   "date": "2026-12-27",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "San Francisco 49ers",
+   "prevDate": "2026-12-27",
+   "date": "2027-01-03",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-09-10",
+   "date": "2026-09-21",
+   "restDays": 11,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-09-21",
+   "date": "2026-09-27",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-12",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-10-12",
+   "date": "2026-10-18",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-25",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-11-25",
+   "date": "2026-12-03",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-12-03",
+   "date": "2026-12-13",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Rams",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-25",
+   "restDays": 5,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-28",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-09-28",
+   "date": "2026-10-04",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-22",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-10-22",
+   "date": "2026-11-02",
+   "restDays": 11,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-11-02",
+   "date": "2026-11-08",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-22",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-26",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-11-26",
+   "date": "2026-12-06",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-19",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-12-19",
+   "date": "2026-12-25",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Chicago Bears",
+   "prevDate": "2026-12-25",
+   "date": "2027-01-03",
+   "restDays": 9,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-18",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-10-25",
+   "date": "2026-10-29",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-10-29",
+   "date": "2026-11-08",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-30",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-11-30",
+   "date": "2026-12-06",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Carolina Panthers",
+   "prevDate": "2026-12-20",
+   "date": "2027-01-03",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-08",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-10-08",
+   "date": "2026-10-18",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-22",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-30",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-11-30",
+   "date": "2026-12-06",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tampa Bay Buccaneers",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-25",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-23",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-11-23",
+   "date": "2026-11-29",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cincinnati Bengals",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-31",
+   "restDays": 11,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-05",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-10-05",
+   "date": "2026-10-11",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-08",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-29",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New Orleans Saints",
+   "prevDate": "2026-12-27",
+   "date": "2027-01-03",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-17",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-09-17",
+   "date": "2026-09-27",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-25",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-26",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-11-26",
+   "date": "2026-12-06",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-28",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Detroit Lions",
+   "prevDate": "2026-12-28",
+   "date": "2027-01-03",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-17",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-09-17",
+   "date": "2026-09-27",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-12",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-10-12",
+   "date": "2026-10-18",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-10-18",
+   "date": "2026-11-01",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-09",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-11-09",
+   "date": "2026-11-15",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-26",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-11-26",
+   "date": "2026-12-06",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-19",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-12-19",
+   "date": "2026-12-25",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Buffalo Bills",
+   "prevDate": "2026-12-25",
+   "date": "2027-01-03",
+   "restDays": 9,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-08",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-19",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-11-19",
+   "date": "2026-11-29",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-24",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Houston Texans",
+   "prevDate": "2026-12-24",
+   "date": "2027-01-04",
+   "restDays": 11,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-05",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-11-05",
+   "date": "2026-11-16",
+   "restDays": 11,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-11-16",
+   "date": "2026-11-22",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-29",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-13",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Baltimore Ravens",
+   "prevDate": "2026-12-27",
+   "date": "2026-12-31",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-19",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-11-19",
+   "date": "2026-11-29",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-13",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Indianapolis Colts",
+   "prevDate": "2026-12-20",
+   "date": "2027-01-03",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-01",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-10-01",
+   "date": "2026-10-11",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-29",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Cleveland Browns",
+   "prevDate": "2026-12-27",
+   "date": "2027-01-03",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-10-18",
+   "date": "2026-11-01",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-05",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-11-05",
+   "date": "2026-11-15",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-29",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-14",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-12-14",
+   "date": "2026-12-20",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Jacksonville Jaguars",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-24",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-09-24",
+   "date": "2026-10-05",
+   "restDays": 11,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-10-05",
+   "date": "2026-10-11",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-29",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Atlanta Falcons",
+   "prevDate": "2026-12-20",
+   "date": "2027-01-03",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-01",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-10-01",
+   "date": "2026-10-11",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-15",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-27",
+   "restDays": 5,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-11-27",
+   "date": "2026-12-06",
+   "restDays": 9,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-14",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-12-14",
+   "date": "2026-12-20",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Pittsburgh Steelers",
+   "prevDate": "2026-12-20",
+   "date": "2027-01-03",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-29",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-13",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Jets",
+   "prevDate": "2026-12-27",
+   "date": "2027-01-03",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-15",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-29",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Tennessee Titans",
+   "prevDate": "2026-12-27",
+   "date": "2027-01-03",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-29",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-20",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Arizona Cardinals",
+   "prevDate": "2026-12-27",
+   "date": "2027-01-03",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-10-18",
+   "date": "2026-11-01",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-16",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-11-16",
+   "date": "2026-11-22",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-29",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-17",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Los Angeles Chargers",
+   "prevDate": "2026-12-17",
+   "date": "2026-12-27",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-25",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-29",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Miami Dolphins",
+   "prevDate": "2026-12-27",
+   "date": "2027-01-03",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-29",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-13",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Las Vegas Raiders",
+   "prevDate": "2026-12-27",
+   "date": "2027-01-03",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-24",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-09-24",
+   "date": "2026-10-04",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-10-25",
+   "date": "2026-10-29",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-10-29",
+   "date": "2026-11-08",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-25",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-11-25",
+   "date": "2026-12-06",
+   "restDays": 11,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-25",
+   "restDays": 5,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Green Bay Packers",
+   "prevDate": "2026-12-25",
+   "date": "2027-01-04",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-25",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-09",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-11-09",
+   "date": "2026-11-15",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-29",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-10",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-12-10",
+   "date": "2026-12-20",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Minnesota Vikings",
+   "prevDate": "2026-12-20",
+   "date": "2027-01-03",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-19",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-10-19",
+   "date": "2026-11-01",
+   "restDays": 13,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-12",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-11-12",
+   "date": "2026-11-23",
+   "restDays": 11,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-11-23",
+   "date": "2026-11-29",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Washington Commanders",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-28",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-09-28",
+   "date": "2026-10-04",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-26",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-10-26",
+   "date": "2026-11-01",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-22",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-26",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-11-26",
+   "date": "2026-12-06",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-19",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-12-19",
+   "date": "2026-12-24",
+   "restDays": 5,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Philadelphia Eagles",
+   "prevDate": "2026-12-24",
+   "date": "2027-01-03",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-08",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-10-08",
+   "date": "2026-10-18",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-26",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-10-26",
+   "date": "2026-11-01",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-26",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-11-26",
+   "date": "2026-12-07",
+   "restDays": 11,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-12-07",
+   "date": "2026-12-20",
+   "restDays": 13,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Dallas Cowboys",
+   "prevDate": "2026-12-27",
+   "date": "2027-01-03",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-09-13",
+   "date": "2026-09-21",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-09-21",
+   "date": "2026-09-27",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-18",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-08",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-12",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-11-12",
+   "date": "2026-11-22",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-29",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-11-29",
+   "date": "2026-12-06",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-28",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "New York Giants",
+   "prevDate": "2026-12-28",
+   "date": "2027-01-03",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-09-14",
+   "date": "2026-09-20",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-11",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-10-11",
+   "date": "2026-10-15",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-10-15",
+   "date": "2026-10-25",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-22",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-27",
+   "restDays": 5,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-11-27",
+   "date": "2026-12-06",
+   "restDays": 9,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-12-06",
+   "date": "2026-12-13",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-20",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Denver Broncos",
+   "prevDate": "2026-12-20",
+   "date": "2026-12-25",
+   "restDays": 5,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-09-14",
+   "date": "2026-09-20",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-09-20",
+   "date": "2026-09-27",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-09-27",
+   "date": "2026-10-04",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-10-04",
+   "date": "2026-10-18",
+   "restDays": 14,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-10-18",
+   "date": "2026-10-25",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-10-25",
+   "date": "2026-11-01",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-11-01",
+   "date": "2026-11-08",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-11-08",
+   "date": "2026-11-15",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-11-15",
+   "date": "2026-11-22",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-11-22",
+   "date": "2026-11-26",
+   "restDays": 4,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-11-26",
+   "date": "2026-12-03",
+   "restDays": 7,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-12-03",
+   "date": "2026-12-13",
+   "restDays": 10,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-12-13",
+   "date": "2026-12-21",
+   "restDays": 8,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "team": "Kansas City Chiefs",
+   "prevDate": "2026-12-21",
+   "date": "2026-12-27",
+   "restDays": 6,
+   "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  }
+ ]
+}

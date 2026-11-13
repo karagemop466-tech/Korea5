@@ -1,0 +1,63 @@
+{
+ "description": "Repo review (task N1) performed 2026-11-13 by arena-1e59465a. Each item states the evidence command or source. Nothing here was changed in other sessions' files.",
+ "checks_run": [
+  {
+   "check": "python3 -m unittest discover -s tests",
+   "result": "5 tests OK"
+  },
+  {
+   "check": "python3 scripts/check_links.py",
+   "result": "pages=11 localLinks=180 external=521 missing=0"
+  },
+  {
+   "check": "python3 tools/verify_extra.py",
+   "result": "rowsMissingSource=0, missingLocal=0, failedNames=[]"
+  },
+  {
+   "check": "python3 scripts/audit_certainty.py",
+   "result": "passed"
+  }
+ ],
+ "irregularities": [
+  {
+   "id": "R1",
+   "severity": "medium",
+   "item": "COORDINATION.md has rows still marked 'in progress' for sessions whose later log entries say all tasks are done (e.g. E7, E8, E9, F1, 0778c36f calendar audit, 8fa03d1b G1-G4, 6faf58ee X4).",
+   "evidence": "grep -n '| in progress |' COORDINATION.md",
+   "source_link": "https://github.com/karagemop466-tech/Korea5/blob/main/COORDINATION.md",
+   "action": "Owner to confirm closed status; not edited by this session."
+  },
+  {
+   "id": "R2",
+   "severity": "low",
+   "item": "COORDINATION.md is about 68 KB of append-only logs; several sessions re-describe the same integration steps.",
+   "evidence": "wc -c COORDINATION.md",
+   "source_link": "https://github.com/karagemop466-tech/Korea5/blob/main/COORDINATION.md",
+   "action": "Consider a summarised status table at the top."
+  },
+  {
+   "id": "R3",
+   "severity": "low",
+   "item": "scripts/check_links.py rewrites verification/links.json on every run, so a plain link check leaves a modified tracked file.",
+   "evidence": "git status after python3 scripts/check_links.py shows M verification/links.json",
+   "source_link": "https://github.com/karagemop466-tech/Korea5/blob/main/scripts/check_links.py",
+   "action": "Restore file or make output deterministic; this session restored it and did not commit the change."
+  },
+  {
+   "id": "R4",
+   "severity": "medium",
+   "item": "data/upstream/ holds read-only copies of another session's feeds (nfl-2026.json, w1-stations.json). Two copies of the same NFL schedule now exist in the repo.",
+   "evidence": "COORDINATION.md 'Integrations taken from that session'",
+   "source_link": "https://github.com/karagemop466-tech/Korea5/tree/main/data/upstream",
+   "action": "Decide which copy is authoritative."
+  },
+  {
+   "id": "R5",
+   "severity": "medium",
+   "item": "The root README headline is dated 2026-11-05 and describes the 2027-2029 vacation analysis; it does not mention the NFL lines lab added on this branch.",
+   "evidence": "README.md line 8",
+   "source_link": "https://github.com/karagemop466-tech/Korea5/blob/main/README.md",
+   "action": "Integration step to add a link to nfl-lab/index.html."
+  }
+ ]
+}

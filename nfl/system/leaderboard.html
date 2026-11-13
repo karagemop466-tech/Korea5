@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leaderboard · NFL Decision System</title>
+<meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL / DECISION SYSTEM</div>
+  <nav class="main"><a href="index.html" class="">Overview</a><a href="summary.html" class="">Executive summary</a><a href="suggestions.html" class="">Suggestions</a><a href="questions.html" class="">Questions &amp; gaps</a><a href="market.html" class="">Lines &amp; market</a><a href="strategies.html" class="">Strategies</a><a href="leaderboard.html" class="active">Leaderboard</a><a href="validation.html" class="">Validation gates</a><a href="signals.html" class="">Signals</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries &amp; depth</a><a href="data.html" class="">Data health</a><a href="flagged.html" class="">Flagged for review</a><a href="method.html" class="">Method</a></nav>
+</div></header>
+<main class="wrap">
+<aside class="callout warn" role="note"><strong>No betting claim is made anywhere on this site.</strong>
+No official NFL source publishes odds, so no price exists in this system.
+Every computed number is labelled <span class="badge model">MODEL</span>. Every value an official page did not publish is
+blank and badged <span class="badge unverified">UNVERIFIED</span>, never filled in.
+<a href="flagged.html">What is unresolved →</a></aside>
+<h1>Leaderboard</h1><p class="lede">Three boards, pre-registered entrants, and zero ranks — because no bet can be settled without a stored price, and none exists.</p>
+
+<div class="callout"><strong>The leaderboard ranks nobody, and that is the correct output.</strong>
+Ranking requires settled bets. A settled bet requires a price. There is no price. Anything shown here other
+than an empty cell would be invented.
+<p style="margin:8px 0 0">This is the difference between a leaderboard and a decoration: a leaderboard that
+cannot compute a rank should say so, not fill the column with a zero.</p></div>
+
+<div class="statline">
+<div><b>0</b><span>certified strategies</span></div>
+<div><b>0</b><span>settled bets</span></div>
+<div><b>0</b><span>stored prices</span></div>
+<div><b>10</b><span>pre-registered entrants</span></div>
+<div><b>No</b><span>reward authorised</span></div>
+</div>
+<h2>Single bets <span class="small dim">· minimum 100 settled bets</span></h2>
+<p class="small">7 entrants · <strong>0 eligible</strong> · no reward authorised</p>
+<div class="scroll"><table class="tight"><thead><tr><th>ID</th><th>Strategy</th><th>Status</th>
+<th>Settled</th><th>Brier</th><th>Log loss</th><th>ROI</th><th>CLV</th><th>Rank</th><th>Reward</th>
+<th>Why unranked</th><th>Official source</th></tr></thead><tbody><tr>
+<td class="nowrap">ST01</td><td>Rest differential</td>
+<td><span class="badge unverified">blocked-no-price</span></td>
+<td>0</td>
+<td><span class="badge unverified">no settled bets</span> &mdash;</td><td><span class="badge unverified">no settled bets</span> &mdash;</td>
+<td><span class="badge unverified">no stored price</span> &mdash;</td><td><span class="badge unverified">no stored price</span> &mdash;</td>
+<td><span class="badge unverified">not ranked</span> &mdash;</td>
+<td><span class="badge unverified">not authorised</span></td>
+<td class="small">0 settled bets; no stored price</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">strategy source</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap">ST02</td><td>Short-week fade</td>
+<td><span class="badge unverified">blocked-no-price</span></td>
+<td>0</td>
+<td><span class="badge unverified">no settled bets</span> &mdash;</td><td><span class="badge unverified">no settled bets</span> &mdash;</td>
+<td><span class="badge unverified">no stored price</span> &mdash;</td><td><span class="badge unverified">no stored price</span> &mdash;</td>
+<td><span class="badge unverified">not ranked</span> &mdash;</td>
+<td><span class="badge unverified">not authorised</span></td>
+<td class="small">0 settled bets; no stored price</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">strategy source</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap">ST03</td><td>Scoring-form baseline</td>
+<td><span class="badge unverified">blocked-sample</span></td>
+<td>0</td>
+<td><span class="badge unverified">no settled bets</span> &mdash;</td><td><span class="badge unverified">no settled bets</span> &mdash;</td>
+<td><span class="badge unverified">no stored price</span> &mdash;</td><td><span class="badge unverified">no stored price</span> &mdash;</td>
+<td><span class="badge unverified">not ranked</span> &mdash;</td>
+<td><span class="badge unverified">not authorised</span></td>
+<td class="small">0 settled bets; no stored price</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/team-stats/offense/scoring/2026/reg/all" target="_blank" rel="noopener noreferrer">strategy source</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap">ST04</td><td>Turnover-regression fade</td>
+<td><span class="badge unverified">blocked-sample</span></td>
+<td>0</td>
+<td><span class="badge unverified">no settled bets</span> &mdash;</td><td><span class="badge unverified">no settled bets</span> &mdash;</td>
+<td><span class="badge unverified">no stored price</span> &mdash;</td><td><span class="badge unverified">no stored price</span> &mdash;</td>
+<td><span class="badge unverified">not ranked</span> &mdash;</td>
+<td><span class="badge unverified">not authorised</span></td>
+<td class="small">0 settled bets; no stored price</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all" target="_blank" rel="noopener noreferrer">strategy source</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap">ST08</td><td>Injury-status prior</td>
+<td><span class="badge unverified">blocked-sample</span></td>
+<td>0</td>
+<td><span class="badge unverified">no settled bets</span> &mdash;</td><td><span class="badge unverified">no settled bets</span> &mdash;</td>
+<td><span class="badge unverified">no stored price</span> &mdash;</td><td><span class="badge unverified">no stored price</span> &mdash;</td>
+<td><span class="badge unverified">not ranked</span> &mdash;</td>
+<td><span class="badge unverified">not authorised</span></td>
+<td class="small">0 settled bets; no stored price</td>
+<td class="nowrap"><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener noreferrer">strategy source</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap">ST09</td><td>Depth-tier mismatch</td>
+<td><span class="badge unverified">blocked-sample</span></td>
+<td>0</td>
+<td><span class="badge unverified">no settled bets</span> &mdash;</td><td><span class="badge unverified">no settled bets</span> &mdash;</td>
+<td><span class="badge unverified">no stored price</span> &mdash;</td><td><span class="badge unverified">no stored price</span> &mdash;</td>
+<td><span class="badge unverified">not ranked</span> &mdash;</td>
+<td><span class="badge unverified">not authorised</span></td>
+<td class="small">0 settled bets; no stored price</td>
+<td class="nowrap"><a href="https://www.49ers.com/team/depth-chart" target="_blank" rel="noopener noreferrer">strategy source</a><br><span class="dim" style="font-size:11px">www.49ers.com</span></td></tr><tr>
+<td class="nowrap">ST10</td><td>Home-field prior</td>
+<td><span class="badge unverified">blocked-no-price</span></td>
+<td>0</td>
+<td><span class="badge unverified">no settled bets</span> &mdash;</td><td><span class="badge unverified">no settled bets</span> &mdash;</td>
+<td><span class="badge unverified">no stored price</span> &mdash;</td><td><span class="badge unverified">no stored price</span> &mdash;</td>
+<td><span class="badge unverified">not ranked</span> &mdash;</td>
+<td><span class="badge unverified">not authorised</span></td>
+<td class="small">0 settled bets; no stored price</td>
+<td class="nowrap"><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">strategy source</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table></div><h2>Parlays <span class="small dim">· minimum 150 settled bets</span></h2>
+<p class="small">1 entrants · <strong>0 eligible</strong> · no reward authorised</p>
+<div class="scroll"><table class="tight"><thead><tr><th>ID</th><th>Strategy</th><th>Status</th>
+<th>Settled</th><th>Brier</th><th>Log loss</th><th>ROI</th><th>CLV</th><th>Rank</th><th>Reward</th>
+<th>Why unranked</th><th>Official source</th></tr></thead><tbody><tr>
+<td class="nowrap">ST07</td><td>Anti-correlated game script</td>
+<td><span class="badge unverified">blocked-no-price</span></td>
+<td>0</td>
+<td><span class="badge unverified">no settled bets</span> &mdash;</td><td><span class="badge unverified">no settled bets</span> &mdash;</td>
+<td><span class="badge unverified">no stored price</span> &mdash;</td><td><span class="badge unverified">no stored price</span> &mdash;</td>
+<td><span class="badge unverified">not ranked</span> &mdash;</td>
+<td><span class="badge unverified">not authorised</span></td>
+<td class="small">0 settled bets; no stored price</td>
+<td class="nowrap"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">strategy source</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table></div><h2>Player-prop combos <span class="small dim">· minimum 120 settled bets</span></h2>
+<p class="small">2 entrants · <strong>0 eligible</strong> · no reward authorised</p>
+<div class="scroll"><table class="tight"><thead><tr><th>ID</th><th>Strategy</th><th>Status</th>
+<th>Settled</th><th>Brier</th><th>Log loss</th><th>ROI</th><th>CLV</th><th>Rank</th><th>Reward</th>
+<th>Why unranked</th><th>Official source</th></tr></thead><tbody><tr>
+<td class="nowrap">ST05</td><td>Workload-first rushing prop</td>
+<td><span class="badge unverified">blocked-sample</span></td>
+<td>0</td>
+<td><span class="badge unverified">no settled bets</span> &mdash;</td><td><span class="badge unverified">no settled bets</span> &mdash;</td>
+<td><span class="badge unverified">no stored price</span> &mdash;</td><td><span class="badge unverified">no stored price</span> &mdash;</td>
+<td><span class="badge unverified">not ranked</span> &mdash;</td>
+<td><span class="badge unverified">not authorised</span></td>
+<td class="small">0 settled bets; no stored price</td>
+<td class="nowrap"><a href="https://www.nfl.com/players/christian-mccaffrey/stats" target="_blank" rel="noopener noreferrer">strategy source</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr><tr>
+<td class="nowrap">ST06</td><td>Same-drive stacking (QB passing + WR receiving)</td>
+<td><span class="badge none">not-certifiable-yet</span></td>
+<td>0</td>
+<td><span class="badge unverified">no settled bets</span> &mdash;</td><td><span class="badge unverified">no settled bets</span> &mdash;</td>
+<td><span class="badge unverified">no stored price</span> &mdash;</td><td><span class="badge unverified">no stored price</span> &mdash;</td>
+<td><span class="badge unverified">not ranked</span> &mdash;</td>
+<td><span class="badge unverified">not authorised</span></td>
+<td class="small">0 settled bets; no stored price</td>
+<td class="nowrap"><a href="https://www.nfl.com/stats/player-stats/category/passing/2026/reg/all/passingyards/desc" target="_blank" rel="noopener noreferrer">strategy source</a><br><span class="dim" style="font-size:11px">www.nfl.com</span></td></tr></tbody></table></div>
+
+<h2>What would make this live</h2>
+<div class="card prose"><ol>
+<li>A price source for each market the entrant needs (Q01) — licensed feed or an owner-recorded, timestamped
+quote ledger.</li>
+<li>Enough settled bets to clear the minimum sample on each board (100 single, 150 parlay, 120 prop combo).</li>
+<li>The nine validation gates passing, including the false-discovery guard.</li>
+<li>A reward policy (Q04) and a named reviewer (Q17).</li>
+</ol>
+<p>Until all four exist, the honest rank is "not ranked".</p></div>
+
+</main>
+<footer><div class="wrap">
+<p><strong>NFL Decision System</strong> · data retrieved 2026-11-13T13:33:20.791202Z (newest official fetch) · official sources only:
+nfl.com, the 32 official club sites, operations.nfl.com.
+Part of the <a href="../../index.html">Korea5 planner</a> · also see the
+<a href="../../nfl-strategy.html">strategy lab proposal</a> and the
+<a href="../index.html">NFL Decision Support hub</a>.</p>
+<p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
+official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
+</div></footer></body></html>

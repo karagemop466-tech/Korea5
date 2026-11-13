@@ -1,0 +1,47 @@
+{
+  "description": "Executive summary for the NFL Lines & Strategy hub. Verified anchors carry sources; gaps are listed explicitly and linked to the Flagged for Review page.",
+  "title": "NFL Lines & Strategy — Executive Summary",
+  "date": "2026-11-13",
+  "purpose": "Decision-support research system that originates NFL lines, develops and validates betting-signal strategies, ranks them on a skill-based leaderboard, and tracks injuries and starter/backup roster state. Not a wagering service.",
+  "verifiedAnchors": [
+    { "anchor": "NFL 2026 fixtures, kickoff times, venues and records are available from the official league schedule.", "source": "S1" },
+    { "anchor": "Official NFL Injury Report publishes player, position, injury, practice status and game status weekly per team.", "source": "S2" },
+    { "anchor": "The official 2026 NFL Rulebook governs game timing, overtime and roster/designation rules.", "source": "S3" },
+    { "anchor": "Official player statistics and Next Gen Stats play-level data are available for model inputs and correlation.", "source": "S4" },
+    { "anchor": "Official division/conference/league standings are published with W-L-T and point differential.", "source": "S6" },
+    { "anchor": "Bet mechanics (single bet, parlay, proposition bet) are defined by official state gaming regulators.", "source": "S8" },
+    { "anchor": "Player-prop action requires the named player to play; parlay legs must each win for the ticket to pay.", "source": "S8" }
+  ],
+  "whatWeHave": [
+    "A full requirements list (R1-R29) decomposed from the brief.",
+    "A clear open-questions inventory (Q1-Q12) with explicit have / don't-have splits.",
+    "A suggestions register (SU1-SU15) to improve decision-making and discover missing information, with a review workflow.",
+    "A strategy framework covering single bet, parlay and player-prop combinations (ST1-ST6).",
+    "A defined methodology for validation gates, correlation, luck removal and ranking (M1-M7).",
+    "A leaderboard design with eligibility, ranking metric, tie-breaks and reward tiers.",
+    "An injury/roster starter-backup signal model with verified example rows from the official Week 10 injury report.",
+    "An official, verified source registry (S1-S10) and a flagged-for-review register (FL1-FL10).",
+    "A line-by-line verification script that fails the build on unsourced or unflagged-blank rows."
+  ],
+  "whatWeDontHave": [
+    "A locked operating jurisdiction and a single settlement rule set (Q1, Q10).",
+    "Machine-readable official feeds for depth charts, rosters and injury history, with confirmed cadence/latency (Q2, Q8).",
+    "A trained, calibrated line-origination model and market-implied calibration (Q7).",
+    "Empirical correlation values computed from official play-level data (Q4).",
+    "Validated strategy performance; no strategy has passed the validation gates yet (Q5, FL5).",
+    "A historical injury/roster archive sufficient for back-testing (Q8).",
+    "Full per-market player-prop grading rules (Q9)."
+  ],
+  "keyDecisionsNeeded": [
+    "Lock the operating jurisdiction and settlement rule set (Q1).",
+    "Select and test the official data feeds for injury, roster and depth charts (Q2).",
+    "Approve the skill metric and validation-gate thresholds (Q3, Q5).",
+    "Approve the leaderboard metric and reward structure (Q6).",
+    "Confirm v1 scope of bet types and markets (Q12).",
+    "Review and approve or reject the proposed suggestions (SU1-SU15)."
+  ],
+  "topSuggestions": ["SU2", "SU3", "SU4", "SU5", "SU6", "SU7", "SU14"],
+  "methodSummary": "Strategies must pass configurable validation gates (out-of-sample, no look-ahead, edge vs market, selectivity, significance). Correlation is estimated from play-level data and applied when combining legs. Luck is removed by out-of-sample testing, ranking on edge vs market / closing-line value, selectivity requirements and risk-adjusted returns. Lines are model-originated and clearly labelled.",
+  "disclaimer": "This is decision-support research, not a wagering service. No real-money wagers are placed. Betting carries risk; please gamble responsibly.",
+  "source": "S8"
+}

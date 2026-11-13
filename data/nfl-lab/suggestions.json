@@ -1,0 +1,224 @@
+{
+ "suggestions": [
+  {
+   "id": "S1",
+   "area": "Market data",
+   "suggestion": "Choose a documented source for market lines before any strategy is judged.",
+   "why": "G0 (provenance) fails for every strategy until this is decided.",
+   "options": [
+    {
+     "id": "A",
+     "label": "License a documented odds feed",
+     "tradeoff": "Cost and a licence check are needed; best evidence quality."
+    },
+    {
+     "id": "B",
+     "label": "Keep nfldata with a disclosure",
+     "tradeoff": "Free and reproducible, but provenance and licence are unknown (Q02, Q13)."
+    },
+    {
+     "id": "C",
+     "label": "Drop market comparison",
+     "tradeoff": "Study the model only; no betting conclusion possible."
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "area": "Multiple testing",
+   "suggestion": "Pre-register a short list of hypotheses before running more tests.",
+   "why": "Ten strategies were tested; the Bonferroni threshold is already strict (p < 0.005).",
+   "options": [
+    {
+     "id": "A",
+     "label": "Pre-register 3 hypotheses",
+     "tradeoff": "Lowest false-discovery risk; slower to find anything."
+    },
+    {
+     "id": "B",
+     "label": "Keep the current 10 with Bonferroni",
+     "tradeoff": "Already applied; fine for a screen, weaker for new ideas."
+    },
+    {
+     "id": "C",
+     "label": "Add many more variants",
+     "tradeoff": "Raises the chance of a lucky result; not recommended."
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "area": "Injuries",
+   "suggestion": "Widen the injury signal so it has enough games to test.",
+   "why": "Only 7 games qualify for the QB Out/Doubtful signal (Q04).",
+   "options": [
+    {
+     "id": "A",
+     "label": "Include Questionable and practice status",
+     "tradeoff": "More games; weaker signal per game."
+    },
+    {
+     "id": "B",
+     "label": "Use team counts by position group",
+     "tradeoff": "Broader; needs a rule for which groups matter."
+    },
+    {
+     "id": "C",
+     "label": "Pause injury strategies",
+     "tradeoff": "Keeps the leaderboard honest until data exists."
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "area": "Leaderboard",
+   "suggestion": "Define what a reward is.",
+   "why": "The brief asks for rewards; the definition is not yet set (Q07).",
+   "options": [
+    {
+     "id": "A",
+     "label": "Points only, shown on the leaderboard",
+     "tradeoff": "No money involved; simplest and lowest legal risk."
+    },
+    {
+     "id": "B",
+     "label": "Points plus a public ranking history",
+     "tradeoff": "Adds accountability over time."
+    },
+    {
+     "id": "C",
+     "label": "Monetary reward",
+     "tradeoff": "Not recommended: wagering from Singapore is restricted (Q01)."
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "area": "Depth charts",
+   "suggestion": "Start archiving depth-chart snapshots so a history exists.",
+   "why": "Historical depth data is not week-keyed (Q05).",
+   "options": [
+    {
+     "id": "A",
+     "label": "Archive snapshots by CI from now on",
+     "tradeoff": "Builds history at no cost; no past data."
+    },
+    {
+     "id": "B",
+     "label": "Find an official weekly depth source",
+     "tradeoff": "Best evidence; the search has not been done yet."
+    },
+    {
+     "id": "C",
+     "label": "Drop depth-based signals",
+     "tradeoff": "Focus on the official injury report only."
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "area": "Site",
+   "suggestion": "Choose how often the data refreshes.",
+   "why": "Injury reports change through the week; the site is static.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Weekly CI refresh",
+     "tradeoff": "Current; needs a scheduled workflow."
+    },
+    {
+     "id": "B",
+     "label": "Refresh on demand only",
+     "tradeoff": "Lowest maintenance; may be stale."
+    },
+    {
+     "id": "C",
+     "label": "Freeze at the current snapshot",
+     "tradeoff": "Stable for review; no new information."
+    }
+   ]
+  },
+  {
+   "id": "S7",
+   "area": "Model",
+   "suggestion": "Add features the market may not price, one at a time, each pre-registered.",
+   "why": "The model is currently 0.4 points worse than the market (Q10).",
+   "options": [
+    {
+     "id": "A",
+     "label": "Rest and travel",
+     "tradeoff": "Data exists in the games file; effect likely small."
+    },
+    {
+     "id": "B",
+     "label": "Keep the model simple",
+     "tradeoff": "Less overfitting; serves as a benchmark only."
+    },
+    {
+     "id": "C",
+     "label": "Stop model development",
+     "tradeoff": "Focus on verification and data quality."
+    }
+   ]
+  },
+  {
+   "id": "S8",
+   "area": "Verification",
+   "suggestion": "Build a CI job that reconciles every row against the official NFL pages.",
+   "why": "Only 3 games and 9 injury rows have been checked (Q08, Q14).",
+   "options": [
+    {
+     "id": "A",
+     "label": "Full reconciliation in CI",
+     "tradeoff": "Strongest evidence; more CI time."
+    },
+    {
+     "id": "B",
+     "label": "Sample-based checks each week",
+     "tradeoff": "Cheaper; leaves gaps."
+    },
+    {
+     "id": "C",
+     "label": "Keep manual spot checks",
+     "tradeoff": "Lowest effort; weakest evidence."
+    }
+   ]
+  },
+  {
+   "id": "S9",
+   "area": "Repo",
+   "suggestion": "Clean up stale 'in progress' rows on the coordination board.",
+   "why": "Irregularity R1 on Flagged for review.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Owner confirms closure and the agent updates rows",
+     "tradeoff": "Accurate board; needs one owner decision."
+    },
+    {
+     "id": "B",
+     "label": "Leave as is",
+     "tradeoff": "No work; board stays confusing."
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "area": "Responsible use",
+   "suggestion": "Show the Singapore legal position and help line on every page.",
+   "why": "Participating in unlicensed gambling is an offence; problem gambling needs a visible route to help.",
+   "options": [
+    {
+     "id": "A",
+     "label": "Keep the current banner and footer",
+     "tradeoff": "Already in place."
+    },
+    {
+     "id": "B",
+     "label": "Add the NCPG help link to the landing page",
+     "tradeoff": "Clearer; the NCPG link was taken from the GRA page and not fetched."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "name": "Strategy registry — the competition entrants, one row per candidate strategy",
+    "compiledUTC": "2026-11-13",
+    "competition": "Three separate boards (single bets, parlays, player-prop combos). A strategy enters a board, is evaluated walk-forward, and is certified only by passing all nine validation gates.",
+    "crucialHonesty": "NO STRATEGY BELOW IS CERTIFIED. Nothing here has been settled against a real price, because the official NFL sources publish no prices (see Q01) and the repository stores none. Every 'status' therefore reads 'not certifiable yet', and the reason is printed. The registry exists so that when prices and sample arrive, the comparison is pre-registered rather than chosen after the fact.",
+    "statusMeaning": {
+      "not-certifiable-yet": "Built and runnable, but a gate that cannot currently be evaluated blocks certification.",
+      "blocked-no-price": "Cannot even be settled: it needs a stored two-way price.",
+      "blocked-sample": "Needs a larger settled sample before the skill-vs-luck gate can return anything but 'not evaluable'."
+    },
+    "rewardRule": "No reward is authorised. Rank only. See Q04."
+  },
+  "scoring": {
+    "primary": "Brier score and log loss against the realised outcome (lower is better); both are proper scoring rules and cannot be gamed by hedging.",
+    "secondary": "Expected calibration error over probability deciles.",
+    "roiOnlyIf": "A stored, timestamped two-way price exists for every settled bet. Otherwise ROI is withheld, not estimated.",
+    "clvOnlyIf": "A stored closing price exists. CLV is the fastest skill signal but needs the price ledger (S20).",
+    "never": [
+      "Raw win rate as a ranking key",
+      "Longest winning streak",
+      "Units won without a stated stake rule",
+      "Any back-test figure that used information published after the decision cutoff"
+    ]
+  },
+  "boards": {
+    "single": {
+      "label": "Single bets",
+      "variance": "Lowest of the three",
+      "minSettledSample": 100,
+      "why": "One outcome per decision; the cleanest place to measure calibration."
+    },
+    "parlay": {
+      "label": "Parlays",
+      "variance": "Highest",
+      "minSettledSample": 150,
+      "why": "Requires the empirical joint probability, not a product of legs. Minimum sample raised because variance is much higher.",
+      "extraGate": "G2 Correlation honesty"
+    },
+    "propCombo": {
+      "label": "Player-prop combos",
+      "variance": "High, and dependent",
+      "minSettledSample": 120,
+      "why": "Legs on the same player or the same game are correlated by construction; the joint must be estimated empirically.",
+      "extraGate": "G2 + G5 suppression floor of 8 shared games"
+    }
+  },
+  "strategies": [
+    {
+      "id": "ST01",
+      "board": "single",
+      "name": "Rest differential",
+      "hypothesis": "The team with more days of rest since its previous game covers the spread more often than the price implies.",
+      "inputs": "Official kickoff dates for every game (nfl.com by-week pages) → exact rest days. No travel, no estimates.",
+      "computedFrom": "official-results.json (2026: 185 finals, 2025: 272 finals)",
+      "status": "blocked-no-price",
+      "blockedBy": "G9 / Q01 — spread outcomes need a spread. Rest days are computable today; outcomes against a number are not.",
+      "whatItWouldNeed": "A stored pre-kickoff spread for each game.",
+      "testableToday": "Yes for the rest-day feature itself; no for the wager.",
+      "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+    },
+    {
+      "id": "ST02",
+      "board": "single",
+      "name": "Short-week fade",
+      "hypothesis": "A team playing on Thursday after a Sunday game (4 days rest) underperforms its price.",
+      "inputs": "Official kickoff dates and the TNF/SNF/MNF labels printed on the official week pages.",
+      "computedFrom": "official-results.json",
+      "status": "blocked-no-price",
+      "blockedBy": "G9 / Q01",
+      "whatItWouldNeed": "A stored spread plus a larger sample of Thursday games (only a handful per season).",
+      "testableToday": "Feature only.",
+      "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+    },
+    {
+      "id": "ST03",
+      "board": "single",
+      "name": "Scoring-form baseline",
+      "hypothesis": "A shrunk estimate of points scored and allowed per game (regularised toward the league mean) is better calibrated than the league-average prior.",
+      "inputs": "Official team scoring stats (offence and defence, 32 clubs) and official final scores.",
+      "computedFrom": "official-teamstats.json + official-results.json",
+      "status": "blocked-sample",
+      "blockedBy": "G3 minimum sample of 100 settled bets; the 2026 season has 185 finals but no prices to settle against.",
+      "whatItWouldNeed": "Prices, plus the full 17-game season.",
+      "testableToday": "Yes as a probability model scored by Brier against realised winners — no price needed for that step.",
+      "sourceUrl": "https://www.nfl.com/stats/team-stats/offense/scoring/2026/reg/all"
+    },
+    {
+      "id": "ST04",
+      "board": "single",
+      "name": "Turnover-regression fade",
+      "hypothesis": "Teams whose win total is driven by an unusually high turnover differential regress; the market lags the regression by a week or two.",
+      "inputs": "Official team turnover differential is NOT on the team-stats pages; the official game pages publish per-game team stat lines.",
+      "computedFrom": "not yet ingested — needs the game-page tab=stats extraction",
+      "status": "blocked-sample",
+      "blockedBy": "Data not ingested (G1) + prices (Q01).",
+      "whatItWouldNeed": "Per-game turnover extraction from official game pages, then a stored spread.",
+      "testableToday": "No.",
+      "sourceUrl": "https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all"
+    },
+    {
+      "id": "ST05",
+      "board": "propCombo",
+      "name": "Workload-first rushing prop",
+      "hypothesis": "A running back's rushing-attempt count is more predictable than his yards per attempt, so his over/under on attempts is a cleaner signal than his yardage line.",
+      "inputs": "Official per-game player logs (WK, OPP, RESULT, ATT, YDS, ...) from the player's own stats page.",
+      "computedFrom": "official-playerstats.json (season leaders) + per-player game logs",
+      "status": "blocked-sample",
+      "blockedBy": "G5 — game logs cover fewer than 8 games for most players, below the suppression floor.",
+      "whatItWouldNeed": "A full season of logs, plus a published attempts line.",
+      "testableToday": "Distribution can be estimated; not enough games to publish.",
+      "sourceUrl": "https://www.nfl.com/players/christian-mccaffrey/stats"
+    },
+    {
+      "id": "ST06",
+      "board": "propCombo",
+      "name": "Same-drive stacking (QB passing + WR receiving)",
+      "hypothesis": "A quarterback's passing yards and his number-one receiver's receiving yards are strongly positively correlated, so the independence product massively understates the joint probability.",
+      "inputs": "Two official per-game logs on the same team, joined by week and opponent.",
+      "computedFrom": "official-playerstats.json + player game logs",
+      "status": "not-certifiable-yet",
+      "blockedBy": "G2 is evaluable (the joint can be estimated), but G3/G7 need settled bets and prices.",
+      "whatItWouldNeed": "Prices on both legs so the parlay can be settled.",
+      "testableToday": "Yes — the correlation and the independence gap can be computed now, with n and an interval.",
+      "sourceUrl": "https://www.nfl.com/stats/player-stats/category/passing/2026/reg/all/passingyards/desc"
+    },
+    {
+      "id": "ST07",
+      "board": "parlay",
+      "name": "Anti-correlated game script",
+      "hypothesis": "In a game with a large spread, the favourite's passing volume and the underdog's rushing volume move in opposite directions to the naive model, so stacking them is worse than independence suggests.",
+      "inputs": "Official spread (not available) + two player logs.",
+      "computedFrom": "blocked on the spread",
+      "status": "blocked-no-price",
+      "blockedBy": "Q01",
+      "whatItWouldNeed": "A stored spread and both legs' lines.",
+      "testableToday": "No.",
+      "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10"
+    },
+    {
+      "id": "ST08",
+      "board": "single",
+      "name": "Injury-status prior",
+      "hypothesis": "A team whose listed starting quarterback is 'Out' on the official report, with a listed backup on the depth chart, underperforms the price by more than the price already reflects.",
+      "inputs": "Official injury report (status) + club depth chart (who is next).",
+      "computedFrom": "official-injuries.json + official-depth.json",
+      "status": "blocked-sample",
+      "blockedBy": "Depth coverage is 30 of 32 clubs (HOU publishes an image, GB uses a different table layout now parsed); QB-out games are few per season.",
+      "whatItWouldNeed": "Several seasons of QB-out games with prices.",
+      "testableToday": "The join is built and runs; the wager cannot be settled.",
+      "sourceUrl": "https://www.nfl.com/injuries/league/2026/reg10"
+    },
+    {
+      "id": "ST09",
+      "board": "single",
+      "name": "Depth-tier mismatch",
+      "hypothesis": "When a club must start a 3rd-string player at a premium position (QB, LT, CB1), its performance falls short of its price.",
+      "inputs": "Club depth charts (depth=1/2/3/4) + official injury report (who is Out).",
+      "computedFrom": "official-depth.json + official-injuries.json",
+      "status": "blocked-sample",
+      "blockedBy": "Depth charts are club projections, several self-labelled 'Unofficial'; 'starting' is not published anywhere as a fact (Q07).",
+      "whatItWouldNeed": "Actual participation (snap counts) to confirm the 3rd string really played.",
+      "testableToday": "The flag is publishable; the edge is not measurable.",
+      "sourceUrl": "https://www.49ers.com/team/depth-chart"
+    },
+    {
+      "id": "ST10",
+      "board": "single",
+      "name": "Home-field prior",
+      "hypothesis": "The baseline every other strategy must beat: home teams win at the league's historical home rate.",
+      "inputs": "Official final scores for 2025 and 2026.",
+      "computedFrom": "official-results.json",
+      "status": "blocked-no-price",
+      "blockedBy": "It is a baseline, not an edge; it cannot be a 'top strategy' and is listed so the leaderboard has a floor.",
+      "whatItWouldNeed": "Nothing more — it is the reference point.",
+      "testableToday": "Yes — the home win rate is computed from official finals and shown with n.",
+      "sourceUrl": "https://www.nfl.com/standings/"
+    }
+  ],
+  "rewards": {
+    "authorised": false,
+    "why": "Q04 is unanswered. A reward rule is a policy decision with money attached and cannot be invented by the system.",
+    "whatOneDecisionWouldUnlock": "Reward currency, payout rule, eligibility rule, and the G8 reviewer. Ranks are already computed, so the reward could be attached retroactively to the same ranking without re-scoring.",
+    "proposedDefaultIfAsked": "Paper-only. Rank by primary score. Reward the top three only after G7 has held for two consecutive evaluation cycles. No cash, no entry fee, no incentive to over-bet."
+  }
+}

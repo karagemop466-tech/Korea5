@@ -30,7 +30,7 @@
 
 ## Where things live
 
-* Site: `nfl-analytics.html` (dashboard) → `lines.html`, `injuries.html`, `strategies.html`, `leaderboard.html`, `questions.html`, `suggestions.html`, `requirements.html`.
+* Site: `nfl-analytics.html` (dashboard) → `lines.html`, `injuries.html`, `strategies.html`, `leaderboard.html`, `questions.html`, `analytics-suggestions.html`, `requirements.html`.
 * Data: `data/nfl-analytics/*.json` (row-level, source-linked). Snapshots: `research/nfl-analytics-raw/` (sha256 in `fetch-report.json`).
 * Verification: `research/nfl-week10-verification.md`. Flags: F33–F42 on the Flagged for Review pages.
 * Reproduce: `scripts/fetch_nfl_analytics.py` (CI) → `scripts/parse_nfl_analytics.py` → `scripts/originate_lines.py` → `scripts/build_nfl_analytics.py`.

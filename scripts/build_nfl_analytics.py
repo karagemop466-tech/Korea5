@@ -5,7 +5,7 @@ Pages (root, same theme as the rest of the site):
   nfl-analytics.html  — suite dashboard + executive summary
   requirements.html   — requirements register (R1-R18)
   questions.html      — decision-prerequisite questions (Q1-Q20)
-  suggestions.html    — suggestions register + review workflow (S1-S15)
+  analytics-suggestions.html    — suggestions register + review workflow (S1-S15)
   lines.html          — our own originated lines + method + validation
   strategies.html     — signals, strategies, validation gates, correlation, luck removal
   leaderboard.html    — competition rules, scoring, rewards
@@ -37,7 +37,7 @@ SUITE_NAV = [
     ("nfl-analytics.html", "Suite dashboard"), ("lines.html", "Lines &amp; model"),
     ("injuries.html", "Injuries &amp; depth"), ("strategies.html", "Strategies &amp; gates"),
     ("leaderboard.html", "Leaderboard"), ("questions.html", "Questions"),
-    ("suggestions.html", "Suggestions"), ("requirements.html", "Requirements"),
+    ("analytics-suggestions.html", "Suggestions"), ("requirements.html", "Requirements"),
 ]
 
 def load(name):
@@ -139,7 +139,7 @@ margin error {esc(str(val.get("absErrorPts")))} pts, side lost. Reported straigh
 <div class="card"><h3>Strategies &amp; gates</h3><p>Signal library, single/parlay/prop strategies, seven validation gates, correlation values and luck-removal method.</p><a href="strategies.html">Strategy register →</a></div>
 <div class="card"><h3>Leaderboard</h3><p>Competition rules, anti-luck scoring and rewards. No entries yet — the table opens when the pick ledger launches.</p><a href="leaderboard.html">Competition →</a></div>
 <div class="card"><h3>Questions</h3><p>What we have, what is missing, and which decision each gap blocks — with discovery suggestions.</p><a href="questions.html">Open questions →</a></div>
-<div class="card"><h3>Suggestions</h3><p>Improvements proposed for review. Nothing is implemented before a reviewer picks the best path.</p><a href="suggestions.html">Review suggestions →</a></div>
+<div class="card"><h3>Suggestions</h3><p>Improvements proposed for review. Nothing is implemented before a reviewer picks the best path.</p><a href="analytics-suggestions.html">Review suggestions →</a></div>
 </div>
 
 <div class="callout flag"><strong>Flagged this week.</strong> Texans depth chart is published as an image (strings unverified);
@@ -187,7 +187,7 @@ def build_questions():
 <h1>Decision-prerequisite questions</h1>
 <p class="lede">A decision is reasonably decidable only when every question it depends on is answered or consciously waived.
 This register lists what we <strong>have</strong> (with official sources), what is <strong>missing</strong>, which decision each gap
-<strong>blocks</strong>, and a discovery suggestion (S-ids link to <a href="suggestions.html">Suggestions</a>).
+<strong>blocks</strong>, and a discovery suggestion (S-ids link to <a href="analytics-suggestions.html">Suggestions</a>).
 Unknown values are never filled in.</p>
 <div class="scroll"><table><thead><tr><th>ID</th><th>Question</th><th>What we have</th><th>What is missing</th><th>Blocks</th><th>How to discover</th><th>Status</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
@@ -220,8 +220,8 @@ in a later, separately claimed task and linked back here.</p></div>
 <div class="scroll"><table><thead><tr><th>ID</th><th>Suggestion</th><th>Problem</th><th>Proposal</th><th>Expected decision impact</th><th>Effort</th><th>Risk</th><th>Status</th><th>Links</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
 '''
-    check_rows(body, "suggestions.html")
-    page("suggestions.html", "Suggestions", "suggestions.html", body)
+    check_rows(body, "analytics-suggestions.html")
+    page("analytics-suggestions.html", "Suggestions", "analytics-suggestions.html", body)
 
 
 # ===================================================================== lines
@@ -340,7 +340,7 @@ player-prop combos all have registered designs below.</p>
 <h2 id="luck-vs-skill">Removing luck from the equation</h2>
 <ul class="clean">{luck}</ul>
 <p class="small">Method references and formulas live in <a href="leaderboard.html">Leaderboard scoring</a>;
-the empirical job that replaces the estimates is <a href="suggestions.html">S5</a>.</p>
+the empirical job that replaces the estimates is <a href="analytics-suggestions.html">S5</a>.</p>
 '''
     check_rows(body, "strategies.html")
     page("strategies.html", "Strategies & gates", "strategies.html", body)
@@ -376,10 +376,10 @@ skillScore = 100·(0.6·z(shrunkROI) + 0.4·z(CLV))</p>
 
 <h2>Current standings</h2>
 <div class="callout"><strong>No entries yet.</strong> The ledger opens with the pick-lock system
-(<a href="suggestions.html">S3</a>). The table below is the published scaffold; a row is added only for a strategy that
+(<a href="analytics-suggestions.html">S3</a>). The table below is the published scaffold; a row is added only for a strategy that
 passed gates G1–G7.</div>
 <div class="scroll"><table><thead><tr><th>Rank</th><th>Strategy</th><th>Type</th><th>n</th><th>Raw ROI</th><th>Shrunk ROI</th><th>95% CI</th><th>CLV</th><th>Skill</th><th>Status</th></tr></thead>
-<tbody><tr><td colspan="10">— no registered entries — {link("suggestions.html", "ledger opens with S3")}</td></tr></tbody></table></div>
+<tbody><tr><td colspan="10">— no registered entries — {link("analytics-suggestions.html", "ledger opens with S3")}</td></tr></tbody></table></div>
 
 <h2>Rewards ({tag("flag", "proposal — owner decision Q11")})</h2>
 <div class="scroll"><table><thead><tr><th>Rank</th><th>Proposed reward</th><th>Confirmed?</th><th>Decision</th></tr></thead>

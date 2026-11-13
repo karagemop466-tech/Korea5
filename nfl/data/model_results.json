@@ -4710,19 +4710,14 @@
   "fill": "missing signal -> 0 (documented; never a guessed value)"
  },
  "crossSource": {
-  "status": "pass",
-  "summary": "2086 of 2776 completed games match exactly, 0 differ, 690 unmatched",
-  "examples": [],
-  "agree": 2086,
-  "disagree": 0,
-  "unmatched": 690
+  "status": "not run",
+  "summary": "no raw data",
+  "examples": []
  },
  "marketCoverage": {
-  "spreadPct": 0.9641,
-  "moneylinePct": 0.9637,
-  "espnOddsGames": 26,
-  "espnGames": 2913,
-  "games": 3033,
-  "totalPct": 0.9641
+  "spreadPct": null,
+  "moneylinePct": null,
+  "espnOddsGames": 0,
+  "espnGames": 0
  }
 }

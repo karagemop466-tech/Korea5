@@ -1,5 +1,5 @@
 {
- "generatedUTC": "2026-11-13T14:45:16Z",
+ "generatedUTC": "2026-11-13T14:46:56Z",
  "checks": [
   {
    "id": "provenance",
@@ -2498,25 +2498,25 @@
   {
    "id": "cross-source",
    "name": "nflverse result vs ESPN final score (independent publishers)",
-   "result": "2086 of 2776 completed games match exactly, 0 differ, 690 unmatched",
-   "status": "pass",
+   "result": "no raw data",
+   "status": "not run",
    "detail": [],
    "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
   },
   {
    "id": "market",
    "name": "Market reference available per game",
-   "result": "spread present for 0.9641 of games; moneylines present for 0.9637; ESPN current-season odds 26 games",
+   "result": "spread present for None of games; moneylines present for None; ESPN current-season odds 0 games",
    "status": "partial",
    "detail": [
     {
      "item": "Spread and total line (nflverse schedules)",
-     "value": "0.9641 of completed games",
+     "value": "None of completed games",
      "caveat": "Single un-timestamped snapshot per game. No opening line, no closing line, no price."
     },
     {
      "item": "Moneylines",
-     "value": "0.9637",
+     "value": "None",
      "caveat": "Empty in every season checked, so vig cannot be measured from this source."
     },
     {
@@ -2526,7 +2526,7 @@
     },
     {
      "item": "ESPN current-season odds",
-     "value": "26 games",
+     "value": "0 games",
      "caveat": "Only the week on screen has odds; older weeks return an empty odds array."
     }
    ],

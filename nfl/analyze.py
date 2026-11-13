@@ -23,7 +23,7 @@ import json
 import math
 import os
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 RAW = "nfl/raw"
 OUT = "nfl/data"
@@ -367,18 +367,24 @@ def cross_source_and_market():
     rows = [r for r in read_csv(games_path) if r.get("season", "").isdigit() and int(r["season"]) >= 2016]
     if not rows:
         return out, coverage
-    n = max(1, len(rows))
-    coverage["games"] = len(rows)
-    coverage["spreadPct"] = round(sum(1 for r in rows if r.get('spread_line')) / n, 4)
-    coverage["moneylinePct"] = round(sum(1 for r in rows if r.get('home_moneyline')) / n, 4)
-    coverage["totalPct"] = round(sum(1 for r in rows if r.get('total_line')) / n, 4)
+    played = [r for r in rows if r.get("home_score") not in ("", None) and r.get("away_score") not in ("", None)]
+    n = max(1, len(played))
+    coverage["games"] = len(played)
+    coverage["scheduled"] = len(rows) - len(played)
+    coverage["spreadPct"] = round(sum(1 for r in played if r.get('spread_line')) / n, 4)
+    coverage["moneylinePct"] = round(sum(1 for r in played if r.get('home_moneyline')) / n, 4)
+    coverage["totalPct"] = round(sum(1 for r in played if r.get('total_line')) / n, 4)
     # ESPN scoreboards: match on date + team abbreviations
+    # key on the unordered pair of teams: neutral-site games are published with no home team,
+    # so a home-team-only join silently drops them.
     idx = defaultdict(list)
     for r in rows:
         if r.get("home_score") and r.get("away_score"):
-            idx[(r["gameday"], r.get("home_team"))].append(r)
+            idx[(r["gameday"], r.get("home_team"), r.get("away_team"))].append(r)
+            idx[(r["gameday"], r.get("away_team"), r.get("home_team"))].append(r)
     agree = disagree = missing = 0
     examples = []
+    unmatched_dates = {}
     for f in sorted(glob.glob(os.path.join(RAW, "espn_*_t2_w*.json"))):
         try:
             d = load(f)
@@ -407,9 +413,20 @@ def cross_source_and_market():
                 continue
             home_score = teams.get(home_ab)
             away_score = teams.get(away_ab)
-            cands = idx.get((day, home_ab), [])
+            cands = idx.get((day, home_ab, away_ab), [])
+            if not cands:
+                for shift in (-1, 1):
+                    try:
+                        d2 = (datetime.fromisoformat(day) + timedelta(days=shift)).date().isoformat()
+                    except ValueError:
+                        break
+                    cands = idx.get((d2, home_ab, away_ab), [])
+                    if cands:
+                        day = d2
+                        break
             if not cands:
                 missing += 1
+                unmatched_dates[(e.get("date") or "")[:10]] = unmatched_dates.get((e.get("date") or "")[:10], 0) + 1
                 continue
             r = cands[0]
             try:
@@ -431,6 +448,7 @@ def cross_source_and_market():
         "summary": f"{agree} of {total} completed games match exactly, {disagree} differ, {missing} unmatched",
         "examples": examples,
         "agree": agree, "disagree": disagree, "unmatched": missing,
+        "unmatchedByDate": dict(sorted(unmatched_dates.items())[:20]),
     }
     return out, coverage
 

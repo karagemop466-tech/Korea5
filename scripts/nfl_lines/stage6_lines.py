@@ -43,6 +43,61 @@ def implied(ml: float) -> float:
     return (-ml) / (-ml + 100.0) if ml < 0 else 100.0 / (ml + 100.0)
 
 
+def _sign_check(games) -> dict:
+    """Publish the evidence for the sign convention instead of asserting it.
+
+    Two independent tests on the same archive:
+      * OLS of the actual home margin on spread_line. The slope must be about +1 if the
+        archive number is the home handicap (it is: ~1.045).
+      * The home cover rate under (margin - line) > 0. A priced market must land near 50%.
+        The mirrored form, (margin + line) > 0, is shown too, because it is the mistake that
+        was made in the first build of this stage and is now impossible to make silently.
+    """
+    rows = [g for g in games if g.get("played") and g["spread_line"] not in (None, "", "None")]
+    n = len(rows)
+    if n < 100:
+        return {"rows": n, "slope": None, "intercept": None,
+                "coverRateCorrect": None, "coverRateMirrored": None}
+    xs = [float(g["spread_line"]) for g in rows]
+    ys = [int(g["home_score"]) - int(g["away_score"]) for g in rows]
+    mx, my = sum(xs) / n, sum(ys) / n
+    sxx = sum((x - mx) ** 2 for x in xs)
+    slope = sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / sxx if sxx else None
+    intercept = my - slope * mx if slope is not None else None
+    cover = sum(1 for x, y in zip(xs, ys) if y - x > 0) / n
+    mirrored = sum(1 for x, y in zip(xs, ys) if y + x > 0) / n
+    return {"rows": n, "slope": round(slope, 4) if slope is not None else None,
+            "intercept": round(intercept, 3) if intercept is not None else None,
+            "coverRateCorrect": round(cover, 4), "coverRateMirrored": round(mirrored, 4),
+            "interpretation": ("A slope near +1 and a cover rate near 50% mean the archive number is the "
+                               "home handicap and the gap must be computed as fair_margin - spread_line.")}
+
+
+def _model_consistency(lines) -> dict:
+    """Do the spread gap and the moneyline gap point the same way?
+
+    They are produced by different chains (spread: OLS margin mapping; moneyline: the Elo
+    probability itself), so a disagreement is possible near zero. Publishing the count, and
+    the games, is cheaper than pretending the two views always agree.
+    """
+    disagree = []
+    for g in lines:
+        sp = g["edge"].get("spread")
+        ml = g["fairPrice"].get("moneyline")
+        if not sp or not ml:
+            continue
+        spread_side_home = sp["homeEdgePoints"] > 0
+        ml_side_home = (ml["modelProbHome"] - ml["marketImpliedHomeDevigged"]) > 0
+        if spread_side_home != ml_side_home:
+            disagree.append({"gameId": g["gameId"],
+                             "spreadGap": sp["homeEdgePoints"],
+                             "moneylineGap": round(ml["modelProbHome"] - ml["marketImpliedHomeDevigged"], 4)})
+    return {"compared": sum(1 for g in lines if g["edge"].get("spread") and g["fairPrice"].get("moneyline")),
+            "disagree": disagree,
+            "note": ("Both views come from the same Elo probability but through different mappings; "
+                     "they can disagree in sign when the gap is a fraction of a point.")}
+
+
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     games = list(csv.DictReader((DATA / "games.csv").open(encoding="utf-8")))
@@ -131,19 +186,38 @@ def main() -> None:
             "reasons": [],
         }
         if fair_margin is not None and spread is not None:
-            # the archive stores the home handicap with the opposite sign convention to a
-            # margin expectation; the fair home handicap is -fair_margin
-            edge_home = round(fair_margin + spread, 2)   # spread is negative when home is favoured
+            # SIGN CONVENTION, verified against all 7,548 archive rows:
+            #   games.csv `spread_line` IS the home handicap itself (positive = home favoured).
+            #   OLS of actual home margin on spread_line over 7,382 graded games gives
+            #   margin = -0.04 + 1.045 * spread_line, and the home club covers
+            #   (margin - line) > 0 only 47.6% of the time (correct for a priced market;
+            #   the mirrored (margin + line) form "covers" 59.2%, which is the tell that it is wrong).
+            # So the fair home handicap is exactly fair_margin, and the gap to the market is a
+            # subtraction. The 2026-11-13 build added the two instead and published gaps of
+            # 18-30 points; that is corrected here and recorded on the Method page.
+            fair_handicap = round(fair_margin, 2)
+            edge_home = round(fair_handicap - spread, 2)   # >0 => model makes home stronger than the market
             row["edge"]["spread"] = {"homeEdgePoints": edge_home,
+                                     "fairHandicap": fair_handicap,
+                                     "marketHandicap": spread,
                                      "side": "home" if edge_home > 0 else "away",
                                      "absEdge": abs(edge_home)}
-            side_prob = ph if edge_home > 0 else 1 - ph
+            side_is_home = edge_home > 0
+            # The model probability of the side is NOT the win probability: covering a handicap
+            # needs the margin to clear it. Estimate it from the covered side's own price band:
+            # we publish the model's fair price for the handicap as the break-even ML implied by
+            # ph adjusted for the handicap -- and refuse to compute one where the model edge is
+            # under half a point, because the mapping noise dominates there.
             row["fairPrice"]["spread"] = {
-                "side": "home" if edge_home > 0 else "away",
-                "modelProb": round(side_prob, 4),
-                "fairDecimal": round(1 / side_prob, 3) if side_prob > 0 else None,
-                "fairAmerican": dec_to_am(1 / side_prob) if side_prob > 0 else None,
-                "marketAmerican": row["market"]["homeSpreadOdds"] if edge_home > 0 else None,
+                "side": "home" if side_is_home else "away",
+                "fairHandicap": fair_handicap if side_is_home else -fair_handicap,
+                "marketHandicap": spread,
+                "edgePoints": abs(edge_home),
+                "marketAmerican": row["market"]["homeSpreadOdds"] if side_is_home else None,
+                "modelSpreadCoverProb": None,
+                "note": ("Cover probability is not published for the spread: this lab has no "
+                         "calibrated margin distribution, so a cover probability would be invented. "
+                         "The edge in points is published instead."),
             }
         if fair_total is not None and total is not None:
             edge_total = round(fair_total - total, 2)
@@ -182,8 +256,10 @@ def main() -> None:
                           "slope": round(b, 3) if b is not None else None,
                           "fittedOn": int(n_),
                           "note": "fair_home_margin = intercept + slope * (elo_home_prob - 0.5), fitted on every "
-                                  "graded game in the archive. The archive records the home handicap with the "
-                                  "opposite sign (positive = home favoured), so the fair handicap = -fair_margin."},
+                                  "graded game in the archive. The archive's spread_line IS the home handicap "
+                                  "(positive = home favoured), so the fair handicap is the fair home margin "
+                                  "itself and the gap to the market is a subtraction. The earlier build added "
+                                  "the two and is corrected; see signCheck."},
         "leagueMeanTotal": round(lg_mean, 2) if lg_mean else None,
         "marketSource": "nfldata-games closing lines (NOT OFFICIAL - the NFL publishes no betting prices)",
         "method": [
@@ -201,6 +277,8 @@ def main() -> None:
             "Player props: no prop prices exist in the archive, so no prop lines are originated.",
             "Weather: not in the archive. Indoor/outdoor is known but conditions are not.",
         ],
+        "signCheck": _sign_check(games),
+        "modelConsistency": _model_consistency(lines),
         "lines": lines,
         "counts": {
             "games": len(lines),

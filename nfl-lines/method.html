@@ -60,6 +60,22 @@ probability of the side taken, which is the sharpest honest benchmark. The three
 p = 0.0005 to p = 0.218. Both the old and new numbers are recorded here rather than quietly overwritten — the
 correction is part of the evidence.</p>
 
+<h2>Second correction: a sign error in the Week 11 card</h2>
+<p>The first build of the fair-lines table computed the gap between the model and the market as
+<code>fair_margin + spread_line</code>. That is wrong. The archive's <code>spread_line</code> <em>is</em> the home
+handicap — a positive number means the home club is favoured — so the gap is a subtraction. Adding the two produced
+absurd gaps: 18.6 points on <code>IND @ HOU</code> and 29.6 on <code>MIA @ BUF</code>, on a model whose own mean
+absolute error on the home margin is 10.5 points.</p>
+<p>The convention is now tested in the pipeline rather than asserted in a comment, on all 7,413 graded rows:
+regressing the actual home margin on the archive number gives a slope of 1.045 and an intercept of -0.04,
+and the home club covers <code>(margin − line) &gt; 0</code> on 47.6% of games. A priced market has to land near
+50%; the mirrored form, <code>(margin + line) &gt; 0</code>, lands on 59.2%, which is the tell. Both numbers are
+printed on the <a href="lines.html">Fair lines</a> page so anyone can repeat the check by eye.</p>
+<p>Corrected, the largest disagreement on the Week 11 card is 4.2 points and most are under three — inside the
+model's own error. That is a far less exciting result, and it is the true one. <strong>The backtest engine already
+had the convention right</strong> (it subtracts the line in <code>outcome_spread</code>), so the leaderboard, the ROI
+figures and the luck tests are unaffected; only the Week 11 origination card was wrong.</p>
+
 <h2>The eight validation gates</h2>
 <ol>
 <li><strong>Provenance</strong> — every input is in the source registry with an access route.</li>
@@ -94,5 +110,5 @@ recommended anywhere on this site. Market prices shown are derived from a public
 labelled <strong>NOT OFFICIAL</strong>; the NFL publishes no betting prices.
 · <a href="index.html">Overview</a> · <a href="sources.html">Sources</a> ·
 <a href="flagged.html">Flagged for review</a> · <a href="method.html">Method</a></p>
-<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:30:56Z</p>
+<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:37:43Z</p>
 </div></footer></body></html>

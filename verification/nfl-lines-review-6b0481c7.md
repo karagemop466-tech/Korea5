@@ -132,7 +132,7 @@ file trace to a source?
 | Injury impact −0.97 / +0.80 points | 414 club-weeks, `impact-2025.json` | MIRROR + official status values |
 | Correlation φ values | joint outcomes in the two tables above | MIRROR, one season for player pairs |
 | 23 questions, 12 suggestions | `nfl-lines/data/decision/*.json` | each row carries its own source or states none exists |
-| 30 flagged items | compiled from the checks above | each row carries a source or states none exists |
+| 32 flagged items | compiled from the checks above | each row carries a source or states none exists |
 
 ### 4.1 Statistical review of the lab's own methods
 
@@ -189,3 +189,22 @@ python3 scripts/nfl_lines/sources.py
 python3 scripts/nfl_lines/stage8_site.py
 python3 scripts/nfl_lines/verify.py              # 12/12 checks
 ```
+
+## 4.2 Post-publication review of this session's own output (2026-11-13, late)
+
+Having reviewed every other session's files line by line, I reviewed my own published pages the same way and found
+one more error, in the table most likely to be acted on.
+
+| # | Where | What was wrong | Evidence | Fix |
+|---|---|---|---|---|
+| R6 | `nfl-lines/lines.html`, Week 11 card | The model-versus-market gap was computed as `fair_margin + spread_line`. The archive's `spread_line` **is** the home handicap, so the gap must be a subtraction. The page published gaps of 18.6 and 29.6 points on a model with a 10.5-point mean absolute margin error. | `python3 -c` on 7,382 graded rows: OLS `margin = -0.04 + 1.045 * spread_line`; cover rate `(margin - line) > 0` = 47.6% vs mirrored `(margin + line) > 0` = 59.2% | `stage6_lines.py` now subtracts, publishes a `signCheck` block with those two statistics, and `verify.py` gained **V13** which re-derives every gap from `fairHandicap - marketHandicap`. V13 was tested by restoring the broken formula: it fails. |
+| R7 | `nfl-lines/lines.html`, "Fair price (home/away)" column | It labelled a moneyline price as the spread's fair price, which conflates covering a handicap with winning outright. | reading `stage6_lines.py` | Column renamed and split: the moneyline price stays; the spread column now publishes the gap and the side, with an explicit note that no cover probability is published because the lab has no calibrated margin distribution. |
+| R8 | `nfl-lines/flagged.html`, F15 | Said the three-leg parlay had "a tiny p-value". Correct only before the luck-test correction; the current p is 0.218. | `leaderboard.json` | F15 rewritten with the current p, the interval, and the reason it once looked significant. |
+| R9 | `nfl-lines/method.html` | The first correction section implied the sign convention had been verified before publication. It had been asserted in a code comment. | `git show eb7bc5f:scripts/nfl_lines/stage6_lines.py` | Method page now carries a second correction section stating plainly that the number was wrong, what it was, and why the backtest is unaffected. |
+
+**Scope of the damage.** The wrong number was confined to the Week 11 origination card. `outcome_spread` in
+`stage3_engine.py` subtracts the line and was correct, so every ROI, gate, interval and p-value on the leaderboard
+and backtest pages stands. Nothing in the questions or suggestions registers depended on the gap.
+
+**Lesson recorded as a gate, not a resolution.** A published number that a reader could act on now has to be
+re-derived by the verifier from its own inputs, not merely present. V13 is that gate for this table.

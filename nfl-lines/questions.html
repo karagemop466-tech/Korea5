@@ -11,7 +11,7 @@
 </div></header>
 <main class="wrap">
 
-<p class="eyebrow">Decision support · 23 questions</p>
+<p class="eyebrow">Decision support · 24 questions</p>
 <h1>Questions, information and answers</h1>
 <p class="lede">Nothing should be built on a question that has not been answered. Each row states what we know,
 what we do <em>not</em> know, the information that is missing, what the answer would change, and the exact step
@@ -20,7 +20,7 @@ that would settle it.</p>
 <div class="grid g4">
   <div class="card"><div class="kpi">3<small>need your decision</small></div></div>
   <div class="card"><div class="kpi">5<small>unverified</small></div></div>
-  <div class="card"><div class="kpi">6<small>partly answered</small></div></div>
+  <div class="card"><div class="kpi">7<small>partly answered</small></div></div>
   <div class="card"><div class="kpi">9<small>answered</small></div></div>
 </div>
 <p class="small">ANSWERED items carry the answer. UNVERIFIED and AWAITING-DECISION items are the open decisions; each names the exact discovery step that would settle it.</p>
@@ -46,6 +46,7 @@ that would settle it.</p>
 <tr><td><strong>Q19</strong><br><span class="small">Injuries &amp; lineups</span></td><td>Does a backup replacing a starter show up in the score at all?</td><td>Only weakly. Position-group differences are all inside their intervals except the small-sample groups, which cannot be interval-estimated.</td><td>Whether an individual-level (not group-level) replacement effect exists.</td><td>Snap counts and participation data, absent here.</td><td>Whether a &#x27;backup tier&#x27; feature would add information.</td><td>Join snap counts when reachable; measure the drop when the tier-1 player&#x27;s snap share is replaced.</td><td><a href="https://www.nfl.com/transactions/">official source</a></td><td><span class="b unverified">UNVERIFIED</span></td></tr>
 <tr><td><strong>Q20</strong><br><span class="small">Injuries &amp; lineups</span></td><td>Is the official injury report&#x27;s blank status meaningful?</td><td>The page leaves Practice Status and Game Status blank for most listed players; 56 of 65 rows in the captured games are blank in at least one field.</td><td>Whether blank means &#x27;no game designation&#x27; or &#x27;not yet published&#x27;.</td><td>The league&#x27;s documentation of the report format.</td><td>Whether a blank should be treated as available.</td><td>Compare the same report across practice days to see blanks fill in.</td><td><a href="https://www.nfl.com/injuries/">official source</a></td><td><span class="b unverified">UNVERIFIED</span></td></tr>
 <tr><td><strong>Q23</strong><br><span class="small">Statistics</span></td><td>Is the luck test correct when bet prices differ?</td><td>An earlier pooled break-even win-rate test was wrong for mixed prices: it compared win counts while the money depends on the price. It has been replaced by a per-bet null using the de-vigged closing market probability of the side taken, with 10,000 seeded simulations.</td><td>Nothing further — the defect was identified, corrected and recorded on the Method page.</td><td>None.</td><td>The three-leg parlay&#x27;s significance fell from p = 0.0005 to p = 0.218. No other strategy crosses the significance line.</td><td>Re-run the engine; the seed is fixed so the result is reproducible.</td><td><span class="blank">no possible official source</span></td><td><span class="b answered">ANSWERED</span></td></tr>
+<tr><td><strong>Q24</strong><br><span class="small">Data integrity</span></td><td>Can a published line card be wrong in a way the site would not notice?</td><td>It was: the first Week 11 build added the market handicap instead of subtracting it, printing 18.6- and 29.6-point gaps. The archive&#x27;s spread_line is the home handicap; the gap is a subtraction.</td><td>How many other published numbers rest on an unchecked sign or unit convention. Only the gap arithmetic is now re-derived by the verifier; the rest are checked for presence and range.</td><td>A convention test for every derived column, not just the one that broke.</td><td>Nothing about strategy conclusions (the backtest already subtracted correctly), but it changes how much of the line card a reader should trust without re-deriving it.</td><td>Extend verify.py the same way V13 does: recompute each published derived value from its own inputs and fail on any mismatch. That is mechanical and cheap.</td><td><span class="blank">no possible official source</span></td><td><span class="b partial">ANSWERED (PARTIAL)</span></td></tr>
 <tr><td><strong>Q21</strong><br><span class="small">Site &amp; process</span></td><td>Where do suggestions get reviewed before anything is built?</td><td>This lab adds a dedicated Suggestions page with a decision column and a recommended path.</td><td>Whether the owner wants a voting or scoring mechanism.</td><td>Owner preference.</td><td>Whether suggestions are ranked by the owner or by the lab.</td><td>Open the Suggestions page; each row names the decision required.</td><td><span class="blank">no possible official source</span></td><td><span class="b answered">ANSWERED</span></td></tr>
 <tr><td><strong>Q22</strong><br><span class="small">Site &amp; process</span></td><td>How can a reader tell an official value from a model value at a glance?</td><td>Every row carries a source link and an OFFICIAL / MIRROR / MODEL / NOT OFFICIAL label.</td><td>Whether the labelling is legible enough in practice.</td><td>Owner feedback after review.</td><td>The badge design, not the data.</td><td>Review the Flagged page and the source badges on any table.</td><td><span class="blank">no possible official source</span></td><td><span class="b answered">ANSWERED</span></td></tr></tbody></table></div>
 
@@ -64,5 +65,5 @@ recommended anywhere on this site. Market prices shown are derived from a public
 labelled <strong>NOT OFFICIAL</strong>; the NFL publishes no betting prices.
 · <a href="index.html">Overview</a> · <a href="sources.html">Sources</a> ·
 <a href="flagged.html">Flagged for review</a> · <a href="method.html">Method</a></p>
-<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:30:56Z</p>
+<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:37:43Z</p>
 </div></footer></body></html>

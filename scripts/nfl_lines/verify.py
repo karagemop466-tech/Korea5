@@ -15,6 +15,10 @@ Checks, each reported individually and all of them failing the build if violated
   V10 every question and every suggestion carries an id, a status and a decision/answer
   V11 root pages link to the lab, and the lab links back
   V12 the report is written to nfl-lines/data/verification.json and summarised on the site
+  V13 the spread-gap sign convention is proven from the archive, not asserted, and every published
+      gap re-derives exactly from its two inputs
+  V14 no page claims a value exists where the data is deliberately blank (the spread cover
+      probability and the blocked props/parlays are the cases that bit during this build)
 
 Writes: nfl-lines/data/verification.json (and prints a summary).
 """
@@ -159,6 +163,93 @@ def main() -> None:
     back = (SITE / "index.html").read_text().count("../index.html")
     check("V11", "root pages link into the lab and the lab links back",
           root_links >= 10 and back >= 1, f"{root_links} root pages link in; {back} back-links")
+
+    # V13 - the sign convention that broke the first Week 11 build
+    sign_errors = []
+    sc = lines.get("signCheck") or {}
+    if not sc:
+        sign_errors.append("no signCheck block in the week-11 artefact")
+    else:
+        slope = sc.get("slope")
+        cover = sc.get("coverRateCorrect")
+        mirror = sc.get("coverRateMirrored")
+        if slope is None or not (0.8 <= slope <= 1.3):
+            sign_errors.append(f"margin-on-line slope {slope} is not ~+1")
+        if cover is None or not (0.45 <= cover <= 0.55):
+            sign_errors.append(f"correct cover rate {cover} is not near 50%")
+        if mirror is not None and 0.45 <= mirror <= 0.55:
+            sign_errors.append("the mirrored (margin + line) form also looks like a priced market, so the "
+                               "check cannot tell the two conventions apart")
+    # Exact re-derivation: the published gap must equal fair handicap minus market handicap,
+    # row by row. This is the check that actually catches a sign error, because it recomputes
+    # the number from the two inputs the page shows instead of trusting the stored one.
+    s2 = json.loads((DATA / "backtest" / "strategies" / "s2-elo-spread.json").read_text())
+    model_mae = (s2.get("gradedRows") or {}).get("spreadMAEModel")
+    arithmetic = []
+    for g in lines["lines"]:
+        e = (g.get("edge", {}) or {}).get("spread")
+        if not e:
+            continue
+        want = round(e["fairHandicap"] - e["marketHandicap"], 2)
+        if abs(want - e["homeEdgePoints"]) > 0.005:
+            arithmetic.append((g["gameId"], e["homeEdgePoints"], want))
+    if arithmetic:
+        sign_errors.append(f"gap does not equal fair minus market handicap: {arithmetic[:4]}")
+    # And the two independently built views of the same Elo number must agree in sign unless the
+    # gap is inside the mapping's noise floor.
+    flipped = []
+    for g in lines["lines"]:
+        e = (g.get("edge", {}) or {}).get("spread")
+        ml = (g.get("fairPrice", {}) or {}).get("moneyline")
+        if not e or not ml:
+            continue
+        ml_gap = ml["modelProbHome"] - ml["marketImpliedHomeDevigged"]
+        if (e["homeEdgePoints"] > 0) != (ml_gap > 0) and abs(e["homeEdgePoints"]) > 2.0:
+            flipped.append((g["gameId"], e["homeEdgePoints"], round(ml_gap, 4)))
+    if flipped:
+        sign_errors.append(f"spread and moneyline disagree in sign beyond 2 points: {flipped}")
+    huge = []
+    if model_mae:
+        for g in lines["lines"]:
+            e = (g.get("edge", {}).get("spread") or {}).get("homeEdgePoints")
+            if e is not None and abs(e) > 3 * model_mae:
+                huge.append((g["gameId"], e))
+        if huge:
+            sign_errors.append(f"gaps larger than 3x the model's own margin error: {huge}")
+    check("V13", "spread-gap sign convention proven and gaps plausible", not sign_errors,
+          "; ".join(sign_errors) or f"slope {sc.get('slope')}, cover {sc.get('coverRateCorrect')}, "
+                                    f"mirrored {sc.get('coverRateMirrored')}, max gap <= 3x MAE {model_mae}")
+
+    # V14 - pages must not promise values the data deliberately withholds
+    overclaims = []
+    blank_claims = {
+        "cover probability": ("modelSpreadCoverProb", "The spread cover probability is blank on purpose"),
+    }
+    if not any("modelSpreadCoverProb" in str(g.get("fairPrice", {})) for g in lines["lines"]):
+        overclaims.append("the week-11 artefact has no modelSpreadCoverProb field at all, so the page cannot "
+                          "be describing its blank state honestly")
+    for g in lines["lines"]:
+        sp = (g.get("fairPrice", {}) or {}).get("spread") or {}
+        if sp.get("modelSpreadCoverProb") is not None:
+            overclaims.append(f"{g['gameId']} publishes a spread cover probability, which this lab cannot "
+                              f"compute honestly")
+            break
+    # the phrase must exist on the lines page so a reader is told, not left to infer
+    lines_html = (SITE / "lines.html").read_text()
+    if "cover probability" not in lines_html.lower():
+        overclaims.append("lines.html does not tell the reader the cover probability is withheld")
+    # props must never appear as priced anywhere
+    disclosure_markers = ("no prop prices", "does not exist", "no player-prop prices", "not sportsbook lines",
+                          "cannot price a prop", "cannot price a real prop", "blocked")
+    for p_ in pages:
+        txt = p_.read_text().lower()
+        if "prop line" in txt:
+            window = txt[max(0, txt.index("prop line") - 400): txt.index("prop line") + 600]
+            if not any(m in window for m in disclosure_markers):
+                overclaims.append(f"{p_.name} mentions prop lines without disclosing nearby that none exist")
+                break
+    check("V14", "no page promises a value the data withholds", not overclaims,
+          "; ".join(overclaims) or "blank states are disclosed, not implied")
 
     # V12 - aggregated source coverage
     rows_without_source = 0

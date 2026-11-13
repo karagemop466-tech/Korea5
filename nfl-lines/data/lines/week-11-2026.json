@@ -1,12 +1,12 @@
 {
- "generatedUTC": "2026-11-13T13:24:19Z",
+ "generatedUTC": "2026-11-13T13:37:52Z",
  "season": 2026,
  "week": 11,
  "marginMapping": {
   "intercept": 0.34,
   "slope": 31.71,
   "fittedOn": 7413,
-  "note": "fair_home_margin = intercept + slope * (elo_home_prob - 0.5), fitted on every graded game in the archive. The archive records the home handicap with the opposite sign (positive = home favoured), so the fair handicap = -fair_margin."
+  "note": "fair_home_margin = intercept + slope * (elo_home_prob - 0.5), fitted on every graded game in the archive. The archive's spread_line IS the home handicap (positive = home favoured), so the fair handicap is the fair home margin itself and the gap to the market is a subtraction. The earlier build added the two and is corrected; see signCheck."
  },
  "leagueMeanTotal": 44.29,
  "marketSource": "nfldata-games closing lines (NOT OFFICIAL - the NFL publishes no betting prices)",
@@ -21,6 +21,30 @@
   "Player props: no prop prices exist in the archive, so no prop lines are originated.",
   "Weather: not in the archive. Indoor/outdoor is known but conditions are not."
  ],
+ "signCheck": {
+  "rows": 7413,
+  "slope": 1.0447,
+  "intercept": -0.039,
+  "coverRateCorrect": 0.4761,
+  "coverRateMirrored": 0.5917,
+  "interpretation": "A slope near +1 and a cover rate near 50% mean the archive number is the home handicap and the gap must be computed as fair_margin - spread_line."
+ },
+ "modelConsistency": {
+  "compared": 13,
+  "disagree": [
+   {
+    "gameId": "2026_11_TEN_DAL",
+    "spreadGap": 1.66,
+    "moneylineGap": -0.0038
+   },
+   {
+    "gameId": "2026_11_CIN_WAS",
+    "spreadGap": -0.63,
+    "moneylineGap": 0.0038
+   }
+  ],
+  "note": "Both views come from the same Elo probability but through different mappings; they can disagree in sign when the gap is a fraction of a point."
+ },
  "lines": [
   {
    "gameId": "2026_11_IND_HOU",
@@ -44,9 +68,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": 18.63,
-     "side": "home",
-     "absEdge": 18.63
+     "homeEdgePoints": -1.37,
+     "fairHandicap": 8.63,
+     "marketHandicap": 10.0,
+     "side": "away",
+     "absEdge": 1.37
     },
     "total": {
      "overEdgePoints": 1.59,
@@ -56,11 +82,13 @@
    },
    "fairPrice": {
     "spread": {
-     "side": "home",
-     "modelProb": 0.7615,
-     "fairDecimal": 1.313,
-     "fairAmerican": -319,
-     "marketAmerican": -110.0
+     "side": "away",
+     "fairHandicap": -8.63,
+     "marketHandicap": 10.0,
+     "edgePoints": 1.37,
+     "marketAmerican": null,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.7615,
@@ -75,7 +103,7 @@
    "label": "WATCH",
    "reasons": [
     "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 18.63 points",
+    "model spread differs from the number by 1.37 points",
     "model total differs from the number by 1.59 points"
    ]
   },
@@ -101,9 +129,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": 29.59,
-     "side": "home",
-     "absEdge": 29.59
+     "homeEdgePoints": -3.41,
+     "fairHandicap": 13.09,
+     "marketHandicap": 16.5,
+     "side": "away",
+     "absEdge": 3.41
     },
     "total": {
      "overEdgePoints": -2.78,
@@ -113,11 +143,13 @@
    },
    "fairPrice": {
     "spread": {
-     "side": "home",
-     "modelProb": 0.9021,
-     "fairDecimal": 1.108,
-     "fairAmerican": -922,
-     "marketAmerican": -110.0
+     "side": "away",
+     "fairHandicap": -13.09,
+     "marketHandicap": 16.5,
+     "edgePoints": 3.41,
+     "marketAmerican": null,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.9021,
@@ -132,7 +164,7 @@
    "label": "WATCH",
    "reasons": [
     "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 29.59 points",
+    "model spread differs from the number by 3.41 points",
     "model total differs from the number by 2.78 points"
    ]
   },
@@ -158,9 +190,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": 1.05,
-     "side": "home",
-     "absEdge": 1.05
+     "homeEdgePoints": -1.95,
+     "fairHandicap": -0.45,
+     "marketHandicap": 1.5,
+     "side": "away",
+     "absEdge": 1.95
     },
     "total": {
      "overEdgePoints": -1.3,
@@ -170,11 +204,13 @@
    },
    "fairPrice": {
     "spread": {
-     "side": "home",
-     "modelProb": 0.475,
-     "fairDecimal": 2.105,
-     "fairAmerican": 111,
-     "marketAmerican": -110.0
+     "side": "away",
+     "fairHandicap": 0.45,
+     "marketHandicap": 1.5,
+     "edgePoints": 1.95,
+     "marketAmerican": null,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.475,
@@ -189,7 +225,7 @@
    "label": "WATCH",
    "reasons": [
     "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 1.05 points"
+    "model spread differs from the number by 1.95 points"
    ]
   },
   {
@@ -214,9 +250,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": 20.0,
+     "homeEdgePoints": 1.0,
+     "fairHandicap": 10.5,
+     "marketHandicap": 9.5,
      "side": "home",
-     "absEdge": 20.0
+     "absEdge": 1.0
     },
     "total": {
      "overEdgePoints": -3.0,
@@ -227,10 +265,12 @@
    "fairPrice": {
     "spread": {
      "side": "home",
-     "modelProb": 0.8204,
-     "fairDecimal": 1.219,
-     "fairAmerican": -457,
-     "marketAmerican": -110.0
+     "fairHandicap": 10.5,
+     "marketHandicap": 9.5,
+     "edgePoints": 1.0,
+     "marketAmerican": -110.0,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.8204,
@@ -245,7 +285,7 @@
    "label": "WATCH",
    "reasons": [
     "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 20.0 points",
+    "model spread differs from the number by 1.0 points",
     "model total differs from the number by 3.0 points"
    ]
   },
@@ -271,9 +311,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": 16.66,
+     "homeEdgePoints": 1.66,
+     "fairHandicap": 9.16,
+     "marketHandicap": 7.5,
      "side": "home",
-     "absEdge": 16.66
+     "absEdge": 1.66
     },
     "total": {
      "overEdgePoints": -6.15,
@@ -284,10 +326,12 @@
    "fairPrice": {
     "spread": {
      "side": "home",
-     "modelProb": 0.7781,
-     "fairDecimal": 1.285,
-     "fairAmerican": -351,
-     "marketAmerican": -115.0
+     "fairHandicap": 9.16,
+     "marketHandicap": 7.5,
+     "edgePoints": 1.66,
+     "marketAmerican": -115.0,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.7781,
@@ -302,7 +346,7 @@
    "label": "WATCH",
    "reasons": [
     "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 16.66 points",
+    "model spread differs from the number by 1.66 points",
     "model total differs from the number by 6.15 points"
    ]
   },
@@ -328,9 +372,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": 10.48,
+     "homeEdgePoints": 3.48,
+     "fairHandicap": 6.98,
+     "marketHandicap": 3.5,
      "side": "home",
-     "absEdge": 10.48
+     "absEdge": 3.48
     },
     "total": {
      "overEdgePoints": -2.04,
@@ -341,10 +387,12 @@
    "fairPrice": {
     "spread": {
      "side": "home",
-     "modelProb": 0.7094,
-     "fairDecimal": 1.41,
-     "fairAmerican": -244,
-     "marketAmerican": -105.0
+     "fairHandicap": 6.98,
+     "marketHandicap": 3.5,
+     "edgePoints": 3.48,
+     "marketAmerican": -105.0,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.7094,
@@ -359,7 +407,7 @@
    "label": "WATCH",
    "reasons": [
     "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 10.48 points",
+    "model spread differs from the number by 3.48 points",
     "model total differs from the number by 2.04 points"
    ]
   },
@@ -385,9 +433,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": 23.81,
-     "side": "home",
-     "absEdge": 23.81
+     "homeEdgePoints": -4.19,
+     "fairHandicap": 9.81,
+     "marketHandicap": 14.0,
+     "side": "away",
+     "absEdge": 4.19
     },
     "total": {
      "overEdgePoints": 3.28,
@@ -397,11 +447,13 @@
    },
    "fairPrice": {
     "spread": {
-     "side": "home",
-     "modelProb": 0.7987,
-     "fairDecimal": 1.252,
-     "fairAmerican": -397,
-     "marketAmerican": -110.0
+     "side": "away",
+     "fairHandicap": -9.81,
+     "marketHandicap": 14.0,
+     "edgePoints": 4.19,
+     "marketAmerican": null,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.7987,
@@ -416,7 +468,7 @@
    "label": "WATCH",
    "reasons": [
     "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 23.81 points",
+    "model spread differs from the number by 4.19 points",
     "model total differs from the number by 3.28 points"
    ]
   },
@@ -442,9 +494,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": -11.33,
-     "side": "away",
-     "absEdge": 11.33
+     "homeEdgePoints": 0.67,
+     "fairHandicap": -5.33,
+     "marketHandicap": -6.0,
+     "side": "home",
+     "absEdge": 0.67
     },
     "total": {
      "overEdgePoints": -0.84,
@@ -454,11 +508,13 @@
    },
    "fairPrice": {
     "spread": {
-     "side": "away",
-     "modelProb": 0.6787,
-     "fairDecimal": 1.473,
-     "fairAmerican": -211,
-     "marketAmerican": null
+     "side": "home",
+     "fairHandicap": -5.33,
+     "marketHandicap": -6.0,
+     "edgePoints": 0.67,
+     "marketAmerican": -110.0,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.3213,
@@ -470,10 +526,9 @@
      "marketImpliedHomeDevigged": 0.3092
     }
    },
-   "label": "WATCH",
+   "label": "PASS",
    "reasons": [
-    "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 11.33 points"
+    "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY."
    ]
   },
   {
@@ -498,9 +553,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": 6.29,
+     "homeEdgePoints": 3.29,
+     "fairHandicap": 4.79,
+     "marketHandicap": 1.5,
      "side": "home",
-     "absEdge": 6.29
+     "absEdge": 3.29
     },
     "total": {
      "overEdgePoints": 1.91,
@@ -511,10 +568,12 @@
    "fairPrice": {
     "spread": {
      "side": "home",
-     "modelProb": 0.6403,
-     "fairDecimal": 1.562,
-     "fairAmerican": -178,
-     "marketAmerican": -110.0
+     "fairHandicap": 4.79,
+     "marketHandicap": 1.5,
+     "edgePoints": 3.29,
+     "marketAmerican": -110.0,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.6403,
@@ -529,7 +588,7 @@
    "label": "WATCH",
    "reasons": [
     "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 6.29 points",
+    "model spread differs from the number by 3.29 points",
     "model total differs from the number by 1.91 points"
    ]
   },
@@ -555,9 +614,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": 19.83,
+     "homeEdgePoints": 2.83,
+     "fairHandicap": 11.33,
+     "marketHandicap": 8.5,
      "side": "home",
-     "absEdge": 19.83
+     "absEdge": 2.83
     },
     "total": {
      "overEdgePoints": 5.32,
@@ -568,10 +629,12 @@
    "fairPrice": {
     "spread": {
      "side": "home",
-     "modelProb": 0.8465,
-     "fairDecimal": 1.181,
-     "fairAmerican": -551,
-     "marketAmerican": -110.0
+     "fairHandicap": 11.33,
+     "marketHandicap": 8.5,
+     "edgePoints": 2.83,
+     "marketAmerican": -110.0,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.8465,
@@ -586,7 +649,7 @@
    "label": "WATCH",
    "reasons": [
     "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 19.83 points",
+    "model spread differs from the number by 2.83 points",
     "model total differs from the number by 5.32 points"
    ]
   },
@@ -612,9 +675,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": -9.29,
+     "homeEdgePoints": -0.29,
+     "fairHandicap": -4.79,
+     "marketHandicap": -4.5,
      "side": "away",
-     "absEdge": 9.29
+     "absEdge": 0.29
     },
     "total": {
      "overEdgePoints": 5.52,
@@ -625,10 +690,12 @@
    "fairPrice": {
     "spread": {
      "side": "away",
-     "modelProb": 0.6618,
-     "fairDecimal": 1.511,
-     "fairAmerican": -196,
-     "marketAmerican": null
+     "fairHandicap": 4.79,
+     "marketHandicap": -4.5,
+     "edgePoints": 0.29,
+     "marketAmerican": null,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.3382,
@@ -643,7 +710,6 @@
    "label": "WATCH",
    "reasons": [
     "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 9.29 points",
     "model total differs from the number by 5.52 points"
    ]
   },
@@ -669,9 +735,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": 5.9,
-     "side": "home",
-     "absEdge": 5.9
+     "homeEdgePoints": -1.1,
+     "fairHandicap": 2.4,
+     "marketHandicap": 3.5,
+     "side": "away",
+     "absEdge": 1.1
     },
     "total": {
      "overEdgePoints": -0.15,
@@ -681,11 +749,13 @@
    },
    "fairPrice": {
     "spread": {
-     "side": "home",
-     "modelProb": 0.5649,
-     "fairDecimal": 1.77,
-     "fairAmerican": -130,
-     "marketAmerican": -115.0
+     "side": "away",
+     "fairHandicap": -2.4,
+     "marketHandicap": 3.5,
+     "edgePoints": 1.1,
+     "marketAmerican": null,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.5649,
@@ -700,7 +770,7 @@
    "label": "WATCH",
    "reasons": [
     "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 5.9 points"
+    "model spread differs from the number by 1.1 points"
    ]
   },
   {
@@ -725,9 +795,11 @@
    },
    "edge": {
     "spread": {
-     "homeEdgePoints": -7.63,
+     "homeEdgePoints": -0.63,
+     "fairHandicap": -4.13,
+     "marketHandicap": -3.5,
      "side": "away",
-     "absEdge": 7.63
+     "absEdge": 0.63
     },
     "total": {
      "overEdgePoints": -7.08,
@@ -738,10 +810,12 @@
    "fairPrice": {
     "spread": {
      "side": "away",
-     "modelProb": 0.6409,
-     "fairDecimal": 1.56,
-     "fairAmerican": -178,
-     "marketAmerican": null
+     "fairHandicap": 4.13,
+     "marketHandicap": -3.5,
+     "edgePoints": 0.63,
+     "marketAmerican": null,
+     "modelSpreadCoverProb": null,
+     "note": "Cover probability is not published for the spread: this lab has no calibrated margin distribution, so a cover probability would be invented. The edge in points is published instead."
     },
     "moneyline": {
      "modelProbHome": 0.3591,
@@ -756,7 +830,6 @@
    "label": "WATCH",
    "reasons": [
     "No strategy in this lab has passed the release gates (G7 prospective trial and G8 human review), so no row can be labelled PLAY.",
-    "model spread differs from the number by 7.63 points",
     "model total differs from the number by 7.08 points"
    ]
   }
@@ -765,7 +838,7 @@
   "games": 13,
   "withSpread": 13,
   "withTotal": 13,
-  "watch": 13,
+  "watch": 12,
   "play": 0
  }
 }

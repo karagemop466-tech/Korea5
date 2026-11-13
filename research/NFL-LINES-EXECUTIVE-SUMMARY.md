@@ -29,10 +29,10 @@ club-weeks **are indistinguishable from zero**, which is itself the most decisio
 | Backtest evidence | Walk-forward 1999–2026, per-season splits, calibration, no-model benchmarks | `nfl-lines/backtest.html` |
 | Correlation engine | Same-game and same-team player dependence, measured φ with intervals | `nfl-lines/correlation.html` |
 | Injury + tier tracker | 65 official 2026 Week 10 rows, computed tiers, measured 2025 impact | `nfl-lines/injuries.html` |
-| Decision support | 23 questions (known / unknown / missing / what it would change) | `nfl-lines/questions.html` |
+| Decision support | 24 questions (known / unknown / missing / what it would change) | `nfl-lines/questions.html` |
 | Suggestions board | 12 scored proposals with the decision you have to make | `nfl-lines/suggestions.html` |
 | Provenance | 13 registered datasets, 3 rejected sources, line-by-line official validation | `nfl-lines/sources.html` |
-| Irregularities | 30 flagged items with sources and severity | `nfl-lines/flagged.html` |
+| Irregularities | 32 flagged items with sources and severity | `nfl-lines/flagged.html` |
 | Method | Definitions, the eight gates, and the correction described in §6 | `nfl-lines/method.html` |
 
 ---
@@ -73,6 +73,13 @@ a reward no matter how good a backtest looks. Gate 7 is deliberately hard-coded 
 `fair_home_margin = 0.34 + 31.71 × (elo_home_probability − 0.5)`, fitted on 7,413 graded games.
 League mean total = 44.29 points; team scoring rates shrunk with a 6-game prior.
 
+**Gap to the market = fair home handicap − market home handicap.** The archive's `spread_line` *is* the home
+handicap (positive = home favoured), proven on all 7,413 graded rows: regressing the actual home margin on it
+gives slope **1.045**, intercept −0.04, and the home club covers `(margin − line) > 0` on **47.6%** of games.
+The mirrored form covers 59.2%, which is the tell that it is wrong. Corrected Week 11 gaps run from 0.3 to 4.2
+points, against a model whose own margin error is 10.5 points, so **no Week 11 game carries a gap worth acting
+on**.
+
 ### 3.4 Correlation, measured
 
 | Pair | n | φ | Joint observed | If independent | Verdict |
@@ -103,7 +110,7 @@ betting role. **On this evidence, a backup replacing a starter does not measurab
 
 ## 4. Questions that block a decision
 
-23 questions are logged with what is known, what is unknown, the missing information, what the answer would
+24 questions are logged with what is known, what is unknown, the missing information, what the answer would
 change, and the exact discovery step. The three that gate everything:
 
 1. **Is the model better than the market?** No (see §3.1). Until it is, a published fair line is a benchmark,
@@ -142,9 +149,14 @@ Full board: `nfl-lines/suggestions.html`.
    per-bet null using the de-vigged market probability of the side taken and 10,000 seeded simulations. The
    three-leg parlay moved from p = 0.0005 to **p = 0.218**. The old figure was withdrawn, not hidden; both are
    on the Method page.
-2. **Spread sign convention verified, not assumed.** The archive stores the home handicap with the opposite
-   sign to a margin expectation (positive = home favoured). This was verified against outcomes (home covers
-   47.6% under the correct convention, 38.9% under the wrong one) before any line was published.
+2. **A sign error in the Week 11 card, found and fixed after it was published to this branch.** The first build
+   computed the model-versus-market gap as `fair_margin + spread_line` and printed gaps of 18.6 and 29.6 points.
+   The archive's `spread_line` *is* the home handicap, so the gap is a subtraction. Corrected gaps run 0.3–4.2
+   points. The convention is now **tested in the pipeline** (slope 1.045, correct cover rate 47.6% against a
+   mirrored 59.2%) and asserted by verifier check **V13**, which re-derives every published gap from its two
+   inputs — I confirmed V13 fails when the old formula is restored. The backtest engine already subtracted the
+   line, so the leaderboard, ROI figures and luck tests are unaffected; only the Week 11 origination card was
+   wrong. This is the second wrong number found in this build and it is recorded rather than quietly replaced.
 3. **Fair total rebuilt.** An initial shrink-toward-even market fade produced zero bets; it was replaced with a
    point-in-time scoring-rate model that produces 4,044 graded bets.
 4. **Club alias made explicit.** The official standings page prints `AZ` where the archive uses `ARI`. An
@@ -152,7 +164,7 @@ Full board: `nfl-lines/suggestions.html`.
 
 ---
 
-## 7. Flagged irregularities (see `nfl-lines/flagged.html` for all 30)
+## 7. Flagged irregularities (see `nfl-lines/flagged.html` for all 31)
 
 **High severity**
 
@@ -186,7 +198,7 @@ mirror (F22), one-season correlation samples (F24), fair totals ignore weather (
 | 2026 standings, club by club, archive vs `nfl.com/standings` | **32/32 match** (W-L-T, points for, points against) |
 | Super Bowl LIX and LX results vs official game pages | **2/2 match** |
 | Internal arithmetic (result = home − away, total = home + away), duplicate ids | **0 errors** across 7,548 games |
-| Lab structural checks (`scripts/nfl_lines/verify.py`) | **12/12 pass** — local links, allow-listed external domains, registry files, JSON parse, no template artefacts, honesty labels, no reward eligibility, intervals published, no PLAY label, register completeness, nav both ways |
+| Lab structural checks (`scripts/nfl_lines/verify.py`) | **14/14 pass** — local links, allow-listed external domains, registry files, JSON parse, no template artefacts, honesty labels, no reward eligibility, intervals published, no PLAY label, register completeness, nav both ways, V13 which re-derives every Week 11 spread gap from its inputs, and V14 which fails any page that promises a value the data deliberately withholds |
 | Existing repository checks | `check_links.py` 12 pages / 202 local links / 0 missing; `verify_extra.py` 31/31; `audit_certainty.py` passed; 5/5 unit tests; calendar Node tests passed |
 | Live page fetch | All 11 lab pages returned HTTP 200 from a local server |
 

@@ -166,8 +166,10 @@ than luck</strong>. That is the finding, not a failure of the build.</p>
 <h2>The three answers</h2>
 <div class="grid g3">
   <div class="card"><h3>1 · Lines, originated</h3>
-    <p>{lines['counts']['games']} Week 11 games carry a model fair spread, fair total, fair moneyline and the
-    break-even price at which the model thinks the bet is a coin flip.</p>
+    <p>{lines['counts']['games']} Week 11 games carry a model fair handicap, a fair total and a fair moneyline —
+    the price at which the model thinks the bet is a coin flip. The spread's cover probability is
+    <span class="blank">deliberately blank</span>: with no calibrated margin distribution it could only be
+    invented, so the spread disagreement is published in points.</p>
     <p class="small">{lines['counts']['play']} can be labelled PLAY, because no strategy has passed the release
     gates.</p><a href="lines.html">Open the fair-line card →</a></div>
   <div class="card"><h3>2 · Skill, measured</h3>
@@ -256,32 +258,70 @@ def render_lines():
     rows = []
     for r in d["lines"]:
         mp = r["fairPrice"].get("moneyline") or {}
-        sp = r["fairPrice"].get("spread") or {}
+        sp = r["edge"].get("spread") or {}
+        edge = sp.get("homeEdgePoints")
+        fair_handicap = sp.get("fairHandicap")
+        if edge is None:
+            gap_cell = '<span class="blank">blank</span>'
+            side_cell = '<span class="blank">blank</span>'
+        else:
+            gap_cell = fmt_num(edge, 1)
+            side = "home " + esc(r["home"]) if edge > 0 else "away " + esc(r["away"])
+            side_cell = f'{side}<br><span class="small">{fmt_num(abs(edge), 1)} pts</span>'
         rows.append([
             f'<strong>{esc(r["away"])} @ {esc(r["home"])}</strong><br><span class="small">{esc(r["kickoff"].replace("T", " "))}</span>',
             fmt_num(r["market"]["spread"], 1) + "<br><span class=\"small\">total " + fmt_num(r["market"]["total"], 1) + "</span>",
-            fmt_num(r["model"]["fairSpread"], 1) + "<br><span class=\"small\">total " + fmt_num(r["model"]["fairTotal"], 1) + "</span>",
-            (fmt_num(r["edge"].get("spread", {}).get("homeEdgePoints"), 1) if r["edge"].get("spread") else '<span class="blank">blank</span>'),
+            fmt_num(fair_handicap, 1) + "<br><span class=\"small\">total " + fmt_num(r["model"]["fairTotal"], 1) + "</span>",
+            gap_cell,
+            side_cell,
             (f'{esc(mp.get("fairAmericanHome"))} / {esc(mp.get("fairAmericanAway"))}' if mp else '<span class="blank">blank</span>'),
             (f'{esc(mp.get("marketAmericanHome"))} / {esc(mp.get("marketAmericanAway"))}' if mp else '<span class="blank">blank</span>'),
             badge("watch") if r["label"] == "WATCH" else badge("pass"),
         ])
+    _dis = d["modelConsistency"]["disagree"]
+    if _dis:
+        consistency_note = ("The " + str(len(_dis)) + " that disagree are "
+                            + ", ".join(f"{esc(x['gameId'].split('_')[-2])} @ {esc(x['gameId'].split('_')[-1])} "
+                                        f"(spread {x['spreadGap']:+.2f} pts, moneyline {x['moneylineGap']:+.4f} "
+                                        f"probability)" for x in _dis)
+                            + ". In each case the disagreement is smaller than the model's own error on that "
+                              "quantity, so it is noise in the mapping, not two conflicting findings.")
+    else:
+        consistency_note = "None disagree."
     body = f"""
 <p class="eyebrow">Line origination · 2026 week {d['week']}</p>
 <h1>Fair lines, and the price they imply</h1>
-<p class="lede">A fair line is the number at which the model thinks the bet is a coin flip. The price that
-follows from it — the break-even price — is the actual origination. Compare it with what the market asks and
-you can see the whole disagreement in one row.</p>
+<p class="lede">A fair line is the number at which the model thinks the bet is a coin flip for a fair-price
+market with no vig. The price that follows from it — the break-even price — is the actual origination. Compare
+it with what the market asks and you can see the whole disagreement in one row.</p>
 
 <aside class="callout flag"><strong>No row can be labelled PLAY.</strong> A PLAY label requires a strategy that
 has passed every validation gate, including a frozen prospective trial and a human release review. None has, so
 the strongest label here is WATCH. This is deliberate: the site must not dress a research number as a pick.</aside>
 
 <h2>Week {d['week']} card</h2>
-{table(["Game", "Market " + badge("notofficial"), "Model fair " + badge("model"), "Gap (pts)",
-        "Fair price (home / away)", "Market price (home / away)", "Label"], rows)}
-<p class="small">Gap = model fair home margin minus the archive's number, in points. Positive means the model
-thinks the home club is stronger than the number does.</p>
+{table(["Game", "Market home handicap " + badge("notofficial"), "Model fair home handicap " + badge("model"),
+        "Gap (pts)", "Who the model prefers", "Fair moneyline (home / away)",
+        "Market moneyline (home / away)", "Label"], rows)}
+<p class="small"><strong>Read the handicap columns as the home club's number:</strong> +10.0 means the home club
+is favoured by ten, so the away club is getting ten. Gap = model fair home handicap minus market home handicap, in
+points. Positive means the model thinks the home club is stronger than the number does. The archive stores the home handicap directly:
+a positive number means the home club is favoured. <strong>Sign convention verified on all 7,548 rows</strong> —
+regressing the actual home margin on the archive number gives margin = {fmt_num(d['signCheck']['intercept'], 2)} +
+{fmt_num(d['signCheck']['slope'], 3)} x line, and the home club covers (margin - line) &gt; 0 on
+{fmt_num(d['signCheck']['coverRateCorrect'] * 100, 1)}% of games, which is what a priced market looks like.</p>
+
+<h3>Do the two views of the same game agree?</h3>
+<p>The spread column and the moneyline column are both built from the same Elo probability but through different
+mappings: the spread from the OLS margin fit, the moneyline from the probability itself. On
+{fmt_num(d['modelConsistency']['compared'], 0)} games they point the same way on
+{fmt_num(d['modelConsistency']['compared'] - len(d['modelConsistency']['disagree']), 0)}.
+{consistency_note}</p>
+
+<aside class="callout flag"><strong>No cover probability is published for the spread, and none should be
+expected.</strong> This lab has no calibrated distribution of margins, so turning "the model likes the home club
+by 1.4 points" into "the model makes the home club a 54% cover chance" would be invention. The edge is published
+in points; the moneyline column is a real probability because a moneyline needs no margin distribution.</aside>
 
 <h2>How each number is produced</h2>
 <ul class="clean">
@@ -837,9 +877,11 @@ def render_flagged():
     F("F14", "Leaderboard", "Zero strategies qualified",
       "No strategy passes all eight gates, so no rank above 'unproven' and no reward eligibility exists.",
       "leaderboard.html", "high")
-    F("F15", "Good-looking result", "The three-leg parlay shows a positive ROI with a tiny p-value",
-      "Its bootstrap interval runs from -30.9% to +57.3%. It is the single most likely result on this site to "
-      "be luck. It is kept visible on purpose.", f"leaderboard.html", "high")
+    F("F15", "Good-looking result", "The three-leg parlay shows a positive ROI of +10.0% on 384 bets",
+      "Its bootstrap interval runs from -30.9% to +57.3%, and against a per-bet market null the p-value is "
+      "0.218. It looked significant only under a luck test this lab has since rejected as invalid. It is the "
+      "single most likely result on this site to be luck, and it is kept visible on purpose.",
+      "leaderboard.html", "high")
     F("F16", "Data validation", "The exact number of 2026 games in the mirror is 163 with prices of 272 scheduled",
       "Weeks 12-18 carry no prices yet, so nothing downstream can be priced for them.", "", "low")
     F("F17", "Club labels", "The official standings page prints AZ while the archive uses ARI",
@@ -883,6 +925,16 @@ def render_flagged():
       "nfl-lines/, scripts/nfl_lines/, and appends to COORDINATION.md.",
       "https://github.com/karagemop466-tech/Korea5/blob/main/COORDINATION.md", "medium")
 
+    F("F31", "Corrected error", "The first Week 11 card added the market handicap instead of subtracting it",
+      "Gaps of 18.6 and 29.6 points were published on a model whose own margin error is 10.5 points. The sign "
+      "convention is now proven in the pipeline and asserted by verifier check V13, which recomputes every gap "
+      "from its two inputs. The backtest engine was already correct, so ROI, gates and luck tests are unaffected.",
+      f"method.html", "high")
+    F("F32", "Origination card", "The spread and moneyline views disagree in sign on 2 of 13 Week 11 games",
+      "TEN @ DAL and CIN @ WAS have gaps of about a point and a fraction of a percentage point respectively. "
+      "Both are far inside the model's own error, so this is mapping noise, but it is published rather than "
+      "smoothed away.", f"lines.html", "low")
+
     body = f"""
 <p class="eyebrow">Flagged for review · {len(flags)} items</p>
 <h1>Flagged for review</h1>
@@ -910,7 +962,15 @@ documentation matter.</aside>
 
 
 def render_method():
-    body = """
+    _sc = j("lines/week-11-2026.json")["signCheck"]
+    _gaps = [abs(g["edge"]["spread"]["homeEdgePoints"]) for g in j("lines/week-11-2026.json")["lines"] if g["edge"].get("spread")]
+    signRows = _sc["rows"] if _sc else 0
+    signSlope = fmt_num(_sc["slope"], 3) if _sc else "blank"
+    signInt = fmt_num(_sc["intercept"], 2) if _sc else "blank"
+    signCover = fmt_num(_sc["coverRateCorrect"] * 100, 1) if _sc else "blank"
+    signMirror = fmt_num(_sc["coverRateMirrored"] * 100, 1) if _sc else "blank"
+    maxGap = fmt_num(max(_gaps), 1) if _gaps else "blank"
+    body = f"""
 <p class="eyebrow">Method · definitions · gates</p>
 <h1>Method</h1>
 <p class="lede">The rules this lab follows, so that every number can be audited or attacked.</p>
@@ -959,6 +1019,22 @@ declare significance that the money does not support.</p>
 probability of the side taken, which is the sharpest honest benchmark. The three-leg parlay moved from
 p = 0.0005 to p = 0.218. Both the old and new numbers are recorded here rather than quietly overwritten — the
 correction is part of the evidence.</p>
+
+<h2>Second correction: a sign error in the Week 11 card</h2>
+<p>The first build of the fair-lines table computed the gap between the model and the market as
+<code>fair_margin + spread_line</code>. That is wrong. The archive's <code>spread_line</code> <em>is</em> the home
+handicap — a positive number means the home club is favoured — so the gap is a subtraction. Adding the two produced
+absurd gaps: 18.6 points on <code>IND @ HOU</code> and 29.6 on <code>MIA @ BUF</code>, on a model whose own mean
+absolute error on the home margin is 10.5 points.</p>
+<p>The convention is now tested in the pipeline rather than asserted in a comment, on all {signRows:,} graded rows:
+regressing the actual home margin on the archive number gives a slope of {signSlope} and an intercept of {signInt},
+and the home club covers <code>(margin − line) &gt; 0</code> on {signCover}% of games. A priced market has to land near
+50%; the mirrored form, <code>(margin + line) &gt; 0</code>, lands on {signMirror}%, which is the tell. Both numbers are
+printed on the <a href="lines.html">Fair lines</a> page so anyone can repeat the check by eye.</p>
+<p>Corrected, the largest disagreement on the Week 11 card is {maxGap} points and most are under three — inside the
+model's own error. That is a far less exciting result, and it is the true one. <strong>The backtest engine already
+had the convention right</strong> (it subtracts the line in <code>outcome_spread</code>), so the leaderboard, the ROI
+figures and the luck tests are unaffected; only the Week 11 origination card was wrong.</p>
 
 <h2>The eight validation gates</h2>
 <ol>

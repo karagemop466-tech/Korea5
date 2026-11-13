@@ -161,10 +161,10 @@ Measured injury / backup-tier effects are indistinguishable from zero.
 | `nfl-lines/backtest.html` | Walk-forward 1999–2026, per-season splits, calibration, no-model benchmarks |
 | `nfl-lines/correlation.html` | Measured φ for market pairs and player pairs, with the pricing consequence |
 | `nfl-lines/injuries.html` | Official 2026 Week 10 tracker (65 rows) + measured 2025 injury impact |
-| `nfl-lines/questions.html` | 23 questions: known / unknown / missing / what it would change / how to settle it |
+| `nfl-lines/questions.html` | 24 questions: known / unknown / missing / what it would change / how to settle it |
 | `nfl-lines/suggestions.html` | 12 scored suggestions, each naming the decision you have to make |
 | `nfl-lines/sources.html` | 13 registered datasets, 3 rejected sources, 32/32-club official validation |
-| `nfl-lines/flagged.html` | 30 flagged irregularities and unverified values, with sources |
+| `nfl-lines/flagged.html` | 32 flagged irregularities and unverified values, with sources |
 | `nfl-lines/method.html` | Definitions, the eight gates, and the one statistical correction |
 
 ## Data and provenance rules
@@ -189,7 +189,7 @@ python3 scripts/nfl_lines/stage6_lines.py        # Week 11 fair lines
 python3 scripts/nfl_lines/stage7_decision.py     # questions + suggestions registers
 python3 scripts/nfl_lines/sources.py             # source registry
 python3 scripts/nfl_lines/stage8_site.py         # the 11 pages
-python3 scripts/nfl_lines/verify.py              # 12 structural checks, exits non-zero on failure
+python3 scripts/nfl_lines/verify.py              # 14 structural checks, exits non-zero on failure
 ```
 
 The seed is fixed (`20261113`), so a rebuild reproduces the numbers byte for byte unless an input file changes.

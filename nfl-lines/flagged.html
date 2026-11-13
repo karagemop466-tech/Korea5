@@ -11,7 +11,7 @@
 </div></header>
 <main class="wrap">
 
-<p class="eyebrow">Flagged for review · 29 items</p>
+<p class="eyebrow">Flagged for review · 31 items</p>
 <h1>Flagged for review</h1>
 <p class="lede">Everything below is a flaw, an irregularity, or a value that could not be confirmed from an
 official source. None of it blocks publication — that is the point of the page. Review it after the fact and
@@ -35,7 +35,7 @@ documentation matter.</aside>
 <tr><td><strong>F12</strong></td><td>Model</td><td>No weather, rest-travel, or injury inputs</td><td>They are absent from the archive. Adding a guessed value would violate the no-invention rule.</td><td><span class="blank">no official source exists</span></td><td><span class="b medium">MEDIUM</span></td></tr>
 <tr><td><strong>F13</strong></td><td>Backtest</td><td>Line prices carry no capture timestamp</td><td>It is unknown whether the stored price is an open, a close, or an in-progress quote.</td><td><a href="https://github.com/nflverse/nfldata" rel="noopener">source</a></td><td><span class="b high">HIGH</span></td></tr>
 <tr><td><strong>F14</strong></td><td>Leaderboard</td><td>Zero strategies qualified</td><td>No strategy passes all eight gates, so no rank above &#x27;unproven&#x27; and no reward eligibility exists.</td><td><a href="leaderboard.html">lab page</a></td><td><span class="b high">HIGH</span></td></tr>
-<tr><td><strong>F15</strong></td><td>Good-looking result</td><td>The three-leg parlay shows a positive ROI with a tiny p-value</td><td>Its bootstrap interval runs from -30.9% to +57.3%. It is the single most likely result on this site to be luck. It is kept visible on purpose.</td><td><a href="leaderboard.html">lab page</a></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F15</strong></td><td>Good-looking result</td><td>The three-leg parlay shows a positive ROI of +10.0% on 384 bets</td><td>Its bootstrap interval runs from -30.9% to +57.3%, and against a per-bet market null the p-value is 0.218. It looked significant only under a luck test this lab has since rejected as invalid. It is the single most likely result on this site to be luck, and it is kept visible on purpose.</td><td><a href="leaderboard.html">lab page</a></td><td><span class="b high">HIGH</span></td></tr>
 <tr><td><strong>F16</strong></td><td>Data validation</td><td>The exact number of 2026 games in the mirror is 163 with prices of 272 scheduled</td><td>Weeks 12-18 carry no prices yet, so nothing downstream can be priced for them.</td><td><span class="blank">no official source exists</span></td><td><span class="b low">LOW</span></td></tr>
 <tr><td><strong>F17</strong></td><td>Club labels</td><td>The official standings page prints AZ while the archive uses ARI</td><td>An explicit alias map is applied so a rename can never silently hide a disagreement.</td><td><a href="https://www.nfl.com/standings/" rel="noopener">source</a></td><td><span class="b low">LOW</span></td></tr>
 <tr><td><strong>F18</strong></td><td>Coverage</td><td>1999–2001 seasons contain 31 clubs</td><td>The Houston Texans did not exist before 2002. This is expected and documented, not a data defect.</td><td><a href="https://www.nfl.com/teams/houston-texans/" rel="noopener">source</a></td><td><span class="b low">LOW</span></td></tr>
@@ -49,7 +49,9 @@ documentation matter.</aside>
 <tr><td><strong>F26</strong></td><td>Neutral sites</td><td>Neutral-site games are identified from the archive&#x27;s location field only</td><td>The 2026 Munich game is confirmed from the official game page, but every other neutral game relies on the archive flag.</td><td><a href="https://www.nfl.com/games/patriots-at-lions-2026-reg-10" rel="noopener">source</a></td><td><span class="b low">LOW</span></td></tr>
 <tr><td><strong>F27</strong></td><td>Fair total</td><td>The fair total ignores weather and pace</td><td>It is a scoring-rate average with a prior. Wind and dome effects are not modelled.</td><td><a href="https://operations.nfl.com/the-rules/" rel="noopener">source</a></td><td><span class="b medium">MEDIUM</span></td></tr>
 <tr><td><strong>F28</strong></td><td>Coverage</td><td>The 2026 Week 11 market was captured on 2026-11-13 and may move</td><td>Any gap will change. The card is a snapshot, not a standing price.</td><td><a href="lines.html">lab page</a></td><td><span class="b medium">MEDIUM</span></td></tr>
-<tr><td><strong>F29</strong></td><td>Process</td><td>Multiple sessions work on this repository concurrently</td><td>A parallel session may be building overlapping NFL data in other paths. This lab writes only under nfl-lines/, scripts/nfl_lines/, and appends to COORDINATION.md.</td><td><a href="https://github.com/karagemop466-tech/Korea5/blob/main/COORDINATION.md" rel="noopener">source</a></td><td><span class="b medium">MEDIUM</span></td></tr></tbody></table></div>
+<tr><td><strong>F29</strong></td><td>Process</td><td>Multiple sessions work on this repository concurrently</td><td>A parallel session may be building overlapping NFL data in other paths. This lab writes only under nfl-lines/, scripts/nfl_lines/, and appends to COORDINATION.md.</td><td><a href="https://github.com/karagemop466-tech/Korea5/blob/main/COORDINATION.md" rel="noopener">source</a></td><td><span class="b medium">MEDIUM</span></td></tr>
+<tr><td><strong>F31</strong></td><td>Corrected error</td><td>The first Week 11 card added the market handicap instead of subtracting it</td><td>Gaps of 18.6 and 29.6 points were published on a model whose own margin error is 10.5 points. The sign convention is now proven in the pipeline and asserted by verifier check V13, which recomputes every gap from its two inputs. The backtest engine was already correct, so ROI, gates and luck tests are unaffected.</td><td><a href="method.html">lab page</a></td><td><span class="b high">HIGH</span></td></tr>
+<tr><td><strong>F32</strong></td><td>Origination card</td><td>The spread and moneyline views disagree in sign on 2 of 13 Week 11 games</td><td>TEN @ DAL and CIN @ WAS have gaps of about a point and a fraction of a percentage point respectively. Both are far inside the model&#x27;s own error, so this is mapping noise, but it is published rather than smoothed away.</td><td><a href="lines.html">lab page</a></td><td><span class="b low">LOW</span></td></tr></tbody></table></div>
 
 <h2>Unverified values, listed explicitly</h2>
 <ul class="clean">
@@ -68,5 +70,5 @@ recommended anywhere on this site. Market prices shown are derived from a public
 labelled <strong>NOT OFFICIAL</strong>; the NFL publishes no betting prices.
 · <a href="index.html">Overview</a> · <a href="sources.html">Sources</a> ·
 <a href="flagged.html">Flagged for review</a> · <a href="method.html">Method</a></p>
-<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:30:56Z</p>
+<p class="small"><a href="../index.html">Free Time planner</a><a href="../nfl-strategy.html">Strategy proposal</a> · data built 2026-11-13T13:37:43Z</p>
 </div></footer></body></html>

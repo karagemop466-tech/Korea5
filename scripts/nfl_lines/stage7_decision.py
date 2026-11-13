@@ -270,6 +270,22 @@ QUESTIONS = [
          source="", status="ANSWERED",
          answer="Yes now, no before. The old figure was withdrawn, not hidden."),
 
+    dict(id="Q24", area="Data integrity", priority="blocking",
+         question="Can a published line card be wrong in a way the site would not notice?",
+         known="It was: the first Week 11 build added the market handicap instead of subtracting it, printing "
+               "18.6- and 29.6-point gaps. The archive's spread_line is the home handicap; the gap is a "
+               "subtraction.",
+         unknown="How many other published numbers rest on an unchecked sign or unit convention. Only the gap "
+                 "arithmetic is now re-derived by the verifier; the rest are checked for presence and range.",
+         missingInfo="A convention test for every derived column, not just the one that broke.",
+         wouldChange="Nothing about strategy conclusions (the backtest already subtracted correctly), but it "
+                     "changes how much of the line card a reader should trust without re-deriving it.",
+         discovery="Extend verify.py the same way V13 does: recompute each published derived value from its "
+                   "own inputs and fail on any mismatch. That is mechanical and cheap.",
+         source="", status="ANSWERED-PARTIAL",
+         answer="For this column, no — V13 re-derives every gap and fails on the old formula. For other derived "
+                "columns, not yet proven."),
+
     # ---------------- site / process
     dict(id="Q21", area="Site & process", priority="medium",
          question="Where do suggestions get reviewed before anything is built?",

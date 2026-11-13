@@ -1,5 +1,5 @@
 {
- "generatedUTC": "2026-11-13T13:30:56Z",
+ "generatedUTC": "2026-11-13T13:37:52Z",
  "checks": [
   {
    "id": "V00",
@@ -29,7 +29,7 @@
    "id": "V04",
    "name": "all data JSON parses",
    "ok": true,
-   "detail": "25 files; []"
+   "detail": "24 files; []"
   },
   {
    "id": "V05",
@@ -71,12 +71,24 @@
    "id": "V11",
    "name": "root pages link into the lab and the lab links back",
    "ok": true,
-   "detail": "12 root pages link in; 1 back-links"
+   "detail": "22 root pages link in; 1 back-links"
+  },
+  {
+   "id": "V13",
+   "name": "spread-gap sign convention proven and gaps plausible",
+   "ok": true,
+   "detail": "slope 1.0447, cover 0.4761, mirrored 0.5917, max gap <= 3x MAE 10.516"
+  },
+  {
+   "id": "V14",
+   "name": "no page promises a value the data withholds",
+   "ok": true,
+   "detail": "blank states are disclosed, not implied"
   }
  ],
  "summary": {
-  "total": 12,
-  "passed": 12,
+  "total": 14,
+  "passed": 14,
   "failed": 0
  },
  "scope": "Structural verification only: links, labels, schema, honesty invariants. It does NOT re-fetch official sources; source facts are documented in data/validation/validation.json and data/official/official-crosschecks.json with the exact page URL for each value.",

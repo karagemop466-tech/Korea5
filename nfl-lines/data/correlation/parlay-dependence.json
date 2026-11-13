@@ -11,5 +11,5 @@
   "note": "No model joint probability is published for three legs because the legs were selected by edge size, which biases any independence calculation."
  },
  "correlationLesson": "A parlay priced by multiplying marginals is only correct when phi = 0. Where phi is materially non-zero the fair price moves, and the direction is given by the sign of phi: positive dependence makes the product price too generous to the bettor; negative dependence makes it too generous to the book.",
- "generatedUTC": "2026-11-13T13:28:21Z"
+ "generatedUTC": "2026-11-13T13:37:49Z"
 }

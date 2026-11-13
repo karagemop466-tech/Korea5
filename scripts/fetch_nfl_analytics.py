@@ -57,7 +57,7 @@ CLUBS = {
     "NE":  "https://www.patriots.com/team/depth-chart/",
     "NO":  "https://www.neworleanssaints.com/team/depth-chart/",
     "NYG": "https://www.giants.com/team/depth-chart/",
-    "NYJ": "https://www.jets.com/team/depth-chart/",
+    "NYJ": "https://www.newyorkjets.com/team/depth-chart/",
     "PHI": "https://www.philadelphiaeagles.com/team/depth-chart/",
     "PIT": "https://www.steelers.com/team/depth-chart/",
     "SEA": "https://www.seahawks.com/team/depth-chart/",
@@ -74,8 +74,8 @@ for wk in range(1, 11):
 for team, url in CLUBS.items():
     TARGETS.append((f"depth-{team.lower()}", url, "html"))
 # ESPN market-odds reference (trusted secondary source, NOT an official league source).
-TARGETS.append(("espn-scoreboard-week10",
-                "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261112-20261117", "json"))
+for d in ("20261112", "20261115", "20261116"):
+    TARGETS.append((f"espn-scoreboard-{d}", f"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates={d}", "json"))
 
 
 def fetch(url: str) -> tuple[int, bytes]:

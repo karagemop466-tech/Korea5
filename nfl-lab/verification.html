@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verification · NFL Lines Lab</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="top"><div class="brand"><a href="index.html">NFL Lines Lab</a> <span class="tag">research only</span></div>
+<nav><a href="index.html">Home</a><a href="executive-summary.html">Executive summary</a><a href="lines-2026.html">Our lines 2026</a><a href="strategies.html">Strategy leaderboard</a><a href="validation.html">Validation gates</a><a href="correlations.html">Correlations &amp; parlays</a><a href="injuries.html">Injuries &amp; depth</a><a href="questions.html">Open questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a><a href="verification.html" class="on">Verification</a><a href="flagged.html">Flagged for review</a></nav></header>
+<div class="banner">Research and education only. Not betting advice. Singapore: only Singapore Pools is licensed for remote gambling; taking part in unlicensed remote gambling is an offence (<a href="https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities">GRA</a>).</div>
+<main>
+<h1>Verification</h1>
+<p class="lede">How each number was checked. Each row below links to the official page used. Items that could not be confirmed against an official page are flagged rather than filled in.</p>
+<h2>Spot checks against official NFL pages (performed 2026-11-13)</h2>
+<div class="scroll"><table id="t12" class="data " data-sort="1"><thead><tr><th>Item</th><th>Official page says</th><th>Our data says</th><th>Result</th><th>Official source</th></tr></thead><tbody><tr><td>2026 Week 10 · Commanders @ Giants (Thu Nov 12)</td><td>WAS 24 – NYG 21, FINAL</td><td>WAS 24 – NYG 21</td><td>pass</td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">nfl.com week 10</a></td></tr><tr><td>2026 Week 9 · Lions @ Dolphins</td><td>DET 19 – MIA 9, FINAL</td><td>DET 19 – MIA 9</td><td>pass</td><td><a href="https://www.nfl.com/games/lions-at-dolphins-2026-reg-9" rel="noopener">nfl.com game center</a></td></tr><tr><td>2026 Week 9 · Bills @ Vikings</td><td>BUF 23 – MIN 6, FINAL</td><td>BUF 23 – MIN 6</td><td>pass</td><td><a href="https://www.nfl.com/games/bills-at-vikings-2026-reg-9" rel="noopener">nfl.com game center</a></td></tr><tr><td>2026 Week 10 injury report · 9 Out/Questionable rows (WAS, NYG, NE, DET first three games)</td><td>status, injury, practice status</td><td>all 9 rows identical</td><td>pass</td><td><a href="https://www.nfl.com/injuries/league/2026/reg10" rel="noopener">nfl.com week 10 injuries</a></td></tr></tbody></table></div><p class="count" data-count-for="t12"></p>
+<h2>How to rebuild</h2>
+<ol class="small">
+<li><code>python3 scripts/nfl_lab/fetch_games.py</code> — downloads the games file from the nfldata archive and writes the hash manifest.</li>
+<li><code>python3 scripts/nfl_lab/fetch_injuries.py</code> — runs in GitHub Actions (workflow <code>nfl-lab-injuries</code>), because the injury mirror is only reachable from there.</li>
+<li><code>python3 scripts/nfl_lab/model.py</code> — walk-forward model, backtests, gates, correlations, parlays.</li>
+<li><code>python3 scripts/nfl_lab/build_site.py</code>, then <code>python3 scripts/nfl_lab/verify.py</code>, then build again so this page shows the latest checks.</li>
+</ol>
+<h2>Automated checks</h2>
+<div class="scroll"><table id="t13" class="data method" data-sort="1"><thead><tr><th>Check</th><th>Result</th><th>Detail</th></tr></thead><tbody><tr><td>Table rows: official link, flagged UNVERIFIED/NO SOURCE, or method table</td><td>1625 rows: 1550 official-linked, 47 flagged, 28 method-table, 0 without source</td><td>Rows without source: none</td></tr><tr><td>Local links resolve</td><td>0 missing</td><td>none</td></tr><tr><td>Data files parse as JSON</td><td>15 files, 0 invalid</td><td>all valid</td></tr><tr><td>External domains linked from pages</td><td>official: www.gra.gov.sg, www.ncpg.org.sg, www.nfl.com; non-official (used only on flagged or method rows): github.com</td><td>Non-official links are third-party data mirrors, the data dictionary, or the repository itself.</td></tr></tbody></table></div><p class="count" data-count-for="t13"></p>
+<p class="small">A full row-by-row comparison of all 137 final 2026 games against nfl.com is not complete: only the three spot checks above were run in this session. Remaining games are flagged, see Flagged for review.</p>
+</main>
+<footer>Part of the <a href="../">Korea5 repository site</a>. Source code and data: <a href="https://github.com/karagemop466-tech/Korea5/tree/arena/1e59465a-korea5/nfl-lab">GitHub branch</a>. Generated 2026-11-13 13:26 UTC.</footer>
+<script src="assets/app.js"></script>
+</body></html>

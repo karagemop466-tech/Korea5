@@ -1,0 +1,2766 @@
+{
+ "meta": {
+  "title": "Official NFL Week 10 (2026) injury report records",
+  "season": 2026,
+  "week": 10,
+  "retrievedUTC": "2026-11-13",
+  "retrievedBy": "arena-c6eea73d",
+  "sources": [
+   {
+    "name": "NFL.com official injury report (week selector)",
+    "url": "https://www.nfl.com/injuries/"
+   },
+   {
+    "name": "NFL.com \u2014 NFL Week 10 injury report: Player statuses for all 14 games",
+    "url": "https://www.nfl.com/news/nfl-week-10-injury-report-2026-season"
+   }
+  ],
+  "fieldNote": "Rows are copied verbatim from the official pages. Empty string means the official page printed nothing in that cell. Nothing is inferred.",
+  "coverageNote": "Practice-participation tables are published for 24 of the 32 clubs. Four club tables could not be transcribed without guessing and are listed under partialTables with the reason. The official Week 10 injury report article had published game-status designations for 3 of the 14 games at retrieval time."
+ },
+ "games": [
+  {
+   "gameUrl": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+   "day": "Thursday, November 12",
+   "kickoff": "8:15 p.m. ET",
+   "away": "Washington Commanders",
+   "home": "New York Giants",
+   "venue": "MetLife Stadium",
+   "tv": "Prime Video, NFL+"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+   "day": "Sunday, November 15",
+   "kickoff": "9:30 a.m. ET",
+   "away": "New England Patriots",
+   "home": "Detroit Lions",
+   "venue": "FC Bayern Munich Stadium (Munich, Germany)",
+   "tv": "FOX, FOX One, NFL+"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+   "day": "Sunday, November 15",
+   "kickoff": "1:00 p.m. ET",
+   "away": "Kansas City Chiefs",
+   "home": "Atlanta Falcons",
+   "venue": "Mercedes-Benz Stadium (Atlanta)",
+   "tv": "CBS"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+   "day": "Sunday, November 15",
+   "kickoff": "1:00 p.m. ET",
+   "away": "Houston Texans",
+   "home": "Cleveland Browns",
+   "venue": "Huntington Bank Field (Cleveland)",
+   "tv": "FOX"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+   "day": "Sunday, November 15",
+   "kickoff": "1:00 p.m. ET",
+   "away": "Minnesota Vikings",
+   "home": "Green Bay Packers",
+   "venue": "Lambeau Field (Green Bay, Wis.)",
+   "tv": "FOX"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+   "day": "Sunday, November 15",
+   "kickoff": "1:00 p.m. ET",
+   "away": "Miami Dolphins",
+   "home": "Indianapolis Colts",
+   "venue": "Lucas Oil Stadium (Indianapolis)",
+   "tv": "CBS"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+   "day": "Sunday, November 15",
+   "kickoff": "1:00 p.m. ET",
+   "away": "Carolina Panthers",
+   "home": "New Orleans Saints",
+   "venue": "Caesars Superdome (New Orleans)",
+   "tv": "FOX"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+   "day": "Sunday, November 15",
+   "kickoff": "1:00 p.m. ET",
+   "away": "Buffalo Bills",
+   "home": "New York Jets",
+   "venue": "MetLife Stadium (New York)",
+   "tv": "CBS"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+   "day": "Sunday, November 15",
+   "kickoff": "1:00 p.m. ET",
+   "away": "Jacksonville Jaguars",
+   "home": "Tennessee Titans",
+   "venue": "Nissan Stadium (Nashville, Tenn.)",
+   "tv": "FOX"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+   "day": "Sunday, November 15",
+   "kickoff": "4:05 p.m. ET",
+   "away": "Los Angeles Rams",
+   "home": "Arizona Cardinals",
+   "venue": "State Farm Stadium (Glendale, Ariz.)",
+   "tv": "CBS, Paramount+, NFL+"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+   "day": "Sunday, November 15",
+   "kickoff": "4:05 p.m. ET",
+   "away": "Seattle Seahawks",
+   "home": "Las Vegas Raiders",
+   "venue": "Allegiant Stadium (Las Vegas)",
+   "tv": "CBS"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+   "day": "Sunday, November 15",
+   "kickoff": "4:25 p.m. ET",
+   "away": "San Francisco 49ers",
+   "home": "Dallas Cowboys",
+   "venue": "AT&T Stadium (Arlington, Texas)",
+   "tv": "FOX, FOX One, NFL+"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+   "day": "Sunday, November 15",
+   "kickoff": "8:20 p.m. ET",
+   "away": "Pittsburgh Steelers",
+   "home": "Cincinnati Bengals",
+   "venue": "Paycor Stadium (Cincinnati)",
+   "tv": "NBC, Peacock, NFL+"
+  },
+  {
+   "gameUrl": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+   "day": "Monday, November 16",
+   "kickoff": "8:15 p.m. ET",
+   "away": "Los Angeles Chargers",
+   "home": "Baltimore Ravens",
+   "venue": "M&T Bank Stadium (Baltimore)",
+   "tv": "ABC, ESPN, NFL+"
+  }
+ ],
+ "gameStatus": [
+  [
+   "Washington Commanders",
+   "WAS",
+   "Colson Yankoff",
+   "TE",
+   "Knee",
+   "Out",
+   "colson-yankoff"
+  ],
+  [
+   "Washington Commanders",
+   "WAS",
+   "Lucas Patrick",
+   "C",
+   "Concussion",
+   "Out",
+   "lucas-patrick"
+  ],
+  [
+   "New York Giants",
+   "NYG",
+   "Malik Harrison",
+   "LB",
+   "Groin",
+   "Questionable",
+   "malik-harrison"
+  ],
+  [
+   "New England Patriots",
+   "NE",
+   "Ben Brown",
+   "C",
+   "Knee",
+   "Out",
+   "ben-brown-2"
+  ],
+  [
+   "New England Patriots",
+   "NE",
+   "Carlton Davis III",
+   "CB",
+   "Knee",
+   "Out",
+   "carlton-davis"
+  ],
+  [
+   "New England Patriots",
+   "NE",
+   "TreVeyon Henderson",
+   "RB",
+   "Illness",
+   "Out",
+   "treveyon-henderson"
+  ],
+  [
+   "Detroit Lions",
+   "DET",
+   "Kerby Joseph",
+   "S",
+   "Knee",
+   "Out",
+   "kerby-joseph"
+  ],
+  [
+   "Detroit Lions",
+   "DET",
+   "Cade Mays",
+   "C",
+   "Ankle",
+   "Out",
+   "cade-mays"
+  ],
+  [
+   "Detroit Lions",
+   "DET",
+   "D.J. Reed",
+   "CB",
+   "Hip",
+   "Out",
+   "d-j-reed"
+  ]
+ ],
+ "gameStatusNote": "Source: NFL.com Week 10 injury report article and the NFL.com weekly injury report page. The article had published these three games' designations at retrieval time (2026-11-13); designations for the remaining eleven games had not been published yet and are therefore absent rather than guessed.",
+ "practice": {
+  "WAS": {
+   "club": "Washington Commanders",
+   "gameUrl": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "John Bates",
+     "TE",
+     "",
+     "Full Participation in Practice",
+     "",
+     "john-bates"
+    ],
+    [
+     "Treylon Burks",
+     "WR",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "treylon-burks"
+    ],
+    [
+     "Jayden Daniels",
+     "QB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "jayden-daniels"
+    ],
+    [
+     "Matt Gulbin",
+     "C",
+     "",
+     "Full Participation in Practice",
+     "",
+     "matt-gulbin"
+    ],
+    [
+     "Chig Okonkwo",
+     "TE",
+     "",
+     "Full Participation in Practice",
+     "",
+     "chigoziem-okonkwo"
+    ],
+    [
+     "Lucas Patrick",
+     "C",
+     "Concussion",
+     "Did Not Participate In Practice",
+     "Out",
+     "lucas-patrick"
+    ],
+    [
+     "Amik Robertson",
+     "CB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "amik-robertson"
+    ],
+    [
+     "Shy Tuttle",
+     "DT",
+     "",
+     "Full Participation in Practice",
+     "",
+     "shy-tuttle"
+    ],
+    [
+     "Colson Yankoff",
+     "TE",
+     "Knee",
+     "Did Not Participate In Practice",
+     "Out",
+     "colson-yankoff"
+    ]
+   ]
+  },
+  "NYG": {
+   "club": "New York Giants",
+   "gameUrl": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Abdul Carter",
+     "LB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "abdul-carter"
+    ],
+    [
+     "Jermaine Eluemunor",
+     "T",
+     "",
+     "Full Participation in Practice",
+     "",
+     "jermaine-eluemunor"
+    ],
+    [
+     "Malik Harrison",
+     "LB",
+     "Groin",
+     "Limited Participation in Practice",
+     "Questionable",
+     "malik-harrison"
+    ],
+    [
+     "Colton Hood",
+     "CB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "colton-hood"
+    ],
+    [
+     "Theo Johnson",
+     "TE",
+     "",
+     "Full Participation in Practice",
+     "",
+     "theo-johnson"
+    ],
+    [
+     "Charlie Jones",
+     "WR",
+     "",
+     "Full Participation in Practice",
+     "",
+     "charlie-jones-3"
+    ],
+    [
+     "J.J. McCarthy",
+     "QB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "j-j-mccarthy"
+    ],
+    [
+     "Darnell Mooney",
+     "WR",
+     "",
+     "Full Participation in Practice",
+     "",
+     "darnell-mooney"
+    ],
+    [
+     "Malik Nabers",
+     "WR",
+     "",
+     "Full Participation in Practice",
+     "",
+     "malik-nabers"
+    ],
+    [
+     "Cam Skattebo",
+     "RB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "cam-skattebo"
+    ],
+    [
+     "Andrew Thomas",
+     "T",
+     "",
+     "Full Participation in Practice",
+     "",
+     "andrew-thomas"
+    ]
+   ]
+  },
+  "NE": {
+   "club": "New England Patriots",
+   "gameUrl": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Ben Brown",
+     "C",
+     "Knee",
+     "Did Not Participate In Practice",
+     "Out",
+     "ben-brown-2"
+    ],
+    [
+     "A.J. Brown",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "a-j-brown"
+    ],
+    [
+     "Kevin Byard",
+     "S",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "kevin-byard"
+    ],
+    [
+     "Carlton Davis III",
+     "CB",
+     "Knee",
+     "Did Not Participate In Practice",
+     "Out",
+     "carlton-davis"
+    ],
+    [
+     "Reggie Gilliam",
+     "FB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "reggie-gilliam"
+    ],
+    [
+     "TreVeyon Henderson",
+     "RB",
+     "Illness",
+     "Did Not Participate In Practice",
+     "Out",
+     "treveyon-henderson"
+    ],
+    [
+     "Hunter Henry",
+     "TE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "hunter-henry"
+    ],
+    [
+     "Cameron Latu",
+     "TE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "cameron-latu"
+    ],
+    [
+     "Drake Maye",
+     "QB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "drake-maye"
+    ],
+    [
+     "Morgan Moses",
+     "T",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "morgan-moses"
+    ],
+    [
+     "Walter Rouse",
+     "T",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "walter-rouse"
+    ],
+    [
+     "Brenden Schooler",
+     "S",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "brenden-schooler"
+    ],
+    [
+     "Rhamondre Stevenson",
+     "RB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "rhamondre-stevenson"
+    ],
+    [
+     "Greg Van Roten",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "greg-van-roten"
+    ],
+    [
+     "Charles Woods",
+     "CB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "charles-woods"
+    ]
+   ]
+  },
+  "DET": {
+   "club": "Detroit Lions",
+   "gameUrl": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Brian Branch",
+     "S",
+     "",
+     "Full Participation in Practice",
+     "",
+     "brian-branch"
+    ],
+    [
+     "Jared Goff",
+     "QB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "jared-goff"
+    ],
+    [
+     "Kerby Joseph",
+     "S",
+     "Knee",
+     "Full Participation in Practice",
+     "Out",
+     "kerby-joseph"
+    ],
+    [
+     "Cade Mays",
+     "C",
+     "Ankle",
+     "Did Not Participate In Practice",
+     "Out",
+     "cade-mays"
+    ],
+    [
+     "D.J. Reed",
+     "CB",
+     "Hip",
+     "Did Not Participate In Practice",
+     "Out",
+     "d-j-reed"
+    ],
+    [
+     "Jacob Saylors",
+     "RB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "jacob-saylors"
+    ],
+    [
+     "Amon-Ra St. Brown",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "amon-ra-st-brown"
+    ],
+    [
+     "Sione Vaki",
+     "RB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "sione-vaki"
+    ],
+    [
+     "DJ Wonnum",
+     "DE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "d-j-wonnum"
+    ]
+   ]
+  },
+  "ATL": {
+   "club": "Atlanta Falcons",
+   "gameUrl": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Zachariah Branch",
+     "WR",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "zachariah-branch"
+    ],
+    [
+     "Kendal Daniels",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "kendal-daniels"
+    ],
+    [
+     "Divine Deablo",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "divine-deablo"
+    ],
+    [
+     "Gervon Dexter Sr.",
+     "DT",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "gervon-dexter"
+    ],
+    [
+     "James Pearce Jr.",
+     "DE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "james-pearce-jr"
+    ],
+    [
+     "Za'Darius Smith",
+     "DE",
+     "",
+     "Full Participation in Practice",
+     "",
+     "za-darius-smith"
+    ],
+    [
+     "Jawaan Taylor",
+     "T",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jawaan-taylor"
+    ],
+    [
+     "Cameron Thomas",
+     "DE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "cameron-thomas"
+    ],
+    [
+     "Josh Woods",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "josh-woods"
+    ]
+   ]
+  },
+  "MIN": {
+   "club": "Minnesota Vikings",
+   "gameUrl": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Blake Cashman",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "blake-cashman"
+    ],
+    [
+     "T.J. Hockenson",
+     "TE",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "t-j-hockenson"
+    ],
+    [
+     "Tyrion Ingram-Dawkins",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "tyrion-ingram-dawkins"
+    ],
+    [
+     "Theo Jackson",
+     "S",
+     "",
+     "Full Participation in Practice",
+     "",
+     "theo-jackson"
+    ],
+    [
+     "Jauan Jennings",
+     "WR",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jauan-jennings"
+    ],
+    [
+     "Kyler Murray",
+     "QB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "kyler-murray"
+    ],
+    [
+     "Kyle Van Noy",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "kyle-van-noy"
+    ],
+    [
+     "Jay Ward",
+     "S",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "jay-ward"
+    ],
+    [
+     "Carson Wentz",
+     "QB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "carson-wentz"
+    ]
+   ]
+  },
+  "GB": {
+   "club": "Green Bay Packers",
+   "gameUrl": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Aaron Banks",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "aaron-banks"
+    ],
+    [
+     "Chris Brooks",
+     "RB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "christopher-brooks"
+    ],
+    [
+     "Javon Bullard",
+     "S",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "javon-bullard"
+    ],
+    [
+     "Zaire Franklin",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "zaire-franklin"
+    ],
+    [
+     "Travis Glover",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "travis-glover"
+    ],
+    [
+     "Ty'Ron Hopper",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "ty-ron-hopper"
+    ],
+    [
+     "Josh Jacobs",
+     "RB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "josh-jacobs-x3315"
+    ],
+    [
+     "Bo Melton",
+     "WR",
+     "",
+     "Full Participation in Practice",
+     "",
+     "bo-melton"
+    ],
+    [
+     "Skyy Moore",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "skyy-moore"
+    ],
+    [
+     "Micah Parsons",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "micah-parsons"
+    ],
+    [
+     "Sean Rhyan",
+     "C",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "sean-rhyan"
+    ],
+    [
+     "Trey Smack",
+     "K",
+     "",
+     "Full Participation in Practice",
+     "",
+     "trey-smack"
+    ],
+    [
+     "Lukas Van Ness",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "lukas-van-ness"
+    ],
+    [
+     "Josh Whyle",
+     "TE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "josh-whyle"
+    ],
+    [
+     "Savion Williams",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "savion-williams"
+    ],
+    [
+     "Kevin Zeitler",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "kevin-zeitler"
+    ]
+   ]
+  },
+  "JAX": {
+   "club": "Jacksonville Jaguars",
+   "gameUrl": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Jessie Bates",
+     "S",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jessie-bates"
+    ],
+    [
+     "Ezra Cleveland",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "ezra-cleveland"
+    ],
+    [
+     "Branson Combs",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "branson-combs"
+    ],
+    [
+     "Jordan Davis",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jordan-davis"
+    ],
+    [
+     "BJ Green II",
+     "DE",
+     "",
+     "Full Participation in Practice",
+     "",
+     "bj-green-ii"
+    ],
+    [
+     "Robert Hainsey",
+     "C",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "robert-hainsey"
+    ],
+    [
+     "Antonio Johnson",
+     "S",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "antonio-johnson-3"
+    ],
+    [
+     "Jakobi Meyers",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "jakobi-meyers"
+    ],
+    [
+     "Chris Rodriguez Jr.",
+     "RB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "chris-rodriguez-jr"
+    ],
+    [
+     "Bhayshul Tuten",
+     "RB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "bhayshul-tuten"
+    ],
+    [
+     "Travon Walker",
+     "DE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "travon-walker"
+    ]
+   ]
+  },
+  "TEN": {
+   "club": "Tennessee Titans",
+   "gameUrl": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Cody Barton",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "cody-barton"
+    ],
+    [
+     "John Franklin-Myers",
+     "DE",
+     "",
+     "Full Participation in Practice",
+     "",
+     "john-franklin-myers"
+    ],
+    [
+     "Marcus Harris",
+     "CB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "marcus-harris-4"
+    ],
+    [
+     "Anthony Hill Jr.",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "anthony-hill-jr"
+    ],
+    [
+     "JC Latham",
+     "T",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "jc-latham"
+    ],
+    [
+     "Tony Pollard",
+     "RB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "tony-pollard"
+    ],
+    [
+     "Peter Skoronski",
+     "G",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "peter-skoronski"
+    ],
+    [
+     "Tyjae Spears",
+     "RB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "tyjae-spears"
+    ],
+    [
+     "Carnell Tate",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "carnell-tate"
+    ],
+    [
+     "Tommy Townsend",
+     "P",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "tommy-townsend"
+    ],
+    [
+     "Kevin Winston Jr.",
+     "S",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "kevin-winston-jr"
+    ]
+   ]
+  },
+  "BUF": {
+   "club": "Buffalo Bills",
+   "gameUrl": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Alec Anderson",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "alec-anderson-2"
+    ],
+    [
+     "Christian Benford",
+     "CB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "christian-benford"
+    ],
+    [
+     "Spencer Brown",
+     "T",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "spencer-brown"
+    ],
+    [
+     "Dion Dawkins",
+     "T",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "dion-dawkins"
+    ],
+    [
+     "Sam Franklin Jr.",
+     "S",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "sam-franklin"
+    ],
+    [
+     "Greg Gaines",
+     "DT",
+     "",
+     "Full Participation in Practice",
+     "",
+     "greg-gaines"
+    ],
+    [
+     "Jordan Hancock",
+     "CB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "jordan-hancock"
+    ],
+    [
+     "Dalton Kincaid",
+     "TE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "dalton-kincaid"
+    ],
+    [
+     "Connor McGovern",
+     "C",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "connor-mcgovern-2"
+    ],
+    [
+     "Ar'maj Reed-Adams",
+     "G",
+     "",
+     "Full Participation in Practice",
+     "",
+     "ar-maj-reed-adams"
+    ],
+    [
+     "T.J. Sanders",
+     "DE",
+     "",
+     "Full Participation in Practice",
+     "",
+     "t-j-sanders"
+    ],
+    [
+     "Tyrell Shavers",
+     "WR",
+     "",
+     "Full Participation in Practice",
+     "",
+     "tyrell-shavers"
+    ]
+   ]
+  },
+  "NYJ": {
+   "club": "New York Jets",
+   "gameUrl": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Jarvis Brownlee Jr.",
+     "CB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jarvis-brownlee-jr"
+    ],
+    [
+     "Omar Cooper Jr.",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "omar-cooper-jr"
+    ],
+    [
+     "Joseph Ossai",
+     "DE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "joseph-ossai"
+    ],
+    [
+     "VJ Payne",
+     "S",
+     "",
+     "Full Participation in Practice",
+     "",
+     "vj-payne"
+    ],
+    [
+     "Harrison Phillips",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "harrison-phillips"
+    ],
+    [
+     "Trevin Wallace",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "trevin-wallace"
+    ],
+    [
+     "Garrett Wilson",
+     "WR",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "garrett-wilson"
+    ],
+    [
+     "Nahshon Wright",
+     "CB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "nahshon-wright"
+    ]
+   ]
+  },
+  "MIA": {
+   "club": "Miami Dolphins",
+   "gameUrl": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Tucker Addington",
+     "LS",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "tucker-addington"
+    ],
+    [
+     "Kaytron Allen",
+     "RB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "kaytron-allen"
+    ],
+    [
+     "Darrell Baker Jr.",
+     "CB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "darrell-baker-jr"
+    ],
+    [
+     "Chris Bell",
+     "WR",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "chris-bell-2"
+    ],
+    [
+     "Aaron Brewer",
+     "C",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "aaron-brewer-2"
+    ],
+    [
+     "Malik Herring",
+     "DE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "malik-herring"
+    ],
+    [
+     "Will Kacmarek",
+     "TE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "will-kacmarek"
+    ],
+    [
+     "Michael Taaffe",
+     "S",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "michael-taaffe"
+    ],
+    [
+     "Dante Trader Jr.",
+     "S",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "dante-trader-jr"
+    ],
+    [
+     "Jared Wayne",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "jared-wayne"
+    ],
+    [
+     "Jaylen Wright",
+     "RB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "jaylen-wright"
+    ]
+   ]
+  },
+  "IND": {
+   "club": "Indianapolis Colts",
+   "gameUrl": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Mo Alie-Cox",
+     "TE",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "mo-alie-cox"
+    ],
+    [
+     "CJ Allen",
+     "LB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "cj-allen"
+    ],
+    [
+     "Jaylon Carlies",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jaylon-carlies"
+    ],
+    [
+     "Akeem Davis-Gaither",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "akeem-davis-gaither"
+    ],
+    [
+     "A.J. Haulcy",
+     "S",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "a-j-haulcy"
+    ],
+    [
+     "Arden Key",
+     "DE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "arden-key"
+    ],
+    [
+     "Luke Rhodes",
+     "LS",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "luke-rhodes"
+    ],
+    [
+     "Grover Stewart",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "grover-stewart"
+    ],
+    [
+     "Jonathan Taylor",
+     "RB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "jonathan-taylor"
+    ],
+    [
+     "Jerry Tillery",
+     "DT",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "jerry-tillery"
+    ],
+    [
+     "Jalen Travis",
+     "T",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jalen-travis"
+    ],
+    [
+     "Justin Walley",
+     "CB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "justin-walley"
+    ],
+    [
+     "Charvarius Ward",
+     "CB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "charvarius-ward"
+    ]
+   ]
+  },
+  "CAR": {
+   "club": "Carolina Panthers",
+   "gameUrl": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Jonathon Brooks",
+     "RB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "jonathon-brooks"
+    ],
+    [
+     "Brady Christensen",
+     "G",
+     "",
+     "Full Participation in Practice",
+     "",
+     "brady-christensen"
+    ],
+    [
+     "Trevor Etienne",
+     "RB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "trevor-etienne"
+    ],
+    [
+     "Chuba Hubbard",
+     "RB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "chuba-hubbard"
+    ],
+    [
+     "Lee Hunter",
+     "DT",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "lee-hunter"
+    ],
+    [
+     "Mike Jackson",
+     "CB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "mike-jackson"
+    ],
+    [
+     "Will Lee III",
+     "CB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "will-lee-iii"
+    ],
+    [
+     "Xavier Legette",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "xavier-legette"
+    ],
+    [
+     "Damien Lewis",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "damien-lewis"
+    ],
+    [
+     "Bobby Okereke",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "bobby-okereke"
+    ],
+    [
+     "Jaelan Phillips",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "jaelan-phillips"
+    ],
+    [
+     "Torricelli Simpkins III",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "torricelli-simpkins-iii"
+    ]
+   ]
+  },
+  "NO": {
+   "club": "New Orleans Saints",
+   "gameUrl": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+   "coverage": "partial \u2014 first row truncated in the source page",
+   "rows": [
+    [
+     "Kelvin Banks Jr.",
+     "T",
+     "",
+     "",
+     "",
+     "kelvin-banks-jr"
+    ],
+    [
+     "CJ Donaldson",
+     "RB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "cj-donaldson"
+    ],
+    [
+     "David Edwards",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "david-edwards-x1290"
+    ],
+    [
+     "Martin Emerson",
+     "CB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "martin-emerson"
+    ],
+    [
+     "Travis Etienne",
+     "RB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "travis-etienne"
+    ],
+    [
+     "Noah Fant",
+     "TE",
+     "",
+     "Full Participation in Practice",
+     "",
+     "noah-fant-x4946"
+    ],
+    [
+     "Taliese Fuaga",
+     "T",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "taliese-fuaga"
+    ],
+    [
+     "Alvin Kamara",
+     "RB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "alvin-kamara"
+    ],
+    [
+     "Erik McCoy",
+     "C",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "erik-mccoy"
+    ],
+    [
+     "Christen Miller",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "christen-miller"
+    ],
+    [
+     "Asim Richards",
+     "T",
+     "",
+     "Full Participation in Practice",
+     "",
+     "asim-richards"
+    ],
+    [
+     "Quincy Riley",
+     "CB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "quincy-riley"
+    ]
+   ]
+  },
+  "HOU": {
+   "club": "Houston Texans",
+   "gameUrl": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Azeez Al-Shaair",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "azeez-al-shaair"
+    ],
+    [
+     "Reed Blankenship",
+     "S",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "reed-blankenship"
+    ],
+    [
+     "Tank Dell",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "tank-dell"
+    ],
+    [
+     "Blake Fisher",
+     "T",
+     "",
+     "Full Participation in Practice",
+     "",
+     "blake-fisher"
+    ],
+    [
+     "Marvin Harrison Jr.",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "marvin-harrison-jr"
+    ],
+    [
+     "Jacob Hummel",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "jake-hummel"
+    ],
+    [
+     "Brevin Jordan",
+     "TE",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "brevin-jordan"
+    ],
+    [
+     "Woody Marks",
+     "RB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "woody-marks"
+    ],
+    [
+     "David Montgomery",
+     "RB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "david-montgomery"
+    ],
+    [
+     "Keylan Rutledge",
+     "G",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "keylan-rutledge"
+    ],
+    [
+     "Jaylin Smith",
+     "CB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "jaylin-smith"
+    ],
+    [
+     "Wyatt Teller",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "wyatt-teller"
+    ],
+    [
+     "Tommy Togiai",
+     "DT",
+     "",
+     "Full Participation in Practice",
+     "",
+     "tommy-togiai"
+    ]
+   ]
+  },
+  "CLE": {
+   "club": "Cleveland Browns",
+   "gameUrl": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Austin Barber",
+     "T",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "austin-barber"
+    ],
+    [
+     "Denzel Boston",
+     "WR",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "denzel-boston"
+    ],
+    [
+     "Michael Burton",
+     "FB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "michael-burton"
+    ],
+    [
+     "Maliek Collins",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "maliek-collins"
+    ],
+    [
+     "Harold Fannin Jr.",
+     "TE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "harold-fannin-jr"
+    ],
+    [
+     "Ronnie Hickman Jr.",
+     "S",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "ronnie-hickman-jr"
+    ],
+    [
+     "Tytus Howard",
+     "T",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "tytus-howard-x1979"
+    ],
+    [
+     "Elgton Jenkins",
+     "C",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "elgton-jenkins"
+    ],
+    [
+     "Donovan McMillon",
+     "S",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "donovan-mcmillon-2"
+    ],
+    [
+     "Carson Schwesinger",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "carson-schwesinger"
+    ],
+    [
+     "Denzel Ward",
+     "CB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "denzel-ward"
+    ],
+    [
+     "Quincy Williams",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "quincy-williams"
+    ]
+   ]
+  },
+  "LAR": {
+   "club": "Los Angeles Rams",
+   "gameUrl": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Davis Allen",
+     "TE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "davis-allen"
+    ],
+    [
+     "Steve Avila",
+     "G",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "steve-avila"
+    ],
+    [
+     "Joe Cardona",
+     "LS",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "joe-cardona"
+    ],
+    [
+     "Kam Curl",
+     "S",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "kamren-curl"
+    ],
+    [
+     "Terrance Ferguson",
+     "TE",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "terrance-ferguson-2"
+    ],
+    [
+     "Myles Garrett",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "myles-garrett"
+    ],
+    [
+     "Trent McDuffie",
+     "CB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "trent-mcduffie"
+    ],
+    [
+     "Puka Nacua",
+     "WR",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "puka-nacua"
+    ],
+    [
+     "Colby Parkinson",
+     "TE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "colby-parkinson"
+    ],
+    [
+     "Matthew Stafford",
+     "QB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "matthew-stafford"
+    ]
+   ]
+  },
+  "AZ": {
+   "club": "Arizona Cardinals",
+   "gameUrl": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Budda Baker",
+     "S",
+     "",
+     "Full Participation in Practice",
+     "",
+     "budda-baker"
+    ],
+    [
+     "Zachary Carter",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "zachary-carter-x9168"
+    ],
+    [
+     "Hjalte Froholdt",
+     "C",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "hjalte-froholdt"
+    ],
+    [
+     "Jon Gaines II",
+     "G",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jon-gaines-ii"
+    ],
+    [
+     "Bam Knight",
+     "RB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "bam-knight"
+    ],
+    [
+     "Hunter Long",
+     "TE",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "hunter-long"
+    ],
+    [
+     "Roy Lopez",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "roy-lopez"
+    ],
+    [
+     "Max Melton",
+     "CB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "max-melton"
+    ],
+    [
+     "Darius Robinson",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "darius-robinson-2"
+    ],
+    [
+     "Isaac Seumalo",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "isaac-seumalo"
+    ],
+    [
+     "Dante Stills",
+     "DT",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "dante-stills"
+    ],
+    [
+     "Josh Sweat",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "josh-sweat"
+    ],
+    [
+     "Jayden Williams",
+     "T",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jayden-williams"
+    ],
+    [
+     "Mack Wilson",
+     "LB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "mack-wilson"
+    ],
+    [
+     "Andrew Wingard",
+     "S",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "andrew-wingard"
+    ]
+   ]
+  },
+  "SEA": {
+   "club": "Seattle Seahawks",
+   "gameUrl": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "AJ Barner",
+     "TE",
+     "",
+     "Full Participation in Practice",
+     "",
+     "aj-barner"
+    ],
+    [
+     "Anthony Bradford",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "anthony-bradford"
+    ],
+    [
+     "Charles Cross",
+     "T",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "charles-cross-2"
+    ],
+    [
+     "Sam Darnold",
+     "QB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "sam-darnold"
+    ],
+    [
+     "Derick Hall",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "derick-hall"
+    ],
+    [
+     "Drew Lock",
+     "QB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "drew-lock"
+    ],
+    [
+     "Quenton Nelson",
+     "G",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "quenton-nelson"
+    ],
+    [
+     "Uchenna Nwosu",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "uchenna-nwosu"
+    ],
+    [
+     "Patrick O'Connell",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "patrick-o-connell"
+    ],
+    [
+     "Connor O'Toole",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "connor-o-toole"
+    ],
+    [
+     "Brandon Pili",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "brandon-pili"
+    ],
+    [
+     "Jarran Reed",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jarran-reed"
+    ],
+    [
+     "Rashid Shaheed",
+     "WR",
+     "",
+     "Full Participation in Practice",
+     "",
+     "rashid-shaheed"
+    ],
+    [
+     "Jaxon Smith-Njigba",
+     "WR",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jaxon-smith-njigba"
+    ],
+    [
+     "Leonard Williams",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "leonard-williams"
+    ]
+   ]
+  },
+  "LV": {
+   "club": "Las Vegas Raiders",
+   "gameUrl": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Thomas Booker",
+     "DT",
+     "",
+     "Full Participation in Practice",
+     "",
+     "thomas-booker"
+    ],
+    [
+     "Foley Fatukasi",
+     "DT",
+     "",
+     "Full Participation in Practice",
+     "",
+     "foley-fatukasi"
+    ],
+    [
+     "Ian Thomas",
+     "TE",
+     "",
+     "Full Participation in Practice",
+     "",
+     "ian-thomas"
+    ],
+    [
+     "Trey Zuhn III",
+     "C",
+     "",
+     "Full Participation in Practice",
+     "",
+     "trey-zuhn-iii"
+    ]
+   ]
+  },
+  "SF": {
+   "club": "San Francisco 49ers",
+   "gameUrl": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Mike Evans",
+     "WR",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "mike-evans"
+    ],
+    [
+     "Renardo Green",
+     "CB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "renardo-green"
+    ],
+    [
+     "Dre Greenlaw",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "dre-greenlaw-x9042"
+    ],
+    [
+     "Nate Hobbs",
+     "CB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "nate-hobbs"
+    ],
+    [
+     "Deommodore Lenoir",
+     "CB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "deommodore-lenoir"
+    ],
+    [
+     "Christian McCaffrey",
+     "RB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "christian-mccaffrey"
+    ],
+    [
+     "Siran Neal",
+     "S",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "siran-neal"
+    ],
+    [
+     "Demarcus Robinson",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "demarcus-robinson"
+    ],
+    [
+     "Deebo Samuel Sr.",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "deebo-samuel"
+    ],
+    [
+     "Upton Stout",
+     "CB",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "upton-stout"
+    ],
+    [
+     "C.J. West",
+     "DT",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "cj-west"
+    ],
+    [
+     "Trent Williams",
+     "T",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "trent-williams"
+    ]
+   ]
+  },
+  "DAL": {
+   "club": "Dallas Cowboys",
+   "gameUrl": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Jonathan Bullard",
+     "DT",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "jonathan-bullard"
+    ],
+    [
+     "Alijah Clark",
+     "S",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "alijah-clark"
+    ],
+    [
+     "Donovan Ezeiruaku",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "donovan-ezeiruaku"
+    ],
+    [
+     "Jake Ferguson",
+     "TE",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jake-ferguson"
+    ],
+    [
+     "Tyler Goodson",
+     "RB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "tyler-goodson"
+    ],
+    [
+     "Malik Hooker",
+     "S",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "malik-hooker"
+    ],
+    [
+     "Marist Liufau",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "marist-liufau"
+    ],
+    [
+     "P.J. Locke",
+     "S",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "p-j-locke"
+    ],
+    [
+     "Von Miller",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "von-miller"
+    ],
+    [
+     "Jonathan Mingo",
+     "WR",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jonathan-mingo"
+    ],
+    [
+     "Devin Moore",
+     "CB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "devin-moore-2"
+    ],
+    [
+     "DeMarvion Overshown",
+     "LB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "demarvion-overshown"
+    ],
+    [
+     "George Pickens",
+     "WR",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "george-pickens"
+    ],
+    [
+     "Joey Porter Jr.",
+     "CB",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "joey-porter-jr"
+    ],
+    [
+     "Luke Schoonmaker",
+     "TE",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "luke-schoonmaker"
+    ],
+    [
+     "Brevyn Spann-Ford",
+     "TE",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "brevyn-spann-ford"
+    ],
+    [
+     "Juanyeh Thomas",
+     "S",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "juanyeh-thomas"
+    ],
+    [
+     "KaVontae Turpin",
+     "WR",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "kavontae-turpin"
+    ]
+   ]
+  },
+  "PIT": {
+   "club": "Pittsburgh Steelers",
+   "gameUrl": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+   "coverage": "complete",
+   "rows": [
+    [
+     "Brandin Echols",
+     "CB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "brandin-echols"
+    ],
+    [
+     "DeShon Elliott",
+     "S",
+     "",
+     "Full Participation in Practice",
+     "",
+     "deshon-elliott"
+    ],
+    [
+     "Derrick Harmon",
+     "DT",
+     "",
+     "Full Participation in Practice",
+     "",
+     "derrick-harmon-2"
+    ],
+    [
+     "Cameron Heyward",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "cameron-heyward"
+    ],
+    [
+     "Ben Skowronek",
+     "WR",
+     "",
+     "Full Participation in Practice",
+     "",
+     "ben-skowronek"
+    ],
+    [
+     "Doneiko Slaughter",
+     "CB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "doneiko-slaughter"
+    ],
+    [
+     "Darnell Washington",
+     "TE",
+     "",
+     "Full Participation in Practice",
+     "",
+     "darnell-washington"
+    ],
+    [
+     "T.J. Watt",
+     "LB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "t-j-watt"
+    ]
+   ]
+  },
+  "LAC": {
+   "club": "Los Angeles Chargers",
+   "gameUrl": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+   "coverage": "official page prints \u201cNo Injuries Reported\u201d",
+   "rows": []
+  }
+ },
+ "partialTables": [
+  {
+   "club": "Kansas City Chiefs",
+   "gameUrl": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+   "reason": "The official injury report page was returned in paginated chunks; the Chiefs table is cut off mid-row (after Omarr Norman-Lott, DT, Limited Participation in Practice). The remaining rows could not be transcribed without guessing.",
+   "rowsObserved": [
+    [
+     "Jeffrey Bassa",
+     "LB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "jeffrey-bassa"
+    ],
+    [
+     "Mansoor Delane",
+     "CB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "mansoor-delane"
+    ],
+    [
+     "Justin Fields",
+     "QB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "justin-fields"
+    ],
+    [
+     "Jaden Hicks",
+     "S",
+     "",
+     "Full Participation in Practice",
+     "",
+     "jaden-hicks"
+    ],
+    [
+     "Travis Kelce",
+     "TE",
+     "",
+     "Full Participation in Practice",
+     "",
+     "travis-kelce"
+    ],
+    [
+     "Patrick Mahomes",
+     "QB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "patrick-mahomes"
+    ],
+    [
+     "Jaylon Moore",
+     "T",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jaylon-moore-2"
+    ],
+    [
+     "Omarr Norman-Lott",
+     "DT",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "omarr-norman-lott"
+    ]
+   ]
+  },
+  {
+   "club": "Cincinnati Bengals",
+   "gameUrl": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+   "reason": "The Bengals table header was the last line of one returned chunk and its rows were not included in the next chunk. No Bengals row could be transcribed without guessing.",
+   "rowsObserved": []
+  },
+  {
+   "club": "Baltimore Ravens",
+   "gameUrl": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+   "reason": "An eight-player table (Jonathan Allen, Jalen Davis, Kyle Dugger, Dylan Fairchild, B.J. Hill, Andrei Iosivas, Brian Parker II, DJ Turner II) is printed between the Steelers\u2013Bengals block and the \u201cMONDAY, NOVEMBER 16TH\u201d block. Its club attribution could not be confirmed from the page structure, so the rows are published here as unassigned rather than attributed to a club.",
+   "rowsObserved": [
+    [
+     "Jonathan Allen",
+     "DT",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "jonathan-allen"
+    ],
+    [
+     "Jalen Davis",
+     "CB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "jalen-davis"
+    ],
+    [
+     "Kyle Dugger",
+     "S",
+     "",
+     "Did Not Participate In Practice",
+     "",
+     "kyle-dugger"
+    ],
+    [
+     "Dylan Fairchild",
+     "G",
+     "",
+     "Full Participation in Practice",
+     "",
+     "dylan-fairchild"
+    ],
+    [
+     "B.J. Hill",
+     "DT",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "b-j-hill"
+    ],
+    [
+     "Andrei Iosivas",
+     "WR",
+     "",
+     "Full Participation in Practice",
+     "",
+     "andrei-iosivas"
+    ],
+    [
+     "Brian Parker II",
+     "G",
+     "",
+     "Limited Participation in Practice",
+     "",
+     "brian-parker-ii"
+    ],
+    [
+     "DJ Turner II",
+     "CB",
+     "",
+     "Full Participation in Practice",
+     "",
+     "dj-turner-2"
+    ]
+   ]
+  }
+ ],
+ "recordReconciliation": {
+  "note": "The official injury-report page printed Washington 3-5-1 and New York 5-3-1 while the official Week 10 report article printed Washington 2-5-1 and New York 5-2-1. The two official pages therefore disagree on the records of the two Thursday teams. Both values are published as printed; neither is adjusted.",
+  "sources": [
+   "https://www.nfl.com/injuries/",
+   "https://www.nfl.com/news/nfl-week-10-injury-report-2026-season"
+  ]
+ }
+}

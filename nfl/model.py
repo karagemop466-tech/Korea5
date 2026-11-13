@@ -792,11 +792,12 @@ def load_prop_rows(raw_dir, seasons):
     return rows
 
 
-def prop_eval(props, season_eval, spec, min_games=4):
+def prop_eval(props, season_eval, spec, min_games=4, prior_seasons=()):
     """
-    Forecast a player's next-week volume from their own prior weeks (no opponent info, no market):
-      p(over line) = Laplace-smoothed share of the player's prior games in the season above the line.
-    Reported as forecast accuracy vs a 0.5 baseline, never as a market edge (no prop prices exist).
+    Forecast a player's next-week over/under on a fixed line from his own prior weeks in that season.
+    Baseline is the LEAGUE BASE RATE for the same market and line computed from strictly prior seasons,
+    not a coin flip: with a fixed line the base rate is rarely 50%, so scoring against ln 2 would flatter
+    the model. Skill here = 1 - logloss / base-rate logloss.
     """
     col, pos, line = spec
     by_player = defaultdict(list)
@@ -808,6 +809,14 @@ def prop_eval(props, season_eval, spec, min_games=4):
             continue
         by_player[(r.get("player_id"), int(fnum(r.get("season"), 0)))].append(
             (int(fnum(r.get("week"), 0)), v))
+    # base rate from seasons strictly before the evaluated season
+    base_hits, base_n = 0, 0
+    for (pid, season), lst in by_player.items():
+        if season in prior_seasons:
+            for _, v in lst:
+                base_hits += 1 if v > line else 0
+                base_n += 1
+    base_rate = (base_hits + 1) / (base_n + 2) if base_n else 0.5
     recs = []
     for (pid, season), lst in by_player.items():
         if season != season_eval:
@@ -821,11 +830,16 @@ def prop_eval(props, season_eval, spec, min_games=4):
     if not recs:
         return None
     ll = mean([logloss(r["p"], r["y"]) for r in recs])
-    acc = mean([1 if (r["p"] >= 0.5) == (r["y"] == 1) else 0 for r in recs])
+    ll_base = mean([logloss(base_rate, r["y"]) for r in recs])
+    acc = mean([1 if (r["p"] >= base_rate) == (r["y"] == 1) else 0 for r in recs])
     return {"market": col, "position": pos, "line": line, "games": len(recs),
-            "logloss": round(ll, 4), "accuracy": round(acc, 4),
-            "skill": round(1 - ll / math.log(2), 4),
-            "note": "Forecast accuracy only. No prop price exists in any reachable source, so no edge is claimed."}
+            "logloss": round(ll, 4), "baseRate": round(base_rate, 4),
+            "baseRateLogloss": round(ll_base, 4),
+            "accuracy": round(acc, 4),
+            "skill": round(1 - ll / ll_base, 4) if ll_base else None,
+            "priorGames": base_n,
+            "note": "Baseline is the league base rate on the same line from strictly prior seasons. "
+                    "No prop price exists in any reachable source, so no edge is claimed."}
 
 
 def prop_correlation(props, season_eval, specs, min_games=4):
@@ -941,12 +955,8 @@ def build_leaderboard(games, recs, base, corr, prop_results, prop_corr, deflatio
         score = 100 * max(0.0, s["skill"] - deflation["p95"]) * min(1, s["games"] / 1000)
         if cal["slope"]:
             score *= max(0.2, min(1.2, 1.2 - abs(cal["slope"] - 1)))
-    lb.append({"family": "single", "name": "Home-win model (walk-forward, prior info only)",
-               "tier": tier, "score": round(score, 3), "metrics": s, "gates": gates,
-               "calibration": cal, "stability": stab,
-               "claim": "Out-of-sample probability skill against a prior-season win-rate baseline. "
-                        "No betting return is claimed: the market columns in the source data are a single "
-                        "un-timestamped snapshot, so no closing price or vig is known."})
+    # NOTE: the single-game family rows are emitted by family_rows() so that calibration and stability
+    # travel with the row that owns them; this function returns only market and combination rows.
     # market-relative variant: does the model add anything over the published spread?
     mkt = market_track(games, recs)
     if mkt:
@@ -999,37 +1009,69 @@ def market_track(games, recs):
 
 
 def parlay_family(games, recs, corr):
-    """2-leg and 3-leg combinations built only from the model's most confident games, priced correlation-aware."""
+    """
+    Cross-game combinations of the model's most confident picks. The legs come from different games, so the
+    measured cross-leg correlation is ~0 by construction; what matters is whether the stated joint probability
+    matches the realised hit rate. That calibration is reported rather than an unmeasurable 'return'.
+    """
     out = []
     by_season = defaultdict(list)
     for r in recs:
         by_season[r["season"]].append(r)
-    # measured correlation between two model legs is ~0 (independent games) -> use the measured signal corr as prior
     for k in (2, 3):
-        joint_indep, joint_corr, n = 0.0, 0.0, 0
+        exp, real, n = 0.0, 0, 0
         for season, rs in by_season.items():
             rs = sorted(rs, key=lambda r: -max(r["p"], 1 - r["p"]))[:k]
             if len(rs) < k:
                 continue
             ps = [r["p"] if r["p"] >= 0.5 else 1 - r["p"] for r in rs]
-            hits = all((r["p"] >= 0.5) == (r["y"] == 1) for r in rs)
-            joint_indep += math.prod(ps)
-            # legs come from different games (different teams by construction of the top-k pick)
-            corr_mat = [[1.0 if i == j else 0.0 for j in range(k)] for i in range(k)]
-            joint_corr += gauss_copula_joint(ps, corr_mat)
+            hit = all((r["p"] >= 0.5) == (r["y"] == 1) for r in rs)
+            exp += math.prod(ps)
+            real += 1 if hit else 0
             n += 1
         if n == 0:
             continue
-        out.append({"family": "parlay", "name": f"{k}-leg parlay of highest-confidence picks",
+        out.append({"family": "parlay", "name": f"{k}-leg cross-game parlay (highest-confidence picks)",
                     "tier": "C", "score": 0.0,
-                    "metrics": {"seasonsTested": n, "expectedJointIndependent": round(joint_indep / n, 4),
-                                "expectedJointCorrelationAware": round(joint_corr / n, 4),
-                                "note": "Cross-game legs are near-independent by construction; the copula path is "
-                                        "exercised so the same code can price same-game legs."},
-                    "gates": {"G8_market": {"pass": False, "value": "no parlay price available; payout rules "
-                                                                   "and vig unknown"}},
-                    "claim": "Joint probability only. No payout, no vig, no ROI, because no parlay price exists "
-                             "in any reachable source."})
+                    "metrics": {"legs": k, "seasonsTested": n,
+                                "expectedJoint": round(exp / n, 4),
+                                "realisedHitRate": round(real / n, 4),
+                                "difference": round(real / n - exp / n, 4),
+                                "note": "One combination per season; a joint probability is not a payout. "
+                                        "With this sample the realised rate is far too noisy to confirm calibration."},
+                    "gates": {"G3_sample": {"pass": n >= 30, "value": f"{n} combinations"},
+                              "G8_market": {"pass": False,
+                                            "value": "no parlay price, payout or vig in any reachable source"}},
+                    "claim": "Joint probability and realised hit rate only. No payout, no vig, no ROI."})
+    return out
+
+
+def prop_combo_family(prop_corr, props, seasons):
+    """
+    Same-game prop combo built ONLY where the measured correlation is real: the pair must exclude zero in its
+    bootstrap interval. The joint probability is then computed twice — naive product vs copula with the measured
+    r — and the gap is the size of the error that multiplying marginals would introduce.
+    """
+    out = []
+    for pc in prop_corr[:6]:
+        lo, hi = pc.get("ci") or [None, None]
+        if lo is None or not (lo > 0 or hi < 0):
+            continue
+        r = pc["r"]
+        p1, p2 = 0.55, 0.55  # illustrative marginal; the point is the gap, not the marginal
+        C = [[1.0, r], [r, 1.0]]
+        joint_corr = gauss_copula_joint([p1, p2], C)
+        joint_indep = p1 * p2
+        out.append({"family": "prop-combo", "name": f"Same-game combo: {pc['a']} + {pc['b']} ({pc['position']})",
+                    "tier": "C", "score": 0.0,
+                    "metrics": {"r": r, "ci": pc["ci"], "pairs": pc["n"],
+                                "jointIfIndependent": round(joint_indep, 4),
+                                "jointWithMeasuredCorrelation": round(joint_corr, 4),
+                                "errorFromAssumingIndependence": round(joint_corr - joint_indep, 4),
+                                "note": "Marginals are illustrative (0.55 each). The published quantity is the gap "
+                                        "between the copula joint and the naive product, not a price."},
+                    "gates": {"G8_market": {"pass": False, "value": "no prop price exists"}},
+                    "claim": "Measures how wrong independence would be. No price, no payout, no edge."})
     return out
 
 
@@ -1054,19 +1096,22 @@ def run(raw_dir, seasons, out_dir, selftest=False, perm_n=60):
             continue
         sf = scores(recs_f, base)
         df = deflate(games, seasons_eval, base, sf["skill"], N=perm_n, K=K, features=feats)
-        results[fam] = {"recs": recs_f, "scores": sf, "deflation": df, "features": feats}
+        results[fam] = {"recs": recs_f, "scores": sf, "deflation": df, "features": feats,
+                        "calibration": calibration(recs_f), "stability": stability(recs_f, base)}
     if not results:
         return {"error": "no evaluable games", "games": len(games)}
     best = max(results, key=lambda k: (results[k]["scores"]["skill"] or -9))
     recs, s, defl = results[best]["recs"], results[best]["scores"], results[best]["deflation"]
     corr = correlation_matrix(games, seasons_eval)
     props = load_prop_rows(raw_dir, seasons_eval)
-    prop_results = [prop_eval(props, s2, spec) for s2 in seasons_eval[-2:] for spec in PROP_SPECS]
+    prop_results = [prop_eval(props, s2, spec, prior_seasons=[x for x in seasons if x < s2])
+                    for s2 in seasons_eval[-2:] for spec in PROP_SPECS]
     pcorr = []
     for s2 in seasons_eval[-2:]:
         pcorr += prop_correlation(props, s2, PROP_SPECS)
     lb = build_leaderboard(games, recs, base, corr, prop_results, pcorr, defl)
     lb += family_rows(results)
+    lb += prop_combo_family(pcorr, props, seasons_eval)
 
     coverage = feature_coverage(games, seasons_eval)
     board = current_board(games, injuries, depth, snaps, LineupIndex(depth, snaps, injuries))
@@ -1100,7 +1145,11 @@ def family_rows(results):
     rows = []
     for fam, r in results.items():
         sc, df = r["scores"], r["deflation"]
-        passed = (sc["skill"] or 0) > 0 and df["passed"]
+        cal = r.get("calibration") or {}
+        stab = r.get("stability") or {}
+        cal_ok = cal.get("slope") is not None and 0.8 <= cal["slope"] <= 1.25
+        stab_ok = sum(1 for v in stab.values() if (v or 0) > 0) >= max(1, len(stab) * 2 // 3)
+        passed = (sc["skill"] or 0) > 0 and df["passed"] and cal_ok and stab_ok
         rows.append({
             "family": "single", "name": f"Single-game model — {fam} features ({len(r['features'])} signals)",
             "tier": "A" if passed else ("C" if (sc["skill"] or 0) > 0 else "D"),
@@ -1109,7 +1158,11 @@ def family_rows(results):
             "gates": {"G4_skill": {"pass": (sc["skill"] or 0) > 0, "value": sc["skill"]},
                       "G5_deflation": {"pass": df["passed"],
                                        "value": f"observed {sc['skill']} vs best-of-{df['K']} null p95 {df['p95']}"},
-                      "G7_stability": {"pass": True, "value": "see stability block"}},
+                      "G6_calibration": {"pass": (cal.get("slope") is not None and
+                                                 0.8 <= cal["slope"] <= 1.25), "value": cal.get("slope")},
+                      "G7_stability": {"pass": sum(1 for v in stab.values() if (v or 0) > 0) >= max(1, len(stab) * 2 // 3),
+                                       "value": stab}},
+            "calibration": cal, "stability": stab,
             "claim": "Out-of-sample probability skill vs a prior-season win-rate baseline. No betting return claimed.",
         })
     return rows

@@ -32,6 +32,19 @@ jobs:
           python-version: '3.11'
       - name: fetch full NFL data (not committed; every file is hashed into provenance)
         run: python3 nfl/fetch_data.py --seasons 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 --with-espn 2>&1 | tee nfl/data/last_run.log
+      - name: persist a compact ESPN sample for the cross-source audit
+        run: |
+          mkdir -p nfl/raw/samples
+          python3 - <<'EOF'
+          import glob, json, os, shutil
+          os.makedirs("nfl/raw/samples", exist_ok=True)
+          files = sorted(glob.glob("nfl/raw/espn_*_t2_w*.json"))[:60]
+          for f in files:
+              d = json.load(open(f))
+              d["events"] = d.get("events", [])[:20]
+              json.dump(d, open(os.path.join("nfl/raw/samples", os.path.basename(f)), "w"))
+          print(len(files), "ESPN week files kept for the audit")
+          EOF
       - name: model
         run: python3 nfl/model.py --perm ${{ github.event.inputs.perm || '200' }} 2>&1 | tee -a nfl/data/last_run.log
       - name: audit, hypotheses, questions

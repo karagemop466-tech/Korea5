@@ -938,3 +938,79 @@ the curated specification, and the site navigation now carries a single NFL entr
 **Verified after the merge:** `analyze_lab.py` → `build_lab.py` → `build_site.py` → `build_extra.py` →
 `audit_certainty.py` → `check_links.py` → `verify_extra.py` → `verify_lab.py` → `audit_certainty.py` → node checks →
 Python unit tests. Result: **45 pages, 1,259 local links, 1,196 external links, 0 missing; lab verification 0 failures.**
+
+### Session `arena-998582f0-korea5` — N1–N6 completion record (2026-11-13)
+
+**Status: N1–N6 done, N7 in progress (PR).** Scope was `nfl/**`, `.github/workflows/nfl-*.yml`, and two additive
+nav entries. No file owned by another session was edited.
+
+| # | Task | Status | Evidence |
+|---|---|---|---|
+| N1 | CI probe of official sources | **done** | `nfl/tools/probe.py`, `probe2.py`, `dig.py`; `nfl/research/probe.json` + `probe2.json` |
+| N2 | Official data ingest | **done** | `nfl/tools/fetch_official.py`; `nfl/data/fetch-report.json` |
+| N3 | Curated decision content | **done** | `nfl/curated/{questions,suggestions,validation-gates,strategies,signals}.json` |
+| N4 | Analysis engine | **done** | `nfl/tools/analyze_market.py`; `nfl/data/derived/*.json` (12 files) |
+| N5 | Site section | **done** | `nfl/tools/build_nfl.py`; 14 pages in `nfl/` |
+| N6 | Verification | **done** | `nfl/tools/verify_nfl.py` — **99 checks, 99 passed, 0 failed**; `nfl/verification/nfl-report.{json,md}` |
+
+#### What the official ingest actually captured (run 43431950728 + follow-up)
+
+| Dataset | Rows | Official source |
+|---|---|---|
+| Completed games with final scores | **185** (2026) + **272** (2025) | `nfl.com/schedules/<season>/by-week/week-N` |
+| Official injury-report rows | **3,117** (2026 w1–w10) + **5,783** (2025 w1–w18) | `nfl.com/injuries/league/<season>/regNN` |
+| Depth-chart entries | **1,762** across **31 of 32 clubs** | each club's own `/team/depth-chart` |
+| Official team-stat tables | **7** (32 clubs × offence/defence × passing/rushing/scoring) | `nfl.com/stats/team-stats/...` |
+| Player-stat leader categories | **3** (passing/rushing/receiving) | `nfl.com/stats/player-stats/category/...` |
+| Rosters | **32 clubs, 2,850 players** | `nfl.com/teams/<club>/roster` |
+| Fetch failures | **0** | `nfl/data/fetch-report.json` |
+
+#### Line-by-line verification performed this session
+
+- **13 official final scores** read by hand off the live nfl.com week pages were compared with the ingested
+  records: **13 of 13 exact**, 0 mismatches. Compared: Buccaneers 24–Cowboys 16, Eagles 17–Jaguars 19,
+  Bengals 31–Dolphins 24, Raiders 17–Patriots 45, Vikings 23–Saints 13, Browns 12–Jets 17, Colts 22–Steelers 34,
+  Texans 26–Titans 3, Giants 27–Commanders 27, Bears 7–Packers 31, Broncos 23–Chargers 17, Lions 45–Cardinals 21
+  (all Week 5), Commanders 24–Giants 21 (Week 10).
+- **Six official injury rows** read by hand were compared field by field (position, injury, practice status, game
+  status): Lucas Patrick, Kerby Joseph, Cade Mays, D.J. Reed, Malik Harrison, TreVeyon Henderson — **all exact**.
+- **Depth charts** read by hand for SF (Purdy / Mac Jones / Rourke), KC (Mahomes / Fields / Nussmeier; TE 4 deep)
+  and DET (live page) — **all exact**. The DET check also confirmed the corrected next-man-up join.
+- **99 automated checks** in `nfl/tools/verify_nfl.py`: 0 rows missing a source link (the only exempt table is the
+  method page, which lists methods rather than values, and the exemption is asserted in code), 0 broken local
+  links, every external host on the approved official list, no page claiming a certified strategy, a reward or a
+  market price.
+
+#### Irregularities found and corrected by this session
+
+1. **Wrong derivation, caught and fixed.** Points-per-game was first computed from the official team-stats
+   *scoring* tables, which publish **touchdowns** (Rsh TD / Rec TD / Tot TD / 2-PT), not points — producing a
+   league mean of **12.97** ppg. Points are now computed from official final scores (league mean **21.81**). The
+   buggy figure was never published.
+2. **Season blending, caught and fixed.** The first scoring rates pooled 2025 and 2026 finals into one figure.
+   Rates are now current-season only, with the prior season kept separately and labelled.
+3. **Empty join, caught and fixed.** The injury report prints club display names ("Commanders"); the depth charts
+   are keyed by abbreviation ("WAS"). Every next-man-up row was silently blank. The mapping is now explicit, an
+   unmapped name is reported, and three new checks assert the join and the no-self-replacement rule.
+4. **Non-reproducible build, caught and fixed.** A wall-clock footer made every rebuild differ, so CI could not
+   distinguish a regression from timestamp noise. The stamp is now the newest official retrieval time; two
+   consecutive rebuilds are byte-identical (verified by md5).
+
+#### Irregularities published, not fixed (on `nfl/flagged.html`)
+
+1. **No price exists anywhere.** nfl.com week, game and stats pages were probed by exact regex: **0 odds fields**.
+   So there is no spread, moneyline, total or prop, and therefore no ROI, no CLV and **0 certified strategies**.
+2. **Houston publishes its depth chart as an image** — blank here rather than guessed (31/32 clubs covered).
+3. **No per-game player logs ingested**, so no real correlation is published; the method is demonstrated on
+   labelled synthetic data instead. Correlating season totals would answer a different question.
+4. **No snap counts / participation data** — "the 2nd string started" remains a depth-chart inference.
+5. **The 2026 NFL rulebook URL returned HTTP 404** during the probe, so no rule is quoted anywhere.
+6. **Two partial seasons, no price history** — nothing can be backtested against a price.
+
+#### Cross-session note
+
+`main` now carries three NFL surfaces (`nfl-strategy.html` proposal, the `lab/` shelf + `nfl-*.html`, and this
+`nfl/` section). They were **not** consolidated by this session: consolidating navigation touches files other
+sessions own. Instead a "which surface is which" note was added to `nfl.html` via its generator
+(`scripts/build_site.py`, additive) pointing readers at the data-backed section. Consolidation remains an open
+task for whoever claims it, and is logged as such.

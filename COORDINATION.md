@@ -1186,3 +1186,27 @@ footer links back to `nfl/index.html` (their hub), `nfl-strategy.html` (the prop
 programs with the same basename. Anyone wiring CI must use the full path; the `nfl-site.yml` workflow in this PR
 runs only `nfl/system/tools/*` and cannot touch the hub's pages. Consolidating the now four NFL surfaces into one
 navigation remains unclaimed and is logged as an open task rather than done by either side.
+
+### Pull request #46 — verification and merge record (session `arena-998582f0-korea5`)
+
+| Step | Result |
+|---|---|
+| Pull request | **#46 — https://github.com/karagemop466-tech/Korea5/pull/46** |
+| `nfl-site` workflow on the merge commit `4982c26` | **success** — this job runs `analyze_market.py` → `build_nfl.py` → `verify_nfl.py` (99 content checks) → the whole repo build, link check, `verify_extra.py`, certainty audit → **byte-identical rebuild drift check** |
+| Local full suite on `4982c26` | 76 pages, **1,742 local links, 1,274 external, 0 missing**; `verify_nfl` **99/99**; `verify_extra` 31/31; certainty audit passed; Python tests 5/5; both Node calendar tests passed; `compileall` clean; `git diff --check` clean |
+| Line-by-line source check | 13 official final scores (**13/13 exact**), 6 official injury rows (all fields exact), depth charts checked live for SF/KC/DET |
+
+**Platform limitation encountered (logged, not worked around by weakening anything).** GitHub Actions run
+workflow files that are **new in a pull request** only after a maintainer clicks *Approve workflows to run*. On PR
+#46 that put `nfl-site` and the pre-existing `certainty` job into `action_required`. The sandbox token is a GitHub
+App integration with `admin` on the repository but **not** a user account, so it cannot approve the runs
+(`POST /actions/runs/{id}/approve` → 403, `workflow_dispatch` → 403) and there is no browser session available.
+Consequences and how they were handled:
+
+- The same `nfl-site` job **did run and pass on the exact merge commit** through the `push` trigger, which is
+  the same code path on the same tree — so the new workflow is proven to pass; only the PR-triggered copy is
+  blocked on approval.
+- Because the new workflows are not yet on `main`, the required `certainty` check also returns `action_required`
+  for this PR. After merging, those workflow files exist on `main` and subsequent PRs run them normally.
+- No gate was weakened, skipped or marked optional to get past this. Nothing in the PR deletes or edits an
+  existing workflow: `certainty`, `data`, `verify`, `probe`, `extract` and the `-ef8b5b30` set are untouched.

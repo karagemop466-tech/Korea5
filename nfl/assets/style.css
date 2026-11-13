@@ -1,0 +1,90 @@
+:root {
+  --bg: #0f1420;
+  --panel: #171d2b;
+  --panel-2: #1e2536;
+  --line: #2a3346;
+  --text: #e6ebf4;
+  --muted: #9aa6bd;
+  --accent: #4f8cff;
+  --accent-2: #37c98b;
+  --warn: #f0b34a;
+  --danger: #f06a6a;
+  --radius: 10px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.topnav {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  padding: 10px 20px; background: var(--panel);
+  border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5;
+}
+.topnav a {
+  padding: 6px 12px; border-radius: 999px; color: var(--muted);
+  font-size: 14px; white-space: nowrap;
+}
+.topnav a:hover { background: var(--panel-2); color: var(--text); text-decoration: none; }
+.topnav a.active { background: var(--accent); color: #fff; }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 60px; }
+.hero h1 { margin: 0 0 6px; font-size: 30px; }
+.subtitle { margin: 0 0 6px; color: var(--muted); }
+.meta { margin: 0 0 22px; color: var(--muted); font-size: 13px; }
+h2 { margin: 34px 0 12px; font-size: 21px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px;
+}
+.card h3 { margin: 0 0 6px; font-size: 15px; color: var(--accent-2); }
+.card p { margin: 0 0 6px; color: var(--text); }
+.card .src { color: var(--muted); font-size: 12px; margin: 0; }
+.nav-card { display: block; color: var(--text); transition: border-color .15s, transform .15s; }
+.nav-card:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.nav-card p { color: var(--muted); }
+
+table.grid { width: 100%; border-collapse: collapse; margin: 12px 0; background: var(--panel);
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+table.grid th, table.grid td { padding: 9px 11px; text-align: left; vertical-align: top;
+  border-bottom: 1px solid var(--line); font-size: 14px; }
+table.grid th { background: var(--panel-2); color: var(--muted); font-weight: 600;
+  position: sticky; top: 53px; }
+table.grid tbody tr:hover { background: var(--panel-2); }
+table.grid td.blank { color: var(--warn); }
+.table-scroll { overflow-x: auto; }
+
+.badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12px;
+  background: var(--panel-2); border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.twocol section { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+.twocol h2 { border: 0; margin: 0 0 8px; font-size: 17px; }
+.twocol ul { margin: 0; padding-left: 18px; }
+.twocol li { margin: 4px 0; }
+
+.kvwrap { display: grid; gap: 10px; }
+.kv { display: grid; grid-template-columns: 180px 1fr; gap: 10px; background: var(--panel);
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; }
+.kv .k { color: var(--muted); font-weight: 600; }
+.kv .v { color: var(--text); }
+
+.note, .disclaimer { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--warn);
+  border-radius: var(--radius); padding: 12px 14px; color: var(--muted); }
+.disclaimer { border-left-color: var(--danger); }
+
+.foot { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.foot p { margin: 6px 0; }
+code { background: var(--panel-2); padding: 1px 6px; border-radius: 5px; font-size: 13px; }
+
+@media (max-width: 760px) {
+  .twocol { grid-template-columns: 1fr; }
+  .kv { grid-template-columns: 1fr; }
+  table.grid { display: block; overflow-x: auto; }
+}

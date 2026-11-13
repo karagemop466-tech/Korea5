@@ -1,0 +1,47 @@
+{
+  "description": "Methodology for the NFL Lines & Strategy hub: validation gates, correlation, luck removal, and metrics. Method is defined here; empirical values are computed from official data and published once available, otherwise left blank and flagged.",
+  "method": [
+    {
+      "id": "M1",
+      "name": "Validation gates",
+      "detail": "A strategy is eligible only if it passes every gate. Default gates: (1) minimum out-of-sample sample size; (2) no look-ahead bias check; (3) model edge versus market above a threshold; (4) minimum selectivity (the strategy does not bet every game); (5) statistical significance on the realised edge. Gates are configurable and each strategy records its own gate results.",
+      "source": null
+    },
+    {
+      "id": "M2",
+      "name": "Correlation method",
+      "detail": "Correlation between selections is estimated from official play-level data (Next Gen Stats, S5). For multi-leg parlays, the combined probability is recomputed with the correlation matrix rather than assuming independence. Same-game parlays model positive dependence explicitly. Empirical correlation values are computed and published once the data feed is live; until then the values are blank and flagged.",
+      "source": "S5"
+    },
+    {
+      "id": "M3",
+      "name": "Removing luck (skill vs luck)",
+      "detail": "Luck is removed by (1) testing on out-of-sample data only, (2) ranking on edge versus the market / closing-line value rather than raw hit rate, (3) requiring minimum selectivity so high-volume variance is not rewarded, (4) applying validation gates before eligibility, and (5) reporting risk-adjusted, correlation-adjusted returns. A strategy is treated as skill-based only after it clears the gates out-of-sample.",
+      "source": null
+    },
+    {
+      "id": "M4",
+      "name": "Ranking metric",
+      "detail": "Leaderboard ranking uses a risk-adjusted, luck-adjusted metric: correlation-adjusted edge versus market, normalised by exposure, with a selectivity penalty for unselective strategies. Raw hit rate is never the primary rank.",
+      "source": null
+    },
+    {
+      "id": "M5",
+      "name": "Line origination",
+      "detail": "Lines are model-implied probabilities produced by our own model from official inputs (stats, play-level data, schedule, injuries). They are labelled model-originated and are not sourced from any bookmaker feed. No bookmaker odds are scraped or presented as source data.",
+      "source": "S4"
+    },
+    {
+      "id": "M6",
+      "name": "Injury and roster signal model",
+      "detail": "Each team's offense and defense depth is tracked by position string (1st-string starter, 2nd/3rd/4th-string backups). When a backup is elevated to starter due to injury, the model records the position, the player, and the expected signal impact. The official weekly injury report (S2) supplies injury and game status; depth charts are confirmed against official team/league sources and third-party aggregators are used only as leads, never as verified values.",
+      "source": "S2"
+    },
+    {
+      "id": "M7",
+      "name": "Honesty rules",
+      "detail": "Every table row links to an official source. A value that cannot be confirmed from an official source is left blank and flagged as unverified. Values are never inferred or filled in. Model outputs are labelled as model-originated, not as sourced market data.",
+      "source": null
+    }
+  ]
+}

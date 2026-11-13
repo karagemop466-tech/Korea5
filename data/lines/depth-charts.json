@@ -1,6 +1,6 @@
 {
  "meta": {
-  "retrievedUTC": "2026-11-13T13:18:31.506690+00:00",
+  "retrievedUTC": "2026-11-13T13:21:22.919287+00:00",
   "sourceName": "Official club depth charts",
   "directoryUrl": "https://www.nfl.com/teams/"
  },
@@ -12,6 +12,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Arizona Cardinals depth chart",
    "verification": "unverified-not-fetched"
@@ -19,24 +20,859 @@
   {
    "team": "Atlanta Falcons",
    "abbr": "ATL",
-   "units": {},
+   "units": {
+    "Offense": {
+     "WR": {
+      "position": "WR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Drake London",
+        "playerPath": "/team/players-roster/drake-london/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Chris Blair",
+        "playerPath": "/team/players-roster/chris-blair/"
+       },
+       {
+        "tier": "1st",
+        "name": "Olamide Zaccheaus",
+        "playerPath": "/team/players-roster/olamide-zaccheaus/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Zachariah Branch",
+        "playerPath": "/team/players-roster/zachariah-branch/"
+       },
+       {
+        "tier": "1st",
+        "name": "Jahan Dotson",
+        "playerPath": "/team/players-roster/jahan-dotson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Beaux Collins",
+        "playerPath": "/team/players-roster/beaux-collins/"
+       }
+      ]
+     },
+     "LT": {
+      "position": "LT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jake Matthews",
+        "playerPath": "/team/players-roster/jake-matthews/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Cameron Williams",
+        "playerPath": "/team/players-roster/cameron-williams/"
+       }
+      ]
+     },
+     "LG": {
+      "position": "LG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Matthew Bergeron",
+        "playerPath": "/team/players-roster/matthew-bergeron/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Kyle Hinton",
+        "playerPath": "/team/players-roster/kyle-hinton/"
+       }
+      ]
+     },
+     "C": {
+      "position": "C",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Corey Levin",
+        "playerPath": "/team/players-roster/corey-levin/"
+       }
+      ]
+     },
+     "RG": {
+      "position": "RG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Chris Lindstrom",
+        "playerPath": "/team/players-roster/chris-lindstrom/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Andrew Vorhees",
+        "playerPath": "/team/players-roster/andrew-vorhees/"
+       }
+      ]
+     },
+     "RT": {
+      "position": "RT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jawaan Taylor",
+        "playerPath": "/team/players-roster/jawaan-taylor/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Ethan Onianwa",
+        "playerPath": "/team/players-roster/ethan-onianwa/"
+       }
+      ]
+     },
+     "TE": {
+      "position": "TE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Kyle Pitts Sr.",
+        "playerPath": "/team/players-roster/kyle-pitts-sr/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Austin Hooper",
+        "playerPath": "/team/players-roster/austin-hooper/"
+       },
+       {
+        "tier": "1st",
+        "name": "Charlie Woerner",
+        "playerPath": "/team/players-roster/charlie-woerner/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Nick Muse",
+        "playerPath": "/team/players-roster/nick-muse/"
+       }
+      ]
+     },
+     "RB": {
+      "position": "RB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Bijan Robinson",
+        "playerPath": "/team/players-roster/bijan-robinson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Khalil Herbert",
+        "playerPath": "/team/players-roster/khalil-herbert/"
+       }
+      ]
+     },
+     "QB": {
+      "position": "QB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Michael Penix Jr.",
+        "playerPath": "/team/players-roster/michael-penix-jr/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Tua Tagovailoa",
+        "playerPath": "/team/players-roster/tua-tagovailoa/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Andy Dalton",
+        "playerPath": "/team/players-roster/andy-dalton/"
+       },
+       {
+        "tier": "4th",
+        "name": "Jack Strand",
+        "playerPath": "/team/players-roster/jack-strand/"
+       }
+      ]
+     }
+    },
+    "Defense": {
+     "DE": {
+      "position": "DE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Cameron Thomas",
+        "playerPath": "/team/players-roster/cameron-thomas/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Za'Darius Smith",
+        "playerPath": "/team/players-roster/za-darius-smith/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Charles Snowden",
+        "playerPath": "/team/players-roster/charles-snowden/"
+       },
+       {
+        "tier": "1st",
+        "name": "Brandon Dorlus",
+        "playerPath": "/team/players-roster/brandon-dorlus/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Yasir Abdullah",
+        "playerPath": "/team/players-roster/yasir-abdullah/"
+       },
+       {
+        "tier": "3rd",
+        "name": "James Pearce Jr.",
+        "playerPath": "/team/players-roster/james-pearce-jr/"
+       }
+      ]
+     },
+     "DL": {
+      "position": "DL",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Maason Smith",
+        "playerPath": "/team/players-roster/maason-smith/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Gervon Dexter Sr.",
+        "playerPath": "/team/players-roster/gervon-dexter-sr/"
+       },
+       {
+        "tier": "1st",
+        "name": "LaCale London",
+        "playerPath": "/team/players-roster/lacale-london/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Zach Harrison",
+        "playerPath": "/team/players-roster/zach-harrison/"
+       }
+      ]
+     },
+     "ILB": {
+      "position": "ILB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Divine Deablo",
+        "playerPath": "/team/players-roster/divine-deablo-x0331/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Christian Harris",
+        "playerPath": "/team/players-roster/christian-harris/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Josh Woods",
+        "playerPath": "/team/players-roster/josh-woods/"
+       },
+       {
+        "tier": "1st",
+        "name": "Kendal Daniels",
+        "playerPath": "/team/players-roster/kendal-daniels/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Harold Perkins Jr.",
+        "playerPath": "/team/players-roster/harold-perkins-jr/"
+       }
+      ]
+     },
+     "CB": {
+      "position": "CB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "A.J. Terrell Jr.",
+        "playerPath": "/team/players-roster/a-j-terrell/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Robert Longerbeam",
+        "playerPath": "/team/players-roster/robert-longerbeam/"
+       },
+       {
+        "tier": "1st",
+        "name": "C.J. Henderson",
+        "playerPath": "/team/players-roster/c-j-henderson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Mike Hughes",
+        "playerPath": "/team/players-roster/mike-hughes/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Mike Ford Jr",
+        "playerPath": "/team/players-roster/mike-ford/"
+       }
+      ]
+     },
+     "S": {
+      "position": "S",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "DeMarcco Hellams",
+        "playerPath": "/team/players-roster/demarcco-hellams/"
+       },
+       {
+        "tier": "1st",
+        "name": "Xavier Watts",
+        "playerPath": "/team/players-roster/xavier-watts/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Sydney Brown",
+        "playerPath": "/team/players-roster/sydney-brown/"
+       }
+      ]
+     },
+     "NB": {
+      "position": "NB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Avieon Terrell",
+        "playerPath": "/team/players-roster/avieon-terrell/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Billy Bowman Jr.",
+        "playerPath": "/team/players-roster/billy-bowman-jr/"
+       }
+      ]
+     }
+    },
+    "Special Teams": {
+     "K": {
+      "position": "K",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jake Moody",
+        "playerPath": "/team/players-roster/jake-moody/"
+       }
+      ]
+     },
+     "P": {
+      "position": "P",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jake Bailey",
+        "playerPath": "/team/players-roster/jake-bailey/"
+       }
+      ]
+     },
+     "LS": {
+      "position": "LS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Liam McCullough",
+        "playerPath": "/team/players-roster/liam-mccullough/"
+       }
+      ]
+     },
+     "PR": {
+      "position": "PR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Zachariah Branch",
+        "playerPath": "/team/players-roster/zachariah-branch/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Olamide Zaccheaus",
+        "playerPath": "/team/players-roster/olamide-zaccheaus/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Jahan Dotson",
+        "playerPath": "/team/players-roster/jahan-dotson/"
+       }
+      ]
+     },
+     "KR": {
+      "position": "KR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Olamide Zaccheaus",
+        "playerPath": "/team/players-roster/olamide-zaccheaus/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Zachariah Branch",
+        "playerPath": "/team/players-roster/zachariah-branch/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Khalil Herbert",
+        "playerPath": "/team/players-roster/khalil-herbert/"
+       }
+      ]
+     }
+    }
+   },
    "asOf": null,
-   "chartLabel": null,
-   "tierLabelsInSource": false,
-   "sourceUrl": null,
+   "chartLabel": "official",
+   "tierLabelsInSource": true,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.atlantafalcons.com/team/depth-chart/",
    "sourceName": "Official Atlanta Falcons depth chart",
-   "verification": "unverified-not-fetched"
+   "verification": "verified"
   },
   {
    "team": "Baltimore Ravens",
    "abbr": "BAL",
-   "units": {},
+   "units": {
+    "Offense": {
+     "WR": {
+      "position": "WR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Zay Flowers",
+        "playerPath": "/team/players-roster/zay-flowers/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Devontez Walker",
+        "playerPath": "/team/players-roster/devontez-walker/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Elijah Sarratt",
+        "playerPath": "/team/players-roster/elijah-sarratt/"
+       },
+       {
+        "tier": "1st",
+        "name": "Rashod Bateman",
+        "playerPath": "/team/players-roster/rashod-bateman/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Ja'Kobi Lane",
+        "playerPath": "/team/players-roster/ja-kobi-lane/"
+       },
+       {
+        "tier": "3rd",
+        "name": "LaJohntay Wester",
+        "playerPath": "/team/players-roster/lajohntay-wester/"
+       }
+      ]
+     },
+     "LT": {
+      "position": "LT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Ronnie Stanley",
+        "playerPath": "/team/players-roster/ronnie-stanley/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Carson Vinson",
+        "playerPath": "/team/players-roster/carson-vinson/"
+       }
+      ]
+     },
+     "LG": {
+      "position": "LG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "John Simpson",
+        "playerPath": "/team/players-roster/john-simpson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Ryan Neuzil",
+        "playerPath": "/team/players-roster/ryan-neuzil/"
+       }
+      ]
+     },
+     "C": {
+      "position": "C",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Cam Jurgens",
+        "playerPath": "/team/players-roster/cam-jurgens/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Ryan Neuzil",
+        "playerPath": "/team/players-roster/ryan-neuzil/"
+       }
+      ]
+     },
+     "RG": {
+      "position": "RG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Vega Ioane",
+        "playerPath": "/team/players-roster/olaivavega-ioane/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Emery Jones Jr.",
+        "playerPath": "/team/players-roster/emery-jones-jr/"
+       }
+      ]
+     },
+     "RT": {
+      "position": "RT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Roger Rosengarten",
+        "playerPath": "/team/players-roster/roger-rosengarten/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Carson Vinson",
+        "playerPath": "/team/players-roster/carson-vinson/"
+       }
+      ]
+     },
+     "TE": {
+      "position": "TE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Mark Andrews",
+        "playerPath": "/team/players-roster/mark-andrews/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Josh Cuevas",
+        "playerPath": "/team/players-roster/josh-cuevas/"
+       },
+       {
+        "tier": "1st",
+        "name": "Matt Hibner",
+        "playerPath": "/team/players-roster/matt-hibner/"
+       }
+      ]
+     },
+     "QB": {
+      "position": "QB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jacoby Brissett",
+        "playerPath": "/team/players-roster/jacoby-brissett/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Joe Fagnano",
+        "playerPath": "/team/players-roster/joe-fagnano/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Kedon Slovis",
+        "playerPath": "/team/players-roster/kedon-slovis/"
+       }
+      ]
+     },
+     "RB": {
+      "position": "RB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Derrick Henry",
+        "playerPath": "/team/players-roster/derrick-henry-x7588/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Justice Hill",
+        "playerPath": "/team/players-roster/justice-hill/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Rasheen Ali",
+        "playerPath": "/team/players-roster/rasheen-ali/"
+       }
+      ]
+     }
+    },
+    "Defense": {
+     "DT": {
+      "position": "DT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Nnamdi Madubuike",
+        "playerPath": "/team/players-roster/justin-madubuike/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Broderick Washington Jr.",
+        "playerPath": "/team/players-roster/broderick-washington/"
+       }
+      ]
+     },
+     "NT": {
+      "position": "NT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Travis Jones",
+        "playerPath": "/team/players-roster/travis-jones/"
+       },
+       {
+        "tier": "2nd",
+        "name": "John Jenkins",
+        "playerPath": "/team/players-roster/john-jenkins/"
+       }
+      ]
+     },
+     "DE": {
+      "position": "DE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Calais Campbell",
+        "playerPath": "/team/players-roster/calais-campbell/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Aeneas Peebles",
+        "playerPath": "/team/players-roster/aeneas-peebles/"
+       }
+      ]
+     },
+     "RUSH": {
+      "position": "RUSH",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Trey Hendrickson",
+        "playerPath": "/team/players-roster/trey-hendrickson-x3131/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Mike Green",
+        "playerPath": "/team/players-roster/mike-green/"
+       }
+      ]
+     },
+     "MLB": {
+      "position": "MLB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Roquan Smith",
+        "playerPath": "/team/players-roster/roquan-smith/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jay Higgins IV",
+        "playerPath": "/team/players-roster/jay-higgins/"
+       }
+      ]
+     },
+     "WLB": {
+      "position": "WLB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Trenton Simpson",
+        "playerPath": "/team/players-roster/trenton-simpson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Teddye Buchanan",
+        "playerPath": "/team/players-roster/teddye-buchanan/"
+       }
+      ]
+     },
+     "SAM": {
+      "position": "SAM",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Mike Green",
+        "playerPath": "/team/players-roster/mike-green/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Zion Young",
+        "playerPath": "/team/players-roster/zion-young/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Ethan Burke",
+        "playerPath": "/team/players-roster/ethan-burke/"
+       }
+      ]
+     },
+     "CB": {
+      "position": "CB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Marlon Humphrey",
+        "playerPath": "/team/players-roster/marlon-humphrey/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Chidobe Awuzie",
+        "playerPath": "/team/players-roster/chidobe-awuzie/"
+       },
+       {
+        "tier": "1st",
+        "name": "Nate Wiggins",
+        "playerPath": "/team/players-roster/nate-wiggins/"
+       },
+       {
+        "tier": "2nd",
+        "name": "T.J. Tampa Jr.",
+        "playerPath": "/team/players-roster/t-j-tampa/"
+       }
+      ]
+     },
+     "DB": {
+      "position": "DB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Kyle Hamilton",
+        "playerPath": "/team/players-roster/kyle-hamilton/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Keyon Martin",
+        "playerPath": "/team/players-roster/keyon-martin/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Chandler Rivers",
+        "playerPath": "/team/players-roster/chandler-rivers/"
+       }
+      ]
+     },
+     "SS": {
+      "position": "SS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jaylinn Hawkins",
+        "playerPath": "/team/players-roster/jaylinn-hawkins/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Keondre Jackson",
+        "playerPath": "/team/players-roster/keondre-jackson/"
+       }
+      ]
+     },
+     "FS": {
+      "position": "FS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Malaki Starks",
+        "playerPath": "/team/players-roster/malaki-starks/"
+       },
+       {
+        "tier": "2nd",
+        "name": "K'Von Wallace",
+        "playerPath": "/team/players-roster/k-von-wallace/"
+       }
+      ]
+     }
+    },
+    "Special Teams": {
+     "P": {
+      "position": "P",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Ryan Eckley",
+        "playerPath": "/team/players-roster/ryan-eckley/"
+       }
+      ]
+     },
+     "K": {
+      "position": "K",
+      "players": []
+     },
+     "H": {
+      "position": "H",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Ryan Eckley",
+        "playerPath": "/team/players-roster/ryan-eckley/"
+       }
+      ]
+     },
+     "LS": {
+      "position": "LS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Nick Moore",
+        "playerPath": "/team/players-roster/nick-moore/"
+       }
+      ]
+     },
+     "KOR": {
+      "position": "KOR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "LaJohntay Wester",
+        "playerPath": "/team/players-roster/lajohntay-wester/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Rasheen Ali",
+        "playerPath": "/team/players-roster/rasheen-ali/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Justice Hill",
+        "playerPath": "/team/players-roster/justice-hill/"
+       }
+      ]
+     },
+     "PR": {
+      "position": "PR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "LaJohntay Wester",
+        "playerPath": "/team/players-roster/lajohntay-wester/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Elijah Sarratt",
+        "playerPath": "/team/players-roster/elijah-sarratt/"
+       }
+      ]
+     }
+    }
+   },
    "asOf": null,
-   "chartLabel": null,
-   "tierLabelsInSource": false,
-   "sourceUrl": null,
+   "chartLabel": "official",
+   "tierLabelsInSource": true,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.baltimoreravens.com/team/depth-chart/",
    "sourceName": "Official Baltimore Ravens depth chart",
-   "verification": "unverified-not-fetched"
+   "verification": "verified"
   },
   {
    "team": "Buffalo Bills",
@@ -45,6 +881,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Buffalo Bills depth chart",
    "verification": "unverified-not-fetched"
@@ -52,13 +889,406 @@
   {
    "team": "Carolina Panthers",
    "abbr": "CAR",
-   "units": {},
+   "units": {
+    "Offense": {
+     "WR": {
+      "position": "WR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Tetairoa McMillan",
+        "playerPath": "/team/players-roster/tetairoa-mcmillan/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Brycen Tremayne",
+        "playerPath": "/team/players-roster/brycen-tremayne/"
+       },
+       {
+        "tier": "1st",
+        "name": "Jalen Coker",
+        "playerPath": "/team/players-roster/jalen-coker/"
+       },
+       {
+        "tier": "1st",
+        "name": "John Metchie III",
+        "playerPath": "/team/players-roster/john-metchie-iii/"
+       }
+      ]
+     },
+     "LT": {
+      "position": "LT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Rasheed Walker",
+        "playerPath": "/team/players-roster/rasheed-walker/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Stone Forsythe",
+        "playerPath": "/team/players-roster/stone-forsythe/"
+       }
+      ]
+     },
+     "LG": {
+      "position": "LG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Damien Lewis",
+        "playerPath": "/team/players-roster/damien-lewis/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Corey Bullock",
+        "playerPath": "/team/players-roster/corey-bullock/"
+       }
+      ]
+     },
+     "C": {
+      "position": "C",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Luke Fortner",
+        "playerPath": "/team/players-roster/luke-fortner/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Sam Hecht",
+        "playerPath": "/team/players-roster/sam-hecht/"
+       }
+      ]
+     },
+     "RG": {
+      "position": "RG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Robert Hunt",
+        "playerPath": "/team/players-roster/robert-hunt/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Torricelli Simpkins III",
+        "playerPath": "/team/players-roster/torricelli-simpkins-iii/"
+       }
+      ]
+     },
+     "RT": {
+      "position": "RT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Monroe Freeling",
+        "playerPath": "/team/players-roster/monroe-freeling/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Stone Forsythe",
+        "playerPath": "/team/players-roster/stone-forsythe/"
+       }
+      ]
+     },
+     "TE": {
+      "position": "TE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Tommy Tremble",
+        "playerPath": "/team/players-roster/tommy-tremble/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Mitchell Evans",
+        "playerPath": "/team/players-roster/mitchell-evans/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Darren Waller",
+        "playerPath": "/team/players-roster/darren-waller/"
+       },
+       {
+        "tier": "4th",
+        "name": "Ja'Tavion Sanders",
+        "playerPath": "/team/players-roster/ja-tavion-sanders/"
+       },
+       {
+        "tier": "5th",
+        "name": "Feleipe Franks",
+        "playerPath": "/team/players-roster/feleipe-franks/"
+       }
+      ]
+     },
+     "QB": {
+      "position": "QB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Bryce Young",
+        "playerPath": "/team/players-roster/bryce-young/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Kenny Pickett",
+        "playerPath": "/team/players-roster/kenny-pickett/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Haynes King",
+        "playerPath": "/team/players-roster/haynes-king/"
+       }
+      ]
+     },
+     "RB": {
+      "position": "RB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Chuba Hubbard",
+        "playerPath": "/team/players-roster/chuba-hubbard/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Trevor Etienne",
+        "playerPath": "/team/players-roster/trevor-etienne/"
+       },
+       {
+        "tier": "3rd",
+        "name": "AJ Dillon",
+        "playerPath": "/team/players-roster/aj-dillon/"
+       },
+       {
+        "tier": "4th",
+        "name": "Anthony Tyus III",
+        "playerPath": "/team/players-roster/anthony-tyus-iii/"
+       }
+      ]
+     }
+    },
+    "Defense": {
+     "DL": {
+      "position": "DL",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Bobby Brown III",
+        "playerPath": "/team/players-roster/bobby-brown-iii/"
+       },
+       {
+        "tier": "2nd",
+        "name": "TeRah Edwards",
+        "playerPath": "/team/players-roster/terah-edwards/"
+       },
+       {
+        "tier": "1st",
+        "name": "Tershawn Wharton",
+        "playerPath": "/team/players-roster/tershawn-wharton/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Lee Hunter",
+        "playerPath": "/team/players-roster/lee-hunter/"
+       },
+       {
+        "tier": "1st",
+        "name": "Derrick Brown",
+        "playerPath": "/team/players-roster/derrick-brown/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Aaron Hall",
+        "playerPath": "/team/players-roster/aaron-hall/"
+       }
+      ]
+     },
+     "OLB": {
+      "position": "OLB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Patrick Jones II",
+        "playerPath": "/team/players-roster/patrick-jones-ii/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Trevis Gipson",
+        "playerPath": "/team/players-roster/trevis-gipson/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Nick Hampton",
+        "playerPath": "/team/players-roster/nick-hampton/"
+       },
+       {
+        "tier": "1st",
+        "name": "Jaelan Phillips",
+        "playerPath": "/team/players-roster/jaelan-phillips/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Princely Umanmielen",
+        "playerPath": "/team/players-roster/princely-umanmielen/"
+       }
+      ]
+     },
+     "LB": {
+      "position": "LB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Devin Lloyd",
+        "playerPath": "/team/players-roster/devin-lloyd/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jackson Kuwatch",
+        "playerPath": "/team/players-roster/jackson-kuwatch/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Bam Martin-Scott",
+        "playerPath": "/team/players-roster/bam-martin-scott/"
+       },
+       {
+        "tier": "1st",
+        "name": "Bobby Okereke",
+        "playerPath": "/team/players-roster/bobby-okereke/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Tyrel Dodson",
+        "playerPath": "/team/players-roster/tyrel-dodson/"
+       }
+      ]
+     },
+     "CB": {
+      "position": "CB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Chau Smith-Wade",
+        "playerPath": "/team/players-roster/chau-smith-wade/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Malcolm DeWalt IV",
+        "playerPath": "/team/players-roster/malcolm-dewalt-iv/"
+       },
+       {
+        "tier": "1st",
+        "name": "Will Lee III",
+        "playerPath": "/team/players-roster/will-lee-iii/"
+       }
+      ]
+     },
+     "S": {
+      "position": "S",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Tre'von Moehrig",
+        "playerPath": "/team/players-roster/tre-von-moehrig/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Zakee Wheatley",
+        "playerPath": "/team/players-roster/zakee-wheatley/"
+       },
+       {
+        "tier": "1st",
+        "name": "Nick Scott",
+        "playerPath": "/team/players-roster/nick-scott/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Lathan Ransom",
+        "playerPath": "/team/players-roster/lathan-ransom/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Isaiah Simmons",
+        "playerPath": "/team/players-roster/isaiah-simmons/"
+       }
+      ]
+     }
+    },
+    "Special Teams": {
+     "KR": {
+      "position": "KR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Anthony Tyus III",
+        "playerPath": "/team/players-roster/anthony-tyus-iii/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Trevor Etienne",
+        "playerPath": "/team/players-roster/trevor-etienne/"
+       }
+      ]
+     },
+     "PR": {
+      "position": "PR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Trevor Etienne",
+        "playerPath": "/team/players-roster/trevor-etienne/"
+       }
+      ]
+     },
+     "LS": {
+      "position": "LS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "JJ Jansen",
+        "playerPath": "/team/players-roster/j-j-jansen/"
+       }
+      ]
+     },
+     "P": {
+      "position": "P",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Sam Martin",
+        "playerPath": "/team/players-roster/sam-martin/"
+       }
+      ]
+     },
+     "K": {
+      "position": "K",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Ryan Fitzgerald",
+        "playerPath": "/team/players-roster/ryan-fitzgerald/"
+       }
+      ]
+     },
+     "H": {
+      "position": "H",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Sam Martin",
+        "playerPath": "/team/players-roster/sam-martin/"
+       }
+      ]
+     }
+    }
+   },
    "asOf": null,
-   "chartLabel": null,
-   "tierLabelsInSource": false,
-   "sourceUrl": null,
+   "chartLabel": "unofficial",
+   "tierLabelsInSource": true,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.panthers.com/team/depth-chart/",
    "sourceName": "Official Carolina Panthers depth chart",
-   "verification": "unverified-not-fetched"
+   "verification": "verified"
   },
   {
    "team": "Chicago Bears",
@@ -67,6 +1297,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Chicago Bears depth chart",
    "verification": "unverified-not-fetched"
@@ -78,6 +1309,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Cincinnati Bengals depth chart",
    "verification": "unverified-not-fetched"
@@ -85,13 +1317,436 @@
   {
    "team": "Cleveland Browns",
    "abbr": "CLE",
-   "units": {},
+   "units": {
+    "Offense": {
+     "WR": {
+      "position": "WR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jerry Jeudy",
+        "playerPath": "/team/players-roster/jerry-jeudy/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Tylan Wallace",
+        "playerPath": "/team/players-roster/tylan-wallace/"
+       },
+       {
+        "tier": "1st",
+        "name": "Denzel Boston",
+        "playerPath": "/team/players-roster/denzel-boston/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Malachi Corley",
+        "playerPath": "/team/players-roster/malachi-corley/"
+       },
+       {
+        "tier": "1st",
+        "name": "KC Concepcion Jr.",
+        "playerPath": "/team/players-roster/kc-concepcion/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Isaiah Bond",
+        "playerPath": "/team/players-roster/isaiah-bond/"
+       }
+      ]
+     },
+     "LT": {
+      "position": "LT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Spencer Fano",
+        "playerPath": "/team/players-roster/spencer-fano/"
+       }
+      ]
+     },
+     "LG": {
+      "position": "LG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Zion Johnson",
+        "playerPath": "/team/players-roster/zion-johnson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Zak Zinter",
+        "playerPath": "/team/players-roster/zak-zinter/"
+       }
+      ]
+     },
+     "C": {
+      "position": "C",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Elgton Jenkins",
+        "playerPath": "/team/players-roster/elgton-jenkins/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Luke Wypler",
+        "playerPath": "/team/players-roster/luke-wypler/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Parker Brailsford",
+        "playerPath": "/team/players-roster/parker-brailsford/"
+       }
+      ]
+     },
+     "RG": {
+      "position": "RG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Austin Barber",
+        "playerPath": "/team/players-roster/austin-barber/"
+       }
+      ]
+     },
+     "RT": {
+      "position": "RT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Tytus Howard",
+        "playerPath": "/team/players-roster/tytus-howard/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Dawand Jones",
+        "playerPath": "/team/players-roster/dawand-jones/"
+       }
+      ]
+     },
+     "QB": {
+      "position": "QB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Deshaun Watson",
+        "playerPath": "/team/players-roster/deshaun-watson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Shedeur Sanders",
+        "playerPath": "/team/players-roster/shedeur-sanders/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Dillon Gabriel",
+        "playerPath": "/team/players-roster/dillon-gabriel/"
+       },
+       {
+        "tier": "4th",
+        "name": "Taylen Green",
+        "playerPath": "/team/players-roster/taylen-green/"
+       }
+      ]
+     },
+     "RB": {
+      "position": "RB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Quinshon Judkins",
+        "playerPath": "/team/players-roster/quinshon-judkins/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Dylan Sampson",
+        "playerPath": "/team/players-roster/dylan-sampson/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Michael Burton",
+        "playerPath": "/team/players-roster/michael-burton/"
+       },
+       {
+        "tier": "4th",
+        "name": "Jaleel McLaughlin",
+        "playerPath": "/team/players-roster/jaleel-mclaughlin/"
+       }
+      ]
+     },
+     "TE": {
+      "position": "TE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Harold Fannin Jr.",
+        "playerPath": "/team/players-roster/harold-fannin-jr/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Blake Whiteheart",
+        "playerPath": "/team/players-roster/blake-whiteheart/"
+       }
+      ]
+     }
+    },
+    "Defense": {
+     "LDE": {
+      "position": "LDE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jared Verse",
+        "playerPath": "/team/players-roster/jared-verse/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Sam Williams",
+        "playerPath": "/team/players-roster/sam-williams/"
+       }
+      ]
+     },
+     "LDT": {
+      "position": "LDT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Maliek Collins",
+        "playerPath": "/team/players-roster/maliek-collins/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Mike Hall Jr.",
+        "playerPath": "/team/players-roster/michael-hall-jr/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Sam Kamara",
+        "playerPath": "/team/players-roster/sam-kamara/"
+       }
+      ]
+     },
+     "RDT": {
+      "position": "RDT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Mason Graham",
+        "playerPath": "/team/players-roster/mason-graham/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Adin Huntington",
+        "playerPath": "/team/players-roster/adin-huntington/"
+       }
+      ]
+     },
+     "RDE": {
+      "position": "RDE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Isaiah McGuire",
+        "playerPath": "/team/players-roster/isaiah-mcguire/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Derek Barnett",
+        "playerPath": "/team/players-roster/derek-barnett/"
+       }
+      ]
+     },
+     "WILL": {
+      "position": "WILL",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Carson Schwesinger",
+        "playerPath": "/team/players-roster/carson-schwesinger/"
+       }
+      ]
+     },
+     "MIKE": {
+      "position": "MIKE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Quincy Williams",
+        "playerPath": "/team/players-roster/quincy-williams/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Justin Jefferson",
+        "playerPath": "/team/players-roster/justin-jefferson/"
+       }
+      ]
+     },
+     "SAM": {
+      "position": "SAM",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Easton Mascarenas-Arnold",
+        "playerPath": "/team/players-roster/easton-mascarenas-arnold/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Winston Reid",
+        "playerPath": "/team/players-roster/winston-reid/"
+       }
+      ]
+     },
+     "CB": {
+      "position": "CB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Tyson Campbell",
+        "playerPath": "/team/players-roster/tyson-campbell/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Myles Harden",
+        "playerPath": "/team/players-roster/myles-harden/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Noah Igbinoghene",
+        "playerPath": "/team/players-roster/noah-igbinoghene/"
+       },
+       {
+        "tier": "1st",
+        "name": "Denzel Ward",
+        "playerPath": "/team/players-roster/denzel-ward/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Mekhi Blackmon",
+        "playerPath": "/team/players-roster/mekhi-blackmon/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Toriano Pride Jr.",
+        "playerPath": "/team/players-roster/toriano-pride-jr/"
+       }
+      ]
+     },
+     "SS": {
+      "position": "SS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Grant Delpit",
+        "playerPath": "/team/players-roster/grant-delpit/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Emmanuel McNeil-Warren",
+        "playerPath": "/team/players-roster/emmanuel-mcneil-warren/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Daniel Thomas",
+        "playerPath": "/team/players-roster/daniel-thomas/"
+       }
+      ]
+     },
+     "FS": {
+      "position": "FS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Ronnie Hickman",
+        "playerPath": "/team/players-roster/ronnie-hickman-jr/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Donovan McMillon",
+        "playerPath": "/team/players-roster/donovan-mcmillon/"
+       }
+      ]
+     }
+    },
+    "Special Teams": {
+     "P": {
+      "position": "P",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Corey Bojorquez",
+        "playerPath": "/team/players-roster/corey-bojorquez/"
+       }
+      ]
+     },
+     "K": {
+      "position": "K",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Andre Szmyt",
+        "playerPath": "/team/players-roster/andre-szmyt/"
+       }
+      ]
+     },
+     "H": {
+      "position": "H",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Corey Bojorquez",
+        "playerPath": "/team/players-roster/corey-bojorquez/"
+       }
+      ]
+     },
+     "KR": {
+      "position": "KR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Malachi Corley",
+        "playerPath": "/team/players-roster/malachi-corley/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Dylan Sampson",
+        "playerPath": "/team/players-roster/dylan-sampson/"
+       }
+      ]
+     },
+     "PR": {
+      "position": "PR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "KC Concepcion Jr.",
+        "playerPath": "/team/players-roster/kc-concepcion/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Denzel Boston",
+        "playerPath": "/team/players-roster/denzel-boston/"
+       }
+      ]
+     },
+     "LS": {
+      "position": "LS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Rex Sunahara",
+        "playerPath": "/team/players-roster/rex-sunahara/"
+       }
+      ]
+     }
+    }
+   },
    "asOf": null,
-   "chartLabel": null,
-   "tierLabelsInSource": false,
-   "sourceUrl": null,
+   "chartLabel": "official",
+   "tierLabelsInSource": true,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.clevelandbrowns.com/team/depth-chart/",
    "sourceName": "Official Cleveland Browns depth chart",
-   "verification": "unverified-not-fetched"
+   "verification": "verified"
   },
   {
    "team": "Dallas Cowboys",
@@ -100,6 +1755,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Dallas Cowboys depth chart",
    "verification": "unverified-not-fetched"
@@ -111,6 +1767,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Denver Broncos depth chart",
    "verification": "unverified-not-fetched"
@@ -514,6 +2171,7 @@
    "asOf": null,
    "chartLabel": "unofficial",
    "tierLabelsInSource": false,
+   "tablesOnPage": 3,
    "sourceUrl": "https://www.detroitlions.com/team/depth-chart/",
    "sourceName": "Official Detroit Lions depth chart",
    "verification": "verified"
@@ -522,7 +2180,7 @@
    "team": "Green Bay Packers",
    "abbr": "GB",
    "units": {
-    "Depth Chart": {
+    "Offense": {
      "WR": {
       "position": "WR",
       "players": [
@@ -702,7 +2360,9 @@
         "playerPath": null
        }
       ]
-     },
+     }
+    },
+    "Defense": {
      "DT": {
       "position": "DT",
       "players": [
@@ -852,7 +2512,9 @@
         "playerPath": null
        }
       ]
-     },
+     }
+    },
+    "Special Teams": {
      "K": {
       "position": "K",
       "players": [
@@ -928,6 +2590,7 @@
    "asOf": null,
    "chartLabel": "unofficial",
    "tierLabelsInSource": false,
+   "tablesOnPage": 3,
    "sourceUrl": "https://www.packers.com/team/depth-chart/",
    "sourceName": "Official Green Bay Packers depth chart",
    "verification": "verified"
@@ -939,6 +2602,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Houston Texans depth chart",
    "verification": "unverified-not-fetched"
@@ -950,6 +2614,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Indianapolis Colts depth chart",
    "verification": "unverified-not-fetched"
@@ -961,6 +2626,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Jacksonville Jaguars depth chart",
    "verification": "unverified-not-fetched"
@@ -972,6 +2638,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Kansas City Chiefs depth chart",
    "verification": "unverified-not-fetched"
@@ -983,6 +2650,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Las Vegas Raiders depth chart",
    "verification": "unverified-not-fetched"
@@ -990,13 +2658,441 @@
   {
    "team": "Los Angeles Chargers",
    "abbr": "LAC",
-   "units": {},
+   "units": {
+    "Offense": {
+     "WR": {
+      "position": "WR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Ladd McConkey",
+        "playerPath": "/team/players-roster/ladd-mcconkey/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Tre' Harris",
+        "playerPath": "/team/players-roster/tre-harris/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Derius Davis",
+        "playerPath": "/team/players-roster/derius-davis/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Theo Wease Jr.",
+        "playerPath": "/team/players-roster/theo-wease-jr/"
+       },
+       {
+        "tier": "1st",
+        "name": "Quentin Johnston",
+        "playerPath": "/team/players-roster/quentin-johnston/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Brenen Thompson",
+        "playerPath": "/team/players-roster/brenen-thompson/"
+       }
+      ]
+     },
+     "LT": {
+      "position": "LT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Travis Burke",
+        "playerPath": "/team/players-roster/travis-burke/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Branson Taylor",
+        "playerPath": "/team/players-roster/branson-taylor/"
+       }
+      ]
+     },
+     "LG": {
+      "position": "LG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Kayode Awosika",
+        "playerPath": "/team/players-roster/kayode-awosika/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Logan Taylor",
+        "playerPath": "/team/players-roster/logan-taylor/"
+       }
+      ]
+     },
+     "C": {
+      "position": "C",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jake Slaughter",
+        "playerPath": "/team/players-roster/jake-slaughter/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jacob Spomer",
+        "playerPath": "/team/players-roster/jacob-spomer/"
+       }
+      ]
+     },
+     "RG": {
+      "position": "RG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Cole Strange",
+        "playerPath": "/team/players-roster/cole-strange/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Logan Taylor",
+        "playerPath": "/team/players-roster/logan-taylor/"
+       }
+      ]
+     },
+     "RT": {
+      "position": "RT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Joe Alt",
+        "playerPath": "/team/players-roster/joe-alt/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Alex Harkey",
+        "playerPath": "/team/players-roster/alex-harkey/"
+       }
+      ]
+     },
+     "TE": {
+      "position": "TE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Charlie Kolar",
+        "playerPath": "/team/players-roster/charlie-kolar/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Oronde Gadsden",
+        "playerPath": "/team/players-roster/oronde-gadsden-ii/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Hayden Rucci",
+        "playerPath": "/team/players-roster/hayden-rucci/"
+       }
+      ]
+     },
+     "QB": {
+      "position": "QB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Justin Herbert",
+        "playerPath": "/team/players-roster/justin-herbert/"
+       },
+       {
+        "tier": "2nd",
+        "name": "DJ Uiagalelei",
+        "playerPath": "/team/players-roster/dj-uiagalelei/"
+       }
+      ]
+     },
+     "FB": {
+      "position": "FB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Alec Ingold",
+        "playerPath": "/team/players-roster/alec-ingold/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Scott Matlock",
+        "playerPath": "/team/players-roster/scott-matlock/"
+       }
+      ]
+     },
+     "RB": {
+      "position": "RB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Omarion Hampton",
+        "playerPath": "/team/players-roster/omarion-hampton-x9967/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Keaton Mitchell",
+        "playerPath": "/team/players-roster/keaton-mitchell/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Kimani Vidal",
+        "playerPath": "/team/players-roster/kimani-vidal/"
+       }
+      ]
+     }
+    },
+    "Defense": {
+     "EDGE": {
+      "position": "EDGE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Khalil Mack",
+        "playerPath": "/team/players-roster/khalil-mack/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Akheem Mesidor",
+        "playerPath": "/team/players-roster/akheem-mesidor/"
+       },
+       {
+        "tier": "1st",
+        "name": "Tuli Tuipulotu",
+        "playerPath": "/team/players-roster/tuli-tuipulotu/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Bud Dupree",
+        "playerPath": "/team/players-roster/bud-dupree/"
+       }
+      ]
+     },
+     "DL": {
+      "position": "DL",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jamaree Caldwell",
+        "playerPath": "/team/players-roster/jamaree-caldwell/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Nick Barrett",
+        "playerPath": "/team/players-roster/nick-barrett/"
+       },
+       {
+        "tier": "1st",
+        "name": "Dalvin Tomlinson",
+        "playerPath": "/team/players-roster/dalvin-tomlinson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Justin Eboigbe",
+        "playerPath": "/team/players-roster/justin-eboigbe/"
+       },
+       {
+        "tier": "1st",
+        "name": "Teair Tart",
+        "playerPath": "/team/players-roster/teair-tart/"
+       }
+      ]
+     },
+     "LB": {
+      "position": "LB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Daiyan Henley",
+        "playerPath": "/team/players-roster/daiyan-henley/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Troy Dye",
+        "playerPath": "/team/players-roster/troy-dye/"
+       },
+       {
+        "tier": "1st",
+        "name": "Del'Shawn Phillips",
+        "playerPath": "/team/players-roster/del-shawn-phillips/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Marlowe Wax",
+        "playerPath": "/team/players-roster/marlowe-wax/"
+       }
+      ]
+     },
+     "CB": {
+      "position": "CB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Tarheeb Still",
+        "playerPath": "/team/players-roster/tarheeb-still/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Cam Hart",
+        "playerPath": "/team/players-roster/cam-hart/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Deane Leonard",
+        "playerPath": "/team/players-roster/deane-leonard/"
+       },
+       {
+        "tier": "1st",
+        "name": "Donte Jackson",
+        "playerPath": "/team/players-roster/donte-jackson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Cam Hart",
+        "playerPath": "/team/players-roster/cam-hart/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Rodney Shelley",
+        "playerPath": "/team/players-roster/rodney-shelley/"
+       }
+      ]
+     },
+     "S": {
+      "position": "S",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Derwin James Jr.",
+        "playerPath": "/team/players-roster/derwin-james/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Tony Jefferson",
+        "playerPath": "/team/players-roster/tony-jefferson/"
+       },
+       {
+        "tier": "3rd",
+        "name": "RJ Mickens",
+        "playerPath": "/team/players-roster/rj-mickens/"
+       },
+       {
+        "tier": "1st",
+        "name": "Elijah Molden",
+        "playerPath": "/team/players-roster/elijah-molden/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Genesis Smith",
+        "playerPath": "/team/players-roster/genesis-smith/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Kendall Williamson",
+        "playerPath": "/team/players-roster/kendall-williamson/"
+       }
+      ]
+     }
+    },
+    "Special Teams": {
+     "K": {
+      "position": "K",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Cameron Dicker",
+        "playerPath": "/team/players-roster/cameron-dicker/"
+       }
+      ]
+     },
+     "P": {
+      "position": "P",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "JK Scott",
+        "playerPath": "/team/players-roster/jk-scott/"
+       }
+      ]
+     },
+     "KO": {
+      "position": "KO",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Cameron Dicker",
+        "playerPath": "/team/players-roster/cameron-dicker/"
+       }
+      ]
+     },
+     "H": {
+      "position": "H",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "JK Scott",
+        "playerPath": "/team/players-roster/jk-scott/"
+       }
+      ]
+     },
+     "LS": {
+      "position": "LS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Josh Harris",
+        "playerPath": "/team/players-roster/josh-harris/"
+       }
+      ]
+     },
+     "KR": {
+      "position": "KR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Derius Davis",
+        "playerPath": "/team/players-roster/derius-davis/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Keaton Mitchell",
+        "playerPath": "/team/players-roster/keaton-mitchell/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Kimani Vidal",
+        "playerPath": "/team/players-roster/kimani-vidal/"
+       }
+      ]
+     },
+     "PR": {
+      "position": "PR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Derius Davis",
+        "playerPath": "/team/players-roster/derius-davis/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Brenen Thompson",
+        "playerPath": "/team/players-roster/brenen-thompson/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Ladd McConkey",
+        "playerPath": "/team/players-roster/ladd-mcconkey/"
+       }
+      ]
+     }
+    }
+   },
    "asOf": null,
-   "chartLabel": null,
-   "tierLabelsInSource": false,
-   "sourceUrl": null,
+   "chartLabel": "official",
+   "tierLabelsInSource": true,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.chargers.com/team/depth-chart/",
    "sourceName": "Official Los Angeles Chargers depth chart",
-   "verification": "unverified-not-fetched"
+   "verification": "verified"
   },
   {
    "team": "Los Angeles Rams",
@@ -1005,6 +3101,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Los Angeles Rams depth chart",
    "verification": "unverified-not-fetched"
@@ -1012,24 +3109,829 @@
   {
    "team": "Miami Dolphins",
    "abbr": "MIA",
-   "units": {},
+   "units": {
+    "Offense": {
+     "WR": {
+      "position": "WR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Caleb Douglas",
+        "playerPath": "/team/players-roster/caleb-douglas/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jared Wayne",
+        "playerPath": "/team/players-roster/jared-wayne/"
+       },
+       {
+        "tier": "1st",
+        "name": "Malik Washington",
+        "playerPath": "/team/players-roster/malik-washington/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Kevin Coleman Jr.",
+        "playerPath": "/team/players-roster/kevin-coleman-jr/"
+       },
+       {
+        "tier": "1st",
+        "name": "Chris Bell",
+        "playerPath": "/team/players-roster/chris-bell/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jalen Tolbert",
+        "playerPath": "/team/players-roster/jalen-tolbert/"
+       }
+      ]
+     },
+     "LT": {
+      "position": "LT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Patrick Paul",
+        "playerPath": "/team/players-roster/patrick-paul/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Chukwuebuka Godrick",
+        "playerPath": "/team/players-roster/chukwuebuka-godrick/"
+       }
+      ]
+     },
+     "LG": {
+      "position": "LG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Kadyn Proctor",
+        "playerPath": "/team/players-roster/kadyn-proctor/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jarrett Kingston",
+        "playerPath": "/team/players-roster/jarrett-kingston/"
+       }
+      ]
+     },
+     "C": {
+      "position": "C",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Aaron Brewer",
+        "playerPath": "/team/players-roster/aaron-brewer/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Andrew Meyer",
+        "playerPath": "/team/players-roster/andrew-meyer/"
+       }
+      ]
+     },
+     "RG": {
+      "position": "RG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jonah Savaiinaea",
+        "playerPath": "/team/players-roster/jonah-savaiinaea/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Caedan Wallace",
+        "playerPath": "/team/players-roster/caedan-wallace/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Christian Haynes",
+        "playerPath": "/team/players-roster/christian-haynes/"
+       }
+      ]
+     },
+     "RT": {
+      "position": "RT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Austin Jackson",
+        "playerPath": "/team/players-roster/austin-jackson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Caedan Wallace",
+        "playerPath": "/team/players-roster/caedan-wallace/"
+       }
+      ]
+     },
+     "TE": {
+      "position": "TE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Greg Dulcich",
+        "playerPath": "/team/players-roster/greg-dulcich/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Will Kacmarek",
+        "playerPath": "/team/players-roster/will-kacmarek/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Seydou Traore",
+        "playerPath": "/team/players-roster/seydou-traore/"
+       },
+       {
+        "tier": "4th",
+        "name": "Justin Joly",
+        "playerPath": "/team/players-roster/justin-joly/"
+       }
+      ]
+     },
+     "FB": {
+      "position": "FB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "DJ Herman",
+        "playerPath": "/team/players-roster/dj-herman/"
+       }
+      ]
+     },
+     "RB": {
+      "position": "RB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Ollie Gordon II",
+        "playerPath": "/team/players-roster/ollie-gordon-ii/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jaylen Wright",
+        "playerPath": "/team/players-roster/jaylen-wright/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Kaytron Allen",
+        "playerPath": "/team/players-roster/kaytron-allen/"
+       }
+      ]
+     },
+     "QB": {
+      "position": "QB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Kyle McCord",
+        "playerPath": "/team/players-roster/kyle-mccord/"
+       }
+      ]
+     }
+    },
+    "Defense": {
+     "DT": {
+      "position": "DT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jordan Phillips",
+        "playerPath": "/team/players-roster/jordan-phillips-2/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Kenneth Grant",
+        "playerPath": "/team/players-roster/kenneth-grant/"
+       },
+       {
+        "tier": "1st",
+        "name": "Zeek Biggers",
+        "playerPath": "/team/players-roster/zeek-biggers/"
+       }
+      ]
+     },
+     "EDGE": {
+      "position": "EDGE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Chop Robinson",
+        "playerPath": "/team/players-roster/chop-robinson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Malik Herring",
+        "playerPath": "/team/players-roster/malik-herring/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Rodney McGraw",
+        "playerPath": "/team/players-roster/rodney-mcgraw/"
+       },
+       {
+        "tier": "1st",
+        "name": "Josh Uche",
+        "playerPath": "/team/players-roster/joshua-uche/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jamree Kromah",
+        "playerPath": "/team/players-roster/jamree-kromah/"
+       }
+      ]
+     },
+     "ILB": {
+      "position": "ILB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jordyn Brooks",
+        "playerPath": "/team/players-roster/jordyn-brooks/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jackson Woodard",
+        "playerPath": "/team/players-roster/jackson-woodard/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Shaka Heyward",
+        "playerPath": "/team/players-roster/shaka-heyward/"
+       },
+       {
+        "tier": "1st",
+        "name": "Jacob Rodriguez",
+        "playerPath": "/team/players-roster/jacob-rodriguez/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Willie Gay Jr.",
+        "playerPath": "/team/players-roster/willie-gay-jr/"
+       }
+      ]
+     },
+     "NB": {
+      "position": "NB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Chris Johnson",
+        "playerPath": "/team/players-roster/chris-johnson/"
+       }
+      ]
+     },
+     "CB": {
+      "position": "CB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "JuJu Brents",
+        "playerPath": "/team/players-roster/juju-brents/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Marcellas Dial Jr.",
+        "playerPath": "/team/players-roster/marcellas-dial-jr/"
+       },
+       {
+        "tier": "1st",
+        "name": "Jason Marshall Jr.",
+        "playerPath": "/team/players-roster/jason-marshall-jr/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jaylin Simpson",
+        "playerPath": "/team/players-roster/jaylin-simpson/"
+       }
+      ]
+     },
+     "S": {
+      "position": "S",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Michael Taaffe",
+        "playerPath": "/team/players-roster/michael-taaffe/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Zayne Anderson",
+        "playerPath": "/team/players-roster/zayne-anderson/"
+       },
+       {
+        "tier": "1st",
+        "name": "Dante Trader Jr.",
+        "playerPath": "/team/players-roster/dante-trader-jr/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Kyle Louis",
+        "playerPath": "/team/players-roster/kyle-louis/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Julius Wood",
+        "playerPath": "/team/players-roster/julius-wood/"
+       }
+      ]
+     }
+    },
+    "Special Teams": {
+     "K": {
+      "position": "K",
+      "players": []
+     },
+     "P": {
+      "position": "P",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Bradley Pinion",
+        "playerPath": "/team/players-roster/bradley-pinion/"
+       }
+      ]
+     },
+     "H": {
+      "position": "H",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Bradley Pinion",
+        "playerPath": "/team/players-roster/bradley-pinion/"
+       }
+      ]
+     },
+     "LS": {
+      "position": "LS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Tucker Addington",
+        "playerPath": "/team/players-roster/tucker-addington/"
+       }
+      ]
+     },
+     "KR": {
+      "position": "KR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Malik Washington",
+        "playerPath": "/team/players-roster/malik-washington/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jaylen Wright",
+        "playerPath": "/team/players-roster/jaylen-wright/"
+       }
+      ]
+     },
+     "PR": {
+      "position": "PR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Malik Washington",
+        "playerPath": "/team/players-roster/malik-washington/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Kevin Coleman Jr.",
+        "playerPath": "/team/players-roster/kevin-coleman-jr/"
+       }
+      ]
+     }
+    }
+   },
    "asOf": null,
-   "chartLabel": null,
-   "tierLabelsInSource": false,
-   "sourceUrl": null,
+   "chartLabel": "official",
+   "tierLabelsInSource": true,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.miamidolphins.com/team/depth-chart/",
    "sourceName": "Official Miami Dolphins depth chart",
-   "verification": "unverified-not-fetched"
+   "verification": "verified"
   },
   {
    "team": "Minnesota Vikings",
    "abbr": "MIN",
-   "units": {},
+   "units": {
+    "Offense": {
+     "QB": {
+      "position": "QB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Kyler Murray",
+        "playerPath": "/team/players-roster/kyler-murray/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Carson Wentz",
+        "playerPath": "/team/players-roster/carson-wentz/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Max Brosmer",
+        "playerPath": "/team/players-roster/max-brosmer/"
+       }
+      ]
+     },
+     "RB": {
+      "position": "RB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Aaron Jones Sr.",
+        "playerPath": "/team/players-roster/aaron-jones/"
+       },
+       {
+        "tier": "1st",
+        "name": "Jordan Mason",
+        "playerPath": "/team/players-roster/jordan-mason/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Demond Claiborne",
+        "playerPath": "/team/players-roster/demond-claiborne/"
+       },
+       {
+        "tier": "3rd",
+        "name": "DeeJay Dallas",
+        "playerPath": "/team/players-roster/deejay-dallas/"
+       }
+      ]
+     },
+     "FB": {
+      "position": "FB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Max Bredeson",
+        "playerPath": "/team/players-roster/max-bredeson/"
+       }
+      ]
+     },
+     "WR": {
+      "position": "WR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Justin Jefferson",
+        "playerPath": "/team/players-roster/justin-jefferson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Tai Felton",
+        "playerPath": "/team/players-roster/tai-felton/"
+       },
+       {
+        "tier": "1st",
+        "name": "Jordan Addison",
+        "playerPath": "/team/players-roster/jordan-addison/"
+       },
+       {
+        "tier": "1st",
+        "name": "Jauan Jennings",
+        "playerPath": "/team/players-roster/jauan-jennings/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Myles Price",
+        "playerPath": "/team/players-roster/myles-price/"
+       }
+      ]
+     },
+     "TE": {
+      "position": "TE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "T.J. Hockenson",
+        "playerPath": "/team/players-roster/t-j-hockenson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Gavin Bartholomew",
+        "playerPath": "/team/players-roster/gavin-bartholomew/"
+       }
+      ]
+     },
+     "LT": {
+      "position": "LT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Christian Darrisaw",
+        "playerPath": "/team/players-roster/christian-darrisaw/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Ryan Van Demark",
+        "playerPath": "/team/players-roster/ryan-van-demark/"
+       }
+      ]
+     },
+     "LG": {
+      "position": "LG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Joe Huber",
+        "playerPath": "/team/players-roster/joe-huber/"
+       }
+      ]
+     },
+     "C": {
+      "position": "C",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Blake Brandel",
+        "playerPath": "/team/players-roster/blake-brandel/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Michael Jurgens",
+        "playerPath": "/team/players-roster/michael-jurgens/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Nick Samac",
+        "playerPath": "/team/players-roster/nick-samac/"
+       }
+      ]
+     },
+     "RG": {
+      "position": "RG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Will Fries",
+        "playerPath": "/team/players-roster/will-fries/"
+       }
+      ]
+     },
+     "RT": {
+      "position": "RT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Brian O'Neill",
+        "playerPath": "/team/players-roster/brian-o-neill/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Caleb Tiernan",
+        "playerPath": "/team/players-roster/caleb-tiernan/"
+       }
+      ]
+     }
+    },
+    "Defense": {
+     "OLB": {
+      "position": "OLB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Dallas Turner",
+        "playerPath": "/team/players-roster/dallas-turner/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Kyle Van Noy",
+        "playerPath": "/team/players-roster/kyle-van-noy/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Chaz Chambliss",
+        "playerPath": "/team/players-roster/chaz-chambliss/"
+       },
+       {
+        "tier": "1st",
+        "name": "Andrew Van Ginkel",
+        "playerPath": "/team/players-roster/andrew-van-ginkel/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Bo Richter",
+        "playerPath": "/team/players-roster/bo-richter/"
+       }
+      ]
+     },
+     "DL": {
+      "position": "DL",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jalen Redmond",
+        "playerPath": "/team/players-roster/jalen-redmond/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Caleb Banks",
+        "playerPath": "/team/players-roster/caleb-banks/"
+       },
+       {
+        "tier": "1st",
+        "name": "Levi Drake Rodriguez",
+        "playerPath": "/team/players-roster/levi-drake-rodriguez/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Domonique Orange",
+        "playerPath": "/team/players-roster/domonique-orange/"
+       },
+       {
+        "tier": "1st",
+        "name": "Tyrion Ingram-Dawkins",
+        "playerPath": "/team/players-roster/tyrion-ingram-dawkins/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Elijah Williams",
+        "playerPath": "/team/players-roster/elijah-williams/"
+       }
+      ]
+     },
+     "LB": {
+      "position": "LB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Blake Cashman",
+        "playerPath": "/team/players-roster/blake-cashman/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Ivan Pace Jr.",
+        "playerPath": "/team/players-roster/ivan-pace-jr/"
+       },
+       {
+        "tier": "1st",
+        "name": "Eric Wilson",
+        "playerPath": "/team/players-roster/eric-wilson/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jake Golday",
+        "playerPath": "/team/players-roster/jake-golday/"
+       }
+      ]
+     },
+     "CB": {
+      "position": "CB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Isaiah Rodgers",
+        "playerPath": "/team/players-roster/isaiah-rodgers/"
+       },
+       {
+        "tier": "2nd",
+        "name": "James Pierre",
+        "playerPath": "/team/players-roster/james-pierre/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Zemaiah Vaughn",
+        "playerPath": "/team/players-roster/zemaiah-vaughn/"
+       },
+       {
+        "tier": "1st",
+        "name": "Byron Murphy Jr.",
+        "playerPath": "/team/players-roster/byron-murphy-jr/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Charles Demmings",
+        "playerPath": "/team/players-roster/charles-demmings/"
+       }
+      ]
+     },
+     "S": {
+      "position": "S",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Harrison Smith",
+        "playerPath": "/team/players-roster/harrison-smith/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Theo Jackson",
+        "playerPath": "/team/players-roster/theo-jackson/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Jacob Thomas",
+        "playerPath": "/team/players-roster/jacob-thomas/"
+       },
+       {
+        "tier": "1st",
+        "name": "Joshua Metellus",
+        "playerPath": "/team/players-roster/josh-metellus/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jay Ward",
+        "playerPath": "/team/players-roster/jay-ward/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Jakobe Thomas",
+        "playerPath": "/team/players-roster/jakobe-thomas/"
+       }
+      ]
+     }
+    },
+    "Special Teams": {
+     "K": {
+      "position": "K",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Will Reichard",
+        "playerPath": "/team/players-roster/will-reichard/"
+       }
+      ]
+     },
+     "P": {
+      "position": "P",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Brett Thorson",
+        "playerPath": "/team/players-roster/brett-thorson/"
+       }
+      ]
+     },
+     "H": {
+      "position": "H",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Brett Thorson",
+        "playerPath": "/team/players-roster/brett-thorson/"
+       }
+      ]
+     },
+     "LS": {
+      "position": "LS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Andrew DePaola",
+        "playerPath": "/team/players-roster/andrew-depaola/"
+       }
+      ]
+     },
+     "KR": {
+      "position": "KR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Myles Price",
+        "playerPath": "/team/players-roster/myles-price/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Tai Felton",
+        "playerPath": "/team/players-roster/tai-felton/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Demond Claiborne",
+        "playerPath": "/team/players-roster/demond-claiborne/"
+       }
+      ]
+     },
+     "PR": {
+      "position": "PR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Myles Price",
+        "playerPath": "/team/players-roster/myles-price/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Tai Felton",
+        "playerPath": "/team/players-roster/tai-felton/"
+       }
+      ]
+     }
+    }
+   },
    "asOf": null,
-   "chartLabel": null,
-   "tierLabelsInSource": false,
-   "sourceUrl": null,
+   "chartLabel": "unofficial",
+   "tierLabelsInSource": true,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.vikings.com/team/depth-chart/",
    "sourceName": "Official Minnesota Vikings depth chart",
-   "verification": "unverified-not-fetched"
+   "verification": "verified"
   },
   {
    "team": "New England Patriots",
@@ -1038,6 +3940,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official New England Patriots depth chart",
    "verification": "unverified-not-fetched"
@@ -1049,6 +3952,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official New Orleans Saints depth chart",
    "verification": "unverified-not-fetched"
@@ -1502,6 +4406,7 @@
    "asOf": null,
    "chartLabel": "official",
    "tierLabelsInSource": false,
+   "tablesOnPage": 3,
    "sourceUrl": "https://www.giants.com/team/depth-chart/",
    "sourceName": "Official New York Giants depth chart",
    "verification": "verified"
@@ -1513,6 +4418,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official New York Jets depth chart",
    "verification": "unverified-not-fetched"
@@ -1524,6 +4430,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Philadelphia Eagles depth chart",
    "verification": "unverified-not-fetched"
@@ -1535,6 +4442,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Pittsburgh Steelers depth chart",
    "verification": "unverified-not-fetched"
@@ -1542,13 +4450,451 @@
   {
    "team": "San Francisco 49ers",
    "abbr": "SF",
-   "units": {},
-   "asOf": null,
-   "chartLabel": null,
-   "tierLabelsInSource": false,
-   "sourceUrl": null,
+   "units": {
+    "Offense": {
+     "WR": {
+      "position": "WR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Mike Evans",
+        "playerPath": "/team/players-roster/mike-evans/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jordan Watkins",
+        "playerPath": "/team/players-roster/jordan-watkins/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Brandin Cooks",
+        "playerPath": "/team/players-roster/brandin-cooks/"
+       },
+       {
+        "tier": "1st",
+        "name": "Deebo Samuel Sr.",
+        "playerPath": "/team/players-roster/deebo-samuel/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Demarcus Robinson",
+        "playerPath": "/team/players-roster/demarcus-robinson/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Jacob Cowing",
+        "playerPath": "/team/players-roster/jacob-cowing/"
+       }
+      ]
+     },
+     "LT": {
+      "position": "LT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Trent Williams",
+        "playerPath": "/team/players-roster/trent-williams/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Vederian Lowe",
+        "playerPath": "/team/players-roster/vederian-lowe/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Enrique Cruz Jr.",
+        "playerPath": "/team/players-roster/enrique-cruz/"
+       }
+      ]
+     },
+     "LG": {
+      "position": "LG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Connor Colby",
+        "playerPath": "/team/players-roster/connor-colby/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Carver Willis",
+        "playerPath": "/team/players-roster/carver-willis/"
+       }
+      ]
+     },
+     "C": {
+      "position": "C",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jake Brendel",
+        "playerPath": "/team/players-roster/jake-brendel/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jarrett Patterson",
+        "playerPath": "/team/players-roster/jarrett-patterson/"
+       }
+      ]
+     },
+     "RG": {
+      "position": "RG",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Dominick Puni",
+        "playerPath": "/team/players-roster/dominick-puni/"
+       }
+      ]
+     },
+     "RT": {
+      "position": "RT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Colton McKivitz",
+        "playerPath": "/team/players-roster/colton-mckivitz/"
+       }
+      ]
+     },
+     "TE": {
+      "position": "TE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "George Kittle",
+        "playerPath": "/team/players-roster/george-kittle/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Luke Farrell",
+        "playerPath": "/team/players-roster/luke-farrell/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Brayden Willis",
+        "playerPath": "/team/players-roster/brayden-willis/"
+       }
+      ]
+     },
+     "RB": {
+      "position": "RB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Christian McCaffrey",
+        "playerPath": "/team/players-roster/christian-mccaffrey/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Kaelon Black",
+        "playerPath": "/team/players-roster/kaelon-black/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Jordan James",
+        "playerPath": "/team/players-roster/jordan-james/"
+       }
+      ]
+     },
+     "FB": {
+      "position": "FB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Kyle Juszczyk",
+        "playerPath": "/team/players-roster/kyle-juszczyk/"
+       }
+      ]
+     },
+     "QB": {
+      "position": "QB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Brock Purdy",
+        "playerPath": "/team/players-roster/brock-purdy/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Mac Jones",
+        "playerPath": "/team/players-roster/mac-jones/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Kurtis Rourke",
+        "playerPath": "/team/players-roster/kurtis-rourke/"
+       }
+      ]
+     }
+    },
+    "Defense": {
+     "LDE": {
+      "position": "LDE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Keion White",
+        "playerPath": "/team/players-roster/keion-white/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Mykel Williams",
+        "playerPath": "/team/players-roster/mykel-williams/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Khalid Kareem",
+        "playerPath": "/team/players-roster/khalid-kareem/"
+       }
+      ]
+     },
+     "LDT": {
+      "position": "LDT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "DeForest Buckner",
+        "playerPath": "/team/players-roster/deforest-buckner/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Gracen Halton",
+        "playerPath": "/team/players-roster/gracen-halton/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Sebastian Valdez",
+        "playerPath": "/team/players-roster/sebastian-valdez/"
+       }
+      ]
+     },
+     "RDT": {
+      "position": "RDT",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Osa Odighizuwa",
+        "playerPath": "/team/players-roster/osa-odighizuwa/"
+       },
+       {
+        "tier": "2nd",
+        "name": "James Thompson Jr.",
+        "playerPath": "/team/players-roster/james-thompson-jr/"
+       }
+      ]
+     },
+     "RDE": {
+      "position": "RDE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Nick Bosa",
+        "playerPath": "/team/players-roster/nick-bosa/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Romello Height",
+        "playerPath": "/team/players-roster/romello-height/"
+       }
+      ]
+     },
+     "SAM": {
+      "position": "SAM",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jaden Dugger",
+        "playerPath": "/team/players-roster/jaden-dugger/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Luke Gifford",
+        "playerPath": "/team/players-roster/luke-gifford/"
+       }
+      ]
+     },
+     "MIKE": {
+      "position": "MIKE",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Fred Warner",
+        "playerPath": "/team/players-roster/fred-warner/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Tatum Bethune",
+        "playerPath": "/team/players-roster/tatum-bethune/"
+       }
+      ]
+     },
+     "WILL": {
+      "position": "WILL",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Dre Greenlaw",
+        "playerPath": "/team/players-roster/dre-greenlaw/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Garret Wallow",
+        "playerPath": "/team/players-roster/garret-wallow/"
+       }
+      ]
+     },
+     "LCB": {
+      "position": "LCB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Renardo Green",
+        "playerPath": "/team/players-roster/renardo-green/"
+       }
+      ]
+     },
+     "RCB": {
+      "position": "RCB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Deommodore Lenoir",
+        "playerPath": "/team/players-roster/deommodore-lenoir/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Ephesians Prysock",
+        "playerPath": "/team/players-roster/ephesians-prysock/"
+       }
+      ]
+     },
+     "NB": {
+      "position": "NB",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Upton Stout",
+        "playerPath": "/team/players-roster/upton-stout/"
+       }
+      ]
+     },
+     "FS": {
+      "position": "FS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Ji'Ayir Brown",
+        "playerPath": "/team/players-roster/ji-ayir-brown/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Siran Neal",
+        "playerPath": "/team/players-roster/siran-neal/"
+       }
+      ]
+     },
+     "SS": {
+      "position": "SS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Malik Mustapha",
+        "playerPath": "/team/players-roster/malik-mustapha/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Marques Sigle",
+        "playerPath": "/team/players-roster/marques-sigle/"
+       },
+       {
+        "tier": "3rd",
+        "name": "Ashtyn Davis",
+        "playerPath": "/team/players-roster/ashtyn-davis/"
+       }
+      ]
+     }
+    },
+    "Special Teams": {
+     "P": {
+      "position": "P",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Corliss Waitman",
+        "playerPath": "/team/players-roster/corliss-waitman/"
+       }
+      ]
+     },
+     "K": {
+      "position": "K",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Eddy Piñeiro",
+        "playerPath": "/team/players-roster/eddy-pineiro/"
+       }
+      ]
+     },
+     "H": {
+      "position": "H",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Corliss Waitman",
+        "playerPath": "/team/players-roster/corliss-waitman/"
+       }
+      ]
+     },
+     "PR": {
+      "position": "PR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jacob Cowing",
+        "playerPath": "/team/players-roster/jacob-cowing/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jordan Watkins",
+        "playerPath": "/team/players-roster/jordan-watkins/"
+       }
+      ]
+     },
+     "KOR": {
+      "position": "KOR",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Deebo Samuel Sr.",
+        "playerPath": "/team/players-roster/deebo-samuel/"
+       },
+       {
+        "tier": "2nd",
+        "name": "Jordan James",
+        "playerPath": "/team/players-roster/jordan-james/"
+       }
+      ]
+     },
+     "LS": {
+      "position": "LS",
+      "players": [
+       {
+        "tier": "1st",
+        "name": "Jon Weeks",
+        "playerPath": "/team/players-roster/jon-weeks/"
+       }
+      ]
+     }
+    }
+   },
+   "asOf": "11/10/26",
+   "chartLabel": "official",
+   "tierLabelsInSource": true,
+   "tablesOnPage": 3,
+   "sourceUrl": "https://www.49ers.com/team/depth-chart/",
    "sourceName": "Official San Francisco 49ers depth chart",
-   "verification": "unverified-not-fetched"
+   "verification": "verified"
   },
   {
    "team": "Seattle Seahawks",
@@ -1557,6 +4903,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Seattle Seahawks depth chart",
    "verification": "unverified-not-fetched"
@@ -1568,6 +4915,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Tampa Bay Buccaneers depth chart",
    "verification": "unverified-not-fetched"
@@ -1579,6 +4927,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Tennessee Titans depth chart",
    "verification": "unverified-not-fetched"
@@ -1590,6 +4939,7 @@
    "asOf": null,
    "chartLabel": null,
    "tierLabelsInSource": false,
+   "tablesOnPage": 0,
    "sourceUrl": null,
    "sourceName": "Official Washington Commanders depth chart",
    "verification": "unverified-not-fetched"

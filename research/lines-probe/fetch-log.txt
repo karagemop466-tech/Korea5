@@ -1,0 +1,96 @@
+[1/4] schedules ...
+[2/4] box scores ...
+    50/424 games, 3507 rows
+    100/424 games, 7026 rows
+    150/424 games, 10555 rows
+    200/424 games, 14082 rows
+    250/424 games, 17578 rows
+    300/424 games, 21088 rows
+    350/424 games, 24646 rows
+    400/424 games, 28197 rows
+[3/4] injuries ...
+[4/4] depth charts ...
+  ! failed https://www.chicagobears.com/team/depth-charts/: HTTP Error 404: Not Found
+  ! failed https://www.bengals.com/team/depth-charts/: HTTP Error 404: Not Found
+  ! failed https://www.azcardinals.com/team/depth-charts/: HTTP Error 404: Not Found
+  ! failed https://www.buffalobills.com/team/depth-charts/: HTTP Error 404: Not Found
+    Arizona Cardinals: unverified-not-fetched (0 units)
+    Atlanta Falcons: verified (3 units)
+    Baltimore Ravens: verified (3 units)
+    Buffalo Bills: unverified-not-fetched (0 units)
+    Carolina Panthers: verified (3 units)
+    Chicago Bears: unverified-not-fetched (0 units)
+    Cincinnati Bengals: unverified-not-fetched (0 units)
+    Cleveland Browns: verified (3 units)
+  ! failed https://www.denverbroncos.com/team/depth-charts/: HTTP Error 404: Not Found
+  ! failed https://www.dallascowboys.com/team/depth-charts/: HTTP Error 404: Not Found
+    Dallas Cowboys: unverified-not-fetched (0 units)
+    Denver Broncos: unverified-not-fetched (0 units)
+    Detroit Lions: verified (3 units)
+    Green Bay Packers: verified (3 units)
+  ! failed https://www.colts.com/team/depth-charts/: HTTP Error 404: Not Found
+  ! failed https://www.houstontexans.com/team/depth-charts/: HTTP Error 404: Not Found
+    Houston Texans: unverified-not-fetched (0 units)
+    Indianapolis Colts: unverified-not-fetched (0 units)
+  ! failed https://www.chiefs.com/team/depth-charts/: HTTP Error 404: Not Found
+  ! failed https://www.jaguars.com/team/depth-charts/: HTTP Error 404: Not Found
+    Jacksonville Jaguars: unverified-not-fetched (0 units)
+    Kansas City Chiefs: unverified-not-fetched (0 units)
+  ! failed https://www.raiders.com/team/depth-charts/: HTTP Error 404: Not Found
+    Las Vegas Raiders: unverified-not-fetched (0 units)
+    Los Angeles Chargers: verified (3 units)
+  ! failed https://www.neworleanssaints.com/team/depth-charts/: HTTP Error 404: Not Found
+  ! failed https://www.therams.com/team/depth-charts/: HTTP Error 404: Not Found
+  ! failed https://www.patriots.com/team/depth-charts/: HTTP Error 404: Not Found
+  ! failed https://www.newyorkjets.com/team/depth-charts/: HTTP Error 404: Not Found
+    Los Angeles Rams: unverified-not-fetched (0 units)
+    Miami Dolphins: verified (3 units)
+    Minnesota Vikings: verified (3 units)
+    New England Patriots: unverified-not-fetched (0 units)
+    New Orleans Saints: unverified-not-fetched (0 units)
+    New York Giants: verified (3 units)
+    New York Jets: unverified-not-fetched (0 units)
+  ! failed https://www.philadelphiaeagles.com/team/depth-charts/: HTTP Error 404: Not Found
+    Philadelphia Eagles: unverified-not-fetched (0 units)
+  ! failed https://www.steelers.com/team/depth-charts/: HTTP Error 404: Not Found
+    Pittsburgh Steelers: unverified-not-fetched (0 units)
+    San Francisco 49ers: verified (3 units)
+  ! failed https://www.seahawks.com/team/depth-charts/: HTTP Error 404: Not Found
+  ! failed https://www.buccaneers.com/team/depth-charts/: HTTP Error 404: Not Found
+    Seattle Seahawks: unverified-not-fetched (0 units)
+    Tampa Bay Buccaneers: unverified-not-fetched (0 units)
+  ! failed https://www.tennesseetitans.com/team/depth-charts/: HTTP Error 404: Not Found
+    Tennessee Titans: unverified-not-fetched (0 units)
+  ! failed https://www.commanders.com/team/depth-charts/: HTTP Error 404: Not Found
+    Washington Commanders: unverified-not-fetched (0 units)
+{
+ "games": 1170,
+ "gamesWithScore": 840,
+ "boxscoreRows": 29919,
+ "injuryRows": 296,
+ "injuryWeek": 10,
+ "depthCharts": 11,
+ "depthChartsMissing": [
+  "Arizona Cardinals",
+  "Buffalo Bills",
+  "Chicago Bears",
+  "Cincinnati Bengals",
+  "Dallas Cowboys",
+  "Denver Broncos",
+  "Houston Texans",
+  "Indianapolis Colts",
+  "Jacksonville Jaguars",
+  "Kansas City Chiefs",
+  "Las Vegas Raiders",
+  "Los Angeles Rams",
+  "New England Patriots",
+  "New Orleans Saints",
+  "New York Jets",
+  "Philadelphia Eagles",
+  "Pittsburgh Steelers",
+  "Seattle Seahawks",
+  "Tampa Bay Buccaneers",
+  "Tennessee Titans",
+  "Washington Commanders"
+ ]
+}

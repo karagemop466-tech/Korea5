@@ -231,31 +231,29 @@ SCORE_TEXT_RE = re.compile(
 
 ANCHOR_RE = re.compile(r'<a[^>]*href="(?:https?://www\.nfl\.com)?/games/([a-z0-9\-]+)"[^>]*>(.*?)</a>',
                        re.S | re.I)
-SCORE_PAIR_RE = re.compile(r"(\d{1,2})\s*,\s*(\d{1,2})\s*,\s*FINAL")
 
 
 def page_scores_by_slug(page: str):
-    """Bind each published FINAL score to the game it belongs to.
+    """Bind every published FINAL score to its own game slug, with a nickname integrity check.
 
-    The by-week page renders one accessible string per game, e.g.
-    "Raiders 17, 49ers 38, FINAL, Sunday, November 8th", inside that game's own link to
-    /games/<slug>. Scores are therefore read from inside each game link — never from a text window,
-    which can borrow a neighbouring game's number. Two indexes are returned:
+    The by-week page carries one accessible string per game, e.g.
+    "49ers 27, Rams 7, FINAL, Thursday, September 10th", inside that game's own link to
+    /games/<slug>. Two passes are run over the page because some cards are emitted as real HTML and
+    others sit inside an HTML-escaped JSON attribute: raw, then entity-decoded.
 
-      by_slug  — authoritative, keyed on the league's own game slug
-      by_nick  — fallback for the rare block that carries no href, keyed on the two nicknames
+    A score is accepted only when the two nicknames in the label agree with the away/home clubs of
+    the game it is being attached to, so a neighbouring card can never lend its number. Mismatches
+    are counted and reported instead of being resolved silently.
     """
-    by_slug: dict[str, tuple[int, int]] = {}
-    by_nick: dict[tuple[str, str], tuple[int, int]] = {}
-    for slug, inner in ANCHOR_RE.findall(page):
-        text = strip_tags(inner)
-        m = SCORE_PAIR_RE.search(text)
-        if m:
-            by_slug.setdefault(slug, (int(m.group(1)), int(m.group(2))))
-    for m in SCORE_TEXT_RE.finditer(page):
-        nick = (m.group("away").strip().split()[-1].lower(), m.group("home").strip().split()[-1].lower())
-        by_nick.setdefault(nick, (int(m.group("as")), int(m.group("hs"))))
-    return by_slug, by_nick
+    out: dict[str, tuple[int, int, str, str]] = {}
+    for variant in (page, html_lib.unescape(page)):
+        for slug, inner in ANCHOR_RE.findall(variant):
+            text = strip_tags(inner)
+            m = SCORE_TEXT_RE.search(text)
+            if m:
+                out.setdefault(slug, (int(m.group("as")), int(m.group("hs")),
+                                      m.group("away").strip().lower(), m.group("home").strip().lower()))
+    return out
 
 
 # ---------------------------------------------------------------------- results
@@ -266,7 +264,7 @@ def parse_results(pairs, url, week_label, page_scores=None):
         # same page has the same ids but no score or status, so require a richer marker.
         walk(data, lambda d: bool(d.get("id")) and ("awayTeamStandings" in d or "summary" in d), games)
     rows, seen = [], set()
-    by_slug, by_nick = page_scores if isinstance(page_scores, tuple) else ({}, {})
+    by_slug = page_scores or {}
     for g in games:
         gid = str(g.get("id"))
         if gid in seen:
@@ -308,15 +306,15 @@ def parse_results(pairs, url, week_label, page_scores=None):
         a_pts = team_points(away_obj)
         h_pts = team_points(home_obj)
         score_source = "gamePayload" if (a_pts is not None and h_pts is not None) else None
-        if a_pts is None or h_pts is None:
-            alt = by_slug.get(slug) if slug else None
-            how = "pageScoreLink"
-            if alt is None:
-                nick = lambda n: (str(n or "").strip().split()[-1].lower() if n else "")
-                alt = by_nick.get((nick(away), nick(home)))
-                how = "pageScoreText"
-            if alt:
-                a_pts, h_pts, score_source = alt[0], alt[1], how
+        score_mismatch = None
+        if (a_pts is None or h_pts is None) and slug and slug in by_slug:
+            alt = by_slug[slug]
+            nick = lambda n: (str(n or "").strip().split()[-1].lower() if n else "")
+            if nick(away) == alt[2].split()[-1] and nick(home) == alt[3].split()[-1]:
+                a_pts, h_pts, score_source = alt[0], alt[1], "pageScoreLink"
+            else:
+                score_mismatch = f"label says {alt[2]} {alt[0]} / {alt[3]} {alt[1]}, row says " \
+                                 f"{away} / {home}"
         is_final = ("FINAL" in status.upper()) or (a_pts is not None and h_pts is not None)
         winner = None
         if a_pts is not None and h_pts is not None:
@@ -340,6 +338,7 @@ def parse_results(pairs, url, week_label, page_scores=None):
             "venue": (g.get("venue") or {}).get("name") if isinstance(g.get("venue"), dict) else None,
             "category": g.get("category"),
             "scoreSource": score_source,
+            "scoreMismatch": score_mismatch,
             "sourceUrl": (f"https://www.nfl.com/games/{slug}" if slug else url),
             "listUrl": url,
             "sourceName": "NFL.com official 2026 by-week schedule page (embedded game payload)",
@@ -934,6 +933,7 @@ def main():
     # 1 + 2 — results and official standings, week by week ---------------------
     all_rows: list[dict] = []
     standing_rows: list[dict] = []
+    mismatch_rows: list[dict] = []
     per_week: dict[str, int] = {}
     per_week_final: dict[str, int] = {}
     fallback_probe: dict[int, dict] = {}
@@ -950,12 +950,12 @@ def main():
         scores = page_scores_by_slug(page)
         fallback_probe[wk] = {
             "anchorCount": len(re.findall(r'href="[^"]*/games/[a-z0-9\-]+', page)),
-            "scoreAnchorsParsed": len(scores[0]),
-            "scorePairsParsed": len(scores[1]),
+            "scoreAnchorsParsed": len(scores),
             "rawSample": (re.sub(r"\s+", " ", page[page.find("/games/") - 200:page.find("/games/") + 1400])
                           if "/games/" in page else ""),
         }
         rows, _games = parse_results(pairs, url, f"Week {wk}", scores)
+        mismatch_rows.extend([r for r in rows if r.get("scoreMismatch")])
         srows, _blobs = parse_standings(pairs, url)
         per_week[f"Week {wk}"] = len(rows)
         per_week_final[f"Week {wk}"] = len([r for r in rows if r["verification"] == "verified"])
@@ -1243,6 +1243,8 @@ def main():
         "counts": {
             "games": len(all_rows),
             "gamesFinalWithScores": len(finals),
+            "scoreLabelMismatches": [{k: r[k] for k in ("slug", "away", "home", "scoreMismatch")}
+                                     for r in mismatch_rows[:20]],
             "gapContextSamples": len(gap_context),
             "gapFilledFromGamePages": filled,
             "pastGamesStillMissingScores": len([r for r in all_rows

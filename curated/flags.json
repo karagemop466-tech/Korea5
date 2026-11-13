@@ -505,6 +505,114 @@
           "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
         }
       ]
+    },
+    {
+      "id": "F33",
+      "severity": "high",
+      "title": "No market prices in this repository: no edge, ROI or CLV claim is possible",
+      "detail": "The NFL Signals Lab publishes model lines only, each labelled 'model line - no market price exists in this repository to compare against'. Edge, ROI and closing-line value require archived odds with timestamps; no price feed is held here, so no such claim is made on any page. Adding a licensed, timestamped price archive is what would unblock them - not different wording.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL Signals Lab — model lines",
+          "url": "https://karagemop466-tech.github.io/Korea5/nfl-signals-lines.html"
+        }
+      ]
+    },
+    {
+      "id": "F34",
+      "severity": "high",
+      "title": "Availability data is one current snapshot, not a point-in-time archive",
+      "detail": "nfl.com/injuries/ returns identical markup for every season/week query, so the capture stores one dated snapshot per run. Applying today's report to past weeks would leak, so the injury-adjusted strategy's leakage gate is marked failed on purpose and its backtest figure is not comparable to the others. Point-in-time history accumulates through data/nfl-signals/forward-ledger.json, one archive per run.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com injury report",
+          "url": "https://www.nfl.com/injuries/"
+        },
+        {
+          "name": "NFL Signals Lab — availability model",
+          "url": "https://karagemop466-tech.github.io/Korea5/nfl-signals-injuries.html"
+        }
+      ]
+    },
+    {
+      "id": "F35",
+      "severity": "medium",
+      "title": "Five played 2026 games carry no score label on the official by-week page",
+      "detail": "For all five (each involving the same club) the by-week card renders a 'Watch Replay' link where the FINAL score label normally sits, and the game page itself publishes no score text either. Those rows stay null, are excluded from scoring, and are counted as pastGamesStillMissingScores in official/lab/fetch-report.json. The exact markup is preserved in official/lab/gap-context.json so a future parser fix is written against evidence instead of assumption.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com 2026 by-week schedule",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2"
+        }
+      ]
+    },
+    {
+      "id": "F36",
+      "severity": "medium",
+      "title": "No official depth chart: replacement tiers cannot be computed",
+      "detail": "nfl.com/depth-charts/ and the per-club depth-chart paths return 404, and no payload on the captured pages carries a position-ranked depth chart. Second-, third- and fourth-string claims are therefore left uncomputed and listed in correlation_study.notComputable, rather than estimated from contract year or snap counts.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com (no depth-chart page)",
+          "url": "https://www.nfl.com/depth-charts/"
+        }
+      ]
+    },
+    {
+      "id": "F37",
+      "severity": "medium",
+      "title": "Backtest sample cannot separate the models from luck",
+      "detail": "100 games are scoreable out of sample from the 2026 capture. The paired difference between the leading strategy and the home-field baseline has t = 1.46 with a block-bootstrap interval that includes zero, so the leaderboard is published as provisional and no prize is payable. About 188 paired games would be needed at the observed effect size; the pre-registered promotion gate is 60 settled forward-ledger rows.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL Signals Lab — walk-forward backtest",
+          "url": "https://karagemop466-tech.github.io/Korea5/nfl-signals-backtest.html"
+        }
+      ]
+    },
+    {
+      "id": "F38",
+      "severity": "low",
+      "title": "Standings payload carries no points for/against",
+      "detail": "The embedded by-week standings blob gives wins, losses, ties, home/away splits and division rank but no points columns, so standingsWithoutPoints is 32/32 and pointsFor/pointsAgainst stay null. Team points used by the model come from the game scores themselves and are never back-filled from another table.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com standings",
+          "url": "https://www.nfl.com/standings/"
+        }
+      ]
+    },
+    {
+      "id": "F39",
+      "severity": "low",
+      "title": "Inactives are reachable only through official articles",
+      "detail": "nfl.com/inactives/ is client-rendered (the capture's probe finds only an apiUrls entry), so the page yields zero rows and inactives are read from the weekly official inactives article, which exists for some weeks only. Because the 2026 rulebook sets a 48-player game-day active roster, an inactive is not necessarily injured; the two are kept as separate fields and never substituted for one another.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com inactives",
+          "url": "https://www.nfl.com/inactives/"
+        }
+      ]
+    },
+    {
+      "id": "F40",
+      "severity": "medium",
+      "title": "Player-prop combinations are specified but uncomputed",
+      "detail": "No player-level season statistics and no prop prices are captured; the official player-statistics page renders client-side. propCombos.available is false, with the required inputs and the joint-distribution method written out so the analysis can run the day the data exists. No player-prop number is published in the meantime.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com player statistics",
+          "url": "https://www.nfl.com/stats/player-stats/"
+        }
+      ]
     }
   ]
 }

@@ -23,6 +23,7 @@ NAV = [
     ("vacation.html", "Vacation windows"),
     ("mlb.html", "MLB"),
     ("nfl.html", "NFL &amp; 49ers"),
+    ("nfl-signals.html", "NFL Signals Lab"),
     ("ncaaf.html", "Stanford &amp; Cal"),
     ("radio.html", "Radio"),
     ("sources.html", "Sources"),

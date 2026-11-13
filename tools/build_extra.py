@@ -399,7 +399,7 @@ verification_out["counts"] = {
 # ---------------------------------------------------------------- page template
 ROOT_NAV = [
     ("../index.html", "Dashboard"), ("../calendar.html", "Calendar"), ("../vacation.html", "Vacation windows"),
-    ("../mlb.html", "MLB"), ("../nfl.html", "NFL &amp; 49ers"), ("../ncaaf.html", "Stanford &amp; Cal"),
+    ("../mlb.html", "MLB"), ("../nfl.html", "NFL &amp; 49ers"), ("../nfl-signals.html", "NFL Signals Lab"), ("../ncaaf.html", "Stanford &amp; Cal"),
     ("../radio.html", "Radio"), ("../sources.html", "Sources"), ("../flagged.html", "Flagged"), ("../method.html", "Method"),
 ]
 EXTRA_NAV = [

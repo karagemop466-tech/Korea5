@@ -19,6 +19,7 @@ import json
 import math
 import os
 import random
+import datetime
 import statistics
 from collections import defaultdict
 
@@ -27,7 +28,10 @@ LAB = os.path.join(ROOT, "official", "lab")
 OUT = os.path.join(ROOT, "data", "nfl-signals")
 SEED = 20261113
 MODEL_VERSION = "signal-lab-1.1.0"
+# The date the run is scored as of. CI passes it so the ledger never silently logs a past game.
+TODAY = os.environ.get("LAB_TODAY") or datetime.date.today().isoformat()
 LEDGER_STAMP = os.environ.get("LAB_STAMP", "2026-11-13T00:00:00Z")
+LEDGER_TODAY = os.environ.get("LAB_TODAY") or __import__("datetime").date.today().isoformat()
 
 # ---------------------------------------------------------------- model settings
 MIN_TRAIN_GAMES = 20      # history needed before a week may be forecast
@@ -134,6 +138,12 @@ def brier(p, y):
 
 
 def ece(pairs, bins=10):
+    """Expected calibration error: average gap between what was predicted and what happened.
+
+    Rows with no probability or no resolvable outcome (a tie) are dropped before binning, so a
+    missing value lowers the sample size instead of being scored as a miscalibration.
+    """
+    pairs = [(p, y) for p, y in pairs if p is not None and y is not None]
     if not pairs:
         return None
     total = 0.0
@@ -385,7 +395,14 @@ def forecast(game, rates, hfa, use_injury=False):
     return {"expHomeMargin": exp_margin, "homePoints": home_ppg, "awayPoints": away_ppg}
 
 
-def spread_sigma(games, rates, hfa):
+def margin_sigma(games, rates, hfa, lam=1.0, avail=None):
+    """sd of (actual margin - shrunk model margin) inside the training window.
+
+    Sigma must be measured against the SAME forecast that is scored: fitting a wide sigma on
+    unshrunk residuals and then applying a heavy shrink would flatten every probability to 0.5 and
+    hide the real uncertainty, while a narrow sigma on a shrunk forecast would overstate it. Both
+    are therefore solved together - lambda inside the window, sigma against that lambda.
+    """
     resid = []
     for g in games:
         if g["awayPoints"] is None:
@@ -393,57 +410,116 @@ def spread_sigma(games, rates, hfa):
         f = forecast(g, rates, hfa)
         if not f:
             continue
-        resid.append((g["homePoints"] - g["awayPoints"]) - f["expHomeMargin"])
-    return sd(resid), len(resid)
+        shift = 0.0
+        if avail is not None:
+            r = rates or {}
+            shift = ((r.get(g["home"]) or {}).get("injuryShift") or 0.0) - \
+                    ((r.get(g["away"]) or {}).get("injuryShift") or 0.0)
+        exp = hfa + lam * (f["expHomeMargin"] - hfa) + (shift if avail is not None else 0.0)
+        resid.append((g["homePoints"] - g["awayPoints"]) - exp)
+    return (sd(resid) or 10.5), len(resid)
 
+
+# Back-compat alias for the pre-shrinkage name.
+def spread_sigma(games, rates, hfa):
+    return margin_sigma(games, rates, hfa, 1.0, None)
 
 
 LAMBDA_GRID = (0.2, 0.35, 0.5, 0.7, 1.0)
 
 
-def choose_shrinkage(hist, use_injury=False, avail=None):
-    """Pick the rating-shrink factor inside the training window only (nested validation).
+def choose_shrinkage(hist, use_injury=False, avail=None, folds=2):
+    """Pick the rating-shrink factor inside the training window only (nested, rolling validation).
 
-    Raw opponent-adjusted ratings are far too confident in small samples: they put probabilities at
-    0.02 and 0.98 that the game does not support. The fix is a single multiplier on the rating gap,
-    chosen by minimising validation log loss on the LAST training week, using only weeks before it.
-    Returns (lambda, validation log loss, validation games).
+    Raw opponent-adjusted ratings are far too confident in small samples - they publish probabilities
+    of 0.02 and 0.98 that one season of 130 games does not support. One multiplier on the rating gap
+    fixes that, and the multiplier is chosen without ever touching the week being forecast: each fold
+    predicts its own week from strictly earlier weeks and the fold losses are averaged. Two folds are
+    used rather than one because a single week's results are noise; the per-fold winners are returned
+    as well, so a reader can see how unstable the choice is instead of being shown one tidy number.
+
+    Returns (lambda, validation log loss, validation games, per-fold detail).
     """
     weeks = sorted({g["week"] for g in hist if g["awayPoints"] is not None})
-    if len(weeks) < 3:
-        return 0.5, None, 0
-    tr = [g for g in hist if g["week"] < weeks[-1]]
-    va = [g for g in hist if g["week"] == weeks[-1]]
-    if len(tr) < MIN_TRAIN_GAMES or not va:
-        return 0.5, None, len(va)
-    r_tr, hfa_tr, _m, _n = team_strengths(tr, avail if use_injury else None, 1.0)
-    sig_tr = spread_sigma(tr, r_tr, hfa_tr)[0] or 10.5
-    best, best_ll = 0.5, None
-    for lam in LAMBDA_GRID:
-        losses = []
-        for g in va:
-            a, h = r_tr.get(g["away"]), r_tr.get(g["home"])
-            if not a or not h:
-                continue
-            shift = 0.0
-            if use_injury:
-                shift = (h.get("injuryShift") or 0.0) - (a.get("injuryShift") or 0.0)
-            p = norm_cdf((hfa_tr + lam * (h["rating"] - a["rating"]) + shift) / sig_tr)
-            if g["homePoints"] == g["awayPoints"]:
-                continue
-            losses.append(log_loss(p, 1 if g["homePoints"] > g["awayPoints"] else 0))
-        v = mean(losses)
-        if v is not None and (best_ll is None or v < best_ll):
-            best, best_ll = lam, v
-    return best, r(best_ll, 5), len(va)
+    if len(weeks) < folds + 1:
+        return 0.5, None, 0, {"fallback": "not enough weeks to validate; 0.5 used"}
+    pool = weeks[-folds:]
+    tr_cut = pool[0]
+    if len([g for g in hist if g["awayPoints"] is not None and g["week"] < tr_cut]) < MIN_TRAIN_GAMES:
+        return 0.5, None, sum(1 for g in hist if g["week"] in pool and g["awayPoints"] is not None), \
+            {"fallback": "training window too small to validate"}
+    scores = {lam: [] for lam in LAMBDA_GRID}
+    n_val = 0
+    for wk in pool:
+        tr = [g for g in hist if g["awayPoints"] is not None and g["week"] < wk]
+        va = [g for g in hist if g["awayPoints"] is not None and g["week"] == wk]
+        n_val += len(va)
+        r_tr, hfa_tr, _m, _n = team_strengths(tr, avail if use_injury else None, 1.0)
+        for lam in LAMBDA_GRID:
+            sig = margin_sigma(tr, r_tr, hfa_tr, lam, avail if use_injury else None)[0] or 10.5
+            for g in va:
+                a_r, h_r = r_tr.get(g["away"]), r_tr.get(g["home"])
+                if not a_r or not h_r:
+                    continue
+                shift = 0.0
+                if use_injury:
+                    shift = (h_r.get("injuryShift") or 0.0) - (a_r.get("injuryShift") or 0.0)
+                p = norm_cdf((hfa_tr + lam * (h_r["rating"] - a_r["rating"]) + shift) / sig)
+                if g["homePoints"] == g["awayPoints"]:
+                    continue
+                scores[lam].append(log_loss(p, 1 if g["homePoints"] > g["awayPoints"] else 0))
+    per_fold = {lam: round(mean(v), 5) for lam, v in scores.items() if v}
+    if not per_fold:
+        return 0.5, None, n_val, {"fallback": "no scorable validation games"}
+    best = min(per_fold, key=lambda lam: per_fold[lam])
+    detail = {
+        "folds": [{"week": wk, "games": len([g for g in hist if g["week"] == wk and g["awayPoints"] is not None])}
+                  for wk in pool],
+        "logLossByLambda": {str(lam): round(mean(v), 5) for lam, v in scores.items() if v},
+        "chosen": best,
+        "spread": r(max(per_fold.values()) - min(per_fold.values()), 5),
+    }
+    weights, lam_eff = shrink_weights(detail, n_val)
+    return lam_eff, per_fold[best], n_val, {**detail, "weightsByLambda": {str(k): r(v, 4)
+                                                                          for k, v in weights.items()},
+                                             "argminLambda": best, "effectiveLambda": lam_eff}
+
+
+
+
+def shrink_weights(detail, validation_games):
+    """Posterior-style weights over the shrink grid, from the validation log losses.
+
+    Choosing one λ by argmin on fifteen games is a coin flip dressed as a decision — the published
+    line inherits that instability. Averaging the forecast over the grid, weighting each λ by
+    exp(-n·Δlog loss), does the statistically ordinary thing instead: λ that the data cannot
+    distinguish share the answer, and a λ only dominates once enough games actually prefer it.
+    The weights and the resulting effective λ are published so a reader can see how much the sample
+    decided.
+    """
+    table = (detail or {}).get("logLossByLambda") or {}
+    if not table:
+        return {0.5: 1.0}, 0.5
+    lams = sorted(float(k) for k in table)
+    losses = [table[str(lam)] if str(lam) in table else table[repr(lam)] for lam in lams]
+    best = min(losses)
+    n_eff = max(1, min(int(validation_games or 1), 40))
+    w = [math.exp(-n_eff * (v - best)) for v in losses]
+    total = sum(w) or 1.0
+    w = [x / total for x in w]
+    return ({lam: wt for lam, wt in zip(lams, w) if wt > 1e-6},
+            r(sum(lam * wt for lam, wt in zip(lams, w)), 4))
+
 
 
 # ---------------------------------------------------------------------- gates
-def evaluate(games, rates, hfa, sigma, mode):
+def evaluate(games, rates, hfa, sigma, mode, lam_policy=None):
     """Walk-forward forecast ledger for one strategy mode.
 
     mode: 'hfa' (home-field only), 'net' (net points, no opposition), 'adj' (opponent-adjusted),
           'adj_injury' (opponent-adjusted + availability deficit).
+    lam_policy: None chooses the shrink factor per week by nested validation; a number pins it, which
+    is how the "does the answer depend on that choice?" table is produced.
     Each week is predicted using only games played in EARLIER weeks — that is the whole point:
     no forecast may see its own result.
     """
@@ -455,22 +531,39 @@ def evaluate(games, rates, hfa, sigma, mode):
         if len(hist) < MIN_TRAIN_GAMES:
             continue
         r_wk, hfa_wk, _m, _n = team_strengths(hist, AVAIL_SCALE[0] if mode == "adj_injury" else None)
-        sigma_wk, _ = spread_sigma(hist, r_wk, hfa_wk)
+        if lam_policy is None:
+            lam, val_ll, val_n, lam_detail = choose_shrinkage(hist, use_injury=(mode == "adj_injury"),
+                                                               avail=AVAIL_SCALE[0])
+            grid = [float(k) for k in (lam_detail or {}).get("weightsByLambda", {}) or LAMBDA_GRID]
+            wmap = {float(k): v for k, v in ((lam_detail or {}).get("weightsByLambda") or {}).items()}
+        else:
+            lam, val_ll, val_n, lam_detail = lam_policy, None, 0, {"pinnedByPolicy": lam_policy}
+            grid, wmap = [lam_policy], {lam_policy: 1.0}
+        grid = grid or [lam]
+        wmap = wmap or {g: 1.0 / len(grid) for g in grid}
+        sigma_wk, _ = margin_sigma(hist, r_wk, hfa_wk, lam,
+                                   AVAIL_SCALE[0] if mode == "adj_injury" else None)
         sigma_use = sigma_wk or sigma or 10.5
-        lam, val_ll, val_n = choose_shrinkage(hist, use_injury=(mode == "adj_injury"),
-                                              avail=AVAIL_SCALE[0])
         for g in [x for x in played if x["week"] == wk]:
             f = forecast(g, r_wk, hfa_wk, use_injury=(mode == "adj_injury"))
             if not f:
                 continue
             if mode == "hfa":
                 p = norm_cdf(hfa_wk / sigma_use)
-            elif mode == "net":
-                gap = ((r_wk.get(g["home"], {}).get("netPpg") or 0)
-                       - (r_wk.get(g["away"], {}).get("netPpg") or 0))
-                p = norm_cdf((hfa_wk + lam * gap) / sigma_use)
             else:
-                p = norm_cdf((hfa_wk + lam * (f["expHomeMargin"] - hfa_wk)) / sigma_use)
+                if mode == "net":
+                    base = ((r_wk.get(g["home"], {}).get("netPpg") or 0)
+                            - (r_wk.get(g["away"], {}).get("netPpg") or 0))
+                else:
+                    base = f["expHomeMargin"] - hfa_wk
+                shift = 0.0
+                if mode == "adj_injury":
+                    shift = ((r_wk.get(g["home"], {}).get("injuryShift") or 0.0)
+                             - (r_wk.get(g["away"], {}).get("injuryShift") or 0.0))
+                # blend across the shrink grid: the probabilities are averaged, not the parameters,
+                # because averaging a probability is what a model average means.
+                p = sum(wmap.get(gl, 0.0) * norm_cdf((hfa_wk + gl * base + shift) / sigma_use)
+                        for gl in grid)
             y = 1 if g["homePoints"] > g["awayPoints"] else (0 if g["homePoints"] < g["awayPoints"] else 2)
             rows.append({
                 "week": wk, "slug": g["slug"], "dateUTC": g["dateUTC"],
@@ -536,7 +629,10 @@ def luck_report(baseline_rows, model_rows):
     lo, hi = moving_block_bootstrap(diffs)
     d_mean, d_se = mean(diffs), (sd(diffs) / math.sqrt(len(diffs))) if len(diffs) > 1 else None
     t = (d_mean / d_se) if d_se else None
-    n_needed = int(math.ceil((2 * d_se / d_mean) ** 2)) if (d_se and d_mean) else None
+    # t grows like sqrt(n) for a fixed effect, so the total paired sample that would carry this same
+    # improvement to |t|=2 is n * (2/|t|)^2. Stating it as a count of games is what stops a
+    # 100-game result being read as a proven one.
+    n_needed = int(math.ceil(len(diffs) * (2 / abs(t)) ** 2)) if (t and abs(t) > 0 and len(diffs)) else None
     return {
         "nPaired": len(diffs),
         "meanImprovement": r(d_mean, 5),
@@ -545,6 +641,7 @@ def luck_report(baseline_rows, model_rows):
         "bootCI95": [r(lo, 5), r(hi, 5)] if lo is not None else None,
         "crossesZero": bool(lo <= 0 <= hi) if lo is not None else None,
         "nForTwoSigma": n_needed,
+        "nForTwoSigmaNote": "total paired games needed for this effect size to clear two standard errors",
         "sampleNeededForGate": SIG_GAMES,
         "verdict": ("not distinguishable from luck at this sample size"
                     if (t is None or abs(t) < 2) else "clears two standard errors on this sample"),
@@ -726,7 +823,36 @@ def sensitivity_run(games):
     return out
 
 
-def update_forward_ledger(lines, games):
+def shrink_policy_report(games, avail):
+    """How much of the leaderboard is decided by one discretionary number?
+
+    The shrink factor is chosen honestly (nested, inside the window), but a reader is entitled to know
+    that a single defensible alternative rewrites the ranking. Each policy is run end to end and the
+    table is published, because "the answer depends on a 0.5-vs-1.0 judgement call" is the finding.
+    """
+    modes = {"S1-homefield": "hfa", "S2-netpoints": "net",
+             "S3-oppadj-ratings": "adj", "S4-oppadj-plus-availability": "adj_injury"}
+    out = {}
+    for label, policy in (("nested-validation (published)", None),
+                          ("fixed 0.5 (heavy shrink)", 0.5),
+                          ("fixed 1.0 (no shrink)", 1.0)):
+        rows_by_strategy = {}
+        for name, mode in modes.items():
+            rates, hfa, _m, _n = team_strengths(games, avail if mode == "adj_injury" else None, 1.0)
+            sigma = margin_sigma(games, rates, hfa, policy if policy is not None else 1.0,
+                                 avail if mode == "adj_injury" else None)[0]
+            rows_by_strategy[name] = evaluate(games, rates, hfa, sigma, mode, lam_policy=policy)
+        scored = {name: score_ledger(rows) for name, rows in rows_by_strategy.items()}
+        order = sorted([n for n, v in scored.items() if v and v.get("logLoss") is not None],
+                       key=lambda n: scored[n]["logLoss"])
+        out[label] = {"logLoss": {n: scored[n]["logLoss"] for n in scored if scored[n]},
+                      "ranking": order,
+                      "leader": order[0] if order else None}
+    return out
+
+
+
+def update_forward_ledger(lines, games):  # noqa: C901 - the ledger is deliberately explicit
     """Append today's frozen predictions to the prospective ledger, and settle old ones.
 
     The ledger is the only honest way to earn a leaderboard place: a prediction is written BEFORE the
@@ -764,8 +890,18 @@ def update_forward_ledger(lines, games):
             rec["totalError"] = r(abs((g["homePoints"] + g["awayPoints"]) - rec["fairTotal"]), 3)
             rec["settledAtUTC"] = LEDGER_STAMP
             settled += 1
+    # A row logged against a game whose official date is already past, with no published result, was
+    # logged under a wrong idea of "upcoming". It is kept and voided rather than deleted — the ledger
+    # never rewrites history — but it cannot count as evidence.
+    voided = 0
+    for rec in prior.values():
+        if rec["outcomeHomeWin"] is None and (rec.get("dateUTC") or "9999")[:10] < LEDGER_TODAY:
+            rec["voided"] = True
+            rec["voidedReason"] = ("logged against a past-dated game whose result the official page does "
+                                  "not publish; excluded from evidence, kept visible for the audit")
+            voided += 1
     rows = sorted(prior.values(), key=lambda x: (x["dateUTC"] or "", x["slug"]))
-    settled_rows = [x for x in rows if x["outcomeHomeWin"] is not None]
+    settled_rows = [x for x in rows if x["outcomeHomeWin"] is not None and not x.get("voided")]
     dir_hits = [1 if (x["pHomeWin"] >= 0.5) == bool(x["outcomeHomeWin"]) else 0 for x in settled_rows]
     dump("forward-ledger.json", {
         "meta": {
@@ -779,6 +915,8 @@ def update_forward_ledger(lines, games):
             "directionalHitRate": r(mean(dir_hits), 4) if dir_hits else None,
             "meanAbsoluteMarginError": r(mean([x["marginError"] for x in settled_rows]), 3) if settled_rows else None,
             "meanAbsoluteTotalError": r(mean([x["totalError"] for x in settled_rows]), 3) if settled_rows else None,
+            "voided": voided,
+            "voidingRule": "past-dated rows with no published result are voided, never deleted",
             "rule": "no prize is payable from this ledger until at least 60 settled games exist",
         },
         "rows": rows,
@@ -807,20 +945,34 @@ def main():
     prop = prop_combo_status(games)
     corr = correlation_study(games, rates, hfa)
 
+    # "Upcoming" means the official date is not in the past - not merely "this date had no scored
+    # game". Five past games never got a score label on the by-week card; publishing them as forward
+    # lines, or logging them in the prospective ledger, would put already-decided games into the only
+    # dataset that must stay honest, so they are excluded and reported as unverified instead.
+    today = TODAY
     played_dates = {g["dateUTC"] for g in games if g["awayPoints"] is not None}
     upcoming = [g for g in games if g["awayPoints"] is None and g["week"] and g["weekType"] == "REG"
-                and g["dateUTC"] and g["dateUTC"][:10] not in {str(d)[:10] for d in played_dates}]
+                and g["dateUTC"] and g["dateUTC"][:10] >= today]
+    unverified_past = [g for g in games if g["awayPoints"] is None and (g.get("dateUTC") or "9999") < today]
     upcoming.sort(key=lambda g: (g["dateUTC"] or "", g["slug"]))
     league_total = mean([g["homePoints"] + g["awayPoints"] for g in games if g["awayPoints"] is not None]) or 44.0
-    lam_pub, val_ll, val_n = choose_shrinkage([g for g in games if g["awayPoints"] is not None],
-                                             use_injury=True, avail=avail)
+    lam_pub, val_ll, val_n, lam_pub_detail = choose_shrinkage(
+        [g for g in games if g["awayPoints"] is not None], use_injury=True, avail=avail)
+    sigma, _sig_n = margin_sigma([g for g in games if g["awayPoints"] is not None], rates, hfa,
+                                 lam_pub, avail)
+    pub_w = {float(k): v for k, v in (lam_pub_detail.get("weightsByLambda") or {}).items()}
+    pub_grid = list(pub_w) or [lam_pub]
     lines = []
     for g in upcoming:
         f = forecast(g, rates, hfa, use_injury=True)
         if not f:
             continue
-        f["expHomeMargin"] = hfa + lam_pub * (f["expHomeMargin"] - hfa)
-        p_home = norm_cdf(f["expHomeMargin"] / (sigma or 10.5))
+        shift_pub = ((rates.get(g["home"], {}).get("injuryShift") or 0.0)
+                     - (rates.get(g["away"], {}).get("injuryShift") or 0.0))
+        base_pub = f["expHomeMargin"] - hfa
+        p_home = sum(pub_w.get(gl, 0.0) * norm_cdf((hfa + gl * base_pub + shift_pub) / (sigma or 10.5))
+                     for gl in pub_grid)
+        f["expHomeMargin"] = hfa + lam_pub * base_pub + shift_pub
         exp_total = f["homePoints"] + f["awayPoints"]
         p_over = 1 - norm_cdf((exp_total - league_total) / ((sigma or 10.5) * 1.35))
         lines.append({
@@ -859,7 +1011,9 @@ def main():
                 "availabilityRows": len(avail_rows),
                 "clubsWithAnAvailabilityFile": len(avail),
                 "standingsClubs": len(standings),
-                "resultCaptureUTC": res_meta.get("retrievedUTC"),
+                "runDate": TODAY,
+            "unverifiedPastGames": len(unverified_past),
+            "resultCaptureUTC": res_meta.get("retrievedUTC"),
             },
             "discipline": [
                 "no market prices are stored here, so no edge, ROI or closing-line claim is made",
@@ -879,10 +1033,12 @@ def main():
         "propCombos": prop,
         "lines": lines,
         "publishedShrinkage": {"lambda": lam_pub, "validationLogLoss": val_ll, "validationGames": val_n,
+                               "detail": lam_pub_detail,
                                "rule": "chosen inside the training window only (see choose_shrinkage)"},
         "leaderboard": board,
         "gates": gate_report,
         "sensitivity": sensitivity_run(games),
+        "shrinkPolicies": shrink_policy_report(games, avail),
     })
     print(f"forwardLedger: +{added} logged, {settled} settled this run, {settled_total} settled total")
     print(f"games={len(games)} played={played_n} sigma={sigma and round(sigma, 2)} hfa={hfa} "

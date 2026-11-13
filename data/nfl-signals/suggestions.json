@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "NFL Signals Lab — suggestion review board",
+    "purpose": "Every suggestion raised for this build, with a decision, the reason, and where the outcome can be seen. Nothing is dropped silently: a declined idea stays here so it is not re-raised and re-litigated.",
+    "statusVocabulary": {
+      "adopted": "implemented as suggested",
+      "adopted-with-change": "implemented, but not in the form proposed, and the difference is stated",
+      "deferred": "agreed as useful, scheduled behind a named blocker",
+      "declined": "not done, with the reason recorded",
+      "blocked": "cannot be done with the data this repository is allowed to use"
+    },
+    "asOfUTC": "2026-11-13T00:00:00Z"
+  },
+  "suggestions": [
+    {
+      "id": "SG-01",
+      "suggestion": "Rank strategies on proper scoring rules (log loss, Brier), not hit rate.",
+      "raisedBy": "brief",
+      "status": "adopted",
+      "decision": "The leaderboard is ordered on out-of-sample log loss. Hit rate is shown next to it, never instead of it, because a 62% hit rate from a model that only ever says 51% is a calibration fact the hit rate hides.",
+      "evidence": ["scripts/signal_lab.py"],
+      "seenOn": "nfl-signals-backtest.html"
+    },
+    {
+      "id": "SG-02",
+      "suggestion": "Add a same-game parlay strategy to the leaderboard.",
+      "raisedBy": "brief",
+      "status": "adopted-with-change",
+      "decision": "The dependence between the two legs is measured (2×2 joint outcome versus the product of the marginals, phi, and a fair parlay decimal computed from the joint), but the combination is not given a leaderboard rank: both legs here come from the model's own numbers, so scoring it as a strategy would double-count one forecast. Its gates are reported and its rank cell says 'not scoreable yet'.",
+      "evidence": ["scripts/signal_lab.py", "data/nfl-signals/signals.json"],
+      "seenOn": "nfl-signals-backtest.html"
+    },
+    {
+      "id": "SG-03",
+      "suggestion": "Price player-prop combinations (e.g. passing yards plus game total) off a joint distribution.",
+      "raisedBy": "brief",
+      "status": "blocked",
+      "decision": "Method written into the code and the page, no numbers published: the official player-statistics page renders client-side and no prop prices exist here, so there is nothing to forecast from and nothing to compare a price against.",
+      "evidence": ["data/nfl-signals/signals.json", "scripts/signal_lab.py"],
+      "seenOn": "nfl-signals-backtest.html"
+    },
+    {
+      "id": "SG-04",
+      "suggestion": "Pull a third-party odds feed so closing-line value and ROI can be reported.",
+      "raisedBy": "this session",
+      "status": "declined",
+      "decision": "Declined for now, on provenance grounds rather than technical ones: the site's rule is that every number traces to an official source, and a licensed odds mirror would break that while also being unverified here. The honest alternative — publish model lines and their mechanics, and say plainly that no market price exists — is what shipped. If a licensed feed is added deliberately, R11 and R12 upgrade without re-framing.",
+      "evidence": ["data/nfl-signals/requirements.json"],
+      "seenOn": "nfl-signals-requirements.html"
+    },
+    {
+      "id": "SG-05",
+      "suggestion": "Report the model's ROI for the season so far.",
+      "raisedBy": "this session",
+      "status": "declined",
+      "decision": "Not computable without prices, and a fake-price ROI would be the kind of number that gets quoted out of context. What is published instead is the luck analysis: the paired log-loss improvement, its bootstrap interval, and how many games the effect would need to clear two standard errors.",
+      "evidence": ["scripts/signal_lab.py"],
+      "seenOn": "nfl-signals-backtest.html"
+    },
+    {
+      "id": "SG-06",
+      "suggestion": "Run the capture on a weekly schedule so the prospective ledger settles by itself.",
+      "raisedBy": "this session",
+      "status": "deferred",
+      "decision": "Right idea, not yet done. The workflow currently runs on dispatch and on changes to the fetcher; a schedule would make the forward ledger real without anyone remembering. Deferred behind the decision on when the lab should start accumulating (a scheduled run also freezes lines earlier in the week, which changes what the ledger means).",
+      "evidence": [".github/workflows/nfl-lab.yml"],
+      "seenOn": "nfl-signals-data.html"
+    },
+    {
+      "id": "SG-07",
+      "suggestion": "Use depth charts to model replacement level when a starter is out.",
+      "raisedBy": "brief",
+      "status": "blocked",
+      "decision": "There is no official depth-chart page to read — nfl.com/depth-charts/ and per-club depth-chart paths return 404 — and inventing a 2nd/3rd-string ranking from a player's contract year is exactly the kind of guess this site exists to avoid. The gap is recorded in correlation_study.notComputable and the availability page shows 'unavailable' where a tier would go.",
+      "evidence": ["official/lab/probe-report.json", "data/nfl-signals/signals.json"],
+      "seenOn": "nfl-signals-injuries.html"
+    },
+    {
+      "id": "SG-08",
+      "suggestion": "Weight unavailability by position (a quarterback out is not a safety out).",
+      "raisedBy": "this session",
+      "status": "adopted",
+      "decision": "Position weights and status credit are explicit tables in the model, and because they are a judgement call the whole ranking is re-run at ×0.5 and ×2.0 scaling and both results are published beside the headline one.",
+      "evidence": ["scripts/signal_lab.py"],
+      "seenOn": "nfl-signals-injuries.html"
+    },
+    {
+      "id": "SG-09",
+      "suggestion": "Backfill the five games whose score label the by-week page does not publish, using a search result or a neighbouring club's page.",
+      "raisedBy": "this session",
+      "status": "declined",
+      "decision": "Declined. Those five rows stay null and are counted in the report (pastGamesStillMissingScores) with the exact page markup captured in gap-context.json, so a future fix is made against evidence. A score borrowed from a neighbouring card is how a backtest quietly becomes fiction — this pipeline had that bug and now has a nickname-agreement check that refuses it.",
+      "evidence": ["official/lab/gap-context.json", "tools/fetch_nfl_lab.py"],
+      "seenOn": "nfl-signals-data.html"
+    },
+    {
+      "id": "SG-10",
+      "suggestion": "Promote the current leader to 'best strategy' on the hub page.",
+      "raisedBy": "brief",
+      "status": "adopted-with-change",
+      "decision": "The hub names the current leader and, in the same sentence, why it is provisional: the best candidate needs about 136 paired games to clear two standard errors and the ledger has 0 settled rows. Promotion requires 60 settled prospective forecasts, which is the leaderboard rule the gates enforce.",
+      "evidence": ["scripts/signal_lab.py", "data/nfl-signals/forward-ledger.json"],
+      "seenOn": "nfl-signals.html"
+    },
+    {
+      "id": "SG-11",
+      "suggestion": "Turn on the reward/payout mechanism for the leaderboard.",
+      "raisedBy": "brief",
+      "status": "deferred",
+      "decision": "Left as a governance decision (gate G8 stays manual-review). The reward rule and the sample it needs are written down so the decision can be made in one line, but this session does not approve payouts.",
+      "evidence": ["scripts/signal_lab.py"],
+      "seenOn": "nfl-signals.html"
+    },
+    {
+      "id": "SG-12",
+      "suggestion": "Publish coverage counts and integrity counters with every capture, so a parser regression is visible without reading code.",
+      "raisedBy": "this session",
+      "status": "adopted",
+      "decision": "fetch-report.json now carries per-week FINAL counts, per-request injury counts, mismatch lists, standings-without-points, injuries-without-team, the gap-fill tally, and error.txt whenever the run throws — which is how a silent '0 scores' regression was found and fixed rather than shipped.",
+      "evidence": ["tools/fetch_nfl_lab.py", "official/lab/fetch-report.json"],
+      "seenOn": "nfl-signals-data.html"
+    },
+    {
+      "id": "SG-13",
+      "suggestion": "Let the ratings model look at the last three weeks only, to catch mid-season trades and coaching changes.",
+      "raisedBy": "this session",
+      "status": "deferred",
+      "decision": "Worth testing, deliberately not added now: at 132 games the extra decay knob is another way to overfit a season, and the shrink factor already chosen per week covers part of it. Recorded so the next session tries it with the same gates rather than as a quiet default.",
+      "evidence": ["scripts/signal_lab.py"],
+      "seenOn": "nfl-signals-backtest.html"
+    }
+  ]
+}

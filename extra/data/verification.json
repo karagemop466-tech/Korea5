@@ -103,7 +103,7 @@
     "stations": 16,
     "ncaafFutureRows": 26,
     "estimateWindows": 11,
-    "flags": 32
+    "flags": 40
   },
   "failures": []
 }

@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "title": "NFL Signals Lab — requirement ledger",
+    "purpose": "Every requirement this build was asked to satisfy, its real status, and the file that proves it. Statuses are earned by an artefact in the repository, not by intent.",
+    "statusVocabulary": {
+      "met": "the artefact exists, runs, and its output is published on the site",
+      "partial": "built and running, but a named limitation stops it being complete",
+      "blocked": "cannot be completed with the data that exists in this repository",
+      "not-started": "deliberately left open; recorded so it is not forgotten"
+    },
+    "generatedBy": "hand-maintained; scripts/build_signals.py renders it verbatim",
+    "asOfUTC": "2026-11-13T00:00:00Z"
+  },
+  "requirements": [
+    {
+      "id": "R1",
+      "area": "Data",
+      "requirement": "Official-source inputs only, each row traceable to the page it came from",
+      "status": "met",
+      "howItIsSatisfied": "tools/fetch_nfl_lab.py reads nfl.com pages only (no third-party mirrors) and writes a source URL and retrievedUTC on every row it emits.",
+      "evidence": ["tools/fetch_nfl_lab.py", "official/lab/source-registry.json", "official/lab/fetch-report.json"],
+      "limits": "The sandbox has no outbound HTTP; the capture runs in GitHub Actions, so a fresh capture is one CI run away rather than a local command."
+    },
+    {
+      "id": "R2",
+      "area": "Data",
+      "requirement": "2026 game results with official scores, for backtesting",
+      "status": "partial",
+      "howItIsSatisfied": "132 of the 137 played regular-season games carry a score read from the by-week page's own FINAL label, bound to the game's /games/<slug> link; per-week counts are published.",
+      "evidence": ["official/lab/results-2026.json", "official/lab/fetch-report.json"],
+      "limits": "Five past games (all involving one club) render 'Watch Replay' instead of a score label, so they stay null and are counted in pastGamesStillMissingScores rather than estimated."
+    },
+    {
+      "id": "R3",
+      "area": "Data",
+      "requirement": "Availability tracking: who is out, doubtful or limited, per club, with position",
+      "status": "met",
+      "howItIsSatisfied": "296 unique players are parsed from the 32 per-club tables on nfl.com/injuries/, each row carrying position, injury text, practice status and game status, joined to its club by the club link inside the same table.",
+      "evidence": ["official/lab/injuries-2026.json", "official/lab/teams-2026.json"],
+      "limits": "The page is 'as of right now'; it has no effective date and ?season=&week= return identical markup, so it is a snapshot, not a history."
+    },
+    {
+      "id": "R4",
+      "area": "Data",
+      "requirement": "Game-day inactives (the official ruled-out list), because inactive is not the same as injured",
+      "status": "partial",
+      "howItIsSatisfied": "Inactives are read from the official inactives article (### TEAM plus one bullet per player with position and note) — 413 article rows from 11 pages, one row per /players/ link.",
+      "evidence": ["official/lab/articles-2026.json"],
+      "limits": "nfl.com/inactives/ is client-rendered (inactivesRows 0 is expected), so coverage is only the weeks an article exists for; article rows carry position on 366/413 and a status word on 124/413."
+    },
+    {
+      "id": "R5",
+      "area": "Data",
+      "requirement": "Standings inputs (points for/against) without silently back-filling them",
+      "status": "partial",
+      "howItIsSatisfied": "32 clubs are parsed from the embedded by-week standings payload with wins/losses/ties, home/away split and division rank. pointsFor/pointsAgainst stay null because the blob does not carry them.",
+      "evidence": ["official/lab/standings-2026.json", "official/lab/fetch-report.json"],
+      "limits": "standingsWithoutPoints is 32/32. Points are therefore taken from the game scores themselves, which is honest, and the standings table is never used as a score source."
+    },
+    {
+      "id": "R6",
+      "area": "Model",
+      "requirement": "Walk-forward evaluation only — no week may see its own result",
+      "status": "met",
+      "howItIsSatisfied": "scripts/signal_lab.py re-fits team strengths, the margin sigma and the shrink factor inside weeks strictly earlier than the week being predicted, for every week.",
+      "evidence": ["scripts/signal_lab.py", "data/nfl-signals/signals.json"],
+      "limits": "None for scores. The availability input is the exception and is therefore failed on its own gate — see R9."
+    },
+    {
+      "id": "R7",
+      "area": "Model",
+      "requirement": "Multiple candidate strategies, including naive baselines, ranked on a stated metric",
+      "status": "met",
+      "howItIsSatisfied": "Four scoreable strategies (home-field only, net points, opponent-adjusted ratings, ratings plus availability) are ranked on out-of-sample log loss with Brier, calibration error, hit rate and uncertainty alongside.",
+      "evidence": ["scripts/signal_lab.py", "nfl-signals-backtest.html"],
+      "limits": "Rankings are reported as provisional: the leaderboard rule is that no winner is declared until the prospective ledger has 60 settled games."
+    },
+    {
+      "id": "R8",
+      "area": "Model",
+      "requirement": "Show whether the result is skill or luck",
+      "status": "met",
+      "howItIsSatisfied": "Paired per-game log-loss differences against the baseline, moving-block bootstrap confidence intervals (week blocks, so same-slate games move together), and the total sample needed to clear two standard errors.",
+      "evidence": ["scripts/signal_lab.py", "nfl-signals-backtest.html"],
+      "limits": "The verdict for every strategy at 100 games is 'not distinguishable from luck'; the best candidate needs about 136 paired games, the ratings models need four to fifty times that."
+    },
+    {
+      "id": "R9",
+      "area": "Model",
+      "requirement": "Injury/availability adjustment that is judged fairly",
+      "status": "partial",
+      "howItIsSatisfied": "Deficit-weighted availability shifts are computed from position weights and status credit, and their effect is measured. Because the only availability file is today's snapshot, the leakage gate for this strategy is marked failed on purpose.",
+      "evidence": ["scripts/signal_lab.py", "nfl-signals-injuries.html", "data/nfl-signals/signals.json"],
+      "limits": "A point-in-time availability archive (one dated snapshot per week, collected before kick-off) does not exist; until it does, this strategy can only be judged prospectively."
+    },
+    {
+      "id": "R10",
+      "area": "Model",
+      "requirement": "Robustness: does the answer depend on a discretionary number?",
+      "status": "met",
+      "howItIsSatisfied": "Two published sensitivity runs: deficit weights scaled ×0.5/×1.0/×2.0, and the shrink factor compared under nested-validation, fixed-0.5 and fixed-1.0 policies, each with its own ranking.",
+      "evidence": ["scripts/signal_lab.py", "nfl-signals-backtest.html"],
+      "limits": "The naive net-points strategy leads under all three shrink policies; the ratings strategies lose under all three. Nothing here is fragile in a way that would change the headline, which is itself the finding."
+    },
+    {
+      "id": "R11",
+      "area": "Pricing",
+      "requirement": "Fair lines for the next games, with the hold mechanics shown",
+      "status": "met",
+      "howItIsSatisfied": "40 upcoming games get a fair spread, fair moneyline pair and fair total, plus a postedWithHold example at the standard 4.5% hold so the arithmetic is visible; every row is labelled as a model line.",
+      "evidence": ["data/nfl-signals/signals.json", "nfl-signals-lines.html"],
+      "limits": "No market price exists in this repository, so no edge, ROI or closing-line-value claim is made anywhere on the site."
+    },
+    {
+      "id": "R12",
+      "area": "Pricing",
+      "requirement": "Same-game parlay: measure the dependence instead of assuming independence",
+      "status": "partial",
+      "howItIsSatisfied": "The measured 2×2 of (model home win × model total over) against the product of the marginals gives phi = -0.223 and a relative change from independence of -22.8%, so a fair parlay decimal is computed from the joint, not from multiplied legs.",
+      "evidence": ["scripts/signal_lab.py", "nfl-signals-backtest.html"],
+      "limits": "Both legs come from the model's own numbers; a real parlay must be priced against the exact offered line and price per leg, which requires market data this repository does not hold."
+    },
+    {
+      "id": "R13",
+      "area": "Pricing",
+      "requirement": "Player-prop combinations (same player, or player-plus-game)",
+      "status": "blocked",
+      "howItIsSatisfied": "The method is specified (forecast the player's distribution, price each leg off it, price the combo off the joint, validate on settled joint outcomes) and the page says so; no number is published.",
+      "evidence": ["data/nfl-signals/signals.json", "nfl-signals-backtest.html"],
+      "limits": "No player-level season statistics and no prop prices are capturable from the official pages available here (player stats render client-side), and there is no official depth chart — nfl.com/depth-charts/ returns 404 — so replacement tiers cannot be computed either."
+    },
+    {
+      "id": "R14",
+      "area": "Correlation",
+      "requirement": "Slate-level correlation study",
+      "status": "met",
+      "howItIsSatisfied": "Margin-vs-total correlation, week-to-week margin autocorrelation, and same-day home-win clustering (observed variance over the independent variance) are computed on the 132 scored games.",
+      "evidence": ["scripts/signal_lab.py", "nfl-signals-backtest.html"],
+      "limits": "Nine slate days is a thin sample for a clustering statistic; it is published with its n and marked as directional."
+    },
+    {
+      "id": "R15",
+      "area": "Validation",
+      "requirement": "Pre-registered gates that can fail, with evidence rather than prose",
+      "status": "met",
+      "howItIsSatisfied": "Gates G1–G8 are generated per strategy from the run itself (provenance, coverage, baseline improvement, leakage, out-of-sample size, robustness, prospective ledger, governance), each with a computed evidence string; G7 reports the settled count of the real ledger.",
+      "evidence": ["scripts/signal_lab.py", "nfl-signals.html"],
+      "limits": "G8 (governance/reward approval) stays manual-review by design — it is a decision for the owner, not a computation."
+    },
+    {
+      "id": "R16",
+      "area": "Validation",
+      "requirement": "A prospective ledger that starts now and cannot be edited afterwards",
+      "status": "met",
+      "howItIsSatisfied": "data/nfl-signals/forward-ledger.json is append-only per game slug: a run adds rows only for games not yet logged, settles a row when the official page reports a score, and voids (never deletes) a row logged against a past-dated game.",
+      "evidence": ["data/nfl-signals/forward-ledger.json", "scripts/signal_lab.py"],
+      "limits": "0 settled rows so far; the CI schedule that would settle them weekly has not been added, so the ledger grows only when the workflow is dispatched."
+    },
+    {
+      "id": "R17",
+      "area": "Testing",
+      "requirement": "Tests for the non-obvious mathematics and the leakage guard",
+      "status": "met",
+      "howItIsSatisfied": "tests/test_signal_lab.py covers the normal CDF against table values, the phi statistic, moneyline conversion and round-trip, expected calibration error, block-bootstrap determinism under a fixed seed, and a leakage test that changes a week's results and asserts earlier forecasts do not move.",
+      "evidence": ["tests/test_signal_lab.py"],
+      "limits": "Tests are offline and run in under a second; they do not re-fetch, so a source-format change is caught by the CI capture report, not by a unit test."
+    },
+    {
+      "id": "R18",
+      "area": "Site",
+      "requirement": "Pages for the hub, requirements, data pipeline, availability model, backtest, lines and the suggestion board",
+      "status": "met",
+      "howItIsSatisfied": "scripts/build_signals.py renders seven root pages from the JSON artefacts; nav entries come only from scripts/build_site.py NAV and tools/build_extra.py ROOT_NAV, and scripts/check_links.py must pass with zero missing links.",
+      "evidence": ["scripts/build_signals.py", "nfl-signals.html", "verification/links.json"],
+      "limits": "No page states a number that is not in a committed JSON file; nothing is hand-typed into HTML."
+    },
+    {
+      "id": "R19",
+      "area": "Governance",
+      "requirement": "Suggestion review board — every suggestion recorded with a decision and a reason",
+      "status": "met",
+      "howItIsSatisfied": "data/nfl-signals/suggestions.json holds each suggestion, who raised it, its status (adopted, adopted-with-change, deferred, declined) and the reason; the page renders it and links to the artefact that shows the outcome.",
+      "evidence": ["data/nfl-signals/suggestions.json", "nfl-signals-suggestions.html"],
+      "limits": "Decisions are this session's reading of the brief; an owner can reverse any of them and the page will follow the file."
+    },
+    {
+      "id": "R20",
+      "area": "Honesty",
+      "requirement": "No published edge, ROI or CLV claims while no market price exists",
+      "status": "met",
+      "howItIsSatisfied": "The line generator has no odds input at all; every line row carries the label 'model line - no market price exists in this repository to compare against', and the meta block repeats the discipline.",
+      "evidence": ["data/nfl-signals/signals.json", "nfl-signals-lines.html"],
+      "limits": "If timestamped prices are ever added, the same pages can publish edge without changing the framing — the gate is data, not wording."
+    }
+  ]
+}

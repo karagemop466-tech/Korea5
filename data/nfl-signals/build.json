@@ -1,0 +1,13 @@
+{
+ "generatedUTC": "2026-11-13T14:33:25+00:00",
+ "modelVersion": "signal-lab-1.1.0",
+ "pages": [
+  "nfl-signals.html",
+  "nfl-signals-requirements.html",
+  "nfl-signals-data.html",
+  "nfl-signals-injuries.html",
+  "nfl-signals-backtest.html",
+  "nfl-signals-lines.html",
+  "nfl-signals-suggestions.html"
+ ]
+}

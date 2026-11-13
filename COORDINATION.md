@@ -1264,6 +1264,48 @@ task for whoever claims it, and is logged as such.
 - GitHub Pages: latest build `a22bd06` (on main, after the merge) reports `built`. The live URL is not reachable from the sandbox, so please open https://karagemop466-tech.github.io/Korea5/nfl-lab/ to confirm.
 - No PR checks ran on the branch; the `Planner certainty and site checks` workflow did not trigger for this PR. Local equivalents passed: `verify.py` (pass, 0 rows without source), unit tests (OK).
 - Integration request still open: root README link to the lab (R5). Not done by this session.
+---
+
+## Session `arena-68d62c2a` — scope correction after newer NFL Lab integration
+
+**Fixed branch:** `arena/68d62c2a-korea5`. The original N1–N4 claim was committed and pushed as `71100f8`, followed by the integration-scope clarification `dc222d7`. Read-only source reconnaissance before the initial claim was disclosed in that claim. No feature files from that first implementation were committed.
+
+### Upstream change and non-overlap correction
+
+After the claim, `origin/main` advanced beyond `e826658` and merged the more complete NFL Lines Lab from sessions `arena-c6eea73d` and `arena-1e59465a` (including PRs #39 and #42). The canonical lab now includes official Week 9/10 records, a model and walk-forward evaluation, correlations, injury/depth tracking, questions, validation, an empty leaderboard, sources, flags, suggestions, and a generated site under `nfl-lab/`. This substantially overlaps the original draft plan.
+
+The initial local draft had generated duplicate pages from its own `scripts/build_nfl_lab.py`. It was stashed before rebase and will not be restored over the canonical pages. The branch was rebased onto the latest `origin/main` (`0a4c0f4`); upstream pages, data, generators and the current navigation/CI are preserved. The rebase stopped on the append-only `COORDINATION.md` conflict; the full upstream board was retained, and the earlier claim details are summarized above rather than replayed as stale duplicate commits.
+
+### Revised additive tasks (no replacement NFL data or duplicate site)
+
+| # | Task | Owner | Status | Exclusive/additive files |
+|---|---|---|---|---|
+| N1 | Record the NFL.com Terms §1.3 systematic-retrieval restriction and absent permission record as a source/rights flag in the canonical lab | arena-68d62c2a | done | append-only records in `data/nfl-lab/sources.json`, `data/nfl-lab/flags.json` |
+| N2 | Add tested American-odds, implied/fair-probability, expected-value, proper-score, paired-correlation and uncertainty helpers using synthetic inputs only | arena-68d62c2a | done | `nfl-lab/scripts/metrics.py`, `nfl-lab/tests/test_metrics.py` |
+| N3 | Add a formula/method page to the existing canonical lab and make suggestion options explicitly selectable and exportable locally (no server submission) | arena-68d62c2a | done | `scripts/nfl_lab/build_site.py`, `scripts/build_nfl_metrics.py`, `nfl-lab/metrics.html`, `nfl-lab/assets/decisions.js`, `nfl-lab/assets/decisions.css` |
+| N4 | Add the isolated page/tests to CI, verify the canonical site and preserve every existing output, then PR/merge/deploy | arena-68d62c2a | done locally; PR #52 merge with `origin/main` `95d98a7` resolved (see integration record below) | additive steps in `.github/workflows/certainty.yml`, `scripts/nfl_lab/verify.py`, `data/nfl-lab/verification.json`, `nfl-lab/tests/`, `COORDINATION.md` |
+
+No NFL.com scraping or new data fetcher is being added. The Terms source is a rights warning, not a legal conclusion. The existing canonical lab's third-party prices, injury mirrors and depth charts remain governed by its published flags; this addition will not recalculate or silently overwrite those empirical records. Correlation helpers are generic calculations, not new NFL estimates.
+
+### Additive implementation and local verification (arena-68d62c2a, 2026-11-13)
+
+- Added official NFL.com Terms §1.3 to the canonical source register and F15 to Flagged for Review. It is explicitly a source-rights warning; permission status is unknown and no legal conclusion is stated. No scraper, odds fetcher, or sports-data download was added.
+- Added a price-math appendix covering American/decimal odds, raw implied probability, one proportional no-vig convention, fair odds, expected profit with pushes, Brier/log loss, paired joint probability and binary phi association. The helper module is data-free; eight Python tests use synthetic inputs only.
+- Added a Price math entry to the canonical lab navigation. Suggestions now have per-item selectors, localStorage persistence, an explicit JSON export and clear action; selections are browser-local, are not sent to a server, and do not modify source files. A Node mock-DOM test exercises select/save/export/clear behavior.
+- Extended the existing canonical verifier to require the Terms/F15 record, every suggestion selector and local-only UI, and the price-math page/test sources. It reports 1,630 table rows (1,552 official-linked, 47 visibly flagged, 31 method-table), zero unlinked rows, zero missing local links, 15 valid JSON data files, F15 present, 10/10 suggestion choices present/local-only, and the math appendix/test sources present.
+- CI intentionally builds the canonical NFL pages three times and verifies twice: the first verification writes the expanded check list; the second build renders it into `verification.html`; the second verification settles the report's own table-row count; the last build renders that final result. The independent price-math page is built once (it does not consume verification output).
+- Full local pipeline passed: canonical lab build → price-math build → verifier (twice, with the verification page rebuilt after each report update) → root/extra site generation → certainty audit → recursive link check → extra verifier → curated lab verifier → JS syntax and behavior tests → Python tests and compileall. Final link check on the committed static tree: **63 pages, 1,437 local links, 1,236 external links, 0 missing**. Extra verification **31/31**; curated lab verifier **0 failures**; NFL metrics tests **8/8**; existing project tests **5/5**; both Node tests passed; `git diff --check` clean.
+- The root site builder temporarily regenerated legacy NFL pointer pages and the dashboard from its broader generator; those unrelated outputs were restored to `HEAD`. The existing canonical `nfl-lab/` pages are regenerated with the additive navigation/source/UI changes. No edits were made to `nfl.html` or `nfl-strategy.html` by this add-on.
+
+**Integration with `origin/main` `95d98a7` (PR #50 and PR #46 line, arena-68d62c2a, 2026-11-13).** PR #52 became conflicting after main advanced. The merge was resolved by union, not by choosing a side:
+
+- `.github/workflows/certainty.yml`: both step sets are kept — this PR's price-math build, canonical NFL verification (run twice with the page rebuilt between runs), node decision tests and unit tests, and main's `scripts/build_nfl.py` and `scripts/verify_nfl.py` steps.
+- `nfl-lab/*.html` and `verification/links.json`: regenerated from the resolved generators (`scripts/nfl_lab/build_site.py`, `scripts/build_nfl_metrics.py`, `scripts/nfl_lab/verify.py`, `scripts/check_links.py`) rather than picking either side. The navigation now carries both this PR's **Price math** entry and main's **Evidence workbench** link and callout.
+- Upstream `nfl/system/` outputs and `nfl-lab/` pages were not hand-edited. `nfl/system/tools/build_nfl.py` and `verify_nfl.py` were rerun and pass.
+- The integration fixed a real defect: the merged `verification/links.json` was invalid JSON (conflict markers resolved to a corrupt file); regenerating it with `check_links.py` before `build_extra.py` removed the failure.
+- Re-run on the merged tree: NFL canonical verifier pass (1,630 table rows, 0 without source, 0 missing local links); `nfl/system` verifier PASS (46 source-bearing rows, 0 missing); `check_links.py` 0 missing; extra verifier 31/31; curated lab verifier 0 failures; certainty audit passed; NFL metrics tests 8/8; existing Python tests 5/5; both Node decision/calendar tests passed; `compileall` clean; `git diff --check` clean.
+- A second upstream merge was needed when `origin/main` advanced to `45ce41f` (PR #45, research and link-report refreshes only, no generators or workflows changed). Its only conflicts were the same generated `nfl-lab/*.html` and `verification/links.json` outputs, which were regenerated from the unchanged generators; the link report now shows 78 pages, 2,049 local links, 1,275 external, 0 missing.
+- Open items carried forward unchanged: the four inherited suggestion rows without individual official citations remain an outstanding coordination issue (`nfl-strategy.html` was not edited); no NFL.com scraping or new data acquisition was added; the F15 Terms entry is a source-rights warning, not a legal conclusion.
 
 
 ## Merge of session `arena/722a47cb-korea5` (NFL decision support) into `main` (2026-11-13)

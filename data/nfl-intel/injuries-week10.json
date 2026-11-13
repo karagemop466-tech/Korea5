@@ -1,0 +1,2742 @@
+{
+ "meta": {
+  "sourceName": "NFL.com official injury report \u2014 2026 Week 10",
+  "sourceUrl": "https://www.nfl.com/injuries/",
+  "retrievedUTC": "2026-11-13",
+  "note": "Rows transcribed verbatim from the official NFL.com Week-10 injury report as published on 2026-11-13. Practice Status and Game Status appear exactly as published; blank Game Status means the official page showed no designation yet (not an inference). Each player links the official NFL.com player page. Publication rule on the site: rows with an injury, a non-Full practice status, or a game designation are listed for every team; 49ers rows are always listed in full. Depth-chart tier (starter/2nd/3rd/4th string) is NOT published by the league report and is left blank unless an official team depth chart confirms it."
+ },
+ "rows": [
+  {
+   "game": "WAS@NYG",
+   "team": "WAS",
+   "player": "John Bates",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "WAS",
+   "player": "Treylon Burks",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "WAS",
+   "player": "Jayden Daniels",
+   "pos": "QB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": "john-bates"
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "WAS",
+   "player": "Matt Gulbin",
+   "pos": "C",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "WAS",
+   "player": "Chig Okonkwo",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "WAS",
+   "player": "Lucas Patrick",
+   "pos": "C",
+   "injury": "Concussion",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": "Out"
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "WAS",
+   "player": "Amik Robertson",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "WAS",
+   "player": "Shy Tuttle",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "WAS",
+   "player": "Colson Yankoff",
+   "pos": "TE",
+   "injury": "Knee",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": "Out"
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "NYG",
+   "player": "Abdul Carter",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "NYG",
+   "player": "Jermaine Eluemunor",
+   "pos": "T",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "NYG",
+   "player": "Malik Harrison",
+   "pos": "LB",
+   "injury": "Groin",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": "Questionable"
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "NYG",
+   "player": "Colton Hood",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "NYG",
+   "player": "Theo Johnson",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "NYG",
+   "player": "Charlie Jones",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "NYG",
+   "player": "J.J. McCarthy",
+   "pos": "QB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "NYG",
+   "player": "Darnell Mooney",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "NYG",
+   "player": "Malik Nabers",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "NYG",
+   "player": "Cam Skattebo",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "WAS@NYG",
+   "team": "NYG",
+   "player": "Andrew Thomas",
+   "pos": "T",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Ben Brown",
+   "pos": "C",
+   "injury": "Knee",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": "Out"
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "A.J. Brown",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Kevin Byard",
+   "pos": "S",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Carlton Davis III",
+   "pos": "CB",
+   "injury": "Knee",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": "Out"
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Reggie Gilliam",
+   "pos": "FB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "TreVeyon Henderson",
+   "pos": "RB",
+   "injury": "Illness",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": "Out"
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Hunter Henry",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Cameron Latu",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Drake Maye",
+   "pos": "QB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Morgan Moses",
+   "pos": "T",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Walter Rouse",
+   "pos": "T",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Brenden Schooler",
+   "pos": "S",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Rhamondre Stevenson",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Greg Van Roten",
+   "pos": "G",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "NE",
+   "player": "Charles Woods",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "DET",
+   "player": "Brian Branch",
+   "pos": "S",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "DET",
+   "player": "Jared Goff",
+   "pos": "QB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "DET",
+   "player": "Kerby Joseph",
+   "pos": "S",
+   "injury": "Knee",
+   "practice": "Full Participation in Practice",
+   "gameStatus": "Out"
+  },
+  {
+   "game": "NE@DET",
+   "team": "DET",
+   "player": "Cade Mays",
+   "pos": "C",
+   "injury": "Ankle",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": "Out"
+  },
+  {
+   "game": "NE@DET",
+   "team": "DET",
+   "player": "D.J. Reed",
+   "pos": "CB",
+   "injury": "Hip",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": "Out"
+  },
+  {
+   "game": "NE@DET",
+   "team": "DET",
+   "player": "Jacob Saylors",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "DET",
+   "player": "Amon-Ra St. Brown",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "DET",
+   "player": "Sione Vaki",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "NE@DET",
+   "team": "DET",
+   "player": "DJ Wonnum",
+   "pos": "DE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "KC",
+   "player": "Jeffrey Bassa",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "KC",
+   "player": "Mansoor Delane",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "KC",
+   "player": "Justin Fields",
+   "pos": "QB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "KC",
+   "player": "Jaden Hicks",
+   "pos": "S",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "KC",
+   "player": "Travis Kelce",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "KC",
+   "player": "Patrick Mahomes",
+   "pos": "QB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "KC",
+   "player": "Jaylon Moore",
+   "pos": "T",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "KC",
+   "player": "Omarr Norman-Lott",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "KC",
+   "player": "Jaydn Ott",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "KC",
+   "player": "Rashee Rice",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "KC",
+   "player": "Peter Woods",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "KC",
+   "player": "Xavier Worthy",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "ATL",
+   "player": "Zachariah Branch",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "ATL",
+   "player": "Kendal Daniels",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "ATL",
+   "player": "Divine Deablo",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "ATL",
+   "player": "Gervon Dexter Sr.",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "ATL",
+   "player": "James Pearce Jr.",
+   "pos": "DE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "ATL",
+   "player": "Za'Darius Smith",
+   "pos": "DE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "ATL",
+   "player": "Jawaan Taylor",
+   "pos": "T",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "ATL",
+   "player": "Cameron Thomas",
+   "pos": "DE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "KC@ATL",
+   "team": "ATL",
+   "player": "Josh Woods",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "MIN",
+   "player": "Blake Cashman",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "MIN",
+   "player": "T.J. Hockenson",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "MIN",
+   "player": "Tyrion Ingram-Dawkins",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "MIN",
+   "player": "Theo Jackson",
+   "pos": "S",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "MIN",
+   "player": "Jauan Jennings",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "MIN",
+   "player": "Kyler Murray",
+   "pos": "QB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "MIN",
+   "player": "Kyle Van Noy",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "MIN",
+   "player": "Jay Ward",
+   "pos": "S",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "MIN",
+   "player": "Carson Wentz",
+   "pos": "QB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Aaron Banks",
+   "pos": "G",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Chris Brooks",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Javon Bullard",
+   "pos": "S",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Zaire Franklin",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Travis Glover",
+   "pos": "G",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Ty'Ron Hopper",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Josh Jacobs",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Bo Melton",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Skyy Moore",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Micah Parsons",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Sean Rhyan",
+   "pos": "C",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Trey Smack",
+   "pos": "K",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Lukas Van Ness",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Josh Whyle",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Savion Williams",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIN@GB",
+   "team": "GB",
+   "player": "Kevin Zeitler",
+   "pos": "G",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "JAX",
+   "player": "Jessie Bates",
+   "pos": "S",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "JAX",
+   "player": "Ezra Cleveland",
+   "pos": "G",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "JAX",
+   "player": "Branson Combs",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "JAX",
+   "player": "Jordan Davis",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "JAX",
+   "player": "BJ Green II",
+   "pos": "DE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "JAX",
+   "player": "Robert Hainsey",
+   "pos": "C",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "JAX",
+   "player": "Antonio Johnson",
+   "pos": "S",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "JAX",
+   "player": "Jakobi Meyers",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "JAX",
+   "player": "Chris Rodriguez Jr.",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "JAX",
+   "player": "Bhayshul Tuten",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "JAX",
+   "player": "Travon Walker",
+   "pos": "DE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "TEN",
+   "player": "Cody Barton",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "TEN",
+   "player": "John Franklin-Myers",
+   "pos": "DE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "TEN",
+   "player": "Marcus Harris",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "TEN",
+   "player": "Anthony Hill Jr.",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "TEN",
+   "player": "Jaylon Jones",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "TEN",
+   "player": "JC Latham",
+   "pos": "T",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "TEN",
+   "player": "Tony Pollard",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "TEN",
+   "player": "Peter Skoronski",
+   "pos": "G",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "TEN",
+   "player": "Tyjae Spears",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "TEN",
+   "player": "Carnell Tate",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "TEN",
+   "player": "Tommy Townsend",
+   "pos": "P",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "JAX@TEN",
+   "team": "TEN",
+   "player": "Kevin Winston Jr.",
+   "pos": "S",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "BUF",
+   "player": "Alec Anderson",
+   "pos": "G",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "BUF",
+   "player": "Christian Benford",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "BUF",
+   "player": "Spencer Brown",
+   "pos": "T",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "BUF",
+   "player": "Dion Dawkins",
+   "pos": "T",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "BUF",
+   "player": "Sam Franklin Jr.",
+   "pos": "S",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "BUF",
+   "player": "Greg Gaines",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "BUF",
+   "player": "Jordan Hancock",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "BUF",
+   "player": "Dalton Kincaid",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "BUF",
+   "player": "Connor McGovern",
+   "pos": "C",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "BUF",
+   "player": "Ar'maj Reed-Adams",
+   "pos": "G",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "BUF",
+   "player": "T.J. Sanders",
+   "pos": "DE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "BUF",
+   "player": "Tyrell Shavers",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "NYJ",
+   "player": "Jarvis Brownlee Jr.",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "NYJ",
+   "player": "Omar Cooper Jr.",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "NYJ",
+   "player": "Joseph Ossai",
+   "pos": "DE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "NYJ",
+   "player": "VJ Payne",
+   "pos": "S",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "NYJ",
+   "player": "Harrison Phillips",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "NYJ",
+   "player": "Trevin Wallace",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "NYJ",
+   "player": "Garrett Wilson",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "BUF@NYJ",
+   "team": "NYJ",
+   "player": "Nahshon Wright",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "MIA",
+   "player": "Tucker Addington",
+   "pos": "LS",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "MIA",
+   "player": "Kaytron Allen",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "MIA",
+   "player": "Darrell Baker Jr.",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "MIA",
+   "player": "Chris Bell",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "MIA",
+   "player": "Aaron Brewer",
+   "pos": "C",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "MIA",
+   "player": "Malik Herring",
+   "pos": "DE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "MIA",
+   "player": "Will Kacmarek",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "MIA",
+   "player": "Michael Taaffe",
+   "pos": "S",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "MIA",
+   "player": "Dante Trader Jr.",
+   "pos": "S",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "MIA",
+   "player": "Jared Wayne",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "MIA",
+   "player": "Jaylen Wright",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "Mo Alie-Cox",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "CJ Allen",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "Jaylon Carlies",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "Akeem Davis-Gaither",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "A.J. Haulcy",
+   "pos": "S",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "Arden Key",
+   "pos": "DE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "Luke Rhodes",
+   "pos": "LS",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "Grover Stewart",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "Jonathan Taylor",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "Jerry Tillery",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "Jalen Travis",
+   "pos": "T",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "Justin Walley",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "MIA@IND",
+   "team": "IND",
+   "player": "Charvarius Ward",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "CAR",
+   "player": "Jonathon Brooks",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "CAR",
+   "player": "Brady Christensen",
+   "pos": "G",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "CAR",
+   "player": "Trevor Etienne",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "CAR",
+   "player": "Chuba Hubbard",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "CAR",
+   "player": "Lee Hunter",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "CAR",
+   "player": "Mike Jackson",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "CAR",
+   "player": "Will Lee III",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "CAR",
+   "player": "Xavier Legette",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "CAR",
+   "player": "Damien Lewis",
+   "pos": "G",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "CAR",
+   "player": "Bobby Okereke",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "CAR",
+   "player": "Jaelan Phillips",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "CAR",
+   "player": "Torricelli Simpkins III",
+   "pos": "G",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "NO",
+   "player": "Kelvin Banks Jr.",
+   "pos": "T",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "NO",
+   "player": "CJ Donaldson",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "NO",
+   "player": "David Edwards",
+   "pos": "G",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "NO",
+   "player": "Martin Emerson",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "NO",
+   "player": "Travis Etienne",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "NO",
+   "player": "Noah Fant",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "NO",
+   "player": "Taliese Fuaga",
+   "pos": "T",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "NO",
+   "player": "Alvin Kamara",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "NO",
+   "player": "Erik McCoy",
+   "pos": "C",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "NO",
+   "player": "Christen Miller",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "NO",
+   "player": "Asim Richards",
+   "pos": "T",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "CAR@NO",
+   "team": "NO",
+   "player": "Quincy Riley",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "Azeez Al-Shaair",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "Reed Blankenship",
+   "pos": "S",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "Tank Dell",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "Blake Fisher",
+   "pos": "T",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "Marvin Harrison Jr.",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "Jacob Hummel",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "Brevin Jordan",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "Woody Marks",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "David Montgomery",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "Keylan Rutledge",
+   "pos": "G",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "Jaylin Smith",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "Wyatt Teller",
+   "pos": "G",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "HOU",
+   "player": "Tommy Togiai",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "CLE",
+   "player": "Austin Barber",
+   "pos": "T",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "CLE",
+   "player": "Denzel Boston",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "CLE",
+   "player": "Michael Burton",
+   "pos": "FB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "CLE",
+   "player": "Maliek Collins",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "CLE",
+   "player": "Harold Fannin Jr.",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "CLE",
+   "player": "Ronnie Hickman Jr.",
+   "pos": "S",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "CLE",
+   "player": "Tytus Howard",
+   "pos": "T",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "CLE",
+   "player": "Elgton Jenkins",
+   "pos": "C",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "CLE",
+   "player": "Donovan McMillon",
+   "pos": "S",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "CLE",
+   "player": "Carson Schwesinger",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "CLE",
+   "player": "Denzel Ward",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "HOU@CLE",
+   "team": "CLE",
+   "player": "Quincy Williams",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "LAR",
+   "player": "Davis Allen",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "LAR",
+   "player": "Steve Avila",
+   "pos": "G",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "LAR",
+   "player": "Joe Cardona",
+   "pos": "LS",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "LAR",
+   "player": "Kam Curl",
+   "pos": "S",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "LAR",
+   "player": "Terrance Ferguson",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "LAR",
+   "player": "Myles Garrett",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "LAR",
+   "player": "Trent McDuffie",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "LAR",
+   "player": "Puka Nacua",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "LAR",
+   "player": "Colby Parkinson",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "LAR",
+   "player": "Matthew Stafford",
+   "pos": "QB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Budda Baker",
+   "pos": "S",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Zachary Carter",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Hjalte Froholdt",
+   "pos": "C",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Jon Gaines II",
+   "pos": "G",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Bam Knight",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Hunter Long",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Roy Lopez",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Max Melton",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Darius Robinson",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Isaac Seumalo",
+   "pos": "G",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Dante Stills",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Josh Sweat",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Jayden Williams",
+   "pos": "T",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Mack Wilson",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "LAR@AZ",
+   "team": "AZ",
+   "player": "Andrew Wingard",
+   "pos": "S",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "AJ Barner",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Anthony Bradford",
+   "pos": "G",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Charles Cross",
+   "pos": "T",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Sam Darnold",
+   "pos": "QB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Derick Hall",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Drew Lock",
+   "pos": "QB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Quenton Nelson",
+   "pos": "G",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Uchenna Nwosu",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Patrick O'Connell",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Connor O'Toole",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Brandon Pili",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Jarran Reed",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Rashid Shaheed",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Jaxon Smith-Njigba",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "SEA",
+   "player": "Leonard Williams",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "LV",
+   "player": "Thomas Booker",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "LV",
+   "player": "Foley Fatukasi",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "LV",
+   "player": "Ian Thomas",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SEA@LV",
+   "team": "LV",
+   "player": "Trey Zuhn III",
+   "pos": "C",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "SF",
+   "player": "Mike Evans",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "SF",
+   "player": "Renardo Green",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "SF",
+   "player": "Dre Greenlaw",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "SF",
+   "player": "Nate Hobbs",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "SF",
+   "player": "Deommodore Lenoir",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "SF",
+   "player": "Christian McCaffrey",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "SF",
+   "player": "Siran Neal",
+   "pos": "S",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "SF",
+   "player": "Demarcus Robinson",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "SF",
+   "player": "Deebo Samuel Sr.",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "SF",
+   "player": "Upton Stout",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "SF",
+   "player": "C.J. West",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "SF",
+   "player": "Trent Williams",
+   "pos": "T",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Jonathan Bullard",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Alijah Clark",
+   "pos": "S",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Donovan Ezeiruaku",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Jake Ferguson",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Tyler Goodson",
+   "pos": "RB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Malik Hooker",
+   "pos": "S",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Marist Liufau",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "P.J. Locke",
+   "pos": "S",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Von Miller",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Jonathan Mingo",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Devin Moore",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "DeMarvion Overshown",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "George Pickens",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Joey Porter Jr.",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Luke Schoonmaker",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Brevyn Spann-Ford",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "Juanyeh Thomas",
+   "pos": "S",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "SF@DAL",
+   "team": "DAL",
+   "player": "KaVontae Turpin",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "PIT",
+   "player": "Brandin Echols",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "PIT",
+   "player": "DeShon Elliott",
+   "pos": "S",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "PIT",
+   "player": "Derrick Harmon",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "PIT",
+   "player": "Cameron Heyward",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "PIT",
+   "player": "Ben Skowronek",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "PIT",
+   "player": "Doneiko Slaughter",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "PIT",
+   "player": "Darnell Washington",
+   "pos": "TE",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "PIT",
+   "player": "T.J. Watt",
+   "pos": "LB",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "CIN",
+   "player": "Jonathan Allen",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "CIN",
+   "player": "Jalen Davis",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "CIN",
+   "player": "Kyle Dugger",
+   "pos": "S",
+   "injury": "",
+   "practice": "Did Not Participate In Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "CIN",
+   "player": "Dylan Fairchild",
+   "pos": "G",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "CIN",
+   "player": "B.J. Hill",
+   "pos": "DT",
+   "injury": "",
+   "practice": "Limited Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "CIN",
+   "player": "Andrei Iosivas",
+   "pos": "WR",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "CIN",
+   "player": "Brian Parker II",
+   "pos": "G",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  },
+  {
+   "game": "PIT@CIN",
+   "team": "CIN",
+   "player": "DJ Turner II",
+   "pos": "CB",
+   "injury": "",
+   "practice": "Full Participation in Practice",
+   "gameStatus": ""
+  }
+ ],
+ "noInjuriesReported": [
+  {
+   "game": "LAC@BAL",
+   "teams": [
+    "LAC",
+    "BAL"
+   ],
+   "officialText": "No Injuries Reported",
+   "sourceUrl": "https://www.nfl.com/injuries/",
+   "note": "The official report shows \"No Injuries Reported\" for both teams on the Monday Night Football game as of 2026-11-13."
+  }
+ ],
+ "statusNews": [
+  {
+   "headline": "Ravens\u2019 Lamar Jackson (right thumb) out 6-9 weeks, expects to return this season",
+   "team": "BAL",
+   "impact": "Starting QB confirmed out long-term; backup QB plays. Verified starter-absence.",
+   "sourceUrl": "https://www.nfl.com/news/ravens-lamar-jackson-right-thumb-out-6-9-weeks-expects-to-return-this-season"
+  },
+  {
+   "headline": "NFL news roundup: Ravens officially place Lamar Jackson on injured reserve",
+   "team": "BAL",
+   "impact": "Starting QB officially on IR.",
+   "sourceUrl": "https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-thursday-nov-5"
+  },
+  {
+   "headline": "Sam Darnold ruled out for Seahawks\u2019 Week 10 game vs. Raiders; Drew Lock expected to start again",
+   "team": "SEA",
+   "impact": "Starting QB ruled out; named backup Drew Lock expected to start.",
+   "sourceUrl": "https://www.nfl.com/news/sam-darnold-ruled-out-for-seahawks-week-10-game-vs-raiders-drew-lock-expected-to-start-again"
+  },
+  {
+   "headline": "Dolphins place QB Malik Willis (groin) on injured reserve; Kyle McCord in line for first start",
+   "team": "MIA",
+   "impact": "Starting QB on IR; backup Kyle McCord in line for first start.",
+   "sourceUrl": "https://www.nfl.com/news/dolphins-place-qb-malik-willis-groin-on-injured-reserve-kyle-mccord-in-line-for-first-start"
+  },
+  {
+   "headline": "NFL news roundup: Browns to start QB Deshaun Watson vs. Texans; Cardinals\u2019 Carson Beck to start vs. Rams",
+   "team": "CLE",
+   "impact": "Official named starters for CLE and AZ games.",
+   "sourceUrl": "https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-wednesday-nov-11"
+  },
+  {
+   "headline": "Rams WR Puka Nacua likely to be placed on injured reserve with turf toe, sprained MCL and PCL",
+   "team": "LAR",
+   "impact": "Starting WR likely to IR (not yet official designation \u2014 labelled likely).",
+   "sourceUrl": "https://www.nfl.com/news/rams-wr-puka-nacua-likely-to-be-placed-on-injured-reserve-with-turf-toe-sprained-mcl-and-pcl"
+  },
+  {
+   "headline": "Packers RB Josh Jacobs to undergo surgery on finger this week; timeline to return TBD",
+   "team": "GB",
+   "impact": "Starting RB having surgery; return timeline TBD.",
+   "sourceUrl": "https://www.nfl.com/news/packers-rb-josh-jacobs-to-undergo-surgery-on-finger-this-week"
+  },
+  {
+   "headline": "NFL news roundup: J.J. McCarthy expected to play Week 10; Justin Herbert avoids finger fracture",
+   "team": "NYG",
+   "impact": "Starting QB expected to play Week 10.",
+   "sourceUrl": "https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-monday-nov-9"
+  },
+  {
+   "headline": "NFL news roundup: Bills acquire S Amani Hooker; Broncos trade for Chargers\u2019 Daiyan Henley",
+   "team": "BUF",
+   "impact": "Roster moves affecting depth at S (BUF) and LB (DEN/LAC).",
+   "sourceUrl": "https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-tuesday-nov-10"
+  }
+ ]
+}

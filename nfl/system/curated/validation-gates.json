@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "name": "Validation gates — a strategy must pass every gate before it may be called skilful, ranked, or rewarded",
+    "version": "1.0",
+    "frozenOn": "2026-11-13",
+    "frozenRule": "These thresholds are frozen on the date above, before any strategy result was computed. Changing a threshold requires a new version number and a new freeze date; the change is logged in the Gate change log below. A threshold changed after results were seen is evidence the result was fitted.",
+    "passRule": "All gates must pass. A gate that cannot be evaluated yet returns 'not evaluable' — never 'pass'.",
+    "why": "The purpose of a gate is to say no. A gate that always passes is decoration."
+  },
+  "gates": [
+    {
+      "id": "G1",
+      "name": "Provenance",
+      "question": "Does every input value come from a named official source, with a URL and a retrieval time?",
+      "passCondition": "100% of input rows carry sourceUrl + retrievedUTC, and the URL is on the approved official-domain list.",
+      "failCondition": "Any row with no source, an unofficial host, or an invented value.",
+      "automated": true,
+      "evaluatedBy": "nfl/tools/verify_nfl.py",
+      "cost": "Low"
+    },
+    {
+      "id": "G2",
+      "name": "Correlation honesty",
+      "question": "Are dependent outcomes treated as dependent?",
+      "passCondition": "No parlay or combo price is published from a product of independent leg probabilities. Every combination shows the empirical joint probability, the independence product, and the signed difference, with n and an interval.",
+      "failCondition": "Any published combo price that silently assumes independence.",
+      "automated": true,
+      "evaluatedBy": "nfl/tools/verify_nfl.py (scans for independence products presented as prices)",
+      "cost": "Medium"
+    },
+    {
+      "id": "G3",
+      "name": "Skill vs luck",
+      "question": "Could this result have arisen from a coin that knows nothing?",
+      "passCondition": "Observed proper score beats the shuffled-outcome distribution at p < 0.05, AND the strategy has at least the minimum settled sample, AND its calibration error is within tolerance.",
+      "minSample": 100,
+      "alpha": 0.05,
+      "shuffleDraws": 2000,
+      "calibrationTolerance": 0.07,
+      "failCondition": "p >= 0.05, or sample below minimum, or calibration error above tolerance.",
+      "note": "The minimum sample of 100 is a policy default (Q03), not a fact. It is set high deliberately: with 20 settled bets a 60% win rate is indistinguishable from luck.",
+      "automated": true,
+      "evaluatedBy": "nfl/tools/analyze_market.py",
+      "cost": "Low"
+    },
+    {
+      "id": "G4",
+      "name": "Calibration",
+      "question": "When the model says 60%, does it happen 60% of the time?",
+      "passCondition": "Expected calibration error (ECE) over deciles <= 0.07 and no decile off by more than 0.15 with n>=20 in that decile.",
+      "failCondition": "ECE above tolerance, or a badly miscalibrated decile.",
+      "automated": true,
+      "evaluatedBy": "nfl/tools/analyze_market.py",
+      "cost": "Low"
+    },
+    {
+      "id": "G5",
+      "name": "Uncertainty",
+      "question": "Is the uncertainty printed next to the estimate?",
+      "passCondition": "Every published estimate carries n and a 90% interval; estimates with n below the suppression floor are withheld entirely.",
+      "suppressionFloor": {
+        "playerCorrelation": 8,
+        "teamRate": 6,
+        "propProbability": 8
+      },
+      "failCondition": "A point estimate with no n, or an estimate published below the floor.",
+      "automated": true,
+      "evaluatedBy": "nfl/tools/verify_nfl.py",
+      "cost": "Low"
+    },
+    {
+      "id": "G6",
+      "name": "Honesty labelling",
+      "question": "Is every non-official number labelled as a model output?",
+      "passCondition": "Every computed value carries MODEL or ESTIMATE; every unpublishable value is blank with an UNVERIFIED badge; no page claims a verified value that has no official source.",
+      "failCondition": "A computed number presented as a fact, or a blank cell with no badge.",
+      "automated": true,
+      "evaluatedBy": "nfl/tools/verify_nfl.py",
+      "cost": "Low"
+    },
+    {
+      "id": "G7",
+      "name": "Multiple testing",
+      "question": "If 40 strategies were tried, is the winner still surprising?",
+      "passCondition": "Benjamini–Hochberg style false-discovery control across all strategies tested in the same cycle, at q = 0.10, applied to the G3 p-values.",
+      "qThreshold": 0.10,
+      "failCondition": "A strategy promoted on a p-value that does not survive the false-discovery correction.",
+      "note": "This is the gate that removes 'we tried everything until something worked'. It raises the bar as the number of tested strategies grows.",
+      "automated": true,
+      "evaluatedBy": "nfl/tools/analyze_market.py",
+      "cost": "Low"
+    },
+    {
+      "id": "G8",
+      "name": "Governance",
+      "question": "Who decided, when, and on what evidence?",
+      "passCondition": "Every promotion, demotion and reward decision names a reviewer, a date, and a reason; the gate version that applied is printed alongside.",
+      "failCondition": "An accepted strategy with no named reviewer.",
+      "automated": false,
+      "evaluatedBy": "nfl/curated/suggestions.json review fields (owner decision — Q17)",
+      "cost": "Zero build, one owner decision"
+    },
+    {
+      "id": "G9",
+      "name": "Point-in-time integrity",
+      "question": "Was the information used actually available at the moment the bet would have been made?",
+      "passCondition": "Every input carries a publication time; nothing published after the decision cutoff may be used. Lineup news after the cutoff is excluded.",
+      "decisionCutoff": "Kickoff minus 60 minutes (proposed default)",
+      "failCondition": "Any input whose publication time is after the cutoff, or any input with no publication time.",
+      "note": "The injury report is published during the week; the final game-status update is published 90 minutes before kickoff per NFL rules. Anything inside the last hour cannot be used.",
+      "automated": false,
+      "evaluatedBy": "requires a stored publication timestamp per input (not yet available for all sources — Q13)",
+      "cost": "Medium"
+    }
+  ],
+  "gateChangeLog": [
+    {
+      "version": "1.0",
+      "date": "2026-11-13",
+      "change": "Initial freeze. Thresholds: minSample 100, alpha 0.05, ECE 0.07, q 0.10, suppression floors 8/6/8.",
+      "resultsSeen": "none — no strategy has been evaluated yet",
+      "changedBy": "session arena-998582f0"
+    }
+  ],
+  "currentStatus": {
+    "gatesDefined": 9,
+    "gatesFullyAutomated": 6,
+    "gatesRequiringOwnerDecision": 1,
+    "gatesRequiringDataNotYetAvailable": 2,
+    "strategiesCertified": 0,
+    "reasonNoStrategyCertified": "No strategy has a settled sample of 100 bets. With zero stored prices (Q01) no strategy can even be settled against a price. Certifying one now would require inventing data."
+  }
+}

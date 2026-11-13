@@ -1,0 +1,11 @@
+{
+ "meta": {
+  "dataset": "NFL.com inactives page rows (game-day inactive designations)",
+  "retrievedUTC": "2026-11-13T14:35:48.558982+00:00",
+  "rows": 0,
+  "sourceUrl": "https://www.nfl.com/inactives/",
+  "sourceName": "NFL.com inactives",
+  "note": "Zero rows means the page renders from a client-side call the static HTML does not contain."
+ },
+ "rows": []
+}

@@ -1,0 +1,330 @@
+{
+ "meta": {
+  "sourceName": "NFL.com official league standings 2026 REG",
+  "sourceUrl": "https://www.nfl.com/standings/league/2026/REG",
+  "retrievedUTC": "2026-11-13",
+  "note": "W/L/T, PF, PA, STRK transcribed from the NFL.com league standings table (official legend: W L T PCT PF PA NET PTS STRK). PCT and NET columns verified by arithmetic. Home/Road/Div/Conf split columns were not reliably machine-parseable and are NOT used. Retrieved 2026-11-13; page records appear to cover Weeks 1-9 (see reconciliation report for the exact boundary check)."
+ },
+ "teams": [
+  {
+   "team": "BUF",
+   "w": 7,
+   "l": 1,
+   "ties": 0,
+   "pf": 256,
+   "pa": 187,
+   "strk": "4W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "SF",
+   "w": 7,
+   "l": 1,
+   "ties": 0,
+   "pf": 235,
+   "pa": 156,
+   "strk": "1W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "CHI",
+   "w": 7,
+   "l": 2,
+   "ties": 0,
+   "pf": 241,
+   "pa": 184,
+   "strk": "4W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "DEN",
+   "w": 7,
+   "l": 2,
+   "ties": 0,
+   "pf": 198,
+   "pa": 186,
+   "strk": "5W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "CIN",
+   "w": 6,
+   "l": 2,
+   "ties": 0,
+   "pf": 240,
+   "pa": 175,
+   "strk": "4W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "DET",
+   "w": 6,
+   "l": 2,
+   "ties": 0,
+   "pf": 222,
+   "pa": 189,
+   "strk": "4W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "JAX",
+   "w": 6,
+   "l": 2,
+   "ties": 0,
+   "pf": 229,
+   "pa": 121,
+   "strk": "2W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "KC",
+   "w": 6,
+   "l": 2,
+   "ties": 0,
+   "pf": 202,
+   "pa": 143,
+   "strk": "1W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "MIN",
+   "w": 6,
+   "l": 2,
+   "ties": 0,
+   "pf": 146,
+   "pa": 116,
+   "strk": "2L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "PIT",
+   "w": 6,
+   "l": 2,
+   "ties": 0,
+   "pf": 180,
+   "pa": 144,
+   "strk": "4W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "GB",
+   "w": 6,
+   "l": 3,
+   "ties": 0,
+   "pf": 216,
+   "pa": 191,
+   "strk": "2W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "NYG",
+   "w": 5,
+   "l": 3,
+   "ties": 1,
+   "pf": 203,
+   "pa": 196,
+   "strk": "1L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "CLE",
+   "w": 5,
+   "l": 4,
+   "ties": 0,
+   "pf": 161,
+   "pa": 196,
+   "strk": "2L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "LAR",
+   "w": 5,
+   "l": 4,
+   "ties": 0,
+   "pf": 214,
+   "pa": 181,
+   "strk": "3W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "NE",
+   "w": 5,
+   "l": 4,
+   "ties": 0,
+   "pf": 211,
+   "pa": 207,
+   "strk": "1L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "SEA",
+   "w": 5,
+   "l": 4,
+   "ties": 0,
+   "pf": 202,
+   "pa": 162,
+   "strk": "1W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "BAL",
+   "w": 4,
+   "l": 5,
+   "ties": 0,
+   "pf": 189,
+   "pa": 236,
+   "strk": "4L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "DAL",
+   "w": 4,
+   "l": 5,
+   "ties": 0,
+   "pf": 246,
+   "pa": 236,
+   "strk": "1W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "LV",
+   "w": 4,
+   "l": 5,
+   "ties": 0,
+   "pf": 238,
+   "pa": 268,
+   "strk": "1L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "WAS",
+   "w": 3,
+   "l": 5,
+   "ties": 1,
+   "pf": 196,
+   "pa": 223,
+   "strk": "1W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "CAR",
+   "w": 3,
+   "l": 5,
+   "ties": 0,
+   "pf": 199,
+   "pa": 219,
+   "strk": "3L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "HOU",
+   "w": 3,
+   "l": 5,
+   "ties": 0,
+   "pf": 209,
+   "pa": 192,
+   "strk": "1W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "NO",
+   "w": 3,
+   "l": 5,
+   "ties": 0,
+   "pf": 185,
+   "pa": 216,
+   "strk": "1W",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "AZ",
+   "w": 3,
+   "l": 6,
+   "ties": 0,
+   "pf": 178,
+   "pa": 255,
+   "strk": "1L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "ATL",
+   "w": 3,
+   "l": 6,
+   "ties": 0,
+   "pf": 188,
+   "pa": 223,
+   "strk": "2L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "TB",
+   "w": 3,
+   "l": 6,
+   "ties": 0,
+   "pf": 202,
+   "pa": 178,
+   "strk": "1L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "IND",
+   "w": 2,
+   "l": 7,
+   "ties": 0,
+   "pf": 184,
+   "pa": 249,
+   "strk": "5L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "NYJ",
+   "w": 2,
+   "l": 7,
+   "ties": 0,
+   "pf": 182,
+   "pa": 223,
+   "strk": "4L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "PHI",
+   "w": 2,
+   "l": 7,
+   "ties": 0,
+   "pf": 148,
+   "pa": 221,
+   "strk": "7L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "MIA",
+   "w": 1,
+   "l": 7,
+   "ties": 0,
+   "pf": 126,
+   "pa": 200,
+   "strk": "2L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "TEN",
+   "w": 1,
+   "l": 7,
+   "ties": 0,
+   "pf": 144,
+   "pa": 199,
+   "strk": "2L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  },
+  {
+   "team": "LAC",
+   "w": 0,
+   "l": 8,
+   "ties": 0,
+   "pf": 121,
+   "pa": 219,
+   "strk": "8L",
+   "sourceUrl": "https://www.nfl.com/standings/league/2026/REG"
+  }
+ ]
+}

@@ -505,6 +505,373 @@
           "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates"
         }
       ]
+    },
+    {
+      "id": "F33",
+      "severity": "medium",
+      "title": "Texans depth chart published as an image — strings unverified",
+      "detail": "houstontexans.com/team/depth-chart publishes 'Unofficial Depth Chart' as a picture, not a table. HOU replacement strings on the Week-10 deficiency tracker are left blank and flagged rather than inferred. The image link is provided for manual review.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Texans depth chart (image)",
+          "url": "https://www.houstontexans.com/team/depth-chart/"
+        }
+      ]
+    },
+    {
+      "id": "F34",
+      "severity": "medium",
+      "title": "Panthers depth-chart page unreachable — CAR rows blank",
+      "detail": "carolinapanthers.com/team/depth-chart refused CI connections twice and returned HTTP 500 on direct fetch (2026-11-13). CAR depth strings and replacements are blank/unverified on the tracker. No ESPN/secondary substitute was used.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Panthers depth chart (unreachable)",
+          "url": "https://www.carolinapanthers.com/team/depth-chart/"
+        }
+      ]
+    },
+    {
+      "id": "F35",
+      "severity": "medium",
+      "title": "Market odds are a trusted secondary source, not official league data",
+      "detail": "Spread/total/moneyline reference values come from DraftKings odds exposed through ESPN's scoreboard API (NFL official partner). They are labelled 'trusted secondary' everywhere. Sportsbook operator pages themselves were not reachable for verification.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "ESPN NFL odds",
+          "url": "https://www.espn.com/nfl/odds"
+        }
+      ]
+    },
+    {
+      "id": "F36",
+      "severity": "low",
+      "title": "Fitted home-field advantage (-0.5 pts) deviates from the traditional ~2.5 prior",
+      "detail": "The least-squares fit on 136 official Week 1-9 results estimates HFA = -0.5 points. The traditional prior is about +2.5. The model uses the fitted value; a +/-3 pt sensitivity shifts all spreads uniformly. Flagged for reviewer decision.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Official results used in the fit",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9"
+        }
+      ]
+    },
+    {
+      "id": "F37",
+      "severity": "low",
+      "title": "Model totals are not injury-adjusted in v0",
+      "detail": "Injury weights move the spread only. Totals for injury-hit games (e.g., SEA @ LV with Darnold out) are therefore stale. Documented as a limitation on lines.html; fix proposed as an accepted-path candidate.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com injuries",
+          "url": "https://www.nfl.com/injuries/"
+        }
+      ]
+    },
+    {
+      "id": "F38",
+      "severity": "medium",
+      "title": "DET S Kerby Joseph (Game Status: Out) is not on the club's published depth chart",
+      "detail": "The official injury report lists Kerby Joseph (S) as Out for NE @ DET, but the Lions' published depth chart lists only Chuck Clark and Brian Branch at S. The replacement string is left blank and flagged — never inferred.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com injuries",
+          "url": "https://www.nfl.com/injuries/"
+        },
+        {
+          "name": "Lions depth chart",
+          "url": "https://www.detroitlions.com/team/depth-chart/"
+        }
+      ]
+    },
+    {
+      "id": "F39",
+      "severity": "low",
+      "title": "Sunday/Monday game statuses not yet designated at retrieval",
+      "detail": "Only WAS @ NYG (Thu) and NE @ DET carry game-status designations in the 2026-11-13 snapshot; other games show practice status only. Blank cells are blank on the tracker — they are not filled with guesses. Re-pull on Friday/Saturday updates them (S2/S7).",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com injuries",
+          "url": "https://www.nfl.com/injuries/"
+        }
+      ]
+    },
+    {
+      "id": "F40",
+      "severity": "high",
+      "title": "Player-prop markets unavailable from verified sources — prop strategies blocked",
+      "detail": "No official or licensed-book prop board could be verified in this pass. Player-prop combo strategies (ST5, SG6/SG7) are registered but blocked (Q5). Modelled prop baselines would need Q19 usage data first.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "ESPN NFL odds (no props verified)",
+          "url": "https://www.espn.com/nfl/odds"
+        }
+      ]
+    },
+    {
+      "id": "F41",
+      "severity": "medium",
+      "title": "Correlation values are literature-anchored estimates, not computed here",
+      "detail": "The correlation matrix on strategies.html publishes rho ranges with explicit 'unverified estimate' labels. Empirical phi coefficients require the pick ledger (S3) and the correlation job (S5). Until then same-game staking uses the documented rho floor 0.35.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Correlation framework (published site page)",
+          "url": "https://karagemop466-tech.github.io/Korea5/strategies.html"
+        }
+      ]
+    },
+    {
+      "id": "F42",
+      "severity": "medium",
+      "title": "Model v0 is unproven: first out-of-sample test was a side loss",
+      "detail": "WAS @ NYG (Week 10 TNF): model NYG -2.2, final Commanders 24-21 — wrong side, 5.2-point margin error. One game proves nothing; gate G4 requires n >= 100 graded picks before any rewards. Reported straight, not hidden.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Official game page",
+          "url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10"
+        }
+      ]
+    },
+    {
+      "id": "F43",
+      "severity": "low",
+      "title": "nfl.com Week-1 game listing shows a Wednesday date for Sunday Night Football",
+      "detail": "The official scores page lists NE at SEA as 'Sunday Night Football, September 9th, 2026', but September 9, 2026 is a Wednesday. The score is captured as shown; no date was silently corrected. Verification of the true kickoff date is pending.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com: 2026 week 1 scores",
+          "url": "https://www.nfl.com/scores/2026/week-1"
+        }
+      ]
+    },
+    {
+      "id": "F44",
+      "severity": "low",
+      "title": "nfl.com scores pages can serve 'Hidden Score' placeholders in spoiler mode",
+      "detail": "One retrieval of the Week-3 scores page returned 'Hidden Score' placeholders (client-side spoiler state). The canonical week URL was re-fetched and the full scores obtained. All 137 captured finals reconcile exactly against the standings, so no placeholder leaked into the data. Logged as a source-behavior irregularity for future collectors.",
+      "status": "resolved",
+      "sources": [
+        {
+          "name": "NFL.com: 2026 week 3 scores",
+          "url": "https://www.nfl.com/scores/2026/week-3"
+        },
+        {
+          "name": "NFL.com: 2026 standings",
+          "url": "https://www.nfl.com/standings/league/2026/REG"
+        }
+      ]
+    },
+    {
+      "id": "F45",
+      "severity": "high",
+      "title": "No OFFICIAL market odds source — nfl-intel market columns blank",
+      "detail": "Market columns on nfl-intel-lines.html are deliberately blank and flagged. A trusted-secondary market feed (DraftKings via ESPN partner feed) was captured by session arena-65332583 and is flagged as not-official league data (their F35) - usable for context, not for verification. This blocks validation gates G5 (ATS vs closing line) and G6 on official data, CLV tracking on official prices, and parlay-leg correlation measurement. Never inferred (see Q-ODDS).",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Questions register: Q-ODDS",
+          "url": "https://karagemop466-tech.github.io/Korea5/questions.html"
+        }
+      ]
+    },
+    {
+      "id": "F46",
+      "severity": "low",
+      "title": "Week-10 game-status designations blank for Sunday and Monday games as of 2026-11-13",
+      "detail": "The official injury report shows no Game Status yet for the Sunday and Monday Week-10 games. Blank means 'not yet published' per the official page semantics; nothing was inferred. Values will refresh after Friday/Saturday designations post.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com: Week-10 injuries",
+          "url": "https://www.nfl.com/injuries/"
+        }
+      ]
+    },
+    {
+      "id": "F47",
+      "severity": "medium",
+      "title": "2026 home-field advantage computes to about zero (−0.02 pts/game)",
+      "detail": "Across 137 verified 2026 finals the weighted home-field edge is −0.02 points per game — far below the historically assumed ~2.5 points. The model uses the computed value. Whether this is a season quirk, a schedule artifact or a lasting change is unverified (see Q-HFA).",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com: 2026 standings (PF/PA reconciliation)",
+          "url": "https://www.nfl.com/standings/league/2026/REG"
+        }
+      ]
+    },
+    {
+      "id": "F48",
+      "severity": "medium",
+      "title": "Rest-days signal (r=0.438) may be partially schedule-confounded",
+      "detail": "The rest-days difference is the strongest measured pre-game signal against 2026 margins (n=74 walk-forward). It is partially confounded: Week-12 bye teams carry a rest edge into their next game by construction. The predictive correlation is computed and reported; any causal interpretation is unverified.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com: 2026 schedule",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-11"
+        }
+      ]
+    },
+    {
+      "id": "F49",
+      "severity": "medium",
+      "title": "Baltimore QB depth tier: '3rd string' verified by news chain, '4th string' unverified",
+      "detail": "Starter Lamar Jackson is on IR and backup Tyler Huntley is out for the season per official NFL.com news, so the starter for Week 10 is necessarily from the third tier or lower. The specific 4th-string designation is not confirmed by an official depth chart and is labelled unverified. Note: club-site depth charts (1st-5th strings, 30 of 32 clubs) were captured by session arena-65332583 in data/lines/depth-charts.json with two flagged gaps (HOU image-only, CAR unreachable); club sites count as team-official sources but are not the league injury report.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com: Top stories from Week 9",
+          "url": "https://www.nfl.com/news/top-stories-from-week-9-of-the-2026-nfl-season"
+        },
+        {
+          "name": "NFL.com: Huntley out for season",
+          "url": "https://www.nfl.com/news/ravens-qb-tyler-huntley-out-for-season-after-suffering-turf-toe-injury"
+        }
+      ]
+    },
+    {
+      "id": "F50",
+      "severity": "low",
+      "title": "Week-10 TNF result falls after the original data snapshot",
+      "detail": "The standings snapshot includes WAS 24 @ NYG 21 (Thu Nov 12), explaining '137 games vs 136' during reconciliation; the 32/32 exact match confirms it. Data stays consistent as of 2026-11-13.",
+      "status": "resolved",
+      "sources": [
+        {
+          "name": "NFL.com: 2026 week 10 scores",
+          "url": "https://www.nfl.com/scores/2026/week-10"
+        }
+      ]
+    },
+    {
+      "id": "F51",
+      "severity": "medium",
+      "title": "Parlay-leg and player-prop pair correlations are blank",
+      "detail": "The strategy frameworks need empirical joint-hit correlations to price same-game parlays and prop combos. No graded market or prop data exists in this system, so all such cells are blank and flagged; conservative Frechet bounds are documented as the interim policy (see Q-PROPS, Q-ODDS).",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "Strategies & correlation values",
+          "url": "https://karagemop466-tech.github.io/Korea5/nfl-strategies.html"
+        }
+      ]
+    },
+    {
+      "id": "F52",
+      "severity": "high",
+      "title": "No market prices in this repository: no edge, ROI or CLV claim is possible",
+      "detail": "The NFL Signals Lab publishes model lines only, each labelled 'model line - no market price exists in this repository to compare against'. Edge, ROI and closing-line value require archived odds with timestamps; no price feed is held here, so no such claim is made on any page. Adding a licensed, timestamped price archive is what would unblock them - not different wording.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL Signals Lab — model lines",
+          "url": "https://karagemop466-tech.github.io/Korea5/nfl-signals-lines.html"
+        }
+      ]
+    },
+    {
+      "id": "F53",
+      "severity": "high",
+      "title": "Availability data is one current snapshot, not a point-in-time archive",
+      "detail": "nfl.com/injuries/ returns identical markup for every season/week query, so the capture stores one dated snapshot per run. Applying today's report to past weeks would leak, so the injury-adjusted strategy's leakage gate is marked failed on purpose and its backtest figure is not comparable to the others. Point-in-time history accumulates through data/nfl-signals/forward-ledger.json, one archive per run.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com injury report",
+          "url": "https://www.nfl.com/injuries/"
+        },
+        {
+          "name": "NFL Signals Lab — availability model",
+          "url": "https://karagemop466-tech.github.io/Korea5/nfl-signals-injuries.html"
+        }
+      ]
+    },
+    {
+      "id": "F54",
+      "severity": "medium",
+      "title": "Five played 2026 games carry no score label on the official by-week page",
+      "detail": "For all five (each involving the same club) the by-week card renders a 'Watch Replay' link where the FINAL score label normally sits, and the game page itself publishes no score text either. Those rows stay null, are excluded from scoring, and are counted as pastGamesStillMissingScores in official/lab/fetch-report.json. The exact markup is preserved in official/lab/gap-context.json so a future parser fix is written against evidence instead of assumption.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com 2026 by-week schedule",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2"
+        }
+      ]
+    },
+    {
+      "id": "F55",
+      "severity": "medium",
+      "title": "No official depth chart: replacement tiers cannot be computed",
+      "detail": "nfl.com/depth-charts/ and the per-club depth-chart paths return 404, and no payload on the captured pages carries a position-ranked depth chart. Second-, third- and fourth-string claims are therefore left uncomputed and listed in correlation_study.notComputable, rather than estimated from contract year or snap counts.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com (no depth-chart page)",
+          "url": "https://www.nfl.com/depth-charts/"
+        }
+      ]
+    },
+    {
+      "id": "F56",
+      "severity": "medium",
+      "title": "Backtest sample cannot separate the models from luck",
+      "detail": "100 games are scoreable out of sample from the 2026 capture. The paired difference between the leading strategy and the home-field baseline has t = 1.48 with a week-block bootstrap interval of [-0.005, 0.073], which includes zero, so the leaderboard is published as provisional and no prize is payable. Roughly 180 paired games would be needed at the observed effect size; the pre-registered promotion gate is 60 settled forward-ledger rows. Figures rendered on nfl-signals-backtest.html always come from the latest run.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL Signals Lab — walk-forward backtest",
+          "url": "https://karagemop466-tech.github.io/Korea5/nfl-signals-backtest.html"
+        }
+      ]
+    },
+    {
+      "id": "F57",
+      "severity": "low",
+      "title": "Standings payload carries no points for/against",
+      "detail": "The embedded by-week standings blob gives wins, losses, ties, home/away splits and division rank but no points columns, so standingsWithoutPoints is 32/32 and pointsFor/pointsAgainst stay null. Team points used by the model come from the game scores themselves and are never back-filled from another table.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com standings",
+          "url": "https://www.nfl.com/standings/"
+        }
+      ]
+    },
+    {
+      "id": "F58",
+      "severity": "low",
+      "title": "Inactives are reachable only through official articles",
+      "detail": "nfl.com/inactives/ is client-rendered (the capture's probe finds only an apiUrls entry), so the page yields zero rows and inactives are read from the weekly official inactives article, which exists for some weeks only. Because the 2026 rulebook sets a 48-player game-day active roster, an inactive is not necessarily injured; the two are kept as separate fields and never substituted for one another.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com inactives",
+          "url": "https://www.nfl.com/inactives/"
+        }
+      ]
+    },
+    {
+      "id": "F59",
+      "severity": "medium",
+      "title": "Player-prop combinations are specified but uncomputed",
+      "detail": "No player-level season statistics and no prop prices are captured; the official player-statistics page renders client-side. propCombos.available is false, with the required inputs and the joint-distribution method written out so the analysis can run the day the data exists. No player-prop number is published in the meantime.",
+      "status": "needs-review",
+      "sources": [
+        {
+          "name": "NFL.com player statistics",
+          "url": "https://www.nfl.com/stats/player-stats/"
+        }
+      ]
     }
   ]
 }

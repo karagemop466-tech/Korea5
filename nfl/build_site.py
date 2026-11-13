@@ -868,7 +868,7 @@ on the <a href="data.html">Data audit</a> page.</p>"""
 def main() -> int:
     os.makedirs(OUT, exist_ok=True)
     mr = load("model_results.json", {})
-    lb = load("leaderboard.json")
+    lb = load("lines-leaderboard.json")
     q = load("questions.json", {"items": []})
     hyp = load("hypotheses.json", {"items": []})
     build_index(mr, lb, q, hyp)

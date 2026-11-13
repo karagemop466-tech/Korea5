@@ -1,0 +1,33 @@
+name: nfl-lab-injuries
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'arena/1e59465a-korea5' ]
+    paths: [ 'scripts/nfl_lab/fetch_injuries.py', '.github/workflows/nfl-lab-data.yml' ]
+permissions:
+  contents: write
+concurrency:
+  group: nfl-lab-injuries-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/1e59465a-korea5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch NFL injury reports and depth charts (nflverse mirror)
+        run: python3 scripts/nfl_lab/fetch_injuries.py
+      - name: Commit derived data
+        run: |
+          git config user.name "korea5-data-bot"
+          git config user.email "korea5-data-bot@users.noreply.github.com"
+          git add data/nfl-lab/
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "data(nfl-lab): refresh injury tracker and depth-chart backup flags"
+            git pull --rebase --autostash origin arena/1e59465a-korea5
+            git push origin HEAD:arena/1e59465a-korea5
+          fi

@@ -22,11 +22,19 @@ rows = ''.join('<tr><td>'+html.escape(a)+'</td><td>'+html.escape(b)+'</td><td>Ne
 page = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Certainty audit · Free Time Vacation</title><link rel="stylesheet" href="assets/style.css"></head><body><header class="top"><div class="wrap topbar"><strong>FREE TIME / VACATION</strong><nav class="main"><a href="index.html">Dashboard</a><a href="extra/calendar.html">Scoreboard</a><a href="extra/vacation.html">Vacation</a><a href="extra/flagged.html">Flagged for Review</a></nav></div></header><main class="wrap"><h1>Flagged for Review: certainty audit</h1><p class="lede">Reviewed 2026-11-03. The plan now names a best window — the two weeks between the conference championships and the Super Bowl — and labels the evidence behind every part of it. None of it is a guarantee.</p><div class="callout"><strong>What “free” can mean here.</strong> A green interval is a model gap in loaded records. It is not a verified absence of live radio programming. Confirmed start times still have estimated end times. Unknown fields remain unknown.</div><h2>Executive finding</h2><p><strong>2027: Feb 1 – Feb 13 is the longest run with nothing on the radio (13 consecutive calendar days).</strong> The two anchors are official — MLB's 2027 season opens Mar 24/25 and runs to Sep 26, and Super Bowl LXI is Sun Feb 14, 2027 — while the NFL playoff round dates around it are modelled. 2028 (Jan 31 – Feb 12) and 2029 (Jan 29 – Feb 10) follow the same structure but are labelled ESTIMATION because neither season's schedule is released. Counting the Pro Bowl exhibition as well as league games shortens the clean run to six calendar days in every year.</p><p style="margin-top:8px">What is still not verified: every individual kickoff time, every game's real end time, and whether each event actually airs on a receivable AM/FM signal at an Outer Sunset address. Treat the window as a strongly evidenced planning target, not a certified booking guarantee.</p><h2>Evidence limits, line by line</h2><div class="scroll"><table><thead><tr><th>Area</th><th>Finding</th><th>Status</th><th>Reference</th></tr></thead><tbody>'''+rows+'''</tbody></table></div><h2>Verification disclosure</h2><p>Official references above are manual-review destinations, not a claim that their contents were freshly retrieved in this sandbox. Outbound access to official sports hosts is restricted. Inherited data and reports have not been relabelled as freshly verified.</p><p>Historical verification report: '''+html.escape(report.get('generatedUTC','unknown'))+'''. Its token checks are limited and include snapshot fallback. Complete line-by-line official validation and complete 94122 radio reception/carriage verification remain outstanding.</p><p><a href="verification/report.json">Historical source-check report</a> · <a href="verification/certainty.json">Current certainty policy</a> · <a href="extra/flagged.html">Inherited irregularities</a> · <a href="research/EXECUTIVE-SUMMARY.md">Executive summary</a></p><h2>Time and duration</h2><p>Display America/Los_Angeles (PST in winter, PDT in summer). No fixed PST conversion is used for the year-round plan. An average duration is not a guaranteed end time. Halftime is part of a football game's elapsed duration, not a separate sports-free interval.</p></main></body></html>'''
 (ROOT / 'certainty.html').write_text(page)
 # A persistent, prominent correction on inherited pages; all generators can run first.
-for path in list(ROOT.glob('*.html')) + list((ROOT/'extra').glob('*.html')) + list((ROOT/'nfl-lines').glob('*.html')):
+def published_pages():
+    pages = list(ROOT.glob('*.html'))
+    for sub in ('extra', 'lab', 'nfl-lines', 'nfl'):
+        if (ROOT / sub).is_dir():
+            pages += list((ROOT / sub).glob('*.html'))
+    return pages
+
+
+for path in published_pages():
     if path.name == 'certainty.html':
         continue
     text = path.read_text()
-    prefix = '../' if path.parent.name in ('extra', 'nfl-lines') else ''
+    prefix = '' if path.parent.name == ROOT.name else '../'
     warning = ('<aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> '
                'Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. '
                f'<a href="{prefix}certainty.html">Flagged for Review: certainty audit</a>.</aside>')
@@ -40,7 +48,7 @@ policy = {'reviewDate': '2026-11-03', 'completeCoverageCertified': False,
           'findings': [{'area':a, 'finding':b, 'status':'needs review', 'sourceUrl':c} for a,b,c in sources]}
 (ROOT/'verification/certainty.json').write_text(json.dumps(policy, indent=2)+'\n')
 # Fail if source links or prominent notices are lost.
-for path in list(ROOT.glob('*.html')) + list((ROOT/'extra').glob('*.html')) + list((ROOT/'nfl-lines').glob('*.html')):
+for path in published_pages():
     assert path.name == 'certainty.html' or 'id="certainty-notice"' in path.read_text(), path
 vacation = json.loads((ROOT/'extra/data/vacation.json').read_text())
 assert all(not v['scheduleReleased'] and v['free'] == 0 for v in vacation['years'].values())

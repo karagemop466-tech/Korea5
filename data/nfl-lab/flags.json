@@ -1,0 +1,120 @@
+{
+ "flags": [
+  {
+   "id": "F01",
+   "severity": "high",
+   "item": "Market lines have no documented source",
+   "detail": "nfldata documents spread_line and total_line but names no upstream source. Gate G0 fails for every strategy.",
+   "source": "https://github.com/nflverse/nfldata/blob/master/DATASETS.md",
+   "source_label": "nfldata DATASETS.md"
+  },
+  {
+   "id": "F02",
+   "severity": "high",
+   "item": "Our model is less accurate than the market",
+   "detail": "Walk-forward 2016\u20132025: model MAE 10.17 points vs market spread 9.79 points.",
+   "source": null
+  },
+  {
+   "id": "F03",
+   "severity": "high",
+   "item": "Starting-QB injury strategies cannot be tested",
+   "detail": "Only 7 games in 2016\u20132025 with a starting QB Out or Doubtful on the official report.",
+   "source": "https://www.nfl.com/injuries/",
+   "source_label": "NFL injury reports"
+  },
+  {
+   "id": "F04",
+   "severity": "high",
+   "item": "Player-prop combinations cannot be tested",
+   "detail": "No official source publishes historical prop prices.",
+   "source": null
+  },
+  {
+   "id": "F05",
+   "severity": "high",
+   "item": "Singapore: participation in unlicensed remote gambling is an offence",
+   "detail": "Only Singapore Pools is licensed for remote gambling. This site is for analysis only and does not recommend any wager.",
+   "source": "https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities",
+   "source_label": "GRA: unlawful remote gambling"
+  },
+  {
+   "id": "F06",
+   "severity": "medium",
+   "item": "Depth charts are third-party and not week-keyed",
+   "detail": "Latest ESPN-derived snapshot only; the Week 10 result (2 starters out with named backups) needs checking against team depth charts.",
+   "source": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+   "source_label": "nflverse depth charts"
+  },
+  {
+   "id": "F07",
+   "severity": "medium",
+   "item": "Only 3 of 137 final 2026 games checked against nfl.com",
+   "detail": "Spot checks matched. The remaining 134 final games are unverified.",
+   "source": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "source_label": "nfl.com week 10"
+  },
+  {
+   "id": "F08",
+   "severity": "medium",
+   "item": "nfldata archive has no LICENSE file",
+   "detail": "Reuse terms for the data and code are unknown.",
+   "source": "https://github.com/nflverse/nfldata",
+   "source_label": "nfldata repository"
+  },
+  {
+   "id": "F09",
+   "severity": "medium",
+   "item": "Unplayed 2026 games carry third-party market lines in the data file",
+   "detail": "Not shown on the site; the market columns are blank.",
+   "source": "https://github.com/nflverse/nfldata/blob/master/DATASETS.md",
+   "source_label": "nfldata DATASETS.md"
+  },
+  {
+   "id": "F10",
+   "severity": "medium",
+   "item": "Injury file: 9 of 1,230 rows checked against the official page",
+   "detail": "The Week 10 rows that were checked matched; the rest are not verified row by row.",
+   "source": "https://www.nfl.com/injuries/league/2026/reg10",
+   "source_label": "nfl.com week 10 injuries"
+  },
+  {
+   "id": "F11",
+   "severity": "low",
+   "item": "Mirror files cannot be downloaded from the sandbox",
+   "detail": "Release assets only download inside GitHub Actions. Reproducibility depends on CI.",
+   "source": "https://github.com/nflverse/nflverse-data/releases/tag/injuries",
+   "source_label": "nflverse injuries release"
+  },
+  {
+   "id": "F12",
+   "severity": "low",
+   "item": "Playoff games excluded from evaluation",
+   "detail": "Scope decision (Q12).",
+   "source": null
+  },
+  {
+   "id": "F13",
+   "severity": "low",
+   "item": "Team codes: 2026 injury and depth files use the same 32 codes",
+   "detail": "Checked: both files use LA, LV, LAC and the other 29 codes. Historical team-code changes in the 2016\u20132025 injury data were not checked.",
+   "source": null
+  },
+  {
+   "id": "F14",
+   "severity": "high",
+   "item": "Kerby Joseph (DET, S), Week 10: report status and practice status conflict",
+   "detail": "Our 2026 injury file lists Kerby Joseph as Out for Week 10 with practice status 'Full Participation in Practice' (Knee). Out and full practice participation is inconsistent and is not resolved. Only the first games of the fetched Week 10 page were compared; this row is not confirmed against the official page. Week 10 comparison is incomplete: 9 rows checked of 1,230 in the file.",
+   "source": "https://www.nfl.com/injuries/league/2026/reg10",
+   "source_label": "nfl.com Week 10 injury report"
+  },
+  {
+   "id": "F15",
+   "severity": "high",
+   "item": "NFL.com systematic-retrieval rights are not documented",
+   "detail": "NFL.com Terms §1.3 limits Services use to individual, non-commercial, informational purposes and prohibits systematic retrieval to build a collection or database absent express prior written consent. No project permission record was found. This is a source-rights warning, not a legal conclusion that permission does not exist. Review the Terms and obtain appropriate written authorization before enabling any new NFL.com data acquisition or expanding an automated fetcher.",
+   "source": "https://www.nfl.com/legal/terms/",
+   "source_label": "NFL.com Terms §1.3"
+  }
+ ]
+}

@@ -1,0 +1,249 @@
+{
+ "meta": {
+  "purpose": "Questions that must be answered before a decision can reasonably be made. Each row states what is already known (with its official source), what is still missing, and a concrete discovery step for the missing piece.",
+  "answerKey": "Known = we can already act on it. Missing = the answer does not exist in any official source we can reach. Discovery = the concrete step that would close the gap.",
+  "compiled": "2026-11-13"
+ },
+ "questions": [
+  {
+   "id": "QN-01",
+   "question": "Which market are our lines intended to be compared against?",
+   "known": "NFL.com publishes the schedule, results, box scores and injury reports. It does not publish betting prices. Every price in this lab is therefore a declared reference price, not a market quote.",
+   "missing": "Any official, licenseable sportsbook price feed. No league source exists for it.",
+   "discovery": "Decide the market universe (spread, total, team total, player props) and the book set, then obtain a licensed price feed and archive timestamped quotes. Until then, no strategy in this lab can be described as beating a market.",
+   "blocking": "Yes - for any claim about profit or market edge",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/"
+  },
+  {
+   "id": "QN-02",
+   "question": "What exactly does a strategy's probability mean, and is it calibrated?",
+   "known": "Every strategy publishes its own probability for every bet, and the leaderboard reports log loss, Brier score and expected calibration error against the realised outcome.",
+   "missing": "Calibration judged on data that was never used to fit anything. The 2026 season is the untouched holdout, so this is partly answered already.",
+   "discovery": "Re-run the same pipeline at the end of the 2026 season and read the holdout calibration; keep the freeze date in the repository.",
+   "blocking": "No",
+   "status": "Partly answered - holdout calibration published",
+   "officialSource": "https://www.nfl.com/games/"
+  },
+  {
+   "id": "QN-03",
+   "question": "How much of a strategy's result is luck rather than skill?",
+   "known": "Gate G6 refuses a strategy whose profit is concentrated in one bet, and G4 requires a bootstrap interval that excludes zero after multiple-testing correction.",
+   "missing": "A longer untouched period. Two seasons of development and one holdout season is a small sample for parlay strategies in particular.",
+   "discovery": "Extend the untouched holdout across the remainder of the 2026 season and the 2027 season, with the freeze date published in advance.",
+   "blocking": "No",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/schedules/"
+  },
+  {
+   "id": "QN-04",
+   "question": "Where is the official historical archive of weekly injury reports?",
+   "known": "NFL.com publishes the current week's injury report, with player, position, injury, practice status and game status.",
+   "missing": "Any week-by-week history from an official source. The current-week page ignores a week parameter, so past weeks cannot be read from it.",
+   "discovery": "Ask the NFL communications contact for the official weekly injury report archive, or determine whether the league-published weekly game statistics books carry the status lists. Both are official routes; neither is available from the pages we can reach today.",
+   "blocking": "Yes - for backtesting any injury-driven signal",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/injuries/"
+  },
+  {
+   "id": "QN-05",
+   "question": "Are the club depth charts official or unofficial, and are they point-in-time?",
+   "known": "Each club publishes a depth chart on its own official site. We capture the club's own label and the 'as of' date.",
+   "missing": "A history of past depth charts. We hold only the current version, so a depth chart can only inform today's tracker, not a backtest.",
+   "discovery": "Ask each club whether prior-week depth charts are archived; in the meantime treat every depth-derived historical statement as unverified.",
+   "blocking": "Yes - for backtesting depth-driven signals",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/teams/"
+  },
+  {
+   "id": "QN-06",
+   "question": "What is the correct home-field advantage?",
+   "known": "The model uses a fixed 3.0 point home-field term, declared on the validation page.",
+   "missing": "An official value. No league publishes home-field advantage, and it is not a fact we can verify - it is a modelling assumption.",
+   "discovery": "Treat it as a declared parameter, publish a sensitivity table over 2.0 to 4.0 points, and refuse to publish a strategy whose gates only pass at one value.",
+   "blocking": "No",
+   "status": "Open - declared as an assumption, not a verified fact",
+   "officialSource": "https://operations.nfl.com/"
+  },
+  {
+   "id": "QN-07",
+   "question": "Which official source resolves a player name to a stable identifier?",
+   "known": "The NFL.com box score identifies each player by an official image id and shows a display form such as 'A. ST. BROWN'. Club depth charts give the full name.",
+   "missing": "A direct official name-to-id mapping. We join the two through the display form, which is ambiguous for 156 display forms where two charted players share initials.",
+   "discovery": "Use the official roster page of each club as the third join, or accept the ambiguous rows as permanently unverified and exclude them from published props.",
+   "blocking": "No",
+   "status": "Open - 156 display forms left ambiguous and flagged",
+   "officialSource": "https://www.nfl.com/players/"
+  },
+  {
+   "id": "QN-08",
+   "question": "How should a player prop line be set when the player is a listed backup rather than the starter?",
+   "known": "The official depth chart gives the tier (1st to 4th string) for every charted player.",
+   "missing": "An official rule linking tier to expected workload. No league source states that a second-string player receives X percent of the carries.",
+   "discovery": "Derive the tier-to-workload relationship from official box scores (minutes, attempts and targets by depth-chart tier), then publish the measured table instead of an assumed multiplier.",
+   "blocking": "Yes - for any prop line on a non-starter",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/stats/player-stats/"
+  },
+  {
+   "id": "QN-09",
+   "question": "Does a team's injury actually change its line, and by how much?",
+   "known": "The official injury report and the official depth chart together identify which starter is replaced by which tier.",
+   "missing": "The size of the effect. This requires the historical injury archive from QN-04.",
+   "discovery": "Once QN-04 is answered, measure the change in team scoring and total points when a starter is replaced, and publish the measured effect with its sample size.",
+   "blocking": "Yes - for any injury-weighted model",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/injuries/"
+  },
+  {
+   "id": "QN-10",
+   "question": "How are player prop payouts settled when a player does not play?",
+   "known": "Nothing in any official source we can reach. Settlement rules belong to the bookmaker.",
+   "missing": "The exact rules (void, half action, minimum participation) that would be needed to score a prop bet.",
+   "discovery": "Obtain the rule set for each book in scope before any prop strategy is priced. Until then, prop results in this lab use the model's own over/under rule and say so.",
+   "blocking": "Yes - for any real-money prop claim",
+   "status": "Open",
+   "officialSource": "https://operations.nfl.com/"
+  },
+  {
+   "id": "QN-11",
+   "question": "What is the correct correlation to use between parlay legs?",
+   "known": "We measure the correlation from official per-game outcomes and publish the value with its sample size and confidence interval.",
+   "missing": "A correlation that is stable across seasons and situations. The within-game prop correlation is small, but the estimate pools every player pair.",
+   "discovery": "Split the measurement by player pair type (same player, same position, different position) and require a minimum sample per cell before any cell is used for pricing.",
+   "blocking": "No",
+   "status": "Open - measured and published, stability not yet proven",
+   "officialSource": "https://www.nfl.com/stats/player-stats/"
+  },
+  {
+   "id": "QN-12",
+   "question": "Should the leaderboard reward points, money, or something else?",
+   "known": "A declared, published formula turns out-of-sample skill into leaderboard points.",
+   "missing": "Any governance decision: reward pool, eligibility, privacy, responsible-play controls, anti-gaming rules, legal review.",
+   "discovery": "Owner decision plus legal and responsible-play review before the leaderboard is used for anything other than a paper exercise.",
+   "blocking": "Yes - for any reward that is not a paper score",
+   "status": "Open",
+   "officialSource": "https://operations.nfl.com/"
+  },
+  {
+   "id": "QN-13",
+   "question": "Which teams and games should the tracker watch next week?",
+   "known": "The official schedule publishes the full 2026 regular season, and the official injury report publishes this week's status for every game.",
+   "missing": "Nothing for this week. The tracker is limited to the current week's report because that is the only week the league publishes.",
+   "discovery": "Re-run the injury fetch each week and store each week's snapshot so a history builds up from the first run.",
+   "blocking": "No",
+   "status": "Answered for the current week, with a plan to build history from here",
+   "officialSource": "https://www.nfl.com/schedules/2026/by-week/week-10"
+  },
+  {
+   "id": "QN-14",
+   "question": "Is the model better than a coin flip, or just better than a bad baseline?",
+   "known": "Every strategy is scored against a pre-registered naive model on the same events, and the log-loss difference is published with a confidence interval.",
+   "missing": "A comparison against a strong public baseline such as a market-implied probability, because no market price is available.",
+   "discovery": "Same as QN-01: a licensed price feed. Until then, 'beats the naive model' is the strongest claim the evidence supports.",
+   "blocking": "Yes - for any claim of genuine edge",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/games/"
+  },
+  {
+   "id": "QN-15",
+   "question": "Do the two NFL datasets inside this repository agree with each other?",
+   "known": "The planner already holds an official NFL 2026 feed, and this lab holds an independently fetched one.",
+   "missing": "A published side-by-side reconciliation between the two feeds.",
+   "discovery": "Compare the two committed feeds game by game and publish the count of agreements and differences.",
+   "blocking": "No",
+   "status": "Open - reconciliation not yet published",
+   "officialSource": "https://www.nfl.com/schedules/2026/by-week/week-9"
+  },
+  {
+   "id": "QN-16",
+   "question": "What is the official definition of a starter for the depth tracker?",
+   "known": "Club depth charts order players by tier (1st, 2nd, 3rd, 4th string) per position group.",
+   "missing": "A league-wide definition. Clubs disagree on granularity: some list a position twice (a first and a second tight end), others list eleven offensive positions only.",
+   "discovery": "Publish the position granularity used per club and treat any comparison across clubs as approximate.",
+   "blocking": "No",
+   "status": "Open - granularity published per club",
+   "officialSource": "https://www.nfl.com/teams/"
+  },
+  {
+   "id": "QN-17",
+   "question": "Should weather be part of the model?",
+   "known": "The official game page publishes the observed weather at kickoff.",
+   "missing": "An official forecast at decision time, which is what a model would need. Observed weather cannot be used without leaking the outcome.",
+   "discovery": "Either locate an official forecast source usable at decision time or leave weather out of the model and state that omission as an evidence limit.",
+   "blocking": "No",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/games/"
+  },
+  {
+   "id": "QN-18",
+   "question": "How should trades, promotions and roster moves be handled?",
+   "known": "NFL.com publishes an official transactions feed.",
+   "missing": "A parsed, dated transaction history joined to the player identity used by this lab.",
+   "discovery": "Fetch and parse the official transactions feed, then join by the player image id so a mid-season starter change is visible in the tracker.",
+   "blocking": "No",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/transactions/"
+  },
+  {
+   "id": "QN-19",
+   "question": "Are the club depth charts we publish complete for all 32 clubs?",
+   "known": "31 of 32 clubs publish a machine-readable depth chart on their official site.",
+   "missing": "The Houston Texans depth chart, whose page is rendered without a readable table.",
+   "discovery": "Open a request with the club for an accessible version, or capture the chart image and treat the entries as unverified.",
+   "blocking": "No",
+   "status": "Open - flagged on the Flagged for Review page",
+   "officialSource": "https://www.houstontexans.com/team/depth-chart"
+  },
+  {
+   "id": "QN-20",
+   "question": "Which reference price should the leaderboard use?",
+   "known": "-110 per leg is declared and used consistently for every strategy and every leg.",
+   "missing": "A justification from evidence, because there is no official price to justify it against.",
+   "discovery": "Publish the leaderboard at several reference prices and report whether the ranking is stable. If the order changes, the ranking is a price artefact and must be labelled as such.",
+   "blocking": "No",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/games/"
+  },
+  {
+   "id": "QN-21",
+   "question": "How many seasons of official box scores can we rely on for player props?",
+   "known": "Official box scores were fetched for the 2025 and 2026 regular seasons.",
+   "missing": "The 2024 season, which would give prop strategies a third season for the robustness gate.",
+   "discovery": "Extend the fetcher's season list and re-run; the official 2024 schedule and box scores are reachable.",
+   "blocking": "No",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/schedules/2024/by-week/week-1"
+  },
+  {
+   "id": "QN-22",
+   "question": "Do we need a freeze date before publishing a strategy ranking?",
+   "known": "The development and holdout split is declared in the published data.",
+   "missing": "An explicit public freeze date and a rule for what happens when a strategy changes after the freeze.",
+   "discovery": "Owner decision: publish a freeze date with the leaderboard, and keep every rejected variant in the audit history rather than deleting it.",
+   "blocking": "No",
+   "status": "Open",
+   "officialSource": "https://operations.nfl.com/"
+  },
+  {
+   "id": "QN-23",
+   "question": "Can the free-time planner and the lines lab share one NFL dataset?",
+   "known": "Both use official NFL.com data; the planner's feed covers 2026 and this lab's feed covers 2024 to 2026.",
+   "missing": "A decision on which feed is canonical, so the two halves of the site cannot drift apart.",
+   "discovery": "Publish the reconciliation (QN-15) and then designate one feed as canonical, with the other generated from it.",
+   "blocking": "No",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/schedules/"
+  },
+  {
+   "id": "QN-24",
+   "question": "What is the acceptable standard for publishing a line at all?",
+   "known": "The current standard in this repository: every table row links an official source, and anything unconfirmed is blank and flagged.",
+   "missing": "A written rule for model outputs. A model number is not an official value, so it needs its own labelling rule and its own provenance link back to the inputs.",
+   "discovery": "Owner decision: adopt the rule used here (model output labelled as such, with the official inputs linked) and apply it to the planner pages as well.",
+   "blocking": "No",
+   "status": "Open",
+   "officialSource": "https://www.nfl.com/stats/"
+  }
+ ]
+}

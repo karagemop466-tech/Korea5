@@ -1,0 +1,19 @@
+{
+ "available": false,
+ "reason": "The ingested official player-stat feed contains season-to-date leaders, not per-game logs joined by team and week. A correlation computed from season totals would be a correlation of 32 aggregate points, not of game outcomes. Refusing to publish it is the honest output; see Q08 and the method page.",
+ "whatIsNeeded": "Per-player game logs (WK / OPP / stat columns), which nfl.com publishes on each player page. That ingest is the next task and is not claimed as done here.",
+ "suppressionFloor": 8,
+ "demonstration": {
+  "label": "SYNTHETIC DEMONSTRATION — simulated numbers, not any real player",
+  "result": {
+   "r": 0.676,
+   "lo": 0.462,
+   "hi": 0.829,
+   "n": 24,
+   "spansZero": false,
+   "reading": "positive"
+  },
+  "reading": "Shows the interval machinery: with 24 observations a strong simulated relationship still has a wide interval."
+ },
+ "sourceUrl": "https://www.nfl.com/players/christian-mccaffrey/stats"
+}

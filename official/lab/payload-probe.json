@@ -1,0 +1,141 @@
+{
+ "meta": {
+  "purpose": "Field-name discovery for the parsers above; keeps parser development offline.",
+  "retrievedUTC": "2026-11-13T13:15:21.570485+00:00"
+ },
+ "pages": {
+  "injuries-current": {
+   "url": "https://www.nfl.com/injuries/",
+   "fetched": true,
+   "bytes": 398793,
+   "queryKeys": [],
+   "samples": [],
+   "injuryHrefs": []
+  },
+  "schedule-week-9": {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "fetched": true,
+   "bytes": 2279950,
+   "queryKeys": [
+    "useFetchScoreStripContainerData",
+    "useFetchFootballStandingsLatest|{'season': '2026', 'seasonType': 'REG'}",
+    "useFetchContentMixedBySlug|{'enableMediakindForgeVod': False, 'limit': 40, 'slug': 'schedules-by-week-inline-promo'}",
+    "useFetchContentMixedBySlug|{'enableMediakindForgeVod': False, 'limit': 40, 'slug': 'schedules-by-week-messaging-banner'}",
+    "useFetchLiveLivestreams|{'enableMediakindLiveEvents': False, 'enableMediakindNFLChannel': False, 'enableMediakindNFLNetwork': True}",
+    "useFetchExperienceWaysToWatchGamesByWeek|{'season': '2026', 'showNflPlusItems': False, 'week': '9', 'weekType': 'REG'}",
+    "useFetchFootballWeeklyGameDetails|{'enableMediakindForgeVod': False, 'enableMediakindMcpVod': False, 'includeDriveChart': False, 'includeReplays': False, 'includeStandings': True, 'includeTaggedVideos': False, 'season': '2026', 'seasonType': 'REG', 'week': 9}",
+    "useFetchExperienceWeekSelectorBySeason|{'includeProBowl': True, 'season': '2026'}",
+    "useFetchExperienceTeams|{'allteams': True, 'season': '2026'}"
+   ],
+   "samples": [
+    {
+     "queryKey": "useFetchScoreStripContainerData",
+     "itemKeys": [
+      "data",
+      "error",
+      "isError"
+     ],
+     "sample": "{\"data\": {\"carouselCardPropsList\": [{\"analyticsProperties\": {\"linkModule\": \"Score Strip\", \"linkName\": \"Score Strip Redzone CTA\", \"linkPosition\": \"1:15\", \"linkType\": \"RedZone Access Point\"}, \"footerTextLong\": \"SUN 6:00PM\", \"footerTextShort\": \"6:00PM\", \"href\": \"/redzone/watch\", \"networkIcon\": \"https://static.www.nfl.com/league/apps/web/global/logos/broadcaster/broadcaster_NFLPlusPremium.svg\", \"networkIconAltText\": \"NFLPlusPremium network icon\", \"redZoneImage\": \"https://static.www.nfl.com/league/apps/web/global/logos/logo-league-redzone-primarylight.svg\", \"redZoneImageAltText\": \"NFL RedZone Upcoming Image\", \"type\": 3, \"variant\": \"upcoming\"}, {\"analyticsProperties\": {\"gameID\": \"ab582c2f-4feb-11f1-abca-2c54536568a9\", \"gameState\": \"$undefined\", \"linkModule\": \"Score Strip\", \"linkName\": \"NE @ DET\", \"linkPosition\": \"2:15\"}, \"awayTeam\": {\"abbreviation\": \"NE\", \"abbreviationScreenReaderElementId\": \"sr-element-score-strip-10403200-69ab-9ea6-5af5-e240fbc08bea-new-england-patriots\", \"abbreviationScreenReaderText\": \"New England Patriots\", \"isGameWinner\": \"$undefined\", \"isInPossession\": \"$undefined\", \"isRedZone\": \"$undefined\", \"logo\": \"https://static.www.nfl.com/{formatInstructions}/league/api/club"
+    },
+    {
+     "queryKey": "useFetchFootballStandingsLatest|{'season': '2026', 'seasonType': 'REG'}",
+     "itemKeys": [
+      "pagination",
+      "season",
+      "seasonType",
+      "weeks"
+     ],
+     "sample": "{\"season\": 2026, \"seasonType\": \"REG\", \"weeks\": [{\"week\": 10, \"standings\": [{\"team\": {\"id\": \"10403800-517c-7b8c-65a3-c61b95d86123\", \"currentLogo\": \"https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/AZ\", \"fullName\": \"Arizona Cardinals\"}, \"clinched\": {\"bye\": false, \"division\": false, \"eliminated\": false, \"homeField\": false, \"playoff\": false, \"wildCard\": false}, \"closeGames\": {\"wins\": 2, \"losses\": 1, \"ties\": 0}, \"conference\": {\"wins\": 2, \"winPct\": 0.286, \"losses\": 5, \"ties\": 0, \"rank\": 15, \"points\": {\"for\": 136, \"against\": 211}}, \"division\": {\"wins\": 1, \"winPct\": 0.25, \"losses\": 3, \"ties\": 0, \"rank\": 4, \"points\": {\"for\": 58, \"against\": 100}}, \"home\": {\"wins\": 0, \"winPct\": 0, \"losses\": 3, \"ties\": 0, \"points\": {\"for\": 44, \"against\": 106}}, \"last5\": {\"wins\": 2, \"winPct\": 0.4, \"losses\": 3, \"ties\": 0, \"points\": {\"for\": 91, \"against\": 138}}, \"overall\": {\"games\": 9, \"wins\": 3, \"winPct\": 0.333, \"losses\": 6, \"ties\": 0, \"points\": {\"for\": 178, \"against\": 255}, \"streak\": {\"type\": \"L\", \"length\": 1}}, \"road\": {\"wins\": 3, \"winPct\": 0.5, \"losses\": 3, \"ties\": 0, \"points\": {\"for\": 134, \"against\": 149}}}, {\"team\": {\"id\": \"10400200-f401-4e53-5175-0974e4f16cf7\", \"currentLogo\": \"https:/"
+    },
+    {
+     "queryKey": "useFetchContentMixedBySlug|{'enableMediakindForgeVod': False, 'limit': 40, 'slug': 'schedules-by-week-inline-promo'}",
+     "itemKeys": [
+      "items",
+      "metadata",
+      "pagination"
+     ],
+     "sample": "{\"items\": [], \"metadata\": {\"generatedAt\": \"2026-11-13T13:15:06.963Z\"}, \"pagination\": {\"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJsaW1pdCI6IjQwIiwib2Zmc2V0Ijo0MCwicXVlcnkiOnsibGltaXQiOiI0MCJ9fQ.MGJWsBM6nwlFeuKABWwPwp93siimFN3ZjcyuhyYBI30\"}}"
+    },
+    {
+     "queryKey": "useFetchContentMixedBySlug|{'enableMediakindForgeVod': False, 'limit': 40, 'slug': 'schedules-by-week-messaging-banner'}",
+     "itemKeys": [
+      "items",
+      "metadata",
+      "pagination"
+     ],
+     "sample": "{\"items\": [{\"provider\": \"forge\", \"type\": \"promo\", \"language\": null, \"advertiserId\": null, \"author\": null, \"authorizations\": null, \"background\": {}, \"cameraSource\": null, \"clipType\": null, \"ctas\": [{\"accessibleText\": \"Explore Ways to Watch Week 18\", \"link\": \"https://www.nfl.com/ways-to-watch/by-week/reg-18\", \"target\": \"_self\", \"text\": \"Explore \"}], \"ctaLink\": \"https://www.nfl.com/ways-to-watch/by-week/reg-18\", \"ctaText\": \"Explore \", \"ctaTarget\": \"_self\", \"description\": \"Get a personalized view of the NFL schedule based on your location and services so you never miss a game this season.\", \"displayTitle\": \"Ways to Watch\", \"startDate\": null, \"endDate\": null, \"duration\": null, \"episodeNumber\": null, \"entitlement\": null, \"expirationDate\": null, \"externalId\": null, \"fantasyLink\": null, \"hostNetwork\": null, \"id\": \"1925aac0-54a8-49be-9630-6a37f83c25e0\", \"ids\": null, \"images\": [], \"intendedAudience\": null, \"introEnd\": null, \"mcpPlaybackId\": null, \"mobileLink\": null, \"mobileTitle\": null, \"originalAirDate\": null, \"outroStart\": null, \"playIds\": [], \"preRollDisabled\": false, \"promoAssets\": [], \"promoLink\": null, \"promoText\": null, \"promoTarget\": \"_self\", \"lastUpdated\": \"2026-01-05T20:32:18.231Z\""
+    },
+    {
+     "queryKey": "useFetchLiveLivestreams|{'enableMediakindLiveEvents': False, 'enableMediakindNFLChannel': False, 'enableMediakindNFLNetwork': True}",
+     "itemKeys": [
+      "data"
+     ],
+     "sample": "{\"data\": {\"items\": [{\"provider\": \"mediakind\", \"authorizations\": {\"mvpd\": [{\"MVPD - NFLN_USandTerritories\": {\"requirements\": {\"countryCode\": [\"AS\", \"VI\", \"US\", \"PR\", \"GU\"], \"dmaCode\": [[\"{{asset.dma_codes}}\"]]}}}], \"nfl_plus\": [{\"NFL_PLUS - NFLN_US\": {\"requirements\": {\"countryCode\": [\"US\"], \"dmaCode\": [[\"{{asset.dma_codes}}\"]]}}}], \"nfl_plus_premium\": [{\"NFL_PLUS_PREMIUM - NFLN_US\": {\"requirements\": {\"countryCode\": [\"US\"], \"dmaCode\": [[\"{{asset.dma_codes}}\"]]}}}], \"espn_unlimited\": [{\"ESPN_UNLIMITED - NFLN_US\": {\"requirements\": {\"countryCode\": [\"US\"], \"dmaCode\": [[\"{{asset.dma_codes}}\"]]}}}], \"nfl_plus_plus\": [{\"NFL_PLUS_PLUS\": {\"requirements\": null}}]}, \"awayTeamId\": null, \"broadcastAiringType\": \"LIVE\", \"callSign\": \"NFLNETWORK\", \"contentType\": \"SPORTSNON-EVENT\", \"countryCodes\": [\"AS\", \"VI\", \"US\", \"PR\", \"GU\"], \"deliveryMethod\": \"LIVE\", \"description\": \"NFL Network enters the morning show fray with a three-hour live presentation. Each day, \\\"Good Morning Football\\\" brings viewers up-to-the-minute breaking NFL news and local NFL stories on a national platform. The show features a combination of headline-making interviews and a discussion of a wide array of issues in the areas of sports"
+    },
+    {
+     "queryKey": "useFetchExperienceWaysToWatchGamesByWeek|{'season': '2026', 'showNflPlusItems': False, 'week': '9', 'weekType': 'REG'}",
+     "itemKeys": [
+      "data",
+      "errors",
+      "meta"
+     ],
+     "sample": "{\"data\": [{\"id\": \"ab380826-4feb-11f1-abca-2c54536568a9\", \"date\": \"2026-11-06T01:15:00Z\", \"homeTeam\": {\"id\": \"10400325-48de-3d6a-be29-8f829437f4c8\", \"abbreviation\": \"BAL\", \"season\": \"2026\", \"fullName\": \"Baltimore Ravens\", \"conferenceAbbr\": \"AFC\", \"conferenceFullName\": \"American Football Conference\", \"divisionFullName\": \"AFC North\", \"league\": \"National Football League\", \"location\": \"Baltimore\", \"nickName\": \"Ravens\", \"currentLogo\": \"https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/BAL\", \"primaryColor\": \"#24135F\", \"secondaryColor\": \"#9A7611\", \"yearEstablished\": 1996, \"nflShopUrl\": \"https://www.nflshop.com/baltimore-ravens/t-36590255+z-9152346-3829362677?_s=bm-nflcom-team-page-buy-gear-052220-Ravens\", \"officialWebsiteUrl\": \"https://www.baltimoreravens.com/\", \"owners\": \"Steve Bisciotti\", \"teamType\": \"TEAM\", \"socials\": [{\"platform\": \"Facebook\", \"link\": \"https://www.facebook.com/baltimoreravens\"}, {\"platform\": \"Instagram\", \"link\": \"https://www.instagram.com/ravens\"}, {\"platform\": \"Snapchat\", \"link\": \"https://www.snapchat.com/add/BLTRavens\"}, {\"platform\": \"Twitter\", \"link\": \"https://twitter.com/ravens\"}], \"venues\": [{\"id\": \"00083695-126e-1517-91fe-aab634a526ea\", \"name\""
+    },
+    {
+     "queryKey": "useFetchFootballWeeklyGameDetails|{'enableMediakindForgeVod': False, 'enableMediakindMcpVod': False, 'includeDriveChart': False, 'includeReplays': False, 'includeStandings': True, 'includeTaggedVideos': False, 'season': '2026', 'seasonType': 'REG', 'week': 9}",
+     "itemKeys": [
+      "awayTeam",
+      "awayTeamStandings",
+      "broadcastInfo",
+      "category",
+      "date",
+      "driveChart",
+      "extensions",
+      "externalIds",
+      "gameType",
+      "hideCategory",
+      "homeTeam",
+      "homeTeamStandings",
+      "id",
+      "international",
+      "neutralSite",
+      "replays",
+      "season",
+      "seasonType",
+      "status",
+      "summary",
+      "taggedVideos",
+      "ticketUrl",
+      "ticketVendors",
+      "time",
+      "venue",
+      "version",
+      "week",
+      "weekType"
+     ],
+     "sample": "{\"id\": \"ab380826-4feb-11f1-abca-2c54536568a9\", \"homeTeam\": {\"id\": \"10400325-48de-3d6a-be29-8f829437f4c8\", \"currentLogo\": \"https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/BAL\", \"fullName\": \"Baltimore Ravens\"}, \"awayTeam\": {\"id\": \"10402250-89fe-7b86-ef98-9062cd354256\", \"currentLogo\": \"https://static.www.nfl.com/{formatInstructions}/league/api/clubs/logos/JAX\", \"fullName\": \"Jacksonville Jaguars\"}, \"category\": \"TNF\", \"hideCategory\": false, \"date\": \"2026-11-06\", \"time\": \"2026-11-06T01:15:00Z\", \"broadcastInfo\": {\"homeNetworkChannels\": [\"Prime Video\"], \"awayNetworkChannels\": [\"Prime Video\"], \"internationalWatchOptions\": [], \"streamingNetworks\": [{\"hostNetwork\": \"PRIME\", \"networks\": [\"PRIME\"], \"streamType\": \"en-pri\"}, {\"hostNetwork\": \"PRIMESPANISH\", \"networks\": [\"PRIMESPANISH\"], \"streamType\": \"es-alt-1\"}, {\"hostNetwork\": \"PRIMEALT1\", \"networks\": [\"PRIMEALT1\"], \"streamType\": \"en-alt-1\"}], \"territory\": \"NATIONAL\", \"audioNetworks\": [{\"audience\": \"AUDIO_NETWORK_AUDIENCE_WESTWOOD_ONE\", \"languages\": [\"en\"]}, {\"audience\": \"AUDIO_NETWORK_AUDIENCE_HOME\", \"languages\": [\"en\"]}, {\"audience\": \"AUDIO_NETWORK_AUDIENCE_AWAY\", \"languages\": [\"en\"]}, {\"audience\": \"AUDIO_NETWORK_AUDIENC"
+    },
+    {
+     "queryKey": "useFetchExperienceWeekSelectorBySeason|{'includeProBowl': True, 'season': '2026'}",
+     "itemKeys": [
+      "data",
+      "errors",
+      "meta"
+     ],
+     "sample": "{\"data\": [{\"week\": 0, \"weekLabel\": \"Hall Of Fame\", \"weekType\": \"HOF\", \"season\": 2026, \"seasonType\": \"PRE\", \"dateBegin\": \"2026-08-07T00:00:00Z\", \"teamsOnBye\": []}, {\"week\": 1, \"weekLabel\": \"Preseason Week 1\", \"weekType\": \"PRE\", \"season\": 2026, \"seasonType\": \"PRE\", \"dateBegin\": \"2026-08-13T23:00:00Z\", \"dateEnd\": \"2026-08-16T00:00:00Z\", \"teamsOnBye\": []}, {\"week\": 2, \"weekLabel\": \"Preseason Week 2\", \"weekType\": \"PRE\", \"season\": 2026, \"seasonType\": \"PRE\", \"dateBegin\": \"2026-08-21T00:00:00Z\", \"dateEnd\": \"2026-08-24T00:00:00Z\", \"teamsOnBye\": []}, {\"week\": 3, \"weekLabel\": \"Preseason Week 3\", \"weekType\": \"PRE\", \"season\": 2026, \"seasonType\": \"PRE\", \"dateBegin\": \"2026-08-27T23:00:00Z\", \"dateEnd\": \"2026-08-29T22:00:00Z\", \"teamsOnBye\": []}, {\"week\": 1, \"weekLabel\": \"Week 1\", \"weekType\": \"REG\", \"season\": 2026, \"seasonType\": \"REG\", \"dateBegin\": \"2026-09-10T00:20:00Z\", \"dateEnd\": \"2026-09-15T00:15:00Z\", \"teamsOnBye\": []}, {\"week\": 2, \"weekLabel\": \"Week 2\", \"weekType\": \"REG\", \"season\": 2026, \"seasonType\": \"REG\", \"dateBegin\": \"2026-09-18T00:15:00Z\", \"dateEnd\": \"2026-09-22T00:15:00Z\", \"teamsOnBye\": []}, {\"week\": 3, \"weekLabel\": \"Week 3\", \"weekType\": \"REG\", \"season\": 2026, \"seasonType\": \"REG\", \"dateB"
+    }
+   ],
+   "injuryHrefs": [
+    "/injuries/"
+   ]
+  },
+  "team-stats": {
+   "url": "https://www.nfl.com/stats/team-stats/?season=2026&statType=season&sortOrder=DESC&sort=points&category=points",
+   "fetched": true,
+   "bytes": 245426,
+   "queryKeys": [],
+   "samples": [],
+   "injuryHrefs": []
+  }
+ }
+}

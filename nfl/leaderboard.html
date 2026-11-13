@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leaderboard · NFL Decision Support</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="topnav"><a href="index.html">Dashboard</a><a href="requirements.html">Requirements</a><a href="method.html">Method</a><a href="leaderboard.html" class="active">Leaderboard</a><a href="sources.html">Sources</a></nav>
+<main class="wrap"><aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. <a href="../certainty.html">Flagged for Review: certainty audit</a>.</aside>
+<header class="hero">
+<h1>Leaderboard</h1>
+<p class="subtitle">Competition design</p>
+<p class="meta">Sources verified 2026-11-13 · every fact-bearing row links to an official source</p>
+</header>
+
+<p>This is a decision-support research competition, not a wagering service. Rewards are illustrative of the design; no real-money wagering is performed by this tool. Betting carries risk.</p>
+<div class="kvwrap">
+<div class="kv"><span class="k">Ranking metric</span><span class="v">Risk-adjusted, luck-adjusted correlation-adjusted edge vs market (closing-line value), selectivity-penalised. Raw hit rate is not the primary rank.</span></div>
+<div class="kv"><span class="k">Eligibility</span><span class="v">A strategy is eligible only if it has passed every validation gate (M1) and meets the minimum out-of-sample sample size.</span></div>
+<div class="kv"><span class="k">Tie-break</span><span class="v">1) correlation-adjusted edge vs market; 2) selectivity; 3) fewer bets (higher confidence); 4) alphabetical strategy name.</span></div>
+<div class="kv"><span class="k">Evaluation window</span><span class="v">Rolling, out-of-sample only; no in-sample ranking is published.</span></div>
+</div>
+<h2>Reward tiers</h2><table class="grid">
+<thead><tr><th>Tier</th><th>Name</th><th>Criteria</th></tr></thead>
+<tbody>
+<tr><td class="">1</td><td class="">Top strategy</td><td class="">Highest rank among eligible strategies at the evaluation window.</td></tr>
+<tr><td class="">2</td><td class="">Top 3</td><td class="">Top three eligible strategies by rank.</td></tr>
+<tr><td class="">3</td><td class="">Validated</td><td class="">Any eligible strategy that passes all gates and clears the edge threshold.</td></tr>
+</tbody>
+</table>
+<p class="note">Performance is not published until a strategy passes validation gates; ranking cells are intentionally blank and flagged on the companion Flagged page.</p>
+
+<footer class="foot">
+<p><strong>Responsible gaming:</strong> this is decision-support research, not a wagering service. No real-money wagers are placed. Betting carries risk; please gamble responsibly.</p>
+<p>Built from <code>nfl/data/*.json</code> by <code>scripts/build_nfl.py</code>. Values that cannot be confirmed from an official source are left blank and flagged on the companion Flagged page.</p>
+</footer>
+</main>
+<script src="assets/app.js"></script>
+</body>
+</html>

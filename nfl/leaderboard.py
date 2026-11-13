@@ -2,7 +2,7 @@
 """
 NFL Lines Lab — leaderboard, tiers and (non-cash) rewards.
 
-Reads nfl/data/model_results.json and writes nfl/data/leaderboard.json.
+Reads nfl/data/model_results.json and writes nfl/data/lines-leaderboard.json.
 
 The competition is deliberately PAPER-ONLY. Rewards are Lab Points and research
 priority inside the lab; no money, no wagering, no prize of monetary value is
@@ -69,7 +69,7 @@ def main() -> int:
         "rows": rows,
     }
     os.makedirs(DATA, exist_ok=True)
-    with open(os.path.join(DATA, "leaderboard.json"), "w", encoding="utf-8") as fh:
+    with open(os.path.join(DATA, "lines-leaderboard.json"), "w", encoding="utf-8") as fh:
         json.dump(out, fh, indent=1)
     print(f"leaderboard: {len(rows)} strategies")
     for r in rows[:8]:

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Executive summary · NFL Lines Lab</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="top"><div class="brand"><a href="index.html">NFL Lines Lab</a> <span class="tag">research only</span></div>
+<nav><a href="index.html">Home</a><a href="executive-summary.html" class="on">Executive summary</a><a href="lines-2026.html">Our lines 2026</a><a href="metrics.html">Price math</a><a href="strategies.html">Strategy leaderboard</a><a href="validation.html">Validation gates</a><a href="correlations.html">Correlations &amp; parlays</a><a href="injuries.html">Injuries &amp; depth</a><a href="questions.html">Open questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a><a href="verification.html">Verification</a><a href="flagged.html">Flagged for review</a><a href="../lab/index.html">Evidence workbench</a></nav></header>
+<div class="banner">Research and education only. Not betting advice. Singapore: only Singapore Pools is licensed for remote gambling; taking part in unlicensed remote gambling is an offence (<a href="https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities">GRA</a>).</div>
+<main>
+<h1>Executive summary</h1>
+<p class="lede">Question: can we set our own NFL lines and find strategies that beat the market, with the luck taken out? Answer as of this build: <strong>not yet, and the evidence points the other way</strong>.</p>
+<h2>What we found</h2>
+<ol class="findings">
+<li><strong>Our line model is less accurate than the market.</strong> Walk-forward on 2016–2025 (K chosen on 2006–2015 only), the model misses the final margin by 10.17 points on average. The market spread misses by 9.79. Our model is a useful benchmark, not a better price.</li>
+<li><strong>No strategy passes every gate.</strong> 10 strategies were tested against six gates. None passes all six. The best by lower confidence bound is <code>MODEL-EDGE-3</code>: 783 bets, hit rate 52.2% (95% CI 50.0% to 54.6%), p = 0.2243. That is consistent with luck.</li>
+<li><strong>The market inputs are not verified.</strong> The spread and total lines come from a community dataset whose documentation does not name the source. Gate G0 therefore fails for every strategy. Results are provisional until a documented source is confirmed.</li>
+<li><strong>Injury-based signals are too thin to test.</strong> Only 7 games from 2016 to 2025 had a starting QB listed Out or Doubtful on the official report (and the QB-based strategies are therefore untestable).</li>
+<li><strong>Correlation is real, and parlays do not rescue the edge.</strong> Edge strategies overlap heavily (see Correlations). For two-leg parlays, the joint win rate is 28.8% for the top pair versus 27.1% if the legs were independent, so the naive independence estimate understates the hit rate for these pairs. But the top pair is two nested versions of one edge (game overlap 100%), and 0 of 10 parlays pass all five parlay gates.</li>
+<li><strong>Current injury picture (Week 10, official report).</strong> 8 players are listed Out. Two starters are out in a depth slot that has a named backup: DET LCB D.J. Reed (backup Khalil Dorsey) and NE LCB Carlton Davis III (backup Charles Woods). Depth data is third-party, so treat these as leads to check against the team's own depth chart.</li>
+<li><strong>Player-prop combinations cannot be tested.</strong> No official source publishes historical prop prices.</li>
+<li><strong>Singapore:</strong> Singapore Pools is the only licensed remote gambling operator. Taking part in unlicensed remote gambling is an offence (up to S$10,000 and/or 6 months). We cannot recommend any wager. The site is for analysis only. <a href="https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities" rel="noopener">GRA: Unlawful remote gambling</a></li>
+</ol>
+<h2>Recommendation (for your decision)</h2>
+<p>Do not act on any strategy yet. The next steps are decisions, not more building. See <a href="suggestions.html">Suggestions</a> for the options and <a href="questions.html">Open questions</a> for the information still needed. Nothing has been implemented beyond the analysis shown here.</p>
+<h2>Method in one paragraph</h2>
+<p>Team power ratings are updated after each game by 0.06 × (actual margin − predicted margin), regressed toward zero each season, with a 2.0-point home edge (none at neutral sites). Totals use an exponentially weighted average of recent game totals (α = 0.15). Every prediction uses only games played before kickoff. Strategies are scored at −110 (break-even 52.38%). Pushes are excluded.</p>
+<p class="small">Scope note: the analysis covers regular-season games. Playoff games are excluded from evaluation.</p>
+</main>
+<footer>Part of the <a href="../">Korea5 repository site</a>. Source code and data: <a href="https://github.com/karagemop466-tech/Korea5/tree/arena/1e59465a-korea5/nfl-lab">GitHub branch</a>. Generated 2026-11-13 15:54 UTC.</footer>
+<script src="assets/app.js"></script>
+</body></html>

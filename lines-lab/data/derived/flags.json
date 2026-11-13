@@ -1,0 +1,85 @@
+{
+ "builtUTC": "2026-11-13T13:45:00Z",
+ "items": [
+  {
+   "id": "NFL-K1",
+   "severity": "low",
+   "area": "Official injury page",
+   "finding": "Player row printed as 'Jacob Hummel' with URL slug 'jake-hummel' on nfl.com; transcription keeps the printed name.",
+   "source": "https://www.nfl.com/injuries/",
+   "status": "needs review"
+  },
+  {
+   "id": "NFL-K2",
+   "severity": "medium",
+   "area": "MIN QB situation",
+   "finding": "Official report lists Kyler Murray (DNP) and Carson Wentz (limited) at QB for Week 10; nfldata records Kirk Cousins as the Week 10 starter. The report alone does not identify the starter, so no starting-QB value is published for MIN W10.",
+   "source": "https://www.nfl.com/injuries/",
+   "status": "needs review"
+  },
+  {
+   "id": "NFL-K3",
+   "severity": "medium",
+   "area": "SEA QB situation",
+   "finding": "Official NFL.com news headline: 'Sam Darnold ruled out for Seahawks' Week 10 game vs. Raiders; Drew Lock expected to start again'. nfldata still records Darnold as the Week 10 starter. Conflict left flagged; model lines do not include a QB adjustment.",
+   "source": "https://www.nfl.com/news/sam-darnold-ruled-out-for-seahawks-week-10-game-vs-raiders-drew-lock-expected-to-start-again",
+   "status": "needs review"
+  },
+  {
+   "id": "NFL-K4",
+   "severity": "medium",
+   "area": "Depth charts",
+   "finding": "No depth-chart data is loaded. Backup tier (2nd/3rd string) is NOT inferred anywhere. nflverse depth-chart/injury/snap-count datasets exist as release assets that this sandbox cannot download; a CI workflow can fetch them (suggestion S12).",
+   "source": "https://github.com/nflverse/nflverse-data",
+   "status": "needs review"
+  },
+  {
+   "id": "NFL-K5",
+   "severity": "medium",
+   "area": "Market data provenance",
+   "finding": "spread_line/total_line/moneylines are bookmaker consensus quotes from nflverse/nfldata \u2014 market data, not official NFL data. Every such cell is labelled 'market'.",
+   "source": "https://github.com/nflverse/nfldata/blob/master/data/games.csv",
+   "status": "accepted-with-label"
+  },
+  {
+   "id": "NFL-K6",
+   "severity": "medium",
+   "area": "CLV measurement",
+   "finding": "Closing-line value cannot be measured: no timestamped entry quotes are archived. Gate G5 is pending and reward payouts are suspended until entry snapshots exist.",
+   "source": "https://github.com/nflverse/nfldata/blob/master/data/games.csv",
+   "status": "needs review"
+  },
+  {
+   "id": "NFL-K7",
+   "severity": "low",
+   "area": "Future weeks",
+   "finding": "NFL.com has not posted lines for Week 12+ 2026 (nfldata mirrors this). Originated lines are still produced for Week 11; Week 12+ comparison cells stay blank.",
+   "source": "https://www.nfl.com/schedules/2026/by-week/week-11/",
+   "status": "accepted-with-label"
+  },
+  {
+   "id": "NFL-K8",
+   "severity": "low",
+   "area": "Injury report timing",
+   "finding": "The Week 10 report was fetched 2026-11-13 (Friday). Sunday/Monday games may change status before kickoff (final inactives come 90 minutes before each game).",
+   "source": "https://www.nfl.com/injuries/",
+   "status": "accepted-with-label"
+  },
+  {
+   "id": "NFL-K9",
+   "severity": "high",
+   "area": "No edge claim",
+   "finding": "Model spread MAE (~10 pts) is worse than the market's (~10 pts market MAE on the same window is comparable); no predictive edge is claimed. The leaderboard is paper research; reward payouts are suspended pending G5/G6.",
+   "source": "https://github.com/nflverse/nfldata/blob/master/data/games.csv",
+   "status": "policy"
+  },
+  {
+   "id": "NFL-K10",
+   "severity": "low",
+   "area": "Player props",
+   "finding": "No per-player snap/opportunity data is loaded, so no player-prop probabilities are published. The prop framework runs only when snap-count/opportunity data lands (S13).",
+   "source": "https://github.com/nflverse/nflverse-data",
+   "status": "blocked-by-data"
+  }
+ ]
+}

@@ -696,11 +696,62 @@ is already merged; this session builds on it and does not re-do it.
 
 | # | Task | Owner | Status | Files |
 |---|---|---|---|---|
-| N3 | Independent line-by-line verification of the NFL lab and sources; add a dedicated Suggestions & Decision Review page and a Decisions & Open Questions register; add skill-vs-luck and correlation-measurement methodology; add a lineup/injury tracking schema | arena-fa99cc2e | in progress | `suggestions.html`, `decisions.html`, `nfl-strategy.html`, `scripts/build_site.py`, `research/NFL-STRATEGY.md`, `research/EXECUTIVE-SUMMARY.md`, `README.md`, `COORDINATION.md` |
-| N4 | Rebuild, run the full local verification suite, PR to `main`, merge without waiting, confirm Pages deploy, log result | arena-fa99cc2e | pending | `COORDINATION.md` (log only) |
+| N3 | Independent line-by-line verification of the NFL lab and sources; add a dedicated Suggestions & Decision Review page and a Decisions & Open Questions register; add skill-vs-luck and correlation-measurement methodology; add a lineup/injury tracking schema | arena-fa99cc2e | **done** | `suggestions.html`, `decisions.html`, `nfl-strategy.html`, `scripts/build_site.py`, `research/NFL-STRATEGY.md`, `research/EXECUTIVE-SUMMARY.md`, `README.md`, `COORDINATION.md` |
+| N4 | Rebuild, run the full local verification suite, PR to `main`, merge without waiting, confirm Pages deploy, log result | arena-fa99cc2e | in progress | `COORDINATION.md` (log only) |
 
 Claim notes: no task on the board is open to another session (all prior rows are done / needs review). Scope is additive
 and does not overlap the open PRs #30 / #32 (other sessions' branches, untouched). No schedule facts are invented; every
 factual table row carries an official source link, and any value that cannot be confirmed is left blank and flagged.
 
 - 2026-11-13 — `arena-fa99cc2e` claims N3–N4. Claim pushed on the fixed session branch.
+
+### N3 completion record (2026-11-13)
+
+**What was added (all additive; no schedule facts changed):**
+
+- `suggestions.html` — a dedicated **Suggestions & Decision Review** section. Every proposed change is a row with the
+  decision requested, the options to choose, the benefit, the dependency/risk, an official reference and a status
+  (Proposed → Under review → Approved → Implementing → Done / Rejected). Nothing is implemented until a reviewer chooses a path.
+- `decisions.html` — a **Decisions & Open Questions** register: for each question, what the repository already knows, what it
+  does **not** know, the options, and the discovery step that would close the gap.
+- `nfl-strategy.html` — extended with four source-linked sections: **bet-type evaluation rules** (single, parlay,
+  player-prop combination, injury-adjusted), **skill-versus-luck decomposition** (chance baseline, proper scoring,
+  calibration, bootstrap skill interval, minimum sample, multiple testing, selective deployment), a **correlation
+  measurement plan** (method, inputs, output metric; current value left blank and unverified), and a **lineup and injury
+  tracking schema** for offense and defense (offensive line, QB, RB/FB, WR/TE, defensive line, LB, defensive backs).
+- `scripts/build_site.py` — the generated nav and dashboard now link to the two new pages; `README.md` and
+  `research/EXECUTIVE-SUMMARY.md` updated.
+
+**Official sources verified live this session (2026-11-13) via page fetch, all confirmed live and official:**
+
+| Source | What it confirms |
+|---|---|
+| `https://www.nfl.com/injuries/` | Publishes player, position, injury, practice status and game status by week (Week 10, 2026 snapshot retrieved). |
+| `https://www.nfl.com/stats/player-stats/` | Official player statistics by category and year (passing, rushing, receiving, tackles, interceptions, etc.). |
+| `https://www.nfl.com/stats/team-stats/` | Official team statistics by category and year (offense, defense, special teams). |
+| `https://www.nfl.com/transactions/` | Official trades, signings, reserve list, waivers, terminations by year/month. |
+| `https://operations.nfl.com/` | NFL Football Operations — 2026 NFL Rulebook, important dates, game operations. |
+| `https://www.nfl.com/news/2026-27-national-football-league-important-dates` | 2026–27 league calendar (preseason weekends, roster cutdown, kickoff weekend, injury-report filing policy). |
+
+**Verification performed:**
+
+- `scripts/check_links.py`: **14 pages, 263 local links, 528 external links, 0 missing**.
+- `tools/verify_extra.py`: **31/31 checks passed**, 0 broken local links, 0 data-table rows missing an official source link.
+- `scripts/audit_certainty.py`: passed — no certified future window; all pages carry the certainty notice.
+- Python unit tests **5/5**; `tests/test_calendar.js` and `tests/test_calendar_today.js` passed; `node --check` both JS bundles;
+  `git diff --check` clean. Local HTTP server returned **200** for `suggestions.html`, `decisions.html`, `nfl-strategy.html`, `index.html`.
+- Custom row audit: **0** table rows on `suggestions.html`, `decisions.html` and `nfl-strategy.html` are missing an official source
+  link (the inherited NFL-lab Suggestions-queue rows were given an official reference column to satisfy the rule).
+
+**Irregularities / limits recorded (non-blocking):**
+
+1. No timestamped market odds, player-prop prices, joint outcomes, forecasts or injury panel exist in this repository, so every
+   **measured** value (correlation, ROI, edge) in the new tables is left **blank and marked unverified**. No value was inferred.
+2. The official injury report publishes status, not depth order; the official transactions page publishes roster events. Neither
+   establishes a 2nd/3rd/4th-string ranking, so replacement tiers stay blank unless a sourced depth-chart/role record supports them.
+3. `extra/summary.html` embeds `research/EXECUTIVE-SUMMARY.md` through a line-based markdown converter that escapes `&` and only
+   handles `#`/`##` headers and single-line paragraphs. The first draft of the new section used `###`, `&amp;` and multi-line
+   paragraphs and rendered incorrectly; the section was rewritten converter-safe and the rendered output re-verified. No schedule
+   facts were involved.
+4. No new schedule facts were added or changed; the NFL 2026–27 calendar, injury/stats/transactions sources and all prior flagged
+   items are unchanged.

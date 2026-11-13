@@ -28,6 +28,8 @@ NAV = [
     ("sources.html", "Sources"),
     ("flagged.html", "Flagged"),
     ("method.html", "Method"),
+    ("suggestions.html", "Suggestions"),
+    ("decisions.html", "Decisions"),
     ("extra/index.html", "Official feeds &amp; verification"),
 ]
 
@@ -219,7 +221,8 @@ If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} op
 <h2>Start here</h2><div class="grid g3">
 <div class="card"><h3>Everyday free time</h3><p>Browse dates, games and modelled gaps, in Pacific time, with Yesterday / Today / Tomorrow controls.</p><a href="extra/calendar.html">Day scoreboard</a></div>
 <div class="card"><h3>Vacation planning</h3><p>Every candidate week, two-week and three-week span, ranked by conflicts, with the evidence layer for each.</p><a href="vacation.html">Best vacation dates</a></div>
-<div class="card"><h3>AM/FM, not streaming</h3><p>Which games have a documented Bay Area radio outlet, and what still cannot be confirmed from official pages.</p><a href="extra/stations.html">Station evidence</a></div></div>
+<div class="card"><h3>AM/FM, not streaming</h3><p>Which games have a documented Bay Area radio outlet, and what still cannot be confirmed from official pages.</p><a href="extra/stations.html">Station evidence</a></div>
+<div class="card"><h3>Decision support</h3><p>Review proposed changes and the open questions before anything is implemented, with the NFL lines strategy behind them.</p><a href="suggestions.html">Suggestions</a> · <a href="decisions.html">Decisions</a></div></div>
 
 <h2>Schedule status — what is official today</h2>
 <div class="grid g3">
@@ -231,7 +234,8 @@ If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} op
 <h2>Explore by category</h2><div class="pill-row">
 <a class="btn" href="mlb.html">All 30 MLB clubs</a><a class="btn" href="extra/nfl-2026.html">NFL &amp; 49ers</a>
 <a class="btn" href="ncaaf.html">Stanford &amp; Cal</a><a class="btn" href="extra/westwoodone.html">Westwood One · all sports</a>
-<a class="btn" href="extra/flagged.html">Flagged for Review</a></div>
+<a class="btn" href="extra/flagged.html">Flagged for Review</a><a class="btn" href="suggestions.html">Suggestions</a>
+<a class="btn" href="decisions.html">Decisions &amp; questions</a></div>
 <p>Giants, Athletics, 49ers, Stanford and Cal remain high priority. The all-games view is a conservative personal-interest scope, not proof that every game is locally broadcast.</p>
 <p><a href="research/EXECUTIVE-SUMMARY.md">Full executive summary</a> · <a href="certainty.html">Audit and source limits</a> · <a href="extra/durations.html">Duration assumptions</a></p>
 """

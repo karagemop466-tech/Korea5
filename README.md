@@ -99,3 +99,21 @@ python3 tools/verify_extra.py
 Local tests check structure and links, not complete source-fact verification. Historical
 verification reports are preserved with their original timestamps. All future vacation
 windows remain provisional. `certainty.html` lists the outstanding evidence limits.
+
+## Decision support (2026-11-13)
+
+A dedicated review workflow now sits beside the schedule site:
+
+| Path | What it is |
+|---|---|
+| `suggestions.html` | Every proposed change as a reviewable row: decision requested, options to choose, benefit, dependency/risk, official reference and a status (Proposed → Under review → Approved → Implementing → Done / Rejected). Nothing is implemented until a path is chosen. |
+| `decisions.html` | The open-questions register: what the repository already knows, what it does **not** know, the options, and the discovery step that would close each gap. |
+| `nfl-strategy.html` | The NFL Lines & Strategy Lab, extended with bet-type evaluation rules, skill-versus-luck decomposition, a correlation measurement plan and a lineup/injury tracking schema. |
+
+In every new table the measured value (correlation, ROI, edge) is left **blank and flagged unverified**, because the
+repository holds no timestamped odds, joint outcomes, forecasts or injury panel. Official sources verified live:
+[NFL injury report](https://www.nfl.com/injuries/), [NFL player statistics](https://www.nfl.com/stats/player-stats/),
+[NFL team statistics](https://www.nfl.com/stats/team-stats/), [NFL transactions](https://www.nfl.com/transactions/),
+[NFL Football Operations](https://operations.nfl.com/) and the
+[2026–27 NFL important dates](https://www.nfl.com/news/2026-27-national-football-league-important-dates). No edge,
+correlation value or ROI is claimed.

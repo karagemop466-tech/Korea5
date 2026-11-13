@@ -1,7 +1,7 @@
 {
  "meta": {
   "dataset": "NFL 2026 official weekly injury report rows (nfl.com/injuries)",
-  "retrievedUTC": "2026-11-13T14:08:56.388024+00:00",
+  "retrievedUTC": "2026-11-13T14:11:23.462168+00:00",
   "rows": 296,
   "perRequest": {
    "current": 296

@@ -1,7 +1,7 @@
 {
  "meta": {
   "dataset": "NFL.com official news articles for weekly injury reports and game-day inactives",
-  "retrievedUTC": "2026-11-13T14:08:59.610656+00:00",
+  "retrievedUTC": "2026-11-13T14:11:27.642747+00:00",
   "rows": 413,
   "pagesParsed": 11,
   "linksDiscovered": [
@@ -31,7 +31,7 @@
    },
    {
     "url": "https://www.nfl.com/news/nfl-week-8-inactives-players-ruled-out-sunday-2026-season",
-    "bytes": 884262,
+    "bytes": 884261,
     "playerLinks": 3,
     "liTags": 513,
     "payloads": 1,

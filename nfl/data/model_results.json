@@ -70,7 +70,7 @@
    ]
   }
  },
- "generatedUTC": "2026-11-13T14:59:12Z",
+ "generatedUTC": "2026-11-13T15:04:41Z",
  "selftest": false,
  "seasons": [
   2016,
@@ -12143,14 +12143,69 @@
   "fill": "missing signal -> 0 (documented; never a guessed value)"
  },
  "crossSource": {
-  "status": "not run",
-  "summary": "no raw data",
-  "examples": []
+  "status": "pass",
+  "summary": "2698 of 2776 ESPN-sampled completed games match exactly, 0 differ, 78 unmatched (ESPN week pulls do not cover January dates or playoff rounds beyond week 4, so those games are absent from the ESPN side, not in conflict)",
+  "examples": [],
+  "agree": 2698,
+  "disagree": 0,
+  "unmatched": 78,
+  "unmatchedByDate": {
+   "2016-09-11": 2,
+   "2016-09-18": 2,
+   "2016-09-25": 2,
+   "2016-10-02": 2,
+   "2016-10-09": 1,
+   "2016-10-14": 1,
+   "2016-10-16": 1,
+   "2016-10-23": 2,
+   "2016-10-30": 2,
+   "2016-11-06": 1,
+   "2016-11-07": 1,
+   "2016-11-13": 1,
+   "2016-11-22": 1,
+   "2016-11-27": 2,
+   "2016-12-04": 2,
+   "2016-12-09": 1,
+   "2016-12-11": 1,
+   "2016-12-18": 1,
+   "2016-12-24": 2,
+   "2017-01-01": 2
+  },
+  "unmatchedPairs": {
+   "KC-LV": 4,
+   "LAC-LV": 4,
+   "DEN-LV": 4,
+   "LV-LAC": 4,
+   "LV-KC": 4,
+   "LV-DEN": 4,
+   "LV-IND": 2,
+   "TEN-LV": 2,
+   "BAL-LV": 2,
+   "MIA-LV": 2,
+   "KC-LAC": 1,
+   "NO-LV": 1,
+   "LAC-MIA": 1,
+   "LV-HOU": 1,
+   "HOU-LAC": 1,
+   "LV-CAR": 1,
+   "LV-BUF": 1,
+   "LAC-TB": 1,
+   "CAR-LAC": 1,
+   "CLE-LAC": 1,
+   "LAC-KC": 1,
+   "LV-ATL": 1,
+   "LAC-JAX": 1,
+   "IND-LAC": 1,
+   "LAC-NO": 1
+  }
  },
  "marketCoverage": {
-  "spreadPct": null,
-  "moneylinePct": null,
-  "espnOddsGames": 0,
-  "espnGames": 0
+  "spreadPct": 1.0,
+  "moneylinePct": 0.9997,
+  "espnOddsGames": 26,
+  "espnGames": 2913,
+  "games": 2898,
+  "scheduled": 135,
+  "totalPct": 1.0
  }
 }

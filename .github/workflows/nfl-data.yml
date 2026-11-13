@@ -1,0 +1,44 @@
+name: nfl-lines-data
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "probe | full"
+        default: "full"
+  push:
+    branches: [ 'arena/02f4d067-korea5' ]
+    paths:
+      - 'nfl/fetch_data.py'
+      - '.github/workflows/nfl-data.yml'
+permissions:
+  contents: write
+concurrency:
+  group: nfl-lines-data
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/02f4d067-korea5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: probe asset inventory (no commit)
+        run: python3 nfl/fetch_data.py --seasons 2025 2026 --check-only
+      - name: full fetch
+        if: github.event.inputs.mode != 'probe'
+        run: python3 nfl/fetch_data.py --seasons 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026
+      - name: commit provenance + manifest
+        run: |
+          git config user.name "korea5-nfl-bot"
+          git config user.email "korea5-nfl-bot@users.noreply.github.com"
+          git add -f nfl/data/provenance.json nfl/data/injuries_timestamp.json nfl/data/stats_player_timestamp.json || true
+          git add nfl/raw/samples 2>/dev/null || true
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "nfl: data provenance manifest (CI-fetched)"
+            git pull --rebase --autostash origin arena/02f4d067-korea5
+            git push origin HEAD:arena/02f4d067-korea5
+          fi

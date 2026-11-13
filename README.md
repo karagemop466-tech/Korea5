@@ -39,6 +39,35 @@ official games, 95% CI -0.98 to -0.02), and a +5 point edge at a -110 price need
 from luck. The repository holds **no market price, no settlement record and no forecast log**, so no win rate, yield, edge
 or fair price is published anywhere, and the leaderboard is published empty on purpose.
 
+
+### The data-backed NFL section (`nfl/`)
+
+The **[NFL decision system](https://karagemop466-tech.github.io/Korea5/nfl/index.html)** is the part of this
+repository that ingests official data rather than curating excerpts. It pulls, in CI, every completed final score
+(**185** from 2026, **272** from 2025), the **full official injury report** (3,117 rows for 2026 weeks 1–10 and
+5,783 for 2025), **all 32 club depth charts** (1,762 entries; 31 clubs parse — Houston publishes its chart as an
+image and is left blank rather than guessed), **7 official team-stat tables**, player-stat leaders and all 32
+rosters, then computes rest days, scoring rates, de-vig arithmetic and a shuffle test from those files.
+
+Three findings worth reading first:
+
+1. **The home-field "edge" is a coin at this sample.** 232 of 453 decided games went to the home team in 2025–26
+   (51.2%, 90% CI 47.4–55.1%), and the shuffle test returns p = 1.000. That is the correct reading and the reason
+   the skill-vs-luck gate exists.
+2. **No price exists, so nothing is certified.** The official NFL week, game and stat pages were probed by exact
+   regex for odds fields: **zero hits**. With no price no bet can be settled, so the leaderboard ranks nobody and
+   says so on every row instead of printing a zero.
+3. **Two facts are kept apart on purpose.** Injury status is not a lineup and a depth chart is not a snap count.
+   The "next man up" table names a replacement only when the club's own chart names the next tier — verified live
+   against Detroit's chart (Cade Mays → Juice Scruggs, D.J. Reed → Rock Ya-Sin).
+
+Start with the [executive summary](https://karagemop466-tech.github.io/Korea5/nfl/summary.html), then the
+[questions and gaps](https://karagemop466-tech.github.io/Korea5/nfl/questions.html) (18 decisions, each with what we
+have, what we lack and the official source that would close it), the
+[suggestions register](https://karagemop466-tech.github.io/Korea5/nfl/suggestions.html) (22 proposals with options,
+cost, risk and gate), and the [flagged page](https://karagemop466-tech.github.io/Korea5/nfl/flagged.html) for what
+remains unresolved.
+
 ## What is in here
 
 | Path | What it is |
@@ -70,6 +99,9 @@ python3 tools/build_extra.py      # regenerate extra/ pages (calendar, stations,
 python3 scripts/check_links.py    # fail if any local link is broken
 python3 tools/verify_extra.py     # 31 link, schema and UI checks
 python3 scripts/verify.py         # re-check every curated row against its official page (needs network)
+python3 nfl/tools/analyze_market.py   # recompute the NFL section's numbers
+python3 nfl/tools/build_nfl.py        # regenerate nfl/*.html
+python3 nfl/tools/verify_nfl.py       # 99 link, source, badge and no-false-claim checks
 ```
 
 Data acquisition and verification run in GitHub Actions (`.github/workflows/`), because the schedule sources are only
@@ -94,6 +126,10 @@ Prev/Next/Today day scoreboard and a clearly labelled **Flagged for Review** pag
 | `extra/data/` | Generated combined calendar, vacation ranking and verification/link reports |
 | `tools/*-ef8b5b30.yml` / `tools/fetch_official.py` / `tools/extract_rules.py` | CI fetchers (GitHub Actions has outbound internet; the sandbox does not) |
 | `tools/build_extra.py` / `tools/verify_extra.py` | Generate the extra pages and re-verify every row, source link and local link line by line |
+| `nfl/` | The data-backed NFL decision system: 14 pages, curated registers, 96+ checked assertions |
+| `nfl/tools/` | `probe.py` (what each official page really returns), `fetch_official.py` (CI ingest), `analyze_market.py` (every published number), `build_nfl.py` (pages), `verify_nfl.py` (99 checks) |
+| `nfl/data/` | Official feeds (`official-*.json`) + the committed fetch report |
+| `nfl/data/derived/` | Every computed value, each with its n, interval and label |
 
 Rebuild the second pass after the first-pass scripts:
 

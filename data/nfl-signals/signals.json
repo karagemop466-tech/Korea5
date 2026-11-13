@@ -21313,14 +21313,14 @@
    "G6": {
     "title": "Robustness",
     "rule": "The leader must survive deficit-weight scaling and week-level block resampling.",
-    "status": "manual-review",
-    "evidence": "deficit-weight scaling is published in data/nfl-signals/signals.json under 'sensitivity'; the reader must confirm the ranking does not flip"
+    "status": "pass",
+    "evidence": "rank 2 of 4 strategies under all 3 shrink policies (nested-validation (published), fixed 0.5 (heavy shrink), fixed 1.0 (no shrink)); deficit-weight scaling x0.5/x1.0/x2.0 is published under 'sensitivity'"
    },
    "G7": {
     "title": "Prospective paper trial",
     "rule": "A frozen, timestamped forecast ledger started before outcomes, for a predeclared horizon.",
-    "status": "not-started",
-    "evidence": "no frozen forward ledger exists yet; the first one starts at the next unplayed slate listed on the Lines page"
+    "status": "insufficient-sample",
+    "evidence": "data/nfl-signals/forward-ledger.json holds 41 frozen predictions: 0 settled, 41 open, 1 voided; the promotion gate needs 60 settled"
    },
    "G8": {
     "title": "Release review",
@@ -21363,14 +21363,14 @@
    "G6": {
     "title": "Robustness",
     "rule": "The leader must survive deficit-weight scaling and week-level block resampling.",
-    "status": "manual-review",
-    "evidence": "deficit-weight scaling is published in data/nfl-signals/signals.json under 'sensitivity'; the reader must confirm the ranking does not flip"
+    "status": "pass",
+    "evidence": "rank 1 of 4 strategies under all 3 shrink policies (nested-validation (published), fixed 0.5 (heavy shrink), fixed 1.0 (no shrink)); deficit-weight scaling x0.5/x1.0/x2.0 is published under 'sensitivity'"
    },
    "G7": {
     "title": "Prospective paper trial",
     "rule": "A frozen, timestamped forecast ledger started before outcomes, for a predeclared horizon.",
-    "status": "not-started",
-    "evidence": "no frozen forward ledger exists yet; the first one starts at the next unplayed slate listed on the Lines page"
+    "status": "insufficient-sample",
+    "evidence": "data/nfl-signals/forward-ledger.json holds 41 frozen predictions: 0 settled, 41 open, 1 voided; the promotion gate needs 60 settled"
    },
    "G8": {
     "title": "Release review",
@@ -21414,13 +21414,13 @@
     "title": "Robustness",
     "rule": "The leader must survive deficit-weight scaling and week-level block resampling.",
     "status": "manual-review",
-    "evidence": "deficit-weight scaling is published in data/nfl-signals/signals.json under 'sensitivity'; the reader must confirm the ranking does not flip"
+    "evidence": "rank differs across policies: {'nested-validation (published)': 3, 'fixed 0.5 (heavy shrink)': 3, 'fixed 1.0 (no shrink)': 4}"
    },
    "G7": {
     "title": "Prospective paper trial",
     "rule": "A frozen, timestamped forecast ledger started before outcomes, for a predeclared horizon.",
-    "status": "not-started",
-    "evidence": "no frozen forward ledger exists yet; the first one starts at the next unplayed slate listed on the Lines page"
+    "status": "insufficient-sample",
+    "evidence": "data/nfl-signals/forward-ledger.json holds 41 frozen predictions: 0 settled, 41 open, 1 voided; the promotion gate needs 60 settled"
    },
    "G8": {
     "title": "Release review",
@@ -21464,13 +21464,13 @@
     "title": "Robustness",
     "rule": "The leader must survive deficit-weight scaling and week-level block resampling.",
     "status": "manual-review",
-    "evidence": "deficit-weight scaling is published in data/nfl-signals/signals.json under 'sensitivity'; the reader must confirm the ranking does not flip"
+    "evidence": "rank differs across policies: {'nested-validation (published)': 4, 'fixed 0.5 (heavy shrink)': 4, 'fixed 1.0 (no shrink)': 3}"
    },
    "G7": {
     "title": "Prospective paper trial",
     "rule": "A frozen, timestamped forecast ledger started before outcomes, for a predeclared horizon.",
-    "status": "not-started",
-    "evidence": "no frozen forward ledger exists yet; the first one starts at the next unplayed slate listed on the Lines page"
+    "status": "insufficient-sample",
+    "evidence": "data/nfl-signals/forward-ledger.json holds 41 frozen predictions: 0 settled, 41 open, 1 voided; the promotion gate needs 60 settled"
    },
    "G8": {
     "title": "Release review",
@@ -21514,13 +21514,13 @@
     "title": "Robustness",
     "rule": "The leader must survive deficit-weight scaling and week-level block resampling.",
     "status": "manual-review",
-    "evidence": "deficit-weight scaling is published in data/nfl-signals/signals.json under 'sensitivity'; the reader must confirm the ranking does not flip"
+    "evidence": "rank differs across policies: {'nested-validation (published)': None, 'fixed 0.5 (heavy shrink)': None, 'fixed 1.0 (no shrink)': None}"
    },
    "G7": {
     "title": "Prospective paper trial",
     "rule": "A frozen, timestamped forecast ledger started before outcomes, for a predeclared horizon.",
-    "status": "not-started",
-    "evidence": "no frozen forward ledger exists yet; the first one starts at the next unplayed slate listed on the Lines page"
+    "status": "not-applicable",
+    "evidence": "combination entries have no per-game ledger rows of their own; their prospective evidence starts once they can be scored against outcomes"
    },
    "G8": {
     "title": "Release review",
@@ -21564,13 +21564,13 @@
     "title": "Robustness",
     "rule": "The leader must survive deficit-weight scaling and week-level block resampling.",
     "status": "manual-review",
-    "evidence": "deficit-weight scaling is published in data/nfl-signals/signals.json under 'sensitivity'; the reader must confirm the ranking does not flip"
+    "evidence": "rank differs across policies: {'nested-validation (published)': None, 'fixed 0.5 (heavy shrink)': None, 'fixed 1.0 (no shrink)': None}"
    },
    "G7": {
     "title": "Prospective paper trial",
     "rule": "A frozen, timestamped forecast ledger started before outcomes, for a predeclared horizon.",
-    "status": "not-started",
-    "evidence": "no frozen forward ledger exists yet; the first one starts at the next unplayed slate listed on the Lines page"
+    "status": "not-applicable",
+    "evidence": "combination entries have no per-game ledger rows of their own; their prospective evidence starts once they can be scored against outcomes"
    },
    "G8": {
     "title": "Release review",

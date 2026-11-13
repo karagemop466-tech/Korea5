@@ -2181,8 +2181,7 @@ from the joint rather than from multiplied legs. Forward ledger: 41 frozen rows,
 "past-dated rows are voided, never deleted" rule.
 
 **Deliberate failures, left failing.** G4 (leakage) is marked **fail** for the availability strategy because the
-only availability file is today's snapshot; G7 (prospective evidence) reports the real settled count; G8
-(governance/reward) stays `manual-review`. Gate G5 reads `insufficient-sample` below 60 games. No gate was
+only availability file is today's snapshot; G7 (prospective evidence) reports the real settled count; G8 (governance/reward) stays `not-started`. Gate G5 reads `insufficient-sample` below 60 games. No gate was
 reworded to pass.
 
 **Verification performed.** `python3 -m unittest discover tests` 37/37 (5 pre-existing + 32 new, incl. a leakage

@@ -92,7 +92,8 @@ SECTIONS = [
     ("method.html", "Method"),
 ]
 
-GENERATED = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+GENERATED = jload(DER / "summary.json").get("generatedUTC", "unknown")
+# ^ the data's own retrieval stamp, so a rebuild is byte-identical until the data changes.
 
 
 def page(title: str, active: str, body: str, lede: str = "") -> str:
@@ -120,7 +121,7 @@ blank and badged {model("UNVERIFIED")}, never filled in.
 {body}
 </main>
 <footer><div class="wrap">
-<p><strong>NFL Decision System</strong> · built {esc(GENERATED)} · official sources only:
+<p><strong>NFL Decision System</strong> · data retrieved {esc(GENERATED)} (newest official fetch) · official sources only:
 nfl.com, the 32 official club sites, operations.nfl.com.
 Part of the <a href="../index.html">Korea5 planner</a> · also see the
 <a href="../nfl-strategy.html">strategy lab proposal</a>.</p>

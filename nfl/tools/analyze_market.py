@@ -160,8 +160,16 @@ def run():
 
     # ---------------------------------------------------------------- coverage
     by_season = Counter(g["season"] for g in games)
+    # Deterministic stamp: the newest official retrieval time in the inputs, NOT the wall clock.
+    # A wall-clock stamp makes every rebuild differ, which hides real drift behind timestamp noise.
+    stamps = [results.get("meta", {}).get("retrievedUTC"),
+              injuries.get("meta", {}).get("retrievedUTC"),
+              depth.get("meta", {}).get("retrievedUTC"),
+              report.get("finishedUTC")]
+    stamps = sorted(x for x in stamps if x)
+    data_as_of = stamps[-1] if stamps else "unknown"
     coverage = {
-        "generatedUTC": __import__("datetime").datetime.utcnow().isoformat() + "Z",
+        "generatedUTC": data_as_of,
         "sources": [
             {"dataset": "Final scores", "rows": len(games), "bySeason": dict(by_season),
              "retrievedUTC": results.get("meta", {}).get("retrievedUTC"),
@@ -580,6 +588,7 @@ def run():
     # ------------------------------------------------------------------ summary
     summary = {
         "generatedUTC": coverage["generatedUTC"],
+        "stampMeaning": "newest official retrieval time among the inputs — not the build time",
         "finalGames2026": by_season.get(2026, 0),
         "finalGames2025": by_season.get(2025, 0),
         "injuryRows2026": sum(1 for r in inj if r.get("season") == 2026),

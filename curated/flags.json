@@ -566,7 +566,7 @@
       "id": "F37",
       "severity": "medium",
       "title": "Backtest sample cannot separate the models from luck",
-      "detail": "100 games are scoreable out of sample from the 2026 capture. The paired difference between the leading strategy and the home-field baseline has t = 1.46 with a block-bootstrap interval that includes zero, so the leaderboard is published as provisional and no prize is payable. About 188 paired games would be needed at the observed effect size; the pre-registered promotion gate is 60 settled forward-ledger rows.",
+      "detail": "100 games are scoreable out of sample from the 2026 capture. The paired difference between the leading strategy and the home-field baseline has t = 1.48 with a week-block bootstrap interval of [-0.005, 0.073], which includes zero, so the leaderboard is published as provisional and no prize is payable. Roughly 180 paired games would be needed at the observed effect size; the pre-registered promotion gate is 60 settled forward-ledger rows. Figures rendered on nfl-signals-backtest.html always come from the latest run.",
       "status": "needs-review",
       "sources": [
         {

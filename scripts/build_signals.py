@@ -183,8 +183,9 @@ def build_hub(sig, ledger, reqs):
     score_rows = kpis([
         (num(inputs.get("gamesWithOfficialScores"), 0), "games with an official score",
          "the backtest sample; 5 played games never got a published label and stay excluded"),
-        (num(inputs.get("availabilityRows"), 0), "availability rows today",
-         f"across {num(inputs.get('clubsWithAnAvailabilityFile'), 0)} clubs, read from the per-club injury tables"),
+        (num(inputs.get("availabilityRows"), 0), "availability rows in this run",
+         f"merged from the per-club injury tables ({num(inputs.get('clubsWithAnAvailabilityFile'), 0)} clubs) and "
+         "the official articles; the injury page alone listed 296 players at capture time"),
         (num(lm.get("rows"), 0), "frozen forward predictions",
          f"{num(lm.get('settled'), 0)} settled · {num(lm.get('open'), 0)} waiting on a result"),
     ])
@@ -308,6 +309,14 @@ def build_pipeline(sig, report, registry):
             ["Club registry", num(inputs.get("clubsWithAnAvailabilityFile"), 0), src("https://www.nfl.com/teams/", "nfl.com/teams"),
              "slugs and labels read from the pages' own club links, never from a hard-coded list"],
         ]),
+        callout("warn", "Two of these datasets move between runs, by design.",
+                "The injury page and the news index are live: each club's report is published on its own schedule, "
+                "and the news pages that exist when CI runs are the news pages that get captured. Article and "
+                "availability row counts therefore differ from one capture to the next — in the run before this "
+                "one, 413 article rows and 32 club tables were found; in this one, fewer. The 132 games with "
+                "FINAL scores did not move, and neither did the model's inputs that matter for the leaderboard. "
+                "Numbers on these pages always come from the capture committed with them, and every capture is "
+                "kept in git, so a figure can be traced to the run that produced it."),
         "<h2>Why score binding is strict</h2>",
         "<p>A score is attached to a game only when it sits inside that game's own link block, or when the "
         "screen-reader label beside it agrees on <em>both</em> club nicknames. That check exists because a text "

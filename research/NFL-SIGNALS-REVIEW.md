@@ -4,6 +4,8 @@ Written as the adversarial read of the build described in
 [`NFL-SIGNALS-EXEC-SUMMARY.md`](NFL-SIGNALS-EXEC-SUMMARY.md). Its purpose is to say what a reader
 should not conclude, and to list the decisions that need an owner rather than another commit.
 
+Written against model signal-lab-1.1.0, capture 2026-11-13. The pages render the latest committed run; the figures quoted here are that run's.
+
 ## What is solid
 
 | Claim | Why it can be trusted |
@@ -17,7 +19,7 @@ should not conclude, and to list the decisions that need an owner rather than an
 ## What a reader must not conclude
 
 1. **Not** that net-points is a good betting model. It is the *least wrong* probability set on 100
-   games, and its 0.6756 log loss is a hair under a coin-flip-ish 0.6931 baseline. That it beats
+   games, and its 0.6681 log loss is only marginally under the 0.6931 a coin flip scores. That it beats
    richer models is evidence the richer models are over-parameterised for this sample, not evidence
    the naive one generalises.
 2. **Not** that injuries do not matter. The availability adjustment changes log loss by ~0.001, but it
@@ -43,7 +45,7 @@ should not conclude, and to list the decisions that need an owner rather than an
 - **One season, one rule era.** 2026 rule changes (6-1-3, 6-1-5, 6-1-6, 19-2) mean special-teams and
   roster features cannot be pooled with prior years; any cross-season model needs a rule-era split,
   and the capture carries no pre-2026 data to build one on.
-- **Sigma is a global constant per window.** A 12.0-point margin spread applies equally to a
+- **Sigma is a global constant per window.** A 11.3-point margin spread applies equally to a
   blowout-prone and a low-scoring matchup; per-matchup variance (weather, pace, venue) is the obvious
   upgrade, and none of it is capturable from the pages used here.
 - **`injuriesWithoutTeam` is 0/296 only because club identity comes from the table's own link.** If the

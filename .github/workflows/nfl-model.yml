@@ -1,0 +1,48 @@
+name: nfl-lines-model
+on:
+  workflow_dispatch:
+    inputs:
+      perm:
+        description: "permutations for the deflation gate"
+        default: "60"
+  push:
+    branches: [ 'arena/02f4d067-korea5' ]
+    paths:
+      - 'nfl/model.py'
+      - 'nfl/leaderboard.py'
+      - 'nfl/build_site.py'
+      - '.github/workflows/nfl-model.yml'
+permissions:
+  contents: write
+concurrency:
+  group: nfl-lines-model
+  cancel-in-progress: false
+jobs:
+  model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/02f4d067-korea5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: fetch full NFL data (not committed; hashed into provenance)
+        run: python3 nfl/fetch_data.py --seasons 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 --with-espn
+      - name: run model
+        run: python3 nfl/model.py --perm ${{ github.event.inputs.perm || '60' }}
+      - name: leaderboard + site data
+        run: |
+          python3 nfl/leaderboard.py || true
+          python3 nfl/build_site.py || true
+      - name: commit derived outputs
+        run: |
+          git config user.name "korea5-nfl-bot"
+          git config user.email "korea5-nfl-bot@users.noreply.github.com"
+          git add -f nfl/data/ nfl-lines/
+          if git diff --cached --quiet; then echo "no changes"; else
+            git commit -m "nfl: model results + site (CI-computed from fetched data)"
+            git pull --rebase --autostash origin arena/02f4d067-korea5
+            git push origin HEAD:arena/02f4d067-korea5
+          fi

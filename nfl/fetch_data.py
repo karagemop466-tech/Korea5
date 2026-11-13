@@ -144,9 +144,11 @@ def espn_inventory(seasons: list[int]) -> list[tuple[str, str]]:
 def dump_samples(raw: dict[str, bytes], outdir: str, rows: int = 240) -> None:
     """Commit small, real excerpts so parsers can be developed/validated offline (no network)."""
     os.makedirs(outdir, exist_ok=True)
-    caps = {"games.csv": 6000, "stats_player_week_2025.csv": 6000, "injuries_2025.csv": 6000,
-            "depth_charts_2025.csv": 8000, "snap_counts_2025.csv": 6000, "injuries_2026.csv": 6000,
-            "depth_charts_2026.csv": 8000, "snap_counts_2026.csv": 6000}
+    caps = {"games.csv": 60000,
+            "stats_player_week_2025.csv": 30000, "injuries_2025.csv": 60000,
+            "depth_charts_2025.csv": 20000, "snap_counts_2025.csv": 20000,
+            "injuries_2024.csv": 60000, "depth_charts_2024.csv": 20000, "snap_counts_2024.csv": 20000,
+            "injuries_2026.csv": 60000, "depth_charts_2026.csv": 20000, "snap_counts_2026.csv": 20000}
     for name, body in raw.items():
         if name.endswith(".csv"):
             n = caps.get(name, rows)

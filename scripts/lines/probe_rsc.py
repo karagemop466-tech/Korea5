@@ -5,16 +5,16 @@ Runs on GitHub Actions (runners have outbound internet; the sandbox does not). F
 official URL it downloads the raw bytes exactly as served and, for NFL.com pages,
 decompresses the React Server Component payloads that carry the structured data.
 
-Outputs (uploaded as a workflow artifact, not committed):
-  research/lines-raw/<slug>.html.gz          raw bytes exactly as served
-  research/lines-raw/payloads/<slug>__<key>.json.gz   full dehydrated react-query payloads
-  research/lines-raw/schema-map.json         query keys + payload shapes (no sports values)
+Committed output (small, reviewable, no bulk media):
+  research/lines-probe/schema-map.json  per URL: query key, payload shape, first record
 
-This script derives no sports fact. It records page structure so the parser can be written
-against the real markup instead of a guess.
+Raw HTML is deliberately NOT committed: it is bulky and carries no sports facts. The
+workflow only commits the schema map so the parser can be written against the real
+structure instead of a guess.
+
+This script derives no sports fact. It records page structure only.
 """
 import concurrent.futures
-import gzip
 import json
 import os
 import re
@@ -22,8 +22,8 @@ import time
 import traceback
 import urllib.request
 
-RAW = "research/lines-raw"
-PAYLOADS = os.path.join(RAW, "payloads")
+RAW = "research/lines-raw"          # raw bytes, kept out of git
+OUT = "research/lines-probe"        # committed schema map
 UA = {
     "User-Agent": "Mozilla/5.0 (compatible; Korea5NFLLines/1.0; +official-source-verification)",
     "Accept-Language": "en-US,en;q=0.9",
@@ -34,10 +34,10 @@ TARGETS = [
     ("schedule-2025-w1", "https://www.nfl.com/schedules/2025/by-week/week-1"),
     ("game-stats-2026-w10", "https://www.nfl.com/games/commanders-at-giants-2026-reg-10?tab=stats"),
     ("game-stats-2026-w9", "https://www.nfl.com/games/commanders-at-giants-2026-reg-9?tab=stats"),
+    ("game-stats-2025-w1", "https://www.nfl.com/games/commanders-at-giants-2025-reg-1?tab=stats"),
     ("game-overview-2026-w10", "https://www.nfl.com/games/commanders-at-giants-2026-reg-10?tab=overview"),
     ("player-stats-2026", "https://www.nfl.com/players/amon-ra-st-brown/stats"),
     ("player-logs-2026", "https://www.nfl.com/players/amon-ra-st-brown/stats/logs/"),
-    ("player-stats-2025", "https://www.nfl.com/players/amon-ra-st-brown/stats/?season=2025"),
     ("injuries", "https://www.nfl.com/injuries/"),
     ("injuries-week9", "https://www.nfl.com/injuries/?week=9"),
     ("inactives", "https://www.nfl.com/inactives/"),
@@ -105,8 +105,31 @@ def shape(obj, depth=0, maxdepth=4):
     return type(obj).__name__
 
 
-def safe_slug(text):
-    return re.sub(r"[^a-zA-Z0-9._-]+", "_", str(text))[:120]
+def first_record(data):
+    """One representative record from a payload (or the payload itself if not a list)."""
+    if isinstance(data, list):
+        if not data:
+            return None
+        return data[0]
+    if isinstance(data, dict):
+        for v in data.values():
+            if isinstance(v, list) and v and isinstance(v[0], dict):
+                return v[0]
+        return data
+    return data
+
+
+def trim(obj, depth=0, maxdepth=6):
+    """Keep a record small enough to commit: truncate long strings and deep lists."""
+    if depth > maxdepth:
+        return "..."
+    if isinstance(obj, dict):
+        return {k: trim(v, depth + 1, maxdepth) for k, v in list(obj.items())[:60]}
+    if isinstance(obj, list):
+        return [trim(v, depth + 1, maxdepth) for v in obj[:2]] + ([f"...len={len(obj)}"] if len(obj) > 2 else [])
+    if isinstance(obj, str) and len(obj) > 220:
+        return obj[:220] + "...[truncated]"
+    return obj
 
 
 def probe(item):
@@ -115,8 +138,8 @@ def probe(item):
         page = get(url)
         if page is None:
             return {"slug": slug, "url": url, "ok": False, "error": "fetch failed", "queryKeys": []}
-        os.makedirs(PAYLOADS, exist_ok=True)
-        with gzip.open(os.path.join(RAW, f"{slug}.html.gz"), "wt", encoding="utf-8") as f:
+        os.makedirs(RAW, exist_ok=True)
+        with open(os.path.join(RAW, f"{slug}.html"), "w", encoding="utf-8") as f:
             f.write(page)
 
         info = {"slug": slug, "url": url, "ok": True, "bytes": len(page), "queryKeys": []}
@@ -132,16 +155,11 @@ def probe(item):
             seen.add(name)
             state = q.get("state") or {}
             data = state.get("data")
-            fn = os.path.join(PAYLOADS, f"{slug}__{safe_slug(name)}.json.gz")
-            try:
-                with gzip.open(fn, "wt", encoding="utf-8") as f:
-                    json.dump(q, f, indent=1, default=str)
-            except Exception as e:  # noqa: BLE001
-                print(f"    payload write failed {slug}/{name}: {e}")
             info["queryKeys"].append({
-                "queryKey": [name] + [str(k)[:80] for k in key[1:6]],
+                "queryKey": [name] + [str(k)[:100] for k in key[1:6]],
                 "status": state.get("status"),
                 "dataShape": shape(data),
+                "sampleRecord": trim(first_record(data)),
             })
         return info
     except Exception:  # noqa: BLE001 - never fail the probe run
@@ -154,10 +172,10 @@ def main():
         for info in ex.map(probe, TARGETS):
             results.append(info)
             print(f"  {info['slug']}: ok={info.get('ok')} keys={len(info.get('queryKeys') or [])}")
-    os.makedirs(RAW, exist_ok=True)
-    with open(os.path.join(RAW, "schema-map.json"), "w") as f:
+    os.makedirs(OUT, exist_ok=True)
+    with open(os.path.join(OUT, "schema-map.json"), "w") as f:
         json.dump(results, f, indent=1, default=str)
-    print("wrote", os.path.join(RAW, "schema-map.json"))
+    print("wrote", os.path.join(OUT, "schema-map.json"))
 
 
 if __name__ == "__main__":

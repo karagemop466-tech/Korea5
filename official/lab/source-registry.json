@@ -1,7 +1,7 @@
 {
  "meta": {
   "purpose": "Audit trail of every official page this fetcher touched, with the HTTP result and payload size, so each dataset can be traced back to a live official source.",
-  "retrievedUTC": "2026-11-13T14:09:01.017327+00:00",
+  "retrievedUTC": "2026-11-13T14:11:28.924231+00:00",
   "requests": 52,
   "failures": 0
  },
@@ -11,7 +11,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 2292675,
-   "at": "2026-11-13T14:08:52.590516+00:00",
+   "at": "2026-11-13T14:11:18.968115+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -19,151 +19,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 2283385,
-   "at": "2026-11-13T14:08:52.734791+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2290963,
-   "at": "2026-11-13T14:08:52.879502+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2291174,
-   "at": "2026-11-13T14:08:53.016238+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2276572,
-   "at": "2026-11-13T14:08:53.168142+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2261213,
-   "at": "2026-11-13T14:08:53.308362+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2261389,
-   "at": "2026-11-13T14:08:53.445479+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2256872,
-   "at": "2026-11-13T14:08:53.588784+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2277515,
-   "at": "2026-11-13T14:08:53.727616+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-10",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2310186,
-   "at": "2026-11-13T14:08:53.854034+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-11",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2292797,
-   "at": "2026-11-13T14:08:53.986121+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-12",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2347776,
-   "at": "2026-11-13T14:08:54.121256+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-13",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2287970,
-   "at": "2026-11-13T14:08:54.285316+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-14",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2306549,
-   "at": "2026-11-13T14:08:54.438372+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-15",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2336166,
-   "at": "2026-11-13T14:08:54.586702+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-16",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2338673,
-   "at": "2026-11-13T14:08:54.742727+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-17",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2320591,
-   "at": "2026-11-13T14:08:54.887292+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-18",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2289804,
-   "at": "2026-11-13T14:08:55.020306+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 2283385,
-   "at": "2026-11-13T14:08:55.212836+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/games/dolphins-at-49ers-2026-reg-2",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 1204955,
-   "at": "2026-11-13T14:08:55.347286+00:00",
+   "at": "2026-11-13T14:11:19.115914+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -171,31 +27,23 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 2290919,
-   "at": "2026-11-13T14:08:55.455288+00:00",
-   "contentType": "text/html; charset=utf-8"
-  },
-  {
-   "url": "https://www.nfl.com/games/cardinals-at-49ers-2026-reg-3",
-   "ok": true,
-   "httpStatus": 200,
-   "bytes": 1226920,
-   "at": "2026-11-13T14:08:55.580894+00:00",
+   "at": "2026-11-13T14:11:19.269465+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
    "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
    "ok": true,
    "httpStatus": 200,
-   "bytes": 2291173,
-   "at": "2026-11-13T14:08:55.680283+00:00",
+   "bytes": 2291302,
+   "at": "2026-11-13T14:11:19.433026+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
-   "url": "https://www.nfl.com/games/broncos-at-49ers-2026-reg-4",
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
    "ok": true,
    "httpStatus": 200,
-   "bytes": 1190807,
-   "at": "2026-11-13T14:08:55.796301+00:00",
+   "bytes": 2276572,
+   "at": "2026-11-13T14:11:19.587497+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -203,7 +51,159 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 2261213,
-   "at": "2026-11-13T14:08:55.883860+00:00",
+   "at": "2026-11-13T14:11:19.748498+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2261433,
+   "at": "2026-11-13T14:11:19.900949+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2256743,
+   "at": "2026-11-13T14:11:20.051436+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2277643,
+   "at": "2026-11-13T14:11:20.243897+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2310272,
+   "at": "2026-11-13T14:11:20.364617+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-11",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2292882,
+   "at": "2026-11-13T14:11:20.517380+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-12",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2347775,
+   "at": "2026-11-13T14:11:20.679282+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-13",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2287970,
+   "at": "2026-11-13T14:11:20.826636+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-14",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2306506,
+   "at": "2026-11-13T14:11:20.975193+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-15",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2336339,
+   "at": "2026-11-13T14:11:21.122122+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-16",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2338674,
+   "at": "2026-11-13T14:11:21.270338+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-17",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2320591,
+   "at": "2026-11-13T14:11:21.417817+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-18",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2289934,
+   "at": "2026-11-13T14:11:21.577565+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2283384,
+   "at": "2026-11-13T14:11:21.764453+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/games/dolphins-at-49ers-2026-reg-2",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 1204910,
+   "at": "2026-11-13T14:11:21.884887+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2290920,
+   "at": "2026-11-13T14:11:22.095645+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/games/cardinals-at-49ers-2026-reg-3",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 1226919,
+   "at": "2026-11-13T14:11:22.220194+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2291174,
+   "at": "2026-11-13T14:11:22.434051+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/games/broncos-at-49ers-2026-reg-4",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 1190806,
+   "at": "2026-11-13T14:11:22.562256+00:00",
+   "contentType": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+   "ok": true,
+   "httpStatus": 200,
+   "bytes": 2261213,
+   "at": "2026-11-13T14:11:22.756344+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -211,7 +211,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 1220460,
-   "at": "2026-11-13T14:08:55.991834+00:00",
+   "at": "2026-11-13T14:11:22.883803+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -219,15 +219,15 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 2277514,
-   "at": "2026-11-13T14:08:56.083138+00:00",
+   "at": "2026-11-13T14:11:23.088745+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
    "url": "https://www.nfl.com/games/raiders-at-49ers-2026-reg-9",
    "ok": true,
    "httpStatus": 200,
-   "bytes": 1231058,
-   "at": "2026-11-13T14:08:56.195509+00:00",
+   "bytes": 1230976,
+   "at": "2026-11-13T14:11:23.218753+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -235,7 +235,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 398806,
-   "at": "2026-11-13T14:08:56.279843+00:00",
+   "at": "2026-11-13T14:11:23.398605+00:00",
    "contentType": "text/html"
   },
   {
@@ -243,7 +243,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 417426,
-   "at": "2026-11-13T14:08:56.332462+00:00",
+   "at": "2026-11-13T14:11:23.423297+00:00",
    "contentType": "text/html"
   },
   {
@@ -251,7 +251,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 398806,
-   "at": "2026-11-13T14:08:56.378002+00:00",
+   "at": "2026-11-13T14:11:23.448092+00:00",
    "contentType": "text/html"
   },
   {
@@ -259,7 +259,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 398806,
-   "at": "2026-11-13T14:08:56.453407+00:00",
+   "at": "2026-11-13T14:11:23.492857+00:00",
    "contentType": "text/html"
   },
   {
@@ -267,15 +267,15 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 417426,
-   "at": "2026-11-13T14:08:56.497104+00:00",
+   "at": "2026-11-13T14:11:23.519384+00:00",
    "contentType": "text/html"
   },
   {
    "url": "https://www.nfl.com/news/dolphins-place-qb-malik-willis-groin-on-injured-reserve-kyle-mccord-in-line-for-first-start",
    "ok": true,
    "httpStatus": 200,
-   "bytes": 721300,
-   "at": "2026-11-13T14:08:56.558292+00:00",
+   "bytes": 721754,
+   "at": "2026-11-13T14:11:23.549312+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -283,7 +283,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 727085,
-   "at": "2026-11-13T14:08:56.769354+00:00",
+   "at": "2026-11-13T14:11:23.846581+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -291,15 +291,15 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 768370,
-   "at": "2026-11-13T14:08:56.970919+00:00",
+   "at": "2026-11-13T14:11:24.150317+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
    "url": "https://www.nfl.com/news/week-9-injuries-sunday-pregame-2026-nfl-season",
    "ok": true,
    "httpStatus": 200,
-   "bytes": 775822,
-   "at": "2026-11-13T14:08:57.177899+00:00",
+   "bytes": 775867,
+   "at": "2026-11-13T14:11:24.404342+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -307,15 +307,15 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 900149,
-   "at": "2026-11-13T14:08:57.386985+00:00",
+   "at": "2026-11-13T14:11:24.660632+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
    "url": "https://www.nfl.com/news/nfl-week-9-injury-report-2026-season",
    "ok": true,
    "httpStatus": 200,
-   "bytes": 1051209,
-   "at": "2026-11-13T14:08:57.649477+00:00",
+   "bytes": 1051210,
+   "at": "2026-11-13T14:11:25.050548+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -323,31 +323,31 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 716101,
-   "at": "2026-11-13T14:08:57.987953+00:00",
+   "at": "2026-11-13T14:11:25.427590+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
    "url": "https://www.nfl.com/news/notable-injuries-news-sunday-week-8-games-2026",
    "ok": true,
    "httpStatus": 200,
-   "bytes": 759835,
-   "at": "2026-11-13T14:08:58.187372+00:00",
+   "bytes": 759834,
+   "at": "2026-11-13T14:11:25.725046+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
    "url": "https://www.nfl.com/news/nfl-week-8-inactives-players-ruled-out-sunday-2026-season",
    "ok": true,
    "httpStatus": 200,
-   "bytes": 884388,
-   "at": "2026-11-13T14:08:58.402540+00:00",
+   "bytes": 884387,
+   "at": "2026-11-13T14:11:26.015426+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
    "url": "https://www.nfl.com/news/week-8-injuries-sunday-pregame-2026-nfl-season",
    "ok": true,
    "httpStatus": 200,
-   "bytes": 787823,
-   "at": "2026-11-13T14:08:58.686177+00:00",
+   "bytes": 787781,
+   "at": "2026-11-13T14:11:26.386746+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -355,15 +355,15 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 1020834,
-   "at": "2026-11-13T14:08:58.901776+00:00",
+   "at": "2026-11-13T14:11:26.689832+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
    "url": "https://www.nfl.com/news/week-10-thursday-night-inactives-washington-commanders-at-new-york-giants",
    "ok": true,
    "httpStatus": 200,
-   "bytes": 705826,
-   "at": "2026-11-13T14:08:59.201607+00:00",
+   "bytes": 706187,
+   "at": "2026-11-13T14:11:27.088084+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -371,7 +371,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 874568,
-   "at": "2026-11-13T14:08:59.429440+00:00",
+   "at": "2026-11-13T14:11:27.357103+00:00",
    "contentType": "text/html; charset=utf-8"
   },
   {
@@ -379,7 +379,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 417426,
-   "at": "2026-11-13T14:08:59.663525+00:00",
+   "at": "2026-11-13T14:11:27.671713+00:00",
    "contentType": "text/html"
   },
   {
@@ -387,7 +387,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 398806,
-   "at": "2026-11-13T14:08:59.707949+00:00",
+   "at": "2026-11-13T14:11:27.695025+00:00",
    "contentType": "text/html"
   },
   {
@@ -395,7 +395,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 417426,
-   "at": "2026-11-13T14:08:59.759521+00:00",
+   "at": "2026-11-13T14:11:27.721832+00:00",
    "contentType": "text/html"
   },
   {
@@ -403,7 +403,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 236667,
-   "at": "2026-11-13T14:08:59.805677+00:00",
+   "at": "2026-11-13T14:11:27.765122+00:00",
    "contentType": "text/html"
   },
   {
@@ -411,7 +411,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 245439,
-   "at": "2026-11-13T14:08:59.876152+00:00",
+   "at": "2026-11-13T14:11:27.806374+00:00",
    "contentType": "text/html"
   },
   {
@@ -419,7 +419,7 @@
    "ok": true,
    "httpStatus": 200,
    "bytes": 2277514,
-   "at": "2026-11-13T14:08:59.934186+00:00",
+   "at": "2026-11-13T14:11:27.837410+00:00",
    "contentType": "text/html; charset=utf-8"
   }
  ]

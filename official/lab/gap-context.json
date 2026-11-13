@@ -1,33 +1,118 @@
 {
  "meta": {
   "purpose": "Exact official markup around each game whose score could not be bound, so the parser is fixed against evidence rather than assumption.",
-  "retrievedUTC": "2026-11-13T14:08:56.227971+00:00"
+  "retrievedUTC": "2026-11-13T14:11:23.355304+00:00"
  },
  "samples": {
   "dolphins-at-49ers-2026-reg-2": {
    "anchorFound": true,
    "anchorText": "Watch Replay",
-   "raw": "bca-2c54536568a9&quot;,&quot;gameState&quot;:&quot;FINAL&quot;,&quot;linkModule&quot;:&quot;Game Card&quot;,&quot;linkName&quot;:&quot;Dolphins 13, 49ers 35, FINAL, Sunday, September 20th&quot;,&quot;linkPosition&quot;:&quot;1:1&quot;,&quot;linkType&quot;:&quot;DGX Access Point&quot;}\" href=\"/games/dolphins-at-49ers-2026-reg-2\"><span class=\"sr-only\">Dolphins 13, 49ers 35, FINAL, Sunday, September 20th</span></a><div class=\"flex md:hidden py-2 pl-4 pr-3 bg-ls-100 items-center justify-between gap-4\"><span class=\"body-2-sans font-bold uppercase text-ls-600\">Final</span><div></div></div><div class=\"flex\"><div class=\"flex flex-col flex-1 gap-1\"><div class=\"flex w-full pr-3 md:pr-6 lg:pr-9 xl:pr-11\"><div class=\"flex items-center justify-start gap-2\"><div style=\"border-left-color:#008E97\" class=\"border-l border-l-ds-200 border-l-[6px] rounded-r-xs h-6 lg:h-9 mr-1\"></div><img alt=\"Miami Dolphins Team Logo\" loading=\"lazy\" width=\"40\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"size-8 lg:size-11\" style=\"color:transparent\" src=\"https://static.www.nfl.com/f_auto,h_40,dpr_2.0,q_auto,w_40/league/api/clubs/logos/MIA\"/><span class=\"display-4 italic text-nowrap py-1 lg:py-2 text-black dark:tex"
+   "raw": "bca-2c54536568a9&quot;,&quot;gameState&quot;:&quot;FINAL&quot;,&quot;linkModule&quot;:&quot;Game Card&quot;,&quot;linkName&quot;:&quot;Dolphins 13, 49ers 35, FINAL, Sunday, September 20th&quot;,&quot;linkPosition&quot;:&quot;1:1&quot;,&quot;linkType&quot;:&quot;DGX Access Point&quot;}\" href=\"/games/dolphins-at-49ers-2026-reg-2\"><span class=\"sr-only\">Dolphins 13, 49ers 35, FINAL, Sunday, September 20th</span></a><div class=\"flex md:hidden py-2 pl-4 pr-3 bg-ls-100 items-center justify-between gap-4\"><span class=\"body-2-sans font-bold uppercase text-ls-600\">Final</span><div></div></div><div class=\"flex\"><div class=\"flex flex-col flex-1 gap-1\"><div class=\"flex w-full pr-3 md:pr-6 lg:pr-9 xl:pr-11\"><div class=\"flex items-center justify-start gap-2\"><div style=\"border-left-color:#008E97\" class=\"border-l border-l-ds-200 border-l-[6px] rounded-r-xs h-6 lg:h-9 mr-1\"></div><img alt=\"Miami Dolphins Team Logo\" loading=\"lazy\" width=\"40\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"size-8 lg:size-11\" style=\"color:transparent\" src=\"https://static.www.nfl.com/f_auto,h_40,dpr_2.0,q_auto,w_40/league/api/clubs/logos/MIA\"/><span class=\"display-4 italic text-nowrap py-1 lg:py-2 text-black dark:tex",
+   "gamePageFetched": true,
+   "gamePageBytes": 1203950,
+   "gamePageHasFinalWord": true,
+   "gamePageScoreLike": [
+    "ers' lead to 34-6",
+    "ers' lead to 34-6",
+    "ers' lead to 34-6",
+    "ers' lead to 34-6"
+   ],
+   "gamePageSrLabels": [
+    "San Francisco 49ers",
+    "San Francisco 49ers",
+    "San Francisco 49ers",
+    "Quarter 1",
+    "Quarter 2",
+    "Quarter 3"
+   ]
   },
   "cardinals-at-49ers-2026-reg-3": {
    "anchorFound": true,
    "anchorText": "Watch Replay",
-   "raw": "ca-2c54536568a9&quot;,&quot;gameState&quot;:&quot;FINAL&quot;,&quot;linkModule&quot;:&quot;Game Card&quot;,&quot;linkName&quot;:&quot;Cardinals 30, 49ers 36, FINAL, Sunday, September 27th&quot;,&quot;linkPosition&quot;:&quot;1:1&quot;,&quot;linkType&quot;:&quot;DGX Access Point&quot;}\" href=\"/games/cardinals-at-49ers-2026-reg-3\"><span class=\"sr-only\">Cardinals 30, 49ers 36, FINAL, Sunday, September 27th</span></a><div class=\"flex md:hidden py-2 pl-4 pr-3 bg-ls-100 items-center justify-between gap-4\"><span class=\"body-2-sans font-bold uppercase text-ls-600\">Final</span><div></div></div><div class=\"flex\"><div class=\"flex flex-col flex-1 gap-1\"><div class=\"flex w-full pr-3 md:pr-6 lg:pr-9 xl:pr-11\"><div class=\"flex items-center justify-start gap-2\"><div style=\"border-left-color:#97233F\" class=\"border-l border-l-ds-200 border-l-[6px] rounded-r-xs h-6 lg:h-9 mr-1\"></div><img alt=\"Arizona Cardinals Team Logo\" loading=\"lazy\" width=\"40\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"size-8 lg:size-11\" style=\"color:transparent\" src=\"https://static.www.nfl.com/f_auto,h_40,dpr_2.0,q_auto,w_40/league/api/clubs/logos/AZ\"/><span class=\"display-4 italic text-nowrap py-1 lg:py-2 text-black dark"
+   "raw": "ca-2c54536568a9&quot;,&quot;gameState&quot;:&quot;FINAL&quot;,&quot;linkModule&quot;:&quot;Game Card&quot;,&quot;linkName&quot;:&quot;Cardinals 30, 49ers 36, FINAL, Sunday, September 27th&quot;,&quot;linkPosition&quot;:&quot;1:1&quot;,&quot;linkType&quot;:&quot;DGX Access Point&quot;}\" href=\"/games/cardinals-at-49ers-2026-reg-3\"><span class=\"sr-only\">Cardinals 30, 49ers 36, FINAL, Sunday, September 27th</span></a><div class=\"flex md:hidden py-2 pl-4 pr-3 bg-ls-100 items-center justify-between gap-4\"><span class=\"body-2-sans font-bold uppercase text-ls-600\">Final</span><div></div></div><div class=\"flex\"><div class=\"flex flex-col flex-1 gap-1\"><div class=\"flex w-full pr-3 md:pr-6 lg:pr-9 xl:pr-11\"><div class=\"flex items-center justify-start gap-2\"><div style=\"border-left-color:#97233F\" class=\"border-l border-l-ds-200 border-l-[6px] rounded-r-xs h-6 lg:h-9 mr-1\"></div><img alt=\"Arizona Cardinals Team Logo\" loading=\"lazy\" width=\"40\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"size-8 lg:size-11\" style=\"color:transparent\" src=\"https://static.www.nfl.com/f_auto,h_40,dpr_2.0,q_auto,w_40/league/api/clubs/logos/AZ\"/><span class=\"display-4 italic text-nowrap py-1 lg:py-2 text-black dark",
+   "gamePageFetched": true,
+   "gamePageBytes": 1225635,
+   "gamePageHasFinalWord": true,
+   "gamePageScoreLike": [
+    "ers lead to 29-27",
+    "ers lead to 29-27",
+    "ers lead to 29-27",
+    "ers lead to 29-27"
+   ],
+   "gamePageSrLabels": [
+    "San Francisco 49ers",
+    "San Francisco 49ers",
+    "San Francisco 49ers",
+    "Quarter 1",
+    "Quarter 2",
+    "Quarter 3"
+   ]
   },
   "broncos-at-49ers-2026-reg-4": {
    "anchorFound": true,
    "anchorText": "Watch Replay",
-   "raw": "f1-abca-2c54536568a9&quot;,&quot;gameState&quot;:&quot;FINAL&quot;,&quot;linkModule&quot;:&quot;Game Card&quot;,&quot;linkName&quot;:&quot;Broncos 14, 49ers 24, FINAL, Sunday, October 4th&quot;,&quot;linkPosition&quot;:&quot;1:1&quot;,&quot;linkType&quot;:&quot;DGX Access Point&quot;}\" href=\"/games/broncos-at-49ers-2026-reg-4\"><span class=\"sr-only\">Broncos 14, 49ers 24, FINAL, Sunday, October 4th</span></a><div class=\"flex md:hidden py-2 pl-4 pr-3 bg-ls-100 items-center justify-between gap-4\"><span class=\"body-2-sans font-bold uppercase text-ls-600\">Final</span><div></div></div><div class=\"flex\"><div class=\"flex flex-col flex-1 gap-1\"><div class=\"flex w-full pr-3 md:pr-6 lg:pr-9 xl:pr-11\"><div class=\"flex items-center justify-start gap-2\"><div style=\"border-left-color:#FC4C02\" class=\"border-l border-l-ds-200 border-l-[6px] rounded-r-xs h-6 lg:h-9 mr-1\"></div><img alt=\"Denver Broncos Team Logo\" loading=\"lazy\" width=\"40\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"size-8 lg:size-11\" style=\"color:transparent\" src=\"https://static.www.nfl.com/f_auto,h_40,dpr_2.0,q_auto,w_40/league/api/clubs/logos/DEN\"/><span class=\"display-4 italic text-nowrap py-1 lg:py-2 text-black dark:text-whi"
+   "raw": "f1-abca-2c54536568a9&quot;,&quot;gameState&quot;:&quot;FINAL&quot;,&quot;linkModule&quot;:&quot;Game Card&quot;,&quot;linkName&quot;:&quot;Broncos 14, 49ers 24, FINAL, Sunday, October 4th&quot;,&quot;linkPosition&quot;:&quot;1:1&quot;,&quot;linkType&quot;:&quot;DGX Access Point&quot;}\" href=\"/games/broncos-at-49ers-2026-reg-4\"><span class=\"sr-only\">Broncos 14, 49ers 24, FINAL, Sunday, October 4th</span></a><div class=\"flex md:hidden py-2 pl-4 pr-3 bg-ls-100 items-center justify-between gap-4\"><span class=\"body-2-sans font-bold uppercase text-ls-600\">Final</span><div></div></div><div class=\"flex\"><div class=\"flex flex-col flex-1 gap-1\"><div class=\"flex w-full pr-3 md:pr-6 lg:pr-9 xl:pr-11\"><div class=\"flex items-center justify-start gap-2\"><div style=\"border-left-color:#FC4C02\" class=\"border-l border-l-ds-200 border-l-[6px] rounded-r-xs h-6 lg:h-9 mr-1\"></div><img alt=\"Denver Broncos Team Logo\" loading=\"lazy\" width=\"40\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"size-8 lg:size-11\" style=\"color:transparent\" src=\"https://static.www.nfl.com/f_auto,h_40,dpr_2.0,q_auto,w_40/league/api/clubs/logos/DEN\"/><span class=\"display-4 italic text-nowrap py-1 lg:py-2 text-black dark:text-whi",
+   "gamePageFetched": true,
+   "gamePageBytes": 1189770,
+   "gamePageHasFinalWord": true,
+   "gamePageScoreLike": [
+    "ers' lead to 17-12",
+    "ers' lead to 17-12",
+    "ers' lead to 17-12",
+    "ers' lead to 17-12"
+   ],
+   "gamePageSrLabels": [
+    "San Francisco 49ers",
+    "San Francisco 49ers",
+    "San Francisco 49ers",
+    "Quarter 1",
+    "Quarter 2",
+    "Quarter 3"
+   ]
   },
   "commanders-at-49ers-2026-reg-6": {
    "anchorFound": true,
    "anchorText": "Watch Replay",
-   "raw": "bca-2c54536568a9&quot;,&quot;gameState&quot;:&quot;FINAL&quot;,&quot;linkModule&quot;:&quot;Game Card&quot;,&quot;linkName&quot;:&quot;Commanders 17, 49ers 23, FINAL, Monday, October 19th&quot;,&quot;linkPosition&quot;:&quot;1:1&quot;,&quot;linkType&quot;:&quot;DGX Access Point&quot;}\" href=\"/games/commanders-at-49ers-2026-reg-6\"><span class=\"sr-only\">Commanders 17, 49ers 23, FINAL, Monday, October 19th</span></a><div class=\"flex md:hidden py-2 pl-4 pr-3 bg-ls-100 items-center justify-between gap-4\"><span class=\"body-2-sans font-bold uppercase text-ls-600\">Final</span><div></div></div><div class=\"flex\"><div class=\"flex flex-col flex-1 gap-1\"><div class=\"flex w-full pr-3 md:pr-6 lg:pr-9 xl:pr-11\"><div class=\"flex items-center justify-start gap-2\"><div style=\"border-left-color:#5A1414\" class=\"border-l border-l-ds-200 border-l-[6px] rounded-r-xs h-6 lg:h-9 mr-1\"></div><img alt=\"Washington Commanders Team Logo\" loading=\"lazy\" width=\"40\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"size-8 lg:size-11\" style=\"color:transparent\" src=\"https://static.www.nfl.com/f_auto,h_40,dpr_2.0,q_auto,w_40/league/api/clubs/logos/WAS\"/><span class=\"display-4 italic text-nowrap py-1 lg:py-2 text-black"
+   "raw": "bca-2c54536568a9&quot;,&quot;gameState&quot;:&quot;FINAL&quot;,&quot;linkModule&quot;:&quot;Game Card&quot;,&quot;linkName&quot;:&quot;Commanders 17, 49ers 23, FINAL, Monday, October 19th&quot;,&quot;linkPosition&quot;:&quot;1:1&quot;,&quot;linkType&quot;:&quot;DGX Access Point&quot;}\" href=\"/games/commanders-at-49ers-2026-reg-6\"><span class=\"sr-only\">Commanders 17, 49ers 23, FINAL, Monday, October 19th</span></a><div class=\"flex md:hidden py-2 pl-4 pr-3 bg-ls-100 items-center justify-between gap-4\"><span class=\"body-2-sans font-bold uppercase text-ls-600\">Final</span><div></div></div><div class=\"flex\"><div class=\"flex flex-col flex-1 gap-1\"><div class=\"flex w-full pr-3 md:pr-6 lg:pr-9 xl:pr-11\"><div class=\"flex items-center justify-start gap-2\"><div style=\"border-left-color:#5A1414\" class=\"border-l border-l-ds-200 border-l-[6px] rounded-r-xs h-6 lg:h-9 mr-1\"></div><img alt=\"Washington Commanders Team Logo\" loading=\"lazy\" width=\"40\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"size-8 lg:size-11\" style=\"color:transparent\" src=\"https://static.www.nfl.com/f_auto,h_40,dpr_2.0,q_auto,w_40/league/api/clubs/logos/WAS\"/><span class=\"display-4 italic text-nowrap py-1 lg:py-2 text-black",
+   "gamePageFetched": true,
+   "gamePageBytes": 1219438,
+   "gamePageHasFinalWord": true,
+   "gamePageScoreLike": [
+    "ers' lead to 23-16",
+    "ers' lead to 23-16",
+    "ers' lead to 23-16",
+    "ers' lead to 23-16"
+   ],
+   "gamePageSrLabels": [
+    "San Francisco 49ers",
+    "San Francisco 49ers",
+    "San Francisco 49ers",
+    "Quarter 1",
+    "Quarter 2",
+    "Quarter 3"
+   ]
   },
   "raiders-at-49ers-2026-reg-9": {
    "anchorFound": true,
    "anchorText": "Watch Replay",
-   "raw": "1-abca-2c54536568a9&quot;,&quot;gameState&quot;:&quot;FINAL&quot;,&quot;linkModule&quot;:&quot;Game Card&quot;,&quot;linkName&quot;:&quot;Raiders 17, 49ers 38, FINAL, Sunday, November 8th&quot;,&quot;linkPosition&quot;:&quot;1:1&quot;,&quot;linkType&quot;:&quot;DGX Access Point&quot;}\" href=\"/games/raiders-at-49ers-2026-reg-9\"><span class=\"sr-only\">Raiders 17, 49ers 38, FINAL, Sunday, November 8th</span></a><div class=\"flex md:hidden py-2 pl-4 pr-3 bg-ls-100 items-center justify-between gap-4\"><span class=\"body-2-sans font-bold uppercase text-ls-600\">Final</span><div></div></div><div class=\"flex\"><div class=\"flex flex-col flex-1 gap-1\"><div class=\"flex w-full pr-3 md:pr-6 lg:pr-9 xl:pr-11\"><div class=\"flex items-center justify-start gap-2\"><div style=\"border-left-color:#000000\" class=\"border-l border-l-ds-200 border-l-[6px] rounded-r-xs h-6 lg:h-9 mr-1\"></div><img alt=\"Las Vegas Raiders Team Logo\" loading=\"lazy\" width=\"40\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"size-8 lg:size-11\" style=\"color:transparent\" src=\"https://static.www.nfl.com/f_auto,h_40,dpr_2.0,q_auto,w_40/league/api/clubs/logos/LV\"/><span class=\"display-4 italic text-nowrap py-1 lg:py-2 text-black dark:text-"
+   "raw": "1-abca-2c54536568a9&quot;,&quot;gameState&quot;:&quot;FINAL&quot;,&quot;linkModule&quot;:&quot;Game Card&quot;,&quot;linkName&quot;:&quot;Raiders 17, 49ers 38, FINAL, Sunday, November 8th&quot;,&quot;linkPosition&quot;:&quot;1:1&quot;,&quot;linkType&quot;:&quot;DGX Access Point&quot;}\" href=\"/games/raiders-at-49ers-2026-reg-9\"><span class=\"sr-only\">Raiders 17, 49ers 38, FINAL, Sunday, November 8th</span></a><div class=\"flex md:hidden py-2 pl-4 pr-3 bg-ls-100 items-center justify-between gap-4\"><span class=\"body-2-sans font-bold uppercase text-ls-600\">Final</span><div></div></div><div class=\"flex\"><div class=\"flex flex-col flex-1 gap-1\"><div class=\"flex w-full pr-3 md:pr-6 lg:pr-9 xl:pr-11\"><div class=\"flex items-center justify-start gap-2\"><div style=\"border-left-color:#000000\" class=\"border-l border-l-ds-200 border-l-[6px] rounded-r-xs h-6 lg:h-9 mr-1\"></div><img alt=\"Las Vegas Raiders Team Logo\" loading=\"lazy\" width=\"40\" height=\"40\" decoding=\"async\" data-nimg=\"1\" class=\"size-8 lg:size-11\" style=\"color:transparent\" src=\"https://static.www.nfl.com/f_auto,h_40,dpr_2.0,q_auto,w_40/league/api/clubs/logos/LV\"/><span class=\"display-4 italic text-nowrap py-1 lg:py-2 text-black dark:text-",
+   "gamePageFetched": true,
+   "gamePageBytes": 1229948,
+   "gamePageHasFinalWord": true,
+   "gamePageScoreLike": [
+    "ers' lead to 28-16",
+    "ers' lead to 28-16",
+    "ers' lead to 28-16",
+    "ers' lead to 28-16"
+   ],
+   "gamePageSrLabels": [
+    "San Francisco 49ers",
+    "San Francisco 49ers",
+    "San Francisco 49ers",
+    "Quarter 1",
+    "Quarter 2",
+    "Quarter 3"
+   ]
   }
  }
 }

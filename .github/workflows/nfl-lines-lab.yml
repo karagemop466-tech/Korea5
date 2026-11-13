@@ -42,15 +42,10 @@ jobs:
         run: python3 scripts/nfl_lines/verify.py
 
       - name: Confirm the rebuild is deterministic
-        run: |
-          echo "--- tracked artefacts (must be byte-identical) ---"
-          git diff --stat -- nfl-lines/data/backtest/leaderboard.json nfl-lines/data/backtest/summary.json             nfl-lines/data/correlation nfl-lines/data/injuries nfl-lines/data/lines nfl-lines/data/decision             nfl-lines/data/validation nfl-lines/data/sources.json
-          if ! git diff --quiet -- nfl-lines/data/backtest/leaderboard.json nfl-lines/data/backtest/summary.json             nfl-lines/data/correlation nfl-lines/data/injuries nfl-lines/data/lines nfl-lines/data/decision             nfl-lines/data/validation nfl-lines/data/sources.json ; then
-            echo "::error::A tracked lab artefact changed on rebuild - it is not reproducible."
-            exit 1
-          fi
-          echo "Rebuild reproduced every tracked artefact byte for byte."
-          echo "Per-strategy bet ledgers are gitignored by design and were regenerated ($(ls nfl-lines/data/backtest/strategies | wc -l) files)."
+        # Every artefact carries a generatedUTC stamp and every page a build time, so a raw
+        # `git diff` can never be clean. The real claim is that the NUMBERS reproduce, which is
+        # what this script tests: all tracked JSON, timestamp keys removed, must be identical.
+        run: python3 scripts/nfl_lines/check_reproducible.py
 
       - name: Python syntax
         run: python3 -m compileall -q scripts/nfl_lines

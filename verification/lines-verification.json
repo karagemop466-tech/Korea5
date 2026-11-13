@@ -47,17 +47,17 @@
     {
       "name": "sources/lines.json",
       "pass": true,
-      "detail": "696 rows carry an official source URL"
+      "detail": "681 rows carry an official source URL"
     },
     {
       "name": "sources/strategies.json",
       "pass": true,
-      "detail": "15352 rows carry an official source URL"
+      "detail": "14793 rows carry an official source URL"
     },
     {
       "name": "sources/lineup-risk.json",
       "pass": true,
-      "detail": "165 rows carry an official source URL"
+      "detail": "75 rows carry an official source URL"
     },
     {
       "name": "sources/depth-charts.json",
@@ -117,7 +117,7 @@
     {
       "name": "pages/source-links/lines.html",
       "pass": true,
-      "detail": "697 table rows carry a source link"
+      "detail": "682 table rows carry a source link"
     },
     {
       "name": "pages/official-source/lines.html",
@@ -237,7 +237,7 @@
     {
       "name": "pages/source-links/injuries.html",
       "pass": true,
-      "detail": "166 table rows carry a source link"
+      "detail": "76 table rows carry a source link"
     },
     {
       "name": "pages/official-source/injuries.html",
@@ -337,7 +337,7 @@
     {
       "name": "pages/source-links/flagged.html",
       "pass": true,
-      "detail": "17 table rows carry a source link"
+      "detail": "3 table rows carry a source link"
     },
     {
       "name": "pages/official-source/flagged.html",

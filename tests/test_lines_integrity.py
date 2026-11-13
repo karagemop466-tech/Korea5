@@ -176,5 +176,78 @@ class TestShuffleTestIsNotVacuous(unittest.TestCase):
         self.assertAlmostEqual(st["observedRate"], sum(o) / len(o), places=4)
 
 
+class TestNoDuplicatedGames(unittest.TestCase):
+    """A04 - a game may appear once per season in the game index.
+
+    fetch_games() appended whatever each week page returned. The 2026 Week 10 payload repeats
+    across page slugs, so all 14 Week 10 games were stored 16 times each: 482 regular-season
+    rows for 272 unique games. Every downstream count and every per-game row inherited it.
+    """
+
+    def games(self):
+        with open(os.path.join(ROOT, "data", "lines", "games.json"), encoding="utf-8") as f:
+            return json.load(f)["games"]
+
+    def test_game_ids_are_unique(self):
+        ids = [g["gameId"] for g in self.games()]
+        dupes = {i: ids.count(i) for i in set(ids) if ids.count(i) > 1}
+        self.assertFalse(dupes, f"{len(dupes)} game ids stored more than once")
+
+    def test_regular_season_2026_has_one_row_per_game(self):
+        reg = [g for g in self.games() if g["season"] == 2026 and g["seasonType"] == "REG"]
+        slugs = [g["slug"] for g in reg]
+        self.assertEqual(len(slugs), len(set(slugs)),
+                         "2026 regular season stores duplicate games")
+        self.assertEqual(len(reg), 272, "a 2026 regular season has 272 games")
+
+    def test_published_count_matches_the_rows(self):
+        """The publishable figure must be counted from the rows, not copied from the capture."""
+        import json as _j
+        with open(os.path.join(ROOT, "data", "lines", "lines.json"), encoding="utf-8") as f:
+            meta = _j.load(f)["meta"]["fetchReport"]
+        games = self.games()
+        self.assertEqual(meta["games"], len(games),
+                         "published game count does not match the rows in games.json")
+        with_score = sum(1 for g in games if g.get("awayScore") is not None)
+        self.assertEqual(meta["gamesWithScore"], with_score)
+
+    def test_lineup_rows_are_unique_facts(self):
+        with open(os.path.join(ROOT, "data", "lines", "lineup-risk.json"), encoding="utf-8") as f:
+            rows = json.load(f)["rows"]
+        keys = [(r["gameId"], r["team"], r["player"]) for r in rows]
+        self.assertEqual(len(keys), len(set(keys)), "the same injury is listed twice")
+
+
+class TestReplacementComesFromTheRightChartRow(unittest.TestCase):
+    """A05 - the next man up must be the name printed next to the injured player.
+
+    The builder searched the whole position and took the alphabetically first player at the
+    next tier, which named Ennis Rakestraw Jr. for D.J. Reed when the club's own row names
+    Rock Ya-Sin. Verified against https://www.detroitlions.com/team/depth-chart/ and
+    https://www.patriots.com/team/depth-chart/ on 2026-11-13.
+    """
+
+    def setUp(self):
+        with open(os.path.join(ROOT, "data", "lines", "lineup-risk.json"), encoding="utf-8") as f:
+            self.rows = json.load(f)["rows"]
+
+    def test_known_replacements_match_the_club_chart(self):
+        expected = {
+            ("Cade Mays", "C"): "Juice Scruggs",
+            ("D.J. Reed", "CB"): "Rock Ya-Sin",
+            ("Carlton Davis III", "CB"): "Channing Canada",
+        }
+        for r in self.rows:
+            key = (r["player"], r["position"])
+            if key in expected and r.get("replacement"):
+                self.assertEqual(r["replacement"], expected[key],
+                                 f'{r["player"]} replacement for {r["team"]}')
+
+    def test_replacement_is_from_the_same_chart_row_or_flagged(self):
+        for r in self.rows:
+            if r.get("replacement"):
+                self.assertIn("sameChartRow", r, "row does not say which chart row it used")
+
+
 if __name__ == "__main__":
     unittest.main()

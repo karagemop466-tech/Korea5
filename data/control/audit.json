@@ -29,6 +29,26 @@
    "fix": "Replaced with a two-sided bootstrap on the hit indicator: 0.5121 observed, 95% interval 0.4702-0.5607, p = 0.6657. Same conclusion, real test.",
    "caughtBy": "tests/test_lines_integrity.py::TestShuffleTestIsNotVacuous",
    "status": "fixed"
+  },
+  {
+   "id": "A04",
+   "severity": "high",
+   "title": "All 14 Week 10 games were stored sixteen times each",
+   "found": "By counting duplicate game ids in data/lines/games.json while reviewing the lineup-risk table, after noticing the same Detroit rows repeated on the live page.",
+   "impact": "482 regular-season 2026 rows for 272 unique games. The published '1,170 games' count was inflated (true figure 960), and the lineup table listed every deficiency nine times.",
+   "fix": "fetch_games() now de-duplicates by game id at fetch time; the committed capture was rebuilt the same way and every derived file regenerated. Lineup rows: 207 -> 75.",
+   "caughtBy": "tests/test_lines_integrity.py::TestNoDuplicatedGames",
+   "status": "fixed"
+  },
+  {
+   "id": "A05",
+   "severity": "medium",
+   "title": "A backup was named from the wrong row of the club's depth chart",
+   "found": "By re-reading Detroit's official chart against the published replacement: the page said Ennis Rakestraw Jr., the chart row says Rock Ya-Sin.",
+   "impact": "The builder searched the whole position and took the alphabetically first player at the next tier, so a corner from a different chart row was named as the next man up. 26 rows name a replacement.",
+   "fix": "Chart rows are recovered (a new row starts at each '1st' tier) and the replacement is taken from the injured player's own row, with a sameChartRow field published. Verified live on Detroit and New England.",
+   "caughtBy": "tests/test_lines_integrity.py::TestReplacementComesFromTheRightChartRow",
+   "status": "fixed"
   }
  ],
  "checks": [
@@ -81,6 +101,18 @@
    "verdict": "both variances reproduced to two decimals"
   },
   {
+   "check": "New England Patriots depth chart re-read live (second club, independent of Detroit)",
+   "rows": 1,
+   "failures": 0,
+   "verdict": "Carlton Davis III -> Channing Canada confirmed on the club's own chart"
+  },
+  {
+   "check": "Duplicate game ids checked in the official game index after every capture",
+   "rows": 960,
+   "failures": 0,
+   "verdict": "0 duplicate ids; 272 unique 2026 regular-season games"
+  },
+  {
    "check": "Home-field win count recomputed from the committed official finals",
    "rows": 453,
    "failures": 0,
@@ -94,18 +126,20 @@
   "The receiving-yards standard deviation behind the prop noise gates (22.65 yards) and the games required for a +3, +5 and +10 yard edge.",
   "The two-receiver correlation r = -0.8192 on the six matched games, and its leave-one-game-out range (-0.911 to -0.780), which shows the sign does not depend on a single game.",
   "All 137 completed 2026 games, across four independently built captures.",
-  "All 296 Week 10 injury rows, across two independently written parsers."
+  "All 296 Week 10 injury rows, across two independently written parsers.",
+  "The 272-game 2026 regular season, after the de-duplication that removed 210 repeated rows."
  ],
  "notDone": [
   "No official source was read for every one of the 1,170 games in the third-party archive; only the 2026 results were compared, because those exist in four independent official captures.",
   "No claim on the site was checked against a market price, because no market price exists in the repository.",
   "The official Game Book PDFs were not parsed for participation, so no replacement is proven to have played.",
   "Depth charts for 31 of 32 clubs were read as committed and only Detroit's and San Francisco's were re-read live. The other 29 are as captured, and Houston's is an image and is left blank.",
-  "Nothing was verified about weeks 11-18 of the 2026 season: those fixtures have not been played."
+  "Nothing was verified about weeks 11-18 of the 2026 season: those fixtures have not been played.",
+  "Only 2 of 32 depth charts were re-read live (Detroit, New England). The other 30 are as captured."
  ],
  "liveChecks": 5,
- "rowsCompared": 936,
- "recomputed": 7,
+ "rowsCompared": 1897,
+ "recomputed": 8,
  "flags": [
   {
    "id": "F01",
@@ -1048,148 +1082,22 @@
    "status": "corrected"
   },
   {
-   "id": "L-FL-01",
-   "severity": "medium",
-   "title": "Houston Texans depth chart is not machine-readable",
-   "detail": "The official Texans depth-chart page renders its entries without a readable table, so 31 of 32 clubs have a parsed official depth chart. Texans rows are left blank rather than transcribed from an image.",
-   "sourceUrl": "https://www.houstontexans.com/team/depth-chart",
-   "action": "Ask the club for an accessible version, or capture the published chart image and mark the entries unverified.",
-   "status": null
-  },
-  {
-   "id": "L-FL-02",
-   "severity": "low",
-   "title": "156 official display forms are ambiguous",
-   "detail": "The NFL.com box score shows players as initials plus surname. Where two players on one club's official depth chart share that display form, the full name cannot be confirmed from official sources, so those rows publish the display form only.",
-   "sourceUrl": "https://www.nfl.com/games/",
-   "action": "Add the official club roster page as a third join source, or keep the affected rows flagged.",
-   "status": null
-  },
-  {
-   "id": "L-FL-03",
+   "id": "L-FL-17",
    "severity": "high",
-   "title": "No official archive of past weekly injury reports",
-   "detail": "NFL.com publishes the current week's report only, and the page ignores a week parameter. Injury-driven signals therefore cannot be backtested and are tracked prospectively only.",
-   "sourceUrl": "https://www.nfl.com/injuries/",
-   "action": "Ask NFL communications for the official weekly archive, or confirm whether the league game-statistics books carry the status lists.",
-   "status": null
-  },
-  {
-   "id": "L-FL-04",
-   "severity": "high",
-   "title": "No official history of club depth charts",
-   "detail": "Only the current version of each club's depth chart exists in this repository, so depth-chart tiers cannot be used to backtest any earlier game.",
-   "sourceUrl": "https://www.nfl.com/teams/",
-   "action": "Ask clubs whether prior-week depth charts are archived; store each week's snapshot from now on.",
-   "status": null
-  },
-  {
-   "id": "L-FL-05",
-   "severity": "high",
-   "title": "No official betting prices exist for comparison",
-   "detail": "No league, club or official body publishes sportsbook prices. Every price used in this lab is a declared reference price of -110 per leg so that strategies can be compared with each other. No claim is made that any strategy beats a market.",
-   "sourceUrl": "https://www.nfl.com/",
-   "action": "Obtain a licensed, timestamped price feed before making any market-comparison claim.",
-   "status": null
-  },
-  {
-   "id": "L-FL-06",
-   "severity": "medium",
-   "title": "Home-field advantage is a declared assumption, not a verified value",
-   "detail": "The model uses a fixed 3.0 point home-field term. No official source publishes a home-field advantage value.",
-   "sourceUrl": "https://operations.nfl.com/",
-   "action": "Publish a sensitivity table over 2.0 to 4.0 points and refuse to publish a strategy whose gates only pass at one value.",
-   "status": null
-  },
-  {
-   "id": "L-FL-07",
-   "severity": "medium",
-   "title": "Player-prop strategies are judged on two seasons, not three",
-   "detail": "Official box scores were fetched for the 2025 and 2026 regular seasons. The 2024 season's box scores were not fetched, so the robustness gate for prop and parlay strategies rests on one development season plus one holdout season.",
-   "sourceUrl": "https://www.nfl.com/schedules/2024/by-week/week-1",
-   "action": "Extend the fetcher to 2024 and re-run the pipeline.",
-   "status": null
-  },
-  {
-   "id": "L-FL-08",
-   "severity": "low",
-   "title": "Several club depth charts are labelled 'unofficial' by the club itself",
-   "detail": "The chart label and 'as of' date published by each club are recorded on every depth row so a reader can weigh the evidence. A chart the club labels unofficial is not the same as an official roster.",
-   "sourceUrl": "https://www.packers.com/team/depth-chart",
-   "action": "No action available from public sources; the label is published instead.",
-   "status": null
-  },
-  {
-   "id": "L-FL-09",
-   "severity": "medium",
-   "title": "Player-prop settlement rules are not available from any official source",
-   "detail": "Void, half-action and minimum-participation rules belong to the bookmaker. Prop results in this lab therefore use the model's own over/under rule, not a bookmaker settlement rule.",
-   "sourceUrl": "https://operations.nfl.com/",
-   "action": "Obtain the rule set for each book in scope before any real-money prop claim.",
-   "status": null
-  },
-  {
-   "id": "L-FL-10",
-   "severity": "medium",
-   "title": "The untouched 2026 holdout is nine weeks so far",
-   "detail": "The 2026 regular season has nine completed weeks at the time of this build, so the holdout gate is decided on a small sample and will change as the season continues.",
+   "title": "All 14 Week 10 games were duplicated sixteen times each (corrected 2026-11-14)",
+   "detail": "data/lines/games.json held 482 regular-season 2026 rows for 272 unique games: 14 Week 10 games appeared 16 times each and no other week was affected. Cause: fetch_games() appended whatever each week page returned without de-duplicating by game id, and the Week 10 page payload is repeated across some of the other page slugs. Consequences: the published '1,170 games' count was wrong (the true figure is 960), the lineup-risk table listed every Detroit deficiency nine times (207 rows for 165 facts, and 207 rows for one club before A01), and any per-game arithmetic that summed this file was inflated. Fixed by de-duplicating on game id at fetch time and by rebuilding from the corrected capture: 272 unique 2026 regular-season games, of which 137 have official finals.",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
-   "action": "Re-run the pipeline weekly and publish the holdout gate each time.",
-   "status": null
-  },
-  {
-   "id": "L-FL-11",
-   "severity": "low",
-   "title": "Model outputs are labelled as model outputs, not as official values",
-   "detail": "Originated lines, probabilities and rewards are computed from official inputs. They are not published on any official page and are labelled accordingly wherever they appear.",
-   "sourceUrl": "https://www.nfl.com/",
-   "action": "Keep the label on every model-derived table.",
-   "status": null
-  },
-  {
-   "id": "L-FL-12",
-   "severity": "low",
-   "title": "Unit classification for players missing from the depth chart is inferred from the position code",
-   "detail": "When an injured player is not on the club's official depth chart, the tracker classifies the position as offence, defence or special teams from the official position code on the injury report. That classification is an inference and is flagged.",
-   "sourceUrl": "https://www.nfl.com/injuries/",
-   "action": "Record the chart absence explicitly so the reader can see which rows are inferred.",
-   "status": null
-  },
-  {
-   "id": "L-FL-13",
-   "severity": "low",
-   "title": "Observed weather is published on the official game page but is not usable in a model",
-   "detail": "Observed kickoff weather is the outcome of the forecast, so using it would leak information. Weather is therefore excluded from every model.",
-   "sourceUrl": "https://www.nfl.com/games/",
-   "action": "Leave weather out unless an official forecast usable at decision time can be found.",
-   "status": null
-  },
-  {
-   "id": "L-FL-14",
-   "severity": "high",
-   "title": "Every injury row was attributed to Dallas Cowboys (corrected 2026-11-13)",
-   "detail": "All 296 rows of the official 2026 Week 10 injury report carried team = 'Dallas Cowboys'. Cause: scripts/lines/fetch_nfl.py searched backwards across the whole page for a full club name and kept the last match, so every table inherited the club named last before the final table. Row values (player, position, injury, practice status, game status) were correct; only the club attribution was wrong. Corrected by binding each table to its own d3-o-section-sub-title club label; the rebuilt file now matches the independent parse in data/nfl-analytics/injuries-week-10-2026.json on all 296 rows across 26 reporting clubs (team abbreviation, player, position, injury, practice status and game status compared row by row). Downstream lineup-risk rows were regenerated (207 rows for one club -> 165 rows across 4 clubs).",
-   "sourceUrl": "https://www.nfl.com/injuries/",
-   "action": "Corrected and verified. Reviewer should confirm the club counts on lines/injuries.html now show 26 clubs.",
+   "action": "Corrected and rebuilt. Reviewer should confirm 960 games on the evidence page and 75 lineup rows.",
    "status": "corrected"
   },
   {
-   "id": "L-FL-15",
+   "id": "L-FL-18",
    "severity": "medium",
-   "title": "leaderboard.json disagreed with strategies.json on S03 reward (corrected 2026-11-13)",
-   "detail": "strategies.json gave S03 a reward of 72 while leaderboard.json gave it 0, because the leaderboard writer built shallow copies before the redundancy gate (G7) ran, so the gate's rewrite of G7/status/reward never reached the copies. The published rank order was therefore computed before G7 was applied. Fixed by making the leaderboard rows the same objects as the strategy rows and adding an assertion that fails the build on any drift.",
-   "sourceUrl": "https://www.nfl.com/standings/",
-   "action": "Corrected. S03 is now published as failed (G7 correlation +0.993 with S05) with reward 0 on both files.",
+   "title": "A backup was named from the wrong chart row (corrected 2026-11-14)",
+   "detail": "For D.J. Reed (CB, Detroit) the page named Ennis Rakestraw Jr. The club's own chart lists Reed, Rock Ya-Sin, Khalil Dorsey and Nick Whiteside in the first CB row and McCreary, Rakestraw and Abney in the second, so the next man up is Rock Ya-Sin. The builder searched the whole position and took the alphabetically first player at the next tier. Fixed by recovering chart rows (a new row starts at each 1st tier) and selecting the replacement from the injured player's own row, with a sameChartRow field published so a reviewer can see whether the fallback was used. Verified live on two clubs: Detroit (Reed -> Rock Ya-Sin) and New England (Carlton Davis III -> Channing Canada).",
+   "sourceUrl": "https://www.detroitlions.com/team/depth-chart/",
+   "action": "Corrected. 26 of 75 rows name a replacement; each is flagged sameChartRow.",
    "status": "corrected"
-  },
-  {
-   "id": "L-FL-16",
-   "severity": "medium",
-   "title": "Lineup-risk rows are raised against Week 18 fixtures for a Week 10 injury report",
-   "detail": "build_lineup_risk iterates over every 2026 game that has no score yet, which includes weeks 11-18, and applies the single stored Week 10 injury snapshot to all of them. 69 of the 165 published rows are for weeks 11-18. Those rows state a current injury against a future game date and should not be read as a projection. The rows are published with this limitation rather than filtered out, because filtering would hide the mismatch.",
-   "sourceUrl": "https://www.nfl.com/injuries/",
-   "action": "Reviewer decision: keep as-is with this label, or restrict the table to Week 10-11 fixtures.",
-   "status": "needs-review"
   }
  ]
 }

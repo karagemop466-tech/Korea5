@@ -1,5 +1,5 @@
 {
- "generatedUTC": "2026-11-13T23:12:22Z",
+ "generatedUTC": "2026-11-13T23:25:06Z",
  "surfaces": [
   {
    "name": "Control Room",
@@ -67,9 +67,9 @@
   "strategyLabs": 6,
   "injuryRows": 296,
   "clubsReporting": 26,
-  "deficiencyRows": 165,
+  "deficiencyRows": 75,
   "flagsCombined": 60,
-  "flagsLines": 16
+  "flagsLines": 2
  },
  "settledBets": 0,
  "boundary": "No market price, no settlement record and no forecast settlement exist in this repository. No win rate, yield, edge or fair price is published anywhere on this site."

@@ -101,7 +101,7 @@ def src_links(urls):
 
 
 # --------------------------------------------------------------------------- pages
-def page_index(meta, decisions, suggestions):
+def page_index(meta, decisions, suggestions, ndefects=0):
     c = meta["counts"]
     tiles = [
         ("Decisions open", c["decisions"] - c["decisionsAnswered"], f'{c["decisionsBlocking"]} blocking',
@@ -187,10 +187,11 @@ authoritative for, so a reader knows where to look and where not to.</p>
 <li><strong>Evidence</strong> — every dataset this site rests on, with its row count, its source and what it cannot tell you.</li>
 <li><strong>Strategies</strong> — all 55 strategy rows from all 6 labs side by side, with gate counts, so a reader can see that none passes.</li>
 <li><strong>Injuries &amp; depth</strong> — the official weekly report by club, and the next-man-up rows the exact chart tier supports.</li>
-<li><strong>Audit</strong> — three published defects found this session, how each was found, and the check that now catches it.</li>
+<li><strong>Audit</strong> — {ndefects} published defects found this session, how each was found, and the check that now catches it.</li>
 <li><strong>Flagged for review</strong> — everything unverified, with the official source that would settle it. Non-blocking, by the project's own rule.</li>
 </ul>
 """
+    body = body.replace("{NDEFECTS}", str(ndefects))
     return page("Overview", body, "index.html",
                 "One page-set for the whole NFL programme: what is known, what is open, and which path to take. "
                 "Built from the registers and datasets already committed, with every figure recomputed rather than copied.")
@@ -466,6 +467,8 @@ def page_injuries(inj):
         + "</td></tr>" for c in inj["clubs"])
     UNV = '<span class="unv" title="the club chart does not name a next tier">— unverified</span>'
     UNV = '<span class="unv" title="the club chart does not name this">— unverified</span>'
+    SAME = '<span class="ok">same chart row</span>'
+    DIFFROW = '<span class="unv">other chart row</span>'
     defs = inj["deficiencies"]
     hi = [d for d in defs if d["severity"] == "high"]
     rows = "".join(
@@ -474,6 +477,7 @@ def page_injuries(inj):
         f'<td>{e(d["depthTier"]) if d["depthTier"] else UNV}</td>'
         f'<td>{(e(d["replacement"]) + " (" + e(d["replacementTier"]) + ")") if d["replacement"] else UNV}</td>'
         f'<td><span class="pill sev-{e(d["severity"])}">{e(d["severity"])}</span></td>'
+        f'<td>{(SAME if d["sameChartRow"] else (DIFFROW if d["replacement"] else UNV))}</td>'
         f'<td>{e(d["chartLabel"]) if d["chartLabel"] else UNV}</td><td>{src_links([d["injurySourceUrl"], d["depthChartSourceUrl"]])}</td></tr>'
         for d in defs)
     body = f"""
@@ -508,7 +512,7 @@ snapshot is applied to every 2026 fixture that has not been played, so some rows
 rows state a current injury against a future date and are not a projection. Recorded as FL-16 and suggestion CS-05.</p>
 <table class="grid wide">
 <thead><tr><th class="num">Wk</th><th>Club</th><th>Opponent</th><th>Player</th><th>Pos</th><th>Status</th>
-<th>Chart tier</th><th>Next man up (tier)</th><th>Severity</th><th>Chart label</th><th>Source</th></tr></thead>
+<th>Chart tier</th><th>Next man up (tier)</th><th>Severity</th><th>Replacement source</th><th>Chart label</th><th>Source</th></tr></thead>
 <tbody>{rows}</tbody></table>
 """
     return page("Injuries &amp; depth", body, "injuries.html",
@@ -636,7 +640,8 @@ def main():
     audit = load("audit.json")
 
     pages = {
-        "index.html": page_index(meta, dec["decisions"], sug["suggestions"]),
+        "index.html": page_index(meta, dec["decisions"], sug["suggestions"],
+                                 len(audit.get("defects", []))),
         "summary.html": page_summary("research/CONTROL-ROOM-EXECUTIVE-SUMMARY.md"),
         "decisions.html": page_decisions(dec["decisions"], dec["notMerged"]),
         "suggestions.html": page_suggestions(sug["suggestions"]),

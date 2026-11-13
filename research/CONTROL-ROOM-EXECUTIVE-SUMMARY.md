@@ -20,9 +20,9 @@ strongest positive result in the whole programme is a model that is **not distin
 (log-loss improvement over its baseline t = 1.48, 95% bootstrap interval −0.005 to +0.073, ~182 paired games needed).
 That is the correct finding, and it is the reason the gate design exists.
 
-## 2. What was found in the review — three published defects
+## 2. What was found in the review — five published defects
 
-All three had passed every existing verifier. Each is now fixed, tested, and published on the audit page and the
+All five had passed every existing verifier. Each is now fixed, tested, and published on the audit page and the
 combined flag register. Naming them is the point: a verifier that cannot fail is not a verifier.
 
 | ID | Defect | How it was found | Impact |
@@ -30,14 +30,24 @@ combined flag register. Naming them is the point: a verifier that cannot fail is
 | **A01** | Every one of the 296 injury rows was attributed to *Dallas Cowboys* | Counting distinct clubs in `data/lines/injuries.json`: 296 rows, 1 club | The lineup-risk table named one club's players against every fixture |
 | **A02** | `leaderboard.json` and `strategies.json` disagreed: S03 showed reward 72 in one file and 0 in the other | Comparing the two published files field by field | Ranks were computed before the redundancy gate ran |
 | **A03** | The published shuffle test could only return p = 1.000 | Re-deriving the statistic from the committed outcomes | Permuting outcomes cannot change the home-win count; the comparison tied on every draw |
+| **A04** | All 14 Week 10 games were stored **16 times each**: 482 rows for 272 unique games | Counting duplicate game ids while reviewing the lineup table | The published "1,170 games" was inflated (true: 960); every deficiency was listed nine times |
+| **A05** | D.J. Reed's next man up was published as *Ennis Rakestraw Jr.*; the club's own row names *Rock Ya-Sin* | Re-reading Detroit's chart against the published row | A corner from a **different chart row** was named as the replacement |
 
-**Fixes.** A01: each club table is bound to its own club title element; the rebuilt file now matches an independently
-written parser on all 296 rows. A02: leaderboard rows are the same objects as the strategy rows, with a build-time
-assertion against drift. A03: replaced with a two-sided bootstrap (0.5121 observed, 95% CI 0.4702–0.5607, p = 0.6657)
-that reaches the same conclusion with a test that can fail.
+**Fixes.**
 
-**Enforcement.** `tests/test_lines_integrity.py` (12 tests) fails the build on all three. Each was negative-tested:
-reintroducing the defect produces a named failure. `tools/verify_control.py` adds 349 checks over the new pages.
+* **A01** — each club table is bound to its own club title element; the rebuilt file matches an independently written
+  parser on all 296 rows.
+* **A02** — leaderboard rows are the same objects as the strategy rows, with a build-time assertion against drift.
+* **A03** — replaced with a two-sided bootstrap (0.5121 observed, 95% CI 0.4702–0.5607, p = 0.6657) that reaches the
+  same conclusion with a test that can fail.
+* **A04** — de-duplicated by game id at fetch time; the capture rebuilt and every derived file regenerated. Lineup
+  rows fell from 207 to **75**.
+* **A05** — chart rows are recovered (a new row starts at each "1st" tier) and the replacement is taken from the
+  injured player's **own row**, with a `sameChartRow` field published. Verified live on **two** clubs: Detroit
+  (Reed → Rock Ya-Sin) and New England (Carlton Davis III → Channing Canada).
+
+**Enforcement.** `tests/test_lines_integrity.py` (17 tests) fails the build on all five. Each was negative-tested:
+reintroducing the defect produces a named failure. `tools/verify_control.py` adds 358 checks over the new pages.
 
 ## 3. What was verified live, this session
 
@@ -47,6 +57,8 @@ reintroducing the defect produces a named failure. `tools/verify_control.py` add
 | Official game page (Jaguars at Ravens, 2026 Week 9) | 1 | **JAX 33 – BAL 10 matched** |
 | Official player log (Justin Jefferson, 8 games) | 8 | **8/8 matched**, including the week with no statistics |
 | Official depth-chart tiers (Detroit) | 2 | **Cade Mays → Juice Scruggs, D.J. Reed → Rock Ya-Sin confirmed** |
+| Official depth-chart tiers (New England, independent club) | 1 | **Carlton Davis III → Channing Canada confirmed** |
+| Duplicate game ids in the official game index | 960 | **0 duplicates; 272 unique 2026 regular-season games** |
 | Week 10 injury report, two independent parsers | 296 | **identical** on club, player, position, injury, practice, game status |
 | Four independent 2026 result captures, game by game | 137 | **all four agree** on both scores for all 137 completed games |
 | Bets needed at −110 recomputed from first principles | 5 | **19,565 / 4,887 / 2,170 / 779 / 345 reproduced exactly** |
@@ -108,13 +120,13 @@ ball. What exists:
 * The **official weekly report**, by club: 296 rows, 26 clubs reporting, captured with its timestamp and a per-row
   source URL. Out / Doubtful / Questionable and practice participation are separated, because they are different facts.
 * **32 club depth charts**, 31 parsing. Houston publishes an image and is left blank rather than transcribed.
-* **165 next-man-up rows**, 71 of which name a specific replacement from the club's own chart, and 71 of which are
-  verified starters marked out. Example, verified live on Detroit's official chart today:
+* **75 next-man-up rows**, 26 of which name a specific replacement taken from the injured player's **own row** of the
+  club's chart (every one flagged `sameChartRow`), and 71 of which are verified starters marked out. Example, verified live on Detroit's official chart today:
   **Cade Mays (C, 1st) → Juice Scruggs (2nd)** and **D.J. Reed (CB, 1st) → Rock Ya-Sin (2nd)**.
 * **What is missing:** a snap count. Nothing in the repository proves the replacement actually played. The site says
   "projected replacement" and flags the gap (F-series, D-DEPTH) rather than implying it was measured.
-* **A published limitation:** the single Week 10 snapshot is applied to every unplayed 2026 fixture, so 69 of 165 rows
-  sit against a game weeks away. Published with the label (FL-16, CS-05), not filtered away.
+* **A published limitation:** the single Week 10 snapshot is applied to every unplayed 2026 fixture, so most of the 75
+  rows sit against a game weeks away. Published with the label (FL-16, CS-05), not filtered away.
 
 ## 7. Suggestions — twelve proposals, each with options and a default
 
@@ -146,7 +158,7 @@ The five that matter most, in order:
 | Suggestions | 12 proposals × 3+ options, selectable in the browser and exportable as JSON; nothing is submitted |
 | Evidence | 22 datasets, row counts counted at build time, content hashes, and what each cannot tell you |
 | Strategies | All 55 rows from all 6 labs side by side, with gate counts; 0 settled bets, 0 certified |
-| Injuries & depth | The official report by club plus the next-man-up ledger with the chart tier and label |
+| Injuries & depth | The official report by club plus the next-man-up ledger with the chart tier, row and label |
 | Audit | The three defects, how each was found, the fix, and the check that now catches it |
 | Sources | Every source, official first, the one secondary source labelled |
 | Flagged | All 76 flagged items with the official source that would settle each |
@@ -155,8 +167,8 @@ The five that matter most, in order:
 
 * **No price, no settlement.** Nothing anywhere is graded, and no monetary claim is made.
 * **The third-party archive's line columns** have no documented upstream source. Two labs use it and both publish the gap.
-* **29 of 32 depth charts** were not re-read live this session; only Detroit's and San Francisco's were. The rest stand
-  as captured.
+* **30 of 32 depth charts** were not re-read live this session; Detroit's, New England's and San Francisco's were. The
+  rest stand as captured.
 * **Weeks 11–18 of 2026** are unplayed, so nothing about them is verified.
 * **The 2026 season is 137 games complete** at capture. Every correlation resting on one partial season is labelled as
   such.

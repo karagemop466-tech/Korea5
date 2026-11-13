@@ -1,13 +1,15 @@
 {
  "meta": {
   "script": "tools/fetch_nfl_lab.py",
-  "startedUTC": "2026-11-13T13:45:43.886480+00:00",
-  "finishedUTC": "2026-11-13T13:45:53.915456+00:00",
+  "startedUTC": "2026-11-13T13:54:02.909214+00:00",
+  "finishedUTC": "2026-11-13T13:54:23.377046+00:00",
   "python": "3.11.18"
  },
  "counts": {
   "games": 291,
   "gamesFinalWithScores": 132,
+  "gapFilledFromGamePages": 0,
+  "pastGamesStillMissingScores": 5,
   "standingsRows": 32,
   "injuryRows": 296,
   "inactivesRows": 0,

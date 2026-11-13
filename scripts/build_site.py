@@ -23,9 +23,11 @@ NAV = [
     ("vacation.html", "Vacation windows"),
     ("mlb.html", "MLB"),
     ("nfl.html", "NFL &amp; 49ers"),
-    ("nfl-lines.html", "NFL Lines (origination)"),
     ("ncaaf.html", "Stanford &amp; Cal"),
     ("radio.html", "Radio"),
+    ("lab/index.html", "NFL Lab"),
+    ("lab/questions.html", "Decisions"),
+    ("lab/suggestions.html", "Suggestions"),
     ("sources.html", "Sources"),
     ("flagged.html", "Flagged"),
     ("method.html", "Method"),
@@ -229,17 +231,14 @@ If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} op
 <div class="card"><h3>NFL — 2026 released, 2027+ not</h3><p>All 2026 NFL games are loaded. nfl.com has no 2027 season page yet. The 2027 playoff round windows (Jan 9–10, Jan 16–18, Jan 23–24, Jan 31) and Super Bowl LXI (Sun Feb 14, 2027, SoFi Stadium) come from the official NFL 2026–27 calendar; game-day splits and kickoffs are modelled. The 2027 Pro Bowl date is not published.</p><a href="https://www.nfl.com/news/2026-27-national-football-league-important-dates">NFL 2026–27 important dates</a></div>
 </div>
 
-<h2>NFL Lines Origination</h2>
-<p class="small">Research framework for originating NFL lines: signals, strategies, validation gates, correlation, injuries and depth tracking. Unsupported prices, correlation values and depth-chart replacements remain blank and flagged unverified.</p>
-<div class="pill-row"><a class="btn" href="nfl-lines.html">NFL Lines dashboard →</a><a class="btn" href="nfl-strategies.html">Strategies &amp; gates →</a><a class="btn" href="nfl-executive-summary.html">Executive summary →</a><a class="btn" href="nfl-flagged.html">Flagged review →</a><a class="btn" href="nfl-lab/sources.html">Official source register →</a></div>
-<p class="small">No betting prices, correlation values or replacement-string observations have been loaded or verified in this repository; unknowns are left blank and flagged.</p>
-
 <h2>Explore by category</h2><div class="pill-row">
 <a class="btn" href="mlb.html">All 30 MLB clubs</a><a class="btn" href="extra/nfl-2026.html">NFL &amp; 49ers</a>
-<a class="btn" href="nfl-lines.html">NFL Lines &amp; Strategy</a><a class="btn" href="ncaaf.html">Stanford &amp; Cal</a><a class="btn" href="extra/westwoodone.html">Westwood One · all sports</a>
+<a class="btn" href="ncaaf.html">Stanford &amp; Cal</a><a class="btn" href="extra/westwoodone.html">Westwood One · all sports</a>
+<a class="btn" href="lab/index.html">NFL Lines Lab</a>
 <a class="btn" href="extra/flagged.html">Flagged for Review</a></div>
 <p>Giants, Athletics, 49ers, Stanford and Cal remain high priority. The all-games view is a conservative personal-interest scope, not proof that every game is locally broadcast.</p>
-<p><a href="research/EXECUTIVE-SUMMARY.md">Full executive summary</a> · <a href="certainty.html">Audit and source limits</a> · <a href="extra/durations.html">Duration assumptions</a></p>
+<p><a href="research/EXECUTIVE-SUMMARY.md">Full executive summary</a> · <a href="certainty.html">Audit and source limits</a> · <a href="extra/durations.html">Duration assumptions</a> ·
+<a href="lab/index.html">NFL Lines Lab</a> · <a href="lab/suggestions.html">Suggestions</a> · <a href="lab/flags.html">Lab flagged items</a></p>
 """
     page("index.html", "Dashboard", "index.html", body)
 
@@ -624,6 +623,16 @@ verified for 2026–27. The 2027, 2028 and 2029 seasons have not been released, 
 <p class="small">Source: the club's own schedule page, which publishes kickoff in Pacific time and names the radio network for every game:
 <strong>KSAN 107.7 FM / KNBR 104.5 FM / 680 AM</strong>. Week 18 is listed by the club as TBD; both days of the league's final weekend are blocked.</p>
 {table(["Date", "Kickoff (PT)", "Opponent", "Venue", "TV", "Status"], sf_rows)}
+
+<h2>NFL lines and strategy lab</h2>
+<div class="callout"><strong>Originating your own NFL lines.</strong> The <a href="lab/index.html">NFL Lines Lab</a> holds the
+decision register (what is known, what is missing, what blocks each decision), the strategy catalogue with its validation
+gates, the measured correlations between candidate legs, the injury and lineup-depth tracker built on the official injury
+report and the official Game Book, the leaderboard design, and the suggestions register. No strategy on it is validated:
+this repository holds no market price and no settlement record, so no win rate, yield or edge is published.</div>
+<div class="pill-row"><a class="btn" href="lab/questions.html">Decision register</a><a class="btn" href="lab/strategies.html">Strategies &amp; gates</a>
+<a class="btn" href="lab/correlations.html">Correlations</a><a class="btn" href="lab/injuries.html">Injuries &amp; depth</a>
+<a class="btn" href="lab/leaderboard.html">Leaderboard</a><a class="btn" href="lab/suggestions.html">Suggestions</a></div>
 
 <h2>Every NFL game, 2026</h2>
 <p class="small">The full {nfl_count} games of the 2026 league year (preseason and regular season), each row linking to its own NFL.com game page.

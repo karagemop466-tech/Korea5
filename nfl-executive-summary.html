@@ -1,76 +1,46 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Executive Summary · NFL Lines Origination · Korea5</title>
-<meta name="description" content="Executive summary of the NFL lines origination project: important details, what is official vs. unverified, decision rules, and next steps.">
+<title>NFL Executive Summary · NFL Lines Lab · Free Time Vacation Planner</title>
+<meta name="description" content="NFL lines, strategy research, injury and depth tracking, decision register and suggestions.">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="lab/assets/lab.css">
 </head><body>
 <header class="top"><div class="wrap topbar">
-  <div class="brand"><span class="dot"></span> NFL LINES / ORIGINATION</div>
-  <nav class="main"><a href="index.html">Dashboard</a><a href="nfl-lines.html">NFL Lines</a><a href="nfl-strategies.html">Strategies</a><a href="nfl-correlation.html">Correlation</a><a href="nfl-injuries.html">Injuries</a><a href="nfl-questions.html">Questions</a><a href="nfl-suggestions.html">Suggestions</a><a href="nfl-executive-summary.html" class="active">Executive Summary</a><a href="nfl-flagged.html">Flagged</a><a href="flagged.html">Planner Flagged</a><a href="extra/index.html">Official feeds &amp; verification</a></nav>
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="index.html">Dashboard</a><a href="calendar.html">Calendar</a><a href="vacation.html">Vacation windows</a><a href="mlb.html">MLB</a><a href="nfl.html">NFL &amp; 49ers</a><a href="radio.html">Radio</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="method.html">Method</a><a href="extra/index.html">Official feeds</a><span class="nav-sep">|</span><a href="lab/index.html" class="">Lab home</a><a href="lab/questions.html" class="">Questions</a><a href="lab/strategies.html" class="">Strategies</a><a href="lab/correlations.html" class="">Correlations</a><a href="lab/injuries.html" class="">Injuries &amp; depth</a><a href="lab/leaderboard.html" class="">Leaderboard</a><a href="lab/suggestions.html" class="">Suggestions</a><a href="lab/flags.html" class="">Flagged for Review</a><a href="lab/../nfl-lab/sources.html" class="">Source register</a></nav>
 </div></header>
 <main class="wrap"><aside id="certainty-notice" class="callout warn" role="note"><strong>Planning estimates — not certified free time.</strong> Schedules and local AM/FM carriage are incomplete. Any “free”, “fully free”, “exact” or “verified gap” wording below describes loaded records only; it does not certify absence of games. <a href="certainty.html">Flagged for Review: certainty audit</a>.</aside>
 
-
-<h1>Executive Summary — NFL Lines Origination</h1>
-<p class="small"><strong>Review date:</strong> 2026-11-13 &middot; <strong>Branch:</strong> <code>arena/8602d76f-korea5</code> &middot; <strong>Site:</strong> https://karagemop466-tech.github.io/Korea5/</p>
-
-<h2>Purpose</h2>
-<p class="small">Originate our own NFL lines using a documented, repeatable framework: single bets, parlays and player-prop combinations, each strategy passing validation gates before reaching a leaderboard, with rewards for top performers. Test repeatable, skill-based signals; luck remains in each outcome, and every number is sourced or flagged.</p>
-
-<h2>What is official (confirmed)</h2>
-<div class="scroll"><table><thead><tr><th>Item</th><th>Detail</th><th>Source</th></tr></thead><tbody>
-<tr><td>NFL season length</td><td>18 regular-season weeks</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">NFL.com schedules</a></td></tr>
-<tr><td>Kickoff anchor</td><td>Thursday after Labor Day</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">NFL.com schedules</a></td></tr>
-<tr><td>Thanksgiving window</td><td>4th Thursday of November</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">NFL.com schedules</a></td></tr>
-<tr><td>Super Bowl window</td><td>2nd Sunday of February</td><td><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">NFL.com schedules</a> &middot; <a href="https://operations.nfl.com/rules-officiating/2026-nfl-rulebook" target="_blank" rel="noopener">NFL rulebook</a></td></tr>
-<tr><td>Official injury-report fields (Week 10, 2026)</td><td>Selected weekly page displays player, position, injury, practice status and game status</td><td><a href="https://www.nfl.com/injuries/league/2026/reg10" target="_blank" rel="noopener">NFL.com Week 10 injury report</a></td></tr>
-<tr><td>Injury designations</td><td>Out / Doubtful / Questionable</td><td><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">NFL.com injury report</a></td></tr>
-<tr><td>Practice statuses</td><td>Full / Limited / Did Not Participate</td><td><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">NFL.com injury report</a></td></tr>
-</tbody></table></div>
-
-<h2>What is missing or unverified (blank, flagged)</h2>
-<div class="scroll"><table><thead><tr><th>Item</th><th>Why missing</th><th>Discovery suggestion</th><th>Status</th></tr></thead><tbody>
-<tr><td>Betting lines (moneyline / spread / total)</td><td>No verified project data source or timestamped line archive</td><td>Identify a licensed odds feed; do not treat it as official NFL data</td><td><span class="tag flag">unverified</span></td></tr>
-<tr><td>Player-prop prices</td><td>No verified project data source or historical prop archive</td><td>Identify a licensed odds feed; preserve exact market rules</td><td><span class="tag flag">unverified</span></td></tr>
-<tr><td>Correlation matrix</td><td>No joint market/outcome data; no value calculated</td><td>Build a game-matched register after data acquisition</td><td><span class="tag flag">unverified</span></td></tr>
-<tr><td>Depth-chart replacements (2nd/3rd/4th string)</td><td>No dated all-team official depth-chart source verified in this project</td><td>Inventory club-published depth charts; leave rank blank unless sourced</td><td><span class="tag flag">unverified</span></td></tr>
-<tr><td>Strategy edge / win rate / rewards</td><td>No prediction, price, settlement or competition ledger in this project</td><td>Run prospective paper evaluation after data and gates are defined</td><td><span class="tag flag">unverified</span></td></tr>
-<tr><td>2027–2029 NFL schedules</td><td>No future NFL schedule verified on the official schedule source in this review</td><td>Recheck the official schedule release; do not invent matchups</td><td><span class="tag flag">unverified</span></td></tr>
-</tbody></table></div>
-
-<h2>Decision rules</h2>
-<ul class="clean">
-<li>No strategy is published unless it passes validation Gates 1–5.</li>
-<li>Blank cells are never inferred or filled in.</li>
-<li>Every row cites an official source or is flagged unverified.</li>
-<li>No change is implemented without a reviewed suggestion and a chosen path (<a href="nfl-suggestions.html">Suggestions</a>).</li>
-<li>Luck cannot be excluded from individual outcomes; use uncertainty, prospective tests and leakage controls to assess repeatable skill.</li>
-</ul>
-
-<h2>Leaderboard &amp; rewards</h2>
-<p class="small">Top strategies (ranked 1–3) that hold across a full validated season and pass re-validation are prioritized for implementation review. Reward values and results are blank and flagged unverified until verified against settled games.</p>
-
-<h2>Next steps</h2>
-<ol>
-<li>Review the <a href="nfl-questions.html">pre-decision questions</a> and answer Q1–Q9 before any line decision.</li>
-<li>Populate strategy rows only after documenting the signal and back-testing.</li>
-<li>Open suggestions via <a href="nfl-suggestions.html">Suggestions</a>; implement only the chosen, reviewed path.</li>
-<li>Monitor <a href="nfl-flagged.html">Flagged</a> for unverified items to resolve.</li>
-</ol>
-
-<h2>Pages in this vertical</h2>
-<div class="pill-row">
-<a class="btn" href="nfl-lines.html">NFL Lines dashboard</a>
-<a class="btn" href="nfl-strategies.html">Strategies</a>
-<a class="btn" href="nfl-correlation.html">Correlation</a>
-<a class="btn" href="nfl-injuries.html">Injuries</a>
-<a class="btn" href="nfl-questions.html">Questions</a>
-<a class="btn" href="nfl-suggestions.html">Suggestions</a>
-<a class="btn" href="nfl-flagged.html">Flagged</a>
+<h1>NFL Executive Summary</h1>
+<p class="lede">The written summary of the lines work. This page is now part of the <strong>NFL Lines Lab</strong>. The content lives in one place,
+with the official records behind it and every row linked to its source.</p>
+<div class="callout"><strong>Where it moved.</strong> The live version of this material is on the
+<a href="research/NFL-LINES.md">Line-origination research notes</a> page. The lab version adds the official NFL records the earlier pages
+could only describe: the published Week 10 injury report, official player game logs, and the official Game Book, plus the
+measured correlations, dispersion figures and minimum-sample rules computed from them.</div>
+<div class="grid g3">
+<div class="card"><h3>Lab home</h3><p>Headline findings and the official sources behind them.</p>
+<a href="lab/index.html">Open →</a></div>
+<div class="card"><h3>Decision register</h3><p>What is known, what is missing, what blocks each decision, how to close it.</p>
+<a href="lab/questions.html">Open →</a></div>
+<div class="card"><h3>Strategies and gates</h3><p>Twelve candidate signals and the nine gates each must pass.</p>
+<a href="lab/strategies.html">Open →</a></div>
+<div class="card"><h3>Correlations</h3><p>Measured dependence between legs, with intervals and sample sizes.</p>
+<a href="lab/correlations.html">Open →</a></div>
+<div class="card"><h3>Injuries and depth</h3><p>The official injury report, the official Game Book and the tier rules.</p>
+<a href="lab/injuries.html">Open →</a></div>
+<div class="card"><h3>Suggestions and flags</h3><p>What to change and in what order; everything that is still unverified.</p>
+<a href="lab/suggestions.html">Suggestions →</a> · <a href="lab/flags.html">Flagged →</a></div>
 </div>
+<p class="small">Written research: <a href="research/NFL-LINES.md">line-origination notes</a> ·
+<a href="research/NFL-LINES-LAB.md">NFL Lines Lab notes</a> · <a href="research/NFL-STRATEGY.md">strategy notes</a> ·
+<a href="research/EXECUTIVE-SUMMARY.md">executive summary</a></p>
+
 </main>
 <footer><div class="wrap">
-  <p><strong>NFL Lines Origination &mdash; Executive Summary</strong> &middot; Pacific time (America/Los_Angeles) &middot; Part of Korea5</p>
-  <p>No betting-line, odds, prop, correlation or strategy-result values are verified in this project; unknowns remain blank and flagged.</p>
+  <p><strong>NFL Lines Lab</strong> · part of the Free Time Vacation Planner · Pacific time · lab records retrieved 2026-11-13</p>
+  <p>Every table row links to the official source it came from. Values that could not be confirmed are blank and listed on
+  <a href="lab/flags.html">Flagged for Review</a>. No strategy on this site is validated: this repository holds no market price,
+  no settlement record and no forecast log, so no win rate, yield, edge or fair price is published anywhere.</p>
 </div></footer></body></html>

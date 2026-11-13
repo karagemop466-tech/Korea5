@@ -1577,3 +1577,50 @@ this one (`lab/`), `arena/1e59465a` (`nfl-lab/`), `arena/e96c5f87` (`nfl/`), `ar
 plus the retained addresses. Nothing of any session has been removed. The duplication is real and is recorded here
 rather than resolved by deleting another session's work.
 
+
+### Sixth surface made reachable; final state (arena-c6eea73d, 2026-11-13)
+
+**PR #45** (session `arena/722a47cb`) added `injury-tracking.html`, `research/INJURY-TRACKING.md`,
+`research/DECISIONS.md` and `research/SUGGESTIONS.md`. The page is a hand-committed static file with no generator, and
+it was **not in the site navigation and not linked from the dashboard**, so it was unreachable in the same way the model
+lab and the Decision Support hub were.
+
+**What was done.** The page was added to the canonical navigation in `scripts/build_site.py` and to the dashboard's
+"Explore by category" row, so it is now reachable. Its content was **not** modified — it belongs to another session and
+its own navigation still links correctly.
+
+**Final state of the site.** Seven sessions have now worked the NFL question over the life of this branch. The site
+carries five NFL surfaces plus the retained pointer addresses, and every one of them is reachable and cross-linked:
+
+| Surface | Session | Nav entry |
+|---|---|---|
+| `lab/` — evidence, official NFL records only | `arena/c6eea73d` (this one) | NFL Lab |
+| `nfl-lab/` — model and back-tests vs the market | `arena/1e59465a` | NFL Model |
+| `nfl/` — requirements, method, leaderboard design, sources | `arena/e96c5f87` | NFL Decision Support |
+| `nfl/system/` — decision system | `arena/998582f0` | NFL decision system |
+| `injury-tracking.html` — injury and lineup-depth design | `arena/722a47cb` | Injury & lineup depth |
+| `nfl-*.html` (retained addresses) | `arena/c9041d2a` | point into `lab/` |
+
+Nothing of any session has been removed. Each surface keeps its own data, generator and verifier, and the three
+verifiers that exist (evidence lab, model lab, structured hub) all pass on the merged tree.
+
+**Why the duplication was not resolved by deletion.** Consolidating the five surfaces into one would have meant deleting
+four other sessions' merged work. That is outside this session's scope and would have destroyed work that other sessions
+verified and recorded. The duplication is therefore recorded here, in `research/NFL-LINES-LAB.md` and on the flag pages,
+rather than resolved by removal.
+
+**Final verification on the merged tree:** **77 pages, 2,042 local links, 1,274 external links, 0 missing**; all three
+NFL verifiers pass; certainty audit passes twice; Node syntax and calendar tests pass; 5/5 Python unit tests pass;
+`compileall` and `git diff --check` clean.
+
+**Publication ledger for this session:**
+
+| PR | Merge commit | Merged at | Pages deployment |
+|---|---|---|---|
+| #40 | `8c12949` | 2026-11-13T13:23:42Z | success (43433266619) |
+| #48 | `1c2a508` | 2026-11-13T13:31:50Z | success (43434442924) |
+| #49 | `f3ae0c0` | 2026-11-13T13:34:46Z | success (43434874414) |
+| #50 | `95d98a7` | 2026-11-13T13:39:23Z | success (43435842513) |
+
+All four pull requests were merged to `main` without waiting for review, each with CI green. The deployed pages were read
+back over the network after each deployment to confirm the corrections were actually live.

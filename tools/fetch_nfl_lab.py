@@ -441,6 +441,44 @@ def club_labels(page: str):
     return out
 
 
+
+def game_page_scores(page: str, url: str, away: str, home: str):
+    """Score reader for a single game page: (awayPoints, homePoints, status, how).
+
+    Three official shapes are tried in order - the accessible score string
+    ("Jaguars 33, Ravens 10, FINAL"), the structured payload, and the page title. If none of them
+    carries a score the row stays null; a missing score is reported, never estimated.
+    """
+    m = SCORE_TEXT_RE.search(page)
+    if m:
+        return int(m.group("as")), int(m.group("hs")), "FINAL", "gamePageScoreText"
+    pairs = list(payload_data(page_payloads(page)))
+    blocks: list[dict] = []
+    for _key, data in pairs:
+        walk(data, lambda d: isinstance(d, dict) and "team" in d
+             and any(k in d for k in ("current", "points", "value", "score")), blocks, cap=120)
+    by_id: dict[str, int] = {}
+    for blk in blocks:
+        tid = str(dig(blk.get("team"), {"id"}) or "")
+        pts = as_int(dig(blk, {"points", "value", "score"}))
+        if pts is None:
+            pts = as_int(dig(blk.get("current") or {}, {"value", "points"}))
+        if tid and pts is not None:
+            by_id[tid] = pts
+    games: list[dict] = []
+    for _key, data in pairs:
+        walk(data, lambda d: "awayTeam" in d and "homeTeam" in d, games, cap=20)
+    if games:
+        a = by_id.get(str(dig(games[0].get("awayTeam"), {"id"}) or ""))
+        h = by_id.get(str(dig(games[0].get("homeTeam"), {"id"}) or ""))
+        if a is not None and h is not None:
+            return a, h, game_status_name(games[0]) or "FINAL", "gamePagePayload"
+    t = re.search(r"<title>[^<]*?(\d{1,2})\s*-\s*(\d{1,2})[^<]*</title>", page, re.I)
+    if t:
+        return int(t.group(2)), int(t.group(1)), "FINAL", "gamePageTitle"
+    return None, None, None, None
+
+
 # ------------------------------------------------------------- plain HTML tables
 ROW_RE = re.compile(r"<tr[^>]*>(.*?)</tr>", re.S | re.I)
 CELL_RE = re.compile(r"<t(?P<k>[hd])[^>]*>(?P<v>.*?)</t(?P=k)>", re.S | re.I)
@@ -942,6 +980,26 @@ def main():
                  "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat()},
         "weeks": fallback_probe,
     })
+    # Any past game whose by-week row carries no score is re-read from the game's own official page.
+    today = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+    gaps = [r for r in all_rows if r["awayPoints"] is None and (r.get("dateUTC") or "9999") < today]
+    filled = 0
+    for r in gaps[:140]:
+        gpage = get(r["sourceUrl"])
+        if not gpage:
+            continue
+        a, h, st, how = game_page_scores(gpage, r["sourceUrl"], r.get("away") or "", r.get("home") or "")
+        if a is None or h is None:
+            continue
+        r["awayPoints"], r["homePoints"] = a, h
+        r["scoreSource"] = how
+        if st:
+            r["status"] = st
+        r["winner"] = "away" if a > h else ("home" if h > a else "tie")
+        r["verification"] = "verified"
+        filled += 1
+    log(f"score gap fill: {filled}/{len(gaps)} past games recovered from their own game page")
+    finals = [r for r in all_rows if r["verification"] == "verified"]
     jwrite("results-2026.json", {
         "meta": {
             "dataset": f"NFL {SEASON} games captured from official nfl.com by-week pages (embedded payload)",
@@ -1162,6 +1220,10 @@ def main():
         "counts": {
             "games": len(all_rows),
             "gamesFinalWithScores": len(finals),
+            "gapFilledFromGamePages": filled,
+            "pastGamesStillMissingScores": len([r for r in all_rows
+                                                if r["awayPoints"] is None
+                                                and (r.get("dateUTC") or "9999") < today]),
             "standingsRows": len(standing_rows),
             "injuryRows": len(inj_rows),
             "inactivesRows": len(ina_rows),

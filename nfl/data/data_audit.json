@@ -1,5 +1,5 @@
 {
- "generatedUTC": "2026-11-13T14:50:45Z",
+ "generatedUTC": "2026-11-13T14:59:14Z",
  "checks": [
   {
    "id": "provenance",
@@ -521,119 +521,119 @@
     {
      "name": "espn_2016_t2_w1.json",
      "status": 200,
-     "sha256": "3f6ebf002d1d0437",
+     "sha256": "ba1108d4bdd76b4f",
      "bytes": 142247,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=1&limit=100"
     },
     {
      "name": "espn_2016_t2_w2.json",
      "status": 200,
-     "sha256": "1924abc1eb98acca",
+     "sha256": "6a9a3dfec3fad6fe",
      "bytes": 141051,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=2&limit=100"
     },
     {
      "name": "espn_2016_t2_w3.json",
      "status": 200,
-     "sha256": "f2f9aabbca3e5b0e",
+     "sha256": "b9f0346bfab986d7",
      "bytes": 140604,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=3&limit=100"
     },
     {
      "name": "espn_2016_t2_w4.json",
      "status": 200,
-     "sha256": "1fa2075e0f547d21",
+     "sha256": "f0adf86bed8e67e3",
      "bytes": 133984,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=4&limit=100"
     },
     {
      "name": "espn_2016_t2_w5.json",
      "status": 200,
-     "sha256": "2ed94e648d7ccbb1",
+     "sha256": "9a2bbb025a29d8bc",
      "bytes": 127541,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=5&limit=100"
     },
     {
      "name": "espn_2016_t2_w6.json",
      "status": 200,
-     "sha256": "cd84bf24051ce884",
+     "sha256": "b328d161aa1c1e5e",
      "bytes": 134919,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=6&limit=100"
     },
     {
      "name": "espn_2016_t2_w7.json",
      "status": 200,
-     "sha256": "1e3afaeedbc770c5",
+     "sha256": "660e8c67a9be6a4a",
      "bytes": 134394,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=7&limit=100"
     },
     {
      "name": "espn_2016_t2_w8.json",
      "status": 200,
-     "sha256": "ec4418eda24ba636",
+     "sha256": "24d7d10df935ecc1",
      "bytes": 120663,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=8&limit=100"
     },
     {
      "name": "espn_2016_t2_w9.json",
      "status": 200,
-     "sha256": "18861b59afe5777d",
+     "sha256": "69bbf2d6ff71d4f2",
      "bytes": 119696,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=9&limit=100"
     },
     {
      "name": "espn_2016_t2_w10.json",
      "status": 200,
-     "sha256": "0371d242f1c2d881",
+     "sha256": "81ccc510746e02dc",
      "bytes": 126402,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=10&limit=100"
     },
     {
      "name": "espn_2016_t2_w11.json",
      "status": 200,
-     "sha256": "4faa454577a59831",
+     "sha256": "aa067f51fc8d48fb",
      "bytes": 126926,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=11&limit=100"
     },
     {
      "name": "espn_2016_t2_w12.json",
      "status": 200,
-     "sha256": "7d976de2838d0b51",
+     "sha256": "a97b29006ce7f0ef",
      "bytes": 142095,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=12&limit=100"
     },
     {
      "name": "espn_2016_t2_w13.json",
      "status": 200,
-     "sha256": "ae1ed39e419b98f3",
+     "sha256": "3d8eaf316986cc7d",
      "bytes": 134502,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=13&limit=100"
     },
     {
      "name": "espn_2016_t2_w14.json",
      "status": 200,
-     "sha256": "e80b7b7e426a9430",
+     "sha256": "36e52957e5f6db7e",
      "bytes": 141974,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=14&limit=100"
     },
     {
      "name": "espn_2016_t2_w15.json",
      "status": 200,
-     "sha256": "d4b7683349e14b6f",
+     "sha256": "53c9c8479add24d6",
      "bytes": 142280,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=15&limit=100"
     },
     {
      "name": "espn_2016_t2_w16.json",
      "status": 200,
-     "sha256": "dfb274ea7ea377f1",
+     "sha256": "d9546c991425bc0c",
      "bytes": 142391,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=16&limit=100"
     },
     {
      "name": "espn_2016_t2_w17.json",
      "status": 200,
-     "sha256": "08b1ad68ca2ca9c8",
+     "sha256": "ecde436de5ec13be",
      "bytes": 140869,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=2&week=17&limit=100"
     },
@@ -682,140 +682,140 @@
     {
      "name": "espn_2016_t1_w2.json",
      "status": 200,
-     "sha256": "b1bb198bc40aee55",
+     "sha256": "574806c907a14af0",
      "bytes": 139546,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=1&week=2&limit=100"
     },
     {
      "name": "espn_2016_t1_w3.json",
      "status": 200,
-     "sha256": "db262d7a7931f8a7",
+     "sha256": "72c4d9c04bc54d3a",
      "bytes": 137856,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=1&week=3&limit=100"
     },
     {
      "name": "espn_2016_t1_w4.json",
      "status": 200,
-     "sha256": "0215bdc523f98750",
+     "sha256": "c92386407f012bb1",
      "bytes": 138143,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2016&seasontype=1&week=4&limit=100"
     },
     {
      "name": "espn_2017_t2_w1.json",
      "status": 200,
-     "sha256": "2293c3beca5220ce",
+     "sha256": "acd0d8b1a7b85d99",
      "bytes": 138423,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=1&limit=100"
     },
     {
      "name": "espn_2017_t2_w2.json",
      "status": 200,
-     "sha256": "f24de5778183e178",
+     "sha256": "3685f85693070c4a",
      "bytes": 141144,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=2&limit=100"
     },
     {
      "name": "espn_2017_t2_w3.json",
      "status": 200,
-     "sha256": "60ab557dd8d0ab57",
+     "sha256": "beebb712a061f8dc",
      "bytes": 141364,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=3&limit=100"
     },
     {
      "name": "espn_2017_t2_w4.json",
      "status": 200,
-     "sha256": "dbedc493e608d2e3",
+     "sha256": "dfa5d0492a81fc6f",
      "bytes": 142416,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=4&limit=100"
     },
     {
      "name": "espn_2017_t2_w5.json",
      "status": 200,
-     "sha256": "7a9ef034ba0631a2",
+     "sha256": "fdc06a075be56391",
      "bytes": 125562,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=5&limit=100"
     },
     {
      "name": "espn_2017_t2_w6.json",
      "status": 200,
-     "sha256": "f68ea51abf7d7f8c",
+     "sha256": "4fdcf74aff1ace6c",
      "bytes": 127373,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=6&limit=100"
     },
     {
      "name": "espn_2017_t2_w7.json",
      "status": 200,
-     "sha256": "2257290fe4872907",
+     "sha256": "b8011d6a8afc92e0",
      "bytes": 133780,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=7&limit=100"
     },
     {
      "name": "espn_2017_t2_w8.json",
      "status": 200,
-     "sha256": "291ed67c56800bfb",
+     "sha256": "a9c8adc6292432d9",
      "bytes": 118094,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=8&limit=100"
     },
     {
      "name": "espn_2017_t2_w9.json",
      "status": 200,
-     "sha256": "2db56e5f43a1fc2f",
+     "sha256": "d9335470e57b375f",
      "bytes": 118390,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=9&limit=100"
     },
     {
      "name": "espn_2017_t2_w10.json",
      "status": 200,
-     "sha256": "cfcbd2bc728eb829",
+     "sha256": "93c690a7b26a8114",
      "bytes": 126606,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=10&limit=100"
     },
     {
      "name": "espn_2017_t2_w11.json",
      "status": 200,
-     "sha256": "321242ec5770e107",
+     "sha256": "007993face7ba409",
      "bytes": 126052,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=11&limit=100"
     },
     {
      "name": "espn_2017_t2_w12.json",
      "status": 200,
-     "sha256": "61b69b4b16d60729",
+     "sha256": "5b1282c49a73809b",
      "bytes": 139381,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=12&limit=100"
     },
     {
      "name": "espn_2017_t2_w13.json",
      "status": 200,
-     "sha256": "f7560e944c10672a",
+     "sha256": "47f9d74598358a9c",
      "bytes": 141143,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=13&limit=100"
     },
     {
      "name": "espn_2017_t2_w14.json",
      "status": 200,
-     "sha256": "4007925bc5f52aa3",
+     "sha256": "8fbd7cbbae3462bc",
      "bytes": 141244,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=14&limit=100"
     },
     {
      "name": "espn_2017_t2_w15.json",
      "status": 200,
-     "sha256": "d69cdf3ace862c3e",
+     "sha256": "80296ba73745cb87",
      "bytes": 142203,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=15&limit=100"
     },
     {
      "name": "espn_2017_t2_w16.json",
      "status": 200,
-     "sha256": "a78f0c337a04dbe3",
+     "sha256": "c9e4a753c4cde8f4",
      "bytes": 140511,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=16&limit=100"
     },
     {
      "name": "espn_2017_t2_w17.json",
      "status": 200,
-     "sha256": "add030881a4691cd",
+     "sha256": "3b8c0ed33c39f28f",
      "bytes": 140719,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=2&week=17&limit=100"
     },
@@ -829,7 +829,7 @@
     {
      "name": "espn_2017_t3_w1.json",
      "status": 200,
-     "sha256": "3bfd88b350458c27",
+     "sha256": "8a521672f59a810b",
      "bytes": 39505,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=3&week=1&limit=100"
     },
@@ -857,147 +857,147 @@
     {
      "name": "espn_2017_t1_w1.json",
      "status": 200,
-     "sha256": "b8b4c1b614abda07",
+     "sha256": "97413e5a70572697",
      "bytes": 13653,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=1&week=1&limit=100"
     },
     {
      "name": "espn_2017_t1_w2.json",
      "status": 200,
-     "sha256": "9e8891e7feaa60d9",
+     "sha256": "544f54539e2271c8",
      "bytes": 140724,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=1&week=2&limit=100"
     },
     {
      "name": "espn_2017_t1_w3.json",
      "status": 200,
-     "sha256": "3bc8d1de74a37f40",
+     "sha256": "9757500d0dda77f8",
      "bytes": 140091,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=1&week=3&limit=100"
     },
     {
      "name": "espn_2017_t1_w4.json",
      "status": 200,
-     "sha256": "48d9ca02e16e3c26",
+     "sha256": "75ba066611da3a1c",
      "bytes": 145382,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2017&seasontype=1&week=4&limit=100"
     },
     {
      "name": "espn_2018_t2_w1.json",
      "status": 200,
-     "sha256": "7104c2756e4714bc",
+     "sha256": "c7a487d9c48e7299",
      "bytes": 142790,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=1&limit=100"
     },
     {
      "name": "espn_2018_t2_w2.json",
      "status": 200,
-     "sha256": "08db8faacc45f9fb",
+     "sha256": "569c661b16f843e3",
      "bytes": 141902,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=2&limit=100"
     },
     {
      "name": "espn_2018_t2_w3.json",
      "status": 200,
-     "sha256": "d9fb33f6a26159a2",
+     "sha256": "34e80b1e040279c1",
      "bytes": 141289,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=3&limit=100"
     },
     {
      "name": "espn_2018_t2_w4.json",
      "status": 200,
-     "sha256": "cae6c1f106dd3ada",
+     "sha256": "634ff4285d7af2b9",
      "bytes": 135131,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=4&limit=100"
     },
     {
      "name": "espn_2018_t2_w5.json",
      "status": 200,
-     "sha256": "3b6bb08d81ab6eda",
+     "sha256": "7b07eebc908e78dd",
      "bytes": 134268,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=5&limit=100"
     },
     {
      "name": "espn_2018_t2_w6.json",
      "status": 200,
-     "sha256": "d744e3012a1b29cb",
+     "sha256": "c9662d1554e1b4ff",
      "bytes": 133785,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=6&limit=100"
     },
     {
      "name": "espn_2018_t2_w7.json",
      "status": 200,
-     "sha256": "09629281700e6dbf",
+     "sha256": "fbffc65a51ac3f63",
      "bytes": 126981,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=7&limit=100"
     },
     {
      "name": "espn_2018_t2_w8.json",
      "status": 200,
-     "sha256": "18103349def43061",
+     "sha256": "69c27a1f940ed13d",
      "bytes": 127158,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=8&limit=100"
     },
     {
      "name": "espn_2018_t2_w9.json",
      "status": 200,
-     "sha256": "56ffec1e60ed0cbb",
+     "sha256": "28d13f55457c9a3a",
      "bytes": 118874,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=9&limit=100"
     },
     {
      "name": "espn_2018_t2_w10.json",
      "status": 200,
-     "sha256": "1ba4c6c8137d37a8",
+     "sha256": "b72f96574f3b325f",
      "bytes": 125542,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=10&limit=100"
     },
     {
      "name": "espn_2018_t2_w11.json",
      "status": 200,
-     "sha256": "d90764202227d3a1",
+     "sha256": "9ece90901a8414f1",
      "bytes": 118743,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=11&limit=100"
     },
     {
      "name": "espn_2018_t2_w12.json",
      "status": 200,
-     "sha256": "4f326560906fd66c",
+     "sha256": "30029a6fb2bb40c5",
      "bytes": 134737,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=12&limit=100"
     },
     {
      "name": "espn_2018_t2_w13.json",
      "status": 200,
-     "sha256": "f85d202e61096e34",
+     "sha256": "dc971b010fbe6d49",
      "bytes": 141183,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=13&limit=100"
     },
     {
      "name": "espn_2018_t2_w14.json",
      "status": 200,
-     "sha256": "f541c0dc2dae656f",
+     "sha256": "846306b77ab64768",
      "bytes": 141758,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=14&limit=100"
     },
     {
      "name": "espn_2018_t2_w15.json",
      "status": 200,
-     "sha256": "9039619789c41f4c",
+     "sha256": "81a3b2227b26b93e",
      "bytes": 141946,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=15&limit=100"
     },
     {
      "name": "espn_2018_t2_w16.json",
      "status": 200,
-     "sha256": "d6785668ed10b2d2",
+     "sha256": "1d51d072b4b644e2",
      "bytes": 141745,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=16&limit=100"
     },
     {
      "name": "espn_2018_t2_w17.json",
      "status": 200,
-     "sha256": "643761cc26417bc6",
+     "sha256": "3bf4221f02fe552f",
      "bytes": 140448,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=2&week=17&limit=100"
     },
@@ -1011,14 +1011,14 @@
     {
      "name": "espn_2018_t3_w1.json",
      "status": 200,
-     "sha256": "585dc183ec646c38",
+     "sha256": "3f02ac354dbacb52",
      "bytes": 39739,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=3&week=1&limit=100"
     },
     {
      "name": "espn_2018_t3_w2.json",
      "status": 200,
-     "sha256": "dd79a4cb03630935",
+     "sha256": "6c085cb735bf0db2",
      "bytes": 40119,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=3&week=2&limit=100"
     },
@@ -1046,140 +1046,140 @@
     {
      "name": "espn_2018_t1_w2.json",
      "status": 200,
-     "sha256": "f3990e793e368c25",
+     "sha256": "c85b17b59e24f77a",
      "bytes": 138812,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=1&week=2&limit=100"
     },
     {
      "name": "espn_2018_t1_w3.json",
      "status": 200,
-     "sha256": "01ae2f64bc6f506f",
+     "sha256": "4b31df13b4f83422",
      "bytes": 140065,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=1&week=3&limit=100"
     },
     {
      "name": "espn_2018_t1_w4.json",
      "status": 200,
-     "sha256": "4b470a1268fb279d",
+     "sha256": "20d0c2a222038823",
      "bytes": 139468,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2018&seasontype=1&week=4&limit=100"
     },
     {
      "name": "espn_2019_t2_w1.json",
      "status": 200,
-     "sha256": "82eb10fe4ba9cb61",
+     "sha256": "ed331ba9fd910d2a",
      "bytes": 141031,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=1&limit=100"
     },
     {
      "name": "espn_2019_t2_w2.json",
      "status": 200,
-     "sha256": "e6feab34352312a9",
+     "sha256": "d983ab397e9a0945",
      "bytes": 141461,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=2&limit=100"
     },
     {
      "name": "espn_2019_t2_w3.json",
      "status": 200,
-     "sha256": "dc34136e234de9c0",
+     "sha256": "a78f7a13df812b97",
      "bytes": 141121,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=3&limit=100"
     },
     {
      "name": "espn_2019_t2_w4.json",
      "status": 200,
-     "sha256": "1bdc0e4bf73369c1",
+     "sha256": "d08aa7b6c315de60",
      "bytes": 134796,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=4&limit=100"
     },
     {
      "name": "espn_2019_t2_w5.json",
      "status": 200,
-     "sha256": "d627cd556d93490b",
+     "sha256": "0f945660364ec634",
      "bytes": 133804,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=5&limit=100"
     },
     {
      "name": "espn_2019_t2_w6.json",
      "status": 200,
-     "sha256": "c97811ff27fcc72e",
+     "sha256": "d7541ac5b71e1a39",
      "bytes": 126239,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=6&limit=100"
     },
     {
      "name": "espn_2019_t2_w7.json",
      "status": 200,
-     "sha256": "f21132c8153bd6ea",
+     "sha256": "e50543d4a9ba200a",
      "bytes": 126272,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=7&limit=100"
     },
     {
      "name": "espn_2019_t2_w8.json",
      "status": 200,
-     "sha256": "c8bccbfbf493ee73",
+     "sha256": "b24955c16655cd6d",
      "bytes": 133486,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=8&limit=100"
     },
     {
      "name": "espn_2019_t2_w9.json",
      "status": 200,
-     "sha256": "c77c944138a2f87f",
+     "sha256": "ffcc2ca076d670ae",
      "bytes": 127246,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=9&limit=100"
     },
     {
      "name": "espn_2019_t2_w10.json",
      "status": 200,
-     "sha256": "52cf3a03e12dfb4b",
+     "sha256": "36e2b227349af35b",
      "bytes": 118415,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=10&limit=100"
     },
     {
      "name": "espn_2019_t2_w11.json",
      "status": 200,
-     "sha256": "92f2d85d77f97aaf",
+     "sha256": "4da8891be164c58c",
      "bytes": 126591,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=11&limit=100"
     },
     {
      "name": "espn_2019_t2_w12.json",
      "status": 200,
-     "sha256": "f5ebfea3d291a5f8",
+     "sha256": "fa3c9aa5e82b7f10",
      "bytes": 126086,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=12&limit=100"
     },
     {
      "name": "espn_2019_t2_w13.json",
      "status": 200,
-     "sha256": "315e2d6b52f58f39",
+     "sha256": "f0dd30027660aa74",
      "bytes": 140980,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=13&limit=100"
     },
     {
      "name": "espn_2019_t2_w14.json",
      "status": 200,
-     "sha256": "4b82ee6f8a968a50",
+     "sha256": "75d8b294073374a0",
      "bytes": 141397,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=14&limit=100"
     },
     {
      "name": "espn_2019_t2_w15.json",
      "status": 200,
-     "sha256": "2074ab142130b6c8",
+     "sha256": "0397f00f5b0eb4cc",
      "bytes": 141146,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=15&limit=100"
     },
     {
      "name": "espn_2019_t2_w16.json",
      "status": 200,
-     "sha256": "ab6563c7968b08bf",
+     "sha256": "0eb4168fdae62cb8",
      "bytes": 141741,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=16&limit=100"
     },
     {
      "name": "espn_2019_t2_w17.json",
      "status": 200,
-     "sha256": "5da034a810a6727e",
+     "sha256": "7a5da7de7ec03da5",
      "bytes": 141157,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=2&week=17&limit=100"
     },
@@ -1193,14 +1193,14 @@
     {
      "name": "espn_2019_t3_w1.json",
      "status": 200,
-     "sha256": "f5da3ed2887e7afe",
+     "sha256": "b01c964a9a2525fb",
      "bytes": 40126,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=3&week=1&limit=100"
     },
     {
      "name": "espn_2019_t3_w2.json",
      "status": 200,
-     "sha256": "de84fc25a11836ae",
+     "sha256": "cb88d68dcf4932a1",
      "bytes": 39626,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=3&week=2&limit=100"
     },
@@ -1214,63 +1214,63 @@
     {
      "name": "espn_2019_t3_w4.json",
      "status": 200,
-     "sha256": "0a35da81c342795b",
+     "sha256": "cfdc280f6892dbc7",
      "bytes": 10952,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=3&week=4&limit=100"
     },
     {
      "name": "espn_2019_t1_w1.json",
      "status": 200,
-     "sha256": "3ef426bb9e68dd61",
+     "sha256": "b7aec08fb70287aa",
      "bytes": 13725,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=1&week=1&limit=100"
     },
     {
      "name": "espn_2019_t1_w2.json",
      "status": 200,
-     "sha256": "5f688b02cd924570",
+     "sha256": "6f792ed08c5ad424",
      "bytes": 139078,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=1&week=2&limit=100"
     },
     {
      "name": "espn_2019_t1_w3.json",
      "status": 200,
-     "sha256": "d586f9aece80572f",
+     "sha256": "0c1d7e82345d7cc4",
      "bytes": 138901,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=1&week=3&limit=100"
     },
     {
      "name": "espn_2019_t1_w4.json",
      "status": 200,
-     "sha256": "09cc4005b611371b",
+     "sha256": "045b1b5070180303",
      "bytes": 138550,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2019&seasontype=1&week=4&limit=100"
     },
     {
      "name": "espn_2020_t2_w1.json",
      "status": 200,
-     "sha256": "70b3e79f630aaea4",
+     "sha256": "126fa294128b01c2",
      "bytes": 140463,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2020&seasontype=2&week=1&limit=100"
     },
     {
      "name": "espn_2020_t2_w2.json",
      "status": 200,
-     "sha256": "99c8cfae7455ad50",
+     "sha256": "a722b9e489a96c4b",
      "bytes": 140443,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2020&seasontype=2&week=2&limit=100"
     },
     {
      "name": "espn_2020_t2_w3.json",
      "status": 200,
-     "sha256": "4e74c7cd077d5c93",
+     "sha256": "174399d36e107ea4",
      "bytes": 140303,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2020&seasontype=2&week=3&limit=100"
     },
     {
      "name": "espn_2020_t2_w4.json",
      "status": 200,
-     "sha256": "1b4d2c7eee69bec0",
+     "sha256": "672dc8b311fe16ff",
      "bytes": 133085,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2020&seasontype=2&week=4&limit=100"
     },
@@ -1326,42 +1326,42 @@
     {
      "name": "espn_2020_t2_w12.json",
      "status": 200,
-     "sha256": "51a1e26cc7f08222",
+     "sha256": "0b74c5c9fa47ff9c",
      "bytes": 139977,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2020&seasontype=2&week=12&limit=100"
     },
     {
      "name": "espn_2020_t2_w13.json",
      "status": 200,
-     "sha256": "56c6403f016bd763",
+     "sha256": "0cbadc7e83ddc925",
      "bytes": 131500,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2020&seasontype=2&week=13&limit=100"
     },
     {
      "name": "espn_2020_t2_w14.json",
      "status": 200,
-     "sha256": "0b3c3200030ef30d",
+     "sha256": "33494f1d8e0d2117",
      "bytes": 140360,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2020&seasontype=2&week=14&limit=100"
     },
     {
      "name": "espn_2020_t2_w15.json",
      "status": 200,
-     "sha256": "7dbd770c28875f03",
+     "sha256": "934bec27db2e0680",
      "bytes": 141027,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2020&seasontype=2&week=15&limit=100"
     },
     {
      "name": "espn_2020_t2_w16.json",
      "status": 200,
-     "sha256": "8d41aef6cc2e070c",
+     "sha256": "d01059a9f983d91a",
      "bytes": 140683,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2020&seasontype=2&week=16&limit=100"
     },
     {
      "name": "espn_2020_t2_w17.json",
      "status": 200,
-     "sha256": "da5f47bca3bd5cec",
+     "sha256": "471086e37428fcd4",
      "bytes": 140473,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2020&seasontype=2&week=17&limit=100"
     },
@@ -1375,14 +1375,14 @@
     {
      "name": "espn_2020_t3_w1.json",
      "status": 200,
-     "sha256": "50d29c9c65e1d0c7",
+     "sha256": "953ad15cd2cb0619",
      "bytes": 56223,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2020&seasontype=3&week=1&limit=100"
     },
     {
      "name": "espn_2020_t3_w2.json",
      "status": 200,
-     "sha256": "5632aa50580d31d3",
+     "sha256": "f6cb9d0dff2956fa",
      "bytes": 38962,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2020&seasontype=3&week=2&limit=100"
     },
@@ -1431,147 +1431,147 @@
     {
      "name": "espn_2021_t2_w1.json",
      "status": 200,
-     "sha256": "eaf15b42796bff9c",
+     "sha256": "274e057c0619a5ec",
      "bytes": 140543,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=1&limit=100"
     },
     {
      "name": "espn_2021_t2_w2.json",
      "status": 200,
-     "sha256": "870e4fd2d6ff63da",
+     "sha256": "79c037a6f441a04a",
      "bytes": 139761,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=2&limit=100"
     },
     {
      "name": "espn_2021_t2_w3.json",
      "status": 200,
-     "sha256": "e68ead93265ee52d",
+     "sha256": "ea145b5ae4126f0a",
      "bytes": 139970,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=3&limit=100"
     },
     {
      "name": "espn_2021_t2_w4.json",
      "status": 200,
-     "sha256": "653641f4307c10b5",
+     "sha256": "50b6ca66d36cc0a9",
      "bytes": 139319,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=4&limit=100"
     },
     {
      "name": "espn_2021_t2_w5.json",
      "status": 200,
-     "sha256": "d465eb4e8d1ac215",
+     "sha256": "543332a35b090b56",
      "bytes": 140390,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=5&limit=100"
     },
     {
      "name": "espn_2021_t2_w6.json",
      "status": 200,
-     "sha256": "74e96ad8b92076bc",
+     "sha256": "9792d430e4ddf6fe",
      "bytes": 124561,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=6&limit=100"
     },
     {
      "name": "espn_2021_t2_w7.json",
      "status": 200,
-     "sha256": "6644879b9e4908f5",
+     "sha256": "3d18c33ecf34dac4",
      "bytes": 117809,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=7&limit=100"
     },
     {
      "name": "espn_2021_t2_w8.json",
      "status": 200,
-     "sha256": "6706ea654e26e2bb",
+     "sha256": "799079d47c41375a",
      "bytes": 132567,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=8&limit=100"
     },
     {
      "name": "espn_2021_t2_w9.json",
      "status": 200,
-     "sha256": "8a142284c5a54d46",
+     "sha256": "506cf9684683accf",
      "bytes": 125164,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=9&limit=100"
     },
     {
      "name": "espn_2021_t2_w10.json",
      "status": 200,
-     "sha256": "ac11ed84fd7077b5",
+     "sha256": "75f326d6c52a15f8",
      "bytes": 125100,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=10&limit=100"
     },
     {
      "name": "espn_2021_t2_w11.json",
      "status": 200,
-     "sha256": "dd139d05e898167a",
+     "sha256": "b36b77b031ed9d6b",
      "bytes": 132277,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=11&limit=100"
     },
     {
      "name": "espn_2021_t2_w12.json",
      "status": 200,
-     "sha256": "209513ad12257041",
+     "sha256": "ab5e336e67fb7ee9",
      "bytes": 132046,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=12&limit=100"
     },
     {
      "name": "espn_2021_t2_w13.json",
      "status": 200,
-     "sha256": "62bf1848ef868ff8",
+     "sha256": "80bedf580bac1f3d",
      "bytes": 125108,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=13&limit=100"
     },
     {
      "name": "espn_2021_t2_w14.json",
      "status": 200,
-     "sha256": "09b0065b7304fd2f",
+     "sha256": "8eadb03b7e46967a",
      "bytes": 125405,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=14&limit=100"
     },
     {
      "name": "espn_2021_t2_w15.json",
      "status": 200,
-     "sha256": "b63d8461f43b7730",
+     "sha256": "6dfef3fd358e19cc",
      "bytes": 140494,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=15&limit=100"
     },
     {
      "name": "espn_2021_t2_w16.json",
      "status": 200,
-     "sha256": "b54040f95d7600d7",
+     "sha256": "0d5b1928bb09ea2b",
      "bytes": 140522,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=16&limit=100"
     },
     {
      "name": "espn_2021_t2_w17.json",
      "status": 200,
-     "sha256": "260bfcd10327f6b6",
+     "sha256": "bed164b4d0bbda11",
      "bytes": 139680,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=17&limit=100"
     },
     {
      "name": "espn_2021_t2_w18.json",
      "status": 200,
-     "sha256": "69d1630cc4a5215a",
+     "sha256": "0a3243df1708e16b",
      "bytes": 140785,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=18&limit=100"
     },
     {
      "name": "espn_2021_t3_w1.json",
      "status": 200,
-     "sha256": "e01c3d2e3c2fc82f",
+     "sha256": "1b8656d031d4cbbb",
      "bytes": 56714,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=3&week=1&limit=100"
     },
     {
      "name": "espn_2021_t3_w2.json",
      "status": 200,
-     "sha256": "4eb3912e7dbe529f",
+     "sha256": "445516a6035a48dd",
      "bytes": 39039,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=3&week=2&limit=100"
     },
     {
      "name": "espn_2021_t3_w3.json",
      "status": 200,
-     "sha256": "faa0852fb0477c7d",
+     "sha256": "39a598777c12ed69",
      "bytes": 21772,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=3&week=3&limit=100"
     },
@@ -1585,161 +1585,161 @@
     {
      "name": "espn_2021_t1_w1.json",
      "status": 200,
-     "sha256": "e56a93720641d0bc",
+     "sha256": "842686a50304cbf6",
      "bytes": 13843,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=1&week=1&limit=100"
     },
     {
      "name": "espn_2021_t1_w2.json",
      "status": 200,
-     "sha256": "954c6ea98ccec6da",
+     "sha256": "1cd4712bebfba096",
      "bytes": 139403,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=1&week=2&limit=100"
     },
     {
      "name": "espn_2021_t1_w3.json",
      "status": 200,
-     "sha256": "653af72818e78907",
+     "sha256": "1a8e125531447324",
      "bytes": 139828,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=1&week=3&limit=100"
     },
     {
      "name": "espn_2021_t1_w4.json",
      "status": 200,
-     "sha256": "edebd294ccd642ed",
+     "sha256": "ca9e56ec0097a85a",
      "bytes": 135815,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=1&week=4&limit=100"
     },
     {
      "name": "espn_2022_t2_w1.json",
      "status": 200,
-     "sha256": "3fa39a4970f2ac3d",
+     "sha256": "0349616ed93a0a7c",
      "bytes": 140516,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=1&limit=100"
     },
     {
      "name": "espn_2022_t2_w2.json",
      "status": 200,
-     "sha256": "696b16ac19d784fe",
+     "sha256": "0d14e60901616bab",
      "bytes": 140949,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=2&limit=100"
     },
     {
      "name": "espn_2022_t2_w3.json",
      "status": 200,
-     "sha256": "b79412f9bac4c5cf",
+     "sha256": "1b2ebe37e4eba5bf",
      "bytes": 139737,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=3&limit=100"
     },
     {
      "name": "espn_2022_t2_w4.json",
      "status": 200,
-     "sha256": "be4fabf47fa614cf",
+     "sha256": "c5b641c381a4cea2",
      "bytes": 138807,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=4&limit=100"
     },
     {
      "name": "espn_2022_t2_w5.json",
      "status": 200,
-     "sha256": "3921623d814b3183",
+     "sha256": "24707caf93d1905f",
      "bytes": 139819,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=5&limit=100"
     },
     {
      "name": "espn_2022_t2_w6.json",
      "status": 200,
-     "sha256": "395b47b6d92fb0f1",
+     "sha256": "5198d94b6c9e2bb2",
      "bytes": 124788,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=6&limit=100"
     },
     {
      "name": "espn_2022_t2_w7.json",
      "status": 200,
-     "sha256": "b3d8af95d6f5a0f7",
+     "sha256": "e2e15340bc573a7d",
      "bytes": 124235,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=7&limit=100"
     },
     {
      "name": "espn_2022_t2_w8.json",
      "status": 200,
-     "sha256": "fffd45b5bcc7035e",
+     "sha256": "7f6f45bc85f41cd9",
      "bytes": 132541,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=8&limit=100"
     },
     {
      "name": "espn_2022_t2_w9.json",
      "status": 200,
-     "sha256": "7a4ab99010f11928",
+     "sha256": "b510c4f3d75c7de5",
      "bytes": 117378,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=9&limit=100"
     },
     {
      "name": "espn_2022_t2_w10.json",
      "status": 200,
-     "sha256": "964c3a2621d1b399",
+     "sha256": "3a26fe2004d3a671",
      "bytes": 125705,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=10&limit=100"
     },
     {
      "name": "espn_2022_t2_w11.json",
      "status": 200,
-     "sha256": "43717800bf31e7ec",
+     "sha256": "5fc7c4af8d32810a",
      "bytes": 125022,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=11&limit=100"
     },
     {
      "name": "espn_2022_t2_w12.json",
      "status": 200,
-     "sha256": "f4858321c1477e79",
+     "sha256": "dcdd8c02a35b74d5",
      "bytes": 140045,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=12&limit=100"
     },
     {
      "name": "espn_2022_t2_w13.json",
      "status": 200,
-     "sha256": "1b5d0bfe13fa090f",
+     "sha256": "7c19ddd5eb7e57a8",
      "bytes": 131949,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=13&limit=100"
     },
     {
      "name": "espn_2022_t2_w14.json",
      "status": 200,
-     "sha256": "18eab45adf0ff715",
+     "sha256": "82130580342f7c21",
      "bytes": 117842,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=14&limit=100"
     },
     {
      "name": "espn_2022_t2_w15.json",
      "status": 200,
-     "sha256": "362b344d8384c0ec",
+     "sha256": "7ade7a17dfbc8b85",
      "bytes": 141196,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=15&limit=100"
     },
     {
      "name": "espn_2022_t2_w16.json",
      "status": 200,
-     "sha256": "ed5fadecbab4f2b0",
+     "sha256": "7812a491e68e0ec4",
      "bytes": 140290,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=16&limit=100"
     },
     {
      "name": "espn_2022_t2_w17.json",
      "status": 200,
-     "sha256": "79602acf35e41cde",
+     "sha256": "d39e6a9a85c911f3",
      "bytes": 136762,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=17&limit=100"
     },
     {
      "name": "espn_2022_t2_w18.json",
      "status": 200,
-     "sha256": "0dc3611c424c6c70",
+     "sha256": "f4cd066a4936cbd4",
      "bytes": 140362,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=18&limit=100"
     },
     {
      "name": "espn_2022_t3_w1.json",
      "status": 200,
-     "sha256": "4f3cd2a86bbd00c1",
+     "sha256": "76f8ffc2182e9b21",
      "bytes": 56321,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=3&week=1&limit=100"
     },
@@ -1774,168 +1774,168 @@
     {
      "name": "espn_2022_t1_w2.json",
      "status": 200,
-     "sha256": "367fb6f4cc411de8",
+     "sha256": "fcb5db0f69f04c78",
      "bytes": 139713,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=1&week=2&limit=100"
     },
     {
      "name": "espn_2022_t1_w3.json",
      "status": 200,
-     "sha256": "4d0db901475c8a47",
+     "sha256": "209729363cb0772c",
      "bytes": 140101,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=1&week=3&limit=100"
     },
     {
      "name": "espn_2022_t1_w4.json",
      "status": 200,
-     "sha256": "62e5c3f4f1d65d11",
+     "sha256": "f97e37827d579480",
      "bytes": 138729,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=1&week=4&limit=100"
     },
     {
      "name": "espn_2023_t2_w1.json",
      "status": 200,
-     "sha256": "9e5fdd2fd64a88ff",
+     "sha256": "a78a6b7a138da75f",
      "bytes": 140908,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=1&limit=100"
     },
     {
      "name": "espn_2023_t2_w2.json",
      "status": 200,
-     "sha256": "4f130e114dd7c248",
+     "sha256": "1e7e6f2c4233bbd8",
      "bytes": 142230,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=2&limit=100"
     },
     {
      "name": "espn_2023_t2_w3.json",
      "status": 200,
-     "sha256": "ac2486e86f7ce966",
+     "sha256": "29255655b3017357",
      "bytes": 141830,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=3&limit=100"
     },
     {
      "name": "espn_2023_t2_w4.json",
      "status": 200,
-     "sha256": "c77eec00d95f1fd6",
+     "sha256": "76404eb2b9b784c3",
      "bytes": 141675,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=4&limit=100"
     },
     {
      "name": "espn_2023_t2_w5.json",
      "status": 200,
-     "sha256": "50802fc5d58c6b06",
+     "sha256": "a13798d7a247e256",
      "bytes": 126632,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=5&limit=100"
     },
     {
      "name": "espn_2023_t2_w6.json",
      "status": 200,
-     "sha256": "6f6e8560d7acfd6c",
+     "sha256": "3d397a047530782b",
      "bytes": 133941,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=6&limit=100"
     },
     {
      "name": "espn_2023_t2_w7.json",
      "status": 200,
-     "sha256": "26c9493dede1fa37",
+     "sha256": "a3f77762b57ec608",
      "bytes": 119482,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=7&limit=100"
     },
     {
      "name": "espn_2023_t2_w8.json",
      "status": 200,
-     "sha256": "7e678b606a1f83f6",
+     "sha256": "3aa76725cf598dc9",
      "bytes": 141015,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=8&limit=100"
     },
     {
      "name": "espn_2023_t2_w9.json",
      "status": 200,
-     "sha256": "338bb5e76c189d0f",
+     "sha256": "090c7a1fc2650d0b",
      "bytes": 126477,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=9&limit=100"
     },
     {
      "name": "espn_2023_t2_w10.json",
      "status": 200,
-     "sha256": "5789822e319886c0",
+     "sha256": "a52b8fe7bf3ccf56",
      "bytes": 126500,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=10&limit=100"
     },
     {
      "name": "espn_2023_t2_w11.json",
      "status": 200,
-     "sha256": "2445752bb8df44ed",
+     "sha256": "0786422fbccc6423",
      "bytes": 126898,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=11&limit=100"
     },
     {
      "name": "espn_2023_t2_w12.json",
      "status": 200,
-     "sha256": "1e44599302ba886d",
+     "sha256": "651fa0c1697af056",
      "bytes": 141355,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=12&limit=100"
     },
     {
      "name": "espn_2023_t2_w13.json",
      "status": 200,
-     "sha256": "0304577b2b3b9609",
+     "sha256": "f77e9c27071762d7",
      "bytes": 119190,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=13&limit=100"
     },
     {
      "name": "espn_2023_t2_w14.json",
      "status": 200,
-     "sha256": "7513e7dc0a097873",
+     "sha256": "c699eec3ee19a58c",
      "bytes": 135161,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=14&limit=100"
     },
     {
      "name": "espn_2023_t2_w15.json",
      "status": 200,
-     "sha256": "4e33b5809c00011b",
+     "sha256": "9813163638f1077d",
      "bytes": 142113,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=15&limit=100"
     },
     {
      "name": "espn_2023_t2_w16.json",
      "status": 200,
-     "sha256": "f6cd5e26e82f32c4",
+     "sha256": "cff44e840062eadb",
      "bytes": 142086,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=16&limit=100"
     },
     {
      "name": "espn_2023_t2_w17.json",
      "status": 200,
-     "sha256": "f81b986e72017e17",
+     "sha256": "9cb0d4260618c791",
      "bytes": 141890,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=17&limit=100"
     },
     {
      "name": "espn_2023_t2_w18.json",
      "status": 200,
-     "sha256": "b16757e1992e580a",
+     "sha256": "cd1a74c6901b144a",
      "bytes": 142527,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=2&week=18&limit=100"
     },
     {
      "name": "espn_2023_t3_w1.json",
      "status": 200,
-     "sha256": "be786068c5c60695",
+     "sha256": "a5ed10289a6e9611",
      "bytes": 56981,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=3&week=1&limit=100"
     },
     {
      "name": "espn_2023_t3_w2.json",
      "status": 200,
-     "sha256": "5828b737a7f21bc4",
+     "sha256": "08229fb7cee95cab",
      "bytes": 40234,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=3&week=2&limit=100"
     },
     {
      "name": "espn_2023_t3_w3.json",
      "status": 200,
-     "sha256": "a832d39cdc190d11",
+     "sha256": "9b996310027840c1",
      "bytes": 22393,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=3&week=3&limit=100"
     },
@@ -1956,168 +1956,168 @@
     {
      "name": "espn_2023_t1_w2.json",
      "status": 200,
-     "sha256": "f7603b1c44fed6cd",
+     "sha256": "e1eb1a169acc38f6",
      "bytes": 141741,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=1&week=2&limit=100"
     },
     {
      "name": "espn_2023_t1_w3.json",
      "status": 200,
-     "sha256": "049fd024ff97f8d4",
+     "sha256": "698f1d2089394fe6",
      "bytes": 140422,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=1&week=3&limit=100"
     },
     {
      "name": "espn_2023_t1_w4.json",
      "status": 200,
-     "sha256": "535b844f072eb0b3",
+     "sha256": "04dc2a910bd1b750",
      "bytes": 140891,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2023&seasontype=1&week=4&limit=100"
     },
     {
      "name": "espn_2024_t2_w1.json",
      "status": 200,
-     "sha256": "4bc6738f18c6707a",
+     "sha256": "934d92cae0719d81",
      "bytes": 142642,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=1&limit=100"
     },
     {
      "name": "espn_2024_t2_w2.json",
      "status": 200,
-     "sha256": "fea44d834f7450ca",
+     "sha256": "32aabdcb7a38b506",
      "bytes": 142333,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=2&limit=100"
     },
     {
      "name": "espn_2024_t2_w3.json",
      "status": 200,
-     "sha256": "a8cda564fa74d5a0",
+     "sha256": "32d05ff54f5f0005",
      "bytes": 142532,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=3&limit=100"
     },
     {
      "name": "espn_2024_t2_w4.json",
      "status": 200,
-     "sha256": "731204916f53555f",
+     "sha256": "acdfb63e27b016d3",
      "bytes": 142265,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=4&limit=100"
     },
     {
      "name": "espn_2024_t2_w5.json",
      "status": 200,
-     "sha256": "8bce1b24ca5fe6c4",
+     "sha256": "451515e52fa92953",
      "bytes": 127293,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=5&limit=100"
     },
     {
      "name": "espn_2024_t2_w6.json",
      "status": 200,
-     "sha256": "e9223c49aecef70f",
+     "sha256": "c0c5c2e7745c821e",
      "bytes": 127405,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=6&limit=100"
     },
     {
      "name": "espn_2024_t2_w7.json",
      "status": 200,
-     "sha256": "1147a00977683c44",
+     "sha256": "16fa8eeef33cd2b4",
      "bytes": 134846,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=7&limit=100"
     },
     {
      "name": "espn_2024_t2_w8.json",
      "status": 200,
-     "sha256": "86223007ecd43acb",
+     "sha256": "db36146def7d1082",
      "bytes": 142431,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=8&limit=100"
     },
     {
      "name": "espn_2024_t2_w9.json",
      "status": 200,
-     "sha256": "b2e9d1ca8125da96",
+     "sha256": "fb30bf3b8c9d4be2",
      "bytes": 134605,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=9&limit=100"
     },
     {
      "name": "espn_2024_t2_w10.json",
      "status": 200,
-     "sha256": "78029f5c669438b7",
+     "sha256": "77788f31ac6107e3",
      "bytes": 127103,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=10&limit=100"
     },
     {
      "name": "espn_2024_t2_w11.json",
      "status": 200,
-     "sha256": "c0e303ef67ac10ab",
+     "sha256": "1e4a1a8613a4caa0",
      "bytes": 126851,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=11&limit=100"
     },
     {
      "name": "espn_2024_t2_w12.json",
      "status": 200,
-     "sha256": "3ed20e66f4ff9b61",
+     "sha256": "de61baedf99329db",
      "bytes": 119650,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=12&limit=100"
     },
     {
      "name": "espn_2024_t2_w13.json",
      "status": 200,
-     "sha256": "9c99fb61394a4407",
+     "sha256": "72479efb9e3fe3df",
      "bytes": 142052,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=13&limit=100"
     },
     {
      "name": "espn_2024_t2_w14.json",
      "status": 200,
-     "sha256": "4a17251639946f10",
+     "sha256": "2e71c551c3beaeff",
      "bytes": 120272,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=14&limit=100"
     },
     {
      "name": "espn_2024_t2_w15.json",
      "status": 200,
-     "sha256": "aa08fc78d3eee6d3",
+     "sha256": "2118ed1cd008606b",
      "bytes": 142389,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=15&limit=100"
     },
     {
      "name": "espn_2024_t2_w16.json",
      "status": 200,
-     "sha256": "482476174b264380",
+     "sha256": "38996ed8920a692b",
      "bytes": 141901,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=16&limit=100"
     },
     {
      "name": "espn_2024_t2_w17.json",
      "status": 200,
-     "sha256": "d4b1a665d7fd790b",
+     "sha256": "3ea9eea52be35573",
      "bytes": 143554,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=17&limit=100"
     },
     {
      "name": "espn_2024_t2_w18.json",
      "status": 200,
-     "sha256": "b7594ff0b1d832ce",
+     "sha256": "5581a22baf9385d4",
      "bytes": 143733,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=2&week=18&limit=100"
     },
     {
      "name": "espn_2024_t3_w1.json",
      "status": 200,
-     "sha256": "0b7eb3f822d44ef6",
+     "sha256": "8c7eabe54e341536",
      "bytes": 57807,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=3&week=1&limit=100"
     },
     {
      "name": "espn_2024_t3_w2.json",
      "status": 200,
-     "sha256": "6aa3922b1442b280",
+     "sha256": "4a4173fc19961fb0",
      "bytes": 40515,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=3&week=2&limit=100"
     },
     {
      "name": "espn_2024_t3_w3.json",
      "status": 200,
-     "sha256": "b79b6c9076a05801",
+     "sha256": "18679fea385b7561",
      "bytes": 22917,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=3&week=3&limit=100"
     },
@@ -2138,147 +2138,147 @@
     {
      "name": "espn_2024_t1_w2.json",
      "status": 200,
-     "sha256": "de6f4dc4a2a54dfa",
+     "sha256": "b0fba6bba947aa19",
      "bytes": 143589,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=1&week=2&limit=100"
     },
     {
      "name": "espn_2024_t1_w3.json",
      "status": 200,
-     "sha256": "62c44a61d74c83a8",
+     "sha256": "4835a8db48751719",
      "bytes": 141920,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=1&week=3&limit=100"
     },
     {
      "name": "espn_2024_t1_w4.json",
      "status": 200,
-     "sha256": "cc93eb5dd06e41b5",
+     "sha256": "2f4eb6145e1df249",
      "bytes": 142102,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2024&seasontype=1&week=4&limit=100"
     },
     {
      "name": "espn_2025_t2_w1.json",
      "status": 200,
-     "sha256": "9631199aaa1cb443",
+     "sha256": "1100e4ed626a2bbc",
      "bytes": 141282,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=1&limit=100"
     },
     {
      "name": "espn_2025_t2_w2.json",
      "status": 200,
-     "sha256": "15aa76110b75b6b8",
+     "sha256": "9c0648425ed744e7",
      "bytes": 141155,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=2&limit=100"
     },
     {
      "name": "espn_2025_t2_w3.json",
      "status": 200,
-     "sha256": "10051505187064a3",
+     "sha256": "ee8edb42f8f80fa0",
      "bytes": 141650,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=3&limit=100"
     },
     {
      "name": "espn_2025_t2_w4.json",
      "status": 200,
-     "sha256": "ed969543d2138381",
+     "sha256": "3b48d5c40297044c",
      "bytes": 141122,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=4&limit=100"
     },
     {
      "name": "espn_2025_t2_w5.json",
      "status": 200,
-     "sha256": "0d7f64118f98ac27",
+     "sha256": "60dc86de42e96c5b",
      "bytes": 126923,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=5&limit=100"
     },
     {
      "name": "espn_2025_t2_w6.json",
      "status": 200,
-     "sha256": "53b3ef3e4af15e9f",
+     "sha256": "1bf15ccad99ab844",
      "bytes": 133298,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=6&limit=100"
     },
     {
      "name": "espn_2025_t2_w7.json",
      "status": 200,
-     "sha256": "0da57e4ed126abcb",
+     "sha256": "b78606a38ae86562",
      "bytes": 134460,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=7&limit=100"
     },
     {
      "name": "espn_2025_t2_w8.json",
      "status": 200,
-     "sha256": "3617375905dd1e9b",
+     "sha256": "822816e18bcacecf",
      "bytes": 119097,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=8&limit=100"
     },
     {
      "name": "espn_2025_t2_w9.json",
      "status": 200,
-     "sha256": "c042fd07237c74e8",
+     "sha256": "00625983163d6e26",
      "bytes": 126569,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=9&limit=100"
     },
     {
      "name": "espn_2025_t2_w10.json",
      "status": 200,
-     "sha256": "70ec8c20d6b80206",
+     "sha256": "3d9af046a812f32e",
      "bytes": 126030,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=10&limit=100"
     },
     {
      "name": "espn_2025_t2_w11.json",
      "status": 200,
-     "sha256": "1328f1d6eb695eb5",
+     "sha256": "b0de0b362781cc42",
      "bytes": 135163,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=11&limit=100"
     },
     {
      "name": "espn_2025_t2_w12.json",
      "status": 200,
-     "sha256": "2e124b272335c177",
+     "sha256": "a5a5f26ddc37b430",
      "bytes": 126685,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=12&limit=100"
     },
     {
      "name": "espn_2025_t2_w13.json",
      "status": 200,
-     "sha256": "4c207777c2147388",
+     "sha256": "c077f3fbce32113f",
      "bytes": 140973,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=13&limit=100"
     },
     {
      "name": "espn_2025_t2_w14.json",
      "status": 200,
-     "sha256": "e734aad6102699f0",
+     "sha256": "964ef60a336540af",
      "bytes": 126646,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=14&limit=100"
     },
     {
      "name": "espn_2025_t2_w15.json",
      "status": 200,
-     "sha256": "c3e9b4321903658f",
+     "sha256": "df40135973b5e591",
      "bytes": 141261,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=15&limit=100"
     },
     {
      "name": "espn_2025_t2_w16.json",
      "status": 200,
-     "sha256": "75b6e0b5ecbc9ca8",
+     "sha256": "decb45c85ffae9c8",
      "bytes": 141604,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=16&limit=100"
     },
     {
      "name": "espn_2025_t2_w17.json",
      "status": 200,
-     "sha256": "4295d450ab07ecd6",
+     "sha256": "bf0307ca8483fae3",
      "bytes": 140843,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=17&limit=100"
     },
     {
      "name": "espn_2025_t2_w18.json",
      "status": 200,
-     "sha256": "6b2dc0d1da6d8c17",
+     "sha256": "980e6c106217434b",
      "bytes": 141127,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=2&week=18&limit=100"
     },
@@ -2292,7 +2292,7 @@
     {
      "name": "espn_2025_t3_w2.json",
      "status": 200,
-     "sha256": "01ee2ea99114b18b",
+     "sha256": "d6c0bd603a338408",
      "bytes": 40531,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=3&week=2&limit=100"
     },
@@ -2313,42 +2313,42 @@
     {
      "name": "espn_2025_t1_w1.json",
      "status": 200,
-     "sha256": "3533ad4def85724b",
+     "sha256": "ed17b55498487608",
      "bytes": 14012,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=1&week=1&limit=100"
     },
     {
      "name": "espn_2025_t1_w2.json",
      "status": 200,
-     "sha256": "e8c3caee533b8967",
+     "sha256": "e317017de2826f38",
      "bytes": 143575,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=1&week=2&limit=100"
     },
     {
      "name": "espn_2025_t1_w3.json",
      "status": 200,
-     "sha256": "09ef7af6171efdc5",
+     "sha256": "7967ba4fbd25aba1",
      "bytes": 144253,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=1&week=3&limit=100"
     },
     {
      "name": "espn_2025_t1_w4.json",
      "status": 200,
-     "sha256": "fb423f3e97c31be4",
+     "sha256": "bff53bc75a80ecc4",
      "bytes": 145612,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2025&seasontype=1&week=4&limit=100"
     },
     {
      "name": "espn_2026_t2_w1.json",
      "status": 200,
-     "sha256": "f9a7452f3c6f49fa",
+     "sha256": "4e0e2c8f863fc106",
      "bytes": 141248,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=1&limit=100"
     },
     {
      "name": "espn_2026_t2_w2.json",
      "status": 200,
-     "sha256": "a2558e082931e0c6",
+     "sha256": "4a99d1ac215ecbc4",
      "bytes": 141116,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=2&limit=100"
     },
@@ -2362,35 +2362,35 @@
     {
      "name": "espn_2026_t2_w4.json",
      "status": 200,
-     "sha256": "09c2d947abfe24df",
+     "sha256": "ff2b0a7c6f4d4027",
      "bytes": 142679,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=4&limit=100"
     },
     {
      "name": "espn_2026_t2_w5.json",
      "status": 200,
-     "sha256": "6cd863a978a39241",
+     "sha256": "92331f8e5fb27acd",
      "bytes": 135394,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=5&limit=100"
     },
     {
      "name": "espn_2026_t2_w6.json",
      "status": 200,
-     "sha256": "548d9b04b3b8b849",
+     "sha256": "0e6ae888bd7f372a",
      "bytes": 126555,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=6&limit=100"
     },
     {
      "name": "espn_2026_t2_w7.json",
      "status": 200,
-     "sha256": "6ba2d90ded12a198",
+     "sha256": "acb7b18e878f09ca",
      "bytes": 126932,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=7&limit=100"
     },
     {
      "name": "espn_2026_t2_w8.json",
      "status": 200,
-     "sha256": "2a91cdb37acbe8e4",
+     "sha256": "88e2a5076263b7bc",
      "bytes": 126088,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=8&limit=100"
     },
@@ -2404,35 +2404,35 @@
     {
      "name": "espn_2026_t2_w10.json",
      "status": 200,
-     "sha256": "6c64fb12a3127804",
+     "sha256": "a61917cc06498ce4",
      "bytes": 254476,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=10&limit=100"
     },
     {
      "name": "espn_2026_t2_w11.json",
      "status": 200,
-     "sha256": "18f4ebd65ab849ed",
+     "sha256": "357037e1377fe43a",
      "bytes": 236508,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=11&limit=100"
     },
     {
      "name": "espn_2026_t2_w12.json",
      "status": 200,
-     "sha256": "788771bba5385f5b",
+     "sha256": "2b57b3bbdab329c9",
      "bytes": 182869,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=12&limit=100"
     },
     {
      "name": "espn_2026_t2_w13.json",
      "status": 200,
-     "sha256": "c0530cace8211c92",
+     "sha256": "9fc88d453ea8b187",
      "bytes": 163033,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=13&limit=100"
     },
     {
      "name": "espn_2026_t2_w14.json",
      "status": 200,
-     "sha256": "5a17496124b48c6c",
+     "sha256": "d3020bc8e5dc617c",
      "bytes": 172371,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=14&limit=100"
     },
@@ -2453,14 +2453,14 @@
     {
      "name": "espn_2026_t2_w17.json",
      "status": 200,
-     "sha256": "e6a95fb52437ad78",
+     "sha256": "6734037b547a5dd0",
      "bytes": 182555,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=17&limit=100"
     },
     {
      "name": "espn_2026_t2_w18.json",
      "status": 200,
-     "sha256": "6c25d277606aef7c",
+     "sha256": "375654bc93c29bdd",
      "bytes": 179655,
      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2026&seasontype=2&week=18&limit=100"
     },
@@ -2516,8 +2516,8 @@
     },
     {
      "item": "Moneylines",
-     "value": "0.9997",
-     "caveat": "Empty in every season checked, so vig cannot be measured from this source."
+     "value": "0.9997 of completed games",
+     "caveat": "Present for both sides but published as a single un-timestamped price per game, so the vig is implied by that one price and no line movement can be measured."
     },
     {
      "item": "Player prop market",
@@ -2535,64 +2535,64 @@
   {
    "id": "lineup",
    "name": "Injury report and depth-chart coverage",
-   "result": "off_value_diff 1591/1639 (0.971); def_value_diff 1591/1639 (0.971); home_off_value 1615/1639 (0.985); away_off_value 1615/1639 (0.985)",
+   "result": "off_value_diff 1639/1639 (1.0); def_value_diff 1639/1639 (1.0); home_off_value 1639/1639 (1.0); away_off_value 1639/1639 (1.0)",
    "status": "pass",
    "detail": [
     {
      "feature": "off_value_diff",
-     "present": 1591,
+     "present": 1639,
      "total": 1639,
-     "share": 0.971,
-     "status": "partial \u2014 blank where absent"
+     "share": 1.0,
+     "status": "verified"
     },
     {
      "feature": "def_value_diff",
-     "present": 1591,
+     "present": 1639,
      "total": 1639,
-     "share": 0.971,
-     "status": "partial \u2014 blank where absent"
+     "share": 1.0,
+     "status": "verified"
     },
     {
      "feature": "home_off_value",
-     "present": 1615,
+     "present": 1639,
      "total": 1639,
-     "share": 0.985,
-     "status": "partial \u2014 blank where absent"
+     "share": 1.0,
+     "status": "verified"
     },
     {
      "feature": "away_off_value",
-     "present": 1615,
+     "present": 1639,
      "total": 1639,
-     "share": 0.985,
-     "status": "partial \u2014 blank where absent"
+     "share": 1.0,
+     "status": "verified"
     },
     {
      "feature": "home_def_value",
-     "present": 1615,
+     "present": 1639,
      "total": 1639,
-     "share": 0.985,
-     "status": "partial \u2014 blank where absent"
+     "share": 1.0,
+     "status": "verified"
     },
     {
      "feature": "away_def_value",
-     "present": 1615,
+     "present": 1639,
      "total": 1639,
-     "share": 0.985,
-     "status": "partial \u2014 blank where absent"
+     "share": 1.0,
+     "status": "verified"
     },
     {
      "feature": "home_off_out_share",
-     "present": 1615,
+     "present": 1639,
      "total": 1639,
-     "share": 0.985,
-     "status": "partial \u2014 blank where absent"
+     "share": 1.0,
+     "status": "verified"
     },
     {
      "feature": "home_def_out_share",
-     "present": 1615,
+     "present": 1639,
      "total": 1639,
-     "share": 0.985,
-     "status": "partial \u2014 blank where absent"
+     "share": 1.0,
+     "status": "verified"
     }
    ],
    "source": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2025.csv"

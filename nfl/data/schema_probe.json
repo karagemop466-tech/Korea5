@@ -1,9 +1,9 @@
 {
- "generatedUTC": "2026-11-13T13:17:22Z",
+ "generatedUTC": "2026-11-13T13:19:34Z",
  "files": {
   "games.csv": {
-   "bytes": 105624,
-   "rows": 399,
+   "bytes": 2190032,
+   "rows": 7548,
    "header": [
     "game_id",
     "season",
@@ -198,8 +198,8 @@
    }
   },
   "officials.csv": {
-   "bytes": 23313,
-   "rows": 399,
+   "bytes": 1293787,
+   "rows": 22012,
    "header": [
     "game_id",
     "game_key",
@@ -249,8 +249,8 @@
    "bytes": 200000
   },
   "injuries_2026.csv": {
-   "bytes": 45643,
-   "rows": 399,
+   "bytes": 354572,
+   "rows": 3117,
    "header": [
     "season",
     "season_type",
@@ -343,8 +343,8 @@
    ]
   },
   "stats_player_week_2024.csv": {
-   "bytes": 145675,
-   "rows": 399,
+   "bytes": 6863480,
+   "rows": 18981,
    "header": [
     "player_id",
     "player_name",
@@ -811,8 +811,8 @@
    }
   },
   "injuries_2024.csv": {
-   "bytes": 50116,
-   "rows": 399,
+   "bytes": 816989,
+   "rows": 6263,
    "header": [
     "season",
     "game_type",
@@ -887,8 +887,8 @@
    }
   },
   "depth_charts_2024.csv": {
-   "bytes": 36087,
-   "rows": 399,
+   "bytes": 3391616,
+   "rows": 37779,
    "header": [
     "season",
     "club_code",
@@ -959,8 +959,8 @@
    }
   },
   "roster_2024.csv": {
-   "bytes": 132388,
-   "rows": 399,
+   "bytes": 1005701,
+   "rows": 3216,
    "header": [
     "season",
     "team",
@@ -1115,8 +1115,8 @@
    }
   },
   "snap_counts_2024.csv": {
-   "bytes": 36040,
-   "rows": 399,
+   "bytes": 2402841,
+   "rows": 26615,
    "header": [
     "game_id",
     "pfr_game_id",
@@ -1196,8 +1196,8 @@
    "schemaError": "EOFError: Compressed file ended before the end-of-stream marker was reached"
   },
   "injuries_2025.csv": {
-   "bytes": 45148,
-   "rows": 399,
+   "bytes": 696006,
+   "rows": 6068,
    "header": [
     "season",
     "season_type",
@@ -1272,8 +1272,8 @@
    }
   },
   "depth_charts_2025.csv": {
-   "bytes": 38716,
-   "rows": 399,
+   "bytes": 52917870,
+   "rows": 554215,
    "header": [
     "dt",
     "team",
@@ -1332,8 +1332,8 @@
    }
   },
   "roster_2025.csv": {
-   "bytes": 133781,
-   "rows": 399,
+   "bytes": 1010039,
+   "rows": 3137,
    "header": [
     "season",
     "team",
@@ -1488,8 +1488,8 @@
    }
   },
   "snap_counts_2025.csv": {
-   "bytes": 36135,
-   "rows": 399,
+   "bytes": 2401290,
+   "rows": 26613,
    "header": [
     "game_id",
     "pfr_game_id",
@@ -1569,8 +1569,8 @@
    "schemaError": "EOFError: Compressed file ended before the end-of-stream marker was reached"
   },
   "depth_charts_2026.csv": {
-   "bytes": 38546,
-   "rows": 399,
+   "bytes": 74572683,
+   "rows": 782468,
    "header": [
     "dt",
     "team",
@@ -1629,8 +1629,8 @@
    }
   },
   "roster_2026.csv": {
-   "bytes": 133673,
-   "rows": 399,
+   "bytes": 982988,
+   "rows": 3073,
    "header": [
     "season",
     "team",
@@ -1785,8 +1785,8 @@
    }
   },
   "snap_counts_2026.csv": {
-   "bytes": 36334,
-   "rows": 399,
+   "bytes": 1147455,
+   "rows": 12785,
    "header": [
     "game_id",
     "pfr_game_id",
@@ -4233,7 +4233,7 @@
    "statusExample": "STATUS_FINAL"
   },
   "espn_2026_t2_w10.json": {
-   "bytes": 254518,
+   "bytes": 254476,
    "jsonTopKeys": [
     "leagues",
     "season",
@@ -4272,7 +4272,7 @@
    "statusExample": "STATUS_FINAL"
   },
   "espn_2026_t2_w11.json": {
-   "bytes": 236550,
+   "bytes": 236508,
    "jsonTopKeys": [
     "leagues",
     "season",
@@ -4323,7 +4323,7 @@
    "oddsExample": {
     "provider": {
      "id": "100",
-     "name": "Draft Kings",
+     "name": "DraftKings",
      "priority": 1,
      "logos": [
       {
@@ -4339,7 +4339,7 @@
        ]
       }
      ],
-     "displayName": "Draft Kings"
+     "displayName": "DraftKings"
     },
     "details": "HOU -10",
     "overUnder": 44.5,

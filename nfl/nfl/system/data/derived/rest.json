@@ -1,0 +1,12 @@
+{
+ "summary": {
+  "gamesWithBothTeams": 0,
+  "shortWeekGames": 0,
+  "restDayHistogram": {},
+  "minRestDays": null,
+  "maxRestDays": null,
+  "teamsCovered": 0,
+  "label": "COMPUTED from official kickoff dates; rest days are exact, travel is not included"
+ },
+ "rows": []
+}

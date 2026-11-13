@@ -32,7 +32,7 @@ NAV = [
     ("flagged.html", "Flagged"),
     ("method.html", "Method"),
     ("extra/index.html", "Official feeds &amp; verification"),
-    ("nfl/index.html", "NFL decision system"),
+    ("nfl/system/index.html", "NFL decision system"),
 ]
 
 
@@ -633,12 +633,12 @@ report and the official Game Book, the leaderboard design, and the suggestions r
 this repository holds no market price and no settlement record, so no win rate, yield or edge is published.</div>
 <div class="callout"><strong>Which NFL surface is which.</strong> Three shelves now cover this topic and they are not
 the same thing. The <a href="lab/index.html">NFL Lines Lab</a> is a design and decision register built on hand-curated
-excerpts. The <a href="nfl/index.html">NFL decision system</a> is the data-backed one: it ingests the official
+excerpts. The <a href="nfl/system/index.html">NFL decision system</a> is the data-backed one: it ingests the official
 injury report, all 32 club depth charts, official team and player statistics and every completed final score in CI,
 then computes rest, scoring, de-vig and skill-vs-luck statistics from those files, publishing an n and an interval
 with every number and marking every value the official pages did not publish as unverified. Start with its
-<a href="nfl/summary.html">executive summary</a> if you want the findings, and its
-<a href="nfl/questions.html">questions and gaps</a> if you want the decisions.</div>
+<a href="nfl/system/summary.html">executive summary</a> if you want the findings, and its
+<a href="nfl/system/questions.html">questions and gaps</a> if you want the decisions.</div>
 <div class="pill-row"><a class="btn" href="lab/questions.html">Decision register</a><a class="btn" href="lab/strategies.html">Strategies &amp; gates</a>
 <a class="btn" href="lab/correlations.html">Correlations</a><a class="btn" href="lab/injuries.html">Injuries &amp; depth</a>
 <a class="btn" href="lab/leaderboard.html">Leaderboard</a><a class="btn" href="lab/suggestions.html">Suggestions</a></div>

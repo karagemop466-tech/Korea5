@@ -1,14 +1,14 @@
 # NFL section verification
 
-Checks: **99** · passed **99** · failed **0**
+Checks: **99** · passed **98** · failed **1**
 
-Pages: 14 · external hosts: 10 · rows without a source link: 0 · broken local links: 0
+Pages: 14 · external hosts: 10 · rows without a source link: 0 · broken local links: 14
 
 | Check | Result | Detail |
 |---|---|---|
 | 14 section pages exist | PASS | 14 pages |
 | derived data present | PASS | 12 files |
-| no broken local links from nfl pages | PASS | [] |
+| no broken local links from nfl pages | FAIL | [{'page': 'correlation.html', 'link': '../index.html'}, {'page': 'data.html', 'link': '../index.html'}, {'page': 'flagged.html', 'link': '../index.html'}, {'page': 'index.html', 'link': '../index.html'}] |
 | no empty href/src in nfl pages | PASS | [] |
 | every external link is an approved official domain | PASS | [] |
 | every data-table row carries an official source link (method page exempt: it lists methods, not values) | PASS | 0 rows: [] |

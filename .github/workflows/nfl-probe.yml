@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [ 'arena/998582f0-korea5' ]
-    paths: [ 'nfl/tools/probe.py', 'nfl/tools/dig.py', 'nfl/tools/probe2.py', '.github/workflows/nfl-probe.yml' ]
+    paths: [ 'nfl/system/tools/probe.py', 'nfl/system/tools/dig.py', 'nfl/system/tools/probe2.py', '.github/workflows/nfl-probe.yml' ]
 permissions:
   contents: write
 concurrency:
@@ -25,18 +25,18 @@ jobs:
         with:
           python-version: '3.11'
       - name: Probe official sources
-        run: python3 nfl/tools/probe.py
+        run: python3 nfl/system/tools/probe.py
       - name: Dump markup excerpts for parser design (log only)
-        run: python3 nfl/tools/dig.py all
+        run: python3 nfl/system/tools/dig.py all
         continue-on-error: true
       - name: Second probe (rosters, player leaders, prior season)
-        run: python3 nfl/tools/probe2.py
+        run: python3 nfl/system/tools/probe2.py
         continue-on-error: true
       - name: Commit probe output
         run: |
           git config user.name "korea5-nfl-bot"
           git config user.email "korea5-nfl-bot@users.noreply.github.com"
-          git add -A nfl/research/
+          git add -A nfl/system/research/
           if git diff --cached --quiet; then echo "no changes"; else
             git commit -m "nfl: probe official sources (raw bytes + diagnostics)"
             git pull --rebase --autostash origin arena/998582f0-korea5

@@ -1,0 +1,11 @@
+{
+ "combined": {
+  "decided": 0,
+  "homeWins": 0,
+  "homeWinRate": null,
+  "ci90": [
+   null,
+   null
+  ]
+ }
+}

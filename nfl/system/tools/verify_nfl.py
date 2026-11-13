@@ -20,8 +20,9 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 
-ROOT = Path(__file__).resolve().parents[2]
-NFL = ROOT / "nfl"
+ROOT = Path(__file__).resolve().parents[3]
+NFL = REPO_ROOT = ROOT / "nfl" / "system"
+NFL = REPO_ROOT
 DER = NFL / "data" / "derived"
 OUT = NFL / "verification"
 OUT.mkdir(parents=True, exist_ok=True)

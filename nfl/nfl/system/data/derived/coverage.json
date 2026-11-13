@@ -1,0 +1,50 @@
+{
+ "generatedUTC": "unknown",
+ "sources": [
+  {
+   "dataset": "Final scores",
+   "rows": 0,
+   "bySeason": {},
+   "retrievedUTC": null,
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "official": true
+  },
+  {
+   "dataset": "Injury report rows",
+   "rows": 0,
+   "bySeason": {},
+   "retrievedUTC": null,
+   "url": "https://www.nfl.com/injuries/league/2026/reg10",
+   "official": true
+  },
+  {
+   "dataset": "Depth-chart entries",
+   "rows": 0,
+   "clubs": 0,
+   "url": "https://www.49ers.com/team/depth-chart",
+   "official": true
+  },
+  {
+   "dataset": "Team stat tables",
+   "rows": 0,
+   "url": "https://www.nfl.com/stats/team-stats/",
+   "official": true
+  },
+  {
+   "dataset": "Player stat categories",
+   "rows": 0,
+   "url": "https://www.nfl.com/stats/player-stats/",
+   "official": true
+  },
+  {
+   "dataset": "Roster players",
+   "rows": 0,
+   "url": "https://www.nfl.com/teams/san-francisco-49ers/roster",
+   "official": true
+  }
+ ],
+ "fetchFailures": 0,
+ "unavailableDepthCharts": [],
+ "priceFeedAvailable": false,
+ "priceFeedNote": "No official NFL page publishes odds (probe: 0 odds fields on week, game and stats pages). No price data exists in this repository."
+}

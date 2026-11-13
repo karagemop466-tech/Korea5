@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches: [ 'arena/998582f0-korea5' ]
-    paths: [ 'nfl/tools/fetch_official.py', '.github/workflows/nfl-data.yml' ]
+    paths: [ 'nfl/system/tools/fetch_official.py', '.github/workflows/nfl-data.yml' ]
 permissions:
   contents: write
 concurrency:
@@ -24,12 +24,12 @@ jobs:
         with:
           python-version: '3.11'
       - name: Fetch official NFL data
-        run: python3 nfl/tools/fetch_official.py
+        run: python3 nfl/system/tools/fetch_official.py
       - name: Commit official data
         run: |
           git config user.name "korea5-nfl-bot"
           git config user.email "korea5-nfl-bot@users.noreply.github.com"
-          git add -A nfl/data/
+          git add -A nfl/system/data/
           if git diff --cached --quiet; then echo "no changes"; else
             git commit -m "nfl: refresh official results/injuries/depth/stats"
             git pull --rebase --autostash origin arena/998582f0-korea5

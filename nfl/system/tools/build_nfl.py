@@ -16,8 +16,8 @@ from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
 
-ROOT = Path(__file__).resolve().parents[2]
-NFL = ROOT / "nfl"
+REPO = Path(__file__).resolve().parents[3]
+NFL = REPO / "nfl" / "system"
 DER = NFL / "data" / "derived"
 CUR = NFL / "curated"
 
@@ -104,7 +104,7 @@ def page(title: str, active: str, body: str, lede: str = "") -> str:
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)} · NFL Decision System</title>
 <meta name="description" content="NFL line-origination and strategy-validation system built only on official NFL data, with every value sourced and every gap published.">
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 <link rel="stylesheet" href="assets/nfl.css">
 </head><body>
 <header class="top"><div class="wrap topbar">
@@ -123,8 +123,9 @@ blank and badged {model("UNVERIFIED")}, never filled in.
 <footer><div class="wrap">
 <p><strong>NFL Decision System</strong> · data retrieved {esc(GENERATED)} (newest official fetch) · official sources only:
 nfl.com, the 32 official club sites, operations.nfl.com.
-Part of the <a href="../index.html">Korea5 planner</a> · also see the
-<a href="../nfl-strategy.html">strategy lab proposal</a>.</p>
+Part of the <a href="../../index.html">Korea5 planner</a> · also see the
+<a href="../../nfl-strategy.html">strategy lab proposal</a> and the
+<a href="../index.html">NFL Decision Support hub</a>.</p>
 <p>Nothing here is betting advice. No reward is authorised. Values that could not be confirmed from an
 official source are blank and listed on <a href="flagged.html">Flagged for review</a>.</p>
 </div></footer></body></html>"""
@@ -1115,8 +1116,10 @@ PAGES = {
 
 
 def main():
+    print(f"writing pages into {NFL}")
     for name, fn in PAGES.items():
-        (NFL / name).write_text(fn(), encoding="utf-8")
+        target = NFL / name
+        target.write_text(fn(), encoding="utf-8")
         print("wrote nfl/" + name)
 
 

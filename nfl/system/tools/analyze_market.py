@@ -27,7 +27,8 @@ from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+REPO = Path(__file__).resolve().parents[3]
+ROOT = REPO / "nfl" / "system"
 DER = ROOT / "data" / "derived"
 DER.mkdir(parents=True, exist_ok=True)
 
@@ -229,7 +230,7 @@ def run():
 
     # Rest is computed from the official 2026 schedule feed that the repo already holds
     # (official/nfl-2026.json), which carries a verified PT date per game.
-    sched = load_path(ROOT.parent / "official" / "nfl-2026.json")
+    sched = load_path(REPO / "official" / "nfl-2026.json")
     rest_rows, rest_summary = [], {"gamesWithBothTeams": 0, "shortWeekGames": 0}
     if sched:
         by_team = defaultdict(list)

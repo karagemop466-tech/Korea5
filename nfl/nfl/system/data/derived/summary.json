@@ -1,0 +1,24 @@
+{
+ "generatedUTC": "unknown",
+ "stampMeaning": "newest official retrieval time among the inputs — not the build time",
+ "finalGames2026": 0,
+ "finalGames2025": 0,
+ "injuryRows2026": 0,
+ "injuryWeek": 0,
+ "depthRows": 0,
+ "depthClubs": 0,
+ "depthClubsUnavailable": 0,
+ "teamStatTables": 0,
+ "homeWinRate2026": null,
+ "homeWinRate2026Ci": null,
+ "homeWinRateAll": null,
+ "homeWinRateAllCi": [
+  null,
+  null
+ ],
+ "leagueMeanPPG": null,
+ "priceFeed": "none",
+ "certifiedStrategies": 0,
+ "shortWeekGames": 0,
+ "minRestDays": null
+}

@@ -1,7 +1,120 @@
 {
  "pages": 59,
- "localLinksChecked": 1578,
- "missing": [],
+ "localLinksChecked": 1592,
+ "missing": [
+  {
+   "page": "extra/calendar.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/durations.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/estimates.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/flagged.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/index.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/ncaaf-future.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/nfl-2026.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/season-anchors.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/sources.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/stations.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/summary.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/vacation.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/verification.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "extra/westwoodone.html",
+   "link": "../../nfl/system/index.html"
+  },
+  {
+   "page": "nfl/system/correlation.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/data.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/flagged.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/index.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/injuries.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/leaderboard.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/market.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/method.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/questions.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/signals.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/strategies.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/suggestions.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/summary.html",
+   "link": "../index.html"
+  },
+  {
+   "page": "nfl/system/validation.html",
+   "link": "../index.html"
+  }
+ ],
  "uniqueExternalLinks": 1239,
  "externalLinks": [
   "https://buffedlizard55-lab.github.io/VacationSchedule/site/",

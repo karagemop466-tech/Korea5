@@ -1,0 +1,2042 @@
+{
+ "description": "Single-bet, correlation and parlay results. Walk-forward. Gates applied in order. Market lines unverified (G0 fails for all).",
+ "break_even_at_110": 0.5238,
+ "k_tests_bonferroni": 10,
+ "leaderboard": [
+  {
+   "strategy": "MODEL-EDGE-3",
+   "kind": "spread",
+   "test_n": 783,
+   "test_hit": 0.5223,
+   "test_roi_at_110": -0.0028,
+   "test_hit_ci95": [
+    0.5,
+    0.5464
+   ],
+   "test_p": 0.2243,
+   "forward_2026_n": 39,
+   "forward_2026_hit": 0.4615,
+   "gates": {
+    "G0_provenance_official_or_verified_lines": {
+     "pass": false,
+     "note": "Market lines (spread_line / total_line) are third-party and unverified. nfldata does not name their source."
+    },
+    "G1_sample_>=300_test_bets": {
+     "pass": true,
+     "value": 783
+    },
+    "G2_hit_>=52.38pct_and_CI_low_>50": {
+     "pass": false,
+     "value": 0.5223,
+     "ci95": [
+      0.5,
+      0.5464
+     ]
+    },
+    "G3_p_below_bonferroni": {
+     "pass": false,
+     "value": 0.2243,
+     "threshold": 0.005,
+     "k_tests": 10
+    },
+    "G4_70pct_of_seasons_above_breakeven": {
+     "pass": false,
+     "value": "4/10"
+    },
+    "G5_no_lookahead": {
+     "pass": true,
+     "note": "Ratings and totals used for a game are stored before that game updates them; qb-injury lookup uses same-week report, which is public before kickoff."
+    }
+   },
+   "validated": false,
+   "passes_all_except_G0": false,
+   "score_ci_low": 0.5,
+   "rank": 1,
+   "reward_points": 0
+  },
+  {
+   "strategy": "MKT-DOG",
+   "kind": "spread",
+   "test_n": 2570,
+   "test_hit": 0.5117,
+   "test_roi_at_110": -0.0232,
+   "test_hit_ci95": [
+    0.4894,
+    0.5324
+   ],
+   "test_p": 0.2445,
+   "forward_2026_n": 131,
+   "forward_2026_hit": 0.4885,
+   "gates": {
+    "G0_provenance_official_or_verified_lines": {
+     "pass": false,
+     "note": "Market lines (spread_line / total_line) are third-party and unverified. nfldata does not name their source."
+    },
+    "G1_sample_>=300_test_bets": {
+     "pass": true,
+     "value": 2570
+    },
+    "G2_hit_>=52.38pct_and_CI_low_>50": {
+     "pass": false,
+     "value": 0.5117,
+     "ci95": [
+      0.4894,
+      0.5324
+     ]
+    },
+    "G3_p_below_bonferroni": {
+     "pass": false,
+     "value": 0.2445,
+     "threshold": 0.005,
+     "k_tests": 10
+    },
+    "G4_70pct_of_seasons_above_breakeven": {
+     "pass": false,
+     "value": "5/10"
+    },
+    "G5_no_lookahead": {
+     "pass": true,
+     "note": "Ratings and totals used for a game are stored before that game updates them; qb-injury lookup uses same-week report, which is public before kickoff."
+    }
+   },
+   "validated": false,
+   "passes_all_except_G0": false,
+   "score_ci_low": 0.4894,
+   "rank": 2,
+   "reward_points": 0
+  },
+  {
+   "strategy": "REST-GAP-3",
+   "kind": "spread",
+   "test_n": 568,
+   "test_hit": 0.5088,
+   "test_roi_at_110": -0.0286,
+   "test_hit_ci95": [
+    0.4774,
+    0.5418
+   ],
+   "test_p": 0.7057,
+   "forward_2026_n": 30,
+   "forward_2026_hit": 0.7,
+   "gates": {
+    "G0_provenance_official_or_verified_lines": {
+     "pass": false,
+     "note": "Market lines (spread_line / total_line) are third-party and unverified. nfldata does not name their source."
+    },
+    "G1_sample_>=300_test_bets": {
+     "pass": true,
+     "value": 568
+    },
+    "G2_hit_>=52.38pct_and_CI_low_>50": {
+     "pass": false,
+     "value": 0.5088,
+     "ci95": [
+      0.4774,
+      0.5418
+     ]
+    },
+    "G3_p_below_bonferroni": {
+     "pass": false,
+     "value": 0.7057,
+     "threshold": 0.005,
+     "k_tests": 10
+    },
+    "G4_70pct_of_seasons_above_breakeven": {
+     "pass": false,
+     "value": "4/10"
+    },
+    "G5_no_lookahead": {
+     "pass": true,
+     "note": "Ratings and totals used for a game are stored before that game updates them; qb-injury lookup uses same-week report, which is public before kickoff."
+    }
+   },
+   "validated": false,
+   "passes_all_except_G0": false,
+   "score_ci_low": 0.4774,
+   "rank": 3,
+   "reward_points": 0
+  },
+  {
+   "strategy": "MODEL-EDGE-2",
+   "kind": "spread",
+   "test_n": 1254,
+   "test_hit": 0.5,
+   "test_roi_at_110": -0.0455,
+   "test_hit_ci95": [
+    0.4771,
+    0.5194
+   ],
+   "test_p": 1.0,
+   "forward_2026_n": 57,
+   "forward_2026_hit": 0.4737,
+   "gates": {
+    "G0_provenance_official_or_verified_lines": {
+     "pass": false,
+     "note": "Market lines (spread_line / total_line) are third-party and unverified. nfldata does not name their source."
+    },
+    "G1_sample_>=300_test_bets": {
+     "pass": true,
+     "value": 1254
+    },
+    "G2_hit_>=52.38pct_and_CI_low_>50": {
+     "pass": false,
+     "value": 0.5,
+     "ci95": [
+      0.4771,
+      0.5194
+     ]
+    },
+    "G3_p_below_bonferroni": {
+     "pass": false,
+     "value": 1.0,
+     "threshold": 0.005,
+     "k_tests": 10
+    },
+    "G4_70pct_of_seasons_above_breakeven": {
+     "pass": false,
+     "value": "2/10"
+    },
+    "G5_no_lookahead": {
+     "pass": true,
+     "note": "Ratings and totals used for a game are stored before that game updates them; qb-injury lookup uses same-week report, which is public before kickoff."
+    }
+   },
+   "validated": false,
+   "passes_all_except_G0": false,
+   "score_ci_low": 0.4771,
+   "rank": 4,
+   "reward_points": 0
+  },
+  {
+   "strategy": "MKT-HOME",
+   "kind": "spread",
+   "test_n": 2574,
+   "test_hit": 0.4907,
+   "test_roi_at_110": -0.0633,
+   "test_hit_ci95": [
+    0.4762,
+    0.5029
+   ],
+   "test_p": 0.3542,
+   "forward_2026_n": 131,
+   "forward_2026_hit": 0.4275,
+   "gates": {
+    "G0_provenance_official_or_verified_lines": {
+     "pass": false,
+     "note": "Market lines (spread_line / total_line) are third-party and unverified. nfldata does not name their source."
+    },
+    "G1_sample_>=300_test_bets": {
+     "pass": true,
+     "value": 2574
+    },
+    "G2_hit_>=52.38pct_and_CI_low_>50": {
+     "pass": false,
+     "value": 0.4907,
+     "ci95": [
+      0.4762,
+      0.5029
+     ]
+    },
+    "G3_p_below_bonferroni": {
+     "pass": false,
+     "value": 0.3542,
+     "threshold": 0.005,
+     "k_tests": 10
+    },
+    "G4_70pct_of_seasons_above_breakeven": {
+     "pass": false,
+     "value": "1/10"
+    },
+    "G5_no_lookahead": {
+     "pass": true,
+     "note": "Ratings and totals used for a game are stored before that game updates them; qb-injury lookup uses same-week report, which is public before kickoff."
+    }
+   },
+   "validated": false,
+   "passes_all_except_G0": false,
+   "score_ci_low": 0.4762,
+   "rank": 5,
+   "reward_points": 0
+  },
+  {
+   "strategy": "MODEL-EDGE-4",
+   "kind": "spread",
+   "test_n": 449,
+   "test_hit": 0.5189,
+   "test_roi_at_110": -0.0093,
+   "test_hit_ci95": [
+    0.4718,
+    0.558
+   ],
+   "test_p": 0.4502,
+   "forward_2026_n": 19,
+   "forward_2026_hit": 0.5263,
+   "gates": {
+    "G0_provenance_official_or_verified_lines": {
+     "pass": false,
+     "note": "Market lines (spread_line / total_line) are third-party and unverified. nfldata does not name their source."
+    },
+    "G1_sample_>=300_test_bets": {
+     "pass": true,
+     "value": 449
+    },
+    "G2_hit_>=52.38pct_and_CI_low_>50": {
+     "pass": false,
+     "value": 0.5189,
+     "ci95": [
+      0.4718,
+      0.558
+     ]
+    },
+    "G3_p_below_bonferroni": {
+     "pass": false,
+     "value": 0.4502,
+     "threshold": 0.005,
+     "k_tests": 10
+    },
+    "G4_70pct_of_seasons_above_breakeven": {
+     "pass": false,
+     "value": "5/10"
+    },
+    "G5_no_lookahead": {
+     "pass": true,
+     "note": "Ratings and totals used for a game are stored before that game updates them; qb-injury lookup uses same-week report, which is public before kickoff."
+    }
+   },
+   "validated": false,
+   "passes_all_except_G0": false,
+   "score_ci_low": 0.4718,
+   "rank": 6,
+   "reward_points": 0
+  },
+  {
+   "strategy": "MKT-FAV",
+   "kind": "spread",
+   "test_n": 2570,
+   "test_hit": 0.4883,
+   "test_roi_at_110": -0.0677,
+   "test_hit_ci95": [
+    0.467,
+    0.5101
+   ],
+   "test_p": 0.2445,
+   "forward_2026_n": 131,
+   "forward_2026_hit": 0.5115,
+   "gates": {
+    "G0_provenance_official_or_verified_lines": {
+     "pass": false,
+     "note": "Market lines (spread_line / total_line) are third-party and unverified. nfldata does not name their source."
+    },
+    "G1_sample_>=300_test_bets": {
+     "pass": true,
+     "value": 2570
+    },
+    "G2_hit_>=52.38pct_and_CI_low_>50": {
+     "pass": false,
+     "value": 0.4883,
+     "ci95": [
+      0.467,
+      0.5101
+     ]
+    },
+    "G3_p_below_bonferroni": {
+     "pass": false,
+     "value": 0.2445,
+     "threshold": 0.005,
+     "k_tests": 10
+    },
+    "G4_70pct_of_seasons_above_breakeven": {
+     "pass": false,
+     "value": "3/10"
+    },
+    "G5_no_lookahead": {
+     "pass": true,
+     "note": "Ratings and totals used for a game are stored before that game updates them; qb-injury lookup uses same-week report, which is public before kickoff."
+    }
+   },
+   "validated": false,
+   "passes_all_except_G0": false,
+   "score_ci_low": 0.467,
+   "rank": 7,
+   "reward_points": 0
+  },
+  {
+   "strategy": "TOTAL-EDGE-3",
+   "kind": "total",
+   "test_n": 774,
+   "test_hit": 0.4742,
+   "test_roi_at_110": -0.0948,
+   "test_hit_ci95": [
+    0.4511,
+    0.4993
+   ],
+   "test_p": 0.1609,
+   "forward_2026_n": 53,
+   "forward_2026_hit": 0.3774,
+   "gates": {
+    "G0_provenance_official_or_verified_lines": {
+     "pass": false,
+     "note": "Market lines (spread_line / total_line) are third-party and unverified. nfldata does not name their source."
+    },
+    "G1_sample_>=300_test_bets": {
+     "pass": true,
+     "value": 774
+    },
+    "G2_hit_>=52.38pct_and_CI_low_>50": {
+     "pass": false,
+     "value": 0.4742,
+     "ci95": [
+      0.4511,
+      0.4993
+     ]
+    },
+    "G3_p_below_bonferroni": {
+     "pass": false,
+     "value": 0.1609,
+     "threshold": 0.005,
+     "k_tests": 10
+    },
+    "G4_70pct_of_seasons_above_breakeven": {
+     "pass": false,
+     "value": "1/10"
+    },
+    "G5_no_lookahead": {
+     "pass": true,
+     "note": "Ratings and totals used for a game are stored before that game updates them; qb-injury lookup uses same-week report, which is public before kickoff."
+    }
+   },
+   "validated": false,
+   "passes_all_except_G0": false,
+   "score_ci_low": 0.4511,
+   "rank": 8,
+   "reward_points": 0
+  },
+  {
+   "strategy": "QB-OUT-BACK",
+   "kind": "spread",
+   "test_n": 7,
+   "test_hit": 0.4286,
+   "test_roi_at_110": -0.1818,
+   "test_hit_ci95": [
+    0.0,
+    1.0
+   ],
+   "test_p": 1.0,
+   "forward_2026_n": 2,
+   "forward_2026_hit": 0.5,
+   "gates": {
+    "G0_provenance_official_or_verified_lines": {
+     "pass": false,
+     "note": "Market lines (spread_line / total_line) are third-party and unverified. nfldata does not name their source."
+    },
+    "G1_sample_>=300_test_bets": {
+     "pass": false,
+     "value": 7
+    },
+    "G2_hit_>=52.38pct_and_CI_low_>50": {
+     "pass": false,
+     "value": 0.4286,
+     "ci95": [
+      0.0,
+      1.0
+     ]
+    },
+    "G3_p_below_bonferroni": {
+     "pass": false,
+     "value": 1.0,
+     "threshold": 0.005,
+     "k_tests": 10
+    },
+    "G4_70pct_of_seasons_above_breakeven": {
+     "pass": false,
+     "value": "1/3"
+    },
+    "G5_no_lookahead": {
+     "pass": true,
+     "note": "Ratings and totals used for a game are stored before that game updates them; qb-injury lookup uses same-week report, which is public before kickoff."
+    }
+   },
+   "validated": false,
+   "passes_all_except_G0": false,
+   "score_ci_low": 0.0,
+   "rank": 9,
+   "reward_points": 0
+  },
+  {
+   "strategy": "QB-OUT-FADE",
+   "kind": "spread",
+   "test_n": 7,
+   "test_hit": 0.5714,
+   "test_roi_at_110": 0.0909,
+   "test_hit_ci95": [
+    0.0,
+    1.0
+   ],
+   "test_p": 1.0,
+   "forward_2026_n": 2,
+   "forward_2026_hit": 0.5,
+   "gates": {
+    "G0_provenance_official_or_verified_lines": {
+     "pass": false,
+     "note": "Market lines (spread_line / total_line) are third-party and unverified. nfldata does not name their source."
+    },
+    "G1_sample_>=300_test_bets": {
+     "pass": false,
+     "value": 7
+    },
+    "G2_hit_>=52.38pct_and_CI_low_>50": {
+     "pass": false,
+     "value": 0.5714,
+     "ci95": [
+      0.0,
+      1.0
+     ]
+    },
+    "G3_p_below_bonferroni": {
+     "pass": false,
+     "value": 1.0,
+     "threshold": 0.005,
+     "k_tests": 10
+    },
+    "G4_70pct_of_seasons_above_breakeven": {
+     "pass": false,
+     "value": "1/3"
+    },
+    "G5_no_lookahead": {
+     "pass": true,
+     "note": "Ratings and totals used for a game are stored before that game updates them; qb-injury lookup uses same-week report, which is public before kickoff."
+    }
+   },
+   "validated": false,
+   "passes_all_except_G0": false,
+   "score_ci_low": 0.0,
+   "rank": 10,
+   "reward_points": 0
+  }
+ ],
+ "per_strategy": {
+  "MKT-HOME": {
+   "kind": "spread",
+   "test": {
+    "n": 2574,
+    "wins": 1263,
+    "losses": 1311,
+    "pushes": 65,
+    "hit": 0.4907,
+    "roi_at_110": -0.0633,
+    "hit_ci95": [
+     0.4762,
+     0.5029
+    ],
+    "p_two_sided": 0.3542,
+    "seasons_with_bets": 10,
+    "seasons_above_breakeven": 1,
+    "per_season": {
+     "2016": {
+      "n": 251,
+      "wins": 123,
+      "hit": 0.49
+     },
+     "2017": {
+      "n": 248,
+      "wins": 130,
+      "hit": 0.5242
+     },
+     "2018": {
+      "n": 247,
+      "wins": 119,
+      "hit": 0.4818
+     },
+     "2019": {
+      "n": 246,
+      "wins": 106,
+      "hit": 0.4309
+     },
+     "2020": {
+      "n": 256,
+      "wins": 127,
+      "hit": 0.4961
+     },
+     "2021": {
+      "n": 268,
+      "wins": 129,
+      "hit": 0.4813
+     },
+     "2022": {
+      "n": 261,
+      "wins": 129,
+      "hit": 0.4943
+     },
+     "2023": {
+      "n": 258,
+      "wins": 128,
+      "hit": 0.4961
+     },
+     "2024": {
+      "n": 268,
+      "wins": 137,
+      "hit": 0.5112
+     },
+     "2025": {
+      "n": 271,
+      "wins": 135,
+      "hit": 0.4982
+     }
+    }
+   },
+   "forward_2026": {
+    "n": 131,
+    "wins": 56,
+    "losses": 75,
+    "pushes": 6,
+    "hit": 0.4275,
+    "roi_at_110": -0.1839,
+    "hit_ci95": [
+     0.4275,
+     0.4275
+    ],
+    "p_two_sided": 0.1155,
+    "seasons_with_bets": 1,
+    "seasons_above_breakeven": 0,
+    "per_season": {
+     "2026": {
+      "n": 131,
+      "wins": 56,
+      "hit": 0.4275
+     }
+    }
+   }
+  },
+  "MKT-FAV": {
+   "kind": "spread",
+   "test": {
+    "n": 2570,
+    "wins": 1255,
+    "losses": 1315,
+    "pushes": 65,
+    "hit": 0.4883,
+    "roi_at_110": -0.0677,
+    "hit_ci95": [
+     0.467,
+     0.5101
+    ],
+    "p_two_sided": 0.2445,
+    "seasons_with_bets": 10,
+    "seasons_above_breakeven": 3,
+    "per_season": {
+     "2016": {
+      "n": 250,
+      "wins": 128,
+      "hit": 0.512
+     },
+     "2017": {
+      "n": 245,
+      "wins": 132,
+      "hit": 0.5388
+     },
+     "2018": {
+      "n": 247,
+      "wins": 114,
+      "hit": 0.4615
+     },
+     "2019": {
+      "n": 246,
+      "wins": 113,
+      "hit": 0.4593
+     },
+     "2020": {
+      "n": 256,
+      "wins": 114,
+      "hit": 0.4453
+     },
+     "2021": {
+      "n": 268,
+      "wins": 125,
+      "hit": 0.4664
+     },
+     "2022": {
+      "n": 261,
+      "wins": 118,
+      "hit": 0.4521
+     },
+     "2023": {
+      "n": 258,
+      "wins": 137,
+      "hit": 0.531
+     },
+     "2024": {
+      "n": 268,
+      "wins": 143,
+      "hit": 0.5336
+     },
+     "2025": {
+      "n": 271,
+      "wins": 131,
+      "hit": 0.4834
+     }
+    }
+   },
+   "forward_2026": {
+    "n": 131,
+    "wins": 67,
+    "losses": 64,
+    "pushes": 6,
+    "hit": 0.5115,
+    "roi_at_110": -0.0236,
+    "hit_ci95": [
+     0.5115,
+     0.5115
+    ],
+    "p_two_sided": 0.8614,
+    "seasons_with_bets": 1,
+    "seasons_above_breakeven": 0,
+    "per_season": {
+     "2026": {
+      "n": 131,
+      "wins": 67,
+      "hit": 0.5115
+     }
+    }
+   }
+  },
+  "MKT-DOG": {
+   "kind": "spread",
+   "test": {
+    "n": 2570,
+    "wins": 1315,
+    "losses": 1255,
+    "pushes": 65,
+    "hit": 0.5117,
+    "roi_at_110": -0.0232,
+    "hit_ci95": [
+     0.4894,
+     0.5324
+    ],
+    "p_two_sided": 0.2445,
+    "seasons_with_bets": 10,
+    "seasons_above_breakeven": 5,
+    "per_season": {
+     "2016": {
+      "n": 250,
+      "wins": 122,
+      "hit": 0.488
+     },
+     "2017": {
+      "n": 245,
+      "wins": 113,
+      "hit": 0.4612
+     },
+     "2018": {
+      "n": 247,
+      "wins": 133,
+      "hit": 0.5385
+     },
+     "2019": {
+      "n": 246,
+      "wins": 133,
+      "hit": 0.5407
+     },
+     "2020": {
+      "n": 256,
+      "wins": 142,
+      "hit": 0.5547
+     },
+     "2021": {
+      "n": 268,
+      "wins": 143,
+      "hit": 0.5336
+     },
+     "2022": {
+      "n": 261,
+      "wins": 143,
+      "hit": 0.5479
+     },
+     "2023": {
+      "n": 258,
+      "wins": 121,
+      "hit": 0.469
+     },
+     "2024": {
+      "n": 268,
+      "wins": 125,
+      "hit": 0.4664
+     },
+     "2025": {
+      "n": 271,
+      "wins": 140,
+      "hit": 0.5166
+     }
+    }
+   },
+   "forward_2026": {
+    "n": 131,
+    "wins": 64,
+    "losses": 67,
+    "pushes": 6,
+    "hit": 0.4885,
+    "roi_at_110": -0.0673,
+    "hit_ci95": [
+     0.4885,
+     0.4885
+    ],
+    "p_two_sided": 0.8614,
+    "seasons_with_bets": 1,
+    "seasons_above_breakeven": 0,
+    "per_season": {
+     "2026": {
+      "n": 131,
+      "wins": 64,
+      "hit": 0.4885
+     }
+    }
+   }
+  },
+  "MODEL-EDGE-2": {
+   "kind": "spread",
+   "test": {
+    "n": 1254,
+    "wins": 627,
+    "losses": 627,
+    "pushes": 23,
+    "hit": 0.5,
+    "roi_at_110": -0.0455,
+    "hit_ci95": [
+     0.4771,
+     0.5194
+    ],
+    "p_two_sided": 1.0,
+    "seasons_with_bets": 10,
+    "seasons_above_breakeven": 2,
+    "per_season": {
+     "2016": {
+      "n": 104,
+      "wins": 49,
+      "hit": 0.4712
+     },
+     "2017": {
+      "n": 112,
+      "wins": 55,
+      "hit": 0.4911
+     },
+     "2018": {
+      "n": 121,
+      "wins": 64,
+      "hit": 0.5289
+     },
+     "2019": {
+      "n": 114,
+      "wins": 59,
+      "hit": 0.5175
+     },
+     "2020": {
+      "n": 143,
+      "wins": 80,
+      "hit": 0.5594
+     },
+     "2021": {
+      "n": 147,
+      "wins": 74,
+      "hit": 0.5034
+     },
+     "2022": {
+      "n": 135,
+      "wins": 69,
+      "hit": 0.5111
+     },
+     "2023": {
+      "n": 118,
+      "wins": 53,
+      "hit": 0.4492
+     },
+     "2024": {
+      "n": 146,
+      "wins": 74,
+      "hit": 0.5068
+     },
+     "2025": {
+      "n": 114,
+      "wins": 50,
+      "hit": 0.4386
+     }
+    }
+   },
+   "forward_2026": {
+    "n": 57,
+    "wins": 27,
+    "losses": 30,
+    "pushes": 3,
+    "hit": 0.4737,
+    "roi_at_110": -0.0957,
+    "hit_ci95": [
+     0.4737,
+     0.4737
+    ],
+    "p_two_sided": 0.7914,
+    "seasons_with_bets": 1,
+    "seasons_above_breakeven": 0,
+    "per_season": {
+     "2026": {
+      "n": 57,
+      "wins": 27,
+      "hit": 0.4737
+     }
+    }
+   }
+  },
+  "MODEL-EDGE-3": {
+   "kind": "spread",
+   "test": {
+    "n": 783,
+    "wins": 409,
+    "losses": 374,
+    "pushes": 13,
+    "hit": 0.5223,
+    "roi_at_110": -0.0028,
+    "hit_ci95": [
+     0.5,
+     0.5464
+    ],
+    "p_two_sided": 0.2243,
+    "seasons_with_bets": 10,
+    "seasons_above_breakeven": 4,
+    "per_season": {
+     "2016": {
+      "n": 53,
+      "wins": 28,
+      "hit": 0.5283
+     },
+     "2017": {
+      "n": 69,
+      "wins": 33,
+      "hit": 0.4783
+     },
+     "2018": {
+      "n": 81,
+      "wins": 47,
+      "hit": 0.5802
+     },
+     "2019": {
+      "n": 74,
+      "wins": 42,
+      "hit": 0.5676
+     },
+     "2020": {
+      "n": 88,
+      "wins": 50,
+      "hit": 0.5682
+     },
+     "2021": {
+      "n": 97,
+      "wins": 49,
+      "hit": 0.5052
+     },
+     "2022": {
+      "n": 95,
+      "wins": 49,
+      "hit": 0.5158
+     },
+     "2023": {
+      "n": 68,
+      "wins": 34,
+      "hit": 0.5
+     },
+     "2024": {
+      "n": 91,
+      "wins": 47,
+      "hit": 0.5165
+     },
+     "2025": {
+      "n": 67,
+      "wins": 30,
+      "hit": 0.4478
+     }
+    }
+   },
+   "forward_2026": {
+    "n": 39,
+    "wins": 18,
+    "losses": 21,
+    "pushes": 3,
+    "hit": 0.4615,
+    "roi_at_110": -0.1189,
+    "hit_ci95": [
+     0.4615,
+     0.4615
+    ],
+    "p_two_sided": 0.7493,
+    "seasons_with_bets": 1,
+    "seasons_above_breakeven": 0,
+    "per_season": {
+     "2026": {
+      "n": 39,
+      "wins": 18,
+      "hit": 0.4615
+     }
+    }
+   }
+  },
+  "MODEL-EDGE-4": {
+   "kind": "spread",
+   "test": {
+    "n": 449,
+    "wins": 233,
+    "losses": 216,
+    "pushes": 7,
+    "hit": 0.5189,
+    "roi_at_110": -0.0093,
+    "hit_ci95": [
+     0.4718,
+     0.558
+    ],
+    "p_two_sided": 0.4502,
+    "seasons_with_bets": 10,
+    "seasons_above_breakeven": 5,
+    "per_season": {
+     "2016": {
+      "n": 28,
+      "wins": 14,
+      "hit": 0.5
+     },
+     "2017": {
+      "n": 37,
+      "wins": 13,
+      "hit": 0.3514
+     },
+     "2018": {
+      "n": 49,
+      "wins": 29,
+      "hit": 0.5918
+     },
+     "2019": {
+      "n": 38,
+      "wins": 22,
+      "hit": 0.5789
+     },
+     "2020": {
+      "n": 47,
+      "wins": 23,
+      "hit": 0.4894
+     },
+     "2021": {
+      "n": 57,
+      "wins": 32,
+      "hit": 0.5614
+     },
+     "2022": {
+      "n": 56,
+      "wins": 33,
+      "hit": 0.5893
+     },
+     "2023": {
+      "n": 39,
+      "wins": 20,
+      "hit": 0.5128
+     },
+     "2024": {
+      "n": 61,
+      "wins": 32,
+      "hit": 0.5246
+     },
+     "2025": {
+      "n": 37,
+      "wins": 15,
+      "hit": 0.4054
+     }
+    }
+   },
+   "forward_2026": {
+    "n": 19,
+    "wins": 10,
+    "losses": 9,
+    "pushes": 2,
+    "hit": 0.5263,
+    "roi_at_110": 0.0048,
+    "hit_ci95": [
+     0.5263,
+     0.5263
+    ],
+    "p_two_sided": 1.0,
+    "seasons_with_bets": 1,
+    "seasons_above_breakeven": 1,
+    "per_season": {
+     "2026": {
+      "n": 19,
+      "wins": 10,
+      "hit": 0.5263
+     }
+    }
+   }
+  },
+  "REST-GAP-3": {
+   "kind": "spread",
+   "test": {
+    "n": 568,
+    "wins": 289,
+    "losses": 279,
+    "pushes": 12,
+    "hit": 0.5088,
+    "roi_at_110": -0.0286,
+    "hit_ci95": [
+     0.4774,
+     0.5418
+    ],
+    "p_two_sided": 0.7057,
+    "seasons_with_bets": 10,
+    "seasons_above_breakeven": 4,
+    "per_season": {
+     "2016": {
+      "n": 60,
+      "wins": 36,
+      "hit": 0.6
+     },
+     "2017": {
+      "n": 55,
+      "wins": 27,
+      "hit": 0.4909
+     },
+     "2018": {
+      "n": 55,
+      "wins": 26,
+      "hit": 0.4727
+     },
+     "2019": {
+      "n": 59,
+      "wins": 27,
+      "hit": 0.4576
+     },
+     "2020": {
+      "n": 54,
+      "wins": 26,
+      "hit": 0.4815
+     },
+     "2021": {
+      "n": 55,
+      "wins": 30,
+      "hit": 0.5455
+     },
+     "2022": {
+      "n": 53,
+      "wins": 28,
+      "hit": 0.5283
+     },
+     "2023": {
+      "n": 54,
+      "wins": 32,
+      "hit": 0.5926
+     },
+     "2024": {
+      "n": 65,
+      "wins": 29,
+      "hit": 0.4462
+     },
+     "2025": {
+      "n": 58,
+      "wins": 28,
+      "hit": 0.4828
+     }
+    }
+   },
+   "forward_2026": {
+    "n": 30,
+    "wins": 21,
+    "losses": 9,
+    "pushes": 2,
+    "hit": 0.7,
+    "roi_at_110": 0.3364,
+    "hit_ci95": [
+     0.7,
+     0.7
+    ],
+    "p_two_sided": 0.0428,
+    "seasons_with_bets": 1,
+    "seasons_above_breakeven": 1,
+    "per_season": {
+     "2026": {
+      "n": 30,
+      "wins": 21,
+      "hit": 0.7
+     }
+    }
+   }
+  },
+  "QB-OUT-FADE": {
+   "kind": "spread",
+   "test": {
+    "n": 7,
+    "wins": 4,
+    "losses": 3,
+    "pushes": 0,
+    "hit": 0.5714,
+    "roi_at_110": 0.0909,
+    "hit_ci95": [
+     0.0,
+     1.0
+    ],
+    "p_two_sided": 1.0,
+    "seasons_with_bets": 3,
+    "seasons_above_breakeven": 1,
+    "per_season": {
+     "2022": {
+      "n": 2,
+      "wins": 0,
+      "hit": 0.0
+     },
+     "2024": {
+      "n": 2,
+      "wins": 1,
+      "hit": 0.5
+     },
+     "2025": {
+      "n": 3,
+      "wins": 3,
+      "hit": 1.0
+     }
+    }
+   },
+   "forward_2026": {
+    "n": 2,
+    "wins": 1,
+    "losses": 1,
+    "pushes": 0,
+    "hit": 0.5,
+    "roi_at_110": -0.0455,
+    "hit_ci95": [
+     0.5,
+     0.5
+    ],
+    "p_two_sided": 1.0,
+    "seasons_with_bets": 1,
+    "seasons_above_breakeven": 0,
+    "per_season": {
+     "2026": {
+      "n": 2,
+      "wins": 1,
+      "hit": 0.5
+     }
+    }
+   }
+  },
+  "QB-OUT-BACK": {
+   "kind": "spread",
+   "test": {
+    "n": 7,
+    "wins": 3,
+    "losses": 4,
+    "pushes": 0,
+    "hit": 0.4286,
+    "roi_at_110": -0.1818,
+    "hit_ci95": [
+     0.0,
+     1.0
+    ],
+    "p_two_sided": 1.0,
+    "seasons_with_bets": 3,
+    "seasons_above_breakeven": 1,
+    "per_season": {
+     "2022": {
+      "n": 2,
+      "wins": 2,
+      "hit": 1.0
+     },
+     "2024": {
+      "n": 2,
+      "wins": 1,
+      "hit": 0.5
+     },
+     "2025": {
+      "n": 3,
+      "wins": 0,
+      "hit": 0.0
+     }
+    }
+   },
+   "forward_2026": {
+    "n": 2,
+    "wins": 1,
+    "losses": 1,
+    "pushes": 0,
+    "hit": 0.5,
+    "roi_at_110": -0.0455,
+    "hit_ci95": [
+     0.5,
+     0.5
+    ],
+    "p_two_sided": 1.0,
+    "seasons_with_bets": 1,
+    "seasons_above_breakeven": 0,
+    "per_season": {
+     "2026": {
+      "n": 2,
+      "wins": 1,
+      "hit": 0.5
+     }
+    }
+   }
+  },
+  "TOTAL-EDGE-3": {
+   "kind": "total",
+   "test": {
+    "n": 774,
+    "wins": 367,
+    "losses": 407,
+    "pushes": 8,
+    "hit": 0.4742,
+    "roi_at_110": -0.0948,
+    "hit_ci95": [
+     0.4511,
+     0.4993
+    ],
+    "p_two_sided": 0.1609,
+    "seasons_with_bets": 10,
+    "seasons_above_breakeven": 1,
+    "per_season": {
+     "2016": {
+      "n": 67,
+      "wins": 29,
+      "hit": 0.4328
+     },
+     "2017": {
+      "n": 85,
+      "wins": 42,
+      "hit": 0.4941
+     },
+     "2018": {
+      "n": 97,
+      "wins": 46,
+      "hit": 0.4742
+     },
+     "2019": {
+      "n": 61,
+      "wins": 35,
+      "hit": 0.5738
+     },
+     "2020": {
+      "n": 68,
+      "wins": 31,
+      "hit": 0.4559
+     },
+     "2021": {
+      "n": 88,
+      "wins": 36,
+      "hit": 0.4091
+     },
+     "2022": {
+      "n": 76,
+      "wins": 36,
+      "hit": 0.4737
+     },
+     "2023": {
+      "n": 72,
+      "wins": 35,
+      "hit": 0.4861
+     },
+     "2024": {
+      "n": 72,
+      "wins": 35,
+      "hit": 0.4861
+     },
+     "2025": {
+      "n": 88,
+      "wins": 42,
+      "hit": 0.4773
+     }
+    }
+   },
+   "forward_2026": {
+    "n": 53,
+    "wins": 20,
+    "losses": 33,
+    "pushes": 0,
+    "hit": 0.3774,
+    "roi_at_110": -0.2796,
+    "hit_ci95": [
+     0.3774,
+     0.3774
+    ],
+    "p_two_sided": 0.0984,
+    "seasons_with_bets": 1,
+    "seasons_above_breakeven": 0,
+    "per_season": {
+     "2026": {
+      "n": 53,
+      "wins": 20,
+      "hit": 0.3774
+     }
+    }
+   }
+  }
+ },
+ "correlation_matrix": {
+  "MKT-HOME": {
+   "MKT-HOME": {
+    "r": 1.0,
+    "overlap": 2574
+   },
+   "MKT-FAV": {
+    "r": 0.221,
+    "overlap": 2570
+   },
+   "MKT-DOG": {
+    "r": -0.221,
+    "overlap": 2570
+   },
+   "MODEL-EDGE-2": {
+    "r": 0.112,
+    "overlap": 1254
+   },
+   "MODEL-EDGE-3": {
+    "r": 0.105,
+    "overlap": 783
+   },
+   "MODEL-EDGE-4": {
+    "r": 0.145,
+    "overlap": 449
+   },
+   "REST-GAP-3": {
+    "r": -0.066,
+    "overlap": 568
+   },
+   "QB-OUT-FADE": {
+    "r": null,
+    "overlap": 7
+   },
+   "QB-OUT-BACK": {
+    "r": null,
+    "overlap": 7
+   },
+   "TOTAL-EDGE-3": {
+    "r": 0.023,
+    "overlap": 757
+   }
+  },
+  "MKT-FAV": {
+   "MKT-HOME": {
+    "r": 0.221,
+    "overlap": 2570
+   },
+   "MKT-FAV": {
+    "r": 1.0,
+    "overlap": 2570
+   },
+   "MKT-DOG": {
+    "r": -1.0,
+    "overlap": 2570
+   },
+   "MODEL-EDGE-2": {
+    "r": -0.661,
+    "overlap": 1252
+   },
+   "MODEL-EDGE-3": {
+    "r": -0.739,
+    "overlap": 783
+   },
+   "MODEL-EDGE-4": {
+    "r": -0.817,
+    "overlap": 449
+   },
+   "REST-GAP-3": {
+    "r": 0.092,
+    "overlap": 568
+   },
+   "QB-OUT-FADE": {
+    "r": null,
+    "overlap": 7
+   },
+   "QB-OUT-BACK": {
+    "r": null,
+    "overlap": 7
+   },
+   "TOTAL-EDGE-3": {
+    "r": -0.028,
+    "overlap": 756
+   }
+  },
+  "MKT-DOG": {
+   "MKT-HOME": {
+    "r": -0.221,
+    "overlap": 2570
+   },
+   "MKT-FAV": {
+    "r": -1.0,
+    "overlap": 2570
+   },
+   "MKT-DOG": {
+    "r": 1.0,
+    "overlap": 2570
+   },
+   "MODEL-EDGE-2": {
+    "r": 0.661,
+    "overlap": 1252
+   },
+   "MODEL-EDGE-3": {
+    "r": 0.739,
+    "overlap": 783
+   },
+   "MODEL-EDGE-4": {
+    "r": 0.817,
+    "overlap": 449
+   },
+   "REST-GAP-3": {
+    "r": -0.092,
+    "overlap": 568
+   },
+   "QB-OUT-FADE": {
+    "r": null,
+    "overlap": 7
+   },
+   "QB-OUT-BACK": {
+    "r": null,
+    "overlap": 7
+   },
+   "TOTAL-EDGE-3": {
+    "r": 0.028,
+    "overlap": 756
+   }
+  },
+  "MODEL-EDGE-2": {
+   "MKT-HOME": {
+    "r": 0.112,
+    "overlap": 1254
+   },
+   "MKT-FAV": {
+    "r": -0.661,
+    "overlap": 1252
+   },
+   "MKT-DOG": {
+    "r": 0.661,
+    "overlap": 1252
+   },
+   "MODEL-EDGE-2": {
+    "r": 1.0,
+    "overlap": 1254
+   },
+   "MODEL-EDGE-3": {
+    "r": 1.0,
+    "overlap": 783
+   },
+   "MODEL-EDGE-4": {
+    "r": 1.0,
+    "overlap": 449
+   },
+   "REST-GAP-3": {
+    "r": -0.307,
+    "overlap": 268
+   },
+   "QB-OUT-FADE": {
+    "r": null,
+    "overlap": 4
+   },
+   "QB-OUT-BACK": {
+    "r": null,
+    "overlap": 4
+   },
+   "TOTAL-EDGE-3": {
+    "r": 0.037,
+    "overlap": 405
+   }
+  },
+  "MODEL-EDGE-3": {
+   "MKT-HOME": {
+    "r": 0.105,
+    "overlap": 783
+   },
+   "MKT-FAV": {
+    "r": -0.739,
+    "overlap": 783
+   },
+   "MKT-DOG": {
+    "r": 0.739,
+    "overlap": 783
+   },
+   "MODEL-EDGE-2": {
+    "r": 1.0,
+    "overlap": 783
+   },
+   "MODEL-EDGE-3": {
+    "r": 1.0,
+    "overlap": 783
+   },
+   "MODEL-EDGE-4": {
+    "r": 1.0,
+    "overlap": 449
+   },
+   "REST-GAP-3": {
+    "r": -0.325,
+    "overlap": 166
+   },
+   "QB-OUT-FADE": {
+    "r": null,
+    "overlap": 4
+   },
+   "QB-OUT-BACK": {
+    "r": null,
+    "overlap": 4
+   },
+   "TOTAL-EDGE-3": {
+    "r": 0.09,
+    "overlap": 271
+   }
+  },
+  "MODEL-EDGE-4": {
+   "MKT-HOME": {
+    "r": 0.145,
+    "overlap": 449
+   },
+   "MKT-FAV": {
+    "r": -0.817,
+    "overlap": 449
+   },
+   "MKT-DOG": {
+    "r": 0.817,
+    "overlap": 449
+   },
+   "MODEL-EDGE-2": {
+    "r": 1.0,
+    "overlap": 449
+   },
+   "MODEL-EDGE-3": {
+    "r": 1.0,
+    "overlap": 449
+   },
+   "MODEL-EDGE-4": {
+    "r": 1.0,
+    "overlap": 449
+   },
+   "REST-GAP-3": {
+    "r": -0.339,
+    "overlap": 94
+   },
+   "QB-OUT-FADE": {
+    "r": null,
+    "overlap": 4
+   },
+   "QB-OUT-BACK": {
+    "r": null,
+    "overlap": 4
+   },
+   "TOTAL-EDGE-3": {
+    "r": 0.072,
+    "overlap": 172
+   }
+  },
+  "REST-GAP-3": {
+   "MKT-HOME": {
+    "r": -0.066,
+    "overlap": 568
+   },
+   "MKT-FAV": {
+    "r": 0.092,
+    "overlap": 568
+   },
+   "MKT-DOG": {
+    "r": -0.092,
+    "overlap": 568
+   },
+   "MODEL-EDGE-2": {
+    "r": -0.307,
+    "overlap": 268
+   },
+   "MODEL-EDGE-3": {
+    "r": -0.325,
+    "overlap": 166
+   },
+   "MODEL-EDGE-4": {
+    "r": -0.339,
+    "overlap": 94
+   },
+   "REST-GAP-3": {
+    "r": 1.0,
+    "overlap": 568
+   },
+   "QB-OUT-FADE": {
+    "r": null,
+    "overlap": 2
+   },
+   "QB-OUT-BACK": {
+    "r": null,
+    "overlap": 2
+   },
+   "TOTAL-EDGE-3": {
+    "r": -0.036,
+    "overlap": 140
+   }
+  },
+  "QB-OUT-FADE": {
+   "MKT-HOME": {
+    "r": null,
+    "overlap": 7
+   },
+   "MKT-FAV": {
+    "r": null,
+    "overlap": 7
+   },
+   "MKT-DOG": {
+    "r": null,
+    "overlap": 7
+   },
+   "MODEL-EDGE-2": {
+    "r": null,
+    "overlap": 4
+   },
+   "MODEL-EDGE-3": {
+    "r": null,
+    "overlap": 4
+   },
+   "MODEL-EDGE-4": {
+    "r": null,
+    "overlap": 4
+   },
+   "REST-GAP-3": {
+    "r": null,
+    "overlap": 2
+   },
+   "QB-OUT-FADE": {
+    "r": null,
+    "overlap": 7
+   },
+   "QB-OUT-BACK": {
+    "r": null,
+    "overlap": 7
+   },
+   "TOTAL-EDGE-3": {
+    "r": null,
+    "overlap": 5
+   }
+  },
+  "QB-OUT-BACK": {
+   "MKT-HOME": {
+    "r": null,
+    "overlap": 7
+   },
+   "MKT-FAV": {
+    "r": null,
+    "overlap": 7
+   },
+   "MKT-DOG": {
+    "r": null,
+    "overlap": 7
+   },
+   "MODEL-EDGE-2": {
+    "r": null,
+    "overlap": 4
+   },
+   "MODEL-EDGE-3": {
+    "r": null,
+    "overlap": 4
+   },
+   "MODEL-EDGE-4": {
+    "r": null,
+    "overlap": 4
+   },
+   "REST-GAP-3": {
+    "r": null,
+    "overlap": 2
+   },
+   "QB-OUT-FADE": {
+    "r": null,
+    "overlap": 7
+   },
+   "QB-OUT-BACK": {
+    "r": null,
+    "overlap": 7
+   },
+   "TOTAL-EDGE-3": {
+    "r": null,
+    "overlap": 5
+   }
+  },
+  "TOTAL-EDGE-3": {
+   "MKT-HOME": {
+    "r": 0.023,
+    "overlap": 757
+   },
+   "MKT-FAV": {
+    "r": -0.028,
+    "overlap": 756
+   },
+   "MKT-DOG": {
+    "r": 0.028,
+    "overlap": 756
+   },
+   "MODEL-EDGE-2": {
+    "r": 0.037,
+    "overlap": 405
+   },
+   "MODEL-EDGE-3": {
+    "r": 0.09,
+    "overlap": 271
+   },
+   "MODEL-EDGE-4": {
+    "r": 0.072,
+    "overlap": 172
+   },
+   "REST-GAP-3": {
+    "r": -0.036,
+    "overlap": 140
+   },
+   "QB-OUT-FADE": {
+    "r": null,
+    "overlap": 5
+   },
+   "QB-OUT-BACK": {
+    "r": null,
+    "overlap": 5
+   },
+   "TOTAL-EDGE-3": {
+    "r": 1.0,
+    "overlap": 774
+   }
+  }
+ },
+ "parlays": [
+  {
+   "legs": [
+    "MODEL-EDGE-3",
+    "MODEL-EDGE-4"
+   ],
+   "pairs": 2015,
+   "joint_win_rate": 0.2883,
+   "independent_assumption": 0.2711,
+   "correlation_gap": 0.0173,
+   "parlay_breakeven_two_legs": 0.2744,
+   "parlay_roi_at_110_empirical": 0.0509,
+   "p_vs_breakeven": 0.1621,
+   "seasons_above_breakeven": "6/10",
+   "leg_game_overlap": 1.0,
+   "gates": {
+    "P1_>=300_pairs": true,
+    "P2_joint_above_breakeven": true,
+    "P3_p_below_bonferroni": false,
+    "P4_70pct_seasons_above": false,
+    "P5_legs_not_nested": false
+   },
+   "validated": false
+  },
+  {
+   "legs": [
+    "MODEL-EDGE-2",
+    "MODEL-EDGE-3"
+   ],
+   "pairs": 5417,
+   "joint_win_rate": 0.2721,
+   "independent_assumption": 0.2612,
+   "correlation_gap": 0.0109,
+   "parlay_breakeven_two_legs": 0.2744,
+   "parlay_roi_at_110_empirical": -0.0083,
+   "p_vs_breakeven": 0.7148,
+   "seasons_above_breakeven": "5/10",
+   "leg_game_overlap": 1.0,
+   "gates": {
+    "P1_>=300_pairs": true,
+    "P2_joint_above_breakeven": false,
+    "P3_p_below_bonferroni": false,
+    "P4_70pct_seasons_above": false,
+    "P5_legs_not_nested": false
+   },
+   "validated": false
+  },
+  {
+   "legs": [
+    "MODEL-EDGE-2",
+    "MODEL-EDGE-4"
+   ],
+   "pairs": 3110,
+   "joint_win_rate": 0.2675,
+   "independent_assumption": 0.2595,
+   "correlation_gap": 0.0081,
+   "parlay_breakeven_two_legs": 0.2744,
+   "parlay_roi_at_110_empirical": -0.025,
+   "p_vs_breakeven": 0.3987,
+   "seasons_above_breakeven": "6/10",
+   "leg_game_overlap": 1.0,
+   "gates": {
+    "P1_>=300_pairs": true,
+    "P2_joint_above_breakeven": false,
+    "P3_p_below_bonferroni": false,
+    "P4_70pct_seasons_above": false,
+    "P5_legs_not_nested": false
+   },
+   "validated": false
+  },
+  {
+   "legs": [
+    "MODEL-EDGE-3",
+    "REST-GAP-3"
+   ],
+   "pairs": 2244,
+   "joint_win_rate": 0.2594,
+   "independent_assumption": 0.2658,
+   "correlation_gap": -0.0064,
+   "parlay_breakeven_two_legs": 0.2744,
+   "parlay_roi_at_110_empirical": -0.0547,
+   "p_vs_breakeven": 0.113,
+   "seasons_above_breakeven": "4/10",
+   "leg_game_overlap": 0.292,
+   "gates": {
+    "P1_>=300_pairs": true,
+    "P2_joint_above_breakeven": false,
+    "P3_p_below_bonferroni": false,
+    "P4_70pct_seasons_above": false,
+    "P5_legs_not_nested": true
+   },
+   "validated": false
+  },
+  {
+   "legs": [
+    "MODEL-EDGE-3",
+    "TOTAL-EDGE-3"
+   ],
+   "pairs": 3309,
+   "joint_win_rate": 0.2475,
+   "independent_assumption": 0.2477,
+   "correlation_gap": -0.0002,
+   "parlay_breakeven_two_legs": 0.2744,
+   "parlay_roi_at_110_empirical": -0.0979,
+   "p_vs_breakeven": 0.0005,
+   "seasons_above_breakeven": "3/10",
+   "leg_game_overlap": 0.35,
+   "gates": {
+    "P1_>=300_pairs": true,
+    "P2_joint_above_breakeven": false,
+    "P3_p_below_bonferroni": true,
+    "P4_70pct_seasons_above": false,
+    "P5_legs_not_nested": true
+   },
+   "validated": false
+  },
+  {
+   "legs": [
+    "MODEL-EDGE-2",
+    "REST-GAP-3"
+   ],
+   "pairs": 3609,
+   "joint_win_rate": 0.2449,
+   "independent_assumption": 0.2544,
+   "correlation_gap": -0.0095,
+   "parlay_breakeven_two_legs": 0.2744,
+   "parlay_roi_at_110_empirical": -0.1073,
+   "p_vs_breakeven": 0.0001,
+   "seasons_above_breakeven": "1/10",
+   "leg_game_overlap": 0.472,
+   "gates": {
+    "P1_>=300_pairs": true,
+    "P2_joint_above_breakeven": false,
+    "P3_p_below_bonferroni": true,
+    "P4_70pct_seasons_above": false,
+    "P5_legs_not_nested": true
+   },
+   "validated": false
+  },
+  {
+   "legs": [
+    "REST-GAP-3",
+    "TOTAL-EDGE-3"
+   ],
+   "pairs": 2274,
+   "joint_win_rate": 0.2423,
+   "independent_assumption": 0.2413,
+   "correlation_gap": 0.0011,
+   "parlay_breakeven_two_legs": 0.2744,
+   "parlay_roi_at_110_empirical": -0.1169,
+   "p_vs_breakeven": 0.0005,
+   "seasons_above_breakeven": "1/10",
+   "leg_game_overlap": 0.246,
+   "gates": {
+    "P1_>=300_pairs": true,
+    "P2_joint_above_breakeven": false,
+    "P3_p_below_bonferroni": true,
+    "P4_70pct_seasons_above": false,
+    "P5_legs_not_nested": true
+   },
+   "validated": false
+  },
+  {
+   "legs": [
+    "MODEL-EDGE-4",
+    "REST-GAP-3"
+   ],
+   "pairs": 1267,
+   "joint_win_rate": 0.2399,
+   "independent_assumption": 0.264,
+   "correlation_gap": -0.0241,
+   "parlay_breakeven_two_legs": 0.2744,
+   "parlay_roi_at_110_empirical": -0.1255,
+   "p_vs_breakeven": 0.0061,
+   "seasons_above_breakeven": "3/10",
+   "leg_game_overlap": 0.209,
+   "gates": {
+    "P1_>=300_pairs": true,
+    "P2_joint_above_breakeven": false,
+    "P3_p_below_bonferroni": false,
+    "P4_70pct_seasons_above": false,
+    "P5_legs_not_nested": true
+   },
+   "validated": false
+  },
+  {
+   "legs": [
+    "MODEL-EDGE-4",
+    "TOTAL-EDGE-3"
+   ],
+   "pairs": 1937,
+   "joint_win_rate": 0.237,
+   "independent_assumption": 0.2461,
+   "correlation_gap": -0.0091,
+   "parlay_breakeven_two_legs": 0.2744,
+   "parlay_roi_at_110_empirical": -0.1364,
+   "p_vs_breakeven": 0.0002,
+   "seasons_above_breakeven": "2/10",
+   "leg_game_overlap": 0.383,
+   "gates": {
+    "P1_>=300_pairs": true,
+    "P2_joint_above_breakeven": false,
+    "P3_p_below_bonferroni": true,
+    "P4_70pct_seasons_above": false,
+    "P5_legs_not_nested": true
+   },
+   "validated": false
+  },
+  {
+   "legs": [
+    "MODEL-EDGE-2",
+    "TOTAL-EDGE-3"
+   ],
+   "pairs": 5245,
+   "joint_win_rate": 0.2315,
+   "independent_assumption": 0.2371,
+   "correlation_gap": -0.0056,
+   "parlay_breakeven_two_legs": 0.2744,
+   "parlay_roi_at_110_empirical": -0.1564,
+   "p_vs_breakeven": 0.0,
+   "seasons_above_breakeven": "0/10",
+   "leg_game_overlap": 0.523,
+   "gates": {
+    "P1_>=300_pairs": true,
+    "P2_joint_above_breakeven": false,
+    "P3_p_below_bonferroni": true,
+    "P4_70pct_seasons_above": false,
+    "P5_legs_not_nested": false
+   },
+   "validated": false
+  }
+ ],
+ "parlays_tested": 10,
+ "parlays_validated": 0,
+ "parlay_gates": [
+  "P1 >= 300 pairs",
+  "P2 joint win rate above two-leg break-even (27.4%)",
+  "P3 p-value below 0.05 / parlays tested",
+  "P4 >= 70% of seasons above break-even",
+  "P5 legs not nested (game overlap <= 50%)"
+ ],
+ "blocked": [
+  {
+   "strategy": "PLAYER-PROP-COMBOS",
+   "reason": "No official NFL source publishes historical player prop prices. Not testable with verified data."
+  },
+  {
+   "strategy": "STARTER-VS-BACKUP-DEPTH",
+   "reason": "Historical depth-chart snapshots are not week-keyed in the available mirror; only the current snapshot is tracked (see injuries page)."
+  }
+ ]
+}

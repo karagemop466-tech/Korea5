@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home · NFL Lines Lab</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="top"><div class="brand"><a href="index.html">NFL Lines Lab</a> <span class="tag">research only</span></div>
+<nav><a href="index.html" class="on">Home</a><a href="executive-summary.html">Executive summary</a><a href="lines-2026.html">Our lines 2026</a><a href="strategies.html">Strategy leaderboard</a><a href="validation.html">Validation gates</a><a href="correlations.html">Correlations &amp; parlays</a><a href="injuries.html">Injuries &amp; depth</a><a href="questions.html">Open questions</a><a href="suggestions.html">Suggestions</a><a href="sources.html">Sources</a><a href="verification.html">Verification</a><a href="flagged.html">Flagged for review</a></nav></header>
+<div class="banner">Research and education only. Not betting advice. Singapore: only Singapore Pools is licensed for remote gambling; taking part in unlicensed remote gambling is an offence (<a href="https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities">GRA</a>).</div>
+<main>
+<section class="hero">
+  <h1>NFL Lines Lab</h1>
+  <p class="lede">Our own NFL line model, tested the way a skeptic would test it: walk-forward, out-of-sample, gated, and compared with the market. Every strategy has to clear the validation gates before it earns any points on the leaderboard.</p>
+  <p class="lede small">Status: <strong>no strategy has passed every gate</strong>, so no rewards are awarded. The model is currently less accurate than the market spread.</p>
+</section>
+<section class="cards">
+  <div class="card"><div class="k">Strategies tested</div><div class="v">10</div><div class="n">single bets, parlays tested separately</div></div>
+  <div class="card"><div class="k">Passing all gates</div><div class="v">0</div><div class="n">0 pass everything except G0 (data provenance)</div></div>
+  <div class="card"><div class="k">Points awarded</div><div class="v">0</div><div class="n">no strategy has passed every gate</div></div>
+  <div class="card"><div class="k">Model MAE 2016–25</div><div class="v">10.17 pts</div><div class="n">market spread MAE 9.79 pts (lower is better)</div></div>
+  <div class="card"><div class="k">Week 10 starters out</div><div class="v">2</div><div class="n">depth slots where a starter is out (current snapshot)</div></div>
+  <div class="card"><div class="k">Open questions</div><div class="v">14</div><div class="n">information still missing</div></div>
+</section>
+<h2>Start here</h2>
+<div class="grid">
+  <a class="tile" href="executive-summary.html"><b>Executive summary</b><span>What we found, in plain language.</span></a>
+  <a class="tile" href="lines-2026.html"><b>Our lines · 2026</b><span>Our projected margin and total for every 2026 game. Market lines left blank (unverified).</span></a>
+  <a class="tile" href="strategies.html"><b>Strategy leaderboard</b><span>Ranked by the lower bound of out-of-sample hit rate. Gates shown.</span></a>
+  <a class="tile" href="validation.html"><b>Validation gates</b><span>The six gates, the tuning, and every pass / fail.</span></a>
+  <a class="tile" href="correlations.html"><b>Correlations & parlays</b><span>How strategies overlap, and what parlays really do.</span></a>
+  <a class="tile" href="injuries.html"><b>Injuries & depth</b><span>Official NFL injury reports, team deficiency counts, starters out with backups.</span></a>
+  <a class="tile" href="questions.html"><b>Open questions</b><span>What we know, what we don't, and how to get each missing piece.</span></a>
+  <a class="tile" href="suggestions.html"><b>Suggestions</b><span>Options for the next step. Nothing is implemented until you choose.</span></a>
+  <a class="tile" href="sources.html"><b>Sources</b><span>Every official and third-party source, with its verification status.</span></a>
+  <a class="tile" href="verification.html"><b>Verification</b><span>Row-by-row checks, spot checks against nfl.com, link checks.</span></a>
+  <a class="tile warn" href="flagged.html"><b>Flagged for review</b><span>Irregularities and unverified items, with links, for your review.</span></a>
+</div>
+<h2>Data freshness</h2>
+<ul>
+  <li>NFL games file (scores, rest, starting QBs, lines): fetched 2026-11-13T13:14:35Z from <a href="https://github.com/nflverse/nfldata" rel="noopener">https://github.com/nflverse/nfldata</a> (archive sha256 <code>ab3bc17f3aa2f43a…</code>).</li>
+  <li>Injury reports: CI fetch 2026-11-13T13:14:07Z from <a href="https://github.com/nflverse/nflverse-data/releases/tag/injuries" rel="noopener">nflverse mirror of NFL injury reports</a>. Latest official week: 10 at <a href="https://www.nfl.com/injuries/league/2026/reg10" rel="noopener">nfl.com</a>.</li>
+  <li>Depth charts: <a href="https://github.com/nflverse/nflverse-data/releases/tag/depth_charts" rel="noopener">nflverse mirror (ESPN-derived, third-party)</a>.</li>
+</ul>
+</main>
+<footer>Part of the <a href="../">Korea5 repository site</a>. Source code and data: <a href="https://github.com/karagemop466-tech/Korea5/tree/arena/1e59465a-korea5/nfl-lab">GitHub branch</a>. Generated 2026-11-13 13:24 UTC.</footer>
+<script src="assets/app.js"></script>
+</body></html>

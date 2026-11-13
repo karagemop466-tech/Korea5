@@ -712,3 +712,56 @@ Root HTML edits are deferred to K11 (final integration step, this session) and l
 Data-fetch network reality: bash can reach only github.com/api.github.com (release-asset redirects are blocked),
 so bulk data comes from `git clone https://github.com/nflverse/nfldata` (committed CSVs) and official NFL.com
 pages are fetched via the Arena fetch tool into `nfl-lab/data/official/` with retrieval timestamps.
+
+### Completion log — session `arena-fb9c9608` (2026-11-13), K1–K11
+
+- **K2 done.** `git clone --depth 1 https://github.com/nflverse/nfldata` @ commit `7aae940b6389125e272dec473765fd063866a4b3`;
+  eight tables copied to `nfl-lab/data/nfldata/` (games 1999–2026, closing/initial/sc lines, standings, teams, win totals, rosters).
+  Provenance registry `nfl-lab/data/sources.json` (tier labels: official / secondary-open-source / market).
+- **K3 done.** Official NFL.com pages fetched live 2026-11-13 via the Arena fetch tool and transcribed with retrieval
+  timestamps: Week 10 injury report (`injuries-2026-w10.json`, 296 player rows / 28 teams / 14 games), Week 10
+  schedule + TNF final (Commanders 24, Giants 21), Week 11 schedule (13 games). Sources:
+  https://www.nfl.com/injuries/ ; https://www.nfl.com/schedules/2026/by-week/week-10/ ;
+  https://www.nfl.com/schedules/2026/by-week/week-11/ ; https://www.nfl.com/games/commanders-at-giants-2026-reg-10 .
+- **K4 done.** Walk-forward margin/pace power ratings (λ=0.10, cap ±18, pace k=3, season shrink 0.55, home advantage 2.07 —
+  tuned on 2016–2019 only) originate spread+total for every 2026 W10/W11 game; board vs market with edges
+  (`nfl-lab/data/derived/lines-2026-w10-w11.json`, page `nfl-lab/lines.html`). Held-out diagnostics: model MAE 10.18 vs
+  market 9.76 (spread), 10.92 vs 10.28 (total) — no edge claimed, banner says so.
+- **K5 done.** Eight strategies walked forward on held-out 2020–2025, flat −110/ML pricing, six gates
+  (`nfl-lab/leaderboard.html`). **Zero strategies qualified** — every ROI 95% CI includes zero
+  (best spread rule −1.98%, market-favorite baseline −2.94% n=1,615). Failed strategies retained; leaderboard
+  points are paper research credit; rewards suspended pending G5 (CLV, needs archived entry quotes) and G6
+  (prospective trial). Bootstrap CI 10,000 resamples, fixed seeds; fully reproducible.
+- **K6 done.** Measured correlation values (`nfl-lab/correlation.html`): Pearson r(margin,total) = +0.0201 (n=6,967),
+  phi(home-covers × over) = +0.0219 (n=2,639), residual σ 13.18 / 13.41 pts; SGP multipliers 0.985×–1.011×
+  (400k seeded sims per scenario); two-leg −110 parlay arithmetic (fair 3.64 vs book +260, EV −1.2% at independence).
+- **K7 done.** Injury & depth tracker (`nfl-lab/injuries.html`): full official report with per-row source links,
+  per-unit availability-pressure index (critical/elevated/watch rule published), QB availability notes with dataset
+  start counts. Depth-chart tier deliberately NOT inferred (flag NFL-K4).
+- **K8 done.** 12 lab pages under `nfl-lab/` + `nfl-lab/assets/lab.css`; shared nav; certainty/honesty banner on
+  every lab page. `nfl-lab/suggestions.html` = dedicated suggestions review board (14 proposals with statuses);
+  `nfl-lab/decisions.html` = decision register (8 questions with have / don't-have / discovery-step).
+- **K9 done.** `research/NFL-LAB-EXECUTIVE-SUMMARY.md`; the shared executive summary
+  (`research/EXECUTIVE-SUMMARY.md`) gained the "NFL Lines Lab — data-driven implementation" section, which flows
+  into `extra/summary.html` on rebuild.
+- **K10 done.** Repo review `nfl-lab/review.html` (R1–R8 with evidence links): all 14 W10 + 13 W11 matchups and
+  kickoffs agree between the official pages fetched today and the committed dataset; TNF final and the 26 printed
+  team records agree (0 mismatches); `spread_line` convention validated against nfldata `DATASETS.md`
+  (+ = home favored; empirically home favorites win 67.5% where spread_line > 0). An initial sign-flip in this
+  build's edge math produced impossible leaderboard numbers (80% cover rates), was caught, and fixed before
+  publication. Flags NFL-K1…K10 published on `nfl-lab/flagged.html`.
+- **K11 done (integration, this session).** Nav integration done in the generators (CI rebuilds root pages, so
+  HTML hand-edits would be clobbered): `scripts/build_site.py` NAV and `tools/build_extra.py` ROOT_NAV gained
+  "NFL Lines Lab"; `tools/build_extra.py` idempotent root-nav pass now also injects the lab link into hand-written
+  root pages (e.g. `nfl-strategy.html`). Full pipeline re-run: `build_events` → `analyze` → `build_site` →
+  `build_extra` → `check_links` (12 pages, 203 local links, 528 external, **0 missing**) → `verify_extra`
+  (**31/31**) → `audit_certainty` (passed) → `nfl-lab` build + `verify_nfl_lab.py` (**20/20**); unit tests OK;
+  `node --check` on both JS files OK; local server smoke test: 15/15 URLs returned 200.
+- **Deviation logged.** One `start_process` preview server (python http.server) used for the smoke test, stopped
+  after. No other deviations: small commits per task, push after each, branch fixed to `arena/fb9c9608-korea5`.
+
+**Sources used this session (all fetched/retrieved 2026-11-13 unless noted):** NFL.com injuries page; NFL.com
+week-10/week-11 schedule pages; official Commanders-Giants game page; nflverse/nfldata GitHub repo (games.csv,
+closing_lines.csv, initial_lines.csv, sc_lines.csv, standings.csv, teams.csv, win_totals.csv, rosters.csv,
+DATASETS.md documentation); nflverse-data release manifests (injuries/depth_charts/snap_counts tags) — release
+assets themselves are fetched only by CI (`.github/workflows/nfl-lab-data.yml`), not from the sandbox.

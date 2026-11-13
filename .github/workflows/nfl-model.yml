@@ -4,7 +4,7 @@ on:
     inputs:
       perm:
         description: "permutations for the deflation gate"
-        default: "60"
+        default: "200"
   push:
     branches: [ 'arena/02f4d067-korea5' ]
     paths:
@@ -33,7 +33,7 @@ jobs:
       - name: fetch full NFL data (not committed; hashed into provenance)
         run: python3 nfl/fetch_data.py --seasons 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 --with-espn
       - name: run model
-        run: python3 nfl/model.py --perm ${{ github.event.inputs.perm || '60' }}
+        run: python3 nfl/model.py --perm ${{ github.event.inputs.perm || '200' }}
       - name: audit + hypotheses + questions
         run: python3 nfl/analyze.py
       - name: leaderboard + site

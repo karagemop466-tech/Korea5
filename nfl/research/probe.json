@@ -1,5 +1,5 @@
 {
-  "generatedUTC": "2026-11-13T13:12:15.461875Z",
+  "generatedUTC": "2026-11-13T13:13:15.303883Z",
   "note": "Raw probe only. No value in this file is published on the site; it exists to prove which official fields are machine-readable.",
   "sources": {
     "nfl_week5": {
@@ -19,7 +19,7 @@
     "nfl_week10": {
       "url": "https://www.nfl.com/schedules/2026/by-week/week-10",
       "httpStatus": 200,
-      "bytes": 2312723,
+      "bytes": 2312722,
       "diagnostics": {
         "rsc_push_blocks": 40,
         "weeklyGameDetails": 2,

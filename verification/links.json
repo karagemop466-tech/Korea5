@@ -1,12 +1,13 @@
 {
- "pages": 12,
- "localLinksChecked": 190,
+ "pages": 20,
+ "localLinksChecked": 336,
  "missing": [],
- "uniqueExternalLinks": 528,
+ "uniqueExternalLinks": 529,
  "externalLinks": [
   "https://calbears.com/sports/football/schedule",
   "https://gostanford.com/sports/football/schedule",
   "https://operations.nfl.com/",
+  "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook",
   "https://operations.nfl.com/the-rules/",
   "https://statsapi.mlb.com/api/v1/schedule",
   "https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2027&amp;gameType=R",

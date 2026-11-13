@@ -76,6 +76,7 @@ def main():
     team_week = defaultdict(lambda: {"Out": 0, "Doubtful": 0, "Questionable": 0,
                                      "by_group": defaultdict(lambda: {"Out": 0, "Doubtful": 0, "Questionable": 0})})
     rows_2026 = []
+    qb_rows = []
     headers_seen = None
     for y in INJ_SEASONS:
         try:
@@ -99,6 +100,13 @@ def main():
             key = (y, int(wk) if wk.isdigit() else wk, team)
             team_week[key][st] += 1
             team_week[key]["by_group"][grp][st] += 1
+            if pos == "QB":
+                qb_rows.append({"season": y, "week": wk, "team": team,
+                                "gsis_id": (r.get("gsis_id") or "").strip(),
+                                "player": (r.get("full_name") or "").strip(),
+                                "report_status": st,
+                                "primary_injury": (r.get("report_primary_injury") or "").strip(),
+                                "source": f"https://www.nfl.com/injuries/league/{y}/reg{wk}" if wk.isdigit() else "https://www.nfl.com/injuries/"})
             if y == 2026:
                 rows_2026.append({
                     "season": y, "week": wk, "team": team,
@@ -124,6 +132,10 @@ def main():
                    "upstream": "https://github.com/nflverse/nflverse-data/releases/tag/injuries",
                    "official_reference": "https://www.nfl.com/injuries/",
                    "rows": tw_out}, f, indent=1)
+    with open(os.path.join(OUT, "injuries-qb-2016-2026.json"), "w") as f:
+        json.dump({"description": "Every QB listed Out, Doubtful or Questionable on the NFL official weekly injury report, 2016-2026 (nflverse mirror). Used to test starting-QB signals.",
+                   "upstream": "https://github.com/nflverse/nflverse-data/releases/tag/injuries",
+                   "rows": qb_rows}, f, indent=1)
     rows_2026.sort(key=lambda r: (int(r["week"]) if str(r["week"]).isdigit() else 99, r["team"], r["position"]))
     with open(os.path.join(OUT, "injuries-2026.json"), "w") as f:
         json.dump({"description": "Row-level 2026 players listed Out, Doubtful or Questionable on the NFL official weekly injury report (via nflverse mirror).",

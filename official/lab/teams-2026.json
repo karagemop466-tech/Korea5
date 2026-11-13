@@ -1,8 +1,9 @@
 {
  "meta": {
   "dataset": "NFL 2026 club registry (official club list embedded on the by-week pages)",
-  "retrievedUTC": "2026-11-13T13:41:06.804604+00:00",
+  "retrievedUTC": "2026-11-13T13:43:34.853318+00:00",
   "clubs": 34,
+  "clubLabelsOnInjuryPage": 28,
   "sourcePages": [
    "https://www.nfl.com/schedules/2026/by-week/week-1"
   ],
@@ -26,7 +27,7 @@
    "abbreviation": "AZ",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "arizona-cardinals",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -37,7 +38,7 @@
    "abbreviation": "ATL",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "atlanta-falcons",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -48,7 +49,7 @@
    "abbreviation": "BAL",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "baltimore-ravens",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -59,7 +60,7 @@
    "abbreviation": "BUF",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "buffalo-bills",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -70,7 +71,7 @@
    "abbreviation": "CAR",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "carolina-panthers",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -92,7 +93,7 @@
    "abbreviation": "CIN",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "cincinnati-bengals",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -103,7 +104,7 @@
    "abbreviation": "CLE",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "cleveland-browns",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -114,7 +115,7 @@
    "abbreviation": "DAL",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "dallas-cowboys",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -136,7 +137,7 @@
    "abbreviation": "DET",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "detroit-lions",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -147,7 +148,7 @@
    "abbreviation": "GB",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "green-bay-packers",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -158,7 +159,7 @@
    "abbreviation": "HOU",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "houston-texans",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -169,7 +170,7 @@
    "abbreviation": "IND",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "indianapolis-colts",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -180,7 +181,7 @@
    "abbreviation": "JAX",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "jacksonville-jaguars",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -191,7 +192,7 @@
    "abbreviation": "KC",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "kansas-city-chiefs",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -202,7 +203,7 @@
    "abbreviation": "LV",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "las-vegas-raiders",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -213,7 +214,7 @@
    "abbreviation": "LAC",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "los-angeles-chargers",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -224,7 +225,7 @@
    "abbreviation": "LAR",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "los-angeles-rams",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -235,7 +236,7 @@
    "abbreviation": "MIA",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "miami-dolphins",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -246,7 +247,7 @@
    "abbreviation": "MIN",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "minnesota-vikings",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -268,7 +269,7 @@
    "abbreviation": "NE",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "new-england-patriots",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -279,7 +280,7 @@
    "abbreviation": "NO",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "new-orleans-saints",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -290,7 +291,7 @@
    "abbreviation": "NYG",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "new-york-giants",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -301,7 +302,7 @@
    "abbreviation": "NYJ",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "new-york-jets",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -323,7 +324,7 @@
    "abbreviation": "PIT",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "pittsburgh-steelers",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -334,7 +335,7 @@
    "abbreviation": "SF",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "san-francisco-49ers",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -345,7 +346,7 @@
    "abbreviation": "SEA",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "seattle-seahawks",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -367,7 +368,7 @@
    "abbreviation": "TEN",
    "conference": "AFC",
    "division": null,
-   "slug": null,
+   "slug": "tennessee-titans",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"
@@ -378,7 +379,7 @@
    "abbreviation": "WAS",
    "conference": "NFC",
    "division": null,
-   "slug": null,
+   "slug": "washington-commanders",
    "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
    "sourceName": "NFL.com club list (embedded schedule payload)",
    "verification": "verified"

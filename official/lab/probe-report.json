@@ -1,7 +1,7 @@
 {
  "meta": {
   "purpose": "Record which official endpoints exist for results / injury / inactive / depth data. Drives the source-availability table on the site. Non-200 answers are findings, not errors.",
-  "retrievedUTC": "2026-11-13T13:41:12.437738+00:00",
+  "retrievedUTC": "2026-11-13T13:43:41.611666+00:00",
   "method": "HTTP GET status from the CI runner (sandbox has no outbound network)"
  },
  "endpoints": [

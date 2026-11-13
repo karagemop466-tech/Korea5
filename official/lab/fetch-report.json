@@ -1,8 +1,8 @@
 {
  "meta": {
   "script": "tools/fetch_nfl_lab.py",
-  "startedUTC": "2026-11-13T13:41:00.393299+00:00",
-  "finishedUTC": "2026-11-13T13:41:12.438618+00:00",
+  "startedUTC": "2026-11-13T13:43:28.233308+00:00",
+  "finishedUTC": "2026-11-13T13:43:41.612673+00:00",
   "python": "3.11.18"
  },
  "counts": {

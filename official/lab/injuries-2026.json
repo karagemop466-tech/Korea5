@@ -1,7 +1,7 @@
 {
  "meta": {
   "dataset": "NFL 2026 official weekly injury report rows (nfl.com/injuries)",
-  "retrievedUTC": "2026-11-13T13:41:06.839221+00:00",
+  "retrievedUTC": "2026-11-13T13:43:34.886174+00:00",
   "rows": 296,
   "perRequest": {
    "current": 296
@@ -101,6 +101,7 @@
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "John Bates",
    "position": "TE",
    "injury": null,
@@ -110,14 +111,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Treylon Burks",
    "position": "WR",
    "injury": null,
@@ -127,14 +129,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Jayden Daniels",
    "position": "QB",
    "injury": null,
@@ -144,14 +147,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Matt Gulbin",
    "position": "C",
    "injury": null,
@@ -161,14 +165,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Chig Okonkwo",
    "position": "TE",
    "injury": null,
@@ -178,14 +183,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Lucas Patrick",
    "position": "C",
    "injury": "Concussion",
@@ -195,14 +201,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Amik Robertson",
    "position": "CB",
    "injury": null,
@@ -212,14 +219,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Shy Tuttle",
    "position": "DT",
    "injury": null,
@@ -229,14 +237,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Colson Yankoff",
    "position": "TE",
    "injury": "Knee",
@@ -246,14 +255,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Abdul Carter",
    "position": "LB",
    "injury": null,
@@ -263,14 +273,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Jermaine Eluemunor",
    "position": "T",
    "injury": null,
@@ -280,14 +291,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Malik Harrison",
    "position": "LB",
    "injury": "Groin",
@@ -297,14 +309,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Colton Hood",
    "position": "CB",
    "injury": null,
@@ -314,14 +327,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Theo Johnson",
    "position": "TE",
    "injury": null,
@@ -331,14 +345,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Charlie Jones",
    "position": "WR",
    "injury": null,
@@ -348,14 +363,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "J.J. McCarthy",
    "position": "QB",
    "injury": null,
@@ -365,14 +381,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Darnell Mooney",
    "position": "WR",
    "injury": null,
@@ -382,14 +399,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Malik Nabers",
    "position": "WR",
    "injury": null,
@@ -399,14 +417,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Cam Skattebo",
    "position": "RB",
    "injury": null,
@@ -416,14 +435,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "THURSDAY, NOVEMBER 12TH",
    "clubSlug": "new-york-giants",
+   "clubLabel": "Giants",
    "player": "Andrew Thomas",
    "position": "T",
    "injury": null,
@@ -433,14 +453,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Giants",
+   "teamAbbr": "NYG",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Ben Brown",
    "position": "C",
    "injury": "Knee",
@@ -450,14 +471,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "A.J. Brown",
    "position": "WR",
    "injury": null,
@@ -467,14 +489,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Kevin Byard",
    "position": "S",
    "injury": null,
@@ -484,14 +507,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Carlton Davis III",
    "position": "CB",
    "injury": "Knee",
@@ -501,14 +525,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Reggie Gilliam",
    "position": "FB",
    "injury": null,
@@ -518,14 +543,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "TreVeyon Henderson",
    "position": "RB",
    "injury": "Illness",
@@ -535,14 +561,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Hunter Henry",
    "position": "TE",
    "injury": null,
@@ -552,14 +579,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Cameron Latu",
    "position": "TE",
    "injury": null,
@@ -569,14 +597,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Drake Maye",
    "position": "QB",
    "injury": null,
@@ -586,14 +615,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Morgan Moses",
    "position": "T",
    "injury": null,
@@ -603,14 +633,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Walter Rouse",
    "position": "T",
    "injury": null,
@@ -620,14 +651,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Brenden Schooler",
    "position": "S",
    "injury": null,
@@ -637,14 +669,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Rhamondre Stevenson",
    "position": "RB",
    "injury": null,
@@ -654,14 +687,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Greg Van Roten",
    "position": "G",
    "injury": null,
@@ -671,14 +705,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": "SUNDAY, NOVEMBER 15TH",
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Charles Woods",
    "position": "CB",
    "injury": null,
@@ -688,14 +723,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Brian Branch",
    "position": "S",
    "injury": null,
@@ -705,14 +741,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Jared Goff",
    "position": "QB",
    "injury": null,
@@ -722,14 +759,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Kerby Joseph",
    "position": "S",
    "injury": "Knee",
@@ -739,14 +777,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Cade Mays",
    "position": "C",
    "injury": "Ankle",
@@ -756,14 +795,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "D.J. Reed",
    "position": "CB",
    "injury": "Hip",
@@ -773,14 +813,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Jacob Saylors",
    "position": "RB",
    "injury": null,
@@ -790,14 +831,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Amon-Ra St. Brown",
    "position": "WR",
    "injury": null,
@@ -807,14 +849,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "Sione Vaki",
    "position": "RB",
    "injury": null,
@@ -824,14 +867,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "detroit-lions",
+   "clubLabel": "Lions",
    "player": "DJ Wonnum",
    "position": "DE",
    "injury": null,
@@ -841,14 +885,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Jeffrey Bassa",
    "position": "LB",
    "injury": null,
@@ -858,14 +903,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Mansoor Delane",
    "position": "CB",
    "injury": null,
@@ -875,14 +921,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Justin Fields",
    "position": "QB",
    "injury": null,
@@ -892,14 +939,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Jaden Hicks",
    "position": "S",
    "injury": null,
@@ -909,14 +957,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Travis Kelce",
    "position": "TE",
    "injury": null,
@@ -926,14 +975,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Patrick Mahomes",
    "position": "QB",
    "injury": null,
@@ -943,14 +993,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Jaylon Moore",
    "position": "T",
    "injury": null,
@@ -960,14 +1011,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Omarr Norman-Lott",
    "position": "DT",
    "injury": null,
@@ -977,14 +1029,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Jaydn Ott",
    "position": "RB",
    "injury": null,
@@ -994,14 +1047,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Rashee Rice",
    "position": "WR",
    "injury": null,
@@ -1011,14 +1065,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Peter Woods",
    "position": "DT",
    "injury": null,
@@ -1028,14 +1083,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Xavier Worthy",
    "position": "WR",
    "injury": null,
@@ -1045,14 +1101,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Zachariah Branch",
    "position": "WR",
    "injury": null,
@@ -1062,14 +1119,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Kendal Daniels",
    "position": "LB",
    "injury": null,
@@ -1079,14 +1137,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Divine Deablo",
    "position": "LB",
    "injury": null,
@@ -1096,14 +1155,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Gervon Dexter Sr.",
    "position": "DT",
    "injury": null,
@@ -1113,14 +1173,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "James Pearce Jr.",
    "position": "DE",
    "injury": null,
@@ -1130,14 +1191,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Za'Darius Smith",
    "position": "DE",
    "injury": null,
@@ -1147,14 +1209,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Jawaan Taylor",
    "position": "T",
    "injury": null,
@@ -1164,14 +1227,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Cameron Thomas",
    "position": "DE",
    "injury": null,
@@ -1181,14 +1245,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "atlanta-falcons",
+   "clubLabel": "Falcons",
    "player": "Josh Woods",
    "position": "LB",
    "injury": null,
@@ -1198,14 +1263,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Atlanta Falcons",
+   "teamAbbr": "ATL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Blake Cashman",
    "position": "LB",
    "injury": null,
@@ -1215,14 +1281,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "T.J. Hockenson",
    "position": "TE",
    "injury": null,
@@ -1232,14 +1299,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Tyrion Ingram-Dawkins",
    "position": "DT",
    "injury": null,
@@ -1249,14 +1317,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Theo Jackson",
    "position": "S",
    "injury": null,
@@ -1266,14 +1335,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Jauan Jennings",
    "position": "WR",
    "injury": null,
@@ -1283,14 +1353,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Kyler Murray",
    "position": "QB",
    "injury": null,
@@ -1300,14 +1371,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Kyle Van Noy",
    "position": "LB",
    "injury": null,
@@ -1317,14 +1389,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Jay Ward",
    "position": "S",
    "injury": null,
@@ -1334,14 +1407,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Carson Wentz",
    "position": "QB",
    "injury": null,
@@ -1351,14 +1425,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Aaron Banks",
    "position": "G",
    "injury": null,
@@ -1368,14 +1443,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Chris Brooks",
    "position": "RB",
    "injury": null,
@@ -1385,14 +1461,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Javon Bullard",
    "position": "S",
    "injury": null,
@@ -1402,14 +1479,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Zaire Franklin",
    "position": "LB",
    "injury": null,
@@ -1419,14 +1497,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Travis Glover",
    "position": "G",
    "injury": null,
@@ -1436,14 +1515,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Ty'Ron Hopper",
    "position": "LB",
    "injury": null,
@@ -1453,14 +1533,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Josh Jacobs",
    "position": "RB",
    "injury": null,
@@ -1470,14 +1551,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Bo Melton",
    "position": "WR",
    "injury": null,
@@ -1487,14 +1569,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Skyy Moore",
    "position": "WR",
    "injury": null,
@@ -1504,14 +1587,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Micah Parsons",
    "position": "LB",
    "injury": null,
@@ -1521,14 +1605,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Sean Rhyan",
    "position": "C",
    "injury": null,
@@ -1538,14 +1623,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Trey Smack",
    "position": "K",
    "injury": null,
@@ -1555,14 +1641,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Lukas Van Ness",
    "position": "LB",
    "injury": null,
@@ -1572,14 +1659,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Josh Whyle",
    "position": "TE",
    "injury": null,
@@ -1589,14 +1677,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Savion Williams",
    "position": "WR",
    "injury": null,
@@ -1606,14 +1695,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "green-bay-packers",
+   "clubLabel": "Packers",
    "player": "Kevin Zeitler",
    "position": "G",
    "injury": null,
@@ -1623,14 +1713,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Jessie Bates",
    "position": "S",
    "injury": null,
@@ -1640,14 +1731,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Ezra Cleveland",
    "position": "G",
    "injury": null,
@@ -1657,14 +1749,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Branson Combs",
    "position": "LB",
    "injury": null,
@@ -1674,14 +1767,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Jordan Davis",
    "position": "DT",
    "injury": null,
@@ -1691,14 +1785,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "BJ Green II",
    "position": "DE",
    "injury": null,
@@ -1708,14 +1803,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Robert Hainsey",
    "position": "C",
    "injury": null,
@@ -1725,14 +1821,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Antonio Johnson",
    "position": "S",
    "injury": null,
@@ -1742,14 +1839,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Jakobi Meyers",
    "position": "WR",
    "injury": null,
@@ -1759,14 +1857,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Chris Rodriguez Jr.",
    "position": "RB",
    "injury": null,
@@ -1776,14 +1875,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Bhayshul Tuten",
    "position": "RB",
    "injury": null,
@@ -1793,14 +1893,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Travon Walker",
    "position": "DE",
    "injury": null,
@@ -1810,14 +1911,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Cody Barton",
    "position": "LB",
    "injury": null,
@@ -1827,14 +1929,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "John Franklin-Myers",
    "position": "DE",
    "injury": null,
@@ -1844,14 +1947,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Marcus Harris",
    "position": "CB",
    "injury": null,
@@ -1861,14 +1965,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Anthony Hill Jr.",
    "position": "LB",
    "injury": null,
@@ -1878,14 +1983,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Jaylon Jones",
    "position": "CB",
    "injury": null,
@@ -1895,14 +2001,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "JC Latham",
    "position": "T",
    "injury": null,
@@ -1912,14 +2019,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Tony Pollard",
    "position": "RB",
    "injury": null,
@@ -1929,14 +2037,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Peter Skoronski",
    "position": "G",
    "injury": null,
@@ -1946,14 +2055,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Tyjae Spears",
    "position": "RB",
    "injury": null,
@@ -1963,14 +2073,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Carnell Tate",
    "position": "WR",
    "injury": null,
@@ -1980,14 +2091,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Tommy Townsend",
    "position": "P",
    "injury": null,
@@ -1997,14 +2109,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "tennessee-titans",
+   "clubLabel": "Titans",
    "player": "Kevin Winston Jr.",
    "position": "S",
    "injury": null,
@@ -2014,14 +2127,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Tennessee Titans",
+   "teamAbbr": "TEN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Alec Anderson",
    "position": "G",
    "injury": null,
@@ -2031,14 +2145,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Christian Benford",
    "position": "CB",
    "injury": null,
@@ -2048,14 +2163,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Spencer Brown",
    "position": "T",
    "injury": null,
@@ -2065,14 +2181,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Dion Dawkins",
    "position": "T",
    "injury": null,
@@ -2082,14 +2199,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Sam Franklin Jr.",
    "position": "S",
    "injury": null,
@@ -2099,14 +2217,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Greg Gaines",
    "position": "DT",
    "injury": null,
@@ -2116,14 +2235,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Jordan Hancock",
    "position": "CB",
    "injury": null,
@@ -2133,14 +2253,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Dalton Kincaid",
    "position": "TE",
    "injury": null,
@@ -2150,14 +2271,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Connor McGovern",
    "position": "C",
    "injury": null,
@@ -2167,14 +2289,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Ar'maj Reed-Adams",
    "position": "G",
    "injury": null,
@@ -2184,14 +2307,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "T.J. Sanders",
    "position": "DE",
    "injury": null,
@@ -2201,14 +2325,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Tyrell Shavers",
    "position": "WR",
    "injury": null,
@@ -2218,14 +2343,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Jarvis Brownlee Jr.",
    "position": "CB",
    "injury": null,
@@ -2235,14 +2361,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Omar Cooper Jr.",
    "position": "WR",
    "injury": null,
@@ -2252,14 +2379,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Joseph Ossai",
    "position": "DE",
    "injury": null,
@@ -2269,14 +2397,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "VJ Payne",
    "position": "S",
    "injury": null,
@@ -2286,14 +2415,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Harrison Phillips",
    "position": "DT",
    "injury": null,
@@ -2303,14 +2433,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Trevin Wallace",
    "position": "LB",
    "injury": null,
@@ -2320,14 +2451,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Garrett Wilson",
    "position": "WR",
    "injury": null,
@@ -2337,14 +2469,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-york-jets",
+   "clubLabel": "Jets",
    "player": "Nahshon Wright",
    "position": "CB",
    "injury": null,
@@ -2354,14 +2487,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New York Jets",
+   "teamAbbr": "NYJ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Tucker Addington",
    "position": "LS",
    "injury": null,
@@ -2371,14 +2505,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Kaytron Allen",
    "position": "RB",
    "injury": null,
@@ -2388,14 +2523,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Darrell Baker Jr.",
    "position": "CB",
    "injury": null,
@@ -2405,14 +2541,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Chris Bell",
    "position": "WR",
    "injury": null,
@@ -2422,14 +2559,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Aaron Brewer",
    "position": "C",
    "injury": null,
@@ -2439,14 +2577,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Malik Herring",
    "position": "DE",
    "injury": null,
@@ -2456,14 +2595,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Will Kacmarek",
    "position": "TE",
    "injury": null,
@@ -2473,14 +2613,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Michael Taaffe",
    "position": "S",
    "injury": null,
@@ -2490,14 +2631,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Dante Trader Jr.",
    "position": "S",
    "injury": null,
@@ -2507,14 +2649,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Jared Wayne",
    "position": "WR",
    "injury": null,
@@ -2524,14 +2667,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Jaylen Wright",
    "position": "RB",
    "injury": null,
@@ -2541,14 +2685,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Mo Alie-Cox",
    "position": "TE",
    "injury": null,
@@ -2558,14 +2703,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "CJ Allen",
    "position": "LB",
    "injury": null,
@@ -2575,14 +2721,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Jaylon Carlies",
    "position": "LB",
    "injury": null,
@@ -2592,14 +2739,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Akeem Davis-Gaither",
    "position": "LB",
    "injury": null,
@@ -2609,14 +2757,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "A.J. Haulcy",
    "position": "S",
    "injury": null,
@@ -2626,14 +2775,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Arden Key",
    "position": "DE",
    "injury": null,
@@ -2643,14 +2793,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Luke Rhodes",
    "position": "LS",
    "injury": null,
@@ -2660,14 +2811,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Grover Stewart",
    "position": "DT",
    "injury": null,
@@ -2677,14 +2829,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Jonathan Taylor",
    "position": "RB",
    "injury": null,
@@ -2694,14 +2847,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Jerry Tillery",
    "position": "DT",
    "injury": null,
@@ -2711,14 +2865,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Jalen Travis",
    "position": "T",
    "injury": null,
@@ -2728,14 +2883,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Justin Walley",
    "position": "CB",
    "injury": null,
@@ -2745,14 +2901,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "indianapolis-colts",
+   "clubLabel": "Colts",
    "player": "Charvarius Ward",
    "position": "CB",
    "injury": null,
@@ -2762,14 +2919,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Jonathon Brooks",
    "position": "RB",
    "injury": null,
@@ -2779,14 +2937,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Brady Christensen",
    "position": "G",
    "injury": null,
@@ -2796,14 +2955,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Trevor Etienne",
    "position": "RB",
    "injury": null,
@@ -2813,14 +2973,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Chuba Hubbard",
    "position": "RB",
    "injury": null,
@@ -2830,14 +2991,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Lee Hunter",
    "position": "DT",
    "injury": null,
@@ -2847,14 +3009,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Mike Jackson",
    "position": "CB",
    "injury": null,
@@ -2864,14 +3027,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Will Lee III",
    "position": "CB",
    "injury": null,
@@ -2881,14 +3045,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Xavier Legette",
    "position": "WR",
    "injury": null,
@@ -2898,14 +3063,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Damien Lewis",
    "position": "G",
    "injury": null,
@@ -2915,14 +3081,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Bobby Okereke",
    "position": "LB",
    "injury": null,
@@ -2932,14 +3099,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Jaelan Phillips",
    "position": "LB",
    "injury": null,
@@ -2949,14 +3117,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Torricelli Simpkins III",
    "position": "G",
    "injury": null,
@@ -2966,14 +3135,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Kelvin Banks Jr.",
    "position": "T",
    "injury": null,
@@ -2983,14 +3153,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "CJ Donaldson",
    "position": "RB",
    "injury": null,
@@ -3000,14 +3171,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "David Edwards",
    "position": "G",
    "injury": null,
@@ -3017,14 +3189,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Martin Emerson",
    "position": "CB",
    "injury": null,
@@ -3034,14 +3207,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Travis Etienne",
    "position": "RB",
    "injury": null,
@@ -3051,14 +3225,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Noah Fant",
    "position": "TE",
    "injury": null,
@@ -3068,14 +3243,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Taliese Fuaga",
    "position": "T",
    "injury": null,
@@ -3085,14 +3261,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Alvin Kamara",
    "position": "RB",
    "injury": null,
@@ -3102,14 +3279,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Erik McCoy",
    "position": "C",
    "injury": null,
@@ -3119,14 +3297,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Christen Miller",
    "position": "DT",
    "injury": null,
@@ -3136,14 +3315,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Asim Richards",
    "position": "T",
    "injury": null,
@@ -3153,14 +3333,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "new-orleans-saints",
+   "clubLabel": "Saints",
    "player": "Quincy Riley",
    "position": "CB",
    "injury": null,
@@ -3170,14 +3351,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Azeez Al-Shaair",
    "position": "LB",
    "injury": null,
@@ -3187,14 +3369,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Reed Blankenship",
    "position": "S",
    "injury": null,
@@ -3204,14 +3387,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Tank Dell",
    "position": "WR",
    "injury": null,
@@ -3221,14 +3405,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Blake Fisher",
    "position": "T",
    "injury": null,
@@ -3238,14 +3423,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Marvin Harrison Jr.",
    "position": "WR",
    "injury": null,
@@ -3255,14 +3441,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Jacob Hummel",
    "position": "LB",
    "injury": null,
@@ -3272,14 +3459,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Brevin Jordan",
    "position": "TE",
    "injury": null,
@@ -3289,14 +3477,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Woody Marks",
    "position": "RB",
    "injury": null,
@@ -3306,14 +3495,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "David Montgomery",
    "position": "RB",
    "injury": null,
@@ -3323,14 +3513,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Keylan Rutledge",
    "position": "G",
    "injury": null,
@@ -3340,14 +3531,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Jaylin Smith",
    "position": "CB",
    "injury": null,
@@ -3357,14 +3549,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Wyatt Teller",
    "position": "G",
    "injury": null,
@@ -3374,14 +3567,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Tommy Togiai",
    "position": "DT",
    "injury": null,
@@ -3391,14 +3585,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Austin Barber",
    "position": "T",
    "injury": null,
@@ -3408,14 +3603,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Denzel Boston",
    "position": "WR",
    "injury": null,
@@ -3425,14 +3621,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Michael Burton",
    "position": "FB",
    "injury": null,
@@ -3442,14 +3639,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Maliek Collins",
    "position": "DT",
    "injury": null,
@@ -3459,14 +3657,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Harold Fannin Jr.",
    "position": "TE",
    "injury": null,
@@ -3476,14 +3675,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Ronnie Hickman Jr.",
    "position": "S",
    "injury": null,
@@ -3493,14 +3693,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Tytus Howard",
    "position": "T",
    "injury": null,
@@ -3510,14 +3711,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Elgton Jenkins",
    "position": "C",
    "injury": null,
@@ -3527,14 +3729,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Donovan McMillon",
    "position": "S",
    "injury": null,
@@ -3544,14 +3747,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Carson Schwesinger",
    "position": "LB",
    "injury": null,
@@ -3561,14 +3765,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Denzel Ward",
    "position": "CB",
    "injury": null,
@@ -3578,14 +3783,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cleveland-browns",
+   "clubLabel": "Browns",
    "player": "Quincy Williams",
    "position": "LB",
    "injury": null,
@@ -3595,14 +3801,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Davis Allen",
    "position": "TE",
    "injury": null,
@@ -3612,14 +3819,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Steve Avila",
    "position": "G",
    "injury": null,
@@ -3629,14 +3837,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Joe Cardona",
    "position": "LS",
    "injury": null,
@@ -3646,14 +3855,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Kam Curl",
    "position": "S",
    "injury": null,
@@ -3663,14 +3873,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Terrance Ferguson",
    "position": "TE",
    "injury": null,
@@ -3680,14 +3891,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Myles Garrett",
    "position": "LB",
    "injury": null,
@@ -3697,14 +3909,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Trent McDuffie",
    "position": "CB",
    "injury": null,
@@ -3714,14 +3927,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Puka Nacua",
    "position": "WR",
    "injury": null,
@@ -3731,14 +3945,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Colby Parkinson",
    "position": "TE",
    "injury": null,
@@ -3748,14 +3963,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Matthew Stafford",
    "position": "QB",
    "injury": null,
@@ -3765,14 +3981,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Budda Baker",
    "position": "S",
    "injury": null,
@@ -3782,14 +3999,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Zachary Carter",
    "position": "DT",
    "injury": null,
@@ -3799,14 +4017,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Hjalte Froholdt",
    "position": "C",
    "injury": null,
@@ -3816,14 +4035,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Jon Gaines II",
    "position": "G",
    "injury": null,
@@ -3833,14 +4053,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Bam Knight",
    "position": "RB",
    "injury": null,
@@ -3850,14 +4071,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Hunter Long",
    "position": "TE",
    "injury": null,
@@ -3867,14 +4089,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Roy Lopez",
    "position": "DT",
    "injury": null,
@@ -3884,14 +4107,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Max Melton",
    "position": "CB",
    "injury": null,
@@ -3901,14 +4125,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Darius Robinson",
    "position": "DT",
    "injury": null,
@@ -3918,14 +4143,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Isaac Seumalo",
    "position": "G",
    "injury": null,
@@ -3935,14 +4161,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Dante Stills",
    "position": "DT",
    "injury": null,
@@ -3952,14 +4179,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Josh Sweat",
    "position": "LB",
    "injury": null,
@@ -3969,14 +4197,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Jayden Williams",
    "position": "T",
    "injury": null,
@@ -3986,14 +4215,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Mack Wilson",
    "position": "LB",
    "injury": null,
@@ -4003,14 +4233,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "arizona-cardinals",
+   "clubLabel": "Cardinals",
    "player": "Andrew Wingard",
    "position": "S",
    "injury": null,
@@ -4020,14 +4251,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "AJ Barner",
    "position": "TE",
    "injury": null,
@@ -4037,14 +4269,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Anthony Bradford",
    "position": "G",
    "injury": null,
@@ -4054,14 +4287,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Charles Cross",
    "position": "T",
    "injury": null,
@@ -4071,14 +4305,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Sam Darnold",
    "position": "QB",
    "injury": null,
@@ -4088,14 +4323,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Derick Hall",
    "position": "LB",
    "injury": null,
@@ -4105,14 +4341,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Drew Lock",
    "position": "QB",
    "injury": null,
@@ -4122,14 +4359,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Quenton Nelson",
    "position": "G",
    "injury": null,
@@ -4139,14 +4377,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Uchenna Nwosu",
    "position": "LB",
    "injury": null,
@@ -4156,14 +4395,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Patrick O'Connell",
    "position": "LB",
    "injury": null,
@@ -4173,14 +4413,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Connor O'Toole",
    "position": "LB",
    "injury": null,
@@ -4190,14 +4431,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Brandon Pili",
    "position": "DT",
    "injury": null,
@@ -4207,14 +4449,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Jarran Reed",
    "position": "DT",
    "injury": null,
@@ -4224,14 +4467,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Rashid Shaheed",
    "position": "WR",
    "injury": null,
@@ -4241,14 +4485,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Jaxon Smith-Njigba",
    "position": "WR",
    "injury": null,
@@ -4258,14 +4503,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Leonard Williams",
    "position": "DT",
    "injury": null,
@@ -4275,14 +4521,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Thomas Booker",
    "position": "DT",
    "injury": null,
@@ -4292,14 +4539,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Foley Fatukasi",
    "position": "DT",
    "injury": null,
@@ -4309,14 +4557,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Ian Thomas",
    "position": "TE",
    "injury": null,
@@ -4326,14 +4575,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "las-vegas-raiders",
+   "clubLabel": "Raiders",
    "player": "Trey Zuhn III",
    "position": "C",
    "injury": null,
@@ -4343,14 +4593,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Mike Evans",
    "position": "WR",
    "injury": null,
@@ -4360,14 +4611,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Renardo Green",
    "position": "CB",
    "injury": null,
@@ -4377,14 +4629,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Dre Greenlaw",
    "position": "LB",
    "injury": null,
@@ -4394,14 +4647,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Nate Hobbs",
    "position": "CB",
    "injury": null,
@@ -4411,14 +4665,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Deommodore Lenoir",
    "position": "CB",
    "injury": null,
@@ -4428,14 +4683,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Christian McCaffrey",
    "position": "RB",
    "injury": null,
@@ -4445,14 +4701,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Siran Neal",
    "position": "S",
    "injury": null,
@@ -4462,14 +4719,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Demarcus Robinson",
    "position": "WR",
    "injury": null,
@@ -4479,14 +4737,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Deebo Samuel Sr.",
    "position": "WR",
    "injury": null,
@@ -4496,14 +4755,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Upton Stout",
    "position": "CB",
    "injury": null,
@@ -4513,14 +4773,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "C.J. West",
    "position": "DT",
    "injury": null,
@@ -4530,14 +4791,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Trent Williams",
    "position": "T",
    "injury": null,
@@ -4547,14 +4809,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Jonathan Bullard",
    "position": "DT",
    "injury": null,
@@ -4564,14 +4827,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Alijah Clark",
    "position": "S",
    "injury": null,
@@ -4581,14 +4845,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Donovan Ezeiruaku",
    "position": "LB",
    "injury": null,
@@ -4598,14 +4863,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Jake Ferguson",
    "position": "TE",
    "injury": null,
@@ -4615,14 +4881,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Tyler Goodson",
    "position": "RB",
    "injury": null,
@@ -4632,14 +4899,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Malik Hooker",
    "position": "S",
    "injury": null,
@@ -4649,14 +4917,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Marist Liufau",
    "position": "LB",
    "injury": null,
@@ -4666,14 +4935,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "P.J. Locke",
    "position": "S",
    "injury": null,
@@ -4683,14 +4953,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Von Miller",
    "position": "LB",
    "injury": null,
@@ -4700,14 +4971,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Jonathan Mingo",
    "position": "WR",
    "injury": null,
@@ -4717,14 +4989,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Devin Moore",
    "position": "CB",
    "injury": null,
@@ -4734,14 +5007,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "DeMarvion Overshown",
    "position": "LB",
    "injury": null,
@@ -4751,14 +5025,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "George Pickens",
    "position": "WR",
    "injury": null,
@@ -4768,14 +5043,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Joey Porter Jr.",
    "position": "CB",
    "injury": null,
@@ -4785,14 +5061,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Luke Schoonmaker",
    "position": "TE",
    "injury": null,
@@ -4802,14 +5079,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Brevyn Spann-Ford",
    "position": "TE",
    "injury": null,
@@ -4819,14 +5097,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "Juanyeh Thomas",
    "position": "S",
    "injury": null,
@@ -4836,14 +5115,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "dallas-cowboys",
+   "clubLabel": "Cowboys",
    "player": "KaVontae Turpin",
    "position": "WR",
    "injury": null,
@@ -4853,14 +5133,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "Brandin Echols",
    "position": "CB",
    "injury": null,
@@ -4870,14 +5151,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "DeShon Elliott",
    "position": "S",
    "injury": null,
@@ -4887,14 +5169,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "Derrick Harmon",
    "position": "DT",
    "injury": null,
@@ -4904,14 +5187,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "Cameron Heyward",
    "position": "DT",
    "injury": null,
@@ -4921,14 +5205,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "Ben Skowronek",
    "position": "WR",
    "injury": null,
@@ -4938,14 +5223,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "Doneiko Slaughter",
    "position": "CB",
    "injury": null,
@@ -4955,14 +5241,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "Darnell Washington",
    "position": "TE",
    "injury": null,
@@ -4972,14 +5259,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "T.J. Watt",
    "position": "LB",
    "injury": null,
@@ -4989,14 +5277,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "Jonathan Allen",
    "position": "DT",
    "injury": null,
@@ -5006,14 +5295,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "Jalen Davis",
    "position": "CB",
    "injury": null,
@@ -5023,14 +5313,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "Kyle Dugger",
    "position": "S",
    "injury": null,
@@ -5040,14 +5331,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "Dylan Fairchild",
    "position": "G",
    "injury": null,
@@ -5057,14 +5349,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "B.J. Hill",
    "position": "DT",
    "injury": null,
@@ -5074,14 +5367,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "Andrei Iosivas",
    "position": "WR",
    "injury": null,
@@ -5091,14 +5385,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "Brian Parker II",
    "position": "G",
    "injury": null,
@@ -5108,14 +5403,15 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   },
   {
    "label": "current",
    "section": null,
    "clubSlug": "cincinnati-bengals",
+   "clubLabel": "Bengals",
    "player": "DJ Turner II",
    "position": "CB",
    "injury": null,
@@ -5125,9 +5421,9 @@
    "sourceUrl": "https://www.nfl.com/injuries/",
    "sourceName": "NFL.com official injury report (page table)",
    "verification": "verified",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoinSource": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoinSource": "https://www.nfl.com/schedules/2026/by-week/week-1"
   }
  ]
 }

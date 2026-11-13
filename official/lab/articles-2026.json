@@ -1,7 +1,7 @@
 {
  "meta": {
   "dataset": "NFL.com official news articles for weekly injury reports and game-day inactives",
-  "retrievedUTC": "2026-11-13T13:41:11.092105+00:00",
+  "retrievedUTC": "2026-11-13T13:43:39.795229+00:00",
   "rows": 413,
   "pagesParsed": 11,
   "linksDiscovered": [
@@ -22,18 +22,18 @@
   "failures": [
    {
     "url": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
-    "bytes": 900085,
+    "bytes": 899989,
     "playerLinks": 3,
-    "liTags": 526,
+    "liTags": 521,
     "payloads": 1,
     "firstPlayerLinkContext": "=\"\"><span class=\"border-b border-b-transparent group-hover/link:border-b-black dark:group-hover/link:border-b-white\">All Teams</span></a></li><li class=\"\"><a class=\"group/link flex items-center gap-0.5 body-2-sans text-black dark:text-white\" data-analytics=\"{&quot;linkModule&quot;:&quot;Main Navigation&quot;,&quot;linkName&quot;:&quot;Players&quot;,&quot;linkPosition&quot;:&quot;2:4&quot;}\" href=\"/players/\" target=\"_self\" data-headlessui-state=\"\"><span class=\"border-b border-b-transparent group-hover/link:border-b-black dark:group-hover/link:border-b-white\">Players</span></a></li><li class=\"\"><a class=\"group/link flex items-center gap-0.5 body-2-sans text-black dark:text-white\" data-analytics=\"{&quot;linkModule&quot;:&quot;Main Navigation&quot;,&quot;linkName&quot;:&quot;Standings&quot;,&q",
     "reason": "no player link parsed"
    },
    {
     "url": "https://www.nfl.com/news/nfl-week-8-inactives-players-ruled-out-sunday-2026-season",
-    "bytes": 884262,
+    "bytes": 884168,
     "playerLinks": 3,
-    "liTags": 513,
+    "liTags": 508,
     "payloads": 1,
     "firstPlayerLinkContext": "=\"\"><span class=\"border-b border-b-transparent group-hover/link:border-b-black dark:group-hover/link:border-b-white\">All Teams</span></a></li><li class=\"\"><a class=\"group/link flex items-center gap-0.5 body-2-sans text-black dark:text-white\" data-analytics=\"{&quot;linkModule&quot;:&quot;Main Navigation&quot;,&quot;linkName&quot;:&quot;Players&quot;,&quot;linkPosition&quot;:&quot;2:4&quot;}\" href=\"/players/\" target=\"_self\" data-headlessui-state=\"\"><span class=\"border-b border-b-transparent group-hover/link:border-b-black dark:group-hover/link:border-b-white\">Players</span></a></li><li class=\"\"><a class=\"group/link flex items-center gap-0.5 body-2-sans text-black dark:text-white\" data-analytics=\"{&quot;linkModule&quot;:&quot;Main Navigation&quot;,&quot;linkName&quot;:&quot;Standings&quot;,&q",
     "reason": "no player link parsed"
@@ -300,9 +300,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -316,9 +316,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Chicago Bears",
+   "teamAbbr": "CHI",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -332,9 +332,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Chicago Bears",
+   "teamAbbr": "CHI",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -348,9 +348,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -364,9 +364,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -380,9 +380,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Denver Broncos",
+   "teamAbbr": "DEN",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -396,9 +396,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Denver Broncos",
+   "teamAbbr": "DEN",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -412,9 +412,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -428,9 +428,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Green Bay Packers",
+   "teamAbbr": "GB",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -444,9 +444,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -460,9 +460,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Indianapolis Colts",
+   "teamAbbr": "IND",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -476,9 +476,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Kansas City Chiefs",
+   "teamAbbr": "KC",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -492,9 +492,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Kansas City Chiefs",
+   "teamAbbr": "KC",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -508,9 +508,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Kansas City Chiefs",
+   "teamAbbr": "KC",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -524,9 +524,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -540,9 +540,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Los Angeles Chargers",
+   "teamAbbr": "LAC",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -556,9 +556,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Los Angeles Chargers",
+   "teamAbbr": "LAC",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -572,9 +572,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Los Angeles Chargers",
+   "teamAbbr": "LAC",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -588,9 +588,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Los Angeles Chargers",
+   "teamAbbr": "LAC",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -604,9 +604,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Los Angeles Chargers",
+   "teamAbbr": "LAC",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -620,9 +620,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Los Angeles Rams",
+   "teamAbbr": "LAR",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -636,9 +636,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Los Angeles Rams",
+   "teamAbbr": "LAR",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -652,9 +652,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Miami Dolphins",
+   "teamAbbr": "MIA",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -668,9 +668,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "New England Patriots",
+   "teamAbbr": "NE",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -684,9 +684,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "New England Patriots",
+   "teamAbbr": "NE",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -700,9 +700,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "New England Patriots",
+   "teamAbbr": "NE",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -716,9 +716,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "New England Patriots",
+   "teamAbbr": "NE",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -732,9 +732,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "New England Patriots",
+   "teamAbbr": "NE",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -748,9 +748,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "New Orleans Saints",
+   "teamAbbr": "NO",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -764,9 +764,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Philadelphia Eagles",
+   "teamAbbr": "PHI",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -780,9 +780,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "San Francisco 49ers",
+   "teamAbbr": "SF",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -796,9 +796,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "San Francisco 49ers",
+   "teamAbbr": "SF",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -812,9 +812,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "San Francisco 49ers",
+   "teamAbbr": "SF",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -828,9 +828,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Seattle Seahawks",
+   "teamAbbr": "SEA",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -844,9 +844,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Tampa Bay Buccaneers",
+   "teamAbbr": "TB",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -860,9 +860,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Washington Commanders",
+   "teamAbbr": "WAS",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3516,9 +3516,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Jacksonville Jaguars",
+   "teamAbbr": "JAX",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": "RELATED CONTENT",
@@ -3580,9 +3580,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3596,9 +3596,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3612,9 +3612,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3628,9 +3628,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3644,9 +3644,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3660,9 +3660,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Arizona Cardinals",
+   "teamAbbr": "AZ",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3676,9 +3676,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Baltimore Ravens",
+   "teamAbbr": "BAL",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3692,9 +3692,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Baltimore Ravens",
+   "teamAbbr": "BAL",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3708,9 +3708,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Buffalo Bills",
+   "teamAbbr": "BUF",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3724,9 +3724,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3740,9 +3740,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Cincinnati Bengals",
+   "teamAbbr": "CIN",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3756,9 +3756,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Cleveland Browns",
+   "teamAbbr": "CLE",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3772,9 +3772,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3788,9 +3788,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3804,9 +3804,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Dallas Cowboys",
+   "teamAbbr": "DAL",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3820,9 +3820,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3836,9 +3836,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3852,9 +3852,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3868,9 +3868,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3884,9 +3884,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3900,9 +3900,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Detroit Lions",
+   "teamAbbr": "DET",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3916,9 +3916,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Jacksonville Jaguars",
+   "teamAbbr": "JAX",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3932,9 +3932,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Jacksonville Jaguars",
+   "teamAbbr": "JAX",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3948,9 +3948,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Kansas City Chiefs",
+   "teamAbbr": "KC",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3964,9 +3964,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Las Vegas Raiders",
+   "teamAbbr": "LV",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3980,9 +3980,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Los Angeles Rams",
+   "teamAbbr": "LAR",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -3996,9 +3996,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Los Angeles Rams",
+   "teamAbbr": "LAR",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -4012,9 +4012,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Minnesota Vikings",
+   "teamAbbr": "MIN",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -4028,9 +4028,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Philadelphia Eagles",
+   "teamAbbr": "PHI",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -4044,9 +4044,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Tampa Bay Buccaneers",
+   "teamAbbr": "TB",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,
@@ -4060,9 +4060,9 @@
    "sourceName": "NFL.com official news article",
    "verification": "verified",
    "articleKind": "other",
-   "team": null,
-   "teamAbbr": null,
-   "teamJoin": null
+   "team": "Washington Commanders",
+   "teamAbbr": "WAS",
+   "teamJoin": "club named in the article sentence"
   },
   {
    "section": null,

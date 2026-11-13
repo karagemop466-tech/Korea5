@@ -671,3 +671,22 @@ Scope: current Arena branch is fixed; no alternate branches or overlapping task 
 - Official-source spot checks via live fetch: NFL injury page currently publishes player position, injury, practice and game status by week; NFL player statistics page has official category/year selectors; the official NFL transactions page is linked as a source starting point. Sources: https://www.nfl.com/injuries/ ; https://www.nfl.com/stats/player-stats/ ; https://www.nfl.com/transactions/ .
 - Evidence limits: no historical timestamped market/prop prices, betting settlement ledger, forecast log, or verified lineup-depth series found in this repository. No performance or correlation claims made. No backup tier inferred from injury status. Research strategies are proposals, not validated edges; reward competition is only proposed as paper-first and remains gated by policy/legal review.
 - Verification: `scripts/check_links.py` reported 12 pages, 190 local links, 528 external links and zero missing; `scripts/audit_certainty.py` passed; Python unit tests 5/5; both calendar Node tests passed; `git diff --check` clean. Strategy page local destination check: 19 links, zero missing. Official injury and player-statistics pages retrieved live; no claim of comprehensive official link availability.
+
+## Session `arena/722a47cb-korea5` — NFL decision support, suggestions, leaderboard, injury/lineup depth
+
+Branch fixed by Arena: `arena/722a47cb-korea5` (base `bf2b8ca0` of `main`). Read this board before starting;
+N1–N2 are complete. New additive scope below. Every factual table row must cite an official source; unverified
+values stay blank and are flagged. No betting edge, correlation value, ROI or leaderboard result is claimed.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N3 | Suggestions page: review/choose workflow + prioritised suggestion register | arena/722a47cb-korea5 | in progress | `suggestions.html`, `research/SUGGESTIONS.md` |
+| N4 | Decision registry: questions / known info / missing info / answers / discovery steps | arena/722a47cb-korea5 | in progress | `decisions.html`, `research/DECISIONS.md` |
+| N5 | NFL leaderboard + rewards, single/parlay/prop strategy gates, correlation methodology | arena/722a47cb-korea5 | in progress | `nfl-strategy.html`, `research/NFL-STRATEGY.md` |
+| N6 | Injury + lineup-depth tracking (2nd/3rd/4th string, offense & defense) design | arena/722a47cb-korea5 | in progress | `injury-tracking.html`, `research/INJURY-TRACKING.md` |
+| N7 | Executive summary update (NFL decision-support + suggestions) | arena/722a47cb-korea5 | in progress | `research/EXECUTIVE-SUMMARY.md` |
+| N8 | Verification, irregularities, integration, PR + merge + Pages deploy | arena/722a47cb-korea5 | in progress | `COORDINATION.md`, `scripts/build_site.py`, nav |
+
+Scope note: this session works only on the fixed Arena branch. No overlapping file scope with prior sessions;
+`official/`, `extra/`, `data/` remain untouched by this session. Shared outputs (root `*.html` nav, generated
+pages) are changed only here, and only additively.

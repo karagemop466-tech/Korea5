@@ -379,6 +379,95 @@ def parse_standings(pairs, url):
     return rows, blobs
 
 
+# ------------------------------------------------------------- plain HTML tables
+ROW_RE = re.compile(r"<tr[^>]*>(.*?)</tr>", re.S | re.I)
+CELL_RE = re.compile(r"<t(?P<k>hd)[^>]*>(?P<v>.*?)</t\k>", re.S | re.I)
+LINK_RE = re.compile(r'<a[^>]*href="(?P<h>[^"]+)"[^>]*>(?P<t>.*?)</a>', re.S | re.I)
+HEAD_RE = re.compile(r"<h([1-6])[^>]*>(?P<v>.*?)</h\1>", re.S | re.I)
+
+
+def parse_tables(page: str, base_url: str):
+    """Every HTML table on a page, with its header row and the nearest preceding heading.
+
+    The official injury-report page renders one table per club. Nothing is invented: a cell that
+    is empty in the source stays an empty string in the parsed row.
+    """
+    tables = []
+    for m in re.finditer(r"<table[^>]*>(.*?)</table>", page, re.S | re.I):
+        seg = m.group(1)
+        trs = ROW_RE.findall(seg)
+        if not trs:
+            continue
+        rows = []
+        for tr in trs:
+            cells = [(mm.group("k"), strip_tags(mm.group("v")), LINK_RE.search(mm.group("v")))
+                     for mm in CELL_RE.finditer(tr)]
+            if cells:
+                rows.append(cells)
+        headers = [c[1] for c in rows[0]] if rows and all(c[0] == "h" for c in rows[0]) else []
+        body = rows[1:] if headers else rows
+        context = page[max(0, m.start() - 6000):m.start()]
+        heads = HEAD_RE.findall(context)
+        heading = strip_tags(heads[-1][1]) if heads else None
+        clubs = list(re.finditer(r'href="(?:https?://www\.nfl\.com)?/teams/([a-z0-9\-]+)', context))
+        club = clubs[-1].group(1) if clubs else None
+        tables.append({
+            "headers": headers,
+            "rows": body,
+            "heading": heading,
+            "clubSlug": club,
+            "url": base_url,
+            "rawRowCount": len(body),
+        })
+    return tables
+
+
+def table_rows_to_injuries(tables, label):
+    """Normalise official injury-report tables into one row per player.
+
+    The page columns are Player / Position / Injuries / Practice Status / Game Status. A column the
+    page does not carry produces a null — never a guess.
+    """
+    rows = []
+    for t in tables:
+        hdr = [h.lower().strip() for h in t["headers"]]
+        if "player" not in hdr:
+            continue
+        for cells in t["rows"]:
+            texts = [c[1] for c in cells]
+            if not texts or not texts[0].strip():
+                continue
+            link = next((c[2] for c in cells if c[2]), None)
+            href = None
+            if link:
+                href = link.group("h")
+                if href.startswith("/"):
+                    href = "https://www.nfl.com" + href
+
+            def get(name):
+                for j, h in enumerate(hdr):
+                    if h.startswith(name):
+                        return texts[j] if j < len(texts) else None
+                return None
+
+            rows.append({
+                "label": label,
+                "section": t["heading"],
+                "clubSlug": t["clubSlug"],
+                "player": texts[0].strip(),
+                "position": get("position") or None,
+                "injury": get("injur") or None,
+                "practiceStatus": get("practice") or None,
+                "gameStatus": get("game") or None,
+                "playerUrl": href,
+                "sourceUrl": t["url"],
+                "sourceName": "NFL.com official injury report (page table)",
+                "verification": "verified" if (get("practice") or get("game")) else "present-no-status",
+            })
+    return rows
+
+
+
 # --------------------------------------------------------------------- injuries
 PLAYER_KEYS = {"playername", "full_name", "fullname", "player", "name", "lastname"}
 
@@ -716,7 +805,9 @@ def main():
     standing_rows: list[dict] = []
     per_week: dict[str, int] = {}
     per_week_final: dict[str, int] = {}
+    fallback_probe: dict[int, dict] = {}
     standings_weeks_seen: set[int] = set()
+    standings_seen: set[tuple] = set()
     for wk in WEEKS:
         url = f"{SCHEDULE_BASE}week-{wk}"
         page = get(url)
@@ -724,13 +815,24 @@ def main():
             per_week[f"Week {wk}"] = -1
             continue
         pairs = list(payload_data(page_payloads(page)))
-        rows, _games = parse_results(pairs, url, f"Week {wk}", page_scores_by_slug(page))
+        scores = page_scores_by_slug(page)
+        fallback_probe[wk] = {
+            "anchorCount": len(re.findall(r'href="[^"]*/games/[a-z0-9\-]+', page)),
+            "scoreAnchorsParsed": len(scores),
+            "rawSample": (re.sub(r"\s+", " ", page[page.find("/games/") - 200:page.find("/games/") + 1400])
+                          if "/games/" in page else ""),
+        }
+        rows, _games = parse_results(pairs, url, f"Week {wk}", scores)
         srows, _blobs = parse_standings(pairs, url)
         per_week[f"Week {wk}"] = len(rows)
         per_week_final[f"Week {wk}"] = len([r for r in rows if r["verification"] == "verified"])
         standings_weeks_seen |= {r["week"] for r in srows if isinstance(r["week"], int)}
         all_rows.extend(rows)
-        standing_rows.extend(srows)
+        for r in srows:
+            k = (r["week"], r["team"])
+            if k not in standings_seen:
+                standings_seen.add(k)
+                standing_rows.append(r)
         log(f"week {wk}: games={len(rows)} final={per_week_final[f'Week {wk}']} standingsRows={len(srows)}")
 
     best: dict[str, dict] = {}
@@ -744,6 +846,11 @@ def main():
                 best[r["gameId"]] = r
     all_rows = sorted(best.values(), key=lambda r: (r["dateUTC"] or "", str(r["gameId"])))
     finals = [r for r in all_rows if r["verification"] == "verified"]
+    jwrite("score-fallback-probe.json", {
+        "meta": {"purpose": "Why the page-level score fallback does or does not find scores, per week page.",
+                 "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat()},
+        "weeks": fallback_probe,
+    })
     jwrite("results-2026.json", {
         "meta": {
             "dataset": f"NFL {SEASON} games captured from official nfl.com by-week pages (embedded payload)",
@@ -775,6 +882,7 @@ def main():
     inj_rows: list[dict] = []
     inj_counts: dict[str, int] = {}
     inj_week_params = ["", *[f"?season={SEASON}&week={w}" for w in range(9, 12)]]
+    inj_shapes: dict[str, dict] = {}
     for i, param in enumerate(inj_week_params):
         url = INJURY_URL + param
         page = get(url)
@@ -782,16 +890,24 @@ def main():
         if page is None:
             inj_counts[label] = -1
             continue
-        rows, _c = parse_injury_like(list(payload_data(page_payloads(page))), url, label)
+        tables = parse_tables(page, url)
+        rows = table_rows_to_injuries(tables, label)
         inj_counts[label] = len(rows)
+        inj_shapes[label] = {
+            "tables": len(tables),
+            "tableHeadings": [t["heading"] for t in tables][:40],
+            "headers": [t["headers"] for t in tables[:3]],
+            "rowCounts": [t["rawRowCount"] for t in tables][:40],
+        }
         inj_rows.extend(rows)
-        log(f"injuries {label}: {len(rows)} rows")
+        log(f"injuries {label}: {len(rows)} rows from {len(tables)} tables")
     jwrite("injuries-2026.json", {
         "meta": {
             "dataset": f"NFL {SEASON} official weekly injury report rows (nfl.com/injuries)",
             "retrievedUTC": dt.datetime.now(dt.timezone.utc).isoformat(),
             "rows": len(inj_rows),
             "perRequest": inj_counts,
+            "pageShape": inj_shapes,
             "sourcePages": [INJURY_URL + p for p in inj_week_params],
             "sourceName": "NFL.com official injury report",
             "note": "Practice participation and game status are separate official fields; the page does not "

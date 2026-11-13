@@ -36,6 +36,7 @@ NAV = [
     ("method.html", "Method"),
     ("extra/index.html", "Official feeds &amp; verification"),
     ("nfl/system/index.html", "NFL decision system"),
+    ("strategy-lab/index.html", "Strategy Lab"),
 ]
 
 

@@ -453,6 +453,11 @@ def cross_source_and_market():
                 missing += 1
                 unmatched_dates[(e.get("date") or "")[:10]] = unmatched_dates.get((e.get("date") or "")[:10], 0) + 1
                 unmatched_pairs[f"{home_ab}-{away_ab}"] = unmatched_pairs.get(f"{home_ab}-{away_ab}", 0) + 1
+                if len(examples) < 12:
+                    examples.append({"kind": "unmatched", "date": day, "home": home_ab, "away": away_ab,
+                                     "espn": f"{away_score}-{home_score}", "espnEvent": e.get("id"),
+                                     "shiftTried": "0,-1,1,-2,2",
+                                     "source": e.get("id")})
                 continue
             r = cands[0]
             try:

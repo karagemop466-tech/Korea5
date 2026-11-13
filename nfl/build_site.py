@@ -633,7 +633,9 @@ def build_data(mr):
              esc(g["howToObtain"]), esc(g["blocks"])] for g in audit.get("gaps", [])]
     mkt = mr.get("marketCoverage", {})
     cs = mr.get("crossSource", {})
-    ex = [[esc(e["date"]), esc(e["home"]), esc(e["nflverse"]), esc(e["espn"]),
+    ex = [[esc(e.get("date")), esc(f'{e.get("away","")} @ {e.get("home","")}'),
+           esc(e.get("nflverse") or "no nflverse row paired"),
+           esc(e.get("espn")), esc(e.get("kind", "checked")),
            src(f'https://www.espn.com/nfl/game/_/gameId/{e["source"]}', "ESPN game")] for e in cs.get("examples", [])]
     body = f"""
 <h1>Data audit</h1>
@@ -644,7 +646,7 @@ missing. A gap is listed even when it would be embarrassing to list it — espec
 nflverse and ESPN publish independently. Every completed game in the fetched seasons was compared on final
 score. Disagreements are shown rather than resolved.</div>
 {table(["Check", "Result", "Status", "Source"], rows)}
-{table(["Date", "Home", "nflverse", "ESPN", "Link"], ex) if ex else ''}
+{table(["Date", "Matchup", "nflverse", "ESPN", "Kind", "Link"], ex) if ex else ''}
 <h2>Market coverage</h2>
 <div class="grid g3">
 <div class="card"><div class="kpi">{pct(mkt.get('spreadPct'))}<small>of games have a spread</small></div>

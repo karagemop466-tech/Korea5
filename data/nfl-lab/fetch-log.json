@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-13T13:11:32Z",
+ "generated_utc": "2026-11-13T13:12:07Z",
  "injuries": {
   "2016": {
    "rows": 5115,
@@ -446,7 +446,146 @@
     "Base 3-4 D": 29,
     "Special Teams": 11
    }
-  }
+  },
+  "match_diagnostics_week": [
+   {
+    "team": "DET",
+    "player": "Cade Mays",
+    "gsis_id": "00-0037297",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "3WR 1TE",
+      "C",
+      "3"
+     ]
+    ]
+   },
+   {
+    "team": "DET",
+    "player": "D.J. Reed",
+    "gsis_id": "00-0034384",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "Base 4-3 D",
+      "LCB",
+      "1"
+     ]
+    ]
+   },
+   {
+    "team": "DET",
+    "player": "Kerby Joseph",
+    "gsis_id": "00-0037667",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "Base 4-3 D",
+      "FS",
+      "3"
+     ]
+    ]
+   },
+   {
+    "team": "NE",
+    "player": "Ben Brown",
+    "gsis_id": "00-0037413",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "3WR 1TE",
+      "LG",
+      "2"
+     ],
+     [
+      "3WR 1TE",
+      "C",
+      "2"
+     ],
+     [
+      "3WR 1TE",
+      "RG",
+      "2"
+     ]
+    ]
+   },
+   {
+    "team": "NE",
+    "player": "Carlton Davis III",
+    "gsis_id": "00-0034778",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "Base 3-4 D",
+      "LCB",
+      "1"
+     ]
+    ]
+   },
+   {
+    "team": "NE",
+    "player": "TreVeyon Henderson",
+    "gsis_id": "00-0040734",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "Special Teams",
+      "KR",
+      "4"
+     ],
+     [
+      "3WR 1TE",
+      "RB",
+      "2"
+     ]
+    ]
+   },
+   {
+    "team": "NYG",
+    "player": "Malik Harrison",
+    "gsis_id": "00-0036280",
+    "status": "Questionable",
+    "in_snapshot": [
+     [
+      "Base 3-4 D",
+      "LILB",
+      "3"
+     ]
+    ]
+   },
+   {
+    "team": "WAS",
+    "player": "Lucas Patrick",
+    "gsis_id": "00-0033082",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "3WR 1TE",
+      "LG",
+      "2"
+     ],
+     [
+      "3WR 1TE",
+      "C",
+      "4"
+     ]
+    ]
+   },
+   {
+    "team": "WAS",
+    "player": "Colson Yankoff",
+    "gsis_id": "00-0039686",
+    "status": "Out",
+    "in_snapshot": [
+     [
+      "3WR 1TE",
+      "TE",
+      "4"
+     ]
+    ]
+   }
+  ]
  },
  "errors": []
 }

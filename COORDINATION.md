@@ -671,3 +671,38 @@ Scope: current Arena branch is fixed; no alternate branches or overlapping task 
 - Official-source spot checks via live fetch: NFL injury page currently publishes player position, injury, practice and game status by week; NFL player statistics page has official category/year selectors; the official NFL transactions page is linked as a source starting point. Sources: https://www.nfl.com/injuries/ ; https://www.nfl.com/stats/player-stats/ ; https://www.nfl.com/transactions/ .
 - Evidence limits: no historical timestamped market/prop prices, betting settlement ledger, forecast log, or verified lineup-depth series found in this repository. No performance or correlation claims made. No backup tier inferred from injury status. Research strategies are proposals, not validated edges; reward competition is only proposed as paper-first and remains gated by policy/legal review.
 - Verification: `scripts/check_links.py` reported 12 pages, 190 local links, 528 external links and zero missing; `scripts/audit_certainty.py` passed; Python unit tests 5/5; both calendar Node tests passed; `git diff --check` clean. Strategy page local destination check: 19 links, zero missing. Official injury and player-statistics pages retrieved live; no claim of comprehensive official link availability.
+
+---
+
+## Session `arena-b06d082c` — NFL decision-support system (2026-11-13)
+
+Branch fixed by Arena: `arena/b06d082c-korea5`; no other branch is created or pushed.
+Start point: `main` tip `bf2b8ca` (PR #33, session `arena-2cd43859`). All prior-session records above
+are preserved unchanged. No other session is active on the repository, so no claim overlaps.
+
+| # | Task | Owner | Status | Files |
+|---|---|---|---|---|
+| N10 | Capture the official Week 10 2026 NFL injury report with row-level sources, plus club depth charts, and derive the depth-deficiency analysis | arena-b06d082c | done | `scripts/nfl_injuries.py`, `data/nfl/injuries-week10-2026.json`, `data/nfl/depth-charts-2026-11-13.json`, `data/nfl/injury-summary.json` |
+| N11 | Capture official league snapshots (standings, team passing) and run a seeded correlation study with bootstrap intervals, permutation tests and a false-discovery adjustment | arena-b06d082c | done | `scripts/nfl_correlations.py`, `data/nfl/standings-2026-reg.json`, `data/nfl/team-passing-2026-reg.json`, `data/nfl/correlations-2026-reg.json` |
+| N12 | Specify the strategy registry, the twelve validation gates, the twenty decision questions and the sixteen-item suggestion board | arena-b06d082c | done | `data/nfl/strategies.json`, `data/nfl/gates.json`, `data/nfl/questions.json`, `data/nfl/suggestions.json` |
+| N13 | Implement the gate engine, the leaderboard scorer and the leaderboard artefact (empty by design) | arena-b06d082c | done | `scripts/nfl_lab.py`, `data/nfl/leaderboard.json`, `tests/test_nfl_lab.py` |
+| N14 | Publish the four decision-support pages and integrate them into the shared navigation, the dashboard and the NFL page | arena-b06d082c | done | `scripts/build_nfl_lab.py`, `nfl-lab.html`, `nfl-injuries.html`, `nfl-decisions.html`, `suggestions.html`, `scripts/build_site.py` |
+| N15 | Verification suite for the NFL work, irregularity register entries, documentation update | arena-b06d082c | done | `tools/verify_nfl.py`, `curated/flags.json` (F33–F38), `research/NFL-STRATEGY.md`, `research/EXECUTIVE-SUMMARY.md` |
+| N16 | PR to `main`, merge without waiting, confirm the Pages deployment, record the result here | arena-b06d082c | in progress | `COORDINATION.md` (log only) |
+
+Scope note: this session owns `scripts/nfl_*.py`, `scripts/build_nfl_lab.py`, `tools/verify_nfl.py`,
+`data/nfl/`, the four new root HTML pages, `tests/test_nfl_lab.py`, and the documentation updates named
+above. It does not edit `scripts/build_events.py`, `scripts/analyze.py`, `data/events-*.json`,
+`data/derived/`, `official/` or `extra/assets/`.
+
+### Claim
+
+- 2026-11-13 — `arena-b06d082c` claims N10–N16. The board's only open NFL work is this session's; the
+  previous NFL session (`arena-2cd43859`, PR #33) is marked done.
+- No price history, forecast ledger or settlement record exists anywhere in this repository, so no
+  strategy can be scored and the leaderboard publishes zero entries. That is a stated result, not a
+  defect to be filled in with an estimate.
+- Depth tiers come only from a club's own published depth chart. The injury report is never used to
+  infer a starter, a backup or a replacement; a missing tier is reported as missing.
+- Every published table row links to an official source. Values that could not be confirmed from an
+  official source are blank and flagged, never inferred.

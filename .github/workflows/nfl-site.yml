@@ -1,0 +1,51 @@
+name: nfl-site
+
+# Build and verify the NFL decision-system section on every push that can affect it.
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 'main', 'arena/998582f0-korea5' ]
+    paths:
+      - 'nfl/system/**'
+      - 'COORDINATION.md'
+      - '.github/workflows/nfl-site.yml'
+  pull_request:
+    paths: [ 'nfl/system/**' ]
+permissions:
+  contents: read
+concurrency:
+  group: nfl-site-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Recompute every published number from the committed official data
+        run: python3 nfl/system/tools/analyze_market.py
+      - name: Rebuild the section
+        run: python3 nfl/system/tools/build_nfl.py
+      - name: Verify every row's source link and every badge rule
+        run: python3 nfl/system/tools/verify_nfl.py
+      - name: Verify the rest of the repository still builds and links
+        run: |
+          python3 scripts/build_events.py
+          python3 scripts/analyze.py
+          python3 scripts/build_site.py
+          python3 tools/build_extra.py
+          python3 scripts/check_links.py
+          python3 tools/verify_extra.py
+          python3 scripts/audit_certainty.py
+      - name: Python syntax
+        run: python3 -m compileall -q nfl/tools
+      - name: Confirm the build is reproducible (no uncommitted drift)
+        run: |
+          git diff --exit-code -- nfl/system/ || {
+            echo "::error::generated nfl/ pages differ from what is committed — rebuild and commit";
+            git diff --stat -- nfl/system/;
+            exit 1;
+          }

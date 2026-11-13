@@ -1,6 +1,6 @@
 # Executive summary — NFL intelligence (2026 season)
 
-Date: 2026-11-13 (Pacific) · Section: [nfl-intel](../nfl-intel.html) · Mirror: [nfl-executive.html](../nfl-executive.html)
+Date: 2026-11-13 (Pacific) · Section: [nfl-intel](../nfl-intel.html) · Mirror: [nfl-intel-executive.html](../nfl-intel-executive.html)
 
 Everything below is either **verified** (transcribed from an official page, link given), **computed** from
 verified inputs (formula given), or **unverified** (blank and flagged). Nothing is inferred.
@@ -14,8 +14,8 @@ verified inputs (formula given), or **unverified** (blank and flagged). Nothing 
 | Week-10 injury report + starter/backup news | `data/nfl-intel/injuries-week10.json` | verified |
 | Ratings, our lines, backtest, signal correlations | `data/nfl-intel/model.json` | computed |
 | Strategy library, gates, correlation policy | `data/nfl-intel/strategies.json` | design |
-| Suggestions register (review-and-choose) | [suggestions.html](../suggestions.html) | process |
-| Questions register (have / missing / discovery) | [questions.html](../questions.html) | process |
+| Suggestions register (review-and-choose) | [nfl-intel-suggestions.html](../nfl-intel-suggestions.html) | process |
+| Questions register (have / missing / discovery) | [nfl-intel-questions.html](../nfl-intel-questions.html) | process |
 
 ## 2. Verification story (how we know the data is right)
 
@@ -31,7 +31,7 @@ verified inputs (formula given), or **unverified** (blank and flagged). Nothing 
   - S1: spread MAE 10.56 vs 11.32 baseline · Brier 0.216 vs 0.255 · side hit 66.2% · corr(predicted, actual) 0.314
   - S2 (recency λ=0.9): MAE 10.54 · Brier 0.215 · hit 63.4% · corr 0.318
   - Gates G1 (skill over baseline) → G4 (holdout) **PASS** for both; G5 (ATS vs closing line) and G6 (bootstrap certainty) are **not evaluable** — no verified odds source exists (Q-ODDS).
-- 26 originated lines published (13 remaining Week 10 + all Week 11) on [nfl-lines.html](../nfl-lines.html). Market columns are blank and flagged by design.
+- 26 originated lines published (13 remaining Week 10 + all Week 11) on [nfl-intel-lines.html](../nfl-intel-lines.html). Market columns are blank and flagged by design.
 
 ## 4. Signals and correlation values (computed)
 
@@ -63,9 +63,9 @@ G1–G8 before its results count. Luck is removed by: sample floors (100 graded 
 skill, out-of-time holdouts, multiple-testing correction, bootstrap confidence intervals, and closing-line
 grading. The leaderboard scores skill with Brier/log-loss improvement over baseline — **not profit** — and
 rewards are non-monetary (Awards page badge, recognition) until the legal question (Q-LEGAL) is answered.
-Full rules: [nfl-strategies.html](../nfl-strategies.html).
+Full rules: [nfl-intel-strategies.html](../nfl-intel-strategies.html).
 
-## 7. What blocks decisions (see [questions.html](../questions.html))
+## 7. What blocks decisions (see [nfl-intel-questions.html](../nfl-intel-questions.html))
 
 1. **No verified market odds source (Q-ODDS)** — blocks monetary grading, CLV (G5), realistic parlay pricing. Single biggest gap.
 2. **Depth tiers unverified (Q-DEPTH)** — blocks systematic 2nd/3rd/4th-string deficiency scoring.

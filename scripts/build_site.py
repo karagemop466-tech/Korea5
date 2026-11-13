@@ -24,18 +24,26 @@ NAV = [
     ("mlb.html", "MLB"),
     ("nfl.html", "NFL &amp; 49ers"),
     ("nfl-intel.html", "NFL Intel"),
-    ("nfl-lines.html", "Lines"),
-    ("nfl-strategies.html", "Strategies"),
-    ("nfl-injuries.html", "Injuries"),
-    ("nfl-executive.html", "Executive"),
-    ("suggestions.html", "Suggestions"),
-    ("questions.html", "Questions"),
+    ("nfl-intel-lines.html", "Intel lines"),
+    ("nfl-intel-strategies.html", "Intel strategies"),
+    ("nfl-intel-injuries.html", "Intel injuries"),
+    ("nfl-intel-executive.html", "Intel executive"),
+    ("nfl-intel-suggestions.html", "Intel suggestions"),
+    ("nfl-intel-questions.html", "Intel questions"),
     ("ncaaf.html", "Stanford &amp; Cal"),
     ("radio.html", "Radio"),
+    ("lab/index.html", "NFL Lab"),
+    ("lab/questions.html", "Decisions"),
+    ("lab/suggestions.html", "Suggestions"),
+    ("nfl-lab/index.html", "NFL Model"),
+    ("nfl/index.html", "NFL Decision Support"),
     ("sources.html", "Sources"),
     ("flagged.html", "Flagged"),
+    ("lines/index.html", "NFL lines (paper)"),
     ("method.html", "Method"),
     ("extra/index.html", "Official feeds &amp; verification"),
+    ("nfl/system/index.html", "NFL decision system"),
+    ("strategy-lab/index.html", "Strategy Lab"),
 ]
 
 
@@ -236,16 +244,22 @@ If the Pro Bowl Games are on Tue Feb 9 only, {esc(run_txt(P[2027]['onlyB']))} op
 </div>
 
 <h2>NFL Intelligence</h2><div class="grid g3">
-<div class="card"><h3>Originate, don't copy</h3><p>Our own spreads, totals and power ratings for every remaining 2026 game, computed from 137 verified finals, with a walk-forward backtest and published formulas.</p><a href="nfl-lines.html">Lines &amp; ratings</a> · <a href="nfl-strategies.html">Strategies</a></div>
-<div class="card"><h3>Availability &amp; deficiencies</h3><p>The official Week-10 injury report (296 rows) plus verified starter/backup news — where a defense is on its 3rd or 4th option, we say so only when an official source confirms it.</p><a href="nfl-injuries.html">Injury tracker</a></div>
-<div class="card"><h3>Decide with gaps visible</h3><p>Executive summary, a suggestions register with review-before-implement workflow, and a questions register listing exactly what is missing and how to discover it.</p><a href="nfl-executive.html">Executive</a> · <a href="questions.html">Questions</a></div>
+<div class="card"><h3>Originate, don't copy</h3><p>Our own spreads, totals and power ratings for every remaining 2026 game, computed from 137 verified finals, with a walk-forward backtest and published formulas.</p><a href="nfl-intel-lines.html">Lines &amp; ratings</a> · <a href="nfl-intel-strategies.html">Strategies</a></div>
+<div class="card"><h3>Availability &amp; deficiencies</h3><p>The official Week-10 injury report (296 rows) plus verified starter/backup news — where a defense is on its 3rd or 4th option, we say so only when an official source confirms it.</p><a href="nfl-intel-injuries.html">Injury tracker</a></div>
+<div class="card"><h3>Decide with gaps visible</h3><p>Executive summary, a suggestions register with review-before-implement workflow, and a questions register listing exactly what is missing and how to discover it.</p><a href="nfl-intel-executive.html">Executive</a> · <a href="nfl-intel-questions.html">Questions</a></div>
 </div>
 <h2>Explore by category</h2><div class="pill-row">
 <a class="btn" href="mlb.html">All 30 MLB clubs</a><a class="btn" href="extra/nfl-2026.html">NFL &amp; 49ers</a>
 <a class="btn" href="ncaaf.html">Stanford &amp; Cal</a><a class="btn" href="extra/westwoodone.html">Westwood One · all sports</a>
+<a class="btn" href="lab/index.html">NFL Lines Lab</a>
+<a class="btn" href="nfl-lab/index.html">NFL Model &amp; back-tests</a>
+<a class="btn" href="nfl/index.html">NFL Decision Support</a>
 <a class="btn" href="extra/flagged.html">Flagged for Review</a></div>
 <p>Giants, Athletics, 49ers, Stanford and Cal remain high priority. The all-games view is a conservative personal-interest scope, not proof that every game is locally broadcast.</p>
-<p><a href="research/EXECUTIVE-SUMMARY.md">Full executive summary</a> · <a href="certainty.html">Audit and source limits</a> · <a href="extra/durations.html">Duration assumptions</a></p>
+<p><a href="research/EXECUTIVE-SUMMARY.md">Full executive summary</a> · <a href="certainty.html">Audit and source limits</a> · <a href="extra/durations.html">Duration assumptions</a> ·
+<a href="lab/index.html">NFL Lines Lab</a> · <a href="nfl-lab/index.html">NFL Model</a> ·
+<a href="nfl/index.html">NFL Decision Support</a> · <a href="lab/suggestions.html">Suggestions</a> ·
+<a href="lab/flags.html">Lab flagged items</a></p>
 """
     page("index.html", "Dashboard", "index.html", body)
 
@@ -630,6 +644,24 @@ verified for 2026–27. The 2027, 2028 and 2029 seasons have not been released, 
 <p class="small">Source: the club's own schedule page, which publishes kickoff in Pacific time and names the radio network for every game:
 <strong>KSAN 107.7 FM / KNBR 104.5 FM / 680 AM</strong>. Week 18 is listed by the club as TBD; both days of the league's final weekend are blocked.</p>
 {table(["Date", "Kickoff (PT)", "Opponent", "Venue", "TV", "Status"], sf_rows)}
+
+<h2>NFL lines and strategy lab</h2>
+<div class="callout"><strong>Originating your own NFL lines.</strong> The <a href="lab/index.html">NFL Lines Lab</a> holds the
+decision register (what is known, what is missing, what blocks each decision), the strategy catalogue with its validation
+gates, the measured correlations between candidate legs, the injury and lineup-depth tracker built on the official injury
+report and the official Game Book, the leaderboard design, and the suggestions register. No strategy on it is validated:
+this repository holds no market price and no settlement record, so no win rate, yield or edge is published.</div>
+<div class="callout"><strong>Which NFL surface is which.</strong> Three shelves now cover this topic and they are not
+the same thing. The <a href="lab/index.html">NFL Lines Lab</a> is a design and decision register built on hand-curated
+excerpts. The <a href="nfl/system/index.html">NFL decision system</a> is the data-backed one: it ingests the official
+injury report, all 32 club depth charts, official team and player statistics and every completed final score in CI,
+then computes rest, scoring, de-vig and skill-vs-luck statistics from those files, publishing an n and an interval
+with every number and marking every value the official pages did not publish as unverified. Start with its
+<a href="nfl/system/summary.html">executive summary</a> if you want the findings, and its
+<a href="nfl/system/questions.html">questions and gaps</a> if you want the decisions.</div>
+<div class="pill-row"><a class="btn" href="lab/questions.html">Decision register</a><a class="btn" href="lab/strategies.html">Strategies &amp; gates</a>
+<a class="btn" href="lab/correlations.html">Correlations</a><a class="btn" href="lab/injuries.html">Injuries &amp; depth</a>
+<a class="btn" href="lab/leaderboard.html">Leaderboard</a><a class="btn" href="lab/suggestions.html">Suggestions</a></div>
 
 <h2>Every NFL game, 2026</h2>
 <p class="small">The full {nfl_count} games of the 2026 league year (preseason and regular season), each row linking to its own NFL.com game page.

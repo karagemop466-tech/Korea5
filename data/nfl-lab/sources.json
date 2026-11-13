@@ -1,0 +1,95 @@
+{
+ "sources": [
+  {
+   "name": "NFL 2026 schedule, week 10",
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "provides": "Dates, final scores, status for week 10",
+   "official": "Yes (NFL)",
+   "verified_how": "Fetched 2026-11-13; Commanders 24, Giants 21 FINAL matched games file."
+  },
+  {
+   "name": "NFL Game Center: Lions at Dolphins, 2026 REG 9",
+   "url": "https://www.nfl.com/games/lions-at-dolphins-2026-reg-9",
+   "provides": "Final score",
+   "official": "Yes (NFL)",
+   "verified_how": "Fetched 2026-11-13; DET 19 MIA 9 matched games file."
+  },
+  {
+   "name": "NFL Game Center: Bills at Vikings, 2026 REG 9",
+   "url": "https://www.nfl.com/games/bills-at-vikings-2026-reg-9",
+   "provides": "Final score",
+   "official": "Yes (NFL)",
+   "verified_how": "Fetched 2026-11-13; BUF 23 MIN 6 matched games file."
+  },
+  {
+   "name": "NFL injury report, week 10",
+   "url": "https://www.nfl.com/injuries/league/2026/reg10",
+   "provides": "Official status, injury, practice status per player",
+   "official": "Yes (NFL)",
+   "verified_how": "Fetched 2026-11-13; 9 Out/Questionable rows matched our file."
+  },
+  {
+   "name": "NFL injury reports hub",
+   "url": "https://www.nfl.com/injuries/",
+   "provides": "Index of weekly reports",
+   "official": "Yes (NFL)",
+   "verified_how": "Fetched 2026-11-13."
+  },
+  {
+   "name": "GRA: Unlawful remote gambling",
+   "url": "https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities",
+   "provides": "Legal status for Singapore residents; penalties",
+   "official": "Yes (Singapore regulator)",
+   "verified_how": "Fetched 2026-11-13."
+  },
+  {
+   "name": "GRA: Problem gambling",
+   "url": "https://www.gra.gov.sg/harm-minimisation/problem-gambling",
+   "provides": "Problem gambling information; link to NCPG",
+   "official": "Yes (Singapore regulator)",
+   "verified_how": "Fetched 2026-11-13."
+  },
+  {
+   "name": "National Council on Problem Gambling (NCPG)",
+   "url": "http://www.ncpg.org.sg/",
+   "provides": "Help for problem gambling",
+   "official": "Linked from GRA page",
+   "verified_how": "Link taken from GRA page; not fetched in this session."
+  },
+  {
+   "name": "nfldata repository (games, closing/initial lines)",
+   "url": "https://github.com/nflverse/nfldata",
+   "provides": "Games file: scores, rest, starting QBs, spread and total lines",
+   "official": "No (third-party dataset)",
+   "verified_how": "Archive downloaded from codeload; SHA-256 recorded in games-source.json."
+  },
+  {
+   "name": "nfldata DATASETS.md",
+   "url": "https://github.com/nflverse/nfldata/blob/master/DATASETS.md",
+   "provides": "Column dictionary; provenance gap noted",
+   "official": "No (third-party documentation)",
+   "verified_how": "Read from the same archive."
+  },
+  {
+   "name": "nflverse injuries release",
+   "url": "https://github.com/nflverse/nflverse-data/releases/tag/injuries",
+   "provides": "Mirror of NFL injury reports 2016\u20132026",
+   "official": "No (mirror)",
+   "verified_how": "Downloaded in GitHub Actions run 43431290366 and later; 9 Week 10 rows matched nfl.com."
+  },
+  {
+   "name": "nflverse depth charts release",
+   "url": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+   "provides": "Dated depth-chart snapshots (ESPN-derived)",
+   "official": "No (third-party mirror)",
+   "verified_how": "Downloaded in GitHub Actions; not checked against team depth charts."
+  },
+  {
+   "name": "NFL.com Terms and Conditions, section 1.3",
+   "url": "https://www.nfl.com/legal/terms/",
+   "provides": "Published permitted-use terms for NFL.com Services, including restrictions on systematic retrieval",
+   "official": "Yes (NFL legal terms)",
+   "verified_how": "Fetched 2026-11-13. Section 1.3 limits use to individual, non-commercial, informational purposes and prohibits systematic retrieval to build a collection/database absent express prior written consent. This is recorded as a source-rights flag, not a legal conclusion or proof that permission does not exist."
+  }
+ ]
+}

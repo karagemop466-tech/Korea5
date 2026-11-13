@@ -18,12 +18,16 @@ NAV = [
     ("index.html", "Dashboard"), ("calendar.html", "Calendar"),
     ("vacation.html", "Vacation windows"), ("mlb.html", "MLB"),
     ("nfl.html", "NFL &amp; 49ers"), ("nfl-intel.html", "NFL Intel"),
-    ("nfl-lines.html", "Lines"), ("nfl-strategies.html", "Strategies"),
-    ("nfl-injuries.html", "Injuries"), ("nfl-executive.html", "Executive"),
-    ("suggestions.html", "Suggestions"), ("questions.html", "Questions"),
+    ("nfl-intel-lines.html", "Intel lines"), ("nfl-intel-strategies.html", "Intel strategies"),
+    ("nfl-intel-injuries.html", "Intel injuries"), ("nfl-intel-executive.html", "Intel executive"),
+    ("nfl-intel-suggestions.html", "Intel suggestions"), ("nfl-intel-questions.html", "Intel questions"),
     ("ncaaf.html", "Stanford &amp; Cal"), ("radio.html", "Radio"),
-    ("sources.html", "Sources"), ("flagged.html", "Flagged"),
+    ("lab/index.html", "NFL Lab"), ("lab/questions.html", "Decisions"),
+    ("lab/suggestions.html", "Suggestions"), ("nfl-lab/index.html", "NFL Model"),
+    ("nfl/index.html", "NFL Decision Support"), ("sources.html", "Sources"),
+    ("flagged.html", "Flagged"), ("lines/index.html", "NFL lines (paper)"),
     ("method.html", "Method"), ("extra/index.html", "Official feeds &amp; verification"),
+    ("nfl/system/index.html", "NFL decision system"), ("strategy-lab/index.html", "Strategy Lab"),
 ]
 
 
@@ -66,8 +70,8 @@ def foot():
 <footer><div class="wrap">
   <p><strong>{SITE}</strong> · NFL Intelligence section · snapshot 2026-11-13 ·
   every factual row links an official source (nfl.com); computed rows are labelled; unverified cells are blank and flagged.</p>
-  <p>Model output is not official league data. See <a href="nfl-lines.html">Lines</a> for formulas and
-  <a href="questions.html">Questions</a> for what is still missing. Items needing review are on
+  <p>Model output is not official league data. See <a href="nfl-intel-lines.html">Lines</a> for formulas and
+  <a href="nfl-intel-questions.html">Questions</a> for what is still missing. Items needing review are on
   <a href="flagged.html">Flagged for review</a>.</p>
 </div></footer></body></html>"""
 
@@ -111,9 +115,9 @@ def build_hub():
 <p class="lede">This section collects the verified 2026 season data, originates our own spreads and totals,
 tracks injuries and depth deficiencies, and defines a leaderboard competition where every strategy must
 pass validation gates before it counts.</p>
-<div class="pill-row"><a class="btn" href="nfl-lines.html">Our lines &amp; ratings →</a>
-<a class="btn" href="nfl-strategies.html">Strategies &amp; leaderboard</a>
-<a class="btn" href="nfl-injuries.html">Injury tracker</a></div></div>
+<div class="pill-row"><a class="btn" href="nfl-intel-lines.html">Our lines &amp; ratings →</a>
+<a class="btn" href="nfl-intel-strategies.html">Strategies &amp; leaderboard</a>
+<a class="btn" href="nfl-intel-injuries.html">Injury tracker</a></div></div>
 <div class="card"><h2>Reading the numbers</h2>
 <p>Every table row carries one of three labels:</p>
 <p>""" + VER() + " — transcribed from an official page, with the link.</p><p>" + CMP() +
@@ -123,20 +127,20 @@ pass validation gates before it counts.</p>
 
     b.append("<h2>What this section contains</h2>")
     b.append(table(["Page", "Contents", "Evidence level"], [
-        ['<a href="nfl-lines.html">Lines &amp; ratings</a>',
+        ['<a href="nfl-intel-lines.html">Lines &amp; ratings</a>',
          "Team power ratings, our own Week 10–11 spreads/totals, walk-forward backtest and validation gates G1–G8",
          VER() + " inputs · " + CMP() + " outputs"],
-        ['<a href="nfl-strategies.html">Strategies &amp; leaderboard</a>',
+        ['<a href="nfl-intel-strategies.html">Strategies &amp; leaderboard</a>',
          "Strategy library (single, parlay, player-prop combos), competition rules, rewards, correlation values, anti-luck scoring",
          "Design " + VER() + " / metrics " + CMP() + " where data exists"],
-        ['<a href="nfl-injuries.html">Injuries &amp; deficiencies</a>',
+        ['<a href="nfl-intel-injuries.html">Injuries &amp; deficiencies</a>',
          "Official Week-10 injury report (296 rows), starter/backup status news, offense/defense deficiency flags",
          VER() + " rows; depth tier blank where unverified"],
-        ['<a href="nfl-executive.html">Executive summary</a>',
+        ['<a href="nfl-intel-executive.html">Executive summary</a>',
          "The one-page answer: what we know, what we built, what blocks decisions", "mixed — labelled per line"],
-        ['<a href="suggestions.html">Suggestions</a>',
+        ['<a href="nfl-intel-suggestions.html">Suggestions</a>',
          "Improvement proposals with a review-and-choose workflow; nothing is implemented before acceptance", "process"],
-        ['<a href="questions.html">Questions register</a>',
+        ['<a href="nfl-intel-questions.html">Questions register</a>',
          "What we have, what is missing, and how to discover it — before any decision", "process"],
     ]))
 
@@ -156,13 +160,13 @@ pass validation gates before it counts.</p>
         ["Market odds", "Not used anywhere — no official source exists; all market columns are blank and flagged (Q-ODDS)",
          UNV()],
     ]))
-    b.append('<p class="small">Full detail and caveats: <a href="nfl-executive.html">Executive summary</a> · '
+    b.append('<p class="small">Full detail and caveats: <a href="nfl-intel-executive.html">Executive summary</a> · '
              '<a href="research/EXECUTIVE-SUMMARY-NFL.md">summary source (markdown)</a> · '
-             '<a href="questions.html">open questions</a></p>')
+             '<a href="nfl-intel-questions.html">open questions</a></p>')
     page("nfl-intel.html", "NFL Intelligence hub", "nfl-intel.html", "".join(b))
 
 
-# ============================================================ nfl-lines.html
+# ============================================================ nfl-intel-lines.html
 def build_lines():
     m = MODEL
     meta = m["meta"]
@@ -234,10 +238,10 @@ def build_lines():
                 for p in bt["predictions"]]
         b.append(table(["Wk", "Away", "Home", "Pred margin (home)", "Actual margin", "P(home)", "Pred total", "Actual", "Label", "Verified result"], rows))
 
-    page("nfl-lines.html", "Originated lines & ratings", "nfl-lines.html", "".join(b))
+    page("nfl-intel-lines.html", "Originated lines & ratings", "nfl-intel-lines.html", "".join(b))
 
 
-# ============================================================ nfl-strategies.html
+# ============================================================ nfl-intel-strategies.html
 def build_strategies():
     s = STRAT
     b = []
@@ -279,7 +283,7 @@ def build_strategies():
                      (CMP() if comp.get("maeSpread") is not None or comp.get("signalCorr") is not None else UNV())])
     b.append(table(["ID", "Strategy", "Type", "Rule", "Metrics", "Validation", "Label"], rows))
     b.append('<p class="small">S1/S2 metrics are computed from the verified results on '
-             '<a href="nfl-lines.html">Lines &amp; ratings</a> (walk-forward weeks 5–9). '
+             '<a href="nfl-intel-lines.html">Lines &amp; ratings</a> (walk-forward weeks 5–9). '
              'S3–S5 metrics are blank until their required data exists (Q-INJ-HIST, Q-ODDS, Q-PROPS). '
              'S6’s signal strength is computed; its pick-level record is blank until graded.</p>')
 
@@ -312,10 +316,10 @@ def build_strategies():
         ["Gates", esc(s["propFramework"]["gates"])],
         ["Status", esc(s["propFramework"]["status"]) + " · " + UNV()],
     ]))
-    page("nfl-strategies.html", "Strategies & leaderboard", "nfl-strategies.html", "".join(b))
+    page("nfl-intel-strategies.html", "Strategies & leaderboard", "nfl-intel-strategies.html", "".join(b))
 
 
-# ============================================================ nfl-injuries.html
+# ============================================================ nfl-intel-injuries.html
 OFF_POS = {"QB", "RB", "WR", "TE", "FB", "C", "G", "T"}
 DEF_POS = {"DE", "DT", "LB", "CB", "S"}
 
@@ -407,10 +411,10 @@ def build_injuries():
             if rows:
                 b.append(f"<h4>{esc(team)}</h4>")
                 b.append(table(["Player", "Pos", "Injury", "Practice", "Game status", "Depth tier", "Label", "Official", "Report"], rows))
-    page("nfl-injuries.html", "Injuries & deficiencies", "nfl-injuries.html", "".join(b))
+    page("nfl-intel-injuries.html", "Injuries & deficiencies", "nfl-intel-injuries.html", "".join(b))
 
 
-# ============================================================ nfl-executive.html
+# ============================================================ nfl-intel-executive.html
 def build_exec():
     b = []
     b.append("<h1>Executive summary — NFL intelligence</h1>")
@@ -463,10 +467,10 @@ error and pass the four evaluative validation gates.</p>""")
              src("https://www.nfl.com/standings/league/2026/REG", "nfl.com standings") + " · " +
              src("https://www.nfl.com/injuries/", "nfl.com injuries") + " · " +
              src("https://www.nfl.com/schedules/2026/by-week/week-11", "nfl.com schedule") + "</p>")
-    page("nfl-executive.html", "Executive summary", "nfl-executive.html", "".join(b))
+    page("nfl-intel-executive.html", "Executive summary", "nfl-intel-executive.html", "".join(b))
 
 
-# ============================================================ suggestions.html
+# ============================================================ nfl-intel-suggestions.html
 def build_suggestions():
     b = []
     b.append("<h1>Suggestions — review before implementing</h1>")
@@ -491,12 +495,12 @@ def build_suggestions():
                     "Blocked by", "Reference", "Implemented by"], rows))
     b.append("<h2>How to use this page</h2><ul>"
              "<li>Sort attention by priority: SG-01 (odds source) and SG-15 (legal) gate the biggest capabilities.</li>"
-             "<li>Anything marked <em>needs-info</em> is waiting on a question in <a href=\"questions.html\">Questions</a>.</li>"
+             "<li>Anything marked <em>needs-info</em> is waiting on a question in <a href=\"nfl-intel-questions.html\">Questions</a>.</li>"
              "<li>When you accept or reject, record the reason here so the decision stays auditable.</li></ul>")
-    page("suggestions.html", "Suggestions", "suggestions.html", "".join(b))
+    page("nfl-intel-suggestions.html", "Suggestions", "nfl-intel-suggestions.html", "".join(b))
 
 
-# ============================================================ questions.html
+# ============================================================ nfl-intel-questions.html
 def build_questions():
     b = []
     b.append("<h1>Questions, information &amp; answers</h1>")
@@ -516,7 +520,7 @@ def build_questions():
                      " ".join(src(u, "link") for u in q["links"]) if q["links"] else '<span class="small">—</span>'])
     b.append(table(["ID", "Question", "Why it blocks decisions", "What we have now", "What is missing",
                     "Discovery action", "Official links"], rows))
-    page("questions.html", "Questions register", "questions.html", "".join(b))
+    page("nfl-intel-questions.html", "Questions register", "nfl-intel-questions.html", "".join(b))
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 name: Planner certainty and site checks
 on:
   push:
-    branches: [main, arena/f9e705a1-korea5]
+    branches: [main, arena/f9e705a1-korea5, arena/c6eea73d-korea5]
   pull_request:
   workflow_dispatch:
 permissions:
@@ -16,13 +16,32 @@ jobs:
           python-version: '3.11'
       - name: Rebuild and validate published site
         run: |
+          python3 scripts/analyze_lab.py
+          python3 tools/build_lab.py
+          python3 scripts/nfl_lab/build_site.py
+          python3 scripts/build_nfl_metrics.py
+          python3 scripts/nfl_lab/verify.py
+          # The verifier writes verification.json; rebuild to include all current checks in the page.
+          python3 scripts/nfl_lab/build_site.py
+          # That page's added check rows affect its own row count, so settle and render the final report.
+          python3 scripts/nfl_lab/verify.py
+          python3 scripts/nfl_lab/build_site.py
+          python3 scripts/build_nfl.py
+          python3 scripts/verify_nfl.py
           python3 scripts/build_site.py
           python3 tools/build_extra.py
           python3 scripts/audit_certainty.py
           python3 scripts/check_links.py
           python3 tools/verify_extra.py
+          python3 tools/verify_lab.py
           python3 scripts/audit_certainty.py
+          python3 -c "import json;a=json.load(open('data/lab/analysis.json'));assert len(a['correlations'])>=8;assert all(c['ci95'] for c in a['correlations']);print('lab analysis ok')"
+          python3 -c "import json;d=json.load(open('data/lab/injuries-week10-2026.json'));assert d['gameStatus'] and d['practice'];print('lab records ok')"
           node --check extra/assets/extra.js
+          node --check nfl-lab/assets/decisions.js
+          node nfl-lab/tests/test_decisions.js
           node tests/test_calendar_today.js
+      - name: NFL price math unit tests
+        run: python3 -m unittest discover -s nfl-lab/tests -v
       - name: Python syntax
-        run: python3 -m compileall -q scripts tools
+        run: python3 -m compileall -q scripts tools nfl-lab/scripts nfl-lab/tests

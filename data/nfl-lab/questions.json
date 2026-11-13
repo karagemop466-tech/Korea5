@@ -1,0 +1,140 @@
+{
+ "questions": [
+  {
+   "id": "Q01",
+   "area": "Legal / access",
+   "question": "Can a Singapore resident legally place NFL wagers?",
+   "known": "Only Singapore Pools (Private) Limited is licensed by the GRA to provide remote gambling services. Participating in unlicensed remote gambling is an offence (fine up to $10,000 and/or 6 months).",
+   "missing": "Whether Singapore Pools offers any NFL market. Not checked in this session.",
+   "how_to_get_it": "Check Singapore Pools' published product list and terms directly (official source to be added), and get written confirmation from the GRA if needed.",
+   "source": "https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities",
+   "source_label": "GRA: unlawful remote gambling"
+  },
+  {
+   "id": "Q02",
+   "area": "Market data",
+   "question": "Where do spread_line and total_line come from?",
+   "known": "The nfldata DATASETS.md documents both columns (positive spread = home favoured) but does not name an upstream source.",
+   "missing": "A named, documented, licensed or official source for the lines.",
+   "how_to_get_it": "Obtain a documented odds feed (decision S1) or ask the dataset maintainer for provenance in writing.",
+   "source": "https://github.com/nflverse/nfldata/blob/master/DATASETS.md",
+   "source_label": "nfldata DATASETS.md"
+  },
+  {
+   "id": "Q03",
+   "area": "Market data",
+   "question": "Are the lines opening or closing lines, and at what time were they captured?",
+   "known": "games.csv has one spread and one total per game. A separate initial_lines.csv exists in the archive but covers 2021 only (1,088 rows, all under one sportsbook label, WSGT).",
+   "missing": "Timestamps and an opening/closing flag for every game.",
+   "how_to_get_it": "Same as Q02. Without timestamps, a bet-at-open test cannot be run.",
+   "source": "https://github.com/nflverse/nfldata/blob/master/DATASETS.md",
+   "source_label": "nfldata DATASETS.md"
+  },
+  {
+   "id": "Q04",
+   "area": "Injuries",
+   "question": "Is there enough history to test starting-QB injury signals?",
+   "known": "Official reports list 780 QB rows for 2016\u20132026. Only 7 games in 2016\u20132025 had a starting QB listed Out or Doubtful.",
+   "missing": "A sample of at least several hundred qualifying games, or a different signal.",
+   "how_to_get_it": "Expand to Questionable and practice status (decision S3), or drop the signal and accept the sample limit.",
+   "source": "https://www.nfl.com/injuries/",
+   "source_label": "NFL injury reports"
+  },
+  {
+   "id": "Q05",
+   "area": "Depth charts",
+   "question": "Who was the starter at each slot on each game day in past seasons?",
+   "known": "The nflverse mirror of depth charts is a series of dated snapshots, not week-keyed. Only the latest snapshot is used on the injuries page.",
+   "missing": "Weekly, game-day depth charts for the historical period, and an official definition of 'starter'.",
+   "how_to_get_it": "Start archiving snapshots by CI from now on (S5), or find an official weekly depth source.",
+   "source": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+   "source_label": "nflverse depth charts"
+  },
+  {
+   "id": "Q06",
+   "area": "Player props",
+   "question": "Can player-prop combinations be tested?",
+   "known": "No official NFL source publishes historical player prop prices. Player stats are not reachable from the sandbox; only CI can fetch the mirrors.",
+   "missing": "Historical prop prices with timestamps, and player-level game logs.",
+   "how_to_get_it": "Licensed data vendor (decision), with a licence that permits this use.",
+   "source": null
+  },
+  {
+   "id": "Q07",
+   "area": "Leaderboard",
+   "question": "What counts as a reward for a top strategy?",
+   "known": "The brief asks for rewards for top performers. No strategy has passed every gate, so none has earned any reward yet.",
+   "missing": "The owner's definition of a reward (points only, public ranking, or something else).",
+   "how_to_get_it": "Owner decision (suggestion S4). Monetary rewards are not recommended for a Singapore resident (see Q01).",
+   "source": null
+  },
+  {
+   "id": "Q08",
+   "area": "Results accuracy",
+   "question": "Do the final scores in the games file match nfl.com for every 2026 game?",
+   "known": "Three final games were checked against nfl.com in this session and all matched. 134 final 2026 games were not checked.",
+   "missing": "Full reconciliation of the 137 final 2026 games and the 2016\u20132025 test window.",
+   "how_to_get_it": "CI job that fetches each nfl.com week page and compares scores (suggestion S8).",
+   "source": "https://www.nfl.com/schedules/2026/by-week/week-10",
+   "source_label": "nfl.com week 10"
+  },
+  {
+   "id": "Q09",
+   "area": "Injuries",
+   "question": "When is the official injury report published and updated, and which version matters for a decision?",
+   "known": "Week pages exist at nfl.com/injuries/league/2026/reg followed by the week number. The mirror CSV has no per-row update timestamp (its columns are listed in data/nfl-lab/fetch-log.json).",
+   "missing": "The official publication schedule and the timing rule for the final status.",
+   "how_to_get_it": "Read the NFL's own injury-report guidance and record the update times we observe.",
+   "source": "https://www.nfl.com/injuries/league/2026/reg10",
+   "source_label": "nfl.com week 10 injuries"
+  },
+  {
+   "id": "Q10",
+   "area": "Model",
+   "question": "Can any of our own models beat the closing market spread?",
+   "known": "Walk-forward 2016\u20132025: model MAE 10.17 points vs market spread 9.79 points on 2,639 games.",
+   "missing": "A feature set that adds information the market lacks (for example verified weather or QB quality measures).",
+   "how_to_get_it": "Decision on which features to add (suggestion S7). Each addition must be pre-registered.",
+   "source": "https://github.com/nflverse/nfldata/blob/master/DATASETS.md",
+   "source_label": "nfldata DATASETS.md"
+  },
+  {
+   "id": "Q11",
+   "area": "Depth charts",
+   "question": "Who counts as a starter?",
+   "known": "In the mirror, depth position rank 1 is the starter on the snapshot.",
+   "missing": "An official definition, or confirmation that rank 1 matches the team's published depth chart.",
+   "how_to_get_it": "Compare the snapshot with each team's own depth chart page (not yet done).",
+   "source": null
+  },
+  {
+   "id": "Q12",
+   "area": "Scope",
+   "question": "Should playoff games be in the evaluation?",
+   "known": "Playoff games (WC, DIV, CON, SB) are in the file but excluded from all evaluations here.",
+   "missing": "Owner's decision.",
+   "how_to_get_it": "Owner decision.",
+   "source": null
+  },
+  {
+   "id": "Q13",
+   "area": "Licensing",
+   "question": "Is the nfldata archive licensed for reuse?",
+   "known": "The downloaded archive contains README.md, DATASETS.md and a data folder, but no LICENSE file.",
+   "missing": "A stated license for the data and the code.",
+   "how_to_get_it": "Ask the maintainer, or treat the data as no-reuse until a license is found.",
+   "source": "https://github.com/nflverse/nfldata",
+   "source_label": "nfldata repository"
+  },
+  {
+   "id": "Q14",
+   "area": "Verification",
+   "question": "Is the official NFL injury report identical to the nflverse mirror?",
+   "known": "The 9 Week 10 rows in our file that appear on the part of the official Week 10 page we fetched (first games in the listing) match on status, injury and practice status. Other rows are not checked.",
+   "missing": "Row-by-row check of all 1,230 rows.",
+   "how_to_get_it": "CI job that compares each row with the nfl.com week page (suggestion S8).",
+   "source": "https://www.nfl.com/injuries/league/2026/reg10",
+   "source_label": "nfl.com week 10 injuries"
+  }
+ ]
+}

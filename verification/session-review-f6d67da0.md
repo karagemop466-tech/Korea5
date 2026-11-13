@@ -47,9 +47,9 @@ S2: MAE 10.54, Brier 0.215, hit 63.4%, corr 0.318. **G1–G4 PASS both. G5/G6 no
 
 | Check | Result |
 |---|---|
-| `python3 scripts/build_events.py` → `analyze.py` → `build_site.py` → `nfl_intel.py` → `build_nfl_intel.py` → `build_extra.py` | all ran clean; 18 pages built |
-| `python3 scripts/check_links.py` | 18 pages, 426 local links, 751 external links, **0 missing** |
-| `python3 tools/verify_extra.py` | all checks passed, `rowsMissingSource: 0` |
+| `python3 scripts/build_events.py` → `analyze.py` → `build_site.py` → `nfl_intel.py` → `build_nfl_intel.py` → `build_extra.py` | all ran clean; 26 root pages + `lab/`, `nfl-lab/`, `nfl/`, `lines/`, `strategy-lab/` surfaces intact |
+| `python3 scripts/check_links.py` | 112 pages, 3,002 local links, 1,922 external links, **0 missing** |
+| `python3 tools/verify_extra.py` | all checks passed, `missingLocal: 0`, `rowsMissingSource: 0` |
 | `python3 -m unittest discover -s tests` | 5/5 passed |
 | `node --check assets/app.js extra/assets/extra.js` · `python3 -m compileall scripts tools` | OK |
 | `python3 scripts/audit_certainty.py` | passed — no certified future windows; all published pages disclose incomplete coverage |
@@ -67,7 +67,33 @@ S2: MAE 10.54, Brier 0.215, hit 63.4%, corr 0.318. **G1–G4 PASS both. G5/G6 no
 
 ## Deliverables
 
-`nfl-intel.html`, `nfl-lines.html`, `nfl-strategies.html`, `nfl-injuries.html`,
-`nfl-executive.html`, `suggestions.html`, `questions.html`; `scripts/build_nfl_intel.py`;
-`scripts/nfl_intel.py`; `research/EXECUTIVE-SUMMARY-NFL.md`; data files above; flags F33–F41;
-README + dashboard section; COORDINATION.md completion log.
+`nfl-intel.html` (hub), `nfl-intel-lines.html`, `nfl-intel-strategies.html`,
+`nfl-intel-injuries.html`, `nfl-intel-executive.html`, `nfl-intel-suggestions.html`,
+`nfl-intel-questions.html`; `scripts/build_nfl_intel.py`; `scripts/nfl_intel.py`;
+`research/EXECUTIVE-SUMMARY-NFL.md`; data files above; flags F33–F41; README + dashboard
+section; COORDINATION.md completion log.
+
+## Integration with parallel sessions (2026-11-13)
+
+`main` moved from `13854fe` to `bdd6c0b` while this session worked: five other NFL sessions
+merged (`lab/`, `nfl-lab/`, `nfl/`, `nfl/system/`, `lines/`, `strategy-lab/` surfaces and the
+retained `nfl-*.html` pointer-page set from `arena/c9041d2a`). Consequences, all resolved
+without removing any session's work:
+
+- **`git pull --rebase` attempted first, per protocol**, and stopped on COORDINATION.md
+  (1 claim commit × a board rewritten by five sessions). The documented fallback used by
+  `arena/b2d2460c` and `arena/2831c7f7` was followed: merge-commit, no history rewrite.
+- **Filename collision:** this session's `nfl-lines.html`, `nfl-strategies.html`,
+  `nfl-injuries.html` and `suggestions.html` would have overwritten `arena/c9041d2a`'s
+  retained pointer pages of the same names. Resolved exactly like the `lab/` → `strategy-lab/`
+  rename precedent: this session's pages were renamed to the `nfl-intel-*` prefix
+  (`nfl-intel-lines.html` etc.); the pointer pages are untouched. Nav labels renamed to
+  `Intel lines / Intel strategies / Intel injuries / Intel executive / Intel suggestions /
+  Intel questions` to avoid duplicating the existing `Suggestions`/`Decisions` labels.
+- **COORDINATION.md:** `origin/main` carried committed conflict markers (left by an earlier
+  merge at lines 1792–1840). Cleaned during resolution by keeping **both** blocks as real
+  content (the `arena/b2d2460c` namespace note and the `arena-2831c7f7` merge record);
+  nothing dropped. Logged as an irregularity in the completion log.
+- **Scope disambiguation:** the N-prefix in this session's task board is shared with
+  `arena-998582f0`'s addendum (their N1–N5); entries are namespaced by session. No task
+  scope overlaps: this session owns `data/nfl-intel/` + root `nfl-intel-*` pages.

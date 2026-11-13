@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bet ledger · NFL Lines Lab</title>
+<meta name="description" content="Every NFL bet candidate with its source — official-source NFL line origination, strategy validation and depth tracking.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="assets/lines.css">
+</head><body>
+<header class="top"><div class="wrap topbar">
+  <div class="brand"><span class="dot"></span> NFL LINES LAB</div>
+  <nav class="main"><a href="../index.html">Dashboard</a><a href="../nfl.html">NFL &amp; 49ers</a><a href="../nfl-strategy.html">Strategy design</a><a href="../extra/index.html">Official feeds</a><a href="../flagged.html">Flagged</a><span class="nav-sep">|</span><a href="index.html">Lines lab</a><a href="lines.html">Originated lines</a><a href="strategies.html">Strategies</a><a href="leaderboard.html">Leaderboard</a><a href="bets.html" class="active">Bet ledger</a><a href="validation.html">Validation</a><a href="correlations.html">Correlations</a><a href="injuries.html">Injury &amp; depth</a><a href="suggestions.html">Suggestions</a><a href="questions.html">Questions</a><a href="executive-summary.html">Executive summary</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+</div></header>
+<main class="wrap">
+<div class="callout warn"><strong>Model outputs, not official values, and not betting advice.</strong> Every number on these pages is computed from official NFL.com results, official box scores and official club depth charts. The originated lines, probabilities, returns and rewards are this repository's model output - they are not published by the league and they are not a market price. The reference price of -110 per leg is a <em>declared convention</em> used so strategies can be compared with each other. No claim is made that any strategy beats a real market. See <a href="validation.html">Validation</a> and <a href="questions.html">Questions</a>.</div>
+
+<h1>Bet ledger</h1>
+<p class="lede">Every candidate bet the strategies produced, with the line it was measured against, the
+strategy's own probability, the naive baseline probability, the outcome and the official game page the
+outcome came from. <b>Placed</b> means the strategy's own probability cleared the declared reference
+price, so a candidate that was not placed earns nothing.</p>
+<div class="toolbar">
+  <input type="text" id="q" placeholder="search team, market or game id">
+  <select id="strategy"><option value="">all strategies</option></select>
+  <select id="season"><option value="">all seasons</option></select>
+  <select id="placed"><option value="placed">placed only</option><option value="">every candidate</option></select>
+  <button id="csv">Download CSV</button>
+  <span class="small" id="count"></span>
+</div>
+<div class="scroll"><table id="bets"><thead><tr>
+<th>Date</th><th>Strategy</th><th>Market</th><th>Side</th><th>Line</th><th>Model p</th><th>Naive p</th>
+<th>Outcome</th><th>Placed</th><th>Units</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+<p class="small">The table is loaded from <a href="../data/lines/strategies.json">data/lines/strategies.json</a>,
+which is committed to the repository. The same rows appear on the <a href="strategies.html">strategy page</a>
+in summary form.</p>
+
+</main>
+<footer><div class="wrap">
+  <p><strong>NFL Lines Lab</strong> · built 2026-11-13 · every table row links its official source · unconfirmed values are blank and listed on <a href="flagged.html">Flagged for Review</a>.</p>
+  <p>Official sources: <a href="https://www.nfl.com/schedules/">NFL.com schedule</a> ·
+     <a href="https://www.nfl.com/games/">NFL.com game pages and box scores</a> ·
+     <a href="https://www.nfl.com/injuries/">NFL.com weekly injury report</a> ·
+     <a href="https://www.nfl.com/teams/">NFL.com team directory</a>.</p>
+  <p>Paper research only. No wagering recommendation, no market price is claimed, and no reward has any monetary value.</p>
+</div></footer>
+<script src="assets/lines.js"></script>
+</body></html>

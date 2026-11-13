@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leaderboard &middot; NFL Lines &amp; Strategy Lab</title>
+<link rel="stylesheet" href="assets/lab.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="brand"><a href="index.html">NFL Lines &amp; Strategy Lab</a>
+    <span class="tag">2026 season &middot; snapshot 2026-11-13</span></div>
+  <nav class="nav" aria-label="Sections"><a href="index.html">Overview</a>
+<a href="requirements.html">Requirements</a>
+<a href="decisions.html">Decisions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="lines.html">Lines</a>
+<a href="signals.html">Signals</a>
+<a href="strategies.html">Strategies</a>
+<a class="active" href="leaderboard.html">Leaderboard</a>
+<a href="injuries.html">Injuries</a>
+<a href="teams.html">Teams</a>
+<a href="games.html">Game log</a>
+<a href="sources.html">Sources</a>
+<a href="flagged.html">Flagged</a>
+<a href="verify.html">Verify</a></nav>
+</header>
+<main id="main">
+<h1>Leaderboard</h1>
+<p class="sub">Strategies ranked by a pre-declared proper scoring rule, paper-only.</p>
+<p class="banner"><strong>Verification rule.</strong> Every row on this site links to the official page it came from. Where an official source has not published a value the cell is left blank and the row is listed on the <a href="flagged.html">Flagged for Review</a> page. Nothing is inferred and nothing is filled in.</p>
+
+<h2>Ranking rule</h2>
+<p>The board ranks on <strong>Out-of-sample Brier skill against a constant 0.50 forecaster</strong>. That metric was fixed before the scores were computed. It was chosen
+because it is a proper scoring rule - it rewards honest probabilities rather than confident ones - and because it
+has a natural no-skill reference: a forecaster that always says 0.50. The board is deliberately
+<em>not</em> ranked by raw win rate or by streak, both of which reward luck.</p>
+
+<h2>Qualification rule</h2>
+<p>An entry appears as qualified only if its paired bootstrap 90% interval excludes zero and its one-sided
+p-value is below 0.05. Entries that fail are still listed, with their blanks visible, so failed ideas stay in the
+audit history instead of disappearing.</p>
+
+<h2>Rewards</h2>
+<p class="banner"><strong>No rewards are authorized.</strong> The competition runs paper-only for at least one
+full season. Attaching money or prizes needs a governance, jurisdictional, tax and privacy review that has not
+happened (decision D11, suggestion SUG-12). Flagged and unqualified items do not block anything.</p>
+
+<h3 id="leaderboard">Leaderboard</h3>
+<table class="data-table" data-filter="1" data-sourced="0">
+<thead><tr><th>ID</th><th>Strategy</th><th>Market</th><th>Brier skill</th><th>n (out of sample)</th><th>p (one-sided)</th><th>90% CI low</th><th>90% CI high</th><th>Status</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td><strong>STR-01</strong></td><td class='wrap'>Shrunk adjusted-scoring spread (Model B)</td><td>Single bet: spread / moneyline</td><td class='num'>0.06</td><td class='num'>89</td><td class='num'>0.0418</td><td class='num'>0.001</td><td class='num'>0.029</td><td><span class='pill qualifies'>qualifies</span></td><td class='wrap'>The only strategy on the board that clears the significance gate. Result is from one 89-game window and the architecture was chosen after seeing it, so it is provisional.</td></tr>
+<tr><td><strong>STR-05</strong></td><td class='wrap'>Pythagorean regression fade</td><td>Single bet: spread</td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td><span class='pill untested'>does not qualify</span></td><td class='wrap'>Needs a multi-season panel. Do not trade.</td></tr>
+<tr><td><strong>STR-02</strong></td><td class='wrap'>Naive adjusted-scoring spread (Model A)</td><td>Single bet: spread</td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td><span class='pill failed'>does not qualify</span></td><td class='wrap'>Retained as a labelled control. Do not use.</td></tr>
+<tr><td><strong>STR-03</strong></td><td class='wrap'>Recalibrated spread (Model C)</td><td>Single bet: spread / moneyline</td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td><span class='pill failed'>does not qualify</span></td><td class='wrap'>Not promoted. Re-test only under a pre-registered protocol (see SUG-03 and SUG-10).</td></tr>
+<tr><td><strong>STR-04</strong></td><td class='wrap'>Game totals</td><td>Single bet: total</td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td><span class='pill failed'>does not qualify</span></td><td class='wrap'>Do not trade totals from this model. See D06 and SUG-04.</td></tr>
+<tr><td><strong>STR-06</strong></td><td class='wrap'>Momentum / streak following</td><td>Single bet: spread</td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td><span class='pill refuted'>does not qualify</span></td><td class='wrap'>Do not trade. This is a direct answer to &#x27;remove luck from the equation&#x27;.</td></tr>
+<tr><td><strong>STR-07</strong></td><td class='wrap'>Same-game parlay (side + total)</td><td>Parlay</td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td><span class='pill blocked'>does not qualify</span></td><td class='wrap'>Requires the joint model in SUG-08. Not priced.</td></tr>
+<tr><td><strong>STR-08</strong></td><td class='wrap'>Player-prop combinations</td><td>Parlay / props</td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td class='num'><td class="blank">—</td></td><td><span class='pill blocked'>does not qualify</span></td><td class='wrap'>Schema designed; waiting on SUG-01 and SUG-09.</td></tr>
+</tbody></table>
+
+</main>
+<footer><p>Static site generated by <code>strategy-strategy-lab/build.py</code> from official NFL sources.
+<a href="../index.html">Back to the main planner</a> &middot;
+<a href="sources.html">Sources</a> &middot; <a href="flagged.html">Flagged for review</a></p></footer>
+<script src="assets/lab.js"></script>
+</body>
+</html>

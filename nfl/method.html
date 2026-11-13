@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method · NFL Lines &amp; Strategy</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="topnav"><a href="index.html">Dashboard</a><a href="executive-summary.html">Executive Summary</a><a href="requirements.html">Requirements</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="strategies.html">Strategies</a><a href="method.html" class="active">Method</a><a href="leaderboard.html">Leaderboard</a><a href="injuries.html">Injuries &amp; Roster</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+<main class="wrap">
+<header class="hero">
+<h1>Method</h1>
+
+<p class="meta">Sources verified 2026-11-13 · every fact-bearing row links to an official source</p>
+</header>
+<p>Methodology: validation gates, correlation, luck removal, ranking and the honesty rules.</p><table class="grid">
+<thead><tr><th>ID</th><th>Method</th><th>Detail</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td class="">M1</td><td class="">Validation gates</td><td class="">A strategy is eligible only if it passes every gate. Default gates: (1) minimum out-of-sample sample size; (2) no look-ahead bias check; (3) model edge versus market above a threshold; (4) minimum selectivity (the strategy does not bet every game); (5) statistical significance on the realised edge. Gates are configurable and each strategy records its own gate results.</td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">M2</td><td class="">Correlation method</td><td class="">Correlation between selections is estimated from official play-level data (Next Gen Stats, S5). For multi-leg parlays, the combined probability is recomputed with the correlation matrix rather than assuming independence. Same-game parlays model positive dependence explicitly. Empirical correlation values are computed and published once the data feed is live; until then the values are blank and flagged.</td><td class=""><a href="https://nextgenstats.nfl.com/" target="_blank" rel="noopener">S5 · NFL Next Gen Stats</a></td></tr>
+<tr><td class="">M3</td><td class="">Removing luck (skill vs luck)</td><td class="">Luck is removed by (1) testing on out-of-sample data only, (2) ranking on edge versus the market / closing-line value rather than raw hit rate, (3) requiring minimum selectivity so high-volume variance is not rewarded, (4) applying validation gates before eligibility, and (5) reporting risk-adjusted, correlation-adjusted returns. A strategy is treated as skill-based only after it clears the gates out-of-sample.</td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">M4</td><td class="">Ranking metric</td><td class="">Leaderboard ranking uses a risk-adjusted, luck-adjusted metric: correlation-adjusted edge versus market, normalised by exposure, with a selectivity penalty for unselective strategies. Raw hit rate is never the primary rank.</td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">M5</td><td class="">Line origination</td><td class="">Lines are model-implied probabilities produced by our own model from official inputs (stats, play-level data, schedule, injuries). They are labelled model-originated and are not sourced from any bookmaker feed. No bookmaker odds are scraped or presented as source data.</td><td class=""><a href="https://www.nfl.com/stats/player-stats/" target="_blank" rel="noopener">S4 · NFL Player Stats</a></td></tr>
+<tr><td class="">M6</td><td class="">Injury and roster signal model</td><td class="">Each team&#x27;s offense and defense depth is tracked by position string (1st-string starter, 2nd/3rd/4th-string backups). When a backup is elevated to starter due to injury, the model records the position, the player, and the expected signal impact. The official weekly injury report (S2) supplies injury and game status; depth charts are confirmed against official team/league sources and third-party aggregators are used only as leads, never as verified values.</td><td class=""><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">S2 · NFL Injury Report</a></td></tr>
+<tr><td class="">M7</td><td class="">Honesty rules</td><td class="">Every table row links to an official source. A value that cannot be confirmed from an official source is left blank and flagged as unverified. Values are never inferred or filled in. Model outputs are labelled as model-originated, not as sourced market data.</td><td class=""><span class="blank">—</span></td></tr>
+</tbody>
+</table>
+<footer class="foot">
+<p><strong>Responsible gaming:</strong> this is decision-support research, not a wagering service. No real-money wagers are placed. Betting carries risk; please gamble responsibly.</p>
+<p>Built from <code>nfl/data/*.json</code> by <code>scripts/build_nfl.py</code>. Values that cannot be confirmed from an official source are left blank and flagged on the Flagged page.</p>
+</footer>
+</main>
+<script src="assets/app.js"></script>
+</body>
+</html>

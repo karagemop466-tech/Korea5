@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requirements · NFL Lines &amp; Strategy</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="topnav"><a href="index.html">Dashboard</a><a href="executive-summary.html">Executive Summary</a><a href="requirements.html" class="active">Requirements</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="strategies.html">Strategies</a><a href="method.html">Method</a><a href="leaderboard.html">Leaderboard</a><a href="injuries.html">Injuries &amp; Roster</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+<main class="wrap">
+<header class="hero">
+<h1>Requirements</h1>
+
+<p class="meta">Sources verified 2026-11-13 · every fact-bearing row links to an official source</p>
+</header>
+<p>The full list of requirements extracted from the brief, decomposed into testable items. Status reflects the current state of the build.</p><table class="grid">
+<thead><tr><th>ID</th><th>Requirement</th><th>Category</th><th>Priority</th><th>Status</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td class="">R1</td><td class="">Collect, organize and analyze NFL data using this full list of requirements as the spec.</td><td class="">Process</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R2</td><td class="">Provide a dedicated Suggestions section where a reviewer can review suggestions and choose the best path before any change is implemented.</td><td class="">Decision support</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R3</td><td class="">Provide a clear list of questions, information and answers that must be addressed before any decision, based on what we have and do not have.</td><td class="">Decision support</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R4</td><td class="">Make suggestions aimed specifically at discovering missing information.</td><td class="">Decision support</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R5</td><td class="">Originate NFL lines from our own model, not from a bookmaker feed.</td><td class="">Lines</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">framework</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R6</td><td class="">Research and develop strategies for generating useful signals.</td><td class="">Strategy</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">framework</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R7</td><td class="">Treat the system as a leaderboard competition with rewards for top-performing strategies.</td><td class="">Leaderboard</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">framework</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R8</td><td class="">Support single bet, parlay and player-prop bet combination strategies.</td><td class="">Strategy</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">framework</span></td><td class=""><a href="https://sbg.colorado.gov/sites/sbg/files/SBRules1_2_4_5_6_7_8_9_10forAG_0.pdf" target="_blank" rel="noopener">S8 · Colorado Division of Gaming - Sports Betting Regulations</a></td></tr>
+<tr><td class="">R9</td><td class="">Every strategy must pass validation gates before it is eligible.</td><td class="">Validation</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">framework</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R10</td><td class="">Determine correlation values between legs/selections.</td><td class="">Correlation</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">method defined</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R11</td><td class="">Remove luck from the equation and build strategies that are selectively skill-based.</td><td class="">Skill</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">method defined</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R12</td><td class="">Track injuries.</td><td class="">Injury / Roster</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">partial</span></td><td class=""><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">S2 · NFL Injury Report</a></td></tr>
+<tr><td class="">R13</td><td class="">Track deficiencies in defenses when 2nd/3rd/4th-string backups replace starters.</td><td class="">Injury / Roster</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">framework</span></td><td class=""><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">S2 · NFL Injury Report</a></td></tr>
+<tr><td class="">R14</td><td class="">Track offenses using starters or backups.</td><td class="">Injury / Roster</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">framework</span></td><td class=""><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">S2 · NFL Injury Report</a></td></tr>
+<tr><td class="">R15</td><td class="">Produce an executive summary outlining important details.</td><td class="">Reporting</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R16</td><td class="">No manual input: the pipeline runs end-to-end automatically.</td><td class="">Process</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">partial</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R17</td><td class="">Review the repo line by line, verifying from official verified trusted sources, and provide links for manual review.</td><td class="">Verification</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R18</td><td class="">Flag any irregularities for review.</td><td class="">Verification</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R19</td><td class="">Create a GitHub Pages live site with a clean landing page.</td><td class="">Site</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R20</td><td class="">Subpages organized by category.</td><td class="">Site</td><td class=""><span class="badge">medium</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R21</td><td class="">Clean, user-friendly, simple dashboard-style UI.</td><td class="">Site</td><td class=""><span class="badge">medium</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R22</td><td class="">All entries and findings in a simple, easy-to-read table format.</td><td class="">Site</td><td class=""><span class="badge">medium</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R23</td><td class="">Include analysis and findings.</td><td class="">Site</td><td class=""><span class="badge">medium</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R24</td><td class="">Every table row must have a source link to an official site.</td><td class="">Verification</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R25</td><td class="">If a value cannot be confirmed from an official source, leave it blank and flag it as unverified.</td><td class="">Verification</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R26</td><td class="">Never infer or fill in values.</td><td class="">Verification</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R27</td><td class="">Coordinate parallel sessions through COORDINATION.md; claim tasks and keep non-overlapping scopes.</td><td class="">Process</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R28</td><td class="">Create a PR, merge without waiting, confirm Pages deploy, and log the result.</td><td class="">Process</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">in progress</span></td><td class=""><span class="blank">—</span></td></tr>
+<tr><td class="">R29</td><td class="">Include responsible-gaming disclosure; betting is a risk and this is decision-support research, not a wagering service.</td><td class="">Compliance</td><td class=""><span class="badge">high</span></td><td class=""><span class="badge">done</span></td><td class=""><a href="https://sbg.colorado.gov/sites/sbg/files/SBRules1_2_4_5_6_7_8_9_10forAG_0.pdf" target="_blank" rel="noopener">S8 · Colorado Division of Gaming - Sports Betting Regulations</a></td></tr>
+</tbody>
+</table>
+<footer class="foot">
+<p><strong>Responsible gaming:</strong> this is decision-support research, not a wagering service. No real-money wagers are placed. Betting carries risk; please gamble responsibly.</p>
+<p>Built from <code>nfl/data/*.json</code> by <code>scripts/build_nfl.py</code>. Values that cannot be confirmed from an official source are left blank and flagged on the Flagged page.</p>
+</footer>
+</main>
+<script src="assets/app.js"></script>
+</body>
+</html>

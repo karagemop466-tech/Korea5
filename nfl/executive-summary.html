@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Executive Summary · NFL Lines &amp; Strategy</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="topnav"><a href="index.html">Dashboard</a><a href="executive-summary.html" class="active">Executive Summary</a><a href="requirements.html">Requirements</a><a href="questions.html">Questions</a><a href="suggestions.html">Suggestions</a><a href="strategies.html">Strategies</a><a href="method.html">Method</a><a href="leaderboard.html">Leaderboard</a><a href="injuries.html">Injuries &amp; Roster</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+<main class="wrap">
+<header class="hero">
+<h1>Executive Summary</h1>
+
+<p class="meta">Sources verified 2026-11-13 · every fact-bearing row links to an official source</p>
+</header>
+
+<p>Decision-support research system that originates NFL lines, develops and validates betting-signal strategies, ranks them on a skill-based leaderboard, and tracks injuries and starter/backup roster state. Not a wagering service.</p>
+<h2>Verified anchors</h2><table class="grid">
+<thead><tr><th>Verified anchor</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td class="">NFL 2026 fixtures, kickoff times, venues and records are available from the official league schedule.</td><td class=""><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">S1 · NFL Schedules</a></td></tr>
+<tr><td class="">Official NFL Injury Report publishes player, position, injury, practice status and game status weekly per team.</td><td class=""><a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">S2 · NFL Injury Report</a></td></tr>
+<tr><td class="">The official 2026 NFL Rulebook governs game timing, overtime and roster/designation rules.</td><td class=""><a href="https://operations.nfl.com/rules-officiating/2026-nfl-rulebook" target="_blank" rel="noopener">S3 · 2026 NFL Rulebook</a></td></tr>
+<tr><td class="">Official player statistics and Next Gen Stats play-level data are available for model inputs and correlation.</td><td class=""><a href="https://www.nfl.com/stats/player-stats/" target="_blank" rel="noopener">S4 · NFL Player Stats</a></td></tr>
+<tr><td class="">Official division/conference/league standings are published with W-L-T and point differential.</td><td class=""><a href="https://www.nfl.com/standings/" target="_blank" rel="noopener">S6 · NFL Standings</a></td></tr>
+<tr><td class="">Bet mechanics (single bet, parlay, proposition bet) are defined by official state gaming regulators.</td><td class=""><a href="https://sbg.colorado.gov/sites/sbg/files/SBRules1_2_4_5_6_7_8_9_10forAG_0.pdf" target="_blank" rel="noopener">S8 · Colorado Division of Gaming - Sports Betting Regulations</a></td></tr>
+<tr><td class="">Player-prop action requires the named player to play; parlay legs must each win for the ticket to pay.</td><td class=""><a href="https://sbg.colorado.gov/sites/sbg/files/SBRules1_2_4_5_6_7_8_9_10forAG_0.pdf" target="_blank" rel="noopener">S8 · Colorado Division of Gaming - Sports Betting Regulations</a></td></tr>
+</tbody>
+</table>
+<div class="twocol">
+<section><h2>What we have</h2><ul><li>A full requirements list (R1-R29) decomposed from the brief.</li>
+<li>A clear open-questions inventory (Q1-Q12) with explicit have / don&#x27;t-have splits.</li>
+<li>A suggestions register (SU1-SU15) to improve decision-making and discover missing information, with a review workflow.</li>
+<li>A strategy framework covering single bet, parlay and player-prop combinations (ST1-ST6).</li>
+<li>A defined methodology for validation gates, correlation, luck removal and ranking (M1-M7).</li>
+<li>A leaderboard design with eligibility, ranking metric, tie-breaks and reward tiers.</li>
+<li>An injury/roster starter-backup signal model with verified example rows from the official Week 10 injury report.</li>
+<li>An official, verified source registry (S1-S10) and a flagged-for-review register (FL1-FL10).</li>
+<li>A line-by-line verification script that fails the build on unsourced or unflagged-blank rows.</li></ul></section>
+<section><h2>What we don't have</h2><ul><li>A locked operating jurisdiction and a single settlement rule set (Q1, Q10).</li>
+<li>Machine-readable official feeds for depth charts, rosters and injury history, with confirmed cadence/latency (Q2, Q8).</li>
+<li>A trained, calibrated line-origination model and market-implied calibration (Q7).</li>
+<li>Empirical correlation values computed from official play-level data (Q4).</li>
+<li>Validated strategy performance; no strategy has passed the validation gates yet (Q5, FL5).</li>
+<li>A historical injury/roster archive sufficient for back-testing (Q8).</li>
+<li>Full per-market player-prop grading rules (Q9).</li></ul></section>
+</div>
+<h2>Key decisions needed</h2><ul><li>Lock the operating jurisdiction and settlement rule set (Q1).</li>
+<li>Select and test the official data feeds for injury, roster and depth charts (Q2).</li>
+<li>Approve the skill metric and validation-gate thresholds (Q3, Q5).</li>
+<li>Approve the leaderboard metric and reward structure (Q6).</li>
+<li>Confirm v1 scope of bet types and markets (Q12).</li>
+<li>Review and approve or reject the proposed suggestions (SU1-SU15).</li></ul>
+<h2>Method summary</h2><p>Strategies must pass configurable validation gates (out-of-sample, no look-ahead, edge vs market, selectivity, significance). Correlation is estimated from play-level data and applied when combining legs. Luck is removed by out-of-sample testing, ranking on edge vs market / closing-line value, selectivity requirements and risk-adjusted returns. Lines are model-originated and clearly labelled.</p>
+<p class="disclaimer">This is decision-support research, not a wagering service. No real-money wagers are placed. Betting carries risk; please gamble responsibly.</p>
+
+<footer class="foot">
+<p><strong>Responsible gaming:</strong> this is decision-support research, not a wagering service. No real-money wagers are placed. Betting carries risk; please gamble responsibly.</p>
+<p>Built from <code>nfl/data/*.json</code> by <code>scripts/build_nfl.py</code>. Values that cannot be confirmed from an official source are left blank and flagged on the Flagged page.</p>
+</footer>
+</main>
+<script src="assets/app.js"></script>
+</body>
+</html>

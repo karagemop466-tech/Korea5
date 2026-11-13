@@ -1,0 +1,77 @@
+{
+  "description": "Strategy catalog for the NFL Lines & Strategy hub. Strategies are frameworks that must pass validation gates before they are eligible for the leaderboard. No performance results are reported until a strategy passes validation; those fields are intentionally blank and flagged.",
+  "strategies": [
+    {
+      "id": "ST1",
+      "name": "Single-bet signal: model edge on side / total",
+      "type": "single bet",
+      "description": "Originates a model-implied probability for a single point-spread, total (or moneyline) selection and takes the selection only when the model edge versus the market exceeds a threshold. Selective by design: it passes only when the edge and confidence are both sufficient.",
+      "signalsUsed": ["Model-implied probability (SU3)", "Official team stats (S4)", "Next Gen Stats play data (S5)", "Injury/starter-backup signal (SU7)"],
+      "validationGates": ["Minimum out-of-sample sample size", "No look-ahead bias check", "Edge vs market above threshold", "Minimum selectivity (not every game bet)", "Significance test on realised edge"],
+      "correlationMethod": "Not applicable for a single leg; independence assumption checked against same-game overlap.",
+      "skillVsLuck": "Edge vs market / closing-line value, selectivity-weighted; ranked only after gates pass.",
+      "status": "proposed",
+      "source": "S4"
+    },
+    {
+      "id": "ST2",
+      "name": "Single-bet signal: home/road situational model",
+      "type": "single bet",
+      "description": "Situational single-bet model combining venue, rest, division and schedule context with model-implied probabilities, restricted to a curated set of high-confidence situations to keep it selectively skill-based.",
+      "signalsUsed": ["Schedule/venue context (S1)", "Standings and point differential (S6)", "Model-implied probability (SU3)", "Injury/starter-backup signal (SU7)"],
+      "validationGates": ["Minimum out-of-sample sample size", "No look-ahead bias check", "Edge vs market above threshold", "Minimum selectivity", "Significance test on realised edge"],
+      "correlationMethod": "Not applicable for a single leg.",
+      "skillVsLuck": "Edge vs market / closing-line value, selectivity-weighted; ranked only after gates pass.",
+      "status": "proposed",
+      "source": "S1"
+    },
+    {
+      "id": "ST3",
+      "name": "Parlay signal: uncorrelated multi-game combination",
+      "type": "parlay",
+      "description": "Combines single-bet selections from unrelated games into a parlay only when each leg independently clears the edge threshold and the estimated cross-leg correlation is low, so the combined probability is not overstated.",
+      "signalsUsed": ["Single-bet legs (ST1/ST2)", "Cross-leg correlation estimate (SU4)", "Official schedule (S1)"],
+      "validationGates": ["Each leg passes single-bet gates", "Estimated cross-leg correlation below cap", "Combined probability recomputed with correlation", "Minimum out-of-sample sample size", "No look-ahead bias check"],
+      "correlationMethod": "Cross-leg correlation estimated from play-level data (SU4); combined probability recomputed with the correlation matrix rather than assuming independence.",
+      "skillVsLuck": "Correlation-adjusted edge vs market; ranked only after gates pass.",
+      "status": "proposed",
+      "source": "S8"
+    },
+    {
+      "id": "ST4",
+      "name": "Parlay signal: same-game correlated combination",
+      "type": "parlay",
+      "description": "Same-game parlay that explicitly models the positive correlation between legs (e.g. passing yards and team total) so the true probability reflects dependence; only used where correlation is measured, not assumed.",
+      "signalsUsed": ["Same-game legs", "Same-game correlation estimate (SU4)", "Play-level data (S5)", "Injury/starter-backup signal (SU7)"],
+      "validationGates": ["Same-game correlation measured, not assumed", "Combined probability recomputed with correlation", "Minimum out-of-sample sample size", "No look-ahead bias check", "Edge vs market above threshold"],
+      "correlationMethod": "Same-game correlation estimated from play-level data (SU4); dependence modelled explicitly.",
+      "skillVsLuck": "Correlation-adjusted edge vs market; ranked only after gates pass.",
+      "status": "proposed",
+      "source": "S8"
+    },
+    {
+      "id": "ST5",
+      "name": "Player-prop combo: pass-game volume stack",
+      "type": "player prop combo",
+      "description": "Player-prop combination keyed on pass-game volume and target share, with a starter/backup check to confirm the targeted receiver/quarterback is the starting player and not a backup, reducing no-action risk.",
+      "signalsUsed": ["Player stats and target share (S4)", "Next Gen Stats route/target data (S5)", "Injury/game status (S2)", "Starter/backup confirmation (SU7)"],
+      "validationGates": ["Named player confirmed as starter (not backup)", "Player-prop action rule satisfied (player plays)", "Minimum out-of-sample sample size", "No look-ahead bias check", "Edge vs market above threshold"],
+      "correlationMethod": "Correlation between the combined player props estimated from play-level data (SU4).",
+      "skillVsLuck": "Edge vs market / closing-line value, selectivity-weighted; ranked only after gates pass.",
+      "status": "proposed",
+      "source": "S4"
+    },
+    {
+      "id": "ST6",
+      "name": "Player-prop combo: defensive pressure + pass-rush prop",
+      "type": "player prop combo",
+      "description": "Player-prop combination linking defensive pressure/pass-rush outcomes, with a defense depth check to confirm the targeted rusher is a starter and that backup usage is not degrading the signal.",
+      "signalsUsed": ["Next Gen Stats pressure/sack data (S5)", "Player stats (S4)", "Injury/depth status (S2)", "Defense depth check (SU7)"],
+      "validationGates": ["Named player confirmed as starter (not backup)", "Player-prop action rule satisfied", "Minimum out-of-sample sample size", "No look-ahead bias check", "Edge vs market above threshold"],
+      "correlationMethod": "Correlation between the combined defensive props estimated from play-level data (SU4).",
+      "skillVsLuck": "Edge vs market / closing-line value, selectivity-weighted; ranked only after gates pass.",
+      "status": "proposed",
+      "source": "S5"
+    }
+  ]
+}

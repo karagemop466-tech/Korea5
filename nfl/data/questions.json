@@ -1,0 +1,137 @@
+{
+  "description": "Open questions that must be answered before any decision, with an explicit inventory of what we already have and what we do not have. Suggestions aimed at discovering missing information are linked from the Suggestions page.",
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "What are the exact settlement and grading rules for each bet type we will model (single bet, parlay, player prop)?",
+      "category": "Bet mechanics",
+      "whatWeHave": "Authoritative definitions of proposition bet, parlay and straight bet from official state gaming regulators (S8, S9, S10); 'player must play' action rule for football props.",
+      "whatWeDontHave": "A single canonical rule set for the specific market/book we will model; rules vary by jurisdiction and operator; full per-market grading and no-action/void rules.",
+      "whyItMatters": "A strategy cannot be validated or settled correctly without an agreed rule set; settlement rules change hit rates and payouts.",
+      "suggestedAction": "Lock one jurisdiction and one operator rule set, document it as the model's settlement basis, and record the choice on the Method page.",
+      "priority": "high",
+      "source": "S8"
+    },
+    {
+      "id": "Q2",
+      "question": "Which official data feeds will supply injury, roster and depth-chart signals, and at what cadence and latency?",
+      "category": "Data feeds",
+      "whatWeHave": "Official weekly NFL Injury Report (S2) with player/position/injury/practice/game status; official player stats (S4) and Next Gen Stats (S5).",
+      "whatWeDontHave": "A machine-readable official depth-chart feed; an official roster/IR-status feed; confirmed ingestion cadence and end-to-end latency for each signal.",
+      "whyItMatters": "Starter/backup signals are the core of the injury and defense-deficiency model; without a reliable, timely feed the signals are not reproducible.",
+      "suggestedAction": "Identify and test official machine-readable feeds (league APIs, team sites, gamebooks); log cadence and latency for each before relying on signals.",
+      "priority": "high",
+      "source": "S2"
+    },
+    {
+      "id": "Q3",
+      "question": "How do we define and measure skill versus luck?",
+      "category": "Skill",
+      "whatWeHave": "Methodology concepts: validation gates, out-of-sample testing, correlation control, selectivity.",
+      "whatWeDontHave": "A validated, agreed skill metric and threshold; a calibrated definition of 'selectively skill-based'.",
+      "whyItMatters": "The whole goal is to remove luck; without a defined skill metric the leaderboard cannot distinguish skill from variance.",
+      "suggestedAction": "Define a skill metric (e.g., edge versus market / closing-line value, risk-adjusted return, selectivity-weighted hit rate) and a minimum-evidence threshold; publish the definition.",
+      "priority": "high",
+      "source": null
+    },
+    {
+      "id": "Q4",
+      "question": "What correlation model will be used between selections, and what are the empirical correlation values?",
+      "category": "Correlation",
+      "whatWeHave": "Statistical correlation concept; regulator definition of a parlay as a single wager linking multiple legs (S8, S10).",
+      "whatWeDontHave": "Empirical correlation values computed from official play-level data; a chosen estimator and assumptions.",
+      "whyItMatters": "Same-game and correlated legs change the true probability of a parlay; ignoring correlation overstates the value of combination bets.",
+      "suggestedAction": "Compute correlation from play-level official data (S5), document the estimator and assumptions, and publish the correlation matrix per bet-type combination.",
+      "priority": "high",
+      "source": "S8"
+    },
+    {
+      "id": "Q5",
+      "question": "What concrete validation gates must a strategy pass to be eligible?",
+      "category": "Validation",
+      "whatWeHave": "The requirement that every strategy pass validation gates (R9).",
+      "whatWeDontHave": "A concrete, configurable list of gates (sample size, out-of-sample period, no-look-ahead check, market-beating edge, minimum selectivity).",
+      "whyItMatters": "Gates are the eligibility filter for the leaderboard; undefined gates mean any strategy could be ranked on luck.",
+      "suggestedAction": "Define a default gate set with thresholds, make it configurable, and record each strategy's gate results.",
+      "priority": "high",
+      "source": null
+    },
+    {
+      "id": "Q6",
+      "question": "What is the leaderboard ranking metric, eligibility rule and reward structure?",
+      "category": "Leaderboard",
+      "whatWeHave": "Requirement for a leaderboard with rewards for top-performing strategies (R7).",
+      "whatWeDontHave": "A ranking metric, eligibility criteria, reward tiers, or a tie-break policy.",
+      "whyItMatters": "The leaderboard only motivates correct behaviour if the metric rewards skill and gates block unvalidated strategies.",
+      "suggestedAction": "Define ranking metric (risk-adjusted, luck-adjusted), eligibility (all gates passed + minimum sample), reward tiers, and tie-breaks; publish on the Leaderboard page.",
+      "priority": "high",
+      "source": null
+    },
+    {
+      "id": "Q7",
+      "question": "How do we originate lines (model-implied probabilities) without a bookmaker feed?",
+      "category": "Lines",
+      "whatWeHave": "Official stats and play-level tracking (S4, S5) to build models; clear label that lines are model-originated (R5).",
+      "whatWeDontHave": "A market-implied line feed for calibration; a trained, validated model; a calibration method against market expectations.",
+      "whyItMatters": "Lines are the foundation of every signal; without a defined model and calibration, 'originating lines' is not reproducible.",
+      "suggestedAction": "Define model inputs, output format (implied probability per market), and a calibration procedure; label all outputs as model-originated, not market-sourced.",
+      "priority": "high",
+      "source": "S4"
+    },
+    {
+      "id": "Q8",
+      "question": "What is the cadence and retention policy for injury and roster tracking?",
+      "category": "Data feeds",
+      "whatWeHave": "Weekly official injury report (S2).",
+      "whatWeDontHave": "A historical injury/roster archive source; a retention/replay policy for back-testing signals.",
+      "whyItMatters": "Back-testing starter/backup signals requires historical injury and lineup data; without it, strategies cannot be validated on history.",
+      "suggestedAction": "Source a historical archive or API, define retention, and back-fill enough seasons to meet the validation sample gate.",
+      "priority": "medium",
+      "source": "S2"
+    },
+    {
+      "id": "Q9",
+      "question": "How are player-prop bets graded when a named player does not play?",
+      "category": "Bet mechanics",
+      "whatWeHave": "Official regulator rule that a football player prop is action only if the player plays, otherwise void (S8, S9, S10).",
+      "whatWeDontHave": "Full grading rules for every market and operator; treatment of partial participation and overtime.",
+      "whyItMatters": "Void/no-action outcomes change realised returns and must be modelled or excluded for fair strategy comparison.",
+      "suggestedAction": "Document grading and no-action rules per market from the chosen official rule set; exclude or adjust void bets in back-tests accordingly.",
+      "priority": "medium",
+      "source": "S8"
+    },
+    {
+      "id": "Q10",
+      "question": "What compliance and responsible-gaming disclosure is required, and for which jurisdiction?",
+      "category": "Compliance",
+      "whatWeHave": "Official regulator sources defining bet mechanics (S8, S9, S10); a responsible-gaming requirement (R29).",
+      "whatWeDontHave": "A locked jurisdiction; jurisdiction-specific limits, age/access controls, and any licensing obligations for operating the tool.",
+      "whyItMatters": "Betting rules and obligations vary by jurisdiction; operating without a defined jurisdiction is a compliance gap.",
+      "suggestedAction": "Lock the operating jurisdiction, add a responsible-gaming disclosure and risk warning, and document that this is decision-support research, not a wagering service.",
+      "priority": "high",
+      "source": "S9"
+    },
+    {
+      "id": "Q11",
+      "question": "How does this NFL Lines hub relate to the existing vacation-planner site?",
+      "category": "Scope",
+      "whatWeHave": "An existing live GitHub Pages site (the free-time/vacation planner) on the same repository.",
+      "whatWeDontHave": "An owner decision on whether the NFL hub is a separate section, an integrated dashboard, or a standalone site.",
+      "whyItMatters": "Determines navigation, shared assets, and whether shared outputs are integration-frozen.",
+      "suggestedAction": "This session ships a self-contained, non-overlapping hub under nfl/ with a single navigation link from the root dashboard; owner can later integrate or separate.",
+      "priority": "medium",
+      "source": null
+    },
+    {
+      "id": "Q12",
+      "question": "Which bet types and markets are in scope for version 1?",
+      "category": "Scope",
+      "whatWeHave": "NFL focus; single bet, parlay and player-prop combinations named in the brief (R8).",
+      "whatWeDontHave": "Confirmed v1 scope (all three bet types, or a subset), market list (spread, total, moneyline, props) and any sport expansion.",
+      "whyItMatters": "Scope determines which strategies, feeds and validation gates must be built first.",
+      "suggestedAction": "Define v1 scope explicitly (NFL; single + parlay + player-prop; spread/total/moneyline + player props) and log it as the baseline.",
+      "priority": "medium",
+      "source": "S8"
+    }
+  ]
+}

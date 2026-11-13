@@ -527,6 +527,7 @@ def fetch_depth_chart(club):
         f"https://www.{domain}/team/depth-charts/",
         f"https://www.{domain}/team/depth-chart",
     ]
+    best = None
     for url in candidates:
         page = get(url, tries=2)
         if page is None:
@@ -545,6 +546,8 @@ def fetch_depth_chart(club):
                 "sourceName": f"Official {full} depth chart",
                 "verification": "verified",
             }
+        if best is None:
+            best = (url, tables_seen)
     return {
         "team": full,
         "abbr": abbr,
@@ -552,8 +555,8 @@ def fetch_depth_chart(club):
         "asOf": None,
         "chartLabel": None,
         "tierLabelsInSource": False,
-        "tablesOnPage": 0,
-        "sourceUrl": None,
+        "tablesOnPage": best[1] if best else 0,
+        "sourceUrl": best[0] if best else None,
         "sourceName": f"Official {full} depth chart",
         "verification": "unverified-not-fetched",
     }

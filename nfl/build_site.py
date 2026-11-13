@@ -30,6 +30,7 @@ DATA = "nfl/data"
 
 NAV = [
     ("index.html", "Dashboard"),
+    ("executive.html", "Executive summary"),
     ("lines.html", "Lines & model"),
     ("signals.html", "Signals"),
     ("injuries.html", "Injuries & lineups"),
@@ -751,6 +752,116 @@ unmatched on purpose: a game nobody checked must never be described as verified.
     page("sources.html", "Sources", body, "sources.html")
 
 
+def build_executive(mr, lb, q, hyp):
+    audit = load("data_audit.json", {})
+    m = mr.get("model", {}) or {}
+    d = mr.get("deflation", {}) or {}
+    cs = mr.get("crossSource", {}) or {}
+    fams = mr.get("families", {}) or {}
+    props = mr.get("props", []) or []
+    corr = (mr.get("correlation", {}) or {}).get("pairs", []) or []
+    mc = mr.get("marketCoverage", {}) or {}
+
+    head = table(["Measure", "Value"], [
+        ["Seasons loaded", esc(", ".join(str(x) for x in (mr.get("seasons") or [])))],
+        ["Out-of-sample evaluation seasons", esc(", ".join(str(x) for x in (mr.get("evaluatedSeasons") or [])))],
+        ["Games evaluated out of sample", esc(m.get("games"))],
+        ["Accuracy (pick the higher-probability side)", esc(m.get("accuracy"))],
+        ["Log loss", esc(f'{m.get("logloss")} vs baseline {m.get("baselineLogloss")}')],
+        ["Log-loss skill vs baseline", esc(m.get("skill"))],
+        ["Brier skill vs baseline", esc(m.get("brierSkill"))],
+        ["Luck deflation (best-of-K null)",
+         esc(f'N={d.get("N")} permutations, K={d.get("K")}, null p95={d.get("p95")} → {d.get("verdict")}')],
+        ["Cross-source score check", esc(cs.get("summary"))],
+    ])
+
+    fam_rows = []
+    for name, f in sorted(fams.items()):
+        sc = f.get("scores", {}) or {}
+        fd = f.get("deflation", {}) or {}
+        fam_rows.append([esc(name.title()), esc(len(f.get("features", []) or [])),
+                         esc(sc.get("skill")), esc(fd.get("p95")),
+                         pill("passed" if fd.get("passed") else "failed"),
+                         esc(f.get("claim", ""))])
+    fam_tbl = table(["Family", "# signals", "Skill", "Null p95", "Deflation verdict", "Claim"], fam_rows) if fam_rows else "<p>No family rows in this run.</p>"
+
+    prop_rows = [[esc(p.get("market", "").replace("_", " ")), esc(p.get("position")),
+                  esc(p.get("line")), esc(p.get("games")), esc(p.get("skill")), esc(p.get("accuracy"))]
+                 for p in props]
+    prop_tbl = (table(["Market", "Position", "Line", "Games", "Skill vs base rate", "Accuracy"], prop_rows)
+                if prop_rows else "<p>No player-prop rows in this run.</p>")
+
+    top = [c for c in corr if c.get("excludesZero") and abs(c.get("r") or 0) < 0.999]
+    top.sort(key=lambda c: -abs(c.get("r") or 0))
+    corr_rows = [[esc(f'{c["a"]} ~ {c["b"]}'), esc(c.get("n")), esc(c.get("r")),
+                  esc(f'[{(c.get("ci") or [None, None])[0]}, {(c.get("ci") or [None, None])[1]}]')]
+                 for c in top[:10]]
+    corr_tbl = (table(["Signal pair (value vs home win)", "N", "Pearson r", "95% bootstrap CI"], corr_rows)
+                if corr_rows else "<p>No correlation excludes zero in this run.</p>")
+
+    chk = audit.get("checks", []) or []
+    chk_rows = [[esc(c.get("id")), esc(c.get("name")), esc(c.get("result")), pill(c.get("status")),
+                 (src(c.get("source"), "source") if c.get("source", "").startswith("http") else esc(c.get("source", "")))]
+                for c in chk]
+    chk_tbl = table(["Check", "What was checked", "Result", "Status", "Source"], chk_rows)
+
+    gaps = audit.get("gaps", []) or []
+    gap_rows = [[esc(g.get("id")), esc(g.get("item")), esc(g.get("why")), esc(g.get("howToObtain"))] for g in gaps]
+    gap_tbl = table(["ID", "Missing information", "Why it blocks decisions", "How to obtain it"], gap_rows)
+
+    items = q.get("items", []) or []
+    q_rows = [[esc(it.get("id")), esc(it.get("question")), esc(it.get("missing")), esc(it.get("impact"))]
+              for it in items[:6]]
+    q_tbl = (table(["ID", "Question before any decision", "Information missing", "Impact"], q_rows)
+             if q_rows else "<p>No open questions recorded.</p>")
+
+    body = f"""<h1>Executive summary</h1>
+<p>Generated from the repository's own pipeline outputs in <code>nfl/data/</code> — nothing on this page is typed
+by hand. Run log: <a href="https://github.com/karagemop466-tech/Korea5/actions">GitHub Actions</a>;
+full method on the <a href="signals.html">Signals</a> page.</p>
+<h2>1. Headline results</h2>
+{head}
+<h2>2. Where the signal comes from</h2>
+{fam_tbl}
+<h2>3. Player-prop signals (base-rate baseline)</h2>
+{prop_tbl}
+<h2>4. Correlation values that exclude zero</h2>
+<p>Pairwise Pearson r among the model's signals and against the home-win outcome. Pairs whose 95% bootstrap
+interval contains zero are treated as unmeasured, not as zero.</p>
+{corr_tbl}
+<h2>5. Verification and provenance</h2>
+{chk_tbl}
+<h2>6. Known gaps — information that must be found before decisions</h2>
+<p>Each gap blocks a class of decision. Acquisition suggestions are listed; nothing is filled in by guesswork.</p>
+{gap_tbl}
+<h2>7. Open questions before any decision can be made</h2>
+{q_tbl}
+<p>Full list with answers and owners: <a href="questions.html">Questions</a>. Improvement proposals to choose
+between before anything changes: <a href="suggestions.html">Suggestions</a>.</p>
+<h2>8. What is claimed, and what is not</h2>
+<ul class="clean">
+<li><strong>Claimed:</strong> the strength family (Elo-style ratings + form) beats its own baseline out of sample
+and survives the best-of-K luck-deflation null at the reported p95.</li>
+<li><strong>Not claimed:</strong> any profit, return, payout or edge. No timestamped price history exists
+(GAP-1), so none of those can be computed, and this lab is a research model, not a betting system.</li>
+<li><strong>Not claimed:</strong> that context-family skill is real — its deflation verdict is
+{esc((fams.get("context", {}).get("deflation", {}) or {}).get("verdict"))}.</li>
+<li>Injuries and depth charts are tracked with snapshot dates and a 1st–4th-string tier table
+(<a href="injuries.html">Injuries &amp; lineups</a>); designations come from the official weekly reports via nflverse.</li>
+</ul>
+<h2>9. Reproduce</h2>
+<pre>python3 nfl/fetch_data.py --with-espn --seasons 2016:2026
+python3 nfl/model.py --perm 200
+python3 nfl/analyze.py
+python3 nfl/leaderboard.py
+python3 nfl/build_site.py
+python3 -m unittest discover -s nfl/tests</pre>
+<p>Every figure above is regenerated by these commands from fetched files whose SHA-256 hashes are published
+on the <a href="data.html">Data audit</a> page.</p>"""
+    page("executive.html", "Executive summary", body, "executive.html")
+
+
+
 def main() -> int:
     os.makedirs(OUT, exist_ok=True)
     mr = load("model_results.json", {})
@@ -758,6 +869,7 @@ def main() -> int:
     q = load("questions.json", {"items": []})
     hyp = load("hypotheses.json", {"items": []})
     build_index(mr, lb, q, hyp)
+    build_executive(mr, lb, q, hyp)
     build_lines(mr)
     build_signals(mr, hyp)
     build_injuries(mr)

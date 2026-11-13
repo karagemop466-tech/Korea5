@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "name": "Open questions, missing information and what would have to be answered before a decision",
+    "compiledUTC": "2026-11-13",
+    "rule": "Every row below is a question this system cannot yet answer from the information the repository holds. The 'what we have' column is evidence; the 'what we do not have' column is the gap; 'how to close it' names an official, checkable source. No row asserts a fact that has not been checked.",
+    "statusMeaning": {
+      "open": "Cannot be answered from current official data. Blocks at least one decision.",
+      "blocked": "Cannot be answered at all right now, because the official publisher has not published it.",
+      "partial": "Partially answerable; the remaining part is named in the gap column.",
+      "answered": "Answered in this session from an official source; link in the source column."
+    }
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "topic": "Our own lines",
+      "question": "Which official source publishes NFL point spreads, moneylines or totals that we are allowed to cite row by row?",
+      "have": "Nothing. nfl.com game pages, week pages and team stat pages were probed by exact regex (nfl/research/probe.json): odds/spread/moneyline field counts are all 0.",
+      "gap": "No official NFL price feed is available in this repository. Any price must therefore be typed in by the owner with the book, timestamp and screenshot, or the system publishes a model number and labels it MODEL — not a market line.",
+      "howToClose": "Decide whether to consume a licensed odds API under the owner's own account, or to record prices manually as observations. Both need a decision before any ROI claim is published.",
+      "blocks": "Every ROI, closing-line-value and 'beat the market' claim.",
+      "status": "open",
+      "sourceUrl": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q02",
+      "topic": "Our own lines",
+      "question": "What does 'originating my own line' mean for this project: a fair-price model, or a tradable two-way price with a hold?",
+      "have": "The engine can produce win probabilities and devigged fair prices from any two-way price pair (functions implemented in nfl/tools/analyze_market.py and unit-tested).",
+      "gap": "The owner has not stated whether the published number must include a margin (juice) and, if so, whether it should be a fixed hold or a per-market hold.",
+      "howToClose": "One decision from the owner. Default proposed in nfl/curated/validation-gates.json: publish fair price and a suggested price at a stated hold.",
+      "blocks": "Presentation of the line, and the definition of a winning bet.",
+      "status": "open",
+      "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q03",
+      "topic": "Skill vs luck",
+      "question": "How many settled bets are needed before a strategy may be called skill-based rather than lucky?",
+      "have": "A statistical gate is implemented (binomial test against the break-even probability implied by the price, plus a Monte-Carlo shuffle test that destroys any real edge).",
+      "gap": "The threshold is a policy choice, not a fact. The gate currently refuses to certify anything below 100 settled bets and reports the p-value so the owner can see how weak the evidence is.",
+      "howToClose": "Owner decision on the false-positive budget. Record it in nfl/curated/validation-gates.json before results accumulate, so the threshold cannot be moved after the fact.",
+      "blocks": "Leaderboard certification and rewards.",
+      "status": "partial",
+      "sourceUrl": "https://www.nfl.com/standings/",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q04",
+      "topic": "Skill vs luck",
+      "question": "Are the rewards real money, an honour system, or a paper scoreboard?",
+      "have": "A leaderboard schema with scoring formulas (Brier score, log loss, ROI, closing-line value, calibration error) and a demotion/probation rule.",
+      "gap": "No reward currency, no payout rule and no eligibility rule exists. The site therefore publishes ranks only and states that no monetary reward is promised.",
+      "howToClose": "Owner decision. Until then the leaderboard is explicitly 'no reward, ranking only'.",
+      "blocks": "Any statement that a strategy 'earns' something.",
+      "status": "open",
+      "sourceUrl": "https://www.nfl.com/standings/",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q05",
+      "topic": "Injuries",
+      "question": "Does the official injury report tell us who will actually start?",
+      "have": "The NFL official report gives player, position, injury, practice status and game status (Out / Doubtful / Questionable) per team per week. 2026 weeks 1-10 and 2025 weeks 1-18 are loaded.",
+      "gap": "It does not name the replacement. 'Questionable' is not a probability. Practice status is not a snap count.",
+      "howToClose": "Join the injury report to each club's official depth chart (done) and to official snap-count/gamebook data (not yet loaded; see Q07).",
+      "blocks": "Any 'defence loses its 2nd-string corner' claim.",
+      "status": "partial",
+      "sourceUrl": "https://www.nfl.com/injuries/league/2026/reg10",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q06",
+      "topic": "Injuries",
+      "question": "How deep is each defence and offence behind the listed starter — is the 2nd string a real drop-off or a coin flip?",
+      "have": "Official club depth charts give 1st/2nd/3rd/4th string at every position for each club that publishes one, with the club's own 'updated as of' date.",
+      "gap": "A depth chart is a projection by the club, not a performance measurement. Several clubs label theirs 'Unofficial Depth Chart'. Depth is not quality: the 2nd string is not always worse.",
+      "howToClose": "Replace the projection with measured performance of the actual participants (official snap counts and player stats). Until then the site shows depth as a flag, never as a rating.",
+      "blocks": "Quantifying 'deficiency' in a defence or offence.",
+      "status": "partial",
+      "sourceUrl": "https://www.49ers.com/team/depth-chart",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q07",
+      "topic": "Injuries",
+      "question": "Which players actually played, and how many snaps?",
+      "have": "Nothing official in this repository yet. Player season stat pages publish per-game logs (WK, OPP, RESULT and stat columns) which imply participation.",
+      "gap": "No official snap-count feed is loaded. Absence from a game log is not proof of zero snaps — a player can play and record no stat.",
+      "howToClose": "Add the official NFL gamebook / snap-count publication as a source, or accept that participation is inferred from stat logs and label it as such.",
+      "blocks": "Backup-vs-starter strength measurement.",
+      "status": "open",
+      "sourceUrl": "https://www.nfl.com/players/christian-mccaffrey/stats",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q08",
+      "topic": "Correlation",
+      "question": "Which player props in the same game are positively correlated, and by how much?",
+      "have": "Official per-game player stat logs for the loaded seasons, which is exactly the input a correlation estimate needs.",
+      "gap": "The sample is small (a partial season), so any correlation estimate carries a wide confidence interval. Estimates are published with n and a bootstrap interval, and are withheld below n=8 games.",
+      "howToClose": "Accumulate more official game logs; resample with a block bootstrap; never publish a correlation without its interval.",
+      "blocks": "Parlay correlation adjustment and same-game parlay pricing.",
+      "status": "partial",
+      "sourceUrl": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q09",
+      "topic": "Correlation",
+      "question": "Do game-level outcomes correlate with the props inside them (e.g. a big favourite rushing more)?",
+      "have": "Final scores for every played 2025 and 2026 game, plus per-game player logs.",
+      "gap": "Mapping a player log row to a specific game requires the opponent and week to match the schedule; that join is implemented but only covers games where both official pages exist.",
+      "howToClose": "Complete the join and report the match rate. Unmatched rows are excluded and counted, never guessed.",
+      "blocks": "Cross-market correlation (spread vs rushing prop).",
+      "status": "open",
+      "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q10",
+      "topic": "Validation",
+      "question": "What is the minimum sample and the multiple-testing correction before a strategy is promoted?",
+      "have": "A gate list with explicit pass/fail logic, including a Benjamini-Hochberg style false-discovery guard when many strategies are tested at once.",
+      "gap": "The reward rule and the promotion threshold are policy, not fact. Defaults are proposed and marked as defaults.",
+      "howToClose": "Owner sign-off, recorded before results are seen.",
+      "blocks": "Publishing 'top performing strategy'.",
+      "status": "open",
+      "sourceUrl": "https://www.nfl.com/standings/",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q11",
+      "topic": "Validation",
+      "question": "Is there enough history to backtest at all?",
+      "have": "2025 and 2026 official results and player logs are loaded on demand by CI.",
+      "gap": "Two partial seasons with no historical prices is not a backtest of a betting strategy; it is a backtest of a probability model. Any strategy that needs prices cannot be backtested yet (see Q01).",
+      "howToClose": "Either obtain licensed historical prices, or restrict backtests to probability-scoring (Brier/log-loss) and label them 'no price backtest'.",
+      "blocks": "Any historical ROI claim.",
+      "status": "blocked",
+      "sourceUrl": "https://www.nfl.com/schedules/2025/by-week/week-5",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q12",
+      "topic": "Data quality",
+      "question": "Are the depth charts the same thing across all 32 clubs?",
+      "have": "Per-club pages with per-club 'updated as of' dates and per-club naming (some say 'Unofficial').",
+      "gap": "They are not normalised: some clubs publish 4 tiers, some 3; some list 11 defensive positions, some 12. Cross-club comparison of 'depth' is therefore approximate and is flagged as such.",
+      "howToClose": "Publish a per-club chart schema note and never sum across clubs without saying so.",
+      "blocks": "League-wide 'most injured defence' style claims.",
+      "status": "partial",
+      "sourceUrl": "https://www.chiefs.com/team/depth-chart",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q13",
+      "topic": "Data quality",
+      "question": "Could a page change between two fetches in the same day?",
+      "have": "Every record carries the fetch time and the exact source URL it came from.",
+      "gap": "Yes — injury reports and depth charts change during the week, and week pages gain scores. The site therefore stamps each table with its retrieval time.",
+      "howToClose": "Re-run the CI fetch before publishing anything time-sensitive; the site shows the stamp so staleness is visible.",
+      "blocks": "Nothing, provided the stamp is shown.",
+      "status": "answered",
+      "sourceUrl": "https://www.nfl.com/injuries/league/2026/reg10",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q14",
+      "topic": "Data quality",
+      "question": "How do the two partial-season datasets compare in size and shape?",
+      "have": "Counts per dataset are published on the Data health page and in nfl/data/fetch-report.json.",
+      "gap": "Coverage is not completeness. A missing week page means missing games, not zero games; the report lists every failed fetch.",
+      "howToClose": "Read fetch-report.json failures before trusting any aggregate.",
+      "blocks": "Nothing, provided failures stay visible.",
+      "status": "answered",
+      "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q15",
+      "topic": "Model",
+      "question": "What is the baseline every strategy must beat?",
+      "have": "Baselines defined: coin flip (50% ATS), home-field prior from official results, and the market's own devigged price when a price exists.",
+      "gap": "With no prices (Q01), the only baselines available are probability-scoring baselines, not ROI baselines.",
+      "howToClose": "State the baseline per competition in the strategy registry.",
+      "blocks": "Any 'beats the baseline' claim.",
+      "status": "partial",
+      "sourceUrl": "https://www.nfl.com/standings/",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q16",
+      "topic": "Model",
+      "question": "How should rest, travel and short weeks be handled?",
+      "have": "Official kickoff dates and venues for every 2026 game, from which rest days can be derived exactly.",
+      "gap": "Travel distance is not published; deriving it means adding a venue-coordinate source, which is not an official NFL page.",
+      "howToClose": "Either drop travel, or publish it as an estimate with the non-official coordinate source named.",
+      "blocks": "Travel-based signals.",
+      "status": "open",
+      "sourceUrl": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q17",
+      "topic": "Governance",
+      "question": "Who reviews a suggestion, and what stops a suggestion contradicting a verified table?",
+      "have": "A suggestions register with status, owner, review gate and a check that a suggestion touching a verified row must cite its source.",
+      "gap": "No reviewer is assigned. The register therefore defaults every row to 'awaiting review' and nothing is auto-accepted.",
+      "howToClose": "Assign the reviewer role. Until then the Suggestion review page lists decisions in open state only.",
+      "blocks": "Any suggestion being marked 'chosen'.",
+      "status": "open",
+      "sourceUrl": "https://github.com/karagemop466-tech/Korea5",
+      "verifiedAt": "2026-11-13"
+    },
+    {
+      "id": "Q18",
+      "topic": "Governance",
+      "question": "What happens when two strategies claim the same edge, or when a strategy's live results diverge from its backtest?",
+      "have": "A probation rule: a strategy whose live scoring diverges from its declared expectation by more than the stated tolerance is demoted to probation and its reward is withheld.",
+      "gap": "The tolerance value is a policy choice, not a fact.",
+      "howToClose": "Owner sets the tolerance in nfl/curated/validation-gates.json.",
+      "blocks": "Reward allocation.",
+      "status": "open",
+      "sourceUrl": "https://www.nfl.com/standings/",
+      "verifiedAt": "2026-11-13"
+    }
+  ]
+}

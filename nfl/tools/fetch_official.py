@@ -277,19 +277,94 @@ def parse_depth(abbr: str, site: str, url: str, page: str):
     return out
 
 
+GENERIC_UNIT_RE = re.compile(
+    r"<h[2-6][^>]*>\s*(?:<strong>)?\s*(OFFENSE|DEFENSE|SPECIAL TEAMS)\s*(?:</strong>)?\s*</h[2-6]>(.*?)(?=<h[2-6][^>]*>\s*(?:<strong>)?\s*(?:OFFENSE|DEFENSE|SPECIAL TEAMS)|\Z)",
+    re.S | re.I)
+JERSEY_NAME_RE = re.compile(r"^\s*(\d{1,2})\s+(.+?)\s*$")
+
+
+def parse_depth_generic(abbr: str, site: str, url: str, page: str):
+    """Fallback for clubs that publish a plain <table> instead of the d3 depth-chart widget.
+
+    Green Bay is the known example (verified live 2026-11-13): headings OFFENSE / DEFENSE /
+    SPECIAL TEAMS followed by "Position | Player | Player | Player" tables whose player cells
+    read "<jersey> <Name>". Rows with an empty position cell continue the row above.
+    """
+    out = []
+    updated = None
+    m = re.search(r"Unofficial,\s*([A-Z][a-z]{2}\.?\s*\d{1,2},\s*\d{4})", page)
+    if m:
+        updated = m.group(1)
+    for unit, block in GENERIC_UNIT_RE.findall(page):
+        table = re.search(r"<table.*?</table>", block, re.S)
+        if not table:
+            continue
+        unit_key = {"offense": "offense", "defense": "defense", "special teams": "specialteams"}[unit.lower()]
+        last_pos = None
+        for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", table.group(0), re.S):
+            cells = re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S)
+            if len(cells) < 2:
+                continue
+            pos = txt(cells[0])
+            if pos and re.fullmatch(r"[A-Z]{1,3}", pos):
+                last_pos = pos
+            elif not pos:
+                pos = last_pos
+            else:
+                continue  # header row ("Position")
+            if not pos:
+                continue
+            for idx, cell in enumerate(cells[1:], start=1):
+                raw = txt(cell)
+                if not raw:
+                    continue
+                jm = JERSEY_NAME_RE.match(raw)
+                name = jm.group(2) if jm else raw
+                jersey = jm.group(1) if jm else None
+                out.append({
+                    "team": abbr, "unit": unit_key, "position": pos,
+                    "depth": idx, "depthLabel": {1: "1st", 2: "2nd", 3: "3rd", 4: "4th"}.get(idx),
+                    "player": name, "jersey": jersey,
+                    "playerPath": None,
+                    "chartUpdatedAsOf": updated,
+                    "clubLabelsChart": "Unofficial Depth Chart",
+                    "sourceUrl": url, "sourceName": f"{abbr} official club depth chart",
+                    "verification": "verified",
+                })
+    return out
+
+
 def fetch_depth():
-    rows, used = [], []
+    rows, used, unavailable = [], [], []
     for abbr, name, site in CLUBS:
         url = site + "/team/depth-chart"
         page = get(url, tries=2)
         if page is None:
+            unavailable.append({"team": abbr, "url": url, "reason": "official page could not be fetched"})
             continue
         got = parse_depth(abbr, site, url, page)
+        parser = "club d3 depth-chart table"
+        if not got:
+            got = parse_depth_generic(abbr, site, url, page)
+            parser = "plain club table"
         if got:
-            used.append({"team": abbr, "url": url, "rows": len(got)})
+            for r in got:
+                r["parser"] = parser
+            used.append({"team": abbr, "url": url, "rows": len(got), "parser": parser})
+        else:
+            # Distinguish "published as an image" from "not published at all" honestly.
+            has_chart_heading = "Depth Chart" in page
+            img_only = has_chart_heading and len(re.findall(r"players-roster/", page)) < 3
+            unavailable.append({
+                "team": abbr, "url": url,
+                "reason": ("official page publishes the depth chart as an image, so no rows can be "
+                           "extracted without reading a picture — left blank rather than guessed")
+                          if img_only else "no parseable depth-chart table on the official page",
+                "imageOnly": bool(img_only),
+            })
         rows.extend(got)
         print(f"  depth {abbr}: {len(got)}")
-    return rows, used
+    return rows, used, unavailable
 
 
 # --------------------------------------------------------------- 4. team stats
@@ -416,17 +491,19 @@ def main():
     report["injuries"] = {"2026": len(inj26), "2025": len(inj25)}
 
     print("== depth charts")
-    dep, dep_urls = fetch_depth()
+    dep, dep_urls, dep_unavailable = fetch_depth()
     write("official-depth.json", {
         "meta": {"sourceName": "Official NFL club depth charts",
                  "retrievedUTC": started,
                  "note": "depth=1 is the listed starter; depth=2/3/4 are the listed backups. "
                          "Charts are the clubs' own; some clubs label theirs 'Unofficial Depth Chart'.",
-                 "pages": dep_urls},
+                 "pages": dep_urls,
+                 "unavailable": dep_unavailable},
         "rows": dep,
     })
     report["depth"] = {"rows": len(dep), "teams": len(dep_urls),
-                       "teamsMissing": [a for a, _, _ in CLUBS if a not in {u['team'] for u in dep_urls}]}
+                       "teamsMissing": [u["team"] for u in dep_unavailable],
+                       "missingReasons": dep_unavailable}
 
     print("== team stats")
     ts = fetch_team_stats(2026)

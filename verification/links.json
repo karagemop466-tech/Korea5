@@ -1,8 +1,8 @@
 {
- "pages": 12,
- "localLinksChecked": 190,
+ "pages": 15,
+ "localLinksChecked": 338,
  "missing": [],
- "uniqueExternalLinks": 528,
+ "uniqueExternalLinks": 530,
  "externalLinks": [
   "https://calbears.com/sports/football/schedule",
   "https://gostanford.com/sports/football/schedule",
@@ -12,6 +12,7 @@
   "https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2027&amp;gameType=R",
   "https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2028&amp;gameType=R",
   "https://www.49ers.com/schedule/2026/",
+  "https://www.49ers.com/team/depth-chart",
   "https://www.mlb.com/giants/schedule/watch",
   "https://www.mlb.com/news/mlb-2027-schedule-released",
   "https://www.mlb.com/schedule",
@@ -498,6 +499,7 @@
   "https://www.nfl.com/news/2026-27-national-football-league-important-dates",
   "https://www.nfl.com/schedules/",
   "https://www.nfl.com/schedules/2027/",
+  "https://www.nfl.com/standings/",
   "https://www.nfl.com/stats/",
   "https://www.nfl.com/stats/player-stats/",
   "https://www.nfl.com/stats/team-stats/",

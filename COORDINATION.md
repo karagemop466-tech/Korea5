@@ -690,3 +690,65 @@ values stay blank and are flagged. No betting edge, correlation value, ROI or le
 Scope note: this session works only on the fixed Arena branch. No overlapping file scope with prior sessions;
 `official/`, `extra/`, `data/` remain untouched by this session. Shared outputs (root `*.html` nav, generated
 pages) are changed only here, and only additively.
+
+### N3–N8 completion (2026-11-13) — session `arena/722a47cb-korea5`
+
+**Delivered (additive, standalone proposal; no betting edge, correlation value, ROI, or reward claimed):**
+
+- **N3 Suggestions** — `suggestions.html` + `research/SUGGESTIONS.md`: a dedicated review/choose section with a
+  5-step review workflow, a 12-item suggestion register (ID, decision served, options, recommended path, priority,
+  status, dependency) and an official-source table. Statuses: proposed → in review → approved → in progress → done / declined.
+- **N4 Decisions** — `decisions.html` + `research/DECISIONS.md`: a decision registry of 10 open decisions (D-01–D-10),
+  each with *what we know (verified)*, *what we do not have*, *answer needed to proceed*, and the suggestion (S-xx) that
+  discovers the missing information; plus 5 resolved decisions (R-01–R-05) and the evidence limits.
+- **N5 Leaderboard & bet-type gates** — `nfl-strategy.html` + `research/NFL-STRATEGY.md`: expanded leaderboard design
+  (entry rules, scoring by predeclared out-of-sample proper-score improvement over a common baseline, gated paper-only
+  rewards), a leaderboard-state table (all rows *not qualified*), a correlation-values table (all values blank/unverified),
+  and bet-type validation gates for single bets, parlays, and player-prop combinations.
+- **N6 Injury & lineup-depth tracking** — `injury-tracking.html` + `research/INJURY-TRACKING.md`: schema, tier logic
+  (1st/2nd/3rd/4th string, offense and defense, special teams), the two-condition "deficiency" rule, and a verified 49ers
+  depth-chart snapshot (updated 11/10/26) as a data-shape example. Tiers read only from official depth charts; no workload
+  or performance effect is asserted.
+- **N7 Executive summary** — `research/EXECUTIVE-SUMMARY.md` updated with the decision-support layer, status, sources and
+  irregularities. `README.md` gained an NFL decision-support section.
+- **N8 Verification & integration** — `scripts/build_site.py` NAV updated to include the four NFL decision-support pages
+  (fixing generator drift: the committed `nfl.html` had a hand-added strategy link that regeneration dropped). Full
+  pipeline re-run and green.
+
+**Sources used (all official; verified live 2026-11-13 via page fetch):**
+
+| Source | What it provided | Verification |
+|---|---|---|
+| https://www.nfl.com/injuries/ | Player, position, injury, practice status, game status by week | Fetched live — Week 10 2026 structure confirmed |
+| https://www.nfl.com/transactions/ | Trades/signings/waivers/reserve list/terminations by month/year | Fetched live — November 2026 table confirmed |
+| https://www.nfl.com/stats/player-stats/ | Passing/rushing/receiving/tackles/etc. category + year selectors | Fetched live — 2026 passing table confirmed |
+| https://www.nfl.com/stats/team-stats/ | Offense/defense/special-teams team categories | Fetched live — 2026 offense passing confirmed |
+| https://www.nfl.com/standings/ | Division/conference/league standings | Fetched live — 2026 division tables confirmed |
+| https://www.nfl.com/schedules/ | By week / by team / prime time | Fetched live — Week 10 2026 games confirmed |
+| https://www.49ers.com/team/depth-chart | Offense/defense/special-teams 1st/2nd/3rd/4th string | Fetched live — "Updated as of 11/10/26" |
+| https://operations.nfl.com/ | NFL Football Operations (rules/officiating) | Verified landing reference |
+
+**Verification performed:** `scripts/build_site.py`, `tools/build_extra.py`, `scripts/check_links.py`,
+`tools/verify_extra.py` (**31/31**), `scripts/audit_certainty.py`, Python unit tests (**5/5**), both calendar Node tests,
+`git diff --check` — all pass. Every factual table row on the new pages links to an official source; unverified values are
+blank and flagged. Local-link check across all root and extra pages: 0 missing.
+
+**Irregularities recorded (published on the Flagged for Review pages; do not block):**
+
+1. **No market/settlement/forecast data exists in the repository** — no odds, prop prices, settlement ledger, forecast log,
+   or historical injury-to-performance panel. All leaderboard and correlation values are therefore blank/unverified; no edge,
+   ROI, or leaderboard winner is claimed.
+2. **No historical depth-chart or injury series** — the 49ers depth chart is a single live snapshot (11/10/26), not a history.
+3. **Injury status ≠ workload** — "out/questionable/limited" does not imply a backup's expected snaps; opportunity share is a
+   model estimate, not asserted.
+4. **NFL.com team depth-chart URL 404** — `nfl.com/teams/.../roster/depth-chart` returned 404 in this check; the verified
+   official tier source used here is the club's own depth-chart page (e.g. 49ers.com). Flagged for review.
+5. **Rulebook URL normalization** — the NFL Football Operations rulebook returned content when requested, but the tool's
+   reported canonical URL differed from the requested one; the verified landing reference is https://operations.nfl.com/ .
+   Flagged for review.
+6. **Generator drift (fixed)** — the committed `nfl.html` carried a hand-added "NFL Strategy Lab" nav link that
+   `build_site.py` did not generate; regeneration would have dropped it. Fixed by adding the four NFL decision-support pages
+   to the `build_site.py` NAV so all generated pages keep the links.
+
+**Status: N3–N8 done.** No unclaimed or overlapping task remains. Flagged items remain published with official links and do
+not block the merge.

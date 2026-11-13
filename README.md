@@ -86,6 +86,25 @@ The exact label **ESTIMATION — not a real verified released schedule** appears
 not been officially released (2028/2029 MLB, 2027 NFL, 2027–2029 Westwood One postseason). Flagged items are
 published and do **not** block the Pages deployment.
 
+## NFL decision support (2026-11-13)
+
+A proposal layer for originating NFL lines, evaluating strategies, and tracking injuries/lineup depth. **Nothing here is
+validated and no reward is authorized** — the repository has no odds, prop prices, settlement, forecast, or
+injury-to-performance data, so no edge, correlation value, ROI, or leaderboard winner is claimed.
+
+| Path | What it is |
+|---|---|
+| `nfl-strategy.html` | NFL Lines & Strategy Lab — signals, validation gates, leaderboard, correlation, bet-type gates |
+| `suggestions.html` | Suggestions register — review and choose a path before implementing (options, priority, status) |
+| `decisions.html` | Decision registry — questions, known/missing information, answer needed, discovery suggestion |
+| `injury-tracking.html` | Injury & lineup-depth tracking — 1st/2nd/3rd/4th string, offense and defense, from official sources |
+| `research/SUGGESTIONS.md`, `DECISIONS.md`, `INJURY-TRACKING.md` | Readable research notes for the pages above |
+
+Leaderboard ranking uses predeclared out-of-sample probability-score improvement over a common baseline (never streaks or
+raw win rate); every strategy must pass validation gates; any reward waits on legal/responsible-play review. Tier
+(2nd/3rd/4th string) is read **only** from an official club depth chart; a "lineup deficiency" requires both a sourced
+tier change and a sourced availability change. See [Flagged for Review](flagged.html) for evidence limits.
+
 ## Certainty audit (2026-11-03)
 
 After either generator runs, publish the certainty policy and disclosure banners:

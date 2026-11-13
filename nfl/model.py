@@ -685,12 +685,15 @@ def deflate(games, seasons_eval, base, observed_skill, N=200, rng_seed=SEED, K=1
     for i in range(0, max(0, len(single) - K + 1), K):
         best_of.append(max(single[i:i + K]))
     p95_single = percentile(single, 0.95) if single else None
-    p95_best = percentile(best_of, 0.95) if best_of else p95_single
+    # a best-of-K null needs at least K draws to exist at all
+    p95_best = percentile(best_of, 0.95) if len(single) >= K else None
     return {"N": len(single), "K": K,
             "p95_single": round(p95_single, 5) if p95_single is not None else None,
             "p95": round(p95_best, 5) if p95_best is not None else None,
             "median": round(statistics.median(single), 5) if single else None,
             "blocks": len(best_of),
+            "verdict": ("insufficient permutations for a best-of-K null"
+                        if p95_best is None else "computed"),
             "passed": (observed_skill is not None and p95_best is not None and observed_skill > p95_best)}
 
 
@@ -1263,9 +1266,8 @@ def _team_rows(teams, week, index, injuries):
 
 def current_board(games, injuries, depth, snaps, index):
     """
-    The current-season board: for each team, the latest week in the data, the official injury report
-    for that week, and the lineup status (starters vs 2nd/3rd/4th string) derived from the latest
-    depth-chart snapshot. Every field is traceable to a published row; anything absent stays blank.
+    The latest week present in the data (which may still be scheduled): fixtures plus the same
+    injury/depth picture used by the played board. Reuses _team_rows so the two boards cannot drift.
     """
     seasons = sorted({g["season"] for g in games})
     if not seasons:
@@ -1276,41 +1278,8 @@ def current_board(games, injuries, depth, snaps, index):
         return {}
     latest_week = max((g["week"] for g in cur_games), default=0)
     teams = sorted({g["home"] for g in cur_games} | {g["away"] for g in cur_games})
-    board = {"season": cur, "week": latest_week, "teams": [], "games": []}
-
-    inj_by_team = defaultdict(list)
-    for (team, week, gid), v in injuries.items():
-        if week == latest_week:
-            inj_by_team[team].append({"gsisId": gid, **v})
-
-    for t in teams:
-        rep = inj_by_team.get(t, [])
-        outs = [x for x in rep if (x.get("report") or "").lower() == "out"]
-        doubts = [x for x in rep if (x.get("report") or "").lower() == "doubtful"]
-        ques = [x for x in rep if (x.get("report") or "").lower() == "questionable"]
-        off_val, off_out, off_doubt, off_ques = index.value(t, latest_week, "off")
-        def_val, def_out, def_doubt, def_ques = index.value(t, latest_week, "def")
-        # who is listed as a backup at each tier, per position group (published rows only)
-        tiers = defaultdict(lambda: defaultdict(list))
-        for pos in ("QB", "RB", "WR", "TE", "OL", "DL", "LB", "CB", "S"):
-            for gid, v in index.by_team_week_pos.get((t, latest_week, pos), []):
-                rank = v.get("rank")
-                if rank and rank <= 4 and v.get("name"):
-                    tiers[pos][rank].append(v["name"])
-        board["teams"].append({
-            "team": t,
-            "reportCount": len(rep),
-            "out": len(outs), "doubtful": len(doubts), "questionable": len(ques),
-            "outNames": [x.get("name") or x.get("full_name") or x["gsisId"] for x in outs][:8],
-            "offStarterValue": off_val, "defStarterValue": def_val,
-            "offOutShare": off_out, "defOutShare": def_out,
-            "offDoubtfulShare": off_doubt, "defDoubtfulShare": def_doubt,
-            "offQuestionableShare": off_ques, "defQuestionableShare": def_ques,
-            "tiers": {p: {str(r): names for r, names in d.items()} for p, d in tiers.items()},
-            "depthSnapshotWeek": snap_week,
-            "depthSnapshotUTC": snap_ts,
-            "status": ("verified" if rep or off_val is not None else "unknown"),
-        })
+    board = {"season": cur, "week": latest_week, "kind": "scheduled",
+             "teams": _team_rows(teams, latest_week, index, injuries), "games": []}
     for g in [x for x in cur_games if x["week"] == latest_week]:
         board["games"].append({
             "gameId": g["game_id"], "date": g["date"], "week": g["week"],
@@ -1318,7 +1287,7 @@ def current_board(games, injuries, depth, snaps, index):
             "awayRest": g["away_rest"], "homeRest": g["home_rest"],
             "spread": g["spread_line"], "total": g["total_line"],
             "complete": g["complete"],
-            "modelHomeWinProb": None,  # filled by the caller with the walk-forward probability when available
+            "source": "https://www.nfl.com/schedules/",
         })
     return board
 

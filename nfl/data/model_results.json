@@ -4,21 +4,21 @@
   "context": {
    "scores": {
     "games": 1632,
-    "logloss": 0.68486,
+    "logloss": 0.68581,
     "baselineLogloss": 0.68848,
-    "skill": 0.00526,
-    "brier": 0.24547,
+    "skill": 0.00388,
+    "brier": 0.24596,
     "baselineBrier": 0.24673,
-    "brierSkill": 0.00514,
-    "accuracy": 0.5711
+    "brierSkill": 0.00312,
+    "accuracy": 0.5643
    },
    "deflation": {
-    "N": 12,
+    "N": 6,
     "K": 11,
-    "p95_single": 0.04176,
-    "p95": 0.04432,
-    "median": 0.03214,
-    "blocks": 1,
+    "p95_single": 0.0444,
+    "p95": 0.0444,
+    "median": 0.03202,
+    "blocks": 0,
     "passed": false
    },
    "features": [
@@ -38,21 +38,21 @@
   "strength": {
    "scores": {
     "games": 1632,
-    "logloss": 0.63821,
+    "logloss": 0.63815,
     "baselineLogloss": 0.68848,
-    "skill": 0.07302,
-    "brier": 0.22347,
+    "skill": 0.07311,
+    "brier": 0.22341,
     "baselineBrier": 0.24673,
-    "brierSkill": 0.09428,
-    "accuracy": 0.6348
+    "brierSkill": 0.09453,
+    "accuracy": 0.6391
    },
    "deflation": {
-    "N": 12,
+    "N": 6,
     "K": 9,
-    "p95_single": 0.01524,
-    "p95": 0.01524,
-    "median": 0.00817,
-    "blocks": 1,
+    "p95_single": 0.01594,
+    "p95": 0.01594,
+    "median": 0.00645,
+    "blocks": 0,
     "passed": true
    },
    "features": [
@@ -68,7 +68,7 @@
    ]
   }
  },
- "generatedUTC": "2026-11-13T14:36:12Z",
+ "generatedUTC": "2026-11-13T14:55:55Z",
  "selftest": true,
  "seasons": [
   2016,
@@ -96,21 +96,21 @@
  "droppedIncomplete": 146,
  "model": {
   "games": 1632,
-  "logloss": 0.63821,
+  "logloss": 0.63815,
   "baselineLogloss": 0.68848,
-  "skill": 0.07302,
-  "brier": 0.22347,
+  "skill": 0.07311,
+  "brier": 0.22341,
   "baselineBrier": 0.24673,
-  "brierSkill": 0.09428,
-  "accuracy": 0.6348
+  "brierSkill": 0.09453,
+  "accuracy": 0.6391
  },
  "deflation": {
-  "N": 12,
+  "N": 6,
   "K": 9,
-  "p95_single": 0.01524,
-  "p95": 0.01524,
-  "median": 0.00817,
-  "blocks": 1,
+  "p95_single": 0.01594,
+  "p95": 0.01594,
+  "median": 0.00645,
+  "blocks": 0,
   "passed": true
  },
  "correlation": {
@@ -198,10 +198,10 @@
     "a": "rest_diff",
     "b": "off_value_diff",
     "n": 1584,
-    "r": 0.0141,
+    "r": 0.0087,
     "ci": [
-     -0.0422,
-     0.0668
+     -0.0457,
+     0.0599
     ],
     "excludesZero": false
    },
@@ -209,10 +209,10 @@
     "a": "rest_diff",
     "b": "def_value_diff",
     "n": 1584,
-    "r": 0.0185,
+    "r": 0.0225,
     "ci": [
-     -0.03,
-     0.0682
+     -0.0284,
+     0.0744
     ],
     "excludesZero": false
    },
@@ -220,10 +220,10 @@
     "a": "rest_diff",
     "b": "off_out_diff",
     "n": 1584,
-    "r": -0.0013,
+    "r": 0.0032,
     "ci": [
-     -0.0565,
-     0.0506
+     -0.0505,
+     0.0573
     ],
     "excludesZero": false
    },
@@ -231,10 +231,10 @@
     "a": "rest_diff",
     "b": "def_out_diff",
     "n": 1584,
-    "r": 0.0158,
+    "r": 0.0073,
     "ci": [
-     -0.023,
-     0.057
+     -0.0326,
+     0.0473
     ],
     "excludesZero": false
    },
@@ -297,10 +297,10 @@
     "a": "div_game",
     "b": "off_value_diff",
     "n": 1584,
-    "r": -0.0043,
+    "r": 0.0005,
     "ci": [
-     -0.0531,
-     0.0405
+     -0.0485,
+     0.0457
     ],
     "excludesZero": false
    },
@@ -308,10 +308,10 @@
     "a": "div_game",
     "b": "def_value_diff",
     "n": 1584,
-    "r": 0.0119,
+    "r": 0.0158,
     "ci": [
-     -0.0338,
-     0.0606
+     -0.0298,
+     0.0648
     ],
     "excludesZero": false
    },
@@ -319,10 +319,10 @@
     "a": "div_game",
     "b": "off_out_diff",
     "n": 1584,
-    "r": 0.0357,
+    "r": 0.028,
     "ci": [
-     -0.0115,
-     0.0807
+     -0.0183,
+     0.0735
     ],
     "excludesZero": false
    },
@@ -330,10 +330,10 @@
     "a": "div_game",
     "b": "def_out_diff",
     "n": 1584,
-    "r": -0.0178,
+    "r": -0.0205,
     "ci": [
-     -0.0629,
-     0.0298
+     -0.067,
+     0.0284
     ],
     "excludesZero": false
    },
@@ -385,10 +385,10 @@
     "a": "dome",
     "b": "off_value_diff",
     "n": 1584,
-    "r": 0.0518,
+    "r": 0.0636,
     "ci": [
-     0.0013,
-     0.0994
+     0.0118,
+     0.1091
     ],
     "excludesZero": true
    },
@@ -396,10 +396,10 @@
     "a": "dome",
     "b": "def_value_diff",
     "n": 1584,
-    "r": 0.1051,
+    "r": 0.0889,
     "ci": [
-     0.059,
-     0.1477
+     0.0437,
+     0.1306
     ],
     "excludesZero": true
    },
@@ -407,10 +407,10 @@
     "a": "dome",
     "b": "off_out_diff",
     "n": 1584,
-    "r": 0.0145,
+    "r": 0.0091,
     "ci": [
-     -0.0348,
-     0.0631
+     -0.0381,
+     0.0572
     ],
     "excludesZero": false
    },
@@ -418,12 +418,12 @@
     "a": "dome",
     "b": "def_out_diff",
     "n": 1584,
-    "r": -0.0421,
+    "r": -0.0486,
     "ci": [
-     -0.0829,
-     0.002
+     -0.091,
+     -0.0041
     ],
-    "excludesZero": false
+    "excludesZero": true
    },
    {
     "a": "home_short_week",
@@ -462,10 +462,10 @@
     "a": "home_short_week",
     "b": "off_value_diff",
     "n": 1584,
-    "r": -0.0014,
+    "r": 0.0004,
     "ci": [
-     -0.05,
-     0.0535
+     -0.052,
+     0.0537
     ],
     "excludesZero": false
    },
@@ -473,10 +473,10 @@
     "a": "home_short_week",
     "b": "def_value_diff",
     "n": 1584,
-    "r": 0.0823,
+    "r": 0.0761,
     "ci": [
-     0.0307,
-     0.1312
+     0.0202,
+     0.1263
     ],
     "excludesZero": true
    },
@@ -484,10 +484,10 @@
     "a": "home_short_week",
     "b": "off_out_diff",
     "n": 1584,
-    "r": 0.0027,
+    "r": 0.0069,
     "ci": [
-     -0.0486,
-     0.055
+     -0.0477,
+     0.061
     ],
     "excludesZero": false
    },
@@ -495,10 +495,10 @@
     "a": "home_short_week",
     "b": "def_out_diff",
     "n": 1584,
-    "r": 0.0123,
+    "r": 0.0041,
     "ci": [
-     -0.0466,
-     0.0655
+     -0.0565,
+     0.0572
     ],
     "excludesZero": false
    },
@@ -528,10 +528,10 @@
     "a": "away_short_week",
     "b": "off_value_diff",
     "n": 1584,
-    "r": -0.0014,
+    "r": 0.0004,
     "ci": [
-     -0.05,
-     0.0535
+     -0.052,
+     0.0537
     ],
     "excludesZero": false
    },
@@ -539,10 +539,10 @@
     "a": "away_short_week",
     "b": "def_value_diff",
     "n": 1584,
-    "r": 0.0823,
+    "r": 0.0761,
     "ci": [
-     0.0307,
-     0.1312
+     0.0202,
+     0.1263
     ],
     "excludesZero": true
    },
@@ -550,10 +550,10 @@
     "a": "away_short_week",
     "b": "off_out_diff",
     "n": 1584,
-    "r": 0.0027,
+    "r": 0.0069,
     "ci": [
-     -0.0486,
-     0.055
+     -0.0477,
+     0.061
     ],
     "excludesZero": false
    },
@@ -561,10 +561,10 @@
     "a": "away_short_week",
     "b": "def_out_diff",
     "n": 1584,
-    "r": 0.0123,
+    "r": 0.0041,
     "ci": [
-     -0.0466,
-     0.0655
+     -0.0565,
+     0.0572
     ],
     "excludesZero": false
    },
@@ -583,10 +583,10 @@
     "a": "home_qb_change",
     "b": "off_value_diff",
     "n": 1492,
-    "r": -0.0398,
+    "r": -0.0442,
     "ci": [
-     -0.0931,
-     0.0131
+     -0.0972,
+     0.0089
     ],
     "excludesZero": false
    },
@@ -594,10 +594,10 @@
     "a": "home_qb_change",
     "b": "def_value_diff",
     "n": 1492,
-    "r": -0.0349,
+    "r": -0.0391,
     "ci": [
-     -0.0845,
-     0.0195
+     -0.0902,
+     0.0139
     ],
     "excludesZero": false
    },
@@ -605,10 +605,10 @@
     "a": "home_qb_change",
     "b": "off_out_diff",
     "n": 1492,
-    "r": -0.006,
+    "r": -0.0018,
     "ci": [
-     -0.0529,
-     0.0455
+     -0.0489,
+     0.0477
     ],
     "excludesZero": false
    },
@@ -616,10 +616,10 @@
     "a": "home_qb_change",
     "b": "def_out_diff",
     "n": 1492,
-    "r": -0.0434,
+    "r": -0.042,
     "ci": [
-     -0.0908,
-     0.0036
+     -0.0902,
+     0.004
     ],
     "excludesZero": false
    },
@@ -627,21 +627,21 @@
     "a": "away_qb_change",
     "b": "off_value_diff",
     "n": 1490,
-    "r": 0.0498,
+    "r": 0.059,
     "ci": [
-     -0.0019,
-     0.1008
+     0.0077,
+     0.1093
     ],
-    "excludesZero": false
+    "excludesZero": true
    },
    {
     "a": "away_qb_change",
     "b": "def_value_diff",
     "n": 1490,
-    "r": 0.0114,
+    "r": 0.0182,
     "ci": [
-     -0.0462,
-     0.0623
+     -0.0396,
+     0.0706
     ],
     "excludesZero": false
    },
@@ -649,10 +649,10 @@
     "a": "away_qb_change",
     "b": "off_out_diff",
     "n": 1490,
-    "r": -0.0069,
+    "r": 0.0002,
     "ci": [
-     -0.0528,
-     0.0412
+     -0.0489,
+     0.0508
     ],
     "excludesZero": false
    },
@@ -660,10 +660,10 @@
     "a": "away_qb_change",
     "b": "def_out_diff",
     "n": 1490,
-    "r": -0.043,
+    "r": -0.0437,
     "ci": [
-     -0.097,
-     0.0074
+     -0.0963,
+     0.0076
     ],
     "excludesZero": false
    },
@@ -671,10 +671,10 @@
     "a": "off_value_diff",
     "b": "def_value_diff",
     "n": 1584,
-    "r": 0.1249,
+    "r": 0.1159,
     "ci": [
-     0.0675,
-     0.1792
+     0.0592,
+     0.1701
     ],
     "excludesZero": true
    },
@@ -682,21 +682,21 @@
     "a": "off_value_diff",
     "b": "off_out_diff",
     "n": 1584,
-    "r": 0.0499,
+    "r": 0.0413,
     "ci": [
-     0.0016,
-     0.094
+     -0.0042,
+     0.0851
     ],
-    "excludesZero": true
+    "excludesZero": false
    },
    {
     "a": "off_value_diff",
     "b": "def_out_diff",
     "n": 1584,
-    "r": 0.0428,
+    "r": 0.0202,
     "ci": [
-     -0.0025,
-     0.0937
+     -0.0252,
+     0.0704
     ],
     "excludesZero": false
    },
@@ -704,21 +704,21 @@
     "a": "def_value_diff",
     "b": "off_out_diff",
     "n": 1584,
-    "r": 0.0508,
+    "r": 0.0722,
     "ci": [
-     -0.008,
-     0.1013
+     0.0136,
+     0.1246
     ],
-    "excludesZero": false
+    "excludesZero": true
    },
    {
     "a": "def_value_diff",
     "b": "def_out_diff",
     "n": 1584,
-    "r": 0.1901,
+    "r": 0.189,
     "ci": [
-     0.1471,
-     0.2321
+     0.1465,
+     0.2314
     ],
     "excludesZero": true
    },
@@ -726,10 +726,10 @@
     "a": "off_out_diff",
     "b": "def_out_diff",
     "n": 1584,
-    "r": 0.1068,
+    "r": 0.0895,
     "ci": [
-     0.0549,
-     0.1517
+     0.0333,
+     0.1367
     ],
     "excludesZero": true
    }
@@ -746,9 +746,10 @@
    "score": 0.0,
    "metrics": {
     "games": 1632,
-    "modelLogloss": 0.6382,
+    "modelLogloss": 0.6381,
     "spreadImpliedLogloss": 0.9288,
-    "skill": 0.3129
+    "skill": 0.313,
+    "note": "Reference only: the spread is a single un-timestamped snapshot, so this cannot be converted into a return."
    },
    "gates": {
     "G8_market": {
@@ -766,9 +767,9 @@
    "metrics": {
     "legs": 2,
     "seasonsTested": 6,
-    "expectedJoint": 0.844,
+    "expectedJoint": 0.8435,
     "realisedHitRate": 1.0,
-    "difference": 0.156,
+    "difference": 0.1565,
     "note": "One combination per season; a joint probability is not a payout. With this sample the realised rate is far too noisy to confirm calibration."
    },
    "gates": {
@@ -791,9 +792,9 @@
    "metrics": {
     "legs": 3,
     "seasonsTested": 6,
-    "expectedJoint": 0.7651,
+    "expectedJoint": 0.7629,
     "realisedHitRate": 0.8333,
-    "difference": 0.0682,
+    "difference": 0.0704,
     "note": "One combination per season; a joint probability is not a payout. With this sample the realised rate is far too noisy to confirm calibration."
    },
    "gates": {
@@ -815,36 +816,36 @@
    "score": 0.0,
    "metrics": {
     "games": 1632,
-    "logloss": 0.68486,
+    "logloss": 0.68581,
     "baselineLogloss": 0.68848,
-    "skill": 0.00526,
-    "brier": 0.24547,
+    "skill": 0.00388,
+    "brier": 0.24596,
     "baselineBrier": 0.24673,
-    "brierSkill": 0.00514,
-    "accuracy": 0.5711
+    "brierSkill": 0.00312,
+    "accuracy": 0.5643
    },
    "gates": {
     "G4_skill": {
      "pass": true,
-     "value": 0.00526
+     "value": 0.00388
     },
     "G5_deflation": {
      "pass": false,
-     "value": "observed 0.00526 vs best-of-11 null p95 0.04432"
+     "value": "observed 0.00388 vs best-of-11 null p95 0.0444"
     },
     "G6_calibration": {
      "pass": false,
-     "value": 0.6277
+     "value": 0.5927
     },
     "G7_stability": {
      "pass": true,
      "value": {
-      "2017": 0.00264,
-      "2018": 0.01695,
-      "2019": 0.00697,
-      "2020": 0.0092,
-      "2021": -0.00277,
-      "2022": -0.00055
+      "2017": 0.00337,
+      "2018": 0.013,
+      "2019": 0.00589,
+      "2020": 0.00333,
+      "2021": -0.0018,
+      "2022": 0.00012
      }
     }
    },
@@ -852,56 +853,56 @@
     "bins": [
      {
       "bin": "0.2-0.3",
-      "n": 17,
-      "predicted": 0.2747,
-      "observed": 0.3529
+      "n": 12,
+      "predicted": 0.2652,
+      "observed": 0.4167
      },
      {
       "bin": "0.3-0.4",
-      "n": 114,
-      "predicted": 0.3556,
-      "observed": 0.4474
+      "n": 123,
+      "predicted": 0.3565,
+      "observed": 0.4472
      },
      {
       "bin": "0.4-0.5",
-      "n": 191,
-      "predicted": 0.4553,
-      "observed": 0.4346
+      "n": 174,
+      "predicted": 0.4565,
+      "observed": 0.454
      },
      {
       "bin": "0.5-0.6",
-      "n": 732,
-      "predicted": 0.5573,
-      "observed": 0.5314
+      "n": 746,
+      "predicted": 0.5568,
+      "observed": 0.5241
      },
      {
       "bin": "0.6-0.7",
-      "n": 432,
-      "predicted": 0.6412,
-      "observed": 0.6273
+      "n": 437,
+      "predicted": 0.6415,
+      "observed": 0.6247
      },
      {
       "bin": "0.7-0.8",
-      "n": 133,
-      "predicted": 0.7344,
-      "observed": 0.6316
+      "n": 129,
+      "predicted": 0.7337,
+      "observed": 0.6357
      },
      {
       "bin": "0.8-0.9",
-      "n": 13,
-      "predicted": 0.8287,
-      "observed": 0.4615
+      "n": 11,
+      "predicted": 0.8281,
+      "observed": 0.4545
      }
     ],
-    "slope": 0.6277
+    "slope": 0.5927
    },
    "stability": {
-    "2017": 0.00264,
-    "2018": 0.01695,
-    "2019": 0.00697,
-    "2020": 0.0092,
-    "2021": -0.00277,
-    "2022": -0.00055
+    "2017": 0.00337,
+    "2018": 0.013,
+    "2019": 0.00589,
+    "2020": 0.00333,
+    "2021": -0.0018,
+    "2022": 0.00012
    },
    "claim": "Out-of-sample probability skill vs a prior-season win-rate baseline. No betting return claimed."
   },
@@ -909,39 +910,39 @@
    "family": "single",
    "name": "Single-game model \u2014 strength features (9 signals)",
    "tier": "A",
-   "score": 5.778,
+   "score": 5.717,
    "metrics": {
     "games": 1632,
-    "logloss": 0.63821,
+    "logloss": 0.63815,
     "baselineLogloss": 0.68848,
-    "skill": 0.07302,
-    "brier": 0.22347,
+    "skill": 0.07311,
+    "brier": 0.22341,
     "baselineBrier": 0.24673,
-    "brierSkill": 0.09428,
-    "accuracy": 0.6348
+    "brierSkill": 0.09453,
+    "accuracy": 0.6391
    },
    "gates": {
     "G4_skill": {
      "pass": true,
-     "value": 0.07302
+     "value": 0.07311
     },
     "G5_deflation": {
      "pass": true,
-     "value": "observed 0.07302 vs best-of-9 null p95 0.01524"
+     "value": "observed 0.07311 vs best-of-9 null p95 0.01594"
     },
     "G6_calibration": {
      "pass": true,
-     "value": 0.8518
+     "value": 0.859
     },
     "G7_stability": {
      "pass": true,
      "value": {
-      "2017": 0.08328,
-      "2018": 0.07262,
-      "2019": 0.07154,
-      "2020": 0.10287,
-      "2021": 0.03475,
-      "2022": 0.0741
+      "2017": 0.08168,
+      "2018": 0.06999,
+      "2019": 0.07508,
+      "2020": 0.10256,
+      "2021": 0.03588,
+      "2022": 0.07438
      }
     }
    },
@@ -950,73 +951,73 @@
      {
       "bin": "0.0-0.1",
       "n": 3,
-      "predicted": 0.0888,
+      "predicted": 0.0916,
       "observed": 0.0
      },
      {
       "bin": "0.1-0.2",
-      "n": 48,
-      "predicted": 0.1632,
-      "observed": 0.375
+      "n": 49,
+      "predicted": 0.1649,
+      "observed": 0.3673
      },
      {
       "bin": "0.2-0.3",
       "n": 98,
-      "predicted": 0.2562,
-      "observed": 0.2551
+      "predicted": 0.2582,
+      "observed": 0.2653
      },
      {
       "bin": "0.3-0.4",
       "n": 170,
-      "predicted": 0.3558,
+      "predicted": 0.3573,
       "observed": 0.3294
      },
      {
       "bin": "0.4-0.5",
-      "n": 251,
-      "predicted": 0.4542,
-      "observed": 0.4502
+      "n": 247,
+      "predicted": 0.454,
+      "observed": 0.4332
      },
      {
       "bin": "0.5-0.6",
-      "n": 292,
-      "predicted": 0.548,
-      "observed": 0.4932
+      "n": 300,
+      "predicted": 0.5481,
+      "observed": 0.51
      },
      {
       "bin": "0.6-0.7",
-      "n": 333,
-      "predicted": 0.6498,
-      "observed": 0.6426
+      "n": 332,
+      "predicted": 0.6511,
+      "observed": 0.6355
      },
      {
       "bin": "0.7-0.8",
-      "n": 271,
-      "predicted": 0.749,
-      "observed": 0.6863
+      "n": 266,
+      "predicted": 0.7491,
+      "observed": 0.6917
      },
      {
       "bin": "0.8-0.9",
-      "n": 140,
-      "predicted": 0.844,
-      "observed": 0.7857
+      "n": 145,
+      "predicted": 0.8447,
+      "observed": 0.7931
      },
      {
       "bin": "0.9-1.0",
-      "n": 26,
-      "predicted": 0.921,
-      "observed": 0.9231
+      "n": 22,
+      "predicted": 0.9224,
+      "observed": 0.9091
      }
     ],
-    "slope": 0.8518
+    "slope": 0.859
    },
    "stability": {
-    "2017": 0.08328,
-    "2018": 0.07262,
-    "2019": 0.07154,
-    "2020": 0.10287,
-    "2021": 0.03475,
-    "2022": 0.0741
+    "2017": 0.08168,
+    "2018": 0.06999,
+    "2019": 0.07508,
+    "2020": 0.10256,
+    "2021": 0.03588,
+    "2022": 0.07438
    },
    "claim": "Out-of-sample probability skill vs a prior-season win-rate baseline. No betting return claimed."
   }
@@ -1145,6 +1146,7 @@
  "currentBoard": {
   "season": 2026,
   "week": 18,
+  "kind": "scheduled",
   "teams": [
    {
     "team": "ARI",
@@ -1164,7 +1166,66 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.1429,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Carson Beck"
+      ],
+      "2": [
+       "Josh Johnson"
+      ],
+      "3": [
+       "Joey Aguilar"
+      ],
+      "4": [
+       "Gardner Minshew II"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Tyler Allgeier"
+      ],
+      "2": [
+       "Bam Knight"
+      ],
+      "3": [
+       "Evan Hull"
+      ],
+      "4": [
+       "James Conner"
+      ]
+     },
+     "WR": {
+      "3": [
+       "Devin Duvernay"
+      ],
+      "1": [
+       "Reggie Virgil"
+      ],
+      "2": [
+       "Simi Fehoko"
+      ],
+      "4": [
+       "Harrison Wallace III"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Trey McBride"
+      ],
+      "2": [
+       "Elijah Higgins"
+      ],
+      "3": [
+       "Teagan Quitoriano"
+      ],
+      "4": [
+       "Hunter Long"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -1191,60 +1252,62 @@
     "tiers": {
      "QB": {
       "1": [
-       "Michael"
+       "Michael Penix"
       ],
       "2": [
-       "Kirk"
+       "Kirk Cousins"
       ]
      },
      "RB": {
       "3": [
-       "Avery",
-       "Carlos"
+       "Avery Williams",
+       "Carlos Washington"
       ],
       "2": [
-       "Tyler"
+       "Tyler Allgeier"
       ],
       "1": [
-       "Bijan"
+       "Bijan Robinson"
       ]
      },
      "WR": {
       "2": [
-       "KhaDarel",
-       "Casey",
-       "Chris"
+       "KhaDarel Hodge",
+       "Casey Washington",
+       "Chris Blair"
       ],
       "1": [
-       "Ray-Ray",
-       "Drake",
-       "Darnell"
+       "Ray-Ray McCloud",
+       "Drake London",
+       "Darnell Mooney"
       ]
      },
      "TE": {
       "1": [
-       "Charlie",
-       "Kyle"
+       "Charlie Woerner",
+       "Kyle Pitts"
       ],
       "2": [
-       "Ross"
+       "Ross Dwelley"
       ]
      },
      "CB": {
       "1": [
-       "A.J.",
-       "Mike",
-       "Dee"
+       "A.J. Terrell",
+       "Mike Hughes",
+       "Dee Alford"
       ],
       "2": [
-       "Clark",
-       "Kevin"
+       "Clark Phillips",
+       "Kevin King"
       ],
       "3": [
-       "Natrone"
+       "Natrone Brooks"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -1268,58 +1331,60 @@
     "tiers": {
      "QB": {
       "1": [
-       "Lamar"
+       "Lamar Jackson"
       ],
       "2": [
-       "Josh"
+       "Josh Johnson"
       ]
      },
      "RB": {
       "1": [
-       "Derrick"
+       "Derrick Henry"
       ],
       "2": [
-       "Justice"
+       "Justice Hill"
       ],
       "3": [
-       "Keaton",
-       "Rasheen"
+       "Keaton Mitchell",
+       "Rasheen Ali"
       ]
      },
      "WR": {
       "2": [
-       "Nelson",
-       "Tylan"
+       "Nelson Agholor",
+       "Tylan Wallace"
       ],
       "1": [
-       "Zay",
-       "Rashod"
+       "Zay Flowers",
+       "Rashod Bateman"
       ],
       "3": [
-       "Devontez"
+       "Devontez Walker"
       ]
      },
      "TE": {
       "2": [
-       "Isaiah"
+       "Isaiah Likely"
       ],
       "1": [
-       "Mark"
+       "Mark Andrews"
       ]
      },
      "CB": {
       "1": [
-       "Marlon"
+       "Marlon Humphrey"
       ],
       "2": [
-       "Nate",
-       "Tre'Davious"
+       "Nate Wiggins",
+       "Tre'Davious White"
       ],
       "3": [
-       "Jalyn"
+       "Jalyn Armour-Davis"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -1344,59 +1409,61 @@
     "tiers": {
      "QB": {
       "1": [
-       "Josh"
+       "Josh Allen"
       ],
       "2": [
-       "Mitchell"
+       "Mitchell Trubisky"
       ]
      },
      "RB": {
       "3": [
-       "Ray"
+       "Ray Davis"
       ],
       "1": [
-       "James"
+       "James Cook"
       ],
       "2": [
-       "Ty"
+       "Ty Johnson"
       ]
      },
      "WR": {
       "1": [
-       "Keon",
-       "Mack",
-       "Khalil"
+       "Keon Coleman",
+       "Mack Hollins",
+       "Khalil Shakir"
       ],
       "2": [
-       "Curtis",
-       "Amari"
+       "Curtis Samuel",
+       "Amari Cooper"
       ]
      },
      "TE": {
       "3": [
-       "Quintin"
+       "Quintin Morris"
       ],
       "1": [
-       "Dalton"
+       "Dalton Kincaid"
       ],
       "2": [
-       "Dawson"
+       "Dawson Knox"
       ]
      },
      "CB": {
       "1": [
-       "Christian",
-       "Taron",
-       "Rasul",
-       "Brandon"
+       "Christian Benford",
+       "Taron Johnson",
+       "Rasul Douglas",
+       "Brandon Codrington"
       ],
       "2": [
-       "Cole",
-       "Ja'Marcus",
-       "Kaiir"
+       "Cole Bishop",
+       "Ja'Marcus Ingram",
+       "Kaiir Elam"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -1421,7 +1488,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Bryce Young"
+      ],
+      "2": [
+       "Kenny Pickett"
+      ],
+      "3": [
+       "Haynes King"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Trevor Etienne"
+      ],
+      "4": [
+       "Anthony Tyus III"
+      ],
+      "1": [
+       "Chuba Hubbard"
+      ],
+      "3": [
+       "AJ Dillon"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Jalen Coker"
+      ],
+      "3": [
+       "John Metchie III"
+      ],
+      "1": [
+       "Tetairoa McMillan"
+      ],
+      "4": [
+       "Brycen Tremayne"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Tommy Tremble"
+      ],
+      "2": [
+       "Darren Waller"
+      ],
+      "3": [
+       "Mitchell Evans"
+      ],
+      "4": [
+       "Feleipe Franks"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -1444,60 +1567,62 @@
     "tiers": {
      "QB": {
       "2": [
-       "Tyson"
+       "Tyson Bagent"
       ],
       "1": [
-       "Caleb"
+       "Caleb Williams"
       ]
      },
      "RB": {
       "3": [
-       "Travis"
+       "Travis Homer"
       ],
       "1": [
-       "D'Andre"
+       "D'Andre Swift"
       ],
       "2": [
-       "Roschon"
+       "Roschon Johnson"
       ]
      },
      "WR": {
       "1": [
-       "D.J.",
-       "Keenan"
+       "D.J. Moore",
+       "Keenan Allen"
       ],
       "3": [
-       "Rome"
+       "Rome Odunze"
       ],
       "2": [
-       "Tyler",
-       "Collin"
+       "Tyler Scott",
+       "Collin Johnson"
       ]
      },
      "TE": {
       "1": [
-       "Cole"
+       "Cole Kmet"
       ],
       "2": [
-       "Gerald"
+       "Gerald Everett"
       ],
       "3": [
-       "Marcedes"
+       "Marcedes Lewis"
       ]
      },
      "CB": {
       "2": [
-       "Tyrique",
-       "Terell",
-       "Ameer"
+       "Tyrique Stevenson",
+       "Terell Smith",
+       "Ameer Speed"
       ],
       "1": [
-       "Kyler",
-       "Josh",
-       "Jaylon"
+       "Kyler Gordon",
+       "Josh Blackwell",
+       "Jaylon Johnson"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -1525,58 +1650,60 @@
     "tiers": {
      "QB": {
       "1": [
-       "Joe"
+       "Joe Burrow"
       ],
       "2": [
-       "Jake"
+       "Jake Browning"
       ]
      },
      "RB": {
       "2": [
-       "Trayveon"
+       "Trayveon Williams"
       ],
       "3": [
-       "Khalil"
+       "Khalil Herbert"
       ],
       "1": [
-       "Chase"
+       "Chase Brown"
       ]
      },
      "WR": {
       "2": [
-       "Jermaine"
+       "Jermaine Burton"
       ],
       "1": [
-       "Ja'Marr",
-       "Andrei",
-       "Tee"
+       "Ja'Marr Chase",
+       "Andrei Iosivas",
+       "Tee Higgins"
       ],
       "3": [
-       "Charlie"
+       "Charlie Jones"
       ]
      },
      "TE": {
       "1": [
-       "Drew"
+       "Drew Sample"
       ],
       "3": [
-       "Tanner",
-       "Tanner"
+       "Tanner Hudson",
+       "Tanner McLachlan"
       ],
       "2": [
-       "Mike"
+       "Mike Gesicki"
       ]
      },
      "CB": {
       "1": [
-       "Mike",
-       "Cam"
+       "Mike Hilton",
+       "Cam Taylor-Britt"
       ],
       "2": [
-       "Josh"
+       "Josh Newton"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -1603,7 +1730,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Deshaun Watson"
+      ],
+      "2": [
+       "Shedeur Sanders"
+      ],
+      "3": [
+       "Dillon Gabriel"
+      ],
+      "4": [
+       "Taylen Green"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Dylan Sampson"
+      ],
+      "3": [
+       "Jaleel McLaughlin"
+      ],
+      "4": [
+       "Raheim Sanders"
+      ],
+      "1": [
+       "Quinshon Judkins"
+      ]
+     },
+     "WR": {
+      "2": [
+       "KC Concepcion"
+      ],
+      "1": [
+       "Denzel Boston"
+      ],
+      "4": [
+       "Tylan Wallace"
+      ],
+      "3": [
+       "Jerry Jeudy"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Harold Fannin Jr."
+      ],
+      "2": [
+       "Blake Whiteheart"
+      ],
+      "3": [
+       "Joe Royer"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -1630,55 +1813,57 @@
     "tiers": {
      "QB": {
       "1": [
-       "Cooper"
+       "Cooper Rush"
       ],
       "2": [
-       "Trey"
+       "Trey Lance"
       ]
      },
      "RB": {
       "2": [
-       "Ezekiel"
+       "Ezekiel Elliott"
       ],
       "3": [
-       "Deuce"
+       "Deuce Vaughn"
       ],
       "1": [
-       "Rico"
+       "Rico Dowdle"
       ]
      },
      "WR": {
       "2": [
-       "Jalen",
-       "Ryan",
-       "Jonathan"
+       "Jalen Brooks",
+       "Ryan Flournoy",
+       "Jonathan Mingo"
       ],
       "1": [
-       "Kavontae",
-       "Jalen"
+       "Kavontae Turpin",
+       "Jalen Tolbert"
       ]
      },
      "TE": {
       "2": [
-       "Luke"
+       "Luke Schoonmaker"
       ],
       "3": [
-       "Brevyn"
+       "Brevyn Spann-Ford"
       ],
       "1": [
-       "Jake"
+       "Jake Ferguson"
       ]
      },
      "CB": {
       "3": [
-       "C.J."
+       "C.J. Goodwin"
       ],
       "1": [
-       "Daron",
-       "Jourdan"
+       "Daron Bland",
+       "Jourdan Lewis"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -1703,61 +1888,63 @@
     "tiers": {
      "QB": {
       "1": [
-       "Bo"
+       "Bo Nix"
       ],
       "3": [
-       "Zach"
+       "Zach Wilson"
       ],
       "2": [
-       "Jarrett"
+       "Jarrett Stidham"
       ]
      },
      "RB": {
       "3": [
-       "Jaleel",
-       "Audric"
+       "Jaleel McLaughlin",
+       "Audric Estime"
       ],
       "1": [
-       "Javonte"
+       "Javonte Williams"
       ]
      },
      "WR": {
       "2": [
-       "Troy",
-       "Lil'Jordan"
+       "Troy Franklin",
+       "Lil'Jordan Humphrey"
       ],
       "1": [
-       "Marvin",
-       "Courtland"
+       "Marvin Mims",
+       "Courtland Sutton"
       ],
       "3": [
-       "Devaughn"
+       "Devaughn Vele"
       ]
      },
      "TE": {
       "2": [
-       "Lucas",
-       "Nate"
+       "Lucas Krull",
+       "Nate Adkins"
       ],
       "1": [
-       "Adam"
+       "Adam Trautman"
       ]
      },
      "CB": {
       "2": [
-       "Damarri",
-       "Tremon"
+       "Damarri Mathis",
+       "Tremon Smith"
       ],
       "3": [
-       "Kris"
+       "Kris Abrams-Draine"
       ],
       "1": [
-       "Patrick",
-       "Riley",
-       "Ja'Quan"
+       "Patrick Surtain",
+       "Riley Moss",
+       "Ja'Quan McMillian"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -1787,56 +1974,58 @@
     "tiers": {
      "QB": {
       "1": [
-       "Jared"
+       "Jared Goff"
       ],
       "2": [
-       "Hendon"
+       "Hendon Hooker"
       ]
      },
      "RB": {
       "3": [
-       "Craig",
-       "Sione"
+       "Craig Reynolds",
+       "Sione Vaki"
       ],
       "2": [
-       "Jahmyr"
+       "Jahmyr Gibbs"
       ],
       "1": [
-       "David"
+       "David Montgomery"
       ]
      },
      "WR": {
       "1": [
-       "Tim",
-       "Amon-Ra",
-       "Jameson"
+       "Tim Patrick",
+       "Amon-Ra St. Brown",
+       "Jameson Williams"
       ],
       "2": [
-       "Allen"
+       "Allen Robinson"
       ]
      },
      "TE": {
       "2": [
-       "Brock"
+       "Brock Wright"
       ],
       "1": [
-       "Sam"
+       "Sam LaPorta"
       ],
       "3": [
-       "Shane"
+       "Shane Zylstra"
       ]
      },
      "CB": {
       "1": [
-       "Terrion",
-       "Kindle",
-       "Amik"
+       "Terrion Arnold",
+       "Kindle Vildor",
+       "Amik Robertson"
       ],
       "2": [
-       "Emmanuel"
+       "Emmanuel Moseley"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -1866,61 +2055,63 @@
     "tiers": {
      "QB": {
       "1": [
-       "Jordan"
+       "Jordan Love"
       ],
       "2": [
-       "Malik"
+       "Malik Willis"
       ]
      },
      "RB": {
       "2": [
-       "Emanuel"
+       "Emanuel Wilson"
       ],
       "3": [
-       "Christopher"
+       "Christopher Brooks"
       ],
       "1": [
-       "Josh"
+       "Josh Jacobs"
       ]
      },
      "WR": {
       "2": [
-       "Bo",
-       "Malik",
-       "Christian"
+       "Bo Melton",
+       "Malik Heath",
+       "Christian Watson"
       ],
       "1": [
-       "Jayden",
-       "Dontayvion",
-       "Romeo"
+       "Jayden Reed",
+       "Dontayvion Wicks",
+       "Romeo Doubs"
       ]
      },
      "TE": {
       "1": [
-       "Tucker"
+       "Tucker Kraft"
       ],
       "2": [
-       "Ben"
+       "Ben Sims"
       ],
       "3": [
-       "John"
+       "John FitzPatrick"
       ]
      },
      "CB": {
       "3": [
-       "Robert",
-       "Jaire"
+       "Robert Rochell",
+       "Jaire Alexander"
       ],
       "1": [
-       "Keisean",
-       "Eric"
+       "Keisean Nixon",
+       "Eric Stokes"
       ],
       "2": [
-       "Corey",
-       "Carrington"
+       "Corey Ballentine",
+       "Carrington Valentine"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -1944,7 +2135,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "C.J. Stroud"
+      ],
+      "2": [
+       "Davis Mills"
+      ],
+      "3": [
+       "Graham Mertz"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Woody Marks"
+      ],
+      "2": [
+       "David Montgomery"
+      ],
+      "3": [
+       "Emari Demercado"
+      ],
+      "4": [
+       "Dare Ogunbowale"
+      ]
+     },
+     "WR": {
+      "3": [
+       "Tank Dell"
+      ],
+      "2": [
+       "Xavier Hutchinson"
+      ],
+      "1": [
+       "Nico Collins"
+      ],
+      "4": [
+       "Marvin Harrison Jr."
+      ]
+     },
+     "TE": {
+      "1": [
+       "Dalton Schultz"
+      ],
+      "2": [
+       "Foster Moreau"
+      ],
+      "3": [
+       "Brevin Jordan"
+      ],
+      "4": [
+       "Marlin Klein"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -1970,60 +2217,62 @@
     "tiers": {
      "QB": {
       "1": [
-       "Anthony"
+       "Anthony Richardson"
       ],
       "2": [
-       "Joe"
+       "Joe Flacco"
       ],
       "3": [
-       "Sam"
+       "Sam Ehlinger"
       ]
      },
      "RB": {
       "1": [
-       "Jonathan",
-       "Tyler"
+       "Jonathan Taylor",
+       "Tyler Goodson"
       ],
       "2": [
-       "Trey"
+       "Trey Sermon"
       ]
      },
      "WR": {
       "1": [
-       "Michael",
-       "Alec",
-       "Josh"
+       "Michael Pittman",
+       "Alec Pierce",
+       "Josh Downs"
       ],
       "2": [
-       "Anthony",
-       "Adonai"
+       "Anthony Gould",
+       "Adonai Mitchell"
       ],
       "3": [
-       "Ashton"
+       "Ashton Dulin"
       ]
      },
      "TE": {
       "2": [
-       "Andrew",
-       "Will"
+       "Andrew Ogletree",
+       "Will Mallory"
       ],
       "1": [
-       "Mo",
-       "Kylen"
+       "Mo Alie-Cox",
+       "Kylen Granson"
       ]
      },
      "CB": {
       "1": [
-       "Samuel",
-       "Kenny",
-       "Jaylon"
+       "Samuel Womack",
+       "Kenny Moore",
+       "Jaylon Jones"
       ],
       "2": [
-       "David",
-       "Chris"
+       "David Long",
+       "Chris Lammons"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -2045,7 +2294,60 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.1111,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Trevor Lawrence"
+      ],
+      "2": [
+       "Quinn Ewers"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Ameer Abdullah"
+      ],
+      "1": [
+       "Bhayshul Tuten"
+      ],
+      "2": [
+       "Chris Rodriguez Jr."
+      ],
+      "4": [
+       "LeQuint Allen Jr."
+      ]
+     },
+     "WR": {
+      "1": [
+       "Parker Washington"
+      ],
+      "4": [
+       "Josh Cameron"
+      ],
+      "2": [
+       "Jakobi Meyers"
+      ],
+      "3": [
+       "Brian Thomas Jr."
+      ]
+     },
+     "TE": {
+      "1": [
+       "Brenton Strange"
+      ],
+      "2": [
+       "Nate Boerkircher"
+      ],
+      "3": [
+       "Tanner Koziol"
+      ],
+      "4": [
+       "Quintin Morris"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -2072,57 +2374,59 @@
     "tiers": {
      "QB": {
       "2": [
-       "Carson"
+       "Carson Wentz"
       ],
       "1": [
-       "Patrick"
+       "Patrick Mahomes"
       ]
      },
      "RB": {
       "1": [
-       "Carson",
-       "Isiah",
-       "Samaje"
+       "Carson Steele",
+       "Isiah Pacheco",
+       "Samaje Perine"
       ],
       "2": [
-       "Kareem"
+       "Kareem Hunt"
       ]
      },
      "WR": {
       "2": [
-       "Marquise",
-       "JuJu",
-       "Nikko"
+       "Marquise Brown",
+       "JuJu Smith-Schuster",
+       "Nikko Remigio"
       ],
       "1": [
-       "Xavier",
-       "DeAndre"
+       "Xavier Worthy",
+       "DeAndre Hopkins"
       ],
       "3": [
-       "Justin"
+       "Justin Watson"
       ]
      },
      "TE": {
       "1": [
-       "Travis"
+       "Travis Kelce"
       ],
       "2": [
-       "Noah"
+       "Noah Gray"
       ]
      },
      "CB": {
       "1": [
-       "Trent",
-       "Joshua"
+       "Trent McDuffie",
+       "Joshua Williams"
       ],
       "2": [
-       "Keith"
+       "Keith Taylor"
       ],
       "3": [
-       "Christian"
+       "Christian Roland-Wallace"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -2148,61 +2452,63 @@
     "tiers": {
      "QB": {
       "1": [
-       "Matthew"
+       "Matthew Stafford"
       ],
       "2": [
-       "Jimmy"
+       "Jimmy Garoppolo"
       ]
      },
      "RB": {
       "2": [
-       "Blake"
+       "Blake Corum"
       ],
       "3": [
-       "Ronnie"
+       "Ronnie Rivers"
       ],
       "1": [
-       "Kyren"
+       "Kyren Williams"
       ]
      },
      "WR": {
       "1": [
-       "Puka",
-       "Cooper",
-       "Demarcus",
-       "Xavier"
+       "Puka Nacua",
+       "Cooper Kupp",
+       "Demarcus Robinson",
+       "Xavier Smith"
       ],
       "2": [
-       "Jordan",
-       "Tutu"
+       "Jordan Whittington",
+       "Tutu Atwell"
       ]
      },
      "TE": {
       "1": [
-       "Tyler"
+       "Tyler Higbee"
       ],
       "2": [
-       "Colby"
+       "Colby Parkinson"
       ],
       "3": [
-       "Davis",
-       "Hunter"
+       "Davis Allen",
+       "Hunter Long"
       ]
      },
      "CB": {
       "3": [
-       "Emmanuel"
+       "Emmanuel Forbes"
       ],
       "2": [
-       "Ahkello",
-       "Josh"
+       "Ahkello Witherspoon",
+       "Josh Wallace"
       ],
       "1": [
-       "Cobie",
-       "Darious"
+       "Cobie Durant",
+       "Darious Williams"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -2225,7 +2531,57 @@
     "defDoubtfulShare": 0.125,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Justin Herbert"
+      ],
+      "2": [
+       "DJ Uiagalelei"
+      ],
+      "3": [
+       "Trey Lance"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Keaton Mitchell"
+      ],
+      "2": [
+       "Kimani Vidal"
+      ],
+      "1": [
+       "Omarion Hampton"
+      ]
+     },
+     "WR": {
+      "4": [
+       "KeAndre Lambert-Smith"
+      ],
+      "1": [
+       "Ladd McConkey"
+      ],
+      "2": [
+       "Quentin Johnston"
+      ],
+      "3": [
+       "Tre' Harris"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Charlie Kolar"
+      ],
+      "2": [
+       "Oronde Gadsden"
+      ],
+      "3": [
+       "David Njoku"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -2251,52 +2607,54 @@
     "tiers": {
      "QB": {
       "1": [
-       "Aidan"
+       "Aidan O'Connell"
       ],
       "2": [
-       "Desmond"
+       "Desmond Ridder"
       ]
      },
      "RB": {
       "2": [
-       "Ameer",
-       "Dylan"
+       "Ameer Abdullah",
+       "Dylan Laube"
       ]
      },
      "WR": {
       "1": [
-       "Tre",
-       "Jakobi"
+       "Tre Tucker",
+       "Jakobi Meyers"
       ],
       "2": [
-       "Ramel"
+       "Ramel Keyton"
       ],
       "3": [
-       "Terrace"
+       "Terrace Marshall"
       ]
      },
      "TE": {
       "1": [
-       "Brock",
-       "Michael"
+       "Brock Bowers",
+       "Michael Mayer"
       ],
       "2": [
-       "Harrison",
-       "Justin"
+       "Harrison Bryant",
+       "Justin Shorter"
       ]
      },
      "CB": {
       "1": [
-       "Decamerion",
-       "Jack",
-       "Nate"
+       "Decamerion Richardson",
+       "Jack Jones",
+       "Nate Hobbs"
       ],
       "2": [
-       "Sam",
-       "Darnay"
+       "Sam Webb",
+       "Darnay Holmes"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -2321,59 +2679,61 @@
     "tiers": {
      "QB": {
       "1": [
-       "Tua"
+       "Tua Tagovailoa"
       ],
       "2": [
-       "Tyler"
+       "Tyler Huntley"
       ]
      },
      "RB": {
       "2": [
-       "Devon",
-       "Jaylen",
-       "Jeffery"
+       "Devon Achane",
+       "Jaylen Wright",
+       "Jeffery Wilson"
       ],
       "1": [
-       "Raheem"
+       "Raheem Mostert"
       ]
      },
      "WR": {
       "1": [
-       "Tyreek",
-       "Jaylen",
-       "Malik"
+       "Tyreek Hill",
+       "Jaylen Waddle",
+       "Malik Washington"
       ],
       "2": [
-       "River",
-       "D'Wayne"
+       "River Cracraft",
+       "D'Wayne Eskridge"
       ]
      },
      "TE": {
       "3": [
-       "Julian",
-       "Jack"
+       "Julian Hill",
+       "Jack Stoll"
       ],
       "2": [
-       "Durham"
+       "Durham Smythe"
       ],
       "1": [
-       "Jonnu"
+       "Jonnu Smith"
       ]
      },
      "CB": {
       "1": [
-       "Jalen",
-       "Kader"
+       "Jalen Ramsey",
+       "Kader Kohou"
       ],
       "2": [
-       "Storm",
-       "Siran"
+       "Storm Duck",
+       "Siran Neal"
       ],
       "3": [
-       "Ethan"
+       "Ethan Bonner"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -2400,62 +2760,64 @@
     "tiers": {
      "QB": {
       "1": [
-       "Sam"
+       "Sam Darnold"
       ],
       "3": [
-       "Brett"
+       "Brett Rypien"
       ],
       "2": [
-       "Nick"
+       "Nick Mullens"
       ]
      },
      "RB": {
       "1": [
-       "Aaron",
-       "Ty"
+       "Aaron Jones",
+       "Ty Chandler"
       ],
       "2": [
-       "Cam"
+       "Cam Akers"
       ]
      },
      "WR": {
       "1": [
-       "Jordan",
-       "Justin",
-       "Brandon"
+       "Jordan Addison",
+       "Justin Jefferson",
+       "Brandon Powell"
       ],
       "2": [
-       "Jalen"
+       "Jalen Nailor"
       ],
       "3": [
-       "Trent"
+       "Trent Sherfield"
       ]
      },
      "TE": {
       "2": [
-       "Josh"
+       "Josh Oliver"
       ],
       "3": [
-       "Johnny"
+       "Johnny Mundt"
       ],
       "1": [
-       "T.J."
+       "T.J. Hockenson"
       ]
      },
      "CB": {
       "2": [
-       "Fabian",
-       "Shaquill"
+       "Fabian Moreau",
+       "Shaquill Griffin"
       ],
       "1": [
-       "Byron",
-       "Stephon"
+       "Byron Murphy",
+       "Stephon Gilmore"
       ],
       "3": [
-       "Dwight"
+       "Dwight McGlothern"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -2485,62 +2847,64 @@
     "tiers": {
      "QB": {
       "3": [
-       "Joe"
+       "Joe Milton"
       ],
       "1": [
-       "Drake"
+       "Drake Maye"
       ],
       "2": [
-       "Jacoby"
+       "Jacoby Brissett"
       ]
      },
      "RB": {
       "1": [
-       "Rhamondre"
+       "Rhamondre Stevenson"
       ],
       "3": [
-       "Terrell",
-       "Antonio"
+       "Terrell Jennings",
+       "Antonio Gibson"
       ],
       "2": [
-       "Jamycal"
+       "Jamycal Hasty"
       ]
      },
      "WR": {
       "1": [
-       "Kendrick",
-       "Demario",
-       "Javon",
-       "Kayshon"
+       "Kendrick Bourne",
+       "Demario Douglas",
+       "Javon Baker",
+       "Kayshon Boutte"
       ],
       "2": [
-       "Alex",
-       "Ja'Lynn"
+       "Alex Erickson",
+       "Ja'Lynn Polk"
       ]
      },
      "TE": {
       "2": [
-       "Austin"
+       "Austin Hooper"
       ],
       "1": [
-       "Hunter"
+       "Hunter Henry"
       ],
       "3": [
-       "Jaheim"
+       "Jaheim Bell"
       ]
      },
      "CB": {
       "1": [
-       "Christian",
-       "Jonathan",
-       "Marcellas"
+       "Christian Gonzalez",
+       "Jonathan Jones",
+       "Marcellas Dial"
       ],
       "2": [
-       "Isaiah",
-       "Alex"
+       "Isaiah Bolden",
+       "Alex Austin"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -2565,7 +2929,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0476,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Tyler Shough"
+      ],
+      "2": [
+       "Spencer Rattler"
+      ],
+      "3": [
+       "Zach Wilson"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Alvin Kamara"
+      ],
+      "2": [
+       "Audric Estime"
+      ],
+      "3": [
+       "CJ Donaldson"
+      ],
+      "4": [
+       "Travis Etienne Jr."
+      ]
+     },
+     "WR": {
+      "4": [
+       "Bryce Lance"
+      ],
+      "1": [
+       "Chris Olave"
+      ],
+      "2": [
+       "Devaughn Vele"
+      ],
+      "3": [
+       "Jordyn Tyson"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Juwan Johnson"
+      ],
+      "2": [
+       "Noah Fant"
+      ],
+      "3": [
+       "Oscar Delp"
+      ],
+      "4": [
+       "Moliki Matavao"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -2592,7 +3012,57 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "J.J. McCarthy"
+      ],
+      "2": [
+       "Jameis Winston"
+      ],
+      "3": [
+       "Jaxson Dart"
+      ]
+     },
+     "RB": {
+      "4": [
+       "Tyrone Tracy Jr."
+      ],
+      "1": [
+       "Cam Skattebo"
+      ],
+      "2": [
+       "Devin Singletary"
+      ]
+     },
+     "WR": {
+      "4": [
+       "Charlie Jones"
+      ],
+      "1": [
+       "Malik Nabers"
+      ],
+      "2": [
+       "Malachi Fields"
+      ],
+      "3": [
+       "Darnell Mooney"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Isaiah Likely"
+      ],
+      "2": [
+       "Theo Johnson"
+      ],
+      "4": [
+       "Thomas Fidone II"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -2619,7 +3089,60 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Geno Smith"
+      ],
+      "2": [
+       "Cade Klubnik"
+      ]
+     },
+     "RB": {
+      "4": [
+       "Kene Nwangwu"
+      ],
+      "1": [
+       "Breece Hall"
+      ],
+      "2": [
+       "Braelon Allen"
+      ],
+      "3": [
+       "Isaiah Davis"
+      ]
+     },
+     "WR": {
+      "4": [
+       "Isaiah Williams"
+      ],
+      "1": [
+       "Garrett Wilson"
+      ],
+      "2": [
+       "Omar Cooper Jr."
+      ],
+      "3": [
+       "Adonai Mitchell"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Mason Taylor"
+      ],
+      "2": [
+       "Kenyon Sadiq"
+      ],
+      "3": [
+       "Jeremy Ruckert"
+      ],
+      "4": [
+       "Jelani Woods"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -2645,7 +3168,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Joe Milton III"
+      ],
+      "2": [
+       "Tanner McKee"
+      ],
+      "3": [
+       "Cole Payton"
+      ],
+      "4": [
+       "Jalen Hurts"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Will Shipley"
+      ],
+      "2": [
+       "Tank Bigsby"
+      ],
+      "1": [
+       "Saquon Barkley"
+      ]
+     },
+     "WR": {
+      "3": [
+       "Makai Lemon"
+      ],
+      "4": [
+       "Darius Cooper"
+      ],
+      "1": [
+       "DeVonta Smith"
+      ],
+      "2": [
+       "Dontayvion Wicks"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Dallas Goedert"
+      ],
+      "2": [
+       "Eli Stowers"
+      ],
+      "3": [
+       "Johnny Mundt"
+      ],
+      "4": [
+       "Grant Calcaterra"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -2667,7 +3246,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Aaron Rodgers"
+      ],
+      "2": [
+       "Mason Rudolph"
+      ],
+      "3": [
+       "Will Howard"
+      ],
+      "4": [
+       "Drew Allar"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Jaylen Warren"
+      ],
+      "2": [
+       "Rico Dowdle"
+      ],
+      "3": [
+       "Lew Nichols"
+      ],
+      "4": [
+       "Travis Homer"
+      ]
+     },
+     "WR": {
+      "1": [
+       "DK Metcalf"
+      ],
+      "2": [
+       "Germie Bernard"
+      ],
+      "3": [
+       "Ben Skowronek"
+      ],
+      "4": [
+       "Brandon Smith"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Darnell Washington"
+      ],
+      "2": [
+       "Pat Freiermuth"
+      ],
+      "3": [
+       "Robert Tonyan"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -2688,7 +3323,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.1429,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Sam Darnold"
+      ],
+      "2": [
+       "Drew Lock"
+      ],
+      "3": [
+       "Jalen Milroe"
+      ]
+     },
+     "RB": {
+      "3": [
+       "George Holani"
+      ],
+      "1": [
+       "Zach Charbonnet"
+      ],
+      "2": [
+       "Jadarian Price"
+      ],
+      "4": [
+       "Emanuel Wilson"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Rashid Shaheed"
+      ],
+      "4": [
+       "Tory Horton"
+      ],
+      "1": [
+       "Jaxon Smith-Njigba"
+      ],
+      "3": [
+       "Cooper Kupp"
+      ]
+     },
+     "TE": {
+      "1": [
+       "AJ Barner"
+      ],
+      "2": [
+       "Eric Saubert"
+      ],
+      "3": [
+       "Nick Kallerup"
+      ],
+      "4": [
+       "Elijah Arroyo"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -2712,7 +3403,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.04,
     "defQuestionableShare": 0.125,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Brock Purdy"
+      ],
+      "2": [
+       "Mac Jones"
+      ],
+      "3": [
+       "Kurtis Rourke"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Jordan James"
+      ],
+      "4": [
+       "Isaac Guerendo"
+      ],
+      "1": [
+       "Christian McCaffrey"
+      ],
+      "2": [
+       "Kaelon Black"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Deebo Samuel"
+      ],
+      "1": [
+       "Mike Evans"
+      ],
+      "3": [
+       "Keenan Allen"
+      ],
+      "4": [
+       "Demarcus Robinson"
+      ]
+     },
+     "TE": {
+      "1": [
+       "George Kittle"
+      ],
+      "2": [
+       "Luke Farrell"
+      ],
+      "3": [
+       "Brayden Willis"
+      ],
+      "4": [
+       "Jake Tonges"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -2735,7 +3482,57 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Baker Mayfield"
+      ],
+      "2": [
+       "Jalon Daniels"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Sean Tucker"
+      ],
+      "2": [
+       "Kenny Gainwell"
+      ],
+      "1": [
+       "Bucky Irving"
+      ]
+     },
+     "WR": {
+      "4": [
+       "Tez Johnson"
+      ],
+      "1": [
+       "Emeka Egbuka"
+      ],
+      "2": [
+       "Chris Godwin Jr."
+      ],
+      "3": [
+       "Ted Hurst III"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Cade Otton"
+      ],
+      "2": [
+       "Payne Durham"
+      ],
+      "3": [
+       "Bauer Sharp"
+      ],
+      "4": [
+       "Ko Kieft"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -2765,64 +3562,66 @@
     "tiers": {
      "QB": {
       "2": [
-       "Will"
+       "Will Levis"
       ],
       "1": [
-       "Mason"
+       "Mason Rudolph"
       ]
      },
      "RB": {
       "2": [
-       "Tyjae"
+       "Tyjae Spears"
       ],
       "3": [
-       "Joshua"
+       "Joshua Kelley"
       ],
       "1": [
-       "Julius",
-       "Tony"
+       "Julius Chestnut",
+       "Tony Pollard"
       ]
      },
      "WR": {
       "3": [
-       "Jha'Quan"
+       "Jha'Quan Jackson"
       ],
       "1": [
-       "Calvin",
-       "Mason",
-       "Tyler",
-       "Nick"
+       "Calvin Ridley",
+       "Mason Kinsey",
+       "Tyler Boyd",
+       "Nick Westbrook-Ikhine"
       ],
       "2": [
-       "Bryce"
+       "Bryce Oliver"
       ]
      },
      "TE": {
       "1": [
-       "Chigoziem"
+       "Chigoziem Okonkwo"
       ],
       "3": [
-       "David",
-       "Nick"
+       "David Martin-Robinson",
+       "Nick Vannett"
       ],
       "2": [
-       "Josh"
+       "Josh Whyle"
       ]
      },
      "CB": {
       "1": [
-       "Chidobe",
-       "Roger"
+       "Chidobe Awuzie",
+       "Roger McCreary"
       ],
       "3": [
-       "Justin"
+       "Justin Hardee"
       ],
       "2": [
-       "Darrell",
-       "Jarvis"
+       "Darrell Baker",
+       "Jarvis Brownlee"
       ]
      }
     },
+    "depthSnapshotWeek": 18,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -2847,7 +3646,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Jayden Daniels"
+      ],
+      "2": [
+       "Marcus Mariota"
+      ],
+      "3": [
+       "Athan Kaliakmanis"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Rachaad White"
+      ],
+      "2": [
+       "Austin Ekeler"
+      ],
+      "3": [
+       "Robert Henry Jr."
+      ],
+      "4": [
+       "Jacory Croskey-Merritt"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Antonio Williams"
+      ],
+      "1": [
+       "Stefon Diggs"
+      ],
+      "3": [
+       "Treylon Burks"
+      ],
+      "4": [
+       "Van Jefferson"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Chig Okonkwo"
+      ],
+      "2": [
+       "Ben Sinnott"
+      ],
+      "3": [
+       "John Bates"
+      ],
+      "4": [
+       "Colson Yankoff"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    }
   ],
@@ -2864,7 +3719,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_PIT_BAL",
@@ -2878,7 +3733,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_NYJ_BUF",
@@ -2892,7 +3747,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_ATL_CAR",
@@ -2906,7 +3761,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_CLE_CIN",
@@ -2920,7 +3775,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_LAC_DEN",
@@ -2934,7 +3789,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_DET_GB",
@@ -2948,7 +3803,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_TEN_HOU",
@@ -2962,7 +3817,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_JAX_IND",
@@ -2976,7 +3831,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_LV_KC",
@@ -2990,7 +3845,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_SEA_LA",
@@ -3004,7 +3859,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_CHI_MIN",
@@ -3018,7 +3873,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_MIA_NE",
@@ -3032,7 +3887,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_TB_NO",
@@ -3046,7 +3901,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_PHI_NYG",
@@ -3060,7 +3915,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_18_DAL_WAS",
@@ -3074,7 +3929,7 @@
     "spread": null,
     "total": null,
     "complete": false,
-    "modelHomeWinProb": null
+    "source": "https://www.nfl.com/schedules/"
    }
   ]
  },
@@ -3100,7 +3955,66 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Carson Beck"
+      ],
+      "2": [
+       "Josh Johnson"
+      ],
+      "3": [
+       "Joey Aguilar"
+      ],
+      "4": [
+       "Gardner Minshew II"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Tyler Allgeier"
+      ],
+      "2": [
+       "Bam Knight"
+      ],
+      "3": [
+       "Evan Hull"
+      ],
+      "4": [
+       "James Conner"
+      ]
+     },
+     "WR": {
+      "3": [
+       "Devin Duvernay"
+      ],
+      "1": [
+       "Reggie Virgil"
+      ],
+      "2": [
+       "Simi Fehoko"
+      ],
+      "4": [
+       "Harrison Wallace III"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Trey McBride"
+      ],
+      "2": [
+       "Elijah Higgins"
+      ],
+      "3": [
+       "Teagan Quitoriano"
+      ],
+      "4": [
+       "Hunter Long"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -3114,67 +4028,69 @@
      "00-0033752",
      "00-0039048"
     ],
-    "offStarterValue": 0.7596,
-    "defStarterValue": 0.6947,
-    "offOutShare": 0.0689,
+    "offStarterValue": 0.8081,
+    "defStarterValue": 0.762,
+    "offOutShare": 0.0733,
     "defOutShare": 0.0,
     "offDoubtfulShare": 0.0,
     "defDoubtfulShare": 0.0,
-    "offQuestionableShare": 0.135,
-    "defQuestionableShare": 0.0296,
+    "offQuestionableShare": 0.1436,
+    "defQuestionableShare": 0.0231,
     "tiers": {
      "QB": {
       "1": [
-       "Kirk"
+       "Kirk Cousins"
       ],
       "2": [
-       "Michael"
+       "Michael Penix"
       ]
      },
      "RB": {
       "2": [
-       "Tyler"
+       "Tyler Allgeier"
       ],
       "1": [
-       "Bijan"
+       "Bijan Robinson"
       ],
       "3": [
-       "Avery"
+       "Avery Williams"
       ]
      },
      "WR": {
       "2": [
-       "Casey",
-       "KhaDarel"
+       "Casey Washington",
+       "KhaDarel Hodge"
       ],
       "1": [
-       "Drake",
-       "Darnell",
-       "Ray-Ray"
+       "Drake London",
+       "Darnell Mooney",
+       "Ray-Ray McCloud"
       ]
      },
      "TE": {
       "2": [
-       "Ross"
+       "Ross Dwelley"
       ],
       "1": [
-       "Charlie",
-       "Kyle"
+       "Charlie Woerner",
+       "Kyle Pitts"
       ]
      },
      "CB": {
       "1": [
-       "Dee",
-       "Mike",
-       "A.J."
+       "Dee Alford",
+       "Mike Hughes",
+       "A.J. Terrell"
       ],
       "2": [
-       "Clark",
-       "Antonio",
-       "Kevin"
+       "Clark Phillips",
+       "Antonio Hamilton",
+       "Kevin King"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -3187,8 +4103,8 @@
      "00-0037838",
      "00-0031177"
     ],
-    "offStarterValue": 0.7508,
-    "defStarterValue": 0.7099,
+    "offStarterValue": 0.747,
+    "defStarterValue": 0.7033,
     "offOutShare": 0.0,
     "defOutShare": 0.0,
     "offDoubtfulShare": 0.0,
@@ -3198,53 +4114,55 @@
     "tiers": {
      "QB": {
       "2": [
-       "Josh"
+       "Josh Johnson"
       ],
       "1": [
-       "Lamar"
+       "Lamar Jackson"
       ]
      },
      "RB": {
       "2": [
-       "Justice"
+       "Justice Hill"
       ],
       "1": [
-       "Derrick"
+       "Derrick Henry"
       ]
      },
      "WR": {
       "1": [
-       "Zay",
-       "Rashod"
+       "Zay Flowers",
+       "Rashod Bateman"
       ],
       "3": [
-       "Tylan",
-       "Devontez"
+       "Tylan Wallace",
+       "Devontez Walker"
       ],
       "2": [
-       "Nelson"
+       "Nelson Agholor"
       ]
      },
      "TE": {
       "1": [
-       "Mark"
+       "Mark Andrews"
       ],
       "3": [
-       "Charlie"
+       "Charlie Kolar"
       ],
       "2": [
-       "Isaiah"
+       "Isaiah Likely"
       ]
      },
      "CB": {
       "2": [
-       "Nate"
+       "Nate Wiggins"
       ],
       "1": [
-       "Marlon"
+       "Marlon Humphrey"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -3259,72 +4177,74 @@
      "00-0036192"
     ],
     "offStarterValue": 0.8074,
-    "defStarterValue": 0.5973,
+    "defStarterValue": 0.6011,
     "offOutShare": 0.0548,
     "defOutShare": 0.0,
     "offDoubtfulShare": 0.0,
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.023,
-    "defQuestionableShare": 0.1176,
+    "defQuestionableShare": 0.0461,
     "tiers": {
      "QB": {
       "1": [
-       "Josh"
+       "Josh Allen"
       ],
       "2": [
-       "Mitchell"
+       "Mitchell Trubisky"
       ]
      },
      "RB": {
       "1": [
-       "James"
+       "James Cook"
       ],
       "2": [
-       "Ty"
+       "Ty Johnson"
       ],
       "3": [
-       "Ray"
+       "Ray Davis"
       ]
      },
      "WR": {
       "2": [
-       "Jalen",
-       "Curtis"
+       "Jalen Virgil",
+       "Curtis Samuel"
       ],
       "1": [
-       "Mack",
-       "Khalil",
-       "Keon"
+       "Mack Hollins",
+       "Khalil Shakir",
+       "Keon Coleman"
       ],
       "3": [
-       "Amari"
+       "Amari Cooper"
       ]
      },
      "TE": {
       "1": [
-       "Dalton"
+       "Dalton Kincaid"
       ],
       "3": [
-       "Quintin"
+       "Quintin Morris"
       ],
       "2": [
-       "Dawson"
+       "Dawson Knox"
       ]
      },
      "CB": {
       "1": [
-       "Brandon",
-       "Christian",
-       "Taron",
-       "Rasul"
+       "Brandon Codrington",
+       "Christian Benford",
+       "Taron Johnson",
+       "Rasul Douglas"
       ],
       "2": [
-       "Kaiir",
-       "Cole",
-       "Ja'Marcus"
+       "Kaiir Elam",
+       "Cole Bishop",
+       "Ja'Marcus Ingram"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -3346,7 +4266,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.2865,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Bryce Young"
+      ],
+      "2": [
+       "Kenny Pickett"
+      ],
+      "3": [
+       "Haynes King"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Trevor Etienne"
+      ],
+      "4": [
+       "Anthony Tyus III"
+      ],
+      "1": [
+       "Chuba Hubbard"
+      ],
+      "3": [
+       "AJ Dillon"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Jalen Coker"
+      ],
+      "3": [
+       "John Metchie III"
+      ],
+      "1": [
+       "Tetairoa McMillan"
+      ],
+      "4": [
+       "Brycen Tremayne"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Tommy Tremble"
+      ],
+      "2": [
+       "Darren Waller"
+      ],
+      "3": [
+       "Mitchell Evans"
+      ],
+      "4": [
+       "Feleipe Franks"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -3356,70 +4332,72 @@
     "doubtful": 2,
     "questionable": 1,
     "outNames": [],
-    "offStarterValue": 0.7211,
-    "defStarterValue": 0.695,
+    "offStarterValue": 0.7562,
+    "defStarterValue": 0.7724,
     "offOutShare": 0.0,
     "defOutShare": 0.0,
-    "offDoubtfulShare": 0.0043,
+    "offDoubtfulShare": 0.0041,
     "defDoubtfulShare": 0.0,
-    "offQuestionableShare": 0.0043,
+    "offQuestionableShare": 0.0717,
     "defQuestionableShare": 0.0,
     "tiers": {
      "QB": {
       "1": [
-       "Joe"
+       "Joe Burrow"
       ],
       "2": [
-       "Jake"
+       "Jake Browning"
       ]
      },
      "RB": {
       "2": [
-       "Trayveon"
+       "Trayveon Williams"
       ],
       "1": [
-       "Zack",
-       "Chase"
+       "Zack Moss",
+       "Chase Brown"
       ]
      },
      "WR": {
       "2": [
-       "Jermaine",
-       "Trenton"
+       "Jermaine Burton",
+       "Trenton Irwin"
       ],
       "1": [
-       "Andrei",
-       "Tee",
-       "Ja'Marr"
+       "Andrei Iosivas",
+       "Tee Higgins",
+       "Ja'Marr Chase"
       ],
       "3": [
-       "Charlie"
+       "Charlie Jones"
       ]
      },
      "TE": {
       "3": [
-       "Tanner",
-       "Tanner"
+       "Tanner Hudson",
+       "Tanner McLachlan"
       ],
       "1": [
-       "Drew"
+       "Drew Sample"
       ],
       "2": [
-       "Erick",
-       "Mike"
+       "Erick All",
+       "Mike Gesicki"
       ]
      },
      "CB": {
       "1": [
-       "Mike",
-       "D.J.",
-       "Cam"
+       "Mike Hilton",
+       "D.J. Turner",
+       "Cam Taylor-Britt"
       ],
       "2": [
-       "Josh"
+       "Josh Newton"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -3440,7 +4418,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Deshaun Watson"
+      ],
+      "2": [
+       "Shedeur Sanders"
+      ],
+      "3": [
+       "Dillon Gabriel"
+      ],
+      "4": [
+       "Taylen Green"
+      ]
+     },
+     "RB": {
+      "2": [
+       "Dylan Sampson"
+      ],
+      "3": [
+       "Jaleel McLaughlin"
+      ],
+      "4": [
+       "Raheim Sanders"
+      ],
+      "1": [
+       "Quinshon Judkins"
+      ]
+     },
+     "WR": {
+      "2": [
+       "KC Concepcion"
+      ],
+      "1": [
+       "Denzel Boston"
+      ],
+      "4": [
+       "Tylan Wallace"
+      ],
+      "3": [
+       "Jerry Jeudy"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Harold Fannin Jr."
+      ],
+      "2": [
+       "Blake Whiteheart"
+      ],
+      "3": [
+       "Joe Royer"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -3453,64 +4487,66 @@
      "00-0037275",
      "00-0033077"
     ],
-    "offStarterValue": 0.6205,
-    "defStarterValue": 0.8376,
-    "offOutShare": 0.0042,
+    "offStarterValue": 0.6252,
+    "defStarterValue": 0.831,
+    "offOutShare": 0.0048,
     "defOutShare": 0.0,
     "offDoubtfulShare": 0.0,
     "defDoubtfulShare": 0.0,
-    "offQuestionableShare": 0.0756,
-    "defQuestionableShare": 0.1671,
+    "offQuestionableShare": 0.0048,
+    "defQuestionableShare": 0.174,
     "tiers": {
      "QB": {
       "1": [
-       "Dak"
+       "Dak Prescott"
       ],
       "2": [
-       "Cooper"
+       "Cooper Rush"
       ]
      },
      "RB": {
       "3": [
-       "Rico"
+       "Rico Dowdle"
       ],
       "2": [
-       "Deuce"
+       "Deuce Vaughn"
       ]
      },
      "WR": {
       "1": [
-       "CeeDee",
-       "Kavontae",
-       "Jalen"
+       "CeeDee Lamb",
+       "Kavontae Turpin",
+       "Jalen Tolbert"
       ],
       "2": [
-       "Jalen",
-       "Ryan"
+       "Jalen Brooks",
+       "Ryan Flournoy"
       ]
      },
      "TE": {
       "2": [
-       "Luke"
+       "Luke Schoonmaker"
       ],
       "1": [
-       "Jake"
+       "Jake Ferguson"
       ],
       "3": [
-       "Brevyn"
+       "Brevyn Spann-Ford"
       ]
      },
      "CB": {
       "1": [
-       "Trevon",
-       "Jourdan",
-       "Caelen"
+       "Trevon Diggs",
+       "Jourdan Lewis",
+       "Caelen Carson"
       ],
       "2": [
-       "C.J."
+       "C.J. Goodwin"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -3529,69 +4565,71 @@
      "00-0033595",
      "00-0037667"
     ],
-    "offStarterValue": 0.7568,
-    "defStarterValue": 0.8297,
+    "offStarterValue": 0.7044,
+    "defStarterValue": 0.6943,
     "offOutShare": 0.0,
-    "defOutShare": 0.1931,
+    "defOutShare": 0.1616,
     "offDoubtfulShare": 0.0,
     "defDoubtfulShare": 0.0,
-    "offQuestionableShare": 0.0789,
+    "offQuestionableShare": 0.0735,
     "defQuestionableShare": 0.0,
     "tiers": {
      "QB": {
       "1": [
-       "Jared"
+       "Jared Goff"
       ],
       "2": [
-       "Hendon"
+       "Hendon Hooker"
       ]
      },
      "RB": {
       "3": [
-       "Sione",
-       "Craig"
+       "Sione Vaki",
+       "Craig Reynolds"
       ],
       "2": [
-       "Jahmyr"
+       "Jahmyr Gibbs"
       ],
       "1": [
-       "David"
+       "David Montgomery"
       ]
      },
      "WR": {
       "2": [
-       "Isaiah",
-       "Allen"
+       "Isaiah Williams",
+       "Allen Robinson"
       ],
       "1": [
-       "Kalif",
-       "Amon-Ra",
-       "Tim"
+       "Kalif Raymond",
+       "Amon-Ra St. Brown",
+       "Tim Patrick"
       ]
      },
      "TE": {
       "1": [
-       "Sam"
+       "Sam LaPorta"
       ],
       "2": [
-       "Brock"
+       "Brock Wright"
       ]
      },
      "CB": {
       "1": [
-       "Carlton",
-       "Terrion",
-       "Khalil"
+       "Carlton Davis",
+       "Terrion Arnold",
+       "Khalil Dorsey"
       ],
       "2": [
-       "Amik",
-       "Ennis"
+       "Amik Robertson",
+       "Ennis Rakestraw"
       ],
       "3": [
-       "Kindle"
+       "Kindle Vildor"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -3603,71 +4641,73 @@
     "outNames": [
      "00-0036871"
     ],
-    "offStarterValue": 0.6359,
-    "defStarterValue": 0.4755,
+    "offStarterValue": 0.6691,
+    "defStarterValue": 0.4884,
     "offOutShare": 0.0,
     "defOutShare": 0.0,
     "offDoubtfulShare": 0.0,
     "defDoubtfulShare": 0.0,
-    "offQuestionableShare": 0.0906,
+    "offQuestionableShare": 0.1057,
     "defQuestionableShare": 0.0,
     "tiers": {
      "QB": {
       "1": [
-       "Jordan"
+       "Jordan Love"
       ],
       "2": [
-       "Malik"
+       "Malik Willis"
       ]
      },
      "RB": {
       "2": [
-       "Emanuel"
+       "Emanuel Wilson"
       ],
       "1": [
-       "Josh"
+       "Josh Jacobs"
       ],
       "3": [
-       "Christopher"
+       "Christopher Brooks"
       ]
      },
      "WR": {
       "1": [
-       "Jayden",
-       "Christian",
-       "Romeo"
+       "Jayden Reed",
+       "Christian Watson",
+       "Romeo Doubs"
       ],
       "2": [
-       "Malik",
-       "Dontayvion",
-       "Bo"
+       "Malik Heath",
+       "Dontayvion Wicks",
+       "Bo Melton"
       ]
      },
      "TE": {
       "1": [
-       "Tucker"
+       "Tucker Kraft"
       ],
       "2": [
-       "Ben"
+       "Ben Sims"
       ],
       "3": [
-       "John"
+       "John FitzPatrick"
       ]
      },
      "CB": {
       "1": [
-       "Keisean",
-       "Jaire"
+       "Keisean Nixon",
+       "Jaire Alexander"
       ],
       "2": [
-       "Eric",
-       "Carrington"
+       "Eric Stokes",
+       "Carrington Valentine"
       ],
       "3": [
-       "Corey"
+       "Corey Ballentine"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -3693,7 +4733,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.1032,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "C.J. Stroud"
+      ],
+      "2": [
+       "Davis Mills"
+      ],
+      "3": [
+       "Graham Mertz"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Woody Marks"
+      ],
+      "2": [
+       "David Montgomery"
+      ],
+      "3": [
+       "Emari Demercado"
+      ],
+      "4": [
+       "Dare Ogunbowale"
+      ]
+     },
+     "WR": {
+      "3": [
+       "Tank Dell"
+      ],
+      "2": [
+       "Xavier Hutchinson"
+      ],
+      "1": [
+       "Nico Collins"
+      ],
+      "4": [
+       "Marvin Harrison Jr."
+      ]
+     },
+     "TE": {
+      "1": [
+       "Dalton Schultz"
+      ],
+      "2": [
+       "Foster Moreau"
+      ],
+      "3": [
+       "Brevin Jordan"
+      ],
+      "4": [
+       "Marlin Klein"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -3719,64 +4815,66 @@
     "tiers": {
      "QB": {
       "1": [
-       "Anthony"
+       "Anthony Richardson"
       ],
       "2": [
-       "Joe"
+       "Joe Flacco"
       ],
       "3": [
-       "Sam"
+       "Sam Ehlinger"
       ]
      },
      "RB": {
       "1": [
-       "Jonathan",
-       "Tyler"
+       "Jonathan Taylor",
+       "Tyler Goodson"
       ],
       "2": [
-       "Trey"
+       "Trey Sermon"
       ]
      },
      "WR": {
       "3": [
-       "Ashton"
+       "Ashton Dulin"
       ],
       "2": [
-       "Adonai",
-       "Anthony"
+       "Adonai Mitchell",
+       "Anthony Gould"
       ],
       "1": [
-       "Josh",
-       "Michael",
-       "Alec"
+       "Josh Downs",
+       "Michael Pittman",
+       "Alec Pierce"
       ]
      },
      "TE": {
       "3": [
-       "Kylen",
-       "Will"
+       "Kylen Granson",
+       "Will Mallory"
       ],
       "2": [
-       "Andrew"
+       "Andrew Ogletree"
       ],
       "1": [
-       "Mo"
+       "Mo Alie-Cox"
       ]
      },
      "CB": {
       "1": [
-       "Samuel",
-       "Jaylon"
+       "Samuel Womack",
+       "Jaylon Jones"
       ],
       "2": [
-       "Kenny",
-       "David"
+       "Kenny Moore",
+       "David Long"
       ],
       "3": [
-       "Chris"
+       "Chris Lammons"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -3799,7 +4897,60 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.1942,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Trevor Lawrence"
+      ],
+      "2": [
+       "Quinn Ewers"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Ameer Abdullah"
+      ],
+      "1": [
+       "Bhayshul Tuten"
+      ],
+      "2": [
+       "Chris Rodriguez Jr."
+      ],
+      "4": [
+       "LeQuint Allen Jr."
+      ]
+     },
+     "WR": {
+      "1": [
+       "Parker Washington"
+      ],
+      "4": [
+       "Josh Cameron"
+      ],
+      "2": [
+       "Jakobi Meyers"
+      ],
+      "3": [
+       "Brian Thomas Jr."
+      ]
+     },
+     "TE": {
+      "1": [
+       "Brenton Strange"
+      ],
+      "2": [
+       "Nate Boerkircher"
+      ],
+      "3": [
+       "Tanner Koziol"
+      ],
+      "4": [
+       "Quintin Morris"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -3811,70 +4962,72 @@
     "outNames": [
      "00-0033857"
     ],
-    "offStarterValue": 0.7248,
-    "defStarterValue": 0.6762,
+    "offStarterValue": 0.7339,
+    "defStarterValue": 0.6522,
     "offOutShare": 0.0,
     "defOutShare": 0.0,
     "offDoubtfulShare": 0.0,
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
-    "defQuestionableShare": 0.0522,
+    "defQuestionableShare": 0.0451,
     "tiers": {
      "QB": {
       "2": [
-       "Carson"
+       "Carson Wentz"
       ],
       "1": [
-       "Patrick"
+       "Patrick Mahomes"
       ]
      },
      "RB": {
       "3": [
-       "Clyde"
+       "Clyde Edwards-Helaire"
       ],
       "2": [
-       "Samaje"
+       "Samaje Perine"
       ],
       "1": [
-       "Carson",
-       "Kareem"
+       "Carson Steele",
+       "Kareem Hunt"
       ]
      },
      "WR": {
       "1": [
-       "Xavier",
-       "Justin"
+       "Xavier Worthy",
+       "Justin Watson"
       ],
       "3": [
-       "DeAndre"
+       "DeAndre Hopkins"
       ],
       "2": [
-       "Mecole",
-       "JuJu"
+       "Mecole Hardman",
+       "JuJu Smith-Schuster"
       ]
      },
      "TE": {
       "1": [
-       "Travis"
+       "Travis Kelce"
       ],
       "2": [
-       "Noah"
+       "Noah Gray"
       ]
      },
      "CB": {
       "2": [
-       "Nazeeh",
-       "Keith"
+       "Nazeeh Johnson",
+       "Keith Taylor"
       ],
       "3": [
-       "Christian"
+       "Christian Roland-Wallace"
       ],
       "1": [
-       "Trent",
-       "Joshua"
+       "Trent McDuffie",
+       "Joshua Williams"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -3887,75 +5040,77 @@
      "00-0036366",
      "00-0032242"
     ],
-    "offStarterValue": 0.8525,
-    "defStarterValue": 0.7622,
-    "offOutShare": 0.0862,
+    "offStarterValue": 0.8551,
+    "defStarterValue": 0.7458,
+    "offOutShare": 0.102,
     "defOutShare": 0.0,
     "offDoubtfulShare": 0.0,
     "defDoubtfulShare": 0.0,
-    "offQuestionableShare": 0.1038,
-    "defQuestionableShare": 0.0641,
+    "offQuestionableShare": 0.102,
+    "defQuestionableShare": 0.0688,
     "tiers": {
      "QB": {
       "2": [
-       "Jimmy"
+       "Jimmy Garoppolo"
       ],
       "3": [
-       "Stetson"
+       "Stetson Bennett"
       ],
       "1": [
-       "Matthew"
+       "Matthew Stafford"
       ]
      },
      "RB": {
       "1": [
-       "Blake",
-       "Kyren"
+       "Blake Corum",
+       "Kyren Williams"
       ],
       "3": [
-       "Ronnie",
-       "Cody"
+       "Ronnie Rivers",
+       "Cody Schrader"
       ]
      },
      "WR": {
       "2": [
-       "Tutu",
-       "Jordan",
-       "Tyler"
+       "Tutu Atwell",
+       "Jordan Whittington",
+       "Tyler Johnson"
       ],
       "1": [
-       "Puka",
-       "Cooper",
-       "Demarcus",
-       "Xavier"
+       "Puka Nacua",
+       "Cooper Kupp",
+       "Demarcus Robinson",
+       "Xavier Smith"
       ]
      },
      "TE": {
       "1": [
-       "Colby"
+       "Colby Parkinson"
       ],
       "2": [
-       "Davis"
+       "Davis Allen"
       ],
       "3": [
-       "Hunter"
+       "Hunter Long"
       ]
      },
      "CB": {
       "2": [
-       "Ahkello",
-       "Tre'Davious"
+       "Ahkello Witherspoon",
+       "Tre'Davious White"
       ],
       "3": [
-       "Josh",
-       "Charles"
+       "Josh Wallace",
+       "Charles Woods"
       ],
       "1": [
-       "Cobie",
-       "Darious"
+       "Cobie Durant",
+       "Darious Williams"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -3975,7 +5130,57 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Justin Herbert"
+      ],
+      "2": [
+       "DJ Uiagalelei"
+      ],
+      "3": [
+       "Trey Lance"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Keaton Mitchell"
+      ],
+      "2": [
+       "Kimani Vidal"
+      ],
+      "1": [
+       "Omarion Hampton"
+      ]
+     },
+     "WR": {
+      "4": [
+       "KeAndre Lambert-Smith"
+      ],
+      "1": [
+       "Ladd McConkey"
+      ],
+      "2": [
+       "Quentin Johnston"
+      ],
+      "3": [
+       "Tre' Harris"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Charlie Kolar"
+      ],
+      "2": [
+       "Oronde Gadsden"
+      ],
+      "3": [
+       "David Njoku"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -3988,55 +5193,57 @@
      "00-0038579"
     ],
     "offStarterValue": 0.5602,
-    "defStarterValue": 0.7086,
+    "defStarterValue": 0.6027,
     "offOutShare": 0.0,
     "defOutShare": 0.0,
     "offDoubtfulShare": 0.0,
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
-    "defQuestionableShare": 0.3219,
+    "defQuestionableShare": 0.3013,
     "tiers": {
      "QB": {
       "2": [
-       "Gardner"
+       "Gardner Minshew"
       ]
      },
      "RB": {
       "1": [
-       "Zamir"
+       "Zamir White"
       ],
       "2": [
-       "Alexander"
+       "Alexander Mattison"
       ],
       "3": [
-       "Ameer"
+       "Ameer Abdullah"
       ]
      },
      "WR": {
       "1": [
-       "Tre"
+       "Tre Tucker"
       ],
       "3": [
-       "D.J."
+       "D.J. Turner"
       ]
      },
      "TE": {
       "1": [
-       "Brock"
+       "Brock Bowers"
       ]
      },
      "CB": {
       "1": [
-       "Nate",
-       "Jakorian",
-       "Jack"
+       "Nate Hobbs",
+       "Jakorian Bennett",
+       "Jack Jones"
       ],
       "2": [
-       "Decamerion",
-       "Darnay"
+       "Decamerion Richardson",
+       "Darnay Holmes"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -4049,72 +5256,74 @@
      "00-0036620",
      "00-0036248"
     ],
-    "offStarterValue": 0.6305,
-    "defStarterValue": 0.7056,
-    "offOutShare": 0.0043,
+    "offStarterValue": 0.66,
+    "defStarterValue": 0.7023,
+    "offOutShare": 0.004,
     "defOutShare": 0.0,
     "offDoubtfulShare": 0.0,
-    "defDoubtfulShare": 0.0543,
-    "offQuestionableShare": 0.0744,
-    "defQuestionableShare": 0.0897,
+    "defDoubtfulShare": 0.053,
+    "offQuestionableShare": 0.0699,
+    "defQuestionableShare": 0.0875,
     "tiers": {
      "QB": {
       "2": [
-       "Skylar"
+       "Skylar Thompson"
       ],
       "1": [
-       "Tua"
+       "Tua Tagovailoa"
       ]
      },
      "RB": {
       "1": [
-       "Devon",
-       "Raheem"
+       "Devon Achane",
+       "Raheem Mostert"
       ],
       "2": [
-       "Jeffery",
-       "Jaylen"
+       "Jeffery Wilson",
+       "Jaylen Wright"
       ]
      },
      "WR": {
       "2": [
-       "Malik",
-       "Odell"
+       "Malik Washington",
+       "Odell Beckham"
       ],
       "1": [
-       "Jaylen",
-       "Tyreek"
+       "Jaylen Waddle",
+       "Tyreek Hill"
       ],
       "3": [
-       "Tanner",
-       "D'Wayne"
+       "Tanner Conner",
+       "D'Wayne Eskridge"
       ]
      },
      "TE": {
       "1": [
-       "Durham"
+       "Durham Smythe"
       ],
       "2": [
-       "Jonnu",
-       "Julian"
+       "Jonnu Smith",
+       "Julian Hill"
       ]
      },
      "CB": {
       "2": [
-       "Cam",
-       "Siran"
+       "Cam Smith",
+       "Siran Neal"
       ],
       "1": [
-       "Kendall",
-       "Jalen",
-       "Kader"
+       "Kendall Fuller",
+       "Jalen Ramsey",
+       "Kader Kohou"
       ],
       "3": [
-       "Storm",
-       "Ethan"
+       "Storm Duck",
+       "Ethan Bonner"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -4127,70 +5336,72 @@
      "00-0035249",
      "00-0036274"
     ],
-    "offStarterValue": 0.6494,
-    "defStarterValue": 0.7794,
+    "offStarterValue": 0.7335,
+    "defStarterValue": 0.688,
     "offOutShare": 0.0,
     "defOutShare": 0.0,
     "offDoubtfulShare": 0.0,
     "defDoubtfulShare": 0.0,
-    "offQuestionableShare": 0.0512,
-    "defQuestionableShare": 0.02,
+    "offQuestionableShare": 0.0579,
+    "defQuestionableShare": 0.0185,
     "tiers": {
      "QB": {
       "2": [
-       "Nick"
+       "Nick Mullens"
       ],
       "1": [
-       "Sam"
+       "Sam Darnold"
       ],
       "3": [
-       "Brett"
+       "Brett Rypien"
       ]
      },
      "RB": {
       "1": [
-       "Ty",
-       "Aaron"
+       "Ty Chandler",
+       "Aaron Jones"
       ],
       "3": [
-       "Cam"
+       "Cam Akers"
       ]
      },
      "WR": {
       "2": [
-       "Jalen"
+       "Jalen Nailor"
       ],
       "1": [
-       "Brandon",
-       "Jordan",
-       "Justin"
+       "Brandon Powell",
+       "Jordan Addison",
+       "Justin Jefferson"
       ],
       "3": [
-       "Trent"
+       "Trent Sherfield"
       ]
      },
      "TE": {
       "1": [
-       "T.J."
+       "T.J. Hockenson"
       ],
       "2": [
-       "Josh"
+       "Josh Oliver"
       ],
       "3": [
-       "Johnny"
+       "Johnny Mundt"
       ]
      },
      "CB": {
       "1": [
-       "Stephon",
-       "Byron"
+       "Stephon Gilmore",
+       "Byron Murphy"
       ],
       "2": [
-       "Fabian",
-       "Shaquill"
+       "Fabian Moreau",
+       "Shaquill Griffin"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -4214,7 +5425,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Drake Maye"
+      ],
+      "2": [
+       "Tommy DeVito"
+      ],
+      "3": [
+       "Behren Morton"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Corey Kiner"
+      ],
+      "4": [
+       "Lan Larison"
+      ],
+      "2": [
+       "TreVeyon Henderson"
+      ],
+      "1": [
+       "Rhamondre Stevenson"
+      ]
+     },
+     "WR": {
+      "4": [
+       "Efton Chism III"
+      ],
+      "2": [
+       "DeMario Douglas"
+      ],
+      "1": [
+       "A.J. Brown"
+      ],
+      "3": [
+       "Mack Hollins"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Hunter Henry"
+      ],
+      "2": [
+       "Eli Raridon"
+      ],
+      "3": [
+       "Cameron Latu"
+      ],
+      "4": [
+       "Julian Hill"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -4238,7 +5505,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Tyler Shough"
+      ],
+      "2": [
+       "Spencer Rattler"
+      ],
+      "3": [
+       "Zach Wilson"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Alvin Kamara"
+      ],
+      "2": [
+       "Audric Estime"
+      ],
+      "3": [
+       "CJ Donaldson"
+      ],
+      "4": [
+       "Travis Etienne Jr."
+      ]
+     },
+     "WR": {
+      "4": [
+       "Bryce Lance"
+      ],
+      "1": [
+       "Chris Olave"
+      ],
+      "2": [
+       "Devaughn Vele"
+      ],
+      "3": [
+       "Jordyn Tyson"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Juwan Johnson"
+      ],
+      "2": [
+       "Noah Fant"
+      ],
+      "3": [
+       "Oscar Delp"
+      ],
+      "4": [
+       "Moliki Matavao"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -4265,7 +5588,57 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "J.J. McCarthy"
+      ],
+      "2": [
+       "Jameis Winston"
+      ],
+      "3": [
+       "Jaxson Dart"
+      ]
+     },
+     "RB": {
+      "4": [
+       "Tyrone Tracy Jr."
+      ],
+      "1": [
+       "Cam Skattebo"
+      ],
+      "2": [
+       "Devin Singletary"
+      ]
+     },
+     "WR": {
+      "4": [
+       "Charlie Jones"
+      ],
+      "1": [
+       "Malik Nabers"
+      ],
+      "2": [
+       "Malachi Fields"
+      ],
+      "3": [
+       "Darnell Mooney"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Isaiah Likely"
+      ],
+      "2": [
+       "Theo Johnson"
+      ],
+      "4": [
+       "Thomas Fidone II"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -4286,7 +5659,60 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Geno Smith"
+      ],
+      "2": [
+       "Cade Klubnik"
+      ]
+     },
+     "RB": {
+      "4": [
+       "Kene Nwangwu"
+      ],
+      "1": [
+       "Breece Hall"
+      ],
+      "2": [
+       "Braelon Allen"
+      ],
+      "3": [
+       "Isaiah Davis"
+      ]
+     },
+     "WR": {
+      "4": [
+       "Isaiah Williams"
+      ],
+      "1": [
+       "Garrett Wilson"
+      ],
+      "2": [
+       "Omar Cooper Jr."
+      ],
+      "3": [
+       "Adonai Mitchell"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Mason Taylor"
+      ],
+      "2": [
+       "Kenyon Sadiq"
+      ],
+      "3": [
+       "Jeremy Ruckert"
+      ],
+      "4": [
+       "Jelani Woods"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -4311,7 +5737,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Aaron Rodgers"
+      ],
+      "2": [
+       "Mason Rudolph"
+      ],
+      "3": [
+       "Will Howard"
+      ],
+      "4": [
+       "Drew Allar"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Jaylen Warren"
+      ],
+      "2": [
+       "Rico Dowdle"
+      ],
+      "3": [
+       "Lew Nichols"
+      ],
+      "4": [
+       "Travis Homer"
+      ]
+     },
+     "WR": {
+      "1": [
+       "DK Metcalf"
+      ],
+      "2": [
+       "Germie Bernard"
+      ],
+      "3": [
+       "Ben Skowronek"
+      ],
+      "4": [
+       "Brandon Smith"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Darnell Washington"
+      ],
+      "2": [
+       "Pat Freiermuth"
+      ],
+      "3": [
+       "Robert Tonyan"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -4334,7 +5816,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Sam Darnold"
+      ],
+      "2": [
+       "Drew Lock"
+      ],
+      "3": [
+       "Jalen Milroe"
+      ]
+     },
+     "RB": {
+      "3": [
+       "George Holani"
+      ],
+      "1": [
+       "Zach Charbonnet"
+      ],
+      "2": [
+       "Jadarian Price"
+      ],
+      "4": [
+       "Emanuel Wilson"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Rashid Shaheed"
+      ],
+      "4": [
+       "Tory Horton"
+      ],
+      "1": [
+       "Jaxon Smith-Njigba"
+      ],
+      "3": [
+       "Cooper Kupp"
+      ]
+     },
+     "TE": {
+      "1": [
+       "AJ Barner"
+      ],
+      "2": [
+       "Eric Saubert"
+      ],
+      "3": [
+       "Nick Kallerup"
+      ],
+      "4": [
+       "Elijah Arroyo"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -4359,7 +5897,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.1239,
     "defQuestionableShare": 0.2404,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Brock Purdy"
+      ],
+      "2": [
+       "Mac Jones"
+      ],
+      "3": [
+       "Kurtis Rourke"
+      ]
+     },
+     "RB": {
+      "3": [
+       "Jordan James"
+      ],
+      "4": [
+       "Isaac Guerendo"
+      ],
+      "1": [
+       "Christian McCaffrey"
+      ],
+      "2": [
+       "Kaelon Black"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Deebo Samuel"
+      ],
+      "1": [
+       "Mike Evans"
+      ],
+      "3": [
+       "Keenan Allen"
+      ],
+      "4": [
+       "Demarcus Robinson"
+      ]
+     },
+     "TE": {
+      "1": [
+       "George Kittle"
+      ],
+      "2": [
+       "Luke Farrell"
+      ],
+      "3": [
+       "Brayden Willis"
+      ],
+      "4": [
+       "Jake Tonges"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    },
    {
@@ -4371,70 +5965,72 @@
     "outNames": [
      "00-0036374"
     ],
-    "offStarterValue": 0.4094,
-    "defStarterValue": 0.6589,
+    "offStarterValue": 0.489,
+    "defStarterValue": 0.6184,
     "offOutShare": 0.0,
-    "defOutShare": 0.0047,
+    "defOutShare": 0.0044,
     "offDoubtfulShare": 0.0,
     "defDoubtfulShare": 0.0,
-    "offQuestionableShare": 0.0939,
+    "offQuestionableShare": 0.0921,
     "defQuestionableShare": 0.0,
     "tiers": {
      "QB": {
       "2": [
-       "Trevor",
-       "Mason"
+       "Trevor Siemian",
+       "Mason Rudolph"
       ],
       "3": [
-       "Will"
+       "Will Levis"
       ]
      },
      "RB": {
       "3": [
-       "Tyjae"
+       "Tyjae Spears"
       ],
       "1": [
-       "Tony"
+       "Tony Pollard"
       ],
       "2": [
-       "Julius"
+       "Julius Chestnut"
       ]
      },
      "WR": {
       "1": [
-       "Calvin",
-       "Jha'Quan"
+       "Calvin Ridley",
+       "Jha'Quan Jackson"
       ],
       "2": [
-       "Tyler",
-       "Nick"
+       "Tyler Boyd",
+       "Nick Westbrook-Ikhine"
       ]
      },
      "TE": {
       "2": [
-       "Josh"
+       "Josh Whyle"
       ],
       "3": [
-       "Nick",
-       "David"
+       "Nick Vannett",
+       "David Martin-Robinson"
       ],
       "1": [
-       "Chigoziem"
+       "Chigoziem Okonkwo"
       ]
      },
      "CB": {
       "1": [
-       "Roger",
-       "L'Jarius",
-       "Jarvis"
+       "Roger McCreary",
+       "L'Jarius Sneed",
+       "Jarvis Brownlee"
       ],
       "2": [
-       "Gabe",
-       "Tre",
-       "Darrell"
+       "Gabe Jeudy-Lally",
+       "Tre Avery",
+       "Darrell Baker"
       ]
      }
     },
+    "depthSnapshotWeek": 10,
+    "depthSnapshotUTC": null,
     "status": "verified"
    },
    {
@@ -4459,7 +6055,63 @@
     "defDoubtfulShare": 0.0,
     "offQuestionableShare": 0.0,
     "defQuestionableShare": 0.0,
-    "tiers": {},
+    "tiers": {
+     "QB": {
+      "1": [
+       "Jayden Daniels"
+      ],
+      "2": [
+       "Marcus Mariota"
+      ],
+      "3": [
+       "Athan Kaliakmanis"
+      ]
+     },
+     "RB": {
+      "1": [
+       "Rachaad White"
+      ],
+      "2": [
+       "Austin Ekeler"
+      ],
+      "3": [
+       "Robert Henry Jr."
+      ],
+      "4": [
+       "Jacory Croskey-Merritt"
+      ]
+     },
+     "WR": {
+      "2": [
+       "Antonio Williams"
+      ],
+      "1": [
+       "Stefon Diggs"
+      ],
+      "3": [
+       "Treylon Burks"
+      ],
+      "4": [
+       "Van Jefferson"
+      ]
+     },
+     "TE": {
+      "1": [
+       "Chig Okonkwo"
+      ],
+      "2": [
+       "Ben Sinnott"
+      ],
+      "3": [
+       "John Bates"
+      ],
+      "4": [
+       "Colson Yankoff"
+      ]
+     }
+    },
+    "depthSnapshotWeek": 0,
+    "depthSnapshotUTC": "2026-03-14T07:32:09Z",
     "status": "verified"
    }
   ],
@@ -4478,7 +6130,7 @@
     "awayScore": 24.0,
     "homeScore": 21.0,
     "complete": true,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_NE_DET",
@@ -4494,7 +6146,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_KC_ATL",
@@ -4510,7 +6162,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_HOU_CLE",
@@ -4526,7 +6178,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_MIN_GB",
@@ -4542,7 +6194,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_MIA_IND",
@@ -4558,7 +6210,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_CAR_NO",
@@ -4574,7 +6226,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_BUF_NYJ",
@@ -4590,7 +6242,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_JAX_TEN",
@@ -4606,7 +6258,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_LA_ARI",
@@ -4622,7 +6274,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_SEA_LV",
@@ -4638,7 +6290,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_SF_DAL",
@@ -4654,7 +6306,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_PIT_CIN",
@@ -4670,7 +6322,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    },
    {
     "gameId": "2026_10_LAC_BAL",
@@ -4686,7 +6338,7 @@
     "awayScore": null,
     "homeScore": null,
     "complete": false,
-    "source": "https://www.nfl.com/games"
+    "source": "https://www.nfl.com/schedules/"
    }
   ],
   "kind": "played"
@@ -4708,44 +6360,5 @@
   "l2": 1.0,
   "type": "logistic regression, walk-forward by season",
   "fill": "missing signal -> 0 (documented; never a guessed value)"
- },
- "crossSource": {
-  "status": "pass",
-  "summary": "2432 of 2776 completed games match exactly, 0 differ, 344 unmatched",
-  "examples": [],
-  "agree": 2432,
-  "disagree": 0,
-  "unmatched": 344,
-  "unmatchedByDate": {
-   "2016-09-12": 1,
-   "2016-09-13": 1,
-   "2016-09-18": 2,
-   "2016-09-25": 2,
-   "2016-10-02": 2,
-   "2016-10-09": 2,
-   "2016-10-16": 2,
-   "2016-10-23": 2,
-   "2016-10-30": 1,
-   "2016-11-06": 1,
-   "2016-11-13": 2,
-   "2016-11-20": 1,
-   "2016-11-21": 1,
-   "2016-11-24": 1,
-   "2016-11-27": 1,
-   "2016-12-04": 2,
-   "2016-12-11": 2,
-   "2016-12-16": 1,
-   "2016-12-20": 1,
-   "2016-12-24": 2
-  }
- },
- "marketCoverage": {
-  "spreadPct": 1.0,
-  "moneylinePct": 0.9997,
-  "espnOddsGames": 26,
-  "espnGames": 2913,
-  "games": 2898,
-  "scheduled": 135,
-  "totalPct": 1.0
  }
 }

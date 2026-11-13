@@ -1,0 +1,46 @@
+name: NFL lab upstream data
+
+# Session arena-fb9c9608 (K-suggestions S12/S13): snapshot the datasets that the
+# sandbox cannot reach — nflverse release assets (injuries, depth charts, snap
+# counts) and the results/market table — so the lab can build the injury→outcome
+# panel and depth-chart facts that are currently blank (flags NFL-K4/NFL-K10).
+# Files are evidence-layer inputs only: nothing is published to page tables
+# without its own provenance pass in a reviewed build.
+
+on:
+  schedule:
+    # Wednesdays 08:20 UTC (after nflverse refreshes stat corrections Tue night)
+    - cron: '20 8 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-lab-data
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch upstream datasets
+        run: python3 nfl-lab/scripts/fetch_upstream.py
+
+      - name: Commit snapshots (if changed)
+        run: |
+          git config user.name "korea5-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add nfl-lab/data/upstream/
+          if git diff --cached --quiet; then
+            echo "No changes to upstream data."
+          else
+            git commit -m "NFL lab upstream snapshot $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+          fi

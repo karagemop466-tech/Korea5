@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard — NFL Lines Lab</title>
+<meta name="description" content="NFL lines origination, strategy leaderboard, correlation values and injury/depth tracking with source-linked verification.">
+<link rel="stylesheet" href="assets/lab.css">
+</head>
+<body>
+<header><h1>NFL Lines Lab</h1>
+<div class="sub">Originate lines &middot; leaderboard strategies through validation gates &middot; measure correlation &middot; track injuries and depth. Built 2026-11-13 by session arena-fb9c9608; branch <code>arena/fb9c9608-korea5</code>.</div>
+</header>
+<nav><a href="index.html" class="active">NFL Lines Lab</a><a href="lines.html" class="">Originated lines</a><a href="leaderboard.html" class="">Strategy leaderboard</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries & depth</a><a href="method.html" class="">Method & gates</a><a href="decisions.html" class="">Decisions needed</a><a href="suggestions.html" class="">Suggestions</a><a href="review.html" class="">Repo review</a><a href="flagged.html" class="">Flagged for review</a><a href="sources.html" class="">Sources</a><a href="data.html" class="">Data index</a></nav>
+<main>
+<div class="banner"><strong>Honesty policy.</strong> Every fact row links to its source. Market lines (spreads/totals/moneylines) are bookmaker quotes from the open-source nflverse/nfldata dataset — labelled <span class="tag mkt">market</span>, not official NFL data. Official data comes from NFL.com pages fetched 2026-11-13 (link on each row). Values that could not be verified are left blank and listed on <a href="flagged.html">Flagged for Review</a>. No betting edge is claimed anywhere; the leaderboard is a paper research competition.</div>
+
+<div class="cards">
+<div class="card"><h3>Originated lines</h3><p class="big">27</p><p>games priced for Weeks 10–11 2026 vs market (<a href="lines.html">board</a>)</p></div>
+<div class="card"><h3>Qualified strategies</h3><p class="big">0 of 8</p><p>passed all mandatory gates on 2020–2025 walk-forward (<a href="leaderboard.html">leaderboard</a>)</p></div>
+<div class="card"><h3>Correlation values</h3><p class="big">+0.020</p><p>margin–total Pearson r; SGP multipliers ~1.0 (<a href="correlation.html">details</a>)</p></div>
+<div class="card"><h3>Injury watch</h3><p class="big">14/28</p><p>teams with a unit at elevated or critical pressure (<a href="injuries.html">tracker</a>)</p></div>
+</div>
+<h2>Executive summary</h2>
+<p class="lede">This lab turns the repository's NFL coverage into a decision system: it originates its own
+game lines from results-based power ratings, publishes them against the market number, runs candidate
+betting strategies through pre-registered validation gates on held-out seasons, measures the correlation
+values needed to price parlays honestly, and tracks injuries/availability from the official NFL report.</p>
+<div class="note"><strong>What the data says so far (2020–2025 held-out walk-forward, flat -110 pricing):</strong>
+<ul class="tight">
+<li><strong>No strategy qualified.</strong> Every candidate's ROI 95% CI includes zero. The market-favorite baseline is −2.94% ROI (n=1,615). This is the luck-removal step working: nothing is promoted on noise.</li>
+<li><strong>The model is a baseline, not an edge.</strong> Model spread MAE 10.18 pts vs market 9.76 pts on the same window. No predictive edge over the closing line is claimed or implied.</li>
+<li><strong>Correlation is small but real to measure.</strong> Margin–total r = +0.0201; same-game-parlay multipliers measured at 0.985×–1.011× — near-independence on this dataset.</li>
+<li><strong>Availability pressure is measurable now.</strong> 14 of 28 Week 10 teams carry an elevated/critical unit from the official report. Depth-chart tier (2nd/3rd string) is deliberately not inferred — see flag NFL-K4.</li>
+<li><strong>Rewards are suspended by design</strong> until gates G5 (closing-line value) and G6 (prospective trial) are satisfiable. Paper points only.</li>
+</ul></div>
+<h2>What is on each page</h2>
+<table><tr><th>Page</th><th>Contents</th></tr>
+<tr><td><a href="lines.html">Originated lines</a></td><td>Week 10/11 2026 board: model spread & total vs market, edges, results (TNF final already settled: <a href="https://www.nfl.com/games/commanders-at-giants-2026-reg-10" rel="noopener">Commanders 24, Giants 21</a>).</td></tr>
+<tr><td><a href="leaderboard.html">Strategy leaderboard</a></td><td>Eight strategies walked forward on 2020–2025, validation gates, points, reward policy.</td></tr>
+<tr><td><a href="correlation.html">Correlation</a></td><td>Measured correlation values, same-game-parlay multipliers, two-leg parlay math.</td></tr>
+<tr><td><a href="injuries.html">Injuries & depth</a></td><td>Every row of the official Week 10 injury report, unit pressure index, QB availability notes.</td></tr>
+<tr><td><a href="method.html">Method & gates</a></td><td>Model specification, parameters, gate definitions, provenance and leakage rules.</td></tr>
+<tr><td><a href="decisions.html">Decisions needed</a></td><td>The questions, information and answers that must exist before any decision can be made — with what we have and do not have.</td></tr>
+<tr><td><a href="suggestions.html">Suggestions</a></td><td>Dedicated review board: proposals awaiting a decision before implementation.</td></tr>
+<tr><td><a href="review.html">Repo review</a></td><td>Line-by-line repo review findings with cross-check evidence.</td></tr>
+<tr><td><a href="flagged.html">Flagged for review</a></td><td>Irregularities and unverified items (NFL-K1…K10).</td></tr>
+<tr><td><a href="sources.html">Sources</a></td><td>Dataset provenance registry and official reference pages.</td></tr>
+<tr><td><a href="data.html">Data index</a></td><td>Every JSON this lab publishes, with schema notes.</td></tr>
+</table>
+<p class="small">Relation to the earlier proposal page: <a href="https://karagemop466-tech.github.io/Korea5/nfl-strategy.html" rel="noopener">nfl-strategy.html</a>
+(session 2cd43859) sketched the rules; this lab implements them on real data and reports the honest result —
+zero qualified strategies, rewards suspended.</p>
+
+</main>
+<footer>NFL Lines Lab — part of <a href="../index.html">Korea5</a> (live site: karagemop466-tech.github.io/Korea5). Data build 2026-11-13T14:00:00Z. Report problems on <a href="flagged.html">Flagged for Review</a>.</footer>
+</body></html>

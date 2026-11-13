@@ -401,6 +401,7 @@ ROOT_NAV = [
     ("../index.html", "Dashboard"), ("../calendar.html", "Calendar"), ("../vacation.html", "Vacation windows"),
     ("../mlb.html", "MLB"), ("../nfl.html", "NFL &amp; 49ers"), ("../ncaaf.html", "Stanford &amp; Cal"),
     ("../radio.html", "Radio"), ("../sources.html", "Sources"), ("../flagged.html", "Flagged"), ("../method.html", "Method"),
+    ("../nfl-lab/index.html", "NFL Lines Lab"),
 ]
 EXTRA_NAV = [
     ("index.html", "Official feeds"), ("calendar.html", "Day scoreboard"), ("vacation.html", "Free windows"),
@@ -1013,11 +1014,15 @@ footer a{color:var(--accent2)}
 
 # ---------------------------------------------------------------- root nav + exact labels (idempotent)
 nav_link = '<a href="extra/index.html">Official feeds &amp; verification</a>'
+lab_link = '<a href="nfl-lab/index.html">NFL Lines Lab</a>'
 for p in sorted(ROOT.glob("*.html")):
     txt = p.read_text(encoding="utf-8")
     orig = txt
     if "extra/index.html" not in txt:
         txt = txt.replace("</nav>", nav_link + "</nav>", 1)
+    if "nfl-lab/index.html" not in txt:
+        # hand-written pages (e.g. nfl-strategy.html) get the lab link too
+        txt = txt.replace("</nav>", lab_link + "</nav>", 1)
     txt = txt.replace('<button id="prev">← Yesterday</button>', '<button id="prev">← Prev</button>')
     txt = txt.replace('<button id="tomorrow">Tomorrow →</button>', '<button id="tomorrow">Next →</button>')
     txt = txt.replace('<button id="next">Tomorrow +1 →</button>', '<button id="next">+2 days →</button>')

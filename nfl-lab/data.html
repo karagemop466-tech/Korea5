@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data index — NFL Lines Lab</title>
+<meta name="description" content="NFL lines origination, strategy leaderboard, correlation values and injury/depth tracking with source-linked verification.">
+<link rel="stylesheet" href="assets/lab.css">
+</head>
+<body>
+<header><h1>NFL Lines Lab</h1>
+<div class="sub">Originate lines &middot; leaderboard strategies through validation gates &middot; measure correlation &middot; track injuries and depth. Built 2026-11-13 by session arena-fb9c9608; branch <code>arena/fb9c9608-korea5</code>.</div>
+</header>
+<nav><a href="index.html" class="">NFL Lines Lab</a><a href="lines.html" class="">Originated lines</a><a href="leaderboard.html" class="">Strategy leaderboard</a><a href="correlation.html" class="">Correlation</a><a href="injuries.html" class="">Injuries & depth</a><a href="method.html" class="">Method & gates</a><a href="decisions.html" class="">Decisions needed</a><a href="suggestions.html" class="">Suggestions</a><a href="review.html" class="">Repo review</a><a href="flagged.html" class="">Flagged for review</a><a href="sources.html" class="">Sources</a><a href="data.html" class="active">Data index</a></nav>
+<main>
+<div class="banner"><strong>Honesty policy.</strong> Every fact row links to its source. Market lines (spreads/totals/moneylines) are bookmaker quotes from the open-source nflverse/nfldata dataset — labelled <span class="tag mkt">market</span>, not official NFL data. Official data comes from NFL.com pages fetched 2026-11-13 (link on each row). Values that could not be verified are left blank and listed on <a href="flagged.html">Flagged for Review</a>. No betting edge is claimed anywhere; the leaderboard is a paper research competition.</div>
+
+<h2>Data index</h2>
+<p class="lede">Everything the lab publishes is a committed, deterministic artifact of
+<code>nfl-lab/scripts/build_nfl_lab.py</code> over the inputs below. Rebuild commands are on
+<a href="method.html">Method</a>.</p>
+<table><tr><th>Path (relative to nfl-lab/)</th><th>Contents</th></tr><tr><td><code>data/sources.json</code></td><td>Provenance registry: every dataset with URL, fetch method, commit, timestamp.</td></tr><tr><td><code>data/official/injuries-2026-w10.json</code></td><td>Official Week 10 injury report, transcribed rows (NFL.com).</td></tr><tr><td><code>data/official/schedule-2026-w10.json</code></td><td>Official Week 10 schedule/results (NFL.com).</td></tr><tr><td><code>data/official/schedule-2026-w11.json</code></td><td>Official Week 11 schedule (NFL.com).</td></tr><tr><td><code>data/nfldata/games.csv</code></td><td>Results + market lines 1999–2026 (nfldata, market + results layer).</td></tr><tr><td><code>data/nfldata/closing_lines.csv</code></td><td>Per-book closing moneylines 2006–2026 (market layer).</td></tr><tr><td><code>data/nfldata/initial_lines.csv</code></td><td>Opening lines 2026 season (market layer).</td></tr><tr><td><code>data/nfldata/sc_lines.csv</code></td><td>Spread movement 2013–2026 (market layer).</td></tr><tr><td><code>data/nfldata/standings.csv</code></td><td>Final weekly standings 2002–2025.</td></tr><tr><td><code>data/nfldata/teams.csv</code></td><td>Team abbreviation crosswalk.</td></tr><tr><td><code>data/nfldata/win_totals.csv</code></td><td>Preseason win totals 2003–2026 (market layer).</td></tr><tr><td><code>data/nfldata/rosters.csv</code></td><td>Career roster rows 2006–2019 (limited — see NFL-K4).</td></tr><tr><td><code>data/derived/model-meta.json</code></td><td>Model parameters, home advantage, σ fits, diagnostics, records cross-check.</td></tr><tr><td><code>data/derived/lines-2026-w10-w11.json</code></td><td>Originated lines vs market, Weeks 10–11.</td></tr><tr><td><code>data/derived/leaderboard.json</code></td><td>Strategy backtest results, gates, points.</td></tr><tr><td><code>data/derived/correlation.json</code></td><td>Correlation values, SGP scenarios, parlay math.</td></tr><tr><td><code>data/derived/depth-2026-w10.json</code></td><td>Injury aggregation, unit pressure, QB notes.</td></tr><tr><td><code>data/derived/flags.json</code></td><td>Flag register NFL-K1…K10.</td></tr><tr><td><code>data/derived/verification.json</code></td><td>Build verification: link check, row-source check, JSON validity.</td></tr></table>
+
+</main>
+<footer>NFL Lines Lab — part of <a href="../index.html">Korea5</a> (live site: karagemop466-tech.github.io/Korea5). Data build 2026-11-13T14:00:00Z. Report problems on <a href="flagged.html">Flagged for Review</a>.</footer>
+</body></html>

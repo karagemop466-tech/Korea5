@@ -99,3 +99,29 @@ python3 tools/verify_extra.py
 Local tests check structure and links, not complete source-fact verification. Historical
 verification reports are preserved with their original timestamps. All future vacation
 windows remain provisional. `certainty.html` lists the outstanding evidence limits.
+
+## NFL Lines Lab (2026-11-13, session `arena/fb9c9608-korea5`)
+
+A data-driven implementation of the [NFL strategy proposal](research/NFL-STRATEGY.md), published under `nfl-lab/`:
+
+| Path | What it is |
+|---|---|
+| `nfl-lab/*.html` | Dashboard, originated lines board, strategy leaderboard, correlation values, injury/depth tracker, method & gates, decision register, suggestions review board, repo review, flagged register, sources, data index |
+| `nfl-lab/data/official/` | NFL.com Week 10 injury report (296 rows), Week 10/11 schedules — fetched 2026-11-13, provenance included |
+| `nfl-lab/data/nfldata/` | nflverse/nfldata results + market lines (market data, labelled as such everywhere) |
+| `nfl-lab/data/derived/` | Deterministic build outputs: lines, leaderboard, correlation, depth, flags, verification |
+| `nfl-lab/scripts/` | `build_nfl_lab.py` (analytics), `build_site_lab.py` (site), `verify_nfl_lab.py` (20 checks), `fetch_upstream.py` (CI-only snapshots) |
+| `.github/workflows/nfl-lab-data.yml` | Weekly CI snapshot of nflverse injuries/depth-charts/snap-counts + market lines — the discovery step that unblocks CLV, depth facts and player props |
+
+Rebuild:
+
+```bash
+python3 nfl-lab/scripts/build_nfl_lab.py    # analytics -> derived JSON (deterministic, seeded)
+python3 nfl-lab/scripts/build_site_lab.py   # derived JSON -> nfl-lab/*.html
+python3 nfl-lab/scripts/verify_nfl_lab.py   # 20 checks: links, row sources, content
+```
+
+Honesty rules: every fact row links to its source; market lines are labelled `market`; unverified values stay
+blank and are published on `nfl-lab/flagged.html`; no betting edge is claimed — on held-out 2020–2025,
+**zero strategies passed the validation gates** (every ROI CI includes zero), which is the luck-removal
+step working as designed. Depth-chart tier is never inferred.

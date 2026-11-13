@@ -28,6 +28,7 @@ NAV = [
     ("sources.html", "Sources"),
     ("flagged.html", "Flagged"),
     ("method.html", "Method"),
+    ("nfl-lab/index.html", "NFL Lines Lab"),
     ("extra/index.html", "Official feeds &amp; verification"),
 ]
 

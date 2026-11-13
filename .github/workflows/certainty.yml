@@ -1,7 +1,7 @@
 name: Planner certainty and site checks
 on:
   push:
-    branches: [main, arena/f9e705a1-korea5]
+    branches: [main, arena/f9e705a1-korea5, arena/02f4d067-korea5]
   pull_request:
   workflow_dispatch:
 permissions:
@@ -24,5 +24,9 @@ jobs:
           python3 scripts/audit_certainty.py
           node --check extra/assets/extra.js
           node tests/test_calendar_today.js
+      - name: NFL lines lab checks (unit tests + link integrity)
+        run: |
+          python3 -m unittest discover -s nfl/tests -v
+          python3 nfl/build_site.py
       - name: Python syntax
-        run: python3 -m compileall -q scripts tools
+        run: python3 -m compileall -q scripts tools nfl

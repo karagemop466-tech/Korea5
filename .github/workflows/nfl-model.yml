@@ -10,8 +10,8 @@ on:
     paths:
       - 'nfl/model.py'
       - 'nfl/leaderboard.py'
-      - 'nfl/build_site.py'
       - 'nfl/analyze.py'
+      - 'nfl/build_site.py'
       - 'nfl/labels.json'
       - '.github/workflows/nfl-model.yml'
 permissions:
@@ -30,23 +30,26 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: fetch full NFL data (not committed; hashed into provenance)
-        run: python3 nfl/fetch_data.py --seasons 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 --with-espn
-      - name: run model
-        run: python3 nfl/model.py --perm ${{ github.event.inputs.perm || '200' }}
-      - name: audit + hypotheses + questions
-        run: python3 nfl/analyze.py
-      - name: leaderboard + site
+      - name: fetch full NFL data (not committed; every file is hashed into provenance)
+        run: python3 nfl/fetch_data.py --seasons 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 --with-espn 2>&1 | tee nfl/data/last_run.log
+      - name: model
+        run: python3 nfl/model.py --perm ${{ github.event.inputs.perm || '200' }} 2>&1 | tee -a nfl/data/last_run.log
+      - name: audit, hypotheses, questions
+        run: python3 nfl/analyze.py 2>&1 | tee -a nfl/data/last_run.log
+      - name: leaderboard and site
         run: |
-          python3 nfl/leaderboard.py
-          python3 nfl/build_site.py
+          python3 nfl/leaderboard.py 2>&1 | tee -a nfl/data/last_run.log
+          python3 nfl/build_site.py 2>&1 | tee -a nfl/data/last_run.log
+      - name: unit tests
+        run: python3 -m unittest discover -s nfl/tests -v 2>&1 | tee -a nfl/data/last_run.log
       - name: commit derived outputs
+        if: always()
         run: |
           git config user.name "korea5-nfl-bot"
           git config user.email "korea5-nfl-bot@users.noreply.github.com"
-          git add -f nfl/data/ nfl-lines/
+          git add -f nfl/data/ nfl-lines/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "no changes"; else
-            git commit -m "nfl: model results + site (CI-computed from fetched data)"
+            git commit -m "nfl: model results, analysis and site (CI-computed from fetched data)"
             git pull --rebase --autostash origin arena/02f4d067-korea5
             git push origin HEAD:arena/02f4d067-korea5
           fi

@@ -11,6 +11,21 @@ LOCAL_OK = re.compile(r'^(?:[a-z]+:|#|mailto:)', re.I)
 
 def main():
     pages = sorted(f for f in os.listdir(".") if f.endswith(".html"))
+    # nested generated sections are link-checked from their own directory
+    for sub in ("nfl-lines",):
+        if os.path.isdir(sub):
+            base = sub
+            for f in sorted(x for x in os.listdir(sub) if x.endswith(".html")):
+                html = open(os.path.join(base, f), encoding="utf-8").read()
+                for link in HREF.findall(html):
+                    if LOCAL_OK.match(link) and not link.startswith("#"):
+                        continue
+                    target = link.split("#")[0]
+                    if not target:
+                        continue
+                    if not os.path.exists(os.path.join(base, target)):
+                        missing.append({"page": f"{base}/{f}", "link": link})
+                    checked += 1
     missing, checked, external = [], 0, set()
     for p in pages:
         html = open(p, encoding="utf-8").read()

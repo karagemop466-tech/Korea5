@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/runner/work/Korea5/Korea5/tools/fetch_nfl_lab.py", line 1049, in _entry
+    main()
+  File "/home/runner/work/Korea5/Korea5/tools/fetch_nfl_lab.py", line 841, in main
+    rows, _games = parse_results(pairs, url, f"Week {wk}", scores)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Korea5/Korea5/tools/fetch_nfl_lab.py", line 310, in parse_results
+    alt = by_nick.get((nick(away), nick(home)))
+          ^^^^^^^
+NameError: name 'by_nick' is not defined

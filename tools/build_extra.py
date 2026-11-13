@@ -751,7 +751,15 @@ def inline(text: str) -> str:
     text = esc(text)
     text = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
     text = _re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r'<a href="\2">\1</a>', text)
-    text = _re.sub(r"\[([^\]]+)\]\((\.\./[^)]+|[^)]+\.(?:html|md))\)", r'<a href="\2">\1</a>', text)
+    def _rel(m):
+        target = m.group(2)
+        # this renderer writes into extra/, so document-relative links need one level up
+        if target.startswith("http") or target.startswith("#"):
+            return m.group(0)
+        if not target.startswith("../"):
+            target = "../" + target
+        return f'<a href="{target}">{m.group(1)}</a>'
+    text = _re.sub(r"\[([^\]]+)\]\((\.\./[^)]+|[^)]+\.(?:html|md))\)", _rel, text)
     return text
 def md_to_html(md: str) -> str:
     out = []

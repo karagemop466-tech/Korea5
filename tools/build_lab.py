@@ -219,6 +219,12 @@ recommended order — so a decision can be made before any code is written.</p><
 
 <h2>Official sources used</h2>
 {source_table()}
+<div class="callout"><strong>Two labs, one question.</strong> This lab is the <em>evidence</em> side: official NFL records
+only — the published injury report, official player game logs, the official Game Book — and every correlation, dispersion
+figure and minimum-sample rule is computed from them by <code>scripts/analyze_lab.py</code>. The companion
+<a href="../nfl-lab/index.html">NFL Lines Lab</a> is the <em>model</em> side: it builds and back-tests a line model
+against third-party game data and reports how it compares with the market spread. Neither lab publishes a validated
+edge, and each says so on its own landing page.</div>
 <p class="small">Checklist of what was verified and how: see <a href="flags.html">Flagged for Review</a> and
 <a href="../research/NFL-LINES-LAB.md">the research notes</a>. The parallel line-origination design memo is kept at
 <a href="../research/NFL-LINES.md">research/NFL-LINES.md</a>, with the earlier strategy notes at

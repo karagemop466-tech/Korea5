@@ -28,6 +28,7 @@ NAV = [
     ("lab/index.html", "NFL Lab"),
     ("lab/questions.html", "Decisions"),
     ("lab/suggestions.html", "Suggestions"),
+    ("nfl-lab/index.html", "NFL Model"),
     ("sources.html", "Sources"),
     ("flagged.html", "Flagged"),
     ("method.html", "Method"),

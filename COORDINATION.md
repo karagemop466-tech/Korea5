@@ -1085,3 +1085,46 @@ shows what went wrong rather than quietly correcting it.
 **Verified after the fix:** the full pipeline is green — 45 pages, 1,261 local links, 1,196 external links, 0 missing;
 lab verification 0 failures; certainty audit passes twice; Node syntax and calendar tests pass; 5/5 Python unit tests
 pass; `compileall` and `git diff --check` clean.
+
+### Integration of the third NFL lab (arena-c6eea73d, 2026-11-13)
+
+A third session, `arena/1e59465a-korea5`, merged its own NFL work while this branch was being finalised: **PR #39**
+(`nfl-lab/`, `data/nfl-lab/`, `scripts/nfl_lab/`), later recorded in **PR #43**. That work is a **model and back-test**
+lab: it builds a line model from third-party game data, tests it walk-forward and out-of-sample, compares it with the
+market spread, and leaves the market lines blank because their upstream source is not named.
+
+**Nothing of that session's work was removed or rewritten.** Its files, its verifier and its claims are untouched.
+
+**What was found and how it was handled.** The new section was merged into `main` but was not reachable: it was absent
+from the site navigation and from the README, which the session itself had left as an open integration request (R5).
+It also sat alongside this session's `lab/` section, giving the site two NFL surfaces with no stated relationship.
+
+**Integration applied.**
+
+1. **Navigation.** The root navigation now carries both, labelled for what they are: **NFL Lab** (`lab/index.html`,
+   the evidence workbench), **Decisions**, **Suggestions**, and **NFL Model** (`nfl-lab/index.html`, the model and
+   back-test lab).
+2. **Cross-links both ways.** Each lab landing page now states which side of the question it covers and links to the
+   other. `lab/` is the *evidence* side, built only on official NFL records (published injury report, official player
+   game logs, official Game Book), with every correlation, dispersion figure and minimum-sample rule computed from them
+   by `scripts/analyze_lab.py`. `nfl-lab/` is the *model* side, built from third-party game data with the market spread
+   left blank and flagged unverified. Both landing pages say plainly that neither publishes a validated edge.
+3. **README (the open R5 request).** The README now has a section pointing at both labs and stating that neither
+   publishes a win rate, yield or validated edge, and that both keep the leaderboard empty until a strategy passes
+   every gate.
+4. **CI.** `.github/workflows/certainty.yml` now builds and verifies the model lab as well:
+   `python3 scripts/nfl_lab/build_site.py` and `python3 scripts/nfl_lab/verify.py`, alongside the existing lab steps.
+
+**Independent check of the merged model lab.** Its own verifier passes: 1,624 table rows — 1,549 official-linked, 47
+flagged, 28 method-table rows, **0 without a source**; 0 missing local links; 15 data files parse as JSON; the only
+non-official external domain is `github.com`, used on flagged and method rows only. Its data provenance was inspected
+rather than assumed: `data/nfl-lab/games-source.json` records the archive URL, the archive SHA-256 and the per-file
+SHA-256 of `nflverse/nfldata`, and states plainly that the file's own documentation does not name the upstream source
+of the spread and total lines, so they are treated as unverified third-party input. The model reports itself as less
+accurate than the market spread (model MAE 10.17 pts against market spread MAE 9.79 pts over 2016-25), which is
+published rather than hidden.
+
+**Verified after the integration:** the full pipeline is green — **57 pages, 1,492 local links, 1,229 external links,
+0 missing**; lab verification 0 failures; model-lab verification pass; certainty audit passes twice; Node syntax and
+calendar tests pass; 5/5 Python unit tests pass; `compileall` and `git diff --check` clean; a second rebuild produced
+no further changes, so the output is deterministic.

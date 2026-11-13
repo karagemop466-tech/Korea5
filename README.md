@@ -27,6 +27,16 @@ See [`research/EXECUTIVE-SUMMARY.md`](research/EXECUTIVE-SUMMARY.md) for the ful
 
 ## NFL lines, strategies and the injury tracker (2026-11-13)
 
+Two companion sections work on the same question from opposite ends, and are meant to be read together:
+
+| Section | What it is |
+|---|---|
+| [NFL Lines Lab](https://karagemop466-tech.github.io/Korea5/lab/index.html) | The **evidence** side, built only on official NFL records — the published injury report, official player game logs, the official Game Book — with measured correlations, dispersion figures and minimum-sample rules computed from them. |
+| [NFL Lines Lab — model](https://karagemop466-tech.github.io/Korea5/nfl-lab/index.html) | The **model** side — a line model built and back-tested against third-party game data, reporting how it compares with the market spread. Market lines are left blank and flagged unverified. |
+
+Neither section publishes a validated edge, a win rate or a yield. Both say so on their own landing page, and both
+keep the leaderboard empty until a strategy passes every gate.
+
 The [NFL Lines Lab](https://karagemop466-tech.github.io/Korea5/lab/index.html) is a new section for originating your own
 NFL lines. It holds a **decision register** (15 open decisions with what is known, what is missing and how to close it),
 a **catalogue of 12 candidate strategies** (singles, player props, prop combinations, parlays) each bound to **9 validation

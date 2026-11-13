@@ -398,13 +398,13 @@ def cross_source_and_market():
         if r.get("season", "").isdigit():
             pass
     # ESPN scoreboards: match on date + team abbreviations
-    # key on the unordered pair of teams: neutral-site games are published with no home team,
-    # so a home-team-only join silently drops them.
-    idx = defaultdict(list)
+    # Pair on the unordered team pair with a +/-1 day window. ESPN timestamps are UTC, so an evening
+    # kickoff in the Americas lands on the following calendar day; an exact-date join silently drops
+    # every Sunday-night game. A pair is never matched to a different team pair.
+    pair_index = defaultdict(list)
     for r in rows:
-        if r.get("home_score") and r.get("away_score"):
-            idx[(r["gameday"], r.get("home_team"), r.get("away_team"))].append(r)
-            idx[(r["gameday"], r.get("away_team"), r.get("home_team"))].append(r)
+        if r.get("home_score") and r.get("away_score") and r.get("gameday"):
+            pair_index[frozenset((r.get("home_team"), r.get("away_team")))].append(r)
     agree = disagree = missing = 0
     examples = []
     unmatched_dates = {}
@@ -437,17 +437,18 @@ def cross_source_and_market():
                 continue
             home_score = teams.get(home_ab)
             away_score = teams.get(away_ab)
-            cands = idx.get((day, home_ab, away_ab), [])
-            if not cands:
-                for shift in (-1, 1):
-                    try:
-                        d2 = (datetime.fromisoformat(day) + timedelta(days=shift)).date().isoformat()
-                    except ValueError:
-                        break
-                    cands = idx.get((d2, home_ab, away_ab), [])
-                    if cands:
-                        day = d2
-                        break
+            cands = None
+            pool = pair_index.get(frozenset((home_ab, away_ab)), [])
+            for shift in (0, -1, 1, -2, 2):
+                try:
+                    d2 = (datetime.fromisoformat(day) + timedelta(days=shift)).date().isoformat()
+                except ValueError:
+                    break
+                hit = [x for x in pool if x.get("gameday") == d2]
+                if hit:
+                    cands = hit
+                    day = d2
+                    break
             if not cands:
                 missing += 1
                 unmatched_dates[(e.get("date") or "")[:10]] = unmatched_dates.get((e.get("date") or "")[:10], 0) + 1

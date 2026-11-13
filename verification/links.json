@@ -1,122 +1,10 @@
 {
- "pages": 59,
- "localLinksChecked": 1592,
- "missing": [
-  {
-   "page": "extra/calendar.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/durations.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/estimates.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/flagged.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/index.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/ncaaf-future.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/nfl-2026.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/season-anchors.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/sources.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/stations.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/summary.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/vacation.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/verification.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "extra/westwoodone.html",
-   "link": "../../nfl/system/index.html"
-  },
-  {
-   "page": "nfl/system/correlation.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/data.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/flagged.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/index.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/injuries.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/leaderboard.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/market.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/method.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/questions.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/signals.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/strategies.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/suggestions.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/summary.html",
-   "link": "../index.html"
-  },
-  {
-   "page": "nfl/system/validation.html",
-   "link": "../index.html"
-  }
- ],
- "uniqueExternalLinks": 1239,
+ "pages": 76,
+ "localLinksChecked": 1742,
+ "missing": [],
+ "uniqueExternalLinks": 1274,
  "externalLinks": [
+  "http://www.ncpg.org.sg/",
   "https://buffedlizard55-lab.github.io/VacationSchedule/site/",
   "https://calbears.com/news/2020/2/11/football-cal-adds-minnesota-and-wyoming-to-future-schedules",
   "https://calbears.com/news/2023/10/30/acc-announces-conference-football-matchups-for-2024-30.aspx?print=true",
@@ -127,9 +15,18 @@
   "https://calbears.com/sports/football/schedule",
   "https://calbears.com/sports/football/schedule/2026",
   "https://collegefootballplayoff.com/news/2026/6/1/26-27-broadcast-sked",
+  "https://gaming.ny.gov/sports-wagering",
   "https://github.com/karagemop466-tech/Korea5",
+  "https://github.com/karagemop466-tech/Korea5/blob/main/COORDINATION.md",
   "https://github.com/karagemop466-tech/Korea5/blob/main/README.md",
   "https://github.com/karagemop466-tech/Korea5/blob/main/scripts/analyze.py",
+  "https://github.com/karagemop466-tech/Korea5/blob/main/scripts/check_links.py",
+  "https://github.com/karagemop466-tech/Korea5/tree/arena/1e59465a-korea5/nfl-lab",
+  "https://github.com/karagemop466-tech/Korea5/tree/main/data/upstream",
+  "https://github.com/nflverse/nfldata",
+  "https://github.com/nflverse/nfldata/blob/master/DATASETS.md",
+  "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+  "https://github.com/nflverse/nflverse-data/releases/tag/injuries",
   "https://gostanford.com/news/2016/06/14/boston-college-series",
   "https://gostanford.com/news/2023/10/30/acc-announces-football-schedule-model",
   "https://gostanford.com/news/2026/04/17/tcu-series-update",
@@ -139,19 +36,17 @@
   "https://gostanford.com/sports/football/schedule",
   "https://karagemop466-tech.github.io/Korea5/",
   "https://karagemop466-tech.github.io/Korea5/certainty.html",
-  "https://karagemop466-tech.github.io/Korea5/flagged.html",
-  "https://karagemop466-tech.github.io/Korea5/lab/flags.html",
-  "https://karagemop466-tech.github.io/Korea5/lab/questions.html",
-  "https://karagemop466-tech.github.io/Korea5/research/NFL-LINES-LAB.md",
   "https://karagemop466-tech.github.io/Korea5/verification/links.json",
   "https://karagemop466-tech.github.io/Korea5/verification/report.md",
   "https://media.nfl.com/football-information/2026/news/2026-kickoff-guide",
   "https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced",
   "https://media.nfl.com/news-and-releases/events/super-bowl-returns-to-las-vegas-in-2029-",
+  "https://nextgenstats.nfl.com/",
   "https://operations.nfl.com/",
   "https://operations.nfl.com/calendar-events/nfl-important-dates",
   "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook",
   "https://operations.nfl.com/the-rules/",
+  "https://sbg.colorado.gov/sites/sbg/files/SBRules1_2_4_5_6_7_8_9_10forAG_0.pdf",
   "https://static.www.nfl.com/image/upload/v1794311318/gamecenter/ab5825a7-4feb-11f1-abca-2c54536568a9.pdf",
   "https://statsapi.mlb.com/api/v1/schedule",
   "https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;season=2026&amp;gameType=A",
@@ -169,6 +64,9 @@
   "https://www.commanders.com/team/depth-chart",
   "https://www.detroitlions.com/team/depth-chart",
   "https://www.espn.com/liveradiotv/s/nbaaffiliates.html",
+  "https://www.gaming.nv.gov/siteassets/content/divisions/administration/history/regulation-22.060-22.090-22.150-adp-01.29.2026-eff-02.28.2026.pdf",
+  "https://www.gra.gov.sg/harm-minimisation/problem-gambling",
+  "https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities",
   "https://www.houstontexans.com/team/depth-chart",
   "https://www.mercedesbenzstadium.com/events/super-bowl-lxii",
   "https://www.mlb.com/athletics/schedule/watch",
@@ -679,11 +577,21 @@
   "https://www.nfl.com/games/vikings-at-patriots-2026-reg-14",
   "https://www.nfl.com/games/vikings-at-saints-2026-reg-5",
   "https://www.nfl.com/injuries/",
+  "https://www.nfl.com/injuries/league/2026/reg1",
   "https://www.nfl.com/injuries/league/2026/reg10",
+  "https://www.nfl.com/injuries/league/2026/reg2",
+  "https://www.nfl.com/injuries/league/2026/reg3",
+  "https://www.nfl.com/injuries/league/2026/reg4",
+  "https://www.nfl.com/injuries/league/2026/reg5",
+  "https://www.nfl.com/injuries/league/2026/reg6",
+  "https://www.nfl.com/injuries/league/2026/reg7",
+  "https://www.nfl.com/injuries/league/2026/reg8",
+  "https://www.nfl.com/injuries/league/2026/reg9",
   "https://www.nfl.com/news/2026-27-national-football-league-important-dates",
   "https://www.nfl.com/news/las-vegas-to-host-super-bowl-lxiii-in-2029",
   "https://www.nfl.com/news/mercedes-benz-stadium-in-atlanta-to-host-super-bowl-lxii-in-2028",
   "https://www.nfl.com/news/nfl-week-10-injury-report-2026-season",
+  "https://www.nfl.com/news/players-now-eligible-to-return-from-injured-reserve-after-four-games",
   "https://www.nfl.com/players/a-j-brown/",
   "https://www.nfl.com/players/a-j-haulcy/",
   "https://www.nfl.com/players/aaron-banks/",
@@ -990,7 +898,21 @@
   "https://www.nfl.com/schedules/2026/by-week/hall-of-fame-game",
   "https://www.nfl.com/schedules/2026/by-week/week-1",
   "https://www.nfl.com/schedules/2026/by-week/week-10",
+  "https://www.nfl.com/schedules/2026/by-week/week-11",
+  "https://www.nfl.com/schedules/2026/by-week/week-12",
+  "https://www.nfl.com/schedules/2026/by-week/week-13",
+  "https://www.nfl.com/schedules/2026/by-week/week-14",
+  "https://www.nfl.com/schedules/2026/by-week/week-15",
+  "https://www.nfl.com/schedules/2026/by-week/week-16",
+  "https://www.nfl.com/schedules/2026/by-week/week-17",
   "https://www.nfl.com/schedules/2026/by-week/week-18",
+  "https://www.nfl.com/schedules/2026/by-week/week-2",
+  "https://www.nfl.com/schedules/2026/by-week/week-3",
+  "https://www.nfl.com/schedules/2026/by-week/week-4",
+  "https://www.nfl.com/schedules/2026/by-week/week-5",
+  "https://www.nfl.com/schedules/2026/by-week/week-6",
+  "https://www.nfl.com/schedules/2026/by-week/week-7",
+  "https://www.nfl.com/schedules/2026/by-week/week-8",
   "https://www.nfl.com/schedules/2026/by-week/week-9",
   "https://www.nfl.com/schedules/2027/",
   "https://www.nfl.com/scores/",

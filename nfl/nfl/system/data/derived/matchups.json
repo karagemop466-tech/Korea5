@@ -1,9 +1,0 @@
-{
- "leagueMeanPointsPerGame": null,
- "games": [],
- "note": "Scores are official. The estimate column is a MODEL output, not an official value and not a betting line. It is included only to show the method that would price a game once real prices exist.",
- "sourceUrls": [
-  "https://www.nfl.com/schedules/2026/by-week/week-10",
-  "https://www.nfl.com/stats/team-stats/offense/scoring/2026/reg/all"
- ]
-}

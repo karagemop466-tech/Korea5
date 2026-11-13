@@ -5,22 +5,16 @@
   },
   "summary": {
     "checks": 99,
-    "passed": 98,
-    "failed": 1
+    "passed": 99,
+    "failed": 0
   },
   "counts": {
     "pages": 14,
     "externalHosts": 10,
     "rowsWithoutSource": 0,
-    "brokenLocal": 14
+    "brokenLocal": 0
   },
-  "failures": [
-    {
-      "name": "no broken local links from nfl pages",
-      "ok": false,
-      "detail": "[{'page': 'correlation.html', 'link': '../index.html'}, {'page': 'data.html', 'link': '../index.html'}, {'page': 'flagged.html', 'link': '../index.html'}, {'page': 'index.html', 'link': '../index.html'}]"
-    }
-  ],
+  "failures": [],
   "checks": [
     {
       "name": "14 section pages exist",
@@ -34,8 +28,8 @@
     },
     {
       "name": "no broken local links from nfl pages",
-      "ok": false,
-      "detail": "[{'page': 'correlation.html', 'link': '../index.html'}, {'page': 'data.html', 'link': '../index.html'}, {'page': 'flagged.html', 'link': '../index.html'}, {'page': 'index.html', 'link': '../index.html'}]"
+      "ok": true,
+      "detail": "[]"
     },
     {
       "name": "no empty href/src in nfl pages",

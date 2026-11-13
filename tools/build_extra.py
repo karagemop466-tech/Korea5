@@ -401,7 +401,7 @@ ROOT_NAV = [
     ("../index.html", "Dashboard"), ("../calendar.html", "Calendar"), ("../vacation.html", "Vacation windows"),
     ("../mlb.html", "MLB"), ("../nfl.html", "NFL &amp; 49ers"), ("../ncaaf.html", "Stanford &amp; Cal"),
     ("../radio.html", "Radio"), ("../sources.html", "Sources"), ("../flagged.html", "Flagged"), ("../method.html", "Method"),
-    ("../../nfl/system/index.html", "NFL decision system"),
+    ("../nfl/system/index.html", "NFL decision system"),
 ]
 EXTRA_NAV = [
     ("index.html", "Official feeds"), ("calendar.html", "Day scoreboard"), ("vacation.html", "Free windows"),
@@ -751,15 +751,8 @@ def inline(text: str) -> str:
     text = esc(text)
     text = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
     text = _re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r'<a href="\2">\1</a>', text)
-    def _rel(m):
-        target = m.group(2)
-        # this renderer writes into extra/, so document-relative links need one level up
-        if target.startswith("http") or target.startswith("#"):
-            return m.group(0)
-        if not target.startswith("../"):
-            target = "../" + target
-        return f'<a href="{target}">{m.group(1)}</a>'
-    text = _re.sub(r"\[([^\]]+)\]\((\.\./[^)]+|[^)]+\.(?:html|md))\)", _rel, text)
+    text = _re.sub(r"\[([^\]]+)\]\((\.\./[^)]+|[^)]+\.(?:html))\)", r'<a href="\2">\1</a>', text)
+    text = _re.sub(r"\[([^\]]+)\]\(([^)/]+\.md)\)", r'<a href="../research/\2">\1</a>', text)
     return text
 def md_to_html(md: str) -> str:
     out = []
